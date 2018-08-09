@@ -14,7 +14,6 @@ functional_areas:
 
 ## What\'s in this topic   {#debug-theme-intro}
 
-
 When you create a Magento theme, you might need to create override files for default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 
 ## Locate templates {#debug-theme-templ}
@@ -52,7 +51,6 @@ A search through the app directory for occurrences of "minicart-wrapper" in `.ph
 
 Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
 
-
 ## Locate layouts {#debug-theme-layout}
 
 Just like templates, layouts are saved on a per-module basis. You can easily locate the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
@@ -79,7 +77,6 @@ Let's search for the layout following the fallback scheme:
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
 After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
-
 
 ## Locate styles {#debug-theme-style}
 

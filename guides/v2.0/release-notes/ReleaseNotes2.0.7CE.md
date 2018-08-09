@@ -15,14 +15,9 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.7
 
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-
 ### Fixed issue
 
-
 The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} now works as expected in a Magento installation running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page would become unresponsive, and the transaction would not appear in the payment gateway. <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.
-
-
 
 ### System requirements
 
@@ -30,7 +25,6 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation instructions
-
 
 #### New installations
 

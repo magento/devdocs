@@ -4,7 +4,6 @@ This section discusses how to install the Magento software using a web-based wiz
 
 ## Before you start your installation   {#instgde-install-prereq}
 
-
 Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{ page.baseurl }}/install-gde/system-requirements.html">Magento System Requirements</a>.

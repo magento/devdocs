@@ -40,7 +40,6 @@ The way you reinstall the Magento application from the command line depends on y
 *	If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall as a system integrator](#instgde-install-reinst-update-sys).
 *	If you're a contributing developer (that is, you started using `composer clone`), see [Contributing developers—update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
-
 ### Reinstall as a system integrator {#instgde-install-reinst-update-sys}
 
 To reinstall the Magento software as a system integrator:

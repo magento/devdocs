@@ -223,7 +223,6 @@ The execution flow will be as follows:
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
 
-
 ### Configuration inheritance
 
 All plugins added for interfaces and inherited classes will be added to classes that implement or inherit those classes and interfaces.

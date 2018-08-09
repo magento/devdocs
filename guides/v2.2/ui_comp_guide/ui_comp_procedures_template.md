@@ -13,11 +13,9 @@ github_link: contributor-guide/basic_template.md
 
 One or two sentences, describing what is the procedure and when the user might need it. High-level workflow.
 
-
 ### Prerequisites (if relevant)
 
 What preparations are required, what a user should be familiar with.
-
 
 ## Actual steps
 
@@ -33,7 +31,6 @@ For the whole procedure, add info how to validate that procedure was successful,
 <!-- форматирование -->
 
 ### Formatting reference
-
 
 ### Basic Markdown Syntax
 
@@ -75,8 +72,6 @@ Lists are useful for organizing and displaying related items. Below are examples
 2.	Second Step
 3.	Third Step
 
-
-
 #### Code blocks
 
 By indenting your content by at least 4 spaces, you can create a code block.
@@ -92,6 +87,7 @@ For highlighted code blocks use the `highlight` Liquid tag.
 
 {% highlight html %}
 <div class="container">
+
 #### Title
 {: .title}
 

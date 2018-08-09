@@ -28,11 +28,7 @@ The gallery widget source code is <a href="{{ site.mage2000url }}lib/web/mage/ga
 
 The gallery magnifier source is <a href="{{ site.mage2000url }}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
 
-
-
 ### Contents
-
-
 
 ## Initialize the gallery widget {#gallery_init}
 
@@ -96,7 +92,6 @@ Example of declarative initialization:
 </script>
 
 {%endhighlight%}
-
 
 ## Options {#gallery_options}
 
@@ -465,7 +460,6 @@ The fullscreen and breakpoints options are set in a similar way:
 {%endhighlight%}
 
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
-
 
 ## Gallery API {#gallery_api}
 

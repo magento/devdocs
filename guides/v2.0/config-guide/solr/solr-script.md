@@ -41,7 +41,6 @@ After you've tested the Solr solution, you should perform the following tasks to
 
 ### Multiple core configuration   {#cores}
 
-
 If you have created multiple cores, make sure the value of the `maxBooleanClauses` parameter is the same on each. This parameter is defined in each core's `solrconfig.xml` file. Solr uses the value defined for the core that initialized most recently as the value for all cores. The default value for the Magento installation is 10240.
 
 If one or more of the `maxBooleanClauses` parameters is set too low, the search results page could display no results.

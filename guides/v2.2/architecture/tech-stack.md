@@ -70,4 +70,5 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
+
 <a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

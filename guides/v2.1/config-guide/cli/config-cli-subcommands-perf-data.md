@@ -148,6 +148,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 </table>
 
 ## Run the data generator {#config-cli-perf-run}
+
 <div class="bs-callout bs-callout-warning" markdown="1">
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 </div>
@@ -182,7 +183,6 @@ Sample output for the small profile:
     Generating simple products...  done in <time>
     Generating configurable EAV variations...  done in <time>
     ... more ...
-
 
 #### Related topics
 

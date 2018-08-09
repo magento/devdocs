@@ -122,7 +122,6 @@ The following table shows which actions are supported for each non-metapackage.
 		</tbody>
 	</table>
 
-
 #### Actions available for metapackages {#extensman-access-types-meta}
 
 A metapackage is an installable package that includes more than one type. For example, we require a package that contains a module and a theme to be packaged as a metapackage.

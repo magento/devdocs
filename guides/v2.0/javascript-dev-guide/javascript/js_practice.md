@@ -29,7 +29,6 @@ Let's look at each step in more detail.
 
 ### Step 1: Define how the message is output   {#define_script1}
 
-
 OrangeCo needs to define how the message is output. To do this, they take the following steps:
 
 <ol>
@@ -52,7 +51,6 @@ To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get
 <img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
 ### Step 2: Add the custom widget extending the gallery widget   {#add_code1}
-
 
 In the `app/design/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` with the following content:
 <pre>
@@ -103,7 +101,6 @@ Using the approach described in the previous section, OrangeCo defines that the 
 
 ### Step 2: Add the custom script to the file system
 
-
 For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a "wrapper" script.
 
@@ -148,4 +145,5 @@ var config = {
 </pre>
 
 ## Recommended reading ##
+
 <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

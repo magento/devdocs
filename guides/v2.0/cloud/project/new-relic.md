@@ -70,7 +70,6 @@ To remove a New Relic license key from an environment:
     magento-cloud project:variable:delete php:newrelic.license
     ```
 
-
 ## Add New Relic extension to your project {#extension}
 
 New relic extension must be listed in the `.magento.app.yaml` project file:

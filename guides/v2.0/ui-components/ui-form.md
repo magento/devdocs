@@ -18,7 +18,6 @@ The following are the components element, the constructor: `<Magento_Ui_module_d
 
 #### Related UI components
 
-
 The following components are used to extend the Form component:
 
 * DataSource

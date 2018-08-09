@@ -237,7 +237,6 @@ In your custom module directory create a new `<your_module_dir>/view/frontend/we
 
 The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{ site.mage2000url }}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
 
-
 ## Step 4: Declare the payment method in layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:

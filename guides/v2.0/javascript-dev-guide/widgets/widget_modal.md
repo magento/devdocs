@@ -13,7 +13,6 @@ redirect_from:
 
 ## Overview   {#modal_overview}
 
-
 The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 <ul>
@@ -34,7 +33,6 @@ The widget uses the following templates:
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 ## Initialize the modal widget   {#modal_initialize}
-
 
 To initialize the widget in your script, use the following general notation:
 <pre>
@@ -62,7 +60,6 @@ The modal widget has the following options:
 <li><a href="#modal_title">title</a></li>
 <li><a href="#modal_type">type</a></li>
 </ul>
-
 
 ### autoOpen   {#modal_autoopen}
 
@@ -185,7 +182,6 @@ Open the modal window.
 Close the modal window.
 
 ## Events   {#modal_events}
-
 
 The modal widget is subscribed to the following events:
 <ul>

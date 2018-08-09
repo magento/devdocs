@@ -48,7 +48,6 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
-
 ## Security enhancements {#security}
 
 Magento 2.2.0 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
@@ -56,7 +55,6 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
 [Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
-
 
 ## Known issues {#known}
 
@@ -116,7 +114,6 @@ We are grateful to the wider Magento community and would like to acknowledge the
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
-
 
 ## System requirements {#requirements}
 

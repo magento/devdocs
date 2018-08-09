@@ -175,7 +175,6 @@ Use the following steps:
 
 	![Sample contents of the cache tag table with database caching enabled]
 
-
 ## Configuration examples {#mage-cache-db-config}
 
 This section contains code sample snippets to refer to when configuring database caching.

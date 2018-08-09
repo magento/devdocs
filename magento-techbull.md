@@ -20,7 +20,6 @@ This page lists technical bulletins for the Magento application.
 
 [Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)]({{ page.baseurl }}/release-notes/tech_bull_tls-repo.html)
 
-
 ## Magento 2.0.x
 
 *	[Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)]({{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html)

@@ -21,7 +21,6 @@ Once it is expanded, the content can be updated using Ajax. The collapsed/expand
 
 The collapsible widget source is [lib/web/mage/collapsible.js].
 
-
 ## Initialize collapsible in JS {#collaps_init_js}
 
 Generally the collapsible widget is instantiated like following:
@@ -516,7 +515,6 @@ Invoke the `forceDeactivate` method:
 ```javascript
 $("#element").collapsible("forceDeactivate");
 ```
-
 
 ## Events {#collapsible_events}
 

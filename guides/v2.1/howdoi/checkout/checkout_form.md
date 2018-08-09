@@ -71,7 +71,6 @@ define([
 });
 ```
 
-
 ## Step 2: Create the HTML template {#template}
 
 Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.

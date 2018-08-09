@@ -75,7 +75,6 @@ The default responsive handler for the navigation widget.
 
 **Accepted values**: `wrap`, `onResize`, `onLoad`
 
-
 ## Methods {#navigation_methods}
 
 -   [setMaxItems()](#nav_setMaxItems)

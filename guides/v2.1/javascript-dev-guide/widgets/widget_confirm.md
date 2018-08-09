@@ -112,7 +112,6 @@ The title of the confirmation window.
 
 **Default value**: `''`
 
-
 ## Events {#confirm_events}
 
 The confirmation widget implements the following events:

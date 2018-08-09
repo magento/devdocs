@@ -88,7 +88,6 @@ You can even scale the image if it is too large:
 
 ![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}
 
-
 ### Tables {#tables}
 
 Tables can be useful for displaying different kinds of data in an organized way.
@@ -130,6 +129,7 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 {%raw%}
 ```html
 <div class="container">
+
 #### Title
 {: .title}
 
@@ -145,6 +145,7 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 ```html
 <div class="container">
+
 #### Title
 {: .title}
 

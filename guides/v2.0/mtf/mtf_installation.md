@@ -57,7 +57,6 @@ The Functional Testing Framework requires Composer, which downloads libraries de
 And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
 </div>
 
-
 ## Check the installation {#mtf_install_check}
 
 ### Find the Functional Testing Framework directory {#mtf_install_check_dir}

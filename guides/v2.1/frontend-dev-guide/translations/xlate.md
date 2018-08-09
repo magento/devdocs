@@ -56,7 +56,6 @@ Changes made:
 *	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 *	The phrases for translations are enabled in the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 
-
 ### Programming notes
 
 * It is recommended, but not enforced, that you do not place variables inside `__()` functions or `new Phrase()` calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the `__()` function or `new Phrase()` call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.
@@ -113,6 +112,7 @@ The Magento application automatically assembles translation dictionaries located
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
 ### The dictionary generator tool {#m2devgde-xlate-generatortool}
+
 <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
 
 ## Language packages {#m2devgde-xlate-languagepack}

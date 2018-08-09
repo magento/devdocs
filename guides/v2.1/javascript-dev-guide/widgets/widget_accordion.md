@@ -144,7 +144,6 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 
 **Default value**: `false`
 
-
 ## Methods {#accordion_methods}
 
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.

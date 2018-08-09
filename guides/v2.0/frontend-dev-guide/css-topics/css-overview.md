@@ -25,7 +25,6 @@ To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefron
 *	Create your own LESS files using the built-in LESS preprocessor. 
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
-
 ## Things to remember when working with styles
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
@@ -33,7 +32,6 @@ Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcomma
 If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
 
 ## Change styles: walkthrough   {#css_walk}
-
 
 Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.
 In the Blank theme, the buttons of the `.action.primary` class, so called *primary* buttons, are blue. The following image illustrates this:

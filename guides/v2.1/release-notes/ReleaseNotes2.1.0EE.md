@@ -56,10 +56,7 @@ To work around this issue, run the following commands in the order shown:
 
 * <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
-
 ### Fixed issues
-
-
 
 #### Installation and upgrade
 {:.no_toc}
@@ -108,9 +105,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} configuration.
 
-
-
-
 #### Shopping
 {:.no_toc}
 
@@ -145,7 +139,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51086-->* You can now log out while persistent shopping cart functionality is enabled.
 
 <!--- 52452-->* Shopping cart shipping estimation no longer fails randomly.
-
 
 #### API
 {:.no_toc}
@@ -187,8 +180,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51066 -->* Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected.
 
-
-
 #### JavaScript
 {:.no_toc}
 
@@ -200,8 +191,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51040-->* You can now  add a custom option to the new Update pop-up.
 
-
-
 #### PHP
 {:.no_toc}
 <!--- 53524 -->*  {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank"> (GITHUB-4722)</a>
@@ -209,8 +198,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
 
 <!--- 48387-->* Payment/Shipping config is no longer decrypted twice in a PHP7 environment.
-
-
 
 #### Gift cards
 {:.no_toc}
@@ -222,10 +209,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 53312-->* Clicking on Submit {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} button no longer exposes the PHP error log.
 
 <!--- 52992-->* Expiration date for Gift Card account is left unspecified if you do not specify a date.
-
-
-
-
 
 #### PayPal
 {:.no_toc}
@@ -266,8 +249,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 53238-->* In the Vault Provider field, Magento no longer displays the Payflow Pro option for countries that don't offer it.  
 
-
-
 #### Braintree
 {:.no_toc}
 <!--- 48649-->* You can now change the quantity for an invoice.
@@ -295,9 +276,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 54293-->* You can now place an order from  within Braintree if 3D Secure Verification is enabled.
 
-
-
-
 #### Integration
 {:.no_toc}
 
@@ -317,8 +295,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 54231-->* You can now delete an Admin user that has the same ID as an integration user, without breaking the integration.
 
-
-
 #### Testing
 {:.no_toc}
 
@@ -329,7 +305,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank"> (GITHUB-4099)</a>
-
 
 #### Import/Export
 {:.no_toc}
@@ -358,10 +333,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50817 -->*  The `console` command now flushes caches without error. {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} should be flushed without errors.
 
-
-
-
-
 #### Search
 {:.no_toc}
 <!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size.
@@ -387,15 +358,10 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52975-->* Both Solr and Elasticsearch now display correct date formatting.
 
-
-
 #### Cloud
 {:.no_toc}
 
 <!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
-
-
-
 
 #### Checkout
 {:.no_toc}
@@ -423,9 +389,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52262-->* Fixed error on checkout page when you changed {% glossarytooltip 825b5f85-7bb8-4005-938e-51c1bb4b401b %}base currency{% endglossarytooltip %} at checkout.
 
 <!--- 50830 -->* Fixed problem with opening My Cart page in one-page checkout.
-
-
-
 
 #### Bundle products
 {:.no_toc}
@@ -479,12 +442,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 46415-->* CLI documentation now includes `magento dev:css` command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a>
 
-
-
-
-
-
-
 #### Testing
 {:.no_toc}
 
@@ -495,9 +452,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank"> (GITHUB-4099)</a>
-
-
-
 
 #### Staging
 {:.no_toc}
@@ -667,9 +621,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 51121 --> *  Fixed issue where the Select from Existing Scheduled Update option resulted in an SQL error.
 
 <!--- 51402-->* Fixed {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
-
-
-
 
 #### Miscellaneous
 {:.no_toc}
@@ -1261,9 +1212,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 * <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
 
 * <i>Fixed GitHub issues <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i>
-
-
-
 
 ### System requirements
 

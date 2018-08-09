@@ -20,7 +20,6 @@ In this article, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-t
 
 Layout files with instructions that override the default or parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} files are referred to as *overriding layout files*.
 
-
 ## Examples of customizations that involve overriding layouts
 
 Examples of customizations that involve overriding layouts:
@@ -41,7 +40,6 @@ Examples of customizations that involve overriding layouts:
 *	Removing block arguments.
 *	Modifying and suppressing <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handles</a> inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
-
 
 ## How to override a layout {#fedg_layout_override_howto}
 
@@ -104,7 +102,6 @@ These files override the following layouts:
 <span class="glyphicon-class">
   <p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p></span>
 </div>
-
 
 ## Customization mistakes {#override-mistake}
 

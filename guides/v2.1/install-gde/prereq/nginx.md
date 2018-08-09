@@ -191,7 +191,6 @@ After installation is complete, start nginx and configure it to start at boot ti
 
 After completing the following sections and [installing Magento]({{ page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-centos), we'll use a sample configuration file to [configure nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-centos).
 
-
 ### Install and configure php-fpm
 
 Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-centos.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.

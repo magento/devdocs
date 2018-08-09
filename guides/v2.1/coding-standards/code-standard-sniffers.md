@@ -19,8 +19,6 @@ Magento recommends the use of [PHP_CodeSniffer](http://pear.php.net/manual/en/pa
 PHP_CodeSniffer 1.4.0+ includes [PSR-1](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2](http://www.php-fig.org/psr/psr-2/){:target="_blank"} standards, which are followed by Magento 2.
 You can configure PHP_CodeSniffer to use your own rules, too. The [Magento Extension Quality Program Coding Standard](https://github.com/magento/marketplace-eqp){:target="_blank"} provides specifications that you can use to configure your code sniffer of choice to bring your _PHP coding style closer to Magento PHP standards_.
 
-
-
 ### Code standards
 
 Magento supports the [PSR-1](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2](http://www.php-fig.org/psr/psr-2/){:target="_blank"} standards.

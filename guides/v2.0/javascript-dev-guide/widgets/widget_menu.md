@@ -60,7 +60,6 @@ Display top level navigational items in mobile menu or all items.
 
 **Default value**: `false`
 
-
 ## Methods and Events   {#menu_methods}
 
 The Magento menu widget has all default <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI menu widget</a> methods and events.

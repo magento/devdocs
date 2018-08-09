@@ -158,7 +158,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 * For the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
 * For the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
 
-
 ## Related reading
 
 [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)

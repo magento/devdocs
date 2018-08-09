@@ -63,7 +63,6 @@ The response is the `quoteId`: `4`
 Some calls refer to this parameter as the `cartId`.
 </div>
 
-
 ### Verify this step {#verify-step}
 
 There are no additional verification steps.`quoteId` values are not displayed on the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or in Admin.

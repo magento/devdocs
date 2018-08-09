@@ -12,6 +12,7 @@ redirect_from:
 ---
 
 ## Overview
+
 <!-- used in {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} -->
 The Magento collapsible {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
@@ -22,7 +23,6 @@ To "bind" several instances of collapsible widget, the <a href="#fedg_collaps_co
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
 The collapsible widget source is <a href="{{ site.mage2000url }}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
-
 
 ## Initialize collapsible in JS   {#collaps_init_js}
 
@@ -46,7 +46,6 @@ You can initialize the collapsible widget without having a container that consis
 <pre>
 $("#header").collapsible();
 </pre>
-
 
 ## Initialize collapsible in a template
 
@@ -476,10 +475,7 @@ var trigger = $("#element").collapsible("option","trigger");
 $("#element").collapsible("option","trigger",".trigger");
 </pre>
 
-
-
 ## Methods   {#collaps_methods}
-
 
 <ul>
 <li><a href="#collaps_activate">activate()</a></li>
@@ -558,9 +554,7 @@ Invoke the <code>forceDeactivate</code> method:
 $("#element").collapsible("forceDeactivate");
 </pre>
 
-
 ## Events   {#collapsible_events}
-
 
 ### `beforeOpen callback`   {#c_beforeOpen}
 

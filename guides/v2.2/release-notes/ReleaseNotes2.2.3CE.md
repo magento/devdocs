@@ -20,7 +20,6 @@ We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhan
 For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See <a href="https://github.com/magento/magento2/issues/13929" target="_blank">GitHub-13929</a> for more information.
 </div>
 
-
 ## Highlights
 
 Look for the following highlights in this release:
@@ -41,7 +40,6 @@ Look for the following highlights in this release:
 Magento 2.2.3 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
-
 
 ### System requirements
 

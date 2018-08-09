@@ -170,6 +170,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 </table>
 
 ### Run the data generator {#config-cli-perf-run}
+
 <div class="bs-callout bs-callout-warning" markdown="1">
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 </div>
@@ -547,7 +548,6 @@ Additional configuration information:
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
-
 
 #### Related topics
 

@@ -85,7 +85,6 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
         git push origin
 
-
 #### Deploy to Pro: created before October 23, 2017 {#classic}
 
 For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html) prior to deployment.

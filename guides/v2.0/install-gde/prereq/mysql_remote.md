@@ -125,7 +125,6 @@ If the MySQL monitor displays as follows, the database is ready for the Magento 
 
 If your web server is clustered, enter the command on each web server host.
 
-
 ## Install the Magento software   {#instgde-prereq-mysql-remote-install}
 
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
@@ -135,7 +134,6 @@ When you install the Magento software using either the command line or Setup Wiz
 *	Database username is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password
 *	Database name is the name of the database on the remote server
-
 
 #### Related topics
 

@@ -89,5 +89,4 @@ Enter actual data in `value` attribute of corresponding `field` element.
 
 ## Next Steps   {#mtf_install_pre}
 
-
 [Prepare Magento application &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)

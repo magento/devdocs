@@ -39,7 +39,6 @@ Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the follow
 
 * **Updated copyright to 2018**. 
 
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
@@ -47,8 +46,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 {% include install/releasenotes/ce_install_21.md %}
-
-
 
 ## Migration toolkits
 

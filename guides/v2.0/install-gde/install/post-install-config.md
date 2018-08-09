@@ -88,7 +88,6 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 
 ## Settings for \{\{site.data.var.ee}} only   {#post-install-ee}
 
-
 You can configure the following only if you use {{site.data.var.ee}}:
 
 *	<a href="{{ page.baseurl }}/config-guide/solr/solr-overview.html">Apache Solr search</a>

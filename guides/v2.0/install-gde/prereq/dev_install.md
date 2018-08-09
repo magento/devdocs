@@ -69,7 +69,6 @@ See one of the following section:
 
 #### Clone with SSH   {#instgde-prereq-compose-clone-ssh}
 
-
 To clone the Magento GitHub repository using the SSH protocol:
 
 1.	Copy to the clipboard the Magento GitHub repository SSH clone {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
@@ -114,7 +113,6 @@ fatal: The remote end hung up unexpectedly</pre>
 4.	Continue with <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
 #### Clone with HTTPS   {#instgde-prereq-compose-clone-https}
-
 
 To clone the Magento GitHub repository using the HTTPS protocol:
 

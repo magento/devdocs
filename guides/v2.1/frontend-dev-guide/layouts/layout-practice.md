@@ -131,7 +131,6 @@ The links that should be in header, but outside the drop-down menu are added in 
 ...
 {%endhighlight xml%}
 
-
 ### Step 2: Define the templates
 
 Similar to the way they defined the layout on the previous step, OrangeCo
@@ -205,7 +204,6 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 </page>
 
 {%endhighlight xml%}
-
 
 ### Step 4: Move links
 

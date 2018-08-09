@@ -18,7 +18,6 @@ On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where `Ma
 
 The Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} application bounds these instances to the corresponding `.html` templates, if there are any `.html` templates declared in JSON for that particular component. The top-level UI component is bound to the page by the `scope` Knockout binding.
 
-
 ## Implementation details
 
 This section provides more detailed steps about the configuration flow.

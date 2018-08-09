@@ -21,7 +21,6 @@ functional_areas:
 
 ## Before you start your installation   {#instgde-install-cli-prereq}
 
-
 Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{ page.baseurl }}/install-gde/system-requirements.html">Magento system requirements</a>.
@@ -81,7 +80,6 @@ You can run the following commands to find values for some required arguments:
 <span class="glyphicon-class">
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
-
 
 ## Install the Magento software from the command line   {#instgde-install-cli-magento}
 
@@ -312,7 +310,6 @@ The following table discusses the meanings of installation option names and valu
 {% include install/sens-data.md %}
 
 #### Sample localhost installations   {#install-cli-example}
-
 
 **Example 1**
 

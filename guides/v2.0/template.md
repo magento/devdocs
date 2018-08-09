@@ -33,8 +33,6 @@ PROVIDE TEXT HERE FOR NEXT SECTION.
 
 TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
 
-
-
 ## HEADING 2   {#H2}
 
 PROVIDE TEXT HERE FOR NEXT SECTION.
@@ -42,7 +40,6 @@ PROVIDE TEXT HERE FOR NEXT SECTION.
 ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
 
 ## Related topics   {#book-related}
-
 
 * <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
 * <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
@@ -111,6 +108,7 @@ See the markdown version of this file for examples.
 
 ~~~
 <div class="collapsible">
+
 #### Collapsible Title
 {: .collapsible-title}
 
@@ -124,6 +122,7 @@ See the markdown version of this file for examples.
 
 {% highlight html %}
 <div class="collapsible">
+
 #### Collapsible Title
 {: .collapsible-title}
 
@@ -133,7 +132,6 @@ See the markdown version of this file for examples.
 </div>
 {% endhighlight %}
 {% endcollapsible %}
-
 
 ### Collapsible Group
 

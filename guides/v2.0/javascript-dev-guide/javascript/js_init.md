@@ -13,7 +13,6 @@ redirect_from:
 
 ## Overview   {#js_init_overview}
 
-
 This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
 It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.
@@ -23,7 +22,6 @@ We strongly recommend that you use the described approaches and do not add inlin
 ## Insert a JS component in a PHTML template {#init_phtml}
 
 Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
-
 
 ### Declarative notation
 
@@ -147,7 +145,6 @@ require([
 });
 </script>
 {%endhighlight%}
-
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 

@@ -70,6 +70,7 @@ The drawback of this approach is that you need to monitor and manually update yo
 To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
 ### Extend component's styles {#structured_extend}
+
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Add <code>_buttons_extend.less</code> and <code>_extend.less</code> here. The path to the files looks like following: 
@@ -115,6 +116,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 </ol>
 
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

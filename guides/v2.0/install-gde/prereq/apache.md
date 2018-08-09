@@ -15,7 +15,6 @@ functional_areas:
 
 ## Apache versions supported   {#apache-support}
 
-
 Magento requires Apache 2.2.x or 2.4.x.
 
 ## Help if you\'re just starting out   {#apache-help-beginner}
@@ -147,7 +146,6 @@ To upgrade to Apache 2.4:
 
 ## Installing Apache on CentOS 6 or 7   {#install-prereq-apache-centos}
 
-
 {% collapsible Click to install Apache on CentOS 6 or 7 %}
 Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.
 
@@ -187,13 +185,11 @@ Installing and configuring Apache is basically a three-step process: install the
 
 ## Solving 403 (Forbidden) errors   {#403-apache}
 
-
 {% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
 *	<a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a>
 *	<a href="#install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</a>
-
 
 #### Solving 403 Forbidden errors for Apache 2.4   {#install-apache-403_2.4}
 
@@ -213,7 +209,6 @@ For example:
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
 
-
 #### Solving 403 Forbidden errors for Apache 2.2   {#install-apache-403_2.2}
 
 To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
@@ -232,7 +227,6 @@ For example:
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
 {% endcollapsible %}
-
 
 #### Related topics:
 

@@ -38,8 +38,6 @@ or
 
 If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template. 
 
-
-
 ## Binding map
 
 The table below shows how the Knockout bindings map to their Magento binding counterparts.

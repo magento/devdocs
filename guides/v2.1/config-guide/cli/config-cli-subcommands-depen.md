@@ -101,8 +101,6 @@ If no directory or filename is passed as an argument, the following application 
 </table>
 	
 
-
-
 ### Sample module dependencies report
 
 The following is a portion of the output for a sample module dependencies report:

@@ -221,6 +221,6 @@ The following excerpt from the Solr command window shows the same search:
 
 	497008 [qtp2032251042-13] INFO  org.apache.solr.core.SolrCore  – [magento2] webapp=/solr path=/select params={facet.field={!key%3Dcategory_bucket}category_ids&json.nl=flat&fl=id,score&start=0&fq=store_id:1&rows=10000&q=sku:((hello*+hello))+OR+fulltext_en:((hello*+hello))+OR+attr_color_en:((hello*+hello))+OR+attr_description_en:((hello*+hello))+OR+attr_manufacturer_en:((hello*+hello))+OR+attr_name_en:((hello*+hello))+OR+attr_short_description_en:((hello*+hello))+OR+attr_status_en:((hello*+hello))+OR+attr_tax_class_id_en:((hello*+hello))&f.category_ids.facet.mincount=1&omitHeader=true&stats=true&wt=json&facet=true&stats.field=price_0_1} hits=0 status=0 QTime=58
 
-
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html">Prepare Solr for production</a>

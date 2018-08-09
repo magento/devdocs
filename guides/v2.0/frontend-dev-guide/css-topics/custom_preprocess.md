@@ -22,7 +22,6 @@ Magento has a sample [module-sample-scss](https://github.com/magento/magento2-sa
 
 You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the [repository's Readme file](https://github.com/magento/magento2-samples/blob/master/README.md).
 
-
 ## Adding a custom preprocessor 
 
 ### Prerequisites
@@ -95,7 +94,6 @@ The content of your `di.xml` will be similar to the following:
     </type>
 </config>
 {%endhighlight%}
-
 
 ## Related reading
 

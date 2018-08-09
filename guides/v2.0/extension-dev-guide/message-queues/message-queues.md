@@ -22,7 +22,6 @@ A basic message queue system can also be set up without using RabbitMQ. In this 
 
 See <a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.
 
-
 ## Send a message from the publisher to a queue
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`
@@ -32,7 +31,6 @@ $publisher->publish($topic, $message)
 {% endhighlight %}
 
 In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
-
 
 ## Instantiate a consumer
 
@@ -48,7 +46,6 @@ $this->consumerFactory->get('customer_created_listener')
 {% endhighlight %}
 
 ### MySQL adapter
-
 
 Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer.
 

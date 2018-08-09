@@ -65,7 +65,6 @@ class Form extends Cc
 }
 ```
 
-
 ## Template
 
 For creating a template for the payment information rendering class, you can use the default [cc.phtml]({{ site.mage2100url }}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) as example.
@@ -87,7 +86,6 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
     </body>
 </page>
 {% endhighlight %}
-
 
 ## What's next
 

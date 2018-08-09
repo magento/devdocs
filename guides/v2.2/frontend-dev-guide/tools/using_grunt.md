@@ -17,7 +17,6 @@ The topic describes how to install and configure [Grunt JavaScript task runner](
 
 You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
-
 ## Prerequisites
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
@@ -84,7 +83,6 @@ You can also use the other way to declare a custom config file:
    It must be added earlier, than the `get()` method with  this alias is called.
 
 2. In the `dev/tools/grunt/configs/` directory, create a copy of the default configuration file. Change its name by adding the ".loc" suffix. For example, your copy of `themes.js` will be `themes.loc.js`.
-
 
 ### How to use custom configuration file
 

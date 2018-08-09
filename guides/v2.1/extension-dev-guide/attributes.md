@@ -86,8 +86,6 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
 }
 {% endhighlight %}
 
-
-
 ## Extension attributes {#extension}
 
 Use `ExtensibleDataInterface` to implement extension attributes. In your code, you must define `getExtensionAttributes()` and `setExtensionAttributes(*ExtensionInterface param)`.

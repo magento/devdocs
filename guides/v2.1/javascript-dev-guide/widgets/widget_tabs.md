@@ -15,7 +15,6 @@ The Magento tabs widget implements single content area with multiple panels, eac
 
 The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/tabs.js].
 
-
 ## Initialize the tabs widget {#fedg_tabs_init}
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
@@ -211,7 +210,6 @@ The option of the [collapsible] widget used by tabs.
 - jQuery object
 
 **Default value**: `[data-role=trigger]`
-
 
 ## Methods {#tabs_methods}
 

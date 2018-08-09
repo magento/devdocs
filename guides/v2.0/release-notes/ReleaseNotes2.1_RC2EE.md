@@ -32,7 +32,6 @@ Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}rele
 
 ### Highlights
 
-
 Magento Commerce 2.1 includes several new and exciting features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
@@ -46,7 +45,6 @@ Magento Commerce 2.1 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
 
-
 ### Known issues
 
 Magento 2.1 RC2 includes the following known issues:
@@ -57,8 +55,6 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 53536 -->* You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
 
-
-
 ### Fixed issues
 
 <!--- P0 issues -->
@@ -68,8 +64,6 @@ Magento 2.1 RC2 includes the following known issues:
 <!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. 
 
 <!--- 50701 --> * Solr search results now displays all products as expected in search results. 
-
-
 
 #### Checkout
 
@@ -84,17 +78,11 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session.
 
-
-
 #### Bundle products
-
 
 <!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}Bundle product{% endglossarytooltip %}.
 
 <!--- 52832 --> * Quotation marks can now be included in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a>
-
-
-
 
 #### Miscellaneous
 
@@ -185,10 +173,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a>
 
-
-
 #### Messages and documentation
-
 
 <!--- 52340 --> * The `getList` method documentation has been enhanced. 
 
@@ -198,10 +183,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 51378 --> * Message serialization now complies with AMPQ specifications. 
 
-
-
 #### Staging
-
 
 <!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".) 
 
@@ -222,10 +204,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 52963 --> * You can now create and successfully save a future update for a {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}downloadable product{% endglossarytooltip %} associated with links and file content. 
 
-
-
 ### Technology stack
-
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -235,7 +214,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 * MySQL 5.6.
 
 We do not support PHP 5.5.x or 7.0.5. 
-
 
 ## Installation and upgrade instructions
 

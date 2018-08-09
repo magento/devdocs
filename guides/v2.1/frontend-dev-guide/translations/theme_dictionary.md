@@ -51,8 +51,6 @@ That is why the recommended flow for adding custom strings is the following:
 
 See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
 
-
-
 ### Custom strings and dictionaries for not default locales
 
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 

@@ -21,7 +21,6 @@ Result class must implement [`Magento\Payment\Gateway\Validator\ResultInterface`
 
 A payment provider integration can have multiple response validators, that should be added to the provider's validators' pool using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html).
 
-
 ## Useful implementations
 
 * [\Magento\Payment\Gateway\Validator\AbstractValidator]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.

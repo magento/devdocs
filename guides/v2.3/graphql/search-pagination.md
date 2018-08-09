@@ -18,7 +18,6 @@ The `search` element causes Magento to perform a full text search on the specifi
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
-
 ## Specifying filters
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
@@ -118,7 +117,6 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 
 The search returns 45 items.
 
-
 ### Full text search with filters
 
 The following sample query returns a list of products that meets the following criteria:
@@ -208,7 +206,6 @@ The query returns the following:
   }
 }
 {% endhighlight %}
-
 
 ### Simple search using a timestamp
 

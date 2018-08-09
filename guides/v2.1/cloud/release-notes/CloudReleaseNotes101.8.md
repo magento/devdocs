@@ -39,7 +39,6 @@ In `magento-cloud-configuration` releases 101.8.0 and 101.8.1, we provide the fo
 
 <!--- MAGECLOUD-459 -->* The `deploy.log` file now contains the Magento version and `mcc` version.
 
-
 ## How to get `magento-cloud-configuration` release 101.8.x
 {{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 

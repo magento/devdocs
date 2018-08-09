@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## Now that you've finished your installation
 
 We suggest the following:

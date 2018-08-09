@@ -52,7 +52,6 @@ The "Load More" button appears at the bottom of the list of scheduled updates. B
 
 ![](img/styles-font.jpg)
 
-
 ## Assets
 
 [Download Scheduled Changes Module source](src/Scheduled Changes Module Source.psd)

@@ -192,7 +192,6 @@ The process for customizing your module includes
 * [Define the required resources](#resources)
 * [Pre-configure the integration](#preconfig)
 
-
 ### Define the required resources {#resources}
 
 The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
@@ -266,6 +265,7 @@ The  file defines which API resources the integration has access to.
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
 </tr>
 </table>
+
 ## Install your module {#install}
 
 Use the following steps to install your module:

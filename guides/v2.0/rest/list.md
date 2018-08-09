@@ -11,7 +11,6 @@ functional_areas:
   - Integration
 ---
 
-
 ## List of REST APIs for {{site.data.var.ee}} {#listee}
 
 The REST APIs for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
@@ -156,7 +155,6 @@ Additions since 2.0 are marked with asterisks (*).
     * POST   /V1/products/:sku/websites
     * PUT    /V1/products/:sku/websites
     * DELETE /V1/products/:sku/websites/:websiteId
-
 
 ### CatalogInventory
 

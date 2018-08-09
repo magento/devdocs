@@ -33,20 +33,13 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, an
 
 <!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud.
 
-
-
 ### 101.6.4 changes
-
 
 <!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
-
 ### 101.6.3 changes
 
-
 <!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.6.2.
-
-
 
 ### 101.6.2 changes
 
@@ -62,9 +55,6 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, an
 
 
 <!--- MAGECLOUD-717 -->* You can now successfully deploy when using the `.regenerate` flag. (We corrected an error in the `magento-cloud-configuration/pre-deploy.php` file.) Previously, a PHP fatal error occurred during deployment with `magento-cloud-configuration` 101.6.0.
-
-
-
 
 ## How to get `magento-cloud-configuration` releases 101.6.x
 {{site.data.var.ece}}  periodically provides patch releases in components like `magento-cloud-configuration`.

@@ -33,8 +33,6 @@ PROVIDE TEXT HERE FOR NEXT SECTION.
 
 TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
-
-
 ## HEADING 2 
 
 PROVIDE TEXT HERE FOR NEXT SECTION.
@@ -130,7 +128,6 @@ See the markdown version of this file for examples.
 </div>
 {% endhighlight %}
 {% endcollapsible %}
-
 
 ### Collapsible Group
 

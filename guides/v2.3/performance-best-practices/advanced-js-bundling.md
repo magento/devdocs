@@ -342,7 +342,6 @@ This example reuses `mage/bootstrap` and `requirejs/require` assets, placing hig
 *   `bundles/checkout`—everything for checkout
 *   `bundles/catalog`—everything for product and category pages
 
-
 ### Part 2: Generate bundles
 
 The steps below describe the basic process for generating more efficient Magento bundles. You can automate this process any way you want, but you will still need to use `nodejs` and `r.js` to actually generate your bundles. And if your themes have JavaScript-related customizations and cannot reuse the same `build.js` file, you may need to create several `build.js` configurations per theme.

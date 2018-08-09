@@ -42,4 +42,5 @@ A sample follows:
 Make sure the version is 4.x or 5.x before continuing. If you are running version 3.x, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
 
 ### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

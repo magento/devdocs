@@ -10,7 +10,6 @@ github_link: release-notes/ReleaseNotes2.2.0CE.md
 
 We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
-
 ## Highlights
 
 Magento Open Source 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. Look for the following highlights in this release:
@@ -34,7 +33,6 @@ Magento Open Source 2.2.0 includes a wealth of new, exciting features, and hundr
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
-
 ## Security enhancements
 
 Magento 2.2.0 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
@@ -42,8 +40,6 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
 [Contact us](https://magento.com/company/contact-us) for more information.
-
-
 
 ## Known issues
 
@@ -65,8 +61,6 @@ Magento 2.2.0 GA includes the following known issues. Fixes for these issues are
 
 
 **Issue**: The Performance Toolkit does not currently work.
-
-
 
 ## Fixed issues
 
@@ -164,8 +158,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58132-->* We’ve fixed problems with the uninstall process. Previously, when Magento tries to uninstall a module using composer, it simultaneously tried to update the `symfony/process` version. However,  because the `module:uninstall`  command uses   `symfony/process`, the command stopped running. [GitHub-5797](https://github.com/magento/magento2/issues/5797)
 
-
-
 ### Cart and checkout
 
 <!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [GitHub-4750](https://github.com/magento/magento2/issues/4750)
@@ -250,7 +242,6 @@ This release contains hundreds of fixes and enhancements.
 <!--- 58059-->* The shopping cart now displays a shipping rate that reflects tax settings. Previously, the prices displayed in your shopping cart were not adjusted to include these settings. [GitHub-6166](https://github.com/magento/magento2/issues/6166)
 
 <!--- 59807-->* Magento now displays the ”Thank you for your purchase!" on the checkout success page.
-
 
 ### Catalog
 
@@ -387,7 +378,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58290 -->* Magento no longer adds an empty product option to each PUT request. Previously, Magento added an empty option even when the options array was empty. [GitHub-5963](https://github.com/magento/magento2/issues/5963)
 
-
 ### Configurable products
 
 <!---57055-->*  You can now successfully disable the lowest price of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price.
@@ -455,9 +445,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!---59649-->*  You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled the price. [GitHub-4419](https://github.com/magento/magento2/issues/4419)
 
-
-
-
 ### Email
 
 <!---57496-->* Magento now successfully loads the New Order Email templates. [GitHub-5101](https://github.com/magento/magento2/issues/5101)
@@ -487,14 +474,11 @@ This release contains hundreds of fixes and enhancements.
 
 <!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member <a href="https://github.com/LukeHandle" target="_blank">Luke Hanley</a> in pull request <a href="https://github.com/magento/magento2/pull/9368" target="_blank">9368</a>.* 
 
-
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.
 
 <!--- 57629 -->* Inline editing in Admin now includes ACL checks. Previously, the Quick Edit editor did not respect permissions. 
-
-
 
 #### Application framework
 
@@ -517,8 +501,6 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 65422 -->* Magento now writes all default configuration values to the `config.php` file.
 
-
-
 #### JavaScript framework
 
 <!--- 71180 -->*  Customers can now place orders as expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale.
@@ -528,8 +510,8 @@ This release contains hundreds of fixes and enhancements.
 <!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
 
 #### Session framework
-<!--- 57118 -->* The Magento storefront and Admin panel no longer share form keys. Previously, if a user were navigating both a storefront and  the Admin simultaneously,  he would be unexpectedly redirected to the Admin dashboard. [GitHub-6201](https://github.com/magento/magento2/issues/6201)
 
+<!--- 57118 -->* The Magento storefront and Admin panel no longer share form keys. Previously, if a user were navigating both a storefront and  the Admin simultaneously,  he would be unexpectedly redirected to the Admin dashboard. [GitHub-6201](https://github.com/magento/magento2/issues/6201)
 
 #### Zend framework
 
@@ -554,8 +536,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member <a href="https://github.com/tdgroot" target="_blank">Timon de Groot</a> in pull request <a href="https://github.com/magento/magento2/pull/9285" target="_blank">9285</a>.*
 
 <!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member <a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/9400" target="_blank">9400</a>.*
-
-
 
 ### General fixes
 
@@ -681,8 +661,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 59258-->* When you override `module-directory/etc/zip_codes.xml` from a local module, all country codes  are now included as expected. Previously, only the last country code was included, which affected the custom  check out process. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
 
-
-
 ### Google Analytics
 
 <!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. *Fix submitted by community member  <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9084" target="_blank">9084</a>.*
@@ -711,8 +689,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 55234-->* Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
 
 <!--- 58031-->*  Inserted images on the content block of Category no longer reference the Admin URL. Previously, when you used the Wysiwyg editor to insert an image into the Content block of a Category, the image URL on the front end would reference the Admin location. When you subsequently logged out of the Admin panel, and refreshed the Category page, the image is no longer available.
-
-
 
 #### Import/Export
 
@@ -777,7 +753,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---63835 -->* The CatalogImportExport uploader can now handle HTTPS images. Previously, if the URL of a file contained HTTPS, the uploader  still used the HTTP provider to retrieve the image, which lead to an error. [GitHub-8277](https://github.com/magento/magento2/issues/8277)
 
-
 #### Integrations
 
 <!---56961, 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
@@ -785,7 +760,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings]({{ site.baseurl }}/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
 
 <!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member <a href="https://github.com/EliasKotlyar" target="_blank">Elias Kotlyar</a> in pull request <a href="https://github.com/magento/magento2/pull/9820" target="_blank">9820</a>.*
-
 
 ### Indexing
 
@@ -881,8 +855,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 60692-->*  You can now use either the parent order item ID or child product order item ID when using  the REST API (`/V1/order/:orderId/invoice : POST method API`)  to create an invoice for an order containing bundle products. [GitHub-6988](https://github.com/magento/magento2/issues/6988)
 
-
-
 ### Payment methods
 
 <!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
@@ -914,8 +886,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 56345-->* Error messages associated with the `Authorize.net` payment method are now translated to fit the configured locale. [GitHub-5934](https://github.com/magento/magento2/issues/5934)
 
 <!--- 58722-->* We’ve increased the size of the `shipping_method` column in the `sales_order` and `quote_address` tables. [GitHub-6475](https://github.com/magento/magento2/issues/6475)
-
-
 
 #### Braintree
 
@@ -965,9 +935,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 63460 -->* You can now modify the product quantities  of a previous order and re-order it using the saved credit card information from the first order.
 
-
-
-
 #### PayPal
 
 <!--- 59581-->* We've improved and streamlined the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} PayPal configuration interface.
@@ -1000,7 +967,6 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---60572-->* The checkout page no longer freezes when you try to use PayPal to pay for a purchase that contains a downloadable product. Previously, a `PayPal.js` error occurred. [GitHub-7000](https://github.com/magento/magento2/issues/7000)
 
-
 ### Performance
 
 This release includes substantial improvements to Magento caching, image processing, and re-indexing, among other enhancements.
@@ -1027,14 +993,11 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 66855-->* We’ve improved the performance of the Display Time for Category Edit page for catalogs with many products or categories.  [GitHub-7469](https://github.com/magento/magento2/issues/7469)
 
-
 #### Image processing
 
 <!---60041-->* We've improved the process of resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}.
 
 <!--- 59806 -->* The process of loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) is more efficient. <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a>
-
-
 
 #### Caching
 
@@ -1044,8 +1007,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 62691 -->* We’ve optimized and streamlined how we cache EAV attributes by removing unnecessary SQL queries.
 
-
-
 ### PHP
 
 <!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types.
@@ -1054,14 +1015,11 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 45339 -->* Cart Price rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
-
 ### Sample data
 
 <!--- 67020 -->* Magento now handles the `catalog_product_entity_media_gallery_value.position` value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code.
 
 <!--- 70299 -->* You can now successfully install Magento with sample data when **auto_increment_increment** is set to **3** in the `options` file. Previously, installation completed successfully, but Magento displayed this error: `Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.`
-
-
 
 ### SalesRule
 
@@ -1087,8 +1045,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 56871 -->* Non-administrative users with access rights to Products, Marketing, Promotions, and Cart Price rules can now search for categories in Cart Price rules. GitHub-6168](https://github.com/magento/magento2/issues/6168)
 
-
-
 ### Scope
 
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level overrode the price set in website scope. [GitHub-5133](https://github.com/magento/magento2/issues/5133)
@@ -1106,8 +1062,8 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---54458, 57003-->* The Product page scope selector now displays all related websites associated with a restricted user. 
 
-
 ### Search
+
 <!---59088-->*  Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
 
 <!---56356 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
@@ -1115,8 +1071,6 @@ This release includes substantial improvements to Magento caching, image process
 <!---52905-->*  Magento now factors in the Weight attribute as expected when you use advanced search on grouped products.
 
 <!---59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
-
-
 
 ### Shipping
 
@@ -1147,7 +1101,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 59149-->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
-
 ### Sitemap
 
 <!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member <a href="https://github.com/sambolek" target="_blank">Petar Sambolek</a> in pull request <a href="https://github.com/magento/magento2/pull/9082" target="_blank">9082</a>.*
@@ -1155,11 +1108,6 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 70056-->* The sitemap is no longer generated in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member <a href="https://github.com/JosephMaxwell" target="_blank">Joseph Maxwell</a> in pull request <a href="https://github.com/magento/magento2/pull/9094" target="_blank">9094</a>.*
 
 <!--- 58730-->* Magento now displays UPS rates on the initial load of the checkout page. Previously, although shipping rates showed up properly at the cart level, the payment page did not load the correct shipping options. [GitHub-6564](https://github.com/magento/magento2/issues/6564)
-
-
-
-
-
 
 ### Static file processing
 
@@ -1171,9 +1119,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
-
 ### Swatches
-
 
 <!--- 65404 -->* Magento no longer creates redundant objects when initializing a configurable product on the Category page.
 
@@ -1188,15 +1134,11 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 66417 -->* Magento no longer displays a notice error when you create a text swatch attribute while the **update product preview image** setting  is set to **Yes**. *Fix submitted by community member <a href="https://github.com/PascalBrouwers" target="_blank">Pascal Brouwers</a> in pull request <a href="https://github.com/magento/magento2/pull/6707" target="_blank">6707</a>.*
 
-
-
-
 ### TargetRule
 
 <!--- 59689 -->* Magento now displays Up-sells on the Product page.
 
 <!--- 70853 -->* We’ve fixed an SQL error that previously caused a logical error during the creation of a TargetRule. (This issue affected the `modifyConditionByCategoryIdsAttribute` function.)
-
 
 ### Tax
 
@@ -1207,7 +1149,6 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error.
 
 <!--- 59514 -->* The `tax_region_id` value is no longer hard-coded in the `\Magento\Tax\Setup\InstallData` file.
-
 
 ### Testing
 
@@ -1221,7 +1162,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 64462-->* `StdoTest` is now marked as skipped. *Fix submitted by community member <a href="https://github.com/dmanners" target="_blank">David Manners</a> in pull request <a href="https://github.com/magento/magento2/pull/8487" target="_blank">8487</a>.*
 
-
 ### Tier pricing
 
 <!---70377-->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
@@ -1233,13 +1173,11 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---55055-->*  Tier pricing now works correctly with full page cache. [GitHub-5364](https://github.com/magento/magento2/issues/5364)
 
-
 ### Translation and locales
 
 <!---67296-->* String localizations now work as expected when phrases include text wrapped with single quotation marks.
 
 <!---69728-->* Translations now work for layered navigation attribute options. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9873" target="_blank">9873</a>.*
-
 
 ### URL rewrites
 
@@ -1261,9 +1199,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56863 -->* Magento now rewrites URLs as expected when you save a CMS page while running Magento in single-store mode. [GitHub-5923](https://github.com/magento/magento2/issues/5923) 
 
-
-
-
 ### Varnish
 
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
@@ -1275,8 +1210,6 @@ This release includes substantial improvements to Magento caching, image process
 
 
 <!--- 52923-->* Viewing the page with HTTPS instead of HTTP no longer causes the Category menu to disappear in installations using Varnish cache.  [GitHub-4540](https://github.com/magento/magento2/issues/4540)
-
-
 
 ### Web API
 
@@ -1308,7 +1241,6 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---58652 -->* Magento now sends REST multiselect attribute values in compatible formats. Previously, putting an unchanged GET returned errors on the multiselect attribute, and the only way to clear a multi-select field of all selections was to delete the product and re-create it. [GitHub-6120](https://github.com/magento/magento2/issues/6120)
 
-
 ## Community contributions
 
  We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1318,18 +1250,13 @@ This release includes substantial improvements to Magento caching, image process
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
-
-
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
-
 ### Installation and upgrade instructions
 
 See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
-
-
 
 ## Migration toolkits
 

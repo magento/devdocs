@@ -24,9 +24,6 @@ You must upgrade or apply this patch by June 30, 2017 to avoid any disruption to
 
  Looking for the [Magento Commerce (Cloud) Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
 
-
-
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. See
@@ -34,8 +31,6 @@ Our technology stack is built on PHP and MySQL. See
 
 
 {% include install/releasenotes/ee_install_20.md %}
-
-
 
 ## Migration toolkits
 

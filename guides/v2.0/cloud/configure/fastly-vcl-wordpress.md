@@ -70,7 +70,6 @@ For this VCL snippet to work, you also need to attach a condition to the WordPre
 
 	req.http.X-WP == “1”
 
-
 ## Finish adding the VCL {#complete}
 
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

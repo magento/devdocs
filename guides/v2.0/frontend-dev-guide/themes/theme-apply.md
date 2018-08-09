@@ -14,14 +14,12 @@ functional_areas:
 
 ## What\'s in this topic   {#theme-apply-overview}
 
-
 The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 Also, it gives information how to add a theme independent logo for your store.
 
 ## Prerequisites
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
-
 
 ## Apply a theme {#theme-apply-apply}
 
@@ -36,7 +34,6 @@ To apply a theme:
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the storefront pages.
 
-
 ## Add a design exception {#theme-apply-except}
 
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
@@ -49,7 +46,6 @@ To add a design exception:
 6. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the storefront pages.
-
 
 ## Add a theme-independent logo {#theme-apply-logo}
 

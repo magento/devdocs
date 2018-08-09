@@ -175,7 +175,6 @@ Use the following steps:
 
 	<img src="{{ site.baseurl }}/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
 
-
 ## Configuration examples   {#mage-cache-db-config}
 
 This section contains code sample snippets to refer to when configuring database caching.

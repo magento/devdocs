@@ -23,7 +23,6 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.1.6
 
 Looking for the <a href="{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
-
 ## Highlights
 
 Magento 2.1.6 contains over 15 significant performance enhancements when compared to 2.1.5. Look for the following highlights in this release:
@@ -57,18 +56,11 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 *	**Minimized indexing operations after product import**
 
-
-
-
-
-
 ## Functional fixes and enhancements
 
 We address the following functional fixes and enhancements in this release.
 
-
 ### Catalog
-
 
 <!--- 65324 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
@@ -95,8 +87,6 @@ or
 
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
 
-
-
 ### Configurable products
 
 <!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} can be sold (that is, is in a saleable state)). 
@@ -105,20 +95,13 @@ or
 
 <!--- 65246 -->*  Magento no longer calculates configurable product special prices on the category page. Previously, Magento calculated special prices on the category page, but did not display them.  
 
-
-
 ### Indexers
 
 <!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you enabled **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set. 
 
-
-
-
 ### Import
 
 <!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
-
-
 
 ### Miscellaneous
 
@@ -132,9 +115,6 @@ or
 
 
 <!--- 66400 -->*  Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4. 
-
-
-
 
 ### Swatches
 
@@ -166,8 +146,6 @@ or
 <!--- WON'T FIX -->
 <!--- 65250 -->
 
-
-
 ## System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
@@ -175,8 +153,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 
 {% include install/releasenotes/ce_install_21.md %}
-
-
 
 ## Migration toolkits
 

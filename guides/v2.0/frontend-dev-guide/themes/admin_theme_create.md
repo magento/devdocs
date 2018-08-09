@@ -12,9 +12,7 @@ functional_areas:
 ---
 ## What\'s in this topic   {#favicon-intro}
 
-
 This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html).
-
 
 ## Prerequisites 
 
@@ -53,8 +51,6 @@ Configure it using the following example (replace placeholders with your {% glos
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
-
-
 ## Add `registration.php` {#add_registry}
 
 In your theme directory, create a `registration.php` file.
@@ -77,13 +73,11 @@ In this file, add the following code, having replaced placeholders with your the
 
 See the [Make your theme a Composer package (optional)]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer)
 
-
 ## Admin theme logo (optional) {#logo}
 
 In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used as theme logo. 
 To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#logo_declare).
-
 
 ## Theme registration {#register_theme}
 

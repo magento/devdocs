@@ -66,7 +66,6 @@ HtmlContent-specific options:
   </tr>
 </table>
 
-
 ## Example of the HtmlContent component configuration
 
 ### How to render layout in scope of UI configuration

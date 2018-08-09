@@ -10,7 +10,6 @@ github_link: release-notes/bk-release-notes.md
 redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
-
 ## Magento 2.0 Release Notes
 
 * [{{site.data.var.ce}} 2.0.18 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.0.18CE.html)

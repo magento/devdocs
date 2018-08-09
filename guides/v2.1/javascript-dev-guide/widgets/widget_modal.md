@@ -54,7 +54,6 @@ The modal widget has the following options:
 -   [title](#modal_title)
 -   [type](#modal_type)
 
-
 ### autoOpen {#modal_autoopen}
 
 Automatically open the modal window when the widget is initialized.

@@ -2,7 +2,6 @@
 
 ## Step 1: Readiness Check   {#instgde-install-magento-web-step1}
 
-
 1.	Click **Start Readiness Check**.
 
 	If any errors display, you must resolve them before you continue.

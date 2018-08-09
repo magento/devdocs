@@ -12,7 +12,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.

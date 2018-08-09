@@ -36,7 +36,6 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 
 ## Set the page layout   {#layout_markup_columns}
 
-
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root <code>&lt;page&gt;</code> node.
 
 Example:
@@ -50,9 +49,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 </page>
 {%endhighlight xml%}
 
-
 ## Include static resources (JavaScript, CSS, fonts)   {#layout_markup_css}
-
 
 JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
@@ -117,7 +114,6 @@ In this example, <code>orange</code> is a custom theme created by the OrangeCo v
 
 ## Remove static resources (JavaScript, CSS, fonts)   {#layout_markup_css_remove}
 
-
 To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending file:
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
@@ -141,7 +137,6 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 
 ## Create a container   {#create_cont}
 
-
 Use the following sample to create (declare) a container:
 
 {%highlight xml%}
@@ -149,7 +144,6 @@ Use the following sample to create (declare) a container:
 {%endhighlight xml%}
 
 ## Reference a container   {#ref_container}
-
 
 To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
 
@@ -167,7 +161,6 @@ Example: add links to the page header panel.
 
 ## Create a block   {#xml-manage-block}
 
-
 Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
 Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
@@ -182,9 +175,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
 </block>
 {%endhighlight xml%}
 
-
 ## Reference a block   {#xml-manage-ref-block}
-
 
 To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
 
@@ -235,7 +226,6 @@ In both example, the template is specified according to the following:
 
 ## Modify block arguments   {#layout_markup_modify-block}
 
-
 To modify block arguments, use the `<referenceBlock>` instruction.
 
 Example: change the value of the existing block argument and add a new argument.
@@ -268,7 +258,6 @@ Extending layout:
 {%endhighlight xml%}
 
 ## Use block object methods to set block properties   {#layout_markup_block-properties}
-
 
 There are two ways to access block object methods:
 
@@ -310,7 +299,6 @@ Extending layout:
 
 ## Rearrange elements   {#layout_markup_rearrange}
 
-
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
 * <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
@@ -348,7 +336,6 @@ This would make the product page look like following:
 
 ## Remove elements   {#layout_markup_remove_elements}
 
-
 Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
 **Example**: remove the Compare Products {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %} block from all store pages. 
@@ -385,12 +372,9 @@ In this file, reference the element having added the `remove` attribute:
 
 {%endhighlight xml%}
 
-
 ## Replace elements   {#layout_markup_replace_elements}
 
-
 To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
-
 
 #### Related topics:
 

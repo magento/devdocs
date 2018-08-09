@@ -20,26 +20,17 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.6
 
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-
 ### Fixed issues
-
-
 
 <!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
-
-
 ### Functional enhancements
-
 
 <!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>.
 
 
 
 <!-- 51809 -->* You can now use the Redis {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} to provide session storage in Magento 2.0.6. For more information, see <a href="{{ site.baseurl }}/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. 
-
-
 
 #### Security enhancements
 
@@ -77,15 +68,12 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
 
-
-
 ### System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation instructions
-
 
 #### New installations
 

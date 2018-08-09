@@ -22,7 +22,6 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.14.
  
  Looking for the <a href= "{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
-
 ## Highlights
 
 Magento 2.0.14 contains more than 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
@@ -31,10 +30,6 @@ Magento 2.0.14 contains more than 15 security enhancements as well as one signif
 
 * **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-
-
-
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. See
@@ -42,8 +37,6 @@ Our technology stack is built on PHP and MySQL. See
 
 
 {% include install/releasenotes/ee_install_20.md %}
-
-
 
 ## Migration toolkits
 

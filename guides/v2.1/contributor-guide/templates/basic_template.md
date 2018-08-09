@@ -88,7 +88,6 @@ You can even scale the image if it is too large:
 
 ![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}
 
-
 ### Tables {#tables}
 
 Tables can be useful for displaying different kinds of data in an organized way.

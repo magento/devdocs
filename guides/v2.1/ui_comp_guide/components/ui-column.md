@@ -117,6 +117,7 @@ Column-specific configuration:
 </table>
 
 ### ColumnAction interface {#column_action}
+
 <table>
   <tr>
     <th>Option</th>
@@ -143,7 +144,6 @@ Column-specific configuration:
     <td>Required</td>
   </tr>
 </table>
-
 
 ## Reference API
 

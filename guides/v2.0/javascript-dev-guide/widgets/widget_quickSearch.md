@@ -23,7 +23,6 @@ The suggest widget source is <a href="{{ site.mage2000url }}app/code/Magento/Sea
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
-
 ## Options   {#quicksearch_options}
 
 <ul>

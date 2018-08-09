@@ -26,6 +26,7 @@ In addition to the command arguments discussed here, see <a href="{{ page.baseur
 There are no prerequisites for using this command.
 
 ## Create or update the Magento deployment configuration {#instgde-cli-subcommands-configphp}
+
 <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:

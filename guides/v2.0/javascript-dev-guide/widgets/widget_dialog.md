@@ -23,7 +23,6 @@ The dropdownDialog widget source is located in <a href="{{ site.mage2000url }}li
 
 ## Initialize the dropdownDialog widget   {#dialog_init}
 
-
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 ## Options   {#dialog_options}
@@ -152,7 +151,6 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 **Type**: Number
 
 **Default value**: 500
-
 
 ## Methods   {#dialog_methods}
 

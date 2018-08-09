@@ -28,7 +28,6 @@ Example of a basic {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI 
 
 A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the basic UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
-
 ## About the basic component configuration file
 
 The instance configuration file name is the name of instance (`%instance_name%`). The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.
@@ -41,7 +40,6 @@ Following are the rules for the instance configuration files:
 In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that basic UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
 
 The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the `<argument>` node.
-
 
 ## Example of a basic component's configuration file
 

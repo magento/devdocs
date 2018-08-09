@@ -87,11 +87,9 @@ To add a variable to your template content:
 
 ## Styles for email templates   {#email-styles}
 
-
 Some email clients (for example, Gmail) support only CSS styles that have been applied as "inline" styles on the `style` attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to `style` attributes of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags.
 
 ### Inline styles   {#inline-styles}
-
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
 
@@ -105,11 +103,9 @@ Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selector
 
 ### Non-inline styles   {#non-inline-styles}
 
-
 Non-inline styles for emails come from global and template-specific styles, as described in the following sections. 
 
 #### Global non-inline styles   {#global-non-inline-styles}
-
 
 While the majority of styles should be applied inline, there are certain CSS styles that can't be applied inline, such as media queries or `:hover` pseudo styles. These styles must be in a `<style type="text/css"></style>` tag for them to work.
 
@@ -140,7 +136,6 @@ The value of that variable comes from any of the following:
 * If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
 
 ### How email styles are organized   {#organization-email-styles}
-
 
 The styles for emails are split into several different files.
 
@@ -247,7 +242,6 @@ If you want to change the font used for emails, do the following:
 
 ## Email logo   {#email-logo}
 
-
 You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
 
 Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
@@ -288,7 +282,6 @@ To customize your logo using a theme:
 
 ### Customize the email logo using the Admin   {#customize-logo-admin}
 
-
 1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **Design** > **Emails**
 2. In the **Scope** drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). 
 3. Upload your logo and specify the alternative text for it.
@@ -298,7 +291,6 @@ To customize your logo using a theme:
 5. Click the **Save Config** button.
 
 ## Use contact information in emails   {#contact-information-emails}
-
 
 Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin. 
 
@@ -322,7 +314,6 @@ The sales emails are configured to display all of the above values, if they're c
     {% raw %}{{var store_hours}}{% endraw %}
 
 ## Localization   {#localization}
-
 
 In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
 
@@ -350,9 +341,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 </p>
 </div>
 
-
 ## Supported email clients and devices   {#supported-clients}
-
 
 We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
 
@@ -383,7 +372,6 @@ We tested responsive emails using a combination of real devices and <a href="htt
     * Yahoo! Mail
 
 ## Newsletter templates   {#newsletter-templates}
-
 
 The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:
 

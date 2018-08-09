@@ -13,8 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
-
 ## Need to make changes?
 
 After installing the Magento software, you might need to:

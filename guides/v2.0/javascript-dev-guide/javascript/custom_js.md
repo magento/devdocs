@@ -27,9 +27,7 @@ To add a custom JS component (module), take the following steps:
 
 2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource.
 
-
 ## Replace a default JS component   {#js_replace}
-
 
 To use a custom implementation of an existing Magento JS component:
 <ol>
@@ -110,7 +108,6 @@ You can add a custom JS component/widget, which will extend a default Magento co
 
 ### Extend Magento widget   {#extend_js_widget}
 
-
 To extend a default Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} widget, create `<your_widget_name>.js` with the following contents:
 
 {% highlight JavaScript %}
@@ -146,7 +143,6 @@ Where the following notation is used:
 For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 ### Extend a default Ui component   {#extend_js_component}
-
 
 To extend a default JS Ui component, your custom script must contain the following:
 
@@ -196,7 +192,6 @@ For information about how to initialize your custom JS component in a `.phtml` t
 
 ## Disable default Magento JS   {#disable_default_js}
 
-
 To disable the auto-loading of default Magento JS components and widget initialization:
 <ol>
   <li>Create a <code>requirejs-config.js</code> file with the
@@ -219,7 +214,6 @@ If you need to enable the loading of default Magento JS components and widget in
 {% highlight JavaScript %}
 $(mage.apply);
 {% endhighlight %}
-
 
 #### Related topic
 

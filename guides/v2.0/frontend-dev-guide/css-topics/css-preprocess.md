@@ -53,7 +53,6 @@ The root source files for the Blank theme:
 </tr>
 </table>
 
-
 ## LESS compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling <code>.less</code> files to CSS are implemented:
@@ -120,7 +119,6 @@ The client-side compilation flow is similar to server-side. The difference is in
 <div class="bs-callout bs-callout-info" id="info">
 <p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import">The @import directive usage</a> for more details.</p>
 </div>
-
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 

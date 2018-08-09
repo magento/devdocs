@@ -22,7 +22,6 @@ functional_areas:
 
 ## PHP versions supported   {#php-support}
 
-
 Magento requires:
 
 {% include install/php_2.0.md %}

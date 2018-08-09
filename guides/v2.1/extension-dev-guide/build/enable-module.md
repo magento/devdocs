@@ -36,8 +36,6 @@ where <code>Component_Name</code> is the name of the component you are enabling.
   </ol>
 </div>
 
-
-
 ## Disable a component
 
 To disable a component, enter the following at the command line:

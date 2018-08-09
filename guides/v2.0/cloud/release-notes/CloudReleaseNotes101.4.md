@@ -31,7 +31,6 @@ In `magento-cloud-configuration` release 101.4.4 on {{site.data.var.ece}} 2.1.4,
 
 <!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud.
 
-
 ## 101.4.1 changes
 
 In `magento-cloud-configuration` release 101.4.1 on {{site.data.var.ece}} 2.1.4, we provide the following improvements:

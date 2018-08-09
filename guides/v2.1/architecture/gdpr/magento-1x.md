@@ -149,7 +149,6 @@ Column | Data type
 `echeck_routing_number` | varchar(255)
 `echeck_account_name` | varchar(255)
 
-
 ### Quote data
 
 Quotes contain a customer's name, email, address, and related information.

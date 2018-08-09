@@ -33,7 +33,6 @@ All endpoints start with **/rest/v1**, which supports API versioning. The initia
 
 All request and response content is formatted using JSON, including error information.
 
-
 ## Error Handling
 
 All HTTP 4xx errors contain a JSON payload with the following structure:

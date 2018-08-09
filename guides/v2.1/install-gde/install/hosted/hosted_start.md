@@ -43,6 +43,7 @@ Magento requires the following software to run:
 For complete details, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html">System requirements</a>.
 
 #### Next step
+
 <a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
 
 <!-- ## Start the cPanel configuration utility {#newbie-cpanel}

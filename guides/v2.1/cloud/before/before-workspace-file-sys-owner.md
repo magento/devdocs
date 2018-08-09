@@ -56,7 +56,6 @@ To find the web server user's group:
 
 	Typically, the username and the group name are both `www-data`
 
-
 ## Put the Magento file system owner in the web server's primary group {#install-update-depend-user-add2group}
 
 Assuming the typical Apache group name for CentOS and Ubuntu, enter the following command as a user with `root` privileges:

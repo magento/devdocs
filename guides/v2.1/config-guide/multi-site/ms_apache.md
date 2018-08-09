@@ -38,7 +38,6 @@ Setting up multiple stores consists of the following tasks:
 1.  [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.  Create one [Apache virtual host](#ms-apache-vhosts) per Magento website.
 
-
 ## Step 1: Create websites, stores, and store views in the Magento Admin
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).

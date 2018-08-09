@@ -12,7 +12,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 
 ## Overview   {#filter}
 
-
 The sticky header component is responsible for rendering additional <a href="{{ page.baseurl }}/ui-library/ui-listing-grid.html">grid</a> header and grid toolbar.
 
 Sticky header is displayed when the persistent header gets hidden during vertical scrolling. The persistent header reactivates when you scroll back up:
@@ -22,7 +21,6 @@ The following image is an illustration of a grid with a sticky header:
 <img src="{{ page.baseurl }}/pattern-library/displaying-data/datatable/img/datatable13.jpg" alt="a grid with a sticky header">
 
 ## Enable sticky header for a grid   {#enable_header}
-
 
 To enable the sticky header functionality for a certain grid, declare it as a child element in the grid configuration file using the following notation:
 
@@ -65,7 +63,6 @@ Enabling a sticky header for the CMS pages grid, configured in `<Magento_Cms_mod
 {% endhighlight %}
 
 ## Sticky header configuration   {#sticky_config}
-
 
 Any component of a sticky header can use a particular, not default template. This template is set in the `stickyTmpl` option. If the sticky template is not set, the default component's template is used for displaying in a sticky header.
 

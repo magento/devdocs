@@ -14,7 +14,6 @@ functional_areas:
 ---
 ## What are the Magento web APIs?   {#whatare}
 
-
 The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:
 
 * Support for both <a href="{{ page.baseurl }}/rest/bk-rest.html">REST</a> (Representational State Transfer) and <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP</a> (Simple Object Access Protocol). In Magento 2, the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} coverage is the same for both REST and SOAP.
@@ -35,9 +34,7 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * Integration style web APIs enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} where one web API call can create a product. If your payload includes the `stock_item` and `media_gallery_entries` objects, then the framework will also create the product’s inventory & media in that one API call.
 
-
 ## What can I do with the Magento web APIs?   {#uses}
-
 
 The APIs can used to perform a wide array of tasks. For example:
 
@@ -50,7 +47,6 @@ The APIs can used to perform a wide array of tasks. For example:
 * Create {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} widgets in the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or on the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel. The {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} makes AJAX calls to access services.
 
 ## How do I get started?   {#procedure}
-
 
 You must register a web service on {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Use the following general steps to set up Magento to enable web services.
 

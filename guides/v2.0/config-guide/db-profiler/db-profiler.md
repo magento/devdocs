@@ -57,7 +57,6 @@ An example follows:
   ),
   {% endhighlight %}
 
-
 ## Step 2: Configure the output
 
 Configure the output in your Magento application boostrap file; this might be `<your Magento install dir>/index.php` or it could be located in a web server virtual host configuration.

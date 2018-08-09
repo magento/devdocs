@@ -15,10 +15,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. 
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-
 ### Fixed issues
-
 
 #### Shopping cart
 
@@ -26,11 +23,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
-
 #### Performance
 
 <!--- 54682 -->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when you use many variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
-
 
 #### Miscellaneous
 
@@ -69,16 +64,12 @@ The Sales API
 
 You can run these operations from the Admin panel.
 
-
-
 ### System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
-
-
 
 ## Migration toolkits
 

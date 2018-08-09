@@ -25,7 +25,6 @@ To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefron
 *	Create your own LESS files using the built-in LESS preprocessor. 
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
-
 ## Things to remember when working with styles
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).

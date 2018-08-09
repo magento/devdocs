@@ -15,25 +15,19 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.1. 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
-
 ### Fixed issues
 
 We address the following functional issues in this release. 
 
-
-
 #### Installation and upgrade
-
 
 <!--- 55357/53777-->* You can now run `magento setup:upgrade --keep-generated` in production mode. Previously, Magento would throw an error when you ran `setup:upgrade` after compiling DI. (This significantly curtailed your ability to deploy continuous integration.) <a href="https://github.com/magento/magento2/issues/4795" target="_blank">(GITHUB-4795)</a> 
 
 
 <!--- 56974-->* You can now upgrade 2.0.9 with sample data to 2.1.1. 
 
-
-
-
 #### Pricing
+
 <!--- 54320 -->* The {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page now displays current, rather than outdated,  product prices.
 
 
@@ -42,20 +36,11 @@ We address the following functional issues in this release.
 
 <!--- 45339 -->* Cart Price rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
-
-
-
-
 #### Shopping cart
 
 <!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
-
-
-
-
 #### Performance
-
 
 <!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
@@ -66,8 +51,6 @@ We address the following functional issues in this release.
 
 
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
-
-
 
 #### Miscellaneous
 
@@ -106,11 +89,7 @@ We address the following functional issues in this release.
 
 <!--- DELETED: 54839 (release notes), 56893 (clone), 54647, 55897, 56945, 54963 -->
 
-
-
-
 ### Known issue
-
 
 The Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} does not currently support all the update operations on objects that you can execute from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
@@ -123,8 +102,6 @@ The Sales API
 
 You can run these operations from the Admin.
 
-
-
 ### System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
@@ -132,8 +109,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 
 {% include install/releasenotes/ee_install_21.md %}
-
-
 
 ### Migration toolkits
 

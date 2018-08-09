@@ -53,12 +53,6 @@ One way to do this follows:
 3.	<a href="{{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.
 
-
-
-
-
-
-
 ## More information
 
 For more information on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components, see the following:

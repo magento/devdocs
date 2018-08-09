@@ -19,10 +19,7 @@ This bulletin informs you of a known issue updating from Magento Commerce (forme
 
 Patch `MDVA-449` supplies the fix for this potential upgrade issue. 
 
-
-
 ### Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1
-
 
 Magento Open Source  and Commerce upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.
 

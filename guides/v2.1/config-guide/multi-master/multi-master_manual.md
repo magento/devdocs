@@ -631,4 +631,5 @@ Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

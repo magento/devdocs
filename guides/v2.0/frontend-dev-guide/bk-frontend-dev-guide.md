@@ -42,7 +42,6 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 
 ## Frontend development prerequisites   {#fedg-prereqs}
 
-
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
 {% include browsers/supported-browsers.md %}

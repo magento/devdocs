@@ -13,9 +13,7 @@ functional_areas:
 
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
-
 ## Simplest way to extend parent styles   {#simple_extend}
-
 
 To extend the parent theme's styles in your theme:
 <ol>
@@ -37,7 +35,6 @@ To extend the parent theme's styles in your theme:
 Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
 ## Simplest way to override parent styles   {#simple_override}
-
 
 To override parent styles (that is, override default Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} variables):
 <ol>
@@ -63,7 +60,6 @@ It is important to remember that your <code>_theme.less</code> overrides the par
 The drawback of this approach is that you need to monitor and manually update your files whenever the parent's <code>_theme.less</code> is updated.
 
 ## Adding structured changes   {#structured_changes}
-
 
 To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
@@ -114,6 +110,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 </ol>
 
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

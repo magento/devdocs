@@ -192,7 +192,6 @@ The process for customizing your module includes
 * [Define the required resources](#resources)
 * [Pre-configure the integration](#preconfig)
 
-
 ### Define the required resources {#resources}
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
@@ -273,6 +272,7 @@ In the following example, the test integration requires access to the following 
 <td>The name of specific resource like `Magento_Sales::reorder`</td>
 </tr>
 </table>
+
 ## Install your module {#install}
 
 Use the following steps to install your module:

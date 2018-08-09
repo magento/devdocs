@@ -207,7 +207,6 @@ PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-
 ### Get keys
 
 Use this API to return the keys associated with the specified `mage_id`.

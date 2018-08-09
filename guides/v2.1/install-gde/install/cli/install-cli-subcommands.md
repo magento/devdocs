@@ -126,10 +126,8 @@ The following table summarizes the available commands. Commands are shown in sum
 ## Help commands {#instgde-cli-help}
 {% include install/cli_help-commands.html %}
 
-
 ## Common arguments {#instgde-cli-subcommands-common}
 {% include install/cli_common-commands.html %}
-
 
 ## Commands {#instgde-cli-subcommands}
 

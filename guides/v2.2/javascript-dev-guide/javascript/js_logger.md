@@ -14,7 +14,6 @@ The `Logger` class provides logging functionality for an application. It can be 
 
 **Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/logger.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/logger.js)
 
-
 ## Logger API
 
 ### `new Logger(outputHandler, entryFactory)`

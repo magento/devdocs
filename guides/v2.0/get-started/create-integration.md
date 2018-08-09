@@ -32,7 +32,6 @@ To create an integration, follow these general steps:
 
 ## Create a skeletal module   {#skeletal}
 
-
 To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
@@ -193,7 +192,6 @@ The process for customizing your module includes
 * [Define the required resources](#resources)
 * [Pre-configure the integration](#preconfig)
 
-
 ### Define the required resources   {#resources}
 
 The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
@@ -221,7 +219,6 @@ In the following example, the test integration requires access to the following 
 {% endhighlight %}
 
 ### Pre-configure the integration   {#preconfig}
-
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
@@ -268,6 +265,7 @@ The  file defines which API resources the integration has access to.
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
 </tr>
 </table>
+
 ## Install your module   {#install}
 
 Use the following steps to install your module:

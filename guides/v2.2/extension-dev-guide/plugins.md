@@ -158,7 +158,6 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
   <p>If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
 </div>
 
-
 #### Around methods
 
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
@@ -294,7 +293,6 @@ The execution flow will be as follows:
   * `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
-
 
 ### Configuration inheritance
 

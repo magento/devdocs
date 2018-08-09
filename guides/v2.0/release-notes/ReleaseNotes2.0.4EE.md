@@ -17,18 +17,15 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 ### Fixed issues
 
-
 ####  Upgrade and Installation
 
 <!-- 50224 -->* Magento no longer creates store data inconsistently during installation. 
 
 <!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
-
 #### Import
 
 <!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLs. 
-
 
 #### APIs
 
@@ -36,7 +33,6 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 <!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
-
 
 #### PHP
 
@@ -56,8 +52,6 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 <!-- 48124 --> * {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} users can now view orders only from stores for which they have view  permission.
 
 <!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} refresh.
-
-
 
 #### Security enhancements
 
@@ -81,16 +75,12 @@ The following list provides an overview of the security issues fixed in this rel
 
 We recommend that you review Magento's <a href="https://magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
-
-
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
-
 ### Installation instructions
-
 
 #### New installations
 
@@ -107,7 +97,6 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 	c.	Click **Download**.
 
 3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
-
 
 #### Upgrade existing installations
 

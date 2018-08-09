@@ -68,6 +68,7 @@ The following table and the sections that follow the table describe these API ca
 </table>
 
 ### HTTP verb {#verbs}
+
 <p>Specify one of these HTTP verbs in the request:</p>
 <ul>
    <li><code>GET</code>.

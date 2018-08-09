@@ -104,7 +104,6 @@ Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Co
 {% endhighlight %}
 {% endcollapsible %}
 
-
 ### Set shipping and billing information {#set-addresses}
 
 In this call, you specify the shipping and billing addresses, as well as the selected `carrier_code` and `method_code`. Since the Table Rate shipping method costs only $5, the customer selected this option.

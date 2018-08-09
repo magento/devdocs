@@ -42,6 +42,7 @@ To check the current mode of your Magento instance, in the root directory, run:
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
+
 ### Create basic theme files
 
 In the `<magento_root>/app/design/frontend/<Your_Vendor>/<your_theme>` directory, create the following files:
@@ -56,6 +57,7 @@ For details, see [Create a new storefront theme]({{ page.baseurl }}/frontend-dev
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
+
 ### Apply the theme
 
 1. In the Admin Panel, go to **CONTENT** > **Design** > **Configuration**
@@ -71,6 +73,7 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 <div class="flow-block" markdown="1">
 
 ### Choose .less compilation mode
+
 </div>
 <div class="flow-arrow"></div>
 
@@ -78,6 +81,7 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
+
 #### Grunt (recommended)
 
 * [Setup Grunt]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
@@ -90,6 +94,7 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
+
 #### Client-side compilation
 
 See [CSS preprocessing#client-side compilation mode]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
@@ -98,6 +103,7 @@ See [CSS preprocessing#client-side compilation mode]({{ page.baseurl }}/frontend
 </div>
 <div class="flow-column">
 <div class="flow-block" markdown="1">
+
 #### Server-side compilation (default)
 
 See [CSS preprocessing#server-side compilation mode]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#server-side)
@@ -107,6 +113,7 @@ See [CSS preprocessing#server-side compilation mode]({{ page.baseurl }}/frontend
 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
+
 #### Custom preprocessor
 
 See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-topics/custom-preprocess-parent.html)
@@ -139,6 +146,7 @@ See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-to
 
 
 <div class="flow-block" markdown="1">
+
 ### Create your styles
 
 See
@@ -150,6 +158,7 @@ See
 
 
 <div class="flow-block" markdown="1">
+
 ### Debug
 
 See:
@@ -161,6 +170,7 @@ See:
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
+
 ### Clean cache and/or static files if necessary
 
 * Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Сlean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
@@ -171,6 +181,7 @@ See:
 <div class="flow-arrow"></div>
 
 <div class="flow-block flow-block-optional" markdown="1">
+
 ### Make sure that the same styles are delivered to production (optional)
 
 When you finish developing and your styles are ready to go to production, you can configure your Grunt/Gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to `/app/design/frontend/<Vendor>/<theme>/web/css` directory next to source files. They will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).
@@ -178,6 +189,7 @@ When you finish developing and your styles are ready to go to production, you ca
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
+
 ### Switch to production mode
 
 In the Magento root directory, run:
@@ -189,6 +201,7 @@ See [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
+
 ### Deploy static content
 
 To publish your static files to the `pub/static` directory when your Magento instance is set to production mode, [run the static content deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).

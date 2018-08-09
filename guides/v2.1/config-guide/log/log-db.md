@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## Example&mdash;logging database activity
 
 To log database activity, use [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/LoggerInterface.php){:target="_blank"}, which has two implementations:

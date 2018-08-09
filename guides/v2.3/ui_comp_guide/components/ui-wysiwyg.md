@@ -88,7 +88,6 @@ The following are available events for use in the WYSIWYG component adapter for 
 * `tinymceChange` - fires when undo level is added to the editor
 * `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
 
-
 ## Add a default editor
 
 Adding the default Magento WYSIWYG editor to a page requires the following steps:

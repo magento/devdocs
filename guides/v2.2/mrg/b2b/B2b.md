@@ -28,7 +28,6 @@ Extension developers can interact with the Magento_B2b module. For more informat
 
 [The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_B2b module.
 
-
 ## Additional information
 
 You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{ page.baseurl }}/release-notes/changes/b2b_changes.html).

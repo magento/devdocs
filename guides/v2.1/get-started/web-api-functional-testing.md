@@ -15,11 +15,9 @@ redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 
 The Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} testing framework allows you to test Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
-
 ## Implementation Details {#details}
 
 The Web API functional testing framework depends on the integration testing framework and reuses most of classes implemented there.
-
 
 ### Custom Annotations for Data Fixtures {#custom}
 

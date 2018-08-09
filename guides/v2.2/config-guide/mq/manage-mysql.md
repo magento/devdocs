@@ -70,7 +70,6 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 * `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.
 * `consumers` - the list of consumers which will be run, by default is empty array (all consumers are allowed to be run).
 
-
 ## Command line interface
 
 ### Start consumers

@@ -15,9 +15,7 @@ We are pleased to present Magento Open Source 2.0.4. This release includes all o
 
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
 ### Fixed issues
-
 
 ####  Upgrade and Installation
 
@@ -25,11 +23,9 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 <!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
-
 #### Import
 
 <!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLs. 
-
 
 #### APIs
 
@@ -37,11 +33,9 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 <!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
 
-
 #### PHP
 
 <!-- 50500 -->* Magento now allows you to use arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
-
 
 #### Miscellaneous
 
@@ -52,8 +46,6 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 <!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
 <!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} refresh.
-
-
 
 #### Security enhancements
 
@@ -76,14 +68,12 @@ The following list provides an overview of the security issues fixed in this rel
 
 We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
-
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation instructions
-
 
 #### New installations
 

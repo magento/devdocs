@@ -19,11 +19,10 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
   <p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{ page.baseurl }}/contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p></span>
 </div>
 
-
-
 ## What is an API?   {#api-definition}
 
 <p>An application programming interface (API) is a set of interfaces and their implementations that a module provides to other modules.</p>
+
 ### API types   {#api-types}
 
 <p>The following items are considered types of APIs:</p>

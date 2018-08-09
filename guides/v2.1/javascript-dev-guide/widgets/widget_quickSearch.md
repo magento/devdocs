@@ -21,7 +21,6 @@ The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/for
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
-
 ## Options {#quicksearch_options}
 
 -   [autocomplete](#q_autocomplete)

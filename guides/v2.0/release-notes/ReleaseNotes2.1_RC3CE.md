@@ -25,7 +25,6 @@ Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}rele
 
 ### Highlights
 
-
 Magento Open Source 2.1 includes several new and exciting features:
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
@@ -35,16 +34,11 @@ Magento Open Source 2.1 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content.
  
 
-
-
 ### Fixed issues
-
 
 #### Security enhancement
 
-
 <!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has been requested. 
-
 
 #### Performance enhancements
 
@@ -52,18 +46,11 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 <!--- 53223-->* Setting the Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
 
-
-
 #### Import/Export
-
 
 <!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error.
 
-
-
-
 #### Cache
-
 
 <!--- 52923-->* Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
@@ -73,9 +60,6 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 <!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
 
-
-
-
 #### Messages and documentation
 
 <!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
@@ -84,9 +68,7 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 <!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
 
-
 #### Payment methods
-
 
 <!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
 
@@ -94,10 +76,7 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 <!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
 
-
-
 #### Miscellaneous
-
 
 <!--- 51753-->* You can now re-install Magento and use a different Admin email address than you had previously used.
 
@@ -162,8 +141,6 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 <!--- 53293 internal only-->
 
-
-
 ### Known issues
 
 Magento Community Edition 2.1, Release Candidate 3 includes the following known issues: 
@@ -192,11 +169,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
-
-
-
 ### Technology stack
-
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -206,7 +179,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 * MySQL 5.6.
 
 We do not support PHP 5.5.x or 7.0.5. 
-
 
 ## Installation and upgrade instructions
 
@@ -226,7 +198,6 @@ Developers who contribute to the CE codebase can <a href="{{ page.baseurl }}/com
 ### Other upgrades
 
 Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).
-
 
 ## Migration toolkits
 

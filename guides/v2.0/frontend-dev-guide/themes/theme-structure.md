@@ -260,7 +260,6 @@ Let's have a closer look at each particular sub-directory.
 
 ## Theme files   {#theme-structure-files}
 
-
 Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} file, all theme files fall into the following two categories:
 
 * Static view files

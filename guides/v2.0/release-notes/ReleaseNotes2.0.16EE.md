@@ -18,8 +18,6 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.16.
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 </div>
 
-
-
 ## Highlights
 
 Magento 2.0.16 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
@@ -32,13 +30,11 @@ vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento
 
 * change to how Magento displays status updates during upgrade.
 
-
 ## Fixed issue
 
 * We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html).
 
 <!--- 60835 -->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.
-
 
 ## System requirements
 
@@ -47,8 +43,6 @@ Our technology stack is built on PHP and MySQL. See
 
 
 {% include install/releasenotes/ee_install_20.md %}
-
-
 
 ## Migration toolkits
 

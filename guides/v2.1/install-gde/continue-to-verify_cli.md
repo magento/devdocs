@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## Now that you've finished your installation
 
 We suggest the following:
@@ -34,4 +33,5 @@ If you haven't already installed optional sample data, you can <a href="{{ page.
 *	<a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
 
 ### Configure
+
 <a href="{{ page.baseurl }}/install-gde/install/post-install-config.html">Configure the Magento application</a>.

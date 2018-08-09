@@ -20,8 +20,6 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
   <p>This version of the Magento Open Source 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
-
-
 ### Highlights
 
 Magento Open Source 2.1.0 includes several new and exciting features:
@@ -43,9 +41,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
-
 ### Fixed issues
-
 
 #### Installation and upgrade
 {:.no_toc}
@@ -94,9 +90,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} configuration.
 
-
-
-
 #### Shopping
 {:.no_toc}
 
@@ -131,7 +124,6 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 51086-->* You can now log out while persistent shopping cart functionality is enabled.
 
 <!--- 52452-->* Shopping cart shipping estimation no longer fails randomly.
-
 
 #### Product
 {:.no_toc}
@@ -174,10 +166,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 41377-->* Products > Catalog "Change status" mass action now works properly. <a href="https://github.com/magento/magento2/issues/1559" target="_blank"> (GITHUB-1559)</a>
 
-
-
-
-
 #### API
 {:.no_toc}
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
@@ -216,9 +204,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 51066 -->* Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected.
 
-
-
-
 #### JavaScript
 {:.no_toc}
 
@@ -228,8 +213,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 49967 -->*  We've optimized `registry.js` performance.
 
-
-
 #### PHP
 {:.no_toc}
 <!--- 53524 -->*  {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank"> (GITHUB-4722)</a>
@@ -237,9 +220,6 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
 
 <!--- 48387-->* Payment/Shipping config is no longer decrypted twice in a PHP7 environment.
-
-
-
 
 #### PayPal
 {:.no_toc}
@@ -280,7 +260,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 53238-->* In the Vault Provider field, Magento no longer displays the Payflow Pro option for countries that don't offer it.  
 
-
 #### Braintree
 {:.no_toc}
 <!--- 48649-->* You can now change the quantity for an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %}.
@@ -306,9 +285,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 54293-->* You can now place an order from  within Braintree if 3D Secure Verification is enabled.
 
-
-
-
 #### Integration
 {:.no_toc}
 
@@ -328,10 +304,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 54231-->* You can now delete an Admin user that has the same ID as an integration user, without breaking the integration.
 
-
-
-
-
 #### Testing
 {:.no_toc}
 
@@ -342,8 +314,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank"> (GITHUB-4099)</a>
-
-
 
 #### Search
 {:.no_toc}
@@ -356,8 +326,6 @@ target="_blank"> (GITHUB-4099)</a>
  <a href="https://github.com/magento/magento2/issues/4282" target="_blank"> (GITHUB-4282)</a>
 
 <!--- 53530-->* Performance of category pages significantly degrade when having around 3000 products or more in category.  
-
-
 
 #### Checkout
 {:.no_toc}
@@ -385,11 +353,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52262-->* Fixed error on checkout page when you changed {% glossarytooltip 825b5f85-7bb8-4005-938e-51c1bb4b401b %}base currency{% endglossarytooltip %} at checkout.
 
 <!--- 50830 -->* Fixed problem with opening My Cart page in one-page checkout.
-
-
-
-
-
 
 #### Bundle products
 {:.no_toc}
@@ -423,7 +386,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 49546 -->*  Magento now successfully validates the price_type field during import and export.
 
-
 #### Import/Export
 {:.no_toc}
 <!--- 47555-->* The Import error message you receive when an attribute exceeds maximum permitted length now inserts variable that defines the attribute name. <a href="https://github.com/magento/magento2/issues/2844" target="_blank"> (GITHUB-2844)</a>
@@ -451,7 +413,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50817 -->*  The `console` command now flushes caches without error. {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} should be flushed without errors.
 
-
 #### Messages and documentation
 {:.no_toc}
 
@@ -471,9 +432,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 51641-->* Documentation now states that the iconv {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is required in installations running PHP 7.x. <a href="https://github.com/magento/magento2/issues/4002" target="_blank"> (GITHUB-4002)</a>
 
 <!--- 46415-->* CLI documentation now includes `magento dev:css` command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a>
-
-
-
 
 #### Admin
 {:.no_toc}
@@ -533,9 +491,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 47255-->* Magento now displays information in the dashboard when the Use Aggregated Data setting is turned on. <a href="https://github.com/magento/magento2/issues/3459" target="_blank"> (GITHUB-3459)</a>
 
-
-
-
 #### Storefront
 {:.no_toc}
 <!--- 48714 -->*  You can now add form elements via layout and use the htmlContent component.
@@ -556,14 +511,11 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51276-->* Magento now displays product attributes for a product on the storefront as expected.
 
-
 #### Indexing
 {:.no_toc}
 <!--- 48507 -->*  Magento can now complete reindexing when the product flat indexer is turned on.
 
 <!--- 48790 -->*  The performance of re-indexing operations after importing many products has been improved.
-
-
 
 #### Varnish
 {:.no_toc}
@@ -581,7 +533,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}Event{% endglossarytooltip %} change in the Product page and Advance Inventory changes.  
 
 <!--- 52607 -->*  We've enhanced Varnish caching performance. <a href="https://github.com/magento/magento2/issues/3926" target="_blank"> (GITHUB-3926)</a>
-
 
 #### Miscellaneous
 {:.no_toc}
@@ -1089,7 +1040,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 * <i>Fixed GitHub issues <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i>
 
-
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
@@ -1109,9 +1059,6 @@ For more information, [System Requirements]({{ site.baseurl }}/magento-system-re
 You can install Magento Open Source 2.1.0 (General Availability) release either Github or by using Composer.
 
 {% include install/releasenotes/ce_install_21.md %}
-
-
-
 
 ## Migration toolkits
 

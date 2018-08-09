@@ -33,9 +33,8 @@ To create a mobile-specific theme:
 
 This will remove the desktop-specific files from your theme.
 
-
-
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a></li>
 </ul>

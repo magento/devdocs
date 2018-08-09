@@ -16,6 +16,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 <div class="bs-callout bs-callout-info" id="info">
    <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
 </div>
+
 ## ObjectManager methods   {#help}
 
 <p>The ObjectManager public interface methods are:</p>
@@ -24,6 +25,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
    <li><a href="#getCollectionMock">getCollectionMock method</a>. Lists mocked constructor arguments.</li>
    <li><a href="#getConstructArguments">getConstructArguments method</a>. Creates collection instances that contain specified elements.</li>
 </ul>
+
 ### getObject method   {#getobject}
 
 <p>Creates mocks for all constructor dependencies and applies any specified custom mocks from <code>$arguments</code> array.</p>
@@ -72,6 +74,7 @@ $optionCollection =
      $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
           array($options));
 </pre>
+
 ### getConstructArguments method   {#getConstructArguments}
 
 <p>Lists dependency mocks for a specified class.</p>

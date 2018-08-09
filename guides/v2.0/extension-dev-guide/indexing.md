@@ -44,7 +44,6 @@ Indexing terminology:
 
 ### Create custom indexers   {#indexing-custom}
 
-
 Magento contains several indexers out of the box, but you might want to add your own if your customization requires data searches, which are not optimized by the Magento default indexers.
 
 This topic provides a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer.
@@ -80,7 +79,6 @@ The following components are involved in the indexing process:
   </div>
 
 ### Indexing types   {#m2devgde-indexing-types}
-
 
 Each index can perform the following types of reindex operations:
 

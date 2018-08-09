@@ -15,6 +15,7 @@ functional_areas:
 		table tr td, table tr th {border: 1px solid #ABABAB}
 	</style>
 </head>
+
 ## What's in this topic
 
 For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
@@ -59,14 +60,12 @@ Sample page layout:
 
 ### Page layout files conventional location   {#layout-types-page-conv}
 
-
 Conventionally page layouts must be located as follows:
 
 * Module page layouts: `<module_dir>/view/frontend/page_layout`
 * Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 ### Page layouts declaration   {#layout-types-page-dec}
-
 
 To be able to use a layout for actual page rendering, you need to declare it in `layouts.xml`.
 
@@ -112,11 +111,9 @@ Sample page layout declaration file:
 
 ## Page configuration   {#layout-types-conf}
 
-
 The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
 
 ### Page configuration file conventional location   {#layout-type-conf-loc}
-
 
 Conventionally page configuration files must be located as follows:
 
@@ -125,9 +122,7 @@ Conventionally page configuration files must be located as follows:
 <li> {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
-
 ### Page configuration structure and allowed layout instructions
-
 
 The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
@@ -396,11 +391,9 @@ The following table describes the instructions specific for page configuration f
 
 ## Generic layout   {#layout-types-gen}
 
-
 Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. 
 
 ### Generic layout file conventional location   {#layout-type-gen-loc}
-
 
 Conventionally generic layout files must be located as follows:
 
@@ -409,9 +402,7 @@ Conventionally generic layout files must be located as follows:
 <li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
-
 ### Generic layout structure and allowed layout instructions
-
 
 The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 

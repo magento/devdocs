@@ -15,9 +15,8 @@ functional_areas:
 
 The topic describes how stylesheets are preprocessed and compiled to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} in the Magento application. It provides the theoretical background a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer needs to debug stylesheets effectively.
 
-
-
 ## Terms used {#css_preprocess_terms}
+
 <table>
 <tr>
 <th>
@@ -55,7 +54,6 @@ The root source files for the Blank theme:
 </td>
 </tr>
 </table>
-
 
 ## LESS compilation modes {#less_modes}
 
@@ -138,7 +136,6 @@ Example of an error message:
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can
 
 See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details how to install, configure and use Grunt.
-
 
 ### Client-side LESS compilation {#client-side}
 

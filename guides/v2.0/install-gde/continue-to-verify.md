@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## Now that you've finished your installation
 
 We suggest the following:
@@ -35,6 +34,7 @@ If you haven't already installed optional sample data, you can [install it now](
 *	*Contributing developers only*: <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
 
 ### Configure
+
 <a href="{{ page.baseurl }}/install-gde/install/post-install-config.html">Configure the Magento application</a>.
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase

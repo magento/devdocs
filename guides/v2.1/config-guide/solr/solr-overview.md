@@ -51,8 +51,6 @@ It's for testing and development only.
 Because it's simple to use, it's a great way for you to learn more about Solr.
 </div>
 
-
-
 ### More information about the Solr solution {#overview-solr}
 
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
@@ -101,7 +99,6 @@ The following suggestions in this topic should *not* be used in a production env
 
 	SELinux settings are entirely up to you.
 Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex.
-
 
 ## Prerequisites {#prereq}
 

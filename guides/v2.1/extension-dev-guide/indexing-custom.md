@@ -20,7 +20,6 @@ To implement your own indexer, add the following code in your module:
 *	[Indexer configuration](#indexer-configuration)
 *	[MView configuration](#mview-configuration)
 
-
 ### Custom indexer logic
 
 Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:

@@ -16,7 +16,6 @@ This chapter combines the topics aiming to help you to quickly start working wit
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
 
-
 ## High-level steps to create a theme and change styles
 
 1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).

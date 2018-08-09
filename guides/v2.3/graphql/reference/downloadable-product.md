@@ -7,7 +7,6 @@ github_link: graphql/reference/downloadable-product.md
 
 The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search.
 
-
 ## DownloadableProduct object
 
 Field | Type | Description

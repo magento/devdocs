@@ -19,6 +19,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## General guidelines {#instgde-prereq-mysql-intro}
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento application requires MySQL 5.6.x.</p>
   <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>

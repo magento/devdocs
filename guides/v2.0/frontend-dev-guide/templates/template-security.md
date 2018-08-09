@@ -81,7 +81,6 @@ For the following output cases, use the specified function to generate XSS-safe 
 
 #### Static Test
 
-
 To check your template for XSS vulnerabilities, you can use the static test `XssPhtmlTemplateTest.php` in `dev\tests\static\testsuite\Magento\Test\Php\`.  
 
 This static test finds all echo calls in PHTML-templates and determines if the output is properly escaped.

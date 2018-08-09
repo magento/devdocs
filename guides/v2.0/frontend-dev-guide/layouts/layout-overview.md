@@ -68,7 +68,6 @@ In this guide we use *layout files* when talking about concepts which are simila
 
 ### Module and theme layout files   {#layout-loc}
 
-
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location: 
@@ -78,7 +77,6 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
@@ -86,7 +84,6 @@ To ensure stability and secure your customizations from being deleted during upg
 To make the necessary changes, create <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
 
 ## Layout files processing {#layout_processing}
-
 
 The Magento application processes layout files in the following order:
 
@@ -104,8 +101,6 @@ The Magento application processes layout files in the following order:
 <div class="bs-callout bs-callout-info" id="info">
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
 </div>
-
-
 
 ## Related topics
 

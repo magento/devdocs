@@ -25,7 +25,6 @@ To add a custom JS component (module), take the following steps:
 
 2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource.
 
-
 ## Replace a default JS component {#js_replace}
 
 To use a custom implementation of an existing Magento JS component:

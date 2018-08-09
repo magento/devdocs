@@ -15,7 +15,6 @@ Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
 
-
 ## Integration
 
 Example configuration of Listing component instance:

@@ -20,9 +20,7 @@ php ./vendor/bin/ece-tools list
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
 
-
 ## v2002.0.13
-
 
 #### New features
 
@@ -69,7 +67,6 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
    -  <!--MAGECLOUD-2227-->Eliminated unnecessary verbosity and updated the priority levels for some log statements.
 
-
 #### Resolved Issues
 
 -  **Cron-specific fixes**
@@ -94,8 +91,6 @@ Now you can easily move your configuration files between environments. After you
 -  <!--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if the updated `.magento.env.yaml` configuration file did not include the `engine` parameter value along with other updated values. Now, the merge operation correctly overwrites only the parameter values included in the updated `.magento.env.yaml` without requiring you to specify the `engine` parameter value.
 
 -  <!-- MAGECLOUD-2515-->Fixed a Redis configuration issue that incorrectly enabled session locking for {{site.data.var.ece}} versions  2.1.11 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the `disable_locking` parameter introduced in v1.3.4 of the Redis session handler package [colinmollenhour/php-redis-session-abstract package](https://github.com/colinmollenhour/php-redis-session-abstract).
-
-
 
 ## v2002.0.12
 
@@ -290,7 +285,6 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
 -   <!-- MAGECLOUD-1413 -->We fixed an issue that was causing `gzip` errors when a file or directory name contains spaces.
 
 -   <!-- MAGECLOUD-1424 -->We fixed an issue that was preventing deployment scripts from properly recognizing and enabling module dependencies.
-
 
 ## v2002.0.5
 

@@ -52,7 +52,6 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 
 	All generated Factories work the same way. After you know how one Factory works, you know how they all work.
 
-
 ## Object Manager responsibility for code compilation   {#codegen-om}
 
 When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.

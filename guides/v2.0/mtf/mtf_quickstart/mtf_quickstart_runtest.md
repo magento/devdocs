@@ -43,5 +43,4 @@ Let's check creating of new category. For this we should run `<magento2_root_dir
 
 ## Next Steps   {#mtf_install_pre}
 
-
 [&lt;&lt; Prepare environment for test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html) | [See logs for failed tests &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_logs.html)

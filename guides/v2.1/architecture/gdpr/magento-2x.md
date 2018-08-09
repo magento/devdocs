@@ -107,7 +107,6 @@ Column | Data type
 `billing_vat_id` | varchar(255)
 `billing_company` | varchar(255)
 
-
 ### Address data
 
 Magento 2 stores these customer attributes:

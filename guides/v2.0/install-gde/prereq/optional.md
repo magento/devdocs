@@ -33,7 +33,6 @@ See one of the following sections:
 
 ### Install and configure NTP on Ubuntu   {#install-optional-ntp-ubuntu}
 
-
 Enter the following command to install NTP:
 
 	apt-get install ntp
@@ -41,7 +40,6 @@ Enter the following command to install NTP:
 Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.
 
 ### Install and configure NTP on CentOS   {#install-optional-ntp-centos}
-
 
 To install and configure NTP:
 
@@ -201,7 +199,6 @@ To install phpmyadmin on CentOS:
 		http://<web server host or IP>/phpmyadmin
 
 8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.
-
 
 #### Related topics:
 

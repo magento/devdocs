@@ -62,7 +62,6 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
 
 ## Validate a configuration type   {#config-files-validate}
 
-
 Each configuration file is validated against a schema specific to its configuration type. Example: events, which, in earlier Magento versions, were configured in `config.xml`, are now configured in `events.xml`.
 
 Configuration files can be validated both before (optional) and after any merge of multiple files affecting the same configuration type. Unless the validation rules for the individual and merged files are identical, you should provide two schemas for validating the configuration files:

@@ -402,7 +402,6 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 <input type="checkbox" data-bind="staticChecked: observable"/>
 {%endhighlight%}
 
-
 ### template
 
 Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
@@ -419,7 +418,6 @@ Magento `template` binding is a customization of the existing Knockout [`templat
 {%highlight javascript%}
 <div data-bind="template: 'path/to/the/template'"></div>
 {%endhighlight%}
-
 
 ### tooltip
 

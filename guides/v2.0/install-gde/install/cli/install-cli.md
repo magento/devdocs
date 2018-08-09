@@ -38,7 +38,6 @@ This topic discusses installing the Magento software using the CLI. For informat
   <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
 
-
 ## First steps   {#instgde-install-cli-first}
 
 {% include install/first-steps-cli.html %}

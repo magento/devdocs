@@ -87,4 +87,5 @@ We know of the following issues with Varnish:
 		}
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-install.html">Install Varnish</a>

@@ -30,7 +30,6 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 
 ## Terms used   {#js_terms}
 
-
 <table>
 <tr>
 <th>

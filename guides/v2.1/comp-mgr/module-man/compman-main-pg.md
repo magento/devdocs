@@ -90,8 +90,6 @@ To install a new purchase:
 3.	Click **Install**.
 4.	Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
 
-
-
 ## Update a component {#compman-access-sync}
 
 To see if any of your components can be updated, click **Sync**.
@@ -125,8 +123,6 @@ To uninstall a component, click **Uninstall** from the **Actions** list as the f
 ![Uninstall a component]({{ site.baseurl }}/common/images/cman_uninstall1.png)
 
 Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
-
-
 
 ## Supported actions for each component type {#compman-access-types}
 

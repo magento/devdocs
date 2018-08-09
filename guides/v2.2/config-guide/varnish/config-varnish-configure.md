@@ -231,4 +231,5 @@ Look for headers like the following:
 	X-Magento-Cache-Debug: HIT
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>

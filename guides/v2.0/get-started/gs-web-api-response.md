@@ -29,7 +29,6 @@ HTTP code | Meaning | Description
 406 | Not acceptable | The requested resource is only capable of generating content that is not acceptable according to the Accept headers sent in the request.
 500 | System Errors | If service implementation throws any other exception  like network errors, database communication, framework returns HTTP 500.
 
-
 ### Response payload {#response-payload}
 
 POST, PUT, and GET web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The `Accept: application/<FORMAT>` header in the request determines the format of the response body, where `FORMAT` is either `json` or `xml`.

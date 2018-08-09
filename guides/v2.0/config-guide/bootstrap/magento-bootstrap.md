@@ -25,7 +25,6 @@ To run the Magento application, the following actions are implemented in <a href
 
 ## Bootstrap run logic   {#config-boot-logic}
 
-
 <a href="{{ site.mage2000url }}app/bootstrap.php" target="_blank">The bootstrap object</a> uses the following algorithm to run the Magento application:
 
 1.	Initializes the error handler.

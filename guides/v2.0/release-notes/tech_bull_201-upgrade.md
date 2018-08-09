@@ -186,7 +186,6 @@ To resolve the issue:
 6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
 <!-- 7.	We recommend you <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
 
-
 #### Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed) {#resolution2}
 
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:

@@ -16,7 +16,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## First steps   {#instgde-cli-before}
 
 {% include install/first-steps-cli.html %}

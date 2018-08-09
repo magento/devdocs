@@ -20,7 +20,6 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.1
  While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  </div>
 
-
 ## Highlights
 
 Magento 2.0.14 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
@@ -29,16 +28,12 @@ Magento 2.0.14 contains over 15 security enhancements as well as one significant
 
 * **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-
-
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
-
 
 ## Migration toolkits
 

@@ -22,9 +22,7 @@ We welcome your participation in this process!  Please open any Open Source  iss
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-
 ### Highlights
-
 
 Magento Open Source (formerly Community Edition) 2.1 includes several new and exciting features:
 
@@ -33,8 +31,6 @@ Magento Open Source (formerly Community Edition) 2.1 includes several new and ex
 * **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive {% glossarytooltip 117df0a3-29a6-4636-9c29-8f696b3ad737 %}cardholder{% endglossarytooltip %} information in checkout. Merchants retain complete control over their checkout style and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree {% glossarytooltip 73a87074-8de7-4e69-a97f-12c65c6f5582 %}settlement{% endglossarytooltip %} reports from within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface.
 
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content.
-
-
 
 ### Known issues
 
@@ -46,12 +42,10 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 <!--- 53536 -->* You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data.
 
-
-
 ### Fixed issues
 
-
 <!--- P0 issues -->
+
 #### Checkout
 
 <!--- 53193 --> * Several address-related issues associated with Checkout have been resolved.
@@ -65,17 +59,11 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 <!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session.
 
-
-
 #### Bundle products
-
 
 <!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}Bundle product{% endglossarytooltip %}.
 
 <!--- 52832 --> * Quotation marks can now be included in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a>
-
-
-
 
 #### Miscellaneous
 
@@ -168,10 +156,7 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 <!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a>
 
-
-
 #### Messages and documentation
-
 
 <!--- 52340 --> * The `getList` method documentation has been enhanced.
 
@@ -181,10 +166,7 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 <!--- 51378 --> * Message serialization now complies with AMPQ specifications.
 
-
-
 ### Technology stack
-
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -194,7 +176,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 * MySQL 5.6.
 
 We do not support PHP 5.5.x or 7.0.5.  
-
 
 ## Installation and upgrade instructions
 

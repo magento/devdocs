@@ -40,14 +40,15 @@ functional_areas:
       <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
    </li>
 </ul>
+
 ## Configure a web API   {#configure-webapi}
 
 <p>To configure a web API for a service, you define XML elements and attributes in the
    <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE&gt;</code> is the module name.
    For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.
 </p>
-## Service Interface Requirements   {#service-interface-requirements}
 
+## Service Interface Requirements   {#service-interface-requirements}
 
 After a service class is configured using the `webapi.xml` file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.
 
@@ -226,6 +227,7 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
+
 ## Sample webapi.xml file   {#sample-webapi}
 
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
@@ -306,10 +308,12 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
+
 ## webapi.xsd XML schema file   {#validate-webapi}
 
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
+
 ## Forcing Request Paramters   {#forced-parameters}
 
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is

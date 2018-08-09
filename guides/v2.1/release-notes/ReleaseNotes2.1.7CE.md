@@ -29,7 +29,6 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 
 Looking for the <a href= "{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
-
 ## Highlights
 
 Magento 2.1.7 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
@@ -40,7 +39,6 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 * **Reversion of the changes to image resizing that we introduced in 2.1.6**. Certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
 
 ### Guidelines for upgrading from 2.1.6 to 2.1.7
-
 
 <table>
   <tr>
@@ -90,8 +88,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 {% include install/releasenotes/ce_install_21.md %}
-
-
 
 ## Migration toolkits
 

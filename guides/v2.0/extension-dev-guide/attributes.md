@@ -20,7 +20,6 @@ Magento provides two types of attributes that integrators can use to extend the 
 
 ## EAV and custom attributes   {#custom}
 
-
 `CustomAttributesDataInterface` defines the methods that are called to get and set custom attributes, including `getCustomAttributes()`.
 
 A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
@@ -46,7 +45,6 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ## Extension attributes   {#extension}
 
-
 Use `ExtensibleDataInterface` to implement extension attributes. In your code, you must define `getExtensionAttributes()` and `setExtensionAttributes(*ExtensionInterface param)`.
 
 <code>public function getExtensionAttributes();</code>
@@ -54,7 +52,6 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module.
 
 ### Declare extension attributes   {#declare}
-
 
 You must create an `<Module>/etc/extension_attributes.xml` file to define the extension attributes for a module:
 
@@ -132,7 +129,6 @@ where:
 
 ### Searching extension attributes   {#search}
 
-
 The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search.
 
 In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`.
@@ -150,7 +146,6 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
 ### Extension attribute authentication   {#ext-auth}
-
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
@@ -204,7 +199,6 @@ This only works for extension attributes (those attributes defined in an `extens
 
 ### ExtensionInterfaces
 
-
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example, in an unmodified installation, `CustomerExtensionInterface` will be generated, but will be empty:
 
 
@@ -223,7 +217,6 @@ However, if an extension similar to the following has been defined, the interfac
 ### Troubleshoot EAV attributes {#troubleshooting}
 
 If you have issues when using `setup:upgrade` to your store environment, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. You should not directly inject `EavSetup` in extension code. Check through your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy. 
-
 
 ## Related topics   {#related}
 

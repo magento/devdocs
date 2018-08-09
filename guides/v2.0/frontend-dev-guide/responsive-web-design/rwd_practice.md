@@ -18,7 +18,6 @@ The described flow is applicable only for themes that <a href="{{ page.baseurl }
 
 ## Changing the number of products in a row   {#rwd_practice}
 
-
 OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} page, so that each product takes more space.
 
 In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):

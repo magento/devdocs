@@ -87,4 +87,5 @@ To export a Varnish configuration file from the Admin panel:
 		service httpd restart
 
 #### Last step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>

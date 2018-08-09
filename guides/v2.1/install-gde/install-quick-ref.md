@@ -161,7 +161,6 @@ To run the Web Setup Wizard:
 
 {% endcollapsible %}
 
-
 ## Installation part 3: Post-installation
 
 *	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html) was successful.

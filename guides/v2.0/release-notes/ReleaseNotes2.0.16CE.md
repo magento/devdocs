@@ -18,8 +18,6 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.1
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 </div>
 
-
-
 ## Highlights
 
 Magento 2.0.16 contains almost 40 security fixes and enhancements.  Look for the following highlights in this release:
@@ -38,16 +36,12 @@ vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento
 
 <!--- 60835 -->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.   
 
-
-
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
-
 
 ## Migration toolkits
 

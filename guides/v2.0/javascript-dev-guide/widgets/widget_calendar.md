@@ -13,7 +13,6 @@ redirect_from:
 
 ## Overview   {#fedg_jquery-widget_calendar-overview}
 
-
 The Calendar widget is a customized {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} <a href="http://api.jQueryui.com/datepicker/" target="_blank">Datepicker Widget</a> that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:
 
 *	Merging the <a href="#fedg_calendar_config">global configuration</a> with the options that are passed from {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} when Calendar is initialized.
@@ -24,11 +23,9 @@ The Calendar widget is a customized {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-6
 
 ## Initialize the calendar widget   {#fedg_calendar_init}
 
-
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 ## Configure the calendar widget   {#fedg_calendar_config}
-
 
 The calendar widget's *global configuration* is a set of default options that are applied when each calendar instance is initialized. It includes the following:
 
@@ -51,9 +48,7 @@ Example of setting global widget configuration follows:
 });
 </pre>
 
-
 ## Options, methods, and events   {#fedg_calendar_options}
-
 
 <p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/" target="_blank">Datepicker Widget</a> options.</p>
 

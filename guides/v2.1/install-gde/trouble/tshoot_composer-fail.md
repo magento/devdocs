@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 ### Symptom
 
 During download, the following error displays:

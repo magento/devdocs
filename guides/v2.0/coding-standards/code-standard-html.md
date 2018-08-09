@@ -54,7 +54,6 @@ Always close self-closing tags.
 <input type="text" name="username" />
 {%endhighlight%}
 
-
 ## Line length
 
 Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.
@@ -112,7 +111,6 @@ Use appropriate HTML5 elements for blocks. The following diagram shows how to de
 
 <img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
 
-
 ## Class names
 
 Use semantic class names and IDs. Avoid presentational class names.
@@ -131,7 +129,6 @@ Use semantic class names and IDs. Avoid presentational class names.
 ## Accessibility
 
 All pages should comply with the [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/).
-
 
 ## Microdata
 

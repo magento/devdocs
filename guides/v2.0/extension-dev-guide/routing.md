@@ -23,7 +23,6 @@ Then, according to a route rule, controller is assigned to URL. Use the `routes.
 
 ### Routers
 
-
 The routers information for the modules is described in the `routerList` parameter of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your `di.xml`.
 
 Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.
@@ -33,7 +32,6 @@ You might need to customize the routers to change either the standard logic of p
 However, you must not customize the routers that are used in Magento core modules.
 
 ### Routes
-
 
 Configurations of the routes are stored in `routes.xml` in the scopes area.
 
@@ -81,9 +79,7 @@ class Create extends \Magento\Framework\App\Action\Action
 }
 </pre>
 
-
 ### Routing processing
-
 
 Routing is processed in the following way:
 

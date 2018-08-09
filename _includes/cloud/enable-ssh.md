@@ -88,7 +88,6 @@ After adding the SSH keys, test the SSH connection to GitHub:
 
 3. If successful, you should receive a success message. If you receive a permission denied error, see [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey) troubleshooting on GitHub.
 
-
 ## Add a public SSH key to your Magento account {#ssh-add-to-account}
 
 You can add SSH keys to your account in any of the following ways:

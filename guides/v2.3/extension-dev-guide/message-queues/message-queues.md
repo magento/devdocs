@@ -15,7 +15,6 @@ A basic message queue system can also be set up without using RabbitMQ. In this 
 
 See [Configure message queues] for information about setting up the message queue system.
 
-
 ## Send a message from the publisher to a queue
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`

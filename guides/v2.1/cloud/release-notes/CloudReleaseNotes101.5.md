@@ -27,7 +27,6 @@ In `magento-cloud-configuration` release 101.5.4 on {{site.data.var.ece}} 2.1.5,
 
 <!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
-
 ## 101.5.3 changes
 
 In `magento-cloud-configuration` release 101.5.3 on {{site.data.var.ece}} 2.1.5, we provide the following improvements:
@@ -47,7 +46,6 @@ In `magento-cloud-configuration` release 101.5.2 on Magento Enterprise Cloud Edi
 <!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.5.1.
 
 <!--- MAGECLOUD-587 -->* Magento now automatically sets the cookie domain to reflect the new domain when branching an environment in a PAAS environment. Previously, the Admin panel was inaccessible until the value of the `cookie_domain` is changed at the database level to the current domain.
-
 
 ## How to get `magento-cloud-configuration` release 101.5.x
 

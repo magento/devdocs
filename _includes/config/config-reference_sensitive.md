@@ -136,7 +136,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Street Address Line 2 | `shipping/origin/street_line2` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Live Account | `carriers/ups/is_account_live` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
-
 ### Sales emails sensitive and system-specific paths
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
@@ -197,7 +196,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Gateway URL | `carriers/dhl/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-
 ### Sales sensitive and system-specific paths
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
@@ -224,7 +222,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 |--------------|--------------|--------------|--------------|--------------|--------------|
 | Account Number | `google/analytics/account` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-
 ## Advanced category
 
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
@@ -247,7 +244,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Error Email Recipient | `system/magento_scheduled_import_export_log/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Access list | `system/full_page_cache/varnish/access_list` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |  | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Error Email Sender | `system/magento_scheduled_import_export_log/error_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |  | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
-
 
 ### Developer sensitive and system-specific paths
 
@@ -272,7 +268,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Backend host | `system/full_page_cache/varnish/backend_host` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Backend port | `system/full_page_cache/varnish/backend_port` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-
 ### Developer paths
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
@@ -280,7 +275,6 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? | 
 |--------------|--------------|--------------|--------------|--------------|--------------|
 Log JS Errors to Session Storage Key | `dev/js/session_storage_key` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
-
 
 ## Payment sensitive and system-specific paths
 
@@ -343,7 +337,6 @@ Your choice for this variable determines which [International paths](#vars-intl-
 | Debug Mode | `payment/payflow_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | SFTP Credentials | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-
 ### PayPal Payments Pro sensitive and system-specific paths
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -377,7 +370,6 @@ Your choice for this variable determines which [International paths](#vars-intl-
 | Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
-
 ### Worldpay sensitive and system-specific paths
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -389,7 +381,6 @@ Your choice for this variable determines which [International paths](#vars-intl-
 | MD5 Secret for Transactions | `payment/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}/common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Signature Fields | `payment/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
-
 
 ### Authorize.net Direct Post sensitive and system-specific paths
 
@@ -433,8 +424,6 @@ Your choice for this variable determines which [International paths](#vars-intl-
 |--------------|--------------|--------------|--------------|--------------|--------------|
 | Send Check to | `payment/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Send Check to | `payment_us/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
-
-
 
 ### International paths {#vars-intl-list}
 

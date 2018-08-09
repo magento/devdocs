@@ -26,7 +26,6 @@ In `magento-cloud-configuration` release 101.9.0, we provide the following impro
 
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
-
 ## How to get `magento-cloud-configuration` release 101.9.x
 {{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 

@@ -337,7 +337,6 @@ Incorrect:
 {:.bs-callout .bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
-
 ## Supported email clients and devices {#supported-clients}
 
 We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/){:target="_blank"}. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.

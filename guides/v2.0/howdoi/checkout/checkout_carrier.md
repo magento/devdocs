@@ -132,7 +132,6 @@ define(
 );
 ```
 
-
 ## Step 4: Add the validation to the checkout layout {#layout}
 
 The last step is specifying the script you created on the previous step in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.

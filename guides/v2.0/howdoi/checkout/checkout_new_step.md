@@ -25,7 +25,6 @@ You can add a custom checkout step, it should be implemented as a {% glossarytoo
 2. [Add your step to the Checkout page layout](#checkout).
 3. [Create mixins for payment and shipping steps (optional)](#create-mixin).
 
-
 ## Step 1: Create the view part of the checkout step component {#create-view}
 
 To create the view part of the new checkout step:

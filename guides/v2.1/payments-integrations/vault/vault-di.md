@@ -49,7 +49,6 @@ Following is an example from Braintree configuration:
 </payment>
 {% endhighlight %}
 
-
 ## Add a gateway command for vault
 
 For payment actions, you need to create gateway commands for vault, and update the payment provider [command pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html). 
@@ -86,7 +85,6 @@ The following sample from Braintree configuration illustrates how to add the `au
     </arguments>
 </virtualType>
 {% endhighlight %}
-
 
 ## Add command manager
 

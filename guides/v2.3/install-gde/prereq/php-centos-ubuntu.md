@@ -44,7 +44,6 @@ If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl
 
 If PHP is *not* installed, see the [PHP 7.1 on CentOS](#php-centos-71) section.
 
-
 ### CentOS repositories {#centos-php-repos}
 
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="&#95;blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
@@ -168,7 +167,6 @@ To install PHP 7.1 on CentOS 6 or 7:
 
 7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
-
 ## PHP for Ubuntu
 
 The following sections give you all the info you need to install PHP for Ubuntu.
@@ -273,7 +271,6 @@ To install PHP 7.1 on Ubuntu 14 or 16:
     [Zend Modules]
     Zend OPcache
     </pre>
-
 
 #### Next
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)

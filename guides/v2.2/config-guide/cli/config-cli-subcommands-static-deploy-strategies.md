@@ -126,7 +126,6 @@ The files are deployed to these subdirectories according to the following patter
   </tbody>
 </table>
 
-
 ### Mapping deployed files
 
 The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and locale. There are separate map files for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and JS:

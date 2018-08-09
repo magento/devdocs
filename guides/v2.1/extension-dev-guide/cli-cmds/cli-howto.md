@@ -49,5 +49,6 @@ Following is a summary of the process:
 To be added at a later time.
 
 #### Related topic
+
 <a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 

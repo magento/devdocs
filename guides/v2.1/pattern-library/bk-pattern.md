@@ -26,12 +26,10 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 * [Slide-out Panels, Modal Windows, and Overlays](containers/slideouts-modals-overlays/slideouts-modals-overalys.html)
 * [Tabs](containers/tabs/tabs.html)
 
-
 ### Controls
 
 * [Buttons](controls/buttons/buttons.html)
 * [Button Bar](controls/button-bar/button-bar.html)
-
 
 ### Displaying and Dealing with Data
 

@@ -34,8 +34,6 @@ on Debian and Ubuntu
 6.	change <VirtualHost *:80> to <VirtualHost *:8080>
 7.	Save your changes to `000-default.conf` and exit the text editor.
 
-
-
 ## Modify the Varnish system configuration {#config-varnish-config-sysvcl}
 
 To modify the Varnish system configuration:
@@ -241,4 +239,5 @@ Look for headers like the following:
 	X-Magento-Cache-Debug: HIT
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>

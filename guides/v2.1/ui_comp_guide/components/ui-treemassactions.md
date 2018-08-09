@@ -47,6 +47,7 @@ TreeMassActions-specific configuration:
 </table>
 
 ## MassActionContainer interface
+
 <table>
   <tr>
     <th>Option</th>

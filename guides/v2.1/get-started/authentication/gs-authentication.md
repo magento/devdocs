@@ -31,7 +31,6 @@ Administrator or Integration | Resources for which administrators or integrators
 Customer | Resources with `anonymous` or `self` permission.
 Guest user | Resources with `anonymous` permission.
 
-
 ### Relation between acl.xml and webapi.xml
 
 The <code>acl.xml</code> file defines the access control list (ACL) for a given {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. It defines available set of permissions to access the resources.

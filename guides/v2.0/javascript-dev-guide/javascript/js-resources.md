@@ -36,7 +36,6 @@ In Magento, you can find the JS components on the following levels:
 Library level can only contain core Magento resources. Do not put custom JS files in  the `lib/web` directory.
 </div>
 
-
 ### Specifying JS
 
 We recommend specifying JavaScript resources in the templates rather than in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates, to ensure processing of the resources in body of a page.
@@ -115,7 +114,6 @@ var config = {
 })(jQuery);
 {%endhighlight%}
 
-
 ## RequireJS library
 
 ### Including RequireJS {#m2devgde-js-resources-configrequirejs}
@@ -188,7 +186,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 
 * for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
 * for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
-
 
 ## Related reading
 

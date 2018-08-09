@@ -33,7 +33,6 @@ Before you begin any tutorial, make sure you know the basics about {{site.data.v
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html){:target="_blank"} for information about the Luma store that is created when you install Magento with the sample data.
 
-
 ## Performing steps
 
 Although some steps require that you configure Magento in some way, you perform most steps by sending one or more REST calls to Magento. Each step that makes a REST call provides the following information:

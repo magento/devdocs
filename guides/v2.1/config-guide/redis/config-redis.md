@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Overview of the Redis solution {#config-redis-over}
+
 <a href="http://redis.io/" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.
 
 ### Issues with `Zend_Cache_Backend_File`

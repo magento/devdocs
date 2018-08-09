@@ -24,7 +24,6 @@ Components are responsible for rendering result page fragments and providing/sup
 This guide is actual for Magento 2.0 UI components. You might be also interested in the [UI Components Guide for Magento 2.1]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html), as it has more conceptual topics.   
 </div>
 
-
 ### General structure
 
 In Magento 2 there are basic and secondary UI components. 

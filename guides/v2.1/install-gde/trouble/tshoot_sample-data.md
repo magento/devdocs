@@ -39,6 +39,7 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
+
 <a href="{{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}

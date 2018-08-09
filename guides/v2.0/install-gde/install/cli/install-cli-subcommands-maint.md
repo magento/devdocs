@@ -74,7 +74,6 @@ where
 
 `--none` clears the list.
 
-
 #### Related topics
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>

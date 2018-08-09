@@ -14,14 +14,12 @@ functional_areas:
 
 ## Web API authentication overview   {#overview-authenticate}
 
-
 Magento allows developers to define web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
 Before you can make {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 
 ### Accessible resources   {#accessible-resources}
-
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
 Each administrator or integration user can have a unique set of permissions which is configured in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -32,7 +30,6 @@ User type | Accessible resources (defined in webapi.xml)
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission.
 Guest user | Resources with `anonymous` permission.
-
 
 ### Relation between acl.xml and webapi.xml   {#acl-webapi-relation}
 
@@ -46,7 +43,6 @@ For example, account management, customer configuration, and customer group reso
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
 #### Sample (truncated) customer webapi.xml   {#acl-webapi-relation}
-
 
 {% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -105,7 +101,6 @@ Similarly, self is a special access used if you already have an authenticated se
 </div>
 
 ### Web API clients and authentication methods   {#webapi-clients}
-
 
 You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.
 
@@ -175,7 +170,6 @@ Each type of client has a preferred authentication method. To authenticate, use 
 </table>
 
 ## Related topics   {#related}
-
 
 Proceed to the authentication method for your preferred client:
 

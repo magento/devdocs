@@ -2,7 +2,6 @@
 
 ## Step 6: Install   {#instgde-install-magento-web-step6}
 
-
 After completing all preceding steps in the Setup Wizard, click **Install Now**.
 
 You have the following options:
@@ -12,7 +11,6 @@ You have the following options:
 *	To try the installation again in the event of failure, click **Try Again**.
 
 ### Installation Success   {#instgde-install-magento-web-step5last}
-
 
 The message `Success` displays to indicate a successful installation.
 
@@ -43,4 +41,5 @@ The value of `sys_temp_dir` determines where `install.log` is located. If the va
 A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
 
 ### Next step
+
 <a href="{{ page.baseurl }}/install-gde/install/verify.html">Verify the installation</a>

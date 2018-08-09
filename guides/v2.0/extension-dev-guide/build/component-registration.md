@@ -39,12 +39,10 @@ Register themes with:
 
 where &lt;area> is the functional area of the module (frontend, controller, and so on.), &lt;vendor> is the name of the company providing the theme, and &lt;theme name> is the name of the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-
 ### Example
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 
 <p>&nbsp;</p>
-
 
 ## Register language packages {#register-lagpacks}
 

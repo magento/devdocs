@@ -143,7 +143,6 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
     ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 
-
 ## Branching
 
 The Bitbucket integration cannot create new environments in your project, so you must use the `magento-cloud` CLI tool to [create branches]({{ page.baseurl }}/cloud/env/environments-start.html#getstarted).

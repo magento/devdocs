@@ -29,13 +29,11 @@ Look for the following highlights in this release:
 
 * **Updated copyright to 2018**.
 
-
 ## Security enhancements
 
 Magento 2.2.3 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
-
 
 ### System requirements
 

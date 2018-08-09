@@ -183,7 +183,6 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 *	[Solving 403 Forbidden errors for Apache 2.4](#install-apache-403_2.4)
 *	[Solving 403 Forbidden errors for Apache 2.2](#install-apache-403_2.2)
 
-
 #### Solving 403 Forbidden errors for Apache 2.4 {#install-apache-403_2.4}
 
 To enable web site visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="&#95;blank"}.
@@ -199,7 +198,6 @@ For example:
 
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="&#95;blank"}.
-
 
 #### Solving 403 Forbidden errors for Apache 2.2 {#install-apache-403_2.2}
 
@@ -218,7 +216,6 @@ For example:
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="&#95;blank"}.
 {% endcollapsible %}
-
 
 #### Related topics:
 

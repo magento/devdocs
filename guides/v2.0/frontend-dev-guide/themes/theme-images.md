@@ -19,7 +19,6 @@ The properties for the images displayed on the product pages are defined by the 
 
 ## Configure image properties in view.xml   {#view_xml_structure}
 
-
 The conventional location of `view.xml` for a theme is:
 {% raw %}
 	<theme_dir>/etc/view.xml

@@ -21,7 +21,6 @@ This release updates the copyright date in every file. It does not contain any f
 
 Looking for the <a href="{{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
-
 ## System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
@@ -31,8 +30,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 
 {% include install/releasenotes/ee_install_21.md %}
-
-
 
 ## Migration toolkits
 

@@ -12,7 +12,6 @@ functional_areas:
   - Setup
 ---
 
-
 ## Overview of backup {#instgde-cli-uninst-back-over}
 
 This command enables you to back up:

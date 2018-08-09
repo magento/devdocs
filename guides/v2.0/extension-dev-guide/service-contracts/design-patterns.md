@@ -28,6 +28,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <p>For example, the interfaces in the <b>Magento\Customer\Api</b> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
                   </p>
     -->
+
 ## Data interfaces   {#data-interfaces}
 
 <p>Define data interfaces in the <b>Api/Data</b> subdirectory for a module.</p>
@@ -51,6 +52,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </ul>
 <p>For file names and coding standards, follow the defined <a href="{{ page.baseurl }}/coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
+
 ### Repository interfaces   {#repository-interfaces}
 
 <p>Repository interfaces provide access to persistent data entities.</p>
@@ -111,6 +113,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    </tr>
 </table>
 <p>Each data entity has a corresponding interface. Consequently, the <code>get()</code> function in the corresponding interface, for example, can return the exact type.</p>
+
 ### Management interfaces   {#management-interfaces}
 
 <p>Management interfaces provide management functions that are not related to repositories. For example:</p>
@@ -136,6 +139,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
       </td>
    </tr>
 </table>
+
 ### Related topics   {#related-topics}
 
 <ul>

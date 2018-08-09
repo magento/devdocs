@@ -14,7 +14,6 @@ This {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglos
 
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
 
-
 ## Serialization
 
 The main purpose of data serialization is to convert data into a string using `serialize()` to store in a database, a cache, or pass onto another layer in the application.
@@ -45,7 +44,6 @@ Magento discourages using the Serialize implementation directly because it can l
 Always use the `SerializerInterface` for serializing and unserializing.
 
 </div>
-
 
 ## Usage
 

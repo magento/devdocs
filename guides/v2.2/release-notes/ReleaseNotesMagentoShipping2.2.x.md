@@ -13,8 +13,6 @@ The release information in this section describes changes to the Magento Shippin
 
 See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.  
 
-
-
 ## Changes effective May 2, 2018 (Magento 2.2.4)
 
 Here are the enhancements and  fixes available as of May 2, 2018:
@@ -33,7 +31,6 @@ Here are the enhancements and  fixes available as of May 2, 2018:
 
 * Provided ad-hoc Return labels with return shipment tracking. This features builds on `Magento_Rma`. 
 
-
 ### Fixes
 
 Resolution of the following issues:
@@ -45,7 +42,6 @@ Resolution of the following issues:
 * Currency conversion issues.
 
 * Duplicated navigation menu during carrier connection.
-
 
 ## Changes effective January 22, 2018 
 
@@ -67,8 +63,6 @@ Here are the enhancements and fixes available as of January 22, 2018:
 
 * Improved the validation of customer API keys during configuration.  (UK Mail)
 
-
-
 ### Fixes
 
 The fixes described here are categorized by shipping carrier. 
@@ -77,7 +71,6 @@ The fixes described here are categorized by shipping carrier.
 
 * Fixed an issue with the error thrown if Export Category is **commercial** when the shipment isn't dutiable. Previously, the error thrown did not correctly address the issue. 
 
-
 #### FedEx 
 
 * Changed the default signature option to DIRECT for all services. 
@@ -85,7 +78,6 @@ The fixes described here are categorized by shipping carrier.
 #### UPS 
 
 * Resolved a UI issue with validation so that users do not need to enter State or Province when connecting to UPS with a United Kingdom  address.
-
 
 #### DHL Express
 
@@ -99,7 +91,6 @@ The fixes described here are categorized by shipping carrier.
 
 * Changed the default display of the `quantityUnit` field. The default value is now zero, and this field is left blank.
 
-
 #### Huxloe Hermes
 
 * Increased the duration of the response timeout from 10 to 20 seconds.
@@ -110,15 +101,9 @@ The fixes described here are categorized by shipping carrier.
 
 * Upgraded to local time zones for booking, pickup, and tracking times.
 
-
-
-
-
 ## Changes effective January 5, 2018
 
 Here are the enhancements and fixes available as of January 5, 2018:
-
-
 
 ### Enhancements  
 
@@ -126,18 +111,14 @@ Here are the enhancements and fixes available as of January 5, 2018:
 
 * Improved error handling for Australia Post
 
-
 ### Fixes
-
 
 #### Billing 
 * Fixed issue with billing metric calculations and capture 
 
-
 #### Tracking 
 
 * Fixed issue with tracking capture and display
-
 
 #### Portal 
 
@@ -145,16 +126,13 @@ Here are the enhancements and fixes available as of January 5, 2018:
 
 * Fixed issue that prevented the consistent saving of qualification rules
 
-
 #### Australia Post 
 
 * Corrected incorrect service names
 
-
 #### UK Mail 
 
 * Removed restrictions on mandatory county information
-
 
 #### FedEx 
 * Removed unsupported freight services from list of available services
@@ -165,11 +143,9 @@ Here are the enhancements and fixes available as of January 5, 2018:
 
 * Implemented sensible defaults for FedEx  
 
-
 #### Configuration 
 
 * Set FedEx  to 'Upcoming' carrier.
-
 
 #### USPS 
 

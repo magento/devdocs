@@ -14,14 +14,12 @@ functional_areas:
 
 ## Introduction   {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
-
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 
 ## Use JSDoc   {#frontend-dev-guide-javascript-js-coding-docblock-use}
-
 
 Document all files, classes, methods, and properties with JSDoc comments.
 
@@ -30,7 +28,6 @@ Inline comments should be of the "//" type.
 It is recommended to avoid sentence fragments in documentation blocks. Use sentence-style capitalization and put a period at the end. Sentence fragmentation is acceptable in inline commentaries to keep it short.
 
 ### Comment syntax   {#frontend-dev-guide-javascript-js-coding-docblock-syntax}
-
 
 JSDoc comments requirements:
 
@@ -51,7 +48,6 @@ Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}met
 
 ### JSDoc indentation   {#frontend-dev-guide-javascript-js-coding-docblock-indentation}
 
-
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
 <pre>/**
@@ -69,7 +65,6 @@ project.MyClass.prototype.method&nbsp;=&nbsp;function(foo)&nbsp;{
 
 ### Class comments   {#frontend-dev-guide-javascript-js-coding-docblock-classcomments}
 
-
 Classes must be documented with a description, and appropriate type tags.
 
 <pre>/**
@@ -84,7 +79,6 @@ project.MyClass&nbsp;=&nbsp;function(arg1,&nbsp;arg2)&nbsp;{
 </pre>
 
 ### Method and function comments   {#frontend-dev-guide-javascript-js-coding-docblock-methodcomments}
-
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
@@ -102,7 +96,6 @@ function&nbsp;someMethod(obj)&nbsp;{
 
 ### Property comments   {#frontend-dev-guide-javascript-js-coding-docblock-propertycomments}
 
-
 <pre>/**
 &nbsp;*&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;things&nbsp;per&nbsp;pane.
 &nbsp;*
@@ -112,7 +105,6 @@ project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
 </pre>
 
 ### JSDoc tag reference   {#frontend-dev-guide-javascript-js-coding-docblock-tagreference}
-
 
 #### @const   {#frontend-dev-guide-javascript-js-coding-docblock-const}
 
@@ -306,10 +298,7 @@ namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
 }
 </pre>
 
-
 ### JavaScript types   {#frontend-dev-guide-javascript-js-coding-docblock-jstypes}
-
-
 
 <table>
 	<tbody>
@@ -478,7 +467,6 @@ new&nbsp;project.MyClass()</pre></td>
 </table>
 
 #### JavaScript type language   {#frontend-dev-guide-javascript-js-coding-docblock-typelang}
-
 
 <table>
 	<tbody>

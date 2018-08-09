@@ -43,9 +43,7 @@ The articles in this chapter describe the particular approaches used in the Blan
 
 </ul>
 
-
 ## Terms used   {#fedg_rwd_terms}
-
 
 <table>
 <tr>
@@ -67,7 +65,6 @@ The width of the user’s screen that causes your responsive {% glossarytooltip 
 </td>
 </tr>
 </table>
-
 
 ## Recommended reading
 

@@ -32,7 +32,6 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
-
 ## Security enhancements {#security}
 
 Magento 2.2.1 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
@@ -42,6 +41,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 [Contact us](https://magento.com/company/contact-us) for more information.
 
 ### New Updates
+
 <!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.   
 
 
@@ -54,6 +54,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).
 
 ## Fixed issues {#fixed}
+
 <!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:  
@@ -80,14 +81,9 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 
 * The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Change the Magento Admin URL, username, and password on master]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-2_clone.html#setvariables).
 
-
-
-
 ## Community contributions {#community}
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html) for more information.
-
-
 
 ## System requirements {#requirements}
 

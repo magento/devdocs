@@ -18,7 +18,6 @@ The widget can be used for implementing confirmation windows for both, Admin and
 
 ## Initialize the confirmation widget   {#confirm_initialize}
 
-
 The confirmation widget can be initialized with or without binding to a certain element.
 
 **Example1**: initialization on an element
@@ -58,7 +57,6 @@ require([
 For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 ## Options   {#confirm_options}
-
 
 <ul>
 <li><a href="#confirm_actions">actions</a></li>
@@ -126,9 +124,7 @@ The title of the confirmation window.
 
 **Default value**: `''`
 
-
 ## Events   {#confirm_events}
-
 
 The confirmation widget implements the following events:
 

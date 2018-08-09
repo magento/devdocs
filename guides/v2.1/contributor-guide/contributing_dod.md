@@ -22,7 +22,6 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The following sections provide additional details about each of these criteria:
 
-
 ## Functional Backward Compatibility
 
 Existing product features and functionality must be retained during any changes to the code.

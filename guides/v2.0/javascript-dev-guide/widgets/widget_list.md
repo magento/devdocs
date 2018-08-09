@@ -119,9 +119,7 @@ Element holding the template.
 
 **Default value**: `null`
 
-
 ## Methods   {#list_methods}
-
 
 The list widget has the following methods:
 <ul>

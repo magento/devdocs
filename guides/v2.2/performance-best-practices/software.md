@@ -108,7 +108,6 @@ Nginx | `worker_collections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX 
 Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](http://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
 Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache MPM Common Directives](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers )
 
-
 ## MySQL
 
 This document does not provide in-depth MySQL tuning instructions because each store and environment is different, but we can make some general recommendations.

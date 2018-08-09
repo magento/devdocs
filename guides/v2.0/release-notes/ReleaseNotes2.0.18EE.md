@@ -30,7 +30,6 @@ To maintain the performance and security of your site, we advise you to upgrade 
 For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See <a href="https://github.com/magento/magento2/issues/13929" target="_blank">GitHub-13929</a> for more information.
 </div>
 
-
 ## Highlights
 
 Look for the following highlights in this release:
@@ -41,7 +40,6 @@ Look for the following highlights in this release:
 
 * **Updated copyright for 2018**.
 
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. See
@@ -49,8 +47,6 @@ Our technology stack is built on PHP and MySQL. See
 
 
 {% include install/releasenotes/ee_install_20.md %}
-
-
 
 ## Migration toolkits
 

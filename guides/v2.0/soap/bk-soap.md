@@ -16,7 +16,6 @@ functional_areas:
 ### Contents
 {:.no_toc}
 
-
 ## Soap WSDL Endpoint Format
 
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`
@@ -34,7 +33,6 @@ functional_areas:
 ## List of Service Names per Module
 
 The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
-
 
 ### Backend
 

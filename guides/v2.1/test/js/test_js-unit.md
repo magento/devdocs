@@ -119,7 +119,6 @@ To complete the unit tests, the PHP script completes this processing:
 3. If the script finds the browser executable and the `JsTestDriver.jar` file, it proceeds with the next step. Otherwise, the script fails.
 4. The script determines the order in which the JsTestDriver loads certain JavaScript files through the `jsTestDriverOrder.php` configuration file in the `<magento2_root_dir>/dev/tests/js` directory.
 
-
 ## Step 1. Before you begin {#test-prereqs}
 
 On the system where you plan to run the unit tests, install the following prerequisite software:

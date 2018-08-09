@@ -2,7 +2,6 @@
 
 ## Step 4: Customize Your Store   {#instgde-install-magento-web-step4}
 
-
 <!-- 1.	To install optional sample data, select the **Use Sample Data** checkbox.
 
 	<div class="bs-callout bs-callout-info" id="info">

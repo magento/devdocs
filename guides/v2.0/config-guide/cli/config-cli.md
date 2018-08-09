@@ -24,7 +24,6 @@ This topic discusses configuring the Magento software using the CLI. For informa
 
 {% include install/before-you-begin-cli.html %}
 
-
 ## First steps   {#config-install-cli-first}
 
 {% include install/first-steps-cli.html %}

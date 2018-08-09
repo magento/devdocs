@@ -1,6 +1,5 @@
 ## Step 5: Create Admin Account   {#instgde-install-magento-web-step5}
 
-
 1.	Enter the following information:
 
 	<table>

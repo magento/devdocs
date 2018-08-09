@@ -60,7 +60,6 @@ After applying the patch, complete your upgrade as follows:
 
 {%include install/sampledata/sample-data-rc1-cli.md %}
 
-
 ### Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data {#tb-upgr-samp-wiz}
 
 Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:

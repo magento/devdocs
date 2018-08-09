@@ -14,7 +14,6 @@ functional_areas:
 
 ## What\'s in this topic   {#layout_theme_how-to_overview}
 
-
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
 
@@ -41,11 +40,8 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading   {#theme-gen-read}
 
-
 * <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
 * <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a>
-
-
 
 ## Create a theme directory {#layout_theme_how-to_dirs}
 
@@ -88,7 +84,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
-
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
 
@@ -146,7 +141,6 @@ Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
 
 For illustration, see the <a href="{{ site.mage2000url }}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
 
-
 ## Configure images {#fedg_create_theme_how-to-images}
 
 Product image sizes and other properties used on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
@@ -199,7 +193,6 @@ During theme development, when you change any files stored here, you need to cle
 </p></span>
 </div>
 
-
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 
 At this point your theme file structure looks as follows:
@@ -216,8 +209,6 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>
-
-
 
 ## Theme logo {#theme_logo}
 
@@ -265,7 +256,6 @@ For example, if your logo file is `my_logo.png` sized 300x300px, you need to dec
 Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
-
 
 ## What's next {#next}
 

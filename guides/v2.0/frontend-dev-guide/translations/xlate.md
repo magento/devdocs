@@ -70,7 +70,6 @@ See one of the following sections for more information:
 
 ## Why you might need to add a dictionary for a theme   {#m2devgde-xlate-themes}
 
-
 You might need to add a dictionary for the default language (en_US) in the following cases:
 
 - if you want to replace certain strings from the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".

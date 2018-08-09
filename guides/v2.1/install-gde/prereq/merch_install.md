@@ -43,4 +43,3 @@ To start configuring your hosted system:
 
 ## Step 3: Configure a database and a database user {#newbie-db}
 
-

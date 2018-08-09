@@ -12,8 +12,6 @@ functional_areas:
 
 ## What\'s in this topic   {#fedg_layout_xml-instruc_overview}
 
-
-
 Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
 To change the page wireframe, modify the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
 
@@ -27,9 +25,7 @@ Use {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instruction
 
 The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
 
-
 ## Common layout instructions   {#fedg_layout_xml-instruc_ex}
-
 
 Use the following layout instructions to customize your layout:
 
@@ -187,7 +183,6 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
-
 ### before and after attributes   {#fedg_xml-instrux_before-after}
 
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
@@ -234,6 +229,7 @@ The following tables give a detailed description of the results you can get usin
       </tr>
    </tbody>
 </table>
+
 ### Examples   {#examples}
 
 <table>

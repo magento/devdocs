@@ -13,7 +13,6 @@ redirect_from:
 
 ---
 
-
 ## WSDL File {#wsdl}
 
 A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.

@@ -29,7 +29,6 @@ To package a component, you must:
 
     Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 
-
 ## Create a Magento Composer file {#composer}
 
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
@@ -53,7 +52,6 @@ Metapackages allow you to group an {% glossarytooltip 55774db9-bf9d-40f3-83db-b1
 <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.</p>
 </div>
-
 
 #### Metapackage example
 
@@ -153,8 +151,6 @@ Magento can retrieve your extension package from any valid GitHub {% glossarytoo
 <span class="glyphicon-class">
   <p>Third party repositories are supported.</p></span>
 </div>
-
-
 
 ### Hosting on GitHub and Packagist {#hosting}
 

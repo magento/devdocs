@@ -133,7 +133,6 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 
 **Default value**: 500
 
-
 ## Methods {#dialog_methods}
 
 Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized. 

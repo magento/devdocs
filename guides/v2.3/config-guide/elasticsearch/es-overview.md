@@ -40,7 +40,6 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 
 Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
 
-
 ### Recommended configuration {#es-arch}
 
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
@@ -130,7 +129,6 @@ This section discusses how to install Elasticsearch 5.2 from their repository. Y
     epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
     1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```
-
 
 ### Install Elasticsearch 2.x {#es-install-es}
 

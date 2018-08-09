@@ -33,7 +33,6 @@ The `queue.xml` file can contain the following elements:
 
 ### Required elements
 
-
 Each `queue.xml` file must contain the following lines:
 
 {% highlight xml %}

@@ -14,7 +14,6 @@ functional_areas:
   - Setup
 ---
 
-
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
 	Whoops, it looks like you have an invalid PHP version.

@@ -12,7 +12,6 @@ In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{%
 
 ## Page Grid   {#page}
 
-
 <ul>
 	<li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
 	<li>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</li>
@@ -22,7 +21,6 @@ In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{%
 <img src="img/PageGrid.png">
 
 ## Slide-Out Grid   {#slide-out}
-
 
 A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
 

@@ -53,7 +53,6 @@ The root source files for the Blank theme are:
 </tr>
 </table>
 
-
 ## LESS compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling `.less` files to CSS are implemented:
@@ -100,7 +99,6 @@ The client-side compilation flow is similar to the server-side flow. The differe
 *   symlinks to all other `.less` files imported recursively by the `@magento_import` and `@import` directives
 
 Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons for this difference might be the usage of the `@import` directive without the file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
-
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 

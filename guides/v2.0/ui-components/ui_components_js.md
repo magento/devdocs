@@ -31,7 +31,6 @@ A UI component's behavior, configuration and structure is defined by the followi
 
 All these properties, options, and methods are available in the component template's scope.
 
-
 ## Most important UI component properties {#main_properties}
 
 The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
@@ -194,7 +193,6 @@ Example of using `listens` in a component's configuration `.xml` file:
        </item>
 </argument>
 {% endhighlight xml%}
-
 
 ## Frequently used additional components {#comp_additional}
 

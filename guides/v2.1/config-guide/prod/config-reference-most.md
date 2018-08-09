@@ -600,7 +600,6 @@ Enable RMA on Storefront | `sales/magento_rma/enabled` | ![EE-only]({{ site.base
 Enable RMA on Product Level | `sales/magento_rma/enabled_on_product` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Use Store Address | `sales/magento_rma/use_store_address` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 
-
 ### Sales emails paths
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.

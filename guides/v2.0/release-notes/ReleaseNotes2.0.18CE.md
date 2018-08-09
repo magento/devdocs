@@ -40,14 +40,12 @@ Look for the following highlights in this release:
 
 * **Updated copyright for 2018**.
 
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
-
 
 ## Migration toolkits
 

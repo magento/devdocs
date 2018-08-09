@@ -21,9 +21,7 @@ The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{%
 
 ## Initialize the accordion widget   {#accordion_init}
 
-
 ### Initialize accordion in JS components
-
 
 #### Initialize accordion with `data-*` attributes specified
 
@@ -97,7 +95,6 @@ Mark-up examples:
 
 {%endhighlight%}
 
-
 #### Initialize accordion with option
 
 You can specify the header, content, trigger as options when you initialize the widget.
@@ -113,9 +110,7 @@ $("#element").accordion({
 
 ### Initialize accordion in a template
 
-
 The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
-
 
 ## Options   {#accordion_options}
 
@@ -171,7 +166,6 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 **Type**: Boolean
 
 **Default value**: `false`
-
 
 ## Methods   {#accordion_methods}
 

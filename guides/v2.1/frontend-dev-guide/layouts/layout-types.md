@@ -15,6 +15,7 @@ functional_areas:
 		table tr td, table tr th {border: 1px solid #ABABAB}
 	</style>
 </head>
+
 ## What's in this topic
 
 For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
@@ -120,7 +121,6 @@ Conventionally page configuration files must be located as follows:
 <li> {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
 <li> {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
-
 
 ### Page configuration structure and allowed layout instructions
 
@@ -401,7 +401,6 @@ Conventionally generic layout files must be located as follows:
 <li>Module generic layouts: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
 <li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
-
 
 ### Generic layout structure and allowed layout instructions
 

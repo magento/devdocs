@@ -2,7 +2,6 @@
 
 ## Step 3: Web Configuration   {#instgde-install-magento-web-step3}
 
-
 1.	Enter the following information:
 
 	<table>

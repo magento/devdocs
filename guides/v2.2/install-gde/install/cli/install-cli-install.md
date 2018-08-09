@@ -74,7 +74,6 @@ You can run the following commands to find values for some required arguments:
 {:.bs-callout .bs-callout-info}
 If an error displays when you run these commands, make sure you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
 
-
 ## Install the Magento software from the command line {#instgde-install-cli-magento}
 
 The format of the install command follows:

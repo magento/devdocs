@@ -41,7 +41,6 @@ Example for Google Chrome with Selenium 2:
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument: `java -jar <path_to_selenium_directory>/selenium-server.jar`
 </div>
 
-
 ## Run generator {#mtf_quickstart_env_generator}
 
 Generator generates [fixtures], [repositories], and [page objects]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in alphabetical order.
@@ -52,7 +51,6 @@ Enter in terminal:
     php generate.php
 
 ## Next Steps   {#mtf_install_pre}
-
 
 [&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
 
