@@ -30,7 +30,8 @@ The gallery magnifier source is <a href="{{ site.mage2000url }}lib/web/magnifier
 
 
 
-<h3>Contents</h3>
+### Contents
+
 
 
 ## Initialize the gallery widget {#gallery_init}

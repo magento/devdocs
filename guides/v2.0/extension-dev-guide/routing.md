@@ -21,7 +21,8 @@ Router has an algorithm to find a matching controller, determined by request.
 
 Then, according to a route rule, controller is assigned to URL. Use the `routes.xml` file to review or change the route rules.
 
-<h3>Routers</h3>
+### Routers
+
 
 The routers information for the modules is described in the `routerList` parameter of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your `di.xml`.
 
@@ -31,7 +32,8 @@ You might need to customize the routers to change either the standard logic of p
 (such as, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} router, default router, and so on).
 However, you must not customize the routers that are used in Magento core modules.
 
-<h3>Routes</h3>
+### Routes
+
 
 Configurations of the routes are stored in `routes.xml` in the scopes area.
 
@@ -80,7 +82,8 @@ class Create extends \Magento\Framework\App\Action\Action
 </pre>
 
 
-<h3>Routing processing</h3>
+### Routing processing
+
 
 Routing is processed in the following way:
 

@@ -19,11 +19,13 @@ The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget
 
 The suggest widget source is <a href="{{ site.mage2000url }}app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.
 
-<h2 id="quicksearch_init">Initialize the quickSearch widget</h2>
+## Initialize the quickSearch widget   {#quicksearch_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
-<h2 id="quicksearch_options">Options</h2>
+## Options   {#quicksearch_options}
+
 <ul>
 <li><a href="#q_autocomplete">autocomplete</a></li>
 <li><a href="#q_formSelector">formSelector</a></li>
@@ -36,7 +38,8 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 </ul>
 
 
-<h3 id="q_autocomplete"><code>autocomplete</code></h3>
+### `autocomplete`   {#q_autocomplete}
+
 Attaches the `autocomplete` attribute to the search field.
 
 **Type**: String
@@ -46,7 +49,8 @@ Attaches the `autocomplete` attribute to the search field.
 **Accepted values**: `off`, `on`
 
 
-<h3 id="q_formSelector"><code>formSelector</code></h3>
+### `formSelector`   {#q_formSelector}
+
 The form selector containing the search input field.
 
 **Type**: String 
@@ -54,42 +58,48 @@ The form selector containing the search input field.
 **Default value**: No form by default.
 
 
-<h3 id="q_minSearchLength"><code>minSearchLength</code></h3>
+### `minSearchLength`   {#q_minSearchLength}
+
 Minimum number of characters required before the auto suggest triggers.
 
 **Type**: Integer
 
 **Default value**: `2`
 
-<h3 id="q_responseFieldElements"><code>responseFieldElements</code></h3>
+### `responseFieldElements`   {#q_responseFieldElements}
+
 Selector for the response elements.
 
 **Type**: String
 
 **Default Value**: `ul li`
 
-<h3 id="q_searchLabel"><code>searchLabel</code></h3>
+### `searchLabel`   {#q_searchLabel}
+
 Selector of a search input label.
 
 **Type**: String
 
 **Default value**: `[data-role=minisearch-label]`
 
-<h3 id="q_selectClass"><code>selectClass</code></h3>
+### `selectClass`   {#q_selectClass}
+
 Class assigned to the selected suggested term.
 
 **Type**: String
 
 **Default value**: `selected`
 
-<h3 id="q_submitBtn"><code>submitBtn</code></h3>
+### `submitBtn`   {#q_submitBtn}
+
 Disable the submit button. 
 
 **Type**: String
 
 **Default value**: `button[type="submit"]`
 
-<h3 id="q_template"><code>template</code></h3>
+### `template`   {#q_template}
+
 Template responsible for rendering returned data (suggested terms).
 
 **Type**: String

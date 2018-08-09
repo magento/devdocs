@@ -125,7 +125,9 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 {%raw%}
 ```html
 <div class="container">
-  <h4 class="title">Title</h4>
+#### Title
+{: .title}
+
   <div class="content">
     <p>Paragraph content.</p>
   </div>
@@ -138,7 +140,9 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 ```html
 <div class="container">
-  <h4 class="title">Title</h4>
+#### Title
+{: .title}
+
   <div class="content">
     <p>Paragraph content.</p>
   </div>

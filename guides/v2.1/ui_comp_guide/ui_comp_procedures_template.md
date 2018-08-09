@@ -89,7 +89,9 @@ For highlighted code blocks use the `highlight` Liquid tag.
 
 {% highlight html %}
 <div class="container">
-  <h4 class="title">Title</h4>
+#### Title
+{: .title}
+
   <div class="content">
     <p>Paragraph content.</p>
   </div>

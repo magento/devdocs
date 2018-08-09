@@ -16,7 +16,8 @@ functional_areas:
 
 {% include config/php-memcache.md %}
 
-<h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
+## Install and configure memcached on Ubuntu   {#config-memcache-install}
+
 This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -49,7 +50,8 @@ To install and configure memcached on Ubuntu:
 
 4.  Continue with the next section.
 
-<h2 id="config-memcache-verify-its-ub">Verify memcached works before installing Magento</h2>
+## Verify memcached works before installing Magento   {#config-memcache-verify-its-ub}
+
 We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.
 
 ### Verify memcached is recognized by the web server

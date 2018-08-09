@@ -1,6 +1,7 @@
 <div markdown="1">
 
-<h2 id="instgde-install-magento-web-step6">Step 6: Install</h2>
+## Step 6: Install   {#instgde-install-magento-web-step6}
+
 
 After completing all preceding steps in the Setup Wizard, click **Install Now**.
 
@@ -10,7 +11,8 @@ You have the following options:
 *	In the event of problems, click **Previous** to go back and fix incorrect entries.
 *	To try the installation again in the event of failure, click **Try Again**.
 
-<h3 id="instgde-install-magento-web-step5last">Installation Success</h3>
+### Installation Success   {#instgde-install-magento-web-step5last}
+
 
 The message `Success` displays to indicate a successful installation.
 
@@ -18,7 +20,8 @@ If the installation failed, click **Previous** to review the information you ent
 
 You can also run the installer again.
 
-<h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
+### Viewing the installation log   {#instgde-install-magento-web-log}
+
 The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
 
 The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to determine where to write the installation log. To locate the log:

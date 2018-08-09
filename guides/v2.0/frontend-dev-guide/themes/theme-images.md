@@ -17,7 +17,8 @@ The properties of product images used on the {% glossarytooltip 1a70d3ac-6bd9-47
 
 The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} `view.xml` as well. For more details, view the [Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) topic.
 
-<h2 id="view_xml_structure">Configure image properties in view.xml</h2>
+## Configure image properties in view.xml   {#view_xml_structure}
+
 
 The conventional location of `view.xml` for a theme is:
 {% raw %}

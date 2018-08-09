@@ -13,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="newbie-ftp-overview">Magento installation overview</h2>
+## Magento installation overview   {#newbie-ftp-overview}
+
 1.	Download the software to your computer.
 2.	Set up the File Transfer Protocol (FTP) to your hosted system.
 3.	Upload the archive to your system using FTP.
@@ -21,7 +22,8 @@ functional_areas:
 
 {% include install/get-software_zip.md %}
 
-<h2 id="set-up-ftp">Set up FTP and transfer the Magento archive</h2>
+## Set up FTP and transfer the Magento archive   {#set-up-ftp}
+
 FTP is a way to transfer files from your computer to your managed server. To transfer the Magento archive, you need an FTP account that has access to the managed server's `public_html` directory. You might already have an account. If not, consult your shared hosting provider's documentation or technical support for more information.
 
 ### Transfer the Magento archive to your hosted system
@@ -45,7 +47,8 @@ To transfer the Magento archive:
 	On some FTP client software, you do this by dragging and dropping.
 5.	Wait while the transfer completes.
 
-<h2 id="extract-perms">Extract the archive</h2>
+## Extract the archive   {#extract-perms}
+
 After transferring the Magento archive to your hosted system, you can use the cPanel to extract it, after which you can run the Magento Setup Wizard to install the software.
 
 To extract the archive:

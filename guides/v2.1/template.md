@@ -108,7 +108,9 @@ See the markdown version of this file for examples.
 
 ~~~
 <div class="collapsible">
-  <h4 class="collapsible-title">Collapsible Title</h4>
+#### Collapsible Title
+{: .collapsible-title}
+
   <div class="collapsible-content">
     <p>Put collapsible content here.</p>
   </div>
@@ -119,7 +121,9 @@ See the markdown version of this file for examples.
 
 {% highlight html %}
 <div class="collapsible">
-  <h4 class="collapsible-title">Collapsible Title</h4>
+#### Collapsible Title
+{: .collapsible-title}
+
   <div class="collapsible-content">
     <p>Put collapsible content here.</p>
   </div>

@@ -30,7 +30,8 @@ This Release Candidate is available from `repo.magento.com` if you have a Magent
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+### Highlights
+
 
 Magento Commerce 2.1 includes several new and exciting features:
 
@@ -46,7 +47,8 @@ Magento Commerce 2.1 includes several new and exciting features:
  
 
 
-<h3>Known issues</h3>
+### Known issues
+
 Magento 2.1 RC2 includes the following known issues:
 
 
@@ -57,17 +59,20 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
+
 <!--- P0 issues -->
 
-<h4>Solr search</h4>
+#### Solr search
+
 <!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. 
 
 <!--- 50701 --> * Solr search results now displays all products as expected in search results. 
 
 
 
-<h4>Checkout</h4>
+#### Checkout
+
 <!--- 53193 --> * Several address-related issues associated with Checkout have been resolved. 
 
 
@@ -81,7 +86,8 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h4>Bundle products</h4>
+#### Bundle products
+
 
 <!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}Bundle product{% endglossarytooltip %}.
 
@@ -90,7 +96,8 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h4>Miscellaneous</h4>
+#### Miscellaneous
+
 <!--- 50755 --> * Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} data.  
 
 <!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard.
@@ -180,7 +187,8 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h4>Messages and documentation</h4>
+#### Messages and documentation
+
 
 <!--- 52340 --> * The `getList` method documentation has been enhanced. 
 
@@ -192,7 +200,8 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h4>Staging</h4>
+#### Staging
+
 
 <!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".) 
 
@@ -215,7 +224,8 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h3>Technology stack</h3>
+### Technology stack
+
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

@@ -29,7 +29,8 @@ You configure the websites, stores, and store views in the Magento {% glossaryto
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
-<h2 id="magerun-conf">Configure Magento websites and stores</h2>
+## Configure Magento websites and stores   {#magerun-conf}
+
 This section discusses the minimum tasks required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables. 
 
 We use the following terms:

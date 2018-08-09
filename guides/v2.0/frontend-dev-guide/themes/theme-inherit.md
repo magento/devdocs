@@ -12,7 +12,8 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="theme-inherit-over">What's in this topic</h2>
+## What\'s in this topic   {#theme-inherit-over}
+
 
 {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 

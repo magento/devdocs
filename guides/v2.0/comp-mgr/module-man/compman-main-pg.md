@@ -12,7 +12,8 @@ functional_areas:
   - Upgrade
 ---
 
-<h2 id="compman-access">Component Management options</h2>
+## Component Management options   {#compman-access}
+
 To choose whether to upgrade or uninstall components:
 
 1.	After you <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
@@ -60,7 +61,8 @@ To choose whether to upgrade or uninstall components:
 	</tbody>
 	</table>
 
-<h2 id="compman-access-new">Install new purchases</h2>
+## Install new purchases   {#compman-access-new}
+
 A *new purchase* can be any of the following:
 
 *	{{site.data.var.ce}} or {{site.data.var.ee}} sample data if it hasn't been installed yet.
@@ -90,7 +92,8 @@ To install a new purchase:
 
 
 
-<h2 id="compman-access-sync">Update a component</h2>
+## Update a component   {#compman-access-sync}
+
 To see if any of your components can be updated, click **Sync**.
 
 <img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available"> displays in the left column of each component that you can update. 
@@ -114,7 +117,8 @@ The following figure shows an example of disabling a component.
 
 Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
-<h2 id="compman-uninst">Uninstall a component</h2>
+## Uninstall a component   {#compman-uninst}
+
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
 <img src="{{ site.baseurl }}/common/images/cman_uninstall1.png" alt="Uninstall a component">
@@ -123,7 +127,8 @@ Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.
 
 
 
-<h2 id="compman-access-types">Supported actions for each component type</h2>
+## Supported actions for each component type   {#compman-access-types}
+
 We define the following *components*:
 
 *	`module` for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} (that is, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code that modifies Magento behavior)
@@ -141,7 +146,8 @@ The following sections provide details:
 *	<a href="#compman-access-types-meta">Actions available for metapackage components</a>
 *	<a href="#compman-access-types-non-meta">Actions available for non-metapackage components</a>
 
-<h3 id="compman-access-types-meta">Actions available for metapackage components</h3>
+### Actions available for metapackage components   {#compman-access-types-meta}
+
 Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be packaged as a metapackage.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -199,7 +205,8 @@ The following table shows which actions are available for components that are pa
       <p><strong>Update</strong> displays as an action only if an update is available for that component.</p>
 </div>
 
-<h3 id="compman-access-types-non-meta">Actions available for non-metapackage components</h3>
+### Actions available for non-metapackage components   {#compman-access-types-non-meta}
+
 Typically, a component that you download from Magento Marketplace is not part of a metapackage; in other words, a single module is probably not part of a metapackage.
 
 The following table shows which actions are supported for each non-metapackage component.

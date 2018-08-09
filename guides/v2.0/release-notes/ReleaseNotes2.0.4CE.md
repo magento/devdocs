@@ -16,29 +16,35 @@ We are pleased to present Magento Open Source 2.0.4. This release includes all o
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
-<h4> Upgrade and Installation</h4>
+
+####  Upgrade and Installation
+
 <!-- 50224 -->* Magento no longer creates store data inconsistently during installation. 
 
 <!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
 
-<h4>Import</h4>
+#### Import
+
 <!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLs. 
 
 
-<h4>APIs</h4>
+#### APIs
+
 <!-- 46720 --> * The Orders {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
 
 <!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
 
 
-<h4>PHP</h4>
+#### PHP
+
 <!-- 50500 -->* Magento now allows you to use arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
 
-<h4>Miscellaneous</h4>
+#### Miscellaneous
+
 <!-- 47704 -->* Magento no longer displays {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags in messages. 
 
 <!-- 48781 --> * Product performance has been enhanced when loading {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} products with multiple color swatches. 
@@ -49,7 +55,8 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 
-<h4>Security enhancements</h4>
+#### Security enhancements
+
 This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
@@ -70,13 +77,16 @@ The following list provides an overview of the security issues fixed in this rel
 We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
 
-<h3>System requirements</h3>
+### System requirements
+
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
-<h3>Installation instructions</h3>
+### Installation instructions
 
-<h4>New installations</h4>
+
+#### New installations
+
 New users can now complete a full installation of Magento Open Source 2.0.4 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 ##### <b>Download a new installation</b>#####
@@ -96,7 +106,8 @@ New users can now complete a full installation of Magento Open Source 2.0.4 from
 3.	Follow the instructions to download Composer, and get the {{site.data.var.ce}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
-<h4><b>Upgrade existing installations</b></h4>
+#### **Upgrade existing installations**
+
 If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.baseurl }}/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 

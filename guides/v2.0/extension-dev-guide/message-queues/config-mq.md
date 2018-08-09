@@ -30,7 +30,8 @@ The `queue.xml` file can contain the following elements:
 + consumer
 + bind
 
-<h3>Required elements</h3>
+### Required elements
+
 
 Each `queue.xml` file must contain the following lines:
 
@@ -45,7 +46,8 @@ Each `queue.xml` file must contain the following lines:
 
 {% endhighlight %}
 
-<h3>publisher element</h3>
+### publisher element
+
 The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
 <table>
 <tr>
@@ -65,7 +67,8 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 </table>
 
-<h3>topic element</h3>
+### topic element
+
 Configuring the `topic` element defines the interface that processes the message and assigns a publisher.
 <table>
 <tr>
@@ -90,7 +93,8 @@ Configuring the `topic` element defines the interface that processes the message
 </tr>
 </table>
 
-<h3>consumer element</h3>
+### consumer element
+
 Each `consumer` elements maps the receiver of a message to a specific queue. The `class` and `method` parameters indicate what receives and processes the message.
 <table>
 <tr>
@@ -122,7 +126,8 @@ Each `consumer` elements maps the receiver of a message to a specific queue. The
 </tr>
 </table>
 
-<h3>bind element</h3>
+### bind element
+
 The `bind` elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.
 
 <table>

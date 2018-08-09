@@ -146,11 +146,13 @@ The following example will generate Magento 2.2 documentation only.
 If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
 
 ## Build using Docker
+
 This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
 
 To use Docker and Docker Compose, first download and install Docker for the appropriate operating system, and then install Docker Compose to execute the `docker-compose.yml` configuration file.
 
 ### Docker for Mac
+
 - Refer [here](https://docs.docker.com/docker-for-mac/install/) for the official installation instructions.
 
 ### Docker for Windows

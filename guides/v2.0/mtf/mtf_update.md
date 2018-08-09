@@ -20,7 +20,8 @@ Two types of updates are available.
 </div>
 
 
-<h3 id="mtf_update_install">Install a new version of the Functional Testing Framework</h3>
+### Install a new version of the Functional Testing Framework   {#mtf_update_install}
+
 
 Step 1.    To avoid conflicts with the previous version, remove directory `<magento2_root_dir>/dev/tests/functional/generate`.
 
@@ -33,7 +34,8 @@ Step 2.    Remove file `<magento2_root_dir>/dev/tests/functional/composer.lock`.
 
 Step 3.    <a href="{{ page.baseurl }}/mtf/mtf_installation.html#mtf_install_perform">Perform and check installation.</a>
 
-<h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
+### Update components from dependencies in `composer.json`   {#mtf_update_depend}
+
 
 Enter in terminal:
 

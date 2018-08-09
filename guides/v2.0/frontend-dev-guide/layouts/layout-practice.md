@@ -35,7 +35,8 @@ The markup, that is needed for a drop-down:
 <img src="{{ site.baseurl }}/common/images/layout_code_after.png">
 </div>
 
-<h4>Step 1: Define the blocks</h4>
+#### Step 1: Define the blocks
+
 
 OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
 
@@ -57,7 +58,8 @@ OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html"
 ...
 {%endhighlight xml%}
 
-<h4>Step 2: Define the templates</h4>
+#### Step 2: Define the templates
+
 
 Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used for rearranging the links:
@@ -104,7 +106,8 @@ defines the template which is used for rearranging the links:
 <?php endif; ?>
 {%endhighlight php%}
 
-<h4>Step 3: Extend the base layout to add a block</h4>
+#### Step 3: Extend the base layout to add a block
+
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
@@ -126,7 +129,8 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 </page>
 {%endhighlight xml%}
 
-<h4>Step 4: Move links</h4>
+#### Step 4: Move links
+
 
 To move the links to the `header.links` block, OrangeCo adds an extending layout:
 

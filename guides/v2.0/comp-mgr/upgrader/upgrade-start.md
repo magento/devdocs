@@ -11,7 +11,8 @@ functional_areas:
   - Upgrade
 ---
 
-<h2 id="compman-prereq">Prerequisites</h2>
+## Prerequisites   {#compman-prereq}
+
 Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
@@ -23,7 +24,8 @@ During the time you're upgrading, your {% glossarytooltip 1a70d3ac-6bd9-475a-893
 
 To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see [Maintenance mode options for upgrade]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
 
-<h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
+## Start System Upgrade from the Magento Admin   {#compman-access}
+
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.

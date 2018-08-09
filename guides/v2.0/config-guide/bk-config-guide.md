@@ -15,7 +15,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="configuration">Configure the Magento application</h2>
+## Configure the Magento application   {#configuration}
+
 You can configure the Magento application in any of the following ways:
 
 *	General configuration

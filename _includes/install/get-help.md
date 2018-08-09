@@ -1,4 +1,5 @@
-<h2 id="help">Getting help with your installation</h2>
+## Getting help with your installation   {#help}
+
 <p>In the event you need additional help, consult the following resources.</p>
 
 <table>

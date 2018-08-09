@@ -17,14 +17,17 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
-<h4> Upgrade and Installation</h4>
+
+####  Upgrade and Installation
+
 
 <!-- 50224 --> *  Magento no longer assumes hard-coded root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
 
 
-<h4>Import/Export</h4>
+#### Import/Export
+
 
 <!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  "URL key for specified store already exists", when importing products into a multi-store configuration. 
 
@@ -32,7 +35,8 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 
-<h4>Database</h4>
+#### Database
+
 
 <!-- 49004 --> * Magento no longer duplicates queries to the database from the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. 
 
@@ -40,7 +44,8 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 
-<h4>Miscellaneous</h4> 
+#### Miscellaneous
+
 
 <!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. <a href="https://github.com/magento/magento2/issues/3459" target="_blank">(GITHUB-3459)</a>
 
@@ -65,13 +70,16 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 
 
-<h3>System requirements</h3>
+### System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
-<h3>Installation instructions</h3>
+### Installation instructions
 
-<h4>New installations</h4>
+
+#### New installations
+
 New users can now complete a full installation of Magento Open Source 2.0.5 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 ##### <b>Download a new installation</b>#####
@@ -91,7 +99,8 @@ New users can now complete a full installation of Magento Open Source 2.0.5 from
 3.	Follow the instructions to download Composer, and get the Magento Open Source {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
-<h4><b>Upgrade existing installations</b></h4>
+#### **Upgrade existing installations**
+
 If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.baseurl }}/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
@@ -113,7 +122,8 @@ Developers who contribute to the Open Source codebase can <a href="{{ site.baseu
 
 2.	Follow the instructions to pull the updates from the repository and update {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
-<h3>Migration toolkits</h3>
+### Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

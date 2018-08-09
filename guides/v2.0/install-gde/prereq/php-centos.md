@@ -20,13 +20,15 @@ functional_areas:
   <p>If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
-<h2 id="php-support">PHP versions supported</h2>
+## PHP versions supported   {#php-support}
+
 
 Magento requires:
 
 {% include install/php_2.0.md %}
 
-<h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
+## Help if you\'re just starting out   {#php-centos-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
@@ -34,7 +36,8 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
-<h2 id="centos-verify-php">Verify PHP is installed</h2>
+## Verify PHP is installed   {#centos-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, messages similar to the following display:
 
 	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
@@ -119,7 +122,8 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
+## PHP 5.6 on CentOS 6 or 7   {#instgde-prereq-php56-install-centos}
+
 There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 5.6 on CentOS 6 or 7: %}
@@ -175,7 +179,8 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 
 {% endcollapsible %}
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS 6</h2>
+## PHP 5.5 on CentOS 6   {#instgde-prereq-php55-install-centos}
+
 There is more than one way to upgrade CentOS 6 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 5.5 on CentOS 6: %}

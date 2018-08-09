@@ -12,7 +12,8 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="debug-theme-intro">What's in this topic</h2>
+## What\'s in this topic   {#debug-theme-intro}
+
 
 When you create a Magento theme, you might need to create override files for default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 

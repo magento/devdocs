@@ -1,7 +1,8 @@
 <div markdown="1">
 
 
-<h2 id="instgde-install-magento-web-step2">Step 2: Add a Database</h2>
+## Step 2: Add a Database   {#instgde-install-magento-web-step2}
+
 
 1.	Enter the following information:
 

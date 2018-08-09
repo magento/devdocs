@@ -38,7 +38,8 @@ Magento _strongly_ recommends you observe the following standard when you set up
   <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ page.baseurl }}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
 </div>
 
-<h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
+## Installing MySQL on Ubuntu   {#instgde-prereq-mysql-ubuntu}
+
 See one of the following sections for more information:
 
 *	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)

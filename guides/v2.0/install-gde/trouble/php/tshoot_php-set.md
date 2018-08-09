@@ -13,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
+### always\_populate\_raw\_post\_data error   {#trouble-php-always}
+
 If you're upgrading the Magento 2 software, the following error can display during the readiness check:
 
 <img src="{{ site.baseurl }}/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
@@ -62,11 +63,13 @@ To increase your PHP memory limit:
 	*	nginx (both CentOS and Ubuntu): `service nginx restart`
 8.	Try the installation again.
 
-<h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
+### xdebug maximum function nesting level error   {#trouble-php-xdebug}
+
 
 See <a href="{{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
 
-<h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
+### Errors display when you access a PHTML template   {#trouble-php-asptags}
+
 Error text is typically:
 
     Parse error: syntax error, unexpected 'data' (T_STRING)

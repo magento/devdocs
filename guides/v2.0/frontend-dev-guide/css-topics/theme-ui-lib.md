@@ -11,7 +11,8 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
+## What\'s in this topic   {#fedg_using-ui-lib_overview}
+
 
 The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers. It employs a set of mixins for base elements to ease frontend theme development and customization. 
 

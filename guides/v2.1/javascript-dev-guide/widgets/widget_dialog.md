@@ -37,7 +37,8 @@ Magento customized Dialog widget has default <a href="http://api.jqueryui.com/di
 
 Description of each option as follows below location.
 
-<h3 id="d_autoPosition"><code>autoPosition</code></h3>
+### `autoPosition`   {#d_autoPosition}
+
 Specifies if the [`position`] option is used for calculating the drop-down offset. 
 
 If set to `false` (default value), then `position` rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the `position` rules.  

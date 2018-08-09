@@ -13,14 +13,16 @@ redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
  -->
 
-<h2 id="cli-over">Naming guideline overview</h2>
+## Naming guideline overview   {#cli-over}
+
 Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules.
 
 As an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it's also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user's learning curve.
 
 This topic discusses our recommended naming conventions.
 
-<h2 id="cli-name">Command name</h2>
+## Command name   {#cli-name}
+
 A command *name* is a part of the command, which defines behavior of the command on the very high level. In the command it goes right after the command's name.
 For example, in `bin/magento setup:upgrade`, `bin/magento` is the command's name and `setup:upgrade` is the name of the command.
 
@@ -57,7 +59,8 @@ If you have a Magento installation handy, enter the following to display the cur
   <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
 </div>
 
-<h2 id="cli-args">Command options and arguments</h2>
+## Command options and arguments   {#cli-args}
+
 Options and arguments follow the command name and modify the command's behavior.
 
 For example, in `bin/magento module:disable --force Magento_Catalog`, the `--force` *option* and the `Magento_Catalog` *argument* bypass the restrictions and specify a particular {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to be disabled; in this case, regardless of dependencies on other modules.
@@ -134,7 +137,8 @@ Example:
 	magento module:disable --force=1 Magento_Catalog
 	magento module:disable -f=yes Magento_Catalog
 
-<h2 id="cli-collision">Recommendations to avoid naming collisions</h2>
+## Recommendations to avoid naming collisions   {#cli-collision}
+
 To avoid naming your command the same as another command, we recommend:
 
 *	Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.

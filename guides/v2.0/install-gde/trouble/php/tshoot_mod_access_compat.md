@@ -17,7 +17,8 @@ functional_areas:
 ---
 
 
-<h2 id="trouble-install-depend">503 (Service Unavailable) errors accessing Magento software in a web browser</h2>
+## 503 (Service Unavailable) errors accessing Magento software in a web browser   {#trouble-install-depend}
+
 
 #### Symptoms
 

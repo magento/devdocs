@@ -12,7 +12,8 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
+## What\'s in this topic   {#layout_theme_how-to_overview}
+
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
@@ -37,7 +38,8 @@ The high-level steps required to add a new theme in the Magento system are the f
 3. Create directories for CSS, JavaScript, images, and fonts.
 4. Configure your theme in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel.
 
-<h2 id="theme-gen-read">Recommended reading</h2>
+## Recommended reading   {#theme-gen-read}
+
 
 * <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
 * <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a>

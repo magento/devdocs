@@ -15,7 +15,8 @@ This topic features a step-by-step illustration of how to change the number of p
 
 The described flow is applicable only for themes that <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the out-of-the-box Blank or Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-<h2 id="rwd_practice">Changing the number of products in a row</h2>
+## Changing the number of products in a row   {#rwd_practice}
+
 
 OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} page, so that each product takes more space.
 

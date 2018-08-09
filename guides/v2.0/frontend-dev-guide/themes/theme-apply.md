@@ -12,7 +12,8 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="theme-apply-overview">What's in this topic</h2>
+## What\'s in this topic   {#theme-apply-overview}
+
 
 The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 Also, it gives information how to add a theme independent logo for your store.

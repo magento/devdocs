@@ -19,7 +19,8 @@ functional_areas:
   <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+## Before you start your installation   {#instgde-install-cli-prereq}
+
 
 Before you begin, make sure that:
 
@@ -81,7 +82,8 @@ You can run the following commands to find values for some required arguments:
 </div>
 
 
-<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
+## Install the Magento software from the command line   {#instgde-install-cli-magento}
+
 The format of the install command follows:
 
 	magento setup:install --<option>=<value> ... --<option>=<value>
@@ -308,7 +310,8 @@ The following table discusses the meanings of installation option names and valu
 
 {% include install/sens-data.md %}
 
-<h4 id="install-cli-example">Sample localhost installations</h4>
+#### Sample localhost installations   {#install-cli-example}
+
 
 **Example 1**
 

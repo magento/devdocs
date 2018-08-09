@@ -13,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="reds-sess-prereq">Prerequisite</h2>
+## Prerequisite   {#reds-sess-prereq}
+
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
 ## Configure Magento to use Redis for default and page caching {#config-redis-config}

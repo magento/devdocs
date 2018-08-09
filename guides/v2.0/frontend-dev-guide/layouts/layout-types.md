@@ -27,7 +27,8 @@ We also distinguish the third type of layout files, *generic layouts*. They are 
 
 This article gives a comprehensive description of each layout file type.
 
-<h2 id="layout-types-page">Page layout</h2>
+## Page layout   {#layout-types-page}
+
 Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. 
 
 Allowed layout instructions:
@@ -55,14 +56,16 @@ Sample page layout:
 </layout>
 {%endhighlight xml%}
 
-<h3 id="layout-types-page-conv">Page layout files conventional location</h3>
+### Page layout files conventional location   {#layout-types-page-conv}
+
 
 Conventionally page layouts must be located as follows:
 
 * Module page layouts: `<module_dir>/view/frontend/page_layout`
 * Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-<h3 id="layout-types-page-dec">Page layouts declaration</h3>
+### Page layouts declaration   {#layout-types-page-dec}
+
 
 To be able to use a layout for actual page rendering, you need to declare it in `layouts.xml`.
 
@@ -106,11 +109,13 @@ Sample page layout declaration file:
 </page_layouts>
 {%endhighlight xml%}
 
-<h2 id="layout-types-conf">Page configuration</h2>
+## Page configuration   {#layout-types-conf}
+
 
 The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
 
-<h3 id="layout-type-conf-loc">Page configuration file conventional location</h3>
+### Page configuration file conventional location   {#layout-type-conf-loc}
+
 
 Conventionally page configuration files must be located as follows:
 
@@ -120,7 +125,8 @@ Conventionally page configuration files must be located as follows:
 </ul>
 
 
-<h3>Page configuration structure and allowed layout instructions</h3>
+### Page configuration structure and allowed layout instructions
+
 
 The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
@@ -387,11 +393,13 @@ The following table describes the instructions specific for page configuration f
   </tbody>
 </table>
 
-<h2 id="layout-types-gen">Generic layout</h2>
+## Generic layout   {#layout-types-gen}
+
 
 Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. 
 
-<h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
+### Generic layout file conventional location   {#layout-type-gen-loc}
+
 
 Conventionally generic layout files must be located as follows:
 
@@ -401,7 +409,8 @@ Conventionally generic layout files must be located as follows:
 </ul>
 
 
-<h3>Generic layout structure and allowed layout instructions</h3>
+### Generic layout structure and allowed layout instructions
+
 
 The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 

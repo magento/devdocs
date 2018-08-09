@@ -2,7 +2,8 @@
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>.
 
-<h2 id="instgde-install-prereq">Before you start your installation</h2>
+## Before you start your installation   {#instgde-install-prereq}
+
 
 Before you begin, make sure that:
 
@@ -10,17 +11,20 @@ Before you begin, make sure that:
 2.	You completed all prerequisite tasks discussed in <a href="{{ page.baseurl }}/install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 4.	After you log in to the Magento server, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 
-<h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
+### Enabling and disabling modules   {#instgde-install-web-enable-mod}
+
 The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.
 
 {% include install/enable-disable-modules.html %}
 
-<h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
+## Running the Setup Wizard   {#instgde-install-magento-web}
+
 The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
-<h3 id="instgde-install-magento-web-step0">Getting started</h3>
+### Getting started   {#instgde-install-magento-web-step0}
+
 To install the Magento software using the Setup Wizard:
 
 1.	Start a web browser.

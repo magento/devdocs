@@ -40,7 +40,8 @@ After setting up a total of three master databases, use the Magento command line
 
 {% include install/first-steps-cli.html %}
 
-<h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+### Configure the checkout database   {#config-ee-multidb-master-cli-check}
+
 Command syntax:
 
 	magento setup:db-schema:split-quote --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
@@ -53,7 +54,8 @@ The following message displays to confirm a successful setup:
 
 	Migration has been finished successfully!
 
-<h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+### Configure the OMS database   {#config-ee-multidb-master-cli-oms}
+
 Command syntax:
 
 	magento setup:db-schema:split-sales --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"

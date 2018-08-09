@@ -36,7 +36,8 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 ## Install Composer {#instgde-prereq-compose-install}
 {% include install/composer-clone.md %}
 
-<h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+## Clone the Magento repository   {#instgde-prereq-compose-clone}
+
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either a release branch or the `develop` branch:
 
 *	Release branches like `2.1.0` are more stable
@@ -63,7 +64,8 @@ See one of the following section:
 *	<a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a>
 *	<a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a>
 
-<h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
+#### Clone with SSH   {#instgde-prereq-compose-clone-ssh}
+
 
 To clone the Magento GitHub repository using the SSH protocol:
 
@@ -108,7 +110,8 @@ fatal: The remote end hung up unexpectedly</pre>
 
 4.	Continue with <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
-<h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
+#### Clone with HTTPS   {#instgde-prereq-compose-clone-https}
+
 
 To clone the Magento GitHub repository using the HTTPS protocol:
 

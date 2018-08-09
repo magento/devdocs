@@ -53,7 +53,8 @@ See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_pr
 
 
 
-<h3>Custom strings and dictionaries for not default locales</h3>
+### Custom strings and dictionaries for not default locales
+
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
 Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:

@@ -24,7 +24,8 @@ The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %} -->
 
-<h2 id="inst-sample-reset">Prepare to update sample data</h2>
+## Prepare to update sample data   {#inst-sample-reset}
+
 This command enables you to update sample data before you update the Magento application.
 
 To prepare sample data for updating, enter the following command:

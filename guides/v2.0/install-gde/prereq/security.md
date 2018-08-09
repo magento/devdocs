@@ -13,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="install-prereq-selinux">SELinux</h2>
+## SELinux   {#install-prereq-selinux}
+
 <a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -50,7 +51,8 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 	Ubuntu: `setsebool -P apache2_can_network_connect=1`
 
-<h2 id="install-iptables">Opening Ports In Your Firewall</h2>
+## Opening Ports In Your Firewall   {#install-iptables}
+
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
 *	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.

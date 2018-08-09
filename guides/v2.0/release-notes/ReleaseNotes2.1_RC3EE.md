@@ -30,7 +30,8 @@ This Release Candidate is available from `repo.magento.com` if you have a Commer
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+### Highlights
+
 
 Magento Enterprise Edition 2.1 includes several new and exciting features:
 
@@ -46,21 +47,25 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
  
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
-<h4>Security enhancement</h4>
+
+#### Security enhancement
+
 
 <!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has been requested. 
 
 
 
-<h4>Performance enhancements</h4>
+#### Performance enhancements
+
 <!--- 53530-->* {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page performance has significantly improved when categories contain more than 30000 items. 
 
 <!--- 53223-->* Setting the Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
 
 
-<h4>Staging</h4>
+#### Staging
+
 
 
 <!--- 53424 -->  Changing the update start or end time on one {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} no longer overwrites update settings on other stores. Previously, changing the update start or end time on one page would overwrite settings on other stores. 
@@ -71,7 +76,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 
 
-<h4>Google Tag Manager</h4>
+#### Google Tag Manager
+
 
 <!--- 53170-->* The Update Cart Quantity {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} now correctly observes add or remove cart actions. 
 
@@ -79,12 +85,14 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 
 
-<h4>Import/Export</h4>
+#### Import/Export
+
 
 <!--- 54200-->* Magento now successfully imports products with a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
 
 
-<h4>Cache</h4>
+#### Cache
+
 
 <!--- 52923-->* Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
@@ -96,7 +104,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 
 
-<h4>Messages and documentation</h4>
+#### Messages and documentation
+
 <!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
 
 <!--- 53008-->* The Swagger-generated docs for the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
@@ -104,7 +113,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
 
 
-<h4>Payment methods</h4>
+#### Payment methods
+
 
 <!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
 
@@ -113,7 +123,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
 
 
-<h4>Miscellaneous</h4>
+#### Miscellaneous
+
 
 <!--- 51753-->* You can now re-install Magento and use a different Admin email address than you had previously used.
 
@@ -174,7 +185,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54211 DUPLICATE-->
 
 
-<h3>Known issues</h3>
+### Known issues
+
 Magento Commerce 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
@@ -203,7 +215,8 @@ Magento Commerce 2.1, Release Candidate 3 includes the following known issues:
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
 
-<h3>Technology stack</h3>
+### Technology stack
+
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
