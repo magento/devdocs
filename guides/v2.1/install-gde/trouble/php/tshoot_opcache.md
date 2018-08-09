@@ -20,9 +20,9 @@ In Magento 2.1 or later, when creating a new product in the Magento Admin, the f
 	Modifier/AdvancedInventory.php on line 87
 
 ### Detail
-Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
+Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73) method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-If you enabled the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} OPcache (which we recommend), this error displays because by default, the OPcache setting [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"} is disabled.
+If you enabled the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} OPcache (which we recommend), this error displays because by default, the OPcache setting [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments) is disabled.
 
 ### Workaround
 To solve the issue, locate your OPcache configuration settings and enable `opcache.save_comments` as follows:
@@ -36,7 +36,7 @@ Use the following guidelines to find it:
 
 *	Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`. 
+	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
 	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 

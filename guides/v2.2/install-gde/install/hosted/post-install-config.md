@@ -26,15 +26,15 @@ Immediately after finishing your Magento installation, set up a *crontab* for th
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
-*	We strongly recommend <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
-*	Make sure the <a href="{{ page.baseurl }}/config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
-*	Take precautions against cross-site scripting (XSS) by <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-security.html">securing your templates</a>
+*	We strongly recommend [changing the default Admin URL]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
+*	Make sure the [`X-Frame-Option` HTTP header]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) is set properly.
+*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html)
 <!-- Set up roles and restricted users (Admin) -->
 
 ## Enable Apache server rewrites {#post-install-rewrites}
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
-<a href="{{ page.baseurl }}/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+[Section on Apache server rewrites]({{ page.baseurl }}/install-gde/prereq/apache.html#apache-help-rewrite)
 
 ## Caching in a multi-webnode environment {#config-redis}
 If you have multiple webnodes, you *cannot* use Magento's default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode's file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.
@@ -50,9 +50,9 @@ The UNIX `logrotate` utility enables you to administer systems that generate lar
 
 For more information, see one of the following:
 
-*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples){:target="_blank"}
-*	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app){:target="_blank"}
-*	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page){:target="_blank"}
+*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples)
+*	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
+*	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
 
 #### Set up iptables rules to enable various Magento services to communicate.
 
@@ -60,8 +60,8 @@ Whether you have one server or many, you must open ports in the firewall to enab
 
 More information:
 
-*	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.
-*	CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.
+*	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
+*	CentOS: [CentOS reference page](http://wiki.centos.org/HowTos/Network/IPTables">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html).
 
 #### Security Enhanced Linux (SELinux) rules
 
@@ -69,20 +69,20 @@ We don't recommend whether or not you use SELinux at all; however, if you use it
 
 More information:
 
-*	Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html" target="_blank">Debian handbook</a>
-*	CentOS: <a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a>
+*	Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html)
+*	CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 
 #### Set up an e-mail server
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)
-*	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html))
+*	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 ## Settings for {{site.data.var.ee}} only {#post-install-ee}
 
 You can configure the following only if you use {{site.data.var.ee}}:
 
-*	<a href="{{ page.baseurl }}/config-guide/elasticsearch/es-overview.html">Elasticsearch</a>
-*	<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message queues</a>
+*	[Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
+*	[Split databases for checkout, order management, and other Magento database tables]({{ page.baseurl }}/config-guide/multi-master/multi-master.html)
+*	[Message queues]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
