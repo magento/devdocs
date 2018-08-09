@@ -119,6 +119,7 @@ The following is more advanced and is provided for your information only:
 {% endhighlight %}
 
 ## Performance improvement
+
 To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern `search\_tmp\_%` that are used for {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search.
 
 To do this, add the following line to your `my.cnf` file on your slave instances:

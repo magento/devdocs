@@ -18,9 +18,11 @@ functional_areas:
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites {#instgde-cli-subcommands-enable-disable-prereq}
+
 This command has no prerequisites.
 
 ## Module enable, disable {#instgde-cli-subcommands-enable-disable}
+
 To enable or disable available modules, use the following command:
 
 	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
@@ -48,6 +50,7 @@ For example, to disable the Weee module, enter:
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 
 ## Update the database {#instgde-cli-subcommands-enable-update}
+
 If you enabled one or more modules, run the following command to update the database:
 
 	magento setup:upgrade

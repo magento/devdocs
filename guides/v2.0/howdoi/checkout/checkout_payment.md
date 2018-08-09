@@ -157,6 +157,7 @@ If your payment method requires credit cards information, you might use the Mage
 </table>
 
 ### Access the system config data {#system-config-data}
+
 Your payment method might need to get data that cannot be defined in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} configuration, JS components or templates directly, for example, data from the Magento system config.
 This configuration is stored in the `window.checkoutConfig` variable that is defined in root checkout template.
 
@@ -195,9 +196,11 @@ A sample DI configuration file of a custom module `<your_module_dir>/etc/fronten
 ```
 
 ### Add other payment-related features {#payment-features}
+
 You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
 
 ## Step 2: Create the .js component that registers the renderer {#register}
+
 In your custom module directory create the `.js` UI component that registers the payment method renderer in the renderers list. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<Magento_module_dir>/view/frontend/web/js/view/payment/` directory.
 
 The file content must be similar to the following:

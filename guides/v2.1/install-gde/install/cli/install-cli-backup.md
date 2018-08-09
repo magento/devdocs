@@ -14,6 +14,7 @@ functional_areas:
 
 
 ## Overview of backup {#instgde-cli-uninst-back-over}
+
 This command enables you to back up:
 
 *	The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)
@@ -32,6 +33,7 @@ In addition to the command arguments discussed here, see <a href="{{ page.baseur
 {% include install/ulimit.md %}
 
 ## Backing up {#instgde-cli-uninst-back}
+
 Command usage:
 
 	magento setup:backup [--code] [--media] [--db]
@@ -92,6 +94,7 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 ## Roll back {#instgde-cli-uninst-roll}
+
 This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.
 
 To find the name of your backups, enter:

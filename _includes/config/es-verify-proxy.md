@@ -1,12 +1,14 @@
 <div markdown="1">
 
 ## Verify communication is secure {#es-ws-secure-verify}
+
 This section discusses two ways to verify that HTTP Basic authentication is working:
 
 *	Using a `curl` command to verify you must enter a username and password to get cluster status
 *	Configuring HTTP Basic authentication in the Magento Admin
 
 ### Use a `curl` command to verify cluster status
+
 Enter the following command:
 
 	curl -i http://<hostname, ip, or localhost>:<proxy port>/_cluster/health
@@ -52,6 +54,7 @@ This time the command succeeds with a message similar to the following:
 
 
 ### Configure HTTP Basic authentication in the Magento Admin
+
 Perform the same tasks as discussed in [Configure Magento to use Elasticsearch](#elastic-m2-configure) *except* click **Yes** from the **Enable Elasticsearch HTTP Auth** list and enter your username and password in the provided fields.
 
 Click **Test Connection** to make sure it works and then click **Save Config**.

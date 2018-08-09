@@ -209,12 +209,14 @@ We do not support PHP 5.5.x or 7.0.5.
 
 
 ## Installation and upgrade instructions
+
 You can install Magento Community Edition 2.1 Release Candidate 3 (RC3) from either Github or by using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
 {% include install/releasenotes/ce_install_21.md %}
 
 ### Upgrade an existing installation from the GitHub repository
+
 Developers who contribute to the CE codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the {{site.data.var.ce}} GitHub repository.
 
 1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -222,8 +224,10 @@ Developers who contribute to the CE codebase can <a href="{{ page.baseurl }}/com
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Other upgrades
+
 Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).
 
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

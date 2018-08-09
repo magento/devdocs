@@ -30,7 +30,9 @@ The following Release Notes are available:
 
 
 ## Test your upgrade locally
+
 To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
 ## Magento Enterprise Edition Release Notes
+
 For information about Magento Commerce, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html).

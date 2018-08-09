@@ -22,6 +22,7 @@ functional_areas:
 You can create a {{site.data.var.ece}} project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.
 
 ## Prerequisites for importing code {#prereqs}
+
 Before you begin, do the following:
 
 -   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/project/project-integrate-github.html).
@@ -32,6 +33,7 @@ Before you begin, do the following:
     -    [Database credentials](#db-creds)
 
 ### SSH access to cloud environments {#ssh}
+
 To transfer the database dump and files to {{site.data.var.ece}}, you must know the SSH access link. You can locate the SSH access link using the [`magento-cloud`] CLI tool({{ page.baseurl }}/cloud/reference/cli-ref-topic.html):
 
   magento-cloud environment:ssh --pipe
@@ -41,6 +43,7 @@ You must enter all {{site.data.var.ece}} commands on the machine on which your C
 </div>
 
 ### Database credentials {#db-creds}
+
 You need your {{site.data.var.ece}} database name and credentials so that you can import your {{site.data.var.ee}} data. You can find the name and credentials for your {{site.data.var.ece}} database in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable.
 
 To find {{site.data.var.ece}} database access information:
@@ -71,6 +74,7 @@ To find {{site.data.var.ece}} database access information:
 In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 
 ### Cloud unsecure base URL
+
 After you import the {{site.data.var.ee}} database into {{site.data.var.ece}}, you must change the base URL so you can access the Magento Admin and storefront.
 
 Use the magento-cloud CLI tool to locate the base URL:
@@ -78,6 +82,7 @@ Use the magento-cloud CLI tool to locate the base URL:
     magento-cloud url
 
 ## Import workflow for existing code {#import}
+
 The complete workflow for importing existing code includes the following steps:
 
 1.  If you do not have a project, create a new [project from a template](#cloud-import-proj). This new project has files and directories specific to {{site.data.var.ece}}.

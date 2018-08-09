@@ -19,6 +19,7 @@ functional_areas:
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}}  version 2.1.7, `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6.
 
 ## Changes and enhancements in this release
+
 In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6 on Magento Commerce 2.1.7, we provide the following improvements:
 
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
@@ -54,4 +55,5 @@ We've reverted the changes to image resizing that we introduced in 2.1.6. Unfort
 To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
 ### Magento Commerce Release Notes
+
 This {{site.data.var.ece}}  release corresponds to Magento Commerce 2.1.7.

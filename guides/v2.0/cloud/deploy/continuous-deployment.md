@@ -52,6 +52,7 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 
 #### Related topics
+
 * [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
 *	[Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html)
 * [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)

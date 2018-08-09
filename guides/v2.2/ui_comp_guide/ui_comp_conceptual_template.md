@@ -16,6 +16,7 @@ github_link: ui_comp_guide/ui_comp_conceptual_template.md
 High-level, one or two sentences, describing the functionality.
 
 ## Common Usage (if relevant)
+
 Include one or two examples of how this feature or functionality is used.
 
 ## Implementation Details
@@ -25,6 +26,7 @@ This topic describes in more detail WHAT this feature is, and provides the reade
 When writing a conceptual topic, pretend that you are describing this feature to a new developer who just joined your team, and who will be working with you to further develop it.
 
 ## Workflow Diagrams (if relevant)
+
 Add any diagrams or text that explains core workflows.
 
 
@@ -34,6 +36,7 @@ Add any diagrams or text that explains core workflows.
 
 
 ### Basic Markdown Syntax
+
 Below are some basic examples of what you can do with {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
 #### Text Effects
@@ -50,6 +53,7 @@ By indenting your content by at least 4 spaces, you can create a code block.
 For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_self"}.
 
 #### Lists
+
 Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.
 
 **Bulleted List:**
@@ -65,6 +69,7 @@ Lists are useful for organizing and displaying related items. Below are examples
 3.	Third Step
 
 #### Tables
+
 Tables can be useful for displaying different kinds of data in an organized way.
 
 *Example:*

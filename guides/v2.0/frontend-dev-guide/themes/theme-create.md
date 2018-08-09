@@ -29,6 +29,7 @@ This topic discusses how to create the files that make up a theme, how to add a 
 2. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
 
 ## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
+
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
@@ -269,9 +270,11 @@ To learn more about theme layouts, refer to the <a href="{{ page.baseurl }}/fron
 ## What's next {#next}
 
 ### Theme registration {#register_theme}
+
 Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
 ### Applying a theme
+
 For information on how to apply the theme for the storefront, see the [Apply and configure a theme in Admin]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html) topic.
 
 ## See also

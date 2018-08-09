@@ -131,6 +131,7 @@ function () {
 {% endhighlight %}
 
 ### Semicolons
+
 Always put semicolons as statement terminators.
 
 The following code examples show the dangers of missing semicolons:

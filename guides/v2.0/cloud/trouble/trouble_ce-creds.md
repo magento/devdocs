@@ -13,9 +13,11 @@ functional_areas:
 ---
 
 ## Incorrect credentials
+
 This topic discusses how to resolve issues with incorrect credentials in your `auth.json`. You might have entered Magento Community Edition (CE) credentials or shared keys for Magento Enterprise Edition (EE).
 
 ### Symptom
+
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
 	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
@@ -28,11 +30,13 @@ To see the error log:
 	![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
+
 To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
 Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
 
 #### Get started
+
 To get started:
 
 1.	Log in to the machine on which your SSH keys are located.
@@ -50,6 +54,7 @@ To get started:
 	For example if your project is named Magento 2, `cd magento-2`
 
 #### Update `auth.json` and redeploy the environment
+
 To resolve the issue with credentials:
 
 1.	If you haven't done so already, change to the project root directory.
@@ -141,6 +146,7 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 {% endcollapsible %}
 
 #### Verify the deployment
+
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
 <div class="bs-callout bs-callout-warning">
@@ -148,6 +154,7 @@ To verify the deployment was successful, enter one of the URLs displayed under `
 </div>
 
 #### Related topics
+
 *	[Manage your projects]({{ page.baseurl }}/cloud/project/projects.html)
 *	[Manage your environments]({{ page.baseurl }}/cloud/env/environments.html)
 *	[Tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)

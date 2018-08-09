@@ -9,6 +9,7 @@ github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md
 ---
 
 ## Overview
+
 The following section covers the configuration flow of UI components within the Magento system. Before a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} declaration, all the way to the merging of module-specific options.
 
 When the server generates a page response, the configuration of these components in the [`.xml` declaration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is then modified by the [`.php` modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), and then finally this combined configuration is packed into JSON format and added into the HTTP response body.

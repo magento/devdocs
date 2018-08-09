@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Step 3. Data Option
+
 This step displays if you're uninstalling extensions.
 
 After backing up, you have the choice of removing data from the Magento 2 database.

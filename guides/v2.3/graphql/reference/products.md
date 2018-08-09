@@ -196,6 +196,7 @@ Attribute | Data type | Description
 `website_ids` | [Int] | An array of website IDs in which the product is available
 
 ### ProductPrices object {#ProductPrices}
+
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description

@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Intended audience {#integrator-aud}
+
 The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and [choose another starting point]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 ## Prerequisites
@@ -25,6 +26,7 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 {% include install/get-software_zip.md %}
 
 ## Transfer the Magento archive to your server {#zip-transfer}
+
 To transfer the Magento software archive to your server:
 
 1.	Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.
@@ -74,6 +76,7 @@ To transfer the Magento software archive to your server:
 8.	Continue with the next section.
 
 ## Extract the software on your server {#zip-extract}
+
 Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) and extract the software package in the web server docroot using one of the following commands:
 
 <table>
@@ -102,6 +105,7 @@ The Magento software extracts to the directory you created. After the file has e
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)

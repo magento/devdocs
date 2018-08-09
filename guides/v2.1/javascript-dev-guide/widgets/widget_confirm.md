@@ -76,6 +76,7 @@ actions: {
 ```
 
 ### autoOpen {#confirm_autoopen}
+
 Automatically open the confirmation window when the widget is initialized.
 
 **Type**: Boolean
@@ -83,6 +84,7 @@ Automatically open the confirmation window when the widget is initialized.
 **Default value**: `false`
 
 ### clickableOverlay {#confirm_clickableOverlay}
+
 Close the confirmation window when a user clicks on the overlay.
 
 **Type**: Boolean
@@ -112,6 +114,7 @@ The title of the confirmation window.
 
 
 ## Events {#confirm_events}
+
 The confirmation widget implements the following events:
 
 - `confirm` callback: called when the confirmation button is clicked.
@@ -119,6 +122,7 @@ The confirmation widget implements the following events:
 - `always` callback.
 
 ## Keyboard navigation {#confirm_key_navigation}
+
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
 

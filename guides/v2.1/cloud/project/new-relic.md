@@ -24,6 +24,7 @@ Your {{site.data.var.ece}} account includes the agent software for New Relic; yo
 By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
 ## Add New Relic extension to your project
+
 You must list the New relic extension in the `.magento.app.yaml` file:
 
 ```
@@ -33,6 +34,7 @@ runtime:
 ```
 
 ## Add New Relic APM to an environment
+
 The {{site.data.var.ece}} plans to support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
 
 {% include note.html type="info" content="If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. 
@@ -71,6 +73,7 @@ If you have more than three active environments using the same New Relic license
 {% include note.html type="warning" content="If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit." %}
 
 ## Investigate performance
+
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
 Using the New Relic dashboard, you can immediately track and find:

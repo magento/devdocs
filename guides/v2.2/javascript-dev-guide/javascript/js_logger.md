@@ -37,6 +37,7 @@ Adds a function that is used to define whether newly created entries should be p
 `criteria: Function`: A function that accepts instance of the `LogEntry` and returns a Boolean value.
 
 ### removeDisplayCriteria(criteria)
+
 Removes the previously added display criteria.
 
 **Parameters**
@@ -131,18 +132,21 @@ The `LogOutputHandler` class responsible for the output of entries passed by `Lo
 `formatter: LogFormatter`: An instance of `LogFormatter` that will be used to create a display message for the  provided entries.
 
 ### show(entry)
+
 Displays the provided entry.
 
 **Parameters**
 `entry: LogEntry`: The entry to be displayed.
 
 ### dump(entries)
+
 Displays multiple entries at once.
 
 **Parameters**
 `entries: Array<LogEntry>`: An array of the `LogEntry` instances to be displayed.
 
 ## LogFormatter
+
 The `LogFormatter` class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by `LogOutputHandler`. It also verifies if the entry's message is set in the template:
 
 ```javascript
@@ -244,6 +248,7 @@ An instance of the `Logger` class that is configured to display messages in the 
  - `messages: messagePool`: Reference to `messagePool` that allows working with a list of predefined messages.
 
 ### Usages in Magento
+
 By default, Magento uses `consoleLogger` to display logs in browser console.
 
 Example:

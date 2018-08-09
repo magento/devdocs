@@ -32,6 +32,7 @@ To create a custom {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Adm
 Each step is described further.
 
 ## Create a theme directory {#create_dir}
+
 In the `app/design/adminhtml` directory create a new `<Vendor>/<admin_theme>` directory.
 
 ## Add a declaration `theme.xml` {#declare_theme}
@@ -54,6 +55,7 @@ If you change the theme title or parent theme information in `theme.xml` after a
 
 
 ## Add `registration.php` {#add_registry}
+
 In your theme directory, create a `registration.php` file.
 In this file, add the following code, having replaced placeholders with your theme information:
 
@@ -71,6 +73,7 @@ In this file, add the following code, having replaced placeholders with your the
 {%endhighlight%}
 
 ## Optionally add `composer.json` {#make_composer}
+
 See the [Make your theme a Composer package (optional)]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer)
 
 

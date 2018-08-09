@@ -8,6 +8,7 @@ github_link: ui_comp_guide/components/ui-column.md
 ---
 
 ## Overview
+
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 ## Configuration

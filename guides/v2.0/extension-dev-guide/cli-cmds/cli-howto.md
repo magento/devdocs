@@ -18,6 +18,7 @@ Magento enables your component to add commands to our Symfony-like command-line 
 {% include install/new-cli-intro.html %}
 
 ### Prerequisites
+
 Before you begin, make sure you understand the following:
 
 *	All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.

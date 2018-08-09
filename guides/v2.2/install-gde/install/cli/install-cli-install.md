@@ -47,6 +47,7 @@ The installer is designed to be run multiple times if necessary so you can:
 {% include install/fully-secure.md %}
 
 ## Installer help commands {#instgde-cli-help-cmds}
+
 You can run the following commands to find values for some required arguments:
 
 <table>
@@ -75,6 +76,7 @@ If an error displays when you run these commands, make sure you updated installa
 
 
 ## Install the Magento software from the command line {#instgde-install-cli-magento}
+
 The format of the install command follows:
 
 	magento setup:install --<option>=<value> ... --<option>=<value>
@@ -396,6 +398,7 @@ Messages similar to the following display to indicate a successful installation:
 The command must be entered either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 #### Next step
+
 *	If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 	This type of setup is typical for shared hosting.

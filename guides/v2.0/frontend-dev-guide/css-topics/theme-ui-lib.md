@@ -19,6 +19,7 @@ The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library
 This topic describes how the library is organized, and how to use it. 
 
 ## Components provided by the UI library {#library_elements}
+
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 
 *	actions-toolbar

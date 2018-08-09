@@ -10,6 +10,7 @@ functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
 ## Simplest way to extend parent styles {#simple_extend} 
@@ -93,6 +94,7 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 </ol>
 
 ### Override component's styles {#structured_override}
+
 To override the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>

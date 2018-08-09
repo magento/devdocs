@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ### Symptom
+
 When you attempt to roll back using the command line, the following error displays:
 
 	Segmentation fault
@@ -21,9 +22,11 @@ When you attempt to roll back using the command line, the following error displa
 As a result, the rollback does not complete.
 
 ### Details
+
 In some cases, a very long query string causes the user's allocated memory space to run out of memory because of too many recursive calls. We're aware of this issue and are working on a solution.
 
 ### Workaround
+
 Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank">`ulimit`</a> for the Magento file system user to a value of 65536 or more.
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.

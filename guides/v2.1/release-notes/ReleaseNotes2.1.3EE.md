@@ -63,6 +63,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 
 ## Functional fixes and enhancements
+
 We address the following functional fixes and enhancements in this release.
 
 
@@ -478,6 +479,7 @@ We've improved the performance of these tasks:
 
 
 ## Breaking changes
+
 We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} configuration.
 
 
@@ -614,6 +616,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
 
@@ -625,11 +628,13 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 
 

@@ -36,6 +36,7 @@ A *language package* is basically a collection of translation dictionaries for a
 </div>
 
 ### Benefits
+
 Benefits include:
 
 *	Two types of language packages:
@@ -52,12 +53,14 @@ Benefits include:
 Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
 
 ### Changes in Magento 2
+
 Changes made:
 
 *	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 *	The phrases for translations are enabled in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 
 ### More information
+
 See one of the following sections for more information:
 
 * <a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>

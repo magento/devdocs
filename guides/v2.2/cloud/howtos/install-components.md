@@ -25,6 +25,7 @@ These instructions walk through extension installation purchased from Magento Ma
 We also include instructions for [updating extensions](#update).
 
 ## Create a branch for adding or updating the extension {#getstarted}
+
 We recommend using a branch for adding or updating, configuring, and testing your extension.
 
 {% include cloud/cli-get-started.md %}
@@ -39,11 +40,13 @@ We recommend using a branch for adding or updating, configuring, and testing you
 1.  [Verify](#verify) the extension installed properly.
 
 ### Step 1: Get the extension's Composer name and version {#compose}
+
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#update).
 
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
+
 When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
 
 To update `composer.json`:
@@ -78,6 +81,7 @@ If there are errors, see [extension deployment failure]({{ page.baseurl }}/cloud
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
 
 ### Step 3: Verify the extension {#verify}
+
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.  Open a terminal.
@@ -93,9 +97,11 @@ To verify the extension installed properly, you can check its functionality in t
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
 ## Manage extensions {#manage}
+
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
+
 To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
 
 Trying to enable and disable extensions not following this method can lead to permissions and other issues.
@@ -130,9 +136,11 @@ Trying to enable and disable extensions not following this method can lead to pe
 1.  [Complete deployment]({{ page.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
+
 You will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
 
 ## Upgrade an extension {#update}
+
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
 
 * Know the extension's Composer name and version

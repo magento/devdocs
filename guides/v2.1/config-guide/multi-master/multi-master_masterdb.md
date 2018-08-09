@@ -15,6 +15,7 @@ functional_areas:
 ---
 
 ## Overview of master databases {#config-ee-multidb-master-over}
+
 This topic discusses how to get started with the split database solution by:
 
 1.	Installing {{site.data.var.ee}} with a single master database (named `magento`)
@@ -27,6 +28,7 @@ This topic discusses how to get started with the split database solution by:
 </div>
 
 ## Install the {{site.data.var.ee}} software {#config-ee-multidb-master-install}
+
 You can enable split databases at any time after you install the {{site.data.var.ee}} software; in other words, you can add split databases to a {{site.data.var.ee}} system that already has checkout and order data. Use the instructions in the {{site.data.var.ee}} README or the <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">installation guide</a> to install the {{site.data.var.ee}} software using a single master database.
 
 {% include config/split-db.md %}

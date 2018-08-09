@@ -14,6 +14,7 @@ Response Validator is a component of the Magento payment provider gateway that p
 Response Validator returns a Result object, containing validation result as Boolean value and errors description as a list of [Phrase]({{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php).
 
 ## Interfaces
+
 Response Validator must implement [`Magento\Payment\Gateway\Validator\ValidatorInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Validator/ValidatorInterface.php)
 
 Result class must implement [`Magento\Payment\Gateway\Validator\ResultInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Validator/ResultInterface.php)

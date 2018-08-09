@@ -148,6 +148,7 @@ At the end of the `if` statement for PURGE requests in the `vcl_recv` subroutine
 
 ``` javascript
 # static files are cacheable. remove SSL flag and cookie
+
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
   unset req.http.Https;
   unset req.http./* {{ ssl_offloaded_header }} */;
@@ -161,6 +162,7 @@ The updated `if` block should look like the following:
 ``` javascript
 # validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
+
 if (beresp.ttl > 0s && (bereq.method == "GET" || bereq.method == "HEAD")) {
   unset beresp.http.set-cookie;
 if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(\?|$)") {

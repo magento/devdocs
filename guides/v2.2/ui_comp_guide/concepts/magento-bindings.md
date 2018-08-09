@@ -7,6 +7,7 @@ github_link: ui_comp_guide/concepts/magento-bindings.md
 ---
 
 ## Overview
+
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
 ### Knockout syntax

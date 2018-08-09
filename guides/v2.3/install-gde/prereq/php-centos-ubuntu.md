@@ -29,6 +29,7 @@ If you must install both Apache and PHP, <a href="{{page.baseurl}}/install-gde/p
 The following sections give you all the info you need to install PHP for CentOS.
 
 ### Verify PHP is installed {#centos-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
 
     PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
@@ -45,6 +46,7 @@ If PHP is *not* installed, see the [PHP 7.1 on CentOS](#php-centos-71) section.
 
 
 ### CentOS repositories {#centos-php-repos}
+
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="&#95;blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
 We're not aware that you can install PHP 7.1 or 7.2 from a CentOS-recommended repository. Therefore, you must consider the following:
@@ -63,6 +65,7 @@ Magento does <em>not</em> officially recommend using the IUS repository. We disc
 </div>
 
 ### PHP 7.1 on CentOS {#php-centos-71}
+
 There is more than one way to install PHP 7.1 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 To install PHP 7.1 on CentOS 6 or 7:
@@ -171,6 +174,7 @@ To install PHP 7.1 on CentOS 6 or 7:
 The following sections give you all the info you need to install PHP for Ubuntu.
 
 ### Verify PHP is installed {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
 
     PHP 7.1.7-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:07:54) ( NTS )

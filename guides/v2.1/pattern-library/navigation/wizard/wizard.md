@@ -57,6 +57,7 @@ These labels are optional. Although long labels are not recommended, it is possi
 This should always be in the format "Step #: Step Label".
 
 ## Style
+
 Refer to below for basic styling. The special cases of styling can be found under variations.
 
 ![](img/wizard-pattern-styles.jpg)

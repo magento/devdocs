@@ -22,11 +22,13 @@ functional_areas:
 All environments for your project are read-only, requiring all work to be completed on your local environment and pushed to cloud environments. To start developing Magento, you need a configured local developer workspace, cloned {{site.data.var.ece}} code from your Git branch, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local system.
 
 ## Project user account {#account}
+
 Depending on the [Project Owner]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html), you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's {{site.data.var.ece}} account. The account includes all source code and deployment environments.
 
 After you receive an invitation, you can complete tasks to create your local, pull code, and deploy your store.
 
 ## Helpful knowledge {#knowledge}
+
 We highly recommend having experience with the following technologies and methodologies:
 
 * Magento [technology stack]({{ page.baseurl }}/architecture/tech-stack.html)
@@ -36,6 +38,7 @@ We highly recommend having experience with the following technologies and method
 * [Galera Cluster](http://galeracluster.com/){:target="\_blank"} for databases, used in Staging and Production (with triple redundancy failover in Production)
 
 ## Gather credentials {#credentials}
+
 Prior to setting up your workspace, you may want to gather the following credentials and accounts:
 
 * **Magento Access Key**: Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 code repo (repo.magento.com), and any other Git services like GitHub and 3rd party accounts needed for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. To generate a key, contact the Project Owner to [Generate Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
@@ -43,6 +46,7 @@ Prior to setting up your workspace, you may want to gather the following credent
 * **Magento Encryption Key**: When importing an existing Magento system only, you will need to capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]({{ page.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html)
 
 ## Create a local environment {#local}
+
 For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to a Integration environment for further testing and deployment to Staging and Production.
 
 We recommend adding a virtual machine (VM) or Docker container and installing {{site.data.var.ee}}. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.

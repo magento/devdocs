@@ -106,6 +106,7 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}/install-gde/prereq/my
 <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics
+
 *	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>

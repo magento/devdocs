@@ -12,6 +12,7 @@ redirect_from:
 ---
 
 ## Overview
+
 The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is <a href="{{ site.mage2000url }}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
@@ -67,6 +68,7 @@ The text that is displayed under the loader image. <br>
 </ul>
 
 ## Events
+
 Loader is subscribed to the following events:
 <ul>
 <li><a href="#l_processStart">processStart</a></li>

@@ -23,6 +23,7 @@ functional_areas:
 Each module that is to be a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 
 ## Edit the <code>queue.xml</code> file
+
 The `queue.xml` file can contain the following elements:
 
 + publisher
@@ -163,6 +164,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 {% endhighlight %}
 
 #### Related Topics
+
 *	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
 *	<a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues</a>
 *	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

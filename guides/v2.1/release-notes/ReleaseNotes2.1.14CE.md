@@ -20,9 +20,11 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
+
 Magento 2.1.14 contains 38 security fixes and enhancements.  The enhancements help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
 ## Fixed issues
+
 In addition to security enhancements, this release contains the following functional fixes. 
 
 
@@ -181,6 +183,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ## Community contributions
+
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 ### Individual contributor contributions
@@ -431,6 +434,7 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions,  bug reports and code contributions. 
 
 

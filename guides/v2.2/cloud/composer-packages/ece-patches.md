@@ -38,6 +38,7 @@ We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8
 ## v102.0.1
 
 ### New features
+
 Implemented version-based patching. Now the package is compatible with {{site.data.var.ece}} 2.2.0 and higher.
 
 ### Fixed issues
@@ -48,4 +49,5 @@ Implemented version-based patching. Now the package is compatible with {{site.da
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 
 ### Initial release
+
 Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.

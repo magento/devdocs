@@ -11,6 +11,7 @@ functional_areas:
 ---
 
 ## REST Schema Endpoint Format
+
 To specify one or more services:
 
 `http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`

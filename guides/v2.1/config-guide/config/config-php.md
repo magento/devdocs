@@ -100,6 +100,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
 ## Environmental configuration {#config-php-contents-env-php}
+
 The following table provides details about each `env.php` segment and its structure.
 
 <table>

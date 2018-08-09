@@ -99,6 +99,7 @@ interface AdapterInterface
 
 ## How to Run the Tests {#howto}
 ### Prerequisites {#prereq}
+
 1. Install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Soap {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
@@ -109,6 +110,7 @@ interface AdapterInterface
 Now you are ready to run the tests.
 
 ### Running the Tests {#running}
+
 1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`.
 
 	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.

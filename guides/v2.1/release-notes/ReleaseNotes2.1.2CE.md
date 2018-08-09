@@ -33,6 +33,7 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 <i>These new interfaces will not break any existing customizations or extensions.</i>  See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning. 
 
 ## Security enhancements
+
 This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-2010-and-212-security-update" target="_blank">Magento Security Center</a>.
@@ -109,6 +110,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 ## Functional fixes and enhancements
+
 We address the following functional issues in this release.
 
 
@@ -236,6 +238,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
@@ -250,6 +253,7 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

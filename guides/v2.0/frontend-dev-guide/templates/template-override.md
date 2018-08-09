@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## What's in this topic
+
 This topic discusses the main concepts of how default templates work in the Magento application. 
 
 ## How templates are initiated   {#template-layout}

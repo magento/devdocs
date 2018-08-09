@@ -62,6 +62,7 @@ When OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.
 </div>
 
 ## What's in this chapter {#css_topics}
+
 Other topics of this chapter describe the following:
 
 * <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. 

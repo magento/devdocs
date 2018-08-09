@@ -53,6 +53,7 @@ See also <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninsta
 {% include install/fully-secure.md %}
 
 ## Installer help commands {#instgde-cli-help-cmds}
+
 You can run the following commands to find values for some required arguments:
 
 <table>
@@ -401,6 +402,7 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
+
 *	If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 	This type of setup is typical for shared hosting.

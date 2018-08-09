@@ -27,6 +27,7 @@ functional_areas:
 FTP is a way to transfer files from your computer to your managed server. To transfer the Magento archive, you need an FTP account that has access to the managed server's `public_html` directory. You might already have an account. If not, consult your shared hosting provider's documentation or technical support for more information.
 
 ### Transfer the Magento archive to your hosted system
+
 To transfer the Magento archive:
 
 1.	Start your FTP client software.

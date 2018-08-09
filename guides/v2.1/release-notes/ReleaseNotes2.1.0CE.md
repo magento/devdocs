@@ -23,6 +23,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 
 ### Highlights
+
 Magento Open Source 2.1.0 includes several new and exciting features:
 
 
@@ -33,6 +34,7 @@ Magento Open Source 2.1.0 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content.
 
 ### Security enhancements
+
 This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
@@ -1089,6 +1091,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 * PHP 5.6
@@ -1111,6 +1114,7 @@ You can install Magento Open Source 2.1.0 (General Availability) release either 
 
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

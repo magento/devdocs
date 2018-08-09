@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Resolve component dependency conflicts
+
 We suggest you try the following solutions in the order shown:
 
 *	[Conflicting dependencies](#trouble-depend-conflict)
@@ -8,6 +9,7 @@ We suggest you try the following solutions in the order shown:
 *	[The Component Dependency Check status never changes](#trouble-depend-state)
 
 ### Conflicting dependencies {#trouble-depend-conflict}
+
 The message `We found conflicting component dependencies` displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.
 
 Following is a sample failure message:
@@ -29,6 +31,7 @@ In the preceding example, the installed package `magento/sample-data version 0.7
 Edit `composer.json` to make any of these changes and try the readiness check again.
 
 ### File system permissions issues {#trouble-depend-permission}
+
 If the Magento file system owner doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
 
 	file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
@@ -37,6 +40,7 @@ If the Magento file system owner doesn't have permissions to write to directorie
 Make sure you set file system permissions as discussed in [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 ### The Component Dependency Check status never changes {#trouble-depend-state}
+
 In some cases, the status of the Component Dependency Check doesn't change, even after you try to correct issues. In that case, you can either delete or rename files named `<your Magento install dir>/var/.update_cronjob_status` and `<your Magento install dir>/var/.setup_cronjob_status` and try running the Component Manager again.
 
 Renaming or removing these files forces the Component Manager to run the checks again.

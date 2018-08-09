@@ -15,4 +15,5 @@ github_link: contributor-guide/templates/tutorial-template-middle.md
 The `title` and `subtitle` parameters provide the top-level headings on this page. Add the content as you see fit.
 
 ## Secondary heading
+
 Use a Head2 (##) as the highest-leveling heading in this topic.

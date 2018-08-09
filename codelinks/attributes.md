@@ -10,6 +10,7 @@ search across multiple objects return detailed information about individual obje
 This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.
 
 ## Contents
+
 * TOC
 {:toc}
 

@@ -128,6 +128,7 @@ Any web API call that accesses a resource that requires a permission level highe
 `Authorization: Bearer <authentication token>`
 
 ### Admin access {#admin-access}
+
 Admins can access any resources for which they are authorized.
 
 For example, to make a web API call with an admin token:
@@ -135,6 +136,7 @@ For example, to make a web API call with an admin token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"`
 
 ### Customer access
+
 Customers can access only resources with `self` permissions.
 
 For example, to make a web API call with a customer token:

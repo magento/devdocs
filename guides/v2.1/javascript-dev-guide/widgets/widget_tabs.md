@@ -17,6 +17,7 @@ The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endg
 
 
 ## Initialize the tabs widget {#fedg_tabs_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 
@@ -236,6 +237,7 @@ The tabs widget has the following methods:
 `disable(index)` disables the tab with the corresponding `index`.
 
 ## Events {#fedg_tabs_events-methods}
+
 Tabs is subscribed to the same events as the [collapsible] widget:
 
 -   [beforeOpen callback](#fedg_tabs_beforeOpen_callback)

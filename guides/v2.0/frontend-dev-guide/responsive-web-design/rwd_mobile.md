@@ -11,6 +11,7 @@ functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 
 
 ## Creating a mobile-specific theme

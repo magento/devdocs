@@ -19,6 +19,7 @@ functional_areas:
 This topic discusses the basics of using Varnish as a web caching accelerator for Magento.
 
 ## Varnish purging {#use-varnish-magento-purge}
+
 According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, "A *purge* is what happens when you pick out an object from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and discard it along with its variants." A Varnish purge is very similar to a Magento cache clean command (or clicking **Flush Magento Cache** in the Magento Admin).
 
 In fact, as discussed in this section, when you clean, flush, or refresh the Magento cache, Varnish purges as well.
@@ -44,6 +45,7 @@ After you've installed and configured Varnish to work with Magento, the followin
 	You should refresh the cache and also periodically delete everything in the `var/generation` and `var/di` directories. For information on refreshing the cache, see the next section.
 
 ## Configure Magento to purge Varnish {#use-varnish-magento-purge}
+
 Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command.
 
 You can use the optional parameter `--http-cache-hosts` parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)

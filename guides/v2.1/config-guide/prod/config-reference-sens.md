@@ -32,9 +32,11 @@ All configuration paths listed in this topic are sensitive. The `System-specific
 </div>
 
 ## General category sensitive and system-specific paths
+
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### Web paths sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -53,6 +55,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### Currency setup sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -60,6 +63,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Error Email Recipient | `currency/import/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Store email address sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Email Configuration** > **General** > **Store Email Addresses**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -76,6 +80,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Sender Email | `trans_email/ident_custom2/email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Contacts sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -83,6 +88,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### New Relic reporting sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -95,9 +101,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Insights API URL | `newrelicreporting/general/insights_api_url` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ## Customers category sensitive and system-specific paths
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
 ### Customer configuration sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -105,9 +113,11 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ## Catalog category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
 
 ### Catalog sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -128,6 +138,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### XML sitemap sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -135,9 +146,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Error Email Recipient | `sitemap/generate/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ## Sales category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
 ### Shipping settings sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -152,6 +165,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 
 ### Sales emails sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -166,6 +180,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send Credit Memo Comment Email Copy To | `sales_email/creditmemo_comment/copy_to` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Checkout sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -173,6 +188,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send Payment Failed Email Copy To | `checkout/payment_failed/copy_to` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Google API sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -180,6 +196,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Container Id | `google/analytics/container_id` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Shipping methods sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -209,6 +226,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 
 ### Sales sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -226,6 +244,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send RMA Comment Email Copy To | `sales_email/magento_rma_customer_comment/copy_to` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Google API paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -234,9 +253,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 
 ## Advanced category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
 
 ### Admin sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -245,6 +266,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Custom Admin Path | `admin/url/custom_path` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### System sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -255,6 +277,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 
 ### Developer sensitive and system-specific paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -262,9 +285,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Allowed IPs (comma separated) | `dev/restrict/allow_ips` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
 
 ## Advanced category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
 
 ### System paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -276,6 +301,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 
 ### Developer paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
@@ -284,6 +310,7 @@ Log JS Errors to Session Storage Key | `dev/js/session_storage_key` | <!-- ![Not
 
 
 ## Payment sensitive and system-specific paths
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales** > **Payment**.
 
 ### General variable {#vars-merch-country}

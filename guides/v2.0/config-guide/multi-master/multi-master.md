@@ -45,6 +45,7 @@ In {{site.data.var.ce}}, only one master database is used.
 {{site.data.var.ee}} uses three master databases and a configurable number of slave databases for replication. {{site.data.var.ee}} has a single interface for database connections, resulting in faster performance and better scalability.
 
 ## Configuration options {#config-ee-multidb-opts}
+
 Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
 
 *	Write directly to the database (instead, you must use the {{site.data.var.ee}} database interface)

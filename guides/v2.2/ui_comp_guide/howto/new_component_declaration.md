@@ -21,6 +21,7 @@ The `<component>` element is typically used for declaring simple custom componen
 The `<container>` element is typically used for declaring custom components that are collections, or in other words, can have nested components. `<container>` uses the [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) constructor by default.
 
 ### Attributes you can use
+
 The `<container>` and `<component>` elements have no mandatory attributes. The following optional attributes are available for both these elements:
 
 - `component`: link to the component's {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} constructor.
@@ -53,6 +54,7 @@ If the custom component you create is a [basic UI component]({{ page.baseurl }}/
 If the custom component you create is secondary (not a basic one), it is declared using  `<container>` or `<component>` in the XML configuration file of the basic component.
 
 ## Example: Creating a custom secondary (not basic) component 
+
 Task: In the Customer form, replace the select field with a custom UI component. The custom component extends the Select component by adding a custom option that enables custom functionality. 
 
 The Customer form configuration is defined in `<Magento_Customer_module_dir>/view/base/ui_component/customer_form.xml`. The default configuration of the select field we will extend is following:

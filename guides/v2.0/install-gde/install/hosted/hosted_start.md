@@ -14,11 +14,13 @@ functional_areas:
 ---
 
 ## Hosted installation
+
 Before you can install the Magento software, you must get your hosted system ready.  
 
 If your hosted system is already set up, go to <a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html#get-archive">Get the Magento software packages</a>.
 
 #### Contents
+
 *	<a href="#newbie-verify">Verify the software on your system</a>
 <!-- *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a> -->
 *	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>

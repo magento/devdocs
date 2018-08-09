@@ -38,6 +38,7 @@ Library level can only contain core Magento resources. Do not put custom JS file
 
 
 ### Specifying JS
+
 We recommend specifying JavaScript resources in the templates rather than in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates, to ensure processing of the resources in body of a page.
 
 ## Accessing JS resources

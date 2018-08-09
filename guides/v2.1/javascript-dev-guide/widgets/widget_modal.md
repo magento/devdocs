@@ -41,6 +41,7 @@ $('#modal_content').modal({
 For details about how to initialize the widget in a`.phtml` template, refer to the [Javascript initialization] topic.
 
 ## Options {#modal_options}
+
 The modal widget has the following options:
 -   [autoOpen](#modal_autoopen)
 -   [buttons](#modal_buttons)
@@ -55,6 +56,7 @@ The modal widget has the following options:
 
 
 ### autoOpen {#modal_autoopen}
+
 Automatically open the modal window when the widget is initialized.
 
 **Type**: Boolean 
@@ -87,6 +89,7 @@ buttons: [{
 ```
 
 ### clickableOverlay {#modal_clickableOverlay}
+
 Close the modal window when a user clicks on the overlay.
 
 **Type**: Boolean 
@@ -148,6 +151,7 @@ The type of window: popup or slide.
 **Default value**: `popup`
 
 ## Methods {#modal_methods}
+
 The modal widget has the following methods:
 -   [closeModal()](#modal_close)
 -   [openModal()](#modal_open)
@@ -196,6 +200,7 @@ Called when the modal window is opened.
 ....
 
 ## Keyboard navigation {#key_navigation}
+
 - the ESC key: close the current modal window
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)

@@ -14,10 +14,12 @@ functional_areas:
 The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/).
 
 ## Overview
+
 You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
 
 ## Prerequisites
+
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 ## Installing and configuring Grunt {#grunt_prereq}
@@ -54,6 +56,7 @@ The problem with using the default configuration files is that they can get over
 There are several ways to declare a custom configuration file.
 
 ### How to declare custom config file: Option 1
+
 To use a custom file for Grunt configuration:
 
 1. Copy the default configuration file to the preferred location in the Magento instance directory. Do not change the file name

@@ -50,6 +50,7 @@ Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.h
 ## Install RabbitMQ on CentOS {#centos-install}
 
 ### Install Erlang
+
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
@@ -63,6 +64,7 @@ rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
 
 ### Install RabbitMQ
+
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
@@ -78,6 +80,7 @@ yum install rabbitmq-server-3.5.6-1.noarch.rpm
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
 
 ## Configure RabbitMQ {#config}
+
 Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay attention to the following items:
 
 * Environment variables
@@ -157,6 +160,7 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for details.
 
 #### Related topics
+
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)

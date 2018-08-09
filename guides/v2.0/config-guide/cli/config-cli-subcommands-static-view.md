@@ -17,6 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of static view files deployment {#config-cli-static-overview}
+
 The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>.
 
 The term *static view file* refers to the following:
@@ -40,6 +41,7 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 </div>
 
 ## Deploy static view files {#config-cli-subcommands-xlate-dict}
+
 To deploy static view files:
 
 1.  Log in to the Magento server as, or <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -130,6 +132,7 @@ Use the following steps:
 	</div> -->
 
 ## Tips for developers customizing the static content deployment tool
+
 When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content.
 
 One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="\_blank"}.

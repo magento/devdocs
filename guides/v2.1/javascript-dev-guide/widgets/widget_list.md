@@ -16,9 +16,11 @@ The content can be moved using buttons and links.
 The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is [lib/web/mage/list.js].
 
 ## Initialize the list widget {#quicksearch_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 ## Options {#list_options}
+
 The list widget has the following options:
 -   [addButton](#l_addButton)
 -   [destinationSelector](#l_destinationSelector)

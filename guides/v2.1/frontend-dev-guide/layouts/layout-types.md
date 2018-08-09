@@ -16,6 +16,7 @@ functional_areas:
 	</style>
 </head>
 ## What's in this topic
+
 For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
 
 A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Page layouts feature only <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
@@ -28,6 +29,7 @@ We also distinguish the third type of layout files, *generic layouts*. They are 
 This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
+
 Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. 
 
 Allowed layout instructions:

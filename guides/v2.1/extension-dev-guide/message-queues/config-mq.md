@@ -38,6 +38,7 @@ response | Specifies the format of the response. This parameter is required if y
 schema | The interface that describes the structure of the message. The format must be  `<module>\Api\<ServiceName>::<methodName>`.
 
 ### handler element ###
+
 The `handler` element specifies the class where the logic for handling messages exists and the method it executes.
 
 Parameter | Description
@@ -48,6 +49,7 @@ method | The method this handler executes.
 disabled | Determines whether this handler is disabled. The default value is `false`.
 
 ### Sample `communication.xml` file
+
 The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.
 
 {% highlight xml %}
@@ -63,9 +65,11 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 {% endhighlight %}
 
 ## Create the `queue.xml` file ##
+
 The `queue.xml` file defines the broker that processes topics.  It also specifies the queue each topic will be sent to.
 
 ### broker element ###
+
 The `broker` element also contains `queue` elements.
 
 Parameter | Description
@@ -75,6 +79,7 @@ type | The type of message broker. For this release, the value must be `amqp` or
 exchange | The name of the exchange to publish to. The default system exchange name is `magento`.
 
 ### queue element ###
+
 The `queue` element defines the module's queues.
 
 Parameter | Description
@@ -99,6 +104,7 @@ maxMessages | Specifies the maximum number of messages to consume.
 {% endhighlight %}
 
 #### Related Topics
+
 *	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
 *	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
 *	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

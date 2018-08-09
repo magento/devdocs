@@ -24,6 +24,7 @@ Magento supported URNs begin with `urn:magento`. Magento supports two XSD refere
 </div>
 
 ### Module XSD
+
 The syntax for the module XSD is a colon separated declaration. An example follows:
 
 `urn:magento:module:Magento_Flow:flows/content.xsd`
@@ -38,6 +39,7 @@ where
 
 
 ### Framework XSD
+
 The syntax for the framework XSD is a colon separated declaration. An example follows:
 
 `urn:magento:framework:Api/etc/extension_attributes.xsd`
@@ -50,6 +52,7 @@ where
 
 
 ### Referencing a XSD from another XSD
+
 Use URN notation to reference schema from inside a XSD document:
 
 {% highlight XML %}

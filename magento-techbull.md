@@ -11,6 +11,7 @@ github_link: magento-techbull.md
 ---
 
 ## Magento Technical Bulletins
+
 This page lists technical bulletins for the Magento application.
 
 ## Magento 2.0.x and 2.1.x
@@ -21,6 +22,7 @@ This page lists technical bulletins for the Magento application.
 
 
 ## Magento 2.0.x
+
 *	[Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)]({{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html)
 *	[Magento upgrade issues (Jan. 28, 2016)]({{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html)
 

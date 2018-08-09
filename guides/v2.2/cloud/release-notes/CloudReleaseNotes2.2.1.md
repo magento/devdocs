@@ -34,6 +34,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ## Security enhancements {#security}
+
 Magento 2.2.1 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
@@ -49,6 +50,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 <!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
 ## Known issues {#known}
+
 For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).
 
 ## Fixed issues {#fixed}
@@ -88,11 +90,13 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 
 ## System requirements {#requirements}
+
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
 The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
+
 If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.

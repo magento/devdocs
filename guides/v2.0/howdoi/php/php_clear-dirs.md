@@ -10,6 +10,7 @@ github_link: howdoi/php/php_clear-dirs.md
 ---
 
 #### Contents
+
 *	<a href="#howdoi-clear-over">Overview of directory clearing</a>
 *	<a href="#howdoi-clear-what">What directories to clear</a>
 *	<a href="#howdoi-clear-how">How to clear the directories</a>

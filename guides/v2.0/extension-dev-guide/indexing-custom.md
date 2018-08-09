@@ -11,6 +11,7 @@ github_link: extension-dev-guide/indexing-custom.md
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}
+
 This topic discusses how to create a custom indexer. We've recently made a performance improvement that enables you to declare one or more *shared* indexers; if one of the shared indexes is already up-to-date, it doesn't need to be reindexed.
 
 To implement your own indexer, add the following code in your module:

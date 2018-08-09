@@ -43,6 +43,7 @@ To check the current mode of your Magento instance, in the root directory, run:
 
 <div class="flow-block" markdown="1">
 ### Create basic theme files
+
 In the `<magento_root>/app/design/frontend/<Your_Vendor>/<your_theme>` directory, create the following files:
 
 - `theme.xml`
@@ -90,6 +91,7 @@ For details, see [Apply and configure a storefront theme]({{ page.baseurl }}/fro
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Client-side compilation
+
 See [CSS preprocessing#client-side compilation mode]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
 </div>
 
@@ -97,6 +99,7 @@ See [CSS preprocessing#client-side compilation mode]({{ page.baseurl }}/frontend
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Server-side compilation (default)
+
 See [CSS preprocessing#server-side compilation mode]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#server-side)
 </div>
 
@@ -105,6 +108,7 @@ See [CSS preprocessing#server-side compilation mode]({{ page.baseurl }}/frontend
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Custom preprocessor
+
 See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-topics/custom-preprocess-parent.html)
 </div>
 
@@ -136,6 +140,7 @@ See [Using custom CSS preprocessor]({{ page.baseurl }}/frontend-dev-guide/css-to
 
 <div class="flow-block" markdown="1">
 ### Create your styles
+
 See
 
 * [Quick start guide to working with styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
@@ -146,6 +151,7 @@ See
 
 <div class="flow-block" markdown="1">
 ### Debug
+
 See:
 
 * [Locate the CSS/Less file you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)

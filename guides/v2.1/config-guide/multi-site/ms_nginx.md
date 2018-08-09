@@ -14,9 +14,11 @@ functional_areas:
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
+
 This tutorial shows you step-by-step how to set up multiple websites using {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
 
 ### Assumptions
+
 We assume that:
 
 *	You are working on a development machine (laptop, virtual machine, or similar).
@@ -38,6 +40,7 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
     </div>
 
 ### Roadmap for setting up multiple websites with nginx
+
 To set up multiple stores:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -52,6 +55,7 @@ To set up multiple stores:
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`.
 
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
+
 This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `sudo` privileges.
 
 By using just one [nginx virtual host file](#ms-nginx-vhosts), you can keep your nginx configuration simple and clean. By using several virtual host files, you can customize each store (to use a custom location for `french.mysite.mg` for instance).
@@ -187,6 +191,7 @@ To modify the `nginx.conf.sample` file:
 An example updated PHP entry point for the main application looks like:
 ```
 # PHP entry point for main application
+
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
     try_files $uri =404;
     fastcgi_pass   fastcgi_backend;

@@ -12,6 +12,7 @@ functional_areas:
 {% include cache/page-cache-overview.md%}
 
 ## Cache types
+
 The following cache types mostly have impact on frontend development process:
 
 | Cache type "friendly" name | Cache type code name | Description                                                                                                                                                                                                                                                                                                                                       |

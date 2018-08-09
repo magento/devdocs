@@ -54,6 +54,7 @@ Since it is not recommended to edit the default files, you need to add overridin
 
 
 ## Locate layouts {#debug-theme-layout}
+
 Just like templates, layouts are saved on a per-module basis. You can easily locate the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
 After you have determined the module, you can search for the layout in the following locations:
@@ -81,6 +82,7 @@ After you located the necessary layout file, you can create your custom layout f
 
 
 ## Locate styles {#debug-theme-style}
+
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 

@@ -16,6 +16,7 @@ See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/
 
 
 ## Changes effective May 2, 2018 (Magento 2.2.4)
+
 Here are the enhancements and  fixes available as of May 2, 2018:
 
 ### Enhancements
@@ -34,6 +35,7 @@ Here are the enhancements and  fixes available as of May 2, 2018:
 
 
 ### Fixes
+
 Resolution of the following issues:
 
 * Incompatibility with Internet Explorer 11.x.
@@ -68,6 +70,7 @@ Here are the enhancements and fixes available as of January 22, 2018:
 
 
 ### Fixes
+
 The fixes described here are categorized by shipping carrier. 
 
 #### Australia Post

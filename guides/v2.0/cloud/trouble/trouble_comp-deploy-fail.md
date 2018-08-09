@@ -20,6 +20,7 @@ You can recover from a failed deployment in any of the following ways:
 *   Remove the component from your environment's `composer.json` and redeploy the environment
 
 ## Remove the component from `composer.json` and redeploy
+
 This section discusses how to remove the component from the root `composer.json` in your environment and redeploy the environment:
 
 ## Get started
@@ -31,6 +32,7 @@ This section discusses how to remove the component from the root `composer.json`
 {% include cloud/composer-name.md %}
 
 ## Clear `var` directories
+
 To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento `var` directory.
 
 1.	Enter the following command to SSH to the current environment:
@@ -42,6 +44,7 @@ To clean up from the previous deployment, you must SSH to the environment and ma
 		rm -rf var/*
 
 ## Remove the component
+
 To remove the component:
 
 1.  Change to your environment's root directory if you haven't already done so.
@@ -62,6 +65,7 @@ To remove the component:
 
 
 #### Related topics
+
 *	[Manage your projects]({{ page.baseurl }}/cloud/project/projects.html)
 *	[Manage your environments]({{ page.baseurl }}/cloud/env/environments.html)
 *	[Tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)

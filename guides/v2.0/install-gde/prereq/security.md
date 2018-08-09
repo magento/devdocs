@@ -22,6 +22,7 @@ functional_areas:
 </div>
 
 ### Suggestion for installing the Magento software with Apache
+
 If you choose to enable SELinux, you might have issues running the installer unless you change the *security context* of some directories as follows:
 
 	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/app/etc
@@ -35,6 +36,7 @@ The preceding commands work only with the Apache web server. Because of the vari
 *	<a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/" target="_blank">serverlab</a>
 
 ### Enable inter-server communication
+
 If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-iptables">Opening Ports In Your Firewall</a>.
 
 To enable Apache to initiate a connection to another host with SELinux enabled:

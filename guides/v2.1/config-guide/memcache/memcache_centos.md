@@ -16,6 +16,7 @@ functional_areas:
 {% include config/php-memcache.md %}
 
 ## Install and configure memcached on CentOS {#config-memcache-install}
+
 This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -62,6 +63,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
 6.  Continue with the next section.
 
 ## Verify memcached works before installing Magento {#config-memcache-verify-its-cent}
+
 We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.
 
 ### Verify memcached is recognized by the web server

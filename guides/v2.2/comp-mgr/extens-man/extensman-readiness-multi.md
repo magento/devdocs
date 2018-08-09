@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Readiness check with multiple extension updates {#extensman-readiness-multi}
+
 If you're updating multiple extensions, the readiness check displays success and failure as discussed in this topic.
 
 ### Successful readiness check {#extensman-readiness-multi-success}

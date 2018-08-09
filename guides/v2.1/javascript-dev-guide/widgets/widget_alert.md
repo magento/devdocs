@@ -49,6 +49,7 @@ require([
 For details about how to initialize a widget in a`.phtml` template, refer to the [Javascript initialization] topic.
 
 ## Options {#alert_options}
+
 The alert widget has the following options:
 
 -   [actions]
@@ -71,6 +72,7 @@ actions: {
 ```
 
 ### autoOpen {#alert_autoopen}
+
 Automatically open the alert window when the widget is initialized.
 
 **Type**: Boolean 
@@ -78,6 +80,7 @@ Automatically open the alert window when the widget is initialized.
 **Default value**: `false`
 
 ### clickableOverlay {#alert_clickableOverlay}
+
 Close the alert window when a user clicks on the overlay.
 
 **Type**: Boolean 
@@ -107,9 +110,11 @@ The title of the alert window.
 **Default value**: `''`
 
 ## Events {#alert_events}
+
 The alert widget implements a single event: the `always` callback.
 
 ## Keyboard navigation {#alert_key_navigation}
+
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
 

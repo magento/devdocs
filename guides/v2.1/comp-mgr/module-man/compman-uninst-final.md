@@ -13,6 +13,7 @@ functional_areas:
 ---
 
 ## Step 4. Uninstall
+
 To uninstall your component, click **Uninstall** as the following figure shows.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/cman_uninst2.png" width="300px" alt="Click Uninstall">

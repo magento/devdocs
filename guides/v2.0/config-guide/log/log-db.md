@@ -15,6 +15,7 @@ functional_areas:
 
 
 ## Example&mdash;logging database activity
+
 To log database activity, use [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/LoggerInterface.php){:target="_blank"}, which has two implementations:
 
 *	Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/Logger/Quiet.php){:target="_blank"}

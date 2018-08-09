@@ -12,6 +12,7 @@ redirect_from:
 ---
 
 ## Overview
+
 Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:
 <ul>
 <li>Expanding all layers of the menu tree past the second layer.</li>

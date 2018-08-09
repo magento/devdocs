@@ -16,6 +16,7 @@ functional_areas:
 ---
  
 ## What's the difference between a module and a component?
+
 A *module* is a type of *component*. A component can be:
 
 *	A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} (code that extends Magento behavior)

@@ -16,6 +16,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## View a list of indexers
+
 To view a list of all indexers:
 
 ```bash
@@ -38,6 +39,7 @@ catalogsearch_fulltext                   Catalog Search
 ```
 
 ## View indexer status
+
 Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.
 
 Command options:
@@ -80,6 +82,7 @@ Sample result:
 ```
 
 ## Reindex {#config-cli-subcommands-index-reindex}
+
 Use this command to reindex all or selected indexers one time only.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -146,6 +149,7 @@ Only use the environment variable in the indexer command. Do not save the variab
 -->
 
 ## Configure indexers
+
 Use this command to set the following indexer options:
 
 *  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
@@ -154,6 +158,7 @@ Use this command to set the following indexer options:
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
 ### Display the current configuration
+
 To view the current indexer configuration:
 
 ```bash
@@ -180,6 +185,7 @@ Catalog Search:                                    Update on Save
 ```
 
 ### Configure indexers
+
 To specify the indexer configuration:
 
 ```bash

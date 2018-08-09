@@ -26,6 +26,7 @@ This guide is actual for Magento 2.0 UI components. You might be also interested
 
 
 ### General structure
+
 In Magento 2 there are basic and secondary UI components. 
 
 Basic components are: 

@@ -30,6 +30,7 @@ However, if you are using an older version of Magento, you must upgrade by June 
 Consult the following tables to learn how to apply a fix to your specific Magento version.
 
 #### Magento 1.x patches
+
 Consult the following tables for guidelines for Magento 1.x EE and CE fixes.
 
 
@@ -151,6 +152,7 @@ To get patches for Magento 1.x Commerce or Open Source
 
 
 ### More information
+
 MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
 
 

@@ -16,6 +16,7 @@ functional_areas:
 {% include comp-man/backup.md %}
 
 #### Next step
+
 After your backup is complete, continue with any of the following: 
 
 *	Installing extensions: [Step 3. Install]({{ page.baseurl }}/comp-mgr/extens-man/extensman-new-purchase.html)

@@ -17,6 +17,7 @@ functional_areas:
 {{site.data.var.ee}} enables you to use caching in your environment. If you disable caching, {{site.data.var.ee}} directly serves the files.
 
 ## Set up caching {#cloud-cache-setup}
+
 Enable caching in your Magento application's `.magento/routes.yaml` as follows:
 
 {% highlight yaml %}
@@ -31,6 +32,7 @@ http://{default}/:
 {% endhighlight %}
 
 ## Route-based caching {#cloud-cache-route}
+
 If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:
 
 {% highlight yaml %}
@@ -69,9 +71,11 @@ And the following routes are **not** cached:
 </div>
 
 ## Cache duration {#cloud-cache-ttl}
+
 The cache duration is determined by the `Cache-Control` response header value. If no `Cache-Control` header is in the response, we use the `default_ttl` key.
 
 ## Cache key {#cloud-cache-key}
+
 To decide how to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} a response, {{site.data.var.ee}} builds a cache key depending on several factors and store the response associated with this key. When a request comes with the same cache key, the response is reused. Its purpose is similar to the HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44){:target="_blank"}.
 
 The parameters `headers` and
@@ -87,6 +91,7 @@ cache:
 {% endhighlight %}
 
 ## Cache attributes {#cloud-cache-attrib}
+
 We support the following attributes:
 
 *	[`enabled`](#cloud-cache-attrib-en)

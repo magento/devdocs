@@ -72,6 +72,7 @@ For example, a `GET /V1/customers/:customerId` call returns the following payloa
 This JSON-formatted response body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.
 
 ### Error format {#error-format}
+
 When an error occurs, the response body contains an error code, error message, and optional parameters.
 
 Part | Description

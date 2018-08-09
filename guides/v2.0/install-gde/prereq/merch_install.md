@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Newbie installation
+
 Before you can install the Magento software, you must get your hosted system ready. This topic is geared specifically for GoDaddy but you can use the same instructions for any other hosting provider. 
 
 If you don't use GoDaddy, you might need to contact your hosting provider's technical support for specific questions.

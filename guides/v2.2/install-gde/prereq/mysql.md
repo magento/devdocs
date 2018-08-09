@@ -10,6 +10,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
 
 ## Help if you're just starting out {#mysql-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -34,6 +35,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
 ## Installing MySQL on Ubuntu {#instgde-prereq-mysql-ubuntu}
+
 See one of the following sections for more information:
 
 *	[Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
@@ -41,6 +43,7 @@ See one of the following sections for more information:
 *	[Installing MySQL 5.6 on Ubuntu 12](#instgde-prereq-mysql56ubu12)
 
 ### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
+
 This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
 {:.bs-callout .bs-callout-info}
@@ -87,6 +90,7 @@ To install MySQL 5.7 on Ubuntu 16:
 6.	[Configure the Magento database instance](#instgde-prereq-mysql-config).
 
 ### Installing MySQL 5.6 on Ubuntu 14 {#instgde-prereq-mysql56ubu14}
+
 To install MySQL 5.6 on Ubuntu 14:
 
 1.	Enter this command:
@@ -173,12 +177,14 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 6.	[Configure the Magento database instance](#instgde-prereq-mysql-config).
 
 ## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
+
 This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
 {:.bs-callout .bs-callout-info}
 The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 ### Get MySQL 5.7 for CentOS 7
+
 The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="&#95;blank"}.
 
 As a user with `root` privileges, enter the following commands in the order shown:
@@ -189,6 +195,7 @@ As a user with `root` privileges, enter the following commands in the order show
 Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos-config).
 
 ### Get MySQL 5.7 for CentOS 6
+
 The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="&#95;blank"}.
 
 As a user with `root` privileges, enter the following commands in the order shown:
@@ -199,6 +206,7 @@ As a user with `root` privileges, enter the following commands in the order show
 Continue with the next section.
 
 ### Install and configure MySQL 5.7 on CentOS 6 or 7 {#mysql57-centos-config}
+
 1.	Enter the following commands in the order shown:
 
 		yum -y install mysql-community-server
@@ -223,6 +231,7 @@ Continue with the next section.
 5.	Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
 
 ## Installing and configuring MySQL 5.6 on CentOS {#instgde-prereq-mysql-centos}
+
 The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux](http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/){:target="&#95;blank"}.
 
 1.	*CentOS 6* Install the MySQL database:
@@ -271,6 +280,7 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 6.	Configure the Magento database instance as discussed in the next section.
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
+
 This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.
 
 To configure a MySQL database instance:
@@ -307,6 +317,7 @@ We recommend you configure your database instance as appropriate for your busine
 </div>
 
 #### Related topics
+
 *	[Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html)
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)

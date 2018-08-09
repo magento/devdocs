@@ -68,6 +68,7 @@ For example, in `bin/magento module:disable --force Magento_Catalog`, the `--for
 Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.
 
 ### Command arguments
+
 Arguments are values passed by the user in a specified order. The argument name is not visible to the user.
 
 #### Format: single word or a compound word separated with a dash or hyphen character
@@ -96,6 +97,7 @@ To make it simpler for the user, we recommend the following:
 *	Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).
 
 ### Command Options
+
 Options are name-value pairs. The sequence of entered values doesn't matter.
 
 An option can have a value or no value. An option that does not require a value represents a flag (`yes` or `no`).

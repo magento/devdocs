@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Step 3. Install
+
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
 <img src="{{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png" width="500px">

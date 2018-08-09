@@ -49,6 +49,7 @@ $("#header").collapsible();
 
 
 ## Initialize collapsible in a template
+
 The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 ## Options

@@ -10,6 +10,7 @@ redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic
+
 This topic is aimed for developers, who need to reuse the [Magento UI Components]({{ page.baseurl }}/ui-library/ui-library-component.html). 
 
 The topic covers the following:
@@ -32,6 +33,7 @@ All these properties, options, and methods are available in the component templa
 
 
 ## Most important UI component properties {#main_properties}
+
 The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
@@ -195,6 +197,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 
 
 ## Frequently used additional components {#comp_additional}
+
 This section is a brief description of the most frequently used additional UI components.
 
 ### `uiClass`
@@ -242,11 +245,13 @@ Example of using the `uiClass` property in a configuration file:
 {%endhighlight js%}
 
 ## JS UI components debugging {#comp_debug}
+
 This section describes how to define what UI components are used on a particular page and what data they use.
 
 To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockout JS context debugger for Google Chrome.
 
 ### Debug using browser built-in tools
+
 1. Open the required page in a browser.
 2. Select to view the page source.
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.

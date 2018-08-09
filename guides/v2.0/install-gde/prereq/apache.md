@@ -96,6 +96,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 {% include install/allowoverrides22.md %}
 
 #### Next steps
+
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
@@ -138,6 +139,7 @@ To upgrade to Apache 2.4:
 {% include install/allowoverrides24.md %}
 
 #### Next steps
+
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
@@ -177,6 +179,7 @@ Installing and configuring Apache is basically a three-step process: install the
 {% include install/allowoverrides22.md %}
 
 #### Next steps
+
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>

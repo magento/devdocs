@@ -21,6 +21,7 @@ This topic discusses how to set up a connection from your Magento web node to a 
 </div>
 
 ### Prerequisites
+
 Before you begin, you must:
 
 *	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
@@ -28,6 +29,7 @@ Before you begin, you must:
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
+
 Use the following guidelines to configure remote database connections if your web server or database server are clustered:
 
 *	You must configure a connection for each web server node
@@ -36,6 +38,7 @@ Use the following guidelines to configure remote database connections if your we
 	For more information, see <a href="https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">MySQL documentation</a>.
 
 ### Resolving connection issues
+
 If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
 ## Create the remote connection   {#instgde-prereq-mysql-remote-create}

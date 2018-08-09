@@ -14,6 +14,7 @@ redirect_from:
 ---
 
 #### Contents
+
 *	<a href="#m2devgde-indexing-intro">Introduction to indexing</a>
 *	<a href="#m2devgde-indexing-implementation">How Magento implements indexing</a>
 *	<a href="#m2devgde-indexing-outofbox">Magento indexers</a>
@@ -98,6 +99,7 @@ The following figure shows the logic for partial reindexing.
 ![Partial indexing workflow]({{ site.baseurl }}/common/images/index_indexers_flow.png){:width="300px"}
 
 ### Indexer status {#m2devgde-indexing-status}
+
 Depending on whether an index data is up to date, an indexer status value is one of the following:
 
 *	valid: data is synchronized, no reindex required

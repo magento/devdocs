@@ -15,6 +15,7 @@ functional_areas:
 This section discusses steps to upgrade *only* if your current {{site.data.var.ece}} version is 2.0.4. When upgrading only from this version, follow these instructions.
 
 ## Create an authorization file
+
 To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento Commerce [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html).
 
 In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
@@ -24,6 +25,7 @@ To create a new `auth.json` in the event you don't have one:
 {% include cloud/auth-json.md %}
 
 ## Update .magento.app.yaml and composer.json
+
 This section discusses how to update:
 
 *   `.magento.app.yaml`, the main project configuration file.
@@ -94,6 +96,7 @@ Run `composer update`, and make sure the updated composer.lock and other changed
 checked in to git.
 
 ## Repository structure
+
 Here are the specific files for this example to work on Magento Commerce:
 
 ```
@@ -116,6 +119,7 @@ php.ini
 Verify your upgrade as discussed in the next section.
 
 ## Verify your upgrade {#upgrade-verify}
+
 This section discusses how to verify your upgrade and to troubleshoot any issues you might find.
 
 To verify the upgrade in your integration, staging, or production system:
@@ -126,6 +130,7 @@ To verify the upgrade in your integration, staging, or production system:
         php bin/magento --version
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
+
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
 
     There has been an error processing your request
@@ -133,11 +138,13 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
+
 To view the error in your integration system, [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
 ### Resolve the error
+
 One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:
 
     a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
@@ -155,6 +162,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
+
 * [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html)
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 * [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)

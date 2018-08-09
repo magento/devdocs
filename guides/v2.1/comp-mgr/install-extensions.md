@@ -24,6 +24,7 @@ To install an extension, you must:
 5.  Enable and configure the extension.
 
 ## Get the extension's Composer name and version
+
 If you already know the extension's Composer name and version, skip this step and continue with [Update your `composer.json` file](#update-composer-json).
 
 To get the extension's Composer name and version from the Magento Marketplace:
@@ -44,6 +45,7 @@ Alternatively, you can find the Composer name and version of _any_ extension (wh
 </div>
 
 ## Update your `composer.json` file {#update-composer-json}
+
 Add the extension's name and version to your `composer.json` file:
 
 1.  Navigate to your Magento project directory and update your `composer.json` file.
@@ -65,6 +67,7 @@ Add the extension's name and version to your `composer.json` file:
 		Generating autoload files
 
 ## Verify the extension
+
 To verify that the extension installed properly, run the following command:
 
 	bin/magento module:status
@@ -79,6 +82,7 @@ The extension name is in the format `<VendorName>_<ComponentName>`; it's not the
 </div>
 
 ## Enable the extension
+
 Some extensions won't work properly unless you clear Magento-generated static view files first. Use the `--clear-static-content` option to clear static view files when you're enabling an extension.
 
 1.  Enable the extension and clear static view files:

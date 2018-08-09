@@ -59,6 +59,7 @@ To get patches for Magento 1.x Commerce or Open Source
 
 
 ### Workaround for Magento 1.x 
+
 Follow this procedure to edit the `Usps.php` file to use the new shipping method name: 
 
 1) Navigate to `app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php`. 

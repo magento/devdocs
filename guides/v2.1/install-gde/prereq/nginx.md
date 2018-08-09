@@ -20,6 +20,7 @@ Installation instructions vary based on which operating system you're using:
 *	[CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
 
 ## Help if you're just starting out {#apache-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -28,6 +29,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Ubuntu 16
+
 The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.
 
 ### Install nginx
@@ -37,6 +39,7 @@ The following section describes how to install Magento 2.x on Ubuntu 16 using ng
 After completing the following sections and [installing Magento]({{ page.baseurl }}/install-gde/prereq/nginx.html#install-magento2-ubuntu), we'll use a sample configuration file to [configure nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html#configure-nginx-ubuntu).
 
 ### Install and configure php-fpm
+
 Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
 
 To install and configure `php-fpm`:
@@ -66,9 +69,11 @@ To install and configure `php-fpm`:
 		systemctl restart php7.0-fpm
 
 ### Install and configure MySQL
+
 Refer to [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html) for more information.
 
 ### Install and configure Magento2 {#install-magento2-ubuntu}
+
 There are several ways to download the Magento software, including:
 
 *	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
@@ -124,6 +129,7 @@ For this example, we'll download and extract an archive.
 		./magento deploy:mode:set developer
 
 ### Configure nginx {#configure-nginx-ubuntu}
+
 We recommend configuring nginx using the `nginx.conf.sample` configuration file provided in the Magento installation directory and an nginx virtual host.
 
 These instructions assume you're using the Ubuntu default location for the nginx virtual host (e.g., `/etc/nginx/sites-available`) and Ubuntu default docroot (e.g., `/var/www/html`), however, you can change these locations to suit your environment.
@@ -166,9 +172,11 @@ These instructions assume you're using the Ubuntu default location for the nginx
 		systemctl restart nginx
 
 ### Verify the installation
+
 Open a web browser and navigate to your site's base URL to [verify the installation.]({{ page.baseurl }}/install-gde/install/verify.html)
 
 ## CentOS 7
+
 The following section describes how to install Magento 2.x on CentOS 7 using nginx, PHP, and MySQL.
 
 ### Install nginx
@@ -185,6 +193,7 @@ After completing the following sections and [installing Magento]({{ page.baseurl
 
 
 ### Install and configure php-fpm
+
 Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/php-centos.html) to function properly. In addition to these extensions, you must also install and configure the `php-fpm` extension if you're using nginx.
 
 1. Install `php-fpm`:
@@ -251,9 +260,11 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 		netstat -pl | grep php-fpm.sock
 
 ### Install and configure MySQL
+
 Refer to [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html) for more information.
 
 ### Install and configure Magento2 {#install-magento2-centos}
+
 There are several ways to download the Magento software, including:
 
 *	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
@@ -313,6 +324,7 @@ For this example, we'll download and extract an archive.
 		./magento deploy:mode:set developer
 
 ### Configure nginx {#configure-nginx-centos}
+
 We recommend configuring nginx using the `nginx.conf.sample` configuration file provided in the Magento installation directory and an nginx virtual host.
 
 These instructions assume you're using the CentOS default location for the nginx virtual host (e.g., `/etc/nginx/conf.d`) and default docroot (e.g., `/usr/share/nginx/html`), however, you can change these locations to suit your environment.
@@ -351,6 +363,7 @@ These instructions assume you're using the CentOS default location for the nginx
 		systemctl restart nginx
 
 ### Configure SELinux and Firewalld
+
 SELinux is enabled by default on CentOS 7. Use the following command to see if it's running:
 
 	sestatus
@@ -385,9 +398,11 @@ To configure SELinux and firewalld:
 		firewall-cmd --reload
 
 ### Verify the installation
+
 Open a web browser and navigate to your site's base URL to [verify the installation.]({{ page.baseurl }}/install-gde/install/verify.html)
 
 #### Related topics:
+
 *	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
 *	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)

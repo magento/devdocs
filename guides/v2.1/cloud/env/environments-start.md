@@ -23,6 +23,7 @@ When managing with your environment, you will tend to use the Magento CLI and SS
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
 
 ## Common Magento CLI commands {#env-start-comm}
+
 The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The `magento-cloud` versions directly connect with Magento Git, the Magento ECE project, and provide Git features.
 
 All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`.
@@ -63,11 +64,13 @@ The environment _name_ is different from the environment _ID_ only if you use sp
 For a full list of Magento cloud CLI commands, see the Magento cloud [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)
 
 ## Get started creating branches {#getstarted}
+
 To begin, you'll need a branch to work in.
 
 {% include cloud/cli-get-started.md %}
 
 ## Merge a branch {#merge}
+
 After completing development, you can merge this branch to the parent. The following instructions provide an example.
 
 1.	Complete code in your local branch.
@@ -88,6 +91,7 @@ After completing development, you can merge this branch to the parent. The follo
 		magento-cloud environment:merge master
 
 ## Optionally delete the environment {#env-delete}
+
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
 {:.bs-callout .bs-callout-info}
@@ -142,6 +146,7 @@ Wait for the environment to delete.
 To activate the environment later, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}
+
 The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
@@ -240,6 +245,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </table>
 
 ## Interact with environments via CLI {#commands}
+
 After setting up your [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can interact with services and modify settings through your local to a remote environment.
 
 {% include cloud/log-in-db.md %}

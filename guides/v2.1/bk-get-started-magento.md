@@ -33,6 +33,7 @@ by creating pull requests, or open a discussion by creating an issue.
 For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-dev-guide/Contribute_edg.html).
 
 ## Contact us {#contact-us}
+
 Feel free to contact the documentation team directly at
 [DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
 

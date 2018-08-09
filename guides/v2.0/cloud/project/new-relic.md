@@ -22,9 +22,11 @@ New Relic APM provides the following features to Magento:
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
 ## New Relic APM credentials {#credentials}
+
 The agent software for New Relic is packaged with your {{site.data.var.ece}} account. You receive your credentials and license information from Magento during launch. You can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
 ## Add New Relic APM to an environment {#configure}
+
 The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -44,6 +46,7 @@ To add a New Relic license key to an environment:
     ```
 
 ## Remove New Relic APM from an environment {#remove}
+
 The {{site.data.var.ece}} plans support up to 3 instances of your New Relic license across all environments. If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
 To remove a New Relic license key from an environment:
@@ -69,6 +72,7 @@ To remove a New Relic license key from an environment:
 
 
 ## Add New Relic extension to your project {#extension}
+
 New relic extension must be listed in the `.magento.app.yaml` project file:
 
 ```yaml
@@ -78,6 +82,7 @@ runtime:
 ```
 
 ## Investigate performance {#performance}
+
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
 Using the New Relic dashboard, you can immediately track and find the following:

@@ -238,6 +238,7 @@ We do not support PHP 5.5.x or 7.0.5.
 
 
 ## Installation and upgrade instructions
+
 You can install Magento Commerce 2.1 Release Candidate 2 (RC2) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
@@ -249,11 +250,13 @@ See one of the following sections:
 *	[Upgrade to an RC with sample data](#upgrade-rc-samp) 
 
 ### Install using Composer {#install-rc-composer}
+
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
+
 This section discusses how to upgrade to a Release Candidate *without* sample data.
 
 If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
@@ -263,9 +266,11 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
+
 Use the instructions in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade an existing installation from the GitHub repository
+
 Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -307,4 +312,5 @@ Developers who contribute to the Open Source codebase can <a href="{{ page.baseu
 {% include install/sampledata/sample-data-rc1-cli.md %}
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

@@ -38,6 +38,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Core code highlights
+
 This release includes significant performance improvements to the core Magento code: 
 
 * <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
@@ -50,6 +51,7 @@ This release includes significant performance improvements to the core Magento c
 
 
 ### Community contribution highlights
+
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
 * <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
@@ -62,6 +64,7 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 
 ### Highlights (Magento Shipping)
+
 This release of Magento Shipping adds the following new capabilities: 
 
 • With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
@@ -78,6 +81,7 @@ This release of Magento Shipping also includes additional minor enhancements, su
 
 
 ## Fixes
+
 In addition to security enhancements, this release contains the following functional fixes. 
 
 ### Installation, setup, and deployment
@@ -277,6 +281,7 @@ The Amazon Pay. dotmailer, Magento Shipping, and Vertex extensions have the foll
 
 
 ### dotmailer known issues
+
 The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases: 
 
 <!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
@@ -980,6 +985,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
@@ -988,6 +994,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

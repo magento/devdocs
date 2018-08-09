@@ -24,6 +24,7 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 </div>
 
 ## Confirm your Varnish version {#config-varnish-version}
+
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V

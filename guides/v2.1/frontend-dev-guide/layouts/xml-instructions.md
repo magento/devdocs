@@ -349,6 +349,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
 </ul>  
 
 ### fedg_layout_xml-instruc_ex_mv
+
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
@@ -438,6 +439,7 @@ Used as follows:
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 ### argument
+
 Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
  
 <table>

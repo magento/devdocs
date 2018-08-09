@@ -94,6 +94,7 @@ Make sure that you declare a component so that it is rendered correctly by the p
 
 
 ## Disable a component {#disable}
+
 To disable the component in your `checkout_index_index.xml` use the following instructions:
 
 ```xml

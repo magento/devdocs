@@ -17,6 +17,7 @@ functional_areas:
 {% include config/split-deploy/split-deploy-overview.md %}
 
 ## Other deployment methods
+
 You can optionally use other deployment methods, including:
 
 *	Secure copying with SCP or rsync
@@ -25,6 +26,7 @@ You can optionally use other deployment methods, including:
 *	Other methods discussed on the [Community resources page]({{ site.baseurl }}/community/resources/#installdeploy)
 
 ## Manage the configuration
+
 Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, Magento now stores the configuration for each system in the system itself. (Development configuration settings are stored on the development system, production settings are stored on the production system.)
 
 We also provide a way to synchronize the configuration of your systems:

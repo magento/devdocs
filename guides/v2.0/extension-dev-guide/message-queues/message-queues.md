@@ -60,6 +60,7 @@ Perform the following actions:
 4. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
 ## Override topic configuration
+
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
 {% highlight php startinline=true %}

@@ -68,5 +68,6 @@ Continuing the <a href="#luma_example">previous example</a> with the Luma theme,
 The default values (keys) are used in the left column.
 
 ## Recommended reading ##
+
 - <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a>
 -  <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>

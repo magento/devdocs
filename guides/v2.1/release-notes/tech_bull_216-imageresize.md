@@ -15,6 +15,7 @@ github_link: release-notes/tech_bull_216-imageresize.md
 These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
 
 ### Who needs this information?
+
 You need to read this bulletin if you've upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues: 
 
 * all images on the product front end appear reduced in size, including the base image
@@ -32,9 +33,11 @@ If your custom theme doesn't include the `frame` element, or a value has not bee
 
 
 ### Action
+
 We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only. 
 
 #### Magento 2.1.x CE
+
 You can fix this issue with image resizing by downloading  and installing the `CE-MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
 
   To download this patch, 
@@ -46,6 +49,7 @@ You can fix this issue with image resizing by downloading  and installing the `C
 
 
 #### Magento 2.1.x EE
+
 You can fix this issue with image resizing by downloading and installing the `EE-MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
 
   To download this patch,
@@ -59,6 +63,7 @@ You can fix this issue with image resizing by downloading and installing the `EE
 
 
 #### Magento Commerce (Cloud) 
+
 General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
 See [Update extensions]({{ site.baseurl }}/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on running `composer update` to upgrade your Cloud extension. 
@@ -72,6 +77,7 @@ See [Update extensions]({{ site.baseurl }}/guides/v2.1/cloud/howtos/update-compo
 For further discussion of this issue, see [GITHUB-9385](https://github.com/magento/magento2/issues/9385){:target="_blank"} and [GITHUB-9395](https://github.com/magento/magento2/issues/9395){:target="_blank"}
 
 ## Credits
+
 Dear community members, thank you for your prompt identification of this issue.  
 
 

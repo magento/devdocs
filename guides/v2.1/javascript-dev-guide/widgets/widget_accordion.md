@@ -22,6 +22,7 @@ The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{%
 ### Initialize accordion in JS components
 
 #### Initialize accordion with `data-*` attributes specified
+
 Generally the accordion widget is instantiated like following:
 ```javascript
 $("#element").accordion();
@@ -78,6 +79,7 @@ Mark-up examples:
 ```
 
 #### Initialize accordion with option
+
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
 ```javascript
@@ -94,6 +96,7 @@ $("#element").accordion({
 The accordion widget can be initialized using the `data-mage-init` attribute or `<script>` element, as described in [JavaScript initialization].
 
 ## Options {#accordion_options}
+
 Accordion options coincide with [Magento Tabs options], plus the following custom ones:
 -   [active]
 -   [multipleCollapsible]
@@ -143,6 +146,7 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 
 
 ## Methods {#accordion_methods}
+
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
 The custom accordion methods are the following:

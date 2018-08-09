@@ -12,6 +12,7 @@ redirect_from:
 ---
 
 #### Contents
+
 *   <a href="#package-over">Overview of packaging</a>
 *   <a href="#composer">Create a Magento Composer file</a>
 *   <a href="#packaging">Package and publish your extension</a>
@@ -55,6 +56,7 @@ Metapackages allow you to group an {% glossarytooltip 55774db9-bf9d-40f3-83db-b1
 
 
 #### Metapackage example
+
 The following example is a `composer.json` for a metapackage:
 
 
@@ -103,6 +105,7 @@ The following example is a `composer.json` for a metapackage:
 {% endhighlight %}
 
 ### Sample composer.json file
+
 The following example is a `composer.json` file for a module:
 
 {% highlight JSON %}

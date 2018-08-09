@@ -21,6 +21,7 @@ Common causes for this issue include:
 *	Timeout values for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} and Varnish
 
 ### Solution:
+
 Set all of the following as appropriate.
 
 #### All web servers and Varnish
@@ -38,6 +39,7 @@ Set all of the following as appropriate.
 	If you use nginx or Varnish, continue with the following sections.
 
 #### nginx only
+
 If you use nginx, use our included `nginx.conf.sample` or add a timeout settings in the nginx host configuration file to the `location ~ ^/setup/index.php` section as follows:
 	
 	location ~ ^/setup/index.php {
@@ -49,6 +51,7 @@ If you use nginx, use our included `nginx.conf.sample` or add a timeout settings
 Restart nginx: `service nginx restart`
 
 #### Varnish only
+
 If you use Varnish, edit `default.vcl` and add a timeout limit value to the `backend` stanza as follows:
 
 	backend default {

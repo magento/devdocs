@@ -110,6 +110,7 @@ php bin/magento setup:upgrade
 It should echo a large amount of output, one line of which should be `Learning_FirstUnit`. Verify that this line of code is there.
 
 ## Check that the new module is active
+
 So far, we haven't added any useful code to our module – it is still empty (and therefore invisible). In order to verify that it has been recognized, check the file `app/etc/config.php`. It has a list of auto-generated modules that are active.
 
 Never change this list manually!

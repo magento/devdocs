@@ -18,6 +18,7 @@ functional_areas:
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites {#instgde-cli-subcommands-configphp-prereq}
+
 There are no prerequisites for using this command.
 
 ## Create or update the Magento deployment configuration {#instgde-cli-subcommands-configphp}

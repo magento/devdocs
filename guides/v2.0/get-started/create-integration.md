@@ -179,6 +179,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
 ## Create integration files {#files}
+
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
 * Managing the third-party account that connects to Magento.
@@ -296,6 +297,7 @@ Before you can activate your integration in Magento, you must create two pages o
 When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for`oauth_consumer_key` tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
 
 ### Callback page {#callback}
+
 The callback page must be able to perform the following tasks:
 
 * Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
@@ -319,6 +321,7 @@ The callback page must be able to perform the following tasks:
 * Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
 
 ## Related Topics
+
 - [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
 - [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
 - [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)

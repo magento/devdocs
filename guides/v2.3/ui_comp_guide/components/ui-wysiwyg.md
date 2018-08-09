@@ -16,6 +16,7 @@ Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="\_bla
 </div>
 
 ## Configuration options
+
 Extends all `abstract` configuration.
 
 Wysiwyg-specific options:
@@ -89,6 +90,7 @@ The following are available events for use in the WYSIWYG component adapter for 
 
 
 ## Add a default editor
+
 Adding the default Magento WYSIWYG editor to a page requires the following steps:
 
 1. Create a layout
@@ -156,6 +158,7 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
 Last, add your data provider, controller, and routes. Refer to [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) for more information.
 
 ## Modify the default editor
+
 The most common way to configure UI components in Magento is to add a configuration section inside the XMl element when declaring it on a form. If you need to apply dynamic modifications to a UI component, we recommend using PHP modifiers since Magento supports replacing the default WYSIWYG editor with other WYSIWYG libraries.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

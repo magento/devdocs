@@ -105,6 +105,7 @@ The Magento software extracts to the directory you created. After the file has e
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

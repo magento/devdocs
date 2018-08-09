@@ -22,6 +22,7 @@ Layout files with instructions that override the default or parent {% glossaryto
 
 
 ## Examples of customizations that involve overriding layouts
+
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.

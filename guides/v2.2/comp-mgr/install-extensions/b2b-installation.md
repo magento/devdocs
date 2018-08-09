@@ -14,6 +14,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 </div>
 
 ## Installation
+
 1.  Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
     ```
@@ -50,9 +51,11 @@ After completing the installation, you must follow the [post-installation steps]
 </div>
 
 ## Post-installation {#configure-b2b}
+
 After installing the {{site.data.var.b2b}} extension, follow these instructions to launch {{site.data.var.b2b}}.
 
 ### Start message consumers
+
 The {{site.data.var.b2b}} extension uses MySQL for message queue management. If you want to enable the B2B **Shared Catalog** feature, you must start the corresponding message consumers after installation.
 
 1.  List the available message consumers:
@@ -87,6 +90,7 @@ Append `&` to the command to run it in the background, return to a prompt, and c
 Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information.
 
 ### Add message consumers to cron
+
 You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
 
 {%highlight xml%}
@@ -95,6 +99,7 @@ You may also add these two message consumers to the cron job (optional). For thi
 {%endhighlight%}
 
 ### Specify parameters for message consumers
+
 Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:
 
 -   `--max-messages`: manages the consumer's lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.
@@ -102,6 +107,7 @@ Depending on your system configuration, to prevent possible issues, you may also
 -   `--batch-size`: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
 
 ### Enable B2B features in Magento Admin
+
 After installing the {{site.data.var.b2b}} extension and starting message consumers (if you want to enable the **Shared Catalog** module), you must also enable B2B modules in Magento Admin.
 
 <div class="bs-callout bs-callout-info" markdown="1">

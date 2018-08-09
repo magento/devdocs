@@ -27,11 +27,13 @@ When [deploying static view files]({{ page.baseurl }}/config-guide/cli/config-cl
 The following sections describe the implementation details and features of each strategy.
 
 ## Standard strategy {#static-file-standard}
+
 When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by [`\Magento\Framework\App\View\Asset\Publisher`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/View/Asset/Publisher.php){:target="\_blank"}.
 
 For more information, see [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
 
 ## Quick strategy {#static-file-quick}
+
 The quick strategy performs the following actions:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the standard strategy.
@@ -46,6 +48,7 @@ By _similar_, we mean files that are independent of the locale, theme, or area. 
 This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.
 
 ## Compact strategy {#static-file-compact}
+
 The compact strategy avoids file duplication by storing similar files in `base` subdirectories.
 
 For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. `base` subdirectories are created for all combinations of these scopes.
@@ -125,6 +128,7 @@ The files are deployed to these subdirectories according to the following patter
 
 
 ### Mapping deployed files
+
 The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and locale. There are separate map files for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and JS:
 
 * `map.php`
@@ -164,6 +168,7 @@ require.config({
 ```
 
 ## Tips for extension developers
+
 To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213){:target="\_blank"}.
 
 Do not use {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} concatenations to avoid problems with {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being not found and not displayed during page rendering.

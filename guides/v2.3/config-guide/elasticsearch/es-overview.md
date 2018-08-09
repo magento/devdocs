@@ -42,6 +42,7 @@ Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elastic
 
 
 ### Recommended configuration {#es-arch}
+
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
 <img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
@@ -71,6 +72,7 @@ Search requests are processed as follows:
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
 ## Install prerequisites and Elasticsearch {#es-prereq}
+
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
@@ -131,6 +133,7 @@ This section discusses how to install Elasticsearch 5.2 from their repository. Y
 
 
 ### Install Elasticsearch 2.x {#es-install-es}
+
 This section discusses how to install the latest 2.x version of Elasticsearch from their repository.
 
 To install Elasticsearch:
@@ -197,6 +200,7 @@ Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7
 </div>
 
 ## Additional resources {#es-resources}
+
 For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
 
 #### Next

@@ -18,6 +18,7 @@ Varnish provides several features that prevent customers from experiencing long 
 See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
 
 ## Health check {#health}
+
 Varnish's health check feature polls the Magento server to determine whether it is responding in a timely manner. If it is responding normally, fresh content will be regenerated after the Time to Live (TTL) period has expired. If not, Varnish always serves stale content.
 
 Magento defines the following default health check:
@@ -69,6 +70,7 @@ Saint mode blacklists unhealthy backends for a configurable amount of time. As a
 Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.
 
 ### Saint mode prerequisites {#saint-prereq}
+
 You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish.
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.

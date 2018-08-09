@@ -27,6 +27,7 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 </div>
 
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
+
 To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
 {% highlight yaml %}
@@ -45,6 +46,7 @@ relationships:
 Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ### Add Elasticsearch plugins {#addplugins}
+
 Optionally, you can add the plugins through the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
 
 {% highlight yaml %}
@@ -92,6 +94,7 @@ If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target=
 For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
+
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -119,6 +122,7 @@ The response includes all relationships for services and configuration data for 
 {% endhighlight %}
 
 ## Configure Elasticsearch for your site {#configure}
+
 The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
 
 <div class="bs-callout bs-callout-warning" markdown="1">

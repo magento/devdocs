@@ -13,6 +13,7 @@ functional_areas:
 ---
 
 ## Resolve issues with HTML minification
+
 This topic discusses solutions to typical issues you might experience by HTML minification.
 
 ### Website load errors after scd-dump, build, and deploy

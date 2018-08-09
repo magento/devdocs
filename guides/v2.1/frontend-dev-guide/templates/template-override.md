@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## What's in this topic
+
 This topic discusses the main concepts of how default templates work in the Magento application. 
 
 ## How templates are initiated {#template-layout}
@@ -44,6 +45,7 @@ Here `<path_to_templates>` might have several levels of directory nesting, or mi
 * `<Magento_Checkout_module_dir>/view/frontend/templates/cart.phtml`
 
 ## Templates overriding {#override}
+
 For template files with the same name, the following is true: 
 theme templates override module templates, and those of a [child theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 

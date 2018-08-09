@@ -33,6 +33,7 @@ The installer is designed to be run multiple times if necessary so you can:
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Command summary {#instgde-cli-summary}
+
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <table>
@@ -131,6 +132,7 @@ The following table summarizes the available commands. Commands are shown in sum
 
 
 ## Commands {#instgde-cli-subcommands}
+
 The following sections discuss the available commands.
 
 *	[Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)

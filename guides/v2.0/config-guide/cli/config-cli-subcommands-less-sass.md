@@ -17,6 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Create LESS files {#config-cli-subcommands-less-sass}
+
 Use this command to create symlinks to LESS files.
 
 Command options:

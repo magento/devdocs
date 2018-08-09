@@ -40,6 +40,7 @@ An *extension* is a component that are packaged for sale on Magento Marketplace.
 
 
 ## Magento module example
+
 Modules are declared in the `module.xml` file. Here is a minimal example:
 
 {% highlight XML %}

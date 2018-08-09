@@ -13,9 +13,11 @@ functional_areas:
 ---
 
 ## Prerequisites {#instgde-cli-uninst-prereq}
+
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 ## Overview of uninstalling modules {#instgde-cli-uninst-mod-over}
+
 This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules' code, database schema, and database data. You can create backups first so you can recover the data at a later time.
 
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.
@@ -31,6 +33,7 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Uninstall modules {#instgde-cli-uninst-mod-uninst}
+
 Command usage:
 
 	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
@@ -146,6 +149,7 @@ Messages similar to the following display:
 </div>
 
 ## Roll back the file system, database, or media files {#instgde-cli-uninst-mod-roll}
+
 To restore the Magento codebase to the state at which you backed it up, use the following command:
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]

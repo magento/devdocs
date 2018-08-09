@@ -3,6 +3,7 @@
 You can get a {{site.data.var.ee}} patch in any of the following ways:
 
 #### From the {{site.data.var.ee}} merchant portal
+
 To get a patch from the {{site.data.var.ee}} merchant portal:
 
 1.	Go to [www.magento.com](http://www.magento.com){:target="_blank"}.
@@ -13,6 +14,7 @@ To get a patch from the {{site.data.var.ee}} merchant portal:
 6.	Transfer the patch to your development system.
 
 #### From the {{site.data.var.ee}} partner portal
+
 To get a patch from the {{site.data.var.ee}} partner portal:
 
 1.	Log in to [partners.magento.com](https://partners.magento.com/English/?rdir=/files.aspx){:target="_blank"}.

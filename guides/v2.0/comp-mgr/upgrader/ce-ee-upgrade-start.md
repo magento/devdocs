@@ -56,6 +56,7 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 	service varnish restart
 
 #### Errors
+
 *	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
 	<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">

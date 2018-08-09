@@ -16,6 +16,7 @@ You can follow the same approach when customizing Magento JavaScript, or [disabl
 For information about how JS resources are located and configured, see [Configure JavaScript].
 
 ## What's in this chapter {#js_contents}
+
 Topics of this chapter describe the following:
 
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates

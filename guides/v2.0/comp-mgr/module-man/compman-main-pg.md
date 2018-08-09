@@ -109,6 +109,7 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
 ## Enable or disable a component {#compman-endis}
+
 To enable or disable a component, click the appropriate choice from the **Actions** list.
 
 The following figure shows an example of disabling a component.

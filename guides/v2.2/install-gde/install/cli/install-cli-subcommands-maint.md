@@ -21,9 +21,11 @@ functional_areas:
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites {#instgde-cli-subcommands-maint-prereq}
+
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 ## Enable or disable maintenance mode {#instgde-cli-maint}
+
 Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
 
 Magento detects maintenance mode as follows:
@@ -64,6 +66,7 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 </div>
 
 ## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}
+
 To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
 	magento maintenance:allow-ips <ip address> .. <ip address> [--none]

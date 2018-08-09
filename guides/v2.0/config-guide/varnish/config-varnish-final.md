@@ -79,5 +79,6 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 </div>
 
 #### Next steps
+
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
