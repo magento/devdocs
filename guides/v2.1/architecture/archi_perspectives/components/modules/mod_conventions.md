@@ -15,7 +15,6 @@ Modules must conform to Magento conventions regarding code location and file nam
 
 Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html).
 
-
 ## Module location conventions {#m2arch-module-conventions-location}
 
 The following table shows the *recommended* location within the Magento file system for specific components.

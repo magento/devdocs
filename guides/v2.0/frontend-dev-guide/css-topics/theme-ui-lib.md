@@ -11,13 +11,14 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
+## What\'s in this topic   {#fedg_using-ui-lib_overview}
 
 The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers. It employs a set of mixins for base elements to ease frontend theme development and customization. 
 
 This topic describes how the library is organized, and how to use it. 
 
 ## Components provided by the UI library {#library_elements}
+
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 
 *	actions-toolbar
@@ -87,7 +88,6 @@ The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f
     ├── images/
     │    └── blank-theme-icons.png (Library icons sprite)
     └── jquery/ (Library javascript files)</pre>
-
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 

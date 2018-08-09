@@ -456,7 +456,6 @@ The fullscreen and breakpoints options are set in a similar way:
 
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
 
-
 ## Gallery API {#gallery_api}
 
 Gallery methods are placed in data storage of the `gallery` object. To initialize the API, on the gallery object, call the `data` method with `gallery` as argument. The illustration follows:

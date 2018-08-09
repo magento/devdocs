@@ -75,8 +75,6 @@ Details on the response fields:
 
 ### Upload files
 
-
-
 You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
 ```

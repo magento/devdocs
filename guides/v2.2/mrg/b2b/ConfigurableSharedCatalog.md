@@ -20,7 +20,6 @@ The `Magento_ConfigurableSharedCatalog` module provides the following features:
 
 * Control the visibility of configurable products in quotes and orders. Only those configurable products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
 
-
 ## Installation details
 
 The `Magento_ConfigurableSharedCatalog` module has a dependency on the `Magento_SharedCatalog` and `Magento_Configurable` modules, which must be installed and enabled first. This module does not create any backward incompatible changes. It can be uninstalled or deactivated at any time.

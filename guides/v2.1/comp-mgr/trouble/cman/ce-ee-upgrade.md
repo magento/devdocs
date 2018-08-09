@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ### Problem: Error upgrading from CE to EE {#ce-ee}
+
 Your upgrade from **{{site.data.var.ce}}** to **{{site.data.var.ee}}** might fail with the following error:
 
 	[2016-01-19 23:33:24 UTC] An error occurred while executing job 

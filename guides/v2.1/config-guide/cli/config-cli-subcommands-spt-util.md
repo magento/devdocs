@@ -17,6 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
+
 The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="\_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
@@ -35,6 +36,7 @@ Magento Support uses these backups (also referred to as *dumps*) to analyze issu
 The utilities can take several minutes to complete.
 
 ## Create a code backup {#config-cli-spt-utils-code}
+
 This command backs up code and compresses it in `tar.gz` format.
 
 {% include config/code-backup.md %}
@@ -56,6 +58,7 @@ For example, to create a code backup named `/var/www/html/magento2/var/log/mycod
 After the command completes, provide the code backup to Magento Support.
 
 ## Create a database backup {#config-cli-spt-utils-db}
+
 This command backs up the Magento database and compresses it in `tar.gz` format.
 
 {% include config/code-backup.md %}
@@ -76,6 +79,7 @@ After the command completes, provide the database backup to Magento Support.
 {% include install/sens-data.md %}
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
+
 We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or on the command line:
 
 	Utility lsof not found

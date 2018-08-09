@@ -87,4 +87,5 @@ To change this mask, add the following code in your `zip_codes.xml`:
 ```
 
 ## Remove a mask {#remove}
+
 To remove a mask, in your `zip_codes.xml` add the corresponding node and set `active` attribute of `<code/>` to `false`.

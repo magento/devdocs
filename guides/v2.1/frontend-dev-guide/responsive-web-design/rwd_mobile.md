@@ -11,6 +11,7 @@ functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 
 
 ## Creating a mobile-specific theme
@@ -32,9 +33,8 @@ To create a mobile-specific theme:
 
 This will remove the desktop-specific files from your theme.
 
-
-
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a></li>
 </ul>

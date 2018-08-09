@@ -62,6 +62,7 @@ bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/cac
 </div>
 
 ## Export a Varnish configuration file
+
 This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
 
 To export a Varnish configuration file from the Admin panel:
@@ -109,5 +110,6 @@ Static files should not be cached by default, but if you want to cache them, you
 You need to make these changes before you configure Magento to use Varnish.
 
 ## Next steps
+
 <p><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> (Optional)</p>
 <p><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a></p>

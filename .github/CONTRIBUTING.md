@@ -28,6 +28,7 @@ If you write and contribute a full topic, we will add your name (or your company
 **Tip![:]()** If you are not sure where to start contributing, check out our GitHub issues labeled [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 ## Contribution guidelines
+
 We use [Markdown](http://daringfireball.net/projects/markdown/) to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html).
 
 You can update, or add content to, existing topics in their respective versioned directories (for 2.0, 2.1, 2.2, and onward).
@@ -69,6 +70,7 @@ Edit and add content to existing pages. For new topics, we provide templates to 
   - Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
 
 ### Edit metadata
+
 The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file.
 
 ```yaml
@@ -91,6 +93,7 @@ GitHub_link: install-gde/continue.md
 | `github_link` | Specifies the name and location of the source file in the GitHub repository.                                         |
 
 ## Report an issue
+
 If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository.
 GitHub issues use templates for requested information. Enter as much information as you can including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
 

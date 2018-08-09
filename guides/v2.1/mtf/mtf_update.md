@@ -19,7 +19,6 @@ Two types of updates are available.
 <p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>
 </div>
 
-
 ### Install a new version of the Functional Testing Framework {#mtf_update_install}
 
 Step 1.    To avoid conflicts with the previous version, remove directory `<magento2_root_dir>/dev/tests/functional/generate`.

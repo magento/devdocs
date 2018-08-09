@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ### always_populate_raw_post_data error {#trouble-php-always}
+
 If you're upgrading the Magento 2 software, the following error can display during the readiness check:
 
 ![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}/common/images/upgr_readiness-success.png){:width="700px}
@@ -41,6 +42,7 @@ To resolve the error:
 8.	On the readiness check page, click **Try Again**.
 
 ### PHP memory limit error {#trouble-php-memory}
+
 The readiness checks makes sure you have at least 1GB of memory set aside for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
 
 To increase your PHP memory limit:
@@ -67,11 +69,13 @@ To increase your PHP memory limit:
 See [During installation, xdebug maximum function nesting level error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html).
 
 ### Errors display when you access a PHTML template {#trouble-php-asptags}
+
 Error text is typically:
 
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
+
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml) for displaying a product image:
 
 ```php?start_inline=1

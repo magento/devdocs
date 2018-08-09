@@ -18,6 +18,7 @@ In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b6
 As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
 
 ## OAuth overview {#overview}
+
 The following diagram shows the OAuth authentication process. Each step is described further.
 ![OAuth flow]({{ page.baseurl }}/get-started/authentication/images/oauthflow.png)
 

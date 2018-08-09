@@ -35,6 +35,7 @@ Generated code and dependency injection configuration successfully.
 ```
 
 #### To compile code before installing the Magento application: {#config-cli-subcommands-single-before}
+
 In some cases, you might want to compile code before you install the Magento application.
 
 1.  Enable the modules.

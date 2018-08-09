@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## What's in this topic
+
 This topic discusses the main concepts of how default templates work in the Magento application. 
 
 ## How templates are initiated {#template-layout}
@@ -44,6 +45,7 @@ Here `<path_to_templates>` might have several levels of directory nesting, or mi
 * `<Magento_Checkout_module_dir>/view/frontend/templates/cart.phtml`
 
 ## Templates overriding {#override}
+
 For template files with the same name, the following is true: 
 theme templates override module templates, and those of a [child theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 
@@ -51,14 +53,11 @@ This mechanism is the basis of the template customization concept in Magento app
 
 Overriding templates is described with more details in the [Theme Inheritance article]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates).
 
-
 ## Root template {#root}
 
 In Magento there's a special template which serves as root template for all {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages in the application: `<Magento_Theme_module_dir>/view/base/templates/root.phtml`.
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application. But similar to other templates, `root.phtml` can be overridden in a theme. 
-
-
 
 ## Getting argument values from layout {#getter}
 

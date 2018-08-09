@@ -287,7 +287,6 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 `[]` (an empty array)
 
-
 ## Related information
 
 * [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)

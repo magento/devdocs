@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Overview of Varnish caching {#config-varnish-cache-over}
+
 This topic discusses how Varnish caching works with Magento using:
 
 *	<a href="{{ site.mage2000url }}nginx.conf.sample" target="_blank">`nginx.conf.sample`</a> from the Magento 2 GitHub repository
@@ -31,6 +32,7 @@ In addition, Varnish uses an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5a
 More detail is provided in the sections that follow.
 
 ## Caching by browser request {#config-varnish-cache-browser}
+
 This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser's local {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 
 ### First browser request {#config-varnish-cache-browser-first}
@@ -47,6 +49,7 @@ The preceding example shows a request for the {% glossarytooltip 1a70d3ac-6bd9-4
 </div>
 
 ### Second browser request {#config-varnish-cache-browser-second}
+
 If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.
 
 <p><img src="{{ site.baseurl }}/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache"></p>
@@ -54,6 +57,7 @@ If the same browser requests the same page again, these assets are delivered fro
 Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they're delivered from local cache for the first time.
 
 ## How Magento uses Etag {#config-varnish-cache-etag}
+
 The following example shows response headers for a particular static asset. 
 
 <p><img src="{{ site.baseurl }}/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not"></p>

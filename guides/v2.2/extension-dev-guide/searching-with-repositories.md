@@ -116,7 +116,6 @@ $searchCriteria
 
 {% endhighlight %}
 
-
 ### Search Result
 
 The `getList(SearchCriteria $searchCriteria)` method defined in your repository should return a Search Result object.

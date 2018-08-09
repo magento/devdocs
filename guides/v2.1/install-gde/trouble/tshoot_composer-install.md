@@ -14,7 +14,6 @@ functional_areas:
   - Setup
 ---
 
-
 ### Suggestion
 
 Change to the directory in which you installed {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and enter the following command:

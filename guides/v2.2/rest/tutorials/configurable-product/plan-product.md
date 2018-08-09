@@ -25,7 +25,6 @@ Since this tutorial uses the sample data, we can take advantage of the options t
 
 The size of the t-shirt will be the configurable aspect of this product. Therefore, we'll create a simple product for each size (Small, Medium, and Large).
 
-
 ## Define product characteristics
 
 The following table lists the general characteristics of men's t-shirt we're creating. These items are among those listed on the New Product page in Admin when the Top attribute set is selected.

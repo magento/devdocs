@@ -58,6 +58,7 @@ You can run Magento in any of the following *modes*:
 </table>
 
 ## Default mode
+
 As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
 
 To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
@@ -71,6 +72,7 @@ In default mode:
 For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 ## Developer mode
+
 You should run the Magento software in developer mode when you're extending or customizing it.
 
 <div class="bs-callout bs-callout-info">
@@ -88,6 +90,7 @@ In developer mode:
 For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 ## Production mode
+
 You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
 
 This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
@@ -98,7 +101,9 @@ In production mode:
 -   Errors are logged to the file system and are never displayed to the user
 
 #### Next step
+
 To set a mode, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 #### Related topic
+
 To generate static view files for production mode, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>

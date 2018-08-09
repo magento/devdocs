@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## Start the Extension Manager from the Magento Admin
+
 To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager:
 
 1.	If you haven't done so already, create or get your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
@@ -44,6 +45,7 @@ See one of the following sections:
 *	[Update extensions](#extensman-update)
 
 ## Choose what to install, uninstall, or update {#extens-choose}
+
 After you log in to the Extension Manager, a list displays as follows:
 
 ![Choose what to install, update, or uninstall]({{ site.baseurl }}/common/images/extens_mgr_updates.png){:width="500px"}
@@ -80,6 +82,7 @@ The following sections provide details:
 *	[Actions available for metapackages](#extensman-access-types-meta)
 
 #### Actions available for non-metapackages {#extensman-access-types-non-meta}
+
 Most extensions you get from Magento Marketplace or another source have only one type; for example, a module.
 
 The following table shows which actions are supported for each non-metapackage.
@@ -119,8 +122,8 @@ The following table shows which actions are supported for each non-metapackage.
 		</tbody>
 	</table>
 
-
 #### Actions available for metapackages {#extensman-access-types-meta}
+
 A metapackage is an installable package that includes more than one type. For example, we require a package that contains a module and a theme to be packaged as a metapackage.
 
 The following table shows which actions are available for a metapackage.
@@ -177,12 +180,15 @@ The Ready to Install page displays as follows.
 The following sections discuss your options.
 
 ### Get more information
+
 To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}/common/images/extensman_icon_question.png).
 
 ### Install one extension
+
 To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 ### Install more than one extension
+
 To install more than one extension:
 
 1.	Select the checkbox next to each extension, or click **Select All** from the list as the following figure shows.

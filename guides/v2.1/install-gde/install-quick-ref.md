@@ -34,11 +34,13 @@ This topic assumes:
 We've broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you'd like to suggest improvements, click **Edit this page on GitHub** at the top of this page and let us know.
 
 ## Precondition: How advanced are you?
+
 Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is?
 
 If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 ## Installation part 1: Getting started
+
 1.	See the [system requirements]({{ site.baseurl }}/magento-system-requirements.html).
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
@@ -50,6 +52,7 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 4.	Switch to the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
 ### Get the Magento software
+
 When all prerequisites have been met, get the Magento software using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} as follows:
 
 	cd <web server docroot directory>
@@ -63,6 +66,7 @@ Alternatively, you can also download a [Magento software archive]({{ page.baseur
 {% include install/file-system-perms-before.md %}
 
 ## Installation part 2: Installing the Magento software
+
 You can choose to install the Magento software using either a [web-based Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html) or using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
 #### Command line installation
@@ -157,7 +161,7 @@ To run the Web Setup Wizard:
 
 {% endcollapsible %}
 
-
 ## Installation part 3: Post-installation
+
 *	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html) was successful.
 *	Learn about the [Component Manager and System Upgrade]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html) for future updates.

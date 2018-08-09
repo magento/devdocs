@@ -16,14 +16,18 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 <div class="bs-callout bs-callout-info" id="info">
    <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
 </div>
+
 ## ObjectManager methods {#help}
+
 <p>The ObjectManager public interface methods are:</p>
 <ul>
    <li><a href="#getobject">getObject method</a>. Creates class instances with automatically mocked dependencies.</li>
    <li><a href="#getCollectionMock">getCollectionMock method</a>. Lists mocked constructor arguments.</li>
    <li><a href="#getConstructArguments">getConstructArguments method</a>. Creates collection instances that contain specified elements.</li>
 </ul>
+
 ### getObject method {#getobject}
+
 <p>Creates mocks for all constructor dependencies and applies any specified custom mocks from <code>$arguments</code> array.</p>
 <p>Also, instantiates the required <code>$className</code> by using constructor with already existing mocks.</p>
 <p><b>Syntax:</b></p>
@@ -47,6 +51,7 @@ $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
 </pre>
 
 ### getCollectionMock method {#getCollectionMock}
+
 <p>Retrieves a collection instance with mocked getIterator method.</p>
 <p><b>Syntax:</b></p>
 <pre>
@@ -69,7 +74,9 @@ $optionCollection =
      $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
           array($options));
 </pre>
+
 ### getConstructArguments method {#getConstructArguments}
+
 <p>Lists dependency mocks for a specified class.</p>
 <p><b>Syntax:</b></p>
 <pre>

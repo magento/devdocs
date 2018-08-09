@@ -145,6 +145,7 @@ Following is a sample `extension_attributes.xml`:
 ```
 
 ## Step 5: Access the value of the custom field on server side {#access}
+
 If you took all the steps described in these steps, Magento will generate the interface that includes your custom attribute. You can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();

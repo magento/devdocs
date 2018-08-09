@@ -11,7 +11,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2 id ="practice_over">What's in this topic</h2>
+## What\'s in this topic   {#practice_over}
 
 This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 

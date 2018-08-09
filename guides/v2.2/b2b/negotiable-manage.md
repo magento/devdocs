@@ -53,7 +53,6 @@ Name | Description | Format | Requirements
 `type` | Defines the type of file, such as `text/plain` or `application/pdf`| string | Optional
 `name` | The name of the file to be uploaded, such as `quote.txt` or `quote.pdf`. | string | Required
 
-
 ### Request a negotiable quote
 
 Before negotiable quote can begin, the following conditions must be met:
@@ -177,7 +176,6 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 {% endhighlight %}
 
 **Response**
-
 
 ### Decline a quote
 
@@ -306,7 +304,6 @@ Not applicable
   }
 ]
 {% endhighlight %}
-
 
 ### Retrieve a negotiable quote attachment
 

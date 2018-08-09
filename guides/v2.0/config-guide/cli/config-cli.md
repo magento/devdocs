@@ -14,16 +14,18 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
+## Introducing the Magento command-line interface (CLI)   {#config-new-cli-intro}
+
 {% include install/new-cli-intro.html %}
 
 This topic discusses configuring the Magento software using the CLI. For information about installing Magento, see <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Installation overview</a>.
 
-<h2 id="config-install-cli-prereq">Before you start configuring Magento</h2>
+## Before you start configuring Magento   {#config-install-cli-prereq}
+
 {% include install/before-you-begin-cli.html %}
 
+## First steps   {#config-install-cli-first}
 
-<h2 id="config-install-cli-first">First steps</h2>
 {% include install/first-steps-cli.html %}
 
 #### Next step 

@@ -1457,7 +1457,6 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-
 ### updateData
 
 When you create a data entity using `createData`, you may need to update it later in the test.

@@ -6,5 +6,6 @@ This topic discusses how to install optional Magento sample data *before* you in
   
 {% include install/sample-data.html %}
 
-<h2 id="sample-next-steps">Next steps</h2>
+## Next steps   {#sample-next-steps}
+
 Install the Magento software using either the <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a> or <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.

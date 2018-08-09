@@ -32,6 +32,7 @@ See the <a href="{{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.htm
 The Magento blank theme template provides a launchpad for storefront customization. You can use this boilerplate as a robust starting point for your own theme development.
 
 ### Magento UI components
+
 Using Magento standard coding and styling tools can help:
 
 * enforce for consistency in design across your storefronts

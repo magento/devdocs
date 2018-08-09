@@ -38,6 +38,7 @@ To get the {{site.data.var.ce}} metapackage:
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

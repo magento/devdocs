@@ -67,7 +67,6 @@ The following example enables Redis default caching, sets the host to `redis.exa
 
 `bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=0`
 
-
 ## Configure Redis page caching
 
 To configure Redis page caching on Magento, run the `setup:config:set` command with additional parameters.

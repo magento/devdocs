@@ -51,9 +51,8 @@ That is why the recommended flow for adding custom strings is the following:
 
 See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
 
+### Custom strings and dictionaries for not default locales
 
-
-<h3>Custom strings and dictionaries for not default locales</h3>
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
 Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
@@ -67,5 +66,6 @@ Continuing the <a href="#luma_example">previous example</a> with the Luma theme,
 The default values (keys) are used in the left column.
 
 ## Recommended reading ##
+
 - <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a>
 -  <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>

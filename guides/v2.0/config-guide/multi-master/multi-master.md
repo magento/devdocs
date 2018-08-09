@@ -14,7 +14,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
+## Overview of the split database solution   {#config-ee-multidb-over}
+
 *This feature is available in {{site.data.var.ee}} only.*
 
 {{site.data.var.ee}} offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.
@@ -44,6 +45,7 @@ In {{site.data.var.ce}}, only one master database is used.
 {{site.data.var.ee}} uses three master databases and a configurable number of slave databases for replication. {{site.data.var.ee}} has a single interface for database connections, resulting in faster performance and better scalability.
 
 ## Configuration options {#config-ee-multidb-opts}
+
 Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
 
 *	Write directly to the database (instead, you must use the {{site.data.var.ee}} database interface)
@@ -70,7 +72,8 @@ This also means you can either:
     <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
-<h2 id="config-ee-multidb-prereq">Prerequisites</h2>
+## Prerequisites   {#config-ee-multidb-prereq}
+
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
 *	One master database for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} tables

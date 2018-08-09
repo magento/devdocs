@@ -15,6 +15,7 @@ redirect_from:
 ---
 
 ## Overview of database caching {#mage-cache-db-over}
+
 This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the `cache` and `cache_tag` Magento 2 database tables. Nothing is stored `var/cache` or `var/page_cache`.
 
 This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
@@ -27,11 +28,13 @@ Database caching&mdash;like file-based caching&mdash; works well in a developmen
 Varnish is designed to accelerate the HTTP protocol.
 
 ## Prerequisites {#mage-cache-db-prereq}
+
 Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
 
 We provide [sample configurations] at the end of this topic.
 
 ## Database caching using the `default` cache frontend {#mage-cache-db-di}
+
 To enable database caching using the `default` frontend, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
 
 To modify `di.xml`:
@@ -98,6 +101,7 @@ To modify `di.xml`:
 7.	Continue with [Verify database caching is working].
 
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
+
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
 {:.bs-callout .bs-callout-info #info}
@@ -137,6 +141,7 @@ To enable database caching using a custom cache frontend, you must modify `<your
 5.	Continue with the next section.
 
 ## Verify database caching is working {#mage-cache-db-verify}
+
 To verify database caching is working, clear the current cache directories, go to any cacheable page in a web browser, and verify that data is written to the database and not to the file system.
 
 Use the following steps:
@@ -173,8 +178,8 @@ Use the following steps:
 
 	![Sample contents of the cache tag table with database caching enabled]
 
-
 ## Configuration examples {#mage-cache-db-config}
+
 This section contains code sample snippets to refer to when configuring database caching.
 
 ### Sample `di.xml` for the default cache frontend {#mage-cache-db-config-default}

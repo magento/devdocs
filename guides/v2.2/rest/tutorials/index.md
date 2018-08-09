@@ -15,7 +15,6 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 * The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
 
-
 ## Complete these prerequisites
 
 You will need
@@ -31,7 +30,6 @@ You will need
 * Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html){:target="_blank"} for information about the Luma store that is created when you install Magento with the sample data.
-
 
 ## Performing steps
 

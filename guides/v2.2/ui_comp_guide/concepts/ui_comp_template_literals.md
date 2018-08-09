@@ -47,7 +47,6 @@ As a result, a template literal used in the value of one the objects listed abov
 
 Perhaps the most important part of template literals in Magento is the `$` object that can be used inside expressions. (Remember an expression is anything within `${ }`.) The `$` provides access to the `this` context in the Javascript class where the template literals are. To take it a step further, `this` (and the related `$`) is the KnockoutJS context for the template that can be bound to the UI Component. This object should not be confused with the `$` that marks the beginning of an expression. The `$` object can only appear inside of an expression. Here is an example: `${ $.submitUrl }`: the `$` references the current KnockoutJS context, and `.submitUrl` will return the `provider` property from that object.
 
-
 ## Example
 
 Perhaps the most useful aspect of template literals is the ability to access other UI Component Javascript classes in the registry so we will use this as an example. First, there are a few things to explain.

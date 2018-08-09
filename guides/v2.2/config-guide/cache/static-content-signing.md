@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ### Static content cache
+
 To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files.
 Setting the `Expires` header on a static resource tells the browser to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} the resource at that {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and serve the cached version until it expires.
 This is a common [best practice](https://developer.yahoo.com/performance/rules.html#expires=){:target="_blank"} for caching static resources.

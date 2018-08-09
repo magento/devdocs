@@ -50,7 +50,6 @@ The `uiCollection` class implements the following methods:
 
   where `childIndex` is the value of the child element's `index` property.
 
-
 ## Commonly used `uiCollection` properties
 
 * `elems` is the observable property that contains the collection of child UI components.

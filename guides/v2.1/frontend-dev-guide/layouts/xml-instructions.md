@@ -9,7 +9,6 @@ functional_areas:
 
 ## What's in this topic {#fedg_layout_xml-instruc_overview}
 
-
 There are two possible ways to customize page layout in Magento:
 * Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
 * Altering templates
@@ -22,7 +21,6 @@ Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instr
 *  Remove a page element.
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.
-
 
 ## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
@@ -181,8 +179,8 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
-
 ### before and after attributes {#fedg_xml-instrux_before-after}
+
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files to control the order of elements in their common parent.
 
@@ -227,7 +225,9 @@ The following tables give a detailed description of the results you can get usin
       </tr>
    </tbody>
 </table>
+
 ### Examples {#examples}
+
 <table>
    <tbody>
       <tr>
@@ -301,6 +301,7 @@ Example:
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
 ### fedg_layout_xml-instruc_ex_ref
+
 <p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
 <p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
 
@@ -349,6 +350,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
 </ul>  
 
 ### fedg_layout_xml-instruc_ex_mv
+
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
@@ -438,6 +440,7 @@ Used as follows:
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 ### argument
+
 Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
  
 <table>

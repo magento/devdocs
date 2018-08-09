@@ -34,6 +34,7 @@ For example, you may want to set the following settings:
 _Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates.
 
 ## Prerequisites {#prereqs}
+
 To complete these configuration management tasks, you need the following:
 
 * Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
@@ -70,6 +71,7 @@ To change locale and static file optimization settings:
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.local.php to your local workstation {#export}
+
 This step creates and transfers the `config.local.php` configuration file on the Integration environment using a command you run on your local machine.
 
 This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local workstation so you can add it to Git.
@@ -112,6 +114,7 @@ The following snippet from `config.local.php` shows an example of changing the d
 </pre>
 
 ## Push and deploy config.local.php to environments {#deploy}
+
 Now that you've created `config.local.php` and transferred it to your local workstation, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 The following command adds, commits, and pushes to master:
@@ -123,6 +126,7 @@ Complete code deployment to Staging and Production. For Starter, you push to `st
 Wait for deployment to complete in all environments.
 
 ## Verify your configuration changes {#cloud-set-verify}
+
 After you push `config.local.php` to your environments, any values you changed should be read-only in the Magento Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Magento Admin. These configuration settings are set in `config.local.php`.
 
 To verify your configuration changes:
@@ -144,11 +148,13 @@ To verify your configuration changes:
 7.	Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
+
 If you need to modify any of these settings and update `config.local.php`, you will need to delete the file, update configurations, generate the file, and push it to Git following the previous steps. For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings.
 
 ### Delete config.local.php on the Integration environment {#delete-file}
+
 Before you can change settings on the Integration environment, delete `app/etc/config.local.php` from that environment. With this file removed, all configuration settings are available to modify in the Admin.
 
 To delete `config.local.php`:
@@ -165,6 +171,7 @@ To delete `config.local.php`:
 		exit
 
 ### Change configuration values in Integration {#change-settings}
+
 To change values in the Integration environment Magento Admin:
 
 1.	If you haven't done so already, log out of the Integration Admin.
@@ -185,6 +192,7 @@ To change values in the Integration environment Magento Admin:
 10.	Log out of the Magento Admin.
 
 ### Generate a new version of config.local.php {#regenerate}
+
 To generate a new file:
 
 1.	On your local workstation, find the integration server's SSH URL.
@@ -203,6 +211,7 @@ To generate a new file:
 		rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
 
 ### Push the changes to Git {#push-again}
+
 To push your changes, enter the following command:
 
 	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master

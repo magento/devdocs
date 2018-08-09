@@ -13,7 +13,6 @@ functional_areas:
   - Setup
 ---
 
-
 #### Contents
 
 *  <a href="#config-php-overview">Purpose of the deployment configuration</a>
@@ -47,7 +46,6 @@ The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 </div>
 
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
-
 
 ## Details about the deployment configuration {#config-php-contents}
 `config.php` and `env.php` are {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.
@@ -100,6 +98,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
 ## Environmental configuration {#config-php-contents-env-php}
+
 The following table provides details about each `env.php` segment and its structure.
 
 <table>
@@ -186,4 +185,5 @@ The following table provides details about each `env.php` segment and its struct
 </table>
 
 ## Related topic
+
 <a href="{{ page.baseurl }}/config-guide/config/config-files.html">Module configuration files</a>

@@ -1,6 +1,7 @@
 <div markdown="1">
 
 #### What is sensitive data? {#sens-data}
+
 Magento uses your encryption key to encrypt the following: 
 
 *	Credit card information

@@ -14,6 +14,7 @@ By default, {{site.data.var.ece}} writes build and deploy actions to the `app/va
 For example, you could send a Slack message to alert a group of people when a deployment fails, and prompt an investigation into what went wrong.
 
 ## Plan your notifications
+
 Before you configure notifications, consider the following:
 
 -   What kind of notifications do you want to receive (Slack messages, email, both)?
@@ -25,6 +26,7 @@ For example, during initial development you may prefer email notifications that 
 {% include note.html type="info" content="The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment." %}
 
 ## Configure notifications
+
 To configure notifications:
 
 1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
@@ -58,6 +60,7 @@ To configure notifications:
     ```
 
 ### Example Slack configuration
+
 The following example shows a Slack-only configuration:
 
 ```yaml
@@ -75,6 +78,7 @@ log:
 -   `min_level`—Minimum log level for notification messages. We recommend using `info`.
 
 ### Example email configuration
+
 The following example shows an email-only configuration:
 
 {:.bs-callout .bs-callout-info}
@@ -95,6 +99,7 @@ log:
 -   `min_level`—Minimum log level for notification messages. We recommend using `notice` or `warning`.
 
 ### Log levels
+
 Log levels determine the level of detail your notification messages contain. You can choose from the following options:
 
 -   **debug**—Detailed debug information.

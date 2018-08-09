@@ -19,6 +19,7 @@ The tree consists of two main "Anchors" and "Links":
 ![](img/treecomponents.jpg)
 
 ### Anchors
+
 Anchors are items that always contain at least one child item and offer "expand" / "collapse" functionality by hiding or revealing its direct children.
 
 ### Link

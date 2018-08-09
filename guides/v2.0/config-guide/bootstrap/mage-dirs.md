@@ -14,10 +14,12 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
+## Introduction to Magento base directory paths   {#dirs-introduction}
+
 The `MAGE_DIRS` environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. 
 
-<h2 id="dirs-set">Set MAGE_DIRS</h2>
+## Set MAGE\_DIRS   {#dirs-set}
+
 Specify an associative array where keys are constants from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php" target="_blank">\Magento\App\Filesystem\DirectoryList</a> and values are absolute paths of directories or their {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} paths, respectively.
 
 You can set `MAGE_DIRS` in any of the following ways:

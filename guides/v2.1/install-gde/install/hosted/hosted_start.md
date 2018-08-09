@@ -14,11 +14,13 @@ functional_areas:
 ---
 
 ## Hosted installation
+
 Before you can install the Magento software, you must get your hosted system ready.  
 
 If your hosted system is already set up, go to [Get the Magento software packages]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html#get-archive).
 
 #### Contents
+
 *	[Verify the software on your system](#newbie-verify)
 *	[Configure a database and a database user]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html)
 *	[Configure PHP]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html)
@@ -26,6 +28,7 @@ If your hosted system is already set up, go to [Get the Magento software package
 *	[Install the Magento software]({{ page.baseurl }}/install-gde/install/hosted/hosted_install.html)
 
 ## Verify the software on your system {#newbie-verify}
+
 Magento requires the following software to run:
 
 *	Web server: Apache 2.2 or 2.4
@@ -38,4 +41,5 @@ We recommend you contact your shared hosting provider's technical support to ver
 For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 #### Next step
+
 [Configure a database and a database user]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html)

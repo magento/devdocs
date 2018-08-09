@@ -105,7 +105,6 @@ Use the following template to create content for a verify step:
 
 * **Calls to action:** [ Task Label ], Cancel ... *Note:* The "Task Label" is the primary call to action and matches the Title's Task Label.
 
-
 ## Button Labels Used in Admin
 
 **Specify actions in buttons:** Appending a specific label to a call to action’s verb clarifies the action that the user is taking. ... *Example:* "Add Row" is more contextual and understandable than "Add".

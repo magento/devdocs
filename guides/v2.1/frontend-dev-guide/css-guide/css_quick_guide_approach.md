@@ -10,6 +10,7 @@ functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
 ## Simplest way to extend parent styles {#simple_extend} 
@@ -69,6 +70,7 @@ The drawback of this approach is that you need to monitor and manually update yo
 To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
 ### Extend component's styles {#structured_extend}
+
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Add <code>_buttons_extend.less</code> and <code>_extend.less</code> here. The path to the files looks like following: 
@@ -93,6 +95,7 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 </ol>
 
 ### Override component's styles {#structured_override}
+
 To override the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
@@ -113,6 +116,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 </ol>
 
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

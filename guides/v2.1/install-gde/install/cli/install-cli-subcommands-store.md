@@ -12,12 +12,12 @@ functional_areas:
   - Setup
 ---
 
-
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-store-prereq}
+
 Before you run this command, you must do all of the following *or* you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html):
 
 *	[Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
@@ -26,6 +26,7 @@ Before you run this command, you must do all of the following *or* you must [ins
 {% include install/fully-secure.md %}
 
 ## Configure the store {#instgde-cli-storeconfig}
+
 Command usage:
 
 	magento setup:store-config:set [--<parameter_name>=<value>, ...]

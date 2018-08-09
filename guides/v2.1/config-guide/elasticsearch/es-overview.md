@@ -25,6 +25,7 @@ functional_areas:
 *	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
 
 ## Overview of Elasticsearch {#overview}
+
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
@@ -50,6 +51,7 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 We also support version 1.7 but recommend you use a later version.
 
 ### Recommended configuration {#es-arch}
+
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
 <img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
@@ -79,6 +81,7 @@ Search requests are processed as follows:
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
 ## Install prerequisites and Elasticsearch {#es-prereq}
+
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
@@ -91,6 +94,7 @@ The tasks discussed in this section require the following:
 {% include config/install-java.md %}
 
 ### Install Elasticsearch {#es-install-es}
+
 This section discusses how to install the latest 2.x version of Elasticsearch from their repository.
 
 To install older versions, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/index.html){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
@@ -151,8 +155,8 @@ To install Elasticsearch:
 
 		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
-
 ## Additional resources {#es-resources}
+
 For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next

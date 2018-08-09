@@ -37,4 +37,5 @@ To configure PHP:
 5.	Click **Save**.
 
 #### Next step
+
 [Transfer the Magento software to your hosted system]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html)

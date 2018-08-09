@@ -49,7 +49,6 @@ The following attributes are available for all UI components, including the basi
   </tr>
 </table>
 
-
 ## Basic component options
 
 The following options are available for all basic components:

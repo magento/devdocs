@@ -26,6 +26,7 @@ During checkout, when a customer fills the shipping address form, shipping carri
 </div>
 
 ## Step 1: Create validation rules {#rules}
+
 Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator).
 
 During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values is carried on the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}. For example, whether a carrier is available for the specified country.
@@ -130,7 +131,6 @@ define(
     }
 );
 ```
-
 
 ## Step 4: Add the validation to the checkout layout {#layout}
 

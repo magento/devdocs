@@ -11,9 +11,11 @@ functional_areas:
 ---
 
 ## What's in this topic
+
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 ## Moving customer account links
+
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
@@ -129,7 +131,6 @@ The links that should be in header, but outside the drop-down menu are added in 
 ...
 {%endhighlight xml%}
 
-
 ### Step 2: Define the templates
 
 Similar to the way they defined the layout on the previous step, OrangeCo
@@ -203,7 +204,6 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 </page>
 
 {%endhighlight xml%}
-
 
 ### Step 4: Move links
 

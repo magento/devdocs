@@ -126,7 +126,6 @@ The buyer can add, update, or delete items from the quote under the following co
 }
 {% endhighlight %}
 
-
 ### Change the quote expiration date
 
 **Sample Usage**

@@ -33,7 +33,6 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * Integration style web APIs enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} where one web API call can create a product. If your payload includes the `stock_item` and `media_gallery_entries` objects, then the framework will also create the product’s inventory & media in that one API call.
 
-
 ## What can I do with the Magento web APIs? {#uses}
 
 The APIs can be used to perform a wide array of tasks. For example:

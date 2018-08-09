@@ -10,6 +10,7 @@ redirect_from:
 ---
 
 ## Overview
+
 The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
 Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
@@ -20,8 +21,8 @@ Once it is expanded, the content can be updated using Ajax. The collapsed/expand
 
 The collapsible widget source is [lib/web/mage/collapsible.js].
 
-
 ## Initialize collapsible in JS {#collaps_init_js}
+
 Generally the collapsible widget is instantiated like following:
 
 ```javascript
@@ -38,15 +39,18 @@ The element's `id` is also used in deep linking: if the `id` of the content or t
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See [Accordion widget initialization] for details.
 
 ### Initialize collapsible with header only
+
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
 ```javascript
 $("#header").collapsible();
 ```
 
 ## Initialize collapsible in a template
+
 The collapsible widget can be initialized using the `data-mage-init` attribute or `<script>` tag, as described in [JavaScript initialization].
 
 ## Options
+
 The collapsible widget has the following options:
 -   [active](#fedg_collaps_active)
 -   [ajaxUrlElement](#fedg_collaps_ajaxUrlElement)
@@ -511,7 +515,6 @@ Invoke the `forceDeactivate` method:
 ```javascript
 $("#element").collapsible("forceDeactivate");
 ```
-
 
 ## Events {#collapsible_events}
 

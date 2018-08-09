@@ -44,6 +44,7 @@ The cache configuration is an associative array similar to the following:
 The preceding lists all cache types and shows they are all enabled.
 
 ## More information about caching
+
 The following topics discuss how to set up caching:
 
 *	<a href="{{ page.baseurl }}/config-guide/cache/caching-cache-type.html">Create a cache type</a>

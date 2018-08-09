@@ -46,7 +46,6 @@ Name | Description | Format | Requirements
 `store_id`  | The store ID the shared catalog is assigned to | integer | Required to create or update a shared catalog.
 `tax_class_id`  | | integer |  Required to create a shared catalog. 2 - Taxable goods; 3 - Retail Customer
 
-
 ### Create a custom shared catalog
 
 When B2B is enabled, the system creates a public shared catalog named `Default (General)`. Magento allows only one public shared catalog at a time. You can create an unlimited number of custom shared catalogs.

@@ -33,6 +33,7 @@ We provide two methods for creating and managing snapshots:
 * Through Magento CLI commands
 
 ## Create a snapshot {#create-snapshot}
+
 To create an environment snapshot using the Magento Web Interface:
 
 1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
@@ -56,6 +57,7 @@ To create an environment snapshot using the Magento CLI:
 3. Use the `magento-cloud snapshots` command so see the most recent snapshots. For a full list, enter `magento-cloud snapshot:list`.
 
 ## Restore a snapshot {#restore-snapshot}
+
 To restore an environment's snapshot using the Magento Web Interface:
 
 1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
@@ -87,6 +89,7 @@ To restore an environment snapshot using the Magento CLI:
 	For a full list of options, enter `magento-cloud snapshot:restore --help`.
 
 ## Dump your database {#db-dump}
+
 To create a copy of your database, you dump the data from the database to a file on your local.
 
 1.	SSH into the environment you want to create a database dump from:
@@ -112,6 +115,7 @@ To create a copy of your database, you dump the data from the database to a file
 If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Rollbacks to remove code {#rollback-code}
+
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
@@ -119,6 +123,7 @@ If you need to restore a snapshot specifically to remove new code and added exte
 Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 #### Related topics
+
 *	[Basic project information]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
 *	[Manage environments (branches)]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)

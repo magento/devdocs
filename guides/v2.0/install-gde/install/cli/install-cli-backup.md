@@ -16,8 +16,8 @@ functional_areas:
   - Setup
 ---
 
+## Overview of backup   {#instgde-cli-uninst-back-over}
 
-<h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
 This command enables you to back up:
 
 *	The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)
@@ -28,14 +28,16 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps   {#instgde-cli-before}
+
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
-<h2 id="instgde-cli-uninst-back">Backing up</h2>
+## Backing up   {#instgde-cli-uninst-back}
+
 Command usage:
 
 	magento setup:backup [--code] [--media] [--db]
@@ -95,7 +97,8 @@ Messages similar to the following display:
 	[SUCCESS]: DB backup completed successfully.
 	Disabling maintenance mode
 
-<h2 id="instgde-cli-uninst-roll">Roll back</h2>
+## Roll back   {#instgde-cli-uninst-roll}
+
 This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.
 
 To find the name of your backups, enter:

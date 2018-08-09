@@ -17,6 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of dependency reports
+
 You can run the following types of reports:
 
 -   {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}**Module**{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
@@ -26,6 +27,7 @@ You can run the following types of reports:
 A dependency in a comment is also a dependency.
 
 ## Run dependency reports
+
 Command options:
 
 	bin/magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
@@ -99,9 +101,8 @@ If no directory or filename is passed as an argument, the following application 
 </table>
 	
 
-
-
 ### Sample module dependencies report
+
 The following is a portion of the output for a sample module dependencies report:
 
 	"","All","Hard","Soft"
@@ -123,6 +124,7 @@ The following is a portion of the output for a sample module dependencies report
 	" -- magento/module-import-export","","1","0"
 
 ### Sample circular dependencies report
+
 The following is a portion of the output for a sample circular dependencies report:
 
 	"Circular dependencies:","Total number of chains"
@@ -146,6 +148,7 @@ The following is a portion of the output for a sample circular dependencies repo
 	"magento/module-config->magento/module-backend->magento/module-sales->magento/module-checkout->magento/module-customer->magento/module-review->magento/module-catalog->magento/module-catalog-rule->magento/module-rule->magento/module-eav->magento/module-config"
 
 ### Sample framework dependencies report
+
 The following is a portion of the output for a sample framework dependencies report:
 
 	"Dependencies of framework:","Total number"

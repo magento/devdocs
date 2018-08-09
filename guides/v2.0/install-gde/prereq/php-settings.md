@@ -49,6 +49,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 {% endcollapsible %}
 
 ### Step 1: Find PHP configuration files {#php-required-find}
+
 This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}

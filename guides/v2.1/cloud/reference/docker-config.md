@@ -33,7 +33,6 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
 -  If you use `ece-tools` v2002.0.12, {{site.data.var.ece}} deploys to a writeable file system in the Docker container. This version does not support the `docker:config:convert` command.
 
-
 #### To launch Docker with `ece-tools` v2002.0.13 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
@@ -96,7 +95,6 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
     -  [`https://localhost`](https://localhost){:target="\_blank"}
 
-
 #### To launch Docker with `ece-tools` v2002.0.12:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
@@ -142,7 +140,6 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
 
     -  [`https://localhost`](https://localhost){:target="\_blank"}
-
 
 ## Stop and remove the Docker configuration
 

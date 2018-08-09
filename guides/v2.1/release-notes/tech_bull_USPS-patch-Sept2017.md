@@ -20,9 +20,6 @@ On September 1, USPS changed their First-Class Mail Parcel Service to First-Clas
 
 If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option. 
 
-
-
-
 ### Who is affected by this issue?
 
 Users of any version of Magento Open Source 1.x and Magento Commerce 1.x are affected by this change.
@@ -33,13 +30,9 @@ Users of any version of Magento Open Source and Magento Commerce earlier than 2.
 If you are running a different shipping extension, contact your extension provider to determine whether you're affected, and if so, the remedial action to take.
 </div>
 
-
-
 ### Recommended Magento 1.x actions
 
 We’ve provided the following workaround to address this change to the USPS API. Additionally, we have released the `SUPEE-10336 for 1.x` patch for this issue. If you implement the following workaround, note that you must undo the workaround before installing the patch.
-
-
 
 #### Access Magento 1.x patches
 
@@ -55,10 +48,8 @@ To get patches for Magento 1.x Commerce or Open Source
 
 5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches]({{ site.baseurl }}/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 
-
-
-
 ### Workaround for Magento 1.x 
+
 Follow this procedure to edit the `Usps.php` file to use the new shipping method name: 
 
 1) Navigate to `app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php`. 
@@ -74,7 +65,6 @@ Follow this procedure to edit the `Usps.php` file to use the new shipping method
 
 **If you've implemented the temporary workaround, you'll need to delete it before you can install the patch.**
 
-
 ### Recommended Magento 2.x actions
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -82,7 +72,6 @@ Fixes for this issue will be included in the Magento 2.1.9 and 2.0.16 releases, 
 </div>
 
 * If you cannot upgrade to or install these releases, or need a temporary workaround until these releases are available, follow the workaround procedure.
-
 
 ### Workaround for Magento 2.x
 
@@ -97,7 +86,6 @@ Follow this procedure to edit the `Carrier.php` file to use the new shipping met
 4) Save your changes to `Carrier.php`. 
 
 5) Flush the Magento cache. 
-
 
 ### More information
 

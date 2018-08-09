@@ -86,6 +86,7 @@ github_link: cloud/basic-information/cloud-plans.md
 </table>
 
 ### Domain-Validated SSL (HTTP) certificate
+
 The Domain-Validated SSL (HTTP) certificate option is an alternative to using the shared SSL certificate. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
 
 This service is an additional cost for your contract.

@@ -11,7 +11,6 @@ There are many headless Magento installations in which a merchant partially uses
 
 See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
-
 ### Components Dependencies
 
 The following diagram shows Web API component dependencies.
@@ -38,7 +37,6 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
 See the [GraphQL documentation]({{ site.baseurl }}/guides/v2.3/graphql/index.html) for more information.
-
 
 #### Add a custom authentication mechanism
 

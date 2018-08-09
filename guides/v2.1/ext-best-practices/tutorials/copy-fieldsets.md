@@ -11,6 +11,7 @@ functional_areas:
 ---
 
 ## Overview
+
 In this tutorial, you will learn to copy custom data from a {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} object to an order object using the [Magento/Framework/DataObject/Copy][0]{:target="_blank"} class.
 
 ## Step 1: Define your attributes

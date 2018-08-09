@@ -206,7 +206,6 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 }
 {% endhighlight %}
 
-
 ### Add a bundle product to a cart {#add-bundle}
 
 The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sku`: `24-WG080`). The kit contains the following items:

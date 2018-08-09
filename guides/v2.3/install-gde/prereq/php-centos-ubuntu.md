@@ -25,6 +25,7 @@ If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/insta
 The following sections give you all the info you need to install PHP for CentOS.
 
 ### Verify PHP is installed {#centos-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
 
     PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
@@ -38,8 +39,8 @@ If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl
 
 If PHP is *not* installed, see the [PHP 7.1 on CentOS](#php-centos-71) section.
 
-
 ### CentOS repositories {#centos-php-repos}
+
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="&#95;blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
 We're not aware that you can install PHP 7.1 or 7.2 from a CentOS-recommended repository. Therefore, you must consider the following:
@@ -57,6 +58,7 @@ Before you continue, review their [Getting Started topic](https://ius.io/Getting
 Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.
 
 ### PHP 7.1 on CentOS {#php-centos-71}
+
 There is more than one way to install PHP 7.1 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 To install PHP 7.1 on CentOS 6 or 7:
@@ -157,12 +159,12 @@ To install PHP 7.1 on CentOS 6 or 7:
 
 7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
-
 ## PHP for Ubuntu
 
 The following sections give you all the info you need to install PHP for Ubuntu.
 
 ### Verify PHP is installed {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
 
     PHP 7.1.7-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:07:54) ( NTS )
@@ -259,7 +261,6 @@ To install PHP 7.1 on Ubuntu 14 or 16:
     [Zend Modules]
     Zend OPcache
     ```
-
 
 #### Next
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)

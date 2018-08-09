@@ -16,4 +16,5 @@ functional_areas:
 {% include install/web/install-web_5-create-admin.md %}
 
 #### Next step
+
 [Step 6. Install]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_6_install.html)

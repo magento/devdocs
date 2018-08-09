@@ -14,12 +14,14 @@ functional_areas:
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
 
 ### Memory requirement
+
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}/comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
 
 ### Composer (latest stable version)
 {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
 ### Web servers
+
 *	[Apache 2.2 or 2.4](http://httpd.apache.org/download.cgi)
 
 	In addition, you must enable the Apache `mod_rewrite` and `mod_version` modules. The [`mod_rewrite`](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) module enables the server to perform URL rewriting. The [`mod_version`](https://httpd.apache.org/docs/2.4/mod/mod_version.html) module provides flexible version checking for different `httpd` versions. For more information, see [our Apache documentation]({{page.baseurl}}/install-gde/prereq/apache.html).
@@ -27,6 +29,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 *	[nginx 1.x](https://nginx.org/en/download.html)
 
 ### Database
+
 MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
@@ -78,6 +81,7 @@ We recommend particular PHP configuration settings, such as `memory_limit`, that
 For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 ### SSL
+
 *	A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
 *	Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
@@ -87,9 +91,11 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 	*	[More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
+
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Technologies Magento can use
+
 *	[Redis]({{page.baseurl}}/config-guide/redis/config-redis.html) version 3.2 (compatible with 2.4+ ) for page caching and session storage
 *	[Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x or 5.2
 
@@ -113,6 +119,7 @@ Mail Transfer Agent (MTA) or an SMTP server
     These [master databases]({{page.baseurl}}/config-guide/multi-master/multi-master.html) provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
 ### Optional but recommended
+
 *	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="&#95;blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}

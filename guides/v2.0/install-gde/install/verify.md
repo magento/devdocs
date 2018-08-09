@@ -14,15 +14,15 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-verify-front-sample">Verify the storefront (with optional sample data)</h2>
+## Verify the storefront (with optional sample data)   {#instgde-verify-front-sample}
+
 Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser. For example, if your Magento installation base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is `http://www.example.com`, enter it in your browser's address or location bar.
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
 <p><img src="{{ site.baseurl }}/common/images/install-success_store-luma.png" alt="Magento storefront with the Luma theme"></p>
 
-
-<h2 id="instgde-verify-front">Verify the storefront (no sample data)</h2>
+## Verify the storefront (no sample data)   {#instgde-verify-front}
 
 Go to the storefront in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
 
@@ -32,7 +32,7 @@ The following figure shows a sample storefront page. If it displays as follows, 
 
 If the page displays a 404 (Not Found) or unconfigured (no styles, only text), see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 
-<h2 id="instgde-verify-admin">Verify the Magento Admin</h2>
+## Verify the Magento Admin   {#instgde-verify-admin}
 
 Go to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
 

@@ -25,6 +25,7 @@ These instructions walk through extension installation purchased from Magento Ma
 We also include instructions for [updating extensions](#update).
 
 ## Create a branch for adding or updating the extension {#getstarted}
+
 We recommend using a branch for adding or updating, configuring, and testing your extension.
 
 {% include cloud/cli-get-started.md %}
@@ -39,11 +40,13 @@ We recommend using a branch for adding or updating, configuring, and testing you
 1.  [Verify](#verify) the extension installed properly.
 
 ### Step 1: Get the extension's Composer name and version {#compose}
+
 If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#update).
 
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
+
 When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from `config.local.php` used by [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html).
 
 To update `composer.json`:
@@ -78,6 +81,7 @@ If there are errors, see [extension deployment failure]({{ page.baseurl }}/cloud
 When installing and adding the module, you must add the `composer.lock` file to your Git branch for deployment. This ensures that the module loads properly when you use the `composer install` command.
 
 ### Step 3: Verify the extension {#verify}
+
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.  Open a terminal.
@@ -93,9 +97,11 @@ To verify the extension installed properly, you can check its functionality in t
 The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
 
 ## Manage extensions {#manage}
+
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
+
 You can use CLI commands or directly edit `app/etc/config.php` to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.
 
 1.  In a terminal, access your local development environment.
@@ -156,11 +162,13 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 1.  [Complete deployment]({{ page.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
+
 For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
 
 For projects **2.1.4 and later**, you will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.local.php`.
 
 ## Upgrade an extension {#update}
+
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
 
 * Know the extension's Composer name and version

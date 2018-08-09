@@ -78,7 +78,6 @@ For details about performing command line tasks, view the following topics:
 
 The last step is to open the Admin in browser and view the new theme applied.
 
-
 ## See also
 
  * [Uninstall a theme]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)

@@ -24,6 +24,7 @@ For a step-by-step tutorial, see [Configure custom cron jobs and cron groups (tu
 {% include config/cron-overview.md %}
 
 ## Configure cron groups {#config-cli-cron-group-conf}
+
 This section discusses how to optionally create a cron group for a custom module. If you don't need to do this, continue with the next section.
 
 A *cron group* is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the `default` cron group; some modules use the `index` group.

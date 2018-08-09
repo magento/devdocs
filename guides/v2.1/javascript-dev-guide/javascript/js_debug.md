@@ -15,7 +15,6 @@ functional_areas:
 
 This topic discusses how to define which {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and widgets are used on a particular Magento store page.
 
-
 ## Locate JS components: walkthrough {#locate_widget}
 
 To locate scripts used for a certain element:

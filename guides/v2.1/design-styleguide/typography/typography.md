@@ -12,6 +12,7 @@ github_link: design-styleguide/typography/typography.md
 Typography is used to establish page hierarchy.
 
 ## Heading Types
+
 <br>
 
 # H1 - Page title

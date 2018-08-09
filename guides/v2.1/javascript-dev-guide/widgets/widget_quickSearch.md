@@ -18,10 +18,11 @@ The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget
 The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`].
 
 ## Initialize the quickSearch widget {#quicksearch_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
-
 ## Options {#quicksearch_options}
+
 -   [autocomplete](#q_autocomplete)
 -   [formSelector](#q_formSelector)
 -   [minSearchLength](#q_minSearchLength)

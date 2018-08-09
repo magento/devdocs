@@ -252,7 +252,6 @@ The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
 ![Add index]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-index.png)
 
-
 ## Other tasks
 
 ### Disable a module

@@ -68,7 +68,6 @@ interface IndexTableRowSizeEstimatorInterface
 }
 {% endhighlight %}
 
-
 ## Batching configuration
 
 Batching is available for the following indexers:

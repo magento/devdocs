@@ -117,7 +117,6 @@ Let's finalize our action group code:
 </config>
 ```
 
-
 ### Usage in a test
 
 Let's see how the action group can be used in tests.

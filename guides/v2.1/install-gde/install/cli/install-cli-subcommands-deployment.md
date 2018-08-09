@@ -14,13 +14,17 @@ functional_areas:
 ---
 
 ## First steps {#instgde-cli-before}
+
 {% include install/first-steps-cli.html %}
+
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-configphp-prereq}
+
 There are no prerequisites for using this command.
 
 ## Create or update the Magento deployment configuration {#instgde-cli-subcommands-configphp}
+
 [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html) provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:

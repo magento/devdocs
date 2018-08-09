@@ -21,6 +21,7 @@ Declaring the custom UI component is an exception, use the arbitrary structure w
 The main advantages of the new structure are described in the following sections.
 
 ## Readability
+
 All components options are separate nodes, and a node's purpose is defined by its name. The number of abstract-named nodes like `<item>` or `<argument>` is minimized.
 {% collapsible Illustration %}
 {% highlight xml%}
@@ -70,6 +71,7 @@ All components options are separate nodes, and a node's purpose is defined by it
 {% endcollapsible %}
 
 ## Autocomplete
+
 When editing XML configuration files in an IDE, the autocomplete feature prompts the correct spelling and the possible options.
 {% collapsible Illustration %}
 

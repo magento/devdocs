@@ -34,7 +34,6 @@ To avoid system overload during its prime time, you can set the preferable time 
 
 Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
 
-
 ## Related topics
 
 [Magento modules that implement the functionality][modules]{:target="_blank"}

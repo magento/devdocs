@@ -18,6 +18,7 @@ Varnish provides several features that prevent customers from experiencing long 
 See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
 
 ## Health check {#health}
+
 Varnish's health check feature polls the Magento server to determine whether it is responding in a timely manner. If it is responding normally, fresh content will be regenerated after the Time to Live (TTL) period has expired. If not, Varnish always serves stale content.
 
 Magento defines the following default health check:
@@ -49,7 +50,6 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 
 ### When the Magento backend is healthy {#grace-healthy}
 
-
 When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as described in [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
 The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).
@@ -69,6 +69,7 @@ Saint mode blacklists unhealthy backends for a configurable amount of time. As a
 Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.
 
 ### Saint mode prerequisites {#saint-prereq}
+
 You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish.
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.
@@ -173,4 +174,5 @@ sub vcl_backend_response {
 {% endcollapsible %}
 
 #### Final step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>

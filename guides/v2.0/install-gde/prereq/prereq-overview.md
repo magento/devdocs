@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-prereq-overview">Before you begin</h2>
+## Before you begin   {#instgde-prereq-overview}
 
 Before you install Magento, you must do all of the following:
 
@@ -47,7 +47,7 @@ Enter the following commands as a user with `root` privileges:
 		yum -y update
 		yum -y upgrade
 
-<h2 id="instgde-prereq-check">Prerequisite check</h2>
+## Prerequisite check   {#instgde-prereq-check}
 
 To check your system for prerequisites, enter the following commands:
 
@@ -107,6 +107,7 @@ Enter `exit` at the `mysql>` prompt to exit.
 To install or upgrade MySQL, see <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
+
 <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
 
 #### Related topics

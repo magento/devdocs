@@ -287,9 +287,7 @@ namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
 }
 </pre>
 
-
 ### JavaScript types {#frontend-dev-guide-javascript-js-coding-docblock-jstypes}
-
 
 <table>
 	<tbody>

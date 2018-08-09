@@ -51,7 +51,6 @@ Examples of environment or system-specific values include:
 
 Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_blank"} to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
 
-
 ### Example: Sensitive settings
 
 {% highlight php startinline=true %}

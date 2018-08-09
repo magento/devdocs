@@ -258,7 +258,6 @@ The following is a list of prohibited changes to Magento functional and integrat
 * Changing a fixture format
 * Changing a fixture content (except changes forced by new functionality)
 
-
 ## Allowed Code Changes
 
 ### PHP
@@ -297,7 +296,6 @@ Adding an argument to an event is allowed.
 3. The setup version of a module must be higher than previous releases of the same module.
 
    For example, the setup version for a fix for the Magento_Catalog module is higher in the `develop` branch (2.1.3) than previous branch versions (2.0.2 and 2.1.2 for versions 2.0 and 2.1).
-
 
 ## Backport fixes with breaking changes to patch branches
 

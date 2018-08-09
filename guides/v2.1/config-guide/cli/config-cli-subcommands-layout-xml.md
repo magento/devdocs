@@ -17,6 +17,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of layout XML conversion
+
 Use this command to update your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.
 
 For more information about layout XML files, see:
@@ -25,6 +26,7 @@ For more information about layout XML files, see:
 -   [Layout file types]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html)
 
 ## Convert layout XML files
+
 Command options:
 
 	bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}

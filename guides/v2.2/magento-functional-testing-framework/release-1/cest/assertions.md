@@ -77,7 +77,6 @@ stepKey|xs:string|required|
 before|xs:string|optional|
 after|xs:string|optional|
 
-
 ### assertArrayHasKey
 
 [See assertArrayHasKey docs on codeception.com](http://codeception.com/docs/modules/Asserts#assertArrayHasKey){:target='_blank'}

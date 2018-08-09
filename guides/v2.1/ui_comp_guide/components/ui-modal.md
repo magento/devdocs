@@ -155,7 +155,6 @@ The following sample is an example of the configuration for a simple modal windo
 </button>
 {%endhighlight%}
 
-
 ## Public API (JS)
 
 - `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window.

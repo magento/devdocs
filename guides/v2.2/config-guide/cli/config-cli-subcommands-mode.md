@@ -12,6 +12,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of setting Magento modes {#config-mode-over}
+
 To improve security and ease-of-use, we added a command that switches <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.
 
 Production mode also has better performance because static view files are populated in the `pub/static` directory and because of code compilation.
@@ -42,6 +43,7 @@ By default, Magento uses the `var` directories to store the cache, logs, and com
 </div>
 
 ## Display the current mode {#config-mode-show}
+
 The easiest way to do that is to run this command as the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it's typically a local user account on the Magento server.
 
 Command usage:
@@ -57,6 +59,7 @@ Current application mode: developer.
 ```
 
 ## Change modes {#config-mode-change}
+
 Command usage:
 
 ``` bash
@@ -117,6 +120,7 @@ Generated classes:
 	Enabled production mode.
 
 ### Change to developer mode
+
 When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:

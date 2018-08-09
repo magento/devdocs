@@ -28,7 +28,6 @@ The following sections describe the flow for uninstalling themes in each case.
 2. Make sure that the theme is not applied on the storefront. To do this, in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel navigate to **STORES** > **Configuration**>**Design** and make sure that your custom theme is not applied for any {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
 2. Make sure that the theme is not defined as a parent for any registered theme. To do this, in the Admin panel, navigate to **Content** > **Design** > **Themes**. Make sure that your theme is not mentioned in the **Parent Theme** column. If it is mentioned, you need to uninstall the child theme first.
 
-
 ## Uninstall a manually added theme
 
 If you created or manually installed the theme, it does not matter how you installed Magento.

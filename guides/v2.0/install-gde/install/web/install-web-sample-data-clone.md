@@ -16,4 +16,5 @@ functional_areas:
 {% include install/sampledata/sample-data-clone.md %}
 
 ### Install the Magento software
+
 After sample data installation is complete, install the Magento software using the [Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).

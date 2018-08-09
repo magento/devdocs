@@ -105,7 +105,6 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
 </table>
 
-
 ##### Methods and Events
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:

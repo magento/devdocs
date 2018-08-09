@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## Step 3. Enable/Disable
+
 To enable or disable your module, click the appropriate button. The following figure shows an example of disabling a module, in which case you click **Disable**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/modman_actions_disable.png" width="500px" alt="Click Disable">

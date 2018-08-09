@@ -16,6 +16,7 @@ functional_areas:
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites
+
 Before you can use this command, you must do all of the following:
 
 -   [Create the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
@@ -26,6 +27,7 @@ Before you can use this command, you must do all of the following:
 The simplest way to create the database is to use the command `magento setup:upgrade`.
 
 ## Create or edit an administrator
+
 Use this command to create a new administrator or to edit an existing administrator. If you're editing an administrator, only the first name, last name, and password can be edited.
 
 Command usage:
@@ -44,6 +46,7 @@ Where the following table defines parameters and values:
 {:style="table-layout:auto;"}
 
 ## Unlock an administrator account
+
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
 	magento admin:user:unlock {username}

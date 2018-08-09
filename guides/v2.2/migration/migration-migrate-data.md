@@ -19,6 +19,7 @@ redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
+
 To start migrating data, run:
 
     bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}

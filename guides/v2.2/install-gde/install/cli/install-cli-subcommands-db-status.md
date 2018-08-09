@@ -18,9 +18,11 @@ functional_areas:
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-db-prereq}
+
 Before you run this command, you must [Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html).
 
 ## Command usage
+
 To check the status of the Magento database, enter
 
 	magento setup:db:status

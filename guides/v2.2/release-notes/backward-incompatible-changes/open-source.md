@@ -27,7 +27,6 @@ content="When the [@api] and [@deprecated] doc blocks tags are added to the code
 
 {% include backward-incompatible-changes/open-source/2.2.3-2.2.4.html %}
 
-
 ## 2.2.2 - 2.2.3 {#releases-2_2_2-2_2_3}
 
 {% include backward-incompatible-changes/open-source/2.2.2-2.2.3.html %}

@@ -240,6 +240,7 @@ The following table contains the list of all properties which can be configured:
 </table>
 
 #### Resize catalog images
+
 Generally, product images are cached while saving the product. However, the `magento catalog:images:resize` command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:
 
 * After you import products, which might have images of various sizes

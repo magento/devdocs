@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Magento optional software {#install-optional-intro}
+
 We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)
 
 The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.
@@ -58,6 +59,7 @@ To install and configure NTP:
 3.	Continue with the next section.
 
 ### Use NTP pool servers {#install-optional-ntp-servers}
+
 Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use [pool servers](http://www.pool.ntp.org/en){:target="&#95;blank"} that are close to your servers' time zone as discussed on the [NTP pool project help page](http://www.pool.ntp.org/en/use.html){:target="&#95;blank"}. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.
 
 1.	Open `/etc/ntp.conf` in a text editor.
@@ -130,6 +132,7 @@ For more detailed information about installation, see the [phpmyadmin installati
 Use phpmyadmin in a development system _only_. It can be a security issue in production.
 
 ## Install phpmyadmin on Ubuntu {#install-optional-phpmyadmin-ubuntu}
+
 To install phpmyadmin on Ubuntu:
 
 1.	Use the following command:
@@ -145,6 +148,7 @@ To install phpmyadmin on Ubuntu:
 4.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
 
 ## Install phpmyadmin on CentOS {#install-optional-phpmyadmin-centos}
+
 To install phpmyadmin on CentOS:
 
 1.	Download the epel RPM for the version of CentOS you're using. A sample follows.
@@ -190,7 +194,6 @@ To install phpmyadmin on CentOS:
 		http://<web server host or IP>/phpmyadmin
 
 8.	When prompted, log in using your MySQL database `root` or administrative user's username and password.
-
 
 #### Related topics:
 

@@ -20,6 +20,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of code compilation {#config-cli-subcommands-compile-overview}
+
 This section discusses the basics of code compilation. Code compilation consists of all of the following (in no particular order):
 
 -   Application code generation (factories, proxies, and so on)
@@ -32,6 +33,7 @@ This section discusses the basics of code compilation. Code compilation consists
 You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 ## Run the single-tenant compiler {#config-cli-subcommands-single}
+
 Run the command as follows (there are no options):
 
 	bin/magento setup:di:compile
@@ -47,6 +49,7 @@ The issue was resolved in Magento versions 2.0.6 and later.
 </div>
 
 ## Run the multi-tenant compiler {#config-cli-subcommands-run}
+
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
 -   There is one Magento 2 code base instance

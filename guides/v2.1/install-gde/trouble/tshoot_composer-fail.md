@@ -13,14 +13,15 @@ functional_areas:
   - Setup
 ---
 
-
 ### Symptom
+
 During download, the following error displays:
 
 	[ErrorException]
   	file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
 
 ### Description
+
 This happens because of changes in certain versions of {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 The workaround is to downgrade Composer to an earlier version and try your Magento download again.

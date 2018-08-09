@@ -7,6 +7,7 @@ github_link: javascript-dev-guide/bk-javascript-dev-guide.md
 ---
 
 ## Introduction {#overview-introduction}
+
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
 You can follow the same approach when customizing Magento JavaScript, or [disable all the default scripts and their load by RequireJS].
@@ -14,6 +15,7 @@ You can follow the same approach when customizing Magento JavaScript, or [disabl
 For information about how JS resources are located and configured, see the [JavaScript resources] topic in the Configuration Guide.
 
 ## What's in this guide {#js_contents}
+
 Topics of this book describe the following:
 
 - [JavaScript initialization] - how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
