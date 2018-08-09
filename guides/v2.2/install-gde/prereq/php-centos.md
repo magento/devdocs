@@ -104,14 +104,14 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
     {:.bs-callout .bs-callout-info}
-        The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -161,7 +161,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -212,7 +212,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -262,7 +262,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 

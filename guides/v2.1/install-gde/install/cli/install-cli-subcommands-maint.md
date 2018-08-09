@@ -13,16 +13,18 @@ functional_areas:
 ---
 
 ## First steps {#instgde-cli-before}
+
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-maint-prereq}
 
-Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
+Before you use this command, you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html).
 
 ## Enable or disable maintenance mode {#instgde-cli-maint}
 
-Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site. 
+Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
 
 Magento detects maintenance mode as follows:
 
@@ -41,11 +43,8 @@ where
 
 `--ip=<ip address>` is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <ul><li>Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
-  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
-</div>
+{:.bs-callout .bs-callout-info}
+Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use. To clear the list of exempt IPs, you can use `magento maintenance:enable --ip=none` or see [Maintain the list of exempt IP addresses](#instgde-cli-maint-exempt).
 
 `magento maintenance:status` displays the current status of maintenance mode.
 
@@ -63,8 +62,8 @@ To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip l
 
 	magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
-where 
+where
 
-`<ip address> .. <ip address>` is an optional space-delimited list of IP addresses to exempt. 
+`<ip address> .. <ip address>` is an optional space-delimited list of IP addresses to exempt.
 
 `--none` clears the list.

@@ -9,9 +9,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-You must install and configure [RabbitMQ](http://rabbitmq.com){:target="&#95;blank"} _before_ installing Magento.
-</div>
+{:.bs-callout .bs-callout-warning"}
+You must install and configure [RabbitMQ](http://rabbitmq.com) _before_ installing Magento.
 
 ## RabbitMQ Overview {#overview}
 
@@ -26,9 +25,8 @@ The message queue system must be established before you install Magento. The bas
 1. Install RabbitMQ and any prerequisites.
 2. Connect RabbitMQ and Magento.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info"}
 A basic message queue system can be implemented with using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
-</div>
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
@@ -96,38 +94,15 @@ Add the following command line parameters when you install {{site.data.var.ce}} 
 
 where:
 
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>--amqp-host</td>
-<td>The hostname where RabbitMQ is installed.</td>
-</tr>
-<tr>
-<td>--amqp-port</td>
-<td>The port to use to connect to RabbitMQ. The default is 5672.</td>
-</tr>
-<tr>
-<td>--amqp-user</td>
-<td>The username for connecting to RabbitMQ. Do not use the default user `guest`. </td>
-</tr>
-<tr>
-<td>--amqp-password</td>
-<td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
-</tr>
-<tr>
-<td>--amqp-virtualhost</td>
-<td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
-<p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
-</tr>
-<tr>
-<td>amqp-ssl</td>
-<td><p>Indicates whether to connect to RabbitMQ. The default is <code>false</code>. If you set the value to <code>true</code>, see <a href="#configure-ssl">Configure SSL</a> for more information.</p></td>
-</tr>
-</table>
+|Parameter|Description|
+|--- |--- |
+|`--amqp-host`|The hostname where RabbitMQ is installed.|
+|`--amqp-port`|The port to use to connect to RabbitMQ. The default is `5672`.|
+|`--amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
+|`--amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
+|`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
+|`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
+{:style="table-layout:auto;"}
 
 ## Configure SSL
 

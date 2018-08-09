@@ -23,9 +23,8 @@ Before you can use this command, you must do all of the following:
 -   [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 -   Create the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The simplest way to create the database is to use the command `magento setup:upgrade`.
-</div>
 
 ## Create or edit an administrator
 
@@ -37,75 +36,14 @@ Command usage:
 
 Where the following table defines parameters and values:
 
-<table>
-  <col width="20%">
-  <col width="55%">
-  <col width="15%">
-  <tbody>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-      <th>Required?</th>
-    </tr>
-    <tr>
-      <td>
-        <p>--admin-firstname</p>
-      </td>
-      <td>
-        <p>Magento administrator user's first name.</p>
-      </td>
-      <td>
-        <p>Yes</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>--admin-lastname</p>
-      </td>
-      <td>
-        <p>Magento administrator user's last name.</p>
-      </td>
-      <td>
-        <p>Yes</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>--admin-email</p>
-      </td>
-      <td>
-        <p>Magento administrator user's e-mail address.</p>
-      </td>
-      <td>
-        <p>Yes</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>--admin-user</p>
-      </td>
-      <td>
-        <p>Magento administrator username.</p>
-      </td>
-      <td>
-        <p>Yes</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>--admin-password</p>
-      </td>
-      <td>
-        <p>Magento administrator user password.</p>
-        <p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
-        <p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password=''A0b9%t_3g'</code>.</p>
-      </td>
-      <td>
-        <p>Yes</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Name|Value|Required?|
+|--- |--- |--- |
+|`--admin-firstname`|Magento administrator user's first name.|Yes|
+|`--admin-lastname`|Magento administrator user's last name.|Yes|
+|`--admin-email`|Magento administrator user's e-mail address.|Yes|
+|`--admin-user`|Magento administrator username.|Yes|
+|`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. <br><br>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`.|Yes|
+{:style="table-layout:auto;"}
 
 ## Unlock an administrator account
 

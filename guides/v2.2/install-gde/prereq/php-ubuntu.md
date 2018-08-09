@@ -79,7 +79,7 @@ If PHP is *not* installed, see one of the following sections:
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -129,7 +129,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -166,7 +166,7 @@ If PHP is *not* installed, see one of the following sections:
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -216,7 +216,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 

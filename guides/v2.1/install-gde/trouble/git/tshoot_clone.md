@@ -20,11 +20,12 @@ functional_areas:
 
 Error is similar to the following:
 
-<pre>Cloning into 'magento2'...
+```
+Cloning into 'magento2'...
 Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
+fatal: The remote end hung up unexpectedly
+```
 
 ### Solution
 
-Upload your SSH key to GitHub as discussed in <a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">the GitHub help page</a>.
-
+Upload your SSH key to GitHub as discussed in [the GitHub help page](https://help.github.com/articles/generating-ssh-keys" target="_blank).

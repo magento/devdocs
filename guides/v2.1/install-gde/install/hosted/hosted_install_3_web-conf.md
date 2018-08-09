@@ -17,4 +17,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_4_customize-store.html">Step 4. Customize your store</a>
+[Step 4. Customize your store]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_4_customize-store.html)

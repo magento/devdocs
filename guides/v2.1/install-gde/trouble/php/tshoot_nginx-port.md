@@ -25,5 +25,4 @@ You can confirm the issue by the following error in the `var/report` directory:
 
 ### Workaround
 
-Append `/setup` to the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} by which you access the Setup Wizard or install the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.
-
+Append `/setup` to the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).

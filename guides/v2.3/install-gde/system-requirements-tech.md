@@ -34,25 +34,20 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
-</div>
 
 ### PHP
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento, with assistance from our community, is implementing PHP 7.2 compatibility for the 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.
-
-If you are interested in participating in Magento Community projects we welcome your help! See our <a href="https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902" target="_blank">ZenHub board</a> for a full list of outstanding issues.
-</div>
+{:.bs-callout .bs-callout-info}
+Magento, with assistance from our community, is implementing PHP 7.2 compatibility for the 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 {% include install/php_2.3.md %}
 
 #### Required PHP extensions
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a step for installing these extensions.
-</div>
 
 *	[bc-math](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} ({{site.data.var.ee}} only)
 * [ctype](http://php.net/manual/en/book.ctype.php){:target="&#95;blank"}
@@ -75,9 +70,9 @@ The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a ste
 
 #### PHP OPcache
 
-We strongly recommend you verify that  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our [PHP documentation](prereq/php-centos-ubuntu.html).
+We strongly recommend you verify that  [PHP OPcache](http://php.net/manual/en/intro.opcache.php) is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our [PHP documentation](prereq/php-centos-ubuntu.html).
 
-If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.
+If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php).
 
 #### PHP settings
 
@@ -127,10 +122,8 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="&#95;blank"} or later (development environments only; can have an adverse effect on performance)
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
 
 * [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
 *	PHPUnit (as a command-line tool) 6.2.0

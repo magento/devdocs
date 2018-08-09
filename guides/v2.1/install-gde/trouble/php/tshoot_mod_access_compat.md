@@ -22,9 +22,9 @@ functional_areas:
 
 When you try to access your {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser, you get HTTP 503 (Service Unavailable) errors.
 
-To confirm this issue is not related to <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache `error.log` for messages that include:
+To confirm this issue is not related to [maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp), look in your Apache `error.log` for messages that include:
 
-	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration". 
+	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
 
 #### Details
 
@@ -43,7 +43,7 @@ On CentOS, `<name>` is `httpd`. On Ubuntu, `<name>` is `apache2`.
 
 #### Additional resources
 
-*	<a href="http://httpd.apache.org/docs/current/mod/mod_access_compat.html" target="_blank">Apache documentation about mod_access_compat</a>
-*	<a href="http://httpd.apache.org/docs/current/mod/mod_authz_host.html" target="_blank">Apache documentation about mod_authz_host</a>
-*	<a href="http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm" target="_blank">Order, Allow, Deny from the Apache Definitive Guide</a>
-*	<a href="http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts" target="_blank">askubuntu.com</a>
+*	[Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html)
+*	[Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html)
+*	[Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm)
+*	[askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts)

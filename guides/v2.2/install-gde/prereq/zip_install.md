@@ -35,8 +35,8 @@ To transfer the Magento software archive to your server:
 
 	There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-	*	Windows: [WinSCP](https://winscp.net/eng/download.php){:target="_blank} or [Filezilla](https://filezilla-project.org/download.php){:target="_blank}
-	*	Mac OS: [CyberDuck](https://cyberduck.io/?l=en){:target="_blank} or [Filezilla](https://filezilla-project.org/download.php){:target="_blank}
+	*	Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
+	*	Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
 
 2.	Create a connection to your Magento server.
 
@@ -81,26 +81,12 @@ To transfer the Magento software archive to your server:
 
 Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) and extract the software package in the web server docroot using one of the following commands:
 
-<table>
-<tbody>
-<tr>
-	<th>File format</th>
-	<th>Command to extract</th>
-</tr>
-<tr>
-	<td>.tar.gz</td>
-	<td><code>tar zxf &lt;filename></code></td>
-</tr>
-<tr>
-	<td>.zip</td>
-	<td><code>unzip &lt;filename></code></td>
-</tr>
-<tr>
-	<td>.tar.bz2</td>
-	<td><code>tar jxf &lt;filename></code></td>
-</tr>
-</tbody>
-</table>
+| File format | Command to extract   |
+| ----------- | -------------------- |
+| `.tar.gz`   | `tar zxf <filename>` |
+| `.zip`      | `unzip <filename> `  |
+| `.tar.bz2`  | `tar jxf <filename>` |
+{:style="table-layout:auto;"}
 
 The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 

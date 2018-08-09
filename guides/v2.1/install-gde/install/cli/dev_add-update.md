@@ -13,9 +13,9 @@ functional_areas:
   - Setup
 ---
 
-A contributing developer updates components by specifying components and their versions in Magento's `composer.json`. 
+A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
 
-To update components if you're *not* a contributing developer, see <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
+To update components if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
@@ -55,8 +55,4 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 
 ### For more information
 
-If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
-
-<!-- ABBREVIATIONS -->
-
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
