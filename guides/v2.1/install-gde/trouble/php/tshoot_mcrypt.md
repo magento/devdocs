@@ -44,7 +44,7 @@ As a result, the Magento installer cannot locate the extension and the installat
 
 Determine if the mcrypt extension is loaded in any of the following ways:
 
-*	Set up a <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">phpinfo.php</a> file in the web server's root directory and examine the output in a web browser.
+*	Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
 *	Run the following command:
 
 	<pre>php -r "phpinfo();" | grep mcrypt</pre>

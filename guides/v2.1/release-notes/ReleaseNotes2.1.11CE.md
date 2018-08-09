@@ -405,7 +405,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11631">11631</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/9830" target="_blank">9830</a>, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
+    <td>[9830](https://github.com/magento/magento2/issues/9830){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
     <td><a target="_blank" href="https://github.com/rogyar">Yaroslav Rogoza</a></td>
   </tr>
   <tr>
@@ -415,7 +415,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12115">12115</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/6597" target="_blank">6597</a>, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
+    <td>[6597](https://github.com/magento/magento2/issues/6597){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
@@ -425,7 +425,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11919">11919</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8172" target="_blank">8172</a>, <a href="https://github.com/magento/magento2/issues/8089" target="_blank">8089</a>, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
+    <td>[8172](https://github.com/magento/magento2/issues/8172){:target="_blank"}, [8089](https://github.com/magento/magento2/issues/8089){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
@@ -437,7 +437,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ce_install_21.md %}
@@ -445,11 +445,11 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 Dear community members, thank you for your suggestions and bug reports. 

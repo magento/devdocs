@@ -227,7 +227,7 @@ To add an issue:
 1. Fill in the Title and Issue description.
 1. Click **Submit new issue**.
 
-## Help triage issues {#triage} <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a>
+## Help triage issues {#triage} [<img src="https://www.codetriage.com/magento/magento2/badges/users.svg" />](https://www.codetriage.com/magento/magento2){:target="_blank"}
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
 

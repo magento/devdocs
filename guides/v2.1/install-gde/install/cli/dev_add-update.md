@@ -52,7 +52,7 @@ Add a `require` section like the following:
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
 ### For more information
-If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
 
 <!-- ABBREVIATIONS -->
 

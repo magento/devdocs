@@ -17,7 +17,7 @@ functional_areas:
 {% include config/php-memcache.md %}
 
 ## Install and configure memcached on Ubuntu {#config-memcache-install}
-This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
+This section provides instructions to install memcached on Ubuntu. For additional information, consult the [memcached wiki](https://code.google.com/p/memcached/wiki/NewStart){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
@@ -137,7 +137,7 @@ Flush memcache storage and quit Telnet:
     flush_all
     quit
 
-<a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
+[Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/){:target="_blank"}
 
 #### Next step
 <a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

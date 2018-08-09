@@ -115,7 +115,7 @@ This example shows you how to construct a REST web API call to create an account
 <pre>POST /V1/customers</pre></li>
 <li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
 <p>In this example, the service interface is the <code>AccountManagementInterface</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file.</p>
-<p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+<p>Open the [AccountManagementInterface.php]({{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php){:target="_blank"} file and find the <code>createAccount</code> method, as follows:</p>
 <pre>public function createAccount(
         \Magento\Customer\Api\Data\CustomerInterface $customer,
         $password = null,
@@ -139,7 +139,7 @@ $httpHeaders->addHeaders([
    'Content-Type' => 'application/json'
 ]);
 </pre>
-<li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
+<li><p>Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml){:target="_blank"} configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php){:target="_blank"} interface with the <code>getList</code> method.</p></li>
 <li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{ page.baseurl }}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();

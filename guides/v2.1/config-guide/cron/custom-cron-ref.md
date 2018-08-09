@@ -78,7 +78,7 @@ The resulting `crontab.xml` with two groups may look like this:
 </config>
 {%endhighlight%}
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
+As an example, see [Magento_Customer crontab.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml){:target="_blank"}.
 
 #### Specifying Cron group options {#specify-cron-group-options}
 

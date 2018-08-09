@@ -80,7 +80,7 @@ To minimally configure Varnish:
 
 	Typically, this is your web server.
 
-	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
+	[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html){:target="_blank"}
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
 
 	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
@@ -158,7 +158,7 @@ The preceding shows Varnish running on port 80 and Apache running on port 8080.
 
 If you don't see output for `varnishd`, make sure Varnish is running.
 
-<a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
+[More information about netstat options](http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html){:target="_blank"}
 
 ## Install the Magento 2 software {#config-varnish-install}
 Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
@@ -211,7 +211,7 @@ A long list of response headers display in your command prompt window. Look for 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
+There are several ways to look at response headers, including using a browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} like Live HTTP Headers ([Firefox](https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/){:target="_blank"}) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 

@@ -414,7 +414,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements](http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 
 ## Installation

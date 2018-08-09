@@ -60,7 +60,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 		name=magento2
 
-	<a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank">More information about core.properties</a>
+	[More information about core.properties](https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29){:target="_blank"}
 3.	Save your changes to `core.properties` and exit the text editor.
 
 3.  *Task for Tomcat 6 with CentOS only*
@@ -159,7 +159,7 @@ The button changes as follows.
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
-	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
+	<li>Verify that [<code>allow_url_fopen = On</code>](http://php.net/manual/en/filesystem.configuration.php){:target="_blank"} is present in your server's <code>php.ini</code>.<br />
 	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
 	<li>Make sure that <a href="{{ page.baseurl }}/config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>

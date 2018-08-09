@@ -62,8 +62,8 @@ Whether you have one server or many, you must open ports in the firewall to enab
 
 More information:
 
-*	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.
-*	CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.
+*	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}.
+*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables){:target="_blank"} and [CentOS reference page](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html){:target="_blank"}.
 
 #### Security Enhanced Linux (SELinux) rules
 
@@ -71,15 +71,15 @@ We don't recommend whether or not you use SELinux at all; however, if you use it
 
 More information:
 
-*	Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html" target="_blank">Debian handbook</a>
-*	CentOS: <a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a>
+*	Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html){:target="_blank"}
+*	CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux){:target="_blank"}
 
 #### Set up an e-mail server
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)
-*	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6){:target="_blank"}, [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html){:target="_blank"})
+*	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04){:target="_blank"}, [Ubuntu documentation](https://help.ubuntu.com/community/MailServer){:target="_blank"})
 
 ## Settings for {{site.data.var.ee}} only {#post-install-ee}
 

@@ -9,7 +9,7 @@ The Functional Testing Framework (FTF) provides a reporting tool, which logs fai
 
 The following image demonstrates example of a general flow.  
 
-<a href="{{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" /></a>
+[<img src="{{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" />]({{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram){:target="_blank"}
 
 The {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} manager is a core component which:
 
