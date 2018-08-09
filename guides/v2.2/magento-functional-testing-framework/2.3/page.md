@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Page structure
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/page.md
+github_link: magento-functional-testing-framework/2.3/page.md
 functional_areas:
  - Testing
 mftf-release: 2.2.0

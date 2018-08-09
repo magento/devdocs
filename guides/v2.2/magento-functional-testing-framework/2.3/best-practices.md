@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Best practices
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/best-practices.md
+github_link: magento-functional-testing-framework/2.3/best-practices.md
 mftf-release: 2.3.0
 functional_areas:
  - Testing

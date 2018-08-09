@@ -1,8 +1,8 @@
 ---
-group: mftf-2.2
+group: mftf
 title: Section structure
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/section.md
+github_link: magento-functional-testing-framework/2.2/section.md
 functional_areas:
  - Testing
 mftf-release: 2.1.2

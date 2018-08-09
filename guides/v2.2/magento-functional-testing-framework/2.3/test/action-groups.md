@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Action groups
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/test/action-groups.md
+github_link: magento-functional-testing-framework/2.3/test/action-groups.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0

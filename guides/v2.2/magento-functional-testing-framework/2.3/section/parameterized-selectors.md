@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Create and use parameterized selectors
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/section/parameterized-selectors.md
+github_link: magento-functional-testing-framework/2.3/section/parameterized-selectors.md
 functional_areas:
  - Testing
 mftf-release: 2.0.2

@@ -3,7 +3,7 @@ layout: default
 group: mftf-2.3
 title: Extending
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/extending.md
+github_link: magento-functional-testing-framework/2.3/extending.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0

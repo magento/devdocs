@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Input testing data
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/data.md
+github_link: magento-functional-testing-framework/2.3/data.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0

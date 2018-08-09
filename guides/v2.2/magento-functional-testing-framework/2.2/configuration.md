@@ -1,8 +1,8 @@
 ---
-group: mftf-2.2
+group: mftf
 title: Configuration
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/configuration.md
+github_link: magento-functional-testing-framework/2.2/configuration.md
 functional_areas:
  - Testing
 mftf-release: 2.1.2

@@ -2,7 +2,7 @@
 group: mftf-2.3
 title: Use Codeception's Locator functions
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/section/locator-functions.md
+github_link: magento-functional-testing-framework/2.3/section/locator-functions.md
 functional_areas:
  - Testing
 mftf-release: 2.0.2
