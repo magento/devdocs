@@ -62,7 +62,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Response**
 
-An `orderID`, such as `1
+An `orderID`, such as `5`.
 
 ## Verify this step {#verify-step}
 

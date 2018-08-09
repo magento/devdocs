@@ -25,11 +25,15 @@ When you complete a partial or full shipment, Magento deducts the reserved produ
 
 ## Ship from the Baltimore warehouse
 
-You must use the `POST V1/shipment` endpoint to create a shipment.
+Although you can use the `POST V1/shipment` endpoint to create a shipment, the `POST /V1/order/:orderId/ship` endpoint is a better option in that it is more efficient and the payload can be simpler.
+
+We'll ship 20 `sp1` items and 25 `sp2` items from the Baltimore warehouse. The `order_item_id` value for `sp1` is 12, and the value for `sp2` is 13.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/shipment`
+`POST http://<host>/rest/us/V1/order/5/ship`
+
+where `5` is the `orderid`
 
 **Scope**
 
@@ -46,30 +50,21 @@ You must use the `POST V1/shipment` endpoint to create a shipment.
 
 ``` json
 {
-  "entity": {
-  	"billing_address_id": 2,
-    "customer_id": 2,
-    "order_id": 1,
-    "store_id": 2,
-    "total_qty": 45,
   "items": [
     {
-      "name": "Simple Product 1",
-      "price": 5,
-      "product_id": 7,
-      "sku": "sp1",
-      "order_item_id": 1,
+      "order_item_id": 12,
       "qty": 20
     },
     {
-      "name": "Simple Product 2",
-      "price": 10,
-      "product_id": 8,
-      "sku": "sp2",
-      "order_item_id": 2,
+      "order_item_id": 13,
       "qty": 25
     }
-    ],
+  ],
+  "notify": true,
+  "comment": {
+    "comment": "Shipment from Baltimore"
+  },
+  "arguments": {
     "extension_attributes": {
       "source_code": "baltimore_wh"
     }
@@ -79,45 +74,7 @@ You must use the `POST V1/shipment` endpoint to create a shipment.
 
 **Response**
 
-``` json
-{
-    "created_at": "2018-08-02 21:14:43",
-    "customer_id": 2,
-    "entity_id": 13,
-    "increment_id": "2000000013",
-    "order_id": 1,
-    "packages": [],
-    "total_qty": 45,
-    "updated_at": "2018-08-02 21:14:43",
-    "items": [
-        {
-            "entity_id": 5,
-            "name": "Simple Product 1",
-            "parent_id": 13,
-            "price": 5,
-            "product_id": 7,
-            "sku": "sp1",
-            "order_item_id": 1,
-            "qty": 20
-        },
-        {
-            "entity_id": 6,
-            "name": "Simple Product 2",
-            "parent_id": 13,
-            "price": 10,
-            "product_id": 8,
-            "sku": "sp2",
-            "order_item_id": 2,
-            "qty": 25
-        }
-    ],
-    "tracks": [],
-    "comments": [],
-    "extension_attributes": {
-        "source_code": "baltimore_wh"
-    }
-}
-```
+The shipment ID, such as `18`.
 
 ## Ship from Reno
 
@@ -127,20 +84,17 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 ``` json
 {
-  "entity": {
-    "customer_id": 2,
-    "order_id": 1,
-    "total_qty": 35,
   "items": [
     {
-      "name": "Simple Product 2",
-      "price": 10,
-      "product_id": 8,
-      "sku": "sp2",
-      "order_item_id": 2,
+      "order_item_id": 13,
       "qty": 35
     }
-    ],
+  ],
+  "notify": true,
+  "comment": {
+    "comment": "Shipment from Reno"
+  },
+  "arguments": {
     "extension_attributes": {
       "source_code": "reno_wh"
     }
@@ -150,38 +104,10 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 **Response**
 
-``` json
-{
-    "created_at": "2018-08-02 22:22:23",
-    "customer_id": 2,
-    "entity_id": 16,
-    "increment_id": "2000000016",
-    "order_id": 1,
-    "packages": [],
-    "shipment_status": 1,
-    "total_qty": 35,
-    "updated_at": "2018-08-02 22:22:23",
-    "items": [
-        {
-            "entity_id": 10,
-            "name": "Simple Product 2",
-            "parent_id": 16,
-            "price": 10,
-            "product_id": 8,
-            "sku": "sp2",
-            "order_item_id": 2,
-            "qty": 35
-        }
-    ],
-    "tracks": [],
-    "comments": [],
-    "extension_attributes": {
-        "source_code": "reno_wh"
-    }
-}
-```
+The shipment ID, such as `19`.
+
 
 ## Verify this step {#verify-step}
 
 1. Click **Sales** > **Shipments**. The two shipments for this order are displayed in the grid.
-2. Click **Catalog** > **Products** to verify **Quantity per Source** values for each product has been deducted according to the selections made at shipment. 
+2. Click **Catalog** > **Products** to verify **Quantity per Source** values for each product has been deducted according to the selections made at shipment.

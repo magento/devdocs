@@ -188,7 +188,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "items_qty": 81,
         "items": [
             {
-                "item_id": 1,
+                "item_id": 19,
                 "price": 5,
                 "base_price": 5,
                 "qty": 20,
@@ -211,7 +211,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Simple Product 1"
             },
             {
-                "item_id": 2,
+                "item_id": 20,
                 "price": 10,
                 "base_price": 10,
                 "qty": 60,
@@ -234,7 +234,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Simple Product 2"
             },
             {
-                "item_id": 3,
+                "item_id": 21,
                 "price": 20,
                 "base_price": 20,
                 "qty": 1,
