@@ -1467,6 +1467,8 @@ This adapter should implement the extensions points called by <code class="highl
 
 <ul>
   <li><code class="highlighter-rouge">get( id )</code> - returns the editor by it element id</li>
+  <li><code class="highlighter-rouge">getContent()</code> - returns the content stored in the WYSIWYG field</li>
+  <li><code class="highlighter-rouge">setContent(content)</code> - replaces the entire contents of the WYSIWYG with the string content parameter</li>
   <li><code class="highlighter-rouge">insertContent( content )</code> - inserts content into the editor</li>
   <li><code class="highlighter-rouge">setCaretOnElement( targetElement )</code> - sets the caret location in the editor</li>
   <li><code class="highlighter-rouge">activeEditor()</code> - returns the active editor as an object with a <code class="highlighter-rouge">selection</code> property.

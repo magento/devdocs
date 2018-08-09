@@ -1459,6 +1459,26 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
+<h2 id="events">Events</h2>
+
+<p>Events are dispatched by modules when certain actions are triggered. When an event is dispatched, it can pass data to any observers configured to watch that event.</p>
+
+<p>See <a href="/guides/v2.3/extension-dev-guide/events-and-observers.html">Events and observers</a> to learn more about events and how to use them.</p>
+
+<p>The following are available events for use in the WYSIWYG component adapter for TinyMCE4:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">tinymceBeforeSetContent</code> - fires before the contents are inserted into the editor</li>
+  <li><code class="highlighter-rouge">tinymcePaste</code> - fires when a paste is done within the editor</li>
+  <li><code class="highlighter-rouge">tinymceSaveContent</code> - fires when the contents in the editor are saved</li>
+  <li><code class="highlighter-rouge">tinymceSaveContent</code> (<code class="highlighter-rouge">PostProcess</code>) - fires when the contents in the editor are being serialized</li>
+  <li><code class="highlighter-rouge">tinymceUndo</code> - fires when the contents have been reverted to a previous state</li>
+  <li><code class="highlighter-rouge">tinymceFocus</code> - fires when the editor is focused</li>
+  <li><code class="highlighter-rouge">tinymceBlur</code> - fires when the editor is blurred</li>
+  <li><code class="highlighter-rouge">tinymceChange</code> - fires when undo level is added to the editor</li>
+  <li><code class="highlighter-rouge">wysiwygEditorInitialized</code> - fires when the WYSIWYG editor is initialized</li>
+</ul>
+
 <h2 id="add-a-default-editor">Add a default editor</h2>
 <p>Adding the default Magento WYSIWYG editor to a page requires the following steps:</p>
 
