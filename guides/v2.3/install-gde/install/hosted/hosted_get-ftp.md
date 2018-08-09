@@ -32,19 +32,20 @@ To transfer the Magento archive:
 1.	Start your FTP client software.
 2.	Create a connection to your managed server.
 
-	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
+    Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
 3.	After you log in to your managed server, browse to locate the Magento archive on your local system.
 
-	On the remote system, browse to locate the `public_html` directory.
+    On the remote system, browse to locate the `public_html` directory.
 
-	The following figure shows an example.
+    The following figure shows an example.
 
-	<img src="{{ site.baseurl }}/common/images/install-merch_ftp-transfer.png">
+    ![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
 
 4.	Transfer the archive from your local system to the `public_html` directory.
 
-	On some FTP client software, you do this by dragging and dropping.
+    On some FTP client software, you do this by dragging and dropping.
+
 5.	Wait while the transfer completes.
 
 ## Extract the archive {#extract-perms}
@@ -58,22 +59,23 @@ To extract the archive:
 
 3.	Click **Web Root**.
 
-	<img src="{{ site.baseurl }}/common/images/install-merch_file-manager-setup.png" width="550px">
+    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-setup.png){:width="550px"}
 
 4.	Click **Go**.
 
-	The File Manager displays in a separate browser window or tab page.
+    The File Manager displays in a separate browser window or tab page.
 
 3.	Right-click the Magento archive in the **public_html** directory.
 4.	From the pop-up menu, click **Extract** as the following figure shows.
 
-	<img src="{{ site.baseurl }}/common/images/install-merch_file-manager-window.png" width="750px">
+    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-window.png){:width="750px"}
+
 5.	Click **Extract Files**.
 5.	Wait while the archive extracts.
 
-	The following figure shows an example of an extracted archive.
+    The following figure shows an example of an extracted archive.
 
-	<img src="{{ site.baseurl }}/common/images/install-merch_file-manager-after.png" width="750px">
+    ![]({{ site.baseurl }}/common/images/install-merch_file-manager-after.png){:width="750px"}
 
 #### Next step
-<a href="{{page.baseurl }}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+[Install the Magento software]({{page.baseurl }}/install-gde/install/hosted/hosted_install.html)

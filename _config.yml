@@ -102,9 +102,6 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   toc_levels: 2..3
-  # Disable auto conversion of some ASCII chars to their corresponding typographic symbols, like -- to em-dash.
-  gfm_quirks:
-    - no_auto_typographic
 
 incremental: false
 
