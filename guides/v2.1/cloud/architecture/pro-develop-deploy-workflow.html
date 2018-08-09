@@ -2021,7 +2021,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The Magento Commerce (Cloud) Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a> for an overview.</p>
+			<p>The Magento Commerce Cloud Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a> for an overview.</p>
 
 <p>The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You <a href="#develop">develop</a> code using an Active branch based on the Integration environment branch, <em>pushing</em> and <em>pulling</em> code changes to and from your remote, Active branch. You deploy verified code by <em>merging</em> the remote branch to the base branch, which activates an automated <a href="#deploy">build and deploy</a> process for that environment.</p>
 
@@ -2030,9 +2030,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">For Pro projects <strong>created before October 23, 2017</strong>, the architecture is slightly different. See <a href="/guides/v2.1/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>.</p>
 
 <h2 id="develop">Development workflow</h2>
-<p>The Integration environment provides a single, base <code class="highlighter-rouge">integration</code> branch containing your Magento Commerce (Cloud) code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</p>
+<p>The Integration environment provides a single, base <code class="highlighter-rouge">integration</code> branch containing your Magento Commerce Cloud code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</p>
 
-<p>The Magento Commerce (Cloud) environments support a flexible, continuous integration process. Begin by cloning the <code class="highlighter-rouge">integration</code> branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:</p>
+<p>The Magento Commerce Cloud environments support a flexible, continuous integration process. Begin by cloning the <code class="highlighter-rouge">integration</code> branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:</p>
 
 <ul>
   <li><strong>Fetch</strong> changes from <code class="highlighter-rouge">integration</code></li>
@@ -2057,7 +2057,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>Site in the target environment continues to run during a build</li>
-  <li>Check and run Magento Commerce (Cloud) patches and hotfixes</li>
+  <li>Check and run Magento Commerce Cloud patches and hotfixes</li>
   <li>Compile code with a build and deploy log</li>
   <li>Check for Configuration Management, static content deploy occurs during this phase</li>
   <li>Create or use a slug of unchanged code to speed up the process</li>
@@ -2069,7 +2069,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ul>
   <li>Place site in the target environment in a <em>Maintenance</em> mode</li>
   <li>Deploy static content if not completed during Build</li>
-  <li>Install or update Magento Commerce (Cloud)</li>
+  <li>Install or update Magento Commerce Cloud</li>
   <li>Configure routing for traffic</li>
 </ul>
 

@@ -2021,7 +2021,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>You can create a Magento Commerce (Cloud) project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.</p>
+			<p>You can create a Magento Commerce Cloud project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.</p>
 
 <h2 id="prereqs">Prerequisites for importing code</h2>
 <p>Before you begin, do the following:</p>
@@ -2040,16 +2040,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="ssh">SSH access to cloud environments</h3>
-<p>To transfer the database dump and files to Magento Commerce (Cloud), you must know the SSH access link. You can locate the SSH access link using the [<code class="highlighter-rouge">magento-cloud</code>] CLI tool(/guides/v2.1/cloud/reference/cli-ref-topic.html):</p>
+<p>To transfer the database dump and files to Magento Commerce Cloud, you must know the SSH access link. You can locate the SSH access link using the [<code class="highlighter-rouge">magento-cloud</code>] CLI tool(/guides/v2.1/cloud/reference/cli-ref-topic.html):</p>
 
 <p>magento-cloud environment:ssh –pipe</p>
 
-<p class="bs-callout bs-callout-info">You must enter all Magento Commerce (Cloud) commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> and <a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
+<p class="bs-callout bs-callout-info">You must enter all Magento Commerce Cloud commands on the machine on which your Cloud SSH keys are stored. For more information, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> and <a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
 
 <h3 id="db-creds">Database credentials</h3>
-<p>You need your Magento Commerce (Cloud) database name and credentials so that you can import your Magento Commerce data. You can find the name and credentials for your Magento Commerce (Cloud) database in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
+<p>You need your Magento Commerce Cloud database name and credentials so that you can import your Magento Commerce data. You can find the name and credentials for your Magento Commerce Cloud database in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
 
-<p>To find Magento Commerce (Cloud) database access information:</p>
+<p>To find Magento Commerce Cloud database access information:</p>
 
 <ol>
   <li>
@@ -2084,7 +2084,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In the previous example, the database name is <code class="highlighter-rouge">main</code>, the listen port is <code class="highlighter-rouge">3306</code>, the hostname is <code class="highlighter-rouge">database.internal</code>, the root username is <code class="highlighter-rouge">user</code>, and the user has no password.</p>
 
 <h3 id="cloud-unsecure-base-url">Cloud unsecure base URL</h3>
-<p>After you import the Magento Commerce database into Magento Commerce (Cloud), you must change the base URL so you can access the Magento Admin and storefront.</p>
+<p>After you import the Magento Commerce database into Magento Commerce Cloud, you must change the base URL so you can access the Magento Admin and storefront.</p>
 
 <p>Use the magento-cloud CLI tool to locate the base URL:</p>
 
@@ -2095,16 +2095,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The complete workflow for importing existing code includes the following steps:</p>
 
 <ol>
-  <li>If you do not have a project, create a new <a href="#cloud-import-proj">project from a template</a>. This new project has files and directories specific to Magento Commerce (Cloud).</li>
+  <li>If you do not have a project, create a new <a href="#cloud-import-proj">project from a template</a>. This new project has files and directories specific to Magento Commerce Cloud.</li>
   <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Replace the contents</a> of this project with your code using Git.</li>
-  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db">Import your Magento database</a> into your Magento Commerce (Cloud) project.</li>
-  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#media">Import your static files</a> into your Magento Commerce (Cloud) project.</li>
-  <li>Copy your Magento Commerce <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#encryption-key">encryption key</a> to your Magento Commerce (Cloud) project. This key is required for data migration and access.</li>
+  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db">Import your Magento database</a> into your Magento Commerce Cloud project.</li>
+  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#media">Import your static files</a> into your Magento Commerce Cloud project.</li>
+  <li>Copy your Magento Commerce <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#encryption-key">encryption key</a> to your Magento Commerce Cloud project. This key is required for data migration and access.</li>
   <li>Clear the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and verify the project imported successfully.</li>
 </ol>
 
-<h2 id="cloud-import-proj">Create a new Magento Commerce (Cloud) project</h2>
+<h2 id="cloud-import-proj">Create a new Magento Commerce Cloud project</h2>
 
 <ol>
   <li>

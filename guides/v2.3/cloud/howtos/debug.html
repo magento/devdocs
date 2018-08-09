@@ -2065,7 +2065,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To set up Xdebug, you need to <a href="#configure">configure</a> a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the <code class="highlighter-rouge">magento.app.yaml</code> file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.</p>
 
-<p>Once configured, you can debug <a href="#debugcli">CLI commands</a>, <a href="#webrequests">web requests</a>, <a href="#code">code</a>. Remember, all Magento Commerce (Cloud) environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include <a href="#pro-debug">additional instructions</a> for Xdebug on those environments.</p>
+<p>Once configured, you can debug <a href="#debugcli">CLI commands</a>, <a href="#webrequests">web requests</a>, <a href="#code">code</a>. Remember, all Magento Commerce Cloud environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include <a href="#pro-debug">additional instructions</a> for Xdebug on those environments.</p>
 
 <h2 id="usexdebug">Requirements</h2>
 <p>To run and use Xdebug, you will need the environment’s SSH URL. You can locate the information through the <a href="/guides/v2.3/cloud/project/projects.html">Project Web Interface</a> or your spreadsheet.</p>
@@ -2233,7 +2233,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="port">Set up port forwarding</h3>
 <p>You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and xdebug locally can track along with it</p>
 
-<p>To do any type of debugging, you must forward port 9000 from your Magento Commerce (Cloud) server to your local machine. See one of the following sections:</p>
+<p>To do any type of debugging, you must forward port 9000 from your Magento Commerce Cloud server to your local machine. See one of the following sections:</p>
 
 <ul>
   <li><a href="#portmac">Port forwarding on Mac or UNIX</a></li>
@@ -2339,7 +2339,7 @@ kill &lt;PID&gt;
 
 <ul>
   <li>All Putty settings are correct</li>
-  <li>You are running Putty on the machine on which your private Magento Commerce (Cloud) SSH keys are located</li>
+  <li>You are running Putty on the machine on which your private Magento Commerce Cloud SSH keys are located</li>
 </ul>
 
 <h3 id="pro">Configure Pro Staging and Production</h3>

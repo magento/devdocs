@@ -2072,7 +2072,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We support RabbitMQ version 3.5.</p>
 
-<p class="bs-callout bs-callout-warning">If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
+<p class="bs-callout bs-callout-warning">If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on Magento Commerce Cloud to create it for you, use the <a href="/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
 
 <h2 id="settings">Add RabbitMQ in services.yaml and .magento.app.yaml</h2>
 <p>To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the <code class="highlighter-rouge">.magento/services.yaml</code> file.</p>
@@ -2091,7 +2091,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see <a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
-<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce Cloud environment variable <a href="/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p>To verify this information used for configurations and settings:</p>
 

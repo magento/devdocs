@@ -329,7 +329,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code class="highlighter-rouge">git push</code> output</h1>
-<p>To better grasp what is happening here, we will show you what the output of the <code class="highlighter-rouge">git push</code> command might look like with Magento Commerce (Cloud).</p>
+<p>To better grasp what is happening here, we will show you what the output of the <code class="highlighter-rouge">git push</code> command might look like with Magento Commerce Cloud.</p>
 
 <p>For this example, we use a sample PHP project configured with multiple services including MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="highlighter-rouge">composer.json</code> file. It uses the Ruby library <code class="highlighter-rouge">sass</code> to compile the SCSS during its build process.</p>
 
@@ -353,14 +353,14 @@ Total 4 (delta 3), reused 0 (delta 0)
 
 <h2 id="validating-submodules">Validating submodules</h2>
 
-<p>Magento Commerce (Cloud) supports git submodules and supports multiple applications. You can have multiple applications, each in its own git repository, but have a single production environment for all of them. In this case we only have a single application and no git submodule.</p>
+<p>Magento Commerce Cloud supports git submodules and supports multiple applications. You can have multiple applications, each in its own git repository, but have a single production environment for all of them. In this case we only have a single application and no git submodule.</p>
 
 <p>The output for each deployed application would have been similar to what you see below for a single application.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Validating configuration files.
 </code></pre></div></div>
 
-<p>Magento Commerce (Cloud) now checks that your configuration files make sense. Errors display if you used tabs instead of spaces in your yaml files. It does many other validations and tries to provide you with useful error messages.</p>
+<p>Magento Commerce Cloud now checks that your configuration files make sense. Errors display if you used tabs instead of spaces in your yaml files. It does many other validations and tries to provide you with useful error messages.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Processing activity: **Shelly** pushed to **maximal**
     Found 1 new commit.
@@ -384,7 +384,7 @@ Total 4 (delta 3), reused 0 (delta 0)
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found a `composer.json`, installing dependencies.
 </code></pre></div></div>
 
-<p>Magento Commerce (Cloud) found <code class="highlighter-rouge">composer.json</code>, so it is going to automatically fetch and install all the PHP dependencies.</p>
+<p>Magento Commerce Cloud found <code class="highlighter-rouge">composer.json</code>, so it is going to automatically fetch and install all the PHP dependencies.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Executing post-build hook...
     Building...
@@ -396,18 +396,18 @@ Total 4 (delta 3), reused 0 (delta 0)
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Executing pre-flight checks...
 </code></pre></div></div>
 
-<p>Magento Commerce (Cloud) just ran some static security checks on the code. There are some vulnerabilities it will refuse to deploy. (You can force it, but it’s not a good idea.)</p>
+<p>Magento Commerce Cloud just ran some static security checks on the code. There are some vulnerabilities it will refuse to deploy. (You can force it, but it’s not a good idea.)</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Compressing application.
 Beaming package to its final destination.
 </code></pre></div></div>
 
-<p>Building is over. Magento Commerce (Cloud) creates an archive of the application and is going to send it to one of the hosts on the grid where it will be mounted.</p>
+<p>Building is over. Magento Commerce Cloud creates an archive of the application and is going to send it to one of the hosts on the grid where it will be mounted.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Re-deploying environment mswy7hzcuhcjy-maximal.
 </code></pre></div></div>
 
-<p>The environment with all its applications has been deployed (here there is just one) and Magento Commerce (Cloud) will now give you an overview of its configuration.</p>
+<p>The environment with all its applications has been deployed (here there is just one) and Magento Commerce Cloud will now give you an overview of its configuration.</p>
 
 <p>You will not be able to see output from the “deploy” hook as these happen in the context of the deployed application. But you could SSH to the environment and inspect the log files.</p>
 
@@ -418,7 +418,7 @@ Beaming package to its final destination.
     moarsearch (type: Elasticsearch, size: S, disk: 200)
 </code></pre></div></div>
 
-<p>We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). Magento Commerce (Cloud) also  configured the network so your application container can access them.</p>
+<p>We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). Magento Commerce Cloud also  configured the network so your application container can access them.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Environment routes:
     http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
@@ -427,7 +427,7 @@ Beaming package to its final destination.
     https://www---maximal-mswy7hzcuhcjy.example.magento.com/ redirects to http://maximal-mswy7hzcuhcjy.example.magento.com/
 </code></pre></div></div>
 
-<p>Finally, Magento Commerce (Cloud) gives you the different routes that are served by your application. Here you can see the “mangled” routes on a non-live environment where the <code class="highlighter-rouge">www.</code> part was replaced by <code class="highlighter-rouge">www---</code> you can visit those in a browser. The site is live.</p>
+<p>Finally, Magento Commerce Cloud gives you the different routes that are served by your application. Here you can see the “mangled” routes on a non-live environment where the <code class="highlighter-rouge">www.</code> part was replaced by <code class="highlighter-rouge">www---</code> you can visit those in a browser. The site is live.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
     31ed214..f32e741  maximal -&gt; maximal

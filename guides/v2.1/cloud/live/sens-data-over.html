@@ -2021,7 +2021,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Configuration management in Magento Commerce (Cloud) provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.</p>
+			<p>Configuration management in Magento Commerce Cloud provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments to keep consistent settings and reduce downtime.</p>
 
 <p>It provides the following benefits:</p>
 
@@ -2046,7 +2046,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>: Exports every configuration setting, including modified and default settings</li>
 </ul>
 
-<p class="bs-callout bs-callout-warning">For Magento Commerce (Cloud), we <strong>do not recommend</strong> <code class="highlighter-rouge">app:config:dump</code> as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.</p>
+<p class="bs-callout bs-callout-warning">For Magento Commerce Cloud, we <strong>do not recommend</strong> <code class="highlighter-rouge">app:config:dump</code> as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.</p>
 
 <p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.</p>
 

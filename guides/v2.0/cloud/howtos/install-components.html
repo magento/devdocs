@@ -1747,9 +1747,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This information includes information for <a href="#install">adding modules</a> to Magento Commerce (Cloud), <a href="#manage">managing</a> enabled and disabled modules, and <a href="#update">upgrading module code</a>.</p>
+			<p>This information includes information for <a href="#install">adding modules</a> to Magento Commerce Cloud, <a href="#manage">managing</a> enabled and disabled modules, and <a href="#update">upgrading module code</a>.</p>
 
-<p>When adding modules (or extensions) to Magento Commerce (Cloud), you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.</p>
+<p>When adding modules (or extensions) to Magento Commerce Cloud, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.</p>
 
 <p>Modules include the following:</p>
 
@@ -1829,7 +1829,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Purchase a module from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or another site.</li>
   <li><a href="#getstarted">Create a branch</a> to work with the files.</li>
   <li><a href="#compose">Get the module’s Composer name</a> and version from your purchase history.</li>
-  <li>In your local Magento Commerce (Cloud) project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the module and add the code to Git. The code builds, deploys, and is available through the environment.</li>
+  <li>In your local Magento Commerce Cloud project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the module and add the code to Git. The code builds, deploys, and is available through the environment.</li>
   <li><a href="#verify">Verify</a> the module installed properly.</li>
 </ol>
 
@@ -1906,7 +1906,7 @@ git push origin &lt;environment ID&gt;
 <p>If there are errors, see <a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">module deployment failure</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
-When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in Magento Commerce (Cloud). This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
+When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in Magento Commerce Cloud. This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
 </div>
 
 <h3 id="verify">Step 3: Verify the module</h3>
@@ -2003,7 +2003,7 @@ git push origin &lt;environment ID&gt;
 
 <ul>
   <li>Know the module’s Composer name and version</li>
-  <li>Know the module is compatible with your project and Magento Commerce (Cloud) version. In particular, check the required PHP version.</li>
+  <li>Know the module is compatible with your project and Magento Commerce Cloud version. In particular, check the required PHP version.</li>
 </ul>
 
 <p>To update an module:</p>

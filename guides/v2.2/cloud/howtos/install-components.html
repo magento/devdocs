@@ -2065,9 +2065,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This information includes information for <a href="#install">adding extensions</a> to Magento Commerce (Cloud), <a href="#manage">managing</a> enabled and disabled extensions, and <a href="#update">upgrading extension code</a>.</p>
+			<p>This information includes information for <a href="#install">adding extensions</a> to Magento Commerce Cloud, <a href="#manage">managing</a> enabled and disabled extensions, and <a href="#update">upgrading extension code</a>.</p>
 
-<p>When adding extensions to Magento Commerce (Cloud), you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.</p>
+<p>When adding extensions to Magento Commerce Cloud, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.</p>
 
 <p>Extensions include the following:</p>
 
@@ -2149,7 +2149,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Purchase an extension or module from <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> or another site.</li>
   <li><a href="#getstarted">Create a branch</a> to work with the files.</li>
   <li><a href="#compose">Get the extension’s Composer name</a> and version from your purchase history.</li>
-  <li>In your local Magento Commerce (Cloud) project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.</li>
+  <li>In your local Magento Commerce Cloud project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.</li>
   <li><a href="#verify">Verify</a> the extension installed properly.</li>
 </ol>
 
@@ -2225,7 +2225,7 @@ git push magento &lt;environment ID&gt;
 
 <p>If there are errors, see <a href="/guides/v2.2/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
 
-<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> to your Git branch for deployment. If the extension is not in the file, the extension won’t load in Magento Commerce (Cloud). This ensures when the <code class="highlighter-rouge">composer install</code> command is used, the extension properly loads. This command uses the <code class="highlighter-rouge">composer.lock</code> file.</p>
+<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> to your Git branch for deployment. If the extension is not in the file, the extension won’t load in Magento Commerce Cloud. This ensures when the <code class="highlighter-rouge">composer install</code> command is used, the extension properly loads. This command uses the <code class="highlighter-rouge">composer.lock</code> file.</p>
 
 <h3 id="verify">Step 3: Verify the extension</h3>
 <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
@@ -2291,7 +2291,7 @@ git push magento &lt;environment ID&gt;
 
 <ul>
   <li>Know the extension’s Composer name and version</li>
-  <li>Know the extension is compatible with your project and Magento Commerce (Cloud) version. In particular, check the required PHP version.</li>
+  <li>Know the extension is compatible with your project and Magento Commerce Cloud version. In particular, check the required PHP version.</li>
 </ul>
 
 <p>To update an extension:</p>

@@ -2073,7 +2073,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To complete configuration management tasks, you must have a project reader role with <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
 
-<p class="bs-callout bs-callout-info">For extended technical information, see <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce (Cloud) provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
+<p class="bs-callout bs-callout-info">For extended technical information, see <a href="/guides/v2.3/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce Cloud provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
 
 <h2 id="cloud-confman-over">How it works</h2>
 <p>The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.php</code>.</p>
@@ -2085,7 +2085,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>—Exports every configuration setting, including modified and default settings</li>
 </ul>
 
-<p class="bs-callout bs-callout-warning">For Magento Commerce (Cloud), we <strong>do not recommend</strong> using the <code class="highlighter-rouge">app:config:dump</code> command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.</p>
+<p class="bs-callout bs-callout-warning">For Magento Commerce Cloud, we <strong>do not recommend</strong> using the <code class="highlighter-rouge">app:config:dump</code> command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.</p>
 
 <p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.</p>
 
@@ -2245,7 +2245,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 
 <h2 id="migrate-configurations">Migrate configurations</h2>
-<p>If you upgrade to Magento Commerce (Cloud) 2.2 or later, you may want to migrate settings from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the <code class="highlighter-rouge">config.php</code> file.</p>
+<p>If you upgrade to Magento Commerce Cloud 2.2 or later, you may want to migrate settings from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the <code class="highlighter-rouge">config.php</code> file.</p>
 
 <p>If they differ, you can append content from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file:</p>
 

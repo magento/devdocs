@@ -1756,14 +1756,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Indexing does not impact customers until reindex is completed</li>
 </ul>
 
-<p>We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later. Refer to <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elasticsearch information</a> to learn more. For Magento Commerce (Cloud) 2.0.X, you can use <a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Solr</a>.</p>
+<p>We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with Magento Commerce Cloud 2.1 and later. Refer to <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elasticsearch information</a> to learn more. For Magento Commerce Cloud 2.0.X, you can use <a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Solr</a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you’re upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in <a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es">the 2.1.3 Release Notes</a>.</p>
 </div>
 
 <div class="bs-callout bs-callout-warning">
-  <p>If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#search"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
+  <p>If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce Cloud to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#search"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
 </div>
 
 <h2 id="settings">Add Elasticsearch in services.yaml and .magento.app.yaml</h2>
@@ -1826,7 +1826,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For full documentation on these plugins, see <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html" target="\_blank">Elasticsearch plugin documentation</a>.</p>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
-<p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce Cloud environment variable <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You will use this information to <a href="#configure">complete Elasticsearch configuration</a> in the Admin Panel.</p>

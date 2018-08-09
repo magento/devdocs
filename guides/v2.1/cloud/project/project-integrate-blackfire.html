@@ -2042,7 +2042,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="get-your-blackfire-credentials">Get your Blackfire credentials</h2>
-<p>The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with Magento Commerce (Cloud) and to log in to the Blackfire website. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
+<p>The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with Magento Commerce Cloud and to log in to the Blackfire website. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
 
 <p>For information on setting up an account on Blackfire, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user" target="_blank">Accessing your Blackfire account as a Magento Cloud user</a>. You can access your Blackfire license key through <a href="/guides/v2.1/cloud/project/projects.html#integrations">project details</a>.</p>
 
@@ -2064,7 +2064,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="enable-blackfire-on-local-workspace">Enable Blackfire on local workspace</h2>
-<p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce (Cloud) installation. You do <em>not</em> need to run these installations directly on the hosted environments; only on your local.</p>
+<p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce Cloud installation. You do <em>not</em> need to run these installations directly on the hosted environments; only on your local.</p>
 
 <p>We recommend using the Blackfire installation guide to walk you through the process:</p>
 
@@ -2115,7 +2115,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>
-    <p>Log in to your Magento Commerce (Cloud) project.</p>
+    <p>Log in to your Magento Commerce Cloud project.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
@@ -2188,7 +2188,7 @@ git push origin
 <p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
 
 <ol>
-  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Open a terminal and navigate to your Magento Commerce Cloud project.</li>
   <li>Copy the commands from step 3 on the Blackfire <em>Magento Cloud Integration</em> page.</li>
   <li>
     <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token, similar to the following:</p>
@@ -2205,7 +2205,7 @@ git push origin
 <p>Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with superuser access. Make sure your Cloud Project account has the <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
-  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
+  <li>Open a terminal and navigate to your Magento Commerce Cloud project.</li>
   <li>
     <p>Copy and enter the integration commands from the Blackfire <em>Magento Cloud Integration</em> page.</p>
 
@@ -2215,14 +2215,14 @@ git push origin
 <span class="nt">--url</span><span class="o">=</span><span class="s1">'&lt;Blackfire provided URL&gt;'</span>
 </code></pre></div>    </div>
   </li>
-  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, verify that you have superuser access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or request an admin run this command.</li>
+  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, verify that you have superuser access for the Magento Commerce Cloud project. Either request your permission be upgraded or request an admin run this command.</li>
 </ol>
 
 <h3 id="route">Default route</h3>
 <p>If you need to specify a different route to use instead of the default route, change the route in the Blackfire <em>Magento Cloud Integration</em> page (step 5) and update the route in your project <code class="highlighter-rouge">routes.yaml</code> file.</p>
 
 <h3 id="save">Save changes in Blackfire</h3>
-<p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce (Cloud) project. Continue to the next section to begin profiling your store to verify the integration.</p>
+<p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce Cloud project. Continue to the next section to begin profiling your store to verify the integration.</p>
 
 <h2 id="profile">Profile your store</h2>
 <p>You can verify that Blackfire works using a browser extension or the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#blackfire-resources">Blackfire resources</a>.</p>

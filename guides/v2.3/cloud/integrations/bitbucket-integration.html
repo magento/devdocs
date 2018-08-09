@@ -2061,16 +2061,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your Magento Commerce (Cloud) account.</p>
+			<p>You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your Magento Commerce Cloud account.</p>
 
 <p>For Pro projects <strong>created before October 23, 2017</strong>, this integration works on Integration environments <em>only</em>. You must <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">request an upgrade</a> before you can use this integration on Staging and Production environments.</p>
 
-<p class="bs-callout bs-callout-info">We <em>strongly</em> recommend using a private Bitbucket repository for your Magento Commerce (Cloud) project.</p>
+<p class="bs-callout bs-callout-info">We <em>strongly</em> recommend using a private Bitbucket repository for your Magento Commerce Cloud project.</p>
 
 <p>Before you enable the integration, you must have the following:</p>
 
 <ul>
-  <li>Administrator access to the Magento Commerce (Cloud) project</li>
+  <li>Administrator access to the Magento Commerce Cloud project</li>
   <li><a href="/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install"><code class="highlighter-rouge">magento-cloud</code> CLI</a> tool in your local environment</li>
   <li>A Bitbucket account</li>
   <li>Administrator access to the Bitbucket repository</li>
@@ -2078,11 +2078,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="prepare-your-repository">Prepare your repository</h2>
-<p>You need to clone your Magento Commerce (Cloud) project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.</p>
+<p>You need to clone your Magento Commerce Cloud project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.</p>
 
 <ol>
   <li>
-    <p>From the terminal, log in to your Magento Commerce (Cloud) project.</p>
+    <p>From the terminal, log in to your Magento Commerce Cloud project.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
@@ -2171,7 +2171,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 
 <ol>
   <li>
-    <p>From the terminal, navigate to your Magento Commerce (Cloud) project.</p>
+    <p>From the terminal, navigate to your Magento Commerce Cloud project.</p>
   </li>
   <li>
     <p>Create a temporary file called <code class="highlighter-rouge">bitbucket.json</code> and add the following, replacing the variables in angle brackets with your values:</p>
@@ -2195,7 +2195,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
   <li>
     <p>Add the integration to your project using the <code class="highlighter-rouge">magento-cloud</code> CLI tool.</p>
 
-    <p class="bs-callout bs-callout-warning">The following command overwrites <em>all</em> code in your Magento Commerce (Cloud) project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone.</p>
+    <p class="bs-callout bs-callout-warning">The following command overwrites <em>all</em> code in your Magento Commerce Cloud project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:curl <span class="nt">-p</span> <span class="s1">'&lt;project-ID&gt;'</span> /integrations <span class="nt">-i</span> <span class="nt">-X</span> POST <span class="nt">-d</span> <span class="s2">"</span><span class="k">$(</span>&lt; bitbucket.json<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>    </div>
@@ -2237,7 +2237,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </ol>
 
 <h2 id="create-a-new-cloud-branch">Create a new Cloud branch</h2>
-<p>The Bitbucket integration cannot activate new environments in your Magento Commerce (Cloud) project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the <code class="highlighter-rouge">magento-cloud</code> CLI tool or the Project Web UI.</p>
+<p>The Bitbucket integration cannot activate new environments in your Magento Commerce Cloud project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the <code class="highlighter-rouge">magento-cloud</code> CLI tool or the Project Web UI.</p>
 
 <h4 id="to-activate-a-branch-created-with-bitbucket">To activate a branch created with Bitbucket:</h4>
 
@@ -2282,7 +2282,7 @@ Parent environment [master]: integration
 
 <ol>
   <li>
-    <p>From the terminal, log in to your Magento Commerce (Cloud) project.</p>
+    <p>From the terminal, log in to your Magento Commerce Cloud project.</p>
   </li>
   <li>
     <p>List your integrations. You need the Bitbucket integration ID to complete the next step.</p>

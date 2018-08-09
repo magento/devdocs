@@ -2080,10 +2080,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
-<p class="bs-callout bs-callout-info">If you use a version of Magento Commerce (Cloud) that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <a href="/guides/v2.2/cloud/project/ece-tools-upgrade-project.html">upgrade</a>. If you currently use the <code class="highlighter-rouge">ece-tools</code> package and you need to update it, see <a href="/guides/v2.2/cloud/project/ece-tools-update.html">Update ece-tools version</a>.</p>
+<p class="bs-callout bs-callout-info">If you use a version of Magento Commerce Cloud that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <a href="/guides/v2.2/cloud/project/ece-tools-upgrade-project.html">upgrade</a>. If you currently use the <code class="highlighter-rouge">ece-tools</code> package and you need to update it, see <a href="/guides/v2.2/cloud/project/ece-tools-update.html">Update ece-tools version</a>.</p>
 
 <h3 id="upgrade-php-version">Upgrade PHP version</h3>
-<p>Magento Commerce (Cloud) 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
+<p>Magento Commerce Cloud 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
 
 <ul>
   <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workstation</li>
@@ -2111,7 +2111,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">You can only delete this file to replace it this one time. After generating a correct <code class="highlighter-rouge">config.php</code> file, you cannot delete the file to generate a new one. For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
 
 <h3 id="update-the-magentoappyaml-file">Update the .magento.app.yaml file</h3>
-<p>If you are upgrading to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you may encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
+<p>If you are upgrading to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you may encounter errors. Magento Commerce Cloud 2.2.X has new settings in the file.</p>
 
 <ol>
   <li>
@@ -2262,7 +2262,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">For an upgrade, you delete the <code class="highlighter-rouge">config.php</code> file. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
 
 <h2 id="extensions">Verify and upgrade your extensions</h2>
-<p>If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) version 2.2.</p>
+<p>If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud version 2.2.</p>
 
 <ol>
   <li>Create a new branch on your local workstation.</li>
@@ -2277,7 +2277,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We strongly recommend upgrading your Production environment <em>before</em> including the upgraded extensions in your go-live process.</p>
 
-<p>We strongly recommend upgrading your Fastly module to v1.2.33 or later for Magento Commerce (Cloud) 2.2.</p>
+<p>We strongly recommend upgrading your Fastly module to v1.2.33 or later for Magento Commerce Cloud 2.2.</p>
 
 <h2 id="troubleshoot-upgrade">Troubleshoot upgrade</h2>
 <p>If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:</p>

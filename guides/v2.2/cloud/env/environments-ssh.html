@@ -2085,7 +2085,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="work">How SSH keys work</h2>
 <p>When you enter an SSH command to connect your client to the remote host, the host and your workspace begin tests back and forth to verify and allow access. These tests use the public and private keys you generated. Your entered command initiates SSH key authentication to request access to the server, indicating the public key to use. The server checks for authorized keys in its list for your public key. When found, it generates a message string and encrypts it with the public key the host has for you. Your system receives the message, decrypts it using your local private key, and merges the message with a session ID. Your system generates an MD5 of the message and session ID, sending it back to the host. If everything checks out, this passes the connection test and completes full SSH access to the host.</p>
 
-<p>You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Commerce (Cloud) and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.</p>
+<p>You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Commerce Cloud and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.</p>
 
 <p>The SSH keys require the following:</p>
 
@@ -2205,8 +2205,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can add SSH keys to your account in any of the following ways:</p>
 
 <ul>
-  <li>Using the <a href="#add-key-cli">Magento Commerce (Cloud) CLI</a></li>
-  <li>Using the <a href="#add-key-web">Magento Commerce (Cloud) Web Interface</a></li>
+  <li>Using the <a href="#add-key-cli">Magento Commerce Cloud CLI</a></li>
+  <li>Using the <a href="#add-key-web">Magento Commerce Cloud Web Interface</a></li>
 </ul>
 
 <h3 id="add-key-cli">Add a key using the CLI</h3>

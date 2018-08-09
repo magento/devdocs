@@ -2061,7 +2061,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Your Magento Commerce (Cloud) Pro architecture supports a maximum of <strong>eight</strong> environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:</p>
+			<p>Your Magento Commerce Cloud Pro architecture supports a maximum of <strong>eight</strong> environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:</p>
 
 <ul>
   <li><strong>Integration</strong>—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</li>
@@ -2163,7 +2163,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.</p>
 
 <h3 id="redundant-hardware">Redundant hardware</h3>
-<p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce (Cloud) runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
+<p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce Cloud runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
 
 <p>Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to   <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span>
  multiple IP addresses, so having more than one fixed IP address is not a problem.</p>
@@ -2180,7 +2180,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="backup-and-disaster-recovery">Backup and disaster recovery</h3>
 <p>Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.</p>
 
-<p>In addition to the redundancy of the high-availability architecture, Magento Commerce (Cloud) provides
+<p>In addition to the redundancy of the high-availability architecture, Magento Commerce Cloud provides
 incremental backups every hour for the first 24 hours of operation. After the
 initial period, full backups which include the file system and the database.
 We retain the backups according to the following schedule:</p>
@@ -2216,7 +2216,7 @@ We retain the backups according to the following schedule:</p>
   </tbody>
 </table>
 
-<p>Magento Commerce (Cloud) creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.</p>
+<p>Magento Commerce Cloud creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.</p>
 
 <ul>
   <li><strong>Recovery Point Objective (RPO)</strong>—is 1 hour for the first 24 hours; after
@@ -2240,8 +2240,8 @@ EBS volumes take more time to restore.</li>
     </ul>
   </li>
   <li><strong>Redis</strong>—one server per VM with only one active and the other two as replicas</li>
-  <li><strong>Elasticsearch</strong>—search for Magento Commerce (Cloud) 2.1 and later</li>
-  <li><strong>Solr</strong>—search for Magento Commerce (Cloud) 2.0 only</li>
+  <li><strong>Elasticsearch</strong>—search for Magento Commerce Cloud 2.1 and later</li>
+  <li><strong>Solr</strong>—search for Magento Commerce Cloud 2.0 only</li>
   <li><strong>Galera</strong>—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database</li>
 </ul>
 
@@ -2261,7 +2261,7 @@ EBS volumes take more time to restore.</li>
  level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
 
 <h2 id="cloud-arch-software">Software versions</h2>
-<p>Magento Commerce (Cloud) uses the Debian GNU/Linux 8 (jessie) operating system and the   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span>
+<p>Magento Commerce Cloud uses the Debian GNU/Linux 8 (jessie) operating system and the   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span>
  1.8 web server. You cannot upgrade this software, but you can configure versions for the following:</p>
 
 <ul>
@@ -2280,7 +2280,7 @@ EBS volumes take more time to restore.</li>
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>—application build and deployment</li>
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>—url processing</li>
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>—supported services</li>
-  <li><a href="/guides/v2.3/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a>—unified configs for Magento Commerce (Cloud) 2.2</li>
+  <li><a href="/guides/v2.3/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a>—unified configs for Magento Commerce Cloud 2.2</li>
 </ul>
 
 			

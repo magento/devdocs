@@ -2021,9 +2021,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>You need to prepare your existing Magento Commerce implementation to import it into a new Magento Commerce (Cloud) project. This includes updating and adding files, transferring media files, and migrating data.</p>
+			<p>You need to prepare your existing Magento Commerce implementation to import it into a new Magento Commerce Cloud project. This includes updating and adding files, transferring media files, and migrating data.</p>
 
-<p>Before preparing your project and importing code, push all pending changes to Git. Your remote Magento Commerce (Cloud) branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.</p>
+<p>Before preparing your project and importing code, push all pending changes to Git. Your remote Magento Commerce Cloud branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.</p>
 
 <p>These import preparation steps include the following:</p>
 
@@ -2038,7 +2038,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="required-files">Prepare and add required files</h2>
-<p>To import Magento Commerce code to a Magento Commerce (Cloud) project, you need to add a directory and the following files to your existing code.</p>
+<p>To import Magento Commerce code to a Magento Commerce Cloud project, you need to add a directory and the following files to your existing code.</p>
 
 <ul>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> manages applications, service relationships, mounts for writable directories, and cron jobs</li>
@@ -2050,7 +2050,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You need to add these files to your Magento Commerce code:</p>
 
 <ol>
-  <li>Go to the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Commerce (Cloud) GitHub</a>.</li>
+  <li>Go to the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Commerce Cloud GitHub</a>.</li>
   <li>
     <p>Select the branch corresponding to the Magento Commerce version you currently have.</p>
 
@@ -2069,7 +2069,7 @@ mkdir .magento
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>One at a time, create the following files in your Magento Commerce system using the contents of the files in the Magento Commerce (Cloud) GitHub:</p>
+    <p>One at a time, create the following files in your Magento Commerce system using the contents of the files in the Magento Commerce Cloud GitHub:</p>
 
     <ul>
       <li><code class="highlighter-rouge">&lt;Magento Commerce install dir&gt;/.magento.app.yaml</code></li>
@@ -2081,7 +2081,7 @@ mkdir .magento
     <p>For example, to create <code class="highlighter-rouge">&lt;Magento Commerce install dir&gt;/.magento.app.yaml</code> from the 2.1.4 branch:</p>
 
     <ol>
-      <li>In the  Magento Commerce (Cloud) GitHub, click <a href="https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml" target="\_blank"><strong>.magento.app.yaml</strong></a>.</li>
+      <li>In the  Magento Commerce Cloud GitHub, click <a href="https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml" target="\_blank"><strong>.magento.app.yaml</strong></a>.</li>
       <li>
         <p>In the upper right, click <strong>Raw</strong>, as the following figure shows.</p>
 
@@ -2113,7 +2113,7 @@ mkdir .magento
 <p>When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.</p>
 
 <h2 id="auth-json">Add or update <code class="highlighter-rouge">auth.json</code> with Magento Authentication keys</h2>
-<p>To enable install and update commands for Magento Commerce (Cloud), you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Commerce (Cloud).</p>
+<p>To enable install and update commands for Magento Commerce Cloud, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Commerce Cloud.</p>
 
 <p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code>. Verify if you have the file and add your authentication credentials before you create a new one. It’s located in your Magento root directory. You can also <a href="https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample" target="\_blank">get a sample <code class="highlighter-rouge">auth.json</code></a>.</p>
 
@@ -2141,12 +2141,12 @@ mkdir .magento
 </ol>
 
 <h2 id="composer-json">Edit <code class="highlighter-rouge">composer.json</code></h2>
-<p>Before you push code to the Magento Commerce (Cloud) Git repository, modify your <code class="highlighter-rouge">composer.json</code> for Cloud. You can also <a href="https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json" target="\_blank">view a sample <code class="highlighter-rouge">composer.json</code></a>.</p>
+<p>Before you push code to the Magento Commerce Cloud Git repository, modify your <code class="highlighter-rouge">composer.json</code> for Cloud. You can also <a href="https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json" target="\_blank">view a sample <code class="highlighter-rouge">composer.json</code></a>.</p>
 
 <p>To edit <code class="highlighter-rouge">composer.json</code>:</p>
 
 <ol>
-  <li>If you haven’t done so already, log in to your Magento Commerce (Cloud) server as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>If you haven’t done so already, log in to your Magento Commerce Cloud server as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>In a text editor, open <code class="highlighter-rouge">composer.json</code> in the project root directory.</li>
   <li>
     <p>Substitute the following value in the <code class="highlighter-rouge">require</code> section:</p>
@@ -2203,7 +2203,7 @@ mkdir .magento
     <p>The backup is stored in the <code class="highlighter-rouge">&lt;Magento Commerce install dir&gt;/var/backups</code> directory.</p>
   </li>
   <li>
-    <p>Transfer the media file to your Magento Commerce (Cloud) system:</p>
+    <p>Transfer the media file to your Magento Commerce Cloud system:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;Magento Commerce install dir&gt;/var/backups/&lt;backup file name&gt; &lt;cloud ssh url&gt;:var/media.tgz
 </code></pre></div>    </div>
@@ -2224,10 +2224,10 @@ mkdir .magento
   <li>Copy the value to the clipboard and save it.</li>
 </ol>
 
-<p>You must paste the encryption key into your Magento Commerce (Cloud) <code class="highlighter-rouge">env.php</code> file in each environment in a <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#encryption-key">later step</a>.</p>
+<p>You must paste the encryption key into your Magento Commerce Cloud <code class="highlighter-rouge">env.php</code> file in each environment in a <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html#encryption-key">later step</a>.</p>
 
 <h2 id="migrate-db">Migrate Magento Commerce data</h2>
-<p>Create a database dump and transfer the data from an existing database. You will import this data to your Magento Commerce (Cloud) database.</p>
+<p>Create a database dump and transfer the data from an existing database. You will import this data to your Magento Commerce Cloud database.</p>
 
 <p>The following command example compresses the dump so it doesn’t significantly interfere with traffic from in live site. The dump file is named <code class="highlighter-rouge">db.sql.gz</code>. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.</p>
 
@@ -2247,7 +2247,7 @@ mkdir .magento
 
 <ol>
   <li>
-    <p>Use the <code class="highlighter-rouge">rsync</code> command to transfer the database dump to the Magento Commerce (Cloud) environment in the <code class="highlighter-rouge">var</code> directory of the application you are importing into:</p>
+    <p>Use the <code class="highlighter-rouge">rsync</code> command to transfer the database dump to the Magento Commerce Cloud environment in the <code class="highlighter-rouge">var</code> directory of the application you are importing into:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rsync &lt;db dump file name&gt; &lt;cloud SSH URL&gt;:var/db.sql.gz
 </code></pre></div>    </div>
@@ -2257,7 +2257,7 @@ mkdir .magento
 <p>To find <code class="highlighter-rouge">&lt;cloud SSH URL&gt;</code>, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds">Find the information you need for your import</a>.</p>
 
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a></p>
+<p><a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce Cloud</a></p>
 
 			
 		</div>

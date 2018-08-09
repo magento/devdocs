@@ -1747,9 +1747,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This information details how to upgrade Magento Commerce (Cloud) from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from version 2.0.4</a>.</p>
+			<p>This information details how to upgrade Magento Commerce Cloud from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="/guides/v2.0/cloud/upgrade/upgrade-from-2-0-4.html">Upgrade from version 2.0.4</a>.</p>
 
-<p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure you have <code class="highlighter-rouge">auth.json</code> in your project root folder if there isn’t one already.</p>
+<p>When you upgrade Magento Commerce Cloud, you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure you have <code class="highlighter-rouge">auth.json</code> in your project root folder if there isn’t one already.</p>
 
 <p>Our upgrades are Composer driven. For more information on Composer, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer in Cloud</a>.</p>
 
@@ -1760,7 +1760,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
 
 <h2 id="variable">Verify or set the ADMIN_EMAIL variable</h2>
-<p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce (Cloud). See <a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
+<p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce Cloud. See <a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
 
 <h2 id="backup-db">Back up the database</h2>
 <p>Back up your integration system database and code:</p>
@@ -1866,7 +1866,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h2 id="extensions">Verify and upgrade your extensions</h2>
-<p>You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) v2.2.</p>
+<p>You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud v2.2.</p>
 
 <p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Integration environments.</p>
 

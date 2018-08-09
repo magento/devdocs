@@ -2065,12 +2065,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>We use <a href="https://getcomposer.org/doc" target="\_blank">Composer</a> to manage Magento Commerce (Cloud) dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
+			<p>We use <a href="https://getcomposer.org/doc" target="\_blank">Composer</a> to manage Magento Commerce Cloud dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
 <p>Composer manages required libraries and dependencies for your project and installs them in the <code class="highlighter-rouge">vendor</code> directory.</p>
 
 <h2 id="files">Composer files</h2>
-<p>For Magento Commerce (Cloud), we use the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.</p>
+<p>For Magento Commerce Cloud, we use the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.</p>
 
 <p>Magento extension and module developers use the <code class="highlighter-rouge">composer.json</code> file to manage product installations and upgrades. See <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade extensions</a>.</p>
 
@@ -2092,7 +2092,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tr>
     <tr>
       <td><code class="highlighter-rouge">composer install</code></td>
-      <td>Reads the <code class="highlighter-rouge">composer.lock</code> file to download dependencies. You must keep an up-to-date copy of <code class="highlighter-rouge">composer.lock</code> in your Magento Commerce (Cloud) repository.</td>
+      <td>Reads the <code class="highlighter-rouge">composer.lock</code> file to download dependencies. You must keep an up-to-date copy of <code class="highlighter-rouge">composer.lock</code> in your Magento Commerce Cloud repository.</td>
     </tr>
   </tbody>
 </table>
@@ -2116,7 +2116,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This package depends on a floating version of <code class="highlighter-rouge">vendor/magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
 
 <h2 id="ece-tools">vendor/magento/ece-tools</h2>
-<p>The <code class="highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce (Cloud) project. It contains scripts and Magento Commerce (Cloud) commands designed to help manage your code and automatically build and deploy your projects.</p>
+<p>The <code class="highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce Cloud project. It contains scripts and Magento Commerce Cloud commands designed to help manage your code and automatically build and deploy your projects.</p>
 
 <h2 id="cloud-composer-prodee">vendor/magento/product-enterprise-edition</h2>
 <p>This   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
@@ -2128,9 +2128,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>These files are location-dependent, and cannot reside in the <code class="highlighter-rouge">vendor</code> directory. They are distributed as part of the base packages, and they rely on hooks located in the <code class="highlighter-rouge">magento/magento-composer-installer</code> package, which marshals them to the appropriate locations.</p>
 
-<p>One way in which Magento Commerce (Cloud) deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of <code class="highlighter-rouge">magento/magento-composer-installer</code>—it is disabled.</p>
+<p>One way in which Magento Commerce Cloud deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of <code class="highlighter-rouge">magento/magento-composer-installer</code>—it is disabled.</p>
 
-<p>When upgrading to a new Magento Commerce (Cloud) version or adding, removing, or changing any packages that rely on file marshaling, you must:</p>
+<p>When upgrading to a new Magento Commerce Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:</p>
 
 <ol>
   <li>

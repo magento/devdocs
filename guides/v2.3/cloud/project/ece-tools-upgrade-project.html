@@ -2061,9 +2061,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>If you still use a version of Magento Commerce (Cloud) that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <em>upgrade</em>. We deprecated the <code class="highlighter-rouge">magento/magento-cloud-configuration</code> and <code class="highlighter-rouge">magento/ece-patches</code> packages in favor of the <code class="highlighter-rouge">ece-tools</code> package.</p>
+			<p>If you still use a version of Magento Commerce Cloud that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <em>upgrade</em>. We deprecated the <code class="highlighter-rouge">magento/magento-cloud-configuration</code> and <code class="highlighter-rouge">magento/ece-patches</code> packages in favor of the <code class="highlighter-rouge">ece-tools</code> package.</p>
 
-<p>You must perform a one-time, manual step to update the <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="highlighter-rouge">composer.json</code> file, located in the root directory. This constraint enables updates for Magento Commerce (Cloud) metapackages—including removing deprecated packages—without upgrading your current Magento Commerce version. If your project contains the <code class="highlighter-rouge">ece-tools</code> package and you have updated the metapackage, you can skip the following upgrade and see <a href="/guides/v2.3/cloud/project/ece-tools-update.html">Update ece-tools</a>.</p>
+<p>You must perform a one-time, manual step to update the <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="highlighter-rouge">composer.json</code> file, located in the root directory. This constraint enables updates for Magento Commerce Cloud metapackages—including removing deprecated packages—without upgrading your current Magento Commerce version. If your project contains the <code class="highlighter-rouge">ece-tools</code> package and you have updated the metapackage, you can skip the following upgrade and see <a href="/guides/v2.3/cloud/project/ece-tools-update.html">Update ece-tools</a>.</p>
 
 <p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
@@ -2083,7 +2083,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can always find the latest metapackage constraint in the <a href="https://github.com/magento/magento-cloud/blob/master/composer.json"><code class="highlighter-rouge">magento-cloud</code> template</a>.</p>
 
-<p>The following example places a constraint for the Magento Commerce (Cloud) metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:</p>
+<p>The following example places a constraint for the Magento Commerce Cloud metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"magento/magento-cloud-metapackage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=2.2.0 &lt;2.2.1"</span><span class="w">

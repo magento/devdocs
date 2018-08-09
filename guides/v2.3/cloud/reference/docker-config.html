@@ -2061,7 +2061,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Magento Commerce (Cloud) provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Commerce (Cloud) Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento Commerce (Cloud) <code class="highlighter-rouge">ece-tools</code> package.</p>
+			<p>Magento Commerce Cloud provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Commerce Cloud Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento Commerce Cloud <code class="highlighter-rouge">ece-tools</code> package.</p>
 
 <p>The <a href="https://github.com/magento/magento-cloud-docker" target="\_blank">Magento Cloud Docker repository</a> contains build information for the following <a href="https://hub.docker.com/r/magento/" target="\_blank">Docker hub</a> images:</p>
 
@@ -2086,14 +2086,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="launch-docker-configuration">Launch Docker configuration</h2>
 
-<p>You can use the <code class="highlighter-rouge">ece-tools</code> package to generate the Docker compose configuration and deploy Magento Commerce (Cloud) in a Docker container.</p>
+<p>You can use the <code class="highlighter-rouge">ece-tools</code> package to generate the Docker compose configuration and deploy Magento Commerce Cloud in a Docker container.</p>
 
 <ul>
   <li>
-    <p>If you use <code class="highlighter-rouge">ece tools</code> v2002.0.13 or later, Magento Commerce (Cloud) deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.</p>
+    <p>If you use <code class="highlighter-rouge">ece tools</code> v2002.0.13 or later, Magento Commerce Cloud deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.</p>
   </li>
   <li>
-    <p>If you use <code class="highlighter-rouge">ece-tools</code> v2002.0.12, Magento Commerce (Cloud) deploys to a writeable file system in the Docker container. This version does not support the <code class="highlighter-rouge">docker:config:convert</code> command.</p>
+    <p>If you use <code class="highlighter-rouge">ece-tools</code> v2002.0.12, Magento Commerce Cloud deploys to a writeable file system in the Docker container. This version does not support the <code class="highlighter-rouge">docker:config:convert</code> command.</p>
   </li>
 </ul>
 

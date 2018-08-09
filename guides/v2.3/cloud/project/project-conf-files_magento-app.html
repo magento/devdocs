@@ -2061,9 +2061,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The <code class="highlighter-rouge">.magento.app.yaml</code> file controls the way your application builds and deploys. Although Magento Commerce (Cloud) supports multiple applications per project, typically, a project has a single application with the <code class="highlighter-rouge">.magento.app.yaml</code> file at the root of the repository.</p>
+			<p>The <code class="highlighter-rouge">.magento.app.yaml</code> file controls the way your application builds and deploys. Although Magento Commerce Cloud supports multiple applications per project, typically, a project has a single application with the <code class="highlighter-rouge">.magento.app.yaml</code> file at the root of the repository.</p>
 
-<p>The <code class="highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="\_blank">a sample <code class="highlighter-rouge">.magento.app.yaml</code> file</a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce (Cloud) versions.</p>
+<p>The <code class="highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="\_blank">a sample <code class="highlighter-rouge">.magento.app.yaml</code> file</a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce Cloud versions.</p>
 
 <p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
@@ -2321,12 +2321,12 @@ nodejs:
         <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
-<p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.</p>
+<p>For Magento Commerce Cloud 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce Cloud 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.</p>
 
 <p>For more information, see <a href="/guides/v2.3/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
 
 <h2 id="variables">Variables</h2>
-<p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce (Cloud) 2.2.X.</p>
+<p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce Cloud 2.2.X.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">variables</span><span class="pi">:</span>
   <span class="na">env</span><span class="pi">:</span>
@@ -2342,7 +2342,7 @@ nodejs:
 type: php:7.1
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">Magento Commerce (Cloud) supports PHP 7.1 and later. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
+<p class="bs-callout bs-callout-info">Magento Commerce Cloud supports PHP 7.1 and later. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
 
 <h3 id="php-extensions">PHP extensions</h3>
 <p>You can define additional PHP extensions to enable or disable:</p>
@@ -2484,7 +2484,7 @@ allocated resources.</p>
 
 <p>This example defines a single worker named queue, with a “small” container, and runs the command <code class="highlighter-rouge">php worker.php</code> on startup. If <code class="highlighter-rouge">worker.php</code> exits, it is automatically restarted.</p>
 
-<p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
+<p>For Magento Commerce Cloud 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce Cloud 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
 
 			
 		</div>

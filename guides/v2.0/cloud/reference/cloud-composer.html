@@ -1747,18 +1747,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Commerce (Cloud) and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
+			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Commerce Cloud and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
-<p>Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For Magento Commerce (Cloud), we use <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use <code class="highlighter-rouge">composer.json</code> to also manage their product installations and upgrades. For details, see <a href="#your-projects-composer-files">Your project’s Composer files</a>.</p>
+<p>Composer is a dependency manager for PHP. Composer manages the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place. For Magento Commerce Cloud, we use <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> to manage your modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more. Magento extension and module developers use <code class="highlighter-rouge">composer.json</code> to also manage their product installations and upgrades. For details, see <a href="#your-projects-composer-files">Your project’s Composer files</a>.</p>
 
-<p>The following sections detail the specifics of Magento Commerce (Cloud) composer packages, how they work, and what they do within the code base.</p>
+<p>The following sections detail the specifics of Magento Commerce Cloud composer packages, how they work, and what they do within the code base.</p>
 
 <p>For information on what files should and shouldn’t be in source control, see <a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a>. We provide a <code class="highlighter-rouge">.gitignore</code> file to aid.</p>
 
 <h2 id="your-projects-composer-files">Your project’s Composer files</h2>
 <p>Your project root directory contains <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code>.</p>
 
-<p>You edit <code class="highlighter-rouge">composer.json</code> to specify dependencies for your Magento Commerce (Cloud) project. For example, when you <a href="/guides/v2.0/cloud/howtos/install-components.html">install an extension or module</a>, you update <code class="highlighter-rouge">composer.json</code> to add the extension to the list. You can either edit it manually or the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager</a> can do it for you.</p>
+<p>You edit <code class="highlighter-rouge">composer.json</code> to specify dependencies for your Magento Commerce Cloud project. For example, when you <a href="/guides/v2.0/cloud/howtos/install-components.html">install an extension or module</a>, you update <code class="highlighter-rouge">composer.json</code> to add the extension to the list. You can either edit it manually or the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager</a> can do it for you.</p>
 
 <p>The file <code class="highlighter-rouge">composer.lock</code> stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
 

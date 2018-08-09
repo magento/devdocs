@@ -2063,10 +2063,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>QUESTION: Do we really want to support a full overwrite?</p>
 
-<p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce (Cloud)’s Git <code class="highlighter-rouge">master</code> branch.</p>
+<p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce Cloud’s Git <code class="highlighter-rouge">master</code> branch.</p>
 
-<p class="bs-callout bs-callout-warning">Warning: When you force push code from an existing Git branch to your Magento Commerce (Cloud) project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.
-Before you continue, make sure there is nothing in your Magento Commerce (Cloud) project you want to keep.</p>
+<p class="bs-callout bs-callout-warning">Warning: When you force push code from an existing Git branch to your Magento Commerce Cloud project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.
+Before you continue, make sure there is nothing in your Magento Commerce Cloud project you want to keep.</p>
 
 <h2 id="required-information">Required information</h2>
 <p>Before you continue, make sure you have the <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
@@ -2080,7 +2080,7 @@ Before you continue, make sure there is nothing in your Magento Commerce (Cloud)
 <p>To create a remote Git reference:</p>
 
 <ol>
-  <li>Log in to your local Magento Commerce (Cloud) development machine as, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Log in to your local Magento Commerce Cloud development machine as, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
     <p>Make a copy of <code class="highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
 
@@ -2148,7 +2148,7 @@ git branch -u cloud-project/master
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Push code from your Magento Commerce project to your Magento Commerce (Cloud) project, overwriting the previous contents and commit history with that of your project.</p>
+    <p>Push code from your Magento Commerce project to your Magento Commerce Cloud project, overwriting the previous contents and commit history with that of your project.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push -f cloud-project master
 </code></pre></div>    </div>
@@ -2170,12 +2170,12 @@ Environment routes:
 </ol>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
-<p>Before you can use your existing Magento Commerce code in Magento Commerce (Cloud), you must import the database.</p>
+<p>Before you can use your existing Magento Commerce code in Magento Commerce Cloud, you must import the database.</p>
 
-<p>To import the Magento database in Magento Commerce (Cloud), you must know:</p>
+<p>To import the Magento database in Magento Commerce Cloud, you must know:</p>
 
 <ul>
-  <li>The Magento Commerce (Cloud) environment’s <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html#ssh">SSH URL</a></li>
+  <li>The Magento Commerce Cloud environment’s <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html#ssh">SSH URL</a></li>
   <li>The database name, username, and password of the <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds">Cloud database</a></li>
 </ul>
 

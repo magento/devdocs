@@ -2166,7 +2166,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.3/cloud/live/live.html">Go Live and launch</a>.</p>
 
 <h3 id="advantage-of-redundant-hardware">Advantage of redundant hardware</h3>
-<p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce (Cloud) runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
+<p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce Cloud runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
 
 <p>Because of our unique, triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to   <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span>
  multiple IP addresses, so having more than one fixed IP address is not a problem.</p>
@@ -2205,8 +2205,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
   <li>Redis server, one per VM with only one active and the other two as replicas</li>
-  <li>Elasticsearch for searching, Magento Commerce (Cloud) 2.1 and later</li>
-  <li>Solr search is supported for Magento Commerce (Cloud) 2.0</li>
+  <li>Elasticsearch for searching, Magento Commerce Cloud 2.1 and later</li>
+  <li>Solr search is supported for Magento Commerce Cloud 2.0</li>
   <li>Galera database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database</li>
 </ul>
 
@@ -2220,7 +2220,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  level rather than the database level. This provides <a href="https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling" target="\_blank"><em>horizontal scaling</em></a> to complement the vertical scaling provided by extra CPUs on the database level.</p>
 
 <h2 id="cloud-arch-services">Services</h2>
-<p>Magento Commerce (Cloud) currently supports the following services:</p>
+<p>Magento Commerce Cloud currently supports the following services:</p>
 
 <ul>
   <li>PHP</li>
@@ -2243,7 +2243,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can have multiple applications running in the same project. Building a microservice-oriented architecture with Magento Commerce is as easy as managing a monolithic application.</p>
 
 <h2 id="cloud-arch-software">Software versions</h2>
-<p>Magento Commerce (Cloud) uses:</p>
+<p>Magento Commerce Cloud uses:</p>
 
 <ul>
   <li>Operating system: Debian GNU/Linux 8 (jessie)</li>

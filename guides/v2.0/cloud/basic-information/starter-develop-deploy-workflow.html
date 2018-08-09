@@ -1747,7 +1747,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Everything in Magento Commerce (Cloud) is Git-driven. Your <a href="/guides/v2.0/cloud/project/projects.html">project</a> is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your Magento Commerce (Cloud) plan subscription, your deployment workflow may differ.</p>
+			<p>Everything in Magento Commerce Cloud is Git-driven. Your <a href="/guides/v2.0/cloud/project/projects.html">project</a> is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your Magento Commerce Cloud plan subscription, your deployment workflow may differ.</p>
 
 <p>The general workflow for all development and deployment includes:</p>
 
@@ -1789,7 +1789,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For detailed information, see <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
 <h2 id="development">Development workflow</h2>
-<p>Development and deployment on Starter plans begin with your initial project. You create your project with the “blank site”, which is a Magento Commerce (Cloud) template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Production environment.</p>
+<p>Development and deployment on Starter plans begin with your initial project. You create your project with the “blank site”, which is a Magento Commerce Cloud template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Production environment.</p>
 
 <p>The full process involves:</p>
 
@@ -1813,7 +1813,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This process assumes you would have your <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">local developer workspace</a> set up. Feel free to read over this process even if your local isn’t ready.</p>
 
 <h3 id="clone-branch">Clone and branch</h3>
-<p>When you created your project, a <code class="highlighter-rouge">master</code> branch was cloned using the Magento Commerce (Cloud) Git repository. To start branching and working with code, you will need to clone the <code class="highlighter-rouge">master</code> to your local.</p>
+<p>When you created your project, a <code class="highlighter-rouge">master</code> branch was cloned using the Magento Commerce Cloud Git repository. To start branching and working with code, you will need to clone the <code class="highlighter-rouge">master</code> to your local.</p>
 
 <p>The format of the Git clone command is:</p>
 
@@ -1840,7 +1840,7 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-branching.png" alt="Branch from Master" /></p>
 
 <h3 id="dev-code">Develop code</h3>
-<p>It’s the time you have been waiting for…writing code. Using this base branch of Magento Commerce (Cloud) code, you can start installing extensions, developing custom code, adding themes, and much more.</p>
+<p>It’s the time you have been waiting for…writing code. Using this base branch of Magento Commerce Cloud code, you can start installing extensions, developing custom code, adding themes, and much more.</p>
 
 <p>We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:</p>
 
@@ -1881,7 +1881,7 @@ git pull origin &lt;environment ID&gt;
 <h3 id="config-management">Generate configuration management files</h3>
 <p>If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or a file all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.</p>
 
-<p>Magento Commerce (Cloud) provides a set of two <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for <strong>Magento Commerce (Cloud) 2.1.4 and later</strong> (not 2.2).</p>
+<p>Magento Commerce Cloud provides a set of two <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for <strong>Magento Commerce Cloud 2.1.4 and later</strong> (not 2.2).</p>
 
 <ul>
   <li><code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code>: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.</li>
@@ -1912,7 +1912,7 @@ git pull origin &lt;environment ID&gt;
 
 <p><img src="/common/images/cloud_workflow-config-mgmt.png" alt="Generate configuration management file" /></p>
 
-<p>An additional feature of this command is part of Magento Commerce (Cloud) 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called <code class="highlighter-rouge">env.php</code> in <code class="highlighter-rouge">app/etc/</code>. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all Magento Commerce (Cloud) versions.</p>
+<p>An additional feature of this command is part of Magento Commerce Cloud 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called <code class="highlighter-rouge">env.php</code> in <code class="highlighter-rouge">app/etc/</code>. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all Magento Commerce Cloud versions.</p>
 
 <p><img src="/common/images/cloud_workflow-env-variables.png" alt="Environment variables generate" /></p>
 
@@ -1928,7 +1928,7 @@ git pull origin &lt;environment ID&gt;
 <p>For more information, see <a href="#deploy">Deployment workflow</a>.</p>
 
 <h3 id="sample-data">Optional: Install sample data</h3>
-<p>If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a “blank site” Magento Commerce (Cloud) template installation when creating your project.</p>
+<p>If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a “blank site” Magento Commerce Cloud template installation when creating your project.</p>
 
 <p>We recommend installing sample data in your local installation and Integration environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.</p>
 
@@ -1961,7 +1961,7 @@ git pull origin &lt;environment ID&gt;
 </div>
 
 <h2 id="deploy">Deployment workflow</h2>
-<p>As we detailed in the architecture information, Magento Commerce (Cloud) is Git driven. Deploying Magento Commerce (Cloud) is part of your Git push processes for branches.</p>
+<p>As we detailed in the architecture information, Magento Commerce Cloud is Git driven. Deploying Magento Commerce Cloud is part of your Git push processes for branches.</p>
 
 <p>When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.</p>
 
@@ -1969,7 +1969,7 @@ git pull origin &lt;environment ID&gt;
 
 <ul>
   <li>Your site on the target environment continue running during a build</li>
-  <li>Check and run Magento Commerce (Cloud) patches and hotfixes</li>
+  <li>Check and run Magento Commerce Cloud patches and hotfixes</li>
   <li>Compile your code with a build and deploy log</li>
   <li>Check for Configuration Management, if there static content deploy occurs during this phase</li>
   <li>Create or use a slug of unchanged code to speed up the process</li>
@@ -1981,7 +1981,7 @@ git pull origin &lt;environment ID&gt;
 <ul>
   <li>Puts your site on the target environment in Maintenance mode</li>
   <li>Deploys static content if not completed during Build</li>
-  <li>Installs or updates Magento Commerce (Cloud)</li>
+  <li>Installs or updates Magento Commerce Cloud</li>
   <li>Configure routing for traffic</li>
 </ul>
 
@@ -2009,7 +2009,7 @@ git pull origin &lt;environment ID&gt;
 <h2 id="continuous-integration">Continuous integration</h2>
 <p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
 
-<p>Magento Commerce (Cloud) environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
+<p>Magento Commerce Cloud environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
 
 <ul>
   <li>Create development branches with future features and changes</li>
