@@ -486,9 +486,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>Introductory text that gives an overview of the topic you will be writing about.</p>
+			<p>Introductory text that gives an overview of the topic you will be writing about.</p>
 
 <p>The purpose of this page is to provide you with a pre-formatted template and useful   <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span>
  references to help you get started writing docs.</p>
@@ -573,7 +571,7 @@ print "Hello World!";
 
 <p>Once the image is added, you can use it in your documentation:</p>
 
-<p><em>Example:</em> <code class="highlighter-rouge">![Image]({{ site.baseurl }}/common/images/install_cygwin.png)</code></p>
+<p><em>Example:</em> <code class="highlighter-rouge">![Image](/common/images/install_cygwin.png)</code></p>
 
 <p><em>Output:</em></p>
 
@@ -581,7 +579,7 @@ print "Hello World!";
 
 <p>You can even scale the image if it is too large:</p>
 
-<p><em>Example:</em> <code class="highlighter-rouge">![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}</code></p>
+<p><em>Example:</em> <code class="highlighter-rouge">![Scaled Image](/common/images/install_cygwin.png){:width="446" height="246"}</code></p>
 
 <p><em>Output:</em></p>
 
@@ -638,29 +636,32 @@ print "Hello World!";
 
 <p>Code blocks can also be defined using <a href="http://rouge.jneen.net/" target="_blank">Rouge formatting</a>. View the .md file of this template for examples.</p>
 
-<p>For inline code, surround the content with single backticks: <code>`example`</code>.</p>
+<p>For inline code, surround the content with single backticks: <code class="highlighter-rouge">`example`</code>.</p>
 
 <p>For blocks of code, surround content with 3 backticks and an optional <a href="https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers" target="_blank">supported language</a>.</p>
 
 <p><em>Example:</em></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">```html
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Paragraph content.<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-```</code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```html
+&lt;div class="container"&gt;
+  &lt;h4 class="title"&gt;Title&lt;/h4&gt;
+  &lt;div class="content"&gt;
+    &lt;p&gt;Paragraph content.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>Paragraph content.<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```html
+&lt;div class="container"&gt;
+  &lt;h4 class="title"&gt;Title&lt;/h4&gt;
+  &lt;div class="content"&gt;
+    &lt;p&gt;Paragraph content.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
 </code></pre></div></div>
 
 <h3 id="callouts">Callout Messages</h3>
@@ -669,11 +670,14 @@ print "Hello World!";
 
 <p><strong>Notes:</strong></p>
 
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w">
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w">
 </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'info'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a note callout. You can use these to provide important information on a topic.'</span><span class="err">
-</span><span class="p">%}</span></code></pre></figure>
+</span><span class="p">%}</span>
+
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -685,11 +689,14 @@ print "Hello World!";
 
 <p><strong>Warnings:</strong></p>
 
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w">
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w">
 </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'warning'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a warning callout. This can be used to convey important information to the reader.'</span><span class="err">
-</span><span class="p">%}</span></code></pre></figure>
+</span><span class="p">%}</span>
+
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -701,11 +708,14 @@ print "Hello World!";
 
 <p><strong>Tips:</strong></p>
 
-<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{%</span><span class="w">
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w">
 </span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'tip'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'</span><span class="err">
-</span><span class="p">%}</span></code></pre></figure>
+</span><span class="p">%}</span>
+
+</code></pre></div></div>
 
 <p><em>Output:</em></p>
 
@@ -719,17 +729,14 @@ print "Hello World!";
 
 <p>You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>The <code>{% collapsible %}</code> tag must be preceded by a blank line.</p>
-</div>
+<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">{% collapsible %}</code> tag must be preceded by a blank line.</p>
 
 <p><em>Example:</em></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;div class="collapsible"&gt;
-    &lt;b class="collapsible-title"&gt;This is the title &lt;/b&gt;
-    &lt;div class="collapsible-content"&gt;&lt;p&gt;Markdown content goes in this area.&lt;/p&gt;
-&lt;/div&gt;
-  &lt;/div&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w"> </span><span class="nt">collapsible</span><span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>title<span class="w"> </span><span class="p">%}</span>
+Markdown content goes in this area.
+<span class="p">{%</span><span class="w"> </span><span class="nt">endcollapsible</span><span class="w"> </span><span class="p">%}</span>
 
 </code></pre></div></div>
 
