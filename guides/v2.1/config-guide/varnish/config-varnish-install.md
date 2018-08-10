@@ -24,6 +24,7 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 </div>
 
 ## Confirm your Varnish version {#config-varnish-version}
+
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V
@@ -37,4 +38,5 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

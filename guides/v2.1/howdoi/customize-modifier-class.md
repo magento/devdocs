@@ -87,6 +87,7 @@ class Example extends AbstractModifier
 You can create nested structures of elements by adding them to the `children` key of any element.
 
 ## Add modifier to the pool {#pool}
+
 In `<your_module_dir>/etc/adminhtml/di.xml` define your modifier as a dependency for `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool`.
 
 

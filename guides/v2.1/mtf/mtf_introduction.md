@@ -80,7 +80,6 @@ For other tests please see the following topics:
 
 - <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
-
 ## FTF on GitHub {#mtf_intro_github-link}
 
 Follow the FTF project and contribute on GitHub

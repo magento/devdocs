@@ -145,7 +145,6 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 The action here is very similar to the action in a previous step.
 The only difference is that different data assigned to the attributes which set a field with password.
 
-
 #### 4. Click the Sign In button {#example-step4}
 
 ```xml
@@ -1349,7 +1348,6 @@ parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
-
 
 ### updateData
 

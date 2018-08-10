@@ -21,6 +21,7 @@ functional_areas:
 This topic provides an overview of how to get either the {{site.data.var.ce}} or {{site.data.var.ee}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 ## Intended audience {#int-aud}
+
 The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">choose another starting point</a>.
 
 ## Prerequisites {#prereq}

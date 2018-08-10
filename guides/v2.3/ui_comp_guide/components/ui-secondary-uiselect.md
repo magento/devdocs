@@ -77,7 +77,6 @@ Navigation keys:
 | Template                        | `app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html`  |
 {:style="table-layout:auto;"}
 
-
 ### UI-select component-specific configuration
 
 <table style="table-layout:auto;">

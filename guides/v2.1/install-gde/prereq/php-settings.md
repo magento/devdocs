@@ -48,6 +48,7 @@ To avoid issues during installation and upgrade, we strongly recommend you apply
 {% endcollapsible %}
 
 ### Step 1: Find PHP configuration files {#php-required-find}
+
 This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}

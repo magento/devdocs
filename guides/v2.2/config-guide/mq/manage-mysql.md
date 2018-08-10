@@ -16,6 +16,7 @@ functional_areas:
 If you don't want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.
 
 ## Process management
+
 Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages and then terminate. Re-running `cron` restarts the consumer.
 
 The following shows a `crontab` configuration for running consumers in our implementation, it is the example for understanding how it works:
@@ -69,10 +70,10 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 * `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.
 * `consumers` - the list of consumers which will be run, by default is empty array (all consumers are allowed to be run).
 
-
 ## Command line interface
 
 ### Start consumers
+
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
     ./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] <consumer_name>
@@ -90,11 +91,13 @@ Where:
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
 ### List consumers
+
 Use the following command to return a list of message queue consumers:
 
     ./bin/magento queue:consumers:list
 
 #### Related Topics
+
 *   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
 *   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
 *   [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)

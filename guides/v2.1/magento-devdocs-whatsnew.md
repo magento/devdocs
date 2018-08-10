@@ -8,7 +8,7 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## August 2018
+## Augusts 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------

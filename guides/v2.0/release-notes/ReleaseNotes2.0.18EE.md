@@ -30,7 +30,6 @@ To maintain the performance and security of your site, we advise you to upgrade 
 For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See <a href="https://github.com/magento/magento2/issues/13929" target="_blank">GitHub-13929</a> for more information.
 </div>
 
-
 ## Highlights
 
 Look for the following highlights in this release:
@@ -41,17 +40,16 @@ Look for the following highlights in this release:
 
 * **Updated copyright for 2018**.
 
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. See
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 An updated version of this toolkit is typically available several days after the patch release.

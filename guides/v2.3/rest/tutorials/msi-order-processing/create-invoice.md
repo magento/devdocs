@@ -19,7 +19,6 @@ You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{
 
 After you submit the invoice, Magento adjusts the Quantity per Source value for non-physical products.
 
-
 ## Capture payment {#capture-payment}
 
 This example creates a full invoice.

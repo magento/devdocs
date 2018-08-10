@@ -77,6 +77,7 @@ The following entities have new forms and design:
 ## Database Schema changes
 
 #### Staging ({{site.data.var.ee}} Only)
+
 The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
 
 *	Products

@@ -49,6 +49,7 @@ require([
 ```
 
 ## Options, methods, and events {#fedg_calendar_options}
+
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
 
 

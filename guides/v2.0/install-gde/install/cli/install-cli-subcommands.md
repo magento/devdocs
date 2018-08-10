@@ -16,7 +16,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+## Before you start your installation   {#instgde-install-cli-prereq}
+
 {% include install/before-you-begin-cli.html %}
 
 The installer is designed to be run multiple times if necessary so you can:
@@ -28,11 +29,13 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Correct mistakes in previous installations
 *	Install Magento in a different database instance
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps   {#instgde-cli-before}
+
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-summary">Command summary</h2>
+## Command summary   {#instgde-cli-summary}
+
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <table>
@@ -122,15 +125,16 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tbody>
 </table>
 
-<h2 id="instgde-cli-help">Help commands</h2>
+## Help commands   {#instgde-cli-help}
+
 {% include install/cli_help-commands.html %}
 
+## Common arguments   {#instgde-cli-subcommands-common}
 
-<h2 id="instgde-cli-subcommands-common">Common arguments</h2>
 {% include install/cli_common-commands.html %}
 
+## Commands   {#instgde-cli-subcommands}
 
-<h2 id="instgde-cli-subcommands">Commands</h2>
 The following sections discuss the available commands.
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>

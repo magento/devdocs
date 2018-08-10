@@ -13,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="install-prereq-selinux">SELinux</h2>
+## SELinux   {#install-prereq-selinux}
+
 <a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -21,6 +22,7 @@ functional_areas:
 </div>
 
 ### Suggestion for installing the Magento software with Apache
+
 If you choose to enable SELinux, you might have issues running the installer unless you change the *security context* of some directories as follows:
 
 	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/app/etc
@@ -34,6 +36,7 @@ The preceding commands work only with the Apache web server. Because of the vari
 *	<a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/" target="_blank">serverlab</a>
 
 ### Enable inter-server communication
+
 If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-iptables">Opening Ports In Your Firewall</a>.
 
 To enable Apache to initiate a connection to another host with SELinux enabled:
@@ -50,7 +53,8 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 	Ubuntu: `setsebool -P apache2_can_network_connect=1`
 
-<h2 id="install-iptables">Opening Ports In Your Firewall</h2>
+## Opening Ports In Your Firewall   {#install-iptables}
+
 Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
 
 *	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.

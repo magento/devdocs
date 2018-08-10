@@ -14,7 +14,6 @@ functional_areas:
   - Integration
 ---
 
-
 ## Manage company objects
 
 This section describes the REST endpoints used to manage `Company` objects.
@@ -81,7 +80,6 @@ The following table lists the parameters defined in `CompanyInterface`.
 <tr>
 <td><code>super_user_id</code></td><td>The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist. </td><td>integer</td><td>Required to create or update a company.</td></tr>
 </table>
-
 
 ### Create a company
 
@@ -249,7 +247,6 @@ None
   }
 }
 {% endhighlight %}
-
 
 ### Delete a company
 

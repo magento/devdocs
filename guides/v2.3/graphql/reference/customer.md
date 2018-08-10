@@ -61,7 +61,6 @@ Attribute |  Data Type | Description
 `reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
 `reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
 
-
 ## Example usage
 
 The following call returns information about the logged-in customer.

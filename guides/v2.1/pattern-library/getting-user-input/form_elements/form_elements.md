@@ -80,6 +80,7 @@ Often times a text field will be paired with a checkbox to enable some behavior 
 ![](img/field_checkbox.png)
 
 ### Text Field with Icon Trigger or Button
+
 A control may be placed inside (overlaid on) a text field to "trigger" a more sophisticated
 or robust interaction, as in the case of something like **date picker**. The icon should appear on the far right end of the field. Once a user has interacted with the control and a value is set, the value should display in the field, as well as the control (icon). This of course allows the user to edit the field if they so desire.
 

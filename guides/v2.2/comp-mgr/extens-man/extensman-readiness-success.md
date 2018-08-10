@@ -14,6 +14,7 @@ functional_areas:
 ---
 
 ## Readiness check success
+
 The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with [Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html).
 
 ![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}/common/images/extensman_readiness-success.png)

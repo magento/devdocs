@@ -21,6 +21,7 @@ functional_areas:
 </div>
 
 ## PHP versions supported {#php-support}
+
 Magento requires:
 
 {% include install/php_2.0.md %}
@@ -30,7 +31,8 @@ Magento requires:
   <p>Magento no longer supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.4.</p></span>
 </div>
 
-<h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
+## Help if you\'re just starting out   {#php-ubuntu-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
@@ -38,7 +40,8 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ page.baseurl }}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
-<h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
+## Verify PHP is installed   {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
 
 	PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)

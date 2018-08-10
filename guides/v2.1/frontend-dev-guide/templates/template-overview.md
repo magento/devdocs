@@ -14,7 +14,6 @@ functional_areas:
 
 ## Introduction to customizing a theme using templates
 
-
 In Magento application templates are the part of the view layer. Templates define exactly how the content of [layout blocks]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} is presented on a page: order, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} classes, elements grouping, and so on.
 In most cases, templates do not contain any logic about whether they will or will not be rendered, this is typically handled by the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. Once a template is called in a layout, it will be displayed.
 

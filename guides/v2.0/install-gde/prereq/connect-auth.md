@@ -16,6 +16,7 @@ functional_areas:
 {% include install/auth-tokens-get.md %}
 
 #### Related topics:
+
 *	Use your authentication keys to:
 
 	*	<a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)</a>

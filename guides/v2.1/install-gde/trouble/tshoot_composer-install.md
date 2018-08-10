@@ -14,12 +14,11 @@ functional_areas:
   - Setup
 ---
 
-
 ### Suggestion
 
 Change to the directory in which you installed {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and enter the following command:
 
 `mv composer.phar /usr/local/bin/composer`
 
-If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
+If you have issues with authenticating with the Magento 2 GitHub repository, see [Get your authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 

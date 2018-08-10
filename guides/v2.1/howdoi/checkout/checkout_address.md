@@ -87,7 +87,6 @@ The template should contain a button for setting the address to be used for ship
 
 You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
 
-
 ## Step 3: Create the JS model for the shipping rate processor {#rate_processor}
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.

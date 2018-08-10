@@ -414,7 +414,6 @@ Additions since 2.0 are marked with asterisks (*). Additions since 2.2 are marke
     * POST /V1/invoice/:invoiceId/refund
     * POST /V1/order/:orderId/refund
 
-
 ### SalesRule
 
     GET    /V1/salesRules/:ruleId

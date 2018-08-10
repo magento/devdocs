@@ -10,7 +10,7 @@ functional_areas:
   - Frontend
   - Theme
 ---
-<h2 id="favicon-intro">What's in this topic</h2>
+## What\'s in this topic   {#favicon-intro}
 
 This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
@@ -77,7 +77,6 @@ For details about performing command line tasks, view the following topics:
 ## Open Admin in browser
 
 The last step is to open the Admin in browser and view the new theme applied.
-
 
 ## See also
 

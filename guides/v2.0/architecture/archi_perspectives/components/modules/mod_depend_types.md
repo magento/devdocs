@@ -73,6 +73,7 @@ Modules belonging to the Magento Framework can be used in the application layer 
 </div>
 
 ## Dependencies in the Application layer {#m2devgde-moddep-app-layer}
+
 Modules belonging to the application layer cannot be used in the Magento Framework.
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).

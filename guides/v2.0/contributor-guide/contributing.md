@@ -28,7 +28,7 @@ The following topics are included in this guide:
 
 * <a href="#labels">Labels applied by the Community Engineering Team</a>
 
-<h2 id="contribute">Contribute to Magento 2 code</h2>
+## Contribute to Magento 2 code   {#contribute}
 
 Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 codebase.
 This contribution model allows contributors to maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
@@ -44,14 +44,13 @@ Often when the Community Engineering Team works on reviewing the suggested chang
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
 </div>
 
-<h2 id="question">Questions or enhancement requests?</h2>
+## Questions or enhancement requests?   {#question}
 
 We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.
 
 Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>).
 
-
-<h2 id="requirements">Contribution requirements</h2>
+## Contribution requirements   {#requirements}
 
 1. Contributions must adhere to <a href="{{ page.baseurl }}/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
 2. Refer to the Magento development team's <a href="{{ page.baseurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
@@ -66,7 +65,8 @@ Submit feature requests or enhancement suggestions to the new <a href="https://c
 
 5. All automated tests must pass successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="_blank">Travis CI</a> must be green).
 
-<h2 id="fork">Fork a repository</h2>
+## Fork a repository   {#fork}
+
 To fork a repository on Github:
 
 1. Create or log in to your account on GitHub.
@@ -76,6 +76,7 @@ To fork a repository on Github:
 4. Clone the repo into your development environment and start playing.
 
 ### Update the fork with the latest changes {#sync}
+
 As community and Magento writers' changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if a `This branch is NUMBER commits behind magento:2.2-develop.` message is displayed at the top of the page. If so, your fork must be updated.
 
 There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
@@ -95,7 +96,7 @@ Check out this video to see the process in action:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mJDCL0uzIpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<h2 id="pull_request">Create a pull request</h2>
+## Create a pull request   {#pull_request}
 
 First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work.
 
@@ -109,7 +110,8 @@ To create a pull request:
 
 After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
-<h2 id="report">Report an issue</h2>
+## Report an issue   {#report}
+
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
 
 Before creating an issue:
@@ -126,11 +128,13 @@ To add an issue:
 3. Fill in the Title and Issue description.
 4. Click **Submit new issue**.
 
-<h2 id="triage">Help triage issues <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a></h2>
+## Help triage issues [![](https://www.codetriage.com/magento/magento2/badges/users.svg)][1]{: target="_blank"}   {#triage}
+
+[1]: https://www.codetriage.com/magento/magento2
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/magento/magento2" target="_blank">subscribe to Magento on CodeTriage</a>.
 
-<h2 id="labels">Labels applied by the Magento team</h2>
+## Labels applied by the Magento team   {#labels}
 
 Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
 

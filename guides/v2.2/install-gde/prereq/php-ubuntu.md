@@ -21,6 +21,7 @@ If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/ins
 {% include install/php_2.2.md %}
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -29,6 +30,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
 
     PHP 7.0.21-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:38:10) ( NTS )
@@ -77,7 +79,7 @@ If PHP is *not* installed, see one of the following sections:
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -127,7 +129,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -164,7 +166,7 @@ If PHP is *not* installed, see one of the following sections:
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -214,7 +216,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -224,6 +226,7 @@ If PHP is *not* installed, see one of the following sections:
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
+
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)

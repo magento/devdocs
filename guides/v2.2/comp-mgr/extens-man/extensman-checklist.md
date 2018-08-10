@@ -12,6 +12,7 @@ functional_areas:
 ---
 
 ## Run the Extension Manager from the Magento Admin
+
 The {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
 
 *	Modules (extend Magento capabilities)
@@ -23,6 +24,7 @@ The {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglo
 </div>
 
 ## Prerequisites
+
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
 ## Extension Manager checklist

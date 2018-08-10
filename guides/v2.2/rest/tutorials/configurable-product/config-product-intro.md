@@ -29,7 +29,6 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 * Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
-
 ### Other resources
 
 * [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.

@@ -20,7 +20,6 @@ The `Magento_GroupedSharedCatalog` module provides the following features:
 
 * Control the visibility of grouped products in quotes and orders. Only those grouped products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
 
-
 ## Installation details
 
 The module has dependency on the `Magento_SharedCatalog` module and `Magento_Grouped` modules, which must be installed and enabled first. This module does not create any backward incompatible changes. Can be uninstalled or deactivated at any time.

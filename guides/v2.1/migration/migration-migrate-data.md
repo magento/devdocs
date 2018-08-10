@@ -21,6 +21,7 @@ functional_areas:
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
+
 To start migrating data, run:
 
     bin/magento migrate:data [-r|--reset] {<path to config.xml>}

@@ -18,7 +18,6 @@ There are mainly three types of XSS vulnerabilities:
 * **Reflected (non-persistent) XSS** - This type of vulnerability occurs when data provided by a web client is used immediately by server-side scripts to parse and display a page to a user without properly sanitizing the request.
 * **DOM XSS** - For this vulnerability, the malicious data does not touch the web server. Rather, it is being reflected by the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code, fully on the client side.
 
-
 ### Preventing XSS
 
 XSS vulnerabilities can be prevented by always validating and sanitizing both user input and output, i.e., user input should never be trusted. Both the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} language and Magento provides classes and functions to help secure your extension from XSS vulnerabilities.

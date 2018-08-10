@@ -23,7 +23,6 @@ The `stock_id` of the default stock is `1`.  You cannot delete or add sources to
 
 For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock){:target="_blank"}.
 
-
 ## Create the stock for North America
 
 The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code`attributes are required. The `code` value cannot be changed.
@@ -68,7 +67,6 @@ The `name` attribute is required.
 **Response**
 
 Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps. 
-
 
 ## Create the Europe stock
 

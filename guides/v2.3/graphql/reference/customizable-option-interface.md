@@ -28,7 +28,6 @@ Field | Type | Description
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
 
-
 ## CustomizableAreaOption object
 
 `CustomizableAreaOption` contains information about a text area that is defined as part of a customizable option.
@@ -151,6 +150,5 @@ Field | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `title` | String | The display name for this option
 `sort_order` | Int | The order in which the option is displayed
-
 
 ## Example usage

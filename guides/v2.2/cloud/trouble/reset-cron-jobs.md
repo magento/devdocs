@@ -11,6 +11,7 @@ functional_areas:
 Sometimes, Magento cron jobs do not finish executing and persist in a `running` status, which prevents other cron jobs from running. This can happen for a number of reasons, such as network issues, application crashes, redeployment issues.
 
 ## Symptom
+
 Symptoms of cron jobs that must be reset include:
 
 *   Large quantity of jobs appear in the `cron_schedule` queue
@@ -18,6 +19,7 @@ Symptoms of cron jobs that must be reset include:
 *   Jobs fail to execute on schedule
 
 ## Solution
+
 To resolve this issue, you must reset the cron job(s) using the `cron:unlock` command. This command changes the status of the cron job in the database, ending the job forcefully to allow other scheduled jobs to continue.
 
 {:.bs-callout .bs-callout-warning}

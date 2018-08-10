@@ -28,7 +28,6 @@ mkdir -p MyCompany/ExampleAdminNewPage
 
 This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
 
-
 ### Initial boilerplate files
 
 These initial boilerplate files are the bare essential files needed for any Magento module.

@@ -46,6 +46,7 @@ If you have created multiple cores, make sure the value of the `maxBooleanClause
 If one or more of the `maxBooleanClauses` parameters is set too low, the search results page could display no results.
 
 ### Script Solr startup and shutdown {#solr-script}
+
 In a production environment, you should start and stop Solr using a script.
 
 <div class="bs-callout bs-callout-info" id="info">

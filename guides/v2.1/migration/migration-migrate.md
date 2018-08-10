@@ -29,6 +29,7 @@ During the migration process, **do not:**
 </div>
 
 ## Run Data Migration Tool {#migration-command-run}
+
 This section shows how to run the Data Migration Tool to migrate settings, data, or incremental changes.
 
 ### First steps {#migration-command-run-first}

@@ -1,11 +1,13 @@
 <div markdown="1">
 
 ### Why to set ulimit
+
 Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the [`magento setup:rollback`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html##instgde-cli-uninst-roll) command.)
 
 In some cases, a very long query string causes the user's allocated memory space to run out of memory because of too many recursive calls. 
 
 ### How to set ulimit
+
 We recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank">`ulimit`</a> for the Magento file system user to a value of 65536 or more.
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.

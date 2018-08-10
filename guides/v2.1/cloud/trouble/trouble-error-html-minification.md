@@ -13,9 +13,11 @@ functional_areas:
 ---
 
 ## Resolve issues with HTML minification
+
 This topic discusses solutions to typical issues you might experience by HTML minification.
 
 ### Website load errors after scd-dump, build, and deploy
+
 <!-- This issue will be resolved with a later release. -->
 After using the command `php bin/magento magento-cloud:scd-dump` to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may receive the error "failed to open stream: No such file or directory" for a series of files.
 

@@ -100,6 +100,7 @@ functional_areas:
 </table>
 
 ## Next step
+
 <ul>
    <li><a href="{{ page.baseurl }}/get-started/gs-web-api-response.html">Status codes and responses</a></li>
 </ul>

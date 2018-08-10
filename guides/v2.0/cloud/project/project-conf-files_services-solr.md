@@ -38,6 +38,7 @@ For more information about Solr, see the following:
 * [Solr FAQ](http://wiki.apache.org/solr/FAQ){:target="_blank"}
 
 ## Add Solr in services.yaml and .magento.app.yaml {#settings}
+
 To enable Solr, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
 {% highlight yaml %}
@@ -68,6 +69,7 @@ relationships:
 Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
+
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
@@ -110,6 +112,7 @@ foreach ($relationships['solr'] as $endpoint) {
 {% endhighlight %} -->
 
 #### Related topics
+
 *	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)

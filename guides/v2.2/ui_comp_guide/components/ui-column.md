@@ -8,6 +8,7 @@ github_link: ui_comp_guide/components/ui-column.md
 ---
 
 ## Overview
+
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 ## Configuration
@@ -116,6 +117,7 @@ Column-specific configuration:
 </table>
 
 ### ColumnAction interface {#column_action}
+
 <table>
   <tr>
     <th>Option</th>
@@ -142,7 +144,6 @@ Column-specific configuration:
     <td>Required</td>
   </tr>
 </table>
-
 
 ## Reference API
 

@@ -106,7 +106,6 @@ The following table lists the parameters defined in `RoleInterface`.
 <td><code>permission</code></td><td>Either <code>allow</code> or <code>deny</code>.</td><td>string</td><td>Required</td></tr>
 </table>
 
-
 ### Create a role
 
 This example creates a role named "Junior Buyer". It allows the assignee to access to all Sales resources except "View orders of subordinate users".

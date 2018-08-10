@@ -43,4 +43,5 @@ Cyclical event loops occur when your observer calls the method of an object that
 Your observer should not make assumptions about the order in which it will be invoked nor should it rely on the execution of another observer. Observers listening to the same event may be invoked in any order when that event is dispatched.
 
 ### Recommended Reading
+
 * [Events and Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)

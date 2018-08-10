@@ -162,7 +162,6 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 {:.bs-callout .bs-callout-info}
 Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
 
-
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic arrives at your newly created cluster.

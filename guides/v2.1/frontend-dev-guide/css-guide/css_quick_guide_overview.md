@@ -13,7 +13,6 @@ This chapter combines the topics aiming to help you to quickly start working wit
 - [Simple ways to customize a theme's styles]
 - [Simple style changes with client-side LESS compilation vs. server-side]
 
-
 ## High-level steps to create a theme and change styles
 
 1. [Set] your Magento application to the developer [mode].

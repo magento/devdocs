@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-
 ## GitHub errors
+
 *	[git pull origin develop fails when updating the Magento software]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html)
 *	[Cannot clone the Magento GitHub repository]({{ page.baseurl }}/install-gde/trouble/git/tshoot_clone.html)

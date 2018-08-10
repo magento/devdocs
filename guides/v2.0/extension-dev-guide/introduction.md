@@ -14,7 +14,6 @@ This guide is for developers that are building a new *component* from scratch fo
 
 ## Magento is made up of the following types of components:
 
-
 	*	Modules (extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)
 	*	Language packages (localize the storefront and Admin)
@@ -38,8 +37,8 @@ An *extension* is a component that are packaged for sale on Magento Marketplace.
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
 
-
 ## Magento module example
+
 Modules are declared in the `module.xml` file. Here is a minimal example:
 
 {% highlight XML %}

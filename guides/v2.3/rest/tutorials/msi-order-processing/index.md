@@ -36,7 +36,6 @@ The Order Processing with MSI tutorial is a draft. It will be expanded to includ
 
 * Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
-
 ### Other resources
 
 * Magento uses [Swagger](https://swagger.io) to provide REST API documentation. You can view the [static REST API documentation]({{ site.baseurl }}/swagger/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).

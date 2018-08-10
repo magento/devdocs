@@ -106,7 +106,6 @@ Go to the Admin in default of developer mode and change the following settings f
 
 Set all indexers to "Update by Schedule" mode.
 
-
 ### Production Mode
 
 Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.

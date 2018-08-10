@@ -33,7 +33,6 @@ This topic discusses installing the Magento software using the CLI. For informat
 {:.bs-callout .bs-callout-tip}
 If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
 
-
 ## First steps {#instgde-install-cli-first}
 {% include install/first-steps-cli.html %}
 

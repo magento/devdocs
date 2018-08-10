@@ -13,10 +13,12 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="reds-sess-prereq">Prerequisite</h2>
+## Prerequisite   {#reds-sess-prereq}
+
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
 ## Configure Magento to use Redis for default and page caching {#config-redis-config}
+
 Following is a sample configuration that causes Magento to use Redis for both the default cache (`default` array) and the full page cache (`page_cache` array). Magento's caching is implemented by [`Magento\Framework\App\CacheInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/CacheInterface.php){:target="_blank"}.
 
 Add a configuration similar to the following to `<your Magento install dir>app/etc/env.php`:

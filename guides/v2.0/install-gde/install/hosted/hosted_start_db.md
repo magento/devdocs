@@ -42,4 +42,5 @@ To configure a MySQL database and database user:
 	<img src="{{ site.baseurl }}/common/images/install-merch_db-user-privs.png" width="750px" alt="Give the database user all privileges to the database">
 
 #### Next step
+
 <a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>

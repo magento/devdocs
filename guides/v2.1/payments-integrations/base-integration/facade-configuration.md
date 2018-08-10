@@ -42,6 +42,7 @@ The following arguments must be configured (all arguments are mandatory):
 | `commandPool`      | [Pool of gateway commands]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html).                                                                                                                                                                                                                                                                                                                     |
 
 #### Value handlers pool {#value_handlers_pool}
+
 Let's look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions. 
 
 For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L296)):

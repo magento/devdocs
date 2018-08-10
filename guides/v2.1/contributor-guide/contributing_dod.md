@@ -22,7 +22,6 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The following sections provide additional details about each of these criteria:
 
-
 ## Functional Backward Compatibility
 
 Existing product features and functionality must be retained during any changes to the code.
@@ -60,6 +59,7 @@ Before committing code changes, author must ensure successful execution of all t
 Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
 ### Functional Tests
+
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
 
@@ -159,10 +159,12 @@ Not all changes can be covered.
 For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
 ### Functional Manual Tests
+
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.
 
 ## Review
+
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
 The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 

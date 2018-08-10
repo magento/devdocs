@@ -19,9 +19,11 @@ The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" 
 The Magento menu {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/menu.js].
 
 ## Initialize the menu widget {#menu_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 ## Options {#menu_options}
+
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
 -   [delay](#m_delay)
 -   [responsive](#m_responsive)
@@ -48,8 +50,8 @@ Display top level navigational items in mobile menu or all items.
 
 **Default value**: `false`
 
-
 ## Methods and Events {#menu_methods}
+
 The Magento menu widget has all default [jQuery UI menu widget] methods and events.
 
 

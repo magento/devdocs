@@ -14,7 +14,6 @@ functional_areas:
   - Setup
 ---
 
-
 ### Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:
 
 	Module 'Magento_Indexer':
@@ -33,6 +32,7 @@ functional_areas:
 	... more ...
 	
 #### Solution
+
 Clear the `<your Magento install dir>/var/generation` and other directories under `var` as follows:
 
 	rm -rf <your Magento install dir>/var/generation/* <your Magento install dir>/var/di/* <your Magento install dir>/var/cache/* 

@@ -12,9 +12,11 @@ functional_areas:
 ---
 
 ## What's in this topic
+
 This topic contains a step-by-step illustration of solving a typical design customization task using templates.
 
 ## Sample template customization: changing a layout of the mini shopping cart
+
 In the Magento basic Blank theme, in the mini shopping cart, products are listed under the **Go to Checkout** button, like following:
 
 <img src="{{ site.baseurl }}/common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the **Go to Checkout** button">

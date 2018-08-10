@@ -19,9 +19,12 @@ You can configure {{site.data.var.ee}} to have multiple websites or stores, such
 1.  Push the changes to an Integration environment and test.
 
 ## Configure your local installation
+
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
 After successfully creating and testing the local installation to use multiple stores, 
+
+## Configure your Integration environment
 
 1.	[Configure routes](#cloud-multi-stores-routes), which specify how incoming URLs are handled by {{site.data.var.ee}}.
 2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your {{site.data.var.ee}} server's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
@@ -29,6 +32,7 @@ After successfully creating and testing the local installation to use multiple s
 4.	[Deploy](#cloud-multi-stores-deploy) to your Integration branch and test.
 
 ### Configure routes {#cloud-multi-stores-routes}
+
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 {:.bs-callout .bs-callout-info}
@@ -59,9 +63,11 @@ To set up routes in a staging or production environment, you must create a [Supp
 5.	Save your changes to `routes.yaml` and exit the text editor.
 
 ### Set up websites, stores, and store views {#cloud-multi-stores-admin}
-Set up in your {{site.data.var.ee}} Admin websites, stores, and store views identical to the ones you set up on your local workstation.
+
+Set up in your {{site.data.var.ee}} Admin websites, stores, and store views identical to the ones you set up on your local system.
 
 #### Get your access information
+
 To get the access information you need to log in to the Magento Admin:
 
 1.	Log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
@@ -93,11 +99,13 @@ To get the access information you need to log in to the Magento Admin:
 		+----------------+---------------+-----------+------+
 
 #### Configure websites, stores, and store views
+
 Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
+
 Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file located in your project root directory.
 
 1.  Open the `magento-vars.php` file in a text editor.
@@ -168,6 +176,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 1.  Save your changes to the `magento-vars.php` file.
 
 ### Deploy and test on the Integration server {#cloud-multi-stores-deploy}
+
 The final step is to push your changes to your {{site.data.var.ece}} server and test your site there.
 
 #### To deploy and test:
@@ -187,6 +196,7 @@ The final step is to push your changes to your {{site.data.var.ece}} server and 
 When complete, merge the code to the `master` Git branch for further deployment.
 
 ### Deploy to Staging and Production {#deploy-staging-prod}
+
 Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use [SSH and CLI commands]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#classic).
 
 We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and begin the process to deploy across environments again.

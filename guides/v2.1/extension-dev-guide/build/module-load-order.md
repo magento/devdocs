@@ -24,7 +24,6 @@ You can check your module's load order from the `<your Magento install dir>/app/
 <p>Currently, the only way to do this is to enable the component using <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code>magento module:enable &lt;module-list></code></a>, where <code>&lt;module-list></code> is the component or components to which you added <code>&lt;sequence></code>.</p></span>
 </div>
 
-
 ### Examples
 
 Assume you have a component that needs a configuration file from another component:

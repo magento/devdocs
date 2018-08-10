@@ -78,7 +78,6 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 
 `<tests>` must contain at least one [`<test>`].
 
-
 ### test {#test-tag}
 
 `<test>` is a set of steps, including [actions] and [assertions][assertion]. It is a sequence of test steps that define test flow within a test method.

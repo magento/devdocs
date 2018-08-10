@@ -11,6 +11,7 @@ functional_areas:
 ---
 
 ## Configure the Magento application {#configuration}
+
 You can configure the Magento application in any of the following ways:
 
 *	General configuration

@@ -49,7 +49,6 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 </page>
 {%endhighlight xml%}
 
-
 ## Include static resources (JavaScript, CSS, fonts) {#layout_markup_css}
 
 JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
@@ -91,6 +90,7 @@ The path to assets is specified relatively to one of the following locations:
 </ul>
 
 ### Adding conditional comments
+
 <a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
@@ -176,7 +176,6 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
     </arguments>
 </block>
 {%endhighlight xml%}
-
 
 ## Reference a block {#xml-manage-ref-block}
 
@@ -375,11 +374,9 @@ In this file, reference the element having added the `remove` attribute:
 
 {%endhighlight xml%}
 
-
 ## Replace elements {#layout_markup_replace_elements}
 
 To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
-
 
 #### Related topics:
 

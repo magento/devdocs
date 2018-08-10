@@ -16,7 +16,6 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
 
 `uiElement` source code is `<UI_Module_dir>/view/base/web/js/lib/core/element/element.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).
 
-
 ## Commonly used `uiElement` methods
 
 - The `initLinks()` method implements component communication by using [`links.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties]({{ site.baseurl }}/guides/v2.0/ui-components/ui_components_js.html#comp_link).

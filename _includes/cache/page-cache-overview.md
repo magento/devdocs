@@ -16,6 +16,7 @@ We recommend using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varn
 -   [Redis]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)
 
 ## Cacheable and uncacheable pages {#cache-over-cacheable}
+
 *Cacheable* and *uncacheable* are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is designated as uncacheable, the entire page is uncacheable.
 
 To create an uncacheable page, mark any block on that page as uncacheable in the layout using `cacheable="false"`.
@@ -29,6 +30,7 @@ Do not configure content pages (i.e., catalog, product, and CMS pages) to be unc
 </div>
 
 ## Public and private content
+
 Reverse proxies serve "public" or shared content to more than one user. However, most Magento websites generate dynamic and personalized "private" content that should only be served to one user, which presents unique caching challenges. To address these challenges, Magento can distinguish between two types of content:
 
 -   **[Public]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/public-content.html)** - Public content is stored server side in your reverse proxy cache storage (e.g., file system, database, Redis, or Varnish) and is available to multiple customers. Examples of public content include header, footer, and category listing.

@@ -10,6 +10,7 @@ redirect_from: contributor-guide/basic_template.html
 ---
 
 ## Overview
+
 Introductory text that gives an overview of the topic you will be writing about.
 
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
@@ -17,6 +18,7 @@ The purpose of this page is to provide you with a pre-formatted template and use
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
 ## Basic Markdown Syntax {#basic}
+
 Below are some basic examples of what you can do with markdown.
 
 ### Text Effects {#text}
@@ -35,6 +37,7 @@ By indenting your content by at least 4 spaces, you can create a code block. For
 For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_blank"}.
 
 ### Lists {#lists}
+
 Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.
 
 **Bulleted List:**
@@ -66,6 +69,7 @@ Lists are useful for organizing and displaying related items. Below are examples
 3.	Third Step
 
 ### Images {#images}
+
 Please add any images you may need to the [`common/images`](https://GitHub.com/magento/devdocs/tree/develop/common/images){:target="_blank"} directory.
 
 Once the image is added, you can use it in your documentation:
@@ -84,8 +88,8 @@ You can even scale the image if it is too large:
 
 ![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}
 
-
 ### Tables {#tables}
+
 Tables can be useful for displaying different kinds of data in an organized way.
 
 *Example:*
@@ -210,6 +214,7 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 %}
 
 ### Collapsible content {#collapsible}
+
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
 <div class="bs-callout bs-callout-info">

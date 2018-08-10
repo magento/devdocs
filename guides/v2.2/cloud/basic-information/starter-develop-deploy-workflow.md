@@ -167,6 +167,7 @@ Before pushing the data to another environment, you should consider sanitizing y
 We do not recommend pushing a database from an Integration or Staging environment to a Production environment. If you do, the data from the Integration or Staging environment overwrites your live Production data including sales, orders, new and updated customers, and much more.
 
 ## Deployment workflow {#deploy}
+
 As we detailed in the architecture information, {{site.data.var.ece}} is Git driven. Deploying {{site.data.var.ece}} is part of your Git push processes for branches.
 
 When you push branched code from your local environment to the remote branch, a series of build and deploy scripts begin.
@@ -192,6 +193,7 @@ When fully completed, your store comes back online, live, with all of your updat
 To learn more, see [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 ### Push to Staging and test {#staging}
+
 You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
@@ -204,11 +206,13 @@ When you push to the `master` branch, you are pushing to the Production environm
 To learn more, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ### Go live {#go-live}
+
 We provide a clear walk-through for going live and launching, which requires more steps than pressing a button. After you complete these steps, your store can serve up products in your customized theme for sale immediately.
 
 To learn more, check out [Go live and launch]({{ page.baseurl }}/cloud/live/live.html).
 
 ## Continuous integration {#continuous-integration}
+
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
 {{site.data.var.ece}} environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.

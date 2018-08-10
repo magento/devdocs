@@ -48,6 +48,7 @@ use the image optimization feature, you must use Fastly module version 1.2.52
 or later.
 
 ## Fastly and 503 timeouts {#timeouts}
+
 Fastly has a default 60 second time out. For Fastly module 1.2.22 and later,
 the timeout for the Magento Admin is three minutes.
 
@@ -66,6 +67,7 @@ We provide [VCL snippet instructions]({{ page.baseurl }}/cloud/configure/fastly-
 for extending the timeout for the Magento Admin.
 
 ## Backends and Origin shields {#backend}
+
 Backend settings provide fine tuning for Fastly performance with Origin shielding
 and timeouts. A _backend_ is a specific location (IP or domain) with configured
 Origin shield and timeout settings for checking and providing cached content.
@@ -80,6 +82,7 @@ We provide detailed instructions for configuring backends when you
 [configure Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
 
 ## Basic authentication {#basic-auth}
+
 Basic authentication is a feature to protect every page and asset on your site
 with a username and password. We **do not recommend** activating basic
 authentication on your Production environment. You can configure it on Staging
@@ -89,6 +92,7 @@ If you add user access and enable basic authentication on Staging, you can still
 access the Magento Admin without requiring additional credentials to enter.
 
 ## Custom VCLs and actions {#custom-vcl}
+
 Fastly provides an extremely custom code friendly method for creating lists of
 items like IPs and domains to complete actions via Fastly and Varnish code
 blocks. For example, with edge and ACL dictionaries and VCL code, you could
@@ -99,6 +103,7 @@ you can create [custom VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vc
 using these edge dictionaries and ACLs.
 
 ### Edge dictionaries {#dictionary}
+
 Save key-value pairs on Fastly Edge nodes of dictionary containers and items to
 invoke with VCL snippets in your site. You have up to 1,000 entries per
 dictionary.
@@ -113,12 +118,14 @@ Another example routes to a different WordPress backend for an edge dictionary
 of WordPress URLs.
 
 ### Edge ACLs {#acl}
+
 ACLs are access control lists that allow you to manage IP addresses to allow or
 block access to resources. You could use edge ACLs with VCL snippets to block IP
 addresses or provide access. For example, use edge ACLs and a custom VCL snippet
 to white list IPs to access your site.
 
 ### VCL snippets {#vcl}
+
 With edge dictionaries and edge ACLs, you can create custom Varnish Configuration
 Language (VCL) snippets to Fastly and your site. VCL snippets are small chunks
 of logic and code that can be included directly into your service configuration.
@@ -136,17 +143,20 @@ After you have [set up Fastly](#install-configure), we provide detailed
 instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
+
 Fastly supports forcing unencrypted requests to TLS through the Force TLS
 feature. Set up a secure base URL in Magento and turn on the Force TLS option
 in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="\_blank"}.
 
 ## GeoIP service support {#geoip}
+
 Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP
 handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
 see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling){:target="\_blank"}.
 
 ## Image Optimization support
+
 Fastly image optimization (Fastly IO) provides real-time image manipulation and
 optimization to speed up image delivery and simplify maintenance of image
 source sets for responsive web applications. Fastly IO provides
@@ -160,6 +170,7 @@ You must set up your Fastly service and configure the Origin shield before you
 can enable and configure the Fastly IO option. See [Configure Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
 ## Installation and configuration {#install-configure}
+
 The installation and configuration process is:
 
 * Install the Fastly module in an Integration branch, without configuring

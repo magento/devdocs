@@ -12,6 +12,7 @@ Sometimes we provide a custom patch to address a specific issue. Also, third-par
 {% include cloud/note-upgrade.md %}
 
 #### To apply and test a custom patch:
+
 You can only apply patches during the build phase of redeployment.
 
 1.  On your local workstation, create a branch based on the `integration` branch.

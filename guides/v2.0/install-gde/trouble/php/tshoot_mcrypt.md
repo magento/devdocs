@@ -16,7 +16,6 @@ functional_areas:
   - Setup
 ---
 
-
 ### Detail
 
 Errors can include the following:

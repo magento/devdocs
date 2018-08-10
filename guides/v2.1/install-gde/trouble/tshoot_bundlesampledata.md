@@ -20,6 +20,7 @@ During the installation, a  message similar to the following displays:
 	[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData'' 
 
 ### Solution
+
 Try each of the following one at a time, then try your installation again.
 
 1.	As a user with `root` privileges, restart your web server and MySQL.

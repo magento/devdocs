@@ -29,6 +29,7 @@ To manage your project, environment, and branches, see:
 *	[Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 
 ### Project and environment variables {#variables}
+
 The following sections detail more about project and environment variables:
 
 *	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
@@ -38,17 +39,20 @@ The following sections detail more about project and environment variables:
 *	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
+
 To upgrade and patch Magento, see:
 
 *	[Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
 *	[Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
+
 With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="\_blank"}.
 
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 
 ## Blackfire and New Relic credentials {#integrations}
+
 Your project includes [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
@@ -68,6 +72,7 @@ To review your integration tokens, IDs, and more:
 	![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
 
 ## Access the project and environments {#project}
+
 When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
@@ -134,6 +139,7 @@ If you have inactive Git branches of code, you can toggle displaying the branche
 ![Show or hide inactive branches]({{ site.baseurl }}/common/images/cloud_show-inactive.png)
 
 ## Configure environments {#configure}
+
 You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{ page.baseurl }}/cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud_project-env.png)
@@ -143,6 +149,7 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
 ## Configure the project
+
 Click ![edit project]({{ site.baseurl }}/common/images/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
 ![configure project]({{ site.baseurl }}/common/images/cloud_project-config.png)

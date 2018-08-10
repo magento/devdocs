@@ -14,8 +14,8 @@ functional_areas:
   - Setup
 ---
 
-
 ### Details
+
 This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
 Errors similar to the following display when you run the Web Setup Wizard:
