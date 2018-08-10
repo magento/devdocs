@@ -2,7 +2,6 @@
 group: pattern
 title: Sign-in form
 version: 2.1
-github_link: pattern-library/templates/sign-in-form/sign-in-form.md
 redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---
 "Sign in" is used to log into the system, or to recover a lost password.

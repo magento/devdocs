@@ -2,7 +2,6 @@
 group: compman
 title: Upgrade from Open Source to Commerce
 version: 2.2
-github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 functional_areas:
   - Upgrade
 ---

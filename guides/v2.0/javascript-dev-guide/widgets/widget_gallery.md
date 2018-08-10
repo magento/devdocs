@@ -5,7 +5,6 @@ title: Gallery widget
 menu_order: 7
 menu_title: Gallery widget
 version: 2.0
-github_link: javascript-dev-guide/widgets/widget_gallery.md
 ---
 
 ## Overview

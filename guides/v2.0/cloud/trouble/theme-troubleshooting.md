@@ -2,7 +2,6 @@
 group: cloud
 title: Theme troubleshooting
 version: 2.0
-github_link: cloud/trouble/theme-troubleshooting.md
 ---
 
 This information helps you troubleshoot issues with themes added to your {{site.data.var.ece}} sites and stores.

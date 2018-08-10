@@ -2,7 +2,6 @@
 group: perf-best-practices
 title: Software recommendations
 version: 2.2
-github_link: performance-best-practices/software.md
 functional_areas:
   - Configuration
   - System

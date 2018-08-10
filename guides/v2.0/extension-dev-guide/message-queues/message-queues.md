@@ -8,7 +8,6 @@ ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
 version: 2.0
-github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.0/extension-dev-guide/message-queues.html
 functional_areas:
   - Services

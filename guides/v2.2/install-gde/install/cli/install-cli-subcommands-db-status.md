@@ -6,7 +6,6 @@ menu_title: Check the Magento database status
 menu_node:
 menu_order: 16
 version: 2.2
-github_link: install-gde/install/cli/install-cli-subcommands-db-status.md
 functional_areas:
   - Install
   - System

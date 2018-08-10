@@ -6,7 +6,6 @@ menu_title: (Easy) Install the Magento archive on your server
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: install-gde/prereq/zip_install.md
 functional_areas:
   - Install
   - System

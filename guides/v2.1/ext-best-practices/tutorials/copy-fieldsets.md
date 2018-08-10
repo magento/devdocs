@@ -5,7 +5,6 @@ title: Copying fieldsets
 menu_title: Copying fieldsets
 menu_order: 1000
 version: 2.1
-github_link: ext-best-practices/tutorials/copy-fieldsets.md
 functional_areas:
   - Standards
 ---

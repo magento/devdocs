@@ -6,7 +6,6 @@ menu_title: SSH and sFTP
 menu_order: 35
 menu_node:
 version: 2.1
-github_link: cloud/env/environments-ssh.md
 functional_areas:
   - Cloud
   - Setup

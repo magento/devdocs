@@ -6,7 +6,6 @@ menu_title: Redis troubleshooting
 menu_order: 23
 menu_node:
 version: 2.0
-github_link: cloud/trouble/redis-troubleshooting.md
 functional_areas:
   - Cloud
   - Configuration

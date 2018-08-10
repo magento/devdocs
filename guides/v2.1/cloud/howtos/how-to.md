@@ -6,7 +6,6 @@ menu_title: Tutorials
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: cloud/howtos/how-to.md
 functional_areas:
   - Cloud
 ---

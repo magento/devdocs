@@ -2,7 +2,6 @@
 group: arch-guide
 title: Module dependency types
 version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_depend_types.md
 redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 

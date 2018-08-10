@@ -6,7 +6,6 @@ menu_title: Code compiler
 menu_node:
 menu_order: 175
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-compiler.md
 functional_areas:
   - Configuration
   - System

@@ -6,7 +6,6 @@ menu_title: Missing .gitignore files
 menu_node:
 menu_order: 5
 version: 2.0
-github_link: comp-mgr/trouble/cman/gitignore.md
 functional_areas:
   - Upgrade
 ---

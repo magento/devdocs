@@ -6,7 +6,6 @@ menu_title: Run unit tests
 menu_node:
 menu_order: 400
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-test.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 functional_areas:
   - Configuration

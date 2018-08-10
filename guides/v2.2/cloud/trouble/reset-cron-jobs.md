@@ -2,7 +2,6 @@
 group: cloud
 title: Reset cron jobs
 version: 2.2
-github_link: cloud/trouble/reset-cron-jobs.md
 functional_areas:
   - Cloud
   - Configuration

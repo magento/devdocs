@@ -4,7 +4,6 @@ subgroup: components
 title: Nav component
 menu_title: Nav component
 version: 2.1
-github_link: ui_comp_guide/components/ui-nav.md
 ---
 
 ## Overview

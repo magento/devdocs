@@ -7,7 +7,6 @@ menu_order: 280
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: release-notes/ReleaseNotes2.2.2CE.md
 ---
 *Patch code and release notes published on December 12, 2017.*
 

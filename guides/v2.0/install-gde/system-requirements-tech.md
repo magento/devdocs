@@ -6,7 +6,6 @@ menu_title: Magento 2.0.x technology stack requirements
 menu_node:
 menu_order: 3
 version: 2.0
-github_link: install-gde/system-requirements-tech.md
 redirect_from:
   - /guides/v1.0/install-gde/system-requirements.html
   - /guides/v2.0/install-gde/system-requirements-2.0-tech.html

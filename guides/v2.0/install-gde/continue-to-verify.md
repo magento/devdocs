@@ -6,7 +6,6 @@ menu_title: Next&mdash;Installation part 3, post-installation
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: install-gde/continue-to-verify.md
 functional_areas:
   - Install
   - System

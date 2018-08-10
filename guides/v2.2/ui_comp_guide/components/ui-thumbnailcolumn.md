@@ -4,7 +4,6 @@ subgroup: components
 title: ThumbnailColumn component
 menu_title: ThumbnailColumn component
 version: 2.2
-github_link: ui_comp_guide/components/ui-thumbnailcolumn.md
 ---
 
 ## Overview

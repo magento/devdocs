@@ -6,7 +6,6 @@ menu_title: Manage branches with the CLI
 menu_order: 2
 menu_node:
 version: 2.1
-github_link: cloud/env/environments-start.md
 redirect_from:
   - /guides/v2.0/cloud/before/integration-ip-addr.html
   - /guides/v2.1/cloud/before/integration-ip-addr.html

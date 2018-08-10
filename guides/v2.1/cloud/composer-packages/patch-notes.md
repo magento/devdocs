@@ -2,7 +2,6 @@
 group: cloud
 title: Magento Commerce (Cloud) package updates
 version: 2.1
-github_link: cloud/composer-packages/patch-notes.md
 functional_areas:
   - Cloud
   - Setup

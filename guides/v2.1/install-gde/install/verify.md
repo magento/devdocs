@@ -6,7 +6,6 @@ menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: install-gde/install/verify.md
 redirect_from: /guides/v1.0/install-gde/install/verify.html
 functional_areas:
   - Install

@@ -2,7 +2,6 @@
 group: install_cli
 title: Create or update the deployment configuration
 version: 2.1
-github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html

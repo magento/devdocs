@@ -6,7 +6,6 @@ menu_title: Manage and upgrade components
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: install-gde/continue-to-cm-updater.md
 functional_areas:
   - Install
   - System

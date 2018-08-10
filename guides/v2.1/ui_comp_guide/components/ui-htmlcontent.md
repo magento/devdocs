@@ -4,7 +4,6 @@ subgroup: components
 title: HtmlContent component
 menu_title: HtmlContent component
 version: 2.1
-github_link: ui_comp_guide/components/ui-htmlcontent.md
 ---
 
 ## Overview

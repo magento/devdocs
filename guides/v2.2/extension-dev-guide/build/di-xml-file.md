@@ -5,7 +5,6 @@ title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
 version: 2.2
-github_link: extension-dev-guide/build/di-xml-file.md
 ---
 
 ## Overview

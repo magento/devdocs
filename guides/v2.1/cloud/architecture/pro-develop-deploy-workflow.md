@@ -2,7 +2,6 @@
 group: cloud
 title: Pro develop and deploy workflow
 version: 2.1
-github_link: cloud/architecture/pro-develop-deploy-workflow.md
 redirect_from:
   - /guides/v2.0/cloud/discover-workflow.html
   - /guides/v2.1/cloud/discover-workflow.html

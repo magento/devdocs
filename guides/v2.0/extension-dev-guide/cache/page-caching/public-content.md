@@ -6,7 +6,6 @@ menu_title: Public content
 menu_order: 17
 menu_node:
 version: 2.0
-github_link: extension-dev-guide/cache/page-caching/public-content.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html

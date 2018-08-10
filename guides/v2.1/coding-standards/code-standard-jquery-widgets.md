@@ -6,7 +6,6 @@ landing-page: Coding standards
 menu_title: jQuery widget coding standard
 menu_order: 7
 version: 2.1
-github_link: coding-standards/code-standard-jquery-widgets.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-jquery-widgets.html
 functional_areas:
   - Standards

@@ -6,7 +6,6 @@ menu_title: Starter develop and deploy workflow
 menu_order: 25
 menu_node:
 version: 2.0
-github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 functional_areas:
   - Cloud
 ---

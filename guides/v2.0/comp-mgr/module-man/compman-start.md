@@ -6,7 +6,6 @@ menu_title: Start the Component Manager
 menu_node:
 menu_order: 2
 version: 2.0
-github_link: comp-mgr/module-man/compman-start.md
 redirect_from:
   - /guides/v2.0/comp-mgr/compman-start.html
   - /guides/v2.1/comp-mgr/compman-start.html

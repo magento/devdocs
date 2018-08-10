@@ -2,7 +2,6 @@
 group: arch-guide
 title: Technology stack
 version: 2.3
-github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 

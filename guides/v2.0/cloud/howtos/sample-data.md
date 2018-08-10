@@ -6,7 +6,6 @@ menu_title: Optional - Install sample data
 menu_order: 70
 menu_node:
 version: 2.0
-github_link: cloud/howtos/sample-data.md
 functional_areas:
   - Cloud
   - Setup

@@ -2,7 +2,6 @@
 group: cloud
 title: Project structure
 version: 2.1
-github_link: cloud/project/project-start.md
 functional_areas:
   - Cloud
   - Configuration

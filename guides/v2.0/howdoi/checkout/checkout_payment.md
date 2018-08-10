@@ -7,7 +7,6 @@ subtitle: Customize Checkout
 menu_order: 3
 level3_subgroup: checkout-tutorial
 version: 2.0
-github_link: howdoi/checkout/checkout_payment.md
 functional_areas:
   - Checkout
 ---

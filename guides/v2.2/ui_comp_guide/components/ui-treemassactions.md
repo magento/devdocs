@@ -4,7 +4,6 @@ subgroup: components
 title: TreeMassActions component
 menu_title: TreeMassActions component
 version: 2.2
-github_link: ui_comp_guide/components/ui-treemassactions.md
 ---
 
 ## Overview

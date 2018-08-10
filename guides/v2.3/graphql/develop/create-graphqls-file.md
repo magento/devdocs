@@ -2,7 +2,6 @@
 group: graphql
 version: 2.3
 title: Define the GraphQL schema for a module
-github_link: graphql/develop/create-graphqls-file.md
 redirect_from: graphql/develop/configure-graphql-xml.html
 ---
 

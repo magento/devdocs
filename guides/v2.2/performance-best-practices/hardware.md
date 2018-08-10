@@ -2,7 +2,6 @@
 group: perf-best-practices
 title: Hardware recommendations
 version: 2.2
-github_link: performance-best-practices/hardware.md
 functional_areas:
   - Configuration
   - System

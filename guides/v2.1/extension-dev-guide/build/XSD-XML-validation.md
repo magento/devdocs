@@ -5,7 +5,6 @@ title: URN schema validation
 menu_title: URN schema validation
 menu_order: 5000
 version: 2.1
-github_link: extension-dev-guide/build/XSD-XML-validation.md
 redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 

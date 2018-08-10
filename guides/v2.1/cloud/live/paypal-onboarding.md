@@ -6,7 +6,6 @@ menu_title: Set up PayPal
 menu_order: 10
 menu_node:
 version: 2.1
-github_link: cloud/live/paypal-onboarding.md
 functional_areas:
   - Cloud
   - Setup

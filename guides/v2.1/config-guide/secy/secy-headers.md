@@ -6,7 +6,6 @@ menu_title: Prevent cache poisoning
 menu_order: 10
 menu_node:
 version: 2.1
-github_link: config-guide/secy/secy-headers.md
 functional_areas:
   - Configuration
   - System

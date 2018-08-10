@@ -2,7 +2,6 @@
 group: config-guide
 title: Install and configure Elasticsearch
 version: 2.3
-github_link: config-guide/elasticsearch/es-overview.md
 functional_areas:
   - Configuration
   - Search

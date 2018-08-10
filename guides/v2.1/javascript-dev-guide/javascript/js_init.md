@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 version: 2.1
-github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_init.html

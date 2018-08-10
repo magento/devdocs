@@ -2,7 +2,6 @@
 group: cloud
 title: Configure routes
 version: 2.1
-github_link: cloud/project/project-conf-files_routes.md
 functional_areas:
   - Cloud
   - Setup

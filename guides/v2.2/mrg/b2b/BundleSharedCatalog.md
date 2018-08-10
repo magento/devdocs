@@ -5,7 +5,6 @@ title: Magento_BundleSharedCatalog module
 menu_title: BundleSharedCatalog
 menu_order: 40
 version: 2.2
-github_link: mrg/b2b/BundleSharedCatalog.md
 functional_areas:
   - B2B
   - Catalog

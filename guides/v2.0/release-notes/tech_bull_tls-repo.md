@@ -7,7 +7,6 @@ menu_title: Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com
 menu_node: 
 menu_order: 2
 version: 2.0
-github_link: release-notes/tech_bull_tls-repo.md
 ---
 
 {% include install/tls-repo.md %}

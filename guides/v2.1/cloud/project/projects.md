@@ -6,7 +6,6 @@ menu_title: Manage your project
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: cloud/project/projects.md
 functional_areas:
   - Cloud
 redirect_from:

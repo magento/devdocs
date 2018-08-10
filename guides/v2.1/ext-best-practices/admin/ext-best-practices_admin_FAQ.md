@@ -5,7 +5,6 @@ title: Admin FAQ
 menu_title: Admin FAQ
 menu_order: 1000
 version: 2.1
-github_link: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
 functional_areas:
   - Standards
 ---

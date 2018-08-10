@@ -2,7 +2,6 @@
 group: config-guide
 title: Enable profiling (MAGE_PROFILER)
 version: 2.2
-github_link: config-guide/bootstrap/mage-profiler.md
 functional_areas:
   - Configuration
   - System

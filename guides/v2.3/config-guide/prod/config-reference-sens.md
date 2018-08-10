@@ -2,7 +2,6 @@
 group: config-guide
 title: Sensitive and system-specific
 version: 2.3
-github_link: config-guide/prod/config-reference-sens.md
 functional_areas:
   - Configuration
   - System

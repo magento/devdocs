@@ -6,7 +6,6 @@ menu_title: Cannot install using nginx
 menu_node:
 menu_order: 20
 version: 2.1
-github_link: install-gde/trouble/php/tshoot_nginx-port.md
 functional_areas:
   - Install
   - System

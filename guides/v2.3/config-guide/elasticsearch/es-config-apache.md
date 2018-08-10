@@ -2,7 +2,6 @@
 group: config-guide
 title: Configure Apache and Elasticsearch
 version: 2.3
-github_link: config-guide/elasticsearch/es-config-apache.md
 functional_areas:
   - Configuration
   - Search

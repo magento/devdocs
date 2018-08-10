@@ -6,7 +6,6 @@ menu_title: How Magento cache clearing works with multiple Varnish instances
 menu_order: 82
 menu_node:
 version: 2.2
-github_link: config-guide/varnish/use-multiple-varnish-cache.md
 redirect_from:
  - /guides/v2.0/config-guide/varnish/config-use-multiple-varnish.html
  - /guides/v2.1/config-guide/varnish/config-use-multiple-varnish.html

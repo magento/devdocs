@@ -6,7 +6,6 @@ menu_title: Roll back after update failure
 menu_node:
 menu_order: 110
 version: 2.0
-github_link: comp-mgr/trouble/cman/update-fail.md
 functional_areas:
   - Upgrade
 ---

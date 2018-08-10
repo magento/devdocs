@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
-github_link: cloud/project/project-routes-more-redir.md
 functional_areas:
   - Cloud
   - Setup

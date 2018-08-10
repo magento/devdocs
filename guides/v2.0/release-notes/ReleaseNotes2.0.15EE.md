@@ -7,7 +7,6 @@ menu_order: 264
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.15EE.md
 ---
 
 *Patch code and release notes were published on June 21, 2017.* 

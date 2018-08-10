@@ -4,7 +4,6 @@ subgroup: components
 title: Expandable Column сomponent
 menu_title: Expandable Column component
 version: 2.2
-github_link: ui_comp_guide/components/ui-expandable-column.md
 ---
 
 ## Overview

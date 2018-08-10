@@ -2,7 +2,6 @@
 group: release-notes
 version: 2.2
 title: Backward Incompatible Changes in Magento Commerce for B2B
-github_link: release-notes/backward-incompatible-changes/b2b.md
 redirect_from: /guides/v2.2/release-notes/changes/b2b_changes.html
 ---
 

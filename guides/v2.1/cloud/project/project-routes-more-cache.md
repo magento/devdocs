@@ -2,7 +2,6 @@
 group: cloud
 title: Caching
 version: 2.1
-github_link: cloud/project/project-routes-more-cache.md
 functional_areas:
   - Cloud
   - Setup

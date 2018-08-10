@@ -8,7 +8,6 @@ level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 251
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
 functional_areas:
   - Configuration
   - System

@@ -7,7 +7,6 @@ menu_title: MasterCard BIN Upgrade for 2.0.x (May 19, 2017)
 menu_node: 
 menu_order: 7
 version: 2.0
-github_link: release-notes/tech_bull_20x_MasterCard.md
 ---
 
 *Technical bulletin published on May 19, 2017.*

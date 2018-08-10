@@ -4,7 +4,6 @@ subgroup: D_CSS
 title: Using custom fonts
 menu_order: 6
 version: 2.0
-github_link: frontend-dev-guide/css-topics/using-fonts.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
 functional_areas:
   - Frontend

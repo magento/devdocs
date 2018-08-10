@@ -2,7 +2,6 @@
 group: release-notes
 title: Magento Commerce 2.1.13 Release Notes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.13EE.md
 ---
 
 *	TOC

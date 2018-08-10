@@ -7,7 +7,6 @@ menu_order: 3
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/solr/solr-script.md
 functional_areas:
   - Configuration
   - Search

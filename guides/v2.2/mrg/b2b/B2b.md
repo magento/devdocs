@@ -5,7 +5,6 @@ title: Magento_b2b module
 menu_title: B2b
 menu_order: 10
 version: 2.2
-github_link: mrg/b2b/B2b.md
 ---
 
 ## Overview

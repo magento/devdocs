@@ -6,7 +6,6 @@ menu_title: Manage the indexers
 menu_node:
 menu_order: 90
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-index.md
 functional_areas:
   - Configuration
   - System

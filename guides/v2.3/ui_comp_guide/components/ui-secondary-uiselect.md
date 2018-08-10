@@ -5,7 +5,6 @@ title: UI-select component
 menu_title: UI-select component
 menu_node:
 version: 2.3
-github_link: ui-components/ui-secondary-uiselect.md
 
 ---
 

@@ -5,7 +5,6 @@ title: Create your component file structure
 menu_title: Create your component file structure
 menu_order: 3000
 version: 2.1
-github_link: extension-dev-guide/build/module-file-structure.md
 redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 

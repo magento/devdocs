@@ -5,7 +5,6 @@ title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
 version: 2.1
-github_link: get-started/authentication/gs-authentication-oauth.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 functional_areas:
   - Integration

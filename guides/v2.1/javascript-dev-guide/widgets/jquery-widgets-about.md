@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 3_Widgets
 title: Magento jQuery widgets
 version: 2.1
-github_link: javascript-dev-guide/widgets/jquery-widgets-about.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html
  - /guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html

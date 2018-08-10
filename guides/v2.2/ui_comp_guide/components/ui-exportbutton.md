@@ -4,7 +4,6 @@ subgroup: components
 title: ExportButton component
 menu_title: ExportButton component
 version: 2.2
-github_link: ui_comp_guide/components/ui-exportbutton.md
 ---
 
 ## Overview

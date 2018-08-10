@@ -3,7 +3,6 @@ group: config-guide
 subgroup: 09_Varnish
 title: Configure and use Varnish
 version: 2.2
-github_link: config-guide/varnish/config-varnish.md
 functional_areas:
   - Configuration
   - System

@@ -2,7 +2,6 @@
 group: cloud
 title: Technologies and requirements
 version: 2.0
-github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
   - /guides/v2.1/cloud/discover-tools.html
