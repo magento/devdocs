@@ -2,7 +2,6 @@
 group: mftf-2.3
 title: Test
 version: 2.2
-github_link: magento-functional-testing-framework/2.3/test.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0
@@ -77,7 +76,6 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 `<tests>` is a container for multiple tests. It is a group of test methods that define test flows within a test case.
 
 `<tests>` must contain at least one [`<test>`].
-
 
 ### test {#test-tag}
 

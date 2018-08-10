@@ -2,7 +2,6 @@
 group: config-guide
 title: Using CLI commands
 version: 2.2
-github_link: config-guide/deployment/pipeline/example/cli.md
 functional_areas:
   - Configuration
   - Deploy

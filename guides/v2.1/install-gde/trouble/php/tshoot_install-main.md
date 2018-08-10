@@ -6,7 +6,6 @@ menu_title: Errors during installation
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: install-gde/trouble/php/tshoot_install-main.md
 functional_areas:
   - Install
   - System

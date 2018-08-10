@@ -4,7 +4,6 @@ subgroup: components
 title: Multiselect component
 menu_title: Multiselect component
 version: 2.1
-github_link: ui_comp_guide/components/ui-multiselect.md
 ---
 
 ## Overview

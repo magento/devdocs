@@ -8,7 +8,6 @@ ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
 version: 2.2
-github_link: extension-dev-guide/message-queues/queue-migration.md
 redirect_from: /guides/v2.2/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration
@@ -65,6 +64,7 @@ The first column in the following table lists the all the parameters in the `que
 `<exchange>/<arguments>` and `<exchange>/<binding>/<arguments>` | Not present in 2.1. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
+
 The first column in the following table lists the all the parameters in the `queue_publisher.xml` file. The second column lists where in the Magento 2.1 `queue.xml` file the equivalent parameters are located.
 
 | 2.2 Attribute  | 2.1 queue.xml source |
@@ -76,6 +76,7 @@ The first column in the following table lists the all the parameters in the `que
 `<publisher>/<connection>/disabled` | Not present in 2.1. Omit this parameter to accept the default value.
 
 ### Migrate from Magento 2.0 to 2.2 ###
+
 To upgrade from Magento 2.0, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
 
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
@@ -87,6 +88,7 @@ The existing `queue.xml` file is deprecated.
 For complete details about these files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
 
 #### Create the `queue_consumer.xml` file ####
+
 The first column in the following table lists the all the parameters in the `queue_consumer.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
 
 2.2 Attribute        | 2.0 queue.xml Source
@@ -99,6 +101,7 @@ The first column in the following table lists the all the parameters in the `que
 `<consumer>/maxMessages`     | `<consumer>/max_messages`
 
 #### Create the `queue_topology.xml` file ####
+
 The first column in the following table lists the all the parameters in the `queue_topology.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
 
 | 2.2 Attribute  | 2.0 queue.xml Source |
@@ -117,6 +120,7 @@ The first column in the following table lists the all the parameters in the `que
 `<arguments>` | Not present in 2.0. Omit this element.
 
 #### Create the `queue_publisher.xml` file ####
+
 The first column in the following table lists the all the parameters in the `queue_publisher.xml` file. The second column lists where in the Magento 2.0 `queue.xml` file the equivalent parameters are located.
 
 | 2.2 Attribute  | 2.0 queue.xml Source |
@@ -128,5 +132,6 @@ The first column in the following table lists the all the parameters in the `que
 `<publisher>/<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
 #### Related topics
+
 *	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
 *	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>

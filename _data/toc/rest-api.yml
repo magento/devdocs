@@ -58,6 +58,11 @@ pages:
         url: /rest/tutorials/orders/order-intro.html
         versions: ["2.1", "2.2", "2.3"]
 
+      - label: Order processing with MSI
+        class: tutorial
+        url: /rest/tutorials/msi-order-processing/index.html
+        versions: ["2.3"]
+
       - label: Create configurable products
         class: tutorial
         url: /rest/tutorials/configurable-product/config-product-intro.html

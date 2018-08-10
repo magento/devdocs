@@ -2,7 +2,6 @@
 group: cloud
 title: Upgrade Magento version
 version: 2.1
-github_link: cloud/project/project-upgrade.md
 redirect_from:
   - /guides/v2.1/cloud/howtos/upgrade-magento.html
 functional_areas:
@@ -54,6 +53,7 @@ It is a best practice to verify the `ADMIN_EMAIL` variable, because it is requir
     ```
 
 ## Verify and upgrade your extensions {#extensions}
+
 If you need to upgrade any third-party extensions and modules that support version 2.1, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.1.
 
 1.  Create a new branch on your local workstation.
@@ -70,6 +70,7 @@ We strongly recommend upgrading your Production environment _before_ including t
 We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.1.X.
 
 ## Troubleshoot upgrade
+
 If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:
 
 ```terminal

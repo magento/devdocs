@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ### About the Magento crontab
+
 The Magento _crontab_ is the configuration used to run Magento cron jobs.
 
 Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:
@@ -18,6 +19,7 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 </div>
 
 #### Create the Magento crontab
+
 Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.
 
 To create the Magento crontab, use the following command:
@@ -39,4 +41,5 @@ A sample follows:
 	#~ MAGENTO END
 
 #### Related topic
+
 To remove the Magento crontab, see []({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cron-remove).

@@ -2,7 +2,6 @@
 group: fedg
 title: Magento UI library
 version: 2.1
-github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 functional_areas:
   - Frontend
   - Theme

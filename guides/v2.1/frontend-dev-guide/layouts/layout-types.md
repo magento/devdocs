@@ -5,7 +5,6 @@ title: Layout file types
 menu_title: Layout file types
 menu_order: 3
 version: 2.1
-github_link: frontend-dev-guide/layouts/layout-types.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 functional_areas:
   - Frontend
@@ -15,7 +14,9 @@ functional_areas:
 		table tr td, table tr th {border: 1px solid #ABABAB}
 	</style>
 </head>
+
 ## What's in this topic
+
 For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
 
 A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Page layouts feature only <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
@@ -28,6 +29,7 @@ We also distinguish the third type of layout files, *generic layouts*. They are 
 This article gives a comprehensive description of each layout file type.
 
 ## Page layout {#layout-types-page}
+
 Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. 
 
 Allowed layout instructions:
@@ -118,7 +120,6 @@ Conventionally page configuration files must be located as follows:
 <li> {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
 <li> {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
-
 
 ### Page configuration structure and allowed layout instructions
 
@@ -399,7 +400,6 @@ Conventionally generic layout files must be located as follows:
 <li>Module generic layouts: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
 <li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
-
 
 ### Generic layout structure and allowed layout instructions
 

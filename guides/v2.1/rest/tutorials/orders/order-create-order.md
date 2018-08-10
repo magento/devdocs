@@ -9,7 +9,6 @@ return_to:
 menu_order: 7
 level3_subgroup: order-tutorial
 version: 2.1
-github_link: rest/tutorials/orders/order-create-order.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-create-order.html
   - /guides/v2.2/get-started/order-tutorial/order-create-order.html

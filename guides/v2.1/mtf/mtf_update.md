@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Update the Functional Testing Framework
 version: 2.1
-github_link: mtf/mtf_update.md
 ---
 
 Two types of updates are available.
@@ -18,7 +17,6 @@ Two types of updates are available.
 <div class="bs-callout bs-callout-info" id="info">
 <p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>
 </div>
-
 
 ### Install a new version of the Functional Testing Framework {#mtf_update_install}
 

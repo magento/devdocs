@@ -9,7 +9,6 @@ menu_order: 0
 level3_menu_node:
 level3_subgroup: sample-tutorial
 version: 2.0
-github_link: contributor-guide/templates/tutorial-template-first.md
 ---
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:
@@ -32,8 +31,7 @@ Parameter | Description
 `menu_title:` | On the first page of the tutorial, specify `Initial tasks`. Otherwise, leave this line blank.
 `menu_order:` | The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.
 `version:` | The version of Magento that this topic applies to.
-`github_link:` | The path to the MD file, starting at the book directory. Ex: `get-started/order-tutorial/order-intro.md`
-`ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
+``ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
 
 ## Before you begin...
 {:.tutorial-before}

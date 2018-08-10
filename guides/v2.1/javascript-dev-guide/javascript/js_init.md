@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 version: 2.1
-github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
@@ -18,6 +17,7 @@ It covers declarative notation, used when initialization is required, and impera
 We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
 
 ## Insert a JS component in a PHTML template {#init_phtml}
+
 Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
 ### Declarative notation
@@ -31,6 +31,7 @@ In Magento 2 there are two ways of declarative notation:
 Both ways are described further.
 
 #### Declarative notation using the `data-mage-init` attribute {#data_mage_init}
+
 Use the `data-mage-init` attribute to insert a JS component in a certain HTML element. The following code sample is an illustration. Here a JS component is inserted in the `<nav/>` element:
 ```html
 <nav data-mage-init='{ "<component_name>": {...} }'></nav>

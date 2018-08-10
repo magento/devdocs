@@ -6,7 +6,6 @@ menu_title: Cascading style sheets (CSS)
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: frontend-dev-guide/css-topics/css-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-overview.html
 functional_areas:
   - Frontend
@@ -24,7 +23,6 @@ To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefron
 *	If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Magento out-of-the-box Blank or Luma theme, you can override the default LESS files; for example to <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. 
 *	Create your own LESS files using the built-in LESS preprocessor. 
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
-
 
 ## Things to remember when working with styles
 
@@ -62,6 +60,7 @@ When OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.
 </div>
 
 ## What's in this chapter {#css_topics}
+
 Other topics of this chapter describe the following:
 
 * <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. 

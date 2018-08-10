@@ -6,7 +6,6 @@ menu_title: Capitalization
 menu_order: 4
 menu_node:
 version: 2.0
-github_link: design-styleguide/capitalization/capitalization.md
 ---
 Magento uses three different cases for content – sentence case, title case, and all-caps.
 

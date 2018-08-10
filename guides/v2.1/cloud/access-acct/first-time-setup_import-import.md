@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.1
-github_link: cloud/access-acct/first-time-setup_import-import.md
 functional_areas:
   - Cloud
   - Setup
@@ -23,9 +22,11 @@ Warning: When you force push code from an existing Git branch to your {{site.dat
 Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
 
 ## Required information
+
 Before you continue, make sure you have the [encryption key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html) from your {{site.data.var.ee}} system.
 
 ## Create a remote Git reference {#cloud-import-ref}
+
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your {{site.data.var.ee}} installation is located.
 
 Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your {{site.data.var.ee}} installation Git repository.
@@ -80,6 +81,7 @@ To create a remote Git reference:
     ```
 
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
+
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
 
 To import your {{site.data.var.ee}} code to Cloud:
@@ -118,6 +120,7 @@ To import your {{site.data.var.ee}} code to Cloud:
     ```
 
 ## Import the Magento database {#cloud-import-db}
+
 Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ece}}, you must import the database.
 
 To import the Magento database in {{site.data.var.ece}}, you must know:
@@ -170,6 +173,7 @@ To drop and re-create the Cloud database:
     ```
 
 ### Update base URLs {#baseurl}
+
 Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the `core_config_data` table.
 
 The following example shows how to change _only_ the insecure URL but you can use the same procedure to change secure URLs as well.
@@ -218,6 +222,7 @@ To update the unsecure base URL:
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 
 ## Add the Magento encryption key {#encryption-key}
+
 The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
 You copied the key in a [previous step]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
@@ -248,6 +253,7 @@ To add your {{site.data.var.ee}} encryption key:
     Make sure to add this key to the `env.php` file for all environments: Integration, Staging, and Production.
 
 ## Import media {#media}
+
 To import media files into your Cloud environment:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
@@ -269,6 +275,7 @@ To import media files into your Cloud environment:
     ```
 
 ## Clear the cache {#cache}
+
 On the Cloud environment, enter the following commands in the order shown:
 
 ```
@@ -280,6 +287,7 @@ bin/magento cache:clean
 After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
 
 ## Verify the import {#verify}
+
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
 1.  On your Cloud environment, enter the following commands to find the information to log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and to view the storefront:

@@ -2,7 +2,6 @@
 group: mftf-2.3
 title: Introduction to the Magento Functional Testing Framework version 2.3
 version: 2.2
-github_link: magento-functional-testing-framework/2.3/introduction.md
 functional_areas:
     - Testing
 mftf-release: 2.3.3
@@ -64,7 +63,7 @@ There are two options to find out your MFTF version:
 cd <magento_root>/
 ```
 ```bash
-vebdor/bin/mftf --version
+vendor/bin/mftf --version
 ```
 
 ### Composer CLI

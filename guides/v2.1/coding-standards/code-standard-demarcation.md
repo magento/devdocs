@@ -6,7 +6,6 @@ title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
 version: 2.1
-github_link: coding-standards/code-standard-demarcation.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 functional_areas:
   - Standards
@@ -27,6 +26,7 @@ functional_areas:
 ## Semantics
 
 ### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
+
 <ul>
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
@@ -54,6 +54,7 @@ functional_areas:
 ```
 
 ### Semantic representation may rely on ID attribute
+
 <ul>
    <li>Forces engineers to think about reusable page components instead of unique singleton components.</li>
    <li>Reduces long-term maintenance efforts.</li>
@@ -126,7 +127,6 @@ The following list will help you make a distinction between the actual meaning o
 
 ### You must use semantic HTML markup only, and must not use presentation markup.
 
-
 **Acceptable**:
 
 ```html
@@ -180,6 +180,7 @@ section[role="main"] { ... }
 ```
 
 ### You must not hard-code CSS styles in JavaScript files
+
 <div class="bs-callout bs-callout-info" id="info">
    <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
 </div>
@@ -219,6 +220,7 @@ this.element.on('click', function() {
 ```
 
 ### You must not use inline CSS styles inside HTML tags
+
 <ul>
 <li>Improves style extensibility allowing engineers to overload styles easier by toggling classes.</li>
 <li>Enforces clean, strict separation between visual presentation and markup.</li>
@@ -306,8 +308,8 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report hidden">Content</div>
 ```
 
-
 ### You must not select DOM elements based on HTML structure
+
 <ul>
 <li>Allows frontend teams to modify markup and themes without affecting business logic.</li></ul>
 
@@ -326,12 +328,14 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 ```
 
 ### You must use jQuery templates to insert recurring markup into DOM structure
+
 <ul>
 <li>Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.</li>
 <li>Reduces long-term maintenance efforts by having markup code stored in one place.</li>
 <li>Simplifies frontend debugging efforts.</li></ul>
 
 ### You must not hard-code inline JavaScript in PHP classes
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -391,10 +395,10 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
-
 ## PHTML templates and PHP files
 
 ### You must not hard-code inline CSS styles in PHP classes
+
 <ul>
 <li>Reduces long-term maintenance efforts by having styles stored in one place.</li>
 <li>Simplifies debugging and reduces number of files to be modified.</li>
@@ -427,6 +431,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ```
 
 ### You must not hard-code inline JavaScript in PHP classes
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -469,6 +474,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ```
 
 ### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
+
 <ul>
 <li>Reduces long-term maintenance efforts by having markup stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>

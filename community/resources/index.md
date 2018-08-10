@@ -43,6 +43,7 @@ They are listed here because the content has been well received within the Magen
 * *GitHub* [Magento 2 Docker][18]{:target="_blank"}
 
 ## Automated Testing
+
 * *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
 * *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
 * *Blog post:* [Integration Tests with Magento 2][19]{:target="_blank"} by Andreas von Studnitz

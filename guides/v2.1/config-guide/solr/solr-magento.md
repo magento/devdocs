@@ -7,7 +7,6 @@ menu_order: 2
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/solr/solr-magento.md
 functional_areas:
   - Configuration
   - Search
@@ -28,6 +27,7 @@ The following topics discuss how to configure Solr to work with {{site.data.var.
 * <a href="#config-solr-magento">Configure Magento to work with Solr</a>
 
 ### Copy the Magento Solr configuration and start Solr {#config-solr-copy-config-files}
+
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -87,6 +87,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	</div>
 
 ### Configure Magento to work with Solr {#config-solr-magento}
+
 This section discusses how to configure {{site.data.var.ee}} to use the Solr search engine.
 
 To configure Magento to work with Solr:
@@ -177,6 +178,7 @@ The button changes as follows.
 Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
 
 ## Reindexing catalog search and refreshing the full page cache {#solr-reindex}
+
 After you change Magento's Solr configuration, you must reindex the catalog search index and refresh the full page using the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or command line.
 
 To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} using the Admin:
@@ -207,6 +209,7 @@ To reindex using the command line:
 </div>
 
 ## Verify Solr is working {#solr-verify}
+
 To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and search for any term (including one that won't return results) and look for the search in the Solr command window.
 
 The following figure shows an example of a storefront search.
@@ -217,6 +220,6 @@ The following excerpt from the Solr command window shows the same search:
 
 	497008 [qtp2032251042-13] INFO  org.apache.solr.core.SolrCore  – [magento2] webapp=/solr path=/select params={facet.field={!key%3Dcategory_bucket}category_ids&json.nl=flat&fl=id,score&start=0&fq=store_id:1&rows=10000&q=sku:((hello*+hello))+OR+fulltext_en:((hello*+hello))+OR+attr_color_en:((hello*+hello))+OR+attr_description_en:((hello*+hello))+OR+attr_manufacturer_en:((hello*+hello))+OR+attr_name_en:((hello*+hello))+OR+attr_short_description_en:((hello*+hello))+OR+attr_status_en:((hello*+hello))+OR+attr_tax_class_id_en:((hello*+hello))&f.category_ids.facet.mincount=1&omitHeader=true&stats=true&wt=json&facet=true&stats.field=price_0_1} hits=0 status=0 QTime=58
 
-
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html">Prepare Solr for production</a>

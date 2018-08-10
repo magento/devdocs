@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Installation of the Functional Testing Framework Entities
 version: 2.1
-github_link: mtf/mtf_installation.md
 ---
 
 Well, you are on the way to install the Functional Testing Framework!
@@ -18,6 +17,7 @@ Follow the next three steps:
 ## Check pre-installation conditions {#mtf_install_pre}
 
 ### Install the Magento application {#mtf_install_pre_inst-magento}
+
 To install the Magento application, see <a href="{{page.baseurl }}/install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 ### Check if all required software installed and configured {#mtf_install_pre_tools}
@@ -55,7 +55,6 @@ The Functional Testing Framework requires Composer, which downloads libraries de
   To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>
 And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
 </div>
-
 
 ## Check the installation {#mtf_install_check}
 

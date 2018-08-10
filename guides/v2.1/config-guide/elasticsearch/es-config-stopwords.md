@@ -7,7 +7,6 @@ menu_order: 10
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/elasticsearch/es-config-stopwords.md
 functional_areas:
   - Configuration
   - Search
@@ -22,6 +21,7 @@ functional_areas:
 *	[Change the stopword directory](#config-stopword-dir)
 
 ## What are stopwords? {#stopword-overview}
+
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
 
 Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.
@@ -36,6 +36,7 @@ For more information about how Elasticsearch uses stopwords, see the following r
 *	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank">Stopwords and Performance</a>
 
 ## Configure stopwords {#config-stopwords}
+
 Elasticsearch stopwords are located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `stopwords.csv`, which has stopwords for any locale that is not represented by another `.csv` file.
 
 The default lifetime for stopwords file {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is 15 minutes.
@@ -46,6 +47,7 @@ See one of the following topics for more information:
 *	[Create stopwords for a new locale](#config-create-stopwords)
 
 ### Edit stopwords for an existing locale {#config-edit-stopwords}
+
 To edit stopwords:
 
 1.	Log in to your Magento server, or switch to the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner).
@@ -66,6 +68,7 @@ To edit stopwords:
 6.	Check the results by searching for terms on your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.x
 
 ### Create stopwords for a new locale {#config-create-stopwords}
+
 To add stopwords for a locale:
 
 1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner).
@@ -94,6 +97,7 @@ To add stopwords for a locale:
 9.	Check the results by searching for terms on your storefront.
 
 ## Change the stopword directory {#config-stopword-dir}
+
 This section discusses how to optionally change the default stopword directory from one of the following:
 
 *	`<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords`

@@ -2,7 +2,6 @@
 group: rest
 title: REST tutorials
 version: 2.3
-github_link: rest/tutorials/index.md
 functional_areas:
   - Integration
   - Orders
@@ -13,13 +12,13 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 * The [**order processing** tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
-* The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
+* The [**order processing with MSI**]({{ page.baseurl }}/rest/tutorials/msi-order-processing/index.html) tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Multi Source Inventory features.
 
-* The **order processing with MSI** tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Multi Source Inventory features.
+* The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
 
 ## Complete these prerequisites
 
-Before you begin any tutorial, make sure you know the basics about {{si.te.data.var.ce}}
+Before you begin any tutorial, make sure you know the basics about {{site.data.var.ce}}
 
 * Install a Magento 2.3 (or later) instance with sample data.
 
@@ -49,9 +48,8 @@ Element | Description
 --- | ---
 `HTTP verb` | One of `GET`, `POST`, `PUT`, or `DELETE`
 `host` | The hostname or IP address (and optionally, port) of the Magento installation.
-`scope` | Specifies which store the call affects. If the tutorial involves only one Magento store, this value will usually be `default`.
+`scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Identifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
-
 
 **Scope**
 

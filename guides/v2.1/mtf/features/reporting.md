@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Reporting with the Functional Testing Framework
 version: 2.1
-github_link: mtf/features/reporting.md
 ---
 
 The Functional Testing Framework (FTF) provides a reporting tool, which logs failures or any other information for you during test run.

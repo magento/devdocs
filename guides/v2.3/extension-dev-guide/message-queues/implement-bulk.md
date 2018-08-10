@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Example bulk operations implementation
 version: 2.3
-github_link: extension-dev-guide/message-queues/implement-bulk.md
 redirect_from: /guides/v2.3/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services
@@ -335,6 +334,7 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 {% endhighlight %}
 
 #### Create `queue_topology.xml`
+
 The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
 {% highlight xml %}

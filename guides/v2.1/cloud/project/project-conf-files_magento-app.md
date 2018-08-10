@@ -2,7 +2,6 @@
 group: cloud
 title: Application
 version: 2.1
-github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
@@ -19,6 +18,7 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 {% include cloud/note-pro-using-yaml.md %}
 
 ## Properties
+
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 ### `name`
@@ -274,6 +274,7 @@ For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron 
 For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
+
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
 
 ```yaml
@@ -285,6 +286,7 @@ variables:
 ```
 
 ## Configure PHP options
+
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```
@@ -296,6 +298,7 @@ type: php:7.1
 {{site.data.var.ece}} supports PHP 7.1 and later. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### PHP extensions
+
 You can define additional PHP extensions to enable or disable:
 
 > .magento.app.yaml
@@ -371,6 +374,7 @@ Optional PHP extensions available to install:
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
 
 ### Customize `php.ini` settings
+
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).

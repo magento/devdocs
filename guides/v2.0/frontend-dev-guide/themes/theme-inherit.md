@@ -5,14 +5,13 @@ title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 70
 version: 2.0
-github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="theme-inherit-over">What's in this topic</h2>
+## What\'s in this topic   {#theme-inherit-over}
 
 {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 
@@ -24,7 +23,6 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
-
 
 ## Set a parent theme
 
@@ -98,7 +96,6 @@ OrangeCo wants it to be replaced with a holiday one, so it places a new backgrou
 Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
 
 <img src="{{ site.baseurl }}/common/images/inh-background2.jpg"/>
-
 
 ## Override templates {#theme-inherit-templates}
 

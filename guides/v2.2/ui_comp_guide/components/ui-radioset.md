@@ -4,7 +4,6 @@ subgroup: components
 title: Radioset component
 menu_title: Radioset component
 version: 2.2
-github_link: ui_comp_guide/components/ui-radioset.md
 ---
 
 ## Overview

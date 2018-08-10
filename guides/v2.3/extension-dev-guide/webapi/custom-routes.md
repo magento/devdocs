@@ -3,7 +3,6 @@ group: extension-dev-guide/webapi
 title: Custom routes
 contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
-github_link: extension-dev-guide/webapi/custom-routes.md
 functional_areas:
   - Configuration
 ---

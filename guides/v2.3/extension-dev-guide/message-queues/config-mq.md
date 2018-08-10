@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Configure message queues
 version: 2.3
-github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
@@ -13,6 +12,7 @@ functional_areas:
 The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it existing modules.
 
 ### Overview ###
+
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
 * [`communication.xml`](#communicationxml) - Defines aspects of the message queue system that all communication types have in common.
@@ -21,6 +21,7 @@ Configuring the message queue topology involves creating and modifying the follo
 * [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
 
 ### Use Cases ###
+
 Depending on your needs, you may only need to create and configure `communication.xml` and one or two of these files.
 
 * If you only want to publish to an existing queue created by a 3rd party system, you will only need the `queue_publisher.xml` file.
@@ -236,6 +237,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
 ### Related Topics
+
 *	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
 *	<a href="{{page.baseurl}}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
 *	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

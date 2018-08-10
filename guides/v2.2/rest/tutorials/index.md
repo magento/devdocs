@@ -2,7 +2,6 @@
 group: rest
 title: REST tutorials
 version: 2.2
-github_link: rest/tutorials/index.md
 functional_areas:
   - Integration
   - Orders
@@ -14,7 +13,6 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 * The [**order processing** tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
 * The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
-
 
 ## Complete these prerequisites
 
@@ -31,7 +29,6 @@ You will need
 * Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html){:target="_blank"} for information about the Luma store that is created when you install Magento with the sample data.
-
 
 ## Performing steps
 

@@ -34,6 +34,7 @@ If you're installing sample data _after_ installing Magento, you must also run t
 You are required to <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
 ## Authentication error
+
 The following authentication error might display:
 
     [Composer\Downloader\TransportException]

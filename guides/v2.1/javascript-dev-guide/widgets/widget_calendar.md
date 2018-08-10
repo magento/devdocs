@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 3_Widgets
 title: Calendar widget
 version: 2.1
-github_link: javascript-dev-guide/widgets/widget_calendar.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
@@ -49,6 +48,7 @@ require([
 ```
 
 ## Options, methods, and events {#fedg_calendar_options}
+
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
 
 

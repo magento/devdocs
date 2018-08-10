@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: JavaScript
 version: 2.1
-github_link: javascript-dev-guide/javascript/js_overview.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_overview.html
@@ -16,6 +15,7 @@ You can follow the same approach when customizing Magento JavaScript, or [disabl
 For information about how JS resources are located and configured, see [Configure JavaScript].
 
 ## What's in this chapter {#js_contents}
+
 Topics of this chapter describe the following:
 
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates

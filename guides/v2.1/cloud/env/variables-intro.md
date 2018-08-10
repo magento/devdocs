@@ -2,7 +2,6 @@
 group: cloud
 title: Environment variables
 version: 2.1
-github_link: cloud/env/variables-intro.md
 functional_areas:
   - Cloud
   - Configuration
@@ -22,6 +21,7 @@ You can set [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_mage
 from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the [`.magento.env.yaml`]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
+
 The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage. Insert these variables in the `global` stage of the `.magento.env.yaml` file:
 
 ```yaml

@@ -8,7 +8,6 @@ level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 253
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 functional_areas:
   - Configuration
   - System
@@ -74,6 +73,7 @@ All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ sit
 When we import backend models, we don't save the configuration values.
 
 ### Websites, stores, and store groups configuration
+
 We import the following types of configurations.
 (These configurations are under the `scopes` array in `config.php`.)
 
@@ -93,10 +93,12 @@ You must associate a root category with a store using the Magento {% glossarytoo
 </div>
 
 ### Theme configuration
+
 Theme configuration includes all themes registered in your Magento system; the data comes directly from the `theme` database table.
 (Theme configuration is in the `themes` array in `config.php`.)
 
 #### Structure of theme data
+
 The key of array is full theme path: `area` + `theme path`
 
 For example, `frontend/Magento/luma`.
@@ -125,5 +127,6 @@ Full example:
 </div>
 
 #### For more information
+
 *   [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
 *   [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)

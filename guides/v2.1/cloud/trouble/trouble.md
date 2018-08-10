@@ -2,7 +2,6 @@
 group: cloud
 title: Troubleshooting
 version: 2.1
-github_link: cloud/trouble/trouble.md
 functional_areas:
   - Cloud
   - Help

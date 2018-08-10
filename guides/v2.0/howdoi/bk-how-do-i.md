@@ -7,7 +7,6 @@ menu_title: How To
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: howdoi/bk-how-do-i.md
 ---
 
 ## Tell me how

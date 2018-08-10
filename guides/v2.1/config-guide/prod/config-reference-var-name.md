@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.1
-github_link: config-guide/prod/config-reference-var-name.md
 functional_areas:
   - Configuration
   - System
@@ -38,6 +37,7 @@ Configuration paths can be found in:
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ### Variable names
+
 The general format of system settings variable names follows:
 
 <pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
@@ -79,6 +79,7 @@ A complete list of configuration paths can be found in:
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}
+
 This section discusses how you can find and set system configuration values per _scope_ (store view or website). To set global scope variables, see [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
@@ -103,6 +104,7 @@ How to read the table:
 	*	You can find `<SYSTEM__VARIABLE__NAME>` as discussed in [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the Magento Admin
+
 The following table summarizes how to find website or store view value in the Admin.
 
 | Description  | Path in Magento Admin | Variable name |
@@ -123,6 +125,7 @@ For example, to find a website or store view scope value in the Admin:
 4.	Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the database {#cloud-vars-db}
+
 To get these values from the database:
 
 1.	If you haven't done so already, log in to your development system as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -181,9 +184,11 @@ The following table shows a few sample variables.
 | Custom Admin Path  | Advanced > **Admin** | `<SCOPE>__ADMIN__URL__CUSTOM_PATH` |
 
 ## Examples {#cloud-system-vars-ex}
+
 This section shows how to find values of some sample variables.
 
 ### Elasticsearch server hostname
+
 To find the variable name for global HTML minification:
 
 1.	Determine the scope.
@@ -194,6 +199,7 @@ To find the variable name for global HTML minification:
 **Result**: The variable name is `CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`
 
 ### Shipping country origin
+
 To find the variable name for the shipping country origin:
 
 1.	Determine the scope.
@@ -206,6 +212,7 @@ To find the variable name for the shipping country origin:
 **Result**: The variable name is `CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 
 ## How to use environment variables
+
 Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php){:target="\_blank"} associate array. You can set the values in any PHP script that runs when Magento runs, such as `index.php`.
 
 An example of setting two values follows:
@@ -224,5 +231,6 @@ A step-by-step example is shown in [Set configuration values using environment v
 </div>
 
 #### Related information
+
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
 *	[Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}

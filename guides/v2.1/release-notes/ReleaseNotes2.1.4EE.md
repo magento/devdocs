@@ -7,7 +7,6 @@ menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.4EE.md
 ---
 
 *	TOC
@@ -33,15 +32,9 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  
 
-
 ## Functional fixes and enhancements
 
 We address the following functional issues in this release.
-
-
-
-
-
 
 ### Catalog
 
@@ -50,15 +43,11 @@ We address the following functional issues in this release.
 
 <!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. Previously, Magento displayed this message at the bottom of the checkout form. 
 
-
 ### Checkout 
 
 <!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception,```Object doesn't support this action```. <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a>
 
-
-
 ### Indexers
-
 
 <!--- 58893-->* `IndexerHandlerFactory` no longer tries to cast the `$indexer` object to a String if an error occurs. Since `$indexer` is an object of type `IndexerInterface` and does not have a `__toString()` method, attempting to cast the `$indexer` object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a> 
 
@@ -67,18 +56,11 @@ We address the following functional issues in this release.
 
 <!--- 58559-->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} tables. 
 
-
-
-
 ### Installation, configuration, and deployment
 
 <!--- 62400-->* Third-party command line tools no longer fail when you run `setup:di:compile`.
 
 <!--- 62648-->* Magento now correctly applies {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} configuration parameters to the corresponding {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/7943" target="_blank">(GITHUB-7943)</a>
-
-
-
-
 
 ### Miscellaneous
 
@@ -101,9 +83,6 @@ We address the following functional issues in this release.
 
 <!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
 
-
-
-
 ### Payment methods
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options.  <a href="https://github.com/magento/magento2/issues/5938" target="_blank">(GITHUB-5938)</a>
@@ -118,10 +97,7 @@ We address the following functional issues in this release.
 
 <!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a>
 
-
-
 ### Travis builds
-
 
 <!--- 62388-->* We've fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you'd receive this error: ```Failed asserting that false is true```.
 
@@ -200,8 +176,6 @@ We address the following functional issues in this release.
 
 <!--- 60364-->
 
-
-
 ## Known issues
 
 <!---62083-->* **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
@@ -267,10 +241,8 @@ We address the following functional issues in this release.
 
  
 
-
-
-
 ## System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
@@ -279,14 +251,14 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 {% include install/releasenotes/ee_install_21.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 
 

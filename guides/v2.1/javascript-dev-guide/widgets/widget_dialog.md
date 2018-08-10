@@ -3,12 +3,12 @@ group: jsdg
 subgroup: 3_Widgets
 title: DropdownDialog widget
 version: 2.1
-github_link: javascript-dev-guide/widgets/widget_dialog.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 ## Overview
+
 Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
 -   triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening
 -   delaying to automatically close the drop-down on mouse out
@@ -132,8 +132,8 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 
 **Default value**: 500
 
-
 ## Methods {#dialog_methods}
+
 Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized. 
 
 
