@@ -21,7 +21,7 @@ The same rule is applied when the quote has the proposed shipping price and the 
 
 The following diagram illustrates the workflow for {{site.data.var.b2b}} negotiable quote checkouts:
 
-![Checkout process]({{ page.baseurl }}/b2b/images/quote-checkout-process.png)
+![Checkout process]({{ site.baseurl }}/common/images/b2b/quote-checkout-process.png)
 
 ## Manage shipping addresses
 

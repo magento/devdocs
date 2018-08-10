@@ -17,7 +17,7 @@ Negotiable quotes are a mechanism that allows a company user (buyer) and a selle
 
 The negotiable quote lifecycle includes a number of stages, as shown on the diagram below.
 
-![Negotiable quote workflow]({{ page.baseurl }}/b2b/images/quote-workflow.jpg)
+![Negotiable quote workflow]({{ site.baseurl }}/common/images/b2b/quote-workflow.jpg)
 
 The quoting process itself can be a continuous process, with a number of repeating cycles until the agreement is reached.
 
@@ -114,7 +114,7 @@ Closed | Closed | Closed
 
 The following diagram shows the negotiable quote lifecycle from the perspective of statuses.
 
-![Negotiable quote status]({{ page.baseurl }}/b2b/images/quote-statuses.png)
+![Negotiable quote status]({{ site.baseurl }}/common/images/b2b/quote-statuses.png)
 
 ## Related information
 
