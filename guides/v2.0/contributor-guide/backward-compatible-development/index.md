@@ -5,7 +5,6 @@ title: Backward compatible development
 menu_title: Backward compatible development
 menu_order: 1
 version: 2.0
-github_link: contributor-guide/backward-compatible-development/index.md
 ---
 This page describes rules and best practices for backward compatible development.
 

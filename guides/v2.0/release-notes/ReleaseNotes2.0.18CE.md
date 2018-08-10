@@ -7,7 +7,6 @@ menu_order: 158
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.18CE.md
 ---
 
 *Patch code and release notes were published on February 27, 2018.* 

@@ -6,7 +6,6 @@ menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
 version: 2.1
-github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 functional_areas:
   - Tools

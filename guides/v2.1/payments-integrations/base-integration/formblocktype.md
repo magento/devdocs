@@ -5,7 +5,6 @@ title: Payment info rendering in Admin checkout
 menu_title: Payment info rendering in Admin checkout
 menu_order: 4
 version: 2.1
-github_link: payments-integrations/base-integration/formblocktype.md
 functional_areas:
   - Integration
 ---

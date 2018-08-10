@@ -6,7 +6,6 @@ menu_title: Troubleshoot backups
 menu_node:
 menu_order: 400
 version: 2.1
-github_link: comp-mgr/trouble/cman/tshoot_backup.md
 functional_areas:
   - Upgrade
 ---

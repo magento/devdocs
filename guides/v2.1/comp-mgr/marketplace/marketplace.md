@@ -6,7 +6,6 @@ menu_title: Magento Marketplace example
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: comp-mgr/marketplace/marketplace.md
 functional_areas:
   - Upgrade
 ---

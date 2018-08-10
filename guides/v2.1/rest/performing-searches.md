@@ -6,7 +6,6 @@ title: Search using REST APIs
 menu_title: Search using REST
 menu_order: 2
 version: 2.1
-github_link: rest/performing-searches.md
 redirect_from: /guides/v2.1/howdoi/webapi/search-criteria.html
 
 ---

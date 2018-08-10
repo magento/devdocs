@@ -2,7 +2,6 @@
 group: jstf
 title: JavaScript testing with JsTestDriver
 version: 2.0
-github_link: test/js/test_js-unit.md
 redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing

@@ -10,7 +10,6 @@ return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/reassign-products-to-another-source.md
 functional_areas:
   - Integration
 ---

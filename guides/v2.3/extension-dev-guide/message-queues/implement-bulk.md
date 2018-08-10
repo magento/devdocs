@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Example bulk operations implementation
 version: 2.3
-github_link: extension-dev-guide/message-queues/implement-bulk.md
 redirect_from: /guides/v2.3/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services

@@ -2,7 +2,6 @@
 group: cloud
 title: Upgrade Magento version
 version: 2.2
-github_link: cloud/project/project-upgrade.md
 functional_areas:
   - Cloud
   - Upgrade

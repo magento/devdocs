@@ -5,7 +5,6 @@ title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
 version: 2.2
-github_link: install-gde/install/cli/install-cli-install.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-install.html
   - /guides/v2.0/install-gde/install/install-cli-install.html

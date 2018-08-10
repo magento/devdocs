@@ -6,7 +6,6 @@ landing-page: Coding standards
 menu_title: PHP code sniffers
 menu_order: 3
 version: 2.1
-github_link: coding-standards/code-standard-sniffers.md
 functional_areas:
   - Standards
 ---

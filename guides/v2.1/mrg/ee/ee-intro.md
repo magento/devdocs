@@ -5,7 +5,6 @@ title: Magento Commerce modules
 version: 2.1
 
 
-github_link: mrg/ee/ee-intro.md
 ---
 
 The following modules are described in detail:

@@ -6,7 +6,6 @@ menu_title: Installation stops at about 70%
 menu_node:
 menu_order: 2
 version: 2.0
-github_link: install-gde/trouble/php/tshoot_70pct.md
 functional_areas:
   - Install
   - System

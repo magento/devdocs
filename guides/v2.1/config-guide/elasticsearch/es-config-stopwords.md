@@ -7,7 +7,6 @@ menu_order: 10
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/elasticsearch/es-config-stopwords.md
 functional_areas:
   - Configuration
   - Search

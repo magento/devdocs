@@ -3,7 +3,6 @@ group: fedg
 subgroup: D_CSS_G
 title: Quick start guide to working with styles for a new theme
 version: 2.1
-github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
 functional_areas:
   - Frontend
 ---

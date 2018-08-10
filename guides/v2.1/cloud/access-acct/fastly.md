@@ -2,7 +2,6 @@
 group: cloud
 title: Set up Fastly
 version: 2.1
-github_link: cloud/access-acct/fastly.md
 functional_areas:
   - Cloud
   - Setup

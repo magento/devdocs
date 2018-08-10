@@ -8,7 +8,6 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: credit
-github_link: b2b/company-credit.md
 functional_areas:
   - B2B
   - Integration

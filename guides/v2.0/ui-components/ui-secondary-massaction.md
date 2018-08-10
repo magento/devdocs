@@ -6,7 +6,6 @@ menu_title: MassActions Component
 menu_node:
 menu_order: 3
 version: 2.0
-github_link: ui-components/ui-secondary-massaction.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
 
 ---

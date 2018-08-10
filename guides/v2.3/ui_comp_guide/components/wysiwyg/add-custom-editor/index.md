@@ -1,7 +1,6 @@
 ---
 group: UI_Components_guide
 title: Add Custom Editor
-github_link: ui_comp_guide/components/wysiwyg/add-custom-editor/index.md
 ---
 
 ## Before you begin...

@@ -5,7 +5,6 @@ title: DropdownDialog widget
 menu_order: 6
 menu_title: DropdownDialog widget
 version: 2.0
-github_link: javascript-dev-guide/widgets/widget_dialog.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html

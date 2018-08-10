@@ -6,7 +6,6 @@ menu_title: Configure PHP
 menu_order: 3
 menu_node:
 version: 2.1
-github_link: install-gde/install/hosted/hosted_start_php.md
 functional_areas:
   - Install
   - System

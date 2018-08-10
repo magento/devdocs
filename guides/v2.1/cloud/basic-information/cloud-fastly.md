@@ -2,7 +2,6 @@
 group: cloud
 title: Fastly
 version: 2.1
-github_link: cloud/basic-information/cloud-fastly.md
 functional_areas:
   - Cloud
   - Setup

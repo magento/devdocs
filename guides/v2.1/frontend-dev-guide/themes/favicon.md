@@ -5,7 +5,6 @@ title: Adding custom favicons
 menu_title: Adding custom favicons
 menu_order: 80
 version: 2.1
-github_link: frontend-dev-guide/themes/favicon.md
 functional_areas:
   - Frontend
   - Theme

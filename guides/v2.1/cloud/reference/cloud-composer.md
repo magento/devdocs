@@ -2,7 +2,6 @@
 group: cloud
 title: Composer
 version: 2.1
-github_link: cloud/reference/cloud-composer.md
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html

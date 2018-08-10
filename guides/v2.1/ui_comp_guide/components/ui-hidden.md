@@ -4,7 +4,6 @@ subgroup: components
 title: Hidden component
 menu_title: Hidden component
 version: 2.1
-github_link: ui_comp_guide/components/ui-hidden.md
 ---
 
 ## Overview

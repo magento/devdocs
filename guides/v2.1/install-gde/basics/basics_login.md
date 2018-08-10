@@ -8,7 +8,6 @@ menu_order: 105
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.1
-github_link: install-gde/basics/basics_login.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_login.html
 functional_areas:
   - Install

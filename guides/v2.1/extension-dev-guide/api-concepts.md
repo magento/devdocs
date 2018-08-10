@@ -5,7 +5,6 @@ title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
 version: 2.1
-github_link: extension-dev-guide/api-concepts.md
 redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
 

@@ -2,7 +2,6 @@
 group: release-notes
 title: Magento 2.2 backward incompatible changes
 version: 2.2
-github_link: release-notes/backward-incompatible-changes/index.md
 redirect_from: /guides/v2.2/release-notes/backward-incompatible-changes.html
 ---
 

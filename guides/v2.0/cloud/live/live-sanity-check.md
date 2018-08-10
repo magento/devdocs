@@ -6,7 +6,6 @@ menu_title: Build and deploy on local
 menu_order: 30
 menu_node:
 version: 2.0
-github_link: cloud/live/live-sanity-check.md
 functional_areas:
   - Cloud
   - Testing

@@ -6,7 +6,6 @@ menu_title: Fastly troubleshooting
 menu_order: 20
 menu_node:
 version: 2.1
-github_link: cloud/trouble/trouble_fastly.md
 functional_areas:
   - Cloud
   - Configuration

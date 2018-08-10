@@ -6,7 +6,6 @@ menu_title: Cannot write to the generated/code directory
 menu_node:
 menu_order: 9
 version: 2.2
-github_link: install-gde/trouble/tshoot_var-gen-perms.md
 functional_areas:
   - Install
   - System

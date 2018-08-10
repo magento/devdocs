@@ -5,7 +5,6 @@ title: Confirmation widget
 menu_order: 5
 menu_title: Confirmation widget
 version: 2.0
-github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
 ## Overview

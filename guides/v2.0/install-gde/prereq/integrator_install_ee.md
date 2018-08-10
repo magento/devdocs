@@ -6,7 +6,6 @@ menu_title: Get the Magento Commerce metapackage
 menu_order: 4
 menu_node:
 version: 2.0
-github_link: install-gde/prereq/integrator_install_ee.md
 functional_areas:
   - Install
   - System

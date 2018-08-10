@@ -6,7 +6,6 @@ menu_title: Advanced Varnish configuration
 menu_order: 16
 menu_node:
 version: 2.2
-github_link: config-guide/varnish/config-varnish-advanced.md
 functional_areas:
   - Configuration
   - System

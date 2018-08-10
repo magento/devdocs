@@ -2,7 +2,6 @@
 group: cloud
 title: Subscriptions and plans
 version: 2.0
-github_link: cloud/basic-information/cloud-plans.md
 ---
 
 {{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products.

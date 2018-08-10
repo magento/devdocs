@@ -6,7 +6,6 @@ menu_title: Change to a released version
 menu_order: 200
 menu_node:
 version: 2.2
-github_link: install-gde/install/cli/dev_downgrade.md
 functional_areas:
   - Install
   - System

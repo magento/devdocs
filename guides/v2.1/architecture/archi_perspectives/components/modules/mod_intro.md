@@ -3,7 +3,6 @@ group: arch-guide
 title: Module overview
 menu_title: Module overview
 version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_intro.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html

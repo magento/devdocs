@@ -5,7 +5,6 @@ title: Simple style changes with client-side LESS compilation vs. server-side
 menu_title: Simple style changes with client-side LESS compilation vs. server-side
 menu_order: 2
 version: 2.0
-github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 functional_areas:
   - Frontend
 ---

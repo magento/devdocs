@@ -5,7 +5,6 @@ title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
 version: 2.1
-github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 functional_areas:
   - Integration

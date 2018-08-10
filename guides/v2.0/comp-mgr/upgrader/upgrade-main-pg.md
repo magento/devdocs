@@ -6,7 +6,6 @@ menu_title: Step 1. Select versions to upgrade
 menu_node:
 menu_order: 5
 version: 2.0
-github_link: comp-mgr/upgrader/upgrade-main-pg.md
 functional_areas:
   - Upgrade
 ---

@@ -6,7 +6,6 @@ menu_title: Sorry, we can't take that action right now
 menu_node:
 menu_order: 2
 version: 2.1
-github_link: comp-mgr/trouble/cman/were-sorry.md
 functional_areas:
   - Upgrade
 ---

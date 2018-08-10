@@ -5,7 +5,6 @@ title: Service layer
 menu_title: Service layer
 menu_order: 2
 version: 2.0
-github_link: architecture/archi_perspectives/service_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
 ---
 

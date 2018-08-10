@@ -6,7 +6,6 @@ menu_title: Manage your components
 menu_node:
 menu_order: 3
 version: 2.1
-github_link: comp-mgr/module-man/compman-main-pg.md
 redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
 functional_areas:
   - Upgrade

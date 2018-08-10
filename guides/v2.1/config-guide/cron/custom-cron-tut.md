@@ -6,7 +6,6 @@ menu_title: Configure a custom cron job and cron group (tutorial)
 menu_order: 3
 menu_node:
 version: 2.1
-github_link: config-guide/cron/custom-cron-tut.md
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: JavaScript Bundling
 menu_title: JavaScript Bundling
 menu_order: 9000
 version: 2.1
-github_link: frontend-dev-guide/themes/js-bundling.md
 functional_areas:
   - Frontend
   - Theme

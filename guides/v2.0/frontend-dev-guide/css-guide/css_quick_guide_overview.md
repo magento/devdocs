@@ -6,7 +6,6 @@ menu_title: Quick start guide to styles
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
 functional_areas:
   - Frontend
 ---

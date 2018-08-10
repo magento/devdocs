@@ -2,7 +2,6 @@
 group: install2
 title: Modify docroot to improve security
 version: 2.0
-github_link: install-gde/tutorials/change-docroot-to-pub.md
 ---
 
 If you installed Magento in Apache's default docroot `/var/www/html`, the Magento file system is vulnerable because it's accessible from a browser. This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.

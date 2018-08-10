@@ -6,7 +6,6 @@ menu_title: Construct a request
 menu_order: 1
 
 version: 2.1
-github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 

@@ -5,7 +5,6 @@ title: Signifyd fraud protection
 menu_title: Signifyd fraud protection
 menu_node: parent
 version: 2.2
-github_link: payments-integrations/signifyd/signifyd.md
 ---
 
 ## About this document

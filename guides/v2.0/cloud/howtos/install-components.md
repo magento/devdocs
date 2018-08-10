@@ -2,7 +2,6 @@
 group: cloud
 title: Install, manage, and upgrade modules
 version: 2.0
-github_link: cloud/howtos/install-components.md
 redirect_from:
   - /guides/v2.0/cloud/howtos/update-components.html
 functional_areas:

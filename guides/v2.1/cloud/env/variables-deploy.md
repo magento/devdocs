@@ -2,7 +2,6 @@
 group: cloud
 title: Deploy variables
 version: 2.1
-github_link: cloud/env/variables-deploy.md
 functional_areas:
   - Cloud
   - Configuration

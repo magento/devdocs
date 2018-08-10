@@ -3,7 +3,6 @@ group: release-notes
 subgroup: 2.3.x_Release_Information
 title: 2.3.x Release Information
 version: 2.3
-github_link: release-notes/bk-release-notes.md
 ---
 
 

@@ -3,7 +3,6 @@ layout: default
 group: release-notes
 title: Magento Open Source 2.1.14 Release Notes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.14CE.md
 ---
 
 *	TOC

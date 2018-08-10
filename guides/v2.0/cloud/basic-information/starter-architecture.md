@@ -6,7 +6,6 @@ menu_title: Starter architecture
 menu_order: 20
 menu_node:
 version: 2.0
-github_link: cloud/basic-information/starter-architecture.md
 functional_areas:
   - Cloud
 ---

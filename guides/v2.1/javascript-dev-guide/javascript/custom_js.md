@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: Use custom JavaScript
 version: 2.1
-github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
  - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html

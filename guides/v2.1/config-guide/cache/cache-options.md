@@ -6,7 +6,6 @@ menu_title: Low-level cache options
 menu_order: 2
 menu_node:
 version: 2.1
-github_link: config-guide/cache/cache-options.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/caching_low-level.html
   - /guides/v2.1/config-guide/cache/caching_low-level.html

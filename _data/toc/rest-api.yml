@@ -2,6 +2,8 @@ label: REST API Reference
 pages:
     - label: Overview
       url: /rest/bk-rest.html
+
+    - label: Quick reference
       children:
         - label: REST Endpoints (Swagger)
           versions: ["2.0"]
@@ -28,7 +30,8 @@ pages:
         - label: Generate a local API reference
           url: /rest/generate-local.html
 
-
+     - label: Use REST Endpoints
+       children:
         - label: Search using REST
           url: /rest/performing-searches.html
 

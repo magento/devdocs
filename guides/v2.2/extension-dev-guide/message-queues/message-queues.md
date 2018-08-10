@@ -3,7 +3,6 @@ group: extension-dev-guide
 title: Message Queues
 ee_only: True
 version: 2.2
-github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html
 ---
 

@@ -4,7 +4,6 @@ subgroup: components
 title: Bookmarks component
 menu_title: Bookmarks component
 version: 2.1
-github_link: ui_comp_guide/components/ui-bookmarks.md
 ---
 
 ## Overview

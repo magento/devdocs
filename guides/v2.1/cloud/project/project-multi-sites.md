@@ -6,7 +6,6 @@ menu_title: Set up multiple websites or stores
 menu_order: 15
 menu_node:
 version: 2.1
-github_link: cloud/project/project-multi-sites.md
 functional_areas:
   - Cloud
   - Configuration

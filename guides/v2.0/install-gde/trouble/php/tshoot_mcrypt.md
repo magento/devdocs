@@ -6,7 +6,6 @@ menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
 menu_order: 355
 version: 2.0
-github_link: install-gde/trouble/php/tshoot_mcrypt.md
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
   - /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html

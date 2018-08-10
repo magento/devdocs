@@ -4,7 +4,6 @@ subgroup: components
 title: ColumnsControls component
 menu_title: ColumnsControls component
 version: 2.2
-github_link: ui_comp_guide/components/ui-columnscontrols.md
 ---
 
 ## Overview

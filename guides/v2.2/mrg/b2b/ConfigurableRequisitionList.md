@@ -5,7 +5,6 @@ title: Magento_ConfigurableRequisitionList module
 menu_title: ConfigurableRequisitionList
 menu_order: 90
 version: 2.2
-github_link: mrg/b2b/ConfigurableRequisitionList.md
 functional_areas:
   - B2B
 ---

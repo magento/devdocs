@@ -2,7 +2,6 @@
 group: config-guide
 title: Performance Configuration Best Practices
 version: 2.2
-github_link: config-guide/prod/perfance-best-practices.md
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: Using Grunt for Magento tasks
 menu_order: 1
 menu_title: Using Grunt for Magento tasks
 version: 2.2
-github_link: frontend-dev-guide/tools/using_grunt.md
 functional_areas:
   - Frontend
   - Tools

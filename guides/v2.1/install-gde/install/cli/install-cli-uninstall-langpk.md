@@ -2,7 +2,6 @@
 group: install_cli
 title: Uninstall language packages
 version: 2.1
-github_link: install-gde/install/cli/install-cli-uninstall-langpk.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html

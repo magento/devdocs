@@ -4,7 +4,6 @@ subgroup: components
 title: Checkbox component
 menu_title: Checkbox component
 version: 2.2
-github_link: ui_comp_guide/components/ui-checkbox.md
 ---
 
 ## Overview

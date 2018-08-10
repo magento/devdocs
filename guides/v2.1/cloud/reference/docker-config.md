@@ -2,7 +2,6 @@
 group: cloud
 title: Configure Docker
 version: 2.1
-github_link: cloud/reference/docker-config.md
 functional_areas:
   - Cloud
   - Setup

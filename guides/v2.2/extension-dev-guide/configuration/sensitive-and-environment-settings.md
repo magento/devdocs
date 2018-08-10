@@ -5,7 +5,6 @@ title: Sensitive and environment settings
 menu_title: Sensitive and environment settings
 menu_order: 1000
 version: 2.2
-github_link: extension-dev-guide/configuration/sensitive-and-environment-settings.md
 functional_areas:
   - Configuration
 ---

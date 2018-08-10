@@ -5,7 +5,6 @@ title: Customizing RWD illustration
 menu_title: Customizing RWD illustration
 menu_order: 6
 version: 2.0
-github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html
 functional_areas:
   - Frontend

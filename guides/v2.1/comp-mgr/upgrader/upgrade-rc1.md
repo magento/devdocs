@@ -7,7 +7,6 @@ menu_node:
 menu_order: 2
 version: 2.1
 ee_only: True
-github_link: comp-mgr/upgrader/upgrade-rc1.md
 functional_areas:
   - Upgrade
 ---

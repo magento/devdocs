@@ -5,7 +5,6 @@ title: Gateway Client
 menu_title: Gateway Client
 menu_order: 5
 version: 2.1
-github_link: payments-integrations/payment-gateway/gateway-client.md
 ---
 
 Gateway Client is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that transfers the payload to the payment provider and gets the response.

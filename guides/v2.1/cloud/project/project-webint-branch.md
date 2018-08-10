@@ -6,7 +6,6 @@ menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
 version: 2.1
-github_link: cloud/project/project-webint-branch.md
 redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html

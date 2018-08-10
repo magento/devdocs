@@ -5,7 +5,6 @@ title: Use translation dictionary to customize strings
 menu_title: Use translation dictionary to customize strings
 menu_order: 1
 version: 2.1
-github_link: frontend-dev-guide/translations/theme_dictionary.md
 functional_areas:
   - Frontend
   - Theme

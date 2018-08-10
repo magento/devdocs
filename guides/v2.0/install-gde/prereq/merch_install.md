@@ -6,7 +6,6 @@ menu_title: Newbie installation first steps
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: install-gde/prereq/merch_install.md
 functional_areas:
   - Install
   - System

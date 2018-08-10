@@ -6,7 +6,6 @@ menu_title: Start the Module Manager
 menu_node:
 menu_order: 2
 version: 2.2
-github_link: comp-mgr/module-man/compman-start.md
 functional_areas:
   - Upgrade
 ---

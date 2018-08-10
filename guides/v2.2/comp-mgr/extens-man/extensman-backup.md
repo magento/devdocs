@@ -6,7 +6,6 @@ menu_title: Step 2. Back up the file system and database
 menu_node:
 menu_order: 10
 version: 2.2
-github_link: comp-mgr/extens-man/extensman-backup.md
 functional_areas:
   - Upgrade
 ---

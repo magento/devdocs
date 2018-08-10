@@ -2,7 +2,6 @@
 group: install
 title: Configure the Magento application
 version: 2.3
-github_link: install-gde/install/post-install-config.md
 functional_areas:
   - Install
   - System

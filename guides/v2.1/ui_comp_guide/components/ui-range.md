@@ -4,7 +4,6 @@ subgroup: components
 title: Range component
 menu_title: Range component
 version: 2.1
-github_link: ui_comp_guide/components/ui-range.md
 ---
 
 ## Overview

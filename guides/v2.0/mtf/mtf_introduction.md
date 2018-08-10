@@ -3,7 +3,6 @@ group: mtf-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 version: 2.0
-github_link: mtf/mtf_introduction.md
 ---
 
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.

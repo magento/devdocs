@@ -6,7 +6,6 @@ menu_title: Resolve a broken branch
 menu_order: 40
 menu_node:
 version: 2.0
-github_link: cloud/trouble/trouble-broken-branch.md
 functional_areas:
   - Cloud
   - Configuration
