@@ -692,14 +692,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h1 id="magento-functional-testing-framework-changelog">Magento Functional Testing Framework Changelog</h1>
 
-<h2 id="233">2.3.3</h2>
+<h2 id="234">2.3.4</h2>
 <h3 id="fixes">Fixes</h3>
+<ul>
+  <li>MagentoWebDriver overrides <code class="highlighter-rouge">parent::_after()</code> function and remaps to <code class="highlighter-rouge">runAfter()</code>, necessary to solve compatibility issues in Codeception <code class="highlighter-rouge">2.3.x</code>.</li>
+</ul>
+
+<h2 id="233">2.3.3</h2>
+<h3 id="fixes-1">Fixes</h3>
 <ul>
   <li>Defaults in <code class="highlighter-rouge">etc/config/functional.suite.dist.yml</code> changed: window-size to <code class="highlighter-rouge">1280x1024</code>, and removed <code class="highlighter-rouge">--ingonito</code> flag.</li>
 </ul>
 
 <h2 id="232">2.3.2</h2>
-<h3 id="fixes-1">Fixes</h3>
+<h3 id="fixes-2">Fixes</h3>
 <ul>
   <li>The <code class="highlighter-rouge">executeJs</code> <code class="highlighter-rouge">function</code> no longer escapes persisted variables referenced via <code class="highlighter-rouge">$$persisted.key$$</code>.</li>
   <li>Extending a test no longer fails to generate the parent <code class="highlighter-rouge">test</code>’s <code class="highlighter-rouge">before</code>/<code class="highlighter-rouge">after</code> blocks if the parent was skipped.</li>
@@ -781,7 +787,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-2">Fixes</h3>
+<h3 id="fixes-3">Fixes</h3>
 <ul>
   <li><code class="highlighter-rouge">_after</code> hook of tests now executes if a non test-related failure causes the test to error.</li>
   <li>Fixed periods in Allure Report showing up as <code class="highlighter-rouge">•</code>.</li>
@@ -864,7 +870,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-3">Fixes</h3>
+<h3 id="fixes-4">Fixes</h3>
 <ul>
   <li>Exception message for the <code class="highlighter-rouge">&lt;conditionalClick&gt;</code> action now correctly references the <code class="highlighter-rouge">selector</code> given.</li>
   <li>Usage of multiple parameterized elements in a <code class="highlighter-rouge">selector</code> now correctly resolves all element references.</li>
@@ -911,7 +917,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-4">Fixes</h3>
+<h3 id="fixes-5">Fixes</h3>
 <ul>
   <li>Data returned by <code class="highlighter-rouge">grab</code> and <code class="highlighter-rouge">createData</code> actions can now be used in <code class="highlighter-rouge">&lt;actionGroup&gt;</code> test steps by their <code class="highlighter-rouge">stepKey</code> reference.</li>
   <li>Fixed an issue where <code class="highlighter-rouge">&lt;requiredEntity&gt;</code> elements inside <code class="highlighter-rouge">&lt;entity&gt;</code> data xml would overwrite one another when merged.</li>
@@ -979,7 +985,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-5">Fixes</h3>
+<h3 id="fixes-6">Fixes</h3>
 <ul>
   <li>Fixed an issue with using the character <code class="highlighter-rouge">-</code> in parameterized selector references.
     <ul>
@@ -1013,7 +1019,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-6">Fixes</h3>
+<h3 id="fixes-7">Fixes</h3>
 <ul>
   <li>Fixed inability to use <code class="highlighter-rouge">&lt;actionGroup&gt;</code> with <code class="highlighter-rouge">&lt;arguments&gt;</code> in test hooks.</li>
   <li>Fixed inability to use <code class="highlighter-rouge">0</code> as data in an entity.</li>
@@ -1044,7 +1050,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-7">Fixes</h3>
+<h3 id="fixes-8">Fixes</h3>
 <ul>
   <li>Fixed inability to use <code class="highlighter-rouge">[]</code> characters within selector/url parameters.</li>
   <li>Fixed a bug where the <code class="highlighter-rouge">&lt;formatMoney&gt;</code> action did not return a variable for test use.</li>
@@ -1053,7 +1059,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="201">2.0.1</h2>
 
-<h3 id="fixes-8">Fixes</h3>
+<h3 id="fixes-9">Fixes</h3>
 <ul>
   <li>Fixed an issue with <code class="highlighter-rouge">group</code> annotation.</li>
 </ul>
@@ -1089,7 +1095,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-9">Fixes</h3>
+<h3 id="fixes-10">Fixes</h3>
 <ul>
   <li>Fixed the <code class="highlighter-rouge">unselectOption.parameterArray</code> property to work as expected.</li>
   <li>Fixed a crash if you had a system environment variable set with the same name as any variable in the <code class="highlighter-rouge">.env</code> file.</li>

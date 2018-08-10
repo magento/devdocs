@@ -2100,13 +2100,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h4 id="to-launch-docker-with-ece-tools-v2002013-and-later">To launch Docker with <code class="highlighter-rouge">ece-tools</code> v2002.0.13 and later:</h4>
 
 <ol>
-  <li>Download a template from the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Cloud repository</a>.</li>
-  <li>Add your credentials to the <code class="highlighter-rouge">auth.json</code> file.</li>
   <li>
-    <p>Update the template dependencies.</p>
+    <p>Download a template from the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Cloud repository</a>.</p>
+  </li>
+  <li>
+    <p>Add your credentials to the <code class="highlighter-rouge">auth.json</code> file.</p>
+  </li>
+  <li>
+    <p>Install the template dependencies.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div>    </div>
+
+    <p class="bs-callout bs-callout-info">You can use the <code class="highlighter-rouge">--ignore-platform-reqs</code> option to bypass restrictions related to the PHP version.</p>
   </li>
   <li>
     <p>In your local environment, start the Docker configuration generator.</p>
@@ -2183,10 +2189,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Add your credentials to <code class="highlighter-rouge">auth.json</code> file.</p>
   </li>
   <li>
-    <p>Update the template dependencies.</p>
+    <p>Install the template dependencies.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div>    </div>
+
+    <p class="bs-callout bs-callout-info">You can use the <code class="highlighter-rouge">--ignore-platform-reqs</code> option to bypass restrictions related to the PHP version.</p>
   </li>
   <li>
     <p>In your local environment, start the Docker configuration generator.</p>
@@ -2216,16 +2224,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Access your local Magento Cloud template by opening one of the following secure URLs in a browser:</p>
+    <p>Access your local Magento Cloud template by opening the following URL in a browser:</p>
 
-    <ul>
-      <li>
-        <p><a href="http://localhost:8080" target="\_blank"><code class="highlighter-rouge">http://localhost:8080</code></a></p>
-      </li>
-      <li>
-        <p><a href="https://localhost" target="\_blank"><code class="highlighter-rouge">https://localhost</code></a></p>
-      </li>
-    </ul>
+    <p><a href="http://localhost:8080" target="\_blank"><code class="highlighter-rouge">http://localhost:8080</code></a></p>
   </li>
 </ol>
 
