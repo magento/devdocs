@@ -4,7 +4,6 @@ title: Asynchronous web endpoints
 version: 2.3
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
-github_link: rest/asynchronous-web-endpoints.md
 functional_areas:
   - Integration
 ---
