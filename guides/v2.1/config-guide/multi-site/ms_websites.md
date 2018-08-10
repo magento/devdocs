@@ -9,19 +9,17 @@ functional_areas:
   - Setup
 ---
 
-This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store.
+This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
-The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
-
-[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
-*	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
-*	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
-*	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
+-  [Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
+-  [Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
+-  [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
+-  [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
 
 {: .bs-callout .bs-callout-info}
-For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:
--  [Tutorial—Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
--  [Tutorial—Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:  
+    -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)  
+    -  [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
 
@@ -104,25 +102,24 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% endcollapsible %}
 
-## Step 5: Change a website base URL
+## Step 5: Change the website base URL
 
 To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 {% collapsible To change the website base URL: %}
 
-1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
-2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
+1.  In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+1.  From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
 
-	![Select a scope]({{ site.baseurl }}/common/images/config_multi-site-scope.png){:width="250px"}
+    ![Select a scope]({{ site.baseurl }}/common/images/config_multi-site-scope.png){:width="250px"}
 
-3.	In the right pane, expand **Base URLs**.
-4.	In the Base URL section, clear the **Use Default** checkbox.
-4.	Enter `http://french.magento.mg` as the following example shows.
+1.  In the right pane, expand **Base URLs**.
+1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
+1.  Enter the `http://french.magento.mg` URL in the **Base URL** and **Base Link URL** fields.
 
-	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url.png){:width="650px"}
+1.  Click **Save Config**.
 
-5.	Click **Save Config**.
-6.	Repeat these tasks for other websites.
+1.  Repeat these tasks for other websites.
 
 {% endcollapsible %}
 
@@ -156,15 +153,15 @@ You must perform this step last because you will lose access to the Magento Admi
 
 {% collapsible To change the default store view base URL: %}
 
-1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
-2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
+1.  In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+
+1.  From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 
-3.	In the right pane, expand **Base URLs**.
-4.	Enter `http://mysite.mg` as the following example shows.
-
-	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url-default2.png){:width="650px"}
+1.  In the right pane, expand **Base URLs**.
+1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
+1.  Enter the `http://mysite.mg` URL in the **Base URL** and **Base Link URL** fields.
 
 5.	Click **Save Config**.
 
