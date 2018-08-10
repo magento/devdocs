@@ -9,12 +9,12 @@ module Jekyll
   class PageBaseUrlGenerator < Generator
 
     def generate(site)
-      PATTERN = %r{guides\/v(\d\.\d)}
+      pattern = %r{guides\/v(\d\.\d)}
       config_version = site.config['version']
       pages = site.pages
       baseurl = site.baseurl
       pages.each do |page|
-        matcher = PATTERN.match(page.path)
+        matcher = pattern.match(page.path)
         version = if matcher
                     matcher[1]
                   else
