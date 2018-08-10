@@ -11,6 +11,8 @@ mftf-release: 2.0.2
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
+{% include mftf/dependency-on-magento-note.md %}
+
 ## Prepare environment
 
 Make sure that you've installed and set up the following software:

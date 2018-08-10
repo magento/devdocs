@@ -12,6 +12,8 @@ redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/commands/ro
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
+{% include mftf/dependency-on-magento-note.md %}
+
 ## Prepare environment  {#prepare-environment}
 
 Make sure that you've installed and set up the following software:
