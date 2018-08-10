@@ -4,7 +4,7 @@ subgroup: Prerequisites
 title: nginx
 menu_title: nginx
 menu_order: 2
-version: 2.1
+version: 2.3
 github_link: install-gde/prereq/nginx.md
 functional_areas:
   - Install
@@ -76,9 +76,9 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 
 There are several ways to download the Magento software, including:
 
-*   [Download an archive]({{page.baseurl }}/install-gde/prereq/zip_install.html)
-
 *   [Get the Composer metapackage]({{page.baseurl }}/install-gde/composer.html)
+
+*   [Download an archive]({{page.baseurl }}/install-gde/prereq/zip_install.html)
 
 *   [Clone the git repository]({{page.baseurl }}/install-gde/prereq/dev_install.html)
 
@@ -90,9 +90,9 @@ For this example, we'll download and extract an archive.
 
 3. Download the Magento archive, extract it, and rename the folder `magento2/`:
 
-		wget https://github.com/magento/magento2/archive/2.1.tar.gz
-		tar -xzvf 2.1.tar.gz
-		mv magento2-2.1/ magento2/
+		wget https://github.com/magento/magento2/archive/2.3.tar.gz
+		tar -xzvf 2.3.tar.gz
+		mv magento2-2.3/ magento2/
 
 5. [Set directory ownership and file permissions]({{page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
@@ -280,9 +280,9 @@ For this example, we'll download and extract an archive.
 
 2. Download the Magento archive, extract it, and rename the folder `magento2/`:
 
-		wget https://github.com/magento/magento2/archive/2.1.tar.gz
-		tar -xzvf 2.1.tar.gz
-		mv magento2-2.1/ magento2/
+		wget https://github.com/magento/magento2/archive/2.3.tar.gz
+		tar -xzvf 2.3.tar.gz
+		mv magento2-2.3/ magento2/
 
 3. [Set directory ownership and file permissions]({{page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
