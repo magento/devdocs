@@ -6,15 +6,16 @@ github_link: magento-functional-testing-framework/2.2/introduction.md
 functional_areas:
     - Testing
 mftf-release: 2.2.0
+redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/introduction.html
 ---
 
-_The latest MFTF release is [{{page.mftf-release}}]._
+_The latest MFTF 2.2 release is [{{page.mftf-release}}]._
 {: style="text-align: right"}
 
-{% include mftf/dependency-on-magento-note.md %}
+{% include_relative include/note-2.3-docs.md %}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
-MFTF will make test creation easier for developers and will improve:
+MFTF improves:
 
 * **Traceability** for clear logging and reporting capabilities.
 * **Modularity** to run tests based on installed modules and extensions.
@@ -56,26 +57,17 @@ As a Magento developer, test changes, such as extended search functionality, a n
 
 As a software engineer, perform regression testing before release to ensure that Magento works as expected with new functionality.
 
-## Find your MFTF version
+## Find your MFTF version {#find-version}
 
 The MFTF is installed as a Composer dependency in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock`.
 
-Open the file and check the corresponding dependency:
+To find out the version, run:
 
-```json
-{
-    ...
-    "packages": [
-        ...
-        {
-            "name": "magento/magento2-functional-testing-framework",
-            "version": "2.0.2",
-            ...
-        }
-        ...
-    ]
-    ...
-}
+```bash
+cd <magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/
+```
+```bash
+composer show magento/magento2-functional-testing-framework
 ```
 
 ## Contents of dev/tests/acceptance

@@ -5,13 +5,12 @@ version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.3.1
-redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/commands/robo.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% include mftf/dependency-on-magento-note.md %}
+{% include_relative include/note-2.2-docs.md %}
 
 ## Prepare environment  {#prepare-environment}
 

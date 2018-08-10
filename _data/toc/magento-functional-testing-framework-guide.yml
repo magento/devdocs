@@ -49,17 +49,14 @@ pages:
   - label: Merging
     url: /magento-functional-testing-framework/2.2/merging.html
 
-  - label: Extending
-    url: /magento-functional-testing-framework/2.2/extending.html
-
   - label: Configuration
     url: /magento-functional-testing-framework/2.2/configuration.html
 
   - label: CLI Commands
     children:
 
-      - label: mftf
-        url: /magento-functional-testing-framework/2.2/commands/mftf.html
+      - label: robo
+        url: /magento-functional-testing-framework/2.2/commands/robo.html
       - label: codecept
         url: /magento-functional-testing-framework/2.2/commands/codeception.html
 

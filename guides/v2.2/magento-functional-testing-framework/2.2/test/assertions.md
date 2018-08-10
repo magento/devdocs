@@ -6,6 +6,7 @@ github_link: magento-functional-testing-framework/2.2/test/assertions.md
 functional_areas:
  - Testing
 mftf-release: 2.1.0
+redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
