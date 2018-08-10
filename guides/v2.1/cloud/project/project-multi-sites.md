@@ -10,9 +10,7 @@ functional_areas:
   - Stores
 ---
 
-You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ page.baseurl }}/cloud/configure/configure-best-practices.html#sites).
-
-#### To set up multiple stores:
+You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ page.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores is as follows:
 
 1.  Configure and test your local installation.
 1.  Configure {{site.data.var.ece}} routes and variables.
@@ -22,16 +20,14 @@ You can configure {{site.data.var.ee}} to have multiple websites or stores, such
 
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
-After successfully creating and testing the local installation to use multiple stores, 
+After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
-## Configure your Integration environment
+1.  **Configure routes**—specify how incoming URLs are handled by {{site.data.var.ee}}
+1.  **Set up websites, stores, and store views**—configure using your {{site.data.var.ee}} server Admin
+1.  **Modify `magento-vars.php` file**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables
+1.  **Deploy**—deploy and test the `integration` branch
 
-1.	[Configure routes](#cloud-multi-stores-routes), which specify how incoming URLs are handled by {{site.data.var.ee}}.
-2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your {{site.data.var.ee}} server's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
-3.	[Modify `magento-vars.php`](#cloud-multi-stores-magento-vars) to specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables.
-4.	[Deploy](#cloud-multi-stores-deploy) to your Integration branch and test.
-
-### Configure routes {#cloud-multi-stores-routes}
+### Configure routes
 
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
@@ -40,10 +36,13 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 #### To configure routes in an integration environment:
 
-1.	Log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-2.	Change to your {{site.data.var.ee}} base directory.
-3.	Open `.magento/routes.yaml` in a text editor.
-4.	Replace its contents with the following:
+1.  On your local workstation, log in as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+
+1.  Change to your {{site.data.var.ee}} base directory.
+
+1.  Open the `.magento/routes.yaml` file in a text editor.
+
+1.  Replace the contents with the following:
 
 		"http://{default}/":
     		type: upstream
@@ -60,53 +59,58 @@ To set up routes in a staging or production environment, you must create a [Supp
 		"https://*.{default}/":
     		type: upstream
     		upstream: "mymagento:php"
-5.	Save your changes to `routes.yaml` and exit the text editor.
 
-### Set up websites, stores, and store views {#cloud-multi-stores-admin}
+1.  Save your changes to the `routes.yaml` file.
 
-Set up in your {{site.data.var.ee}} Admin websites, stores, and store views identical to the ones you set up on your local system.
+### Set up websites, stores, and store views
 
-#### Get your access information
+Set up your {{site.data.var.ee}} Admin websites, stores, and store views identical to the ones you set up on your local workstation.
 
-To get the access information you need to log in to the Magento Admin:
+#### To retrieve Admin login information:
 
-1.	Log in to your local environment as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-2.	Change to your {{site.data.var.ee}} base directory.
-3.	Log in to your account:
+1.  On your local workstation, log in as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-		magento-cloud login
-4.	List the environments:
+1.  Change to your {{site.data.var.ee}} base directory.
 
-		magento-cloud environment:list
-3.	Check out your environment:
+1.  Log in to your account.
 
-		magento-cloud environment:checkout <environment ID>
-4.	View the environment's access URLs:
+    ```bash
+    magento-cloud login
+    ```
 
-		magento-cloud environment:url
-5.	View Admin login information:
+1.  List the environments.
 
-		magento-cloud variable:list
+    ```bash
+    magento-cloud environment:list
+    ```
 
-	Admin access information displays similar to the following:
+1.  Check out your environment.
 
-		+----------------+---------------+-----------+------+
-		| ID             | Value         | Inherited | JSON |
-		+----------------+---------------+-----------+------+
-		| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
-		| ADMIN_URL      | magento_A8v10 | Yes       | No   |
-		| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
-		+----------------+---------------+-----------+------+
+    ```bash
+    magento-cloud environment:checkout <environment-ID>
+    ```
 
-#### Configure websites, stores, and store views
+1.  Access the public URLs:
+
+    ```bash
+    magento-cloud environment:url
+    ```
+
+1.  View Admin login information in the variable list.
+
+    ```bash
+    magento-cloud variable:list
+    ```
 
 Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
-### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
+### Modify the `magento-vars.php` file
 
 Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using the `magento-vars.php` file located in your project root directory.
+
+#### To pass variables using the `magento-vars.php` file:
 
 1.  Open the `magento-vars.php` file in a text editor.
 
@@ -117,7 +121,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     The file should look like the following:
     
     ```php
-    <?php
     // enable, adjust and copy this code for each store you run
     // Store #0, default one
     function isHttpHost($host)
@@ -137,13 +140,13 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
     From:
 
-    ```
+    ```php
     return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     ```
 
     To:
 
-    ```
+    ```php
     return $_SERVER['HTTP_HOST'] ===  $host;
     ```
 
@@ -156,7 +159,6 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
         -  `store`—load a storeview in the storefront
 
     ```php
-    <?php
     // enable, adjust and copy this code for each store you run
     // Store #0, default one
     function isHttpHost($host)
@@ -175,28 +177,27 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
 1.  Save your changes to the `magento-vars.php` file.
 
-### Deploy and test on the Integration server {#cloud-multi-stores-deploy}
+### Deploy and test on the Integration server
 
 The final step is to push your changes to your {{site.data.var.ece}} server and test your site there.
 
-#### To deploy and test:
+1.  Add, commit, and push code changes to the remote branch.
 
-1.	Enter the following commands in the order shown:
+    ```bash
+    git add -A && git commit -m "Implement multiple sites" && git push origin <branch name>
+    ```
 
-		git add -A && git commit -m "Implement multiple sites"
-		git push origin <branch name>
-2.	Wait for deployment to complete.
-3.	When deployment is done, in a web browser, go to your site base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+1.  Wait for deployment to complete.
 
-	The URL must be in the format: `http://<magento-run-code>.<rest-of-URL>`
+1.  After deployment, open your site base URL in a web browser.
 
-	For example, `http://french.master-benrmky-dyrozemqbw72k.us.magentosite.cloud/`
-4.	Make sure you test your site thoroughly.
+    Use the format: `http://<magento-run-code>.<site-URL>`  
+    For example, `http://french.master-name-projectID.us.magentosite.cloud/`
 
-When complete, merge the code to the `master` Git branch for further deployment.
+1.  Test your site thoroughly and merge the code to the `integration` branch for further deployment.
 
-### Deploy to Staging and Production {#deploy-staging-prod}
+### Deploy to Staging and Production
 
 Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use [SSH and CLI commands]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#classic).
 
-We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and begin the process to deploy across environments again.
+We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to make changes, you should complete those in the Integration environment and begin the process to deploy across environments again.

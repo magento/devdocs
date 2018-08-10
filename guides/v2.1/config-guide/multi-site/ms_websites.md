@@ -9,24 +9,19 @@ functional_areas:
   - Setup
 ---
 
-## Set up multiple websites, stores, and store views in the Admin
-
 This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store.
 
 The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
-*	[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
+[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
 *	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
 *	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info}
 For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:
-
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
-*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
-
-</div>
+-  [Tutorial—Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
+-  [Tutorial—Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
 
@@ -133,13 +128,13 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 
 ## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
 
-Magento gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`.
+Magento gives you the option to add the store code to the site base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`.
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
 For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}.
 
-{% collapsible To add the store code to the website's base URL: %}
+{% collapsible To add the store code to the base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
@@ -149,21 +144,20 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 4.	Clear the **Use system value** checkbox next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
 
-	![Add the store code to the store's base URL]({{ site.baseurl }}/common/images/config_multi-site-add-store-url.png){:width="550px"}
+	![Add the store code to the store base URL]({{ site.baseurl }}/common/images/config_multi-site-add-store-url.png){:width="550px"}
 6.	Click **Save Config**.
 7.	If prompted, flush the Magento cache. (**System** > **Cache Management**).
 
 {% endcollapsible %}
 
-## Step 7: Change the default store view's base URL
+## Step 7: Change the default store view base URL
 
-You must perform this step last because after it's done, you'll lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
+You must perform this step last because you will lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
 
-{% collapsible To change the default store view's base URL: %}
+{% collapsible To change the default store view base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
-
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 
@@ -172,9 +166,6 @@ You must perform this step last because after it's done, you'll lose access to t
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url-default2.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
-	</div>
 5.	Click **Save Config**.
 
 {% endcollapsible %}
@@ -184,6 +175,3 @@ You must perform this step last because after it's done, you'll lose access to t
 *	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
 *	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 *	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
-
-#### Related information
-[Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
