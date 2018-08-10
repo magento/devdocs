@@ -6,7 +6,6 @@ menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
 version: 2.0
 ee_only: True
-github_link: install-gde/prereq/install-rabbitmq.md
 functional_areas:
   - Install
   - System

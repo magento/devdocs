@@ -6,7 +6,6 @@ menu_title: Overview
 menu_node:
 menu_order: 1100
 version: 2.2
-github_link: config-guide/deployment/pipeline/index.md
 functional_areas:
   - Configuration
   - Deploy

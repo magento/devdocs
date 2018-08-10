@@ -3,7 +3,6 @@ group: extension-dev-guide
 subgroup: 03_Build
 title: Define your configuration files
 version: 2.3
-github_link: extension-dev-guide/build/required-configuration-files.md
 ---
 
 Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has its own set of configuration files, gathered into the module's `etc` directory.

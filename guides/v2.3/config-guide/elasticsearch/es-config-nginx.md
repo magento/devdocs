@@ -2,7 +2,6 @@
 group: config-guide
 title: Configure nginx and Elasticsearch
 version: 2.3
-github_link: config-guide/elasticsearch/es-config-nginx.md
 functional_areas:
   - Configuration
   - Search

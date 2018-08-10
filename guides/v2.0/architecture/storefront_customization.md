@@ -5,7 +5,6 @@ title: Storefront customization strategies
 menu_title: Storefront customization strategies
 menu_order:
 version: 2.0
-github_link: architecture/storefront_customization.md
 ---
 
 ## Overview

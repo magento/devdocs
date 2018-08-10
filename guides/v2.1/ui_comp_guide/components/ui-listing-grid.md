@@ -4,7 +4,6 @@ subgroup: components
 title: Listing (grid) component
 menu_title: Listing (grid) component
 version: 2.1
-github_link: ui_comp_guide/components/ui-listing-grid.md
 ---
 
 ## Overview

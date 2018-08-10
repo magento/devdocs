@@ -6,7 +6,6 @@ menu_title: Voice and Tone
 menu_order: 1
 menu_node:
 version: 2.1
-github_link: design-styleguide/content-voice-tone/content-voice-tone.md
 functional_areas:
   - Content
 ---

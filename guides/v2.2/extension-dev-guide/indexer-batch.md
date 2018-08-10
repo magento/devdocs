@@ -7,7 +7,6 @@ menu_order: 14
 version: 2.2
 level3_menu_node: level3child
 level3_subgroup: index
-github_link: extension-dev-guide/indexer-batch.md
 
 ---
 

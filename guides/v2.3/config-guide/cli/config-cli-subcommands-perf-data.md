@@ -6,7 +6,6 @@ menu_title: Generate data for performance testing
 menu_node:
 menu_order: 800
 version: 2.3
-github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 functional_areas:
   - Configuration
   - System

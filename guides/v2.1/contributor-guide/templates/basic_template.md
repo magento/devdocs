@@ -5,7 +5,6 @@ title: Basic template
 menu_title: Basic template
 menu_order: 1
 version: 2.1
-github_link: contributor-guide/templates/basic_template.md
 redirect_from: contributor-guide/basic_template.html
 ---
 

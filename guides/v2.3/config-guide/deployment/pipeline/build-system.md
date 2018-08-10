@@ -6,7 +6,6 @@ menu_title: Build System Setup
 menu_node:
 menu_order: 1400
 version: 2.2
-github_link: config-guide/deployment/pipeline/build-system.md
 functional_areas:
   - Configuration
   - Deploy

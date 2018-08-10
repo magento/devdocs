@@ -6,7 +6,6 @@ menu_title: Custom extend Admin timeout VCL
 menu_order:
 menu_node:
 version: 2.1
-github_link: cloud/configure/fastly-vcl-extend-timeout.md
 functional_areas:
   - Cloud
   - Setup

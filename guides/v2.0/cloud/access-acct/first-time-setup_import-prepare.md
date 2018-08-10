@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
-github_link: cloud/access-acct/first-time-setup_import-prepare.md
 functional_areas:
   - Cloud
   - Setup

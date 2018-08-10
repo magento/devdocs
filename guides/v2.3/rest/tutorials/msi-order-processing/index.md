@@ -9,7 +9,6 @@ return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/index.md
 functional_areas:
   - Integration
 ---

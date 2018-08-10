@@ -6,7 +6,6 @@ menu_title: Reinstall the Magento software
 menu_order: 200
 menu_node:
 version: 2.1
-github_link: install-gde/install/cli/dev_reinstall.md
 functional_areas:
   - Install
   - System

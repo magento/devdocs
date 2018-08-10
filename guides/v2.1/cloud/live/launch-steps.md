@@ -6,7 +6,6 @@ menu_title: Launch steps
 menu_order: 20
 menu_node:
 version: 2.1
-github_link: cloud/live/launch-steps.md
 functional_areas:
   - Cloud
   - Testing

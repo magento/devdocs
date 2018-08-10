@@ -4,7 +4,6 @@ title: Magento cache overview
 menu_title: Magento cache overview
 menu_order: 10
 version: 2.0
-github_link: frontend-dev-guide/cache_for_frontdevs.md
 functional_areas:
   - Frontend
 ---

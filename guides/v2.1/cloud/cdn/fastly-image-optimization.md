@@ -2,7 +2,6 @@
 group: cloud
 title: Fastly image optimization
 version: 2.1
-github_link: cloud/cdn/fastly-image-optimization.md
 functional_areas:
   - Cloud
   - Setup

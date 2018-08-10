@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Page
 version: 2.0
-github_link: mtf/mtf_entities/mtf_page.md
 ---
 
 A page object is a class that serves to interact with the Magento page under test.

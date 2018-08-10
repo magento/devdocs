@@ -2,7 +2,6 @@
 group: install2
 title: What operating system is my server running?
 version: 2.1
-github_link: install-gde/basics/basics_os-version.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 functional_areas:
   - Install

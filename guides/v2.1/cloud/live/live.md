@@ -6,7 +6,6 @@ menu_title: Go live and launch
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: cloud/live/live.md
 functional_areas:
   - Cloud
 ---

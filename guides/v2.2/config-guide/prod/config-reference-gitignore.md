@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
-github_link: config-guide/prod/config-reference-gitignore.md
 functional_areas:
   - Configuration
   - System

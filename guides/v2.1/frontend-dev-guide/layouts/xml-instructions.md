@@ -2,7 +2,6 @@
 group: fedg
 title: Layout instructions
 version: 2.1
-github_link: frontend-dev-guide/layouts/xml-instructions.md
 functional_areas:
   - Frontend
 ---

@@ -5,7 +5,6 @@ title: Magento Commerce 2.3.0 Release Notes
 menu_title: Magento Commerce 2.3.0 Release Notes
 menu_order: 300
 version: 2.3
-github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 
   
 ---

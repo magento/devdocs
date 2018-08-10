@@ -5,7 +5,6 @@ title: Using jQuery UI styles
 menu_order: 5
 menu_title: Using jQuery UI styles
 version: 2.1
-github_link: frontend-dev-guide/css-topics/css-jquery.md
 functional_areas:
   - Frontend
 ---

@@ -7,7 +7,6 @@ menu_order: 299
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.

@@ -2,7 +2,6 @@
 group: reporting
 title: Advanced Reporting
 version: 2.2
-github_link: advanced-reporting/overview.md
 functional_areas:
     - Reports
 ---

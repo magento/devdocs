@@ -2,7 +2,6 @@
 group: cloud
 title: Services
 version: 2.2
-github_link: cloud/project/project-conf-files_services.md
 functional_areas:
   - Cloud
   - Setup

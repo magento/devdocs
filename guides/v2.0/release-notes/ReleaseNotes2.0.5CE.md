@@ -7,7 +7,6 @@ menu_order: 190
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
 version: 2.0
-github_link: release-notes/ReleaseNotes2.0.5CE.md
 ---
 
 We are pleased to present Magento Open Source 2.0.5. This release includes miscellaneous functional fixes. 

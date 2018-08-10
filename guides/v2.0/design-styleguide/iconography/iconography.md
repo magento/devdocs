@@ -6,7 +6,6 @@ menu_title: Iconography
 menu_order: 2
 menu_node:
 version: 2.0
-github_link: design-styleguide/iconography/iconography.md
 ---
 Icons are used throughout the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
 

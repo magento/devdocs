@@ -6,7 +6,6 @@ menu_title: Troubleshoot upgrade issues
 menu_node:
 menu_order: 5
 version: 2.1
-github_link: comp-mgr/trouble/cman/upgrade_51431.md
 functional_areas:
   - Upgrade
 ---

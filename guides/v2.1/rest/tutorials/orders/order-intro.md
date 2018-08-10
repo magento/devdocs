@@ -9,7 +9,6 @@ return_to:
 menu_order: 0
 level3_subgroup: order-tutorial
 version: 2.1
-github_link: rest/tutorials/orders/order-intro.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-intro.html
   - /guides/v2.2/get-started/order-tutorial/order-intro.html

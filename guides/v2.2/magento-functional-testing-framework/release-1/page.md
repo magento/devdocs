@@ -2,7 +2,6 @@
 group: mftf
 title: Page structure in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/release-1/page.md
 functional_areas:
  - Testing
 redirect_from:

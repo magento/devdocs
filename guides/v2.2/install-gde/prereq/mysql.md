@@ -5,7 +5,6 @@ title: MySQL
 menu_title: MySQL
 menu_order: 25
 version: 2.2
-github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
 

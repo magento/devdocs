@@ -2,7 +2,6 @@
 group: cloud
 title: Deployment process
 version: 2.1
-github_link: cloud/reference/discover-deploy.md
 functional_areas:
   - Cloud
   - Deploy

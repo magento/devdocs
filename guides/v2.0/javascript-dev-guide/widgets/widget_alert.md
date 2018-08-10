@@ -5,7 +5,6 @@ title: Alert widget
 menu_order: 2
 menu_title: Alert widget
 version: 2.0
-github_link: javascript-dev-guide/widgets/widget_alert.md
 ---
 ## Overview   {#alert_overview}
 

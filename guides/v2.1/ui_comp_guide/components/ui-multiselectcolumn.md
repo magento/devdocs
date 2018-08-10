@@ -4,7 +4,6 @@ subgroup: components
 title: MultiselectColumn component
 menu_title: MultiselectColumn component
 version: 2.1
-github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 ---
 
 ## Overview

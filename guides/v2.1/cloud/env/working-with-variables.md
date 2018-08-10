@@ -2,7 +2,6 @@
 group: cloud
 title: Working with variables
 version: 2.1
-github_link: cloud/env/working-with-variables.md
 functional_areas:
   - Cloud
   - Configuration

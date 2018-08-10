@@ -2,7 +2,6 @@
 group: migration
 title: Extend the tool
 version: 2.0
-github_link: migration/extend-the-tool.md
 functional_areas:
   - Tools
 ---

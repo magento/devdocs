@@ -2,7 +2,6 @@
 group: cloud
 title: Set up Elasticsearch service
 version: 2.0
-github_link: cloud/project/project-conf-files_services-elastic.md
 functional_areas:
   - Cloud
   - Setup

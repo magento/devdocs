@@ -7,7 +7,6 @@ menu_title: MasterCard BIN Range Update (May 19, 2017)
 menu_node: 
 menu_order: 6
 version: 2.1
-github_link: release-notes/tech_bull_21x_MasterCard.md
 ---
 
 *Technical Bulletin published on May 19, 2017 and edited on June 29, 2017.*

@@ -2,7 +2,6 @@
 group: cloud
 title: New Relic APM
 version: 2.1
-github_link: cloud/project/new-relic.md
 functional_areas:
   - Cloud
   - Integration

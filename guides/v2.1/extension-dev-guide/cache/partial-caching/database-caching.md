@@ -6,7 +6,6 @@ menu_title: Create custom cache engines
 menu_order: 9
 menu_node:
 version: 2.1
-github_link: extension-dev-guide/cache/partial-caching/database-caching.md
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html

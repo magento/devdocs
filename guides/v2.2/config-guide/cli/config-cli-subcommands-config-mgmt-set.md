@@ -2,7 +2,6 @@
 group: config-guide
 title: Set configuration values
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
 functional_areas:
   - Configuration
   - System

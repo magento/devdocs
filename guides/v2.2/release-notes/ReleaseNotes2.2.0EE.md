@@ -3,7 +3,6 @@ group: release-notes
 title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
 version: 2.2
-github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
 
 *Release notes updated June 4, 2018.* 

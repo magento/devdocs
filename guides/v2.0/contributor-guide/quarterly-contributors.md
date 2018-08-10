@@ -3,7 +3,6 @@ group: contributor
 title: DevDocs Contributors
 menu_order: 1000
 version: 2.0
-github_link: contributor-guide/quarterly-contributors.md
 redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
 ---
 

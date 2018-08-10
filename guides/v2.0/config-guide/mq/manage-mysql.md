@@ -5,7 +5,6 @@ title: Manage message queues
 menu_title: Manage message queues
 menu_order: 3
 version: 2.0
-github_link: config-guide/mq/manage-mysql.md
 functional_areas:
   - Configuration
   - System

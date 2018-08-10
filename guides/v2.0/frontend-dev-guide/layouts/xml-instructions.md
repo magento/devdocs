@@ -5,7 +5,6 @@ title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
 version: 2.0
-github_link: frontend-dev-guide/layouts/xml-instructions.md
 functional_areas:
   - Frontend
 ---

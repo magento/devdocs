@@ -6,7 +6,6 @@ menu_title: Magento 2.1 technical bulletins
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: release-notes/tech_bull_parent.md
 redirect_from: /guides/v2.1/release-notes/tech_bull_21-parent.html
 ---
 

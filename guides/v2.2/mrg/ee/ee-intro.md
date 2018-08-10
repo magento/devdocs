@@ -9,7 +9,6 @@ menu_node: parent
 version: 2.2
 
 
-github_link: mrg/ee/ee-intro.md
 ---
 
 The following modules are described in detail:

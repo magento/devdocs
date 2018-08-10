@@ -2,7 +2,6 @@
 group: compman
 title: Update and upgrade checklist
 version: 2.2
-github_link: comp-mgr/prereq/prereq_compman-checklist.md
 functional_areas:
   - Upgrade
 ---

@@ -7,7 +7,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: custom-preprocess
 version: 2.1
-github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 functional_areas:
   - Frontend
 ---

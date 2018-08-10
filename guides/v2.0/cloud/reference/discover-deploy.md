@@ -6,7 +6,6 @@ menu_title: Deployment process
 menu_order: 10
 menu_node:
 version: 2.0
-github_link: cloud/reference/discover-deploy.md
 redirect_from:
   - /guides/v2.0/cloud/discover-deploy.html
 functional_areas:

@@ -6,7 +6,6 @@ menu_title: View logs for troubleshooting
 menu_order: 5
 menu_node:
 version: 2.2
-github_link: cloud/trouble/environments-logs.md
 functional_areas:
   - Cloud
   - Configuration

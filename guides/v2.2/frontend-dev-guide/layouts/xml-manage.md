@@ -5,7 +5,6 @@ title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
 version: 2.2
-github_link: frontend-dev-guide/layouts/xml-manage.md
 functional_areas:
   - Frontend
 ---

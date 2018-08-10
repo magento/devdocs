@@ -4,7 +4,6 @@ subgroup: components
 title: Fieldset сomponent
 menu_title: Fieldset component
 version: 2.1
-github_link: ui_comp_guide/components/ui-fieldset.md
 ---
 
 ## Overview

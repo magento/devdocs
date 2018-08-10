@@ -6,7 +6,6 @@ menu_title: Run the Extension Manager
 menu_node: parent
 menu_order: 1
 version: 2.2
-github_link: comp-mgr/extens-man/extensman-checklist.md
 functional_areas:
   - Upgrade
 ---

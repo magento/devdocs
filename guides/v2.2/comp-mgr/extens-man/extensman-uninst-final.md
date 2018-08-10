@@ -6,7 +6,6 @@ menu_title: Step 4. Uninstall
 menu_node:
 menu_order: 100
 version: 2.2
-github_link: comp-mgr/extens-man/extensman-uninst-final.md
 functional_areas:
   - Upgrade
 redirect_from: 

@@ -6,7 +6,6 @@ menu_title: Update installation dependencies
 menu_node:
 menu_order: 10
 version: 2.2
-github_link: install-gde/install/prepare-install.md
 functional_areas:
   - Install
   - System

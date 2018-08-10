@@ -4,7 +4,6 @@ subgroup: components
 title: ActionDelete component
 menu_title: ActionDelete component
 version: 2.2
-github_link: ui_comp_guide/components/ui-actiondelete.md
 ---
 
 ## Overview

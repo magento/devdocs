@@ -6,7 +6,6 @@ menu_title: Segmentation fault during rollback
 menu_node:
 menu_order: 510
 version: 2.0
-github_link: install-gde/trouble/tshoot_segfault.md
 functional_areas:
   - Install
   - System

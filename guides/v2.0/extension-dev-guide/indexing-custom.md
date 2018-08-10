@@ -7,7 +7,6 @@ menu_order: 15
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: index
-github_link: extension-dev-guide/indexing-custom.md
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}

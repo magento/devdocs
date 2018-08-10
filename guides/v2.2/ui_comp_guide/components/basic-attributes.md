@@ -5,7 +5,6 @@ title: Basic attributes
 menu_title: Basic attributes
 menu_order: 1
 version: 2.2
-github_link: ui_comp_guide/components/basic-attributes.md
 ---
 
 ## Overview

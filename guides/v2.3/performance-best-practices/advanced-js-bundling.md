@@ -3,7 +3,6 @@ layout: default
 group: perf-best-practices
 title: Advanced JavaScript bundling
 version: 2.3
-github_link: performance-best-practices/advanced-js-bundling.md
 functional_areas:
   - Configuration
   - System

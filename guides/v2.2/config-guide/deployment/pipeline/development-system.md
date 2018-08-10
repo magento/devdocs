@@ -6,7 +6,6 @@ menu_title: Development System Setup
 menu_node:
 menu_order: 1300
 version: 2.2
-github_link: config-guide/deployment/pipeline/development-system.md
 functional_areas:
   - Configuration
   - Deploy

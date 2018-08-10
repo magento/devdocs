@@ -6,7 +6,6 @@ menu_title: Custom block bad referer VCL
 menu_order:
 menu_node:
 version: 2.0
-github_link: cloud/configure/fastly-vcl-badreferer.md
 functional_areas:
   - Cloud
   - Setup

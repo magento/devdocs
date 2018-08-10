@@ -7,7 +7,6 @@ menu_order: 24
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.0
-github_link: install-gde/prereq/php-settings.md
 functional_areas:
   - Install
   - System

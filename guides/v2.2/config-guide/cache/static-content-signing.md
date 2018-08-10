@@ -6,7 +6,6 @@ menu_title: Static content signing
 menu_node:
 menu_order: 3
 version: 2.2
-github_link: config-guide/cache/static-content-signing.md
 functional_areas:
   - Configuration
   - System

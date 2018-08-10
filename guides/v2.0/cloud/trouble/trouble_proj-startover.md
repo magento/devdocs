@@ -6,7 +6,6 @@ menu_title: Resolve issues with a new project
 menu_order: 10
 menu_node:
 version: 2.0
-github_link: cloud/trouble/trouble_proj-startover.md
 functional_areas:
   - Cloud
   - Setup

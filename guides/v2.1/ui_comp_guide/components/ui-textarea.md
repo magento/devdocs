@@ -4,7 +4,6 @@ subgroup: components
 title: Textarea component
 menu_title: Textarea component
 version: 2.1
-github_link: ui_comp_guide/components/ui-textarea.md
 ---
 
 ## Overview

@@ -7,7 +7,6 @@ menu_order: 198
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.1CE.md
 ---
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.1. This release includes several functional fixes and enhancements to the deployment of static assets. 
