@@ -10,7 +10,9 @@ mftf-release: 2.3.3
 _The latest MFTF release is [{{page.mftf-release}}]._
 {: style="text-align: right"}
 
+{% if page.guide_version == 2.2 %}
 {% include_relative include/note-2.2-docs.md %}
+{% endif %}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
 MFTF improves:

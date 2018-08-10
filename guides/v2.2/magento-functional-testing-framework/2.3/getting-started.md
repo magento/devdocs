@@ -10,7 +10,9 @@ mftf-release: 2.3.1
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
+{% if page.guide_version == 2.2 %}
 {% include_relative include/note-2.2-docs.md %}
+{% endif %}
 
 ## Prepare environment  {#prepare-environment}
 
