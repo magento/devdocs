@@ -7,10 +7,11 @@
 module Jekyll
   # Extending the Generator class of the Jekyll module
   class PageBaseUrlGenerator < Generator
-    VERSION = '2.2'.freeze
-    PATTERN = %r{guides\/v(\d\.\d)}
 
     def generate(site)
+      PATTERN = %r{guides\/v(\d\.\d)}
+      config_version = site.config['version']
+      puts config_version
       pages = site.pages
       baseurl = site.baseurl
       pages.each do |page|
@@ -18,7 +19,7 @@ module Jekyll
         version = if matcher
                     matcher[1]
                   else
-                    VERSION
+                    config_version
                   end
         page.data['baseurl'] = "#{baseurl}/guides/v#{version}"
         page.data['guide_version'] = version
@@ -26,8 +27,8 @@ module Jekyll
 
       videos = site.collections['videos'].docs
       videos.each do |video|
-        video.data['baseurl'] = "#{baseurl}/guides/v#{VERSION}"
-        video.data['guide_version'] = VERSION
+        video.data['baseurl'] = "#{baseurl}/guides/v#{config_version}"
+        video.data['guide_version'] = config_version
       end
     end
   end
