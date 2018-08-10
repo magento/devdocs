@@ -11,7 +11,6 @@ module Jekyll
     def generate(site)
       PATTERN = %r{guides\/v(\d\.\d)}
       config_version = site.config['version']
-      puts config_version
       pages = site.pages
       baseurl = site.baseurl
       pages.each do |page|
