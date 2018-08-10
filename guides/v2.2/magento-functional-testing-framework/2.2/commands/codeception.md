@@ -2,7 +2,6 @@
 group: mftf
 title: Codeception commands
 version: 2.2
-github_link: magento-functional-testing-framework/2.2/commands/codeception.md
 functional_areas:
  - Testing
 mftf-release: 2.0.2

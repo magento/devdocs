@@ -2,7 +2,6 @@
 group: mftf
 title: Assertions
 version: 2.2
-github_link: magento-functional-testing-framework/2.2/test/assertions.md
 functional_areas:
  - Testing
 mftf-release: 2.1.0
