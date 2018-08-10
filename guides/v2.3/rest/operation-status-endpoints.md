@@ -4,7 +4,6 @@ title: Status endpoints
 version: 2.3
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
-github_link: rest/operation-status-endpoints.md
 functional_areas:
   - Integration
 ---
