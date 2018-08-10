@@ -117,6 +117,8 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
 1.  Enter the `http://french.magento.mg` URL in the **Base URL** and **Base Link URL** fields.
 
+1.  Repeat the previous step in the **Base URLs (Secure)** section.
+
 1.  Click **Save Config**.
 
 1.  Repeat these tasks for other websites.
@@ -162,6 +164,8 @@ You must perform this step last because you will lose access to the Magento Admi
 1.  In the right pane, expand **Base URLs**.
 1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
 1.  Enter the `http://mysite.mg` URL in the **Base URL** and **Base Link URL** fields.
+
+1.  Repeat the previous step in the **Base URLs (Secure)** section.
 
 5.	Click **Save Config**.
 
