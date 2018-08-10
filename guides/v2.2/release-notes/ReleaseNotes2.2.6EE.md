@@ -5,12 +5,12 @@ title: Magento Commerce 2.2.6 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.6EE.md
 ---
-*Patch code and release notes published on , 2018.*
+*Patch code and release notes published on September , 2018.*
 
 
 
 
-We are pleased to present Magento Commerce 2.2.6. This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the over 150 community-contributed fixes!
+We are pleased to present Magento Commerce 2.2.6. This release includes 25 critical enhancements to product security plus over 150 core code fixes and enhancements. Check out the over 10 community-contributed fixes!
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -20,21 +20,20 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5
 
 ## Highlights
 
-Look for the following highlights in this release:
-
-
-
-Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+In addition to 25 critical security fixes, look for the following highlights in this release:
 
 
 ### Core code highlights
 This release includes significant performance improvements to the core Magento code:
 
-**Substantial improvements to performance** focus on catalog indexing, among other features: 
+#### Substantial improvements to performance** focus on catalog indexing, among other features
 
-* <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
+Seven  performance tuning enhancements related to catalog indexing  
 
-* <!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by 90%. Note: This improvement has necessitated these additional manual steps after you upgrade your Magento shop to 2.2.6: 
+
+<!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
+
+<!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by 90%. Note: This improvement has necessitated these additional manual steps after you upgrade your Magento shop to 2.2.6: 
 
 	* remove  `pub/media/catalog/product/cache`
 
@@ -42,13 +41,13 @@ This release includes significant performance improvements to the core Magento c
 
 <!-- MAGETWO-47320 -->* The Catalog Rule re-indexing operation has been optimized, and average re-indexing time, which depends on rule conditions, has improved by more than  80%.  Previously, a full Catalog Rule re-index operation on a medium B2C store took more than 20 minutes. 
 
- <!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
 
- <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
+<!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
 <!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function do not require this capability.
 
-**Improvements to the reliability and ease of the checkout process** 
+#### Improvements to the reliability and ease of the checkout process 
 
 <!-- MAGETWO-86490 -->* A shopping cart’s contents remains constant even when the Checkout page is repeatedly reloaded. Previously, if a customer reloaded the checkout page several times, Magento emptied the shopping cart and the customer could not place the order. (This problem primarily affected stores running on HTTPS.)
 
@@ -59,17 +58,36 @@ This release includes significant performance improvements to the core Magento c
 <!-- MAGETWO-89264-->* The Checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 
-**Additional**
+#### Additional enhancements
 
 <!-- MAGETWO-86125-->* Configurable products are now sorted by only visible prices as expected. Previously, sorting a catalog by price resulted in sort results that included the prices of out-of-stock products and disabled child products.
 
-<!-- MAGETWO-91411 -->*  Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products occurred as a result of an unstable Internet connection. 
+<!-- MAGETWO-91411 -->*  Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products sometimes occurred as a result of an unstable Internet connection. 
 
+
+
+### Magento Cloud highlights
+
+
+* Provided new, simple way to create local development environment: Added possibility for ECE-Tools to deploy local Docker environment from the template or your current version of local code
+
+* Added support for changing store locales without needing configuration import and export
+
+* Simplified workflow for adding robots.txt file and generating sitemap.xml file for single domain configuration without needing change to infrastructure
+
+* SCD_Matrix reduced deployment time by reducing the number of unnecessary theme files. For example, developers can deploy magento/backend theme in English only
+
+* Zero-downtime deployment: Added “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes
+
+* Fixed issue with post_deploy hook that cleared the cache in deploy phase vs. post-deploy phase
+
+* Fixed issue to ensure post_deploy phase begins immediately after the deploy phase ends
 
 
 
 ### Community contribution highlights
-Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
+
+Highlights of community contributions include fixes that improve checkout flow and the sorting of simple products:
 
 
 * Customers can now successfully complete check out when their order contains a configurable product with a configurable option. Previously, customers could not check out when there is a configurable product in the cart with a configurable option, which is now deleted, shopping cart could not be loaded. [GitHub-15467](https://github.com/magento/magento2/issues/15467) Thanks to community member [jonshipman](https://github.com/jonshipman)!  
@@ -89,6 +107,59 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 
 
+#### Amazon Pay
+
+Enhancements to Amazon Pay include the following new features :
+
+* Implementation of Magento Payment Gateway
+
+* Improved handling of virtual products by Amazon Pay
+
+* Added entry to admin panel to allow or disallow Amazon Pay to be displayed in the list of payment options
+
+* Combined 'Synchronous, if possible' and 'Asynchronous' settings for authorization mode into one setting.
+
+
+
+#### dotmailer
+
+Enhancements to dotmailer include the following new features:
+
+* Record your customers and guests' consent and store it using dotmailer's new Consent Insight
+
+* Improved retry process after a failed attempt to access EDC
+
+* Users can now import only those Magento contacts who've opted-in (customer subscribers, guest subscribers, and other subscribers)
+
+* Users now get warned when they're about to sync non-subscribers into their dotmailer account
+
+
+
+#### Klarna
+
+Enhancements to Klarna include support for these new features :
+
+ 
+* Pass shipping details in capture request
+
+* FRAUD_STOPPED
+
+* Add Shipping and discount order lines to OM calls
+
+* Migrate from hard-coded mapping to dynamic name and assets
+
+* Add link to Klarna Automated onboarding in Admin
+
+
+#### Magento Shipping
+
+
+
+
+
+Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+
+
 ## Fixes
 In addition to security enhancements, this release contains the following functional fixes. 
 
@@ -97,33 +168,7 @@ In addition to security enhancements, this release contains the following functi
 ### Installation, setup, and deployment
 
 
-<!-- ENGCOM-1537 -->* 
-
-You can now use the `app:config:status` command to check whether configuration propagation is up-to-date. 
-
-
-
-*Fix submitted by [Juan Alonso](https://github.com/hostep) in pull request [12441](https://github.com/magento/magento2/pull/12441)*.
-
-
-
-
-
-
-
-But when trying this out on a cleanly installed Magento 2.2.4, that new command doesn't seem to exist.
-
-This is because the line which was added to the di.xml file of the Magento_Deploy module by #12441 was (accidentally?) removed in e6b6c65#diff-2bf3eac66ec091433127117dae63d6a5L34
-
-Just to be sure, the commit which introduced the problem is fixing this issue: #14104 and I verified that restoring this one line in the di.xml file has no influence on issue #14104, so I'm pretty sure that line was accidentally removed (probably by a merge conflict or something like that).
-
-
-
-
-
- *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [15174](https://github.com/magento/magento2/pull/15174)*. [GitHub-14104](https://github.com/magento/magento2/issues/14104)
-
-
+<!-- ENGCOM-1537 -->* You can now use the `app:config:status` command to check whether configuration propagation is up-to-date. (This fix restores this command, which was inadvertently deleted in a previous release.)  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [15174](https://github.com/magento/magento2/pull/15174)*. [GitHub-14104](https://github.com/magento/magento2/issues/14104)
 
 <!-- MAGETWO-93192 -->* Configuration backend models are now populated as expected with all fieldset data, which makes it possible to access all configured values from a current group. [GitHub-16712](https://github.com/magento/magento2/issues/16712)
 
@@ -145,30 +190,20 @@ Just to be sure, the commit which introduced the problem is fixing this issue: #
 
 <!-- MAGETWO-92375 -->* Category pages now display as expected all products whose SKUs contain either single or double quotation marks. Previously, Magento threw an error when trying to set pricing and structure on a shared catalog when product SKUs contained these characters. 
 
+<!-- MAGETWO-92040 -->* You can now save a company address in a country that is on the allowed list of countries for the non-default website only. Previously, if a customer tried to save an address for a country  allowed on the non-default website only,  Magento threw this error, `Invalid value of "UA" provided for the country_id field`.
 
 
 
 
-<!-- MAGETWO-92040 -->* fix issue with saving company's address if country allowed only for non-default website
+<!-- MAGETWO-90824 -->* Companies are now listed as Resource Access 
 
-Cannot save company with country address that is allowed on non-default website only
-ISSUE:
-Cannot save company with country address that is allowed on non-default website only
-STEPS TO REPLICATE:
-
-Create second website
-Set different allowed countries for each website. E.g. For the first website - U.S, for second Ukraine (Under Stores -> Configuration -> GENERAL -> Country options -> Allow countries set different lists of allowed countries on default configuration level, and for every other created website.)
-Create Company from admin with address in country allowed on second site only (Ukraine)
-EXPECTED RESULTS:
-Company saved
-ACTUAL RESULTS:
-Error appears:
-Invalid value of "UA" provided for the country_id field.
-Though country is allowed on secondary website
+This permits users to see  companies in the user roles permissions without being a full Admin with "all" resources selected.
 
 
-<!-- MAGETWO-90824 -->* The new Company resource so that administrators with limited permissions can 
 
+The new Company resource so that administrators with limited permissions can 
+
+When creating B2B user roles, 
 
 
 Can only see companies if the user roll is full administrator
@@ -176,6 +211,8 @@ Added "Company" resource for using in user role.
 Merchant pointed out there is no option in the permissions to see or not see companies in the user roles permissions unless you are a full admin with "all" resources selected.
 
 When creating b2b user roles, Companies should be listed as Resource Access
+
+
 
 actual results: When creating b2b user roles, Companies is not listed as Resource Access and thus, the role has to be created providing full access to all resources, making financial information or other sensible data accessible to all admin users with such role.
 
@@ -199,22 +236,7 @@ add link to UG
 
 
 
-<!-- MAGETWO-89971 -->* Magento now displays the correct product total price value on all websites in a B2B deployment. Previously, 
-
-
-Fixed B2B company product prices on different websites
-
-
-The product total price value on the second website is as on the default website
-
-EXPECTED RESULTS:
-The product total price value on the second website have to be 30.99;
-ACTUAL RESULTS:
-The product total price value on the second website is as on the default website 10.99;
-
-Magento now displays the correct product total price value on all websites in a  
-
-
+<!-- MAGETWO-89971 -->* Magento now displays the correct product total price value on all websites in a B2B deployment. 
 
 <!-- MAGETWO-89888 -->* When **Website Restrictions** are set to **Private Sales: Login Only**, access to the storefront is now restricted to customers who log in, and merchants can still create new companies in the Admin. Previously, when a merchant tried to create a company when this setting was enabled, Magento threw this error, `Can not register new customer due to restrictions are enabled`. 
 
@@ -246,54 +268,17 @@ Magento now displays the correct product total price value on all websites in a
 
 <!-- ENGCOM-1617 -->* Breadcrumbs now work as expected when a product name contains quotation marks. Previously, the breadcrumbs on the product details page caused this syntax error to be thrown, `SyntaxError: Unexpected token x in JSON`. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [15347](https://github.com/magento/magento2/pull/15347)*. [GitHub-15037](https://github.com/magento/magento2/issues/15037)
 
-
-
-<!-- ENGCOM-1463 -->* 
-
-Disabling a product does not remove it from the flat index
-
-
-
- *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [15019](https://github.com/magento/magento2/pull/15019)*. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
-
-
+<!-- ENGCOM-1463 -->* Disabling a product now removes it from the flat index as expected. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [15019](https://github.com/magento/magento2/pull/15019)*. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
 
 <!-- ENGCOM-1051 -->* The success message that Magento displays when a customer adds a product to the compare list now contains a link to the comparison list. *Fix submitted by [Andreas von Studnitz](https://github.com/avstudnitz) in pull request [13862](https://github.com/magento/magento2/pull/13862)*. 
 
-
-<!-- ENGCOM-1953 -->* 
-
-Previously, when currency codes were not used, 
-
-Complete the fix for cache issue due to the currencies with no symbol 
-Using getCurrencySymbol() leads to a bug for currencies where there is no currency symbol - cache ends up being non-unique. Using currency code for caching is a more foolproof way.
-
- *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15902](https://github.com/magento/magento2/pull/15902)*. 
-
-
+<!-- ENGCOM-1953 -->* Cache problems no longer occur when currencies are used without a currency symbol. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15902](https://github.com/magento/magento2/pull/15902)*. 
 
 <!-- ENGCOM-1927 -->* Catalog component blocks now contain correct return type suggestions, and typos have been corrected where needed in the PHPDocs. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15913](https://github.com/magento/magento2/pull/15913)*. 
 
+<!-- ENGCOM-1287 -->* Widget cache errors that resulted in one widget being loaded twice on the storefront have been resolved. *Fix submitted by [Alexandr Kozyr](https://github.com/AlexandrKozyr) in pull request [12764](https://github.com/magento/magento2/pull/12764)*. [GitHub-4389](https://github.com/magento/magento2/issues/4389)
 
-
-<!-- ENGCOM-1287 -->* 
-
-Previously, 
-
-
-Widget cache error
-
-
-Expected result
-	1.	Two widgets appear on homepage with the same products, but different titles.
-Actual result
-	1.	First widget loaded shows twice depending on sort order
-
- *Fix submitted by [Alexandr Kozyr](https://github.com/AlexandrKozyr) in pull request [12764](https://github.com/magento/magento2/pull/12764)*. [GitHub-4389](https://github.com/magento/magento2/issues/4389)
-
-
-<!-- ENGCOM-1059 -->* Magento no longer makes redundant requests on the 'customer data' on checkout cart page. *Fix submitted by [Andrey Bezyazychnyy](https://github.com/andrewbess) in pull request [14314](https://github.com/magento/magento2/pull/14314)*. [GitHub-13765](https://github.com/magento/magento2/issues/13765)
-
+<!-- ENGCOM-1059 -->* Magento no longer makes redundant requests on the 'customer data' on the checkout  page. *Fix submitted by [Andrey Bezyazychnyy](https://github.com/andrewbess) in pull request [14314](https://github.com/magento/magento2/pull/14314)*. [GitHub-13765](https://github.com/magento/magento2/issues/13765)
 
 <!-- MAGETWO-93196 -->* Administrators with permission to change product names on one website only cannot change product names on any other sites. Previously, an administrator with permission to change a product name on one site only could change product names on all websites in a multisite deployment. 
 
@@ -333,9 +318,6 @@ Actual result
 
 <!-- MAGETWO-88102 -->* Magento now updates the `catalog_category_product_index` table as expected after a category is deleted. 
 
-
-
-
 <!-- MAGETWO-87721 -->* Customizable options are now configured the same for all websites to which a product is added. Previously, when a merchant added a product with customizable options to an additional site, the options were corrupted. 
 
 <!-- MAGETWO-87589 -->* Fixed issue with polluted database for additional stores if attribute data wasn't set for additional stores (use default check box now is set even if tab with the attribute was not opened)
@@ -364,6 +346,8 @@ Actual result
 
 
 <!--  ENGCOM-2383 -->* The shopping cart now displays as expected images of configurable products that have only size options (that is, no color options). Previously, when a customer added a configurable product that had only size options to her shopping cart, the shopping cart did not display the expected product image. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16863](https://github.com/magento/magento2/pull/16863)*. [GitHub-16843](https://github.com/magento/magento2/issues/16843)
+
+
 
 
 <!--  ENGCOM-2313 -->* Rating Star issue on Product detail Page
@@ -635,6 +619,13 @@ date format changed after customer tries to register with
 
  *Fix submitted by [KaushikChavda](https://github.com/KaushikChavda) in pull request [15272](https://github.com/magento/magento2/pull/15272)*.
 
+
+### dotmailer
+Fixed a regression issue that caused ROI tracking feature to not track order events properly
+	•	Fixed an error that was being caused by the importer
+	•	Fixed the catalog sync so it now syncs all products across all created collections when it's configured to sync on store level 
+	•	Improved validation for new subscribers so that it's no longer possible for them to get enrolled multiple times into the new subscriber program
+	•	Fixed occurrences of unexpected errors during subscriber and/or customer creation
 
 
 
@@ -1188,6 +1179,12 @@ PRIVATE REPO -- ask Lori
 <!-- ENGCOM-1640 -->* Refactor javascript code of button split widget 
 
 *Fix submitted by [Amit](https://github.com/amittiwari024) in pull request [15351](https://github.com/magento/magento2/pull/15351)*. [GitHub-15354](https://github.com/magento/magento2/issues/15354)
+
+
+
+### Klarna
+
+* Fixed product tax 
 
 
 ### Module Manager
@@ -2016,6 +2013,9 @@ This release includes a fix that optimizes image resizing.
 
 
 ## Community contributions
+
+~100 GitHub issues fixed; ~350 community pull requests merged.
+
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
