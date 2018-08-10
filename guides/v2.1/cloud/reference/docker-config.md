@@ -35,12 +35,17 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 #### To launch Docker with `ece-tools` v2002.0.13 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
+
 1.  Add your credentials to the `auth.json` file.
-1.  Update the template dependencies.
+
+1.  Install the template dependencies.
 
     ```bash
     composer install
     ```
+    
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1.  In your local environment, start the Docker configuration generator.
 
@@ -100,11 +105,14 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
 1.  Add your credentials to `auth.json` file.
 
-1.  Update the template dependencies.
+1.  Install the template dependencies.
 
     ```bash
     composer install
     ```
+    
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1.  In your local environment, start the Docker configuration generator.
 
@@ -134,11 +142,10 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     docker-compose run cli magento-installer
     ```
 
-1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+1.  Access your local Magento Cloud template by opening the following URL in a browser:
 
-    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
+    [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
 
-    -  [`https://localhost`](https://localhost){:target="\_blank"}
 
 ## Stop and remove the Docker configuration
 
