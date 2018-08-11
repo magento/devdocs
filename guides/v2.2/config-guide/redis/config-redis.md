@@ -14,34 +14,13 @@ functional_areas:
 
 ## Overview of the Redis solution {#config-redis-over}
 
-<a href="http://redis.io/" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.
+Redis features:
 
-### Issues with `Zend_Cache_Backend_File`
-
-* The `core_cache_tag` table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into `core_cache_tag` leads to issues with MySQL server, including performance degradation.
-
-  (A *tag* is an identifier that classifies different types of Magento {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} objects.)
-
-* The TwoLevels {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.
-Further, memcached itself has limitations such as a maximum object size and fixed bucket sizes which also contribute to difficult maintenance.
-
-* The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %} adds additional load to the master database server. Additionally, there is no reliable method for `memcached` replication.
-
-### Why Redis is better
-
-Advantages of Redis include:
-
-* Redis can also be used for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} session storage, making it possible to completely replace `memcached` with Redis.
-
-* The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file.
-
-* The {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the `adler32` hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.
+* Redis can also be used for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} session storage.
 
 * The backend supports tag-based cache cleanup without `foreach` loops.
 
 * Redis supports on-disk save and master/slave replication.
-
-  This is a highly requested feature that is not supported by `memcached`. Replication avoids a single point of failure and provides high  availability.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
