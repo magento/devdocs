@@ -20,25 +20,25 @@ A single instance of the {{site.data.var.ee}} software enables you to start mult
 -  Products
 -  Currencies
 
-This flexible solution enables one Magento codebase and {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to administer and display different stores. You configure the websites, stores, and store views in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Use certain variables in virtual hosts to start the Magento application using these websites or store views. 
+This flexible solution enables one Magento codebase and {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
 
 A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.
 
 Consider the following terms:
 
--   **Website** is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites.
+-   **Website**—is the top-level container for sites, shipping methods, payment methods, and more. To create completely separate sites that do not share cart, shipping methods, or other you must create separate websites.
 
     Website customer accounts can be shared between multiple websites within a single Magento instance. A website contains at least one store. Catalog prices should be managed at the website level.
 
--   **Store** is contained by a website. In turn, a store contains at least one *store view*. 
+-   **Store**—is contained by a website. In turn, a store contains at least one *store view*. 
 
-    Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price.
+    Multiple stores can share cart, user sessions, payment gateways, and more, but they have separate catalog structures and Catalog price.
 
     Catalog Qty (inventory) can not be managed at the store level. Inventory is managed at Website or Global level only.
 
     Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. You can manage different currencies per store view.
 
-Each website and each {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} must have a unique identifier. This identifier is required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables as follows:
+Each website and each store view must have a unique identifier. This identifier is required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables as follows:
 
 -   `MAGE_RUN_TYPE` can be either `store` or `website`
 

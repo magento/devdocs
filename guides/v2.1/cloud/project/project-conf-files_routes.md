@@ -58,16 +58,18 @@ For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcs
 
 Configure each route separately using the following properties:
 
+Property         | Description
+---------------- | -----------
 `type: upstream` | Serves an application. Also, it has an `upstream` property that specifies the name of the application (as defined in `.magento.app.yaml`) followed by the `:http` endpoint.
 `type: redirect` | Redirects to another route. It is followed by the `to` property, which is an HTTP redirection to another route identified by its template.
-`cache:` | Controls [caching for the route]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
-`redirects:` | Controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
-`ssi:` | Controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
+`cache:`         | Controls [caching for the route]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+`redirects:`     | Controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
+`ssi:`           | Controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
 {:style="table-layout:auto;"}
 
 ## Simple routes
 
-The following sample routes the naked domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS:
+The following sample routes the apex domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS:
 
 ```yaml
 "http://{default}/":
@@ -79,7 +81,7 @@ The following sample routes the naked domain and the `www` subdomain to the `fro
     to: "http://{default}/"
 ```
 
-The following sample route does not redirect from the `www` to the naked domain; instead, it serves from both:
+The following sample route does not redirect from the `www` to the apex domain; instead, it serves from both:
 
 ```yaml
 "http://{default}/":
@@ -105,7 +107,7 @@ This functions as a catch-all domain in a live environment.
 
 ### Routing a non-mapped domain
 
-You can route to a system that is not mapped to a domain using the dot (\.) to separate the subdomain. For example, a project with an `add-theme` branch routes to `http://add-theme-projectID.us.magento.com/`.
+You can route to a system that is not mapped to a domain using a dot (\.) to separate the subdomain. For example, a project with an `add-theme` branch routes to `http://add-theme-projectID.us.magento.com/`.
 
 If you define a `http://www.{default}/` route, the route becomes `http://www.add-theme-projectID.us.magento.com/`.
 

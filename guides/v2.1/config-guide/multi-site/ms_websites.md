@@ -87,7 +87,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% collapsible To create a store view: %}
 
-1.	In the Magento Admin, click **Stores** > Settings > **All Stores**.
+1.	In the Admin panel, click **Stores** > **Settings** > **All Stores**.
 2.	On the Stores page, click **Create Store View**.
 
 	*	**Store** list: Click the name of the store with which to associate this store view.
@@ -104,20 +104,20 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 ## Step 5: Change the website base URL
 
-To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 {% collapsible To change the website base URL: %}
 
-1.  In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+1.  In the _Admin_ panel, click **Stores** > **Settings** > **Configuration** > **General** > **Web**.
 1.  From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
 
     ![Select a scope]({{ site.baseurl }}/common/images/config_multi-site-scope.png){:width="250px"}
 
 1.  In the right pane, expand **Base URLs**.
-1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
+1.  In the _Base URLs_ section, clear **Use system value**.
 1.  Enter the `http://french.magento.mg` URL in the **Base URL** and **Base Link URL** fields.
 
-1.  Repeat the previous step in the **Base URLs (Secure)** section.
+1.  Repeat the previous step in the _Base URLs (Secure)_ section.
 
 1.  Click **Save Config**.
 
@@ -127,7 +127,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 
 ## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
 
-Magento gives you the option to add the store code to the site base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`.
+Magento gives you the option to add the store code to the site base URL, which simplifies the process of setting up multiple stores. Using this option, you do not have to create directories on the Magento file system to store `index.php` and `.htaccess`.
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
@@ -135,7 +135,7 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 {% collapsible To add the store code to the base URL: %}
 
-1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+1.	In the _Admin_ panel, click **Stores** > Settings > **Configuration** > **General** > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
@@ -155,24 +155,24 @@ You must perform this step last because you will lose access to the Magento Admi
 
 {% collapsible To change the default store view base URL: %}
 
-1.  In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
+1.  In the _Admin_ panel, click **Stores** > Settings > **Configuration** > General > **Web**.
 
 1.  From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 
 1.  In the right pane, expand **Base URLs**.
-1.  In the _Base URLs_ section, clear the **Use system value** checkbox.
+1.  In the _Base URLs_ section, clear **Use system value**.
 1.  Enter the `http://mysite.mg` URL in the **Base URL** and **Base Link URL** fields.
 
 1.  Repeat the previous step in the **Base URLs (Secure)** section.
 
-5.	Click **Save Config**.
+1.  Click **Save Config**.
 
 {% endcollapsible %}
 
 #### Next step
 
 *	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
-*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
+*	[Tutorial: up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+*	[Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)

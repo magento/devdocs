@@ -23,7 +23,7 @@ To configure your local installation to use multiple stores, see [Multiple websi
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
 1.  **Configure routes**—specify how incoming URLs are handled by {{site.data.var.ee}}
-1.  **Set up websites, stores, and store views**—configure using your {{site.data.var.ee}} server Admin
+1.  **Set up websites, stores, and store views**—configure using the {{site.data.var.ee}} Admin panel
 1.  **Modify `magento-vars.php` file**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables
 1.  **Deploy**—deploy and test the `integration` branch
 
@@ -64,7 +64,7 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 ### Set up websites, stores, and store views
 
-Set up your {{site.data.var.ee}} Admin websites, stores, and store views identical to the ones you set up on your local workstation.
+In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 #### To retrieve Admin login information:
 
