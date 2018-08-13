@@ -2,7 +2,6 @@
 group: cloud
 title:  Restore configuration files
 version: 2.1
-github_link: cloud/trouble/restore-configuration-files.md
 functional_areas:
   - Cloud
   - Deploy

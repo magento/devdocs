@@ -7,7 +7,6 @@ menu_order: 23
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
-github_link: install-gde/prereq/php-ubuntu.md
 functional_areas:
   - Install
   - System

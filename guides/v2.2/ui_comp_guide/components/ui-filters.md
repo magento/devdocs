@@ -4,7 +4,6 @@ subgroup: components
 title: Filters component
 menu_title: Filters component
 version: 2.2
-github_link: ui_comp_guide/components/ui-filters.md
 ---
 
 ## Overview

@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Test case
 version: 2.1
-github_link: mtf/mtf_entities/mtf_testcase.md
 ---
 
 The Magento Functional Testing Framework supports two types of functional tests:

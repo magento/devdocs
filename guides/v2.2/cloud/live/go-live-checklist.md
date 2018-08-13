@@ -2,7 +2,6 @@
 group: cloud
 title: Go live checklist
 version: 2.2
-github_link: cloud/live/go-live-checklist.md
 functional_areas:
   - Cloud
   - Testing

@@ -2,7 +2,6 @@
 group: cloud
 title: Starter architecture
 version: 2.1
-github_link: cloud/basic-information/starter-architecture.md
 functional_areas:
   - Cloud
 ---

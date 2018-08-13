@@ -8,7 +8,6 @@ menu_order: 125
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.1
-github_link: install-gde/basics/basics_software.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_software.html
 functional_areas:
   - Install

@@ -5,7 +5,6 @@ title: nginx
 menu_title: nginx
 menu_order: 2
 version: 2.0
-github_link: install-gde/prereq/nginx.md
 functional_areas:
   - Install
   - System

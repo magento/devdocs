@@ -6,7 +6,6 @@ menu_title: Install Composer
 menu_order: 2
 menu_node:
 version: 2.0
-github_link: install-gde/prereq/integrator_install.md
 functional_areas:
   - Install
   - System

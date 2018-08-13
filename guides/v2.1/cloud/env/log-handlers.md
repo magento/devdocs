@@ -2,7 +2,6 @@
 group: cloud
 title: Logging handlers
 version: 2.1
-github_link: cloud/env/log-handlers.md
 functional_areas:
   - Cloud
   - Setup

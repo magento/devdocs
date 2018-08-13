@@ -5,7 +5,6 @@ title: About the uiClass library
 menu_title: About the uiClass library
 menu_order: 60
 version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
 
 ## What is `uiClass`?

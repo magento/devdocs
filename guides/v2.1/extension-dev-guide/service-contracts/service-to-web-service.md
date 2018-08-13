@@ -7,7 +7,6 @@ menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
 version: 2.1
-github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services

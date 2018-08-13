@@ -6,7 +6,6 @@ menu_title: Upgrade from Open Source to Commerce
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 functional_areas:
   - Upgrade
 ---

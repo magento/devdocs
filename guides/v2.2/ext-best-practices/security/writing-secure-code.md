@@ -5,7 +5,6 @@ title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
 version: 2.2
-github_link: ext-best-practices/security/writing-secure-code.md
 ---
 
 ## Overview

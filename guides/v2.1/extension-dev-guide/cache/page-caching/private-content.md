@@ -6,7 +6,6 @@ menu_title: Private content
 menu_order: 18
 menu_node:
 version: 2.1
-github_link: extension-dev-guide/cache/page-caching/private-content.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html

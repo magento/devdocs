@@ -6,7 +6,6 @@ menu_title: Configure your project
 menu_order: 5
 menu_node:
 version: 2.0
-github_link: cloud/project/project-webint-basic.md
 functional_areas:
   - Cloud
   - Configuration

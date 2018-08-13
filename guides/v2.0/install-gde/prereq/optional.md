@@ -5,7 +5,6 @@ title: Optional software
 menu_title: Optional software
 menu_order: 400
 version: 2.0
-github_link: install-gde/prereq/optional.md
 redirect_from: /guides/v1.0/install-gde/prereq/optional.html
 functional_areas:
   - Install

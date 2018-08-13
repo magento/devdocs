@@ -2,7 +2,6 @@
 group: compman
 title: Install extensions from the command line
 version: 2.1
-github_link: comp-mgr/install-extensions.md
 ---
 
 Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"} or another Magento extension distribution system. Extensions include:

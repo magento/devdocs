@@ -5,7 +5,6 @@ landing-page: JavaScript Developer Guide
 menu_title: Introduction
 menu_order: 1
 version: 2.0
-github_link: javascript-dev-guide/bk-javascript-dev-guide.md
 ---
 
 ## Introduction   {#overview-introduction}

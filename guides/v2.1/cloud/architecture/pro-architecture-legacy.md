@@ -2,7 +2,6 @@
 group: cloud
 title: Pro architecture (legacy)
 version: 2.1
-github_link: cloud/architecture/pro-architecture-legacy.md
 functional_areas:
   - Cloud
 ---

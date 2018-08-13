@@ -6,7 +6,6 @@ menu_title: Get the Magento software
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: install-gde/install/get-software.md
 functional_areas:
   - Install
   - System

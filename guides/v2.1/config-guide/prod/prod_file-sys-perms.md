@@ -6,7 +6,6 @@ menu_title: Magento ownership and permissions in development and production
 menu_node:
 menu_order: 2
 version: 2.1
-github_link: config-guide/prod/prod_file-sys-perms.md
 functional_areas:
   - Configuration
   - System

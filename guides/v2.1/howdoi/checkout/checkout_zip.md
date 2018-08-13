@@ -7,7 +7,6 @@ subtitle: Customize Checkout
 menu_order: 6
 level3_subgroup: checkout-tutorial
 version: 2.1
-github_link: howdoi/checkout/checkout_zip.md
 functional_areas:
   - Checkout
 ---

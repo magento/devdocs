@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Configure message queues
 version: 2.3
-github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration

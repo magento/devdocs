@@ -2,7 +2,6 @@
 group: cloud
 title: Application variables
 version: 2.0
-github_link: cloud/env/environment-vars_magento.md
 functional_areas:
   - Cloud
   - Configuration

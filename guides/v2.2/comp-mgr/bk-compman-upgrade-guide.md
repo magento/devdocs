@@ -2,7 +2,6 @@
 group: compman
 title: Upgrade the Magento application and modules
 version: 2.2
-github_link: comp-mgr/bk-compman-upgrade-guide.md
 functional_areas:
   - Upgrade
 ---

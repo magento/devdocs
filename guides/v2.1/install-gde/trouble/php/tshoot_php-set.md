@@ -6,7 +6,6 @@ menu_title: PHP settings errors
 menu_node:
 menu_order: 350
 version: 2.1
-github_link: install-gde/trouble/php/tshoot_php-set.md
 functional_areas:
   - Install
   - System

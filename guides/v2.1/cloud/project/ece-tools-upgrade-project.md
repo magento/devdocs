@@ -2,7 +2,6 @@
 group: cloud
 title: Upgrade to ece-tools
 version: 2.1
-github_link: cloud/project/ece-tools-upgrade-project.md
 functional_areas:
   - Cloud
   - Upgrade

@@ -6,7 +6,6 @@ menu_title: Step 4. Uninstall
 menu_node:
 menu_order: 50
 version: 2.1
-github_link: comp-mgr/module-man/compman-uninst-final.md
 redirect_from: /guides/v2.0/comp-mgr/compman-uninst-final.html
 functional_areas:
   - Upgrade

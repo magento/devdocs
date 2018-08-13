@@ -2,7 +2,6 @@
 group: cloud
 title: Apply custom patches
 version: 2.2
-github_link: cloud/project/project-patch.md
 functional_areas:
   - Cloud
   - Upgrade

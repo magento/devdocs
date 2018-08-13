@@ -7,7 +7,6 @@ menu_order: 262
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.6EE.md
 ---
 
 *	TOC

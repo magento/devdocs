@@ -5,7 +5,6 @@ title: Contribute to Magento DevDocs
 menu_title: Contribute to Magento DevDocs
 menu_order: 
 version: 2.1
-github_link: extension-dev-guide/Contribute_edg.md
 
 ---
 

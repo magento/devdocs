@@ -3,7 +3,6 @@ group: pattern
 title: Admin Design Pattern Library
 landing-page: Pattern Library
 version: 2.1
-github_link: pattern-library/bk-pattern.md
 redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 ## What is a design pattern?

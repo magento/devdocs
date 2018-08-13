@@ -6,7 +6,6 @@ menu_title: Local environment setup
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: cloud/access-acct/first-time-setup.md
 redirect_from:
   - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
   - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html

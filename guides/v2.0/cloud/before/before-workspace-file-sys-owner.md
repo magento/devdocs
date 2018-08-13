@@ -6,7 +6,6 @@ menu_title: Set up the Magento file system owner
 menu_order: 25
 menu_node:
 version: 2.0
-github_link: cloud/before/before-workspace-file-sys-owner.md
 functional_areas:
   - Cloud
   - Setup

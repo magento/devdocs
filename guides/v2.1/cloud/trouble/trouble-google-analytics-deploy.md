@@ -6,7 +6,6 @@ menu_title: Resolve issues with Google Analytics during deployment
 menu_order: 35
 menu_node:
 version: 2.1
-github_link: cloud/trouble/trouble-google-analytics-deploy.md
 functional_areas:
   - Cloud
   - Configuration

@@ -5,7 +5,6 @@ title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
 version: 2.1
-github_link: config-guide/config/config-create.md
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration

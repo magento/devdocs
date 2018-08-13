@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Message Queues
 version: 2.3
-github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.3/extension-dev-guide/message-queues.html
 
 ---

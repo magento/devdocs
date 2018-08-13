@@ -3,7 +3,6 @@ group: arch-guide
 title: Modules and areas
 menu_title: Modules and areas
 version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_and_areas.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_and_areas.html
   - /guides/v2.0/architecture/modules/mod_and_areas.html

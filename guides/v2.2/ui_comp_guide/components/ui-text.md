@@ -4,7 +4,6 @@ subgroup: components
 title: Text component
 menu_title: Text component
 version: 2.2
-github_link: ui_comp_guide/components/ui-text.md
 ---
 
 ## Overview

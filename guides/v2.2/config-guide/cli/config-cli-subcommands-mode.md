@@ -2,7 +2,6 @@
 group: config-guide
 title: Set the Magento mode
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-mode.md
 functional_areas:
   - Configuration
   - System

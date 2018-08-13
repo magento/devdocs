@@ -2,7 +2,6 @@
 group: mftf
 title: Actions in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/release-1/cest/actions.md
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/cest/actions.html

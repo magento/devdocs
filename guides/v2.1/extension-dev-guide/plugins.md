@@ -5,7 +5,6 @@ title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
 version: 2.1
-github_link: extension-dev-guide/plugins.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html

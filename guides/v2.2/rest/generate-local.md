@@ -5,7 +5,6 @@ title: Generate a local REST API reference
 menu_title: Generate a local API reference
 menu_order: 5
 version: 2.0
-github_link: rest/generate-local.md
 functional_areas:
   - Integration
 ---

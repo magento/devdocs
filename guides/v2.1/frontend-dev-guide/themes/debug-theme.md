@@ -5,7 +5,6 @@ title: Locate templates, layouts, and styles
 menu_title: Locate templates, layouts, and styles
 menu_order: 50
 version: 2.1
-github_link: frontend-dev-guide/themes/debug-theme.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 functional_areas:
   - Frontend

@@ -5,7 +5,6 @@ title: UI components XML configuration structure
 menu_title: UI components XML configuration structure  
 menu_order: 15
 version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 ---
 
 ## Overview

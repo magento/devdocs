@@ -2,7 +2,6 @@
 group: fedg
 title: Layout overview
 version: 2.2
-github_link: frontend-dev-guide/layouts/layout-overview.md
 functional_areas:
   - Frontend
 ---

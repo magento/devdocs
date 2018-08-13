@@ -2,7 +2,6 @@
 group: cloud
 title: Message queues
 version: 2.1
-github_link: cloud/trouble/message-queues.md
 functional_areas:
   - Cloud
   - Configuration

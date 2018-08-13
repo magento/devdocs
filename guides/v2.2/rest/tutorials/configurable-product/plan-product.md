@@ -10,7 +10,6 @@ return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
 version: 2.2
-github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:
   - Integration
 ---

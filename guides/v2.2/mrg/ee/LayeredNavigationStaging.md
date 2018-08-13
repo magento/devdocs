@@ -7,7 +7,6 @@ menu_title: LayeredNavigationStaging
 menu_order: 2
 version: 2.2
 ee_only: true
-github_link: mrg/ee/LayeredNavigationStaging.md
 ---
 
 

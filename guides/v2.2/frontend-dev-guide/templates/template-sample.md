@@ -2,7 +2,6 @@
 group: fedg
 title: Illustration of customizing templates
 version: 2.2
-github_link: frontend-dev-guide/templates/template-sample.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 functional_areas:
   - Frontend

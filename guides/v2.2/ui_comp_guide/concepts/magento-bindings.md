@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: concepts
 title: Magento binding syntax
 version: 2.2
-github_link: ui_comp_guide/concepts/magento-bindings.md
 ---
 
 ## Overview

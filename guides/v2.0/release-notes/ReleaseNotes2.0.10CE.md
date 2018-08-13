@@ -7,7 +7,6 @@ menu_order: 170
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
 version: 2.0
-github_link: release-notes/ReleaseNotes2.0.10CE.md
 ---
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.10. This release includes multiple security and functional enhancements as well as enhancements to the Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. New Sales API methods allow third party solutions, such as shipping or ERP applications, to use APIs when they create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} or {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}.

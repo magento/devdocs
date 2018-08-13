@@ -2,7 +2,6 @@
 group: config-guide
 title: Message Queues Overview
 version: 2.3
-github_link: config-guide/mq/rabbitmq-overview.md
 ---
 
 The Message Queue Framework (MQF) is a system that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.

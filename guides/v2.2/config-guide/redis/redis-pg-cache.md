@@ -6,7 +6,6 @@ menu_title: Use Redis for the Magento page and default cache
 menu_order: 5
 menu_node:
 version: 2.2
-github_link: config-guide/redis/redis-pg-cache.md
 functional_areas:
   - Configuration
   - System

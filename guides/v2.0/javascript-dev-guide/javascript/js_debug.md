@@ -5,7 +5,6 @@ title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 20
 version: 2.0
-github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_debug.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_debug.html

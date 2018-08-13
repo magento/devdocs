@@ -7,7 +7,6 @@ menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.0
-github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 functional_areas:
   - Install

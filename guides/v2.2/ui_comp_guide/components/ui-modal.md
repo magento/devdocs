@@ -4,7 +4,6 @@ subgroup: components
 title: Modal сomponent
 menu_title: Modal component
 version: 2.2
-github_link: ui_comp_guide/components/ui-modal.md
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 

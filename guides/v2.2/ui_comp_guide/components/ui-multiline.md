@@ -4,7 +4,6 @@ subgroup: components
 title: Multiline component
 menu_title: Multiline component
 version: 2.2
-github_link: ui_comp_guide/components/ui-multiline.md
 ---
 
 ## Overview

@@ -5,7 +5,6 @@ title: Install Magento
 menu_title: Install Magento
 menu_order: 50
 version: 2.0
-github_link: cloud/before/before-setup-env-install.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
   - /guides/v2.1/cloud/before/before-setup-env-perms.html

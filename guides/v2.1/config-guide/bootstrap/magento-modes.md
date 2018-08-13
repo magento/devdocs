@@ -2,7 +2,6 @@
 group: config-guide
 title: About Magento modes
 version: 2.1
-github_link: config-guide/bootstrap/magento-modes.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:
   - Configuration

@@ -5,7 +5,6 @@ title: JavaScript Logger
 menu_title: JavaScript Logger
 menu_order: 20
 version: 2.2
-github_link: javascript-dev-guide/javascript/js_logger.md
 ---
 
 ## Logger overview

@@ -4,7 +4,6 @@ subgroup: components
 title: FileUploader component
 menu_title: FileUploader component
 version: 2.1
-github_link: ui_comp_guide/components/ui-fileuploader.md
 ---
 
 ## Overview

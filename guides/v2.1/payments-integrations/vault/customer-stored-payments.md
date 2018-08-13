@@ -5,7 +5,6 @@ title: Display the stored information
 menu_title: Display the stored information
 menu_order: 20
 version: 2.1
-github_link: payments-integrations/vault/customer-stored-payments.md
 functional_areas:
   - Integration
 ---

@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 version: 2.1
-github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html

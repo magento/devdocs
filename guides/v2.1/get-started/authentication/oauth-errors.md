@@ -5,7 +5,6 @@ title: OAuth error codes
 menu_title: OAuth error codes
 menu_order: 3
 version: 2.1
-github_link: get-started/authentication/oauth-errors.md
 functional_areas:
   - Integration
 ---
