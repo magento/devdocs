@@ -66,8 +66,8 @@ Field name | Data type | Description
 `id` | Integer | Identifies the bulk or asynchronous request
 `bulk_uuid` | String | Generated UUID
 `topic_name` | String | The message queue topic 
-`serialized_data` | String | 
-`result_serialized_data` | String | 
+`serialized_data` | String | An array of serialized input data. Contains serialized JSON with the following keys: `entity_id` - `null`, `entity_link` - empty string, `meta_info` - contains body of API request that was executed.
+`result_serialized_data` | String | Contains serialized output of corresponding API Call. (Example: If call `POST /async/V1/products` was executed, this field will contains serialized response from execution of `POST /V1/products`) 
 `status` | Integer | The operation status <br/>* `1` = Complete <br/>* `2` = The operation failed, but you can try to perform it again<br/>* `3` = The operation failed. You must change something to retry it.<br/>* `4` = Open<br/>* `5` = Rejected
 `result_message` | String | Describes the result of the operation. If successful, the value contains the string `Service execution success` as well as the method that executed the operation.
 `error_code` | Integer | 
