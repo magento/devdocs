@@ -8,7 +8,6 @@ menu_order: 200
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.1
-github_link: install-gde/basics/basics_docroot.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
 functional_areas:
   - Install
@@ -28,9 +27,11 @@ The path to your web server's default docroot varies depending on the following:
 As part of the Magento 2 installation process, you specify a subdirectory (usually `magento2`) under the docroot. The Magento-specific files are installed in this subdirectory, so knowing where to locate the default docroot is critical.
 
 ## Contact your hosting provider
+
 If you use one, contact your hosting provider to locate the web server docroot. For example, [cPanel](http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder){:target="\_blank"} typically uses `public_html` as its docroot, but you should contact your provider to confirm.
 
 ## Find the docroot yourself
+
 This section assumes you've already set up a simple web server using [Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="\_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="\_blank"}.
 
 {:.bs-callout .bs-callout-info}

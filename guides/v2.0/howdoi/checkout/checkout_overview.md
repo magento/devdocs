@@ -8,7 +8,6 @@ menu_node:
 level3_subgroup: checkout-tutorial
 menu_order: 0
 version: 2.0
-github_link: howdoi/checkout/checkout_overview.md
 functional_areas:
   - Checkout
 ---
@@ -28,6 +27,7 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 </div>
 
 ## List of available customizations
+
 You can customize the default checkout in multiple ways. This tutorial includes the following customizations:
 
  - [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)

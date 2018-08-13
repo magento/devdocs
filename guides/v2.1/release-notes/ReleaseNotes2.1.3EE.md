@@ -7,7 +7,6 @@ menu_order: 269
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.3EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. This release includes many functional fixes and enhancements.
@@ -15,7 +14,6 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
-
 
 ## Highlights
 
@@ -59,13 +57,9 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 * **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
-
-
-
 ## Functional fixes and enhancements
+
 We address the following functional fixes and enhancements in this release.
-
-
 
 ### Cart and checkout
 {:.no_toc} 
@@ -96,7 +90,6 @@ We address the following functional fixes and enhancements in this release.
 
 <!---57168-->* We fixed a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
-
 ### Configurable products
 {:.no_toc} 
 
@@ -121,16 +114,12 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
 
-
-
 ### Email
 {:.no_toc}
 
 <!---57496-->* Magento now successfully loads the New Order Email templates. <a href="https://github.com/magento/magento2/issues/5101" target="_blank">(GITHUB-5101)</a>
 
 <!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
-
-
 
 ### General fixes
 {:.no_toc} 
@@ -183,7 +172,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59397-->* Custom themes now inherit parent {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration information as expected.  
 
-
 ### Gift cards
 {:.no_toc} 
 
@@ -196,8 +184,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.
-
-
 
 ### Images
 {:.no_toc} 
@@ -212,11 +198,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---56972-->* You can now set an image size for product watermarks. <a href="https://github.com/magento/magento2/issues/5270" target="_blank">(GITHUB-5270)</a> 
 
 <!---55608-->*  Graphics now scroll as expected on mobile devices. <a href="https://github.com/magento/magento2/issues/5302" target="_blank">(GITHUB-5302)</a> 
-
-
-
-
-
 
 ### Import/Export
 {:.no_toc} 
@@ -240,11 +221,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57981-->* You can now export a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
 
-
-
-
-
-
 ### Indexing
 {:.no_toc} 
 
@@ -254,8 +230,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
 <!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
-
-
 
 ### Installation, upgrade, and deployment
 {:.no_toc} 
@@ -281,18 +255,6 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### Orders
 {:.no_toc} 
 
@@ -311,17 +273,6 @@ We've enhanced the performance of configurable products in several ways:
 
 
 <!---57387 -->* You can now print invoices and credit memos from the Order page. 
-
-
-
-
-
-
-
-
-
-
-
 
 ### Payment methods
 {:.no_toc} 
@@ -350,23 +301,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---59637-->*  Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
 `Uncaught Error: [paypal-container] is not a valid DOM Element`. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Performance
 {:.no_toc} 
 We've improved the performance of these tasks: 
@@ -383,30 +317,6 @@ We've improved the performance of these tasks:
 
 <!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) command). 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Scope
 {:.no_toc} 
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
@@ -421,15 +331,10 @@ We've improved the performance of these tasks:
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
-
-
-
 ### Staging
 {:.no_toc} 
 
 <!---57346-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
-
-
 
 ### Static file processing
 {:.no_toc} 
@@ -439,7 +344,6 @@ We've improved the performance of these tasks:
 
 <!---57904-->* We've improved the speed of static asset deployment. See <a href="{{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
-
 ### Tier pricing
 {:.no_toc} 
 
@@ -448,13 +352,10 @@ We've improved the performance of these tasks:
 
 <!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
 
-
-
 ### Tracking and shipping
 {:.no_toc}  
 
 <!---57037-->* UPS now generates shipping rates for Puerto Rico postal codes.
-
 
 ### Varnish
 {:.no_toc} 
@@ -473,14 +374,9 @@ We've improved the performance of these tasks:
 
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
-
-
-
-
 ## Breaking changes
+
 We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} configuration.
-
-
 
 ### New method
 {:.no_toc} 
@@ -526,15 +422,6 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602, 57144, 60801 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731, 60696-->
-
-
-
-
-
-
-
-
-
 
 ## Known issues
 
@@ -611,9 +498,8 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
  	}
  ```
 
-
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
 
@@ -622,14 +508,14 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 {% include install/releasenotes/ee_install_21.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 
 

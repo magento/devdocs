@@ -8,7 +8,6 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
-github_link: b2b/shared-cat-manage.md
 functional_areas:
   - B2B
   - Catalog
@@ -45,7 +44,6 @@ Name | Description | Format | Requirements
 `created_by` | The user ID of the admin who created the shared catalog | integer | Optional
 `store_id`  | The store ID the shared catalog is assigned to | integer | Required to create or update a shared catalog.
 `tax_class_id`  | | integer |  Required to create a shared catalog. 2 - Taxable goods; 3 - Retail Customer
-
 
 ### Create a custom shared catalog
 

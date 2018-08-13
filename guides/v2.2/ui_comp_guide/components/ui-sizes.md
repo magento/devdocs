@@ -4,7 +4,6 @@ subgroup: components
 title: Sizes component
 menu_title: Sizes component
 version: 2.2
-github_link: ui_comp_guide/components/ui-sizes.md
 ---
 
 ## Overview

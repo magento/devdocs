@@ -5,13 +5,13 @@ title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
 version: 2.1
-github_link: extension-dev-guide/build/composer-integration.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/composer-integration.html
   - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
 ## Overview
+
 Magento 2 uses [Composer][0]{:target="\_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
@@ -28,6 +28,7 @@ Magento does not support the [`path`][3] repository.
 </div>
 
 ## Composer binary location {#composer-binary}
+
 Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.
 
 Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.
@@ -40,9 +41,11 @@ The [installation instructions for system integrators][10] use the {{site.data.v
 A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
 
 ## Descriptions of different composer.json files {#composerjson-overview}
+
 The following Magento components and product editions use a `composer.json` file.
 
 ### Magento Root
+
 **Location:** `composer.json`
 
 **Name:** `magento/magento2ce`
@@ -78,6 +81,7 @@ Magento system integrators use this `composer.json` file to deploy the {{site.da
 ----
 
 ### Magento Framework
+
 **Location:** `lib/internal/Magento/Framework/composer.json`
 
 **Name:** `magento/framework`
@@ -89,6 +93,7 @@ The Magento application uses this `composer.json` file for its framework package
 ----
 
 ### Module
+
 **Locations:**
 
 * `app/code/<vendor-name>/<module-name>/composer.json`
@@ -103,6 +108,7 @@ The `composer.json` file for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b14
 ----
 
 ### Theme
+
 **Locations:**
 
 * `app/design/frontend/<vendor-name>/<theme-name>/composer.json`
@@ -117,6 +123,7 @@ The `composer.json` file for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7
 ----
 
 ### Language Package
+
 **Location:**
 `app/i18n/<vendor-name>/<language-code>/composer.json`
 

@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Quick start. Adjust configuration
 version: 2.1
-github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
 ---
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
@@ -37,9 +36,11 @@ Example:
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 
 #### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
+
 In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} URL.
 
 #### Set browser that the FTF will use for tests {#mtf_quickstart_config_configxml_browser}
+
 The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
@@ -78,6 +79,7 @@ Find `credentials.xml` in `<magento2_root_dir>/dev/tests/functional`, and open i
 </div>
 
 #### Set credentials for Magento modules under test {#mtf_quickstart_config_credentialsxml-set}
+
 Open `credentials.xml`.
 
 Find block of elements for the Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} you want to test.

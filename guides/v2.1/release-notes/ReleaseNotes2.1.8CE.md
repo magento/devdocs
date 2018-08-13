@@ -7,7 +7,6 @@ menu_order: 160
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.8CE.md
 ---
 
 *	TOC
@@ -20,7 +19,6 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.
-
 
 ## Highlights
 
@@ -41,10 +39,9 @@ With this release, we're inaugurating a new feature of our release notes: descri
 
 If a community member has provided a fix, we identify the fix with the phrase, "*Fix provided by community member @member_name*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR.
 
-
 ## Fixed issues and enhancements
-This release includes both improvements we've made internally and those submitted by the community through our Community Engineering program.  
 
+This release includes both improvements we've made internally and those submitted by the community through our Community Engineering program.  
 
 ### Catalog
 
@@ -99,8 +96,6 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@Pieter Hoste</a>.*
 
-
-
 ### Checkout
 
 <!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout.
@@ -108,7 +103,6 @@ This release includes both improvements we've made internally and those submitte
 <!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member <a href="https://github.com/rachkulik" target="_blank">@Ilia Rachkulik</a> in pull request <a href="https://github.com/magento/magento2/pull/9485" target="_blank">9485</a>.*
 
 <!--- 68902 -->* Magento now highlights in any red fields that are missing shipping information when you proceed to checkout. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9500" target="_blank">9500</a>.*
-
 
 ### Configurable products
 
@@ -126,10 +120,6 @@ This release includes both improvements we've made internally and those submitte
 
 
 <!--- 69501 -->* Color swatches are now replaced by images on the Catalog and Product pages.
-
-
-
-
 
 ### General
 
@@ -226,7 +216,6 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a>.*
 
-
 ### Import/Export
 
 <!--- 62995 -->* We've fixed an issue where product URL keys (for SKUs) were not  auto-generated as expected during import.
@@ -247,7 +236,6 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a>.*
 
-
 ### Installation and deployment
 
 <!--- 63020 -->*  Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, `bin/magento setup:static-content:deploy en_CA fr_CA de_DE`).
@@ -265,7 +253,6 @@ This release includes both improvements we've made internally and those submitte
 <!--- 60723 -->* Nginx now redirects to the setup page when using port 81.
 
 <!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the limit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
-
 
 ### Order management
 
@@ -287,10 +274,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 60326 -->* Magento now correctly identifies an order being processed when it is placed in a store configured for multiple currencies.  Previously, these orders always were identified as potentially fraudulent.
 
-
-
 ### Payment methods
-
 
 <!--- 68811 -->*  Magento now permits you to run reference transactions in a different currency than the currency that the authorization uses. Previously, Magento did not support sending authorizations in any currency other than U.S. dollars.  
 
@@ -299,9 +283,6 @@ This release includes both improvements we've made internally and those submitte
 
 
 <!--- 63702, 64730 -->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: `We can't place the order`. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
-
-
-
 
 ### Performance
 
@@ -315,10 +296,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *Fix submitted by community member <a href="https://github.com/ekuusela" target="_blank">Eero Kuusela</a> in pull request <a href="https://github.com/magento/magento2/pull/9647" target="_blank">9647</a>.*
 
-
-
 ### Reports
-
 
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report.
 
@@ -330,7 +308,6 @@ This release includes both improvements we've made internally and those submitte
 ### Sample data
 
 <!--- 64499 -->* You can now successfully install Magento with sample data when   **auto_increment_increment** is set to **3**  in the `options` file. Previously, installation completed successfully, but Magento displayed this error: `Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.`
-
 
 ### Search
 
@@ -345,13 +322,11 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
-
 ### Shipping methods
 
 <!--- 59660 -->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
 <!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the front end only, but not on the Admin order creation page.
-
 
 ### Tax
 
@@ -363,8 +338,6 @@ This release includes both improvements we've made internally and those submitte
 
 
 <!--- 61135 -->* You can now use  REST to  add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
-
-
 
 ## Community contributions
 
@@ -567,18 +540,19 @@ The following table identifies contributions from our community members. This ta
 <!--- INTERNAL ONLY  64299, 64244, 64243, 64242, 64241, 64240, 70084, 67109, 67115, 67101, 66711, 70037, 70036, 67748, 69707, 68990, 68951, 70620, 70617, 60742, 69474, 67110, 64512, 67715, 69637, 66276, 67104, 67105, 67751, 68826, 67261 -->
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 {% include install/releasenotes/ce_install_21.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports.

@@ -8,7 +8,6 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/roles.md
 functional_areas:
   - B2B
 ---
@@ -105,7 +104,6 @@ The following table lists the parameters defined in `RoleInterface`.
 <tr>
 <td><code>permission</code></td><td>Either <code>allow</code> or <code>deny</code>.</td><td>string</td><td>Required</td></tr>
 </table>
-
 
 ### Create a role
 

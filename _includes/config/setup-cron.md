@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ### Prerequisites
+
 Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:
 
 *	PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
@@ -19,6 +20,7 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 </div>
 
 #### Find the PHP binary and php.ini path
+
 To display the path to your PHP binary, enter
 
 	which php

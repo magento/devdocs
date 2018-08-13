@@ -4,7 +4,6 @@ subgroup: components
 title: DateColumn component
 menu_title: DateColumn component
 version: 2.1
-github_link: ui_comp_guide/components/ui-datecolumn.md
 ---
 
 ## Overview

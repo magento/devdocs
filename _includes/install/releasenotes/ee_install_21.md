@@ -1,6 +1,7 @@
 <div markdown="1">
  
 ## Install the Magento software
+
 See one of the following sections:
 
 *	[Get Magento Commerce using Composer](#install-rc-composer)
@@ -38,4 +39,5 @@ After you get the Commerce software:
 	*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 ## Upgrade from an earlier version
+
 To upgrade to Magento Commerce 2.1 from an earlier version, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).

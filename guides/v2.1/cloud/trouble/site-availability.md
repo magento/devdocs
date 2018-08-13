@@ -2,7 +2,6 @@
 group: cloud
 title: Site availability
 version: 2.1
-github_link: cloud/trouble/site-availability.md
 functional_areas:
   - Cloud
   - Configuration
@@ -14,6 +13,7 @@ If you have site availability issues, the first thing you should do is review yo
 You may be able to resolve your issue by searching your logs for one of the examples in this topic and trying the associated solution.
 
 ## CredisException
+
 This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment in the deploy phase.
 
     [2018-01-30 18:56:52] Generating static content for locales: en_US
@@ -30,10 +30,12 @@ You can also move static content deployment from the deploy phase to the build p
 Static content deployment in the build phase also reduces downtime. The deploy phase puts your application in maintenance mode, which takes your site offline until static content deployment is complete. If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime.
 
 ### Symptoms
+
 -   Your site is not functioning at all. HTTP requests result in 50x errors.
 -   Your site is functioning normally, but fails to refresh static assets.
 
 ### Solution
+
 Modify the deploy phase using the `STATIC_CONTENT_THREADS` environment variable and redeploy your site.
 
 1.  In a terminal, log in to your project.

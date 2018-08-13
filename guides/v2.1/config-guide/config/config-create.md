@@ -5,7 +5,6 @@ title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
 version: 2.1
-github_link: config-guide/config/config-create.md
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration
@@ -14,6 +13,7 @@ functional_areas:
 ---
 
 ## Extend configuration types {#config-files-extend-create}
+
 To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
@@ -23,6 +23,7 @@ Because the event configuration type already exists in Magento, the loader and t
 Your new `events.xml` is automatically collected from your module and merged with other `events.xml` files for other modules.
 
 ## Create configuration types {#config-files-extend-create-create}
+
 To create new configuration type, you must add at minimum:
 
 *  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files

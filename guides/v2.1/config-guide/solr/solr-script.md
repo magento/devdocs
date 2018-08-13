@@ -7,7 +7,6 @@ menu_order: 3
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/solr/solr-script.md
 functional_areas:
   - Configuration
   - Search
@@ -46,6 +45,7 @@ If you have created multiple cores, make sure the value of the `maxBooleanClause
 If one or more of the `maxBooleanClauses` parameters is set too low, the search results page could display no results.
 
 ### Script Solr startup and shutdown {#solr-script}
+
 In a production environment, you should start and stop Solr using a script.
 
 <div class="bs-callout bs-callout-info" id="info">

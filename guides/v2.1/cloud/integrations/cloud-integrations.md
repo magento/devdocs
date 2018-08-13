@@ -2,7 +2,6 @@
 group: cloud
 title: Integrations
 version: 2.1
-github_link: cloud/integrations/cloud-integrations.md
 functional_areas:
   - Cloud
   - Setup

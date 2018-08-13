@@ -2,7 +2,6 @@
 group: config-guide
 title: Deploy static view files
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 functional_areas:
   - Configuration

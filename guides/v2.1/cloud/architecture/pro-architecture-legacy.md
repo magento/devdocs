@@ -2,7 +2,6 @@
 group: cloud
 title: Pro architecture (legacy)
 version: 2.1
-github_link: cloud/architecture/pro-architecture-legacy.md
 functional_areas:
   - Cloud
 ---
@@ -62,6 +61,7 @@ The following table summarizes the differences between environments:
 </table>
 
 ## Integration environment {#cloud-arch-int}
+
 Developers use the Integration environment to develop, deploy, and test:
 
 -   Magento application code
@@ -75,6 +75,7 @@ The Integration environment runs in a Linux container (LXC) on a grid of servers
 The Integration environment does not support all services. For example, Fastly is not accessible in Integration.
 
 #### Branches
+
 You can have an unlimited number of _inactive_ Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the `magento-cloud environment:activate` command to activate the environment.
 
 When you update your project to manage the [Staging and Production environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), all active and inactive branches continue as children of the `master` branch.
@@ -89,9 +90,11 @@ Developing in the Integration environment requires the following Git process:
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html) and [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Staging environment {#cloud-arch-stage}
+
 The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment, including Fastly, New Relic, Blackfire, and search, and shares the same dedicated IaaS hardware as the Production environment.
 
 #### Branches
+
 The Staging environment contains a default `master` branch. You cannot branch from the Staging environment `master` branch. You must push code changes from the Integration environment `master` branch to Staging environment `master` branch.
 
 When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `staging` that contains all user access settings and environment variables for your Staging environment.
@@ -100,9 +103,11 @@ When you update your project to manage the [Production and Staging environments 
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test  deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Production environment {#cloud-arch-prod}
+
 The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.
 
 #### Branches
+
 The Production environment contains a default `master` branch. You cannot branch from the Production environment `master` branch. You must push code changes from the Staging environment `master` branch to Production environment `master` branch.
 
 When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `production` that contains all user access settings and environment variables for your Production environment.
@@ -111,6 +116,7 @@ When you update your project to manage the [Production and Staging environments 
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Go Live and launch]({{ page.baseurl }}/cloud/live/live.html).
 
 ### Advantage of redundant hardware
+
 Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
 Because of our unique, triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
@@ -123,6 +129,7 @@ These three gateways map to the three servers in your Production environment clu
 -   Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
+
 Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours. 
 
 The coordinating agent that monitors your production system:
@@ -131,6 +138,7 @@ The coordinating agent that monitors your production system:
 -   Fully automates and coordinates recovery where an automated recovery is possible
 
 ### Production technology stack
+
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
 
 -   Fastly for HTTP caching and CDN
@@ -196,6 +204,7 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
 
 ## Prepare for development {#develop}
+
 To branch and develop your Magento store:
 
 1.   Set up your local environment

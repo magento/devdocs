@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
 version: 2.1
-github_link: javascript-dev-guide/javascript/js-resources.md
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html
@@ -33,6 +32,7 @@ In Magento, you can find the JS components on the following levels:
 Library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
 
 ### Specifying JS
+
 We recommend specifying JavaScript resources in the templates rather than in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates, to ensure processing of the resources in body of a page.
 
 ## Accessing JS resources
@@ -156,7 +156,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 
 * For the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
 * For the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
-
 
 ## Related reading
 

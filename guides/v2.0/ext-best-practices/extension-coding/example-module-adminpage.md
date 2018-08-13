@@ -5,7 +5,6 @@ title: Creating a Magento admin page
 menu_title: Creating a Magento admin page
 menu_order: 1000
 version: 2.0
-github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 functional_areas:
   - Standards
 ---
@@ -27,7 +26,6 @@ mkdir -p MyCompany/ExampleAdminNewPage
 ~~~
 
 This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
-
 
 ### Initial boilerplate files
 

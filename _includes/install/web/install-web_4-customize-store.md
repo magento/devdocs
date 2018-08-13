@@ -1,6 +1,6 @@
 <div markdown="1">
 
-<h2 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h2>
+## Step 4: Customize Your Store   {#instgde-install-magento-web-step4}
 
 <!-- 1.	To install optional sample data, select the **Use Sample Data** checkbox.
 
@@ -25,7 +25,8 @@
 
 4.	Click **Next**.
 
-<h4 id="instgde-install-magento-web-step4-depend1">General module configuration options</h4>
+#### General module configuration options   {#instgde-install-magento-web-step4-depend1}
+
 Modules are listed in **Advanced Modules Configuration** in alphabetical order; the order has nothing to do with dependencies.
 
 You have the following options for any module listed:
@@ -44,7 +45,8 @@ The following figure shows an example of disabling the `Magento_GoogleAnalytics`
 
 ![Disabling a module]({{ site.baseurl }}/common/images/install_wizard_disable-google.png)
 
-<h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
+#### Module dependency errors   {#instgde-install-magento-web-step4-depend2}
+
 A dependency error occurs when two inter-dependent modules are disabled at the same time. 
 
 If there is a dependency error, a message similar to the following displays.

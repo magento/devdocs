@@ -5,7 +5,6 @@ title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
 version: 2.1
-github_link: config-guide/config/config-files.md
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration
@@ -14,6 +13,7 @@ functional_areas:
 ---
 
 ## Overview of module configuration files {#config-files-overview}
+
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
@@ -32,9 +32,11 @@ Following are common terms used in this topic:
 </dl>
 
 ## Configuration load and merge {#config-files-loadmerge}
+
 This section discusses how configuration files are loaded and merged.
 
 ### How Magento loads configuration files {#config-files-load}
+
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration (<a href="{{ site.mage2000url }}app/etc/di.xml" target="_blank">app/etc/di.xml</a>). This file is used to bootstrap Magento.
@@ -46,6 +48,7 @@ Magento loads configuration files in the following order (all paths are relative
 *     `<component-name>`: Name of your component as defined in <a href="{{ site.mage2000url }}composer.json" target="_blank">composer.json</a>.
 
 ### Configuration file merge {#config-files-load-merge-merge}
+
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
 
 Magento's merge algorithm follows:
@@ -57,12 +60,14 @@ Magento's merge algorithm follows:
 After configuration files are merged, the resulting document contains all nodes from the original files.
 
 ## Configuration types, objects, and interfaces {#config-files-classes}
+
 The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:
 
 * <a href="#config-files-classes-objects">Configuration types and objects</a>
 * <a href="#config-files-classes-int">Configuration interfaces</a>
 
 ### Configuration types and objects {#config-files-classes-objects}
+
 The following table shows each configuration type and the Magento configuration object to which it relates.
 
 <table>
@@ -112,6 +117,7 @@ The following table shows each configuration type and the Magento configuration 
 </table>
 
 ### Configuration interfaces {#config-files-classes-int}
+
 You can interact with configuration files using interfaces under <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:

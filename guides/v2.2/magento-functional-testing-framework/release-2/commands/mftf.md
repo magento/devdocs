@@ -3,7 +3,6 @@ group: mftf
 title: |
     CLI commands: vendor/bin/mftf
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/commands/mtft.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0
@@ -64,7 +63,7 @@ vendor/bin/mftf run:group example
 ### Run and generate all tests
 
 ```bash
-vendor/bin/mftf run:tests
+vendor/bin/mftf run:test
 ```
 
 ## Reference
@@ -191,23 +190,23 @@ It also enables auto-completion in PhpStorm.
 
 #### Usage
 
-`generate:urn-catalog <path>`
+`generate:urn-catalog [options] <path to the directory with misc.xml>/`
 
-`<path>` is a path to the PhpStorm folder containing the `misc.xml` file (typically located in `<project root>/.idea/`).
+`misc.xml` is typically located in `<project root>/.idea/`.
 
 #### Options
 
 Option | Description
 ---|---
-`-f, --force` | Forces creation of the `misc.xml` file if it does not exist in the given `path`.
+`-f, --force` | Creates the `misc.xml` file if it does not exist in the given `path`.
 
 #### Example
 
 ```bash
-vendor/bin/mftf generate:urn-catalog /Users/user/Documents/Project/.idea/
+vendor/bin/mftf generate:urn-catalog .idea/
 ```
 
-#### `reset`
+### `reset`
 
 #### Description
 
@@ -277,7 +276,7 @@ Option | Description
 Generate from XML and execute the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests:
 
 ```bash
-vendor/bin/mftf run:tests LoginCustomerTest StorefrontCreateCustomerTest
+vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
 
 Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests:

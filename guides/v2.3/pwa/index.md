@@ -1,7 +1,6 @@
 ---
 layout: full-width
 title: Magento Progressive Web Applications (PWA)
-github_link: /pwa/index.md
 ---
 
 ## What is a Progressive Web App

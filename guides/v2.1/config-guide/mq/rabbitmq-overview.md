@@ -7,7 +7,6 @@ menu_order: 1
 menu_node: parent
 version: 2.1
 ee_only: True
-github_link: config-guide/mq/rabbitmq-overview.md
 functional_areas:
   - Configuration
   - System

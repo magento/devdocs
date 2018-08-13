@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Install the Magento software
+
 See one of the following sections:
 
 *	[Get Magento Open Source using Composer](#install-ce-composer)
@@ -37,6 +38,7 @@ After you get the Open Source software:
 	*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 ## Upgrade from an earlier version {#upgrade}
+
 To upgrade to version 2.0.x from an earlier version:
 
 *	[Web Setup Wizard (System Upgrade)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

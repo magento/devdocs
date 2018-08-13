@@ -6,7 +6,6 @@ menu_title: Command line configuration
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link: config-guide/cli/config-cli.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
 functional_areas:
   - Configuration
@@ -21,7 +20,6 @@ This topic discusses configuring the Magento software using the CLI. For informa
 
 ## Before you start configuring Magento {#config-install-cli-prereq}
 {% include install/before-you-begin-cli.html %}
-
 
 ## First steps {#config-install-cli-first}
 {% include install/first-steps-cli.html %}

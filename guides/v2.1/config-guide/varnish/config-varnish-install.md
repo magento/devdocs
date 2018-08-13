@@ -6,7 +6,6 @@ menu_title: Install Varnish
 menu_order: 5
 menu_node:
 version: 2.1
-github_link: config-guide/varnish/config-varnish-install.md
 functional_areas:
   - Configuration
   - System
@@ -24,6 +23,7 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 </div>
 
 ## Confirm your Varnish version {#config-varnish-version}
+
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V
@@ -37,4 +37,5 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

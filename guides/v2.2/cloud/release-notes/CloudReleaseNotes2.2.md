@@ -7,7 +7,6 @@ menu_order: 400
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: cloud/release-notes/CloudReleaseNotes2.2.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
@@ -48,19 +47,20 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
-
 ## Security enhancements {#security}
+
 Magento 2.2.0 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
 [Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
 
-
 ## Known issues {#known}
+
 For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
 
 ## Fixed issues {#fixed}
+
 This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
 
 <!--RFC-125-->* We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
@@ -86,6 +86,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 <!--- 68833 -->* We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout.
 
 ## Changes in Deployment {#deploy}
+
 When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in deployment:
 
 * `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
@@ -94,7 +95,7 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * The command for generating `config.php` changed in 2.2 from `php bin/magento magento-cloud:scd-dump` to `php vendor/bin/m2-ece-scd-dump`.
 
-* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
+* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project//project-upgrade.html#update-the-magentoappyaml-file). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
 
 * The deploy variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
 
@@ -113,13 +114,14 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of  top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
-
 ## System requirements {#requirements}
+
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
 The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="\_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
+
 If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.

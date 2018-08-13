@@ -9,7 +9,6 @@ version: 2.0
 tabgroup: best-practices
 tablabel: Admin
 tabweight: 20
-github_link: ext-best-practices/admin/admin-best-practices.md
 functional_areas:
   - Standards
 ---
@@ -23,11 +22,3 @@ This is an important section to read, because what {% glossarytooltip 55774db9-b
 </div>
 
 For additional information on design topics for the Admin, read the [Admin Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html) and the [Admin Style Guide]({{ page.baseurl }}/design-styleguide/bk-styleguide.html).
-
-### Articles
-
-{% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
-
-{% for node in subgroup %}
-*  [{{ node.menu_title }}]({{ page.baseurl }}/{{ node.github_link | replace: ".md",".html" }})
-{% endfor %}

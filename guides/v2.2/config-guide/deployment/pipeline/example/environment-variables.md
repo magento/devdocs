@@ -8,7 +8,6 @@ menu_order: 6300
 level3_menu_node: level3child
 level3_subgroup: deployment-examples
 version: 2.2
-github_link: config-guide/deployment/pipeline/example/environment-variables.md
 functional_areas:
   - Configuration
   - Deploy
@@ -35,9 +34,11 @@ You can use the same procedure to configure any settings in the following refere
 *	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
+
 Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Assumptions
+
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
 
 For the purposes of this example, we assume the following:
@@ -47,6 +48,7 @@ For the purposes of this example, we assume the following:
 *	Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}
+
 To set the default locale and weight units in your development system:
 
 1.	Log in to the Magento Admin.
@@ -74,6 +76,7 @@ To set the default locale and weight units in your development system:
 11.	If prompted, flush the cache.
 
 ## Step 2: Update the configuration
+
 Now that you've changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.
 
 {% include config/split-deploy/example_save-shared-config.md %}
@@ -81,17 +84,20 @@ Now that you've changed the configuration in the Magento Admin, write the shared
 Note that even though `app/etc/env.php` (the system-specific configuration) was updated, don't check it in to source control. You'll create the same configuration settings on your production system later in this procedure.
 
 ## Step 3: Update your build system and generate files
+
 Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.
 
 {% include config/split-deploy/example_build-sync.md %}
 
 ## Step 4: Update the production system
+
 The last step in the process is to update your production system. You must do it in two parts:
 
 *	[Update the sensitive and system-specific settings](#config-split-verify-sens)
 *	[Update the shared settings](#config-split-verify-shared)
 
 ### Update the sensitive and system-specific settings {#config-split-verify-sens}
+
 To set the sensitive and system-specific settings using environment variables, you must know the following:
 
 *	Each setting's scope 
@@ -111,6 +117,7 @@ To set the sensitive and system-specific settings using environment variables, y
 	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 
 #### Convert configuration paths to variable names
+
 As discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html), the format of variables is:
 
 <pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
@@ -131,6 +138,7 @@ The preceding table has a sample website code, `BASE`, for the Default Email Dom
 </div>
 
 #### Set the variables using environment variables
+
 You can set the variable values in the Magento `index.php` using the following format:
 
 	$_ENV['VARIABLE'] = 'value';
@@ -147,11 +155,13 @@ To set variable values:
 5.	Continue with the next section.
 
 ### Update the shared settings {#config-split-verify-shared}
+
 This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).
 
 {% include config/split-deploy/example_update-prod.md %}
 
 ### Verify configuration settings in the Magento Admin
+
 This section discusses how you can verify the configuration settings in your production system Admin.
 
 To verify the configuration settings:

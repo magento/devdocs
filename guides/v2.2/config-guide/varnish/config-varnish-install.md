@@ -6,7 +6,6 @@ menu_title: Install Varnish
 menu_order: 5
 menu_node:
 version: 2.2
-github_link: config-guide/varnish/config-varnish-install.md
 functional_areas:
   - Configuration
   - System
@@ -14,6 +13,7 @@ functional_areas:
 ---
 
 ## Install Varnish {#config-varnish-install}
+
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
 *	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>
@@ -27,6 +27,7 @@ If you intend to install Varnish modules (vmods), such as saint mode, you should
 </div>
 
 ## Confirm your Varnish version {#config-varnish-version}
+
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V
@@ -40,4 +41,5 @@ A sample follows:
 Make sure the version is 4.x or 5.x before continuing. If you are running version 3.x, you must upgrade to a supported version. Consult the Varnish installation documentation for more information.
 
 ### Next step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

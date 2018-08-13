@@ -5,7 +5,6 @@ title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
 version: 2.2
-github_link: config-guide/config/config-php.md
 functional_areas:
   - Configuration
   - System
@@ -85,6 +84,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
 ## Related topic
+
 <a href="{{ page.baseurl }}/config-guide/config/config-files.html">Module configuration files</a>
 
 [config-php]: {{ page.baseurl }}/config-guide/prod/config-reference-configphp.html

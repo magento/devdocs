@@ -7,7 +7,6 @@ menu_order: 24
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
-github_link: install-gde/prereq/php-settings.md
 functional_areas:
   - Install
   - System
@@ -48,6 +47,7 @@ To avoid issues during installation and upgrade, we strongly recommend you apply
 {% endcollapsible %}
 
 ### Step 1: Find PHP configuration files {#php-required-find}
+
 This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}

@@ -3,7 +3,6 @@ group: config-guide
 subgroup: 09_Varnish
 title: Configure and use Varnish
 version: 2.2
-github_link: config-guide/varnish/config-varnish.md
 functional_areas:
   - Configuration
   - System
@@ -11,6 +10,7 @@ functional_areas:
 ---
 
 #### Contents
+
 *	[Overview of the Varnish solution]  
 *	[Varnish topology diagram]
 *	[Process overview]
@@ -42,6 +42,7 @@ For more information about Varnish, see:
 *	[Varnish and Website Performance]
 
 ## Varnish topology diagram {#varnish-arch}
+
 The following figure shows a basic view of Varnish in your Magento topology.
 
 ![Basic Varnish diagram]
@@ -53,6 +54,7 @@ As the web server returns assets, cacheable assets are stored in Varnish. Any su
 Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or the [`magento cache:clean`] command.
 
 ## Process overview {#config-varnish-process}
+
 This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you'll export a Varnish configuration from the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and test it again.
 
 The process can be summarized as follows:
@@ -69,6 +71,7 @@ The process can be summarized as follows:
 * This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.
 
 ## Known issues {#config-varnish-issues}
+
 We know of the following issues with Varnish:
 
 *	[Varnish does not support SSL]

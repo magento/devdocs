@@ -4,7 +4,6 @@ subgroup: components
 title: Toolbar component
 menu_title: Toolbar component
 version: 2.1
-github_link: ui_comp_guide/components/ui-toolbar.md
 ---
 ## Overview
 

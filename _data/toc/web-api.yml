@@ -16,11 +16,6 @@ pages:
         - label: Status codes and responses
           url: /get-started/gs-web-api-response.html
 
-        - label: Order Processing with REST APIs Tutorial
-          class: tutorial
-          url: /get-started/order-tutorial/order-intro.html
-          versions: ["2.1", "2.2", "2.3"]
-
 
     - label: Use SOAP Services
       url: /get-started/soap/soap-web-api-calls.html

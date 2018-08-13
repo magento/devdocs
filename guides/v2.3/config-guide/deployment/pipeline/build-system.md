@@ -6,7 +6,6 @@ menu_title: Build System Setup
 menu_node:
 menu_order: 1400
 version: 2.2
-github_link: config-guide/deployment/pipeline/build-system.md
 functional_areas:
   - Configuration
   - Deploy
@@ -38,6 +37,7 @@ The build machine can be on its own host or on the same host as an installed Mag
 </div>
 
 ## Configure the build machine
+
 The following sections discuss how to configure the build machine.
 
 ### Install Composer
@@ -45,9 +45,11 @@ The following sections discuss how to configure the build machine.
 {% include install/composer-clone.md %}
 
 ### Install PHP
+
 To install PHP on CentOS or Ubuntu see [PHP](../../../install-gde/prereq/php-centos-ubuntu.html).
 
 ### Set up the build system
+
 To set up the build system:
 
 1.	Log in to the build system as, or switch to, the Magento file system owner.
@@ -84,5 +86,6 @@ To set up the build system:
 	See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Related topics
+
 *	[Set up your development systems]({{ page.baseurl }}/config-guide/deployment/pipeline/development-system.html)
 *	[Set up your production system]({{ page.baseurl }}/config-guide/deployment/pipeline/production-system.html)

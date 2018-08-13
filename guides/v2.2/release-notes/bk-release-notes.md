@@ -6,7 +6,6 @@ menu_title: 2.2.x Release Information
 menu_order: 1
 menu_node: parent
 version: 2.2
-github_link: release-notes/bk-release-notes.md
 ---
 
 
@@ -15,9 +14,6 @@ With Magento 2.2.5, we are moving to a quarterly release cycle for  minor releas
 
 Quarterly patch releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major and minor releases that occur outside this quarterly cadence. 
 </div>
-
-
-
 
 ## Magento 2.2.x Release Notes
 
@@ -63,8 +59,6 @@ We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}
 ## Magento Shipping release notes
 
 We provide a list of current fixes and enhancements to the Magento Shipping extension in the [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html). 
-
-
 
 ## Third-party license agreements
 

@@ -5,7 +5,6 @@ title: Magento_Company module
 menu_title: Company
 menu_order: 50
 version: 2.2
-github_link: mrg/b2b/Company.md
 functional_areas:
   - B2B
 ---

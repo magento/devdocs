@@ -7,7 +7,6 @@ menu_title: Introduction
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: get-started/bk-get-started-api.md
 redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
 functional_areas:
   - Integration
@@ -32,7 +31,6 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 * The framework supports field filtering of web API responses to conserve mobile bandwidth.
 
 * Integration style web APIs enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} where one web API call can create a product. If your payload includes the `stock_item` and `media_gallery_entries` objects, then the framework will also create the product’s inventory & media in that one API call.
-
 
 ## What can I do with the Magento web APIs? {#uses}
 
