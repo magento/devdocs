@@ -81,7 +81,7 @@ There are several ways to download the Magento software, including:
 
 *	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we'll install using Composer and the Command Line.
+For this example, we'll install using Composer and the command line.
 
 {:.bs-callout .bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
@@ -284,61 +284,76 @@ Refer to [MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html) for more infor
 
 There are several ways to download the Magento software, including:
 
-*   [Download an archive]({{page.baseurl }}/install-gde/prereq/zip_install.html)
+*	[Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*   [Get the Composer metapackage]({{page.baseurl }}/install-gde/composer.html)
+*	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*   [Clone the git repository]({{page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we'll download and extract an archive.
-
-1. Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we're using the CentoOS default `/usr/share/nginx/html`.
-
-		cd /usr/share/nginx/html
-
-2. Download the Magento archive, extract it, and rename the folder `magento2/`:
-
-		wget https://github.com/magento/magento2/archive/2.3.tar.gz
-		tar -xzvf 2.3.tar.gz
-		mv magento2-2.3/ magento2/
-
-3. [Set directory ownership and file permissions]({{page.baseurl }}/install-gde/prereq/file-system-perms.html).
-
-		cd /usr/share/nginx/html/magento2
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-		chown -R :apache .
-		chmod u+x bin/magento
-
-4. Install Composer globally. You'll need Composer to update dependencies before installing Magento:
-
-		curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-
-5. Update Magento dependencies:
-
-		cd /usr/share/nginx/html/magento2
-		composer install
-
-6. If prompted, enter your [Magento authentication keys]({{page.baseurl }}/install-gde/prereq/connect-auth.html).
-
-7. Install Magento from the [command line]({{page.baseurl }}/install-gde/install/cli/install-cli.html).
-
-		cd /usr/share/nginx/html/magento2/bin
-		./magento setup:install --base-url=http://www.magento-dev.com/ \
-		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-rewrites=1
-
-    Replace `http://www.magento-dev.com` with your domain name.
+For this example, we'll install using Composer and the command line.
 
 {:.bs-callout .bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
-8. Switch Magento to developer mode:
+1.  As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
 
-		cd /usr/share/nginx/html/magento2/bin
-		./magento deploy:mode:set developer
+1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we're using the Ubuntu default `/var/www/html`.
+
+		cd /var/www/html
+
+1.  Install Composer globally. You'll need Composer to update dependencies before installing Magento:
+
+		curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+
+1. Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
+
+    **{{site.data.var.ce}}**
+    ```bash
+    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+    ```
+
+    **{{site.data.var.ee}}**
+    ```bash
+    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    ```
+
+    When prompted, enter your [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your _public key_ is your username; your _private key_ is your password.
+
+1. Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.
+
+    ```terminal
+    cd /var/www/html/<magento install directory>
+    find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+    find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+    chown -R :www-data . // Ubuntu
+    chmod u+x bin/magento
+    ```
+
+1. Install Magento from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html). This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
+
+    ```bash
+    bin/magento setup:install \
+    --base-url=http://localhost/magento2ee \
+    --db-host=localhost \
+    --db-name=magento \
+    --db-user=magento \
+    --db-password=magento \
+    --backend-frontname=admin \
+    --admin-firstname=admin \
+    --admin-lastname=admin \
+    --admin-email=admin@admin.com \
+    --admin-user=admin \
+    --admin-password=admin123 \
+    --language=en_US \
+    --currency=USD \
+    --timezone=America/Chicago \
+    --use-rewrites=1
+    ```
+
+1. Switch to developer mode:
+
+		cd /var/www/html/magento2/bin
+    ./magento deploy:mode:set developer
 
 ### Configure nginx {#configure-nginx-centos}
 
