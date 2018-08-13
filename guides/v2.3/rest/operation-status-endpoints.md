@@ -1,6 +1,6 @@
 ---
 group: rest
-title: Status endpoints
+title: Bulk operation status endpoints
 version: 2.3
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com/
