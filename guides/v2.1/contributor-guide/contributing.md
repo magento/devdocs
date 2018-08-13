@@ -17,6 +17,7 @@ The following topics are included in this guide:
 - [Contribution requirements](#requirements)
 - [Fork a repository](#fork)
 - [Create a pull request](#pull_request)
+- [Magento Contributor Assistant](#contributor-assist)
 - [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
@@ -55,11 +56,11 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
-| | Fix for Existing Issue | Test Coverage | Refactoring| New Feature | Code Cleanup
-| --- | :---: | :---: | :---: | :---: | :---: |
-2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png)| ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png)
-2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png)
-2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png)
+|     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
+|:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
+| 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
+| 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
+| 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
 
 ## Contribution requirements {#requirements}
 
@@ -120,6 +121,90 @@ To create a pull request:
 1. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the Magento 2 repository’s [Pull Requests panel](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+
+## Magento Contributor Assistant {#contributor-assist}
+
+The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento/magento2` repository. It helps automate different issue and pull request workflows using commands entered as comments.
+
+Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issuess. We plan on adding features in the future.
+
+* [Deploy vanilla Magento instance](#vanilla-pr)
+* [Deploy instance based on PR changes](#deploy-pr)
+* [Combine multiple pull requests](#combine-pr)
+
+### Deploy vanilla Magento instance {#vanilla-pr}
+
+When you need to verify an issue or pull request, enter a command to generate an issue verification instance, or vanilla Magento. This instance is a clean Magento installation of a specified version tag or the develop branch of a specified release line.
+
+**Command:** To deploy a vanilla Magento instance, add the following command as a comment to the GitHub Pull Request or Issue:
+
+```
+@magento-engcom-team give me {$version} instance
+```
+
+For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and develop branches starting with 2.2.0 and 2.2-develop.
+
+**Actions:** The following actions complete for the command:
+
+- If the instance does not exist, it will be deployed. Deploymnent takes ~2 minutes.
+- If the instance exists, a fresh instance will be redeployed.
+- By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
+
+**Admin access:**
+
+- http://i-xxx.engcom.dev.magento.com/admin
+- Credentials: Username: admin | Password: 123123q
+
+### Deploy instance based on PR changes {#deploy-pr}
+
+To verify and test changes completed in a pull request, enter a command to generate a Magento instance using the code based in the PR.
+
+**Command:** To deploy, [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members), a [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) member, or contributor under the existing Pull Request enters the following command as a comment to the pull request:
+
+```
+@magento-engcom-team give me test instance
+```
+
+**Actions:**
+* It deploys a new Magento instance based on Pull Request changes.
+* Deployment takes ~2 minutes.
+
+**Admin access:**
+
+- http://pr-xxx.engcom.dev.magento.com/admin
+- Credentials: Username: admin | Password: 123123q
+
+**Permissions:**
+
+- [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+- [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+- Contributor
+
+### Combine multiple pull requests {#combine-pr}
+
+To optimize the pull request queue, enter a command with a series of related pull requests to verify and combine the code. If all tests pass, the entered PRs are merged into the current PR.
+
+**Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members) or [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) under the existing Pull Request enters the following command:
+
+```
+@magento-engcom-team combine {xxx} {yyy} {zzz}
+```
+
+The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento-engcom-team combine 1234 1238 1239`
+
+**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+
+- Current pull request allows changes from maintainers
+- All mentioned pull requests are open
+- All mentioned pull requests have been created by the same contributor (author)
+- All mentioned pull requests have same target (base) branch
+- All mentioned pull requests are mergeable with each other
+
+**Permissions:**
+
+- [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+- [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+
 
 ## Porting code contributions across Magento versions {#porting}
 
