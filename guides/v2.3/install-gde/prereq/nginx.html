@@ -2314,14 +2314,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Install <code class="highlighter-rouge">php-fpm</code> and <code class="highlighter-rouge">php-cli</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get -y install php7.0-fpm php7.0-cli
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get -y install php7.2-fpm php7.2-cli
 </code></pre></div>    </div>
+
+    <p class="bs-callout bs-callout-info">This command installs the latest available version of PHP 7.2.X. See <a href="/guides/v2.3/install-gde/system-requirements-tech.html">Magento 2.3.x technology stack requirements</a> for supported PHP versions.</p>
   </li>
   <li>
     <p>Open the <code class="highlighter-rouge">php.ini</code> files in an editor:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vim /etc/php/7.0/fpm/php.ini
- vim /etc/php/7.0/cli/php.ini
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vim /etc/php/7.2/fpm/php.ini
+ vim /etc/php/7.2/cli/php.ini
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2343,7 +2345,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Restart the <code class="highlighter-rouge">php-fpm</code> service:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl restart php7.0-fpm
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> systemctl restart php7.2-fpm
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2358,78 +2360,84 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>
-    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
+    <p><a href="/guides/v2.3/install-gde/composer.html">Get the Composer metapackage</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3/install-gde/composer.html">Get the Composer metapackage</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
   </li>
   <li>
     <p><a href="/guides/v2.3/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
   </li>
 </ul>
 
-<p>For this example, we’ll download and extract an archive.</p>
-
-<ol>
-  <li>
-    <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the Ubuntu default <code class="highlighter-rouge">/var/www/html</code>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Download the Magento archive, extract it, and rename the folder <code class="highlighter-rouge">magento2/</code>:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
- tar -xzvf 2.1.tar.gz
- mv magento2-2.1/ magento2/
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><a href="/guides/v2.3/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2
- find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
- find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
- chown -R :www-data .
- chmod u+x bin/magento
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Update Magento dependencies:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2
- composer install -v
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>If prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
-  </li>
-  <li>
-    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin
- ./magento setup:install --base-url=http://www.magento-dev.com/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre></div>    </div>
-
-    <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
-  </li>
-</ol>
+<p>For this example, we’ll install using Composer and the command line.</p>
 
 <p class="bs-callout bs-callout-info">You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
 
 <ol>
   <li>
+    <p>As the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, log in to your Magento server.</p>
+  </li>
+  <li>
+    <p>Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we’re using the Ubuntu default <code class="highlighter-rouge">/var/www/html</code>.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a new Composer project using the Magento Open Source or Magento Commerce metapackage.</p>
+
+    <p><strong>Magento Open Source</strong></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt;
+</code></pre></div>    </div>
+
+    <p><strong>Magento Commerce</strong></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt;
+</code></pre></div>    </div>
+
+    <p>When prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+  </li>
+  <li>
+    <p>Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> cd /var/www/html/&lt;magento install directory&gt;</span>
+<span class="gp"> find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;</span>
+<span class="gp"> find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;</span>
+<span class="go"> chown -R :www-data . // Ubuntu
+ chmod u+x bin/magento
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>. This example assumes that the Magento install directory is named <code class="highlighter-rouge">magento2ee</code>, the <code class="highlighter-rouge">db-host</code> is on the same machine (<code class="highlighter-rouge">localhost</code>), and that the <code class="highlighter-rouge">db-name</code>, <code class="highlighter-rouge">db-user</code>, and <code class="highlighter-rouge">db-password</code> are all <code class="highlighter-rouge">magento</code>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento setup:install <span class="se">\</span>
+ <span class="nt">--base-url</span><span class="o">=</span>http://localhost/magento2ee <span class="se">\</span>
+ <span class="nt">--db-host</span><span class="o">=</span>localhost <span class="se">\</span>
+ <span class="nt">--db-name</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--db-user</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--db-password</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--backend-frontname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-firstname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-lastname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-email</span><span class="o">=</span>admin@admin.com <span class="se">\</span>
+ <span class="nt">--admin-user</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-password</span><span class="o">=</span>admin123 <span class="se">\</span>
+ <span class="nt">--language</span><span class="o">=</span>en_US <span class="se">\</span>
+ <span class="nt">--currency</span><span class="o">=</span>USD <span class="se">\</span>
+ <span class="nt">--timezone</span><span class="o">=</span>America/Chicago <span class="se">\</span>
+ <span class="nt">--use-rewrites</span><span class="o">=</span>1
+</code></pre></div>    </div>
+  </li>
+  <li>
     <p>Switch to developer mode:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin
- ./magento deploy:mode:set developer
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin  ./magento deploy:mode:set developer
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2451,7 +2459,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Add the following configuration:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> upstream fastcgi_backend {
-     server  unix:/run/php/php7.0-fpm.sock;
+     server  unix:/run/php/php7.2-fpm.sock;
  }
 
  server {
@@ -2621,82 +2629,84 @@ systemctl enable php-fpm
 
 <ul>
   <li>
-    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
+    <p><a href="/guides/v2.3/install-gde/composer.html">Get the Composer metapackage</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3/install-gde/composer.html">Get the Composer metapackage</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
   </li>
   <li>
     <p><a href="/guides/v2.3/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
   </li>
 </ul>
 
-<p>For this example, we’ll download and extract an archive.</p>
-
-<ol>
-  <li>
-    <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the CentoOS default <code class="highlighter-rouge">/usr/share/nginx/html</code>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Download the Magento archive, extract it, and rename the folder <code class="highlighter-rouge">magento2/</code>:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
- tar -xzvf 2.1.tar.gz
- mv magento2-2.1/ magento2/
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><a href="/guides/v2.3/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
- find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
- find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
- chown -R :apache .
- chmod u+x bin/magento
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Update Magento dependencies:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
- composer install
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>If prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
-  </li>
-  <li>
-    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
- ./magento setup:install --base-url=http://www.magento-dev.com/ \
- --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
- --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
- --admin-user=admin --admin-password=admin123 --language=en_US \
- --currency=USD --timezone=America/Chicago --use-rewrites=1
-</code></pre></div>    </div>
-
-    <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
-  </li>
-</ol>
+<p>For this example, we’ll install using Composer and the command line.</p>
 
 <p class="bs-callout bs-callout-info">You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
 
 <ol>
   <li>
-    <p>Switch Magento to developer mode:</p>
+    <p>As the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, log in to your Magento server.</p>
+  </li>
+  <li>
+    <p>Change to the web server docroot directory or a directory that you have configured as a virtual host docroot. For this example, we’re using the Ubuntu default <code class="highlighter-rouge">/var/www/html</code>.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
- ./magento deploy:mode:set developer
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a new Composer project using the Magento Open Source or Magento Commerce metapackage.</p>
+
+    <p><strong>Magento Open Source</strong></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt;
+</code></pre></div>    </div>
+
+    <p><strong>Magento Commerce</strong></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt;
+</code></pre></div>    </div>
+
+    <p>When prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+  </li>
+  <li>
+    <p>Set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> cd /var/www/html/&lt;magento install directory&gt;</span>
+<span class="gp"> find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;</span>
+<span class="gp"> find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;</span>
+<span class="go"> chown -R :www-data . // Ubuntu
+ chmod u+x bin/magento
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>. This example assumes that the Magento install directory is named <code class="highlighter-rouge">magento2ee</code>, the <code class="highlighter-rouge">db-host</code> is on the same machine (<code class="highlighter-rouge">localhost</code>), and that the <code class="highlighter-rouge">db-name</code>, <code class="highlighter-rouge">db-user</code>, and <code class="highlighter-rouge">db-password</code> are all <code class="highlighter-rouge">magento</code>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento setup:install <span class="se">\</span>
+ <span class="nt">--base-url</span><span class="o">=</span>http://localhost/magento2ee <span class="se">\</span>
+ <span class="nt">--db-host</span><span class="o">=</span>localhost <span class="se">\</span>
+ <span class="nt">--db-name</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--db-user</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--db-password</span><span class="o">=</span>magento <span class="se">\</span>
+ <span class="nt">--backend-frontname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-firstname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-lastname</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-email</span><span class="o">=</span>admin@admin.com <span class="se">\</span>
+ <span class="nt">--admin-user</span><span class="o">=</span>admin <span class="se">\</span>
+ <span class="nt">--admin-password</span><span class="o">=</span>admin123 <span class="se">\</span>
+ <span class="nt">--language</span><span class="o">=</span>en_US <span class="se">\</span>
+ <span class="nt">--currency</span><span class="o">=</span>USD <span class="se">\</span>
+ <span class="nt">--timezone</span><span class="o">=</span>America/Chicago <span class="se">\</span>
+ <span class="nt">--use-rewrites</span><span class="o">=</span>1
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Switch to developer mode:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin  ./magento deploy:mode:set developer
 </code></pre></div>    </div>
   </li>
 </ol>
