@@ -84,7 +84,7 @@ There are several ways to download the Magento software, including:
 
 *	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we'll install using Composer and the Command Line.
+For this example, we'll install using Composer and the command line.
 
 {:.bs-callout .bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
