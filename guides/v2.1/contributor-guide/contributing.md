@@ -155,6 +155,10 @@ For `version`, the currently supported values are [version tags](https://github.
 - http://i-xxx.engcom.dev.magento.com/admin
 - Credentials: Username: admin | Password: 123123q
 
+**Permissions:**
+
+- All permissions granted for all users
+
 ### Deploy instance based on PR changes {#deploy-pr}
 
 To verify and test changes completed in a pull request, enter a command to generate a Magento instance using the code based in the PR.
