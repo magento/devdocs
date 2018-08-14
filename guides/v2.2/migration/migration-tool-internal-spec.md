@@ -6,7 +6,6 @@ menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
 version: 2.2
-github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
 
@@ -20,7 +19,7 @@ Data Migration Tool repository <a href="https://github.com/magento/data-migratio
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
+Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
 
 ## Internal structure {#migrate-is}
 
@@ -417,6 +416,7 @@ Options:
 </table>
 
 #### Wildcards
+
 To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.
 
 #### URL Rewrite Step

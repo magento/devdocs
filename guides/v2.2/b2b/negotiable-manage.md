@@ -8,7 +8,6 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
-github_link: b2b/negotiable-manage.md
 functional_areas:
   - B2B
   - Integration
@@ -52,7 +51,6 @@ Name | Description | Format | Requirements
 `base64_encoded_data` | A string in base 64 that defines the contents of the added file | string | Required
 `type` | Defines the type of file, such as `text/plain` or `application/pdf`| string | Optional
 `name` | The name of the file to be uploaded, such as `quote.txt` or `quote.pdf`. | string | Required
-
 
 ### Request a negotiable quote
 
@@ -177,7 +175,6 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 {% endhighlight %}
 
 **Response**
-
 
 ### Decline a quote
 
@@ -306,7 +303,6 @@ Not applicable
   }
 ]
 {% endhighlight %}
-
 
 ### Retrieve a negotiable quote attachment
 

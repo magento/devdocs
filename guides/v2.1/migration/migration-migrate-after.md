@@ -6,7 +6,6 @@ menu_title: After Migration
 menu_node: parent
 menu_order: 7
 version: 2.1
-github_link: migration/migration-migrate-after.md
 redirect_from: /guides/v1.0/migration/migration-migrate-after.html
 functional_areas:
   - Tools

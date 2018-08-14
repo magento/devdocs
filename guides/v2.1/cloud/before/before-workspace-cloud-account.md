@@ -6,7 +6,6 @@ menu_title: Set up an account and project
 menu_order:
 menu_node:
 version: 2.1
-github_link: cloud/before/before-workspace-cloud-account.md
 ---
 
 #### Previous step:
@@ -18,9 +17,8 @@ You should receive an e-mail invitation to verify and access the account. If you
 
 When logged in, you should see a project named and ready to access.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in {{site.data.var.ece}}. If you have an existing Magento deployment, import code, extensions, themes, and data after fully deploying this base Magento code.
-</div>
 
 {% include cloud/new-project-from-template.md %}
 

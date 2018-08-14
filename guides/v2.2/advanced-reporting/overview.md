@@ -2,15 +2,12 @@
 group: reporting
 title: Advanced Reporting
 version: 2.2
-github_link: advanced-reporting/overview.md
 functional_areas:
     - Reports
 ---
 
 [Advanced reporting functionality]{:target="_blank"} is provided through integration of a Magento instance with the [Magento Business Intelligence]{:target="_blank"} (MBI).
 Magento collects data and sends this information to the MBI for analytics.
- 
-**Magento Admin > Dashboard > "Go to Advanced Reporting"** button opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
  
 ## Prerequisites
 
@@ -22,6 +19,8 @@ Magento collects data and sends this information to the MBI for analytics.
 6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
 
 
+The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
+
 <div class="bs-callout bs-callout-info" markdown="1">
 The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.
 </div>
@@ -30,12 +29,9 @@ The first synchronization of a Magento instance and the MBI can take up to a day
 
 To avoid system overload during its prime time, you can set the preferable time of a day for a data collection.
 
-**Magento Admin > Stores > Settings > Configuration > General > Advanced Reporting**
-
 ## Extensibility
 
 Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
-
 
 ## Related topics
 
@@ -52,5 +48,5 @@ Though the Analytics module provides API, it is used specifically to interchange
 [Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
 [base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
-[Magento crontab]: http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
+[Magento crontab]: {{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
 [set to **Yes**]: http://docs.magento.com/m2/ce/user_guide/Resources/Images/config-general-web-base-urls-secure.png

@@ -5,7 +5,6 @@ title: Retrieve filtered responses for REST APIs
 menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.3
-github_link: rest/retrieve-filtered-responses.md
 redirect_from: /guides/v2.3/howdoi/webapi/filter-response.html
 ---
 

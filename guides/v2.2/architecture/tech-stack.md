@@ -5,7 +5,6 @@ title: Technology stack
 menu_title: Technology stack
 menu_order: 2
 version: 2.2
-github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
@@ -33,15 +32,15 @@ Magento's highly modular structure includes the following open-source technologi
 
 *	Varnish
 
-### Cache Storage
+### Cache storage
 
 *	Redis
 *	Memcache
 
 ### Search
 
-* Solr ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) only)
-* Elasticsearch ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) 2.1.x only)
+* Solr ({{site.data.var.ee}})
+* Elasticsearch ({{site.data.var.ee}} - 2.1.x only)
 
 ### Additional technologies
 
@@ -70,4 +69,5 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
+
 <a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

@@ -4,15 +4,13 @@ subgroup: components
 title: Form component
 menu_title: Form component
 version: 2.1
-github_link: ui_comp_guide/components/ui-form.md
 ---
 
-
 ## Overview
+
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
 Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure).
-
 
 ## Structure
 
@@ -37,7 +35,6 @@ The following components can be used in the scope of the Form component:
 * Text
 * Textarea
 * {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}Wysiwyg{% endglossarytooltip %}
-
 
 ## Component options
 
@@ -220,13 +217,11 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
   </tbody>
 </table>
 
-
-
 ## Create an instance of the Form component
 
 To create an instance of the Form component, you need to do the following:
 
-1. In you custom module, add a configuration file for the instance, for example: `customer_form.xml`.
+1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
 2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
@@ -327,6 +322,7 @@ To group components you can use the component container as in example below:
 {% endhighlight %}
 
 ## Creating DataSource
+
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`

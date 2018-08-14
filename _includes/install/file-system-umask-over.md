@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Overview of ownership and permissions {#umask-over}
+
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -14,6 +15,7 @@ This topic provides some basic information about our ownership and permissions g
 *	[Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
 ### Magento file system owner
+
 We refer to the *Magento file system owner* as a user who owns and can write to files in the Magento file system.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -43,6 +45,7 @@ The Magento file system owner is any of the following:
 Before you install the Magento software, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 ### Restrict access with a umask {#restrict}
+
 To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 <div class="bs-callout bs-callout-warning">
@@ -60,6 +63,7 @@ Here's what that means:
 For more information about `magento_umask`, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 ## Permissions, ownership, and Magento modes
+
 We recommend different permissions and ownership for default mode, developer mode, and production mode.
 
 We discuss these recommendations in [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html).

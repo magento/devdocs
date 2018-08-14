@@ -5,7 +5,6 @@ title: List of REST endpoints by module
 menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.3
-github_link: rest/list.md
 functional_areas:
   - Integration
 ---
@@ -83,6 +82,7 @@ Additions since 2.2 are marked with hash characters (#).
 
 ### AsynchronousOperations
 
+    #GET    /V1/bulk
     #GET    /V1/bulk/:bulkUuid/detailed-status
     #GET    /V1/bulk/:bulkUuid/status
     #GET    /V1/bulk/:bulkUuid/operation-status/:status
@@ -325,6 +325,40 @@ Additions since 2.2 are marked with hash characters (#).
 
     POST   /V1/integration/admin/token
     POST   /V1/integration/customer/token
+
+### InventoryApi
+
+    #GET    /V1/inventory/sources
+    #GET    /V1/inventory/sources/:sourceCode
+    #POST   /V1/inventory/sources
+    #PUT    /V1/inventory/sources/:sourceCode
+    #GET    /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stockId
+    #GET    /V1/inventory/stocks
+    #GET    /V1/inventory/stocks/:stockId
+    #POST   /V1/inventory/stocks
+    #DELETE /V1/inventory/stocks/:stockId
+    #PUT    /V1/inventory/stocks/:stockId
+    #GET    /V1/inventory/stock-source-links
+    #POST   /V1/inventory/stock-source-links
+    #POST   /V1/inventory/stock-source-links-delete
+    #GET    /V1/inventory/source-items
+    #POST   /V1/inventory/source-items
+    #POST   /V1/inventory/source-items-delete
+
+### InventoryLowQuantityNotificationApi
+
+    #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
+    #POST   /V1/inventory/low-quantity-notification
+    #DELETE /V1/inventory/low-quantity-notification
+
+### InventorySalesApi
+
+    #GET    /V1/inventory/get-product-salable-quantity/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable/:sku/:stockId
+
+### InventorySourceSelectionApi
+    #GET   /V1/inventory/source-selection-algorithm-list
+    #POST  /V1/inventory/source-selection-algorithm-result
 
 ### Quote
 

@@ -5,7 +5,6 @@ title: Searching with Repositories
 menu_title: Searching with Repositories
 menu_order: 35
 version: 2.2
-github_link: extension-dev-guide/searching-with-repositories.md
 functional_areas:
   - Search
 ---
@@ -115,7 +114,6 @@ $searchCriteria
     ->setCurrentPage(15); //will show entities from 15-th to 20-th
 
 {% endhighlight %}
-
 
 ### Search Result
 

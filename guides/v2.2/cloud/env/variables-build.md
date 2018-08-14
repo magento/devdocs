@@ -2,7 +2,6 @@
 group: cloud
 title: Build variables
 version: 2.2
-github_link: cloud/env/variables-build.md
 functional_areas:
   - Cloud
   - Configuration
@@ -88,7 +87,7 @@ stage:
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 

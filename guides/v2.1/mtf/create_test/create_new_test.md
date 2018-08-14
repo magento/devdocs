@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
 version: 2.1
-github_link: mtf/create_test/create_new_test.md
 ---
 
 To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.
@@ -108,7 +107,7 @@ The following is a code of the new Synonym fixture.
              repository_class="Magento\Search\Test\Repository\Synonym"
              handler_interface="Magento\Search\Test\Handler\Synonym\SynonymInterface"
              class="Magento\Search\Test\Fixture\Synonym">
-        <field name="group_id" is_required="1 "/>
+        <field name="group_id" is_required="1"/>
         <field name="synonyms" is_required="0" />
         <field name="store_id" is_required="0" />
         <field name="website_id" is_required="0" />

@@ -2,7 +2,6 @@
 group: mrg
 title: Magento_Sales module
 version: 2.0
-github_link: mrg/ce/Sales.md
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.
@@ -206,9 +205,6 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 |[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]{:target="_blank"}| An interface for sending notifications about new Invoice creation.
 |[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]{:target="_blank"}| An interface for validating service parameters and Invoice data object.
 |[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.
-
-
-
 
 ## RefundInvoice
 

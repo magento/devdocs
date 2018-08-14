@@ -2,7 +2,6 @@
 group: cloud
 title: Application
 version: 2.0
-github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
@@ -109,6 +108,7 @@ The following displays the default set of web accessible locations associated wi
 
 ```yaml
 # The configuration of app when it is exposed to the web.
+
 web:
 locations:
     "/":
@@ -156,6 +156,7 @@ The following is a default list of mounts configured in `magento.app.yaml`:
 
 ```yaml
 # The mounts that will be performed when the package is deployed.
+
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
@@ -264,6 +265,7 @@ crons:
 ```
 
 ## Configure PHP options {#cloud-yaml-platform-php}
+
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
@@ -274,6 +276,7 @@ type: php:5.6
 {{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
+
 You can define additional PHP extensions you want to enable or disable. Example:
 
 ```yaml
@@ -349,6 +352,7 @@ Important: PHP compiled with debug is not supported and the Probe may conflict w
 </div>
 
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
+
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
@@ -368,6 +372,7 @@ After pushing your file, you can check that the custom PHP configuration has bee
 	cat /etc/php5/fpm/php.ini
 
 #### Related topics
+
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
 *	[routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
 *	[services.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)

@@ -6,7 +6,6 @@ menu_title: URN highlighter
 menu_node:
 menu_order: 215
 version: 2.0
-github_link: config-guide/cli/config-cli-subcommands-urn.md
 functional_areas:
   - Configuration
   - System
@@ -16,6 +15,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of URN highlighter
+
 Magento code references all XSD schemas as <a href="https://www.ietf.org/rfc/rfc2141.txt" target="\_blank">Uniform Resource Names (URNs)</a>. If you're developing code and need to reference XSDs, this command configures your integrated developer environment (IDE) to recognize and highlight URNs. This makes development easier.
 
 By default, an IDE like PHPStorm is not configured to recognize URNs and, as a result, they display in red text as follows:
@@ -31,6 +31,7 @@ Specifically, this command creates the following PHPStorm configuration:
 <img src="{{ site.baseurl }}/common/images/config_urn_settings.png" width="750px">
 
 ## Configure your IDE
+
 Currently, only PHPStorm is supported.
 
 Command syntax:

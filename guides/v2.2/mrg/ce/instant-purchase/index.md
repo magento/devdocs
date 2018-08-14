@@ -1,7 +1,6 @@
 ---
 group: mrg
 title: Instant Purchase module
-github_link: mrg/ce/instant-purchase/index.md
 functional_areas:
   - Checkout
 ---
@@ -268,10 +267,10 @@ Use this marker if no other options are available to implement specific payment 
 [`ShippingAddressChooserInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php
 [`BillingAddressChooserInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php
 [`ShippingMethodChooserInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php
-[`PaymentTokenInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php
-[`Address`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Customer/Model/Address.php
+[`PaymentTokenInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php
+[`Address`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Customer/Model/Address.php
 [`InstantPurchaseInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseInterface.php
-[`ShippingMethodInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php
+[`ShippingMethodInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php
 [`InstantPurchaseOption`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOption.php
 [`InstantPurchaseOptionFactory`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseOptionFactory.php
 [`InstantPurchaseChooser`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/Model/InstantPurchaseChooser.php
@@ -290,6 +289,6 @@ Use this marker if no other options are available to implement specific payment 
 [Vault module]: https://github.com/magento/magento2/tree/{{page.guide_version}}/app/code/Magento/Vault
 [`PaymentTokenFormatterInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentTokenFormatterInterface.php
 [`PaymentAdditionalInformationProviderInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentAdditionalInformationProviderInterface.php
-[`Quote\Address`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Quote/Model/Quote/Address.php
-[`InfoInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Payment/Model/InfoInterface.php
+[`Quote\Address`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Quote/Model/Quote/Address.php
+[`InfoInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Payment/Model/InfoInterface.php
 [dependency injection]: {{ page.baseurl }}/extension-dev-guide/depend-inj.html

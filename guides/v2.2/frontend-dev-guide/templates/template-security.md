@@ -5,12 +5,11 @@ title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
 version: 2.2
-github_link: frontend-dev-guide/templates/template-security.md
 functional_areas:
   - Frontend
 ---
 
-<h2>Security measures against XSS attacks</h2>
+## Security measures against XSS attacks
 
 To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
 
@@ -30,7 +29,7 @@ The following code sample illustrates the XSS-safe output in templates:
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
 <?php echo $block->escapeHtml($block->getTitle()) ?>
-<h1><?php echo (int)$block->getId() ?></h1>
+# <?php echo (int)$block->getId() ?>
 <?php echo count($var); ?>
 <?php echo 'some text' ?>
 <?php echo "some text" ?>
@@ -120,7 +119,7 @@ For example, when a URL output string is inside a JavaScript context, use both `
   <img src="product-blue.jpg" alt="<?php echo $block->escapeHtmlAttr(__('A picture of the product in blue')) ?>" />
 {% endhighlight %}
 
-<h4>Static Test</h4>
+#### Static Test
 
 To check your template for XSS vulnerabilities, you can use the static test `XssPhtmlTemplateTest.php` in `dev\tests\static\testsuite\Magento\Test\Php\`.
 

@@ -6,7 +6,6 @@ menu_title: Unknown module Magento_BundleSampleData
 menu_node:
 menu_order: 400
 version: 2.0
-github_link: install-gde/trouble/tshoot_bundlesampledata.md
 functional_areas:
   - Install
   - System
@@ -20,6 +19,7 @@ During the installation, a  message similar to the following displays:
 	[ERROR] exception 'LogicException' with message 'Unknown module in the requested list: 'Magento_BundleSampleData'' 
 
 ### Solution
+
 Try each of the following one at a time, then try your installation again.
 
 1.	As a user with `root` privileges, restart your web server and MySQL.

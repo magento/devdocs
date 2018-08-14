@@ -23,7 +23,7 @@ To set permissions before you install the Magento software:
 3.	If you haven't done so already, get the Magento software in one of the following ways:
 
 	*	[Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-	*	[Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+	*	[Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 	*	[Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 4.	After you have set file system ownership and permissions, continue with any of the following:
 

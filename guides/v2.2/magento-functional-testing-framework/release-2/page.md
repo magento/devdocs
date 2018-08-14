@@ -2,7 +2,6 @@
 group: mftf
 title: Page structure
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/page.md
 functional_areas:
  - Testing
 mftf-release: 2.2.0
@@ -40,7 +39,7 @@ The format of `<page>` is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
     <page name="" url="" module="" area="">
         <section name=""/>
         <section name=""/>
@@ -71,7 +70,7 @@ Example (_Catalog/Page/AdminCategoryPage.xml_ file):
 <?xml version="1.0" encoding="UTF-8"?>
 
 <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
     <page name="AdminCategoryPage" url="catalog/category/" module="Magento_Catalog" area="admin">
         <section name="AdminCategorySidebarActionSection"/>
         <section name="AdminCategorySidebarTreeSection"/>
@@ -108,7 +107,7 @@ Example (_Catalog/Page/StorefrontCategoryPage.xml_ file):
 <?xml version="1.0" encoding="UTF-8"?>
 
 <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
     <page name="StorefrontCategoryPage" url="/{{var1}}.html" module="Magento_Catalog" parameterized="true" area="storefront">
         <section name="StorefrontCategoryMainSection"/>
     </page>

@@ -2,7 +2,6 @@
 group: mftf
 title: Test actions
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
 mftf-release: 2.2.0
@@ -93,7 +92,7 @@ Source code (`StorefrontCustomerSignInPage.xml` ):
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
     <page name="StorefrontCustomerSignInPage" url="/customer/account/login/" module="Magento_Customer">
         <section name="StorefrontCustomerSignInFormSection" />
     </page>
@@ -123,7 +122,7 @@ This section is declared in `.../Customer/Section/StorefrontCustomerSignInFormSe
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="StorefrontCustomerSignInFormSection">
         <element name="emailField" type="input" selector="#email"/>
         <element name="passwordField" type="input" selector="#pass"/>
@@ -170,10 +169,10 @@ Learn more in [Using data returned by test actions](../data.html#use-data-return
 
 The following test actions handle data entities using [metadata](../metadata.html):
 
-* [createData](#createData)
-* [deleteData](#deleteData)
-* [updateData](#updateData)
-* [getData](#getData)
+* [createData](#createdata)
+* [deleteData](#deletedata)
+* [updateData](#updatedata)
+* [getData](#getdata)
 
 Learn more in [Handling a REST API response](../metadata.html#rest-response).
 
@@ -719,12 +718,36 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+### fillSecretField
+
+Attribute|Type|Use|Description
+---|---|---|---
+`selector`|string|optional|
+`selectorArray`|string|optional|
+`userInput`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
 ### formatMoney
 
 Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `locale`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+### generateDate
+
+Generates a date for use in `{$stepKey}` format in other test actions.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`date`|string|required| Date input to parse. Uses the same functionality as the PHP `strtotime()` function.
+`format`|string|required| Format in which to save the given date. Uses the same formatting as the PHP `date()` function.
+`timezone`|string|optional| Timezone to use when generating date, defaults to `America/Los_Angeles`.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -852,6 +875,7 @@ Specifies a CLI command to execute in a Magento environment.
 Attribute|Type|Use|Description
 ---|---|---|---
 `command`|string |optional| CLI command to be executed in Magento environment.
+`arguments`|string |optional| Unescaped arguments to be passed in with the CLI command. 
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1431,7 +1455,6 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
-
 
 ### updateData
 

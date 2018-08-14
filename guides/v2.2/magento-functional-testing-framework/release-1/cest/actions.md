@@ -2,7 +2,6 @@
 group: mftf
 title: Actions in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/release-1/cest/actions.md
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/cest/actions.html
@@ -144,7 +143,6 @@ This section is declared in _.../Customer/Section/StorefrontCustomerSignInFormSe
 
 The action here is very similar to the action in a previous step.
 The only difference is that different data assigned to the attributes which set a field with password.
-
 
 #### 4. Click the Sign In button {#example-step4}
 
@@ -1349,7 +1347,6 @@ parameterArray|string|optional|
 stepKey|string|required|A unique identifier of the action.
 before|string|optional| `stepKey` of action that must be executed next.
 after|string|optional| `stepKey` of preceding action.
-
 
 ### updateData
 

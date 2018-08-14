@@ -5,7 +5,6 @@ title: Technology stack
 menu_title: Technology stack
 menu_order: 2
 version: 2.0
-github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
@@ -72,4 +71,5 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
+
 <a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

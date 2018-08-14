@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Introduction to Magento sample data {#instgde-prereq-sample-intro}
+
 Magento sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.
 
 You can install sample data either before or after installing the Magento software. When you're done with the sample data, you can either remove it or you can install it fresh as discussed in <a href="{{ page.baseurl }}/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a>.

@@ -5,7 +5,6 @@ title: Use REST APIs
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: get-started/rest_front.md
 redirect_from: /guides/v1.0/get-started/rest_front.html
 ---
 

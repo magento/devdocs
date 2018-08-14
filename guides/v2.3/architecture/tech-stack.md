@@ -2,7 +2,6 @@
 group: arch-guide
 title: Technology stack
 version: 2.3
-github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
@@ -42,7 +41,7 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Search
 
-* Elasticsearch (Magento Commerce versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)
+* Elasticsearch ({{site.data.var.ee}} versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)
 
 ### Additional technologies
 
@@ -71,4 +70,5 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{page.baseurl}}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
+
 <a href="{{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

@@ -8,12 +8,11 @@ menu_node:
 level3_subgroup: product-creation-form
 menu_order: 1
 version: 2.1
-github_link: howdoi/customize_product.md
 ---
 
 This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
-In Magento version 2.1, the product creation form was completely refactored and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html).
+In Magento version 2.1, the product creation form was completely refactored and implemented using the [form UI component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html).
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 

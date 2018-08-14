@@ -2,7 +2,6 @@
 group: contributor
 title: Suggested topics for contribution
 version: 2.1
-github_link: contributor-guide/contributing_docs_suggested.md
 ---
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
@@ -42,7 +41,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
-              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
+              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
             </ul>
         </td>
         <td></td>

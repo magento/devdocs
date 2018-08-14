@@ -2,10 +2,9 @@
 group: mftf
 title: Configuration
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/configuration.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -137,7 +136,7 @@ FW_BP is an acronym for FrameWork BasePath.
 
 * Use: Optional.
 * Description: The path to where MFTF modules mirror Magento's modules.
-* Example: `~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
+* Example: `~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest`
 
 ### MODULE_WHITELIST
 

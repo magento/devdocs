@@ -6,7 +6,6 @@ menu_title: Single machine deployment
 menu_node: parent
 menu_order: 2000
 version: 2.2
-github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
 functional_areas:
@@ -99,7 +98,7 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 [5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
 [7]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
-[8]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[8]: {{ page.baseurl }}/install-gde/composer.html
 [9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
 [11]: {{ site.baseurl }}/community/resources/#installdeploy

@@ -2,7 +2,6 @@
 group: release-notes
 version: 2.2
 title: Backward incompatible changes in Magento Commerce
-github_link: release-notes/backward-incompatible-changes/commerce.md
 redirect_from: /guides/v2.2/release-notes/changes/ee_changes.html
 ---
 
@@ -23,6 +22,10 @@ The changes are aggregated into two tables:
 type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
+
+## 2.2.4 - 2.2.5 {#releases-2_2_4-2_2_5}
+
+{% include backward-incompatible-changes/commerce/2.2.4-2.2.5.html %}
 
 ## 2.2.3 - 2.2.4 {#releases-2_2_3-2_2_4}
 

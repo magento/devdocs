@@ -5,16 +5,17 @@ title: Illustration of customizing templates
 menu_title: Illustration of customizing templates
 menu_order: 3
 version: 2.0
-github_link: frontend-dev-guide/templates/template-sample.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
+
 This topic contains a step-by-step illustration of solving a typical design customization task using templates.
 
-<h2>Sample template customization: changing a layout of the mini shopping cart</h2>
+## Sample template customization: changing a layout of the mini shopping cart
+
 In the Magento basic Blank theme, in the mini shopping cart, products are listed under the **Go to Checkout** button, like following:
 
 <img src="{{ site.baseurl }}/common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the **Go to Checkout** button">

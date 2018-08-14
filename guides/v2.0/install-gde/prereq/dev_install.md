@@ -6,7 +6,6 @@ menu_title: (Contributor) Clone the Magento repository
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: install-gde/prereq/dev_install.md
 redirect_from:
   - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
@@ -22,6 +21,7 @@ functional_areas:
 </div>
 
 ## Intended audience {#integrator-aud}
+
 The audience for this topic is anyone who contributes to the {{site.data.var.ce}} codebase. You should be highly technical, understand {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">choose another starting point</a>.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -31,12 +31,13 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 ## Prerequisites
 {% include install/prereq.md %}
 
-{% include install/composer-overview.html %}
+{% include install/composer-overview.md %}
 
 ## Install Composer {#instgde-prereq-compose-install}
 {% include install/composer-clone.md %}
 
-<h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+## Clone the Magento repository   {#instgde-prereq-compose-clone}
+
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either a release branch or the `develop` branch:
 
 *	Release branches like `2.1.0` are more stable
@@ -47,12 +48,14 @@ This section discusses how to get current code by cloning the Magento GitHub's d
 Currently, the `develop` branch is the default but you can checkout a release branch like `2.1.0` after cloning.
 
 ### Creating an authorization file {#instgde-prereq-compose-clone-auth}
+
 The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
 #### Create `auth.json`
 {% include install/auth-json.md %}
 
 ### How to clone the Magento 2 GitHub repository {#instgde-prereq-compose-clone-ways}
+
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
 *	Use SSH for better security (no username and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.
@@ -63,7 +66,7 @@ See one of the following section:
 *	<a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a>
 *	<a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a>
 
-<h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
+#### Clone with SSH   {#instgde-prereq-compose-clone-ssh}
 
 To clone the Magento GitHub repository using the SSH protocol:
 
@@ -108,7 +111,7 @@ fatal: The remote end hung up unexpectedly</pre>
 
 4.	Continue with <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
-<h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
+#### Clone with HTTPS   {#instgde-prereq-compose-clone-https}
 
 To clone the Magento GitHub repository using the HTTPS protocol:
 
@@ -144,6 +147,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 		git checkout tags/2.1.0 -b 2.1.0
 
 #### Next step
+
 After completing the tasks discussed on this page, see <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
 

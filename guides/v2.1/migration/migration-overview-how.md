@@ -2,7 +2,6 @@
 group: migration
 title: How migration works
 version: 2.1
-github_link: migration/migration-overview-how.md
 redirect_from: /guides/v1.0/migration/migration-overview-how.html
 ---
 

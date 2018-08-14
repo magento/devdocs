@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento 2.1 backward incompatible changes
-github_link: release-notes/backward-incompatible-changes/index.md
 version: 2.1
 redirect_from: 
  - /guides/v2.1/release-notes/backward-incompatible-changes-2.1.html
@@ -77,6 +76,7 @@ The following entities have new forms and design:
 ## Database Schema changes
 
 #### Staging ({{site.data.var.ee}} Only)
+
 The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
 
 *	Products

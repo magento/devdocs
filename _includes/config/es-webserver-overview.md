@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Overview of secure web server communication {#es-ws-secure-over}
+
 This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.
 
 (An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to *TLS*.)
@@ -10,6 +11,7 @@ This topic discusses an example of securing communication between your web serve
 </div>
 
 ### Recommendations
+
 We recommend the following:
 
 *	Your web server uses TLS.
@@ -20,6 +22,7 @@ We recommend the following:
 	The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server doesn't have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.
 
 ### More information about TLS
+
 See one of the following resources:
 
 *	Apache

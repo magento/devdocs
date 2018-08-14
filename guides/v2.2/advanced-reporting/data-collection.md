@@ -2,7 +2,6 @@
 group: reporting
 title: Data collection for advanced reporting
 version: 2.2
-github_link: advanced-reporting/data-collection.md
 functional_areas:
     - Reports
 ---

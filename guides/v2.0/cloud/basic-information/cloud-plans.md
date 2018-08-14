@@ -2,10 +2,9 @@
 group: cloud
 title: Subscriptions and plans
 version: 2.0
-github_link: cloud/basic-information/cloud-plans.md
 ---
 
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your [free 30-day trial](https://magento.com/trial){:target="\_blank"}, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="\_blank"}.
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products.
 
 <table>
   <tbody>
@@ -94,9 +93,11 @@ github_link: cloud/basic-information/cloud-plans.md
 </table>
 
 ## Additional options {#extras}
+
 To further customize your {{site.data.var.ece}} project and account, you can purchase additional options.
 
 ### Domain-Validated SSL (HTTP) certificate {#ssl}
+
 If you don't want to use the shared SSL certificate, you can purchase this option as part of your subscription. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
 
 This service is an additional cost for your contract.

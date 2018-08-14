@@ -5,7 +5,6 @@ title: UI components XML configuration structure
 menu_title: UI components XML configuration structure  
 menu_order: 15
 version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 ---
 
 ## Overview
@@ -13,6 +12,7 @@ github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 This topic describes the basic elements used in XML configuration files for declaring  UI components. These elements core structure is strict and third party developers must follow it when customizing existing UI component configuration or declaring new ones.  
 
 ## Basic configuration elements
+
 <table>
   <tr>
     <th>

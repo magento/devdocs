@@ -66,9 +66,6 @@ pages:
             - label: Using environment variables
               url: /config-guide/deployment/pipeline/example/environment-variables.html
 
-            - label: Using rsync
-              url: /config-guide/deployment/pipeline/example/rsync.html
-
     - label: Single machine deployment
       versions: ["2.2", "2.3"]
       url: /config-guide/deployment/single-machine.html

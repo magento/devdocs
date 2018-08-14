@@ -1,26 +1,30 @@
-<div markdown="1">
-We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
+We recommend creating a backup of your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.
 
-Back up your Integration environment database and code:
+#### To back up your Integration environment database and code:
 
-1.  Enter the following command to make a local backup of the remote database:
+1.  Create a local backup of the remote database.
 
-        magento-cloud db:dump
-2.  Enter the following command to back up code and media:
+    ```bash
+    magento-cloud db:dump
+    ```
 
-        php bin/magento setup:backup --code [--media]
+1.  Back up code and media.
 
-    You can optionally omit `[--media]` if you have a large number of static files that are already in source control.
+    ```bash
+    php bin/magento setup:backup --code [--media]
+    ```
 
-Back up your Staging or Production environment database before deploying to those environments:
+    Optionally, you can omit `[--media]` if you have a large number of static files that are already in source control.
 
-1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+#### To back up your Staging or Production environment database before deploying:
 
-2.  Enter the following command to create a database dump:
+1.  Use SSH to log in to the remote server.
 
-        vendor/bin/ece-tools db-dump
+2.  Create a database dump.
 
-<div class="bs-callout bs-callout-info" markdown="1">
--   We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--   The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`. Refer to [Snapshot and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) for more information.
-</div>
+    ```bash
+    vendor/bin/ece-tools db-dump
+    ```
+
+-   We recommend setting the application in maintenance mode before doing a database dump in Production environments.
+-   This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump).

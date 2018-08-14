@@ -2,7 +2,6 @@
 group: config-guide
 title: Use Redis for session storage
 version: 2.2
-github_link: config-guide/redis/redis-session.md
 functional_areas:
   - Configuration
   - System

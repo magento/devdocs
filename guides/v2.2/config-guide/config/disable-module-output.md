@@ -5,7 +5,6 @@ title: Disable module output
 menu_title: Disable module output
 menu_order: 15
 version: 2.2
-github_link: config-guide/config/disable-module-output.md
 functional_areas:
   - Configuration
   - System

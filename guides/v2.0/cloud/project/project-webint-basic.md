@@ -6,7 +6,6 @@ menu_title: Configure your project
 menu_order: 5
 menu_node:
 version: 2.0
-github_link: cloud/project/project-webint-basic.md
 functional_areas:
   - Cloud
   - Configuration
@@ -26,6 +25,7 @@ As you make changes to these settings, the branch redeploys to the environment. 
 {% include cloud/wings-management.md %}
 
 ## Access your project and environments {#project-access}
+
 The Project Web Interface provides several ways to access your project and environments:
 
 *	Storefront URL for each active environment
@@ -48,6 +48,7 @@ The following figure shows an example.
 Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}/common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
+
 You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 <table>
 	<tbody>
@@ -70,6 +71,7 @@ You can set environment settings for the following table of settings. These sett
 </table>
 
 ### Configure emails for testing {#email}
+
 One of these environment variables enables or disables outgoing emails for the environment. If you wanted to test email notifications for the environment, you need to set this option On.
 
 1. [Access your project](#project-access) and select a specific environment.
@@ -81,6 +83,7 @@ One of these environment variables enables or disables outgoing emails for the e
 Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
 ## Set environment and project variables {#project-conf-env-var}
+
 You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see [Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html).
 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
@@ -92,6 +95,7 @@ For new Pro projects **created after October 23, 2017**, you can add variables f
 {% include cloud/wings-variables.md %}
 
 ### Environment variable {#env}
+
 To set environment specific variables in the Project Web Interface:
 
 1. [Access your project](#project-access) and select a specific environment.
@@ -105,11 +109,12 @@ To set environment specific variables in the Project Web Interface:
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+If you're attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 
 ### Project variable {#project}
+
 To set project variables in the Project Web Interface:
 
 1. [Access your project](#project-access) and select a specific environment.
@@ -123,6 +128,7 @@ To set project variables in the Project Web Interface:
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 ## Configure routes {#project-conf-env-route}
+
 Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html). These routes (or URLs) are used to access your Magento storefront.
 
 1. [Access your project](#project-access) and select a specific environment.
@@ -144,6 +150,7 @@ Routes allow you to set redirects or upstream settings for applications for your
 ![Configure a route]({{ site.baseurl }}/common/images/cloud_routes.png)
 
 ## View environment history {#project-conf-hist}
+
 An environment's history includes:
 
 *	Initial creation
@@ -169,6 +176,7 @@ We recommend [creating a snapshot]({{ page.baseurl }}/cloud/project/project-webi
 *	Environment snapshot created
 
 #### Related topics
+
 * [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
 * [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
 *	[Manage branches]({{ page.baseurl }}/cloud/project/project-webint-branch.html)

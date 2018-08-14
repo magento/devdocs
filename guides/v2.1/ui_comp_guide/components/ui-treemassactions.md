@@ -4,7 +4,6 @@ subgroup: components
 title: TreeMassActions component
 menu_title: TreeMassActions component
 version: 2.1
-github_link: ui_comp_guide/components/ui-treemassactions.md
 ---
 
 ## Overview
@@ -47,6 +46,7 @@ TreeMassActions-specific configuration:
 </table>
 
 ## MassActionContainer interface
+
 <table>
   <tr>
     <th>Option</th>

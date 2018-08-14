@@ -4,7 +4,6 @@ subgroup: components
 title: ActionsColumn component
 menu_title: ActionsColumn component
 version: 2.2
-github_link: ui_comp_guide/components/ui-actionscolumn.md
 ---
 
 ## Overview
@@ -40,7 +39,7 @@ ActionsColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: string]: Boolean}</td>
     <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>

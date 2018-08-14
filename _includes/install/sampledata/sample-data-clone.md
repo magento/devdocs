@@ -1,6 +1,7 @@
 <div markdown="1">
 
-<h2 id="sample-clone">Install sample data by cloning repositories</h2>
+## Install sample data by cloning repositories   {#sample-clone}
+
 This topic discusses how to get the Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
 
 If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
@@ -21,12 +22,14 @@ See the following sections:
 *   [Set file system ownership and permissions](#samp-data-perms)
 
 ## Clone the sample data repository {#clone-sample-repo}
+
 This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:
 
 *   Clone with the <a href="#clone-sample-repo-ssh">SSH protocol</a>
 *   Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a>
 
 ### Clone with SSH {#clone-sample-repo-ssh}
+
 To clone the Magento sample data GitHub repository using the SSH protocol:
 
 1.  In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.
@@ -54,6 +57,17 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
     </div>
+7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
+    
+    For example:
+    
+    If you used the `2.2-develop` branch of the Magento 2 repository, the Sample Data branch should be `2.2-develop`.
+    
+    If you used the `2.2.5` branch of the Magento 2 repository, the Sample Data branch should be `2.2.5`.
+    
+    To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
+
+        git checkout 2.2.5
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
@@ -63,6 +77,7 @@ fatal: The remote end hung up unexpectedly</pre>
 10. See <a href="#samp-data-perms">Set file system permissions and ownership</a>.
 
 ### Clone with HTTPS {#instgde-prereq-compose-clone-https}
+
 To clone the Magento sample data GitHub repository using the HTTPS protocol:
 
 1.  In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.
@@ -81,6 +96,17 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 
         git clone https://github.com/magento/magento2-sample-data.git
 4.  Wait for the repository to clone on your server.
+7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
+    
+    For example:
+    
+    If you used the `2.2-develop` branch of the Magento 2 repository, the Sample Data branch should be `2.2-develop`.
+    
+    If you used the `2.2.5` branch of the Magento 2 repository, the Sample Data branch should be `2.2.5`.
+    
+    To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
+
+        git checkout 2.2.5
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
@@ -100,6 +126,7 @@ If you're installing sample data _after_ installing Magento, you must also run t
 </div>
 
 ## Set file system ownership and permissions {#samp-data-perms}
+
 Because the `php build-sample-data.php` script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.
 
 To set file system permissions and ownership on the sample data repository:

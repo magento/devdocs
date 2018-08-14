@@ -28,7 +28,6 @@ These commands were built for use in production mode only.
   `setup:static-content:deploy` deploys static content for a store.
   In development mode, Magento performs it on-demand; you do not need to run it.
 
-
 ## Normal page load time on a virtual machine
 
 If you develop on a VM and it takes longer than 2 seconds to load a Magento page, review your environment settings.
