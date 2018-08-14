@@ -6,7 +6,6 @@ menu_title: Number Formats
 menu_order: 8
 menu_node:
 version: 2.1
-github_link: design-styleguide/number-formats/number-formats.md
 ---
 For more number formats, use the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
 
@@ -158,4 +157,4 @@ This is how we write about money:
 
 * Do not indicate standard or daylight time. ... *Correct example:* Central Time is written as "CT", not "CST" or "CDT".
 
-* Do not use military time. ... *Inorrect example:* Using 19:40, instead of 7:40pm.
+* Do not use military time. ... *Incorrect example:* Using 19:40, instead of 7:40pm.

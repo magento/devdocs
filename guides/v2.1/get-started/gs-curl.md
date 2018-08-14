@@ -5,7 +5,6 @@ title: Use cURL to run the request
 menu_title: Use cURL to run the request
 menu_order: 2
 version: 2.1
-github_link: get-started/gs-curl.md
 redirect_from: /guides/v1.0/get-started/gs-curl.html
 functional_areas:
   - Integration
@@ -99,7 +98,8 @@ functional_areas:
    </tr>
 </table>
 
-<h2>Next step</h2>
+## Next step
+
 <ul>
    <li><a href="{{ page.baseurl }}/get-started/gs-web-api-response.html">Status codes and responses</a></li>
 </ul>

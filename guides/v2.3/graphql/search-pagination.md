@@ -2,7 +2,6 @@
 group: graphql
 title: Searches and pagination in GraphQL
 version: 2.3
-github_link: graphql/search-pagination.md
 ---
 
 A GraphQL search query can contain the following components:
@@ -17,7 +16,6 @@ A GraphQL search query can contain the following components:
 The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
-
 
 ## Specifying filters
 
@@ -118,7 +116,6 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 
 The search returns 45 items.
 
-
 ### Full text search with filters
 
 The following sample query returns a list of products that meets the following criteria:
@@ -208,7 +205,6 @@ The query returns the following:
   }
 }
 {% endhighlight %}
-
 
 ### Simple search using a timestamp
 

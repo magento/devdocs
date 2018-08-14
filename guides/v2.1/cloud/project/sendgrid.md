@@ -2,7 +2,6 @@
 group: cloud
 title: SendGrid
 version: 2.1
-github_link: cloud/project/sendgrid.md
 functional_areas:
   - Cloud
   - Setup

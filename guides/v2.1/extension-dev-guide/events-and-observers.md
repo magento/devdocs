@@ -5,7 +5,6 @@ title: Events and observers
 menu_title: Events and observers
 menu_order: 6
 version: 2.1
-github_link: extension-dev-guide/events-and-observers.md
 ---
 
 ### Overview

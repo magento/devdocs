@@ -1,6 +1,7 @@
 <div markdown="1">
 
-<h2 id="instgde-install-reinstall">Updating or reinstalling the Magento software</h2>
+## Updating or reinstalling the Magento software   {#instgde-install-reinstall}
+
 You can reinstall the Magento software in an development environment especially to get all the latest code changes:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html#instgde-install-magento-update">Update</a>

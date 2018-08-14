@@ -1,12 +1,9 @@
-<div markdown="1">
-
 This topic discusses how to test patches to your Magento Commerce (Cloud) system locally before you push them to the remote server. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full Magento Commerce application, see [Upgrade a Magento Commerce patch](#upgrade-patch). To upgrade and test a full Magento Commerce version (including patches and hotfixes), see [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info}
 We recommend installing full Magento Commerce upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
-</div>
 
 There are two types of patches:
 
@@ -22,16 +19,17 @@ There are two types of patches:
 
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
-</div>
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Upgrade a Magento Commerce patch {#upgrade-patch}
+
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ### Back up the database
+
 Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
@@ -55,6 +53,7 @@ Back up your Staging or Production environment database before deploying to thos
         mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ### Verify other changes
+
 Verify other changes you're going to submit to source control before you start the upgrade:
 
 1.  If you haven't done so already, change to your project root directory.
@@ -84,11 +83,13 @@ Verify other changes you're going to submit to source control before you start t
 5.  Wait for deployment to complete.
 
 ## Test general patches {#cloud-patch-gen}
+
 *General patches* are provided for all Magento Commerce customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
 The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#gen-getstarted}
+
 We recommend you test a patch in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
@@ -118,6 +119,7 @@ To test a general patch on your local system:
 		git push origin <branch name>
 
 ### Push a general patch to the staging or production environment {#gen-pushpatch}
+
 After you've successfully tested a patch locally and on your integration environment, you can push the patch to staging or production as follows:
 
 1.  Open an SSH connection to your staging or production server:
@@ -142,11 +144,13 @@ After you've successfully tested a patch locally and on your integration environ
 		git push origin master
 
 ## Test custom patches {#cloud-patch-custom}
+
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
 The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#custom-getstarted}
+
 We recommend you test a patch locally in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
@@ -215,4 +219,3 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-</div>

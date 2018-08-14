@@ -3,7 +3,6 @@ group: graphql
 title: Overview
 version: 2.3
 landing-page: GraphQL Developer's Guide
-github_link: graphql/index.md
 ---
 
 [GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for front-end development.
@@ -19,7 +18,7 @@ GraphQL allows you to define the structure of the data that you need, and the se
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
 * **EAV attributes** are explicitly declared in the `schema.graphqls` files.
-For example, the [`Catalogschema.graphqlsfile`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) declares multiple EAV attributes.
+For example, the [`Catalogschema.graphqls`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
 
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 
@@ -43,7 +42,7 @@ The current GraphQL codebase also supports the following features:
 In the near future, we'll roll out the following features:
 
 * A more performant data retrieval mechanism
-* Cacheing
+* Caching
 * Queries for other storefront entities like carts and orders
 * Support mutations to enable payments, checkout, and other operations
 

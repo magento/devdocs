@@ -6,7 +6,6 @@ menu_title: Production System Setup
 menu_node:
 menu_order: 1500
 version: 2.2
-github_link: config-guide/deployment/pipeline/production-system.md
 functional_areas:
   - Configuration
   - Deploy
@@ -31,6 +30,7 @@ You can have one production system. All of the following must be true:
 *	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Set up a production machine
+
 To set up a production machine:
 
 1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -64,6 +64,7 @@ To set up a production machine:
 	The following section shows an example.
 
 ## Set configuration values on your production system
+
 This section discusses how to set sensitive values on your production system using the `magento config:sensitive:set` command.
 
 To set sensitive values:
@@ -95,6 +96,7 @@ To set sensitive values:
 	![Sensitive setting in Admin]({{ site.baseurl }}/common/images/config_sensitive-set.png)
 
 #### Related topics
+
 *	[`magento deploy:mode:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
 *	[`magento config:sensitive:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 *	[`magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html)

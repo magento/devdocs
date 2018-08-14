@@ -6,7 +6,6 @@ menu_title: PHP version readiness check issues
 menu_node:
 menu_order: 100
 version: 2.1
-github_link: install-gde/trouble/readiness/tshoot_rc_php.md
 functional_areas:
   - Install
   - System

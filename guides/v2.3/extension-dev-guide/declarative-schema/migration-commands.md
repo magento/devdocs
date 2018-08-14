@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Migrate install/upgrade scripts to declarative schema
 version: 2.3
-github_link: extension-dev-guide/declarative-schema/migration-commands.md
 ---
 
 Magento provides several commands to help convert your installation and upgrade scripts to declarative schema. These commands also help you test your changes, roll back your changes if anything goes wrong, and help your module maintain backward compatibility.
@@ -32,7 +31,7 @@ The Schema Listener Tool cannot convert everything that can appear in a pre-Mage
 
 * The tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. As a result, the tool ignores all custom DDL operations.
 * The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
-* Any DDL statements in a `Recurring` file will not be transfered to the new schema, because this file should be designed to run during each installation or upgrade.
+* Any DDL statements in a `Recurring` file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.
 * See [Configure declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) if you need to make manual modifications to your schema.
 
 ## Convert install/upgrade data scripts to the data patch format

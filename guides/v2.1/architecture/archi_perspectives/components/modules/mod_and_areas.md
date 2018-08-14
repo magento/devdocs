@@ -1,13 +1,8 @@
 ---
 group: arch-guide
-subgroup: Components
 title: Modules and areas
 menu_title: Modules and areas
-menu_order: 4
-level3_menu_node: level3child
-level3_subgroup: modules
 version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_and_areas.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_and_areas.html
   - /guides/v2.0/architecture/modules/mod_and_areas.html
@@ -59,8 +54,11 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.
 
-After the area name, the URI segment specifies the *full front name*. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class) and action (a PHP method in the class) to execute. A common action to display a HTML page is `index`, which returns an HTML page.
+After the area name, the URI segment specifies the *frontname*. When an HTTP request arrives, Magento extracts the handle from the URL and interprets it as follows: `[frontName]/[controller folder]/[controller class]` where `frontName` is a value defined in the module. For example, in `catalog/product/view`, `catalog` is the name of the module used, `product` is the controller folder, and `view` is the controller class.   For deeper directory structures, the controller folders are separated with `_` (for example, `catalog/product_compare/add` for `Magento/Catalog/Controller/Product/Compare/Add.php`).
+
+Note that only the **execute()** method of any given controller is executed. 
 
 ## Related topics {#m2arch-module-related}
 
-* <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+[Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
+

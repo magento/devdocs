@@ -6,7 +6,6 @@ menu_title: Troubleshoot the updater application
 menu_node:
 menu_order: 10
 version: 2.1
-github_link: comp-mgr/trouble/cman/updater.md
 functional_areas:
   - Upgrade
 ---

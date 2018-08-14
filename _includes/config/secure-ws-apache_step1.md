@@ -17,6 +17,7 @@ First, see if you have the Apache `htpasswd` utility is installed as follows:
 	*	CentOS: `yum -y install httpd-tools`
 
 #### Create a password file
+
 Enter the following commands as a user with `root` privileges:
 
 	mkdir -p /usr/local/apache/password
@@ -50,6 +51,7 @@ You must set up authentication for two users: one with access to nginx and one w
 	htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
 
 #### Add additional users
+
 To add another user to your password file, enter the following command as a user with `root` privileges:
 
 	htpasswd /usr/local/apache/password/.htpasswd <username>

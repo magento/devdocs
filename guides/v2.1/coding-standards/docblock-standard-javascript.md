@@ -6,20 +6,19 @@ landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
 version: 2.1
-github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 functional_areas:
   - Standards
 ---
 
-<h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
+## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 
-<h2 id="frontend-dev-guide-javascript-js-coding-docblock-use">Use JSDoc</h2>
+## Use JSDoc {#frontend-dev-guide-javascript-js-coding-docblock-use}
 
 Document all files, classes, methods, and properties with JSDoc comments.
 
@@ -27,7 +26,7 @@ Inline comments should be of the "//" type.
 
 It is recommended to avoid sentence fragments in documentation blocks. Use sentence-style capitalization and put a period at the end. Sentence fragmentation is acceptable in inline commentaries to keep it short.
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-syntax">Comment syntax</h3>
+### Comment syntax {#frontend-dev-guide-javascript-js-coding-docblock-syntax}
 
 JSDoc comments requirements:
 
@@ -46,7 +45,7 @@ Example:
 
 Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} from JSDoc comments to validate and optimize the code.
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-indentation">JSDoc indentation</h3>
+### JSDoc indentation {#frontend-dev-guide-javascript-js-coding-docblock-indentation}
 
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
@@ -63,7 +62,7 @@ project.MyClass.prototype.method&nbsp;=&nbsp;function(foo)&nbsp;{
 };
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-classcomments">Class comments</h3>
+### Class comments {#frontend-dev-guide-javascript-js-coding-docblock-classcomments}
 
 Classes must be documented with a description, and appropriate type tags.
 
@@ -78,7 +77,7 @@ project.MyClass&nbsp;=&nbsp;function(arg1,&nbsp;arg2)&nbsp;{
 };
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-methodcomments">Method and function comments</h3>
+### Method and function comments {#frontend-dev-guide-javascript-js-coding-docblock-methodcomments}
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
@@ -94,7 +93,7 @@ function&nbsp;someMethod(obj)&nbsp;{
 }
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-propertycomments">Property comments</h3>
+### Property comments {#frontend-dev-guide-javascript-js-coding-docblock-propertycomments}
 
 <pre>/**
 &nbsp;*&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;things&nbsp;per&nbsp;pane.
@@ -104,9 +103,9 @@ function&nbsp;someMethod(obj)&nbsp;{
 project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-tagreference">JSDoc tag reference</h3>
+### JSDoc tag reference {#frontend-dev-guide-javascript-js-coding-docblock-tagreference}
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-const">@const</h4>
+#### @const {#frontend-dev-guide-javascript-js-coding-docblock-const}
 
 Marks a variable read-only and suitable for inlining. Generates warnings if it is rewritten. Constants should also be ALL_CAPS, but the annotation should help eliminate reliance on the naming convention.
 
@@ -123,7 +122,7 @@ Marks a variable read-only and suitable for inlining. Generates warnings if it i
 mynamespace.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-extends">@extends</h4>
+#### @extends {#frontend-dev-guide-javascript-js-coding-docblock-extends}
 
 Used with `@constructor` to indicate that a class inherits from another class.
 
@@ -139,7 +138,7 @@ project.MyClass.EmptyNodeList&nbsp;=&nbsp;function()&nbsp;{
 </pre>
 
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-interface">@interface</h4>
+#### @interface {#frontend-dev-guide-javascript-js-coding-docblock-interface}
 
 Used to indicate that the function defines an interface.
 
@@ -161,7 +160,7 @@ function&nbsp;Polygon()&nbsp;{};
 Polygon.prototype.getSides&nbsp;=&nbsp;function()&nbsp;{};
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-implements">@implements</h4>
+#### @implements {#frontend-dev-guide-javascript-js-coding-docblock-implements}
 
 Used with `@constructor` to indicate that a class implements an interface.
 
@@ -183,7 +182,7 @@ Square.prototype.draw&nbsp;=&nbsp;function()&nbsp;{
 };
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-lends">@lends</h4>
+#### @lends {#frontend-dev-guide-javascript-js-coding-docblock-lends}
 
 Indicates that the keys of an object literal should be treated as properties of some other object. This annotation should only appear on object literals.
 
@@ -199,7 +198,7 @@ Please refer to <a href ="https://code.google.com/p/jsdoc-toolkit/wiki/TagLends"
 );
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-override">@override</h4>
+#### @override {#frontend-dev-guide-javascript-js-coding-docblock-override}
 
 Indicates that a method or property of a subclass intentionally hides a method or property of the superclass. If no other documentation is included, the method or property also inherits documentation from its superclass.
 
@@ -212,7 +211,7 @@ project.SubClass.prototype.toString()&nbsp;{
 };
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-param">@param</h4>
+#### @param {#frontend-dev-guide-javascript-js-coding-docblock-param}
 
 Used with method, function and constructor calls to document the arguments of a function.
 
@@ -230,7 +229,7 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 };
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-return">@return</h4>
+#### @return {#frontend-dev-guide-javascript-js-coding-docblock-return}
 
 Used with method and function calls to document the return type. When writing descriptions for boolean parameters, prefer "Whether the component is visible" to "True if the component is visible, false otherwise". If there is no return value, do not use an `@return` tag.
 
@@ -245,7 +244,7 @@ namespace.Storage.prototype.getLastId&nbsp;=&nbsp;function()&nbsp;{
 };
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-this">@this</h4>
+#### @this {#frontend-dev-guide-javascript-js-coding-docblock-this}
 
 The type of the object in whose context a particular method is called. Required when the this {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} is referenced from a function that is not a prototype method.
 
@@ -262,7 +261,7 @@ The type of the object in whose context a particular method is called. Required 
 );
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-type">@type</h4>
+#### @type {#frontend-dev-guide-javascript-js-coding-docblock-type}
 
 Identifies the type of a variable, property, or expression.
 
@@ -274,7 +273,7 @@ Identifies the type of a variable, property, or expression.
 var&nbsp;hexId&nbsp;=&nbsp;hexId;
 </pre>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-typedef">@typedef</h4>
+#### @typedef {#frontend-dev-guide-javascript-js-coding-docblock-typedef}
 
 This annotation can be used to declare an alias of a more complex type.
 
@@ -287,9 +286,7 @@ namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
 }
 </pre>
 
-
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-jstypes">JavaScript types</h3>
-
+### JavaScript types {#frontend-dev-guide-javascript-js-coding-docblock-jstypes}
 
 <table>
 	<tbody>
@@ -457,7 +454,7 @@ new&nbsp;project.MyClass()</pre></td>
   </tbody>
 </table>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-typelang">JavaScript type language</h4>
+#### JavaScript type language {#frontend-dev-guide-javascript-js-coding-docblock-typelang}
 
 <table>
 	<tbody>

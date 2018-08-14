@@ -6,7 +6,6 @@ menu_title: Construct a request
 menu_order: 1
 
 version: 2.1
-github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
@@ -33,6 +32,7 @@ Specify one of these HTTP verbs in the request:
 * `DELETE`. Requests that the origin server delete the target resource.
 
 ### Endpoint {#endpoints}
+
 An endpoint is a combination of the _server_ that fulfills a request, the web service, the store code, the resource against which the request is being made, and any template parameters.
 
 For example, in the `http://magento.ll/index.php/rest/default/V1/customerGroups/:id` endpoint, the server is `magento.ll/index.php/`, the web service is `rest`, the resource is `/V1/customerGroups`, and the template parameter is `id`.
@@ -57,8 +57,8 @@ HTTP header | Description | Syntax
 `Accept` | Optional. Specifies the format of the response body. Default is `JSON`. | `Accept: application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
 `Content-Type` | Required for operations with a request body. Specifies the format of the request body. | `Content-Type:application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
 
-
 ### Call payload {#payload}
+
 The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
 
 You specify input parameters in the URI. For example, in the `GET/V1/customers/:customerId` URI, you must specify the `customerId` template parameter. This parameter filters the response by the specified customer ID.
@@ -98,6 +98,7 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
 This JSON-formatted request body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.
 
 ## Construct a request {#construct-request}
+
 This example shows you how to construct a REST web API call to create an account.
 
 <ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
@@ -127,6 +128,7 @@ This example shows you how to construct a REST web API call to create an account
 </ol>
 
 ### Customers Search API request example {#customers-search-api-request-example}
+
 The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.
 <ol>
 <li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} token returned by the Magento token service.</p></li>
@@ -169,4 +171,5 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
+
 Run the web API call through a <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL command</a> or a REST client.

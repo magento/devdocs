@@ -7,7 +7,6 @@ menu_order: 5
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/multi-master/multi-master_verify.md
 functional_areas:
   - Configuration
   - System
@@ -45,6 +44,6 @@ To verify your split databases are working properly, perform the following tasks
     <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
-
 #### Next step (optional)
+
 <a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>

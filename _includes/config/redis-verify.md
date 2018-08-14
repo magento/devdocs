@@ -3,6 +3,7 @@
 To verify that Redis and Magento are working together, use the following commands:
 
 ### Redis monitor command
+
 In a command prompt on the server on which Redis is running, enter:
 
 	redis-cli monitor
@@ -10,6 +11,7 @@ In a command prompt on the server on which Redis is running, enter:
 Refresh your storefront page and you'll see output similar to the following.
 
 #### Session storage
+
 If you use Redis for session storage, you'll see output similar to the following:
 
 	1476824834.187250 [0 127.0.0.1:52353] "select" "0"
@@ -21,6 +23,7 @@ If you use Redis for session storage, you'll see output similar to the following
 	... more ...
 
 #### Page caching
+
 If you use Redis for page caching, you'll see output similar to the following:
 
 	1476826133.810090 [0 127.0.0.1:52366] "select" "1"
@@ -45,6 +48,7 @@ If you use Redis for page caching, you'll see output similar to the following:
 	... more ...
 
 ### Redis ping command
+
 Enter the following command:
 
 	redis-cli ping

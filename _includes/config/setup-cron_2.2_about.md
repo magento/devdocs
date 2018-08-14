@@ -1,4 +1,5 @@
 ### About the Magento crontab
+
 The Magento _crontab_ is the configuration used to run Magento cron jobs.
 
 Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:

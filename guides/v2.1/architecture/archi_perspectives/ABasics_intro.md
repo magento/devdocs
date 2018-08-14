@@ -1,12 +1,8 @@
 ---
 group: arch-guide
-subgroup: Architectural Basics
 title: Architectural basics overview
 menu_title: Architectural basics
-menu_node: parent
-menu_order: 1
 version: 2.1
-github_link: architecture/archi_perspectives/ABasics_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ABasics_intro.html
 ---
 
@@ -23,10 +19,10 @@ The following discussion focuses on how these topics apply directly to Magento:
 
 ## Related topics
 
-[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-[Technology stack]({{ page.baseurl }}/architecture/tech-stack.html)
+[Technology stack]({{page.baseurl}}/architecture/tech-stack.html)
 
-[Stack basics]({{ page.baseurl }}/architecture/tech-stack.html)
+[Stack basics]({{page.baseurl}}/architecture/tech-stack.html)
 
-[Versioning]({{ page.baseurl }}/architecture/versioning.html)
+[Versioning]({{page.baseurl}}/architecture/versioning.html)

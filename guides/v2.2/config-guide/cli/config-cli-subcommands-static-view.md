@@ -2,7 +2,6 @@
 group: config-guide
 title: Deploy static view files
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-static-view.md
 functional_areas:
   - Configuration
   - System
@@ -12,6 +11,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of static view files deployment {#config-cli-static-overview}
+
 The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>.
 
 The term *static view file* refers to the following:
@@ -35,6 +35,7 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 </div>
 
 ## Deploy static view files {#config-cli-subcommands-staticview}
+
 To deploy static view files:
 
 1.  Log in to the Magento server as, or <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -101,7 +102,7 @@ The following table explains this command's parameters and values.
           default, with no option specified, is to generate files
           for all <a href=
           "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-          target="\_blank">ISO-636</a> language codes. You can
+          target="\_blank">ISO-639</a> language codes. You can
           specify the name of one language code at a time.
         </p>
         <p>
@@ -182,7 +183,7 @@ The following table explains this command's parameters and values.
           <code>frontend</code>.
         </p>
         <p>
-          For example, <code>--area adminthml</code>
+          For example, <code>--area adminhtml</code>
         </p>
       </td>
       <td>
@@ -404,9 +405,11 @@ If you specify values for both `<languages>` and `--language`, `<languages>` tak
 </div>
 
 ### Examples
+
 Following are some example commands.
 
 #### Excluding a theme and HTML minification
+
 The following command deploys {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} for the US English (`en_US`) language, excludes the Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} provided with Magento, and does not minify {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} files.
 
     bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
@@ -429,6 +432,7 @@ Sample output:
     ---
 
 #### Generating static view files for one theme and one area
+
 The following command generates static view files for all languages, the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area only, the Magento Luma theme only, without generating fonts:
 
     bin/magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
@@ -448,6 +452,7 @@ Sample output:
     New version of deployed files: 1466711110
 
 ### Deploy static view files without installing Magento {#deploy_without_db}
+
 You might want to run the deployment process in a separate, non-production, environment, to avoid any build processes on sensitive production machines.
 
 To do this, take the following steps:
@@ -456,7 +461,8 @@ To do this, take the following steps:
 2.  Copy the exported files to the non-production code base.
 3.  Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
-<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+## Troubleshooting the static view files deployment tool {#view-file-trouble}
+
 <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
@@ -483,6 +489,7 @@ Use the following steps:
 	</div> -->
 
 ## Tip for developers customizing the static content deployment tool
+
 When creating a custom implementation of the static content deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability){:target="\_blank"} file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="\_blank"}.

@@ -2,11 +2,9 @@
 group: fedg
 title: Layout overview
 version: 2.2
-github_link: frontend-dev-guide/layouts/layout-overview.md
 functional_areas:
   - Frontend
 ---
-
 ## What's in this topic
 
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
@@ -71,14 +69,12 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
 To make the necessary changes, create [extending][extend]{:target="_blank"} and [overriding][override]{:target="_blank"} layout files in your custom theme.
 
 ## Layout files processing {#layout_processing}
-
 
 The Magento application processes layout files in the following order:
 

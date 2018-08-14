@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ### Find the Magento software version {#magento-version}
+
 To find the version of the Magento software:
 
 *	If you downloaded the Magento software using a Composer metapackage, enter the following command:

@@ -1,9 +1,11 @@
 <div markdown="1">
 
 ### Firewall and SELinux {#firewall-selinux}
+
 Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.
 
 #### Set up rules for iptables and SELinux
+
 To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:
 
 *	<a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a>

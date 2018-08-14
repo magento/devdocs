@@ -4,7 +4,6 @@ subgroup: components
 title: OnOffColumn component
 menu_title: OnOffColumn component
 version: 2.2
-github_link: ui_comp_guide/components/ui-onoffcolumn.md
 ---
 
 ## Overview
@@ -34,7 +33,7 @@ OnOffColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{<br><code>[name: string]: boolean</code><br>}</td>
     <td>{<br>'<code>admin__scope-old': true,</code><br><code>'data-grid-onoff-cell': true,</code><br><code>'data-grid-checkbox-cell': false</code><br>}</td>
   </tr>

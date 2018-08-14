@@ -2,7 +2,6 @@
 group: mftf
 title: Action groups in the Magento Functional Testing Framework
 version: 2.2
-github_link: magento-functional-testing-framework/release-1/cest/action-groups.md
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/cest/action-groups.html
@@ -116,7 +115,6 @@ Let's finalize our action group code:
     </actionGroup>
 </config>
 ```
-
 
 ### Usage in a test
 

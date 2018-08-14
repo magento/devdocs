@@ -5,17 +5,16 @@ title: Use translation dictionary to customize strings
 menu_title: Use translation dictionary to customize strings
 menu_order: 1
 version: 2.1
-github_link: frontend-dev-guide/translations/theme_dictionary.md
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This topic describes how default strings can be changed in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
 
-<h2>How Magento applies locales</h2>
+## How Magento applies locales
 
 When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
 
@@ -28,7 +27,7 @@ When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endg
 
 If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 
-<h2>Creating a theme dictionary to override parent strings for default locale</h2>
+## Creating a theme dictionary to override parent strings for default locale
 
 The translations priority described earlier is applied for the default en_US locale as well. So you can use the `en_US.csv` dictionary to customize the strings used in the default locale.
 
@@ -51,9 +50,8 @@ That is why the recommended flow for adding custom strings is the following:
 
 See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
 
+### Custom strings and dictionaries for not default locales
 
-
-<h3>Custom strings and dictionaries for not default locales</h3>
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
 Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
@@ -67,5 +65,6 @@ Continuing the <a href="#luma_example">previous example</a> with the Luma theme,
 The default values (keys) are used in the left column.
 
 ## Recommended reading ##
+
 - <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a>
 -  <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>

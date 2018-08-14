@@ -1,18 +1,14 @@
 ---
 group: arch-guide
-subgroup: Architectural Layers
 title: Architectural layers overview
 menu_title: Architectural layers
-menu_node: parent
-menu_order:
 version: 2.1
-github_link: architecture/archi_perspectives/ALayers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ALayers_intro.html
 ---
 
 ## Magento as layered software
 
-At its highest level, Magento's product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code.
+At its highest level, Magento's product architecture consists of the core product code plus optional *modules*. These optional modules enhance or replace the basic product code.
 
 If you are substantially customizing the basic Magento product, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} as well as its fundamental behavior.
 
@@ -30,12 +26,12 @@ Layered application design offers many advantages, but users of Magento will app
 
 ## Related topics
 
-[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-[Presentation layer]({{ page.baseurl }}/architecture/archi_perspectives/present_layer.html)
+[Presentation layer]({{page.baseurl}}/architecture/archi_perspectives/present_layer.html)
 
-[Service layer]({{ page.baseurl }}/architecture/archi_perspectives/service_layer.html)
+[Service layer]({{page.baseurl}}/architecture/archi_perspectives/service_layer.html)
 
-[Domain layer]({{ page.baseurl }}/architecture/archi_perspectives/domain_layer.html)
+[Domain layer]({{page.baseurl}}/architecture/archi_perspectives/domain_layer.html)
 
-[Persistence layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html)
+[Persistence layer]({{page.baseurl}}/architecture/archi_perspectives/persist_layer.html)

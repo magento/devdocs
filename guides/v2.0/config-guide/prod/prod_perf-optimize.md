@@ -5,7 +5,6 @@ title: Magento Optimization Guide
 menu_title: Magento Optimization Guide
 menu_order: 100
 version: 2.0
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -105,7 +104,6 @@ Go to the Admin in default of developer mode and change the following settings f
 #### Stores -> Index Management
 
 Set all indexers to "Update on Schedule" mode.
-
 
 ### Production Mode
 

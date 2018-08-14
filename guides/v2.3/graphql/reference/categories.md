@@ -2,7 +2,6 @@
 group: graphql
 title: category endpoint
 version: 2.3
-github_link: graphql/reference/categories.md
 ---
 
 The `category` endpoint allows you to search for a single category definition or the entire category tree.

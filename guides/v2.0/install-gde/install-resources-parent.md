@@ -6,7 +6,6 @@ menu_title: Helpful resources
 menu_order: 1
 menu_node: parent
 version: 2.0
-github_link: install-gde/install-resources-parent.md
 functional_areas:
   - Install
   - System

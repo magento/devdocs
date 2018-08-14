@@ -6,7 +6,6 @@ menu_title: Configure and run cron
 menu_node:
 menu_order: 100
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-cron.md
 functional_areas:
   - Configuration
   - System
@@ -19,6 +18,7 @@ functional_areas:
 To run cron in a web browser, see <a href="{{ page.baseurl }}/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a>
 
 ## Create or remove the Magento crontab
+
 This section discusses how to create or remove your Magento crontab (that is, the configuration for Magento cron jobs).
 
 {% include config/setup-cron_2.2_about.md %}
@@ -26,6 +26,7 @@ This section discusses how to create or remove your Magento crontab (that is, th
 {% include config/setup-cron_2.2_how-to.md %}
 
 ### Remove the Magento crontab {#config-cron-remove}
+
 You should remove the Magento crontab only before uninstalling the Magento application.
 
 To remove the Magento crontab:
@@ -41,6 +42,7 @@ This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ M
 </div>
 
 ## Run cron from the command line {#config-cli-cron-group-run}
+
 Command options:
 
   bin/magento cron:run [--group="<cron group name>"]
@@ -64,6 +66,7 @@ You must run cron twice: the first time to discover tasks to run and the second 
 </div>
 
 ## Logging
+
 System logs provide detailed information for debugging. The following attributes apply to Magento cron logs:
 
 -   All exceptions from cron jobs are logged by `\Magento\Cron\Observer\ProcessCronQueueObserver::execute`.

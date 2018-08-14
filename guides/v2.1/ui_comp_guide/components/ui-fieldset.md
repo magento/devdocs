@@ -4,13 +4,14 @@ subgroup: components
 title: Fieldset сomponent
 menu_title: Fieldset component
 version: 2.1
-github_link: ui_comp_guide/components/ui-fieldset.md
 ---
 
 ## Overview
+
 The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.
 
 ## Fieldset options
+
 Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `collapsible` configuration.
 
 Fieldset-specific options:

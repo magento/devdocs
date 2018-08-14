@@ -4,7 +4,6 @@ subgroup: components
 title: MultiselectColumn component
 menu_title: MultiselectColumn component
 version: 2.2
-github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 ---
 
 ## Overview
@@ -55,7 +54,7 @@ MultiselectColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td>{<br><code>'data-grid-checkbox-cell': true</code><br>}</td>
   </tr>

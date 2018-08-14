@@ -2,7 +2,6 @@
 group: config-guide
 title: Set configuration values
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
 functional_areas:
   - Configuration
   - System
@@ -40,6 +39,7 @@ Use the following commands:
 *   `bin/magento config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks.
 
 ## Prerequisites
+
 To set a configuration value, you must know at least one of the following:
 
 *   The configuration path
@@ -48,6 +48,7 @@ To set a configuration value, you must know at least one of the following:
     To set a configuration value for the default scope, you don't need to do anything.
 
 ### Find the configuration path
+
 See the following references:
 
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
@@ -56,6 +57,7 @@ See the following references:
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ### Find the scope code
+
 You can find the scope code either in the Magento database or in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. See one of the following sections for more information.
 
 #### Find the scope code in the Admin
@@ -68,7 +70,6 @@ You can find the scope code either in the Magento database or in the Magento {% 
 
     ![Get a website or store view code from the Admin]({{ site.baseurl }}/common/images/config_configset_website-code.png){:width="450px"}
 4.  Continue with [Set configuration values](#config-cli-config-set).
-
 
 #### Find the scope code in the database
 
@@ -101,6 +102,7 @@ To find the values in the database:
 3.  Continue with the next section.
 
 ## Set configuration values {#config-cli-config-set}
+
 To set system-specific configuration values on Magento 2.2.0 - 2.2.3, use:
 
 ``` bash
@@ -145,6 +147,7 @@ See one of the following sections for more information:
 *   [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
 
 ### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
+
 Use `bin/magento config:set` _without_ `--lock` (or `--lock-env` or `--lock-config`) to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
 #### Examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}
@@ -168,6 +171,7 @@ bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url ht
 ```
 
 ### Set configuration values that cannot be edited in the Magento Admin {#config-cli-config-file}
+
 If you use the `--lock-env` (Magento 2.2.4 and later) or `--lock` (up to Magento 2.2.3) option as follows, the command saves the configuration value in `<Magento base dir>/app/etc/env.php` and disables the field for editing this value in Admin.
 
 ``` bash
@@ -193,6 +197,7 @@ You can transfer `config.php` to another system to use the same configuration va
 </div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
+
 Command options:
 
 ``` bash

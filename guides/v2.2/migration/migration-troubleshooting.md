@@ -6,7 +6,6 @@ menu_title: Troubleshooting
 menu_node: parent
 menu_order: 6
 version: 2.2
-github_link: migration/migration-troubleshooting.md
 ---
 
 ## Common error messages

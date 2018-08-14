@@ -5,7 +5,6 @@ title: Compile LESS using Grunt
 menu_order: 4
 menu_title: Compile LESS using Grunt
 version: 2.2
-github_link: frontend-dev-guide/css-topics/css_debug.md
 functional_areas:
   - Frontend
 ---
@@ -14,10 +13,8 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 ## Prerequisites
 
-
 - Make sure you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
-
 
 ## Adding themes to Grunt configuration {#add_theme}
 

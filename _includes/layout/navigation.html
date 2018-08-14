@@ -7,17 +7,15 @@
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
           <li><a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Installation Guide</a></li>
-          {% if page.guide_version == "2.2" %}
+          {% unless page.guide_version == "2.0" or page.guide_version == "2.1"%}
           <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
-          {% elsif page.guide_version == "2.1" %}
+          {% else %}
           <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-          {% elsif page.guide_version == "2.0" %}
-          <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-          {% endif %}
+          {% endunless %}
           <li><a href="{{ page.baseurl }}/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+          {% unless page.guide_version == "2.0" or page.guide_version == "2.1"%}
           <li><a href="{{ page.baseurl }}/performance-best-practices/index.html">Performance Best Practices</a></li>
-          {% endif %}
+          {% endunless %}
           <li><a href="{{ page.baseurl }}/migration/bk-migration-guide.html">Migration Guide</a></li>
           <li><a href="{{ page.baseurl }}/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li><a href="{{ site.baseurl }}/release-notes/bk-release-notes.html">Release Information</a></li>
@@ -56,7 +54,9 @@
           <li><a href="{{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
           <li><a href="{{ page.baseurl }}/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
           <li><a href="{{ page.baseurl }}/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
-          <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
+          {% if page.guide_version == "2.3" %}
+          <li><a href="{{ page.baseurl }}/pwa/">PWA Studios</a></li>
+          {% endif %}
         </ul>
       </div>
 
@@ -132,10 +132,7 @@
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
         {% if page.guide_version != "2.0" %}
-        <li><a  data-proofer-ignore href="{{ page.baseurl }}/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
-        {% endif %}
-        {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
-        <li><a href="{{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product with REST APIs</a></li>
+        <li><a  data-proofer-ignore href="{{ page.baseurl }}/rest/tutorials/index.html">REST tutorials</a></li>
         {% endif %}
         {% if page.guide_version != "2.0" %}
         <li><a  data-proofer-ignore href="{{ page.baseurl }}/howdoi/customize_product.html">Customize Product Creation Form</a></li>

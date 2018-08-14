@@ -1,4 +1,3 @@
-<div markdown="1">
 
 	To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
 
@@ -6,4 +5,3 @@
 
 		 SHOW VARIABLES LIKE 'max_allowed_packet';
 		 
-</div>

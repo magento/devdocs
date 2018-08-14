@@ -5,7 +5,6 @@ subgroup: Framework
 menu_title: Serialize Library
 menu_order: 1000
 version: 2.2
-github_link: extension-dev-guide/framework/serializer.md
 ---
 
 ## Overview
@@ -13,7 +12,6 @@ github_link: extension-dev-guide/framework/serializer.md
 This {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
 
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
-
 
 ## Serialization
 
@@ -45,7 +43,6 @@ Magento discourages using the Serialize implementation directly because it can l
 Always use the `SerializerInterface` for serializing and unserializing.
 
 </div>
-
 
 ## Usage
 
@@ -116,7 +113,7 @@ public function loadDataFromCache()
 ## Backward Compatibility Note
 
 The `SerializerInterface` interface and its implementations only exist since Magento version 2.2.  
-Because of this, it is not posssible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
+Because of this, it is not possible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
 
 In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of `SerializerInterface`.  
 Instead, a runtime check if the `SerializerInterface` definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the `magento/framework` composer package version would work, too.  

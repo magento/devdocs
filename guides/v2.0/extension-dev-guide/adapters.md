@@ -5,7 +5,6 @@ title: Adapters
 menu_title: Adapters
 menu_order: 1000
 version: 2.0
-github_link: extension-dev-guide/adapters.md
 ---
 
 ## Overview

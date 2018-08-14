@@ -4,7 +4,6 @@ subgroup: components
 title: Wysiwyg component
 menu_title: Wysiwyg component
 version: 2.1
-github_link: ui_comp_guide/components/ui-wysiwyg.md
 ---
 
 ## Overview

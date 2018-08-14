@@ -1,43 +1,30 @@
 ---
 group: pattern
-subgroup: Controls
-title: Admin Design Pattern Library
-menu_title: Buttons
-menu_order: 1
-menu_node:
+title: Buttons
 version: 2.1
-github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
-
-## Buttons
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento.
 
 For solutions not described in this topic, please refer to other related patterns or contact the Magento UX Design team.
 
+## When to Use
 
-<h3 id="when-to-use">When to Use</h3>
-Buttons should be used anywhere a call to action(CTA) is needed. Discretion should be
-used when deciding when to use a button vs. a hyperlink, icon, or another call to action.
+Buttons should be used anywhere a call to action(CTA) is needed. Discretion should be used when deciding when to use a button vs. a hyperlink, icon, or another call to action.
 
+## When Not to Use
 
-<h3 id="when-not-to-use">When Not to Use</h3>
-* Do not use buttons to indicate actions that are better suited as hyperlinks such     
-  as "Cancel". Some exceptions may apply.
-* Do not use more than one primary page level action on a single page for
-  different actions. Some exceptions may apply.
-* Do not use buttons to indicate a link to more information or to a task not related
-  to primary flow.
+* Do not use buttons to indicate actions that are better suited as hyperlinks such as "Cancel". Some exceptions may apply.
+* Do not use more than one primary page level action on a single page for different actions. Some exceptions may apply.
+* Do not use buttons to indicate a link to more information or to a task not related to primary flow.
 
-<h3 id="variations">Variations</h3>
+## Variations
 
 Variations of this pattern are as follows, and will be detailed in the section on Appearance and behavior:
 
 * Page level buttons are to be used for calls to action on pages.
 * Form level buttons are to be used on forms.
 * Table level buttons are to be used within tables or data grids
-
-<br>
 
 Buttons will be take on one of the below variations.
 
@@ -89,200 +76,257 @@ Buttons will be take on one of the below variations.
 {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style classes will need to be established for any buttons that require a custom
 defined style.
 
-<h2 id="style_behavior">Styles and Behavior</h2>
+## Styles and Behavior
 
-#### 1. Page Level Button
+### Page Level Button
 
-<img src="img/Button_grid01_primary.png">
+![](img/Button_grid01_primary.png)
 
-**Font details**<br>
-Family: Open Sans Semibold;<br>
-Size: 17px; (or 1.125em based on 14px default font)<br>
-Color: #ffffff<br>
-<br>
-**Background color**<br>
-Primary: #eb5202; (CSS-$magento-orange-color)<br>
-Secondary: #514943; (CSS-$magento-dark-brown)<br>
-<br>
-**Hover background color**<br>
-Primary: # aa2d00;<br>
-Secondary: # 282421;<br>
-<br>
-**Disabled style**<br>
-Opacity: 50%<br>
-<br>
-**Page Level Button Padding**<br>
-Top/Bottom: 11px<br>
-Left/Right: 20px<br>
-<br>
-**Margin Spacing**<br>
-Top/Bottom margin spacing should not be less than 10px<br>
-Left/Right margin spacing should not be less than 20px<br>
-<br>
+#### Font details
 
+Family: Open Sans Semibold;
 
-#### 2. Dropdown Buttons
+Size: 17px; (or 1.125em based on 14px default font)
 
-<img src="img/Button_grid03_dropdown.png" >
+Color: #ffffff
 
-**Font details**<br>
-Family: Open Sans Semibold;<br>
-Size: 17px; (or 1.125em based on 14px default font)<br>
-Color: #ffffff<br>
-<br>
-**Background color**<br>
-Primary: #eb5202; (CSS-$magento-orange-color)<br>
-Secondary: #514943; (CSS-$magento-dark-brown)<br>
+#### Background color
 
-<br>
-**Hover background color**<br>
-Primary: # aa2d00;<br>
-Secondary: #28242;<br>
-Dropdown stroke: #337ab7;<br>
-Dropdown Highlight: #eeeeee<br>
-<br>
-**Disabled style**<br>
-Opacity: 50%<br>
-<br>
-**Page Level Button Padding**<br>
-Top/Bottom: 11px<br>
-Left/Right: 20px<br>
-<br>
-**Margin Spacing**<br>
-Top/Bottom margin spacing should not be less than 10px<br>
-Left/Right margin spacing should not be less than 20px<br>
+Primary: #eb5202; (CSS-$magento-orange-color)
 
-<br>
+Secondary: #514943; (CSS-$magento-dark-brown)
 
+#### Hover background color
 
-#### 3. Tertiary Buttons
+Primary: #aa2d00;
+Secondary: #282421;
 
-<img src="img/Button_grid02_tertiary.png">
+#### Disabled style
 
-<br>
-**Font details**<br>
-Family: Open Sans Semibold;<br>
-Size: 14px; (or .750em based on 14px default font)<br>
-Color: #ffffff<br>
-<br>
-**Background colors**<br>
-Secondary: #514943; (CSS-$magento-dark-brown)<br>
-<br>
-**Hover background color**<br>
-Secondary: #28242;<br>
-<br>
-**Disabled style**<br>
-Opacity: 50%<br>
-<br>
-**Tertiary Level Button Padding**<br>
-Top/Bottom: 12px<br>
-Left/Right: 30px<br>
-<br>
-**Margin Spacing**<br>
-Top/Bottom margin spacing should not be less than 10px<br>
-Left/Right margin spacing should not be less than 20px<br>
-<br>
+Opacity: 50%
 
-**Tertiary Button Example:**<br><br>
-<img src="img/TertiaryExample.png">
+#### Page Level Button Padding
 
-<br>
+Top/Bottom: 11px
 
-####  4. Quaternary Buttons
+Left/Right: 20px
 
-<img src="img/Button_grid02_quaternary.png">
+#### Margin Spacing
 
-<br>
-Quaternary buttons are only after all the buttons hierarchy have been used.<br>
-<br>
-**Font details**<br>
-Family: Open Sans Semibold;<br>
-Size: 13px; (or .750em based on 14px default font)<br>
-Color: #322923<br>
-<br>
-**Background colors**<br>
-Light: #dcdcdc;<br>
-<br>
-**Border**<br>
-Solid<br>
-Width: 1px;<br>
-Border color: #9d9d9d;<br>
-<br>
-**Hover background color**<br>
-Dark:#cccccc;<br>
-<br>
+Top/Bottom margin spacing should not be less than 10px
 
-**Disabled style**<br>
-Opacity: 50%<br>
-<br>
-**Tertiary Level Button Padding**<br>
-Top/Bottom: 12px<br>
-Left/Right: 15px<br>
-<br>
-**Margin Spacing**<br>
-Top/Bottom margin spacing should should not be less than 10px<br>
-Left/Right margin spacing should not be less than 10px<br>
-<br>
-**Quaternary Button Example:**<br><br>
-<img src="img/TableButtonExample.png">
+Left/Right margin spacing should not be less than 20px
 
-####  5. Toggle Buttons
+### Dropdown Buttons
+
+![](img/Button_grid03_dropdown.png)
+
+#### Font details
+
+Family: Open Sans Semibold;
+
+Size: 17px; (or 1.125em based on 14px default font)
+
+Color: #ffffff
+
+#### Background color
+
+Primary: #eb5202; (CSS-$magento-orange-color)
+
+Secondary: #514943; (CSS-$magento-dark-brown)
+
+#### Hover background color
+
+Primary: #aa2d00
+
+Secondary: #28242
+
+Dropdown stroke: #337ab7
+
+Dropdown Highlight: #eeeeee
+
+#### Disabled style
+
+Opacity: 50%
+
+#### Page Level Button Padding
+
+Top/Bottom: 11px
+
+Left/Right: 20px
+
+#### Margin Spacing
+
+Top/Bottom margin spacing should not be less than 10px
+
+Left/Right margin spacing should not be less than 20px
+
+### Tertiary Buttons
+
+![](img/Button_grid02_tertiary.png)
+
+#### Font details
+
+Family: Open Sans Semibold
+
+Size: 14px; (or .750em based on 14px default font)
+
+Color: #ffffff
+
+#### Background colors
+
+Secondary: #514943; (CSS-$magento-dark-brown)
+
+#### Hover background color
+
+Secondary: #28242
+
+#### Disabled style
+
+Opacity: 50%
+
+#### Tertiary Level Button Padding
+
+Top/Bottom: 12px
+
+Left/Right: 30px
+
+#### Margin Spacing
+
+Top/Bottom margin spacing should not be less than 10px
+
+Left/Right margin spacing should not be less than 20px
+
+#### Tertiary Button Example:
+
+![](img/TertiaryExample.png)
+
+### Quaternary Buttons
+
+![](img/Button_grid02_quaternary.png)
+
+Quaternary buttons are only after all the buttons hierarchy have been used.
+
+#### Font details
+
+Family: Open Sans Semibold
+
+Size: 13px; (or .750em based on 14px default font)
+
+Color: #322923
+
+#### Background colors
+
+Light: #dcdcdc
+
+#### Border
+
+Solid
+
+Width: 1px;
+
+Border color: #9d9d9d;
+
+#### Hover background color
+
+Dark:#cccccc;
+
+#### Disabled style
+
+Opacity: 50%
+
+#### Tertiary Level Button Padding
+
+Top/Bottom: 12px
+
+Left/Right: 15px
+
+#### Margin Spacing
+
+Top/Bottom margin spacing should should not be less than 10px
+
+Left/Right margin spacing should not be less than 10px
+
+#### Quaternary Button Example:
+
+![](img/TableButtonExample.png)
+
+### Toggle Buttons
+
 The toggle button acts like a checkbox. When you touch/click on it, the state toggles between "yes" and "no" and/or "on" and "off".<br>
-<br>
-**When to Use/When Not to Use**<br>
-Use toggle for:<br>
-* Binary selection (true/false) when only a single option can be set<br>
-* When multiple non-required selections can be set<br>
-* In relation to other form elements when needed<br>
-<br>
-Do not use checkboxes if:<br>
-* Multiple options need visibility<br>
 
-<br>
-**Variations**<br>
-No additional variations.<br>
-<br>
-**Font details**<br>
-Family: Open Sans Semibold;<br>
-Size: 13px; (or .750em based on 14px default font)<br>
-Color: #322923<br>
-<br>
-**Background colors**<br>
-Light: #dcdcdc;<br>
-<br>
-**Border**<br>
-Solid<br>
-Width: 1px;<br>
-Border color: #9d9d9d;<br>
-<br>
-**Active background color**<br>
-Dark:#cccccc;<br>
-<br>
-**Inactive background color**<br>
-Dark:#cccccc;<br>
-<br>
-**Disabled style**<br>
-Opacity: 50%<br>
-<br>
-**Tertiary Level Button Padding**<br>
-Top/Bottom: 12px<br>
-Left/Right: 15px<br>
-<br>
-**Margin Spacing**<br>
-Top/Bottom margin spacing should should not be less than 10px<br>
-Left/Right margin spacing should not be less than 10px<br>
-<br>
-**Examples of toggle buttons:**<br><br>
-<img src="img/TableWToggle.png">
+#### When to Use/When Not to Use
 
-<h3 id="accessibility">Accessibility</h3>
+Use toggle for:
 
-PC: <a href="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts" target="\_blank">https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts</a><br>
-OS: <a href="http://support.apple.com/en-us/HT201236" target="\_blank">http://support.apple.com/en-us/HT201236</a><br>
-(Keyboard shortcut same as checkbox)<br>
+* Binary selection (true/false) when only a single option can be set
+* When multiple non-required selections can be set
+* In relation to other form elements when needed
 
-<h3 id="assets">Assets</h3>
+Do not use checkboxes if:
+* Multiple options need visibility
+
+#### Variations
+
+No additional variations.
+
+#### Font details
+
+Family: Open Sans Semibold
+
+Size: 13px; (or .750em based on 14px default font)
+
+Color: #322923
+
+#### Background colors
+
+Light: #dcdcdc
+
+#### Border
+
+Solid
+
+Width: 1px
+
+Border color: #9d9d9d
+
+#### Active background color
+
+Dark: #cccccc
+
+#### Inactive background color
+
+Dark: #cccccc
+
+#### Disabled style
+
+Opacity: 50%
+
+#### Tertiary Level Button Padding
+
+Top/Bottom: 12px
+
+Left/Right: 15px
+
+#### Margin Spacing
+
+Top/Bottom margin spacing should should not be less than 10px
+
+Left/Right margin spacing should not be less than 10px
+
+#### Examples of toggle buttons:
+
+![](img/TableWToggle.png)
+
+## Accessibility
+
+* [Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
+* [Mac keyboard shortcuts](http://support.apple.com/en-us/HT201236)
+
+(Keyboard shortcut same as checkbox)
+
+## Assets
+
+[Download Button PSD source](src/magento-buttons.psd).
 
 Please reach out to the Magento UX Design team if you need anything else.
-
-<a href="src/magento-buttons.psd">Download Button PSD source</a>

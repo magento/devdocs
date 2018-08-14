@@ -8,7 +8,6 @@ level3_menu_node: level3child
 level3_subgroup: credit
 version: 2.2
 ee_only: True
-github_link: b2b/credit-manage.md
 functional_areas:
   - B2B
   - Integration
@@ -58,7 +57,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 
 **Sample Usage**
 
-`PUT /V1/companyCredits/company/2`
+`PUT /V1/companyCredits/2`
 
 **Payload**
 

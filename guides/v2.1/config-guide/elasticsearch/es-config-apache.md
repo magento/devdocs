@@ -7,7 +7,6 @@ menu_order: 7
 menu_node:
 version: 2.1
 ee_only: True
-github_link: config-guide/elasticsearch/es-config-apache.md
 functional_areas:
   - Configuration
   - Search
@@ -26,6 +25,7 @@ functional_areas:
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-apache-proxy}
+
 This section discusses how to configure Apache as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with Apache](#es-ws-secure-apache).
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -38,6 +38,7 @@ See one of the following sections:
 *	[Set up a proxy for Apache 2.2](#es-apache-proxy-22)
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
+
 This section discusses how to configure an Elasticsearch proxy using a virtual host.
 
 1.	Enable `mod_proxy` as follows:
@@ -76,6 +77,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 6.	Continue with [Configure Magento to use Elasticsearch](#elastic-m2-configure).
 
 ### Set up a proxy for Apache 2.2 {#es-apache-proxy-22}
+
 This section discusses how to configure an Elasticsearch proxy using a virtual host.
 
 1.	As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
@@ -118,6 +120,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 {% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with Apache {#es-ws-secure-apache}
+
 This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:
 
 *	<a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a>
@@ -133,6 +136,7 @@ See one of the following sections:
 {% include config/secure-ws-apache_step1.md %}
 
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}
+
 This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
 This section discusses how to specify who can access the Apache server.
@@ -167,4 +171,5 @@ This section discusses how to specify who can access the Apache server.
 {% include config/es-verify-proxy.md %}
 
 #### Next
+
 <a href="{{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>

@@ -14,9 +14,11 @@ To get started, edit your local version of this file, using the {% glossarytoolt
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
 ## Overview 
+
 PROVIDE OVERVIEW OF TOPIC HERE
 
 ## HEADING 2 
+
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -26,13 +28,13 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 </div>
 
 ### HEADING 3 
+
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
-
-
 ## HEADING 2 
+
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 ADD DIAGRAM OR ILLUSTRATION
@@ -127,7 +129,6 @@ See the markdown version of this file for examples.
 {% endhighlight %}
 {% endcollapsible %}
 
-
 ### Collapsible Group
 
 **Collapsible Topic 1**
@@ -150,3 +151,7 @@ You can use a glossary term's UUID from the [Magento Glossary](https://magento.g
 
 * {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}
 * Inline {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}Markup{% endglossarytooltip %} text
+
+{% comment %}
+Test comment
+{% endcomment %}

@@ -5,7 +5,6 @@ title: Display the stored information
 menu_title: Display the stored information
 menu_order: 20
 version: 2.1
-github_link: payments-integrations/vault/customer-stored-payments.md
 functional_areas:
   - Integration
 ---
@@ -13,6 +12,7 @@ functional_areas:
 This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens. 
 
 ## Token renderer
+
 To implement the displaying functionality, create a token renderer. Its
 implementation depends on token type (card or account). But both  types of renderers
 implement the common [`TokenRendererInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Block/TokenRendererInterface.php)

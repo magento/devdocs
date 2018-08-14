@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## TLS 1.2 requirement for PayPal
+
 PayPal recently announced they will require Transport Layer Security (TLS) version 1.2 to process payments in a live environment. (PayPal already requires TLS 1.2 in the sandbox.)
 
 More information:
@@ -9,6 +10,7 @@ More information:
 *	[PayPal live payments switching in June 2016 (PayPal technical blog)](https://devblog.paypal.com/upcoming-security-changes-notice/#tls){:target="_blank"} 
 
 ### Symptom
+
 According to PayPal, symptoms of the issue include the following messages in your error log:
 
 	*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
@@ -29,6 +31,7 @@ or
 	... (more messages) ...
 
 ### Description
+
 The source of the issue is your version of [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"}. `libcurl` versions earlier than 7.34 use TLS 1.1 or earlier by default. 
 
 To determine the version of `libcurl` you're running, enter the following command on the server that processes PayPal transactions:
@@ -38,6 +41,7 @@ To determine the version of `libcurl` you're running, enter the following comman
 If the version is earlier than 7.34, continue with the next section. If you're already running version 7.34 or later, no action is necessary.
 
 ### Solution
+
 The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
 
 To determine the version of CentOS your server runs, enter the following command:
