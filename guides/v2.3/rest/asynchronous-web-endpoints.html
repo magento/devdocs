@@ -674,7 +674,106 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			
+			<p>An asynchronous web endpoint intercepts messages to a Web API and writes them to the message queue. Each time the system accepts such an API request, it generates a UUID identifier. Magento includes this UUID when it adds the message to the queue. Then, a consumer reads the messages from the queue and executes them one-by-one.</p>
+
+<p>Magento supports the following types of asynchronous requests:</p>
+
+<ul>
+  <li>POST</li>
+  <li>PUT</li>
+  <li>DELETE</li>
+  <li>PATCH</li>
+</ul>
+
+<p class="bs-callout bs-callout-info">GET requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.</p>
+
+<p>The route to all asynchronous calls contains the prefix <code class="highlighter-rouge">/async</code>, added before <code class="highlighter-rouge">/V1</code> of a standard synchronous endpoint. For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /async/V1/products
+PUT /async/V1/products/:sku
+DELETE /async/V1/products/:sku
+</code></pre></div></div>
+
+<p>Magento Open Source and Magento Commerce installations support asynchronous web endpoints.</p>
+
+<p>The <a href="/swagger/index.html">Swagger documentation</a> provides a list of all current synchronous Magento API routes.</p>
+
+<p>The response of an asynchronous request contains the following fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field name</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">bulk_uuid</code></td>
+      <td>String</td>
+      <td>A generated universally unique identifier.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">request_items</code></td>
+      <td>Object</td>
+      <td>An array containing information about the status of the asynchronous request.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">id</code></td>
+      <td>Integer</td>
+      <td>A generated ID that identifies the request.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">data_hash</code></td>
+      <td>String</td>
+      <td>Reserved for future use. Currently, the value is always <code class="highlighter-rouge">null</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">status</code></td>
+      <td>String</td>
+      <td>Reserved for future use. Currently, the value is always <code class="highlighter-rouge">accepted</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">errors</code></td>
+      <td>Boolean</td>
+      <td>Reserved for future use. Currently, the value is always <code class="highlighter-rouge">false</code>. If an error occurs, the system provides all error-related information as a standard <code class="highlighter-rouge">webapi</code> exception.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sample-usage">Sample usage</h2>
+
+<p>The following call asynchronously changes the price of the product that has a <code class="highlighter-rouge">sku</code> of <code class="highlighter-rouge">24-MB01</code>:</p>
+
+<p>PUT /async/V1/products/24-MB01</p>
+
+<h2 id="payload">Payload</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="response">Response</h2>
+
+<p>Magento generates a <code class="highlighter-rouge">bulk_uuid</code> for each asynchronous request. Use the <code class="highlighter-rouge">bulk_uuid</code> to determine the <a href="/guides/v2.3/rest/operation-status-endpoints.html">operation status</a> of your request.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"bulk_uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fbfca270-7a90-4c4e-9f32-d6cf3728cdc7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data_hash"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 
 			
 		</div>
@@ -682,6 +781,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 		<div class="page-info">
 
+  
+    <div class="page-contributor">
+      <a href="http://comwrap.com/" target="_blank">
+        Thanks to comwrap GmbH for contributing this topic
+      </a>
+    </div>
   
 
 
