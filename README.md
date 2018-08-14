@@ -268,7 +268,7 @@ Although you can install Git using Chocolatey, I chose to install _Git for Windo
 1.  Follow the [Generating a new SSH](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) instructions.
 
 
-### Connect to the DevDocs repository
+### Clone and build the DevDocs repository
 
 You may have to close and reopen the Git Bash application after the Choco installations.
 
@@ -277,7 +277,7 @@ You may have to close and reopen the Git Bash application after the Choco instal
 1.  Change to the directory you created for Git repositories and clone the DevDocs repository.
 
     ```bash
-    git clone <devdocs>
+    git clone git@github.com:magento/devdocs.git
     ```
 
 1.  Change to the `devdocs` directory.
