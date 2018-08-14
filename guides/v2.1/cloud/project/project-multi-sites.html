@@ -2021,46 +2021,47 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This topic discusses how to set up Magento Commerce to have multiple websites or stores. For example, you might have an English store, a French store, and a German store. For more information on websites, stores, and store views, see <a href="/guides/v2.1/cloud/configure/configure-best-practices.html#sites">Understanding websites, stores, and store views</a>.</p>
-
-<p>To set up multiple stores, you must:</p>
+			<p>You can configure Magento Commerce to have multiple websites or stores, such as an English store, a French store, and a German store. See <a href="/guides/v2.1/cloud/configure/configure-best-practices.html#sites">Understanding websites, stores, and store views</a>. The process to set up multiple stores is as follows:</p>
 
 <ol>
-  <li><a href="/guides/v2.1/config-guide/multi-site/ms_over.html">Configure your local installation</a> and test it locally.</li>
+  <li>Configure and test your local installation.</li>
   <li>Configure Magento Commerce Cloud routes and variables.</li>
-  <li>Push the changes to an Integration environment and test it.</li>
+  <li>Push the changes to an Integration environment and test.</li>
 </ol>
 
 <h2 id="configure-your-local-installation">Configure your local installation</h2>
 
 <p>To configure your local installation to use multiple stores, see <a href="/guides/v2.1/config-guide/multi-site/ms_over.html">Multiple websites or stores</a>.</p>
 
-<h2 id="configure-your-integration-environment">Configure your Integration environment</h2>
-
-<p>After successfully creating and testing multiple stores locally, you must:</p>
+<p>After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:</p>
 
 <ol>
-  <li><a href="#cloud-multi-stores-routes">Configure routes</a>, which specify how incoming URLs are handled by Magento Commerce.</li>
-  <li><a href="#cloud-multi-stores-admin">Set up websites, stores, and store views</a> in your Magento Commerce server’s   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
-.</li>
-  <li><a href="#cloud-multi-stores-magento-vars">Modify <code class="highlighter-rouge">magento-vars.php</code></a> to specify the values of the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables.</li>
-  <li><a href="#cloud-multi-stores-deploy">Deploy</a> to your Integration branch and test.</li>
+  <li><strong>Configure routes</strong>—specify how incoming URLs are handled by Magento Commerce</li>
+  <li><strong>Set up websites, stores, and store views</strong>—configure using the Magento Commerce Admin panel</li>
+  <li><strong>Modify <code class="highlighter-rouge">magento-vars.php</code> file</strong>—specify the values of the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables</li>
+  <li><strong>Deploy</strong>—deploy and test the <code class="highlighter-rouge">integration</code> branch</li>
 </ol>
 
-<h3 id="cloud-multi-stores-routes">Configure routes</h3>
+<h3 id="configure-routes">Configure routes</h3>
 
 <p>Magento Enterprise Edition <em>routes</em> define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.</p>
 
 <p class="bs-callout bs-callout-info">To set up routes in a staging or production environment, you must create a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a>.</p>
 
-<p>To configure routes in an integration environment:</p>
+<h4 id="to-configure-routes-in-an-integration-environment">To configure routes in an integration environment:</h4>
 
 <ol>
-  <li>Log in to your local environment as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-  <li>Change to your Magento Commerce base directory.</li>
-  <li>Open <code class="highlighter-rouge">.magento/routes.yaml</code> in a text editor.</li>
   <li>
-    <p>Replace its contents with the following:</p>
+    <p>On your local workstation, log in as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to your Magento Commerce base directory.</p>
+  </li>
+  <li>
+    <p>Open the <code class="highlighter-rouge">.magento/routes.yaml</code> file in a text editor.</p>
+  </li>
+  <li>
+    <p>Replace the contents with the following:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
 	type: upstream
@@ -2079,172 +2080,171 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	upstream: "mymagento:php"
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor.</li>
+  <li>
+    <p>Save your changes to the <code class="highlighter-rouge">routes.yaml</code> file.</p>
+  </li>
 </ol>
 
-<h3 id="cloud-multi-stores-admin">Set up websites, stores, and store views</h3>
+<h3 id="set-up-websites-stores-and-store-views">Set up websites, stores, and store views</h3>
 
-<p>Set up in your Magento Commerce Admin websites, stores, and store views identical to the ones you set up on your local system.</p>
+<p>In the Admin panel, set up your Magento Commerce websites, stores, and store views. See <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
-<h4 id="get-your-access-information">Get your access information</h4>
-
-<p>To get the access information you need to log in to the Magento Admin:</p>
+<h4 id="to-retrieve-admin-login-information">To retrieve Admin login information:</h4>
 
 <ol>
-  <li>If you haven’t done so already, log in to your local environment as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-  <li>Change to your Magento Commerce base directory.</li>
   <li>
-    <p>Log in to your account:</p>
+    <p>On your local workstation, log in as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to your Magento Commerce base directory.</p>
+  </li>
+  <li>
+    <p>Log in to your account.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>List the environments:</p>
+    <p>List the environments.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Check out your environment:</p>
+    <p>Check out your environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment-ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>View the environment’s access URLs:</p>
+    <p>Access the public URLs:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:url
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:url
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>View Admin login information:</p>
+    <p>View Admin login information in the variable list.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
-</code></pre></div>    </div>
-
-    <p>Admin access information displays similar to the following:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------+---------------+-----------+------+
-| ID             | Value         | Inherited | JSON |
-+----------------+---------------+-----------+------+
-| ADMIN_PASSWORD | admin_A456    | Yes       | No   |
-| ADMIN_URL      | magento_A8v10 | Yes       | No   |
-| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
-+----------------+---------------+-----------+------+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
 </code></pre></div>    </div>
   </li>
 </ol>
-
-<h4 id="configure-websites-stores-and-store-views">Configure websites, stores, and store views</h4>
 
 <p>Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.</p>
 
 <p>See <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
-<h3 id="cloud-multi-stores-magento-vars">Modify <code class="highlighter-rouge">magento-vars.php</code></h3>
+<h3 id="modify-the-magento-varsphp-file">Modify the <code class="highlighter-rouge">magento-vars.php</code> file</h3>
 
-<p>Instead of configuring an   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>
- virtual host, pass the <code class="highlighter-rouge">MAGE_RUN_CODE</code> and <code class="highlighter-rouge">MAGE_RUN_TYPE</code> variables using <code class="highlighter-rouge">magento-vars.php</code> which is located in your Magento root directory.</p>
+<p>Instead of configuring an NGINX virtual host, pass the <code class="highlighter-rouge">MAGE_RUN_CODE</code> and <code class="highlighter-rouge">MAGE_RUN_TYPE</code> variables using the <code class="highlighter-rouge">magento-vars.php</code> file located in your project root directory.</p>
+
+<h4 id="to-pass-variables-using-the-magento-varsphp-file">To pass variables using the <code class="highlighter-rouge">magento-vars.php</code> file:</h4>
 
 <ol>
-  <li>Open <code class="highlighter-rouge">magento-vars.php</code> in a text editor.</li>
-  <li>Uncomment everything after the first two lines.</li>
+  <li>
+    <p>Open the <code class="highlighter-rouge">magento-vars.php</code> file in a text editor.</p>
+  </li>
+  <li>
+    <p>Uncomment everything after the first two lines.</p>
+  </li>
   <li>
     <p>Move the entire block starting with <code class="highlighter-rouge">if (isHttpHost("example.com")</code> after <code class="highlighter-rouge">function isHttpHost($host)</code>.</p>
 
-    <p>Following is what the file should look like so far:</p>
+    <p>The file should look like the following:</p>
 
-    <pre class="no-copy">&lt;?php
-    // enable, adjust and copy this code for each store you run
-    // Store #0, default one
-    function isHttpHost($host)
-    {
-       if (!isset($_SERVER['HTTP_HOST'])) {
-           return false;
-    }
-           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-    }
-    if (isHttpHost("example.com")) {
-        $_SERVER["MAGE_RUN_CODE"] = "default";
-        $_SERVER["MAGE_RUN_TYPE"] = "store";
-    }</pre>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// enable, adjust and copy this code for each store you run
+// Store #0, default one
+</span><span class="k">function</span> <span class="nf">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+       <span class="k">return</span> <span class="nb">strpos</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]),</span> <span class="nv">$host</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">isHttpHost</span><span class="p">(</span><span class="s2">"example.com"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_CODE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span><span class="p">;</span>
+    <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_TYPE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"store"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Change the following line:</p>
 
     <p>From:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nb">strpos</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]),</span> <span class="nv">$host</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 </code></pre></div>    </div>
 
     <p>To:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return $_SERVER['HTTP_HOST'] ===  $host;
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]</span> <span class="o">===</span>  <span class="nv">$host</span><span class="p">;</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following values in the <code class="highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">"example.com"</code> with the base URL of your website, replacing the first period with three dashes.</li>
-      <li><code class="highlighter-rouge">"default"</code> with the unique code for your website or store view.</li>
-      <li><code class="highlighter-rouge">"store"</code> with either <code class="highlighter-rouge">website</code> (to load the website in the storefront) or <code class="highlighter-rouge">store</code> (to load a storeview in the storefront).</li>
+      <li><code class="highlighter-rouge">example.com</code>—with the base URL of your website</li>
+      <li><code class="highlighter-rouge">default</code>—with the unique code for your website or store view</li>
+      <li><code class="highlighter-rouge">store</code>—with one of the following values:
+        <ul>
+          <li><code class="highlighter-rouge">website</code>—load the website in the storefront</li>
+          <li><code class="highlighter-rouge">store</code>—load a storeview in the storefront</li>
+        </ul>
+      </li>
     </ul>
 
-    <p>An example follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
-// enable, adjust and copy this code for each store you run
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// enable, adjust and copy this code for each store you run
 // Store #0, default one
-function isHttpHost($host)
-{
-	if (!isset($_SERVER['HTTP_HOST'])) {
-		return false;
-	}
-	 return $_SERVER['HTTP_HOST'] ===  $host;
-}
-if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
-	$_SERVER["MAGE_RUN_CODE"] = "french";
-	$_SERVER["MAGE_RUN_TYPE"] = "website";
-}
+</span><span class="k">function</span> <span class="nf">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]</span> <span class="o">===</span>  <span class="nv">$host</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">isHttpHost</span><span class="p">(</span><span class="s2">"french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud"</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_CODE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"french"</span><span class="p">;</span>
+    <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_TYPE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"website"</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">magento-vars.php</code> and exit the text editor.</li>
+  <li>
+    <p>Save your changes to the <code class="highlighter-rouge">magento-vars.php</code> file.</p>
+  </li>
 </ol>
 
-<h3 id="cloud-multi-stores-deploy">Deploy and test on the Integration server</h3>
+<h3 id="deploy-and-test-on-the-integration-server">Deploy and test on the Integration server</h3>
 
-<p>The final step is to push your changes to your Magento Commerce Cloud server and test your site there.
-To deploy and test:</p>
+<p>The final step is to push your changes to your Magento Commerce Cloud server and test your site there.</p>
 
 <ol>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p>Add, commit, and push code changes to the remote branch.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Implement multiple sites"
-git push origin &lt;branch name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Implement multiple sites"</span> <span class="o">&amp;&amp;</span> git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Wait for deployment to complete.</li>
   <li>
-    <p>When deployment is done, in a web browser, go to your site’s base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
-.</p>
-
-    <p>The URL must be in the format: <code class="highlighter-rouge">http://&lt;magento run_code&gt;---&lt;rest of URL&gt;</code></p>
-
-    <p>For example, <code class="highlighter-rouge">http://french---master-benrmky-dyrozemqbw72k.us.magentosite.cloud/</code></p>
+    <p>Wait for deployment to complete.</p>
   </li>
-  <li>Make sure you test your site thoroughly.</li>
+  <li>
+    <p>After deployment, open your site base URL in a web browser.</p>
+
+    <p>Use the format: <code class="highlighter-rouge">http://&lt;magento-run-code&gt;.&lt;site-URL&gt;</code><br />
+For example, <code class="highlighter-rouge">http://french.master-name-projectID.us.magentosite.cloud/</code></p>
+  </li>
+  <li>
+    <p>Test your site thoroughly and merge the code to the <code class="highlighter-rouge">integration</code> branch for further deployment.</p>
+  </li>
 </ol>
 
-<p>When complete, merge the code to the <code class="highlighter-rouge">master</code> Git branch for further deployment.</p>
-
-<h3 id="deploy-staging-prod">Deploy to Staging and Production</h3>
+<h3 id="deploy-to-staging-and-production">Deploy to Staging and Production</h3>
 
 <p>Follow the deployment process for <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">deploying to Staging and Production</a>. For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html#classic">SSH and CLI commands</a>.</p>
 
-<p>We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and begin the process to deploy across environments again.</p>
+<p>We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to make changes, you should complete those in the Integration environment and begin the process to deploy across environments again.</p>
 
 			
 		</div>

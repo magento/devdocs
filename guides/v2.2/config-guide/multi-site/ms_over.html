@@ -1875,53 +1875,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="ms-over">Introduction to multiple Magento stores and websites</h2>
-
-<p>One instance of the Magento software can enable you to start multiple websites or store views that use different:</p>
+			<p>A single instance of the Magento Commerce software enables you to start multiple websites or store views that use different attributes and content, such as:</p>
 
 <ul>
   <li>Default languages</li>
-  <li><span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">Domain</span>
- names</li>
+  <li>Domain names</li>
   <li>Categories</li>
   <li>Products</li>
-  <li>Currency</li>
+  <li>Currencies</li>
 </ul>
 
 <p>This flexible solution enables one Magento codebase and   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
- to administer and display different stores.</p>
+ to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.</p>
 
-<p>You configure the websites, stores, and store views in the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
-. Use the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables in virtual hosts to start the Magento application using these websites or store views.</p>
+<p>A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.</p>
 
-<p>A typical use of <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.</p>
-
-<h2 id="magerun-conf">Configure Magento websites and stores</h2>
-
-<p>This section discusses the tasks required to use the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables.</p>
-
-<p>We use the following terms:</p>
+<p>Consider the following terms:</p>
 
 <ul>
   <li>
-    <p><em>Website</em> is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites.</p>
+    <p><strong>Website</strong>—is the top-level container for sites, shipping methods, payment methods, and more. To create completely separate sites that do not share cart, shipping methods, or other you must create separate websites.</p>
 
     <p>Website customer accounts can be shared between multiple websites within a single Magento instance. A website contains at least one store. Catalog prices should be managed at the website level.</p>
   </li>
   <li>
-    <p><em>Store</em> is contained by a   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
-. In turn, a store contains at least one <em>store view</em>.</p>
+    <p><strong>Store</strong>—is contained by a website. In turn, a store contains at least one <em>store view</em>.</p>
 
-    <p>Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price.</p>
+    <p>Multiple stores can share cart, user sessions, payment gateways, and more, but they have separate catalog structures and Catalog price.</p>
 
-    <p>Catalog Qty (inventory) can’t be managed at the store level. Inventory is managed at Website or Global level only.</p>
+    <p>Catalog Qty (inventory) can not be managed at the store level. Inventory is managed at Website or Global level only.</p>
 
     <p>Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. You can manage different currencies per store view.</p>
   </li>
 </ul>
 
-<p>Each website and each   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
- must have a unique identifier. This identifier is required to use <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> as follows:</p>
+<p>Each website and each store view must have a unique identifier. This identifier is required to use the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables as follows:</p>
 
 <ul>
   <li>
@@ -1937,21 +1925,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<p>Following is a summary of the tasks you must perform. More details are provided in the sections that follow.</p>
+<p>The following is a summary of the tasks you must perform:</p>
 
 <ol>
-  <li>Define websites, stores, and store views in the Magento Admin.</li>
+  <li><a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views in the Magento Admin.</a></li>
   <li>Create a virtual host to load many websites or one virtual host per Magento website or store view to allow specific directives for each store.</li>
   <li>Pass the values of <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> to the web server.</li>
 </ol>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
-  <li><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
-  <li><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
-</ul>
 
 			
 		</div>

@@ -1875,12 +1875,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="set-up-multiple-websites-stores-and-store-views-in-the-admin">Set up multiple websites, stores, and store views in the Admin</h2>
-
-<p>This task requires you to create a root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
- (and additional categories if desired) for each store.</p>
-
-<p>The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:</p>
+			<p>This task requires you to create a root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+ (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:</p>
 
 <ul>
   <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/categories.html" target="_blank">Categories</a></li>
@@ -1889,16 +1885,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html" target="_blank">Content</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For example purposes only, we use a French   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
- with website code <code class="highlighter-rouge">french</code> in this topic. For step-by-step tutorials, see:</p>
-
-  <ul>
-    <li><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial—Set up multiple websites with Apache</a></li>
-    <li><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial—Set up multiple websites with nginx</a></li>
-  </ul>
-
-</div>
+<p class="bs-callout bs-callout-info">For example purposes only, we use a French   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ with website code <code class="highlighter-rouge">french</code> in this topic. For step-by-step tutorials, see:<br />
+    -  <a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial: Set up multiple websites with Apache</a><br />
+    -  <a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial: Set up multiple websites with nginx</a></p>
 
 <h2 id="step-1-create-root-categories">Step 1: Create root categories</h2>
 
@@ -1933,14 +1923,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <b class="collapsible-title">To create a website: </b>
     <div class="collapsible-content"><ol>
   <li>Log in to the Magento Admin as a user authorized to create websites, stores, and store views.</li>
-  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>All Stores</strong>.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>All Stores</strong>.</li>
   <li>
-    <p>On the Stores page, click <strong>Create Website</strong>.</p>
+    <p>On the <em>Stores</em> page, click <strong>Create Website</strong>.</p>
 
     <ul>
-      <li><strong>Name</strong> field: Enter a name to identify the website.</li>
-      <li><strong>Code</strong> field: Enter a unique code; for example, if you have a French store, you can enter <code class="highlighter-rouge">french</code></li>
-      <li><strong>Sort Order</strong> field: Enter an optional numerical sort order.</li>
+      <li><strong>Name</strong>—Enter a name to identify the website.</li>
+      <li><strong>Code</strong>—Enter a unique code; for example, if you have a French store, you can enter <code class="highlighter-rouge">french</code></li>
+      <li><strong>Sort Order</strong>—Enter an optional numerical sort order.</li>
     </ul>
 
     <p>The following figure shows an example.</p>
@@ -1958,15 +1948,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="collapsible">
     <b class="collapsible-title">To create a store: </b>
     <div class="collapsible-content"><ol>
-  <li>In the Magento Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>All Stores</strong>.</li>
+  <li>In the <em>Admin</em> panel, click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>All Stores</strong>.</li>
   <li>
-    <p>On the Stores page, click <strong>Create Store</strong>.</p>
+    <p>On the <em>Stores</em> page, click <strong>Create Store</strong>.</p>
 
     <ul>
-      <li><strong>Web Site</strong> list: Click the name of the website with which to associate this store.</li>
-      <li><strong>Name</strong> field: Enter a name to identify the store.</li>
-      <li><strong>Code</strong> field: Enter a unique code to identify the store.</li>
-      <li><strong>Root Category</strong> list: Click the name of the root category for this store.</li>
+      <li><strong>Web Site</strong>—Click the name of the website with which to associate this store.</li>
+      <li><strong>Name</strong>—Enter a name to identify the store.</li>
+      <li><strong>Code</strong>—Enter a unique code to identify the store.</li>
+      <li><strong>Root Category</strong>—Click the name of the root category for this store.</li>
     </ul>
 
     <p>The following figure shows an example.</p>
@@ -1984,15 +1974,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="collapsible">
     <b class="collapsible-title">To create a store view: </b>
     <div class="collapsible-content"><ol>
-  <li>In the Magento Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>All Stores</strong>.</li>
+  <li>In the <em>Admin</em> panel, click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>All Stores</strong>.</li>
   <li>
     <p>On the Stores page, click <strong>Create Store View</strong>.</p>
 
     <ul>
-      <li><strong>Store</strong> list: Click the name of the store with which to associate this store view.</li>
-      <li><strong>Name</strong> field: Enter a name to identify this store view.</li>
-      <li><strong>Code</strong> field: Enter a unique name to identify this store view.</li>
-      <li><strong>Status</strong> list: Click <strong>Enabled</strong>.
+      <li><strong>Store</strong>—Click the name of the store with which to associate this store view.</li>
+      <li><strong>Name</strong>—Enter a name to identify this store view.</li>
+      <li><strong>Code</strong>—Enter a unique name to identify this store view.</li>
+      <li><strong>Status</strong>—Select <strong>Enabled</strong>.
 The following figure shows an example.</li>
     </ul>
 
@@ -2004,34 +1994,31 @@ The following figure shows an example.</li>
 </div>
   </div>
 
-<h2 id="step-5-change-a-websites-base-url">Step 5: Change a website’s base URL</h2>
+<h2 id="step-5-change-the-website-base-url">Step 5: Change the website base URL</h2>
 
-<p>To access a website using a unique   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- like <code class="highlighter-rouge">http://french.magento.mg</code>, you must change the base URL for each site in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+<p>To access a website using a unique URL like <code class="highlighter-rouge">http://french.magento.mg</code>, you must change the base URL for each site in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 .</p>
 
 <div class="collapsible">
-    <b class="collapsible-title">To change the website's base URL: </b>
+    <b class="collapsible-title">To change the website base URL: </b>
     <div class="collapsible-content"><ol>
-  <li>In the Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Web</strong>.</li>
+  <li>In the <em>Admin</em> panel, click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Web</strong>.</li>
   <li>
     <p>From the <strong>Store View</strong> list at the top of the page, click the name of one of your websites as the following figure shows.</p>
 
     <p><img src="/common/images/config_multi-site-scope.png" alt="Select a scope" width="250px" /></p>
   </li>
   <li>In the right pane, expand <strong>Base URLs</strong>.</li>
-  <li>In the Base URL section, clear the <strong>Use Default</strong> checkbox.</li>
+  <li>In the <em>Base URLs</em> section, clear <strong>Use system value</strong>.</li>
   <li>
-    <p>Enter <code class="highlighter-rouge">http://french.magento.mg</code> as the following example shows.</p>
-
-    <p><img src="/common/images/config_multi-site_base-url.png" alt="Set a base URL" width="650px" /></p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment Magento Commerce Cloud, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
-  		<p>If you're setting up a base URL for local testing, use a period.</p>
-</div>
+    <p>Enter the <code class="highlighter-rouge">http://french.magento.mg</code> URL in the <strong>Base URL</strong> and <strong>Base Link URL</strong> fields.</p>
   </li>
-  <li>Click <strong>Save Config</strong>.</li>
+  <li>
+    <p>Repeat the previous step in the <em>Base URLs (Secure)</em> section.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save Config</strong>.</p>
+  </li>
   <li>Repeat these tasks for other websites.</li>
 </ol>
 </div>
@@ -2039,27 +2026,27 @@ The following figure shows an example.</li>
 
 <h2 id="multi-storecode-baseurl">Step 6: Add the store code to the base URL</h2>
 
-<p>Magento gives you the option to add the store code to the site’s base URL, which simplifies the process of setting up multiple stores. Using this option, you don’t have to create directories on the Magento file system to store <code class="highlighter-rouge">index.php</code> and <code class="highlighter-rouge">.htaccess</code>.</p>
+<p>Magento gives you the option to add the store code to the site base URL, which simplifies the process of setting up multiple stores. Using this option, you do not have to create directories on the Magento file system to store <code class="highlighter-rouge">index.php</code> and <code class="highlighter-rouge">.htaccess</code>.</p>
 
 <p>This prevents <code class="highlighter-rouge">index.php</code> and <code class="highlighter-rouge">.htaccess</code> from getting out of sync with the Magento codebase in future upgrades.</p>
 
 <p>For more information, see the <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html" target="_blank">Magento User Guide</a>.</p>
 
 <div class="collapsible">
-    <b class="collapsible-title">To add the store code to the website's base URL: </b>
+    <b class="collapsible-title">To add the store code to the base URL: </b>
     <div class="collapsible-content"><ol>
-  <li>In the Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Web</strong>.</li>
+  <li>In the <em>Admin</em> panel, click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Web</strong>.</li>
   <li>
     <p>From the <strong>Store View</strong> list at the top of the page, click <strong>Default Config</strong> as the following figure shows.</p>
 
     <p><img src="/common/images/config_multi-site-default.png" alt="Select the default config scope" width="250px" /></p>
   </li>
   <li>In the right pane, expand <strong>Url Options</strong>.</li>
-  <li>Clear the <strong>Use system value</strong> checkbox next to <strong>Add Store Code to Urls</strong>.</li>
+  <li>Clear the <strong>Use system value</strong> checkbox next to <em>Add Store Code to Urls</em>.</li>
   <li>
-    <p>From the <strong>Add Store Code to Urls</strong> list, click <strong>Yes</strong> as the following figure shows.</p>
+    <p>From the <em>Add Store Code to Urls</em> list, click <strong>Yes</strong>.</p>
 
-    <p><img src="/common/images/config_multi-site-add-store-url.png" alt="Add the store code to the store's base URL" width="550px" /></p>
+    <p><img src="/common/images/config_multi-site-add-store-url.png" alt="Add the store code to the store base URL" width="550px" /></p>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
   <li>If prompted, flush the Magento cache. (<strong>System</strong> &gt; <strong>Cache Management</strong>).</li>
@@ -2067,28 +2054,28 @@ The following figure shows an example.</li>
 </div>
   </div>
 
-<h2 id="step-7-change-the-default-store-views-base-url">Step 7: Change the default store view’s base URL</h2>
+<h2 id="step-7-change-the-default-store-view-base-url">Step 7: Change the default store view base URL</h2>
 
-<p>You must perform this step last because after it’s done, you’ll lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.</p>
+<p>You must perform this step last because you will lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.</p>
 
 <div class="collapsible">
-    <b class="collapsible-title">To change the default store view's base URL: </b>
+    <b class="collapsible-title">To change the default store view base URL: </b>
     <div class="collapsible-content"><ol>
-  <li>In the Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Web</strong>.</li>
   <li>
-    <p>From the <strong>Store View</strong> list at the top of the page, click <strong>Default Config</strong> as the following figure shows.</p>
+    <p>In the <em>Admin</em> panel, click <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Web</strong>.</p>
+  </li>
+  <li>
+    <p>From the <em>Store View</em> list at the top of the page, click <strong>Default Config</strong>.</p>
 
     <p><img src="/common/images/config_multi-site-default.png" alt="Select the default config scope" width="250px" /></p>
   </li>
   <li>In the right pane, expand <strong>Base URLs</strong>.</li>
+  <li>In the <em>Base URLs</em> section, clear <strong>Use system value</strong>.</li>
   <li>
-    <p>Enter <code class="highlighter-rouge">http://mysite.mg</code> as the following example shows.</p>
-
-    <p><img src="/common/images/config_multi-site_base-url-default2.png" alt="Set a base URL" width="650px" /></p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for Magento Commerce Cloud, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
-</div>
+    <p>Enter the <code class="highlighter-rouge">http://mysite.mg</code> URL in the <strong>Base URL</strong> and <strong>Base Link URL</strong> fields.</p>
+  </li>
+  <li>
+    <p>Repeat the previous step in the <strong>Base URLs (Secure)</strong> section.</p>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
@@ -2099,12 +2086,9 @@ The following figure shows an example.</li>
 
 <ul>
   <li>Magento Commerce Cloud: <a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple Magento Commerce Cloud websites or stores</a></li>
-  <li><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial—Set up multiple websites or stores with nginx</a></li>
-  <li><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial—Set up multiple websites with Apache</a></li>
+  <li><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial: up multiple websites or stores with NGINX</a></li>
+  <li><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial: Set up multiple websites with Apache</a></li>
 </ul>
-
-<h4 id="related-information">Related information</h4>
-<p><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html" target="_blank">Add content to your websites</a></p>
 
 			
 		</div>

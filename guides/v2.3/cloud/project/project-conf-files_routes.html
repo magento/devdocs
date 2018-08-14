@@ -2085,7 +2085,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 +-------------------+----------+---------------+
 </code></pre></div></div>
 
-<h2 id="cloud-yaml-routes-temp">Route templates</h2>
+<h2 id="route-templates">Route templates</h2>
 
 <p>The <code class="highlighter-rouge">routes.yaml</code> file is a list of templated routes and their configurations. A route template looks similar to this: <code class="highlighter-rouge">http://www.{default}/</code> or <code class="highlighter-rouge">https://{default}/blog</code>, where <code class="highlighter-rouge">{default}</code> is the qualified domain name configured for the project. For example, the routes for <code class="highlighter-rouge">example.com</code> domain resolve to the following:</p>
 
@@ -2108,21 +2108,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- Magento Commerce Cloud also supports [multiple applications](/guides/v2.3/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
-<h2 id="cloud-yaml-routes-opts">Route options</h2>
+<h2 id="route-options">Route options</h2>
 
 <p>Configure each route separately using the following properties:</p>
 
-<ul>
-  <li><code class="highlighter-rouge">type: upstream</code>—serves an application. Also, it has an <code class="highlighter-rouge">upstream</code> property that specifies the name of the application (as defined in <code class="highlighter-rouge">.magento.app.yaml</code>) followed by the <code class="highlighter-rouge">:http</code> endpoint.</li>
-  <li><code class="highlighter-rouge">type: redirect</code>—redirects to another route. It is followed by the <code class="highlighter-rouge">to</code> property, which is an HTTP redirection to another route identified by its template.</li>
-  <li><code class="highlighter-rouge">cache</code>—controls <a href="/guides/v2.3/cloud/project/project-routes-more-cache.html">caching for the route</a>.</li>
-  <li><code class="highlighter-rouge">redirects</code>—controls <a href="/guides/v2.3/cloud/project/project-routes-more-redir.html">redirect rules</a>.</li>
-  <li><code class="highlighter-rouge">ssi</code>—controls enabling of <a href="/guides/v2.3/cloud/project/project-routes-more-ssi.html">Server Side Includes</a>.</li>
-</ul>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">type: upstream</code></td>
+      <td>Serves an application. Also, it has an <code class="highlighter-rouge">upstream</code> property that specifies the name of the application (as defined in <code class="highlighter-rouge">.magento.app.yaml</code>) followed by the <code class="highlighter-rouge">:http</code> endpoint.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">type: redirect</code></td>
+      <td>Redirects to another route. It is followed by the <code class="highlighter-rouge">to</code> property, which is an HTTP redirection to another route identified by its template.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cache:</code></td>
+      <td>Controls <a href="/guides/v2.3/cloud/project/project-routes-more-cache.html">caching for the route</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">redirects:</code></td>
+      <td>Controls <a href="/guides/v2.3/cloud/project/project-routes-more-redir.html">redirect rules</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ssi:</code></td>
+      <td>Controls enabling of <a href="/guides/v2.3/cloud/project/project-routes-more-ssi.html">Server Side Includes</a>.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="cloud-yaml-routes-sample-simple">Simple routes</h2>
+<h2 id="simple-routes">Simple routes</h2>
 
-<p>The following sample routes the naked domain and the <code class="highlighter-rouge">www</code> subdomain to the <code class="highlighter-rouge">frontend</code>application. This route does not redirect HTTPS:</p>
+<p>The following sample routes the apex domain and the <code class="highlighter-rouge">www</code> subdomain to the <code class="highlighter-rouge">frontend</code>application. This route does not redirect HTTPS:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
@@ -2133,7 +2156,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="na">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://{default}/"</span>
 </code></pre></div></div>
 
-<p>The following sample route does not redirect from the <code class="highlighter-rouge">www</code> to the naked domain; instead, it serves from both:</p>
+<p>The following sample route does not redirect from the <code class="highlighter-rouge">www</code> to the apex domain; instead, it serves from both:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
@@ -2146,7 +2169,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In the first sample, the server responds directly to a request of the form <code class="highlighter-rouge">http://example.com/hello</code>, but it issues a <em>301 redirect</em> for <code class="highlighter-rouge">http://www.example.com/mypath</code> (to <code class="highlighter-rouge">http://example.com/mypath</code>).</p>
 
-<h2 id="cloud-yaml-routes-sample-wild">Wildcard routes</h2>
+<h2 id="wildcard-routes">Wildcard routes</h2>
 <p>Magento Commerce Cloud supports wildcard routes, so you can map multiple subdomains to the same application. This works for   <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>
  and upstream routes. You prefix the route with an asterisk (*). For example, the following routes to the same application:</p>
 
@@ -2161,34 +2184,30 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="routing-a-non-mapped-domain">Routing a non-mapped domain</h3>
 
-<p>You can route to a system that is not mapped to a domain using the dot (.) to separate the subdomain.</p>
+<p>You can route to a system that is not mapped to a domain using a dot (.) to separate the subdomain. For example, a project with an <code class="highlighter-rouge">add-theme</code> branch routes to <code class="highlighter-rouge">http://add-theme-projectID.us.magento.com/</code>.</p>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Projects provisioned before December 8, 2017, use the triple dash (---) as a separator for the subdomain.</p>
-</div>
-
-<p>For example, a project with the <code class="highlighter-rouge">vmwklxcpbi6zq</code> ID and an <code class="highlighter-rouge">add-theme</code> branch routes to <code class="highlighter-rouge">http://add-theme-vmwklxcpbi6zq.us.magento.com/</code>.</p>
-
-<p>If you define a <code class="highlighter-rouge">http://www.{default}/</code> route, the route becomes <code class="highlighter-rouge">http://www.add-theme-vmwklxcpbi6zq.us.magento.com/</code>.</p>
+<p>If you define a <code class="highlighter-rouge">http://www.{default}/</code> route, the route becomes <code class="highlighter-rouge">http://www.add-theme-projectID.us.magento.com/</code>.</p>
 
 <p>You can put any subdomain before the dot and the route resolves. In this example, the route is defined as <code class="highlighter-rouge">http://*.{default}/</code>, so both of the following URLs work:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">http://foo.add-theme-vmwklxcpbi6zq.us.magentosite.cloud/</code></li>
-  <li><code class="highlighter-rouge">http://bar.add-theme-vmwklxcpbi6zq.us.magentosite.cloud/</code></li>
+  <li><code class="highlighter-rouge">http://foo.add-theme-projectID.us.magentosite.cloud/</code></li>
+  <li><code class="highlighter-rouge">http://bar.add-theme-projectID.us.magentosite.cloud/</code></li>
 </ul>
 
 <p>If you examine the routes of this sample application, you see:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
-https://*.add-theme-vmwklxcpbi6zq.us.magentosite.cloud/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nv">$MAGENTO_CLOUD_RELATIONSHIPS</span> | base64 <span class="nt">--decode</span> | json_pp
 </code></pre></div></div>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">https://*.add-theme-projectID.us.magentosite.cloud/
+</span></code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">Some projects provisioned before December 8, 2017, use the triple dash (---) as a separator for the subdomain.</p>
 
 <p>See more information about <a href="/guides/v2.3/cloud/project/project-routes-more-cache.html">caching</a>.</p>
 
-<h2 id="cloud-yaml-routes-sample-redirects">Redirects</h2>
+<h2 id="redirects">Redirects</h2>
 
 <p>As discussed in more detail in <a href="/guides/v2.3/cloud/project/project-routes-more-redir.html">Redirects</a>, you can manage complex redirection rules, such as <em>partial redirects</em>:</p>
 
