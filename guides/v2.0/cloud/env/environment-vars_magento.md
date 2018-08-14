@@ -2,7 +2,6 @@
 group: cloud
 title: Application variables
 version: 2.0
-github_link: cloud/env/environment-vars_magento.md
 functional_areas:
   - Cloud
   - Configuration
@@ -52,6 +51,7 @@ The following table lists variables that you can override using environment vari
 </table>
 
 ## Magento deploy variables {#deploy}
+
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
 
 <table>
@@ -90,7 +90,7 @@ The following variables are available during the deploy process of build and dep
 <td><code>STATIC_CONTENT_THREADS</code></td>
 <td><p>Sets the number of threads for processing and deploying static content files. The higher amount of threads increasing the amount of files processed during the deployment. The lower the number of threads, the slower static files are processed increasing deployment time.</p>
 <p>For Starter plan environments and Pro Integration environments, the threads value is 1. This amount is fine for these environments. For Pro Staging and Production environments, the default threads is 3 to increase the speed of processing static content, especially for Production with three nodes and GlusterFS.</p>
-<p>To further reduce deployment time, we recommend using <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="{{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code>scd-dump</code> command to move static deployment into the build phase.</p>
 <p>This is available in all versions.</p></td>
 <td>1 for Starter environments and Pro Integration environments<br />
 3 for Pro Staging and Production environments</td>
@@ -145,6 +145,7 @@ The following variables are available during the deploy process of build and dep
 For information on the build and deploy process, see [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 ## Add environment variables {#addvariables}
+
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -160,6 +161,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
+
 In the event something goes wrong and you can not access your environment after it deploys, try the following:
 
 *   [SSH to the environment]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{ page.baseurl }}/cloud/env/environments-start.html#tunnel-services) are running.

@@ -6,7 +6,6 @@ menu_title: Translation dictionaries and language packages
 menu_node:
 menu_order: 260
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-i18n.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 functional_areas:
   - Configuration
@@ -17,6 +16,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of translations
+
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced the amount of code coupling and duplication.
 
 This topic discusses how to generate:
@@ -27,12 +27,14 @@ This topic discusses how to generate:
 For more information, see <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translation</a>.
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
+
 You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %}. See one of the following sections:
 
 -   <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 -   <a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
+
 To translate words and phrases, you must:
 
 1.  Run the translation collection command to extract translatable words and phrases from enabled components.
@@ -92,6 +94,7 @@ To create a language pack from a translation dictionary, you <em>must</em> use t
 </div>
 
 ### Translation guidelines {#config-cli-subcommands-xlate-dict-trans}
+
 Use the following guidelines when translating words and phrases:
 
 -   Change the contents of the second column only. Translate the phrases from English (`US`) to the desired language.
@@ -110,6 +113,7 @@ Use the following guidelines when translating words and phrases:
     	"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
 
 ## Create a language package {#config-cli-subcommands-xlate-pack}
+
 As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component&mdash;like a module or a theme&mdash;using a translation dictionary.) <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.
 
 This section discusses how to create a language package, which writes `.csv` files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:
@@ -122,6 +126,7 @@ This section discusses how to create a language package, which writes `.csv` fil
 4.  (Optional.) <a href="#m2devgde-xlate-severalpacks">Configure multiple packages for a language</a>.
 
 ### Run the language package command {#config-cli-subcommands-xlate-pack-cmd}
+
 Command usage:
 
 	bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
@@ -173,6 +178,7 @@ The following table explains this command's parameters and values:
 </table>
 
 ### Create directories and files {#m2devgde-xlate-files}
+
 A language package is a directory under `app/i18n/<VendorName>` in the Magento file system with the following contents:
 
 -   Required license files
@@ -198,6 +204,7 @@ To create these files:
 5.  Add `language.xml` meta-information file as discussed in the next section.
 
 #### Language package language.xml {#config-cli-subcommands-xlate-pack-meta-xml}
+
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
 
 Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the _parent_). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If a child translation lacks a phrase or a word, this phrase or word is taken from the parent {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}. <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.
@@ -226,6 +233,7 @@ Where:
 If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.
 
 #### Example of language inheritance {#m2devgde-xlate-inheritancework}
+
 Suppose a language package descends from two other packages, and that those packages also have parent and "grandparent" packages.
 
 If a language package descends from two packages, its `language.xml` might look like the following:
@@ -258,17 +266,20 @@ If the Magento application cannot find word or phrase in the `en_GB` package, it
 Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="\_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
 ### Configure multiple packages for a language {#m2devgde-xlate-severalpacks}
+
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.
 
 To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package's `language.xml` meta-information file as discussed in the next section.
 
 ## Examples of using translation commands
+
 The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:
 
 -   <a href="#config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</a>
 -   <a href="#config-cli-subcommands-xlate-example2">Example: Create a language package</a>
 
 ### Example: Create a translation dictionary for a module or theme {#config-cli-subcommands-xlate-example1}
+
 To add a German translation to a module or theme that you want to distribute to other merchants:
 
 1.  Collect phrases from your module:
@@ -282,6 +293,7 @@ To add a German translation to a module or theme that you want to distribute to 
 3.  If necessary, copy `xx_YY.csv` to `/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n` or to the module's theme directory (depending on whether the translation dictionary is for a module or a theme).
 
 ### Example: Create a language package {#config-cli-subcommands-xlate-example2}
+
 Similar to the preceding example, generate a .csv file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.
 
 1.  Collect phrases from your module:

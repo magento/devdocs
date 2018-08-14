@@ -6,7 +6,6 @@ menu_title: Clone and branch the project
 menu_order: 30
 menu_node:
 version: 2.0
-github_link: cloud/before/before-setup-env-2_clone.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-keys.html
   - /guides/v2.1/cloud/before/before-setup-env-keys.html
@@ -70,6 +69,7 @@ To clone the project's `master` environment to your local:
 		git pull magento <environment ID>
 
 ## Change the Magento Admin URL, username, and password on master {#setvariables}
+
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
 * `ADMIN_EMAIL`: Administrative user's e-mail address. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
@@ -82,6 +82,7 @@ Make note of any changes you make. You may need them when installing Magento wit
 </div>
 
 ### List and review variables {#variablelist}
+
 If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables. 
 
 	magento-cloud variable:get -e <environment ID>
@@ -97,6 +98,7 @@ Everytime you add or modify a variable using the web interface or the CLI, the b
 </div>
 
 ### Add variables using the CLI {#cli}
+
 To set variables using the CLI (with example values used):
 
 1.  To set the administrator's username to `admin_A456` in the `master` environment, enter:
@@ -137,6 +139,7 @@ To set variables using the CLI (with example values used):
 			magento-cloud snapshot:create -e master
 
 ### Add variables using the Project Web Interface {#web}
+
 To set variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
@@ -159,6 +162,7 @@ Repeat to optionally add the following variables using the examples above:
 * Name: `ADMIN_URL`, Value: magento_A8v10
 
 ## Branch an environment {#branch}
+
 With your project cloned and Magento administrator account configured, you can branch for development.
 
 * For [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, than branch from `staging` for development.

@@ -6,7 +6,6 @@ menu_title: Get started with command-line configuration
 menu_node:
 menu_order: 2
 version: 2.0
-github_link: config-guide/cli/config-cli-subcommands.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 functional_areas:
   - Configuration
@@ -18,6 +17,7 @@ functional_areas:
 {% include install/before-you-begin-cli.html %}
 
 ## First steps {#config-cli-before}
+
 1.  Log in to the Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.  Change to the following directory:
 
@@ -37,6 +37,7 @@ You can run the commands in any of the following ways:
 </div>
 
 ## Command summary {#config-cli-summary}
+
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -120,6 +121,7 @@ Before you run any of these commands, you must either [install the Magento appli
 {% include install/cli_common-commands.html %}
 
 ## Commands {#config-cli-subcommands}
+
 The following sections discuss the available commands.
 
 -   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>

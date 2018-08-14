@@ -6,7 +6,6 @@ menu_title: Component dependency readiness issues
 menu_node:
 menu_order: 3
 version: 2.1
-github_link: install-gde/trouble/readiness/tshoot_rc_depend.md
 functional_areas:
   - Install
   - System

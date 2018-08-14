@@ -9,7 +9,6 @@ version: 2.0
 tabgroup: best-practices
 tablabel: Storefront
 tabweight: 40
-github_link: ext-best-practices/storefront/storefront-best-practices.md
 functional_areas:
   - Frontend
   - Theme

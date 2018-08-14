@@ -4,7 +4,6 @@ subgroup: components
 title: File component
 menu_title: File component
 version: 2.1
-github_link: ui_comp_guide/components/ui-file.md
 ---
 
 ## Overview

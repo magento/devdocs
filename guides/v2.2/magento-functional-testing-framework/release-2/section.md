@@ -2,7 +2,6 @@
 group: mftf
 title: Section structure
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/section.md
 functional_areas:
  - Testing
 mftf-release: 2.1.2
@@ -42,7 +41,7 @@ The format of a `<section>` is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="">
         <element name="" type="" selector="" />
         <element name="" type="" selector="" parameterized="true"/>
@@ -69,7 +68,7 @@ Example (`.../Catalog/Section/AdminCategorySidebarActionSection.xml` file):
 <?xml version="1.0" encoding="utf-8"?>
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="AdminCategorySidebarActionSection">
         <element name="addRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
         <element name="addSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>

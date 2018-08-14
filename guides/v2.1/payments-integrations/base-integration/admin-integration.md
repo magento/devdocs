@@ -5,7 +5,6 @@ title: Configure payment method by area
 menu_title: Configure payment method by area
 menu_order: 10
 version: 2.1
-github_link: payments-integrations/base-integration/admin-integration.md
 functional_areas:
   - Integration
 ---

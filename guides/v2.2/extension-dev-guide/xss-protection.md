@@ -5,7 +5,6 @@ title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
 version: 2.2
-github_link: extension-dev-guide/xss-protection.md
 ---
 
 ### Overview
@@ -17,7 +16,6 @@ There are mainly three types of XSS vulnerabilities:
 * **Persisted XSS** - In this type of vulnerability, the source of unvalidated data comes from the Database or {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}Backend{% endglossarytooltip %} permanent store.
 * **Reflected (non-persistent) XSS** - This type of vulnerability occurs when data provided by a web client is used immediately by server-side scripts to parse and display a page to a user without properly sanitizing the request.
 * **DOM XSS** - For this vulnerability, the malicious data does not touch the web server. Rather, it is being reflected by the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code, fully on the client side.
-
 
 ### Preventing XSS
 

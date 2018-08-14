@@ -6,7 +6,6 @@ menu_title: Generate data for performance testing
 menu_node:
 menu_order: 800
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 functional_areas:
   - Configuration
@@ -17,6 +16,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of performance testing data {#config-cli-perf-overview}
+
 To use the [Magento Performance Toolkit]({{ site.mage2100url }}setup/performance-toolkit){:target="\_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
@@ -28,6 +28,7 @@ The following figure shows how a product displays on the {% glossarytooltip 1a70
 This gives you an idea about what the data looks like.
 
 ## About profiles {#config-cli-perf-prof}
+
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
 Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
@@ -146,6 +147,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 </table>
 
 ## Run the data generator {#config-cli-perf-run}
+
 <div class="bs-callout bs-callout-warning" markdown="1">
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 </div>
@@ -181,8 +183,8 @@ Sample output for the small profile:
     Generating configurable EAV variations...  done in <time>
     ... more ...
 
-
 #### Related topics
+
 *   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 *   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
 *   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)

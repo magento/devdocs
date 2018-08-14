@@ -8,7 +8,6 @@ menu_order: 200
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.0
-github_link: install-gde/basics/basics_docroot.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
 functional_areas:
   - Install
@@ -29,9 +28,11 @@ As part of the Magento 2 installation process, you specify a subdirectory (usual
 </div>
 
 ## Contact your hosting provider
+
 If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="\_blank">cPanel</a> typically uses `public_html` as its docroot, but you should contact your provider to confirm.
 
 ## Find the docroot yourself
+
 This section assumes you've already set up a simple web server using [Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="\_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="\_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

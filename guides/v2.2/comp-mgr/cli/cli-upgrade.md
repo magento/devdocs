@@ -2,7 +2,6 @@
 group: compman
 title: Command-line upgrade
 version: 2.2
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---
@@ -86,13 +85,12 @@ To enable maintenance mode:
 5. Manually clear `var` subdirectories:
    ```bash
    rm -rf <Magento install dir>/var/cache/*
-   ```
-   ```bash
    rm -rf <Magento install dir>/var/page_cache/*
-   ```
-   ```bash
    rm -rf <Magento install dir>/generated/code/*
    ```
+   <div class="bs-callout bs-callout-info" markdown="1">
+        If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+    </div>
 6. Update the database schema and data:
    ```bash
    php bin/magento setup:upgrade

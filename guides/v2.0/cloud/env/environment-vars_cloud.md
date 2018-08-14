@@ -2,7 +2,6 @@
 group: cloud
 title: Cloud variables
 version: 2.0
-github_link: cloud/env/environment-vars_cloud.md
 functional_areas:
   - Cloud
   - Configuration
@@ -36,7 +35,7 @@ Environment variables that are specific to {{site.data.var.ece}} are prefixed wi
     variables names and values are variable values (a string).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
+If you're attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 

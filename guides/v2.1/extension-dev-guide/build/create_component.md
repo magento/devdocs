@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Name your component
 version: 2.1
-github_link: extension-dev-guide/build/create_component.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
@@ -12,12 +11,14 @@ redirect_from:
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
 
 ## Prerequisites {#prereq}
+
 Before you continue, make sure you have completed all of the following tasks:
 *   Create a [file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 *   Create the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
 *   [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
 
 ## Add the component's `module.xml` file {#module-xml}
+
 Declare the component itself by adding a `module.xml` file in the `/etc` folder of your component.
 
 A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
@@ -95,8 +96,6 @@ Here:
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
   <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
  </div> -->
-
-
 
 #### Next
 

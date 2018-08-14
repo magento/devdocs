@@ -5,7 +5,6 @@ title: Token UI component provider
 menu_title: Token UI component provider
 menu_order: 15
 version: 2.1
-github_link: payments-integrations/vault/token-ui-component-provider.md
 functional_areas:
   - Integration
 ---
@@ -79,7 +78,7 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
 
 ## JavaScript component for vault 
 
-In you custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 

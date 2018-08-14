@@ -3,10 +3,10 @@ group: UI_Components_guide
 subgroup: concepts
 title: Magento binding syntax
 version: 2.2
-github_link: ui_comp_guide/concepts/magento-bindings.md
 ---
 
 ## Overview
+
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
 ### Knockout syntax
@@ -36,8 +36,6 @@ or
 ```
 
 If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template. 
-
-
 
 ## Binding map
 

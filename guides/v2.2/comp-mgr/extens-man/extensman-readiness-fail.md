@@ -8,12 +8,12 @@ menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: readiness
 version: 2.2
-github_link: comp-mgr/extens-man/extensman-readiness-fail.md
 functional_areas:
   - Upgrade
 ---
 
 ## Readiness check failure {#compman-readiness-fail}
+
 Messages similar to the following display if any readiness check fails. 
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}/common/images/cman_readiness-fail-ex.png)

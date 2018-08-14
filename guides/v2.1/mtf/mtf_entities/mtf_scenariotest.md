@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Scenario test
 version: 2.1
-github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
 
 Scenario test is a case of separate test steps where each step is a distinct class. Test steps can be grouped in any order that makes functional testing more agile comparatively with [injectable test].  

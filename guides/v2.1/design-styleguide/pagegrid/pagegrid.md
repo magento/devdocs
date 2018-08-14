@@ -6,11 +6,10 @@ menu_title: Page Grids
 menu_order: 3
 menu_node:
 version: 2.1
-github_link: design-styleguide/pagegrid/pagegrid.md
 ---
 In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}, a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.
 
-<h2 id="page">Page Grid</h2>
+## Page Grid {#page}
 
 <ul>
 	<li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
@@ -20,7 +19,7 @@ In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{%
 
 <img src="img/PageGrid.png">
 
-<h2 id="slide-out">Slide-Out Grid</h2>
+## Slide-Out Grid {#slide-out}
 
 A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
 

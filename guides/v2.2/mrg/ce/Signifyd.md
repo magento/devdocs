@@ -5,7 +5,6 @@ title: Magento_Signifyd module
 menu_title: Signifyd
 menu_order: 2
 version: 2.2
-github_link: mrg/ce/Signifyd.md
 redirect_from: /guides/v2.2/mrg/ee/Signifyd.html
 ---
 
@@ -55,7 +54,7 @@ The following interfaces (marked with the `@api` annotation) extend the Signifyd
 
 - might be used by `Magento\Signifyd\Api\CaseRepositoryInterface` to retrieve a list of case entities by specific conditions
 
-For information about a public API in Magento 2, see [Public interfaces & APIs](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/api-concepts.html).
+For information about a public API in Magento 2, see [Public interfaces & APIs]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/api-concepts.html).
 
 ## Additional information
 
@@ -75,7 +74,7 @@ The Debug Mode may be enabled in the module configuration. This logs the communi
 
 The Magento_Signifyd module does not introduce backward incompatible changes.
 
-You can track [backward incompatible changes in patch releases](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes in patch releases]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).
 
 ### Processing supplementary payment information
 

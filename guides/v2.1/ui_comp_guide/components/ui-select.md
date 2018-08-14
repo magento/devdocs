@@ -4,7 +4,6 @@ subgroup: components
 title: Select component
 menu_title: Select component
 version: 2.1
-github_link: ui_comp_guide/components/ui-select.md
 ---
 
 ## Overview

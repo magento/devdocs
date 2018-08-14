@@ -5,7 +5,6 @@ title: Compile LESS using Grunt
 menu_order: 4
 menu_title: Compile LESS using Grunt
 version: 2.2
-github_link: frontend-dev-guide/css-topics/css_debug.md
 functional_areas:
   - Frontend
 ---
@@ -14,10 +13,8 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 ## Prerequisites
 
-
 - Make sure you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
-
 
 ## Adding themes to Grunt configuration {#add_theme}
 
@@ -113,7 +110,7 @@ The following shows which Grunt tasks to use for debugging:
 <li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
-<li>After you <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
+<li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 </ul>
 
 If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:
@@ -121,7 +118,7 @@ If you have LiveReload installed, run the <code>grunt watch</code> command, and 
 <li>
 After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
 
-<li>After you <a href="http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, which reloads the page in the browser.</li>
+<li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, which reloads the page in the browser.</li>
 
 </ul>
 

@@ -4,7 +4,6 @@ subgroup: components
 title: Tab component
 menu_title: Tab component
 version: 2.2
-github_link: ui_comp_guide/components/ui-tab.md
 ---
 
 ## Overview

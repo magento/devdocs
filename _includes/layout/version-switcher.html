@@ -5,9 +5,9 @@
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
-	{% for version in site.versions %}
-    <li><a class="dropdown-item" data-proofer-ignore href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Magento {{ version.name }}{% if version.url contains "v2.3" %} Alpha{% endif %}</a></li>
-	{% endfor %}
+		{% for version in site.versions %}
+		<li><a class="dropdown-item" data-proofer-ignore href="{{ site.baseurl }}{{ version.url }}{{ page.url | split: '/' | shift | shift | shift | join: '/' }}">Magento {{ version.name }}{% if version.url contains "v2.3" %} Alpha{% endif %}</a></li>
+		{% endfor %}
   </ul>
 
 </div>

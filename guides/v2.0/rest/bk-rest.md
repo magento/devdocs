@@ -7,13 +7,12 @@ menu_title: Overview
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: rest/bk-rest.md
 redirect_from: /guides/v1.0/rest/bk-rest.html
 functional_areas:
   - Integration
 ---
 
-The [REST API documentation](https://devdocs.magento.com/swagger/index_20.html) published here on the Magento 2 Developer Documentation {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} describes the REST APIs that are available on the latest release of Magento 2.
+The [REST API documentation]({{ site.baseurl }}/swagger/index_20.html) published here on the Magento 2 Developer Documentation {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} describes the REST APIs that are available on the latest release of Magento 2.
 
 This documentation is generated from the code base using [Swagger](http://swagger.io) and represents the state of the code at the time the documentation was generated. Swagger displays a list of service names. Click on a service name to display the list of APIs defined within that service. Click on an {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} name to display detailed information about that API.
 

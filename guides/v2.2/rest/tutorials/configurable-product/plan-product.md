@@ -2,14 +2,14 @@
 layout: tutorial
 group: rest
 title: Step 1. Plan the product
+subtitle: Create a configurable product tutorial
 menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
+  title: REST tutorials
+  url: rest/tutorials/index.html
 version: 2.2
-github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:
   - Integration
 ---
@@ -23,7 +23,6 @@ To create a configurable product programmatically, you'll need to know the follo
 Since this tutorial uses the sample data, we can take advantage of the options that the Top attribute set provides. This attribute set contains attributes that describe the fabric, sleeve length, and other characteristics that are specific to clothing. It also includes EAV attributes such as size and color, which are commonly available to all types of physical products.
 
 The size of the t-shirt will be the configurable aspect of this product. Therefore, we'll create a simple product for each size (Small, Medium, and Large).
-
 
 ## Define product characteristics
 

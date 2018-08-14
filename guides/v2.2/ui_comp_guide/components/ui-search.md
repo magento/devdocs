@@ -4,7 +4,6 @@ subgroup: components
 title: Search component
 menu_title: Search component
 version: 2.2
-github_link: ui_comp_guide/components/ui-search.md
 ---
 
 ## Overview

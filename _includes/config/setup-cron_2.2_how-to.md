@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ### Create the Magento crontab
+
 Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.
 
 The Magento crontab is inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.

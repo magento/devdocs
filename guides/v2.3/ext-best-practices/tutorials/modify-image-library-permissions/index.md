@@ -1,7 +1,6 @@
 ---
 group: ext-best-practices
 title: Modify Media Library folder permissions
-github_link: ext-best-practices/tutorials/modify-image-library-folder-permissions/index.md
 ---
 
 The Magento Media Library gives admins the ability to upload image files in specific folders.

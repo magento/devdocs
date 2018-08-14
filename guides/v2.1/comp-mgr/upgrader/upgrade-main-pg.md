@@ -6,12 +6,12 @@ menu_title: Step 1. Select versions to upgrade
 menu_node:
 menu_order: 5
 version: 2.1
-github_link: comp-mgr/upgrader/upgrade-main-pg.md
 functional_areas:
   - Upgrade
 ---
 
-<h2 id="upgrade-access">System upgrade options</h2>
+## System upgrade options {#upgrade-access}
+
 To choose which components to upgrade:
 
 1.	After you <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
@@ -58,14 +58,15 @@ To choose which components to upgrade:
 	</tbody>
 	</table>
 
-<h2 id="upgr-comps">Upgrade components</h2>
+## Upgrade components {#upgr-comps}
+
 To upgrade components:
 
 1.	From the **Magento Core Components** list, click the core component version to which to upgrade.
 
 	For example, to upgrade to the latest version, click the one with **(latest)** in the name as the following figure shows.
 
-	<img src="{{ site.baseurl }}/common/images/upgr_step1_core-ver.png" alt="Select the version of Magento core components to which to upgrade">
+	![Select the version of Magento core components to which to upgrade]({{ site.baseurl }}/common/images/upgr_step1_core-ver.png)
 
 2.	For each third-party component:
 
@@ -73,12 +74,12 @@ To upgrade components:
 
 		A sample follows.
 
-		<img src="{{ site.baseurl }}/common/images/upgr_comp_yes.png" alt="Upgrade this component">
+		![Upgrade this component]({{ site.baseurl }}/common/images/upgr_comp_yes.png)
 
 	*	If you *do not* want to upgrade it, set **Upgrade** to **No**.
 
 		A sample follows.
 
-		<img src="{{ site.baseurl }}/common/images/upgr_comp_no.png" alt="Do not upgrade this component">
+		![Do not upgrade this component]({{ site.baseurl }}/common/images/upgr_comp_no.png)
 
-3.	Click **Next** and continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>
+3.	Click **Next** and continue with [Step 2. Readiness check]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-readiness.html)

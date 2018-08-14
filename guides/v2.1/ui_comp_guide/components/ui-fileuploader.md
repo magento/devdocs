@@ -4,7 +4,6 @@ subgroup: components
 title: FileUploader component
 menu_title: FileUploader component
 version: 2.1
-github_link: ui_comp_guide/components/ui-fileuploader.md
 ---
 
 ## Overview
@@ -194,7 +193,7 @@ Fileuploader-specific configuration:
 
 ## Integration {#example}
 
-Here is an example of how File Uploader component integrates with [Form](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html) component:
+Here is an example of how File Uploader component integrates with [Form]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html) component:
 
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

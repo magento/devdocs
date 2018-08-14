@@ -7,7 +7,6 @@ menu_title: Staging
 menu_order: 2
 version: 2.2
 ee_only: true
-github_link: mrg/ee/Staging.md
 ---
 
 
@@ -95,7 +94,7 @@ You can manipulate the timeline view and the grid view of a dashboard in the `ap
     - `component` extends selection column, sets a CSS class specified in a value.
     - `updateTypesMap` declares an array that contains bound classes and values that indicate which CSS class must be applied. Depending on the `value` (obtained from backend), a CSS class from the `className` is applied to a stripe with update.
 
-[Learn more details about the timeline dashboard.](http://devdocs.magento.com/guides/v2.2/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
+[Learn more details about the timeline dashboard.]({{ site.baseurl }}/guides/v2.2/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
 
 ## Manage future campaigns
 
@@ -158,6 +157,7 @@ The lower expandable list in the form represent types of [staging](#staging) ent
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
+
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### Update
@@ -260,7 +260,7 @@ You can extend and override layouts in the `view/adminhtml/layout` directory. Fo
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
 
 ### cron options
 

@@ -1,6 +1,7 @@
 <div markdown="1">
 
 ## Locate your session storage {#session-where}
+
 This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:
 
 *	If you configured memcached, sessions are stored in RAM; for more information, see [Use memcached for session storage]({{ page.baseurl }}/config-guide/memcache/memcache.html).

@@ -5,7 +5,6 @@ title: Enable vault
 menu_title: Enable vault
 menu_order: 5
 version: 2.1
-github_link: payments-integrations/vault/enabler.md
 functional_areas:
   - Integration
 ---

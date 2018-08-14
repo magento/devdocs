@@ -1,0 +1,2 @@
+{: .bs-callout .bs-callout-info}
+If you use a version of {{site.data.var.ece}} that does not contain the `ece-tools` package, then your project requires an [upgrade]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html). If you currently use the `ece-tools` package and you need to update it, see [Update ece-tools version]({{page.baseurl}}/cloud/project/ece-tools-update.html).

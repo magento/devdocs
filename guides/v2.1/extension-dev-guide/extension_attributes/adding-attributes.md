@@ -5,7 +5,6 @@ title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
 menu_order: 20
 version: 2.1
-github_link: extension-dev-guide/extension_attributes/adding-attributes.md
 ---
 
 Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
@@ -98,7 +97,7 @@ public function afterSave
 }
 {% endhighlight %}
 
-But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension atrributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
 

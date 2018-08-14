@@ -8,12 +8,10 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-object.md
 functional_areas:
   - B2B
   - Integration
 ---
-
 
 ## Manage company objects
 
@@ -77,11 +75,10 @@ The following table lists the parameters defined in `CompanyInterface`.
 <tr>
 <td><code>reject_reason</code></td><td>Specifies why a company's request to be a B2B customer is rejected</td><td>string</td><td>Optional </td></tr>
 <tr>
-<td><code>rejected_at</code></td><td>A timestamp incdicating when the company was rejected.</td><td>string</td><td>Optional</td></tr>
+<td><code>rejected_at</code></td><td>A timestamp indicating when the company was rejected.</td><td>string</td><td>Optional</td></tr>
 <tr>
 <td><code>super_user_id</code></td><td>The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist. </td><td>integer</td><td>Required to create or update a company.</td></tr>
 </table>
-
 
 ### Create a company
 
@@ -249,7 +246,6 @@ None
   }
 }
 {% endhighlight %}
-
 
 ### Delete a company
 

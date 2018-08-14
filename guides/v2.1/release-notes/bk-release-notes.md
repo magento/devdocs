@@ -6,17 +6,18 @@ menu_title: 2.1.x Release Information
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: release-notes/bk-release-notes.md
 ---
 
 
 Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
 
-
 ## Magento 2.1.0 Release Notes
 
-* [{{site.data.var.ce}} 2.1.13 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.13CE.html)
-* [{{site.data.var.ee}} 2.1.13 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.13EE.html)
+* [{{site.data.var.ce}} 2.1.14 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.14CE.html)
+* [{{site.data.var.ee}} 2.1.14 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.14EE.html)
+
+* [{{site.data.var.ce}} 2.1.13 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.13CE.html)
+* [{{site.data.var.ee}} 2.1.13 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.13EE.html)
 
 * [{{site.data.var.ce}} 2.1.12 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.12CE.html)
 * [{{site.data.var.ee}} 2.1.12 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.12EE.html)
@@ -57,9 +58,6 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 
 * [{{site.data.var.ce}} 2.1.0 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.0CE.html)
 * [{{site.data.var.ee}} 2.1.0 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.0EE.html)
-
-
-
 
 ## Backward-incompatible changes
 
