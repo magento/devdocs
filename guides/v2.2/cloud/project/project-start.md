@@ -15,7 +15,7 @@ File | Description
 `/app` | The `code` folder is used for custom modules. The `design` folder is used for custom themes. See [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html). The `etc` folder contains configuration files for Magento.
 `/m2-hotfixes` | Used for custom patches.
 `/update` | A service folder used by the support module.
-`.gitignore` | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring files).
+`.gitignore` | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring-files).
 `.magento.app.yaml` | Configuration file that defines the properties to build your application. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `.magento.env.yaml` | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `composer.json` | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html).
