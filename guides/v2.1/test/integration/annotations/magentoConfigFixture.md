@@ -43,7 +43,7 @@ The following example demonstrates the `testConfigFixtures` test that uses the s
 The test asserts that the specified configuration options have been applied.
 
 ```php?start_inline=1
-class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit_Framework_TestCase
+class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Mage_Core_Model_Config

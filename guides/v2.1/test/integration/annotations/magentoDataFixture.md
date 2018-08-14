@@ -61,7 +61,7 @@ Create a data fixture as a separate file called `layout_custom_handle.php` that 
 
 ```php?start_inline=1
 <?php
-$model = new Magento_Core_Model_Layout_Update();
+$model = new \Magento\Widget\Model\Layout\Update();
 $model->setData(array(
     'handle'     => 'custom',
     'xml'        => '<layout/>',
@@ -78,7 +78,7 @@ Declare the fixture in your test case using the `@magentoDataFixture` annotation
 /**
  * @magentoDataFixture Magento/Core/Model/Layout/_files/layout_custom_handle.php
  */
-class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
+class Magento_Core_Model_Layout_UpdateTest extends PHPUnit\Framework\TestCase
 {
     public function testLoad()
     {
@@ -97,30 +97,31 @@ A method of the current test case class must be declared as `public` and `static
 > Fixture Method Usage
 
 ```php?start_inline=1
-/**
- * @magentoDataFixture layoutDataFixture
- */
-class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
+namespace Magento\Widget\Model\Layout;
+
+class UpdateTest extends PHPUnit\Framework\TestCase
 {
-    private static $_modelId;
- 
-    public static function layoutDataFixture()
+    private $modelId;
+    public function layoutDataFixture()
     {
-        $model = new Magento_Core_Model_Layout_Update();
-        $model->setData(array(
+        $model = new Update::class();
+        $model->setData([
             'handle'     => 'default',
-            'xml'        => '<layout/>',
-            'sort_order' => 123
-        ));
+             'xml'        => '<layout/>',
+             'sort_order' => 123
+        ]);
         $model->save();
-        self::$_modelId = $model->getId();
+        $this->modelId = $model->getId();
     }
- 
+    
+    /**
+     * @magentoDataFixture layoutDataFixture
+     */
     public function testLoad()
     {
         /* Load by id */
-        $model = new Magento_Core_Model_Layout_Update();
-        $model->load(self::$_modelId);
+        $model = new Update::class();
+        $model->load($this->modelId);
         $this->assertEquals(123, $model->getSortOrder());
     }
 }
@@ -166,12 +167,12 @@ Relying on and modifying application state from within a fixture is prohibited.
 
 The limitation is dictated by the compatibility requirements with the [application isolation annotation][magentoAppIsolation], which may reset application state at any time.
 
-For example, the following fixture results passing to curresponding test is prohibited:
+For example, the following fixture results passing to corresponding test is prohibited:
 
 > Prohibited data passing through the global registry
 
 ```php?start_inline=1
-$user = Mage::getModel('Magento_User_Model_User');
+$user = Mage::getModel('\Magento\User\Model\User');
 $user->setFirstname('Dummy')
     ->setLastname('Dummy')
     ->setEmail('dummy@dummy.com')
@@ -183,11 +184,11 @@ Mage::register('_fixture/user_id', $user->getId()); // incompatible with eventua
 
 #### Session fixtures
 
-Session fixtures must not use `Mage::getSingleton()` to instantiate a necessary session model.
+Session fixtures must not use `::getSingleton` to instantiate a necessary session model.
 
 This restriction is necessitated by the way PHPUnit backs up global variables, including the superglobal variable [`$_SESSION`].
 A conflict arises because Magento's abstract session model refers to session data by reference (`$this->_data = &$_SESSION[$namespace]`), which is no longer accurate after something is assigned to the `$_SESSION` variable.
-Therefore, when using `Mage::getSingleton()`, a session model with a snapshot of the session data (rather than a reference to the current data) will be placed into the registry, polluting the following test with old session data.
+Therefore, when using `::getSingleton`, a session model with a snapshot of the session data (rather than a reference to the current data) will be placed into the registry, polluting the following test with old session data.
 
 <!-- Link definitions -->
 

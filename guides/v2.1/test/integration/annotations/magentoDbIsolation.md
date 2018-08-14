@@ -34,7 +34,7 @@ For example:
 /**
  * @magentoDbIsolation enabled
  */
-class Some_EntityTest extends PHPUnit_Framework_TestCase
+class Some_EntityTest extends PHPUnit\Framework\TestCase
 {
     public function testCreate()
     {

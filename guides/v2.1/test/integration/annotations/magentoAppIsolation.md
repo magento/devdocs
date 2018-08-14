@@ -60,7 +60,7 @@ Default values for the `@magentoAppIsolation` annotation:
 
 Test class ancestors|Test case (class)|Test (method)
 ---|---|---
-`PHPUnit_Framework_TestCase`|enabled|disabled
+`PHPUnit\Framework\TestCase`|enabled|disabled
 `Magento_TestFramework_TestCase_ControllerAbstract`|enabled|enabled
 
 Although `@magentoAppIsolation` cannot be changed at the test case level, developers can change it for individual tests.

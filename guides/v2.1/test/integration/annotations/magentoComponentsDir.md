@@ -56,7 +56,7 @@ namespace Magento\Foo;
 /**
  * @magentoComponentsDir Magento/Foo/_files/modules
  */
-class BarTest extends \PHPUnit_Framework_TestCase
+class BarTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @magentoComponentsDir Magento/Foo/_files/themes
@@ -92,8 +92,9 @@ namespace Magento\Foo;
  
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Backend\App\Area\FrontNameResolver as BackendFrontNameResolver;
+use Magento\Theme\Model\Theme\Registration;
  
-class BarTest extends \PHPUnit_Framework_TestCase
+class BarTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Add fixture themes to the list of available themes in the application
@@ -105,9 +106,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
     {
         $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
         /** @var \Magento\Theme\Model\Theme\Registration $registration */
-        $registration = $objectManager->get(
-            'Magento\Theme\Model\Theme\Registration'
-        );
+        $registration = $objectManager->get(Registration::class);
         $registration->register();
     }
  

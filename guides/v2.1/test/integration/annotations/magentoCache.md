@@ -53,7 +53,7 @@ namespace Magento\Foo;
 /**
  * @magentoCache all enabled
  */
-class BarTest extends \PHPUnit_Framework_TestCase
+class BarTest extends \PHPUnit\Framework\TestCase
 {
     public function testOne()
     {

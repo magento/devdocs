@@ -36,7 +36,8 @@ If the annotation is specified over a test in the test case, it will overwrite t
 /**
  * @magentoAppArea adminhtml
  */
-class Some_Class_ToTest extends PHPUnit_Framework_TestCase
+namespace Vendor\Module;
+class ClassToTest extends PHPUnit\Framework\TestCase
 {
     public function testOne()
     {
@@ -71,7 +72,8 @@ Each time you specify a different area, Magento will be reinitialized in the spe
 > The test annotation example:
 
 ```php?start_inline=1
-class Some_Class_ToTest extends PHPUnit_Framework_TestCase
+namespace Vendor\Module;
+class ClassToTest extends PHPUnit\Framework\TestCase
 {
     // executes the test in scope of the global area
     public function testOne()
