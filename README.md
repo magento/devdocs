@@ -195,6 +195,8 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 ## Build DevDocs in Windows
 
+Some of the technologies we use to develop DevDocs is not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you. 
+
 Download software:
 
 -  [Git for Windows](https://gitforwindows.org)
