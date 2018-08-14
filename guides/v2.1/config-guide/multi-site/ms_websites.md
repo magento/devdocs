@@ -48,12 +48,12 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 {% collapsible To create a website: %}
 
 1.	Log in to the Magento Admin as a user authorized to create websites, stores, and store views.
-2.	Click **Stores** > Settings > **All Stores**.
-3.	On the Stores page, click **Create Website**.
+2.	Click **Stores** > **Settings** > **All Stores**.
+3.	On the _Stores_ page, click **Create Website**.
 
-	*	**Name** field: Enter a name to identify the website.
-	*	**Code** field: Enter a unique code; for example, if you have a French store, you can enter `french`
-	*	**Sort Order** field: Enter an optional numerical sort order.
+	*	**Name**—Enter a name to identify the website.
+	*	**Code**—Enter a unique code; for example, if you have a French store, you can enter `french`
+	*	**Sort Order**—Enter an optional numerical sort order.
 
 	The following figure shows an example.
 
@@ -67,13 +67,13 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% collapsible To create a store: %}
 
-1.	In the Magento Admin, click **Stores** > Settings > **All Stores**.
-1.	On the Stores page, click **Create Store**.
+1.	In the _Admin_ panel, click **Stores** > **Settings** > **All Stores**.
+1.	On the _Stores_ page, click **Create Store**.
 
-	*	**Web Site** list: Click the name of the website with which to associate this store.
-	*	**Name** field: Enter a name to identify the store.
-	*	**Code** field: Enter a unique code to identify the store.
-	*	**Root Category** list: Click the name of the root category for this store.
+	*	**Web Site**—Click the name of the website with which to associate this store.
+	*	**Name**—Enter a name to identify the store.
+	*	**Code**—Enter a unique code to identify the store.
+	*	**Root Category**—Click the name of the root category for this store.
 
 	The following figure shows an example.
 
@@ -87,13 +87,13 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% collapsible To create a store view: %}
 
-1.	In the Admin panel, click **Stores** > **Settings** > **All Stores**.
+1.	In the _Admin_ panel, click **Stores** > **Settings** > **All Stores**.
 2.	On the Stores page, click **Create Store View**.
 
-	*	**Store** list: Click the name of the store with which to associate this store view.
-	*	**Name** field: Enter a name to identify this store view.
-	*	**Code** field: Enter a unique name to identify this store view.
-	*	**Status** list: Click **Enabled**.
+	*	**Store**—Click the name of the store with which to associate this store view.
+	*	**Name**—Enter a name to identify this store view.
+	*	**Code**—Enter a unique name to identify this store view.
+	*	**Status**—Select **Enabled**.
 	The following figure shows an example.
 
 	![Add a store]({{ site.baseurl }}/common/images/config_multi-site-storeview.png){:width="500px"}
@@ -135,13 +135,13 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 {% collapsible To add the store code to the base URL: %}
 
-1.	In the _Admin_ panel, click **Stores** > Settings > **Configuration** > **General** > **Web**.
+1.	In the _Admin_ panel, click **Stores** > **Settings** > **Configuration** > **General** > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 3.	In the right pane, expand **Url Options**.
-4.	Clear the **Use system value** checkbox next to **Add Store Code to Urls**.
-5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
+4.	Clear the **Use system value** checkbox next to _Add Store Code to Urls_.
+5.	From the _Add Store Code to Urls_ list, click **Yes**.
 
 	![Add the store code to the store base URL]({{ site.baseurl }}/common/images/config_multi-site-add-store-url.png){:width="550px"}
 6.	Click **Save Config**.
@@ -155,9 +155,9 @@ You must perform this step last because you will lose access to the Magento Admi
 
 {% collapsible To change the default store view base URL: %}
 
-1.  In the _Admin_ panel, click **Stores** > Settings > **Configuration** > General > **Web**.
+1.  In the _Admin_ panel, click **Stores** > **Settings** > **Configuration** > **General** > **Web**.
 
-1.  From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
+1.  From the _Store View_ list at the top of the page, click **Default Config**.
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 
