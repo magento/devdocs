@@ -203,6 +203,7 @@ Download software:
 -  [Chocolatey](https://chocolatey.org/install)
 
 ### Install Chocolatey
+
 Only Administrators can use Chocolatey features. You can use the Administrator account, or you can use the "Run as Administror" function on the shortcut menu.
 
 1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
