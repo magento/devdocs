@@ -15,6 +15,7 @@ Token type | Description | Default lifetime
 Integration | The merchant determines which Magento resources the integration has access to. | Indefinite. It lasts until it is manually revoked.
 Admin | The merchant determines which Magento resources an admin user has access to. | 4 hours
 Customer | Magento grants access to resources with the `anonymous` or `self` permission. Merchants cannot edit these settings. | 1 hour
+{:style="table-layout:auto;"}
 
 ## Integration tokens
 
@@ -45,6 +46,7 @@ Request|REST|SOAP
 ---|---|---
 Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminTokenServiceV1`
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
+{:style="table-layout:auto;"}
 
 For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
 
@@ -59,6 +61,7 @@ Component | Specifies
 Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST https://magento.host/index.php/rest/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
+{:style="table-layout:auto;"}
 
 #### Examples {#token-example}
 
