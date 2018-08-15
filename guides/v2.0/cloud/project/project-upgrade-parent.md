@@ -5,7 +5,6 @@ title: Upgrades and Patches
 menu_title: Upgrades and Patches
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Cloud
   - Upgrade

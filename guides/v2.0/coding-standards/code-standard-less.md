@@ -5,7 +5,6 @@ title: LESS coding standard
 landing-page: Coding standards
 menu_title: LESS coding standard
 menu_order: 8
-version: 2.0
 functional_areas:
   - Standards
 ---

@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Codeception commands in the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/commands/codeception.html

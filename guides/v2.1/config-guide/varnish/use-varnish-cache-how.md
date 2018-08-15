@@ -5,7 +5,6 @@ title: How Varnish caching works
 menu_title: How Varnish caching works
 menu_order: 105
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

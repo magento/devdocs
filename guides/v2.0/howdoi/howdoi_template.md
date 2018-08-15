@@ -5,7 +5,6 @@ title:
 menu_title: 
 menu_node: 
 menu_order: 1
-version: 2.0
 ---
 
 <!-- Author in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} also welcome -->

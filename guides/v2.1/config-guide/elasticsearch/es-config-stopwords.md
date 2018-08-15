@@ -5,7 +5,6 @@ title: Configure Elasticsearch stopwords
 menu_title: Configure Elasticsearch stopwords
 menu_order: 10
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

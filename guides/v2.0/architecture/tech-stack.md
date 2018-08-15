@@ -4,7 +4,6 @@ subgroup: Architectural Basics
 title: Technology stack
 menu_title: Technology stack
 menu_order: 2
-version: 2.0
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 

@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 redirect_from:

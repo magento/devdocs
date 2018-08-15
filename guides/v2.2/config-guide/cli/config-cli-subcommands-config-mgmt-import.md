@@ -7,7 +7,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 253
-version: 2.2
 functional_areas:
   - Configuration
   - System

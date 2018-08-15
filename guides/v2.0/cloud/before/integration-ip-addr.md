@@ -5,7 +5,6 @@ title: Public IP addresses for integration environments
 menu_title: Public IP addresses for integration environments
 menu_order:
 menu_node:
-version: 2.0
 ---
 
 This topic lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.

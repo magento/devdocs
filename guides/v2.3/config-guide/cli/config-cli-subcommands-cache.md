@@ -5,7 +5,6 @@ title: Manage the cache
 menu_title: Manage the cache
 menu_node:
 menu_order: 50
-version: 2.3
 functional_areas:
   - Configuration
   - System

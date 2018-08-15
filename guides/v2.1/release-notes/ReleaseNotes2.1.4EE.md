@@ -6,7 +6,6 @@ menu_title: Magento Commerce 2.1.4 Release Notes
 menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
-version: 2.1
 ---
 
 *	TOC

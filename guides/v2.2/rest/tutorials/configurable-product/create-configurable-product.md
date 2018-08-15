@@ -9,7 +9,6 @@ level3_subgroup: configurable-product-tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
-version: 2.2
 functional_areas:
   - Integration
 ---

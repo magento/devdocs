@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Troubleshooting
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.0.2

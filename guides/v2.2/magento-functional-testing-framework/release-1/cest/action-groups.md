@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Action groups in the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/cest/action-groups.html

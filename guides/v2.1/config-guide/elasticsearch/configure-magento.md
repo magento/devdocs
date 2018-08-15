@@ -5,7 +5,6 @@ title: Configure Magento to use Elasticsearch
 menu_title: Configure Magento to use Elasticsearch
 menu_order: 900
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - Search

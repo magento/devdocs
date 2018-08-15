@@ -5,7 +5,6 @@ title: Configure your hosted system
 menu_title: Configure your hosted system
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Install
   - System

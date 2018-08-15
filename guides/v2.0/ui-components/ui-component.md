@@ -5,7 +5,6 @@ title: Overview
 landing-page: UI Components
 menu_title: Overview
 menu_node: parent
-version: 2.0
 redirect_from: 
   - /guides/v2.0/ui-library/ui-library-component.html
   - /guides/v2.0/ui_comp_guide/bk-ui_comps.html

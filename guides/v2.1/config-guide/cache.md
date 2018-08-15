@@ -5,7 +5,6 @@ title: Configure caching
 menu_title: Configure caching
 menu_order: 3
 menu_node: parent
-version: 2.1
 functional_areas:
   - Configuration
   - System

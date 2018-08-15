@@ -5,7 +5,6 @@ title: Configure Apache and Elasticsearch
 menu_title: Configure Apache and Elasticsearch
 menu_order: 7
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

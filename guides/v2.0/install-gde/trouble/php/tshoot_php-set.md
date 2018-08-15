@@ -5,7 +5,6 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 350
-version: 2.0
 functional_areas:
   - Install
   - System

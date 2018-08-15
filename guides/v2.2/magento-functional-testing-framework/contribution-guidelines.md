@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Contribution Guidelines for the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 ---

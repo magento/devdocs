@@ -5,7 +5,6 @@ subgroup: Web APIs
 title: Search using REST APIs
 menu_title: Search using REST
 menu_order: 2
-version: 2.2
 redirect_from: /guides/v2.2/howdoi/webapi/search-criteria.html
 
 ---

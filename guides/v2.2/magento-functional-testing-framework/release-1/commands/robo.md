@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Robo commands in the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/commands/robo.html

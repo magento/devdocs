@@ -5,7 +5,6 @@ title: Known issues that affect installation
 menu_title: Known issues that affect installation
 menu_node:
 menu_order: 500
-version: 2.1
 functional_areas:
   - Install
   - System

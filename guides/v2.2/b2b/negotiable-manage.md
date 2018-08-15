@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Manage negotiable quotes
 menu_title: Manage negotiable quotes
 menu_order: 32
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq

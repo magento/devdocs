@@ -4,7 +4,6 @@ subgroup: G_Translate
 title: Create a translation dictionary for a theme
 menu_title: Create a translation dictionary for a theme, illustration
 menu_order: 2
-version: 2.1
 functional_areas:
   - Frontend
 ---

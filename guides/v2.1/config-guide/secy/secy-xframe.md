@@ -5,7 +5,6 @@ title: X-Frame-Options header
 menu_title: X-Frame-Options header
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

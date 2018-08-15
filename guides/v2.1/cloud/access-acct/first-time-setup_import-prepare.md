@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Prepare your existing Magento Commerce install
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

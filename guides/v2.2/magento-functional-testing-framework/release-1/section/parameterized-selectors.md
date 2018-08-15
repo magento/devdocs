@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Create and use parameterized selectors in the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 redirect_from: /guides/v2.2/magento-functional-testing-framework/section/parameterized-selectors.html

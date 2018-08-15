@@ -5,7 +5,6 @@ title: Update installation dependencies
 menu_title: Update installation dependencies
 menu_node:
 menu_order: 10
-version: 2.2
 functional_areas:
   - Install
   - System

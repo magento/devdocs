@@ -5,7 +5,6 @@ title: Go live and launch
 menu_title: Go live and launch
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Cloud
 ---

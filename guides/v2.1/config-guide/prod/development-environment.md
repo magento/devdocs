@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Development environment recommendations
-version: 2.1
 functional_areas:
   - Configuration
   - System

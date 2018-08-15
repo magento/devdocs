@@ -1,7 +1,6 @@
 ---
 group: install_cli
 title: Uninstall modules
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html

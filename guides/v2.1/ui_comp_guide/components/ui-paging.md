@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Paging component
 menu_title: Paging component
-version: 2.1
 ---
 
 ## Overview

@@ -5,7 +5,6 @@ title: Static content signing
 menu_title: Static content signing
 menu_node:
 menu_order: 3
-version: 2.2
 functional_areas:
   - Configuration
   - System

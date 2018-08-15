@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Text component
 menu_title: Text component
-version: 2.2
 ---
 
 ## Overview

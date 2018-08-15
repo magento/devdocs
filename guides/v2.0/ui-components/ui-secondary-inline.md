@@ -5,7 +5,6 @@ title: Inline Edit Component
 menu_title: Inline Edit Component
 menu_node:
 menu_order: 8
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
 
 ---

@@ -5,7 +5,6 @@ title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node:
 menu_order: 20
-version: 2.0
 functional_areas:
   - Upgrade
 ---

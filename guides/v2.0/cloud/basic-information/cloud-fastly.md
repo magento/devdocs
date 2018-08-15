@@ -5,7 +5,6 @@ title: Fastly
 menu_title: Fastly
 menu_node:
 menu_order: 15
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

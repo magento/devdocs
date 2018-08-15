@@ -2,7 +2,6 @@
 group: arch-guide
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
-version: 2.1
 ---
 
 ## Overview

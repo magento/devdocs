@@ -5,7 +5,6 @@ title: Out of memory errors
 menu_title: Out of memory errors
 menu_node:
 menu_order: 4
-version: 2.0
 functional_areas:
   - Upgrade
 ---

@@ -5,7 +5,6 @@ title: Custom logging
 menu_title: Custom logging
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Configuration
   - System

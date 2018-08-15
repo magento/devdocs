@@ -6,8 +6,6 @@ title: Magento Technical Bulletins
 menu_title: Magento Technical Bulletins
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: magento-techbull.md
 ---
 
 ## Magento Technical Bulletins

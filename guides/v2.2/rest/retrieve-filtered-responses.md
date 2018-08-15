@@ -4,7 +4,6 @@ subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
 menu_title: Retrieve filtered responses
 menu_order: 3
-version: 2.0
 redirect_from: /guides/v2.0/howdoi/webapi/filter-response.html
 ---
 

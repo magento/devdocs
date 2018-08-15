@@ -5,7 +5,6 @@ title: Manage branches with the Project Web Interface
 menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html

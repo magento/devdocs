@@ -1,7 +1,6 @@
 ---
 group: contributor
 title: DevDocs Contributors
-version: 2.1
 redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
 ---
 

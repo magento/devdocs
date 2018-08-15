@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: FiltersChips component
 menu_title: FiltersChips component
-version: 2.2
 ---
 
 ## Overview

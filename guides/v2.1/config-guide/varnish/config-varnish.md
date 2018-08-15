@@ -5,7 +5,6 @@ title: Configure and use Varnish
 menu_title: Configure and use Varnish
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Configuration
   - System

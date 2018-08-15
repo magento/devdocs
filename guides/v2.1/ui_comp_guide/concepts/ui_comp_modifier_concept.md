@@ -4,7 +4,6 @@ subgroup: concepts
 title: About PHP modifiers in UI components
 menu_title: About PHP modifiers in UI components
 menu_order: 40
-version: 2.1
 ---
 
 ## What's in this topic

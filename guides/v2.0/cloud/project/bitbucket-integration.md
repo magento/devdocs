@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Bitbucket integration
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

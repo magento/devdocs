@@ -5,7 +5,6 @@ title: Configure and run cron
 menu_title: Configure and run cron
 menu_node:
 menu_order: 100
-version: 2.2
 functional_areas:
   - Configuration
   - System

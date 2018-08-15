@@ -4,7 +4,6 @@ subgroup: concepts
 title: About the uiCollection class
 menu_title: About the uiCollection class
 menu_order: 80
-version: 2.2
 ---
 
 ## What is `uiCollection`

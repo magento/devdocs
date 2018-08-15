@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Update the Magento Functional Testing Framework and pull new tests
-version: 2.2
 functional_areas:
  - Testing
 redirect_from:

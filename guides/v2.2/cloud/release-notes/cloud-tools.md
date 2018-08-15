@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Release notes for ece-tools
-version: 2.2
 redirect_from:
   - guides/v2.2/cloud/composer-packages/ece-tools.html
 functional_areas:

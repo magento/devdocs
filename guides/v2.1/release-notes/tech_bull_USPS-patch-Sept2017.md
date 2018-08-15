@@ -1,12 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: USPS Service Name Change  
 menu_title: USPS Service Name Change (September 10, 2017)
 menu_node: 
 menu_order: 7
-version: 2.1
 ---
 
 *Technical Bulletin published on September 10, 2017.*

@@ -4,7 +4,6 @@ subgroup: C_Templates
 title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
-version: 2.2
 functional_areas:
   - Frontend
 ---

@@ -4,7 +4,6 @@ subgroup: templates
 title: Basic template
 menu_title: Basic template
 menu_order: 1
-version: 2.0
 redirect_from: contributor-guide/basic_template.html
 ---
 

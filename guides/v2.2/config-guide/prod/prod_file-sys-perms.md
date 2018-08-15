@@ -5,7 +5,6 @@ title: File systems access permissions
 menu_title: File systems access permissions
 menu_node:
 menu_order: 3000
-version: 2.2
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: Go live checklist
 menu_title: Go live checklist
 menu_order: 10
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Testing

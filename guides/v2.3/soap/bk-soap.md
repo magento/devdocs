@@ -6,7 +6,6 @@ landing-page: SOAP API
 menu_title: Overview
 menu_order: 1
 menu_node: parent
-version: 2.3
 functional_areas:
   - Integration
 ---

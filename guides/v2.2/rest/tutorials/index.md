@@ -1,7 +1,6 @@
 ---
 group: rest
 title: REST tutorials
-version: 2.2
 functional_areas:
   - Integration
   - Orders

@@ -4,7 +4,6 @@ subgroup: A_rest
 title: Generate a local REST API reference
 menu_title: Generate a local API reference
 menu_order: 5
-version: 2.1
 functional_areas:
   - Integration
 ---

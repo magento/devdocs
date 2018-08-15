@@ -4,7 +4,6 @@ subgroup: D_Signifyd
 title: Signifyd fraud protection
 menu_title: Signifyd fraud protection
 menu_node: parent
-version: 2.2
 ---
 
 ## About this document

@@ -5,7 +5,6 @@ title: Admin Capitalization
 menu_title: Capitalization
 menu_order: 4
 menu_node:
-version: 2.1
 ---
 Magento uses three different cases for content – sentence case, title case, and all-caps.
 

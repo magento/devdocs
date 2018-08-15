@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Subscriptions and plans
-version: 2.1
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.

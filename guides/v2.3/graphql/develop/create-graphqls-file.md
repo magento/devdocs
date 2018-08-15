@@ -1,6 +1,5 @@
 ---
 group: graphql
-version: 2.3
 title: Define the GraphQL schema for a module
 redirect_from: graphql/develop/configure-graphql-xml.html
 ---

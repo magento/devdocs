@@ -4,7 +4,6 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 ---
 

@@ -3,7 +3,6 @@ group: unit-testing
 title: Running Unit Tests in PHPStorm
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-version: 2.1
 functional_areas:
   - Testing
   - test

@@ -4,7 +4,6 @@ subgroup: A_Using_UI
 title: Using UI components client-side
 menu_title: Using UI components client-side
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 

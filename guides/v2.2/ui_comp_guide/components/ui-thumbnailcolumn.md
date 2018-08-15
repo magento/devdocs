@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ThumbnailColumn component
 menu_title: ThumbnailColumn component
-version: 2.2
 ---
 
 ## Overview

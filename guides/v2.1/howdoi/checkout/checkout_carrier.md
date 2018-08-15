@@ -6,7 +6,6 @@ title: Add custom shipping carrier validations
 subtitle: Customize Checkout
 menu_order: 5
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---

@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Installation of the Functional Testing Framework Entities
-version: 2.1
 ---
 
 Well, you are on the way to install the Functional Testing Framework!

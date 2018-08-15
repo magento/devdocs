@@ -1,7 +1,6 @@
 ---
 group: marketplace-api
 title: Users
-version: 2.1
 ---
 
 The `users` resource accesses and updates your user profile. You can also access reports you own.

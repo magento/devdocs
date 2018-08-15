@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: Searches and pagination in GraphQL
-version: 2.3
 ---
 
 A GraphQL search query can contain the following components:

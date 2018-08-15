@@ -8,7 +8,6 @@ menu_title: Initial tasks
 menu_order: 0
 level3_menu_node:
 level3_subgroup: sample-tutorial
-version: 2.0
 ---
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:

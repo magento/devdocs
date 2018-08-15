@@ -4,7 +4,6 @@ subgroup: components
 title: Basic attributes
 menu_title: Basic attributes
 menu_order: 1
-version: 2.2
 ---
 
 ## Overview

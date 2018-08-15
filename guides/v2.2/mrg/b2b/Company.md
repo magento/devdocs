@@ -4,7 +4,6 @@ subgroup: 30_B2B
 title: Magento_Company module
 menu_title: Company
 menu_order: 50
-version: 2.2
 functional_areas:
   - B2B
 ---

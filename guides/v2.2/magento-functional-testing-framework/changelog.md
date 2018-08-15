@@ -1,6 +1,5 @@
 ---
 group: mftf
-version: 2.2
 functional_areas:
  - Testing
 ---

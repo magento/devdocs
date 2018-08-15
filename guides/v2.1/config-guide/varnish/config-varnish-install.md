@@ -5,7 +5,6 @@ title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

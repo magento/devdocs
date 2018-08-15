@@ -5,7 +5,6 @@ title: Continuous integration
 menu_title: Continuous integration
 menu_order: 15
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

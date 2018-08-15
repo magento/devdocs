@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: MassActions component
 menu_title: MassActions component
-version: 2.2
 ---
 
 ## Overview

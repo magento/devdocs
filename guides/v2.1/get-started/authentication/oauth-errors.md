@@ -1,7 +1,6 @@
 ---
 group: get-started
 title: OAuth error codes
-version: 2.1
 functional_areas:
   - Integration
 ---

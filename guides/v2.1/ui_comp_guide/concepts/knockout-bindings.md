@@ -4,7 +4,6 @@ subgroup: concepts
 title: Magento custom Knockout.js bindings
 menu_title: Magento custom Knockout.js bindings
 menu_order: 60
-version: 2.1
 functional_areas:
   - Tools
 ---

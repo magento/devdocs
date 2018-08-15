@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Parallel execution flow with the Functional Testing Framework
-version: 2.0
 ---
 
 ## Overview

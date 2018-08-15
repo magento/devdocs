@@ -7,7 +7,6 @@ menu_node:
 menu_order: 9
 level3_menu_node: level3child
 level3_subgroup: step3
-version: 2.0
 redirect_from: /guides/v2.0/comp-mgr/compman-new-purchase.html
 functional_areas:
   - Upgrade

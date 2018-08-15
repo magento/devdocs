@@ -1,7 +1,6 @@
 ---
 group: rest
 title: Bulk endpoints
-version: 2.3
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:

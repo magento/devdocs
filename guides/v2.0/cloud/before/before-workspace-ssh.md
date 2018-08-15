@@ -5,7 +5,6 @@ title: Enable SSH keys
 menu_title: Enable SSH keys
 menu_order: 20
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-1_get-start.html
   - /guides/v2.1/cloud/before/before-setup-env-1_get-start.html

@@ -5,7 +5,6 @@ title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

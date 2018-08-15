@@ -1,7 +1,6 @@
 ---
 group: mrg
 title: Magento_WeeeStaging module
-version: 2.1
 ee_only: true
 ---
 

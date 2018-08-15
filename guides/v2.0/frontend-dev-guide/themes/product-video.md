@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Configure product video
 menu_title: Configure product video
 menu_order: 100
-version: 2.0
 functional_areas:
   - Frontend
   - Theme

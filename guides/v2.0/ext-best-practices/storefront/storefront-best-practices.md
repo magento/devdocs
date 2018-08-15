@@ -5,7 +5,6 @@ title: Storefront UI best practices
 menu_title: Storefront
 menu_order: 1
 menu_node: parent
-version: 2.0
 tabgroup: best-practices
 tablabel: Storefront
 tabweight: 40

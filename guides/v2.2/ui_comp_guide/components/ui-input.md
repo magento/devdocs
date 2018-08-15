@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Input component
 menu_title: Input component
-version: 2.2
 ---
 
 ## Overview

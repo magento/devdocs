@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Deployment process
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/discover-deploy.html
 functional_areas:

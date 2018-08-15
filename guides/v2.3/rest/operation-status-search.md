@@ -1,7 +1,6 @@
 ---
 group: rest
 title: Search for the status of a bulk operation
-version: 2.3
 contributor_name: comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:

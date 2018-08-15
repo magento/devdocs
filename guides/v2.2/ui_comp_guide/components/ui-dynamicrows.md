@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DynamicRows component
 menu_title: DynamicRows component
-version: 2.2
 ---
 
 ## Overview

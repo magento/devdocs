@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Dependency injection
 menu_title: Dependency injection
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
 

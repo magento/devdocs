@@ -5,7 +5,6 @@ title: Code Contributions
 menu_title: Code Contributions
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
 

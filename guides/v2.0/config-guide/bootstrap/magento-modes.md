@@ -5,7 +5,6 @@ title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
 menu_node:
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:
   - Configuration

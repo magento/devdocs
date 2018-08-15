@@ -1,7 +1,6 @@
 ---
 group: payments-integrations
 title: Payment Token
-version: 2.2
 functional_areas:
   - Integration
 ---

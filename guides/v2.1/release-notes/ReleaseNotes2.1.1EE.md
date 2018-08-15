@@ -6,7 +6,6 @@ menu_title: Magento Commerce 2.1.1 Release Notes
 menu_order: 298
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
-version: 2.1
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.

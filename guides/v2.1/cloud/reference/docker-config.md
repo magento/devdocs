@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Configure Docker
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

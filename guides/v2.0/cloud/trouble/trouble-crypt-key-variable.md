@@ -5,7 +5,6 @@ title: Resolve issues with encryption key
 menu_title: Resolve issues with encryption key
 menu_order: 25
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

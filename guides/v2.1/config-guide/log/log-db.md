@@ -5,7 +5,6 @@ title: Example&mdash;logging database activity
 menu_title: Example&mdash;logging database activity
 menu_node:
 menu_order: 3
-version: 2.1
 functional_areas:
   - Configuration
   - System

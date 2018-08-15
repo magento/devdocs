@@ -5,7 +5,6 @@ title: Partial caching
 menu_title: Partial caching
 menu_order: 1
 menu_node: parent
-version: 2.1
 redirect_from:
   - /guides/v1.0/config-guide/cache/caching.html
   - /guides/v2.0/config-guide/config/caching.html

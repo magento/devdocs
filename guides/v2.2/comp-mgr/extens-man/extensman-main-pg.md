@@ -5,7 +5,6 @@ title: Start the Extension Manager
 menu_title: Start the Extension Manager
 menu_node:
 menu_order: 2
-version: 2.2
 functional_areas:
   - Upgrade
 ---

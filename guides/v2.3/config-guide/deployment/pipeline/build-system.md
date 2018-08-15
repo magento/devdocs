@@ -5,7 +5,6 @@ title: Build System Setup
 menu_title: Build System Setup
 menu_node:
 menu_order: 1400
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

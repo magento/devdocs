@@ -4,7 +4,6 @@ subgroup: 080_setup
 title: First time deployment
 menu_title: First time deployment
 menu_order: 60
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

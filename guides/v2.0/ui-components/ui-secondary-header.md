@@ -5,7 +5,6 @@ title: Sticky Header Component
 menu_title: Sticky Header Component
 menu_node:
 menu_order: 11
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 ---
 

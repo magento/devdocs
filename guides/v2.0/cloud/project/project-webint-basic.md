@@ -5,7 +5,6 @@ title: Configure your project
 menu_title: Configure your project
 menu_order: 5
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

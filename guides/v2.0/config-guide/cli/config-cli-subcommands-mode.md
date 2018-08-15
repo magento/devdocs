@@ -5,7 +5,6 @@ title: Set the Magento mode
 menu_title: Set the Magento mode
 menu_node:
 menu_order: 200
-version: 2.0
 functional_areas:
   - Configuration
   - System

@@ -6,7 +6,6 @@ menu_title: Magento Open Source 2.1.0  Release Notes
 menu_order: 199
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
-version: 2.1
 ---
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.

@@ -5,7 +5,6 @@ title: Admin Number Formats
 menu_title: Number Formats
 menu_order: 8
 menu_node:
-version: 2.1
 ---
 For more number formats, use the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
 

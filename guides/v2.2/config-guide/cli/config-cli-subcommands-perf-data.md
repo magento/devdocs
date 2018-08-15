@@ -5,7 +5,6 @@ title: Generate data for performance testing
 menu_title: Generate data for performance testing
 menu_node:
 menu_order: 800
-version: 2.2
 functional_areas:
   - Configuration
   - System

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Composer
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/cloud-composer.html
 functional_areas:

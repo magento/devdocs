@@ -5,7 +5,6 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node:
 menu_order: 2
-version: 2.2
 functional_areas:
   - Install
   - System

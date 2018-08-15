@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Uninstall a storefront theme
 menu_title: Uninstall a storefront theme
 menu_order: 2
-version: 2.1
 functional_areas:
   - Frontend
   - Theme

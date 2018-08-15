@@ -5,7 +5,6 @@ title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_order: 500
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

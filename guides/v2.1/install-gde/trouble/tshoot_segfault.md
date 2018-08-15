@@ -5,7 +5,6 @@ title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback
 menu_node:
 menu_order: 510
-version: 2.1
 functional_areas:
   - Install
   - System
