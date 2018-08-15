@@ -46,6 +46,7 @@ To develop a module, you must:
     --- | ---
     `name` | A string that uniquely identifies the module
     `setup_version` | The version of Magento the component uses
+    {:style="table-layout:auto;"}
 
     The following example shows an example `etc/module.xml` file.
 
@@ -229,6 +230,7 @@ Element | Description
 `email` | An email to associate with this integration.
 `endpoint_url` | Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using `https://`. See [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html) for details.
 `identity_link_url` | Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.
+{:style="table-layout:auto;"}
 
 ## Install your module {#install}
 
