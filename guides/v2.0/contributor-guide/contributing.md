@@ -58,7 +58,7 @@ Submit feature requests or enhancement suggestions to the new <a href="https://c
 4. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed <a href="{{ page.baseurl }}/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
+  * Proposed <a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
@@ -99,7 +99,7 @@ Check out this video to see the process in action:
 
 First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work.
 
-To create a pull request: 
+To create a pull request:
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
 2. In your repository, click **Pull requests** on the right, and then click **New pull request**. <br><img src="{{ site.baseurl }}/common/images/pr.png" target="_blank">
