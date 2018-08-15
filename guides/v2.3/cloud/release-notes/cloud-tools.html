@@ -2123,7 +2123,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       </li>
       <li>
         <!--MAGECLOUD-2389-->
-        <p>Added an Elasticsearch compatibility check. Now, the deployment fails if the <code class="highlighter-rouge">.magento/services.yaml</code> file specifies an Elasticsearch version that is incompatible with the <a href="https://packagist.org/packages/elasticsearch/elasticsearch">elasticsearch composer package</a> used to install Magento Commerce v2.1.4 and later. Previously, you could deploy with an unsupported version of the Elasticsearch service, which caused product catalog issues after site deployment. See <a href="/guides/v2.3/cloud/project/project-conf-files_services-elastic.html">Setup Elasticsearch</a>.</p>
+        <p>Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with Magento Commerce. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.</p>
+
+        <p>You can resolve the incompatiblity by <a href="/guides/v2.3/cloud/trouble/trouble.html">submitting a Support ticket</a> to upgrade Elasticsearch to a compatible version, or change the Magento Commerce configuration to specify a compatible version of the Elasticsearch PHP client.</p>
+
+        <ul>
+          <li>For Magento Commerce version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.</li>
+          <li>For Magento Commerce version 2.2.3 and later, upgrade Elaticsearch to version 5.2.</li>
+          <li>If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the Magento Commerce Elasticsearch PHP client version requirement in composer.json to <code class="highlighter-rouge">"elasticsearch/elasticsearch": "~2.0"</code>.</li>
+        </ul>
       </li>
       <li>
         <!--MAGECLOUD-2156-->
