@@ -71,7 +71,7 @@ Please review the following supported and accepted pull request rules. We define
 1. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 1. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed [documentation]({{page.baseurl}}/contributor-guide/contributing_docs.html){:target="\_blank"} updates. [Documentation]({{site.baseurl}}/){:target="\_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
+  * Proposed [documentation](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md){:target="\_blank"} updates. [Documentation]({{site.baseurl}}/){:target="\_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
 1. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 1. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines){:target="\_blank"}.
 1. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="\_blank"} must be green).
