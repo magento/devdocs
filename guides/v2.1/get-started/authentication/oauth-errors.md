@@ -23,6 +23,7 @@ HTTP code | Error code | Text representation | Description
 401 | 11 | `token_revoke` | The token is revoked by the user who authorized it.
 401 | 12 | `token_rejected` | The token is not valid, or does not exist, or is not valid for using in the current type of request.
 401 | 13 | `verifier_invalid` |The confirmation string does not correspond to the token.
+{:style="table-layout:auto;"}
 
 ## Related topic
 
