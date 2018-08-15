@@ -21,7 +21,7 @@ All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints**
 
-``` html
+``` json
 POST /V1/negotiableQuote/request
 POST /V1/negotiableQuote/submitToCustomer
 POST /V1/negotiableQuote/decline
