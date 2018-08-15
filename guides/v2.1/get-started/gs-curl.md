@@ -28,7 +28,7 @@ Option | Description
 `-s` | Specifies silent or quiet mode, which makes cURL mute. Progress and error messages are suppressed.
 `-T` | Transfers the specified local file to the remote URL.
 `-X` | Specifies the request method to use when communicating with the HTTP server. The specified request method is used instead of the default GET method.
-
+{:style="table-layout:auto;"}
 
 ## Next step
 
