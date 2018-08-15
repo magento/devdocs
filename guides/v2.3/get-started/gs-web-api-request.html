@@ -631,7 +631,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code class="highlighter-rouge">POST /V1/customers</code> call, you must specify a request body like this:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"customers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
@@ -657,7 +657,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>This JSON-formatted request body includes a <code class="highlighter-rouge">customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
@@ -665,76 +666,97 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
-<ol><li>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
-<li><p>Find the route element that defines the <code>createAccount</code> call:</p>
-<pre>
-&lt;route url="/V1/customers" method="POST"&gt;
-    &lt;service class="Magento\Customer\Api\AccountManagementInterface" method="createAccount"/&gt;
-    &lt;resources&gt;
-        &lt;resource ref="anonymous"/&gt;
-    &lt;/resources&gt;
-&lt;/route&gt;
-</pre>
-</li>
-<li><p>Use the <code>method</code> and <code>url</code> values on the <code>route</code> element to construct the URI.</p><p>In this example, the URI is:</p>
-<pre>POST /V1/customers</pre></li>
-<li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
-<p>In this example, the service interface is the <code>AccountManagementInterface</code>   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<ol>
+  <li>
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml">Magento/Customer/etc/webapi.xml</a></p>
+  </li>
+  <li>
+    <p>Find the route element that defines the <code class="highlighter-rouge">createAccount</code> call:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\AccountManagementInterface"</span> <span class="na">method=</span><span class="s">"createAccount"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;resources&gt;</span>
+      <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"anonymous"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/route&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Use the <code>method</code> and <code class="highlighter-rouge">url</code> values on the <code class="highlighter-rouge">route</code> element to construct the URI. In this example, the URI is POST <code class="highlighter-rouge">/V1/customers</code>.</p>
+  </li>
+  <li>
+    <p>Use the <code class="highlighter-rouge">class</code> attribute on the <code class="highlighter-rouge">service</code> element to identify the service interface. In this example, the service interface is the <code class="highlighter-rouge">AccountManagementInterface</code>   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  file.</p>
-<p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
-<pre>public function createAccount(
-        \Magento\Customer\Api\Data\CustomerInterface $customer,
-        $password = null,
-        $redirectUrl = ''
-    );</pre>
-<p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
-</li>
-<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- request body on the call.</p></li>
+
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/AccountManagementInterface.php">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">createAccount</span><span class="p">(</span>
+     <span class="nx">\Magento\Customer\Api\Data\CustomerInterface</span> <span class="nv">$customer</span><span class="p">,</span>
+     <span class="nv">$password</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nv">$redirectUrl</span> <span class="o">=</span> <span class="s1">''</span>
+ <span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>The <code class="highlighter-rouge">createAccount</code> call requires a <code class="highlighter-rouge">customer</code> data object. The <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">redirectUrl</code> values are optional. The default <code class="highlighter-rouge">password</code> value is <code class="highlighter-rouge">null</code> and the default <code class="highlighter-rouge">redirectUrl</code> value is blank.</p>
+  </li>
+  <li>
+    <p>To pass the <code>customer</code> data object in the POST call payload, specify <a href="http://www.json.com/">JSON</a> or   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ request body on the call.</p>
+  </li>
 </ol>
 
 <h3 id="customers-search-api-request-example">Customers Search API request example</h3>
 
 <p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+
 <ol>
-<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span>
- token returned by the Magento token service.</p></li>
-<pre>
-$token = 'token';
-$httpHeaders = new \Zend\Http\Headers();
-$httpHeaders-&gt;addHeaders([
-   'Authorization' =&gt; 'Bearer ' . $token,
-   'Accept' =&gt; 'application/json',
-   'Content-Type' =&gt; 'application/json'
-]);
-</pre>
-<li><p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="/guides/v2.3/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
-<pre>
-$request = new \Zend\Http\Request();
-$request-&gt;setHeaders($httpHeaders);
-$request-&gt;setUri('http://magento.ll/rest/V1/customers/search');
-$request-&gt;setMethod(\Zend\Http\Request::METHOD_GET);
+  <li>
+    <p>Prepare <code class="highlighter-rouge">Authorization</code>, <code class="highlighter-rouge">Accept</code> and <code class="highlighter-rouge">Content-Type</code> headers to be passed to a request object. Use the   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span>
+ token returned by the Magento token service.</p>
 
-$params = new \Zend\Stdlib\Parameters([
-   'searchCriteria' =&gt; '*'
-]);
-$request-&gt;setQuery($params);
-</pre>
-<li><p>Prepare a HTTP Curl client object and pass the request object to <code>Client::send()</code> method.</p></li>
-<pre>
-$client = new \Zend\Http\Client();
-$options = [
-   'adapter'   =&gt; 'Zend\Http\Client\Adapter\Curl',
-   'curloptions' =&gt; [CURLOPT_FOLLOWLOCATION =&gt; true],
-   'maxredirects' =&gt; 0,
-   'timeout' =&gt; 30
-];
-$client-&gt;setOptions($options);
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$token</span> <span class="o">=</span> <span class="s1">'token'</span><span class="p">;</span>
+<span class="nv">$httpHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Headers</span><span class="p">();</span>
+<span class="nv">$httpHeaders</span><span class="o">-&gt;</span><span class="na">addHeaders</span><span class="p">([</span>
+   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer '</span> <span class="o">.</span> <span class="nv">$token</span><span class="p">,</span>
+   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
+   <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
+<span class="p">]);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml">Magento/Customer/etc/webapi.xml</a>  configuration file and find the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php">CustomerRepositoryInterface</a> interface with the <code class="highlighter-rouge">getList</code> method.</p>
+  </li>
+  <li>
+    <p>Set the headers, URI and method to a request object. Use URI <code class="highlighter-rouge">/V1/customers/search</code> and method <code class="highlighter-rouge">GET</code> values. Also, the <code class="highlighter-rouge">searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="/guides/v2.3/rest/performing-searches.html">searchCriteria usage</a>.</p>
 
-$response = $client-&gt;send($request);
-</pre>
-<li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Request</span><span class="p">();</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setHeaders</span><span class="p">(</span><span class="nv">$httpHeaders</span><span class="p">);</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setUri</span><span class="p">(</span><span class="s1">'http://magento.ll/rest/V1/customers/search'</span><span class="p">);</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setMethod</span><span class="p">(</span><span class="nx">\Zend\Http\Request</span><span class="o">::</span><span class="na">METHOD_GET</span><span class="p">);</span>
+
+ <span class="nv">$params</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Stdlib\Parameters</span><span class="p">([</span>
+   <span class="s1">'searchCriteria'</span> <span class="o">=&gt;</span> <span class="s1">'*'</span>
+   <span class="p">]);</span>
+   <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setQuery</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Prepare a HTTP Curl client object and pass the request object to <code class="highlighter-rouge">Client::send()</code> method.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Client</span><span class="p">();</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">'adapter'</span>   <span class="o">=&gt;</span> <span class="s1">'Zend\Http\Client\Adapter\Curl'</span><span class="p">,</span>
+   <span class="s1">'curloptions'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">],</span>
+   <span class="s1">'maxredirects'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="mi">30</span>
+ <span class="p">];</span>
+ <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+
+ <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p>
+  </li>
 </ol>
 
 <h2 id="next-step">Next step</h2>

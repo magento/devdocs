@@ -543,48 +543,51 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p>Also create  <code class="highlighter-rouge">etc</code>, <code class="highlighter-rouge">etc/integration</code>, and <code class="highlighter-rouge">Setup</code> subdirectories under <code class="highlighter-rouge">module-&lt;module_name&gt;</code>, as shown in the following example:</p>
 
-    <pre>
- cd &lt;magento_base_dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd &lt;magento_base_dir&gt;
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/etc/integration
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/Setup
-</pre>
+</code></pre></div>    </div>
     <p>For more detailed information, see <a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>.</p>
   </li>
   <li>
     <p><strong>Define your module configuration file.</strong> The <code class="highlighter-rouge">etc/module.xml</code> file provides basic information about the module. Change directories to the <code class="highlighter-rouge">etc</code> directory and create the <code class="highlighter-rouge">module.xml</code> file. You must specify values for the following attributes:</p>
 
-    <table>
-<tr>
-<th>Attribute</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td>A string that uniquely identifies the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
-.</td>
-</tr>
-<tr>
-<td>setup_version</td>
-<td>The version of Magento the component uses</td>
-</tr>
-</table>
+    <table style="table-layout:auto;">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="highlighter-rouge">name</code></td>
+          <td>A string that uniquely identifies the module</td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">setup_version</code></td>
+          <td>The version of Magento the component uses</td>
+        </tr>
+      </tbody>
+    </table>
+
     <p>The following example shows an example <code class="highlighter-rouge">etc/module.xml</code> file.</p>
 
-    <pre>
-&lt;?xml version="1.0"?&gt;
-&lt;!--
-   /**
-   * Copyright © 2015 Magento. All rights reserved.
-   * See COPYING.txt for license details.
-   &#42;&#47;
-   --&gt;
-   &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
-       &lt;module name="Vendor1_Module1" setup_version="2.0.0"&gt;
-            &lt;sequence&gt;
-                &lt;module name="Magento_Integration"/&gt;
-            &lt;/sequence&gt;
-       &lt;/module&gt;
-     &lt;/config&gt;
-</pre>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+* Copyright © 2015 Magento. All rights reserved.
+* See COPYING.txt for license details.
+*/
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Vendor1_Module1"</span> <span class="na">setup_version=</span><span class="s">"2.0.0"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;sequence&gt;</span>
+             <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Integration"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/sequence&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/config&gt;</span>
+</code></pre></div>    </div>
 
     <p>Module <code class="highlighter-rouge">Magento_Integration</code> is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
   </li>
@@ -593,44 +596,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p>The following example demonstrates a minimal <code class="highlighter-rouge">composer.json</code> file.</p>
 
-    <pre>
-   {
-      "name": "Vendor1_Module1",
-      "description": "create integration from config",
-      "require": {
-         "php": "~5.5.0|~5.6.0|~7.0.0",
-         "magento/framework": "2.0.0",
-         "magento/module-integration": "2.0.0"
-      },
-      "type": "magento2-module",
-      "version": "1.0",
-      "autoload": {
-         "files": [ "registration.php" ],
-         "psr-4": {
-            "Vendor1\\Module1\\": ""
-         }
-      }
-   }
- </pre>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vendor1_Module1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create integration from config"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~7.0.0"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.0"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"magento/module-integration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.0"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+         </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Vendor1</span><span class="se">\\</span><span class="s2">Module1</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p>For more information, see <a href="/guides/v2.1/extension-dev-guide/build/create_component.html">Create a component</a>.</p>
   </li>
   <li>
     <p><strong>Create a <code class="highlighter-rouge">registration.php</code> file</strong> The <code class="highlighter-rouge">registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
 
-    <pre>
-   &lt;?php
-     /**
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="cp">&lt;?php</span>
+     <span class="sd">/**
      * Copyright © 2015 Magento. All rights reserved.
      * See COPYING.txt for license details.
-     &#42;&#47;
+     */</span>
 
-     \Magento\Framework\Component\ComponentRegistrar::register(
-     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-     'Vendor1_Module1',
-     __DIR__
-     );
-   </pre>
+     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+     <span class="s1">'Vendor1_Module1'</span><span class="p">,</span>
+     <span class="nx">__DIR__</span>
+     <span class="p">);</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>Create an install class.</strong>
@@ -638,43 +639,42 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 
     <p>The following sample is boilerplate and requires minor changes to make your integration work.</p>
 
-    <pre>
- &lt;?php
- namespace Vendor1\Module1\Setup;
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;?php</span>
+ <span class="k">namespace</span> <span class="nx">Vendor1\Module1\Setup</span><span class="p">;</span>
 
- use Magento\Framework\Setup\ModuleContextInterface;
- use Magento\Framework\Setup\ModuleDataSetupInterface;
- use Magento\Integration\Model\ConfigBasedIntegrationManager;
- use Magento\Framework\Setup\InstallDataInterface;
+ <span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Integration\Model\ConfigBasedIntegrationManager</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallDataInterface</span><span class="p">;</span>
 
- class InstallData implements InstallDataInterface
- {
-     /**
-      &#42; @var ConfigBasedIntegrationManager
-      &#42;&#47;
+ <span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+ <span class="p">{</span>
+     <span class="sd">/**
+      * @var ConfigBasedIntegrationManager
+      */</span>
 
 
-     private $integrationManager;
+     <span class="k">private</span> <span class="nv">$integrationManager</span><span class="p">;</span>
 
-     /**
-      &#42; @param ConfigBasedIntegrationManager $integrationManager
-      &#42;&#47;
+     <span class="sd">/**
+      * @param ConfigBasedIntegrationManager $integrationManager
+      */</span>
 
-     public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
-     {
-         $this-&gt;integrationManager = $integrationManager;
-     }
+     <span class="k">public</span> <span class="k">function</span> <span class="o">&amp;</span><span class="err">#95;&amp;#95;</span><span class="nf">construct</span><span class="p">(</span><span class="nx">ConfigBasedIntegrationManager</span> <span class="nv">$integrationManager</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">integrationManager</span> <span class="o">=</span> <span class="nv">$integrationManager</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     /**
-      &#42; {@inheritdoc}
-      &#42;&#47;
+     <span class="sd">/**
+      * {@inheritdoc}
+      */</span>
 
-     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-     {
-         $this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);
-     }
- }
- </pre>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">integrationManager</span><span class="o">-&gt;</span><span class="na">processIntegrationConfig</span><span class="p">([</span><span class="s1">'testIntegration'</span><span class="p">]);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
 
     <p>In the following line</p>
 
@@ -715,7 +715,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 
 <p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;integrations&gt;</span>
     <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"testIntegration"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
             <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
@@ -729,54 +729,56 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
             <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">"Magento_Sales::reorder"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
+<span class="nt">&lt;/integrations&gt;</span>
+</code></pre></div></div>
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
 <p>Your module can optionally provide a configuration file <code class="highlighter-rouge">config.xml</code> so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code class="highlighter-rouge">config.xml</code> file in the <code class="highlighter-rouge">etc/integration</code> directory.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you pre-configure the integration, the values cannot be edited from the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
+<p class="bs-callout bs-callout-tip">If you pre-configure the integration, the values cannot be edited from the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  panel.</p>
-</div>
 
-<p>The  file defines which API resources the integration has access to.</p>
+<p>The file defines which API resources the integration has access to.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;integrations&gt;</span>
    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">"TestIntegration"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
        <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
        <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
    <span class="nt">&lt;/integration&gt;</span>
-<span class="nt">&lt;/integrations&gt;</span></code></pre></figure>
+<span class="nt">&lt;/integrations&gt;</span>
+</code></pre></div></div>
 
-<table>
-<tr>
-<th>Element</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>integrations</td>
-<td>Contains one or more integration definitions.</td>
-</tr>
-<tr>
-<td>integration name=""</td>
-<td>Defines an integration. The <code>name</code> must be specified.</td>
-</tr>
-<tr>
-<td>email</td>
-<td>An email to associate with this integration.</td>
-</tr>
-<tr>
-<td>endpoint_url</td>
-<td><p>Optional. The   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
-<p>See <a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
-</tr>
-<tr>
-<td>identity_link_url</td>
-<td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
-</tr>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">integrations</code></td>
+      <td>Contains one or more integration definitions.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">integration name</code></td>
+      <td>Defines an integration. The <code class="highlighter-rouge">name</code> must be specified.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">email</code></td>
+      <td>An email to associate with this integration.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">endpoint_url</code></td>
+      <td>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code class="highlighter-rouge">https://</code>. See <a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">identity_link_url</code></td>
+      <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2 id="install">Install your module</h2>
