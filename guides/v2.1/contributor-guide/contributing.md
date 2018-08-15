@@ -401,11 +401,9 @@ General labels include a variety of tasks and definitions for pull requests and 
 * `G1 Failed` - Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
 * `G2 Passed` - The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.
 * `G3 Passed` - The Community Engineering Team has validated and confirmed the issue.
-* `Reproduced on 2.0.x` - The Community Engineering Team reproduced the issue on latest 2.0.x release.
 * `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
 * `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
 * `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
-* `Fixed in 2.0.x` - The issue has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.1.x` - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.2.x` - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.3.x` - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.
