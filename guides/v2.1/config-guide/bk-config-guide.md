@@ -1,11 +1,7 @@
 ---
 group: config-guide
-subgroup: 01_Introduction
 title: Configuration Guide
 landing-page: Configuration Guide
-menu_title: Introduction
-menu_order: 1
-menu_node: parent
 version: 2.1
 functional_areas:
   - Configuration

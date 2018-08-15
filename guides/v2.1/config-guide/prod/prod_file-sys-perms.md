@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 999_prod
 title: Magento ownership and permissions in development and production
-menu_title: Magento ownership and permissions in development and production
-menu_node:
-menu_order: 2
 version: 2.1
 functional_areas:
   - Configuration
@@ -26,7 +22,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
 	Instead, you have separate users:
 
-	*	The web server user, which runs the Magento Admin (including Setup Wizard) and storefront. 
+	*	The web server user, which runs the Magento Admin (including Setup Wizard) and storefront.
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -39,7 +35,7 @@ Because having one file system owner is less secure, we recommend you deploy Mag
 
 In default or developer mode, the following directories must be writable by the user:
 
-*	`vendor` 
+*	`vendor`
 *	`app/etc`
 *	`pub/static`
 *	`var`
@@ -54,8 +50,8 @@ You can set these permissions using either the command line or a file manager ap
 
 When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-*	`vendor` 
-*	`app/code` 
+*	`vendor`
+*	`app/code`
 *	`app/etc`
 *	`pub/static`
 *	Any other static resources
@@ -104,9 +100,8 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:.bs-callout .bs-callout-info}
 	The command-line user is also referred to as the _Magento file system owner_.
-	</div>
 
 Because these users require access to the same files, we recommend you create a [shared group]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
@@ -124,11 +119,10 @@ Files in the following directories must be writable by both users in developer a
 * `pub/media`
 * `app/etc`
 
-Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory. 
+Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/) bit on directories so permissions always inherit from the parent directory.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 `setgid` applies to directories only, _not_ to files.
-</div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
 
@@ -147,8 +141,8 @@ To set `setgid` and permissions for developer mode:
 
 When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
-*	`vendor` 
-*	`app/code` 
+*	`vendor`
+*	`app/code`
 *	`app/etc`
 *	`lib`
 *	`pub/static`
@@ -181,7 +175,3 @@ To make files and directories writable so you can update components and upgrade 
 		find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
 {% endcollapsibleh2 %}
-
-
-
-

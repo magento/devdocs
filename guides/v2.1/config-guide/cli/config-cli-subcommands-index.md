@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Manage the indexers
-menu_title: Manage the indexers
-menu_node:
-menu_order: 90
 version: 2.1
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 functional_areas:
@@ -73,9 +69,8 @@ Sample result:
 
 Use this command to reindex all or selected indexers one time only.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
-</div>
 
 Command options:
 
@@ -102,9 +97,8 @@ Sample result:
 	Catalog Product Rule index has been rebuilt successfully in <time>
 	Catalog Search index has been rebuilt successfully in <time>
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
-</div>
 
 ## Configure indexers
 
@@ -160,18 +154,3 @@ Sample result:
 
 	Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
-
-#### Related topics
-
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

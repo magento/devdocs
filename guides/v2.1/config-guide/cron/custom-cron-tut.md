@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
-menu_title: Configure a custom cron job and cron group (tutorial)
-menu_order: 3
-menu_node:
 version: 2.1
 functional_areas:
   - Configuration
@@ -12,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
+This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
 Running the cron job results in a row being added to the `cron_schedule` table with the name of the cron job, `custom_cron`.
 
@@ -34,14 +30,14 @@ If you already have a sample module, you can use it; skip this step and the next
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to a directory that is not in your Magento application root (for example, your home directory).
-2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
+2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
     For example,
 
         cd ~
         git clone git@github.com:magento/magento2-samples.git
 
-    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to github.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account){:target="_blank"}.
+    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to github.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account).
 4.  Make a directory to which to copy the sample code:
 
         mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal

@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 03_Bootstrap
 title: Magento application initialization and bootstrap
-menu_title: Magento application initialization and bootstrap
-menu_order: 1
-menu_node: parent
 version: 2.1
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 functional_areas:
@@ -43,7 +39,7 @@ The assertions that the Magento application is installed and not in maintenance 
 
 Sample entry point script that modifies the bootstrap object:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 use Magento\Framework\App\Bootstrap;
 require __DIR__ . '/app/bootstrap.php';
 $params = $_SERVER;
@@ -53,7 +49,7 @@ $bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
-{% endhighlight %}
+```
 
 ## Default exception handling {#config-boot-exception}
 
