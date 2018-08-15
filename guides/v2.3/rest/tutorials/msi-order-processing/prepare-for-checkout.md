@@ -9,6 +9,7 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+functional_areas:
   - Integration
 ---
 
