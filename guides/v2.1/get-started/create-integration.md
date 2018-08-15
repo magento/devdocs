@@ -34,9 +34,9 @@ To develop a module, you must:
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
     ```
-    cd &lt;magento_base_dir>
-    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
-    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
+    cd <magento_base_dir>
+    mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
+    mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
    ```
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
