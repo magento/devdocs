@@ -204,7 +204,7 @@ Download software:
 
 ### Install Chocolatey
 
-Only Administrators can use Chocolatey features. You can use the Administrator account, or you can use the "Run as Administror" function on the shortcut menu.
+Only Administrators can use Chocolatey features. You can use the Administrator account, or you can use the "Run as Administrator" function on the shortcut menu.
 
 1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
 
@@ -243,11 +243,11 @@ If you have Ruby installed on the workstation, then you can skip this installati
     -  In the Windows CMD console, type `echo %path%`.
 
 >  **NOTE**  
->  If you encounter problems with ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
+>  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
 
 ### Install Git for Windows
 
-Use Git for Windows to prevent interference with existing Windows environment and to have Git launch commands available on the shortcut menu.
+Use Git for Windows to prevent interference with the existing Windows environment and to have _Git Bash_ and _Git GUI_ launch commands available on the shortcut menu.
 
 Open the Git Setup file downloaded from the Git for Windows site and use the following settings during installation wizard:
 
@@ -256,13 +256,13 @@ Open the Git Setup file downloaded from the Git for Windows site and use the fol
 -  select your preferred editor (can use Nano, Notepad++, or VIM)
 -  select **Enable symbolic links**
 
-Although you can install Git using Chocolatey, I chose to install _Git for Windows_ independently for more control of the installation settings.
+Although you can install Git using Chocolatey, we chose to install _Git for Windows_ independently for more control of the installation settings.
 
 #### Set up SSH key
 
-1.  Open Git Bash. The Git Bash command is on the shortcut menu.
+1.  Open Git Bash. The **Git Bash** executable is on the shortcut menu.
 
-1.  Create a working directory for Git repositories and change to the new directory.
+1.  Create a working directory for your Git repositories and change to the new directory.
 
     ```bash
     mkdir <directory-name>
@@ -275,7 +275,7 @@ Although you can install Git using Chocolatey, I chose to install _Git for Windo
 
 You may have to close and reopen the Git Bash application after the Choco installations.
 
-1.  Open Git Bash. The Git Bash command is on the shortcut menu.
+1.  Open Git Bash. The **Git Bash** executable is on the shortcut menu.
 
 1.  Change to the directory you created for Git repositories and clone the DevDocs repository.
 
@@ -316,5 +316,4 @@ You may have to close and reopen the Git Bash application after the Choco instal
     ```
 
 >  **NOTE**  
->  The .bash_profile CAN be created and managed using Git Bash for aliases and other customizations. It sits in the 
-`users/Administrator` folder.
+>  The `.bash_profile` file CAN be created and managed using Git Bash, which is useful for aliases and other customizations, This file is in the `users/Administrator` folder.
