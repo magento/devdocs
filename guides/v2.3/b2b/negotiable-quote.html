@@ -695,9 +695,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Upon agreement, the buyer begins the checkout process and the system converts the negotiable quote into an order</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot negotiate prices on individual items.</p>
-</div>
+<p class="bs-callout bs-callout-info">You cannot negotiate prices on individual items.</p>
 
 <h2 id="quote-statuses">Quote statuses</h2>
 
@@ -705,71 +703,66 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The negotiated price set in the negotiable quote is exactly the price that will be applied on a quote during checkout, order generation, and invoice generation.</p>
 
-<table>
-<tr>
-<th>Status</th><th>Description</th><th>Available actions to seller</th></tr>
-<tr>
-<td>New </td>
-<td><p>The buyer submitted the quote, but the seller has not opened it yet. The buyer can edit the quote.</p>
-<p>The system creates a new quote record with its own ID.</p>
- </td>
-<td>View</td>
-</tr>
-
-<tr>
-<td>Open </td>
-<td>The seller has opened the submitted quote and is reviewing/modifying it. The seller can edit the quote, but the buyer cannot.	 </td>
-<td><p>View, submit, decline, save as draft.</p>
-<p>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</p> </td>
-</tr>
-
-<tr>
-<td>Submitted </td>
-<td>The seller has reviewed the quote and has sent it back to buyer. The seller cannot edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Client reviewed </td>
-<td>The buyer has opened the quote submitted by seller and is modifying it, by changing items or adding a shipping address. The seller cannot edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Updated </td>
-<td>The buyer has re-submitted the quote to seller. The seller can edit the quote, but the buyer cannot. </td>
-<td><p>View, submit, decline, save as draft.</p>
-<p>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</p></td>
-</tr>
-
-<tr>
-<td>Ordered </td>
-<td>The buyer has purchased the quote, and Magento converts the quote to an order. Neither the seller nor the buyer can edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Closed </td>
-<td><p>The buyer has cancelled the quote and thus stopped the negotiation process. Neither the seller nor the buyer can edit the quote.</p><p>The buyer clicks the <b>Close</b> button from the Quote details page. (Not available using Web API) </p></td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Declined </td>
-<td>The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Expired </td>
-<td>The quote is on the buyer's side, and the quote's expiration date has passed. </td>
-<td>View </td>
-</tr>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Description</th>
+      <th>Available actions to seller</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>New</td>
+      <td>The buyer submitted the quote, but the seller has not opened it yet. The buyer can edit the quote. <br /><br />The system creates a new quote record with its own ID.</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Open</td>
+      <td>The seller has opened the submitted quote and is reviewing/modifying it. The seller can edit the quote, but the buyer cannot.</td>
+      <td>View, submit, decline, save as draft. <br /><br />Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</td>
+    </tr>
+    <tr>
+      <td>Submitted</td>
+      <td>The seller has reviewed the quote and has sent it back to buyer. The seller cannot edit the quote.</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Client reviewed</td>
+      <td>The buyer has opened the quote submitted by seller and is modifying it, by changing items or adding a shipping address. The seller cannot edit the quote.</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Updated</td>
+      <td>The buyer has re-submitted the quote to seller. The seller can edit the quote, but the buyer cannot.</td>
+      <td>View, submit, decline, save as draft.<br /><br />Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</td>
+    </tr>
+    <tr>
+      <td>Ordered</td>
+      <td>The buyer has purchased the quote, and Magento converts the quote to an order. Neither the seller nor the buyer can edit the quote.</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Closed</td>
+      <td>The buyer has cancelled the quote and thus stopped the negotiation process. Neither the seller nor the buyer can edit the quote. <br /><br />The buyer clicks the <strong>Close</strong> button from the Quote details page. (Not available using Web API)</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Declined</td>
+      <td>The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing.</td>
+      <td>View</td>
+    </tr>
+    <tr>
+      <td>Expired</td>
+      <td>The quote is on the buyer’s side, and the quote’s expiration date has passed.</td>
+      <td>View</td>
+    </tr>
+  </tbody>
 </table>
 
 <p>The following table maps the internal Magento system state to the statuses displayed on the Storefront and Admin.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>System state</th>

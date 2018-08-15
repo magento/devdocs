@@ -688,19 +688,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-http" data-lang="http"><span class="err">POST /V1/negotiableQuote/request
-POST /V1/negotiableQuote/submitToCustomer
-POST /V1/negotiableQuote/decline
-POST /V1/negotiableQuote/pricesUpdated
-GET /V1/negotiableQuote/:quoteId/comments
-GET /V1/negotiableQuote/attachmentContent
-PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/request</span><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/submitToCustomer</span><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/decline</span><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/pricesUpdated</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/</span><span class="p">:</span><span class="err">quoteId/comments</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/attachmentContent</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/</span><span class="p">:</span><span class="err">quoteId/shippingMethod</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>NegotiableQuoteManagementInterface Parameters</strong></p>
 
 <p>The following table lists the parameters defined in <code class="highlighter-rouge">CompanyInterface</code>.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -741,7 +742,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p>The <code class="highlighter-rouge">files</code> array contains the following parameters</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -783,9 +784,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p>If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (<code class="highlighter-rouge">POST /V1/carts/:cartId/shipping-information</code>)</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Requesting a negotiable quote requires an admin authorization token.</p>
-</div>
+<p class="bs-callout bs-callout-info">Requesting a negotiable quote requires an admin authorization token.</p>
 
 <p><strong>Service Name</strong></p>
 
@@ -797,7 +796,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requesting a 5% discount"</span><span class="p">,</span><span class="w">
@@ -807,7 +806,8 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -845,10 +845,11 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"It'd be our pleasure. Please proceed with your order."</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -870,9 +871,10 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -888,9 +890,10 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"shippingMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixedrate"</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -916,10 +919,11 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your order is too large. "</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -943,7 +947,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
@@ -1018,7 +1022,8 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:44:16"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span></code></pre></figure>
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="retrieve-a-negotiable-quote-attachment">Retrieve a negotiable quote attachment</h3>
 
@@ -1036,7 +1041,7 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1045,7 +1050,8 @@ PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="related-information">Related information</h2>
 
