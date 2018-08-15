@@ -39,7 +39,7 @@ Currently, MSI supports only the default SSA for priority. Third-party developer
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 
