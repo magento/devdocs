@@ -1,18 +1,14 @@
 ---
 group: rest
-subgroup: Web APIs
-title: Retrieve filtered responses for REST APIs
-menu_title: Retrieve filtered responses
-menu_order: 3
+title: Retrieve filtered responses for REST endpoints
 version: 2.3
-redirect_from: /guides/v2.3/howdoi/webapi/filter-response.html
+redirect_from: /guides/v2.2/howdoi/webapi/filter-response.html
 ---
 
-Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.
+Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST requests that return partial responses.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
-</div>
+{:.bs-callout .bs-callout-tip}
+This feature is not available for SOAP, because SOAP does not allow partial responses.
 
 You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any GET, POST, or PUT operation to filter unimportant information from the response. `<field_or_object>` can be any of the following:
 
@@ -28,7 +24,6 @@ On POST and PUT requests, Magento ignores the `fields` parameter as input, but t
 # Examples
 {:.no_toc}
 
-
 All examples use {{site.data.var.ce}} sample data.
 
 ## Simple fields
@@ -37,15 +32,13 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 `GET http://<host>/rest/default/V1/products/24-MB01?fields=sku,price,name`
 
-{% collapsible Sample output %}
-{% highlight json %}
+``` json
 {
   "sku": "24-MB01"
   "name": "Joust Duffle Bag"
   "price": 24.99
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
 ## Simple fields and top-level objects with all fields
 
@@ -53,8 +46,7 @@ The following example returns only the customer first name, last name, and the e
 
 `GET http:/<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
-{% collapsible Sample output %}
-{% highlight json %}
+```json
 {
 "customer_firstname": "Veronica"
 "customer_lastname": "Costello"
@@ -76,8 +68,7 @@ The following example returns only the customer first name, last name, and the e
   "telephone": "(555) 229-3326"
   }
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
 ## Top-level object with selected fields
 
@@ -85,7 +76,6 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
 
 `GET http://<host>/rest/default/V1/shipment/2?fields=items[name,qty,sku]`
 
-{% collapsible Sample output %}
 {% highlight json %}
 "items": [
    {
@@ -95,7 +85,6 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
    }
  ]
  {% endhighlight %}
- {% endcollapsible %}
 
 ## Nested objects
 
@@ -107,7 +96,6 @@ This example returns only the following:
 
 `GET http://<host>/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
 
-{% collapsible Sample output %}
 {% highlight json %}
 {
   "sku": "MT12"
@@ -124,7 +112,6 @@ This example returns only the following:
   }
 }
 {% endhighlight %}
-{% endcollapsible %}
 
 ## POST operation
 
@@ -132,24 +119,26 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 
 `POST http://<host>/rest/V1/categories?fields=id,parent_id,name`
 
-{% highlight json %}
+**Payload**
+
+```json
 {
   "category": {
     "name": "New Category",
     "is_active": true
   }
 }
-{% endhighlight %}
+```
 
-{% collapsible Sample output %}
-{% highlight json %}
+**Response**
+
+```json
 {
 "id": 43
 "parent_id": 2
 "name": "New Category"
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
 ## Using with searchCriteria
 
@@ -159,8 +148,7 @@ The following query returns only the `sku` and `name` parameters for product ite
 
 `GET http://<host>/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&searchCriteria[filter_groups][0][filters][0][value]=86&searchCriteria[filter_groups][0][filters][0][condition_type]=finset&fields=items[sku,name]`
 
-{% collapsible Sample output %}
-{% highlight json %}
+``` json
 {
 "items":
   {
@@ -200,8 +188,7 @@ The following query returns only the `sku` and `name` parameters for product ite
     "name": "Didi Sport Watch"
   }
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
 ## Related topics
 {:.no_toc}

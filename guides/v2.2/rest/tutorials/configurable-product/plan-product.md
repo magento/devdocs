@@ -43,6 +43,7 @@ Pattern | Graphic Print
 Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
+{:style="table-layout:auto;"}
 
 A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
@@ -69,7 +70,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
 The `attribute_set_id` for the Top attribute set is `9`.
 
-{% highlight json %}
+``` json
 {
     "items": [
         {
@@ -94,7 +95,7 @@ The `attribute_set_id` for the Top attribute set is `9`.
     },
     "total_count": 1
 }
-{% endhighlight %}
+```
 
 ### Get the list of attributes defined in an attribute searchCriteria {#get-attributes}
 
@@ -116,10 +117,10 @@ Material | LumaTech  | 136 | `material` | 148
 Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
+{:style="table-layout:auto;"}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.
-</div>
 
 ### Get the list of category values
 
