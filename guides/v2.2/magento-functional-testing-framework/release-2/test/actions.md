@@ -335,7 +335,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Ensure the checkbox is checked. -->
+<!-- Ensure the checkbox `<input type="checkbox" id="checkbox" ... >...</input>` is checked. -->
 <checkOption selector="input#checkbox" stepKey="checkCheckbox"/>
 ```
 
@@ -654,8 +654,8 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Verify that the page does not contain the `<input type="checkbox" id="option1" checked>Sample title</input>` element. -->
-<dontSeeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="checkboxNotChecked"/>
+<!-- Verify that the page does not contain the `<input type="checkbox" id="option1" ... >...</input>` element. -->
+<dontSeeCheckboxIsChecked selector="input#option1" stepKey="checkboxNotChecked"/>
 ```
 
 ### dontSeeCookie
@@ -696,7 +696,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Verify that the relative URL of the current page does not match the `/admin`. -->
+<!-- Verify that the relative URL of the current page does not match `/admin`. -->
 <dontSeeCurrentUrlEquals url="/admin" stepKey="notOnAdminPage"/>
 ```
 
@@ -771,9 +771,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the url of the current active tab does not contain the string "/users/". -->
 <dontSeeInCurrentUrl url="/users/" stepKey="dontSeeInCurrentUrl"/>
 ```
-This action will be true only if the url of the current active tab does not contain the string "/users/".
 
 ### dontSeeInField
 
@@ -791,9 +791,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<input id="field" ... >...</input>` does not contain the text "Sample text". -->
 <dontSeeInField userInput="Sample text" selector="input#field" stepKey="dontSeeInField1"/>
 ```
-This action will be true only if the input with an id of `field` does not contain the text "Sample text".
 
 ### dontSeeInFormFields
 
@@ -810,9 +810,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<form name="myform" ... >...</form>` with the input elements `<input name="input1">...</input>` and `<input name="input2">...</input>`, do not have the values of `value1` and `value2` respectively. -->
 <dontSeeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="dontSeeInFormFields"/>
 ```
-This action will be true only if the form with the name `myform`, with the input elements of name `input1` and `input2`, do not have the values of `value1` and `value2` respectively.
 
 ### dontSeeInPageSource
 
@@ -828,9 +828,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the page source does not contain the string "Sample text". -->
 <dontSeeInPageSource userInput="Sample text" stepKey="dontSeeInPageSource"/>
 ```
-This action will be true only if the page source does not contain the string "Sample text".
 
 ### dontSeeInSource
 
@@ -846,9 +846,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the page does not contain the raw source code `<h1>Sample text</h1>`. -->
 <dontSeeInSource userInput="<h1>Sample text</h1>" stepKey="dontSeeInSource"/>
 ```
-This action will be true only if the page does not contain the raw source code `<h1>Sample text</h1>`.
 
 ### dontSeeInTitle
 
@@ -864,9 +864,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the title of the current active window does not contain the text "Page Title". -->
 <dontSeeInTitle userInput="Page Title" stepKey="dontSeeInTitle"/>
 ```
-This action will be true only if the title of the current active window does not contain the text "Page Title".
 
 ### dontSeeJsError
 
@@ -881,9 +881,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify there are no JavaScript errors in the current active window. -->
 <dontSeeJsError stepKey="dontSeeJsError"/>
 ```
-This action will be true only if there are no JavaScript errors in the current active window.
 
 ### dontSeeLink
 
@@ -900,14 +900,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Verify that there is no hyperlink tag on the page with the text "External link". -->
 <dontSeeLink userInput="External link" stepKey="dontSeeLink"/>
 ```
-This action will be true only if there is no hyperlink tag with the text "External link".
 
 ```xml
+<!-- Verify that there is no hyperlink tag with the text "External link" and the `href` attribute of `/admin`. -->
 <dontSeeLink userInput="External link" url="/admin" stepKey="dontSeeAdminLink"/>
 ```
-This action will be true only if there is no hyperlink tag with the text "External link" and the `href` attribute of `/admin`.
 
 ### dontSeeOptionIsSelected
 
@@ -924,9 +924,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<select id="myselect" ... >...</select>` does not have the option `option1` selected -->
 <dontSeeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="dontSeeOption1"/>
 ```
-This action will be true only if the select element with an id of `myselect` does not have the option `option1` selected
 
 ### doubleClick
 
@@ -942,9 +942,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Click `<button id="mybutton" ... >...</button>` twice in succession. -->
 <doubleClick selector="button#mybutton" stepKey="doubleClickButton"/>
 ```
-This action will click the button with the id of `mybutton` twice in succession.
 
 ### dragAndDrop
 
@@ -963,14 +963,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<dragAndDrop selector1="#block1" selector2="#block2" stepKey="dragAndDrop"/>
+<!-- Click and drag `<div id="block1" ... >...</div>` to the middle of `<div id="block2" ... >...</div>` -->
+<dragAndDrop selector1="div#block1" selector2="div#block2" stepKey="dragAndDrop"/>
 ```
-This action will click and drag the element with an id of `block1` to the middle of an element with an id of `block2`.
 
 ```xml
+<!-- Click and drag `<div id="block1" ... >...</div>` to the middle of `<div id="block2" ... >...</div>` with a left offset of 50px and top offset of 50px. -->
 <dragAndDrop selector1="#block1" selector2="#block2" x="50" y="50" stepKey="dragAndDrop"/>
 ```
-This action will click and drag the element with an id of `block1` to the middle of the element with an id of `block2` with a left offset of 50px and top offset of 50px.
 
 ### executeInSelenium
 
@@ -986,9 +986,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Execute the Selenium function `function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}`. -->
 <executeInSelenium function="function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}" stepKey="executeInSelenium"/>
 ```
-This action will execute the Selenium function `function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}`.
 
 ### executeJS
 
@@ -1004,9 +1004,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function. -->
 <executeJS function="return Math.floor(new Date() / 1000);" stepKey="returnTime"/>
 ```
-This action will return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function.
 
 To access this value you would use `{$returnTime}` in later actions.
 
@@ -1026,9 +1026,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Fill in `<input id="myfield" ... >...</input>` with the text "Sample text". -->
 <fillField userInput="Sample text" selector="input#myfield" stepKey="fillField"/>
 ```
-This action will fill in the field with an id of `myfield` with the text "Sample text".
 
 ### formatMoney
 
@@ -1053,6 +1053,14 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example
+
+```xml
+<!-- Generate a date that is 1 minute after the current date using Pacific Standard Time. For example "07/11/2020 7:00 AM". -->
+<generateDate date="+1 minute" format="m/d/Y g:i A" stepKey="generateDate"/>
+```
+Call the date later in a test using {$generateDate}.
+
 ### getData
 
 Gets an entity (for example, a category), from the Magento API according to the data and metadata of the entity type that is requested.
@@ -1069,11 +1077,11 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Get the product attribute that was created using `<createData stepkey="productAttributeHandle" ... />`. -->
 <getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
     <requiredEntity createDataKey="productAttributeHandle"/>
 </getData>
 ```
-This action would get the product attribute that was created using `<createData>` with the stepkey of `productAttributeHandle`.
 
 The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
 
@@ -1094,10 +1102,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Grab the `title` attribute from `<input id="myinput" ... >...</input>`. -->
 <grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFromInput"/>
 ```
-This action would grab the `title` attribute from an input element with the id of `myinput`.
-
 To use this value later in a test you would call it using `{$grabAttributeFromInput}`.
 
 ### grabCookie
@@ -1115,17 +1122,15 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Grab the cookie with the given name `cookie1`. -->
 <grabCookie userInput="cookie1" stepKey="grabCookie1"/>
 ```
-This action will grab the cookie with the given name `cookie1`.
-
 To use this value later in a test you would call it using `{$grabCookie1}`.
 
 ```xml
+<!-- Grab the cookie with the given name `cookie1` from the domain `www.example.com`. -->
 <grabCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="grabCookieExampleDomain"/>
 ```
-This action will grab the cookie with the given name `cookie1` from the domain `www.example.com`.
-
 To use this value later in a test you would call it using `{$grabCookieExampleDomain}`.
 
 ### grabFromCurrentUrl
@@ -1142,10 +1147,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`. -->
 <grabFromCurrentUrl regex="~$/user/(\d+)/~" stepKey="grabFromCurrentUrl"/>
 ```
-This action will grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`.
-
 To use this value later in a test you would call it using `{$grabFromCurrentUrl}`.
 
 ### grabMultiple
@@ -1163,17 +1167,15 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Grab every element on the page with the class `myElement` and return them as an array. -->
 <grabMultiple selector="div.myElement" stepKey="grabAllMyElements"/>
 ```
-This action will grab every element on the page with the class `myElement` and return them as an array.
-
 To use these values later in a test you would call it using `{$grabAllMyElements}`.
 
 ```xml
+<!-- Grab the `href` tag from every `a` element on the page and return them as an array. -->
 <grabMultiple userInput="href" selector="a" stepKey="grabAllLinks"/>
 ```
-This action will grab the `href` tag from every `a` element on the page and return them as an array.
-
 To use these values later in a test you would call it using `{$grabAllLinks}`.
 
 ### grabPageSource
@@ -1189,10 +1191,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Store the page source code as text -->
 <grabPageSource stepKey="grabPageSource"/>
 ```
-This action will grab the source code of the page and store it as text.
-
 To use this string later in a test you would call it using `{$grabPageSource}`.
 
 ### grabTextFrom
@@ -1209,10 +1210,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Store the text currently displayed by `<h2 id="title" ... >...</h2>`. -->
 <grabTextFrom selector="h2#title" stepKey="grabTitle"/>
 ```
-This action will store the text currently displayed by an h2 with the id of `title`.
-
 To use this string later in a test you would call it using `{$grabTitle}`.
 
 ### grabValueFrom
@@ -1230,10 +1230,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Store the value currently entered in <input id="name" ... >...</input>. -->
 <grabValueFrom selector="input#name" stepKey="grabInputName"/>
 ```
-This action will store the value currently entered in the input with the id of `name`.
-
 To use this string later in a test you would call it using `{$grabInputName}`.
 
 ### loadSessionSnapshot
@@ -1250,9 +1249,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Load all cookies saved via `<saveSessionSnapshot name="savedSnapshot" ... />`. -->
 <loadSessionSnapshot userInput="savedSnapshot" stepKey="loadSnapshot"/>
 ```
-This action will load all cookies saved via a `<saveSessionSnapshot>` action with the name of `savedSnapshot`.
 
 ### magentoCLI
 
@@ -1261,7 +1260,7 @@ Specifies a CLI command to execute in a Magento environment.
 Attribute|Type|Use|Description
 ---|---|---|---
 `command`|string |optional| CLI command to be executed in Magento environment.
-`arguments`|string |optional| Unescaped arguments to be passed in with the CLI command. 
+`arguments`|string |optional| Unescaped arguments to be passed in with the CLI command.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -1269,9 +1268,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Re-index all indices via the command line.  -->
 <magentoCLI command="indexer:reindex" stepKey="reindex"/>
 ```
-This action will re-index all indices via the command line.
 
 ### makeScreenshot
 
@@ -1287,9 +1286,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Take a screenshot of the page and save it to the directory `tests/_output/debug` under the name `example.png`. -->
 <makeScreenshot userInput="example" stepKey="screenshotPage"/>
 ```
-This action will take a screenshot of the page in its current state and save it to the directory `tests/_output/debug` under the name `example.png`.
 
 ### maximizeWindow
 
@@ -1304,9 +1303,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Maximize the current window. -->
 <maximizeWindow stepKey="maximizeWindow"/>
 ```
-This action will maximize the current window.
 
 ### moveBack
 
@@ -1321,9 +1320,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Move back one page in history. -->
 <moveBack stepKey="moveBack"/>
 ```
-This action will move back one page in history.
 
 ### moveForward
 
@@ -1336,9 +1335,9 @@ Attribute|Type|Use|Description
 `after`|string|optional| `stepKey` of preceding action.
 
 ```xml
+<!-- Move forward one page in history. -->
 <moveForward stepKey="moveForward"/>
 ```
-This action will move forward one page in history.
 
 ### moveMouseOver
 
@@ -1357,14 +1356,14 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Move the mouse cursor over the `<div id="product1" ... >...</div>`. -->
 <moveMouseOver selector="div#product1" stepKey="hoverOverProduct1"/>
 ```
-This action will move the mouse cursor over the div element with an id of `product1`.
 
 ```xml
+<!-- Move the mouse cursor over the `<div id="product1" ... >...</div>` with an offset of 50px from the top and 50px from the left. -->
 <moveMouseOver selector="div#product1" x="50" y="50" stepKey="hoverOverProduct2"/>
 ```
-This action will move the mouse cursor over the div element with an id of `product1` with an offset of 50px from the top and 50px from the left.
 
 ### mSetLocale
 
@@ -1397,9 +1396,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Open and switch to a new browser tab. -->
 <openNewTab stepKey="openNewTab"/>
 ```
-This action will open a new browser tab and switch to it.
 
 ### parseFloat
 
@@ -1425,9 +1424,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Halt test execution to stop until the `enter` key is pressed to continue. -->
+
 <pauseExecution stepKey="pause"/>
 ```
-This action will cause test execution to stop until the `enter` key is pressed to continue.
 
 ### performOn
 
@@ -1457,14 +1457,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<pressKey userInput="a" selector="#page" stepKey="pressA"/>
+<!-- Press the `a` key within `<div id="page" ... >...</div>`. -->
+<pressKey userInput="a" selector="div#page" stepKey="pressA"/>
 ```
-This action will press the `a` key on an element with the id of `page`.
 
 ```xml
+<-- Press the delete key on an element with an id of `targetElement` uses key constants from the WebDriverKeys class. -->
 <pressKey selector="#targetElement" parameterArray="[\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="pressDelete"/>
 ```
-This action uses key constants from the WebDriverKeys class to press the delete key on an element with an id of `targetElement`.
 
 ### reloadPage
 
@@ -1479,9 +1479,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Reload the current page. -->
 <reloadPage stepKey="reloadPage"/>
 ```
-This action will reload the current page.
 
 ### remove
 
@@ -1494,9 +1494,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Remove an action in the test with the stepKey of `stepKeyToRemove`. -->
 <remove keyForRemoval="stepKeyToRemove"/>
 ```
-This action will remove another action in the test with the stepKey of `stepKeyToRemove`.
 
 ### resetCookie
 
@@ -1513,14 +1513,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Reset the cookie with the name `cookie1`. -->
 <resetCookie userInput="cookie1" stepKey="resetCookie1"/>
 ```
-This action will reset the cookie with the given name `cookie1`.
 
 ```xml
+<!-- Reset the cookie with the given name `cookie1` from the domain `www.example.com`. -->
 <resetCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="resetCookieExampleDomain"/>
 ```
-This action will reset the cookie with the given name `cookie1` from the domain `www.example.com`.
 
 ### resizeWindow
 
@@ -1537,9 +1537,9 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Resize the current window to a width of 800px and a height of 600px. -->
 <resizeWindow width="800" height="600" stepKey="resizeWindow"/>
 ```
-This action will resize the current window to a width of 800px and a height of 600px.
 
 ### saveSessionSnapshot
 
@@ -1555,9 +1555,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Save all of the current cookies under the name `savedSnapshot`. -->
 <saveSessionSnapshot userInput="savedSnapshot" stepKey="saveCurrentCookies"/>
 ```
-This action will save all of the current cookies under the name `savedSnapshot`.
 
 ### scrollTo
 
@@ -1576,14 +1576,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<scrollTo selector="#anchor" stepKey="scrollToAnchor"/>
+<!-- Move the page to the middle of `<div id="anchor" ... >...</div>`. -->
+<scrollTo selector="div#anchor" stepKey="scrollToAnchor"/>
 ```
-This action will move the page to the middle of an element with an id of `anchor`.
 
 ```xml
+<!-- Move the page to the middle of `<div id="anchor" ... >...</div>` with an offset of 50px from the top and 50px from the left. -->
 <scrollTo selector="#anchor" x="50" y="50" stepKey="scrollToAnchor2"/>
 ```
-This action will move the page to the middle of an element with an id of `anchor`, with an offset of 50px from the top and 50px from the left.
 
 ### scrollToTopOfPage
 
@@ -1598,9 +1598,9 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Move the page to the uppermost, leftmost position. -->
 <scrollToTopOfPage stepKey="scrollToTopOfPages"/>
 ```
-This action will move the page to the uppermost, leftmost position.
 
 ### searchAndMultiSelectOption
 
@@ -1646,9 +1646,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<h2 id="title" ... >...</h2> contains the text "Sample title". -->
 <see userInput="Sample title" selector="h2#title" stepKey="seeTitle"/>
 ```
-This action will be true only if there is a header with an id of `title` on the page that contains the text "Sample title".
 
 ### seeCheckboxIsChecked
 
@@ -1664,9 +1664,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<seeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="seeCheckboxChecked"/>
+<!-- Verify `<input type="checkbox" id="option1" ... >...</input>` is checked. -->
+<seeCheckboxIsChecked selector="input#option1" stepKey="seeCheckboxChecked"/>
 ```
-This action will be true only if a checkbox element with an id of option1 is checked.
 
 ### seeCookie
 
@@ -1683,11 +1683,12 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Verify that there is a cookie with the given name `cookie1`. -->
 <seeCookie userInput="cookie1" stepKey="cookie1Present"/>
 ```
-This action will be true only if there is a cookie with the given name `cookie1`.
 
 ```xml
+<!-- Verify that there is a cookie with the given name `cookie1` from the domain `www.example.com`. -->
 <seeCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="seeCookieInExampleDomain"/>
 ```
 This action will be true only if there is a cookie with the given name `cookie1` from the domain `www.example.com`.
@@ -1706,9 +1707,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the relative URL of the current page matches `/admin`. -->
 <seeCurrentUrlEquals url="/admin" stepKey="onAdminPage"/>
 ```
-This action will be true only if active window is currently on the URL `(baseURL)/admin`.
 
 ### seeCurrentUrlMatches
 
@@ -1724,9 +1725,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the relative URL of the current page matches the `~$/users/(\d+)~` regular expression. -->
 <seeCurrentUrlMatches regex="~$/users/(\d+)~" stepKey="seeCurrentUrlMatches"/>
 ```
-This action will be true only if active window is currently on the URL that matches the regex expression `~$/users/(\d+)~`.
 
 ### seeElement
 
@@ -1744,9 +1745,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is available and visible on the current page. -->
 <seeElement selectore="div#box" stepKey="seeBox"/>
 ```
-This action will be true only if a div with an id of `box` is available and visible on the page.
 
 ### seeElementInDOM
 
@@ -1763,9 +1764,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is available on the current page. -->
 <seeElementInDOM selectore="div#box" stepKey="seeBoxInDOM"/>
 ```
-This action will be true only if a div with an id of `box` is available on the page. The action would also be true if the element was available on the page, but invisible.
 
 ### seeInCurrentUrl
 
@@ -1781,9 +1782,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the url of the current active tab contains the string "/users/". -->
 <seeInCurrentUrl url="/users/" stepKey="seeInCurrentUrl"/>
 ```
-This action will be true only if the url of the current active tab contains the string "/users/".
 
 ### seeInField
 
@@ -1801,9 +1802,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<input id="field" ... >...</input>` contains the text "Sample text". -->
 <seeInField userInput="Sample text" selector="input#field" stepKey="seeInField"/>
 ```
-This action will be true only if an input with an id of `field` contains the text “Sample text”.
 
 ### seeInFormFields
 
@@ -1820,9 +1821,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<form name="myform" ... >...</form>` with the input elements `<input name="input1">...</input>` and `<input name="input2">...</input>`, has the values of `value1` and `value2` respectively. -->
 <seeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="seeInFormFields"/>
 ```
-This action will be true only if the form with the name `myform`, with the input elements of name `input1` and `input2`, have the values of `value1` and `value2` respectively.
 
 ### seeInPageSource
 
@@ -1838,9 +1839,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the page source contains the string "Sample text". -->
 <seeInPageSource userInput="Sample text" stepKey="seeInPageSource"/>
 ```
-This action will be true only if the page source contains the string "Sample text".
 
 ### seeInPopup
 
@@ -1856,9 +1857,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify the current popup on the page contains the string "Sample text". -->
 <seeInPopup userInput="Sample text" stepKey="seeInPopup"/>
 ```
-This action will be true only if the current popup on the page contains the string "Sample text".
 
 ### seeInSource
 
@@ -1874,9 +1875,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the page does contains the raw source code `<h1>Sample text</h1>`. -->
 <seeInSource userInput="<h1>Sample text</h1>" stepKey="seeInSource"/>
 ```
-This action will be true only if the page containa the raw source code `<h1>Sample text</h1>`.
 
 ### seeInTitle
 
@@ -1892,9 +1893,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that the title of the current active window contains the text "Page Title". -->
 <seeInTitle userInput="Page Title" stepKey="seeInTitle"/>
 ```
-This action will be true only if the title of the current active window contains the text "Page Title".
 
 ### seeLink
 
@@ -1911,11 +1912,12 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that there is a hyperlink tag on the page with the text "External link". -->
 <seeLink userInput="External link" stepKey="seeLink"/>
 ```
-This action will be true only if there is a hyperlink tag with the text "External link".
 
 ```xml
+<!-- Verify that there is a hyperlink tag with the text "External link" and the `href` attribute of `/admin`. -->
 <seeLink userInput="External link" url="/admin" stepKey="seeAdminLink"/>
 ```
 This action will be true only if there is a hyperlink tag with the text "External link" and the href attribute of `/admin`.
@@ -1936,14 +1938,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<seeNumberOfElements userInput="10" selector=".product" stepKey="seeTenProducts"/>
+<!-- Verify there are 10 `<div id="product" ... >...</div>` elements on the page. -->
+<seeNumberOfElements userInput="10" selector="div.product" stepKey="seeTenProducts"/>
 ```
-This action will be true only if there are 10 elements with the class of `product` on the page.
 
 ```xml
+<!-- Verify there are between 5 and 10 `<div id="product" ... >...</div>` elements on the page. -->
 <seeNumberOfElements userInput="[5, 10]" selector=".product" stepKey="seeFiveToTenProducts"/>
 ```
-This action will be true only if there are between 5 and 10 elements with the class of `product` on the page.
 
 ### seeOptionIsSelected
 
@@ -1960,9 +1962,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<select id="myselect" ... >...</select>` has the option `option1` selected -->
 <seeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="seeOption1"/>
 ```
-This action will be true only if the select element with an id of `myselect` has the option `option1` selected.
 
 ### selectOption
 
@@ -1980,9 +1982,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<selectOption userInput="option1" selector="select#myselect" stepKey="selectOption1"/>
+<!-- Select `option1` from `<select id="mySelect" ... >...</select>`. -->
+<selectOption userInput="option1" selector="select#mySelect" stepKey="selectOption1"/>
 ```
-This action will select the option `option1` from a select element with an id of `myselect`.
 
 ### selectMultipleOptions
 
@@ -2001,11 +2003,11 @@ It contains a child element `<array>` where you specify the options that must be
 #### Example
 
 ```xml
+<!-- Select the options `opt1` and `opt2` from `<option class="option" ... >...</option>` and `<input class="filter" ...>...</input>` -->
 <selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
     <array>['opt1', 'opt2']</array>
 </selectMultipleOptions>
 ```
-This action would select the options `opt1` and `opt2` from the option tag with the class of `option` and a field element with the class of `filter`.
 
 ### setCookie
 
@@ -2023,9 +2025,9 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Set a cookie with the name of `cookieName` and value of `cookieValue`. -->
 <setCookie userInput="cookieName" value="cookieValue" stepKey="setCookie"/>
 ```
-This action will set a cookie with the name of `cookieName` and value of `cookieValue`.
 
 ### submitForm
 
@@ -2043,9 +2045,9 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Submit a value of `admin` for `<input name="username" ... >...</input>`, a value of `123123q` for `<input name="password" ... >...</input>` for the form `<form id="loginForm" ...>...</form>` and a submit button of `<button id="submit" ... >...</button>` -->
 <submitForm selector="#loginForm" parameterArray="['username' => 'admin','password' => '123123q']" button="#submit" stepKey="submitForm"/>
 ```
-This action will submit a value of `admin` for an input of name `username`, a value of `123123q` for an input of name `password` for a form with an id of `loginForm` and a submit button with an id of `submit`.
 
 ### switchToIFrame
 
@@ -2062,9 +2064,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Set the focus to <iframe name="embeddedFrame" ... /> -->
 <switchToIFrame userInput="embeddedFrame" stepKey="switchToIFrame"/>
 ```
-This action will the focus to an iframe with the name attribute of `embeddedFrame`.
 
 ### switchToNextTab
 
@@ -2080,14 +2082,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Switch to the next tab. -->
 <switchToNextTab stepKey="switchToNextTab"/>
 ```
-This action will switch to the next tab.
 
 ```xml
+<!-- Switch to the third next tab. -->
 <switchToNextTab userInput="3" stepKey="switchToThirdNextTab"/>
 ```
-This action will switch to the third next tab.
 
 ### switchToPreviousTab
 
@@ -2103,14 +2105,14 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
+<!-- Switch to the previous tab. -->
 <switchToPreviousTab stepKey="switchToPreviousTab"/>
 ```
-This action will switch to the previous tab.
 
 ```xml
+<!-- Switch to the third previous tab. -->
 <switchToPreviousTab userInput="3" stepKey="switchToThirdPreviousTab"/>
 ```
-This action will switch to the third previous tab.
 
 ### switchToWindow
 
@@ -2126,9 +2128,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- This action will switch to a window with the `name` parameter of `newWindow`. -->
 <switchToWindow userInput="newWindow" stepKey="switchToWindow"/>
 ```
-This action will switch to a window with the `name` parameter of `newWindow`.
 
 ### typeInPopup
 
@@ -2144,9 +2146,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Type the text "Sample Text" into the current popup visible on the page. -->
 <typeInPopup userInput="Sample Text" stepKey="typeInPopup"/>
 ```
-This action will type the text "Sample Text" into the current popup visible on the page.
 
 ### uncheckOption
 
@@ -2162,9 +2164,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Ensure the checkbox `<input type="checkbox" id="checkbox" ... >...</input>` is unchecked. -->
 <uncheckOption selector="input#checkbox" stepKey="uncheckCheckbox"/>
 ```
-This action will ensure that the input with the id of `checkbox` is unchecked, regardless of whether it was already checked or not.
 
 ### unselectOption
 
@@ -2182,9 +2184,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Unselect `option1` from `<select id="mySelect" ... >...</select>`. -->
 <unselectOption userInput="option1" selector="select#myselect" stepKey="unselectOption1"/>
 ```
-This action will unselect the option `option1` from a select element with an id of `myselect`.
 
 ### updateData
 
@@ -2232,9 +2234,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Halt test execution for 10 seconds before continuing. -->
 <wait time="10" stepKey="waitTenSeconds"/>
 ```
-This action will halt test execution for 10 seconds before continuing.
 
 ### waitForAjaxLoad
 
@@ -2250,9 +2252,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for all AJAX calls to finish before continuing. -->
 <waitForAjaxLoad stepKey="waitForAjaxLoad"/>
 ```
-This action will wait by default up to 30 seconds for all AJAX calls to finish before continuing.
 
 ### waitForElementChange
 
@@ -2270,9 +2272,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<waitForElementChange selector="#changedElement" function="function(\WebDriverElement $el) {return $el->isDisplayed();}" stepKey="waitForElementChange"/>
+<!-- Wait up to 30 seconds for `<div id="changedElement" ... >...</div>` to change to displayed before continuing. -->
+<waitForElementChange selector="div#changedElement" function="function(\WebDriverElement $el) {return $el->isDisplayed();}" stepKey="waitForElementChange"/>
 ```
-This action will wait by default up to 30 seconds for an element with an id of `changedElement` to change to displayed before continuing.
 
 ### waitForElement
 
@@ -2289,9 +2291,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for `<div id="changedElement" ... >...</div>` to be appear on the page before continuing. -->
 <waitForElement selector="#changedElement" stepKey="waitForElement"/>
 ```
-This action will wait by default up to 30 seconds for an element with an id of `changedElement` to be appear on the page before continuing.
 
 ### waitForElementNotVisible
 
@@ -2308,9 +2310,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for `<div id="changedElement" ... >...</div>` to become non-visible on the page before continuing. -->
 <waitForElementNotVisible selector="#changedElement" stepKey="waitForElementNotVisible"/>
 ```
-This action will wait by default up to 30 seconds for an element with an id of `changedElement` to become non-visible on the page before continuing.
 
 ### waitForElementVisible
 
@@ -2327,9 +2329,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for `<div id="changedElement" ... >...</div>` to become visible on the page before continuing. -->
 <waitForElementVisible selector="#changedElement" stepKey="waitForElementVisible"/>
 ```
-This action will wait by default up to 30 seconds for an element with an id of `changedElement` to become visible on the page before continuing.
 
 ### waitForJS
 
@@ -2346,9 +2348,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait for all jQuery AJAX requests to finish before continuing. -->
 <waitForJS function="return $.active == 0;" stepKey="waitForJS"/>
 ```
-This action will wait for all jQuery AJAX requests to finish before continuing.
 
 ### waitForLoadingMaskToDisappear
 
@@ -2377,9 +2379,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for all Magento loading overlays to disappear before continuing. -->
 <waitForLoadingMaskToDisappear stepKey="waitForLoadingMaskToDisappear"/>
 ```
-This action will wait by default up to 30 seconds for all Magento loading overlays to disappear before continuing.
 
 ### waitForPageLoad
 
@@ -2395,9 +2397,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Wait up to 30 seconds for the current page to fully load before continuing. -->
 <waitForPageLoad stepKey="waitForPageLoad"/>
 ```
-This action will wait by default up to 30 seconds for the current page to fully load before continuing.
 
 ### waitForText
 
@@ -2415,6 +2417,6 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<waitForText userInput="Sample Text" selector="#page" stepKey="waitForText"/>
+<!-- This action will wait for text "Sample Text" to appear in `<div id="page" ... >...</div>` before continuing. -->
+<waitForText userInput="Sample Text" selector="div#page" stepKey="waitForText"/>
 ```
-This action will wait for text "Sample Text" to appear in an element with the id of `page` before continuing.
