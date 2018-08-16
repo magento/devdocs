@@ -153,7 +153,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){target="&#95;blank"} article.
+For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

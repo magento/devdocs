@@ -61,7 +61,6 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
   * Proposed [documentation]({{ page.baseurl }}/contributor-guide/contributing_docs.html) updates. [Documentation]({{ site.baseurl }}/) contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
 4. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
-
 5. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="\_blank"} must be green).
 
 ## Fork a repository   {#fork}
