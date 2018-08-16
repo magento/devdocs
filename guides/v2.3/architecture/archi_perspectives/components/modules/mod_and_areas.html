@@ -203,7 +203,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <ul>
         <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/2.3/introduction.html">Functional Acceptance Testing</a></li>
         
         <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
         <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
@@ -739,6 +739,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
   <li>
     <p><strong>Basic</strong> (<code class="highlighter-rouge">base</code>): used as a fallback for files absent in <code class="highlighter-rouge">adminhtml</code> and <code class="highlighter-rouge">frontend</code> areas.</p>
+  </li>
+  <li>
+    <p><strong>Cron</strong> (<code class="highlighter-rouge">crontab</code>): In <code class="highlighter-rouge">cron.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
   </li>
 </ul>
 

@@ -203,7 +203,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <ul>
         <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/2.3/introduction.html">Functional Acceptance Testing</a></li>
         
         <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
         <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
@@ -1425,7 +1425,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="binding-map">Binding map</h2>
 
-<p>The table below shows how the Knockout bindings map to their Magento binding counterparts.</p>
+<p>The table below shows examples of how the Knockout bindings map to their Magento binding counterparts.</p>
 
 <table style="table-layout:auto">
   <thead>
@@ -1447,6 +1447,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td><code class="highlighter-rouge">&lt;div if="isVisible"&gt;&lt;/div&gt;</code></td>
     </tr>
     <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;!-- ko if: getCartParam('summary_count') --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;if args="getCartParam('summary_count')"&gt;</code></td>
+    </tr>
+    <tr>
       <td>ifnot</td>
       <td><code class="highlighter-rouge">&lt;!-- ko ifnot: isVisible--&gt;&lt;!-- /ko --&gt;</code></td>
       <td><code class="highlighter-rouge">&lt;ifnot args="isVisible"&gt;&lt;/ifnot&gt;</code></td>
@@ -1455,6 +1460,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td> </td>
       <td><code class="highlighter-rouge">&lt;div data-bind="ifnot: isVisible"&gt;&lt;/div&gt;</code></td>
       <td><code class="highlighter-rouge">&lt;div ifnot="isVisible"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;!-- ko ifnot: getCartParam('summary_count') --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;ifnot args="getCartParam('summary_count')"&gt;</code></td>
     </tr>
     <tr>
       <td>text</td>
@@ -1585,6 +1595,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>checked</td>
       <td><code class="highlighter-rouge">&lt;input type="checkbox" data-bind="checked: isChecked"/&gt;</code></td>
       <td><code class="highlighter-rouge">&lt;input type="checkbox" ko-checked="isChecked"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;input type="radio" data-bind="value: value,checked: isSelected" /&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input type="radio" ko-checked="element.isSelected" ko-value="value" /&gt;</code></td>
     </tr>
     <tr>
       <td>checkedValue</td>

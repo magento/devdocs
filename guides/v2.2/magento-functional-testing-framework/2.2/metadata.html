@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Metadata | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.2/metadata.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.2">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/2.2/metadata.html">Magento 2.0</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/2.2/metadata.html">Magento 2.1</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/2.2/metadata.html">Magento 2.2</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/2.2/metadata.html">Magento 2.3 Alpha</a></li>
+		
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          
+          <li><a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          <li><a href="https://developers.rjmetrics.com/" target="_blank">Magento BI Import REST API</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/2.2/introduction.html">Functional Acceptance Testing</a></li>
+        
+        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="http://omsdocs.magento.com/en/" target="_blank">Order Management</a></li>
+        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/rest/tutorials/index.html">REST tutorials</a></li>
+        
+        
+        <li><a  data-proofer-ignore href="/guides/v2.2/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        
+        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+        <li><a href="/community/resources/support.html">Magento Support</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.2/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide version 2.2</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="introduction">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/introduction.html">Introduction</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="getting-started">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/getting-started.html">Getting started</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="suite">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/suite.html">Suite</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="test">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/test.html">Test</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="annotations">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/test/annotations.html">Annotations</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="actions">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/test/actions.html">Actions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="action-groups">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/test/action-groups.html">Action groups</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="assertions">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/test/assertions.html">Assertions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="page">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/page.html">Page</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="section">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/section.html">Section</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="parameterized-selectors">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/section/parameterized-selectors.html">Parameterized selectors</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="locator-functions">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/section/locator-functions.html">Locator functions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="data">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/data.html">Data</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1 active " id="metadata">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/metadata.html">Metadata</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="merging">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/merging.html">Merging</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="configuration">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/configuration.html">Configuration</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="cli-commands">
+    
+
+    
+    <span>CLI Commands</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="robo">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/commands/robo.html">robo</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="codecept">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/2.2/commands/codeception.html">codecept</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="update">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/update.html">Update</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="best-practices">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/best-practices.html">Best practices</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="troubleshooting">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/2.2/troubleshooting.html">Troubleshooting</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="contribution-guidelines">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/contribution-guidelines.html">Contribution Guidelines</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="changelog">
+    
+
+    
+    <a href="/guides/v2.2/magento-functional-testing-framework/changelog.html">Changelog</a>
+    
+
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Metadata</h1>
+
+  
+
+
+</section>
+
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+
+<p>In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
+Using data handling actions like <a href="test/actions.html#createdata">createData</a>, <a href="test/actions.html#deletedata">deleteData</a>, <a href="test/actions.html#updatedata">updateData</a>, and <a href="test/actions.html#getdata">getData</a>, you are able to create, delete, update, and read entities for your tests. 
+The framework enables you to send HTTP requests with these statically defined data entities:</p>
+<ul>
+  <li><a href="#handling-with-api">Sending a REST API request</a></li>
+  <li><a href="#rest-response">Handling a REST API response</a></li>
+  <li><a href="#using-html-forms">Sending an HTML form encoded in URL</a></li>
+</ul>
+
+<p>You have probably noticed that some modules in acceptance functional tests contain a directory, which is called <code class="highlighter-rouge">Metadata</code> .</p>
+
+<blockquote>
+  <p>Example of a module with <em>Metadata</em></p>
+</blockquote>
+
+<pre><code class="language-tree">Wishlist
+├── Data
+├── Metadata
+├── Page
+├── Section
+└── Test
+</code></pre>
+
+<p>This directory contains XML files with metadata required to create a valid request to handle an entity defined in <code class="highlighter-rouge">dataType</code>.
+A metadata file contains a list of operations with different types (defined in <code class="highlighter-rouge">type</code>).
+Each <a href="#operation-tag">operation</a> includes:</p>
+<ul>
+  <li>The set of adjustments for processing a request in <a href="#operation-tag">attributes</a>, and in some cases, a response  (see <code class="highlighter-rouge">successRegex</code> and <code class="highlighter-rouge">returnRegex</code> in <a href="#operation-tag">reference details</a>).</li>
+  <li>The type of body content encoding in <a href="#contentType-tag">contentType</a>.</li>
+  <li>The body of the request represented as a tree of objects, arrays, and fields.</li>
+</ul>
+
+<p>When a test step requires handling the specified data entity, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> performs the following steps:</p>
+<ul>
+  <li>Reads input data (<code class="highlighter-rouge">&lt;data/&gt;</code>) and the type (the <code class="highlighter-rouge">type</code> attribute) of the specified <a href="data.html#entity-tag">entity</a>.</li>
+  <li>Searches the metadata operation for the <code class="highlighter-rouge">dataType</code> that matches the entity’s <code class="highlighter-rouge">type</code>. For example, <code class="highlighter-rouge">&lt;entity type="product"&gt;</code> matches <code class="highlighter-rouge">&lt;operation dataType="product"</code>.</li>
+  <li>Forms a request of the operation and the input data of the entity according to matching metadata.</li>
+  <li>Stores a response and provides access to its data using <abbr title="Magento Functional Testing Framework">MFTF</abbr> variables syntax in XML.</li>
+</ul>
+
+<p>The following diagram demonstrates the XML structure of a metadata file:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?></p>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="561" height="478" version="1.1" id="svg318" sodipodi:docname="metadata-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata id="metadata324">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs322" />
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1017" id="namedview320" showgrid="false" inkscape:zoom="1.3964619" inkscape:cx="235.1642" inkscape:cy="256.75664" inkscape:window-x="3278" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg318" />
+  <a id="a4301" href="#field-tag" title="zero or more &lt;field&gt; elements">
+    <g id="g417">
+      <rect x="491" y="28" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect2" />
+      <rect x="488" y="25" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect4" />
+      <text x="510" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text6">field</text>
+      <text x="522" y="57" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text8">0..∞</text>
+    </g>
+  </a>
+  <a id="a4308" title="zero or more &lt;array&gt; elements" href="#array-tag">
+    <g id="g442">
+      <rect x="491" y="80" width="53" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect18" />
+      <rect x="488" y="77" width="53" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect20" />
+      <text x="514.5" y="88" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text22">array</text>
+      <text x="536" y="109" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text24">0..∞</text>
+      <rect x="536" y="83" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect26" />
+      <line x1="538" y1="88" x2="544" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line28" />
+      <line x1="541" y1="85" x2="541" y2="91" style="stroke:rgb(0,0,0);stroke-width:1" id="line30" />
+    </g>
+  </a>
+  <line x1="478" y1="36" x2="488" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line46" />
+  <line x1="478" y1="88" x2="488" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line48" />
+  <a id="a4318" href="#object-tag" title="zero or more &lt;object&gt; elements">
+    <g id="g452">
+      <rect x="491" y="132" width="58" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect32" />
+      <rect x="488" y="129" width="58" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect34" />
+      <text x="517" y="140" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text36">object</text>
+      <text x="541" y="161" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text38">0..∞</text>
+      <rect x="541" y="135" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect40" />
+      <line x1="543" y1="140" x2="549" y2="140" style="stroke:rgb(0,0,0);stroke-width:1" id="line42" />
+      <line x1="546" y1="137" x2="546" y2="143" style="stroke:rgb(0,0,0);stroke-width:1" id="line44" />
+      <line x1="478" y1="140" x2="488" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line50" />
+    </g>
+  </a>
+  <line x1="478" y1="36" x2="478" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line52" />
+  <line x1="468" y1="88" x2="478" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line54" />
+  <a id="a4284" title="that may contain zero or more times one of the following nodes">
+    <g id="g433">
+      <path d="M437 81 L460 81 L466 87 L466 95 L460 101 L437 101 L431 95 L431 87 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path56" />
+      <path d="M434 78 L457 78 L463 84 L463 92 L457 98 L434 98 L428 92 L428 84 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path58" />
+      <line x1="433" y1="88" x2="437" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line60" />
+      <line x1="437" y1="88" x2="441" y2="84" style="stroke:rgb(0,0,0);stroke-width:1" id="line62" />
+      <line x1="449" y1="84" x2="453" y2="84" style="stroke:rgb(0,0,0);stroke-width:1" id="line64" />
+      <line x1="449" y1="88" x2="457" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line66" />
+      <line x1="449" y1="92" x2="453" y2="92" style="stroke:rgb(0,0,0);stroke-width:1" id="line68" />
+      <line x1="453" y1="84" x2="453" y2="92" style="stroke:rgb(0,0,0);stroke-width:1" id="line70" />
+      <ellipse cx="445" cy="84" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse72" />
+      <ellipse cx="445" cy="88" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse74" />
+      <ellipse cx="445" cy="92" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse76" />
+      <text x="458" y="108" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text78">0..∞</text>
+      <rect x="458" y="83" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect80" />
+      <line x1="460" y1="88" x2="466" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line82" />
+    </g>
+  </a>
+  <line x1="408" y1="88" x2="428" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line84" />
+  <a id="a4227" title="zero or more &lt;field&gt; elements" href="#field-tag">
+    <g id="g387">
+      <rect x="348" y="184" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect98" />
+      <rect x="345" y="181" width="44" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect100" />
+      <text x="367" y="192" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text102">field</text>
+      <text x="379" y="213" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text104">0..∞</text>
+    </g>
+  </a>
+  <a id="a4262" title="zero or one &lt;value&gt; element" href="#value-tag">
+    <g id="g466">
+      <rect x="483" y="285" width="49" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect128" />
+      <text x="507.5" y="296" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text130">value</text>
+    </g>
+  </a>
+  <a id="a4329" title="zero or more &lt;object&gt; elements" href="#object-tag">
+    <g id="g462">
+      <rect x="486" y="236" width="58" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect114" />
+      <rect x="483" y="233" width="58" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect116" />
+      <text x="512" y="244" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text118">object</text>
+      <text x="536" y="265" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text120">0..∞</text>
+      <rect x="536" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect122" />
+      <line x1="538" y1="244" x2="544" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line124" />
+      <line x1="541" y1="241" x2="541" y2="247" style="stroke:rgb(0,0,0);stroke-width:1" id="line126" />
+      <line x1="473" y1="244" x2="483" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line140" />
+    </g>
+  </a>
+  <line x1="473" y1="296" x2="483" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line142" />
+  <line x1="473" y1="244" x2="473" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line144" />
+  <line x1="463" y1="270" x2="473" y2="270" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line146" />
+  <a id="a4267" title="that may contain zero or more times one of the following nodes">
+    <g id="g482">
+      <path d="M432 263 L455 263 L461 269 L461 277 L455 283 L432 283 L426 277 L426 269 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path148" />
+      <path d="M429 260 L452 260 L458 266 L458 274 L452 280 L429 280 L423 274 L423 266 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path150" />
+      <line x1="428" y1="270" x2="432" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line152" />
+      <line x1="432" y1="270" x2="436" y2="266" style="stroke:rgb(0,0,0);stroke-width:1" id="line154" />
+      <line x1="444" y1="266" x2="448" y2="266" style="stroke:rgb(0,0,0);stroke-width:1" id="line156" />
+      <line x1="444" y1="270" x2="452" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line158" />
+      <line x1="444" y1="274" x2="448" y2="274" style="stroke:rgb(0,0,0);stroke-width:1" id="line160" />
+      <line x1="448" y1="266" x2="448" y2="274" style="stroke:rgb(0,0,0);stroke-width:1" id="line162" />
+      <ellipse cx="440" cy="266" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse164" />
+      <ellipse cx="440" cy="270" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse166" />
+      <ellipse cx="440" cy="274" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse168" />
+      <text x="453" y="290" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text170">0..∞</text>
+      <rect x="453" y="265" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect172" />
+      <line x1="455" y1="270" x2="461" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line174" />
+    </g>
+  </a>
+  <line x1="403" y1="270" x2="423" y2="270" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line176" />
+  <a id="a4234" title="zero or more &lt;array&gt; elements" href="#array-tag">
+    <g id="g395">
+      <rect x="348" y="262" width="53" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect178" />
+      <rect x="345" y="259" width="53" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect180" />
+      <text x="371.5" y="270" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text182">array</text>
+      <text x="393" y="291" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text184">0..∞</text>
+      <rect x="393" y="265" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect186" />
+      <line x1="395" y1="270" x2="401" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line188" />
+    </g>
+  </a>
+  <a id="a4243" href="#header-tag" title="zero or more &lt;header&gt; elements">
+    <g id="g400">
+      <rect x="348" y="340" width="57" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect190" />
+      <rect x="345" y="337" width="57" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect192" />
+      <text x="373.5" y="348" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text194">header</text>
+    </g>
+  </a>
+  <text x="392" y="369" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text196">0..∞</text>
+  <a id="a4249" title="zero or more &lt;param&gt; elements" href="#param-tag">
+    <g id="g406">
+      <rect x="348" y="392" width="54" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect206" />
+      <rect x="345" y="389" width="54" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect208" />
+      <text x="372" y="400" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text210">param</text>
+      <text x="389" y="421" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text212">0..∞</text>
+    </g>
+  </a>
+  <a id="a4216" href="#object-tag" title="zero or more &lt;object&gt; elements">
+    <g id="g381">
+      <g id="g346">
+        <rect id="rect86" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" height="22" width="58" y="80" x="348" />
+        <rect id="rect88" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" height="22" width="58" y="77" x="345" />
+        <text id="text90" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" y="88" x="374">object</text>
+        <text id="text92" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" y="109" x="398">0..∞</text>
+        <rect id="rect94" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" height="10" width="10" y="83" x="398" />
+        <line id="line96" style="stroke:rgb(0,0,0);stroke-width:1" y2="88" x2="406" y1="88" x1="400" />
+      </g>
+      <line x1="335" y1="88" x2="345" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line234" />
+    </g>
+  </a>
+  <line x1="335" y1="192" x2="345" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line236" />
+  <line x1="335" y1="270" x2="345" y2="270" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line238" />
+  <line x1="335" y1="348" x2="345" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line240" />
+  <line x1="335" y1="400" x2="345" y2="400" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line242" />
+  <a id="a4256" title="one &lt;contentType&gt; element" href="#contentType-tag">
+    <g id="g411">
+      <rect x="345" y="441" width="84" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect222" />
+      <text x="387" y="452" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text224">contentType</text>
+      <line x1="335" y1="452" x2="345" y2="452" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line244" />
+    </g>
+  </a>
+  <line x1="335" y1="88" x2="335" y2="452" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line246" />
+  <line x1="325" y1="244" x2="335" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line248" />
+  <a id="a4199" title="that may contain zero or more times one of the following nodes">
+    <g id="g371">
+      <path d="M294 237 L317 237 L323 243 L323 251 L317 257 L294 257 L288 251 L288 243 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path250" />
+      <path d="M291 234 L314 234 L320 240 L320 248 L314 254 L291 254 L285 248 L285 240 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path252" />
+      <line x1="290" y1="244" x2="294" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line254" />
+      <line x1="294" y1="244" x2="298" y2="240" style="stroke:rgb(0,0,0);stroke-width:1" id="line256" />
+      <line x1="306" y1="240" x2="310" y2="240" style="stroke:rgb(0,0,0);stroke-width:1" id="line258" />
+      <line x1="306" y1="244" x2="314" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line260" />
+      <line x1="306" y1="248" x2="310" y2="248" style="stroke:rgb(0,0,0);stroke-width:1" id="line262" />
+      <line x1="310" y1="240" x2="310" y2="248" style="stroke:rgb(0,0,0);stroke-width:1" id="line264" />
+      <ellipse cx="302" cy="240" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse266" />
+      <ellipse cx="302" cy="244" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse268" />
+      <ellipse cx="302" cy="248" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse270" />
+      <text x="315" y="264" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text272">0..∞</text>
+      <rect x="315" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect274" />
+      <line x1="317" y1="244" x2="323" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line276" />
+    </g>
+  </a>
+  <line x1="265" y1="244" x2="285" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line278" />
+  <a id="a4190" title="zero or more &lt;operation&gt; elements" href="#operation-tag">
+    <g id="g338">
+      <rect x="188" y="236" width="75" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect280" />
+      <rect x="185" y="233" width="75" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect282" />
+      <text x="222.5" y="244" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text284">operation</text>
+      <text x="255" y="265" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text286">0..∞</text>
+      <rect x="255" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect288" />
+      <line x1="257" y1="244" x2="263" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line290" />
+    </g>
+  </a>
+  <line x1="165" y1="244" x2="185" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line292" />
+  <a id="a4180" title="that contains a sequence of">
+    <g id="g355">
+      <path d="M131 234 L154 234 L160 240 L160 248 L154 254 L131 254 L125 248 L125 240 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path294" />
+      <line x1="128" y1="244" x2="157" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line296" />
+      <ellipse cx="137" cy="244" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse298" />
+      <ellipse cx="142" cy="244" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse300" />
+      <ellipse cx="147" cy="244" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse302" />
+      <rect x="155" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect304" />
+      <line x1="157" y1="244" x2="163" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line306" />
+    </g>
+  </a>
+  <line x1="105" y1="244" x2="125" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line308" />
+  <a id="a484" href="#operations-tag" xlink:arcrole="The &lt;operations&gt; element">
+    <g id="g330">
+      <rect x="20" y="233" width="80" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect310" />
+      <text x="60" y="244" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text312">operations</text>
+      <rect x="95" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect314" />
+      <line x1="97" y1="244" x2="103" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line316" />
+    </g>
+  </a>
+</svg>
+
+<h2 id="format">Format</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;operations</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataOperation.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;operation</span> <span class="na">name=</span><span class="s">""</span>
+               <span class="na">dataType=</span><span class="s">""</span>
+               <span class="na">type=</span><span class="s">""</span>
+               <span class="na">auth=</span><span class="s">""</span>
+               <span class="na">url=</span><span class="s">""</span>
+               <span class="na">method=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;contentType&gt;&lt;/contentType&gt;</span>
+        <span class="nt">&lt;object</span> <span class="na">key=</span><span class="s">""</span> <span class="na">dataType=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;</span>boolean<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;array</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;value&gt;</span>string<span class="nt">&lt;/value&gt;</span>
+            <span class="nt">&lt;/array&gt;</span>
+        <span class="nt">&lt;/object&gt;</span>
+    <span class="nt">&lt;/operation&gt;</span>
+</code></pre></div></div>
+
+<h2 id="principles">Principles</h2>
+
+<ul>
+  <li>The <code class="highlighter-rouge">dataType</code> value must match the <code class="highlighter-rouge">type</code> value of the corresponding entity.</li>
+  <li>The file name contains data type split with <code class="highlighter-rouge">_</code> and ends with <code class="highlighter-rouge">-meta</code>.
+Example: <code class="highlighter-rouge">product_attribute-meta.xml</code>.</li>
+  <li>A metadata file may contain different types of operations (<code class="highlighter-rouge">type</code>) with the same data entity (<code class="highlighter-rouge">dataType</code>).
+Example:
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;operations&gt;</span>
+    <span class="nt">&lt;operation</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/operation&gt;</span>
+    <span class="nt">&lt;operation</span> <span class="na">type=</span><span class="s">"update"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/operation&gt;</span>
+    <span class="nt">&lt;operation</span> <span class="na">type=</span><span class="s">"delete"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/operation&gt;</span>
+    <span class="nt">&lt;operation</span> <span class="na">type=</span><span class="s">"get"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        ...
+    <span class="nt">&lt;/operation&gt;</span>
+<span class="nt">&lt;/operations&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="handling-with-api">Handling entities using REST API</h2>
+
+<h3 id="sending-a-rest-api-request">Sending a REST API request</h3>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> allows you to handle basic <abbr title="Create Read Update Delete">CRUD</abbr> operations with an object using <a href="/guides/v2.2/rest/bk-rest.html">Magento REST API</a> requests.
+To convert a request to the <abbr title="Magento Functional Testing Framework">MFTF</abbr> format, wrap the corresponding REST API request into XML tags according to the <a href="#reference">Reference documentation</a>.</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>GET is used for retrieving data from objects.<br />
+POST is used for creating new objects.<br />
+PUT is used for updating objects.<br />
+DELETE is used for deleting objects.<br /></p>
+</div>
+
+<p>This is an example of how to handle a category using REST API operations provided by the <code class="highlighter-rouge">catalogCategoryRepositoryV1</code> service.</p>
+
+<p><img src="img/catalogCategoryRepository-operations.png" alt="REST API operations provided by catalogCategoryRepositoryV1" /></p>
+
+<p>The above screenshot from the <a href="/guides/v2.2/rest/bk-rest.html">Magento REST API Reference</a> demonstrates a list of available operations to:</p>
+<ul>
+  <li>Delete a category by its identifier (<code class="highlighter-rouge">method="DELETE"</code>)</li>
+  <li>Get information about a category by its ID (<code class="highlighter-rouge">method="GET"</code>)</li>
+  <li><a href="#create-object-as-adminOauth">Create a new category</a> (<code class="highlighter-rouge">method="POST"</code>)</li>
+  <li>Update category data by its ID (<code class="highlighter-rouge">method="PUT"</code>)</li>
+</ul>
+
+<p>We assume that our <code class="highlighter-rouge">.env</code> file sets <code class="highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code>.</p>
+
+<h4 id="create-object-as-adminOauth">Create a simple category</h4>
+
+<p>Let’s see what happens when you create a category:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"_defaultCategory"</span> <span class="na">stepKey=</span><span class="s">"createPreReqCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="_defaultCategory"&gt;</code> and reads <code class="highlighter-rouge">type</code> of the entity.
+If there are more than one entity with the same name, all of the entities are merged.</p>
+
+<blockquote>
+  <p><em>Catalog/Data/CategoryData.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultCategory"</span> <span class="na">type=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simpleCategory<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name_lwr"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simplecategory<span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"is_active"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p>Here, <code class="highlighter-rouge">type</code> is equal to <code class="highlighter-rouge">"category"</code>, which instructs the <abbr title="Magento Functional Testing Framework">MFTF</abbr> to search an operation with <code class="highlighter-rouge">dataType="category"</code>. 
+Since the action is <strong>to create</strong> a category, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> will also search for operation with <code class="highlighter-rouge">type="create"</code> in <em>Metadata</em> for <code class="highlighter-rouge">dataType="category"</code>.</p>
+
+<blockquote>
+  <p><em>Catalog/Metadata/category-meta.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;operation</span> <span class="na">name=</span><span class="s">"CreateCategory"</span> <span class="na">dataType=</span><span class="s">"category"</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">auth=</span><span class="s">"adminOauth"</span> <span class="na">url=</span><span class="s">"/V1/categories"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;contentType&gt;</span>application/json<span class="nt">&lt;/contentType&gt;</span>
+    <span class="nt">&lt;object</span> <span class="na">key=</span><span class="s">"category"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"parent_id"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"is_active"</span><span class="nt">&gt;</span>boolean<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"position"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"level"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"children"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"created_at"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"updated_at"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"path"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"include_in_menu"</span><span class="nt">&gt;</span>boolean<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;array</span> <span class="na">key=</span><span class="s">"available_sort_by"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;value&gt;</span>string<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;/array&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"extension_attributes"</span><span class="nt">&gt;</span>empty_extension_attribute<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;array</span> <span class="na">key=</span><span class="s">"custom_attributes"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;value&gt;</span>custom_attribute<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/operation&gt;</span>
+</code></pre></div></div>
+<p>(The corresponding operation is provided by <em>catalogCategoryRepositoryV1</em> in <a href="/guides/v2.2/rest/bk-rest.html">REST API</a>.)</p>
+
+<p>The following is encoded in <code class="highlighter-rouge">&lt;operation&gt;</code>:</p>
+<ul>
+  <li><code class="highlighter-rouge">name="CreateCategory"</code> defines a descriptive name of the operation, which is used for merging if needed.</li>
+  <li><code class="highlighter-rouge">dataType="category"</code> defines a relation with data entities with input data for a Category (<code class="highlighter-rouge">&lt;entity type="category"&gt;</code>).</li>
+  <li><code class="highlighter-rouge">auth="adminOauth"</code> defines Oauth authorization, which is required for the Admin area.</li>
+  <li><code class="highlighter-rouge">url="/V1/categories"</code> defines a routing URL to the corresponding service class.
+  (The request will be sent to <a href="">https://example.com/rest/V1/categories</a> if <code class="highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code> are set in the <em>acceptance/.env</em> configuration file.)</li>
+  <li><code class="highlighter-rouge">method="POST"</code> defines a POST method of the HTTP request.</li>
+</ul>
+
+<p><code class="highlighter-rouge">&lt;contentType&gt;application/json&lt;/contentType&gt;</code> defines a content type of the REST API request, which is set as <code class="highlighter-rouge">application/json</code> here.</p>
+
+<p>The parameter that declares a body of the request is <em>catalogCategoryRepositoryV1SavePostBody</em>.
+Using the <a href="#reference">Reference</a>, we can trace how the JSON request was converted into XML representation.</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Comments in the example below are used to demonstrate relation between JSON request and <abbr title="Magento Functional Testing Framework">MFTF</abbr> metadata in XML.
+JSON does not support comments.</p>
+</div>
+
+<blockquote id="catalogCategoryRepositoryV1SavePostBody">
+  <p>Model schema for <em>catalogCategoryRepositoryV1SavePostBody</em> with XML representation of <em>Catalog/Metadata/category-meta.xml</em> in comments</p>
+</blockquote>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">                                           </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">representation</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">MFTF</span><span class="w"> </span><span class="err">metadata</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/category-meta.xml')</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;object</span><span class="w"> </span><span class="err">key=</span><span class="s2">"category"</span><span class="w"> </span><span class="err">dataType=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                                </span><span class="err">//</span><span class="w"> </span><span class="err">Skipped</span><span class="p">,</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">Category</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">UI</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">category.</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"parent_id"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                          </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"position"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"level"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                   </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"children"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"created_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"updated_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"path"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"available_sort_by"</span><span class="err">&gt;</span><span class="w">
+      </span><span class="s2">"string"</span><span class="w">                              </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;value&gt;string&lt;/value&gt;</span><span class="w">
+    </span><span class="p">],</span><span class="w">                                      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/array&gt;</span><span class="w">
+    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"include_in_menu"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
+    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"extension_attributes"</span><span class="err">&gt;empty_extension_attribute&lt;/field&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">'empty_extension_attribute'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">'dataType=</span><span class="s2">"empty_extension_attribute"</span><span class="err">'</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/empty_extension_attribute-meta.xml')</span><span class="w">
+    </span><span class="s2">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"custom_attributes"</span><span class="err">&gt;</span><span class="w">
+      </span><span class="p">{</span><span class="w">                                     </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;value&gt;custom_attribute&lt;/value&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">'custom_attribute'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">'dataType=</span><span class="s2">"custom_attribute"</span><span class="err">'</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/custom_attribute-meta.xml')</span><span class="w">
+        </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">         
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">                   
+      </span><span class="p">}</span><span class="w">                                     
+    </span><span class="p">]</span><span class="w">                                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/array&gt;</span><span class="w">
+  </span><span class="p">}</span><span class="w">                                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/object&gt;</span><span class="w">                                                                                  
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>So, the body of a REST API request that creates a simple category is the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">                                             </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">representation</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">used</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">simple</span><span class="w"> </span><span class="err">category</span><span class="w"> </span><span class="err">(</span><span class="s2">"Catalog/Data/CategoryData.xml"</span><span class="err">)</span><span class="w">
+  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;entity</span><span class="w"> </span><span class="err">name=</span><span class="s2">"_defaultCategory"</span><span class="w"> </span><span class="err">type=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="w"> </span><span class="err">unique=</span><span class="s2">"suffix"</span><span class="err">&gt;simpleCategory&lt;/data&gt;</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;</span><span class="kc">true</span><span class="err">&lt;/data&gt;</span><span class="w">
+  </span><span class="p">}</span><span class="w">                                           </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/entity&gt;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="create-object-as-anonymous">Create an object as a guest</h4>
+
+<p>The corresponding test step is:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"guestCart"</span> <span class="na">stepKey=</span><span class="s">"createGuestCart"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="guestCart"&gt;</code> and reads <code class="highlighter-rouge">type</code>:</p>
+
+<blockquote>
+  <p>Source file: <em>Quote/Data/GuestCartData.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"guestCart"</span> <span class="na">type=</span><span class="s">"guestCart"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">type="guestCart"</code> points to the operation with <code class="highlighter-rouge">dataType=guestCart"</code> and <code class="highlighter-rouge">type="create"</code> in the <em>Metadata</em> directory:</p>
+
+<blockquote>
+  <p>Source file: <em>Catalog/Data/CategoryData.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;operation</span> <span class="na">name=</span><span class="s">"CreateGuestCart"</span> <span class="na">dataType=</span><span class="s">"guestCart"</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">auth=</span><span class="s">"anonymous"</span> <span class="na">url=</span><span class="s">"/V1/guest-carts"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;contentType&gt;</span>application/json<span class="nt">&lt;/contentType&gt;</span>
+ <span class="nt">&lt;/operation&gt;</span>
+</code></pre></div></div>
+
+<p>As a result, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> sends an unauthorized POST request with an empty body to the <a href="">https://example.com/rest/V1/guest-carts</a> and stores the single string response that the endpoint returns.</p>
+
+<h3 id="rest-response">Handling a REST API response</h3>
+
+<p>There are cases when you need to reuse the data that Magento responded with to your POST request.</p>
+
+<p>Let’s see how to handle data after you created a category with custom attributes:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"customizedCategory"</span> <span class="na">stepKey=</span><span class="s">"createPreReqCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> receives the corresponding JSON response and enables you to reference its data using a variable of format:</p>
+
+<p><strong>$</strong> <em>stepKey</em> <strong>.</strong> <em>JsonKey</em> <strong>$</strong></p>
+
+<p>Example:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$createPreReqCategory.id$
+</code></pre></div></div>
+
+<p>And for a custom attribute:</p>
+
+<p><strong>$</strong> <em>stepKey</em>  <strong>.custom_attributes[</strong> <em>attribute key</em> <strong>]$</strong></p>
+
+<p>Example:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$createPreReqCategory.custom_attributes[is_anchor]$
+</code></pre></div></div>
+
+<p>The following example of response in JSON demonstrates how to reference data on the root level and as data in custom attributes:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">                                          </span><span class="err">//$createPreReqCategory.id$</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">                                   </span><span class="err">//$createPreReqCategory.parent_id$</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">              </span><span class="err">//$createPreReqCategory.is_active$</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is_anchor"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">                              </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">is_anchor</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="w">                          </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">path</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"children_count"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">   </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">url_key</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_path"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="using-html-forms">Handling entities using HTML forms</h2>
+
+<p>For cases when REST API is not applicable, you may use <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html">HTML forms</a> (when all object parameters are encoded in a URL as <code class="highlighter-rouge">key=name</code> attributes).
+There are two different attributes to split access to different areas:</p>
+<ul>
+  <li><code class="highlighter-rouge">auth="adminFormKey"</code> is used for objects in an Admin area.</li>
+  <li><code class="highlighter-rouge">auth="customerFormKey"</code> is used for objects in a storefront.</li>
+</ul>
+
+<p>You are able to create assurances with <code class="highlighter-rouge">successRegex</code>, and even return values with <code class="highlighter-rouge">returnRegex</code>.</p>
+
+<h3 id="create-object-as-adminFormKey">Create an object in Admin</h3>
+
+<p>The <code class="highlighter-rouge">CreateStoreGroup</code> operation is used to persist a store group:</p>
+
+<blockquote>
+  <p>Source file: <em>Store/Metadata/store_group-meta.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;operation</span> <span class="na">name=</span><span class="s">"CreateStoreGroup"</span> <span class="na">dataType=</span><span class="s">"group"</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">auth=</span><span class="s">"adminFormKey"</span> <span class="na">url=</span><span class="s">"/admin/system_store/save"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">successRegex=</span><span class="s">"/messages-message-success/"</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;contentType&gt;</span>application/x-www-form-urlencoded<span class="nt">&lt;/contentType&gt;</span>
+    <span class="nt">&lt;object</span> <span class="na">dataType=</span><span class="s">"group"</span> <span class="na">key=</span><span class="s">"group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"group_id"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"code"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"root_category_id"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"website_id"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/object&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"store_action"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"store_type"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/operation&gt;</span>
+</code></pre></div></div>
+
+<p>The operation is called when <code class="highlighter-rouge">&lt;createData&gt;</code> (<code class="highlighter-rouge">type="create"</code>) points to a data entity of type <code class="highlighter-rouge">"group"</code> (<code class="highlighter-rouge">dataType="group"</code>).
+It sends a POST request (<code class="highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/admin/system_store/save</a> (<code class="highlighter-rouge">url="/admin/system_store/save"</code>) that is authorized for the Admin area (<code class="highlighter-rouge">auth="adminFormKey"</code>).
+The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
+If the returned HTML code contains the <code class="highlighter-rouge">messages-message-success</code> string, it is resolved as successful.</p>
+
+<p>The operation enables you to assign the following form fields:</p>
+<ul>
+  <li><code class="highlighter-rouge">group/group_id</code></li>
+  <li><code class="highlighter-rouge">group/name</code></li>
+  <li><code class="highlighter-rouge">group/code</code></li>
+  <li><code class="highlighter-rouge">group/root_category_id</code></li>
+  <li><code class="highlighter-rouge">group/website_id</code></li>
+  <li><code class="highlighter-rouge">store_action</code></li>
+  <li><code class="highlighter-rouge">store_type</code></li>
+</ul>
+
+<h3 id="create-object-as-customerFormKey">Create an object in storefront</h3>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> uses the <code class="highlighter-rouge">CreateWishlist</code> operation to create a wish list on storefront:</p>
+
+<blockquote>
+  <p>Source file: <em>Wishlist/Metadata/wishlist-meta.xml</em></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;operation</span> <span class="na">name=</span><span class="s">"CreateWishlist"</span> <span class="na">dataType=</span><span class="s">"wishlist"</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">auth=</span><span class="s">"customerFormKey"</span> <span class="na">url=</span><span class="s">"/wishlist/index/add/"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">successRegex=</span><span class="s">""</span> <span class="na">returnRegex=</span><span class="s">"~\/wishlist_id\/(\d*?)\/~"</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;contentType&gt;</span>application/x-www-form-urlencoded<span class="nt">&lt;/contentType&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"product"</span><span class="nt">&gt;</span>integer<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"customer_email"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"customer_password"</span><span class="nt">&gt;</span>string<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/operation&gt;</span>
+</code></pre></div></div>
+
+<p>The operation is used when <code class="highlighter-rouge">&lt;createData&gt;</code> (<code class="highlighter-rouge">type="create"</code>) points to a data entity of type <code class="highlighter-rouge">"wishlist"</code> (<code class="highlighter-rouge">dataType="wishlist"</code>).
+It sends a POST request (<code class="highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/wishlist/index/add/</a> (<code class="highlighter-rouge">url="wishlist/index/add/"</code>) as a customer (<code class="highlighter-rouge">auth="customerFormKey"</code>).
+The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
+If the returned HTML code contains a string that matches the regular expression <code class="highlighter-rouge">~\/wishlist_id\/(\d*?)\/~</code>, it returns the matching value.</p>
+
+<p>The operation assigns three form fields:</p>
+<ul>
+  <li><code class="highlighter-rouge">product</code></li>
+  <li><code class="highlighter-rouge">customer_email</code></li>
+  <li><code class="highlighter-rouge">customer_password</code></li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<h3 id="operations-tag">operations</h3>
+
+<p>Root element that points to the corresponding XML Schema.</p>
+
+<h3 id="operation-tag">operation</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Name of the operation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">dataType</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Data type of the operation. It refers to a <code class="highlighter-rouge">type</code> attribute of data entity that will be used as a source of input data.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">type</code></td>
+      <td>Possible values: <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, <code class="highlighter-rouge">update</code>, <code class="highlighter-rouge">get</code>.</td>
+      <td>required</td>
+      <td>Type of operation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A routing URL of the operation. Example: <code class="highlighter-rouge">/V1/categories</code>. The full URL at the end will contain: <code class="highlighter-rouge">ENV.baseUrl</code> + /rest/ + <code class="highlighter-rouge">url</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">auth</code></td>
+      <td>Possible values: <code class="highlighter-rouge">adminOath</code>, <code class="highlighter-rouge">adminFormKey</code>, <code class="highlighter-rouge">customerFormKey</code>, <code class="highlighter-rouge">anonymous</code></td>
+      <td>optional</td>
+      <td>Type of authorization of the operation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">method</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>HTTP method of the operation. Possible values: <code class="highlighter-rouge">POST</code>, <code class="highlighter-rouge">DELETE</code>, <code class="highlighter-rouge">PUT</code>, <code class="highlighter-rouge">GET</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">successRegex</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the <code class="highlighter-rouge">successRegex</code> exists.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">returnRegex</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Determines if the response contains the matching value to return.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">removeBackend</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Removes backend name from requested URL. Applicable when <code class="highlighter-rouge">auth="adminFormKey"</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>GET is used for retrieving data from objects.<br />
+POST is used for creating new objects.<br />
+PUT is used for updating objects.<br />
+DELETE is used for deleting objects.<br /></p>
+</div>
+
+<p>The following is a list with descriptions the <code class="highlighter-rouge">auth</code> possible values:</p>
+<ul>
+  <li><code class="highlighter-rouge">adminOath</code> is used for REST API persistence in the Admin area with <a target="_blank" href="/guides/v2.2/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
+  <li><code class="highlighter-rouge">adminFormKey</code> is used for HTML form persistence in the Admin area.</li>
+  <li><code class="highlighter-rouge">customerFormKey</code> is used for HTML form persistence in the Customer area.</li>
+  <li><code class="highlighter-rouge">anonymous</code> is used for REST API persistence without authorization.</li>
+</ul>
+
+<h3 id="contentType-tag">contentType</h3>
+
+<p>Sets one of the following operation types:</p>
+<ul>
+  <li><code class="highlighter-rouge">application/json</code> is used for REST API operations.</li>
+  <li><code class="highlighter-rouge">application/x-www-form-urlencoded</code> is used for HTML form operations.</li>
+</ul>
+
+<h3 id="object-tag">object</h3>
+
+<p>Representation of a complex entity that may contain fields, arrays, and objects.
+An object must match the <a href="data.html#entity-tag">entity</a> of the same <code class="highlighter-rouge">type</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Name of the object.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">dataType</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Type of the related <a href="data.html#entity-tag">entity</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">required</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Determines if the object is required or not. It must match the Magento REST API specification.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="field-tag">field</h3>
+
+<p>Representation of HTML form or REST API fields.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Name of the field. It must match the field name of the related <a href="data.html#entity-tag">entity</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">type</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Type of the value. It may contain a primitive type or the type of another operation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">required</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Determines if the field is required or not. It must match the Magento REST API specification.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="array-tag">array</h3>
+
+<p>Representation of an array.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Name of the array.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It contains one or more <code class="highlighter-rouge">value</code> elements.</p>
+
+<h3 id="value-tag">value</h3>
+
+<p>An item in <code class="highlighter-rouge">array</code>.</p>
+
+<h3 id="header-tag">header</h3>
+
+<p>An additional parameter in REST API request.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">param</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A REST API header parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;header</span> <span class="na">param=</span><span class="s">"status"</span><span class="nt">&gt;</span>available<span class="nt">&lt;/header&gt;</span>
+</code></pre></div></div>
+
+<h3 id="param-tag">param</h3>
+
+<p>An additional parameter in URL.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Name of the URL parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;param</span> <span class="na">key=</span><span class="s">"status"</span><span class="nt">&gt;</span>someValue<span class="nt">&lt;/param&gt;</span>
+</code></pre></div></div>
+<!-- LINK DEFINITIONS -->
+
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.2/magento-functional-testing-framework/2.2/metadata.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/magento-functional-testing-framework/2.2/metadata.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+</body>
+</html>
+

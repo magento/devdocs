@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Test | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/2.3/test.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Alpha
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/magento-functional-testing-framework/2.3/test.html">Magento 2.0</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/magento-functional-testing-framework/2.3/test.html">Magento 2.1</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/magento-functional-testing-framework/2.3/test.html">Magento 2.2</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/magento-functional-testing-framework/2.3/test.html">Magento 2.3 Alpha</a></li>
+		
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          
+          <li><a href="/guides/v2.3/pwa/">PWA Studios</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          <li><a href="https://developers.rjmetrics.com/" target="_blank">Magento BI Import REST API</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/2.3/introduction.html">Functional Acceptance Testing</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="http://omsdocs.magento.com/en/" target="_blank">Order Management</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/rest/tutorials/index.html">REST tutorials</a></li>
+        
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+        <li><a href="/community/resources/support.html">Magento Support</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+<div class="message-banner">
+    This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+</div>
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide version 2.3</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="introduction">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/introduction.html">Introduction</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="getting-started">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/getting-started.html">Getting started</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="suite">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/suite.html">Suite</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1 active " id="test">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/test.html">Test</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="annotations">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/test/annotations.html">Annotations</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="actions">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/test/actions.html">Actions</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="action-groups">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/test/action-groups.html">Action groups</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="assertions">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/test/assertions.html">Assertions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="page">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/page.html">Page</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="section">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/section.html">Section</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="parameterized-selectors">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/section/parameterized-selectors.html">Parameterized selectors</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="locator-functions">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/section/locator-functions.html">Locator functions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="data">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/data.html">Data</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="metadata">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/metadata.html">Metadata</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="merging">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/merging.html">Merging</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="extending">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/extending.html">Extending</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="configuration">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/configuration.html">Configuration</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="cli-commands">
+    
+
+    
+    <span>CLI Commands</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="mftf">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/commands/mftf.html">mftf</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="codecept">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/2.3/commands/codeception.html">codecept</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="update">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/update.html">Update</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="best-practices">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/best-practices.html">Best practices</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="troubleshooting">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/2.3/troubleshooting.html">Troubleshooting</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="contribution-guidelines">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/contribution-guidelines.html">Contribution Guidelines</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="changelog">
+    
+
+    
+    <a href="/guides/v2.3/magento-functional-testing-framework/changelog.html">Changelog</a>
+    
+
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Test</h1>
+
+  
+
+
+</section>
+
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+
+<p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#tests-tag"><code class="highlighter-rouge">&lt;tests&gt;</code></a>.
+<code class="highlighter-rouge">&lt;tests&gt;</code> is a <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception test container</a> that contains multiple individual tests with test metadata and before and after actions.</p>
+
+<p>MFTF <code class="highlighter-rouge">&lt;tests&gt;</code> is considered a sequence of actions with associated parameters.
+Any failed <a href="./test/assertions.html">assertion</a> within a test constitutes a failed test.</p>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code>.
+They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in which they are declared.</p>
+
+  <p>The steps in <code class="highlighter-rouge">&lt;after&gt;</code> are run in both successful <strong>and</strong> failed test runs.</p>
+</div>
+
+<p>The following diagram shows the structure of an MFTF test case:</p>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="601" height="322" version="1.1" id="svg330" sodipodi:docname="test-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata id="metadata336">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs334" />
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1017" id="namedview332" showgrid="false" inkscape:zoom="1.890183" inkscape:cx="272.85453" inkscape:cy="165.81687" inkscape:window-x="3278" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg330" />
+  <g id="g398">
+    <path id="path2" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" d="M354 25 L436 25 L442 31 L442 41 L436 47 L354 47 L348 41 L348 31 Z" />
+    <text id="text4" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" y="36" x="395">testTypeTags</text>
+    <line id="line6" style="stroke:rgb(0,0,0);stroke-width:2" y2="41" x2="354" y1="44" x1="351" />
+    <path id="path8" style="fill:rgb(0,0,0)" d="M354 41 L356 43 L357 38 L352 39 L354 41 Z" />
+    <rect id="rect10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" height="10" width="10" y="31" x="437" />
+    <line id="line12" style="stroke:rgb(0,0,0);stroke-width:1" y2="36" x2="445" y1="36" x1="439" />
+    <line id="line14" style="stroke:rgb(0,0,0);stroke-width:1" y2="39" x2="442" y1="33" x1="442" />
+  </g>
+  <g id="g429">
+    <path id="path16" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" d="M498 77 L580 77 L586 83 L586 93 L580 99 L498 99 L492 93 L492 83 Z" />
+    <text id="text18" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" y="88" x="539">testTypeTags</text>
+    <line id="line20" style="stroke:rgb(0,0,0);stroke-width:2" y2="93" x2="498" y1="96" x1="495" />
+    <path id="path22" style="fill:rgb(0,0,0)" d="M498 93 L500 95 L501 90 L496 91 L498 93 Z" />
+    <rect id="rect24" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" height="10" width="10" y="83" x="581" />
+    <line id="line26" style="stroke:rgb(0,0,0);stroke-width:1" y2="88" x2="589" y1="88" x1="583" />
+    <line id="line28" style="stroke:rgb(0,0,0);stroke-width:1" y2="91" x2="586" y1="85" x1="586" />
+  </g>
+  <line x1="472" y1="88" x2="492" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line30" />
+  <a id="a4301" title="that may contain any number of the following nodes in any order">
+    <g id="g420">
+      <path d="M441 81 L464 81 L470 87 L470 95 L464 101 L441 101 L435 95 L435 87 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path32" />
+      <path d="M438 78 L461 78 L467 84 L467 92 L461 98 L438 98 L432 92 L432 84 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path34" />
+      <line x1="437" y1="88" x2="441" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line36" />
+      <line x1="441" y1="88" x2="445" y2="84" style="stroke:rgb(0,0,0);stroke-width:1" id="line38" />
+      <line x1="453" y1="84" x2="457" y2="84" style="stroke:rgb(0,0,0);stroke-width:1" id="line40" />
+      <line x1="453" y1="88" x2="461" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line42" />
+      <line x1="453" y1="92" x2="457" y2="92" style="stroke:rgb(0,0,0);stroke-width:1" id="line44" />
+      <line x1="457" y1="84" x2="457" y2="92" style="stroke:rgb(0,0,0);stroke-width:1" id="line46" />
+      <ellipse cx="449" cy="84" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse48" />
+      <ellipse cx="449" cy="88" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse50" />
+      <ellipse cx="449" cy="92" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse52" />
+      <text x="462" y="108" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text54">0..∞</text>
+      <rect x="462" y="83" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect56" />
+      <line x1="464" y1="88" x2="470" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line58" />
+    </g>
+  </a>
+  <line x1="412" y1="88" x2="432" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line60" />
+  <a id="a4270" href="#before-tag" title="zero or one &lt;before&gt; element">
+    <g id="g404">
+      <rect x="348" y="77" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect62" />
+      <text x="377.5" y="88" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text64">before</text>
+      <rect x="402" y="83" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect66" />
+      <line x1="404" y1="88" x2="410" y2="88" style="stroke:rgb(0,0,0);stroke-width:1" id="line68" />
+    </g>
+  </a>
+  <g id="g438">
+    <path id="path70" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" d="M489 129 L571 129 L577 135 L577 145 L571 151 L489 151 L483 145 L483 135 Z" />
+    <text id="text72" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" y="140" x="530">testTypeTags</text>
+    <line id="line74" style="stroke:rgb(0,0,0);stroke-width:2" y2="145" x2="489" y1="148" x1="486" />
+    <path id="path76" style="fill:rgb(0,0,0)" d="M489 145 L491 147 L492 142 L487 143 L489 145 Z" />
+    <rect id="rect78" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" height="10" width="10" y="135" x="572" />
+    <line id="line80" style="stroke:rgb(0,0,0);stroke-width:1" y2="140" x2="580" y1="140" x1="574" />
+    <line id="line82" style="stroke:rgb(0,0,0);stroke-width:1" y2="143" x2="577" y1="137" x1="577" />
+  </g>
+  <line x1="463" y1="140" x2="483" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line84" />
+  <a id="a4318" title="that may contain any number of the following nodes in any order">
+    <g id="g460">
+      <path d="M432 133 L455 133 L461 139 L461 147 L455 153 L432 153 L426 147 L426 139 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path86" />
+      <path d="M429 130 L452 130 L458 136 L458 144 L452 150 L429 150 L423 144 L423 136 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path88" />
+      <line x1="428" y1="140" x2="432" y2="140" style="stroke:rgb(0,0,0);stroke-width:1" id="line90" />
+      <line x1="432" y1="140" x2="436" y2="136" style="stroke:rgb(0,0,0);stroke-width:1" id="line92" />
+      <line x1="444" y1="136" x2="448" y2="136" style="stroke:rgb(0,0,0);stroke-width:1" id="line94" />
+      <line x1="444" y1="140" x2="452" y2="140" style="stroke:rgb(0,0,0);stroke-width:1" id="line96" />
+      <line x1="444" y1="144" x2="448" y2="144" style="stroke:rgb(0,0,0);stroke-width:1" id="line98" />
+      <line x1="448" y1="136" x2="448" y2="144" style="stroke:rgb(0,0,0);stroke-width:1" id="line100" />
+      <ellipse cx="440" cy="136" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse102" />
+      <ellipse cx="440" cy="140" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse104" />
+      <ellipse cx="440" cy="144" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse106" />
+      <text x="453" y="160" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text108">0..∞</text>
+      <rect x="453" y="135" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect110" />
+      <line x1="455" y1="140" x2="461" y2="140" style="stroke:rgb(0,0,0);stroke-width:1" id="line112" />
+    </g>
+  </a>
+  <line x1="403" y1="140" x2="423" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line114" />
+  <a id="a4277" href="#after-tag" title="zero or one &lt;after&gt; element">
+    <g id="g444">
+      <rect x="348" y="129" width="50" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect116" />
+      <text x="373" y="140" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text118">after</text>
+      <rect x="393" y="135" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect120" />
+      <line x1="395" y1="140" x2="401" y2="140" style="stroke:rgb(0,0,0);stroke-width:1" id="line122" />
+    </g>
+  </a>
+  <a id="a4335" title="zero or one &lt;annotations&gt; element" href="#annotations-tag">
+    <g id="g467">
+      <rect x="348" y="181" width="86" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect124" />
+      <text x="391" y="192" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text126">annotations</text>
+      <rect x="429" y="187" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect128" />
+      <line x1="431" y1="192" x2="437" y2="192" style="stroke:rgb(0,0,0);stroke-width:1" id="line130" />
+      <line x1="434" y1="189" x2="434" y2="195" style="stroke:rgb(0,0,0);stroke-width:1" id="line132" />
+    </g>
+  </a>
+  <line x1="338" y1="36" x2="348" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line134" />
+  <line x1="338" y1="88" x2="348" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line136" />
+  <line x1="338" y1="140" x2="348" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line138" />
+  <line x1="338" y1="192" x2="348" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line140" />
+  <line x1="338" y1="36" x2="338" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line142" />
+  <line x1="328" y1="114" x2="338" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line144" />
+  <a id="a4284" title="that may contain any number of the following nodes in any order">
+    <g id="g389">
+      <path d="M297 107 L320 107 L326 113 L326 121 L320 127 L297 127 L291 121 L291 113 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path146" />
+      <path d="M294 104 L317 104 L323 110 L323 118 L317 124 L294 124 L288 118 L288 110 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path148" />
+      <line x1="293" y1="114" x2="297" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line150" />
+      <line x1="297" y1="114" x2="301" y2="110" style="stroke:rgb(0,0,0);stroke-width:1" id="line152" />
+      <line x1="309" y1="110" x2="313" y2="110" style="stroke:rgb(0,0,0);stroke-width:1" id="line154" />
+      <line x1="309" y1="114" x2="317" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line156" />
+      <line x1="309" y1="118" x2="313" y2="118" style="stroke:rgb(0,0,0);stroke-width:1" id="line158" />
+      <line x1="313" y1="110" x2="313" y2="118" style="stroke:rgb(0,0,0);stroke-width:1" id="line160" />
+      <ellipse cx="305" cy="110" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse162" />
+      <ellipse cx="305" cy="114" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse164" />
+      <ellipse cx="305" cy="118" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse166" />
+      <text x="318" y="134" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text168">0..∞</text>
+      <rect x="318" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect170" />
+      <line x1="320" y1="114" x2="326" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line172" />
+    </g>
+  </a>
+  <line x1="268" y1="114" x2="288" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line174" />
+  <a id="a4261" title="one or more &lt;test&gt; elements" href="#test-tag">
+    <g id="g373">
+      <rect x="220" y="106" width="46" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect176" />
+      <rect x="217" y="103" width="46" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect178" />
+      <text x="240" y="114" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text180">test</text>
+      <text x="258" y="135" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text182">1..∞</text>
+      <rect x="258" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect184" />
+      <line x1="260" y1="114" x2="266" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line186" />
+    </g>
+  </a>
+  <line x1="197" y1="114" x2="217" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line188" />
+  <a id="a4205" title="that contains one of the following nodes">
+    <g id="g365">
+      <path d="M163 104 L186 104 L192 110 L192 118 L186 124 L163 124 L157 118 L157 110 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path190" />
+      <line x1="162" y1="114" x2="166" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line192" />
+      <line x1="166" y1="114" x2="170" y2="110" style="stroke:rgb(0,0,0);stroke-width:1" id="line194" />
+      <line x1="178" y1="110" x2="182" y2="110" style="stroke:rgb(0,0,0);stroke-width:1" id="line196" />
+      <line x1="178" y1="114" x2="186" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line198" />
+      <line x1="178" y1="118" x2="182" y2="118" style="stroke:rgb(0,0,0);stroke-width:1" id="line200" />
+      <line x1="182" y1="110" x2="182" y2="118" style="stroke:rgb(0,0,0);stroke-width:1" id="line202" />
+      <ellipse cx="174" cy="110" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse204" />
+      <ellipse cx="174" cy="114" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse206" />
+      <ellipse cx="174" cy="118" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse208" />
+      <rect x="187" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect210" />
+      <line x1="189" y1="114" x2="195" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line212" />
+    </g>
+  </a>
+  <line x1="137" y1="114" x2="157" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line214" />
+  <a id="a4195" title="that contains a sequence of the following nodes">
+    <g id="g351">
+      <path d="M103 104 L126 104 L132 110 L132 118 L126 124 L103 124 L97 118 L97 110 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path216" />
+      <line x1="100" y1="114" x2="129" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line218" />
+      <ellipse cx="109" cy="114" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse220" />
+      <ellipse cx="114" cy="114" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse222" />
+      <ellipse cx="119" cy="114" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse224" />
+      <rect x="127" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect226" />
+      <line x1="129" y1="114" x2="135" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line228" />
+    </g>
+  </a>
+  <line x1="77" y1="114" x2="97" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line230" />
+  <a id="a499" href="#tests-tag" title="Root element &lt;tests&gt;">
+    <g id="g342">
+      <rect x="20" y="103" width="52" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect232" />
+      <text x="46" y="114" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text234">tests</text>
+      <rect x="67" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect236" />
+      <line x1="69" y1="114" x2="75" y2="114" style="stroke:rgb(0,0,0);stroke-width:1" id="line238" />
+    </g>
+  </a>
+  <a href="test/actions.html" title="one of &lt;action&gt; elements" target="_blank" id="a4355">
+    <g id="g497">
+      <path d="M205 233 L299 233 L305 239 L305 249 L299 255 L205 255 L199 249 L199 239 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path240" />
+      <text x="252" y="244" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text242">actionTypeTags</text>
+      <line x1="202" y1="252" x2="205" y2="249" style="stroke:rgb(0,0,0);stroke-width:2" id="line244" />
+      <path d="M205 249 L207 251 L208 246 L203 247 L205 249 Z" style="fill:rgb(0,0,0)" id="path246" />
+      <rect x="300" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect248" />
+      <line x1="302" y1="244" x2="308" y2="244" style="stroke:rgb(0,0,0);stroke-width:1" id="line250" />
+      <line x1="305" y1="241" x2="305" y2="247" style="stroke:rgb(0,0,0);stroke-width:1" id="line252" />
+    </g>
+  </a>
+  <a id="a4350" href="#argument-tag" title="one &lt;argument&gt; element">
+    <g id="g471">
+      <rect x="373" y="285" width="70" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect254" />
+      <text x="408" y="296" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text256">argument</text>
+    </g>
+  </a>
+  <line x1="353" y1="296" x2="373" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line258" />
+  <a id="a4220" title="that may contain multiple sequences of the following node">
+    <g id="g482">
+      <path d="M322 289 L345 289 L351 295 L351 303 L345 309 L322 309 L316 303 L316 295 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path260" />
+      <path d="M319 286 L342 286 L348 292 L348 300 L342 306 L319 306 L313 300 L313 292 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="path262" />
+      <line x1="316" y1="296" x2="345" y2="296" style="stroke:rgb(0,0,0);stroke-width:1" id="line264" />
+      <ellipse cx="325" cy="296" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse266" />
+      <ellipse cx="330" cy="296" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse268" />
+      <ellipse cx="335" cy="296" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse270" />
+      <text x="343" y="316" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central" id="text272">0..∞</text>
+      <rect x="343" y="291" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect274" />
+      <line x1="345" y1="296" x2="351" y2="296" style="stroke:rgb(0,0,0);stroke-width:1" id="line276" />
+    </g>
+  </a>
+  <line x1="293" y1="296" x2="313" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line278" />
+  <a id="a4343" href="#actiongroup-tag" target="" title="zero or one &lt;actionGroup&gt; elements">
+    <g id="g488">
+      <rect x="199" y="285" width="89" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1" id="rect280" />
+      <text x="243.5" y="296" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text282">actionGroup</text>
+      <rect x="283" y="291" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect284" />
+      <line x1="285" y1="296" x2="291" y2="296" style="stroke:rgb(0,0,0);stroke-width:1" id="line286" />
+    </g>
+  </a>
+  <line x1="189" y1="244" x2="199" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line288" />
+  <line x1="189" y1="296" x2="199" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line290" />
+  <line x1="189" y1="244" x2="189" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line292" />
+  <line x1="179" y1="270" x2="189" y2="270" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line294" />
+  <a id="a4246" title="that contains one of the following nodes">
+    <g id="g4244">
+      <path d="M145 260 L168 260 L174 266 L174 274 L168 280 L145 280 L139 274 L139 266 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path296" />
+      <line x1="144" y1="270" x2="148" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line298" />
+      <line x1="148" y1="270" x2="152" y2="266" style="stroke:rgb(0,0,0);stroke-width:1" id="line300" />
+      <line x1="160" y1="266" x2="164" y2="266" style="stroke:rgb(0,0,0);stroke-width:1" id="line302" />
+      <line x1="160" y1="270" x2="168" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line304" />
+      <line x1="160" y1="274" x2="164" y2="274" style="stroke:rgb(0,0,0);stroke-width:1" id="line306" />
+      <line x1="164" y1="266" x2="164" y2="274" style="stroke:rgb(0,0,0);stroke-width:1" id="line308" />
+      <ellipse cx="156" cy="266" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse310" />
+      <ellipse cx="156" cy="270" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse312" />
+      <ellipse cx="156" cy="274" rx="2" ry="2" style="rgb(0,0,0)" id="ellipse314" />
+      <rect x="169" y="265" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect316" />
+      <line x1="171" y1="270" x2="177" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line318" />
+    </g>
+  </a>
+  <line x1="119" y1="270" x2="139" y2="270" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round" id="line320" />
+  <path d="M26 259 L108 259 L114 265 L114 275 L108 281 L26 281 L20 275 L20 265 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="path322" />
+  <text x="67" y="270" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central" id="text324">testTypeTags</text>
+  <rect x="109" y="265" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1" id="rect326" />
+  <line x1="111" y1="270" x2="117" y2="270" style="stroke:rgb(0,0,0);stroke-width:1" id="line328" />
+</svg>
+
+<h2 id="format">Format</h2>
+
+<p>The format of <code class="highlighter-rouge">&lt;tests&gt;</code> is:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="nt">&lt;tests</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+       <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">""</span> <span class="na">insertBefore=</span><span class="s">""</span> <span class="na">insertAfter=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;annotations&gt;</span>
+                <span class="c">&lt;!-- TEST ANNOTATIONS --&gt;</span>
+            <span class="nt">&lt;/annotations&gt;</span>
+            <span class="nt">&lt;before&gt;</span>
+                <span class="c">&lt;!-- ACTIONS AND ACTION GROUPS PERFORMED BEFORE THE TEST --&gt;</span>
+            <span class="nt">&lt;/before&gt;</span>
+            <span class="nt">&lt;after&gt;</span>
+                <span class="c">&lt;!-- ACTIONS AND ACTION GROUPS PERFORMED AFTER THE TEST --&gt;</span>
+            <span class="nt">&lt;/after&gt;</span>
+            <span class="c">&lt;!-- TEST ACTIONS, ACTION GROUPS, AND ASSERTIONS--&gt;</span>
+        <span class="nt">&lt;/test&gt;</span>
+    <span class="nt">&lt;/tests&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h2 id="principles">Principles</h2>
+
+<p>The following conventions apply to MFTF tests:</p>
+
+<ul>
+  <li>All names within the framework are in the CamelCase format.</li>
+  <li><code class="highlighter-rouge">&lt;test&gt;</code> name must be alphanumeric.</li>
+  <li>Each action and action group has its own identifier <code class="highlighter-rouge">&lt;stepKey&gt;</code> for reference purposes.</li>
+  <li>A test may have any number of <a href="./test/assertions.html">assertions</a> at any point within the <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>If <code class="highlighter-rouge">&lt;test&gt;</code> is included in <code class="highlighter-rouge">&lt;suite&gt;</code>, it <strong>cannot be generated in isolation</strong> to the rest of the contents of the suite (see <a href="./suite.html">suites</a> for details).</li>
+</ul>
+
+<p>Multiple <code class="highlighter-rouge">&lt;test&gt;</code> tags per XML file can make it hard to find and organize tags.
+To simplify, we generate one <code class="highlighter-rouge">test.php</code> file per <code class="highlighter-rouge">&lt;test&gt;</code> tag provided, though we support both single and multiple <code class="highlighter-rouge">&lt;test&gt;</code> tags per XML file.</p>
+
+<h2 id="elements-reference">Elements reference</h2>
+
+<p>There are several XML elements that are used in <code class="highlighter-rouge">&lt;tests&gt;</code> in the MFTF.</p>
+
+<h3 id="tests-tag">tests</h3>
+
+<p><code class="highlighter-rouge">&lt;tests&gt;</code> is a container for multiple tests. It is a group of test methods that define test flows within a test case.</p>
+
+<p><code class="highlighter-rouge">&lt;tests&gt;</code> must contain at least one <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</p>
+
+<h3 id="test-tag">test</h3>
+
+<p><code class="highlighter-rouge">&lt;test&gt;</code> is a set of steps, including <a href="./test/actions.html">actions</a> and <a href="./test/assertions.html">assertions</a>. It is a sequence of test steps that define test flow within a test method.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>The test identifier.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">remove</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Set <code class="highlighter-rouge">true</code> to remove the test when merging.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">insertBefore</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>This option is used for <a href="./merging.html#insert-after">merging</a>. It enables you to add all test actions contained in the original test into a test with the same name BEFORE the test step with <code class="highlighter-rouge">stepKey</code> that you assigned in <code class="highlighter-rouge">insertBefore</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">insertAfter</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Set <code class="highlighter-rouge">stepKey</code> of the test step after which you want to insert the test when <a href="./merging.html#insert-after">merging</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">extends</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A name of the parent test to <a href="extending.html">extend</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">&lt;test&gt;</code> may also contain <a href="#annotations-tag"><code class="highlighter-rouge">&lt;annotations&gt;</code></a>, <a href="#before-tag"><code class="highlighter-rouge">&lt;before&gt;</code></a>, <a href="#after-tag"><code class="highlighter-rouge">&lt;after&gt;</code></a>, any <a href="./test/actions.html">action</a>, or <a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
+
+<h3 id="annotations-tag">annotations</h3>
+
+<p><a href="./test/annotations.html">Annotations</a> are supported by both <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception</a> and <a href="https://github.com/allure-framework/">Allure</a>.</p>
+
+<p>Codeception annotations typically provide metadata and are able to influence test selection.
+Allure annotations provide metadata for reporting.</p>
+
+<h3 id="before-tag">before</h3>
+
+<p><code class="highlighter-rouge">&lt;before&gt;</code> wraps the steps to perform before the <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</p>
+
+<p><code class="highlighter-rouge">&lt;before&gt;</code> may contain these child elements:</p>
+
+<ul>
+  <li>Any <a href="./test/actions.html"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
+</ul>
+
+<h3 id="after-tag">after</h3>
+
+<p><code class="highlighter-rouge">&lt;after&gt;</code> wraps the steps to perform after the <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.
+The steps are run in both successful <strong>and</strong> failed test runs.</p>
+
+<p><code class="highlighter-rouge">&lt;after&gt;</code> may contain:</p>
+
+<ul>
+  <li>Any <a href="./test/actions.html"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
+</ul>
+
+<h3 id="actiongroup-tag">actionGroup</h3>
+
+<p><code class="highlighter-rouge">&lt;actionGroup&gt;</code> calls a corresponding <a href="./test/action-groups.html">action group</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">ref</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>References the required action group by its <code class="highlighter-rouge">name</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Identifies the element within <code class="highlighter-rouge">&lt;test&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed next while merging.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed one step before the current one while merging.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">&lt;actionGroup&gt;</code> may contain <a href="#argument-tag"><code class="highlighter-rouge">&lt;argument&gt;</code></a>.</p>
+
+<h3 id="argument-tag">argument</h3>
+
+<p><code class="highlighter-rouge">&lt;argument&gt;</code> sets an argument that is used in the parent <a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Name of the argument.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Value of the argument.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="./test/action-groups.html">Action groups</a> for more information.</p>
+
+<!-- Link definitions -->
+
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.3/magento-functional-testing-framework/2.3/test.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/magento-functional-testing-framework/2.3/test.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+</body>
+</html>
+

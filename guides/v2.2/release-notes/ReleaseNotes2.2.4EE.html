@@ -199,7 +199,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <ul>
         <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.2/magento-functional-testing-framework/2.2/introduction.html">Functional Acceptance Testing</a></li>
         
         <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
         <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
@@ -733,7 +733,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84588,MAGETWO-84587 MAGETWO-84589 -->
 <ul>
-  <li>The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. As part of the process of adding CyberSource support, we’ve made improvements to the Multishipping module to simplify integration process for other payment methods.</li>
+  <li>The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by Magento Commerce only. As part of the process of adding CyberSource support, we’ve made improvements to the Multi-shipping module to simplify integration process for other payment methods.</li>
 </ul>
 
 <!--- MAGETWO-84815 -->
@@ -883,7 +883,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-87838 -->
 <ul>
-  <li>The output of the <code class="highlighter-rouge">magento maintenance:status</code> command no longer inserts a comma in between IP addresses, making it easier to copy and paste the values. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13587</em>.</li>
+  <li>The output of the <code class="highlighter-rouge">Magento maintenance:status</code> command no longer inserts a comma in between IP addresses, making it easier to copy and paste the values. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13587</em>.</li>
 </ul>
 
 <!--- MAGETWO-87744 -->
@@ -903,7 +903,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-83120 -->
 <ul>
-  <li>Magento no longer throws an error when you try to generate an URN catalog for an empty <code class="highlighter-rouge">misc.xml</code> file. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11686</em>. <a href="https://github.com/magento/magento2/issues/5188">GitHub-5188</a></li>
+  <li>Magento no longer throws an error when you try to generate a URN catalog for an empty <code class="highlighter-rouge">misc.xml</code> file. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11686</em>. <a href="https://github.com/magento/magento2/issues/5188">GitHub-5188</a></li>
 </ul>
 
 <!--- MAGETWO-84180 -->
@@ -987,7 +987,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84087 -->
 <ul>
-  <li>You can now add customizable options to a product. Previously, when you tried to add a custom option to  product, Magento threw this error: <code class="highlighter-rouge">A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 11965</em>. <a href="https://github.com/magento/magento2/issues/11792">GitHub-11792</a></li>
+  <li>You can now add customizable options to a product. Previously, when you tried to add a custom option to the product, Magento threw this error: <code class="highlighter-rouge">A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 11965</em>. <a href="https://github.com/magento/magento2/issues/11792">GitHub-11792</a></li>
 </ul>
 
 <!--- MAGETWO-84311 -->
@@ -998,6 +998,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!--- MAGETWO-84367 -->
 <ul>
   <li>You can now save emojis in custom product options. <em>Fix submitted by <a href="https://github.com/KarlDeux">Carlos Lizaga</a> in pull request 12253</em>.</li>
+</ul>
+
+<!--- MAGETWO-84411 -->
+<ul>
+  <li>Magento no longer displays unused product attributes  with a value of N/A or NO on the storefront. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 12057</em>. <a href="https://github.com/magento/magento2/issues/6634">GitHub-6634</a>, <a href="https://github.com/magento/magento2/issues/9961">GitHub-9961</a></li>
 </ul>
 
 <!--- MAGETWO-84498 -->
@@ -1022,7 +1027,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84808 -->
 <ul>
-  <li>You can now add a new product with custom attributes that has the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a <code class="highlighter-rouge">request_path</code> with the same value already existed in <code class="highlighter-rouge">table url_rewrite</code> from the previous product. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 12167</em>. <a href="https://github.com/magento/magento2/issues/12110">GitHub-12110</a></li>
+  <li>You can now add a new product with custom attributes that have the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a <code class="highlighter-rouge">request_path</code> with the same value already existed in <code class="highlighter-rouge">table url_rewrite</code> from the previous product. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 12167</em>. <a href="https://github.com/magento/magento2/issues/12110">GitHub-12110</a></li>
 </ul>
 
 <!--- MAGETWO-84949 -->
@@ -1128,7 +1133,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-87847 -->
 <ul>
-  <li>Language switching nows works as expected on the Catalog and Product pages. Previously, language switching did not work on these pages in production mode. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1143</em>. <a href="https://github.com/magento/magento2/issues/11963">GitHub-11963</a></li>
+  <li>Language switching now works as expected on the Catalog and Product pages. Previously, language switching did not work on these pages in production mode. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1143</em>. <a href="https://github.com/magento/magento2/issues/11963">GitHub-11963</a></li>
 </ul>
 
 <!--- MAGETWO-87526 -->
@@ -1168,7 +1173,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85575 -->
 <ul>
-  <li>Magento now correctly sets a <code class="highlighter-rouge">product_links</code> position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type were shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. <em>Fix submitted by <a href="https://github.com/mohammedsalem">Mohammad Haj-Salem</a> in pull request 12650</em>.</li>
+  <li>Magento now correctly sets a <code class="highlighter-rouge">product_links</code> position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type was shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. <em>Fix submitted by <a href="https://github.com/mohammedsalem">Mohammad Haj-Salem</a> in pull request 12650</em>.</li>
 </ul>
 
 <!--- MAGETWO-83560 -->
@@ -1190,12 +1195,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85317 -->
 <ul>
-  <li>You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded with  checkout by choosing a Bank Transfer Payment as Payment Method, Magento displayed, <strong>Your credit card will be charged for</strong>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 993</em>. <a href="https://github.com/magento/magento2/issues/12526">GitHub-12526</a></li>
+  <li>You can now successfully change currency for an order before you complete the order. Previously, if you changed currency, when you  proceeded to checkout by choosing a Bank Transfer Payment as Payment Method, Magento displayed, <strong>Your credit card will be charged for</strong>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 993</em>. <a href="https://github.com/magento/magento2/issues/12526">GitHub-12526</a></li>
 </ul>
 
 <!--- MAGETWO-86506 -->
 <ul>
-  <li>Magento no longer throws a JavaScript error on the cart from postcode validation when <strong>United States</strong> is deselected in the <strong>Allowed Countries</strong> Admin option (<strong>Admin &gt; Stores &gt; Configuration &gt; General &gt; Default Country</strong>). <em>Fix submitted by <a href="https://github.com/codekipple">codekipple</a> in pull request 13051</em>.</li>
+  <li>Magento no longer throws a JavaScript error on the cart from postcode validation when the <strong>United States</strong> is deselected in the <strong>Allowed Countries</strong> Admin option (<strong>Admin &gt; Stores &gt; Configuration &gt; General &gt; Default Country</strong>). <em>Fix submitted by <a href="https://github.com/codekipple">codekipple</a> in pull request 13051</em>.</li>
 </ul>
 
 <!--- MAGETWO-86543 -->
@@ -1205,12 +1210,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-86896 -->
 <ul>
-  <li>Magento now displays text on the New Cart Rules page correctly. Previously, labels listed in the Store View Specific Labels section of this page were sometimes truncated or duplicated. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1146</em>. <a href="https://github.com/magento/magento2/issues/12231">GitHub-12231</a></li>
+  <li>Magento now displays text on the New Cart Rules page correctly. Previously, labels listed in the Store View Specific Labels section of this page was sometimes truncated or duplicated. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1146</em>. <a href="https://github.com/magento/magento2/issues/12231">GitHub-12231</a></li>
 </ul>
 
 <!--- MAGETWO-86617 -->
 <ul>
-  <li>When you check out as guest  and click <strong>Create an account</strong> on the success page, you can now click on the customer name to jump to the customer record. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12998</em>.</li>
+  <li>When you check out as a guest  and click <strong>Create an account</strong> on the success page, you can now click on the customer name to jump to the customer record. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12998</em>.</li>
 </ul>
 
 <!--- MAGETWO-87340 -->
@@ -1220,7 +1225,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-88332 -->
 <ul>
-  <li><code class="highlighter-rouge">dropdownDialog</code> is now required when the minicart is available. <em>Fix submitted by <a href="https://github.com/amenk">Alexander Menk</a> in pull request 13830</em>.</li>
+  <li><code class="highlighter-rouge">dropdownDialog</code> is now required when the mini cart is available. <em>Fix submitted by <a href="https://github.com/amenk">Alexander Menk</a> in pull request 13830</em>.</li>
 </ul>
 
 <!--- MAGETWO-87196 -->
@@ -1242,7 +1247,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85782 -->
 <ul>
-  <li>Magento now displays elements of the <strong>Catalog &gt; Products &gt; Create Configurations</strong> page correctly. Previously, the currency symbol overlapped with the attribute option’s price during creation of a configurable product. <em>Fix submitted by <a href="https://github.com/EfremovaVI">Vasilina</a> in pull request</em>.</li>
+  <li>Magento now displays elements of the <strong>Catalog &gt; Products &gt; Create Configurations</strong> page correctly. Previously, the currency symbol overlapped with the attribute option’s price during the creation of a configurable product. <em>Fix submitted by <a href="https://github.com/EfremovaVI">Vasilina</a> in a pull request</em>.</li>
 </ul>
 
 <!--- MAGETWO-85777 -->
@@ -1284,7 +1289,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85300 -->
 <ul>
-  <li>Magento now successfully sends email (with content) even when you make a mistake in the email template file name. Previously, when the template name was incorrect, Magento sent the email with no content. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 970</em>. <a href="https://github.com/magento/magento2/issues/8437">GitHub-8437</a></li>
+  <li>Magento now successfully sends an email (with content) even when you make a mistake in the email template file name. Previously, when the template name was incorrect, Magento sent the email with no content. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 970</em>. <a href="https://github.com/magento/magento2/issues/8437">GitHub-8437</a></li>
 </ul>
 
 <!--- MAGETWO-85653 -->
@@ -1294,7 +1299,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84862 -->
 <ul>
-  <li>Magento no longer displays the <code class="highlighter-rouge">Too many password reset requests</code> error when the <strong>max wait time between password resets</strong> setting has been disabled. Previously, when you attempted to reset a customer’s password through the Admin, Magento threw an error even when you disabled the <code class="highlighter-rouge">max wait time between password resets</code> setting in the store configuration settings. <em>Fix submitted by <a href="https://github.com/coleHafner">Cole Hafner</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/11409">GitHub-11409</a></li>
+  <li>Magento no longer displays the <code class="highlighter-rouge">Too many passwords reset requests</code> error when the <strong>max wait time between password resets</strong> setting has been disabled. Previously, when you attempted to reset a customer’s password through the Admin, Magento threw an error even when you disabled the <code class="highlighter-rouge">max wait time between password resets</code> setting in the store configuration settings. <em>Fix submitted by <a href="https://github.com/coleHafner">Cole Hafner</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/11409">GitHub-11409</a></li>
 </ul>
 
 <!--- MAGETWO-84439 -->
@@ -1356,7 +1361,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-86203 -->
 <ul>
-  <li>The scroll bar on the Admin store switcher is now scrollable on machines running OSX. <em>Fix submitted by <a href="https://github.com/jalogut">Juan Alonso</a> in pull request 12931</em>.</li>
+  <li>The scrollbar on the Admin store switcher is now scrollable on machines running OSX. <em>Fix submitted by <a href="https://github.com/jalogut">Juan Alonso</a> in pull request 12931</em>.</li>
 </ul>
 
 <h3 id="directory">Directory</h3>
@@ -1390,7 +1395,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85772 -->
 <ul>
-  <li>Magento now saves multiselect attributes for a product that has a related product using another attribute set. Previously, multiselect attribute values were not saved for a product in the Admin panel when it had a related product that used another attribute set. <em>Fix submitted by <a href="https://github.com/awarche">awarche</a> in pull request 12767</em>.</li>
+  <li>Magento now saves multi-select attributes for a product that has a related product using another attribute set. Previously, multi-select attribute values were not saved for a product in the Admin panel when it had a related product that used another attribute set. <em>Fix submitted by <a href="https://github.com/awarche">awarche</a> in pull request 12767</em>.</li>
 </ul>
 
 <!--- MAGETWO-85579 -->
@@ -1415,17 +1420,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-85833 -->
 <ul>
-  <li><code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> now stops the Profiler before it returns Profiler run time. Previously, <code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> did not stop the Profiler from returning early, and consequently reported incorrect run time. <em>Fix submitted by <a href="https://github.com/nicka101">Nick Anstee</a> in pull request 12810</em>.</li>
+  <li><code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> now stops the Profiler before it returns Profiler runtime. Previously, <code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> did not stop the Profiler from returning early and consequently reported incorrect runtime. <em>Fix submitted by <a href="https://github.com/nicka101">Nick Anstee</a> in pull request 12810</em>.</li>
 </ul>
 
 <!--- MAGETWO-87588 -->
 <ul>
-  <li>The <code class="highlighter-rouge">beforeSave</code> method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also encoded multiple times. Consequently, Magento did save the product, and  displayed this error, <strong>Unable to unserialize value</strong>. <em>Fix submitted by <a href="https://github.com/tkotosz">Tibor Kotosz</a> in pull request 13551</em>.</li>
+  <li>The <code class="highlighter-rouge">beforeSave</code> method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also encoded multiple times. Consequently, Magento did save the product and  displayed this error, <strong>Unable to unserialize value</strong>. <em>Fix submitted by <a href="https://github.com/tkotosz">Tibor Kotosz</a> in pull request 13551</em>.</li>
 </ul>
 
 <!--- MAGETWO-87354 -->
 <ul>
-  <li>The deprecated <code class="highlighter-rouge">each()</code> function has been removed from the code. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request</em>.</li>
+  <li>The deprecated <code class="highlighter-rouge">each()</code> function has been removed from the code. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in a pull request</em>.</li>
 </ul>
 
 <h3 id="email">Email</h3>
@@ -1511,7 +1516,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-81802 -->
 <ul>
-  <li>The customer grid indexer now works as expected.  Previously, this indexer did not work when reindexing using the command-line interface during upgrade. <em>Fix submitted by <a href="https://github.com/le0n4eg">Leonid Poluyanov</a> in pull request 10838</em>. <a href="https://github.com/magento/magento2/issues/10838">GitHub-10838</a></li>
+  <li>The customer grid indexer now works as expected.  Previously, this indexer did not work when reindexing using the command-line interface during the upgrade. <em>Fix submitted by <a href="https://github.com/le0n4eg">Leonid Poluyanov</a> in pull request 10838</em>. <a href="https://github.com/magento/magento2/issues/10838">GitHub-10838</a></li>
 </ul>
 
 <!--- MAGETWO-80223 -->
@@ -1562,12 +1567,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-83373 -->
 <ul>
-  <li>The Setup Wizard page now loads successfully when the session storage method is memcache.  Previously, Magento returned an HTTP 500 error when you navigated to <strong>System &gt; Tools &gt; Web Setup Wizard Setup Wizard</strong>  in installations where you’ve configured the session storage method to memcache in <code class="highlighter-rouge">env.php</code>. <em>Fix submitted by <a href="https://github.com/sylink">Marty S</a> in pull request 11608</em>. <a href="https://github.com/magento/magento2/issues/9633">GitHub-9633</a></li>
+  <li>The Setup Wizard page now loads successfully when the session storage method is Memcache.  Previously, Magento returned an HTTP 500 error when you navigated to <strong>System &gt; Tools &gt; Web Setup Wizard Setup Wizard</strong>  in installations where you’ve configured the session storage method to Memcache in <code class="highlighter-rouge">env.php</code>. <em>Fix submitted by <a href="https://github.com/sylink">Marty S</a> in pull request 11608</em>. <a href="https://github.com/magento/magento2/issues/9633">GitHub-9633</a></li>
 </ul>
 
 <!--- MAGETWO-83287 -->
 <ul>
-  <li>When you add a product to your wish list after logging out, Magento now redirects you to your account Wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12038</em>. <a href="https://github.com/magento/magento2/issues/11825">GitHub-11825</a></li>
+  <li>When you add a product to your wish list after logging out, Magento now redirects you to your account Wish list page and adds the product. Previously, you were redirected to your wishlist page, but Magento did not add the product. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12038</em>. <a href="https://github.com/magento/magento2/issues/11825">GitHub-11825</a></li>
 </ul>
 
 <!--- MAGETWO-86880 -->
@@ -1693,7 +1698,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-86431 -->
 <ul>
-  <li>Magento now displays the Contact Us page in the menu as expected. Previously, Magento displayed unnecessary space between the category page and the main footer. <em>Fix submitted by <a href="https://github.com/sanjay-wagento">Sanjay Patel</a> in pull request 13026</em>. <a href="https://github.com/magento/magento2/issues/12601">GitHub-12601</a></li>
+  <li>Magento now displays the Contact Us page on the menu as expected. Previously, Magento displayed unnecessary space between the category page and the main footer. <em>Fix submitted by <a href="https://github.com/sanjay-wagento">Sanjay Patel</a> in pull request 13026</em>. <a href="https://github.com/magento/magento2/issues/12601">GitHub-12601</a></li>
 </ul>
 
 <!--- MAGETWO-86248 -->
@@ -1813,7 +1818,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84474 -->
 <ul>
-  <li>Magento now saves new orders created by guest accounts to the Order display as expected. Previously, Magento did not display the order with the customer information assigned to it, and although Magento sent email containing the order ID,  the email did not contain information about the ordered items. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12241</em>. <a href="https://github.com/magento/magento2/issues/10128">GitHub-10128</a></li>
+  <li>Magento now saves new orders created by guest accounts to the Order display as expected. Previously, Magento did not display the order with the customer information assigned to it, and although Magento sent an email containing the order ID,  the email did not contain information about the ordered items. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12241</em>. <a href="https://github.com/magento/magento2/issues/10128">GitHub-10128</a></li>
 </ul>
 
 <!--- MAGETWO-84284 -->
@@ -1828,7 +1833,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-84098 -->
 <ul>
-  <li>Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: <code class="highlighter-rouge">report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as child to 'root', because the latter doesn't exist</code> <em>Fix submitted by <a href="https://github.com/mediactbv">MediaCT</a> in pull request</em>.</li>
+  <li>Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: <code class="highlighter-rouge">report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as a child to 'root', because the latter doesn't exist</code> <em>Fix submitted by <a href="https://github.com/mediactbv">MediaCT</a> in a pull request</em>.</li>
 </ul>
 
 <!--- MAGETWO-87242 -->
@@ -1848,7 +1853,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-86240 -->
 <ul>
-  <li>The New Product Configuration process now works as expected from the Admin.  Previously, on the last step of this process, Magento displayed the <code class="highlighter-rouge">the element.disabled is not a function</code> message, and did not create the product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
+  <li>The New Product Configuration process now works as expected from the Admin.  Previously, on the last step of this process, Magento displayed <code class="highlighter-rouge">the element.disabled is not a function</code> message and did not create the product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
 </ul>
 
 <!--- MAGETWO-88278 -->
@@ -1903,7 +1908,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- MAGETWO-88044 -->
 <ul>
-  <li>Magento now provides a test for adding values in the system variable collection unit test. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 13742</em>.</li>
+  <li>Magento now provides a test for adding values to the system variable collection unit test. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 13742</em>.</li>
 </ul>
 
 <!--- MAGETWO-74042 -->
@@ -2037,7 +2042,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-83783 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Sales\Service\V1\OrderCreateTest</code> test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order’s shipping method was treated an object. <em>Fix submitted by <a href="https://github.com/andrew-garside-temando">andrew-garside-temando</a> in pull request 12227</em>.</li>
+  <li>The <code class="highlighter-rouge">Magento\Sales\Service\V1\OrderCreateTest</code> test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order’s shipping method was treated as an object. <em>Fix submitted by <a href="https://github.com/andrew-garside-temando">andrew-garside-temando</a> in pull request 12227</em>.</li>
 </ul>
 
 <!--- MAGETWO-84219 -->
@@ -2052,7 +2057,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85305 -->
 <ul>
-  <li>When you are editing an order’s shipping or billing address, Magento now displays the allowed countries from the correct store view. Previously, possible addresses were derived from the wrong store view. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/12560">GitHub-12560</a></li>
+  <li>When you are editing an order’s shipping or billing address, Magento now displays the allowed countries from the correct store view. Previously, possible addresses were derived from the wrong store view. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/12560">GitHub-12560</a></li>
 </ul>
 
 <!--- MAGETWO-85660 -->
@@ -2094,10 +2099,10 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->
 <ul>
-  <li>The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However,  as part of the process of adding CyberSource support, we’ve made improvements to the Multishipping module to simplify integration process for other payment methods.</li>
+  <li>The multi-shipping checkout  flow now supports the CyberSource payment method. This payment method is supported by Magento Commerce only. However,  as part of the process of adding CyberSource support, we’ve made improvements to the Multi-shipping module to simplify integration process for other payment methods.</li>
 </ul>
 
-<p>Users of the CyberSource payment method should note that  that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won’t be displayed on the checkout page or customer account.</p>
+<p>Users of the CyberSource payment method should note that CyberSource uses the Magento Vault module only to store and retrieve tokens. Stored CyberSource tokens won’t be displayed on the checkout page or customer account.</p>
 
 <!--- MAGETWO-75497 -->
 <ul>
@@ -2196,12 +2201,12 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86434 -->
 <ul>
-  <li>Magento no longer truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13015</em>. <a href="https://github.com/magento/magento2/issues/10869">GitHub-10869</a></li>
+  <li>Magento no longer truncates very long telephone numbers on the order page. Previously, Magento cut off very long phone numbers at 20 digits. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13015</em>. <a href="https://github.com/magento/magento2/issues/10869">GitHub-10869</a></li>
 </ul>
 
 <!--- MAGETWO-86430 -->
 <ul>
-  <li>You can now implement a product attribute that sets <strong>Catalog Input Type for Store Owner</strong> equal to  <strong>Fixed Product Tax</strong> in a multistore environment. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13019</em>.
+  <li>You can now implement a product attribute that sets <strong>Catalog Input Type for Store Owner</strong> equal to  <strong>Fixed Product Tax</strong> in a multi-store environment. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13019</em>.
 <a href="https://github.com/magento/magento2/issues/12393">GitHub-12393</a></li>
 </ul>
 
@@ -2231,7 +2236,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-71393 -->
 <ul>
-  <li>Magento now displays the correct catalog rule price for bundle products with custom options.</li>
+  <li>Magento now display the correct catalog rule price for bundle products with custom options.</li>
 </ul>
 
 <!--- MAGETWO-86780 -->
@@ -2251,7 +2256,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85960-->
 <ul>
-  <li>Coupon codes that a customer has applied to a subsequently canceled order are now available for re-use as expected. Previously, once a customer canceled this order, she could not apply the coupon code to another order. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/12817">GitHub-12817</a></li>
+  <li>Coupon codes that a customer has applied to a subsequently canceled order are now available for re-use as expected. Previously, once a customer canceled this order, she could not apply the coupon code to another order. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/12817">GitHub-12817</a></li>
 </ul>
 
 <h3 id="search">Search</h3>
@@ -2294,7 +2299,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85291 -->
 <ul>
-  <li>Magento now enforces the minimum order amount during checkout as expected. Previously, you could bypass the minimum order amount logic by clicking <strong>Check Out with Multiple Addresses</strong>, removing products from the order,and then clicking <strong>Update Qty &amp; Addresses</strong>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 963</em>.</li>
+  <li>Magento now enforces the minimum order amount during checkout as expected. Previously, you could bypass the minimum order amount logic by clicking <strong>Check Out with Multiple Addresses</strong>, removing products from the order and then clicking <strong>Update Qty &amp; Addresses</strong>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 963</em>.</li>
 </ul>
 
 <!--- MAGETWO-85586 -->
@@ -2316,7 +2321,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-81525 -->
 <ul>
-  <li>Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former <code class="highlighter-rouge">_translateModel</code> property is not used anymore, and the inline translation is correctly suspended using the <code class="highlighter-rouge">inlineTranslation</code> property instead. <em>Fix submitted by <a href="https://github.com/marinagociu">Marina Gociu</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/10502">GitHub-10502</a></li>
+  <li>Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former <code class="highlighter-rouge">_translateModel</code> property is not used anymore, and the inline translation is correctly suspended using the <code class="highlighter-rouge">inlineTranslation</code> property instead. <em>Fix submitted by <a href="https://github.com/marinagociu">Marina Gociu</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/10502">GitHub-10502</a></li>
 </ul>
 
 <h3 id="swagger">Swagger</h3>
@@ -2354,7 +2359,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-87941 -->
 <ul>
-  <li>The default selector on the Admin’s tax rule edit page now selects only the correct container (tax rate) following the Tax Rate multiselect. Previously, the default selector selected three elements, which resulted in inaccurate results. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13643</em>. <a href="https://github.com/magento/magento2/issues/12791">GitHub-12791</a></li>
+  <li>The default selector on the Admin’s tax rule edit page now selects only the correct container (tax rate) following the Tax Rate multi-select. Previously, the default selector selected three elements, which resulted in inaccurate results. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13643</em>. <a href="https://github.com/magento/magento2/issues/12791">GitHub-12791</a></li>
 </ul>
 
 <!--- MAGETWO-87352 -->
@@ -2386,7 +2391,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86859 -->
 <ul>
-  <li>We’ve re-implemented tests using Jasmine as part of the process of removing the legacy JavaScript test framework and completely removing <code class="highlighter-rouge">JSTestDriver</code> support.  <em>Fix submitted by <a href="https://github.com/KarlDeux">Carlos Lizaga</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/12342">GitHub-12342</a></li>
+  <li>We’ve re-implemented tests using Jasmine as part of the process of removing the legacy JavaScript test framework and completely removing <code class="highlighter-rouge">JSTestDriver</code> support.  <em>Fix submitted by <a href="https://github.com/KarlDeux">Carlos Lizaga</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/12342">GitHub-12342</a></li>
 </ul>
 
 <!--- MAGETWO-86005 -->
@@ -2428,7 +2433,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85549 -->
 <ul>
-  <li>You can now disable the full screen gallery on mobile devices <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1006</em>. <a href="https://github.com/magento/magento2/issues/12490">GitHub-12490</a>, <a href="https://github.com/magento/magento2/issues/12285">GitHub-12285</a></li>
+  <li>You can now disable the full-screen gallery on mobile devices <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1006</em>. <a href="https://github.com/magento/magento2/issues/12490">GitHub-12490</a>, <a href="https://github.com/magento/magento2/issues/12285">GitHub-12285</a></li>
 </ul>
 
 <!--- MAGETWO-86310 -->
@@ -2438,7 +2443,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85708 -->
 <ul>
-  <li>Customers can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if a customer chose full screen zoom for any product image, he could not close the full screen zoom.</li>
+  <li>Customers can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if a customer chose full-screen zoom for any product image, he could not close the full-screen zoom.</li>
 </ul>
 
 <h3 id="translations-and-locale">Translations and locale</h3>
@@ -2455,12 +2460,12 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-87226 -->
 <ul>
-  <li>Magento now uses current locale (as defined in <strong>Stores &gt; Configuration &gt; Advanced Reporting</strong>) when translating the time zone label. Previously, Magento used operating system settings instead of current locale. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 13408</em>.</li>
+  <li>Magento now uses current locale (as defined in <strong>Stores &gt; Configuration &gt; Advanced Reporting</strong>) when translating the time zone label. Previously, Magento used operating system settings instead of the current locale. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 13408</em>.</li>
 </ul>
 
 <!--- MAGETWO-86436 -->
 <ul>
-  <li>Newsletter labels can now handle Chinese language. <em>Fix submitted by <a href="https://github.com/dasharath-wagento">Dasharth patel</a> in pull request 13029</em>. <a href="https://github.com/magento/magento2/issues/12320">GitHub-12320</a></li>
+  <li>Newsletter labels can now handle the Chinese language. <em>Fix submitted by <a href="https://github.com/dasharath-wagento">Dasharth patel</a> in pull request 13029</em>. <a href="https://github.com/magento/magento2/issues/12320">GitHub-12320</a></li>
 </ul>
 
 <!--- MAGETWO-87575 -->
@@ -2472,7 +2477,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85784-->
 <ul>
-  <li>You can now configure a form field with validation range words. As a result, the category name is validated, and the category is created (or displays the correct error message, if validation fails). Previously, Magento displayed an error message in the console. <em>Fix submitted by <a href="https://github.com/robinhuy">Robin Huy</a> in pull request 12739</em>.</li>
+  <li>You can now configure a form field with validation range words. As a result, the category name is validated, and the category is created (or displays the correct error message, if validation fails). Previously, Magento displayed an error message on the console. <em>Fix submitted by <a href="https://github.com/robinhuy">Robin Huy</a> in pull request 12739</em>.</li>
 </ul>
 
 <!--- MAGETWO-86025 -->
@@ -2498,7 +2503,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-83293 -->
 <ul>
-  <li>Magento has added verification for previously set filters in <code class="highlighter-rouge">Magento/Ui/Component/Filters</code>, which has eliminated duplication of filters in collection <code class="highlighter-rouge">where</code> conditions.</li>
+  <li>Magento has added verification for previously set filters in <code class="highlighter-rouge">Magento/Ui/Component/Filters</code>, which has eliminated duplication of filters in the collection <code class="highlighter-rouge">where</code> conditions.</li>
 </ul>
 
 <!--- MAGETWO-87994 -->

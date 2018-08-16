@@ -203,7 +203,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <ul>
         <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/2.3/introduction.html">Functional Acceptance Testing</a></li>
         
         <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
         <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
@@ -511,6 +511,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#requirements">Contribution requirements</a></li>
   <li><a href="#fork">Fork a repository</a></li>
   <li><a href="#pull_request">Create a pull request</a></li>
+  <li><a href="#contributor-assist">Magento Contributor Assistant</a></li>
   <li><a href="#porting">Porting code contributions across Magento versions</a></li>
   <li><a href="#report">Report an issue</a></li>
   <li><a href="#triage">Help triage issues</a></li>
@@ -529,9 +530,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Often when the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. If you’re ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
-</div>
+<p class="bs-callout bs-callout-tip">Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.</p>
 
 <h2 id="two-factor">GitHub and Two-Factor Authentication</h2>
 
@@ -554,7 +553,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <table>
   <thead>
     <tr>
-      <th> </th>
+      <th style="text-align: left"> </th>
       <th style="text-align: center">Fix for Existing Issue</th>
       <th style="text-align: center">Test Coverage</th>
       <th style="text-align: center">Refactoring</th>
@@ -564,7 +563,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </thead>
   <tbody>
     <tr>
-      <td>2.1</td>
+      <td style="text-align: left">2.1</td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
@@ -572,7 +571,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
     </tr>
     <tr>
-      <td>2.2</td>
+      <td style="text-align: left">2.2</td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
@@ -580,7 +579,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
     </tr>
     <tr>
-      <td>2.3</td>
+      <td style="text-align: left">2.3</td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
       <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
@@ -617,7 +616,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Create or log in to your account on GitHub.</li>
   <li>Navigate to the <a href="https://github.com/magento/magento2" target="\_blank">Magento 2 repository</a>.</li>
   <li>
-    <p>Click <strong>Fork</strong> at the top right: <br /><img src="/common/images/fork.png" alt="fork a repository" /></p>
+    <p>Click <strong>Fork</strong> at the top right:</p>
+
+    <p><img src="/common/images/fork.png" alt="Fork a Repository" /></p>
   </li>
   <li>Clone the repo into your development environment and start playing.</li>
 </ol>
@@ -660,6 +661,126 @@ magento:2.2-develop is up to date with all commits from &lt;your fork&gt;:2.2-de
 </ol>
 
 <p>After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.</p>
+
+<h2 id="contributor-assist">Magento Contributor Assistant</h2>
+
+<p>The Magento Contributor Assistant is a bot that currently runs on the GitHub <code class="highlighter-rouge">magento/magento2</code> repository. It helps automate different issue and pull request workflows using commands entered as comments.</p>
+
+<p>Currently, the Magento Contributor Assistant automatically deploys test instances on Magento’s hosting based on a contributor’s pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issuess. We plan on adding features in the future.</p>
+
+<ul>
+  <li><a href="#vanilla-pr">Deploy vanilla Magento instance</a></li>
+  <li><a href="#deploy-pr">Deploy instance based on PR changes</a></li>
+  <li><a href="#combine-pr">Combine multiple pull requests</a></li>
+</ul>
+
+<h3 id="vanilla-pr">Deploy vanilla Magento instance</h3>
+
+<p>When you need to verify an issue or pull request, enter a command to generate an issue verification instance, or vanilla Magento. This instance is a clean Magento installation of a specified version tag or the develop branch of a specified release line.</p>
+
+<p><strong>Command:</strong> To deploy a vanilla Magento instance, add the following command as a comment to the GitHub Pull Request or Issue:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@magento-engcom-team give me {$version} instance
+</code></pre></div></div>
+
+<p>For <code class="highlighter-rouge">version</code>, the currently supported values are <a href="https://github.com/magento/magento2/tags">version tags</a> and develop branches starting with 2.2.0 and 2.2-develop.</p>
+
+<p><strong>Actions:</strong> The following actions complete for the command:</p>
+
+<ul>
+  <li>If the instance does not exist, it will be deployed. Deploymnent takes ~2 minutes.</li>
+  <li>If the instance exists, a fresh instance will be redeployed.</li>
+  <li>By default, instances have a lifetime of 3 hours. All deployments are terminated after that.</li>
+</ul>
+
+<p><strong>Admin access:</strong></p>
+
+<ul>
+  <li>http://i-xxx.engcom.dev.magento.com/admin</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Credentials: Username: admin</td>
+          <td>Password: 123123q</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li>All permissions granted for all users</li>
+</ul>
+
+<h3 id="deploy-pr">Deploy instance based on PR changes</h3>
+
+<p>To verify and test changes completed in a pull request, enter a command to generate a Magento instance using the code based in the PR.</p>
+
+<p><strong>Command:</strong> To deploy, <a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a>, a <a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a> member, or contributor under the existing Pull Request enters the following command as a comment to the pull request:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@magento-engcom-team give me test instance
+</code></pre></div></div>
+
+<p><strong>Actions:</strong></p>
+<ul>
+  <li>It deploys a new Magento instance based on Pull Request changes.</li>
+  <li>Deployment takes ~2 minutes.</li>
+</ul>
+
+<p><strong>Admin access:</strong></p>
+
+<ul>
+  <li>http://pr-xxx.engcom.dev.magento.com/admin</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Credentials: Username: admin</td>
+          <td>Password: 123123q</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a></li>
+  <li><a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a></li>
+  <li>Contributor</li>
+</ul>
+
+<h3 id="combine-pr">Combine multiple pull requests</h3>
+
+<p>To optimize the pull request queue, enter a command with a series of related pull requests to verify and combine the code. If all tests pass, the entered PRs are merged into the current PR.</p>
+
+<p><strong>Command:</strong> To combine pull requests, a member of the <a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a> or <a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a> under the existing Pull Request enters the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@magento-engcom-team combine {xxx} {yyy} {zzz}
+</code></pre></div></div>
+
+<p>The command merges the listed related pull requests (<code class="highlighter-rouge">xxx</code>, <code class="highlighter-rouge">yyy</code>, <code class="highlighter-rouge">zzz</code>) into the current pull request. For example: <code class="highlighter-rouge">@magento-engcom-team combine 1234 1238 1239</code></p>
+
+<p><strong>actions:</strong> When all conditions are passed, all related pull requests will be closed and merged to the current PR:</p>
+
+<ul>
+  <li>Current pull request allows changes from maintainers</li>
+  <li>All mentioned pull requests are open</li>
+  <li>All mentioned pull requests have been created by the same contributor (author)</li>
+  <li>All mentioned pull requests have same target (base) branch</li>
+  <li>All mentioned pull requests are mergeable with each other</li>
+</ul>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a></li>
+  <li><a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a></li>
+</ul>
 
 <h2 id="porting">Porting code contributions across Magento versions</h2>
 
@@ -783,110 +904,117 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li>Click <strong>Submit new issue</strong>.</li>
 </ol>
 
-<h2 id="help-triage-issues-triage-">Help triage issues {#triage} <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a></h2>
+<h2 id="triage">Help triage issues  <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a></h2>
 
 <p>In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/magento/magento2" target="_blank">subscribe to Magento on CodeTriage</a>.</p>
 
 <h2 id="labels">Labels applied by the Magento team</h2>
 
-<p>Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.</p>
+<p>We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.</p>
 
-<table style="width:100%">
-   <colgroup>
-      <col width="30%" />
-      <col width="70%" />
-   </colgroup>
-   <thead>
-      <tr style="background-color:lightgray">
-         <th>Label image</th>
-         <th>Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-        <th colspan="2">Pull Request Resolution Status</th>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_accept.png" alt="the Accept button" /></td>
-         <td>The pull request has been accepted and will be merged into mainline code.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_rejected.png" alt="the Reject button" /></td>
-         <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_needs_update.png" alt="the needs update button" /></td>
-         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
-      </tr>
-      <tr>
-        <th colspan="2">Issue Resolution Status</th>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_G1_Passed.png" alt="G1 Passed" /></td>
-         <td>Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_G1_Failed.png" alt="G1 Failed" /></td>
-         <td>Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_G2_Passed.png" alt="G2 Passed" /></td>
-         <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_G3_Passed.png" alt="G3 Passed" /></td>
-         <td>The Community Engineering Team has validated and confirmed the issue.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x" /></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.0.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x" /></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x" /></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x" /></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x" /></td>
-         <td>The issue has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x" /></td>
-         <td>The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x" /></td>
-         <td>The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x" /></td>
-         <td>The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/gitHub_acknowledged.png" alt="the acknowledged button" /></td>
-         <td>The Community Engineering Team has created internal ticket.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_needs_update.png" alt="the needs update button" /></td>
-         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce" /></td>
-         <td>The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</td>
-      </tr>
-      <tr>
-         <td><img src="/common/images/github_non-issue.png" alt="Non Issue" /></td>
-         <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
-      </tr>
-   </tbody>
-</table>
+<h3 id="release-lines">Release Lines</h3>
+
+<p>Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.2.6, you would apply the Release Line: 2.2. This effectively includes all releases in this line.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Release Line: 2.1</code></li>
+  <li><code class="highlighter-rouge">Release Line: 2.2</code></li>
+  <li><code class="highlighter-rouge">Release Line: 2.3</code></li>
+</ul>
+
+<h3 id="progress">Progress</h3>
+
+<p>Progress labels indicate the Pull Request status on each review stage:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Progress: needs update</code> - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request. <!-- needs update --></li>
+  <li><code class="highlighter-rouge">Progress: on hold</code> - The pull request is on hold due and will be further reviewed to accept or reject.</li>
+  <li><code class="highlighter-rouge">Progress: accept</code> - The pull request has been accepted and will be merged into mainline code. <!-- accept --></li>
+  <li><code class="highlighter-rouge">Progress: reject</code> - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject --></li>
+</ul>
+
+<h3 id="contribution-rewards">Contribution Rewards</h3>
+
+<p>The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Award: complex</code></li>
+  <li><code class="highlighter-rouge">Award: advanced</code></li>
+  <li><code class="highlighter-rouge">Award: special achievement</code></li>
+  <li><code class="highlighter-rouge">Award: category of expertise</code></li>
+  <li><code class="highlighter-rouge">Award: test coverage</code></li>
+  <li><code class="highlighter-rouge">Award: devdocs update</code></li>
+  <li><code class="highlighter-rouge">Award: MFTF test coverage</code></li>
+  <li><code class="highlighter-rouge">Award: bug fix</code></li>
+  <li><code class="highlighter-rouge">Cleanup</code></li>
+  <li><code class="highlighter-rouge">Port</code> - For up-port and back-port work
+<!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). --></li>
+</ul>
+
+<h3 id="partners">Partners</h3>
+
+<p>All partners Pull Requests should be marked with label <code class="highlighter-rouge">partners-contribution</code>. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: <code class="highlighter-rouge">Partner: &lt;PartnerName&gt;</code>. The following are Partner examples:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">partners-contribution</code></li>
+  <li><code class="highlighter-rouge">Partner: Atwix</code></li>
+  <li><code class="highlighter-rouge">Partner: Comwrap</code></li>
+  <li><code class="highlighter-rouge">Partner: Interactiv4</code></li>
+  <li><code class="highlighter-rouge">Partner: Wagento</code></li>
+  <li><code class="highlighter-rouge">etc</code></li>
+</ul>
+
+<h3 id="components">Components</h3>
+
+<p>Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see <a href="https://github.com/magento/magento2/wiki/Magento-Components-Assignment">Magento Components Assignment</a>.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Component: Catalog</code></li>
+  <li><code class="highlighter-rouge">Component: Report</code></li>
+  <li><code class="highlighter-rouge">Component: Checkout</code></li>
+  <li><code class="highlighter-rouge">etc</code></li>
+</ul>
+
+<h3 id="events">Events</h3>
+
+<p>Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a <a href="https://magentocommeng.slack.com">Community Engineering Slack</a> channel using the same label.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Event: mm18in</code></li>
+  <li><code class="highlighter-rouge">Event: mm17es</code></li>
+  <li><code class="highlighter-rouge">Event: mlau18</code></li>
+  <li><code class="highlighter-rouge">etc</code></li>
+</ul>
+
+<h3 id="general-labels">General Labels</h3>
+
+<p>General labels include a variety of tasks and definitions for pull requests and issues.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">good first issue</code> - Indicates a good issue for first-time contributors.</li>
+  <li><code class="highlighter-rouge">help wanted</code> - Indicates the creator or author needs help with a decision, advice for resolving, and so on.</li>
+  <li><code class="highlighter-rouge">triage wanted</code> - Indicates the issues are under triage. See this information to learn more about the <a href="https://github.com/magento/magento2/wiki/Triage-Wanted">Triage Wanted program</a>.</li>
+</ul>
+
+<h3 id="issue-resolution-status">Issue Resolution Status</h3>
+<!-- old labels -->
+
+<ul>
+  <li><code class="highlighter-rouge">G1 Passed</code> - Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</li>
+  <li><code class="highlighter-rouge">G1 Failed</code> - Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</li>
+  <li><code class="highlighter-rouge">G2 Passed</code> - The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</li>
+  <li><code class="highlighter-rouge">G3 Passed</code> - The Community Engineering Team has validated and confirmed the issue.</li>
+  <li><code class="highlighter-rouge">Reproduced on 2.1.x</code> - The Community Engineering Team reproduced the issue on latest 2.1.x release.</li>
+  <li><code class="highlighter-rouge">Reproduced on 2.2.x</code> - The Community Engineering Team reproduced the issue on latest 2.2.x release.</li>
+  <li><code class="highlighter-rouge">Reproduced on 2.3.x</code> - The Community Engineering Team reproduced the issue on latest 2.3.x release.</li>
+  <li><code class="highlighter-rouge">Fixed in 2.1.x</code> - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.</li>
+  <li><code class="highlighter-rouge">Fixed in 2.2.x</code> - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.</li>
+  <li><code class="highlighter-rouge">Fixed in 2.3.x</code> - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.</li>
+  <li><code class="highlighter-rouge">acknowledged</code> - The Community Engineering Team has created internal ticket.</li>
+  <li><code class="highlighter-rouge">needs update</code> - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</li>
+  <li><code class="highlighter-rouge">Cannot Reproduce</code> - The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</li>
+  <li><code class="highlighter-rouge">non-issue</code> - A described behavior in the issue description is valid and shouldn’t be changed in Magento code base.</li>
+</ul>
 
 			
 		</div>
