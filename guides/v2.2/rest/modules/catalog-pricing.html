@@ -678,7 +678,7 @@ POST /V1/products/special-price-delete
 
 <p><strong>SpecialPriceStorageInterface Parameters</strong></p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -741,7 +741,7 @@ POST /V1/products/special-price-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
@@ -765,7 +765,9 @@ POST /V1/products/special-price-delete
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -781,17 +783,18 @@ POST /V1/products/special-price-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-WG080"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.949999999999999</span><span class="p">,</span><span class="w">
         </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -813,7 +816,8 @@ POST /V1/products/special-price-delete
         </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span></code></pre></figure>
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="delete-a-special-price">Delete a special price</h3>
 
@@ -825,7 +829,7 @@ POST /V1/products/special-price-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
@@ -849,7 +853,8 @@ POST /V1/products/special-price-delete
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -861,7 +866,7 @@ POST /V1/products/special-price-delete
 
 <p>You can use REST endpoints to set tier prices for the following product types:</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Product type</th>
@@ -902,7 +907,7 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>TierPriceStorageInterface Parameters</strong></p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -967,7 +972,8 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -994,7 +1000,8 @@ POST /V1/products/tier-prices-delete
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -1012,7 +1019,7 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
@@ -1031,7 +1038,8 @@ POST /V1/products/tier-prices-delete
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -1047,16 +1055,17 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-UG01"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
@@ -1089,7 +1098,8 @@ POST /V1/products/tier-prices-delete
         </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span></code></pre></figure>
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="delete-tier-prices">Delete tier prices</h3>
 
@@ -1101,7 +1111,7 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
@@ -1112,7 +1122,8 @@ POST /V1/products/tier-prices-delete
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -1122,9 +1133,7 @@ POST /V1/products/tier-prices-delete
 
 <p>A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  <code class="highlighter-rouge">BasePriceStorageInterface</code> service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete a base price. It can only be changed to another value (0 or greater).</p>
-</div>
+<p class="bs-callout bs-callout-info">You cannot delete a base price. It can only be changed to another value (0 or greater).</p>
 
 <p><strong>REST Endpoints</strong></p>
 
@@ -1134,7 +1143,7 @@ POST /V1/products/base-prices-information
 
 <p><strong>BasePriceStorageInterface Parameters</strong></p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -1190,7 +1199,7 @@ POST /V1/products/base-prices-information
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
@@ -1203,7 +1212,8 @@ POST /V1/products/base-prices-information
     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -1218,17 +1228,17 @@ POST /V1/products/base-prices-information
 <p><code class="highlighter-rouge">POST /V1/products/base-prices-information</code></p>
 
 <p><strong>Payload</strong></p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
     </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1239,7 +1249,8 @@ POST /V1/products/base-prices-information
     </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span></code></pre></figure>
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="manage-cost-values">Manage cost values</h2>
 
@@ -1254,7 +1265,7 @@ POST /V1/products/cost-delete
 
 <p><strong>CostStorageInterface Parameters</strong></p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Name</th>
@@ -1309,7 +1320,7 @@ POST /V1/products/cost-delete
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
@@ -1322,7 +1333,8 @@ POST /V1/products/cost-delete
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
@@ -1337,17 +1349,17 @@ POST /V1/products/cost-delete
 <p><code class="highlighter-rouge">POST /V1/products/cost-information</code></p>
 
 <p><strong>Payload</strong></p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
     </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1358,7 +1370,8 @@ POST /V1/products/cost-delete
     </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span></code></pre></figure>
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="delete-cost-values">Delete cost values</h3>
 
@@ -1369,13 +1382,13 @@ POST /V1/products/cost-delete
 <p><code class="highlighter-rouge">POST /V1/products/cost-delete</code></p>
 
 <p><strong>Payload</strong></p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 

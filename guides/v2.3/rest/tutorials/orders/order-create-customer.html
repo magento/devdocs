@@ -397,9 +397,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Creating a customer account requires   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  permissions.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the <code class="highlighter-rouge">password</code> parameter. By default if the call is successful, Magento sends a “Welcome” email to the customer that includes a request to set the password. You could also initiate a password reset email by calling <code class="highlighter-rouge">PUT /V1/customers/password</code>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the <code class="highlighter-rouge">password</code> parameter. By default if the call is successful, Magento sends a “Welcome” email to the customer that includes a request to set the password. You could also initiate a password reset email by calling <code class="highlighter-rouge">PUT /V1/customers/password</code>.</p>
 
 <p><strong>Endpoint</strong></p>
 
@@ -417,7 +415,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">Show code sample </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    <div class="collapsible-content"><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
 	</span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 		</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
 		</span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
@@ -440,7 +438,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</span><span class="p">}]</span><span class="w">
 	</span><span class="p">},</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 </div>
   </div>
 
@@ -450,7 +449,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">Show code sample </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    <div class="collapsible-content"><div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -487,7 +486,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 </div>
   </div>
 
@@ -510,10 +510,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Payload</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
 </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 

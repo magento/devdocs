@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate a local REST API reference | Magento 2 Developer Documentation</title>
+	<title>Generate a local REST reference | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -641,36 +641,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Generate a local REST API reference</h1>
+	<h1 class="page-heading">Generate a local REST reference</h1>
 
   
 
 
 </section>
 
-			<h2 id="get-more-rest-api-documentation">Get more REST API documentation</h2>
-
-<p>The REST documentation on the Magento devdocs   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
- is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento Commerce. However, the REST   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+			<p>The REST documentation on the Magento devdocs   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ is generated with <a href="http://swagger.io">Swagger UI</a> using a schema derived from the latest build of Magento 2. However, the REST   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.</p>
 
-<p>Magento provides two ways to get detailed information about the structure of the REST APIs, as described below.</p>
+<p>Magento provides two ways to get detailed information about the structure of the REST endpoints, as described below.</p>
 
-<h2 id="generate-a-full-rest-api-reference-locally">Generate a full REST API reference locally</h2>
+<h2 id="generate-a-full-rest-reference-locally">Generate a full REST reference locally</h2>
 
 <p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Commerce modules, third-party modules, and   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  attributes that have been installed on your system. To view this documentation, go to:</p>
 
 <p><code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
 
-<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the APIs the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
+<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
 
-<p>The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
+<p>The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
  token has been specified.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <b>Try it out!</b> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
-</div>
+<p class="bs-callout bs-callout-info">The <strong>Try it out!</strong> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
 
 <h2 id="return-the-json-schema-for-one-or-more-services">Return the JSON schema for one or more services</h2>
 
@@ -696,11 +692,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
 
-<div class="bs-callout bs-callout-info" id="info">
-
-<p>You must specify an authorization token for an   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
- user to return information for most endpoints. See <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
-</div>
+<p class="bs-callout bs-callout-info">You must specify an authorization token for an   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
+ user to return information for most endpoints. See <a href="/guides/v2.2/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
 
 <h2 id="related-topics">Related topics</h2>
 

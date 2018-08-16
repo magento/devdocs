@@ -660,7 +660,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following table lists the APIs that are no longer available to an anonymous user by default:</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Product</th>
@@ -859,9 +859,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.</p>
-    <p>To disable this feature, log in to the Admin panel and navigate to <b>Stores &gt; Configuration &gt; Services &gt; Magento Web API &gt; Web API Security</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-warning" id="warning">
+  <p>Preventing anonymous access to these endpoints could cause third-party integrations to fail. If a third-party integration calls any of these endpoints, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.</p>
+
+  <p>To disable this feature, log in to the Admin panel and navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Services</strong> &gt; <strong>Magento Web API</strong> &gt; <strong>Web API Security</strong>. Then select <strong>Yes</strong> from the <strong>Allow Anonymous Guest Access</strong> menu.</p>
 </div>
 
 <p>If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension’s <code class="highlighter-rouge">di.xml</code> file to update or replace the functionality defined in the WebapiSecurity module.</p>
@@ -869,7 +872,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the   <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>
  and add-to-cart Ajax functionalities.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Product</th>
