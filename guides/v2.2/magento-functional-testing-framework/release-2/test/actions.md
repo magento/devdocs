@@ -734,9 +734,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is missing or invisible on the current page. -->
 <dontSeeElement selectore="div#box" stepKey="dontSeeBox"/>
 ```
-This action will be true only if a div with an id of `box` is not available or invisible on the page.
 
 ### dontSeeElementInDOM
 
@@ -754,9 +754,9 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is completely missing on the current page. -->
 <dontSeeElementInDOM selectore="div#box" stepKey="dontSeeBoxInDOM"/>
 ```
-This action will be true only if a div with an id of `box` is not available on the page. The action would be false if the element was available on the page, but invisible.
 
 ### dontSeeInCurrentUrl
 
