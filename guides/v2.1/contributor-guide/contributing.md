@@ -354,7 +354,7 @@ The level of investigation, research, and work required for a task may differ. C
 * `Award: MFTF test coverage`
 * `Award: bug fix`
 * `Cleanup`
-* `Back port/Up port`
+* `Port` - For up-port and back-port work
 <!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). -->
 
 ### Partners
