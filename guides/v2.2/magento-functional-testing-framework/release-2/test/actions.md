@@ -183,6 +183,8 @@ If the description of an element does not include a link to Codeception analogue
 
 ### acceptPopup
 
+Accepts the current popup visible on the page.
+
 See [acceptPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#acceptPopup){:target="_blank"}.
 
 Attribute|Type|Use|Description
@@ -191,14 +193,15 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <acceptPopup stepKey="acceptPopup"/>
 ```
-This action will accept the current popup visible on the page.
 
 ### amOnPage
+
+Opens the page by the URL relative to the one set in the `MAGENTO_BASE_URL` configuration variable.
 
 See [amOnPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnPage){:target="_blank"}.
 
@@ -209,14 +212,17 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
+
+Open the `(baseURL)/admin` page.
 
 ```xml
 <amOnPage url="/admin" stepKey="goToLogoutPage"/>
 ```
-This action will open the page `(baseURL)/admin`.
 
 ### amOnSubdomain
+
+Takes the base URL and changes the subdomain.
 
 See [amOnSubdomain docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnSubdomain){:target="_blank"}.
 
@@ -227,15 +233,22 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
+
+Pre-condition: the current base URL is `https://www.magento.com`.
 
 ```xml
-<amOnSubdomain url="data" stepKey="changeSubdomain"/>
+<!-- Change the sub-domain to `https://devdocs.magento.com`. -->
+<amOnSubdomain url="devdocs" stepKey="changeSubdomain"/>
+<!-- Open the page `https://devdocs.magento.com` -->
 <amOnPage url="/" stepKey="goToDataPage"/>
 ```
-If the current base URL was `http://www.magento.com`, these actions would open the page `http://data.magento.com`.
+
+If the current base URL is `https://www.magento.com`, these steps open the page `https://data.magento.com`.
 
 ### amOnUrl
+
+Opens a page by the absolute URL.
 
 See [amOnUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnUrl){:target="_blank"}.
 
@@ -246,12 +259,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
-<amOnUrl url="https://www.google.com/" stepKey="amOnUrl"/>
+<!-- Set url to be used in the next steps to https://www.magento.com/ -->
+<amOnUrl url="https://www.magento.com/" stepKey="amOnUrl"/>
 ```
-This action will take to you the URL `https://www.google.com/`.
 
 ### appendField
 
@@ -265,12 +278,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Append the "Sample Text" string to the selected input element -->
 <appendField userInput="Sample Text" selector="input#name" stepKey="appendSuffix"/>
 ```
-This action would append the suffix "Sample Text" to the current value of an input with an id of `name`.
 
 ### attachFile
 
@@ -284,12 +297,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Upload a file from the `tests/_data` directory with the `image.png` name to the selected input element. -->
 <attachFile userInput="image.png" selector="input#imgUpload" stepKey="uploadFile"/>
 ```
-This action would upload a file in the `tests/_data` directory with the name of `image.png` to an input with the id of `imgUpload`.
 
 ### cancelPopup
 
@@ -301,12 +314,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Cancel the current popup visible on the page. -->
 <cancelPopup stepKey="cancelPopup"/>
 ```
-This action will cancel the current popup visible on the page.
 
 ### checkOption
 
@@ -319,12 +332,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Ensure the checkbox is checked. -->
 <checkOption selector="input#checkbox" stepKey="checkCheckbox"/>
 ```
-This action will ensure that the input with the id of `checkbox` is checked, regardless of whether it was already checked or not
 
 ### clearField
 
@@ -338,12 +351,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
-<appendField selector="input#name" stepKey="clearField"/>
+<!-- Clear the selected field. -->
+<clearField selector="input#name" stepKey="clearField"/>
 ```
-This action will clear the field of an input with an id of `name`.
 
 ### click
 
@@ -352,23 +365,23 @@ See [click docs on codeception.com](http://codeception.com/docs/modules/WebDrive
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
-`selectorArray`|string|optional|
+`selectorArray`|string|optional| Selects an element as a key value array. See [strict locator](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Click the selected button. -->
 <click selector="button#clickable" stepKey="clickButton"/>
 ```
-This action will click the button with the id of `clickable`.
 
 ```xml
+<!-- Click on the "<a href=...>Login</a>" link. -->
 <click selectorArray="['link' => 'Login']" stepKey="clickButton2"/>
 ```
-This action will click on a link with the text of "login" using a [strict selector](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
 
 ### clickWithLeftButton
 
@@ -384,22 +397,22 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
+<!-- Left click on the center of the `<button id="clickable" />` element. -->
 <clickWithLeftButton selector="button#clickable" stepKey="clickButton1"/>
 ```
-This action will perform a left button click on the center of an element with the id of `clickable`.
 
 ```xml
+<!-- Left click on the point that is 50 px from the top of the window and 50 px from the left of the window. -->
 <clickWithLeftButton x="50" y="50" stepKey="clickButton2"/>
 ```
-This action will perform a left button click that is 50px from the top of the window and 50px from the left of the window.
 
 ```xml
+<!-- Left click on the point that is 50 px from the top and 50 px from the left of of the `<button id="clickable" />` element.. -->
 <clickWithLeftButton selector="button#clickable" x="50" y="50" stepKey="clickButton3"/>
 ```
-This action will perform a left button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
 
 ### clickWithRightButton
 
@@ -415,22 +428,22 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
+<!-- Right click on the center of the `<button id="clickable" />` element. -->
 <clickWithRightButton selector="button#clickable" stepKey="clickButton1"/>
 ```
-This action will perform a right button click on the center of an element with the id of `clickable`.
 
 ```xml
+<!-- Right click on the point that is 50 px from the top of the window and 50 px from the left of the window. -->
 <clickWithRightButton x="50" y="50" stepKey="clickButton2"/>
 ```
-This action will perform a right button click that is 50px from the top of the window and 50px from the left of the window.
 
 ```xml
+<!-- Right click on the point that is 50 px from the top and 50 px from the left of of the `<button id="clickable" />` element.. -->
 <clickWithRightButton selector="button#clickable" x="50" y="50" stepKey="clickButton3"/>
 ```
-This action will perform a right button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
 
 ### closeAdminNotification
 
@@ -442,12 +455,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Remove elements of the `.modal-popup` or `.modals-overlay` CSS classes. -->
 <closeAdminNotification stepKey="closeAdminNotification"/>
 ```
-This action will remove all elements with the CSS classes `.modal-popup` or `.modals-overlay`.
 
 ### closeTab
 
@@ -459,12 +472,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Close the active tab. -->
 <closeTab stepKey="closeTab"/>
 ```
-This action will close the current active tab and switch to the previous active tab.
 
 ### comment
 
@@ -480,14 +493,14 @@ Attribute|Type|Use|Description
 `after`|string|optional| `stepKey` of preceding action.
 
 ```xml
+<!-- Open the specified page and print a comment "I am on the login page" in the log during test execution. -->
 <amOnPage url="/login" stepKey="goToLoginPage"/>
 <comment userInput="I am on the login page" stepKey="loginPageComment"/>
 ```
-This action will leave a comment of "I am on the login page" after the `amOnPage` action in the generated PHP file and will be displayed in test execution.
 
 ### conditionalClick
 
-Conditionally click on an element if, and only if, another element is visible or not.
+Conditionally clicks on an element if, and only if, another element is visible or not.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -498,17 +511,17 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
+<!-- Click on the element with `id="foo"` if the element with `id="bar"` is visible. -->
 <conditionalClick selector="#foo" dependentSelector="#bar" visible="true" stepKey="click1"/>
 ```
-This action will click on `#foo` if `#bar` is visible.
 
 ### createData
 
-Create an entity (for example, a category or product). In other words, make a `POST` request
-to the Magento API according to the data and metadata of the entity to be created.
+Creates an entity (for example, a category or product).
+To create an entity, the MFTF makes a `POST` request to the Magento API according to the [data](../data.html) and [metadata](../metadata.html) of the entity to be created.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -518,26 +531,26 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+It can optionally contain one or more `requiredEntity` child elements.
+
+#### Example
 
 ```xml
+<!-- Create an entity with the "SampleProduct" name.  -->
 <createData entity="SampleProduct" stepKey="createSampleProduct"/>
 ```
-This action will create the entity with the name "SampleProduct":
-
-This action can optionally contain one or more `requiredEntity` child elements.
 
 #### requiredEntity
 
-Specify relationships amongst data to be created. For example, a complex Product
-object may contain within it a pointer (an ID) to a complex Category object.
+Specify relationships amongst data to be created.
+For example, a complex Product object may contain within it a pointer (an ID) to a complex Category object.
 
-For example, first we create a category, then we create a product in that category
-by indicating the relationship.
+##### Example
 
 ```xml
+<!-- Create an entity with the "SampleCategory" name.  -->
 <createData entity="SampleCategory" stepKey="createCategory"/>
-
+<!-- Create the "SampleProduct" product in that category. -->
 <createData entity="SampleProduct" stepKey="createProduct">
     <requiredEntity createDataKey="createCategory"/>
 </createData>
@@ -552,19 +565,22 @@ Attribute|Type|Use|Description
 
 #### field
 
-Specify a custom field you'd like persisted to Magento (as a part of the entity) which will overwrite any other declaration in static data. This field will only replace at a top level (nested values such as custom attributes or extension attributes will not be replaceable via this annotation).
+Persists a custom field (as a part of the entity) overriding the matching declaration in static data.
+This field is replaced at a top level only (nested values such as custom attributes or extension attributes are not replaced).
 
-For example, to overwrite the `name` field in a particular product specify a field element during its creation.
+Attribute|Type|Use|Description
+---|---|---|---
+`key`|string|required| Name of the field to be replaced or added.
+
+##### Example
+
+To overwrite the `name` field in a particular product, specify a field element during its creation.
 
 ```xml
 <createData entity="SampleProduct" stepKey="createProduct">
     <field key="name">myCustomProductName</field>
 </createData>
 ```
-
-Attribute|Type|Use|Description
----|---|---|---
-`key`|string|required| Name of the field to be replaced or added.
 
 ### deleteData
 
@@ -579,7 +595,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 Delete the entity that was previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
 
@@ -617,12 +633,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Check that the page does not contain the `<h2 id="title">Sample title</h2>` element. -->
 <dontSee userInput="Sample title" selector="h2#title" stepKey="dontSeeTitle"/>
 ```
-This action will be true only if there is no h2 element with an id of `title` containing the text "Sample title" on the page.
 
 ### dontSeeCheckboxIsChecked
 
@@ -635,12 +651,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Verify that the page does not contain the `<input type="checkbox" id="option1" checked>Sample title</input>` element. -->
 <dontSeeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="checkboxNotChecked"/>
 ```
-This action will be true only if a checkbox element with an id of `option1` is unchecked.
 
 ### dontSeeCookie
 
@@ -654,17 +670,17 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
+<!-- Verify that there is no cookie with the given name `cookie1`. -->
 <dontSeeCookie userInput="cookie1" stepKey="cookie1NotPresent"/>
 ```
-This action will be true only if there is no cookie with the given name `cookie1`.
 
 ```xml
+<!-- Verify that there is no cookie with the given name `cookie1` from the domain `www.example.com`. -->
 <dontSeeCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="dontSeeCookieInExampleDomain"/>
 ```
-This action will be true only if there is no cookie with the given name `cookie1` from the domain `www.example.com`.
 
 ### dontSeeCurrentUrlEquals
 
@@ -677,12 +693,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Verify that the relative URL of the current page does not match the `/admin`. -->
 <dontSeeCurrentUrlEquals url="/admin" stepKey="notOnAdminPage"/>
 ```
-This action will be true only if active window is not currently on the URL `(baseURL)/admin`.
 
 ### dontSeeCurrentUrlMatches
 
@@ -695,12 +711,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Verify that the relative URL of the current page does not match the `~$/users/(\d+)~` regular expression. -->
 <dontSeeCurrentUrlMatches regex="~$/users/(\d+)~" stepKey="dontSeeCurrentUrlMatches"/>
 ```
-This action will be true only if active window is not currently on the URL that matches the regex expression `~$/users/(\d+)~`.
 
 ### dontSeeElement
 
@@ -714,12 +730,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is missing or invisible on the current page. -->
 <dontSeeElement selectore="div#box" stepKey="dontSeeBox"/>
 ```
-This action will be true only if a div with an id of `box` is not available or invisible on the page.
 
 ### dontSeeElementInDOM
 
@@ -734,12 +750,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
+<!-- Verify that `<div id="box" ... >...</div>` is completely missing on the current page. -->
 <dontSeeElementInDOM selectore="div#box" stepKey="dontSeeBoxInDOM"/>
 ```
-This action will be true only if a div with an id of `box` is not available on the page. The action would be false if the element was available on the page, but invisible.
 
 ### dontSeeInCurrentUrl
 
@@ -752,7 +768,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInCurrentUrl url="/users/" stepKey="dontSeeInCurrentUrl"/>
@@ -772,7 +788,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInField userInput="Sample text" selector="input#field" stepKey="dontSeeInField1"/>
@@ -791,7 +807,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="dontSeeInFormFields"/>
@@ -809,7 +825,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInPageSource userInput="Sample text" stepKey="dontSeeInPageSource"/>
@@ -827,7 +843,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInSource userInput="<h1>Sample text</h1>" stepKey="dontSeeInSource"/>
@@ -845,7 +861,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeInTitle userInput="Page Title" stepKey="dontSeeInTitle"/>
@@ -862,7 +878,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeJsError stepKey="dontSeeJsError"/>
@@ -881,7 +897,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <dontSeeLink userInput="External link" stepKey="dontSeeLink"/>
@@ -905,7 +921,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <dontSeeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="dontSeeOption1"/>
@@ -923,7 +939,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <doubleClick selector="button#mybutton" stepKey="doubleClickButton"/>
@@ -944,7 +960,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <dragAndDrop selector1="#block1" selector2="#block2" stepKey="dragAndDrop"/>
@@ -967,7 +983,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <executeInSelenium function="function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}" stepKey="executeInSelenium"/>
@@ -985,7 +1001,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <executeJS function="return Math.floor(new Date() / 1000);" stepKey="returnTime"/>
@@ -1007,7 +1023,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <fillField userInput="Sample text" selector="input#myfield" stepKey="fillField"/>
@@ -1050,7 +1066,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
@@ -1075,7 +1091,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFromInput"/>
@@ -1096,7 +1112,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <grabCookie userInput="cookie1" stepKey="grabCookie1"/>
@@ -1123,7 +1139,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <grabFromCurrentUrl regex="~$/user/(\d+)/~" stepKey="grabFromCurrentUrl"/>
@@ -1144,7 +1160,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <grabMultiple selector="div.myElement" stepKey="grabAllMyElements"/>
@@ -1190,7 +1206,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <grabTextFrom selector="h2#title" stepKey="grabTitle"/>
@@ -1211,7 +1227,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <grabValueFrom selector="input#name" stepKey="grabInputName"/>
@@ -1231,7 +1247,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <loadSessionSnapshot userInput="savedSnapshot" stepKey="loadSnapshot"/>
@@ -1250,7 +1266,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <magentoCLI command="indexer:reindex" stepKey="reindex"/>
@@ -1268,7 +1284,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <makeScreenshot userInput="example" stepKey="screenshotPage"/>
@@ -1285,7 +1301,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <maximizeWindow stepKey="maximizeWindow"/>
@@ -1302,7 +1318,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <moveBack stepKey="moveBack"/>
@@ -1338,7 +1354,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <moveMouseOver selector="div#product1" stepKey="hoverOverProduct1"/>
@@ -1378,7 +1394,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <openNewTab stepKey="openNewTab"/>
@@ -1406,7 +1422,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <pauseExecution stepKey="pause"/>
@@ -1438,7 +1454,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <pressKey userInput="a" selector="#page" stepKey="pressA"/>
@@ -1460,7 +1476,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <reloadPage stepKey="reloadPage"/>
@@ -1475,7 +1491,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `keyForRemoval`|string|required| Set `stepKey` of the action you want to remove.
 
-#### Example:
+#### Example
 
 ```xml
 <remove keyForRemoval="stepKeyToRemove"/>
@@ -1494,7 +1510,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <resetCookie userInput="cookie1" stepKey="resetCookie1"/>
@@ -1518,7 +1534,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <resizeWindow width="800" height="600" stepKey="resizeWindow"/>
@@ -1536,7 +1552,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <saveSessionSnapshot userInput="savedSnapshot" stepKey="saveCurrentCookies"/>
@@ -1557,7 +1573,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <scrollTo selector="#anchor" stepKey="scrollToAnchor"/>
@@ -1579,7 +1595,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <scrollToTopOfPage stepKey="scrollToTopOfPages"/>
@@ -1600,7 +1616,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <searchAndMultiSelectOption selector="#stuff" parameterArray="['Item 1', 'Item 2']" stepKey="searchAndMultiSelect1"/>
@@ -1627,7 +1643,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <see userInput="Sample title" selector="h2#title" stepKey="seeTitle"/>
@@ -1645,7 +1661,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="seeCheckboxChecked"/>
@@ -1664,7 +1680,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <seeCookie userInput="cookie1" stepKey="cookie1Present"/>
@@ -1687,7 +1703,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeCurrentUrlEquals url="/admin" stepKey="onAdminPage"/>
@@ -1705,7 +1721,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeCurrentUrlMatches regex="~$/users/(\d+)~" stepKey="seeCurrentUrlMatches"/>
@@ -1725,7 +1741,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeElement selectore="div#box" stepKey="seeBox"/>
@@ -1744,7 +1760,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeElementInDOM selectore="div#box" stepKey="seeBoxInDOM"/>
@@ -1762,7 +1778,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInCurrentUrl url="/users/" stepKey="seeInCurrentUrl"/>
@@ -1782,7 +1798,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInField userInput="Sample text" selector="input#field" stepKey="seeInField"/>
@@ -1801,7 +1817,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="seeInFormFields"/>
@@ -1819,7 +1835,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInPageSource userInput="Sample text" stepKey="seeInPageSource"/>
@@ -1837,7 +1853,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInPopup userInput="Sample text" stepKey="seeInPopup"/>
@@ -1855,7 +1871,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInSource userInput="<h1>Sample text</h1>" stepKey="seeInSource"/>
@@ -1873,7 +1889,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeInTitle userInput="Page Title" stepKey="seeInTitle"/>
@@ -1892,7 +1908,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeLink userInput="External link" stepKey="seeLink"/>
@@ -1917,7 +1933,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <seeNumberOfElements userInput="10" selector=".product" stepKey="seeTenProducts"/>
@@ -1941,7 +1957,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <seeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="seeOption1"/>
@@ -1961,7 +1977,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <selectOption userInput="option1" selector="select#myselect" stepKey="selectOption1"/>
@@ -1982,7 +1998,7 @@ Attribute|Type|Use|Description
 
 It contains a child element `<array>` where you specify the options that must be selected using an array format like `['opt1', 'opt2']`.
 
-#### Example:
+#### Example
 
 ```xml
 <selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
@@ -2004,7 +2020,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <setCookie userInput="cookieName" value="cookieValue" stepKey="setCookie"/>
@@ -2024,7 +2040,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <submitForm selector="#loginForm" parameterArray="['username' => 'admin','password' => '123123q']" button="#submit" stepKey="submitForm"/>
@@ -2043,7 +2059,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <switchToIFrame userInput="embeddedFrame" stepKey="switchToIFrame"/>
@@ -2061,7 +2077,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <switchToNextTab stepKey="switchToNextTab"/>
@@ -2084,7 +2100,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Examples:
+#### Examples
 
 ```xml
 <switchToPreviousTab stepKey="switchToPreviousTab"/>
@@ -2107,7 +2123,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <switchToWindow userInput="newWindow" stepKey="switchToWindow"/>
@@ -2125,7 +2141,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <typeInPopup userInput="Sample Text" stepKey="typeInPopup"/>
@@ -2143,7 +2159,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <uncheckOption selector="input#checkbox" stepKey="uncheckCheckbox"/>
@@ -2163,7 +2179,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <unselectOption userInput="option1" selector="select#myselect" stepKey="unselectOption1"/>
@@ -2213,7 +2229,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <wait time="10" stepKey="waitTenSeconds"/>
@@ -2231,7 +2247,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForAjaxLoad stepKey="waitForAjaxLoad"/>
@@ -2251,7 +2267,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForElementChange selector="#changedElement" function="function(\WebDriverElement $el) {return $el->isDisplayed();}" stepKey="waitForElementChange"/>
@@ -2270,7 +2286,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForElement selector="#changedElement" stepKey="waitForElement"/>
@@ -2289,7 +2305,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForElementNotVisible selector="#changedElement" stepKey="waitForElementNotVisible"/>
@@ -2308,7 +2324,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForElementVisible selector="#changedElement" stepKey="waitForElementVisible"/>
@@ -2327,7 +2343,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForJS function="return $.active == 0;" stepKey="waitForJS"/>
@@ -2358,7 +2374,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForLoadingMaskToDisappear stepKey="waitForLoadingMaskToDisappear"/>
@@ -2376,7 +2392,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForPageLoad stepKey="waitForPageLoad"/>
@@ -2396,7 +2412,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example:
+#### Example
 
 ```xml
 <waitForText userInput="Sample Text" selector="#page" stepKey="waitForText"/>
