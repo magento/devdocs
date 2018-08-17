@@ -5,7 +5,6 @@ title: Secure cron.php to run in a browser
 menu_title: Secure cron.php to run in a browser
 menu_order: 2
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

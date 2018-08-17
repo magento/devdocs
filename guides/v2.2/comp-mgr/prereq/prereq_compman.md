@@ -5,7 +5,6 @@ title: Prerequisites
 menu_title: Prerequisites
 menu_order: 1
 menu_node: parent
-version: 2.2
 functional_areas:
   - Upgrade
 ---

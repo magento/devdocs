@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Integrate with the Company module
 menu_title: Integrate with the Company module
 menu_order: 11
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company

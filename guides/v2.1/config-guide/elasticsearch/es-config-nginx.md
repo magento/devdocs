@@ -5,7 +5,6 @@ title: Configure nginx and Elasticsearch
 menu_title: Configure nginx and Elasticsearch
 menu_order: 5
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

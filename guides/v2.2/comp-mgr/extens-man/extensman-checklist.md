@@ -5,7 +5,6 @@ title: Run the Extension Manager
 menu_title: Run the Extension Manager
 menu_node: parent
 menu_order: 1
-version: 2.2
 functional_areas:
   - Upgrade
 ---

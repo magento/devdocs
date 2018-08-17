@@ -5,7 +5,6 @@ title: Final verification
 menu_title: Final verification
 menu_order: 100
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

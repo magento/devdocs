@@ -4,7 +4,6 @@ subgroup: B_integration
 title: Add a payment action
 menu_title: Add a payment action
 menu_order: 5
-version: 2.1
 functional_areas:
   - Integration
 ---

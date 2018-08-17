@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Performance Configuration Best Practices
-version: 2.2
 functional_areas:
   - Configuration
   - System

@@ -1,7 +1,6 @@
 ---
 group: rest
 title: Generate a local REST reference
-version: 2.2
 functional_areas:
   - Integration
 ---

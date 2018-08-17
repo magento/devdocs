@@ -5,7 +5,6 @@ title: Set up an account and project
 menu_title: Set up an account and project
 menu_order:
 menu_node:
-version: 2.1
 ---
 
 #### Previous step:

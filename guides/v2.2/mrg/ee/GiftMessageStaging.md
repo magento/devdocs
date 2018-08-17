@@ -5,7 +5,6 @@ ee_only: true
 title: Magento_GiftMessageStaging module
 menu_title: GiftMessageStaging
 menu_order: 2
-version: 2.2
 ee_only: true
 ---
 

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Application
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html

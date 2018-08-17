@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Backward incompatible changes in Magento Commerce
-version: 2.1
 redirect_from: /guides/v2.1/release-notes/changes/ee_changes.html
 ---
 

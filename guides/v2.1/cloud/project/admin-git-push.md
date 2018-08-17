@@ -5,7 +5,6 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node:
-version: 2.1
 ---
 
 # Step by step walk-through of `git push` output

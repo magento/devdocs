@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
-version: 2.0
 ee_only: True
 functional_areas:
   - Install

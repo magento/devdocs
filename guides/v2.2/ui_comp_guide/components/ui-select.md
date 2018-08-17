@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Select component
 menu_title: Select component
-version: 2.2
 ---
 
 ## Overview

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Set up Magento B2B
-version: 2.2
 ---
 
 With the {{site.data.var.ece}} Pro subscription for v2.2 and later, you can install and setup Magento Business to Business (B2B) Commerce features. B2B supports merchants whose customers are other companies. This section provides specific information for installing and setting up B2B in {{site.data.var.ece}}.

@@ -6,7 +6,6 @@ title: Add custom validations before order placement
 subtitle: Customize Checkout
 menu_order: 4
 level3_subgroup: checkout-tutorial
-version: 2.0
 functional_areas:
   - Checkout
 ---

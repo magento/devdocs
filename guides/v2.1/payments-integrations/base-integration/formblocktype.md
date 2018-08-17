@@ -4,7 +4,6 @@ subgroup: B_integration
 title: Payment info rendering in Admin checkout
 menu_title: Payment info rendering in Admin checkout
 menu_order: 4
-version: 2.1
 functional_areas:
   - Integration
 ---

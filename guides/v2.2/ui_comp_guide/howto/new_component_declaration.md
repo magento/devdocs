@@ -4,7 +4,6 @@ subgroup: how tos
 title: Declare a custom UI component
 menu_title: Declare a custom UI component
 menu_order: 1
-version: 2.2
 ---
 
 Declaring a custom {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} refers to creating the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration of your custom component, and is a part of a bigger task of creating a custom UI component.

@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Listing (grid) component
 menu_title: Listing (grid) component
-version: 2.2
 ---
 
 ## Overview

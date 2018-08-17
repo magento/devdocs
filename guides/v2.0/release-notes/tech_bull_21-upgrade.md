@@ -1,12 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Upgrade to Magento version 2.1 (June 22, 2016)
 menu_node: 
 menu_order: 3
-version: 2.1
 ---
 
 

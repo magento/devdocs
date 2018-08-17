@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: Example bulk operations implementation
-version: 2.3
 redirect_from: /guides/v2.3/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services

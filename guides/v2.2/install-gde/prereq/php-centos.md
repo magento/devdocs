@@ -6,7 +6,6 @@ menu_title: PHP 7.0 or 7.1&mdash;CentOS
 menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
-version: 2.2
 functional_areas:
   - Install
   - System

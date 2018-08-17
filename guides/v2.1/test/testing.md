@@ -2,7 +2,6 @@
 group: testing
 title: Magento Testing Guide
 landing-page: Testing Guide
-version: 2.1
 redirect_from: /guides/v2.0/howdoi/mtf/mtf.html
 functional_areas:
   - Testing

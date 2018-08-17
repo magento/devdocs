@@ -5,7 +5,6 @@ title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

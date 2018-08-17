@@ -5,7 +5,6 @@ ee_only: true
 title: Magento_DownloadableStaging module
 menu_title: DownloadableStaging
 menu_order: 2
-version: 2.2
 ee_only: true
 ---
 

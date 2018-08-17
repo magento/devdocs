@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: urlInput component
 menu_title: urlInput component
-version: 2.3
 ---
 
 ## Overview

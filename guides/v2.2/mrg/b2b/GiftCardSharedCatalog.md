@@ -4,7 +4,6 @@ subgroup: 30_B2B
 title: Magento_GiftCardSharedCatalog module
 menu_title: GiftCardSharedCatalog
 menu_order: 130
-version: 2.2
 functional_areas:
   - B2B
 ---

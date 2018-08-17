@@ -2,7 +2,6 @@
 group: jsdg
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
-version: 2.1
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html

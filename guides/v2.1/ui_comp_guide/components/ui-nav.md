@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Nav component
 menu_title: Nav component
-version: 2.1
 ---
 
 ## Overview

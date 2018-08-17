@@ -1,12 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)
 menu_node: 
 menu_order: 2
-version: 2.0
 ---
 
 {% include install/tls-repo.md %}

@@ -1,7 +1,6 @@
 ---
 group: marketplace-api
 title: Introduction
-version: 2.1
 ---
 
 <div class="bs-callout bs-callout-info">

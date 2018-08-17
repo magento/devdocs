@@ -4,7 +4,6 @@ subgroup: G_Translate
 title: Translate theme strings
 menu_title: Translate theme strings
 menu_order: 1
-version: 2.1
 functional_areas:
   - Frontend
 ---

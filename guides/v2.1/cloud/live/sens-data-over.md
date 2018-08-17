@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Configuration management for store settings
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

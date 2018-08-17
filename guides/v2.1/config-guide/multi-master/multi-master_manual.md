@@ -5,7 +5,6 @@ title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

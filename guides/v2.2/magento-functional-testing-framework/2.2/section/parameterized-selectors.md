@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Create and use parameterized selectors
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.0.2

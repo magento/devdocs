@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DateColumn component
 menu_title: DateColumn component
-version: 2.1
 ---
 
 ## Overview

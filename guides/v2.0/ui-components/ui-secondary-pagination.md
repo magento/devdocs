@@ -5,7 +5,6 @@ title: Pagination Component
 menu_title: Pagination Component
 menu_node:
 menu_order: 2
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-pagination.html
 
 ---

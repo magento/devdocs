@@ -5,7 +5,6 @@ title: Development System Setup
 menu_title: Development System Setup
 menu_node:
 menu_order: 1300
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

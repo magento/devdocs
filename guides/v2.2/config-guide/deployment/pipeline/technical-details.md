@@ -5,7 +5,6 @@ title: Technical Details
 menu_title: Technical Details
 menu_node:
 menu_order: 1200
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

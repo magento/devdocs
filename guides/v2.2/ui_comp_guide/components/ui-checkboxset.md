@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Checkboxset component
 menu_title: Checkboxset component
-version: 2.2
 ---
 
 ## Overview

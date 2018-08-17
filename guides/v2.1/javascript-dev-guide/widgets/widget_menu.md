@@ -2,7 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Menu widget
-version: 2.1
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html

@@ -5,7 +5,6 @@ title: Cannot install using nginx
 menu_title: Cannot install using nginx
 menu_node:
 menu_order: 20
-version: 2.0
 functional_areas:
   - Install
   - System

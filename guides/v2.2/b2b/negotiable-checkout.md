@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Negotiable quote checkout
 menu_title: Negotiable quote checkout
 menu_order: 34
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq

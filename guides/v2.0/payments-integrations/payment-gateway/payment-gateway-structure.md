@@ -4,7 +4,6 @@ subgroup: A_gateway
 title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1
-version: 2.0
 redirect_from: /guides/v2.0/payment-gateway/payment-gateway-stucture.html
 ---
 

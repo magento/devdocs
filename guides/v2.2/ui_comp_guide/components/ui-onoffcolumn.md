@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: OnOffColumn component
 menu_title: OnOffColumn component
-version: 2.2
 ---
 
 ## Overview

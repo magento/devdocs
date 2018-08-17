@@ -1,7 +1,6 @@
 ---
 group: modules
 title: Iconography
-version: 2.3
 ee_only: true
 ---
 

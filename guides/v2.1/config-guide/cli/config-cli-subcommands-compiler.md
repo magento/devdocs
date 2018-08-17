@@ -5,7 +5,6 @@ title: Code compiler
 menu_title: Code compiler
 menu_node:
 menu_order: 175
-version: 2.1
 functional_areas:
   - Configuration
   - System

@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Manage shared catalogs
 menu_title: Manage shared catalogs
 menu_order: 22
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared

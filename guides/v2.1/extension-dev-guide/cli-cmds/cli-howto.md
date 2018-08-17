@@ -5,7 +5,6 @@ title: How to add CLI commands
 menu_title: How to add CLI commands
 menu_node: 
 menu_order: 3
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 

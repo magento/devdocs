@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
-version: 2.0
 ---
 
 To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.

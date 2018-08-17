@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Textarea component
 menu_title: Textarea component
-version: 2.1
 ---
 
 ## Overview

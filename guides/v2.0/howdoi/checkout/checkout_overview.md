@@ -7,7 +7,6 @@ menu_title: Initial Tasks
 menu_node:
 level3_subgroup: checkout-tutorial
 menu_order: 0
-version: 2.0
 functional_areas:
   - Checkout
 ---

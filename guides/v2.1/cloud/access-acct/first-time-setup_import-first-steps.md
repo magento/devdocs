@@ -7,7 +7,6 @@ menu_order: 151
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html

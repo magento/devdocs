@@ -4,7 +4,6 @@ subgroup: how tos
 title: Render prices on the frontend
 menu_title: Render prices on the frontend
 menu_order: 1
-version: 2.2
 ---
 
 This article shows how templates and UI components work together to render the price for any product listing(e.g. category, widget, etc).

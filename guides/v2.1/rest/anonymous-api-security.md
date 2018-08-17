@@ -1,7 +1,6 @@
 ---
 group: rest
 title: Restricting access to anonymous web endpoints
-version: 2.1
 functional_areas:
   - Integration
 ---

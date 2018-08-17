@@ -4,7 +4,6 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.0.18 Release Notes
 menu_title: Magento Commerce 2.0.18 Release Notes
 menu_order: 260
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
 ---

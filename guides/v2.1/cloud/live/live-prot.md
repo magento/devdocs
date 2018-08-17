@@ -5,7 +5,6 @@ title: Protective block
 menu_title: Protective block
 menu_order: 20
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

@@ -2,7 +2,6 @@
 group: arch-guide
 title: Global features that support extensibility
 menu_title: Global features that support extensibility
-version: 2.1
 ---
 
 ## Overview

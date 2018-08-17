@@ -1,7 +1,6 @@
 ---
 group: install_cli
 title: Update the Magento database schema and data
-version: 2.1
 functional_areas:
   - Install
   - System

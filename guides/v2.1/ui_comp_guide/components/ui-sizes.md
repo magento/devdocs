@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Sizes component
 menu_title: Sizes component
-version: 2.1
 ---
 
 ## Overview

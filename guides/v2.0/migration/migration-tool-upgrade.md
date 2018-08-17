@@ -5,7 +5,6 @@ title: Upgrade Data Migration Tool
 menu_title: Upgrade Data Migration Tool
 menu_node:
 menu_order: 3
-version: 2.0
 functional_areas:
   - Tools
 ---

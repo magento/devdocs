@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DragAndDrop component
 menu_title: DragAndDrop component
-version: 2.1
 ---
 
 ## Overview

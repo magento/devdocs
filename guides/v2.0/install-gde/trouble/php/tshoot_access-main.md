@@ -5,7 +5,6 @@ title: Access issues
 menu_title: Access issues
 menu_node: parent
 menu_order: 1
-version: 2.0
 functional_areas:
   - Install
   - System

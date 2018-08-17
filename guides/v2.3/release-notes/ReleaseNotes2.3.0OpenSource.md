@@ -4,9 +4,6 @@ subgroup: Release Notes
 title: Magento Open Source 2.3.0 Release Notes
 menu_title: Magento Open Source 2.3.0 Release Notes
 menu_order: 200
-version: 2.3
-
-  
 ---
 
 

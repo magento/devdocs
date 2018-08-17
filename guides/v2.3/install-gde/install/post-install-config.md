@@ -1,7 +1,6 @@
 ---
 group: install
 title: Configure the Magento application
-version: 2.3
 functional_areas:
   - Install
   - System

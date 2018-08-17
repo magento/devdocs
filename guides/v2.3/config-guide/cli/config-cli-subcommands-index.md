@@ -5,7 +5,6 @@ title: Manage the indexers
 menu_title: Manage the indexers
 menu_node:
 menu_order: 90
-version: 2.3
 functional_areas:
   - Configuration
   - System

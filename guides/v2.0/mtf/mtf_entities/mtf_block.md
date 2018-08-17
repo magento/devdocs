@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Block
-version: 2.0
 ---
 
 In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.

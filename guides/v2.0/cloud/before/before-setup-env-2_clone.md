@@ -5,7 +5,6 @@ title: Clone and branch the project
 menu_title: Clone and branch the project
 menu_order: 30
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-keys.html
   - /guides/v2.1/cloud/before/before-setup-env-keys.html

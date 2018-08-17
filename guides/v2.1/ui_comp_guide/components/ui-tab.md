@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Tab component
 menu_title: Tab component
-version: 2.1
 ---
 
 ## Overview

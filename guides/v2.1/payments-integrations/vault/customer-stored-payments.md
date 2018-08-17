@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Display the stored information
 menu_title: Display the stored information
 menu_order: 20
-version: 2.1
 functional_areas:
   - Integration
 ---

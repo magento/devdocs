@@ -5,7 +5,6 @@ title: Go back to the Magento installation overview
 menu_title: Go back to the Magento installation overview
 menu_node: parent
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v1.0/install-gde/back-intro.html
 functional_areas:
   - Install

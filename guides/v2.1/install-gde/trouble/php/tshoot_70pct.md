@@ -5,7 +5,6 @@ title: Installation stops at about 70%
 menu_title: Installation stops at about 70%
 menu_node:
 menu_order: 2
-version: 2.1
 functional_areas:
   - Install
   - System

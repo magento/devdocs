@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Component Status
-version: 2.3
 ---
 
 **Last Updated: July 30, 2018**

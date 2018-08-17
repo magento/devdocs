@@ -5,7 +5,6 @@ title: Filter Component
 menu_title: Filter Component
 menu_node:
 menu_order: 1
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-filter.html
 ---
 

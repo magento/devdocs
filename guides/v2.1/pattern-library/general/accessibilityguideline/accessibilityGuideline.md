@@ -1,7 +1,6 @@
 ---
 group: pattern
 title: Accessibility Guidelines
-version: 2.1
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 ---
 The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.

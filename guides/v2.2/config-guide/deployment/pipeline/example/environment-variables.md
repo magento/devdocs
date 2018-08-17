@@ -7,7 +7,6 @@ menu_node:
 menu_order: 6300
 level3_menu_node: level3child
 level3_subgroup: deployment-examples
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

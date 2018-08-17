@@ -3,7 +3,6 @@ group: fedg
 subgroup: A_Themes
 title: Apply an Admin theme
 menu_title: Apply an Admin theme
-version: 2.1
 menu_order: 10
 functional_areas:
   - Frontend

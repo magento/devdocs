@@ -5,7 +5,6 @@ title: Use Redis for the Magento page and default cache
 menu_title: Use Redis for the Magento page and default cache
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System

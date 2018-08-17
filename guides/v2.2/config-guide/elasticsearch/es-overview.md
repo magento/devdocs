@@ -5,7 +5,6 @@ title: Install and configure Elasticsearch
 menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
 functional_areas:
   - Configuration

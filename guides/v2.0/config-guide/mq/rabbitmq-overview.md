@@ -5,7 +5,6 @@ title: Message Queues Overview
 menu_title: Message Queues (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.0
 ee_only: True
 functional_areas:
   - Configuration

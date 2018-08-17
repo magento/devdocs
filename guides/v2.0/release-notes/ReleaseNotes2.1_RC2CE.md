@@ -4,7 +4,6 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes
 menu_title: Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes
 menu_order: 410
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
 ---

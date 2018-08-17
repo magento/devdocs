@@ -4,7 +4,6 @@ subgroup: 02_Extension-Coding
 title: Programming Best Practices
 menu_title: Programming best practices
 menu_order: 1
-version: 2.0
 functional_areas:
   - Standards
 ---

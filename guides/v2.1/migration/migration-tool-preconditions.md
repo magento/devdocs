@@ -5,7 +5,6 @@ title: Preconditions
 menu_title: Preconditions
 menu_node:
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 functional_areas:
   - Tools

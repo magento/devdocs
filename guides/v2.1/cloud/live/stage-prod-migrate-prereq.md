@@ -5,7 +5,6 @@ title: Prepare to deploy to Staging and Production
 menu_title: Prepare to deploy to Staging and Production
 menu_order: 40
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

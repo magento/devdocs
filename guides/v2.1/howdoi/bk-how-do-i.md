@@ -6,7 +6,6 @@ landing-page: How To
 menu_title: How To
 menu_node: parent
 menu_order: 1
-version: 2.1
 ---
 
 ## Tell me how

@@ -6,7 +6,6 @@ menu_title: Magento Commerce 2.1.3 Release Notes
 menu_order: 269
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
-version: 2.1
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. This release includes many functional fixes and enhancements.

@@ -5,7 +5,6 @@ title: Missing .gitignore files
 menu_title: Missing .gitignore files
 menu_node:
 menu_order: 5
-version: 2.1
 functional_areas:
   - Upgrade
 ---

@@ -4,7 +4,6 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-version: 2.0
 redirect_from: /guides/v2.0/howdoi/webapi/integration.html
 
 ---

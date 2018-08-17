@@ -5,7 +5,6 @@ title: Create custom cache engines
 menu_title: Create custom cache engines
 menu_order: 9
 menu_node:
-version: 2.1
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html

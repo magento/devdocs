@@ -11,7 +11,7 @@ Before you continue, to avoid errors during your installation or update, make su
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
 
-Magento {{ page.version }} includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format.
+Magento {{ page.guide_version }} includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.
 
 One or more fields in the following tables are affected: `sales_order`, `sales_order_payment`, `quote`, `quote_payment`, `core_config_data`, `magento_reward_history`, `url_rewrite`, `salesrule`, and `catalogrule`.

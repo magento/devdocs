@@ -5,7 +5,6 @@ title: Admin Typography
 menu_title: Typography
 menu_order: 4
 menu_node:
-version: 2.0
 ---
 
 Typography is used to establish page hierarchy.

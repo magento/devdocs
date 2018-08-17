@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: HtmlContent component
 menu_title: HtmlContent component
-version: 2.2
 ---
 
 ## Overview

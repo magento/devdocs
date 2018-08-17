@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Data set
-version: 2.0
 ---
 
 A data set contains data used by a [test case] and [constraints][constraint].

@@ -1,7 +1,6 @@
 ---
 group: migration
 title: Extend the tool
-version: 2.0
 functional_areas:
   - Tools
 ---

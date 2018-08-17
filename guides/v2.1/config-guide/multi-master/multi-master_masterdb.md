@@ -5,7 +5,6 @@ title: Automatically configure master databases
 menu_title: Automatically configure master databases
 menu_order: 2
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

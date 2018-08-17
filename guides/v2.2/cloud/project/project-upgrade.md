@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Upgrade Magento version
-version: 2.2
 functional_areas:
   - Cloud
   - Upgrade

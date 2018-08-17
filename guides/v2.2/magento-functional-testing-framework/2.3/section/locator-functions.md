@@ -1,7 +1,6 @@
 ---
 group: mftf-2.3
 title: Use Codeception's Locator functions
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.0.2

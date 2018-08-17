@@ -1,7 +1,6 @@
 ---
 group: install_cli
 title: Create the Magento database schema
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-db.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-db.html

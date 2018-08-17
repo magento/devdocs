@@ -4,8 +4,6 @@ subgroup: components
 title: UI-select component
 menu_title: UI-select component
 menu_node:
-version: 2.3
-
 ---
 
 ## Overview

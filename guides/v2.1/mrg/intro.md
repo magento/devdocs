@@ -1,6 +1,5 @@
 ---
 group: mrg
-version: 2.1
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 ---

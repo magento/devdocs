@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ColumnsControls component
 menu_title: ColumnsControls component
-version: 2.2
 ---
 
 ## Overview

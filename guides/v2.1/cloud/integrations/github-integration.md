@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: GitHub integration
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

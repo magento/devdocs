@@ -2,7 +2,6 @@
 group: arch-guide
 title: Service layer
 menu_title: Service layer
-version: 2.1
 redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
 ---
 
