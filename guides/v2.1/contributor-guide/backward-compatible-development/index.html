@@ -579,12 +579,12 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">updatePrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">updateScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">);</span>
-<span class="p">}</span> 
+<span class="p">}</span>
 
 <span class="k">private</span> <span class="k">function</span> <span class="nf">updateScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Updated logic that takes into account $storeId
-</span><span class="p">}</span> </code></pre></figure>
+</span><span class="p">}</span></code></pre></figure>
 </div>
   </div>
 
@@ -686,7 +686,7 @@ Continue storing the value in the property to preserve the old functionality.</p
 
 <p>Do not remove or rename   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  arguments.
-Do not change argument types. 
+Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding <code class="highlighter-rouge">@deprecated</code> annotation before dispatching the event.</p>
 
 <h3 id="js">JS</h3>
