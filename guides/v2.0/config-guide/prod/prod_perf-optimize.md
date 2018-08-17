@@ -4,7 +4,6 @@ subgroup: Optimization
 title: Magento Optimization Guide
 menu_title: Magento Optimization Guide
 menu_order: 100
-version: 2.0
 functional_areas:
   - Configuration
   - System

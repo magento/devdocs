@@ -2,7 +2,6 @@
 group: jsdg
 title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide
-version: 2.1
 ---
 
 ## Introduction {#overview-introduction}

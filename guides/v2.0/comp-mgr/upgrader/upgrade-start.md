@@ -5,7 +5,6 @@ title: Start System Upgrade
 menu_title: Start System Upgrade
 menu_node:
 menu_order: 3
-version: 2.0
 functional_areas:
   - Upgrade
 ---

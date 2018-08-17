@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Configure message queues
 menu_title: Configure message queues
 menu_order: 18
-version: 2.1
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq

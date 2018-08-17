@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: FileUploader component
 menu_title: FileUploader component
-version: 2.1
 ---
 
 ## Overview

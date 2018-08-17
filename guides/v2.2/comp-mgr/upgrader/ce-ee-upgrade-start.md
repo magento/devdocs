@@ -1,7 +1,6 @@
 ---
 group: compman
 title: Upgrade from Open Source to Commerce
-version: 2.2
 functional_areas:
   - Upgrade
 ---

@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Magento jQuery widgets
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html
  - /guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html

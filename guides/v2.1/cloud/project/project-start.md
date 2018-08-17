@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Project structure
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

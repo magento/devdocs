@@ -5,7 +5,6 @@ title: Transfer the Magento software to your hosted system
 menu_title: Transfer the Magento software to your hosted system
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

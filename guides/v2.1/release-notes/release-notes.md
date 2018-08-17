@@ -5,7 +5,6 @@ title: Magento 2.1 Release Notes
 menu_title: Magento 2.1 Release Notes
 menu_node: parent
 menu_order: 1
-version: 2.1
 ---
 
 ## Magento Open Source (formerly Community Edition), Commerce (formerly Enterprise Edition), and Commerce Cloud (formerly Enterprise Cloud Edition) Release Notes

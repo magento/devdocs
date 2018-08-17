@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Place a negotiable quote order
 menu_title: Place a negotiable quote order
 menu_order: 35
-version: 2.2
 ee_only: true
 level3_menu_node: level3child
 level3_subgroup: nq

@@ -5,7 +5,6 @@ title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node:
 menu_order: 500
-version: 2.0
 functional_areas:
   - Install
   - System

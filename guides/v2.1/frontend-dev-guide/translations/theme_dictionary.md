@@ -4,7 +4,6 @@ subgroup: G_Translate
 title: Use translation dictionary to customize strings
 menu_title: Use translation dictionary to customize strings
 menu_order: 1
-version: 2.1
 functional_areas:
   - Frontend
   - Theme

@@ -5,7 +5,6 @@ title: Set up a custom cron job and cron group
 menu_title: Set up a custom cron job and cron group
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Configuration
   - System

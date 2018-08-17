@@ -1,7 +1,6 @@
 ---
 group: mftf-2.3
 title: Test actions
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.2.0

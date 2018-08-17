@@ -1,7 +1,6 @@
 ---
 group: mftf-2.3
 title: Best practices
-version: 2.2
 mftf-release: 2.3.0
 functional_areas:
  - Testing

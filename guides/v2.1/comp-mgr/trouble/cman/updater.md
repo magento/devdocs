@@ -5,7 +5,6 @@ title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application
 menu_node:
 menu_order: 10
-version: 2.1
 functional_areas:
   - Upgrade
 ---

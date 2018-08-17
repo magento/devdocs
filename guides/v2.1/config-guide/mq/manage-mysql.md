@@ -4,7 +4,6 @@ subgroup: 15_RabbitMQ
 title: Manage message queues
 menu_title: Manage message queues
 menu_order: 3
-version: 2.1
 functional_areas:
   - Configuration
   - System

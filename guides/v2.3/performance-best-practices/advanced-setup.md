@@ -1,7 +1,6 @@
 ---
 group: perf-best-practices
 title: Advanced setup
-version: 2.2
 functional_areas:
   - Configuration
   - System

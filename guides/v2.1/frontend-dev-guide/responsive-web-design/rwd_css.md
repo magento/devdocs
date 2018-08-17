@@ -4,7 +4,6 @@ subgroup: E_rwd
 title: CSS in responsive design
 menu_title: CSS in responsive design
 menu_order: 2
-version: 2.1
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html
 functional_areas:
   - Frontend
@@ -12,7 +11,7 @@ functional_areas:
 
 ## What's in this topic
 
-Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the Magento Blank theme.
+Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} [inherit]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html){:target="_blank"} from the Magento Blank theme.
 
 ## Mobile first
 
@@ -29,7 +28,7 @@ The mobile and desktop styles are defined in separate files:
 
 Breakpoints are used in the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code to set up the screen width at which the design switches from the mobile to the desktop version.
 
-The Blank and Luma themes use LESS variables to implement the following <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:
+The Blank and Luma themes use LESS variables to implement the following [breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms){:target="_blank"}:
 <ul>
   <li><code>@screen__xxs</code>: 320px</li>
   <li><code>@screen__xs</code>: 480px</li>
@@ -43,7 +42,7 @@ You can change these breakpoints and add new ones in your custom theme. For inst
 
 ## Media queries in Magento default themes {#lib_rwd}
 
-The Blank and Luma theme styles are based on the <a href="{{ page.baseurl }}/frontend-dev-guide//css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <code>@media</code> rule, to adapt the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} to the screen width.
+The Blank and Luma theme styles are based on the [Magento UI library]({{ page.baseurl }}/frontend-dev-guide//css-topics/theme-ui-lib.html){:target="_blank"}. The library uses [CSS3 media queries](http://en.wikipedia.org/wiki/Media_queries){:target="_blank"}, an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <code>@media</code> rule, to adapt the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} to the screen width.
 
 The approach implemented in the Magento UI library, uses <code>@media-common</code> style group separation and <code>.media-width()</code> {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixins{% endglossarytooltip %} which can be used in any <code>.less</code> file in a theme, as many times as needed, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles-m.css</code> and <code>styles-l.css</code> both have only one call of each media query with all the rules there, instead of multiple calls for the same query.
 

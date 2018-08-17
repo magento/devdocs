@@ -1,6 +1,5 @@
 ---
 group: graphql
-version: 2.3
 title: Resolvers
 ---
 

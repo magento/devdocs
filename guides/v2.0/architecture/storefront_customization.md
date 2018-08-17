@@ -4,7 +4,6 @@ subgroup: Architectural Basics
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
 menu_order:
-version: 2.0
 ---
 
 ## Overview

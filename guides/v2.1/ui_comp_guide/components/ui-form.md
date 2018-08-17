@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.1
 redirect_from: /guides/v2.1/ui-components/ui-form.html
 ---
 

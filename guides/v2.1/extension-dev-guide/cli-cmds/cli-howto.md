@@ -5,7 +5,6 @@ title: How to add CLI commands
 menu_title: How to add CLI commands
 menu_node: 
 menu_order: 3
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
@@ -29,8 +28,7 @@ Before you begin, make sure you understand the following:
 	*	<a href="#cli-autoload">Add CLI commands using the Composer autoloader</a>
 
 ## Add CLI commands using dependency injection {#cli-sample}
-
-The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank">`sample-module-command`</a> for an example. The module's <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.
+The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}. Look at the [`sample-module-command`](https://github.com/magento/magento2-samples/tree/master/sample-module-command){:target="_blank"} for an example. The module's [README.md](https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md){:target="_blank"} discusses how to install it.
 
 Following is a summary of the process:
 

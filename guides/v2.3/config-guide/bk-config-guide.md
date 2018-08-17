@@ -2,7 +2,6 @@
 group: config-guide
 title: Configuration Guide
 landing-page: Configuration Guide
-version: 2.3
 functional_areas:
   - Configuration
   - System

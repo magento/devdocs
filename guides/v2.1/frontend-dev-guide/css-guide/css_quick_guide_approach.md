@@ -4,7 +4,6 @@ subgroup: D_CSS_G
 title: Simple ways to customize a theme's styles
 menu_title: Simple ways to customize a theme's styles
 menu_order: 1
-version: 2.1
 functional_areas:
   - Frontend
 ---
@@ -66,7 +65,7 @@ The drawback of this approach is that you need to monitor and manually update yo
 
 ## Adding structured changes {#structured_changes}
 
-To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
+To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each [Magento UI library component]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements){:target="_blank"} you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
 ### Extend component's styles {#structured_extend}
 

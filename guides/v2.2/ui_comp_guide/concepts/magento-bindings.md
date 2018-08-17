@@ -2,7 +2,6 @@
 group: UI_Components_guide
 subgroup: concepts
 title: Magento binding syntax
-version: 2.2
 ---
 
 ## Overview

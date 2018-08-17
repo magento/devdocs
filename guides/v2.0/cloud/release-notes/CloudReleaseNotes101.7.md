@@ -7,7 +7,6 @@ menu_order:
 menu_node:
 level3_menu_node:
 level3_subgroup:
-version: 2.0
 functional_areas:
   - Cloud
 ---

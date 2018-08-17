@@ -6,7 +6,6 @@ menu_title: Magento Commerce (Cloud) 2.2.0 Release Notes
 menu_order: 400
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---

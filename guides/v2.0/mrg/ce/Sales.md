@@ -1,7 +1,6 @@
 ---
 group: mrg
 title: Magento_Sales module
-version: 2.0
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.

@@ -2,7 +2,6 @@
 group: mftf-2.3
 title: |
     CLI commands: vendor/bin/codecept
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.3.0

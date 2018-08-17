@@ -5,7 +5,6 @@ ee_only: true
 title: Magento_MsrpStaging module
 menu_title: MsrpStaging
 menu_order: 2
-version: 2.2
 ee_only: true
 ---
 

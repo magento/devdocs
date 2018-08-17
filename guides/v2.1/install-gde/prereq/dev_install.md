@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: (Contributor) Clone the Magento repository
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html

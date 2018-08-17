@@ -5,7 +5,6 @@ title: Admin Voice and Tone
 menu_title: Voice and Tone
 menu_order: 1
 menu_node:
-version: 2.0
 functional_areas:
   - Content
 ---

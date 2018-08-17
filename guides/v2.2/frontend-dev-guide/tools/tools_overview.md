@@ -5,7 +5,6 @@ title: Additional tools for frontend developers
 menu_title: Tools
 menu_order: 1
 menu_node: parent
-version: 2.2
 functional_areas:
   - Frontend
   - Tools

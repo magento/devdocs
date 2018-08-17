@@ -4,7 +4,6 @@ subgroup: concepts
 title: About XML сonfiguration of UI сomponents
 menu_title: About XML сonfiguration of UI сomponents
 menu_order: 13
-version: 2.2
 ---
 
 ## Overview

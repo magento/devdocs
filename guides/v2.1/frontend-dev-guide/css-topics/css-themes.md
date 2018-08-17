@@ -3,7 +3,6 @@ group: fedg
 subgroup: D_CSS
 title: Include CSS
 menu_order: 2
-version: 2.1
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
@@ -73,7 +72,7 @@ Contains the following:
 <p>In the Magento application, the recommended way to include stylesheets is to specify them in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. 
 
 <p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. 
-The recommended way to do this is adding an <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>default_head_blocks.xml</code> in your theme, and including the required stylesheets in this file. </p>
+The recommended way to do this is adding an [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){:target="_blank"} <code>default_head_blocks.xml</code> in your theme, and including the required stylesheets in this file. </p>
 
 Your custom <code>default_head_blocks.xml</code> should be located as follows:
 

@@ -5,7 +5,6 @@ title: JavaScript DocBlock standard
 landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
-version: 2.1
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 functional_areas:
   - Standards
@@ -14,7 +13,7 @@ functional_areas:
 ## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){:target="_blank"} regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 

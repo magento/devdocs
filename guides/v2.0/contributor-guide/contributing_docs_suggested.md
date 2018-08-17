@@ -1,7 +1,6 @@
 ---
 group: contributor
 title: Suggested topics for contribution
-version: 2.0
 ---
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.

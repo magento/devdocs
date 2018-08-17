@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Upgrade to ece-tools
-version: 2.1
 functional_areas:
   - Cloud
   - Upgrade

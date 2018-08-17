@@ -6,7 +6,6 @@ title: Add a new checkout step
 subtitle: Customize Checkout
 menu_order: 1
 level3_subgroup: checkout-tutorial
-version: 2.0
 functional_areas:
   - Checkout
 ---

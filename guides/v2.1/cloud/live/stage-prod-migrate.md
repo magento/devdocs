@@ -5,7 +5,6 @@ title: Deploy code and migrate static files and data
 menu_title: Deploy code and migrate static files and data
 menu_order: 50
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

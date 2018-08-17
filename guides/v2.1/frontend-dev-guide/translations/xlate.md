@@ -5,7 +5,6 @@ title: Translations overview
 menu_title: Translations
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Frontend
 ---
@@ -53,7 +52,7 @@ Depending on your needs, you can use the existing <a href="#m2devgde-xlate-langu
 Changes made:
 
 *	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
-*	The phrases for translations are enabled in the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
+*	The phrases for translations are enabled in the [Phrase]({{ site.mage2100url }}lib/internal/Magento/Framework/Phrase.php){:target="_blank"} class.
 
 ### Programming notes
 
@@ -148,11 +147,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}
 
-	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/composer.json" target="_blank">Sample composer.json</a>
+	[Sample composer.json]({{ site.mage2100url }}app/i18n/Magento/de_DE/composer.json){:target="_blank"}
 
 *	`language.xml`, in which you declare a language package.
 
-	<a href="{{ site.mage2100url }}app/i18n/Magento/de_DE/language.xml" target="_blank">Sample language.xml</a>
+	[Sample language.xml]({{ site.mage2100url }}app/i18n/Magento/de_DE/language.xml){:target="_blank"}
 
 #### Next step
 

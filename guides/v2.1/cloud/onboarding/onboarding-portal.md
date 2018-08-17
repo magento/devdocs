@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Onboarding Portal management
-version: 2.1
 redirect_to:
 # Temporarily removing this page from the doc site per MAGECLOUD-1531
  - /guides/v2.0/cloud/onboarding/onboarding-tasks.html

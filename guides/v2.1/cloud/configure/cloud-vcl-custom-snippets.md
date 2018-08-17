@@ -5,7 +5,6 @@ title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets
 menu_order: 7
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

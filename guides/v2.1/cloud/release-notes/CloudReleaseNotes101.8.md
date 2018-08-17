@@ -7,7 +7,6 @@ menu_order: 360
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.1
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.8.html
 functional_areas:

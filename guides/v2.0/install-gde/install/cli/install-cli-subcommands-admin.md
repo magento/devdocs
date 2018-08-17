@@ -1,7 +1,6 @@
 ---
 group: install_cli
 title: Create, edit, or unlock a Magento administrator account
-version: 2.0
 redirect_from: /guides/v2.0/install-gde/install/install-cli-subcommands-admin.html
 functional_areas:
   - Install

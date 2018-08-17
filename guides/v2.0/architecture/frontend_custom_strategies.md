@@ -5,7 +5,6 @@ title: Ease of frontend customization
 menu_title: Ease of frontend customization
 menu_node:
 menu_order:
-version: 2.0
 ---
 
 ## Overview {#m2arch-whatis-overview}

@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Hidden component
 menu_title: Hidden component
-version: 2.2
 ---
 
 ## Overview

@@ -4,7 +4,6 @@ title: Serialize Library
 subgroup: Framework
 menu_title: Serialize Library
 menu_order: 1000
-version: 2.2
 ---
 
 ## Overview

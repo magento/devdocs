@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript Logger
 menu_title: JavaScript Logger
 menu_order: 20
-version: 2.2
 ---
 
 ## Logger overview

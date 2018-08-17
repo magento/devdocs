@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Pro architecture (legacy)
-version: 2.1
 functional_areas:
   - Cloud
 ---

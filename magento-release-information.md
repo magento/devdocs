@@ -6,8 +6,6 @@ title: Magento release information
 menu_title: Magento release information
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: magento-release-information.md
 ---
 
 To find Release Notes, technical bulletins, and backward-incompatible information for the Magento 2.0.x, 2.1.x, and 2.2.x releases, see the following:

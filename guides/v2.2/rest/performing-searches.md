@@ -1,7 +1,6 @@
 ---
 group: rest
 title: Search using REST endpoints
-version: 2.2
 redirect_from: /guides/v2.2/howdoi/webapi/search-criteria.html
 ---
 

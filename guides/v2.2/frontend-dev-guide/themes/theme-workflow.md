@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Theme development workflow
 menu_title: Theme development workflow
 menu_order: 10
-version: 2.2
 functional_areas:
   - Frontend
   - Theme

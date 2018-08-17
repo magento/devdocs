@@ -5,7 +5,6 @@ title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3
 menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System
@@ -15,8 +14,7 @@ functional_areas:
 {% include config/php-memcache.md %}
 
 ## Install and configure memcached on CentOS {#config-memcache-install}
-
-This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
+This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the [memcached wiki](https://github.com/memcached/old-wiki){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
@@ -48,7 +46,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
             CACHESIZE="1GB"
     3.  Locate the value for `OPTIONS` and change it to `localhost` or `127.0.0.1`
 
-    For more information about configuring memcached, see <a href="https://code.google.com/p/memcached/wiki/NewConfiguringServer" target="_blank">the memcached wiki</a>.
+    For more information about configuring memcached, see [the memcached wiki](https://code.google.com/p/memcached/wiki/NewConfiguringServer){:target="_blank"}.
 
 4.  Save your changes to `memcached` and exit the text editor.
 5.  Restart memcached.
@@ -173,8 +171,7 @@ Flush the memcache storage and quit Telnet:
     flush_all
     quit
 
-<a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
+[Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/){:target="_blank"}
 
 #### Next step
-
 <a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

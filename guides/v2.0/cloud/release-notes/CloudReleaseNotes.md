@@ -7,7 +7,6 @@ menu_order: 325
 menu_node:
 level3_menu_node: level3parent
 level3_subgroup: mccloud-relnotes
-version: 2.0
 functional_areas:
   - Cloud
 ---

@@ -2,7 +2,6 @@
 group: arch-guide
 title: Architectural diagrams
 menu_title: Architectural diagrams
-version: 2.1
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_diagrams.html
 ---
 

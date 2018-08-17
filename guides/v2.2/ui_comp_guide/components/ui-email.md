@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title:  Email component
 menu_title: Email component
-version: 2.2
 ---
 
 ## Overview

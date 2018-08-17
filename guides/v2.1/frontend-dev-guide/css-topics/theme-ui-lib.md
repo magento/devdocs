@@ -1,7 +1,6 @@
 ---
 group: fedg
 title: Magento UI library
-version: 2.1
 functional_areas:
   - Frontend
   - Theme

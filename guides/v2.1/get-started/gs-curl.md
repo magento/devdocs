@@ -1,7 +1,6 @@
 ---
 group: get-started
 title: Use cURL to run the request
-version: 2.1
 functional_areas:
   - Integration
 ---

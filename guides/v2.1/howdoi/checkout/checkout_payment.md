@@ -6,7 +6,6 @@ title: Add a custom payment method to checkout
 subtitle: Customize Checkout
 menu_order: 3
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---

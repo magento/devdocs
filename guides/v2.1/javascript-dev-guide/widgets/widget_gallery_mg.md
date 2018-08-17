@@ -2,7 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Magnifier widget 
-version: 2.1
 ---
 
 ## Overview

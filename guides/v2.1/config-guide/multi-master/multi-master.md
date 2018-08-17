@@ -5,7 +5,6 @@ title: Split database performance solution (Magento Commerce only)
 menu_title: Split database performance solution (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration
@@ -25,7 +24,7 @@ Checkout, orders, and product data can all each use a separate master databases 
 {{site.data.var.ece}} does _not_ support this feature at this time.
 </div>
 
-The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
+The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the [Command Query Responsibility Segregation (CQRS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation){:target="_blank"} database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
 
 If you set up optional database replication, you get the following advantages:
 

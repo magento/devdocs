@@ -2,7 +2,6 @@
 group: perf-best-practices
 title: Reference architecture
 contributor_name: Chuck Choukalos
-version: 2.2
 functional_areas:
   - Configuration
   - System

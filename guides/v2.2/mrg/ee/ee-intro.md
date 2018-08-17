@@ -6,9 +6,6 @@ title: Magento Commerce modules
 menu_title: Commerce
 menu_order: 1
 menu_node: parent
-version: 2.2
-
-
 ---
 
 The following modules are described in detail:

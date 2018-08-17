@@ -4,9 +4,6 @@ subgroup: Release Notes
 title: Magento Commerce 2.3.0 Release Notes
 menu_title: Magento Commerce 2.3.0 Release Notes
 menu_order: 300
-version: 2.3
-
-  
 ---
 
 

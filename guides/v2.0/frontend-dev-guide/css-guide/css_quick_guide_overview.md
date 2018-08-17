@@ -5,7 +5,6 @@ title: Quick start guide to working with styles for a new theme
 menu_title: Quick start guide to styles
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Frontend
 ---

@@ -5,7 +5,6 @@ title: Redis troubleshooting
 menu_title: Redis troubleshooting
 menu_order: 23
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

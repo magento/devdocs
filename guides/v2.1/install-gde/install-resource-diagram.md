@@ -5,7 +5,6 @@ title: Installation flow diagram
 menu_title: Installation flow diagram
 menu_node:
 menu_order: 5
-version: 2.1
 functional_areas:
   - Install
   - System

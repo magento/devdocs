@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-version: 2.2
 functional_areas:
   - Frontend
 ---

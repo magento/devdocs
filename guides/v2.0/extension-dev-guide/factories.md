@@ -6,7 +6,6 @@ menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.0
 ---
 
 ## Overview

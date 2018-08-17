@@ -7,7 +7,6 @@ menu_order: 27
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.2
 redirect_from: /guides/v2.2/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration

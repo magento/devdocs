@@ -5,7 +5,6 @@ title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)
 menu_node:
 menu_order: 10
-version: 2.1
 functional_areas:
   - Install
   - System

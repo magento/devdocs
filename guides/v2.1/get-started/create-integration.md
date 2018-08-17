@@ -1,7 +1,6 @@
 ---
 group: get-started
 title: Create an integration
-version: 2.1
 redirect_from: /guides/v2.1/howdoi/webapi/integration.html
 ---
 

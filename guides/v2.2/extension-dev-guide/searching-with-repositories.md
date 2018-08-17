@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Searching with Repositories
 menu_title: Searching with Repositories
 menu_order: 35
-version: 2.2
 functional_areas:
   - Search
 ---

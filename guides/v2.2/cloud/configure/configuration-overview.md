@@ -5,7 +5,6 @@ title: Configure your store
 menu_title: Configure your store
 menu_order: 1
 menu_node: parent
-version: 2.2
 functional_areas:
   - Cloud
   - Configuration

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Onboarding tasks
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

@@ -1,7 +1,6 @@
 ---
 group: mftf-2.3
 title: Update the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.3.0

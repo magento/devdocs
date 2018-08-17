@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Shipping Release Notes
-version: 2.2
 ---
 *Code and release notes updated on May 2, 2018.*
 

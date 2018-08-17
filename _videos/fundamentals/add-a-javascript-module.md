@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "How to Add a JavaScript Module"
 thumbnail: "fundamentals/thumbs/add-js-module.png"
 menu_order: 1
-github_link:
 ---
 
 Magento 2 uses requireJS as a tool to define the module structure.

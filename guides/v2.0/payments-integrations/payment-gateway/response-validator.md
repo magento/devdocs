@@ -5,7 +5,6 @@ title: Response Validator
 menu_title: Response Validator
 menu_node:
 menu_order: 6
-version: 2.0
 ---
 
 Response Validator is a component of the Magento payment provider gateway that performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.

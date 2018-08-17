@@ -4,7 +4,6 @@ subgroup: 30_B2B
 title: Magento B2B modules
 menu_title: B2B
 menu_order: 1
-version: 2.2
 menu_node: parent
 ---
 

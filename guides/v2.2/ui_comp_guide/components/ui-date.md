@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Date component
 menu_title: Date component
-version: 2.2
 ---
 
 ## Overview

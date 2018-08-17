@@ -6,7 +6,6 @@ title: Community Resources
 menu_title: Community Resources
 menu_order: 100
 menu_node: parent
-github_link: /community/resources/index.md
 redirect_from: 
   - /guides/v2.1/community/resources/index.html
   - /guides/v2.0/community/resources/index.html

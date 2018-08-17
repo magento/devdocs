@@ -5,7 +5,6 @@ title: Get the Magento Commerce metapackage
 menu_title: Get the Magento Commerce metapackage
 menu_order: 4
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

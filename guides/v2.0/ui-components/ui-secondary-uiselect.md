@@ -5,7 +5,6 @@ title: UI-select Component
 menu_title: UI-select Component
 menu_node:
 menu_order: 6
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-uiselect.html
 
 ---

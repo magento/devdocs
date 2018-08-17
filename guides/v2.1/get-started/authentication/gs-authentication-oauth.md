@@ -1,7 +1,6 @@
 ---
 group: get-started
 title: OAuth-based authentication
-version: 2.1
 functional_areas:
   - Integration
 ---

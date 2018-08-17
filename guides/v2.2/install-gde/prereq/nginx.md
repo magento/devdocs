@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: nginx
 menu_title: nginx
 menu_order: 2
-version: 2.2
 functional_areas:
   - Install
   - System

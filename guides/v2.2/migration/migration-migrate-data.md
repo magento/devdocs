@@ -5,7 +5,6 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-version: 2.2
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 

@@ -4,7 +4,6 @@ subgroup: 99_third
 menu_title: Magento Commerce (Cloud) third-party licenses
 title: Magento Commerce (Cloud) third-party licenses
 menu_order: 4
-version: 2.0
 ---
 
 This page contains links to license agreements of the third party components used within {{site.data.var.ece}} (formerly Enterprise Cloud Edition).  Click the **License** links to view the end user license agreement for the corresponding software.

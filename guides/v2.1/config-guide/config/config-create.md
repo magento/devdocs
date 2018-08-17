@@ -4,7 +4,6 @@ subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration

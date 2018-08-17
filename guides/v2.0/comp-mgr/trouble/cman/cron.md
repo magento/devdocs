@@ -5,7 +5,6 @@ title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node:
 menu_order: 7
-version: 2.0
 functional_areas:
   - Upgrade
 ---

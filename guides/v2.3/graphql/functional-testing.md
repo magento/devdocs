@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: GraphQL functional testing
-version: 2.3
 ---
 
 Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.

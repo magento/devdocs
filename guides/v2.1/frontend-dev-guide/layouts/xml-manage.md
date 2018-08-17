@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-version: 2.1
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 functional_areas:
   - Frontend
@@ -50,7 +49,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 ## Include static resources (JavaScript, CSS, fonts) {#layout_markup_css}
 
-JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
+JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a [page configuration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf){:target="_blank"} file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
 <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
@@ -89,8 +88,8 @@ The path to assets is specified relatively to one of the following locations:
 </ul>
 
 ### Adding conditional comments
+[Conditional comments](http://en.wikipedia.org/wiki/Conditional_comment){:target="_blank"} are meant to give special instructions for Internet Explorer. 
 
-<a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
@@ -146,7 +145,7 @@ Use the following sample to create (declare) a container:
 
 ## Reference a container {#ref_container}
 
-To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+To update a container use the [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref){:target="_blank"} instruction.
 
 Example: add links to the page header panel.
 
@@ -162,7 +161,7 @@ Example: add links to the page header panel.
 
 ## Create a block {#xml-manage-block}
 
-Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+Blocks are created (declared) using the [`<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block){:target="_blank"} instruction.
 
 Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
 
@@ -178,7 +177,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
 
 ## Reference a block {#xml-manage-ref-block}
 
-To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+To update a block use the [`<referenceBlock>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref){:target="_blank"} instruction.
 
 Example: pass the image to the `logo` block.
 
@@ -302,8 +301,8 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
+* [`<move>` instruction]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv){:target="_blank"}: allows changing elements' order and parent.
+* [`before` and `after` attributes of `<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after){:target="_blank"}: allows changing elements' order within one parent.
 
 <p></p>
 Example of `<move>` usage:
@@ -375,10 +374,10 @@ In this file, reference the element having added the `remove` attribute:
 
 ## Replace elements {#layout_markup_replace_elements}
 
-To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
+To replace an element, [remove it]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem){:target="_blank"} and add a new one.
 
 #### Related topics:
 
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}
+*	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){:target="_blank"}
 

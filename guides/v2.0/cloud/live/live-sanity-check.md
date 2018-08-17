@@ -5,7 +5,6 @@ title: Build and deploy on local
 menu_title: Build and deploy on local
 menu_order: 30
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Testing
