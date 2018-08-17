@@ -4,11 +4,11 @@ title: category endpoint
 version: 2.3
 ---
 
-The `category` endpoint allows you to search for a single category definition or the entire category tree.
+The `category` endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels.
 
 ## Query structure
 
-``` json
+``` 
 category (
    id: int
 ): CategoryTree
@@ -40,7 +40,11 @@ Attribute | Data type | Description
 `product_count`| Int | The number of products in the category
 `default_sort_by`| String | The attribute to use for sorting
 `products(<attributes>)` | `CategoryProducts` | The list of products assigned to the category
-`children` | `CategoryTree` |
+`breadcrumbs` | `Breadcrumb` |
+`children` | `CategoryTree` | A `CategoryTree` object that contains information about a child category. You can specify up to 10 levels of child categories.
+
+
+#### CategoryProducts object
 
 The `products` attribute can contain the following attributes:
 
@@ -48,9 +52,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `pageSize` | Int | Specifies the maximum number of results to return at once. This attribute is optional. The default value is 20.
 `currentPage` | Int |  Specifies which page of results to return. The default value is 1.
-`sort` | `ProductSortInput` Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
-
-#### CategoryProducts
+`sort` | `ProductSortInput` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
 
 The `CategoryProducts` object contains the following attributes:
 
@@ -61,28 +63,24 @@ Attribute | Data type | Description
 `total_count` | Int | The number of products returned
 
 
-The response can contain up to ten nested `children` options that allow you to return multiple levels of the category tree. In most cases, the entire category tree can be returned in a single call. The following response definition returns two levels of categories:
+#### Breadcrumb object
 
-{% highlight json %}
-{
-  category_tree {
-    id
-    level
-    name
-    children {
-      id
-      level
-      name
-    }
-  }
-}
-{% endhighlight %}
+A breadcrumb trail is a set of links that shows customers where they are in relation to other pages in the
+store.
 
-## Sample Query
+Attribute | Data type | Description
+--- | --- | ---
+`category_id` | Int | An ID that uniquely identifies the category
+`category_name` | String |  The display name of the category
+`category_level` | Int | Indicates the depth of the category within the tree
+`category_url_key` | String | The url key assigned to the category
+
+
+## Sample Queries
 
 The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
 
-{% highlight json %}
+```
 {
   category(id: 20) {
     products {
@@ -119,4 +117,24 @@ The following query returns information about category ID `20` and four levels o
       }
   }
 }
-{% endhighlight %}
+```
+
+The following query returns breadcrumb information about the women's tops category (`id` = 25).
+
+```
+{
+  category (
+   id: 25
+) {
+    id
+    level
+    name
+    breadcrumbs {
+      category_id
+      category_name
+      category_level
+      category_url_key
+    }
+  }
+}
+```
