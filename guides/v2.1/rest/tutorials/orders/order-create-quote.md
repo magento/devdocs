@@ -57,9 +57,8 @@ None
 
 The response is the `quoteId`: `4`
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
-</div>
 
 ### Verify this step {#verify-step}
 

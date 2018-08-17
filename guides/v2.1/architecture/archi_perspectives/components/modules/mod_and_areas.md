@@ -23,6 +23,8 @@ Magento is organized into these main areas:
 
 * **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
+* **Cron** (`crontab`): In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 
 * **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} lookups for REST-based URLs.

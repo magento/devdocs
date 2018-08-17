@@ -89,7 +89,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>

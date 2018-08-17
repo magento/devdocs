@@ -15,5 +15,5 @@ Always feel free to [email us][1] with any questions.
 <div class="devdocs-contributors"></div>
 
 
-[0]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
+[0]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [1]: mailto:DL-Magento-Doc-Feedback@magento.com
