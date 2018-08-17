@@ -73,7 +73,7 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 
@@ -99,7 +99,7 @@ Use the same endpoint to check the quantity available for product `sp2`.
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 

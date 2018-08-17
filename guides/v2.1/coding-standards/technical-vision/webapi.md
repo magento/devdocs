@@ -28,10 +28,10 @@ The following image provides an overview of how Web API requests are processed.
 
 Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html) can be [exposed as REST and SOAP]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html) endpoints via configuration in a module's `webapi.xml` file.
 
-#### Declare a new GraphQL query
+#### Declare a new GraphQL query/mutation
 
 1. Create custom resolvers.
-1. Declare a custom query and all necessary types in `schema.graphqls`
+1. Declare a custom query/mutation and all necessary types in `schema.graphqls`.
 
 If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 

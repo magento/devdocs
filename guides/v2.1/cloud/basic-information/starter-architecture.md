@@ -64,7 +64,6 @@ Additional sections in this guide provide instructions and walk-throughs for set
 
 The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html).
 
-\
 * Fastly for HTTP caching and CDN
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
 * Redis server
