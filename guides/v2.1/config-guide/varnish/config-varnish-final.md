@@ -45,7 +45,7 @@ For example, to use the Chrome inspector:
 6.	Scroll to the top of the inspector pane so you can see the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the page you are viewing.
 
 	The following figure shows an example of loading the `magento2` index page.<br><br>
-	<img src="{{ site.baseurl }}/common/images/config_varnish_inspector.png" alt="Click the page you're viewing">
+	![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
 
 	The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.
 

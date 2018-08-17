@@ -23,7 +23,7 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	[Customize Solr](http://wiki.apache.org/solr)
 
 	{:.bs-callout .bs-callout-warning}
-	Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/">Apache Solr Wiki</a>.</p>
+	Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the [Apache Solr Wiki](http://wiki.apache.org/solr/).
 
 *	If you choose to enable SELinux, set up [rules](http://wiki.centos.org/HowTos/SELinux) to allow Magento and Solr to communicate with each other
 
@@ -103,7 +103,7 @@ All parameters shown in the following table are required.
 
   For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
 
-  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL">Securing Jetty</a>.
+  For more information, see [Securing Jetty](https://wiki.eclipse.org/Jetty/Howto/Configure_SSL).
 </td>
 </tr>
 <tr>

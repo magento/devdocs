@@ -55,7 +55,7 @@ The following table explains this command's parameters and values:
 {:style="table-layout:auto;"}
 
 {:.bs-callout .bs-callout-info}
-To create a language pack from a translation dictionary, you <em>must</em> use the `-m|--magento` option.
+To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 
 ### Translation guidelines {#config-cli-subcommands-xlate-dict-trans}
 

@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 045_pipeline
 title: Production System Setup
-menu_title: Production System Setup
-menu_node:
-menu_order: 1500
 version: 2.2
 functional_areas:
   - Configuration
@@ -94,13 +90,3 @@ To set sensitive values:
 	The setting is displayed in the Admin and cannot be edited. The following figure shows an example.
 
 	![Sensitive setting in Admin]({{ site.baseurl }}/common/images/config_sensitive-set.png)
-
-#### Related topics
-
-*	[`magento deploy:mode:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-*	[`magento config:sensitive:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
-*	[`magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
-*	[Example of setting configuration values using environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html)
-*	[Example of setting configuration values using CLI commands]({{ page.baseurl }}/config-guide/deployment/pipeline/example/cli.html)
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
-*	[Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html)

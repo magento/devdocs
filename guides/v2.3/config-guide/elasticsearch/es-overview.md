@@ -43,7 +43,7 @@ Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elastic
 
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
+![]({{ site.baseurl }}/common/images/elastic_config.png){:width="500px"}
 
 The preceding diagram shows:
 
@@ -192,9 +192,8 @@ Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch
 
 Upgrading from 2.x to 5.x requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/restart-upgrade.html){:target="_blank"} for details.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"} to check which version of JDK is installed.
-</div>
+{:.bs-callout .bs-callout-info}
+Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
 
 ## Additional resources {#es-resources}
 

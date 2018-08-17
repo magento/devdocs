@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configuration Guide
-landing-page: Configuration Guide
 version: 2.1
 functional_areas:
   - Configuration

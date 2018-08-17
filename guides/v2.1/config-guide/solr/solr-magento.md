@@ -82,8 +82,8 @@ This section discusses how to configure {{site.data.var.ee}} to use the Solr sea
 To configure Magento to work with Solr:
 
 1.  Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.  Click <strong>STORES</strong> > <strong>Configuration</strong> > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}CATALOG{% endglossarytooltip %} > <strong>Catalog</strong> > <strong>Catalog Search</strong>.
-3.  In the right pane, expand <strong>Catalog Search</strong>.
+2.  Click **STORES** > **Configuration** > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}CATALOG{% endglossarytooltip %} > **Catalog** > **Catalog Search**.
+3.  In the right pane, expand **Catalog Search**.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
 <col width="30%">
@@ -126,9 +126,9 @@ To configure Magento to work with Solr:
 </table>
 
 The following figure shows an example.
-<img src="{{ site.baseurl }}/common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
+![Configure Magento to use Solr]({{ site.baseurl }}/common/images/solr_config-admin.png)
 
-Click <strong>Test Connection</strong>.
+Click **Test Connection**.
 
 The button changes as follows.
 
@@ -164,7 +164,7 @@ The button changes as follows.
 </tbody>
 </table>
 
-Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
+Only after the test connection succeeds, click **Save Config<** and continue with the next section.
 
 ## Reindexing catalog search and refreshing the full page cache {#solr-reindex}
 
@@ -172,11 +172,11 @@ After you change Magento's Solr configuration, you must reindex the catalog sear
 
 To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} using the Admin:
 
-1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-2.  Select the checkbox next to <strong>Page Cache</strong>.
-3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+1.  In the Admin, click **System** > **Cache Management**.
+2.  Select the checkbox next to **Page Cache**.
+3.  From the **Actions** list in the upper right, click **Refresh**.<br />
 		The following figure shows an example.<br />
-		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
+		![]({{ site.baseurl }}/common/images/solr_refresh-cache.png){:width="600px"}
 
 To clean the cache using the command line, use the [`magento cache:clean`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean) command.
 
@@ -202,7 +202,7 @@ To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80c
 
 The following figure shows an example of a storefront search.
 
-<img src="{{ site.baseurl }}/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
+![Verify Solr works by searching the storefront]({{ site.baseurl }}/common/images/solr_verify.png)
 
 The following excerpt from the Solr command window shows the same search:
 

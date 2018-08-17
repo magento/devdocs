@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Manage the indexers
-menu_title: Manage the indexers
-menu_node:
-menu_order: 90
 version: 2.2
 functional_areas:
   - Configuration
@@ -84,9 +80,8 @@ Sample result:
 
 Use this command to reindex all or selected indexers one time only.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
-</div>
 
 Command options:
 
@@ -121,9 +116,8 @@ Catalog Product Rule index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. To reduce processing time, see the next section for reindexing in parallel mode.
-</div>
 
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
@@ -141,9 +135,8 @@ For example, the following command runs the Catalog Search Fulltext indexer acro
 MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
-</div>
 
 ## Configure indexers
 
@@ -213,18 +206,3 @@ Sample result:
 Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 ```
-
-#### Related topics
-
-* [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
-* [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-* [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
-* [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-* [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
-* [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
-* [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
-* [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
-* [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
-* [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html")
-* [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
