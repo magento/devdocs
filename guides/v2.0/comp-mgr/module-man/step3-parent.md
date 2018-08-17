@@ -7,7 +7,6 @@ menu_order: 8
 menu_node:
 level3_menu_node: level3parent
 level3_subgroup: step3
-version: 2.0
 functional_areas:
   - Upgrade
 ---

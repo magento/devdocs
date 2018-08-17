@@ -5,7 +5,6 @@ title: Check the Magento database status
 menu_title: Check the Magento database status
 menu_node:
 menu_order: 16
-version: 2.2
 functional_areas:
   - Install
   - System

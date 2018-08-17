@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Column component
 menu_title: Column component
-version: 2.1
 ---
 
 ## Overview

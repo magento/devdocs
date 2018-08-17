@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Indexer optimization
 menu_title: Indexer optimization
 menu_order: 14
-version: 2.2
 level3_menu_node: level3child
 level3_subgroup: index
 

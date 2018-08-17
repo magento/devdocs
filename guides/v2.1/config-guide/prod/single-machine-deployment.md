@@ -5,7 +5,6 @@ title: Single machine deployment
 menu_title: Single machine deployment
 menu_node:
 menu_order: 500
-version: 2.1
 functional_areas:
   - Configuration
   - Deploy

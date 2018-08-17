@@ -5,7 +5,6 @@ title: Step 4. Customize your store
 menu_title: Step 4. Customize your store
 menu_order: 6
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

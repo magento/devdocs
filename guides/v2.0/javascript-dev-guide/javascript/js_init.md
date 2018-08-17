@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 menu_title: Calling and initializing JavaScript
 menu_order: 10
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_init.html

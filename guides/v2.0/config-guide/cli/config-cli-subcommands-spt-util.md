@@ -5,7 +5,6 @@ title: Run the support utilities
 menu_title: Run the support utilities (Magento Commerce only)
 menu_node:
 menu_order: 900
-version: 2.0
 ee_only: True
 functional_areas:
   - Configuration

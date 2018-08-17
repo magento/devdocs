@@ -5,7 +5,6 @@ title: Get the Magento software
 menu_title: Get the Magento software
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Install
   - System

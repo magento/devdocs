@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ActionsColumn component
 menu_title: ActionsColumn component
-version: 2.2
 ---
 
 ## Overview

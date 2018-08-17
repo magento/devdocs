@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: InsertListing component
 menu_title: InsertListing component
-version: 2.1
 ---
 ## Overview
 

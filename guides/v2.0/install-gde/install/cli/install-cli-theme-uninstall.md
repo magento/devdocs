@@ -5,7 +5,6 @@ title: Uninstall themes Composer packages
 menu_title: Uninstall themes Composer packages
 menu_node:
 menu_order: 200
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html

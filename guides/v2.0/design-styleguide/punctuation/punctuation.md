@@ -5,7 +5,6 @@ title: Admin Punctuation
 menu_title: Punctuation
 menu_order: 6
 menu_node:
-version: 2.0
 ---
 The following sections surface exceptions to the Associated Press (AP) Stylebook and summarize key stylebook elements to keep handy when writing content.
 

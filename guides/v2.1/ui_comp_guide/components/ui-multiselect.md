@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Multiselect component
 menu_title: Multiselect component
-version: 2.1
 ---
 
 ## Overview

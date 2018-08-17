@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ExportButton component
 menu_title: ExportButton component
-version: 2.2
 ---
 
 ## Overview

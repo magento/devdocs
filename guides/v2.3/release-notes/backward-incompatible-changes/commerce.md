@@ -1,6 +1,5 @@
 ---
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Commerce
 ---
 

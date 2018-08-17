@@ -5,7 +5,6 @@ title: Set up cron for update and upgrade
 menu_title: Set up cron for update and upgrade
 menu_order: 3
 menu_node:
-version: 2.2
 functional_areas:
   - Upgrade
 ---

@@ -4,7 +4,6 @@ subgroup: concepts
 title: Linking properties of UI components
 menu_title: Linking properties of UI components
 menu_order: 100
-version: 2.1
 ---
 
 ## Linking properties implementation

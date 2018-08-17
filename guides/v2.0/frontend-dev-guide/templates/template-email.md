@@ -4,7 +4,6 @@ subgroup: C_Templates
 title: Customize email templates
 menu_title: Customize email templates
 menu_order: 4
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-email.html
 functional_areas:
   - Frontend

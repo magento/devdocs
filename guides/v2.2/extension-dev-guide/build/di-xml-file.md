@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
-version: 2.2
 ---
 
 ## Overview

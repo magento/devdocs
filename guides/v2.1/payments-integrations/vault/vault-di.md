@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Vault DI configuration
 menu_title: Vault DI configuration
 menu_order: 3
-version: 2.1
 functional_areas:
   - Integration
 ---

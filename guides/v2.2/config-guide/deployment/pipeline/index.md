@@ -5,7 +5,6 @@ title: Overview
 menu_title: Overview
 menu_node:
 menu_order: 1100
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

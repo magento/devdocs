@@ -6,7 +6,6 @@ menu_title: Magento Commerce 2.0.9 Release Notes
 menu_order: 279
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. This release includes several functional fixes.

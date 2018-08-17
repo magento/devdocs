@@ -4,7 +4,6 @@ subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
-version: 2.2
 functional_areas:
   - Configuration
   - System

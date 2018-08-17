@@ -5,7 +5,6 @@ title: Update the Magento application
 menu_title: Update the Magento application
 menu_order: 2
 menu_node:
-version: 2.0
 redirect_from: /guides/v2.0/install-gde/install/cli/instgde-install-magento-update-db
 functional_areas:
   - Install

@@ -5,7 +5,6 @@ title: Starter develop and deploy workflow
 menu_title: Starter develop and deploy workflow
 menu_order: 25
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
 ---

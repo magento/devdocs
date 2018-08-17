@@ -5,7 +5,6 @@ title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
 menu_node:
 menu_order: 200
-version: 2.0
 functional_areas:
   - Upgrade
 ---

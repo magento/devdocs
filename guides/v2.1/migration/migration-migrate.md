@@ -5,7 +5,6 @@ title: Migrate using Data Migration Tool
 menu_title: Migrate using Data Migration Tool
 menu_node: parent
 menu_order: 4
-version: 2.1
 redirect_from: /guides/v1.0/migration/migration-migrate.html
 functional_areas:
   - Tools

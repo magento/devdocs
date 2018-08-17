@@ -11,7 +11,7 @@ pages:
     - label: DevDocs Contributions
       children:
         - label: Contribution Guidelines
-          url: https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md
+          url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 
         - label: Magento Definition of Done
           url: /contributor-guide/contributing_dod.html

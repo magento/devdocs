@@ -41,7 +41,20 @@ pages:
         - label: Restricting access to anonymous web APIs
           url: /rest/anonymous-api-security.html
 
-        - label: Bulk operation status searches
+        - label: Asynchronous web endpoints
+          versions: ["2.3"]
+          url: /rest/asynchronous-web-endpoints.html
+
+        - label: Bulk endpoints
+          versions: ["2.3"]
+          url: /rest/bulk-endpoints.html
+
+        - label: Bulk operation status endpoints
+          versions: ["2.3"]
+          url: /rest/operation-status-endpoints.html
+
+        - label: Search for the status of a bulk operation
+          versions: ["2.3"]
           url: /rest/operation-status-search.html
 
         - label: REST usage notes

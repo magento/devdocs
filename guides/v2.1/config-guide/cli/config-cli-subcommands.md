@@ -5,7 +5,6 @@ title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node:
 menu_order: 2
-version: 2.1
 functional_areas:
   - Configuration
   - System

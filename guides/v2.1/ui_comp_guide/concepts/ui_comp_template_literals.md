@@ -6,7 +6,6 @@ menu_title: Template Literals
 menu_order: 50
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.1
 ---
 
 # Template Literals in Magento

@@ -3,7 +3,6 @@ group: fedg
 subgroup: A_Themes
 title: Apply and configure a storefront theme
 menu_title: Apply and configure a storefront theme
-version: 2.1
 menu_order: 30
 functional_areas:
   - Frontend

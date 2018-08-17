@@ -5,7 +5,6 @@ title: Step 6. Install
 menu_title: Step 6. Install
 menu_order: 15
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

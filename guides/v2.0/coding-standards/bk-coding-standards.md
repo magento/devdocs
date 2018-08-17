@@ -6,7 +6,6 @@ landing-page: Coding Standards
 menu_title: Coding Standards
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v1.0/coding-standards/bk-coding-standards.html
 functional_areas:
   - Standards

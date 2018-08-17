@@ -1,13 +1,12 @@
 ---
 group: cloud
 title: Upgrade Magento version
-version: 2.2
 functional_areas:
   - Cloud
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from versiobn 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
+You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from version 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
 
 Prepare your environment with the following tasks:
 

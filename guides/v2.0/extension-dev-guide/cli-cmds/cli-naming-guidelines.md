@@ -5,7 +5,6 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node:
 menu_order: 2
-version: 2.0
 redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 ---
 

@@ -5,7 +5,6 @@ title: Tutorials
 menu_title: Tutorials
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Cloud
 ---

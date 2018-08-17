@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
-version: 2.3
 redirect_from: /guides/v2.3/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration

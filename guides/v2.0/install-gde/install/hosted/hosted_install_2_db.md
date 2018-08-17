@@ -5,7 +5,6 @@ title: Step 2. Add a database
 menu_title: Step 2. Add a database
 menu_order: 5
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

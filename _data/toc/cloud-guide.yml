@@ -148,7 +148,7 @@ pages:
           versions: ["2.2"]
 
     - label: Configure Fastly
-      url: /cloud/basic-information/cloud-fastly.html
+      url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html

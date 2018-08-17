@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Add site map and search engine robots
-version: 2.2
 functional_areas:
   - Cloud
   - Configuration

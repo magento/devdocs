@@ -5,7 +5,6 @@ title: Merge and delete an environment (tutorial)
 menu_title: Merge and delete an environment (tutorial)
 menu_order:
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

@@ -1,13 +1,6 @@
 ---
 group: cloud
-subgroup: 080_setup
 title: Prepare your existing Magento Commerce install
-menu_title: Prepare your existing Magento Commerce install
-menu_order: 153
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: import
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
@@ -34,7 +27,7 @@ To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need
 *  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
 *  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
 *  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) for handling routes including redirections, caching, and server-side includes
-*  [`magento-vars.php`]({{ page.baseurl }}/cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) for multiple websites and stores
+*  [`magento-vars.php`]({{ page.baseurl }}/cloud/project/project-multi-sites.html) for multiple websites and stores
 
 You need to add these files to your {{site.data.var.ee}} code:
 

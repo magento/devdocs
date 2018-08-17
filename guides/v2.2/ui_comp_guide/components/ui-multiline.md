@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Multiline component
 menu_title: Multiline component
-version: 2.2
 ---
 
 ## Overview

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Theme troubleshooting
-version: 2.1
 ---
 
 This information helps you troubleshoot issues with themes added to your {{site.data.var.ece}} sites and stores.

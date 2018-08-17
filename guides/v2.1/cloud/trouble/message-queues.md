@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Message queues
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

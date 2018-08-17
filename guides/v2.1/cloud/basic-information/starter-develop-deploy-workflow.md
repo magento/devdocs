@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Starter develop and deploy workflow
-version: 2.1
 functional_areas:
   - Cloud
 ---

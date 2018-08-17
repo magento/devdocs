@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ActionDelete component
 menu_title: ActionDelete component
-version: 2.2
 ---
 
 ## Overview

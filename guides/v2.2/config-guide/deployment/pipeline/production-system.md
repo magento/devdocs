@@ -5,7 +5,6 @@ title: Production System Setup
 menu_title: Production System Setup
 menu_node:
 menu_order: 1500
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

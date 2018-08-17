@@ -2,7 +2,6 @@
 group: arch-guide
 title: Technology stack
 menu_title: Technology stack
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 

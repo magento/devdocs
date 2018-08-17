@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Filters component
 menu_title: Filters component
-version: 2.2
 ---
 
 ## Overview

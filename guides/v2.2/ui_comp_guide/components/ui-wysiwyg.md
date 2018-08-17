@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Wysiwyg component
 menu_title: Wysiwyg component
-version: 2.2
 ---
 
 ## Overview

@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
 menu_order: 200
-version: 2.1
 redirect_from: /guides/v1.0/install-gde/prereq/security.html
 functional_areas:
   - Install

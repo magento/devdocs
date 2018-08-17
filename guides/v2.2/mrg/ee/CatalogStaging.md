@@ -5,7 +5,6 @@ ee_only: true
 title: Magento_CatalogStaging module
 menu_title: CatalogStaging
 menu_order: 2
-version: 2.2
 ee_only: true
 ---
 

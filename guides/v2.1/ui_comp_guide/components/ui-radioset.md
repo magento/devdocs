@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Radioset component
 menu_title: Radioset component
-version: 2.1
 ---
 
 ## Overview

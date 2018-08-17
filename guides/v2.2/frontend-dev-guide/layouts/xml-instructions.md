@@ -1,7 +1,6 @@
 ---
 group: fedg
 title: Layout instructions
-version: 2.2
 functional_areas:
   - Frontend
 ---

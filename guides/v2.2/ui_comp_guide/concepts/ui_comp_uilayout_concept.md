@@ -1,7 +1,6 @@
 ---
 group: UI_Components_guide
 title: The uiLayout service object
-version: 2.2
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.

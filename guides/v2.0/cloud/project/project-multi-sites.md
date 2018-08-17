@@ -5,7 +5,6 @@ title: Set up multiple websites or stores
 menu_title: Set up multiple websites or stores
 menu_order: 15
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

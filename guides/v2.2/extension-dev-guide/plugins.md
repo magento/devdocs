@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
-version: 2.2
 redirect_from:
 
 ---

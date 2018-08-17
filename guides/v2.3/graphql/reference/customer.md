@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: Customer endpoint
-version: 2.3
 ---
 
 The `Customer` endpoint returns information about a customer account.

@@ -5,7 +5,6 @@ title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3
 menu_node:
-version: 2.0
 ee_only: True
 functional_areas:
   - Configuration

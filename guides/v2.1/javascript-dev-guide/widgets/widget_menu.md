@@ -2,14 +2,13 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Menu widget
-version: 2.1
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
 ---
 ## Overview
 
-The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento menu extends the default functionality with the following:
+The Magento menu widget is a customized [jQuery UI Menu widget](http://api.jqueryui.com/menu/){:target="_blank"}. Magento menu extends the default functionality with the following:
 
 -   expanding all layers of the menu tree past the second layer
 -   declaring a responsive menu

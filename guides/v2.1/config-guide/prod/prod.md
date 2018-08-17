@@ -5,7 +5,6 @@ title: Deploy Magento to production
 menu_title: Deploy Magento to production
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Configuration
   - System

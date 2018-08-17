@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: Overview
-version: 2.3
 landing-page: GraphQL Developer's Guide
 ---
 

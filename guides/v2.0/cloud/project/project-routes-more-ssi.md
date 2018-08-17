@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Server side includes
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

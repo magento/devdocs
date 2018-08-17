@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Build and deploy on local
-version: 2.1
 functional_areas:
   - Cloud
   - Testing

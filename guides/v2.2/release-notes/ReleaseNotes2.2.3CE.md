@@ -6,7 +6,6 @@ menu_title: Magento Open Source 2.2.3 Release Notes
 menu_order: 270
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 ---
 *Patch code and release notes published on February 27, 2018.*
 

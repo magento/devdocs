@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Enable profiling (MAGE_PROFILER)
-version: 2.2
 functional_areas:
   - Configuration
   - System

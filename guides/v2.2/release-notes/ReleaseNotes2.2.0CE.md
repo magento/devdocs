@@ -2,7 +2,6 @@
 group: release-notes
 title: Magento Open Source 2.2.0 Release Notes
 menu_title: Magento Open Source 2.2.0 Release Notes
-version: 2.2
 ---
 
 *Release notes updated June 4, 2018.* 

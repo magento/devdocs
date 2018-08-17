@@ -2,7 +2,6 @@
 group: arch-guide
 title: Ease of frontend customization
 menu_title: Ease of frontend customization
-version: 2.1
 ---
 
 ## Overview {#m2arch-whatis-overview}

@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: InsertForm component
 menu_title: InsertForm component
-version: 2.2
 ---
 
 ## Overview

@@ -4,7 +4,6 @@ subgroup: Configuration
 title: Configuration importers
 menu_title: Configuration importers
 menu_order: 2000
-version: 2.2
 functional_areas:
   - Configuration
 ---

@@ -1,7 +1,6 @@
 ---
 group: fedg
 title: Create a new storefront theme
-version: 2.1
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
   - Frontend

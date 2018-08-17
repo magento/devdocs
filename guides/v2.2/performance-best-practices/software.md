@@ -1,7 +1,6 @@
 ---
 group: perf-best-practices
 title: Software recommendations
-version: 2.2
 functional_areas:
   - Configuration
   - System

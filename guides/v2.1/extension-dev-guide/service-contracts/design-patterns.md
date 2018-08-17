@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
 

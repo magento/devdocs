@@ -4,7 +4,6 @@ subgroup: concepts
 title: UI components XML configuration structure
 menu_title: UI components XML configuration structure  
 menu_order: 15
-version: 2.2
 ---
 
 ## Overview

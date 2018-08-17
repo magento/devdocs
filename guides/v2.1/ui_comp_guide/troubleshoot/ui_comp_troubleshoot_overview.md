@@ -5,7 +5,6 @@ title: Troubleshooting UI components
 menu_title: Troubleshooting UI components
 menu_order: 1
 menu_node: parent
-version: 2.1
 ---
 
 ## Overview

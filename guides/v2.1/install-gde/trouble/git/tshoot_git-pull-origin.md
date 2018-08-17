@@ -5,7 +5,6 @@ title: git pull origin develop fails when updating the Magento software
 menu_title: git pull origin develop fails when updating the Magento software
 menu_node:
 menu_order: 410
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
   - /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
@@ -38,7 +37,7 @@ Your solution depends on whether or not you intentionally modified files in the 
 
 #### You intentionally modified files
 
-Manually resolve the conflicts in the usual way. If you're not sure what to do, consult [GitHub help](https://help.github.com/).
+Manually resolve the conflicts in the usual way. If you're not sure what to do, consult [GitHub help](https://help.github.com/){:target="_blank"}.
 
 #### You didn't intentionally modify any files
 

@@ -5,7 +5,6 @@ title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3
 menu_node:
-version: 2.0
 functional_areas:
   - Configuration
   - System

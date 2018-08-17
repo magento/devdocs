@@ -5,7 +5,6 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-version: 2.0
 redirect_from: /guides/v1.0/install-gde/prereq/prereq-overview.html
 functional_areas:
   - Install

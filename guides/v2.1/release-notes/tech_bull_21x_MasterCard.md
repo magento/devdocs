@@ -1,12 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: MasterCard BIN Range Update 
 menu_title: MasterCard BIN Range Update (May 19, 2017)
 menu_node: 
 menu_order: 6
-version: 2.1
 ---
 
 *Technical Bulletin published on May 19, 2017 and edited on June 29, 2017.*

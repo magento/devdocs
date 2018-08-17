@@ -4,7 +4,6 @@ subgroup: E_rwd
 title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design
 menu_order: 3
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 functional_areas:
   - Frontend

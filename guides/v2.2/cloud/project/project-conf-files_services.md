@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Services
-version: 2.2
 functional_areas:
   - Cloud
   - Setup

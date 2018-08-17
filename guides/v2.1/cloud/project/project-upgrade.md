@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Upgrade Magento version
-version: 2.1
 redirect_from:
   - /guides/v2.1/cloud/howtos/upgrade-magento.html
 functional_areas:

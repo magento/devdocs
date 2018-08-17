@@ -5,7 +5,6 @@ title: Configure nginx and Elasticsearch
 menu_title: Configure nginx and Elasticsearch
 menu_order: 5
 menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration
@@ -87,13 +86,13 @@ This section discusses how to specify who can access the {% glossarytooltip b14e
 
 This section discusses how to set up [HTTP Basic authentication](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html){:target="_blank"} with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
-Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, <a href="https://www.nginx.com/resources/wiki/modules/auth_digest/" target="_blank">Digest authentication</a>, which isn't recommended in production.
+Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, [Digest authentication](https://www.nginx.com/resources/wiki/modules/auth_digest/){:target="_blank"}, which isn't recommended in production.
 
 Additional resources:
 
-*	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)</a>
-*	<a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication With Nginx (HowtoForge)</a>
-*	<a href="https://gist.github.com/karmi/b0a9b4c111ed3023a52d" target="_blank">Example Nginx Configurations for Elasticsearch</a>
+*	[How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04){:target="_blank"}
+*	[Basic HTTP Authentication With Nginx (HowtoForge)](https://www.howtoforge.com/basic-http-authentication-with-nginx){:target="_blank"}
+*	[Example Nginx Configurations for Elasticsearch](https://gist.github.com/karmi/b0a9b4c111ed3023a52d){:target="_blank"}
 
 See the following sections for more information:
 

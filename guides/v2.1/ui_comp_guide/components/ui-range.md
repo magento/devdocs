@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Range component
 menu_title: Range component
-version: 2.1
 ---
 
 ## Overview

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Reset cron jobs
-version: 2.2
 functional_areas:
   - Cloud
   - Configuration

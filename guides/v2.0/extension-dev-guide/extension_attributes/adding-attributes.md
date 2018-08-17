@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
 menu_order: 20
-version: 2.0
 ---
 
 Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces

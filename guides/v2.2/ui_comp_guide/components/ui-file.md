@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: File component
 menu_title: File component
-version: 2.2
 ---
 
 ## Overview

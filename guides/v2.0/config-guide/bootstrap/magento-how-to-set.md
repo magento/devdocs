@@ -5,7 +5,6 @@ title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters
 menu_order: 2
 menu_node:
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 functional_areas:
   - Configuration

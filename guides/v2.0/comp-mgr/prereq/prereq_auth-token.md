@@ -5,7 +5,6 @@ title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
 menu_order: 2
 menu_node:
-version: 2.0
 functional_areas:
   - Upgrade
 ---

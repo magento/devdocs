@@ -5,7 +5,6 @@ title: Configure the database profiler
 menu_title: Configure the database profiler
 menu_order: 1
 menu_node: parent
-version: 2.1
 contributor_name: Atish Goswami
 contributor_link: http://atishgoswami.com
 functional_areas:

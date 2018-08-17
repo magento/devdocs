@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Search component
 menu_title: Search component
-version: 2.2
 ---
 
 ## Overview

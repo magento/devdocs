@@ -4,7 +4,6 @@ subgroup: Architectural Basics
 title: Security overview
 menu_title: Security
 menu_order:
-version: 2.1
 ---
 
 ## Enhanced password management

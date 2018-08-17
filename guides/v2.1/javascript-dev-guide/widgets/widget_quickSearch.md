@@ -2,7 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: QuickSearch widget
-version: 2.1
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
