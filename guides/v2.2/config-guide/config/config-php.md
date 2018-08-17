@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Magento's deployment configuration
-<<<<<<< HEAD
-=======
-menu_title: Magento's deployment configuration
-menu_order: 1
->>>>>>> master
 functional_areas:
   - Configuration
   - System

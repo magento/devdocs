@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Run unit tests
-<<<<<<< HEAD
-=======
-menu_title: Run unit tests
-menu_node:
-menu_order: 400
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 functional_areas:
   - Configuration

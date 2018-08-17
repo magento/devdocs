@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Troubleshooting 503 (Backend Fetch Failed) errors
-<<<<<<< HEAD
-=======
-menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
-menu_order: 500
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

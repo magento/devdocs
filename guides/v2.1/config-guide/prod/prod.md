@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Deploy Magento to production
-<<<<<<< HEAD
-=======
-menu_title: Deploy Magento to production
-menu_node: parent
-menu_order: 1
->>>>>>> master
 functional_areas:
   - Configuration
   - System

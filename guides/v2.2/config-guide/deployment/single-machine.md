@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Single machine deployment
-<<<<<<< HEAD
-=======
-menu_title: Single machine deployment
-menu_node: parent
-menu_order: 2000
->>>>>>> master
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
 functional_areas:

@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Magento Optimization Guide
-<<<<<<< HEAD
-=======
-menu_title: Magento Optimization Guide
-menu_order: 100
->>>>>>> master
 functional_areas:
   - Configuration
   - System

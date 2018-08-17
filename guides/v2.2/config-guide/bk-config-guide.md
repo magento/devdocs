@@ -1,13 +1,6 @@
 ---
 group: config-guide
 title: Configuration Guide
-<<<<<<< HEAD
-=======
-landing-page: Configuration Guide
-menu_title: Introduction
-menu_order: 1
-menu_node: parent
->>>>>>> master
 functional_areas:
   - Configuration
   - System

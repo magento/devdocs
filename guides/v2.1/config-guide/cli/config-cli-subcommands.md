@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Get started with command-line configuration
-<<<<<<< HEAD
-=======
-menu_title: Get started with command-line configuration
-menu_node:
-menu_order: 2
->>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Install, configure, verify memcached on Ubuntu
-<<<<<<< HEAD
-=======
-menu_title: Install, configure, verify memcached on Ubuntu
-menu_order: 2
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

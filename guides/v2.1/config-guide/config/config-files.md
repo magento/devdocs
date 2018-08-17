@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Module configuration files
-<<<<<<< HEAD
-=======
-menu_title: Module configuration files
-menu_order: 5
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration

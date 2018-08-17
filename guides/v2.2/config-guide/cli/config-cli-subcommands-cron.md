@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure and run cron
-<<<<<<< HEAD
-=======
-menu_title: Configure and run cron
-menu_node:
-menu_order: 100
->>>>>>> master
 functional_areas:
   - Configuration
   - System

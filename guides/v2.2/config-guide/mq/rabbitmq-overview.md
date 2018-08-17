@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Message Queues Overview
-<<<<<<< HEAD
-=======
-menu_title: Message Queues (Magento Commerce only)
-menu_order: 1
-menu_node: parent
->>>>>>> master
 ee_only: true
 ---
 

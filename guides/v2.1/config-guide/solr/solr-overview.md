@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Install and configure Solr
-<<<<<<< HEAD
-=======
-menu_title: Install and configure Solr (Magento Commerce only)
-menu_order: 1
-menu_node: parent
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

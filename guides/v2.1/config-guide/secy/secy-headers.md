@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Prevent cache poisoning
-<<<<<<< HEAD
-=======
-menu_title: Prevent cache poisoning
-menu_order: 10
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

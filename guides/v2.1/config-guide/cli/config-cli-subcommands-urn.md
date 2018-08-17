@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: URN highlighter
-<<<<<<< HEAD
-=======
-menu_title: URN highlighter
-menu_node:
-menu_order: 215
->>>>>>> master
 functional_areas:
   - Configuration
   - System

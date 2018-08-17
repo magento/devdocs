@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Static files deployment strategies
-<<<<<<< HEAD
-=======
-menu_title: Static files deployment strategies
-menu_node:
-menu_order: 301
-level3_menu_node: level3child
-level3_subgroup: static_deploy
->>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Run the support utilities
-<<<<<<< HEAD
-=======
-menu_title: Run the support utilities (Magento Commerce only)
-menu_node:
-menu_order: 900
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

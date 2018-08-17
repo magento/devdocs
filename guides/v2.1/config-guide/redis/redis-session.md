@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Use Redis for session storage
-<<<<<<< HEAD
-=======
-menu_title: Use Redis for session storage
-menu_order: 10
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

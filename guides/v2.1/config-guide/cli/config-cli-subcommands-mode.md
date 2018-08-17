@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Set the Magento mode
-<<<<<<< HEAD
-=======
-menu_title: Set the Magento mode
-menu_node:
-menu_order: 200
->>>>>>> master
 functional_areas:
   - Configuration
   - System

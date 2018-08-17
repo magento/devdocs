@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Use Redis for the Magento page and default cache
-<<<<<<< HEAD
-=======
-menu_title: Use Redis for the Magento page and default cache
-menu_order: 5
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

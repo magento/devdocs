@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Create or extend configuration types
-<<<<<<< HEAD
-=======
-menu_title: Create or extend configuration types
-menu_order: 10
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration

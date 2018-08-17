@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Install and configure Elasticsearch
-<<<<<<< HEAD
-=======
-menu_title: Install and configure Elasticsearch (Magento Commerce only)
-menu_order: 1
-menu_node: parent
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

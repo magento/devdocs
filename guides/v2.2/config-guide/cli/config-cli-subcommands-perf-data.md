@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Generate data for performance testing
-<<<<<<< HEAD
-=======
-menu_title: Generate data for performance testing
-menu_node:
-menu_order: 800
->>>>>>> master
 functional_areas:
   - Configuration
   - System

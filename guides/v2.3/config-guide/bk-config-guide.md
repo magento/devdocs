@@ -1,10 +1,6 @@
 ---
 group: config-guide
 title: Configuration Guide
-<<<<<<< HEAD
-=======
-landing-page: Configuration Guide
->>>>>>> master
 functional_areas:
   - Configuration
   - System

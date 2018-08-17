@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Single machine deployment
-<<<<<<< HEAD
-=======
-menu_title: Single machine deployment
-menu_node:
-menu_order: 500
->>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

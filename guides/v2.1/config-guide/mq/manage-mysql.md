@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Manage message queues
-<<<<<<< HEAD
-=======
-menu_title: Manage message queues
-menu_order: 3
->>>>>>> master
 functional_areas:
   - Configuration
   - System

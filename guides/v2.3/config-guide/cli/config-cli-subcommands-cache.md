@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Manage the cache
-<<<<<<< HEAD
-=======
-menu_title: Manage the cache
-menu_node:
-menu_order: 50
->>>>>>> master
 functional_areas:
   - Configuration
   - System

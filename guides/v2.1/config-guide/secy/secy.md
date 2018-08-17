@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Security settings
-<<<<<<< HEAD
-=======
-menu_title: Security settings
-menu_order: 1
-menu_node: parent
->>>>>>> master
 functional_areas:
   - Configuration
   - System

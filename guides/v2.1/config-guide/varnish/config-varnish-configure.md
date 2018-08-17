@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure Varnish and your web server
-<<<<<<< HEAD
-=======
-menu_title: Configure Varnish and your web server
-menu_order: 10
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

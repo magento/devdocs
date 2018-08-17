@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Magento Enterprise B2B Extension configuration paths reference
-<<<<<<< HEAD
-=======
-menu_title: Magento Enterprise B2B Extension configuration paths reference
-menu_order: 5500
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
->>>>>>> master
 functional_areas:
   - Configuration
   - System

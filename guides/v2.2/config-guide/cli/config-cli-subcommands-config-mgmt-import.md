@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Import data from configuration files
-<<<<<<< HEAD
-=======
-menu_title: Import data from configuration files
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: cli-config-mgmt
-menu_order: 253
->>>>>>> master
 functional_areas:
   - Configuration
   - System

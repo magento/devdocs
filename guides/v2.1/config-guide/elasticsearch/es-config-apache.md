@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure Apache and Elasticsearch
-<<<<<<< HEAD
-=======
-menu_title: Configure Apache and Elasticsearch
-menu_order: 7
-menu_node:
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration
@@ -173,7 +167,7 @@ This section discusses how to specify who can access the Apache server.
 		 </LimitExcept>
 		 </Proxy>
      ```
-     
+
 3.	If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier to your unsecure virtual host.
 4.	Save your changes, exit the text editor, and restart Apache:
 

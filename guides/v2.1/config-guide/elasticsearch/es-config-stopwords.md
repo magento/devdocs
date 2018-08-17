@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure Elasticsearch stopwords
-<<<<<<< HEAD
-=======
-menu_title: Configure Elasticsearch stopwords
-menu_order: 10
-menu_node:
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

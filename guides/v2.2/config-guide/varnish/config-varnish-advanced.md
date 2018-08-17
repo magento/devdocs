@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Advanced Varnish configuration
-<<<<<<< HEAD
-=======
-menu_title: Advanced Varnish configuration
-menu_order: 16
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

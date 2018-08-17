@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Final verification
-<<<<<<< HEAD
-=======
-menu_title: Final verification
-menu_order: 100
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Translation dictionaries and language packages
-<<<<<<< HEAD
-=======
-menu_title: Translation dictionaries and language packages
-menu_node:
-menu_order: 260
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 functional_areas:
   - Configuration

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Code compiler
-<<<<<<< HEAD
-=======
-menu_title: Code compiler
-menu_node:
-menu_order: 175
->>>>>>> master
 functional_areas:
   - Configuration
   - System

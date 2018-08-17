@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Overview
-<<<<<<< HEAD
-=======
-menu_title: Overview
-menu_node:
-menu_order: 1100
->>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

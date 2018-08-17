@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: .gitignore reference
-<<<<<<< HEAD
-=======
-menu_title: .gitignore reference
-menu_order: 5600
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
->>>>>>> master
 functional_areas:
   - Configuration
   - System

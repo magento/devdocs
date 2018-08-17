@@ -1,11 +1,6 @@
 ---
 group: config-guide
 title: Magento's deployment configuration
-<<<<<<< HEAD
-=======
-menu_title: Magento's deployment configuration
-menu_order: 1
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
 functional_areas:
   - Configuration

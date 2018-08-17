@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Custom logging
-<<<<<<< HEAD
-=======
-menu_title: Custom logging
-menu_node: parent
-menu_order: 1
->>>>>>> master
 functional_areas:
   - Configuration
   - System

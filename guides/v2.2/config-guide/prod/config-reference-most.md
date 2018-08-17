@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Other configuration paths reference
-<<<<<<< HEAD
-=======
-menu_title: Other configuration paths reference
-menu_order: 5300
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
->>>>>>> master
 functional_areas:
   - Configuration
   - System

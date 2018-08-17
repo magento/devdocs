@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure a custom cron job and cron group (tutorial)
-<<<<<<< HEAD
-=======
-menu_title: Configure a custom cron job and cron group (tutorial)
-menu_order: 3
-menu_node:
->>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: File systems access permissions
-<<<<<<< HEAD
-=======
-menu_title: File systems access permissions
-menu_node:
-menu_order: 3000
->>>>>>> master
 functional_areas:
   - Configuration
   - System

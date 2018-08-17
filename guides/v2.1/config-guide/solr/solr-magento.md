@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure Solr and Magento
-<<<<<<< HEAD
-=======
-menu_title: Configure Solr and Magento
-menu_order: 2
-menu_node:
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

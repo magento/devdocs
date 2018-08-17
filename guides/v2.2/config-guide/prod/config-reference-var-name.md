@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Use environment variables to override configuration settings
-<<<<<<< HEAD
-=======
-menu_title: Use environment variables to override configuration settings
-menu_order: 5700
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
->>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Magento ownership and permissions in development and production
-<<<<<<< HEAD
-=======
-menu_title: Magento ownership and permissions in development and production
-menu_node:
-menu_order: 2
->>>>>>> master
 functional_areas:
   - Configuration
   - System

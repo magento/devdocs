@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Convert layout XML files
-<<<<<<< HEAD
-=======
-menu_title: Convert layout XML files
-menu_node:
-menu_order: 700
->>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html
 functional_areas:
   - Configuration

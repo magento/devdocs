@@ -1,12 +1,6 @@
 ---
 group: config-guide
 title: Configure nginx and Elasticsearch
-<<<<<<< HEAD
-=======
-menu_title: Configure nginx and Elasticsearch
-menu_order: 5
-menu_node:
->>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

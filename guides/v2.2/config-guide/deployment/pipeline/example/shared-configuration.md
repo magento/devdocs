@@ -1,14 +1,6 @@
 ---
 group: config-guide
 title: Shared configuration
-<<<<<<< HEAD
-=======
-menu_title: Shared configuration
-menu_node:
-menu_order: 6100
-level3_menu_node: level3child
-level3_subgroup: deployment-examples
->>>>>>> master
 functional_areas:
   - Configuration
   - Deploy
