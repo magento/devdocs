@@ -130,7 +130,7 @@ See one of the following sections:
 
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}
 
-This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
+This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html). Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
 This section discusses how to specify who can access the Apache server.
 
