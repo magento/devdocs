@@ -1,6 +1,14 @@
 ---
 group: config-guide
 title: config.php reference
+<<<<<<< HEAD
+=======
+menu_title: config.php reference
+menu_order: 5800
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: config-ref
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

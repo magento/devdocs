@@ -6,7 +6,6 @@ title: Add a custom template for a form field on Checkout page
 subtitle: Customize Checkout
 menu_order: 7
 level3_subgroup: checkout-tutorial
-version: 2.0
 functional_areas:
   - Checkout
 ---

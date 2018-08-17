@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: How Varnish caching works
+<<<<<<< HEAD
+=======
+menu_title: How Varnish caching works
+menu_order: 105
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

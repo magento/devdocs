@@ -5,7 +5,6 @@ title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

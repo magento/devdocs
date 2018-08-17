@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Configure caching
+<<<<<<< HEAD
+=======
+menu_title: Configure caching
+menu_order: 3
+menu_node: parent
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

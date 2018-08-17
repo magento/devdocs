@@ -1,6 +1,14 @@
 ---
 group: config-guide
 title: Export the configuration
+<<<<<<< HEAD
+=======
+menu_title: Export the configuration
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: cli-config-mgmt
+menu_order: 251
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

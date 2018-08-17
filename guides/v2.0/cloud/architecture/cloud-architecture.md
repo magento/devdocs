@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Magento Commerce (Cloud) architecture
-version: 2.0
 functional_areas:
   - Cloud
 ---

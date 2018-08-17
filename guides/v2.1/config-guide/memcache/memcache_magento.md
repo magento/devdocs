@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Configure Magento to use memcached
+<<<<<<< HEAD
+=======
+menu_title: Configure Magento to use memcached
+menu_order: 30
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

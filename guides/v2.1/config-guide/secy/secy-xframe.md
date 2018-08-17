@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: X-Frame-Options header
+<<<<<<< HEAD
+=======
+menu_title: X-Frame-Options header
+menu_order: 5
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

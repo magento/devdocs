@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Verify split databases
+<<<<<<< HEAD
+=======
+menu_title: Verify split databases
+menu_order: 5
+menu_node:
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

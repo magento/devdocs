@@ -5,7 +5,6 @@ title: Troubleshooting
 menu_title: Troubleshooting
 menu_node: parent
 menu_order: 6
-version: 2.0
 functional_areas:
   - Tools
 ---

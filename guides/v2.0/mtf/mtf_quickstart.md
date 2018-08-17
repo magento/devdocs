@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start with the Functional Testing Framework
-version: 2.0
 ---
 
 In this chapter you will learn how to:

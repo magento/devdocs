@@ -1,7 +1,6 @@
 ---
 group: fedg
 title: Use Sass preprocessor and Gulp task runner
-version: 2.1
 functional_areas:
   - Frontend
   - Tools

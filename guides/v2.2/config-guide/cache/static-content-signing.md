@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Static content signing
+<<<<<<< HEAD
+=======
+menu_title: Static content signing
+menu_node:
+menu_order: 3
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: Cannot write to the generated/code directory
 menu_title: Cannot write to the generated/code directory
 menu_node:
 menu_order: 9
-version: 2.2
 functional_areas:
   - Install
   - System

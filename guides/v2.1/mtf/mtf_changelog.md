@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Changelog of the Functional Testing Framework
-version: 2.1
 redirect_from: /guides/v1.0/mtf/mtf_changelog.html
 ---
 

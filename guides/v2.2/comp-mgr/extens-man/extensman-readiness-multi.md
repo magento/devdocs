@@ -7,7 +7,6 @@ menu_node:
 menu_order: 8
 level3_menu_node: level3child
 level3_subgroup: readiness
-version: 2.2
 functional_areas:
   - Upgrade
 ---

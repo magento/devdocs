@@ -5,7 +5,6 @@ title: Resolve issues with a new project
 menu_title: Resolve issues with a new project
 menu_order: 10
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

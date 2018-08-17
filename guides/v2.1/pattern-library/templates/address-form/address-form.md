@@ -1,7 +1,6 @@
 ---
 group: pattern
 title: Address Form
-version: 2.1
 redirect_from: /guides/v1.0/pattern-library/templates/address-form/address-form.html
 ---
 This article discusses standards and rules for an address entry forms.

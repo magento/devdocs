@@ -5,7 +5,6 @@ title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
 menu_node:
 menu_order: 500
-version: 2.1
 functional_areas:
   - Upgrade
 ---

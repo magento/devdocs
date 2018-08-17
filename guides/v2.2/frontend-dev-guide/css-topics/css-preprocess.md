@@ -4,7 +4,6 @@ subgroup: D_CSS
 title: How CSS and LESS files are preprocessed and how to debug them
 menu_order: 3
 menu_title: How CSS and LESS files are preprocessed and how to debug them
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
   - Frontend

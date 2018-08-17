@@ -1,7 +1,6 @@
 ---
 group: pattern
 title: Static Content Container
-version: 2.1
 redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
 functional_areas:
   - Content

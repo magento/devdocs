@@ -4,7 +4,6 @@ subgroup: 30_B2B
 title: Magento_GroupedSharedCatalog module
 menu_title: GroupedSharedCatalog
 menu_order: 150
-version: 2.2
 functional_areas:
   - B2B
 ---

@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: Create your component file structure
 menu_title: Create your component file structure
 menu_order: 3000
-version: 2.0
 redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 

@@ -5,7 +5,6 @@ title: Resolve a broken branch
 menu_title: Resolve a broken branch
 menu_order: 40
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

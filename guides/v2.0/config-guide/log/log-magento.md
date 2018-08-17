@@ -5,7 +5,6 @@ title: Magento logging in more detail
 menu_title: Magento logging in more detail
 menu_node:
 menu_order: 2
-version: 2.0
 functional_areas:
   - Configuration
   - System

@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Split database performance solution (Magento Commerce only)
+<<<<<<< HEAD
+=======
+menu_title: Split database performance solution (Magento Commerce only)
+menu_order: 1
+menu_node: parent
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

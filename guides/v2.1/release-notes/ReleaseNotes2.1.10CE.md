@@ -6,7 +6,6 @@ menu_title: Magento Open Source 2.1.10 Release Notes
 menu_order: 156
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
-version: 2.1
 ---
 
 *	TOC

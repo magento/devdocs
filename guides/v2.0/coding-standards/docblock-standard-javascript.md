@@ -5,7 +5,6 @@ title: JavaScript DocBlock standard
 landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
-version: 2.0
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 functional_areas:
   - Standards

@@ -5,7 +5,6 @@ title: Upgrade from Open Source to Commerce
 menu_title: Upgrade from Open Source to Commerce
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Upgrade
 ---

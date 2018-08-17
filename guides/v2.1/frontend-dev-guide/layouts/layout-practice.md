@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
-version: 2.1
 functional_areas:
   - Frontend
 ---

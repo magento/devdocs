@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Build System Setup
+<<<<<<< HEAD
+=======
+menu_title: Build System Setup
+menu_node:
+menu_order: 1400
+>>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

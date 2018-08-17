@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Manage the cache
+<<<<<<< HEAD
+=======
+menu_title: Manage the cache
+menu_node:
+menu_order: 50
+>>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
 functional_areas:
   - Configuration

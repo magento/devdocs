@@ -6,7 +6,6 @@ title: Add a new field in address form
 subtitle: Customize Checkout
 menu_order: 9
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---

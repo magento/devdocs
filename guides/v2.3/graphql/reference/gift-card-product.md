@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: GiftCardProduct endpoint
-version: 2.3
 ---
 
 The `GiftCardProduct` endpoint defines which gift card-specific attributes are returned when performing a `products` search.

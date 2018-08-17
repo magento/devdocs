@@ -8,7 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 8
 level3_subgroup: order-tutorial
-version: 2.1
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-create-invoice.html
   - /guides/v2.2/get-started/order-tutorial/order-create-invoice.html

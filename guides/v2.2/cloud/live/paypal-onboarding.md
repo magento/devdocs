@@ -5,7 +5,6 @@ title: Set up PayPal payment methods
 menu_title: Set up PayPal
 menu_order: 10
 menu_node:
-version: 2.2
 functional_areas:
   - Cloud
   - Setup

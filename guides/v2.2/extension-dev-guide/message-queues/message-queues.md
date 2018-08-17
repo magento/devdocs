@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Message Queues
 ee_only: True
-version: 2.2
 redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html
 ---
 

@@ -2,7 +2,6 @@
 group: testing
 title: Magento Testing Guide
 landing-page: Testing Guide
-version: 2.2
 ---
 
 When talking about testing in Magento 2, we have to distinguish between different test types.

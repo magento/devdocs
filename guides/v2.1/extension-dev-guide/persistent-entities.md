@@ -4,7 +4,6 @@ subgroup:
 title: Persistent entities
 menu_title: Persistent entities
 menu_order: 1000
-version: 2.1
 ---
 
 ### Overview

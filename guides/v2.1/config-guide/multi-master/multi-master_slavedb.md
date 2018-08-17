@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Set up optional database replication
+<<<<<<< HEAD
+=======
+menu_title: Set up optional database replication
+menu_order: 10
+menu_node:
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

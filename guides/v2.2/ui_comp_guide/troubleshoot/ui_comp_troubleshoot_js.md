@@ -4,7 +4,6 @@ subgroup: troubleshoot
 title: Debug UI components JavaScript
 menu_title: Debug UI components JavaScript
 menu_order: 1
-version: 2.2
 ---
 
 ## Overview

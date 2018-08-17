@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Deploy to production
+<<<<<<< HEAD
+=======
+menu_title: Deploy to production
+menu_node:
+menu_order: 10
+>>>>>>> master
 redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 functional_areas:
   - Configuration

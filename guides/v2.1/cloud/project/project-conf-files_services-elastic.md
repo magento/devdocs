@@ -7,7 +7,6 @@ menu_order: 70
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

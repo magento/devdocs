@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Command line configuration
+<<<<<<< HEAD
+=======
+menu_title: Command line configuration
+menu_node: parent
+menu_order: 1
+>>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
 functional_areas:
   - Configuration

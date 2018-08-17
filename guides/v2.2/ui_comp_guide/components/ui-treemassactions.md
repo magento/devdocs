@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: TreeMassActions component
 menu_title: TreeMassActions component
-version: 2.2
 ---
 
 ## Overview

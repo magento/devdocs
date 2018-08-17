@@ -5,7 +5,6 @@ title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
 menu_node:
-version: 2.1
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 

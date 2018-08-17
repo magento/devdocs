@@ -4,7 +4,6 @@ subgroup: Configuration
 title: Sensitive and environment settings
 menu_title: Sensitive and environment settings
 menu_order: 1000
-version: 2.2
 functional_areas:
   - Configuration
 ---

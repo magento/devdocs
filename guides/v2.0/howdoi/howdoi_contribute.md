@@ -5,7 +5,6 @@ title: Contributor sign-up sheet
 menu_title: Contributor sign-up sheet
 menu_node: parent
 menu_order: 1
-version: 2.0
 ---
 
 Please sign up to write a How Do I topic for us!

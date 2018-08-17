@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Install, configure, verify memcached on CentOS
+<<<<<<< HEAD
+=======
+menu_title: Install, configure, verify memcached on CentOS
+menu_order: 3
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

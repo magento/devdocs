@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 2000
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html

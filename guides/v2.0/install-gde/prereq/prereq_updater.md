@@ -5,7 +5,6 @@ title: Set up the updater (obsolete)
 menu_title: Set up the updater (obsolete)
 menu_order: 1000
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

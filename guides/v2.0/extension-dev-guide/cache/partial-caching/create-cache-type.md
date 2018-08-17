@@ -5,7 +5,6 @@ title: Create a cache type
 menu_title: Create a cache type
 menu_order: 10
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/config-guide/cache/caching-cache-type.html
   - /guides/v2.1/config-guide/cache/caching-cache-type.html

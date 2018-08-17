@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Indexing overview
 menu_title: Indexing overview
 menu_order: 13
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: index
 redirect_from:

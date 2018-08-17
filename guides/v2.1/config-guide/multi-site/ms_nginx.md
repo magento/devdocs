@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Tutorial&mdash;Set up multiple websites or stores with nginx
+<<<<<<< HEAD
+=======
+menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
+menu_order: 3
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

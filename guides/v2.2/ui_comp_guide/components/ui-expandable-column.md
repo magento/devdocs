@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Expandable Column сomponent
 menu_title: Expandable Column component
-version: 2.2
 ---
 
 ## Overview

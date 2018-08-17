@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Development System Setup
+<<<<<<< HEAD
+=======
+menu_title: Development System Setup
+menu_node:
+menu_order: 1300
+>>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

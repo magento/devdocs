@@ -1,7 +1,6 @@
 ---
 group: contributor
 title: Basic template
-version: 2.1
 redirect_from: contributor-guide/basic_template.html
 ---
 

@@ -7,7 +7,6 @@ menu_order: 29
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.2
 redirect_from: /guides/v2.2/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services

@@ -4,7 +4,6 @@ subgroup: 01_Admin
 title: Admin FAQ
 menu_title: Admin FAQ
 menu_order: 1000
-version: 2.1
 functional_areas:
   - Standards
 ---

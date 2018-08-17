@@ -1,6 +1,14 @@
 ---
 group: config-guide
 title: Sensitive and system-specific
+<<<<<<< HEAD
+=======
+menu_title: Sensitive and system-specific
+menu_order: 5100
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: config-ref
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

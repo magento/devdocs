@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Modal сomponent
 menu_title: Modal component
-version: 2.2
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 

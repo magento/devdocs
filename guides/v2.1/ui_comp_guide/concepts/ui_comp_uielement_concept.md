@@ -5,7 +5,6 @@ title: About the uiElement class
 menu_title: About the uiElement class
 menu_node:
 menu_order: 70
-version: 2.1
 ---
 
 ## What is the `uiElement` class

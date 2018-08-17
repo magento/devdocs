@@ -5,7 +5,6 @@ title: Magento Components
 menu_title: Components
 menu_order:
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
 

@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Tutorial&mdash;Set up multiple websites with Apache
+<<<<<<< HEAD
+=======
+menu_title: Tutorial&mdash;Set up multiple websites with Apache
+menu_order: 9
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

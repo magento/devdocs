@@ -5,7 +5,6 @@ title: Translations overview
 menu_title: Translations
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Frontend
 ---

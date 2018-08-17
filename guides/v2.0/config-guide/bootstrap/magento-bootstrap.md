@@ -5,7 +5,6 @@ title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 functional_areas:
   - Configuration

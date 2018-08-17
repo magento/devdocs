@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Configure Magento to use Varnish
+<<<<<<< HEAD
+=======
+menu_title: Configure Magento to use Varnish
+menu_order: 15
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

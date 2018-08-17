@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Blackfire.io for Magento Cloud
-version: 2.1
 functional_areas:
   - Cloud
   - Integration

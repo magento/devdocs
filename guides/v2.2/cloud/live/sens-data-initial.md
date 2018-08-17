@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Example of managing system-specific settings
-version: 2.2
 functional_areas:
   - Cloud
   - Deploy

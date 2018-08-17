@@ -5,7 +5,6 @@ title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer
 menu_node:
 menu_order: 300
-version: 2.0
 functional_areas:
   - Install
   - System

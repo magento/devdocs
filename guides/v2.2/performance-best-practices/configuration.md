@@ -1,7 +1,6 @@
 ---
 group: perf-best-practices
 title: Configuration best practices
-version: 2.2
 functional_areas:
   - Configuration
   - System

@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Magento configuration files
+<<<<<<< HEAD
+=======
+menu_title: Magento configuration files
+menu_order: 1
+menu_node: parent
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

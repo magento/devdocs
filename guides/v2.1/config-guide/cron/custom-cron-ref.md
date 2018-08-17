@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Custom cron job and cron group reference
+<<<<<<< HEAD
+=======
+menu_title: Custom cron job and cron group reference
+menu_order: 2
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

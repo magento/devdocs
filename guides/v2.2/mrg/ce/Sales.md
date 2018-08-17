@@ -4,7 +4,6 @@ subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Sales
 menu_order: 1
-version: 2.2
 redirect_from:
  - /guides/v2.2/mrg/ce/Sales/description.html
  - /guides/v2.2/mrg/ce/Sales/dependencies.html

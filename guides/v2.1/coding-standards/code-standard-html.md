@@ -5,7 +5,6 @@ title: HTML style guide
 landing-page: Coding standards
 menu_title: HTML style guide
 menu_order: 9
-version: 2.1
 functional_areas:
   - Standards
 ---

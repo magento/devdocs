@@ -4,7 +4,6 @@ title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide
 menu_title: Introduction
 menu_order: 1
-version: 2.0
 ---
 
 ## Introduction   {#overview-introduction}

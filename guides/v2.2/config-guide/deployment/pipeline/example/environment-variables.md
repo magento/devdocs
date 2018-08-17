@@ -1,6 +1,14 @@
 ---
 group: config-guide
 title: Using environment variables
+<<<<<<< HEAD
+=======
+menu_title: Using environment variables
+menu_node:
+menu_order: 6300
+level3_menu_node: level3child
+level3_subgroup: deployment-examples
+>>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

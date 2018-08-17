@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: PHP
-version: 2.3
 functional_areas:
   - Install
   - System

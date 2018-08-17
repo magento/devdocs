@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Deploy variables
-version: 2.2
 functional_areas:
   - Cloud
   - Configuration

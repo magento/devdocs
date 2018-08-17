@@ -1,7 +1,6 @@
 ---
 group: coding-standards
 title: Technical guidelines
-version: 2.1
 redirect_from:
     - /guides/v2.1/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:

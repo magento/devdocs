@@ -1,7 +1,6 @@
 ---
 group: ext-best-practices
 title: Programming Best Practices
-version: 2.2
 functional_areas:
   - Standards
 ---

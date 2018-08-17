@@ -44,7 +44,7 @@ Release Notes for Magento 2.0.18 [Open Source]({{ site.baseurl }}/guides/v2.0/re
 Release Notes for Magento 2.1.12 [Open Source]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).|2.1.x|New|Feb 27
 Release Notes 2.2.3 [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)|2.2.x|New|Feb 27
 Added supported MySQL technologies to the [MySQL]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/mysql.html) topic.|2.2.x|Updated|Feb 27
-Updated the [DevDocs contributions]({{ site.baseurl }}/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
+Updated the [DevDocs contributions](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
 Formatting to improve consistency in the [Configuration Guide]({{ site.baseurl }}/guides/v2.0/config-guide/bootstrap/magento-modes.html).||Updated|Feb 26
 Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
 Added reference and [examples]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20

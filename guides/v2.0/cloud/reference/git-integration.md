@@ -5,7 +5,6 @@ title: Git
 menu_title: Git
 menu_node:
 menu_order:
-version: 2.0
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:

@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento 2.0 Backward Incompatible Changes
-version: 2.0
 redirect_from: /guides/v2.0/release-notes/backward-incompatible-changes.html
 ---
 

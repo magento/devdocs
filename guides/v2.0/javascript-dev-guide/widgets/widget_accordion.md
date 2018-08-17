@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html

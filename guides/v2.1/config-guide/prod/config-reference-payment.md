@@ -1,6 +1,14 @@
 ---
 group: config-guide
 title: Payment configuration paths reference
+<<<<<<< HEAD
+=======
+menu_title: Payment configuration paths reference
+menu_order: 5200
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: config-ref
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Technical Details
+<<<<<<< HEAD
+=======
+menu_title: Technical Details
+menu_node:
+menu_order: 1200
+>>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Fastly
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/basic-information/cloud-fastly.html
   - /guides/v2.1/cloud/basic-information/cloud-fastly.html

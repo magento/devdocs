@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Configure Apache and Elasticsearch
+<<<<<<< HEAD
+=======
+menu_title: Configure Apache and Elasticsearch
+menu_order: 7
+menu_node:
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

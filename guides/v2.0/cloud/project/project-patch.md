@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Patch Magento Commerce (Cloud)
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magento.html
   - /guides/v2.1/cloud/howtos/patch-magento.html

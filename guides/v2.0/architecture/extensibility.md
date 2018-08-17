@@ -5,7 +5,6 @@ title: Extensibility and modularity
 menu_title: Extensibility and modularity
 menu_node:
 menu_order:
-version: 2.0
 ---
 
 ## Overview

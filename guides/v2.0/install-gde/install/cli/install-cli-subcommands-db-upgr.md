@@ -5,7 +5,6 @@ title: Update the Magento database schema and data
 menu_title: Update the Magento database schema and data
 menu_node:
 menu_order: 16
-version: 2.0
 functional_areas:
   - Install
   - System

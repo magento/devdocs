@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Retrieving detailed attributes
 menu_title: Retrieving detailed attributes
 ---

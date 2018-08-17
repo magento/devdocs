@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Production System Setup
+<<<<<<< HEAD
+=======
+menu_title: Production System Setup
+menu_node:
+menu_order: 1500
+>>>>>>> master
 functional_areas:
   - Configuration
   - Deploy

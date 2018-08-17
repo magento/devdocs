@@ -1,7 +1,6 @@
 ---
 group: reporting
 title: Data collection for advanced reporting
-version: 2.2
 functional_areas:
     - Reports
 ---

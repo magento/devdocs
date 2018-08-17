@@ -5,7 +5,6 @@ title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - UpgradeUpgrade
 ---

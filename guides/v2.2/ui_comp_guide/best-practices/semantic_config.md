@@ -4,7 +4,6 @@ subgroup: best practices
 title: Using the new structure in UI components XML configuration
 menu_title: Using the new structure in UI components XML configuration
 menu_order: 1
-version: 2.2
 ---
 
 Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics.

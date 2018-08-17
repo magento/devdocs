@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Secure cron.php to run in a browser
+<<<<<<< HEAD
+=======
+menu_title: Secure cron.php to run in a browser
+menu_order: 2
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

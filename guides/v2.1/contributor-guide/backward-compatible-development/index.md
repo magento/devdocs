@@ -4,7 +4,6 @@ subgroup: contributor
 title: Backward compatible development
 menu_title: Backward compatible development
 menu_order: 1
-version: 2.1
 ---
 This page describes rules and best practices for backward compatible development.
 

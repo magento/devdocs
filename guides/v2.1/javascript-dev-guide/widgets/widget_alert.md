@@ -2,7 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Alert widget
-version: 2.1
 ---
 ## Overview {#alert_overview}
 

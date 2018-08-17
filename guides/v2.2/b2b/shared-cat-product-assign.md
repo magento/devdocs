@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Assign categories and products to a shared catalog
 menu_title: Assign categories and products
 menu_order: 23
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared

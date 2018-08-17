@@ -4,7 +4,6 @@ subgroup: D_CSS
 title: Compile LESS with Grunt
 menu_order: 4
 menu_title: Compile LESS with Grunt
-version: 2.1
 functional_areas:
   - Frontend
 ---

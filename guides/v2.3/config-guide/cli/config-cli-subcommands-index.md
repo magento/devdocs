@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Manage the indexers
+<<<<<<< HEAD
+=======
+menu_title: Manage the indexers
+menu_node:
+menu_order: 90
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

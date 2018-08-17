@@ -5,8 +5,6 @@ title: Magento payment provider gateway
 menu_title: Magento payment provider gateway 
 menu_node: parent
 menu_order: 1
-version: 2.1
-
 ---
 
 ### What is Magento payment provider gateway

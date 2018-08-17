@@ -5,7 +5,6 @@ title: Custom redirect to Wordpress VCL
 menu_title: Custom redirect to Wordpress VCL
 menu_order:
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

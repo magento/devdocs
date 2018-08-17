@@ -4,7 +4,6 @@ subgroup: 02_Extension-Coding
 title: Security, Performance, and Data Handling
 menu_title: Security, performance, and data handling
 menu_order: 3
-version: 2.0
 functional_areas:
   - Standards
 ---

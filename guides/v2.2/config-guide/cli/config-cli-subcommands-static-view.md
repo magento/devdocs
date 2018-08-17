@@ -1,7 +1,10 @@
 ---
 group: config-guide
 title: Deploy static view files
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

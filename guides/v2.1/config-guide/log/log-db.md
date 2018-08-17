@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Example&mdash;logging database activity
+<<<<<<< HEAD
+=======
+menu_title: Example&mdash;logging database activity
+menu_node:
+menu_order: 3
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: Uninstall modules
 menu_title: Uninstall modules
 menu_node:
 menu_order: 8
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html

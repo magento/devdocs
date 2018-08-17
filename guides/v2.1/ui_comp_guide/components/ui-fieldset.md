@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Fieldset сomponent
 menu_title: Fieldset component
-version: 2.1
 ---
 
 ## Overview

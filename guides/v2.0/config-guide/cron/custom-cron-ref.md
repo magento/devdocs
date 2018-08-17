@@ -5,7 +5,6 @@ title: Custom cron job and cron group reference
 menu_title: Custom cron job and cron group reference
 menu_order: 2
 menu_node:
-version: 2.0
 functional_areas:
   - Configuration
   - System

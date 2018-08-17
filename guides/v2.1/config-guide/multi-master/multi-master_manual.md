@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Manually configure master databases
+<<<<<<< HEAD
+=======
+menu_title: Manually configure master databases
+menu_order: 3
+menu_node:
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

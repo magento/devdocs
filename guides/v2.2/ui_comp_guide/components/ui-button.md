@@ -3,7 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Button component
 menu_title: Button component
-version: 2.2
 ---
 
 ## Overview

@@ -1,6 +1,5 @@
 ---
 group: release-notes
-version: 2.2
 title: Backward incompatible changes in Magento Open Source
 redirect_from: /guides/v2.2/release-notes/changes/ce_changes.html
 ---

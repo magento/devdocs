@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Prepare Solr for production
+<<<<<<< HEAD
+=======
+menu_title: Prepare Solr for production
+menu_order: 3
+menu_node:
+>>>>>>> master
 ee_only: True
 functional_areas:
   - Configuration

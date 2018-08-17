@@ -4,7 +4,6 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 411
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
 ---

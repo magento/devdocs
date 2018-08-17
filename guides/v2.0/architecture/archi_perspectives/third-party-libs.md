@@ -4,7 +4,6 @@ subgroup: Logical View
 title: Third-party libraries
 menu_title: Third-party libraries
 menu_order: 5
-version: 2.0
 redirect_from: /guides/v1.0/architecture/archi_perspectives/third-party-libs.html
 ---
 

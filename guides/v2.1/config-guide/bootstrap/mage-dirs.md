@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Customize base directory paths (MAGE_DIRS)
+<<<<<<< HEAD
+=======
+menu_title: Customize base directory paths (MAGE_DIRS)
+menu_order: 5
+menu_node:
+>>>>>>> master
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
 functional_areas:
   - Configuration

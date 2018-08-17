@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Install Varnish
+<<<<<<< HEAD
+=======
+menu_title: Install Varnish
+menu_order: 5
+menu_node:
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

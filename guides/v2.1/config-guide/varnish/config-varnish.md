@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Configure and use Varnish
+<<<<<<< HEAD
+=======
+menu_title: Configure and use Varnish
+menu_order: 1
+menu_node: parent
+>>>>>>> master
 functional_areas:
   - Configuration
   - System

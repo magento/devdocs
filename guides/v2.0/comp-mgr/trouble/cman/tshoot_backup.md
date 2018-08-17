@@ -5,7 +5,6 @@ title: Troubleshoot backups
 menu_title: Troubleshoot backups
 menu_node:
 menu_order: 400
-version: 2.0
 functional_areas:
   - Upgrade
 ---

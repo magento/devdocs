@@ -5,7 +5,6 @@ title: Starter architecture
 menu_title: Starter architecture
 menu_order: 20
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
 ---

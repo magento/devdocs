@@ -1,6 +1,12 @@
 ---
 group: config-guide
 title: Manage the indexers
+<<<<<<< HEAD
+=======
+menu_title: Manage the indexers
+menu_node:
+menu_order: 90
+>>>>>>> master
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 functional_areas:
   - Configuration

@@ -7,7 +7,6 @@ menu_node:
 menu_order: 101
 level3_menu_node: level3child
 level3_subgroup: tls
-version: 2.1
 functional_areas:
   - Install
   - System

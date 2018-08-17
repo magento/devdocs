@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Enable vault
 menu_title: Enable vault
 menu_order: 5
-version: 2.1
 functional_areas:
   - Integration
 ---

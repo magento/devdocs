@@ -1,6 +1,11 @@
 ---
 group: config-guide
 title: Disable module output
+<<<<<<< HEAD
+=======
+menu_title: Disable module output
+menu_order: 15
+>>>>>>> master
 functional_areas:
   - Configuration
   - System
