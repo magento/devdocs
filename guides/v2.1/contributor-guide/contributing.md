@@ -1,11 +1,7 @@
 ---
 group: contributor
-subgroup: contributor
 title: Code Contributions
-menu_title: Code Contributions
-menu_order: 1
-menu_node: parent
-redirect_from: /guides/v1.0/contributor-guide/contributing.html
+redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
 
 The following topics are included in this guide:

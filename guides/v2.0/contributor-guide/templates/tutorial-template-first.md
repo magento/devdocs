@@ -29,8 +29,7 @@ Parameter | Description
 `subtitle` | Displays the tutorial name. The value must be specified on each topic in the tutorial.
 `menu_title:` | On the first page of the tutorial, specify `Initial tasks`. Otherwise, leave this line blank.
 `menu_order:` | The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.
-`version:` | The version of Magento that this topic applies to.
-``ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
+`ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
 
 ## Before you begin...
 {:.tutorial-before}
