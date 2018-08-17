@@ -196,6 +196,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
+<!-- Accept the current popup visible on the page. -->
 <acceptPopup stepKey="acceptPopup"/>
 ```
 
@@ -214,9 +215,8 @@ Attribute|Type|Use|Description
 
 #### Example
 
-Open the `(baseURL)/admin` page.
-
 ```xml
+<!-- Open the `(baseURL)/admin` page. -->
 <amOnPage url="/admin" stepKey="goToLogoutPage"/>
 ```
 
@@ -243,8 +243,6 @@ Pre-condition: the current base URL is `https://www.magento.com`.
 <!-- Open the page `https://devdocs.magento.com` -->
 <amOnPage url="/" stepKey="goToDataPage"/>
 ```
-
-If the current base URL is `https://www.magento.com`, these steps open the page `https://data.magento.com`.
 
 ### amOnUrl
 
@@ -1004,7 +1002,8 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function. -->
+<!-- Return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function.
+To access this value, use `{$returnTime}` in later actions. -->
 <executeJS function="return Math.floor(new Date() / 1000);" stepKey="returnTime"/>
 ```
 
@@ -1056,7 +1055,8 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Generate a date that is 1 minute after the current date using Pacific Standard Time. For example "07/11/2020 7:00 AM". -->
+<!-- Generate a date that is 1 minute after the current date using Pacific Standard Time. For example "07/11/2020 7:00 AM".
+To access this value, use `{$generateDate}` in later actions. -->
 <generateDate date="+1 minute" format="m/d/Y g:i A" stepKey="generateDate"/>
 ```
 Call the date later in a test using {$generateDate}.
@@ -1102,10 +1102,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Grab the `title` attribute from `<input id="myinput" ... >...</input>`. -->
+<!-- Grab the `title` attribute from `<input id="myinput" ... >...</input>`.
+To access this value, use `{$grabAttributeFromInput}` in later actions. -->
 <grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFromInput"/>
 ```
-To use this value later in a test you would call it using `{$grabAttributeFromInput}`.
 
 ### grabCookie
 
@@ -1122,16 +1122,16 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<!-- Grab the cookie with the given name `cookie1`. -->
+<!-- Grab the cookie with the given name `cookie1`.
+To access this value, use `{$grabCookie1}` in later actions. -->
 <grabCookie userInput="cookie1" stepKey="grabCookie1"/>
 ```
-To use this value later in a test you would call it using `{$grabCookie1}`.
 
 ```xml
-<!-- Grab the cookie with the given name `cookie1` from the domain `www.example.com`. -->
+<!-- Grab the cookie with the given name `cookie1` from the domain `www.example.com`.
+To access this value, use `{$grabCookieExampleDomain}` in later actions. -->
 <grabCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="grabCookieExampleDomain"/>
 ```
-To use this value later in a test you would call it using `{$grabCookieExampleDomain}`.
 
 ### grabFromCurrentUrl
 
@@ -1147,10 +1147,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`. -->
+<!-- Grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`.
+To access this value, use `{$grabFromCurrentUrl}` in later actions. -->
 <grabFromCurrentUrl regex="~$/user/(\d+)/~" stepKey="grabFromCurrentUrl"/>
 ```
-To use this value later in a test you would call it using `{$grabFromCurrentUrl}`.
 
 ### grabMultiple
 
@@ -1167,16 +1167,16 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<!-- Grab every element on the page with the class `myElement` and return them as an array. -->
+<!-- Grab every element on the page with the class `myElement` and return them as an array.
+To access this value, use `{$grabAllMyElements}` in later actions. -->
 <grabMultiple selector="div.myElement" stepKey="grabAllMyElements"/>
 ```
-To use these values later in a test you would call it using `{$grabAllMyElements}`.
 
 ```xml
-<!-- Grab the `href` tag from every `a` element on the page and return them as an array. -->
+<!-- Grab the `href` tag from every `a` element on the page and return them as an array.
+To access this value, use `{$grabAllLinks}` in later actions. -->
 <grabMultiple userInput="href" selector="a" stepKey="grabAllLinks"/>
 ```
-To use these values later in a test you would call it using `{$grabAllLinks}`.
 
 ### grabPageSource
 
@@ -1191,10 +1191,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Store the page source code as text -->
+<!-- Store the page source code as text
+To access this value, use `{$grabPageSource}` in later actions. -->
 <grabPageSource stepKey="grabPageSource"/>
 ```
-To use this string later in a test you would call it using `{$grabPageSource}`.
 
 ### grabTextFrom
 
@@ -1210,10 +1210,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Store the text currently displayed by `<h2 id="title" ... >...</h2>`. -->
+<!-- Store the text currently displayed by the selected element.
+To access this value, use `{$grabTitle}` in later actions. -->
 <grabTextFrom selector="h2#title" stepKey="grabTitle"/>
 ```
-To use this string later in a test you would call it using `{$grabTitle}`.
 
 ### grabValueFrom
 
@@ -1230,10 +1230,10 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Store the value currently entered in <input id="name" ... >...</input>. -->
+<!-- Store the value currently entered in <input id="name" ... >...</input>.
+To access this value, use `{$grabInputName}` in later actions. -->
 <grabValueFrom selector="input#name" stepKey="grabInputName"/>
 ```
-To use this string later in a test you would call it using `{$grabInputName}`.
 
 ### loadSessionSnapshot
 
@@ -1356,13 +1356,13 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Move the mouse cursor over the `<div id="product1" ... >...</div>`. -->
-<moveMouseOver selector="div#product1" stepKey="hoverOverProduct1"/>
+<!-- Move the mouse cursor over the selected element. -->
+<moveMouseOver selector="button#product1" stepKey="hoverOverProduct1"/>
 ```
 
 ```xml
-<!-- Move the mouse cursor over the `<div id="product1" ... >...</div>` with an offset of 50px from the top and 50px from the left. -->
-<moveMouseOver selector="div#product1" x="50" y="50" stepKey="hoverOverProduct2"/>
+<!-- Move the mouse cursor over the selected element with an offset of 50px from the top and 50px from the left. -->
+<moveMouseOver selector="button#product1" x="50" y="50" stepKey="hoverOverProduct2"/>
 ```
 
 ### mSetLocale
@@ -1424,8 +1424,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Halt test execution to stop until the `enter` key is pressed to continue. -->
-
+<!-- Halt test execution until the `enter` key is pressed to continue. -->
 <pauseExecution stepKey="pause"/>
 ```
 
@@ -1457,12 +1456,12 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<!-- Press the `a` key within `<div id="page" ... >...</div>`. -->
-<pressKey userInput="a" selector="div#page" stepKey="pressA"/>
+<!-- Press the `a` key within the selected area. -->
+<pressKey userInput="a" selector="#targetElement" stepKey="pressA"/>
 ```
 
 ```xml
-<-- Press the delete key on an element with an id of `targetElement` uses key constants from the WebDriverKeys class. -->
+<!-- Press the delete within the selected area uses key constants from the WebDriverKeys class. -->
 <pressKey selector="#targetElement" parameterArray="[\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="pressDelete"/>
 ```
 
@@ -1513,12 +1512,12 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<!-- Reset the cookie with the name `cookie1`. -->
+<!-- Reset a cookie with the name `cookie1`. -->
 <resetCookie userInput="cookie1" stepKey="resetCookie1"/>
 ```
 
 ```xml
-<!-- Reset the cookie with the given name `cookie1` from the domain `www.example.com`. -->
+<!-- Reset a cookie with the given name `cookie1` from the domain `www.example.com`. -->
 <resetCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="resetCookieExampleDomain"/>
 ```
 
@@ -1576,13 +1575,13 @@ Attribute|Type|Use|Description
 #### Examples
 
 ```xml
-<!-- Move the page to the middle of `<div id="anchor" ... >...</div>`. -->
+<!-- Move the page to the middle of the selected area. -->
 <scrollTo selector="div#anchor" stepKey="scrollToAnchor"/>
 ```
 
 ```xml
-<!-- Move the page to the middle of `<div id="anchor" ... >...</div>` with an offset of 50px from the top and 50px from the left. -->
-<scrollTo selector="#anchor" x="50" y="50" stepKey="scrollToAnchor2"/>
+<!-- Move the page to the middle of the selected area with an offset of 50px from the top and 50px from the left. -->
+<scrollTo selector="div#anchor" x="50" y="50" stepKey="scrollToAnchor2"/>
 ```
 
 ### scrollToTopOfPage
@@ -1619,7 +1618,8 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<searchAndMultiSelectOption selector="#stuff" parameterArray="['Item 1', 'Item 2']" stepKey="searchAndMultiSelect1"/>
+<!-- Search and select for "Item 1" amd "Item 2" in the Magento multiselect element with the id of `multiSelect`. -->
+<searchAndMultiSelectOption selector="#multiSelect" parameterArray="['Item 1', 'Item 2']" stepKey="searchAndMultiSelect1"/>
 ```
 
 On this test step the MFTF:
@@ -1646,7 +1646,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Verify that `<h2 id="title" ... >...</h2> contains the text "Sample title". -->
+<!-- Verify that the selected element contains the text "Sample title". -->
 <see userInput="Sample title" selector="h2#title" stepKey="seeTitle"/>
 ```
 
@@ -1689,9 +1689,8 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Verify that there is a cookie with the given name `cookie1` from the domain `www.example.com`. -->
-<seeCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="seeCookieInExampleDomain"/>
+<seeCookie userInput="cookie1" parameterArray="['domainName' => 'www.example.com']" stepKey="seeCookieInExampleDomain"/>
 ```
-This action will be true only if there is a cookie with the given name `cookie1` from the domain `www.example.com`.
 
 ### seeCurrentUrlEquals
 
@@ -1920,7 +1919,6 @@ Attribute|Type|Use|Description
 <!-- Verify that there is a hyperlink tag with the text "External link" and the `href` attribute of `/admin`. -->
 <seeLink userInput="External link" url="/admin" stepKey="seeAdminLink"/>
 ```
-This action will be true only if there is a hyperlink tag with the text "External link" and the href attribute of `/admin`.
 
 ### seeNumberOfElements
 
@@ -2128,7 +2126,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- This action will switch to a window with the `name` parameter of `newWindow`. -->
+<!-- Switch to a window with the `name` parameter of `newWindow`. -->
 <switchToWindow userInput="newWindow" stepKey="switchToWindow"/>
 ```
 
@@ -2417,6 +2415,6 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- This action will wait for text "Sample Text" to appear in `<div id="page" ... >...</div>` before continuing. -->
+<!-- Wait for text "Sample Text" to appear in the selected area before continuing. -->
 <waitForText userInput="Sample Text" selector="div#page" stepKey="waitForText"/>
 ```
