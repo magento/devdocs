@@ -550,11 +550,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Any <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">service contract</a> can be <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">exposed as REST and SOAP</a> endpoints via configuration in a module’s <code class="highlighter-rouge">webapi.xml</code> file.</p>
 
-<h4 id="declare-a-new-graphql-query">Declare a new GraphQL query</h4>
+<h4 id="declare-a-new-graphql-querymutation">Declare a new GraphQL query/mutation</h4>
 
 <ol>
   <li>Create custom resolvers.</li>
-  <li>Declare a custom query and all necessary types in <code class="highlighter-rouge">schema.graphqls</code></li>
+  <li>Declare a custom query/mutation and all necessary types in <code class="highlighter-rouge">schema.graphqls</code>.</li>
 </ol>
 
 <p>If the target module is called <code class="highlighter-rouge">MyModule</code>, then create the resolvers and configuration files in a new module called <code class="highlighter-rouge">MyModuleGraphQl</code>.</p>
