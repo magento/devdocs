@@ -55,4 +55,4 @@ To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-
 
 
 {:.bs-callout .bs-callout-info}
-You can access the GraphQL introspection feature only if your Magento instance is in developer mode. See [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) for more information about modes.
+You can access the GraphQL introspection feature only if your Magento instance is in developer mode. [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) describes how to check and change the mode.
