@@ -7,7 +7,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from versiobn 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
+You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from version 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
 
 Prepare your environment with the following tasks:
 
