@@ -131,7 +131,6 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 *Output:*
 
-````
 ```html
 <div class="container">
   <h4 class="title">Title</h4>
@@ -140,7 +139,6 @@ For blocks of code, surround content with 3 backticks and an optional [supported
   </div>
 </div>
 ```
-````
 
 ### Callout Messages {#callouts}
 
