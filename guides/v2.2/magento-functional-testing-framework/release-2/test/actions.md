@@ -940,7 +940,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Click `<button id="mybutton" ... >...</button>` twice in succession. -->
+<!-- Click the selected element twice in succession. -->
 <doubleClick selector="button#mybutton" stepKey="doubleClickButton"/>
 ```
 
@@ -1059,7 +1059,6 @@ Attribute|Type|Use|Description
 To access this value, use `{$generateDate}` in later actions. -->
 <generateDate date="+1 minute" format="m/d/Y g:i A" stepKey="generateDate"/>
 ```
-Call the date later in a test using {$generateDate}.
 
 ### getData
 
@@ -1249,7 +1248,8 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Load all cookies saved via `<saveSessionSnapshot name="savedSnapshot" ... />`. -->
+<!-- Load all cookies saved via `<saveSessionSnapshot name="savedSnapshot" ... />`.
+To access this value, use the `loadSessionSnapshot` action -->
 <loadSessionSnapshot userInput="savedSnapshot" stepKey="loadSnapshot"/>
 ```
 
