@@ -6,7 +6,6 @@ menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node:
 version: 2.1
-github_link: config-guide/varnish/config-varnish-magento.md
 functional_areas:
   - Configuration
   - System
@@ -60,6 +59,7 @@ Where `magento` is the name of your database.
 </div>
 
 ## Export a Varnish configuration file
+
 This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
 
 To export a Varnish configuration file from the Admin panel:
@@ -86,4 +86,5 @@ To export a Varnish configuration file from the Admin panel:
 		service httpd restart
 
 #### Last step
+
 <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>

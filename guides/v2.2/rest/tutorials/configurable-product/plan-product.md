@@ -10,7 +10,6 @@ return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
 version: 2.2
-github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:
   - Integration
 ---
@@ -24,7 +23,6 @@ To create a configurable product programmatically, you'll need to know the follo
 Since this tutorial uses the sample data, we can take advantage of the options that the Top attribute set provides. This attribute set contains attributes that describe the fabric, sleeve length, and other characteristics that are specific to clothing. It also includes EAV attributes such as size and color, which are commonly available to all types of physical products.
 
 The size of the t-shirt will be the configurable aspect of this product. Therefore, we'll create a simple product for each size (Small, Medium, and Large).
-
 
 ## Define product characteristics
 

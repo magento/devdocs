@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Data set
 version: 2.1
-github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 
 A data set contains data used by a [test case] and [constraints][constraint].

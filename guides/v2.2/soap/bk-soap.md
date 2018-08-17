@@ -7,7 +7,6 @@ menu_title: Overview
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: soap/bk-soap.md
 functional_areas:
   - Integration
 ---

@@ -6,7 +6,6 @@ menu_title: Glossary of common terms
 menu_order: 5
 menu_node:
 version: 2.1
-github_link: extension-dev-guide/intro/intro-composer-gloss.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
@@ -34,6 +33,7 @@ You can *package* your components as follows:
 </div>
 
 ### Metapackage {#gloss-meta}
+
 Magento Marketplace requires more than one component to be packaged as a *metapackage*, which consists of only a `composer.json` that specifies individual components and their dependencies. (Magento Marketplace also refers to a metapackage as an *extension*.)
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
@@ -47,10 +47,12 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
+
 *	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
 *	<a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
+
 Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall

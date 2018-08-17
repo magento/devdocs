@@ -5,7 +5,6 @@ title: UI-select component
 menu_title: UI-select component
 menu_node:
 version: 2.3
-github_link: ui-components/ui-secondary-uiselect.md
 
 ---
 
@@ -76,7 +75,6 @@ Navigation keys:
 | Dependencies                    | `Magento/Ui/view/base/web/js/form/element/abstract.js`|
 | Template                        | `app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html`  |
 {:style="table-layout:auto;"}
-
 
 ### UI-select component-specific configuration
 

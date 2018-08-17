@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 3_Widgets
 title: Tabs widget
 version: 2.1
-github_link: javascript-dev-guide/widgets/widget_tabs.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
@@ -15,8 +14,8 @@ The Magento tabs widget implements single content area with multiple panels, eac
 
 The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/tabs.js].
 
-
 ## Initialize the tabs widget {#fedg_tabs_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 
@@ -211,7 +210,6 @@ The option of the [collapsible] widget used by tabs.
 
 **Default value**: `[data-role=trigger]`
 
-
 ## Methods {#tabs_methods}
 
 The tabs widget has the following methods:
@@ -236,6 +234,7 @@ The tabs widget has the following methods:
 `disable(index)` disables the tab with the corresponding `index`.
 
 ## Events {#fedg_tabs_events-methods}
+
 Tabs is subscribed to the same events as the [collapsible] widget:
 
 -   [beforeOpen callback](#fedg_tabs_beforeOpen_callback)

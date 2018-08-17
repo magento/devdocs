@@ -6,7 +6,6 @@ menu_title: Use Redis for the Magento page and default cache
 menu_order: 5
 menu_node:
 version: 2.2
-github_link: config-guide/redis/redis-pg-cache.md
 functional_areas:
   - Configuration
   - System
@@ -66,7 +65,6 @@ where
 The following example enables Redis default caching, sets the host to `redis.example.com` and assigns the database number to 0. All other parameters are set to the default value.
 
 `bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=0`
-
 
 ## Configure Redis page caching
 

@@ -2,7 +2,6 @@
 group: rest
 title: Manage prices for multiple products
 version: 2.2
-github_link: rest/modules/catalog-pricing.md
 functional_areas:
   - Integration
 redirect_from: /guides/v2.2/rest/catalog-pricing.html

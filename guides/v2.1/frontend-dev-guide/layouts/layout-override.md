@@ -5,7 +5,6 @@ title: Override a layout
 menu_title: Override a layout
 menu_order: 5
 version: 2.1
-github_link: frontend-dev-guide/layouts/layout-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 functional_areas:
   - Frontend
@@ -20,8 +19,8 @@ In this article, [page layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/la
 
 Layout files with instructions that override the default or parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} files are referred to as *overriding layout files*.
 
-
 ## Examples of customizations that involve overriding layouts
+
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
@@ -40,7 +39,6 @@ Examples of customizations that involve overriding layouts:
 *	Removing block arguments.
 *	Modifying and suppressing [handles]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle){:target="_blank"} inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
-
 
 ## How to override a layout {#fedg_layout_override_howto}
 
@@ -103,7 +101,6 @@ These files override the following layouts:
 <span class="glyphicon-class">
   <p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p></span>
 </div>
-
 
 ## Customization mistakes {#override-mistake}
 

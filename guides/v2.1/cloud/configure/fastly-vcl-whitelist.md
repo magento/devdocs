@@ -6,7 +6,6 @@ menu_title: Custom whitelist VCL
 menu_order:
 menu_node:
 version: 2.1
-github_link: cloud/configure/fastly-vcl-whitelist.md
 functional_areas:
   - Cloud
   - Setup
@@ -24,6 +23,7 @@ You must have the following information to complete this VCL code snippet:
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
+
 Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an Edge ACL of IPs to whitelist and enable access to your site. Then create a custom VCL snippet to manage access.
 
 If you want to allow access to Staging and Production, create the Edge ACL in both Magento Admins with the same name. You can have different IPs in the two environments. The VCL snippet code will apply to both environments.
@@ -38,6 +38,7 @@ If you want to allow access to Staging and Production, create the Edge ACL in bo
 You will use the Edge ACL by name in your VCL snippet code.
 
 ## Create allowlist.json {#vcl}
+
 To allow only whitelisted IPs access to Staging and Production environments, you can use the same VCL snippet file without edits.
 
 Create an `allowlist.json` file with the following JSON content:
@@ -67,5 +68,6 @@ Review the following values for the code to determine if you need to make change
 The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
 
 ## Finish adding the VCL {#complete}
+
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 

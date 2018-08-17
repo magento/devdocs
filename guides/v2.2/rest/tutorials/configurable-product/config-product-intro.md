@@ -9,7 +9,6 @@ return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
 version: 2.2
-github_link: rest/tutorials/configurable-product/config-product-intro.md
 functional_areas:
   - Integration
 ---
@@ -28,7 +27,6 @@ This **5-step tutorial** generally takes **45 minutes**.
 * Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
 
 * Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
-
 
 ### Other resources
 

@@ -2,7 +2,6 @@
 group: cloud
 title: Configure Docker
 version: 2.1
-github_link: cloud/reference/docker-config.md
 functional_areas:
   - Cloud
   - Setup
@@ -33,16 +32,20 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
 -  If you use `ece-tools` v2002.0.12, {{site.data.var.ece}} deploys to a writeable file system in the Docker container. This version does not support the `docker:config:convert` command.
 
-
 #### To launch Docker with `ece-tools` v2002.0.13 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
+
 1.  Add your credentials to the `auth.json` file.
-1.  Update the template dependencies.
+
+1.  Install the template dependencies.
 
     ```bash
     composer install
     ```
+    
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1.  In your local environment, start the Docker configuration generator.
 
@@ -96,18 +99,20 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
     -  [`https://localhost`](https://localhost){:target="\_blank"}
 
-
 #### To launch Docker with `ece-tools` v2002.0.12:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 
 1.  Add your credentials to `auth.json` file.
 
-1.  Update the template dependencies.
+1.  Install the template dependencies.
 
     ```bash
     composer install
     ```
+    
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1.  In your local environment, start the Docker configuration generator.
 
@@ -137,11 +142,9 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     docker-compose run cli magento-installer
     ```
 
-1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+1.  Access your local Magento Cloud template by opening the following URL in a browser:
 
-    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
-
-    -  [`https://localhost`](https://localhost){:target="\_blank"}
+    [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
 
 
 ## Stop and remove the Docker configuration

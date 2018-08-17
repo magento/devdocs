@@ -7,7 +7,6 @@ menu_order: 299
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -20,6 +19,7 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 </div>
 
 ### Highlights
+
 Magento Magento Commerce 2.1.0 includes several new and exciting features:
 
 * **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing, and can preview these changes by date or {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
@@ -34,11 +34,13 @@ Magento Magento Commerce 2.1.0 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
 ### Security enhancements
+
 This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
 ### Known issues
+
 Magento 2.1.0 GA includes the following known issues:
 
 <!--- 54447-->* A developer who attempts to upgrade the {{site.data.var.ee}} software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
@@ -53,10 +55,7 @@ To work around this issue, run the following commands in the order shown:
 
 * <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
-
 ### Fixed issues
-
-
 
 #### Installation and upgrade
 {:.no_toc}
@@ -105,9 +104,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} configuration.
 
-
-
-
 #### Shopping
 {:.no_toc}
 
@@ -142,7 +138,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51086-->* You can now log out while persistent shopping cart functionality is enabled.
 
 <!--- 52452-->* Shopping cart shipping estimation no longer fails randomly.
-
 
 #### API
 {:.no_toc}
@@ -184,8 +179,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51066 -->* Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected.
 
-
-
 #### JavaScript
 {:.no_toc}
 
@@ -197,8 +190,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51040-->* You can now  add a custom option to the new Update pop-up.
 
-
-
 #### PHP
 {:.no_toc}
 <!--- 53524 -->*  {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} errors no longer occur when you run a cron script on installations running PHP5.5. [ (GITHUB-4722)](https://github.com/magento/magento2/issues/4722){:target="_blank"}
@@ -206,8 +197,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
 
 <!--- 48387-->* Payment/Shipping config is no longer decrypted twice in a PHP7 environment.
-
-
 
 #### Gift cards
 {:.no_toc}
@@ -219,10 +208,6 @@ To work around this issue, run the following commands in the order shown:
 <!--- 53312-->* Clicking on Submit {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} button no longer exposes the PHP error log.
 
 <!--- 52992-->* Expiration date for Gift Card account is left unspecified if you do not specify a date.
-
-
-
-
 
 #### PayPal
 {:.no_toc}
@@ -263,8 +248,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 53238-->* In the Vault Provider field, Magento no longer displays the Payflow Pro option for countries that don't offer it.  
 
-
-
 #### Braintree
 {:.no_toc}
 <!--- 48649-->* You can now change the quantity for an invoice.
@@ -292,9 +275,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 54293-->* You can now place an order from  within Braintree if 3D Secure Verification is enabled.
 
-
-
-
 #### Integration
 {:.no_toc}
 
@@ -314,8 +294,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 54231-->* You can now delete an Admin user that has the same ID as an integration user, without breaking the integration.
 
-
-
 #### Testing
 {:.no_toc}
 
@@ -326,7 +304,6 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank"> (GITHUB-4099)</a>
-
 
 #### Import/Export
 {:.no_toc}
@@ -355,10 +332,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50817 -->*  The `console` command now flushes caches without error. {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} should be flushed without errors.
 
-
-
-
-
 #### Search
 {:.no_toc}
 <!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size.
@@ -384,15 +357,10 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52975-->* Both Solr and Elasticsearch now display correct date formatting.
 
-
-
 #### Cloud
 {:.no_toc}
 
 <!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
-
-
-
 
 #### Checkout
 {:.no_toc}
@@ -420,9 +388,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52262-->* Fixed error on checkout page when you changed {% glossarytooltip 825b5f85-7bb8-4005-938e-51c1bb4b401b %}base currency{% endglossarytooltip %} at checkout.
 
 <!--- 50830 -->* Fixed problem with opening My Cart page in one-page checkout.
-
-
-
 
 #### Bundle products
 {:.no_toc}
@@ -476,12 +441,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 46415-->* CLI documentation now includes `magento dev:css` command. [ (GITHUB-433)](https://github.com/magento/magento2/issues/433){:target="_blank"}
 
-
-
-
-
-
-
 #### Testing
 {:.no_toc}
 
@@ -492,9 +451,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank"> (GITHUB-4099)</a>
-
-
-
 
 #### Staging
 {:.no_toc}
@@ -664,9 +620,6 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 51121 --> *  Fixed issue where the Select from Existing Scheduled Update option resulted in an SQL error.
 
 <!--- 51402-->* Fixed {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
-
-
-
 
 #### Miscellaneous
 {:.no_toc}
@@ -1259,10 +1212,8 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 * <i>Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i>
 
-
-
-
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 

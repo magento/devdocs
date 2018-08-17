@@ -5,7 +5,6 @@ title: REST usage notes
 menu_title: REST usage notes
 menu_order: 1
 version: 2.1
-github_link: rest/notes.md
 functional_areas:
   - Integration
 ---

@@ -2,7 +2,6 @@
 group: mftf
 title: Test actions
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/test/actions.md
 functional_areas:
  - Testing
 mftf-release: 2.2.0
@@ -1456,7 +1455,6 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
-
 
 ### updateData
 

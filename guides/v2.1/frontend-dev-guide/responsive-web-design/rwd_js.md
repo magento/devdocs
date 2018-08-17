@@ -5,7 +5,6 @@ title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design
 menu_order: 3
 version: 2.1
-github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 functional_areas:
   - Frontend
@@ -14,7 +13,6 @@ functional_areas:
 ## What's in this topic
 
 This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the [breakpoint]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms){:target="_blank"}.
-
 
 ## Scripts general overview
 
@@ -41,7 +39,6 @@ See one of the following sections for more information:
 
 *	<a href="#fedg_rwd_js_resp">responsive.js</a>
 *	<a href="#fedg_rwd_js_nav">menu.js</a>
-
 
 ## responsive.js {#fedg_rwd_js_resp}
 
@@ -73,9 +70,7 @@ For example, <code>responsive.js</code> changes the view of the {% glossarytoolt
 <li>For the mobile view, it is moved by {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} to be displayed under the checkout steps. <code>responsive.js</code> makes it a toggled block: by default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it is visible after you click it.</li>
 </ul>
 
-
 ## menu.js {#fedg_rwd_js_nav}
-
 
 In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
@@ -92,7 +87,6 @@ The following image illustrates the mobile-view navigation menu.
 
 
 <img style="border: 1px solid #ABABAB" src="{{ site.baseurl }}/common/images/js_rwd_menu.png">
-
 
 ## Re-using Magento scripts in your theme {#rwd_js_reuse}
 

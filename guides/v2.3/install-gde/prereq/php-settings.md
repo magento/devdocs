@@ -2,7 +2,6 @@
 group: install_pre
 title: Required PHP settings
 version: 2.3
-github_link: install-gde/prereq/php-settings.md
 functional_areas:
   - Install
   - System
@@ -39,6 +38,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
+
 This section discusses how you find the configuration files necessary to update required settings.
 
 ### Find `php.ini` configuration file

@@ -2,7 +2,6 @@
 group: release-notes
 title: Component Status
 version: 2.3
-github_link: release-notes/component-status.md
 ---
 
 **Last Updated: July 30, 2018**

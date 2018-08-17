@@ -9,7 +9,6 @@ return_to:
 menu_order: 5
 level3_subgroup: order-tutorial
 version: 2.1
-github_link: rest/tutorials/orders/order-add-items.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-add-items.html
   - /guides/v2.2/get-started/order-tutorial/order-add-items.html
@@ -205,7 +204,6 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
     }
 }
 {% endhighlight %}
-
 
 ### Add a bundle product to a cart {#add-bundle}
 

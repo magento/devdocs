@@ -2,13 +2,13 @@
 group:
 title: Merge and delete an environment (tutorial)
 version: 2.1
-github_link: cloud/howtos/environment-tutorial-env-merge.md
 functional_areas:
   - Cloud
   - Configuration
 ---
 
 ## Merge an environment {#tut-env-merge}
+
 This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code updates, new components, changes to themes, and so on.
 
 You can then optionally delete the environment.
@@ -19,11 +19,13 @@ This tutorial shows how to create a sample file and merge it. This tutorial assu
 You _cannot_ merge environment variables because they are not code. You must set the value of environment variables in an environment.
 
 ### Get started
+
 To get started:
 
 {% include cloud/cli-get-started.md %}
 
 ### Merge an environment
+
 To merge an environment:
 
 1.	Add a file named `test.txt` to the environment root directory.
@@ -47,6 +49,7 @@ To merge an environment:
 		magento-cloud environment:merge master
 
 ## Optionally delete the environment {#tut-env-delete}
+
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
 {:.bs-callout .bs-callout-info}

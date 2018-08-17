@@ -5,7 +5,6 @@ title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
 version: 2.0
-github_link: frontend-dev-guide/templates/template-security.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
 functional_areas:
   - Frontend
@@ -79,7 +78,7 @@ For the following output cases, use the specified function to generate XSS-safe 
   <span class="<?php $block->escapeQuote($block->getSpanClass()) ?>">Product Description</span>
 {% endhighlight %}
 
-<h4>Static Test</h4>
+#### Static Test
 
 To check your template for XSS vulnerabilities, you can use the static test `XssPhtmlTemplateTest.php` in `dev\tests\static\testsuite\Magento\Test\Php\`.  
 

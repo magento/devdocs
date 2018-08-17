@@ -2,7 +2,6 @@
 group: config-guide
 title: Logging
 version: 2.2
-github_link: config-guide/cli/logging.md
 functional_areas:
   - Configuration
   - System

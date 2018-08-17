@@ -5,7 +5,6 @@ title: Magento theme structure
 menu_title: Magento theme structure
 menu_order: 60
 version: 2.1
-github_link: frontend-dev-guide/themes/theme-structure.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 functional_areas:
   - Frontend
@@ -13,6 +12,7 @@ functional_areas:
 ---
 
 ## What's in this topic {#theme-structure-intro}
+
 A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html#theme-gen-overview){target="&#95;blank"} is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Magento theme location {#theme-structure-loc}
@@ -28,6 +28,7 @@ app/design/frontend/&lt;Vendor&gt;/
 </pre>
 
 ## Theme components {#theme-structure-comp}
+
 The structure of a Magento theme directory typically would be like following:
 <pre>
 &lt;theme_dir&gt;/
@@ -262,6 +263,7 @@ Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c
 * Dynamic view files
 
 ### Static view files {#theme-structure-pub}
+
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
 {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static files{% endglossarytooltip %} can be located in a theme directory as follows:
@@ -282,6 +284,7 @@ Static view files that can be accessed by a direct link from the storefront, are
   To be actually accessible for browsers public static files are [published]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) to the `/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/` directory.
 
 ### Dynamic view files
+
 View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, and layouts.
 
 Dynamic view files are located in a theme directory as follows:

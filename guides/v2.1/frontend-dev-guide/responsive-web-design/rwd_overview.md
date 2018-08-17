@@ -6,7 +6,6 @@ menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html
 functional_areas:
   - Frontend
@@ -43,7 +42,6 @@ The articles in this chapter describe the particular approaches used in the Blan
 
 </ul>
 
-
 ## Terms used {#fedg_rwd_terms}
 
 <table>
@@ -66,7 +64,6 @@ The width of the user’s screen that causes your responsive {% glossarytooltip 
 </td>
 </tr>
 </table>
-
 
 ## Recommended reading
 

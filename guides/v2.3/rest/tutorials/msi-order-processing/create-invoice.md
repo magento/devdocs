@@ -10,7 +10,6 @@ return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/create-invoice.md
 functional_areas:
   - Integration
 ---
@@ -18,7 +17,6 @@ functional_areas:
 You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 
 After you submit the invoice, Magento adjusts the Quantity per Source value for non-physical products.
-
 
 ## Capture payment {#capture-payment}
 

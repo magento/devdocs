@@ -6,7 +6,6 @@ menu_title: Configure Magento to use memcached
 menu_order: 30
 menu_node:
 version: 2.1
-github_link: config-guide/memcache/memcache_magento.md
 functional_areas:
   - Configuration
   - System
@@ -45,6 +44,7 @@ To configure Magento to use memcache:
 3.  Continue with the next section.
 
 ## Verify memcached is working with Magento {#config-memcache-verify}
+
 To verify memcached works with Magento:
 
 1.  Delete the contents of the following directories under your Magento installation directory:

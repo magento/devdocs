@@ -2,7 +2,6 @@
 group: rest
 title: REST tutorials
 version: 2.3
-github_link: rest/tutorials/index.md
 functional_areas:
   - Integration
   - Orders
@@ -32,7 +31,6 @@ Before you begin any tutorial, make sure you know the basics about {{site.data.v
 * Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html){:target="_blank"} for information about the Luma store that is created when you install Magento with the sample data.
-
 
 ## Performing steps
 

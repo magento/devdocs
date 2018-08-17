@@ -6,7 +6,6 @@ menu_title: Troubleshoot deployment
 menu_order: 3
 menu_node:
 version: 2.0
-github_link: cloud/access-acct/trouble.md
 functional_areas:
   - Cloud
   - Deploy

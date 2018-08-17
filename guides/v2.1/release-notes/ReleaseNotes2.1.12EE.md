@@ -7,7 +7,6 @@ menu_order: 254
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.12EE.md
 ---
 
 *	TOC
@@ -29,6 +28,7 @@ For security reasons, this release limits the ability to use symlinks for <code>
 </div>
 
 ## Highlights
+
 Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
 
 * **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
@@ -46,8 +46,6 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 {% include install/releasenotes/ee_install_21.md %}
 
-
-
 ## Migration toolkits
 The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
 
@@ -56,6 +54,7 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 
 

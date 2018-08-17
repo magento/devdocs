@@ -5,7 +5,6 @@ title: Adding custom favicons
 menu_title: Adding custom favicons
 menu_order: 80
 version: 2.1
-github_link: frontend-dev-guide/themes/favicon.md
 functional_areas:
   - Frontend
   - Theme
@@ -42,7 +41,6 @@ To add a custom favicon in the Magento Admin, do the following:
 5. Click **Save Configuration** in the upper right corner to save the changes.
 
 If caching is enabled in your Admin, you get a notification that refreshing certain {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types is required. Click the link provided in the notification, and then click **Flush Magento Cache**.
-
 
 ## Add custom favicons manually
 

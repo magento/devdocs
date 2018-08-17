@@ -2,7 +2,6 @@
 group: cloud
 title: Bitbucket integration
 version: 2.1
-github_link: cloud/integrations/bitbucket-integration.md
 functional_areas:
   - Cloud
   - Setup
@@ -24,6 +23,7 @@ Before you enable the integration, you must have the following:
 -  An SSH access key for the Bitbucket repository
 
 ## Prepare your repository
+
 You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.
 
 1.  From the terminal, log in to your {{site.data.var.ece}} project.
@@ -80,6 +80,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 1.  Verify that your Bitbucket repository contains all of your project files.
 
 ## Create an OAuth consumer
+
 The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
 
 #### To create an OAuth consumer in Bitbucket:
@@ -145,6 +146,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     ```
 
 ## Test the integration
+
 After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.
 
 1.  Create a test file.
@@ -164,6 +166,7 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
     ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 
 ## Create a new Cloud branch
+
 The Bitbucket integration cannot activate new environments in your {{site.data.var.ece}} project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the `magento-cloud` CLI tool or the Project Web UI.
 
 #### To activate a branch created with Bitbucket:
@@ -202,6 +205,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
 After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
+
 You can safely remove the Bitbucket integration from your project without affecting your code.
 
 #### To remove the Bitbucket integration:

@@ -7,7 +7,6 @@ menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
 version: 2.1
-github_link: install-gde/prereq/php-centos.md
 functional_areas:
   - Install
   - System
@@ -24,6 +23,7 @@ If you must install both Apache and PHP, [Install Apache]({{ page.baseurl }}/ins
 Magento 2.1.x does not support PHP 5.5.
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -32,6 +32,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#centos-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, messages similar to the following display:
 
 	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
@@ -45,6 +46,7 @@ The preceding message confirms that the `Zend OPcache` is installed. We strongly
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
 ## CentOS repositories {#centos-php-repos}
+
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="&#95;blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
 We're not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
@@ -67,6 +69,7 @@ Continue with one of the following sections:
 *	[PHP 5.6 on CentOS 6 or 7](#instgde-prereq-php56-install-centos)
 
 ## PHP 7 on CentOS 6 or 7 {#php-centos-7}
+
 There is more than one way to install PHP 7.0 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 7 on CentOS 6 or 7: %}
@@ -110,6 +113,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 {% endcollapsible %}
 
 ## PHP 5.6 on CentOS 6 or 7 {#instgde-prereq-php56-install-centos}
+
 There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 5.6 on CentOS 6 or 7: %}
@@ -165,6 +169,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
+
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 5.6 or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)

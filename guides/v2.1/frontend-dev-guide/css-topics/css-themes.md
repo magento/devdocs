@@ -4,7 +4,6 @@ subgroup: D_CSS
 title: Include CSS
 menu_order: 2
 version: 2.1
-github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
@@ -23,7 +22,6 @@ The CSS class names can be assigned in both templates and layouts.</span></p>
 </div>
 
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
-
 
 ## How Magento stylesheet files are organized
 
@@ -69,7 +67,6 @@ Contains the following:
 </tr>
 
 </table>
-
 
 ## Include CSS {#fedg_css-in-themes_xml}
 

@@ -6,7 +6,6 @@ menu_title: Access issues
 menu_node: parent
 menu_order: 1
 version: 2.2
-github_link: install-gde/trouble/php/tshoot_access-main.md
 functional_areas:
   - Install
   - System

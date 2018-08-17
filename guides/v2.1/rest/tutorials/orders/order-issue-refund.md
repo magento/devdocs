@@ -9,7 +9,6 @@ return_to:
 menu_order: 10
 level3_subgroup: order-tutorial
 version: 2.1
-github_link: rest/tutorials/orders/order-issue-refund.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-issue-refund.html
   - /guides/v2.2/get-started/order-tutorial/order-issue-refund.html
@@ -78,7 +77,6 @@ A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglo
 ### Verify this step {#verify-step}
 
 Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit memos**. The credit memo is displayed in the grid.
-
 
 ## Congratulations! You've finished.
 {:.no_toc}

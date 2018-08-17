@@ -7,7 +7,6 @@ menu_order: 170
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
 version: 2.1
-github_link: release-notes/ReleaseNotes2.1.2CE.md
 ---
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.2. This release includes security enhancements and several functional fixes.
@@ -33,11 +32,10 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 <i>These new interfaces will not break any existing customizations or extensions.</i>  See [Alan Kent’s blog about Magento](https://alankent.me/category/magento/){:target="_blank"} for more information about these features and Magento’s use of semantic versioning. 
 
 ## Security enhancements
+
 This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the [Magento Security Center](https://magento.com/security/patches/magento-2010-and-212-security-update){:target="_blank"}.
-
-
 
 ### General security 
 {:.no_toc} 
@@ -76,19 +74,12 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56901/1492-->*  A user with lesser privileges can no longer force an Admin user to add his private or public key using a JSON call. 
 
-
-
-
-
 ### Denial-of-service (DoS) attacks and brute force attacks
 {:.no_toc} 
 
 <!--- 46026/57463-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
 <!--- 57302/1338-->*  You can no longer manipulate the full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} to store incorrect pages under regular page {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} entries.
-
-
-
 
 ### Cross-Site Request Forgery  (CSRF)
 {:.no_toc} 
@@ -98,20 +89,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
 
-
-
-
 ### SQL injection
 {:.no_toc} 
 
 <!--- 56540/1480-->*  Fixed issue with potential SQL injection through the Zend framework through ordering or grouping parameters. 
 
-
-
 ## Functional fixes and enhancements
+
 We address the following functional issues in this release.
-
-
 
 ### Sales API enhancements
 {:.no_toc} 
@@ -149,12 +134,6 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 
 <!--- 58401-->* You can now use the REST API to create a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
 
-
-
-
-
-
-
 ### Cart and checkout
 {:.no_toc} 
 
@@ -162,7 +141,6 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. [(GITHUB-6121)](https://github.com/magento/magento2/issues/6121){:target="_blank"} 
-
 
 ### Tracking and shipping
 {:.no_toc}  
@@ -176,7 +154,6 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 {:.no_toc} 
 
 <!--- 59505-->* You can now save simple products created in 2.0.x environments after upgrading to environments running Magento 2.1.x. Previously, you could not successfully save the opened product after upgrading. 
-
 
 ### General fixes
 {:.no_toc} 
@@ -201,14 +178,10 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 
 <!--- DELETED:  (won't fix) 57578, CLONE: 58123, 58111, 57049, OMIT: 58667, 57878, 58473, 58421, 58402, 58313 (releasenotes),57845, 55862, 57294, 58166, 58204, (internal) 58929, 58875, 58700, 58606, 58590, 58474, 56425 -->
 
-
-
 ## Known issues
 
-
-* **Issue**: Error creating configurable products in 2.1.1 [(GITHUB-6424)](https://github.com/magento/magento2/issues/6424){:target="_blank"}. **Workaround**: Clear your browser cache after upgrading. 
+* **Issue**: Error creating configurable products in 2.1.1 [(GITHUB-6424)](https://github.com/magento/magento2/issues/6424){:target="_blank"}. **Workaround**: Clear your browser cache after upgrading.
 <!--- 58017-->
-
 
 
 
@@ -233,9 +206,8 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 * **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
 <!--- 54618-->
 
-
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
@@ -246,8 +218,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 {% include install/releasenotes/ce_install_21.md %}
-
-
 
 ## Migration toolkits
 The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.

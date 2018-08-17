@@ -6,7 +6,6 @@ menu_title: Associate cache frontends with cache types
 menu_order: 1
 menu_node:
 version: 2.1
-github_link: config-guide/cache/cache-types.md
 redirect_from:
   - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html
@@ -18,6 +17,7 @@ functional_areas:
 ---
 
 ## Step 1: Define a cache frontend {#cache-mage-frontend}
+
 The Magento application has a `default` cache {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} you can use for any [cache type]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over). This section discusses how to optionally define a {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %} with a different name, which is preferable if you expect to customize your frontend.
 
 {:.bs-callout .bs-callout-info}
@@ -50,6 +50,7 @@ The following example shows how to define it in `env.php` (which overrides `di.x
 where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
 
 ## Step 2: Configure the cache {#cache-mage-adv}
+
 You can specify frontend and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} cache configuration options in `env.php` or `di.xml`. This task is optional.
 
 `env.php` example:

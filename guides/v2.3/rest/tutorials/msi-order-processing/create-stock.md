@@ -10,7 +10,6 @@ return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/create-stock.md
 functional_areas:
   - Integration
 ---
@@ -22,7 +21,6 @@ A sales channel can only be assigned to one stock.
 The `stock_id` of the default stock is `1`.  You cannot delete or add sources to the default stock, but you can perform these actions with custom stocks.
 
 For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock){:target="_blank"}.
-
 
 ## Create the stock for North America
 
@@ -68,7 +66,6 @@ The `name` attribute is required.
 **Response**
 
 Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps. 
-
 
 ## Create the Europe stock
 

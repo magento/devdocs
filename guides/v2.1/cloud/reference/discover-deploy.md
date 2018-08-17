@@ -2,7 +2,6 @@
 group: cloud
 title: Deployment process
 version: 2.1
-github_link: cloud/reference/discover-deploy.md
 functional_areas:
   - Cloud
   - Deploy
@@ -161,7 +160,6 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 
 {:.bs-callout .bs-callout-info}
 Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
-
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
 

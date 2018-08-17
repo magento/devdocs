@@ -4,7 +4,6 @@ subgroup: components
 title:  Email component
 menu_title: Email component
 version: 2.1
-github_link: ui_comp_guide/components/ui-email.md
 ---
 
 ## Overview

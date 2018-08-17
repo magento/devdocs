@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 3_Widgets
 title: Prompt widget
 version: 2.1
-github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
 
 ## Overview 
@@ -79,6 +78,7 @@ actions: {
 ```
 
 ### autoOpen {#prompt_autoopen}
+
 Automatically open the prompt window when the widget is initialized.
 
 **Type**: Boolean
@@ -86,6 +86,7 @@ Automatically open the prompt window when the widget is initialized.
 **Default value**: `false`
 
 ### clickableOverlay {#prompt_clickableOverlay}
+
 Close the prompt window when a user clicks on the overlay.
 
 **Type**: Boolean
@@ -122,6 +123,7 @@ The prompt widget implements the following events:
 - `always` callback.
 
 ## Keyboard navigation {#prompt_key_navigation}
+
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
 

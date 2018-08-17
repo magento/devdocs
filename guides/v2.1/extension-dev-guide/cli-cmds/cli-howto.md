@@ -6,17 +6,18 @@ menu_title: How to add CLI commands
 menu_node: 
 menu_order: 3
 version: 2.1
-github_link: extension-dev-guide/cli-cmds/cli-howto.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
 ## Overview of adding CLI commands {#cli-add-over}
+
 Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
 
 ### About the Magento CLI
 {% include install/new-cli-intro.html %}
 
 ### Prerequisites
+
 Before you begin, make sure you understand the following:
 
 *	All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
@@ -42,8 +43,10 @@ Following is a summary of the process:
 		rm -rf cache/* page_cache/* di/* generation/* 
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}
+
 To be added at a later time.
 
 #### Related topic
+
 <a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 

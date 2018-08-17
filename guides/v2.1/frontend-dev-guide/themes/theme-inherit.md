@@ -5,7 +5,6 @@ title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 70
 version: 2.1
-github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
@@ -24,7 +23,6 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
-
 
 ## Set a parent theme
 
@@ -95,7 +93,6 @@ OrangeCo wants it to be replaced with a holiday one, so it places a new backgrou
 Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
 
 ![]({{ site.baseurl }}/common/images/inh-background2.jpg)
-
 
 ## Override templates {#theme-inherit-templates}
 

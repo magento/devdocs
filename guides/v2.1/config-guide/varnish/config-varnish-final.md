@@ -6,7 +6,6 @@ menu_title: Final verification
 menu_order: 100
 menu_node:
 version: 2.1
-github_link: config-guide/varnish/config-varnish-final.md
 functional_areas:
   - Configuration
   - System
@@ -16,6 +15,7 @@ functional_areas:
 Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
 ### Verify HTTP response headers {#config-varnish-final-verify-headers}
+
 Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser.
 
 First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change); otherwise, you won't see the headers.
@@ -35,6 +35,7 @@ Important headers:
 </div>
 
 ### Check page load times {#config-varnish-final-response}
+
 If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} pages.
 
 Use a browser inspector to measure page load times.
@@ -58,6 +59,7 @@ For example, to use the Chrome inspector:
 	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
 
 ### Verify the Magento cache {#config-varnish-final-verify-cache}
+
 Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 
 1.	Log in to your Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -76,5 +78,6 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 </div>
 
 #### Next steps
+
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>

@@ -2,7 +2,6 @@
 group: cloud
 title: Subscriptions and plans
 version: 2.1
-github_link: cloud/basic-information/cloud-plans.md
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.
@@ -86,6 +85,7 @@ github_link: cloud/basic-information/cloud-plans.md
 </table>
 
 ### Domain-Validated SSL (HTTP) certificate
+
 The Domain-Validated SSL (HTTP) certificate option is an alternative to using the shared SSL certificate. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
 
 This service is an additional cost for your contract.

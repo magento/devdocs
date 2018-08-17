@@ -2,7 +2,6 @@
 group: mrg
 title: Magento_Sales module
 version: 2.1
-github_link: mrg/ce/Sales.md
 redirect_from:
  - /guides/v2.1/mrg/ce/Sales/description.html
  - /guides/v2.1/mrg/ce/Sales/dependencies.html
@@ -210,9 +209,6 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 |[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]{:target="_blank"}| An interface for sending notifications about new Invoice creation.
 |[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]{:target="_blank"}| An interface for validating service parameters and Invoice data object.
 |[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.
-
-
-
 
 ## RefundInvoice
 

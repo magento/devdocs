@@ -5,7 +5,6 @@ title: Translate theme strings
 menu_title: Translate theme strings
 menu_order: 1
 version: 2.1
-github_link: frontend-dev-guide/translations/translate_theory.md
 functional_areas:
   - Frontend
 ---
@@ -82,6 +81,7 @@ __($this->config->getData('label'))
 {% endhighlight %}
 
 ## Strings added in .js files {#add_strings_js}
+
 To ensure that the text you add in a <code>.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:
 <ol>
 <li>Link the <code>mage/translate</code> library:

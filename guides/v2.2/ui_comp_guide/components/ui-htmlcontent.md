@@ -4,7 +4,6 @@ subgroup: components
 title: HtmlContent component
 menu_title: HtmlContent component
 version: 2.2
-github_link: ui_comp_guide/components/ui-htmlcontent.md
 ---
 
 ## Overview
@@ -15,6 +14,7 @@ The layout structure inside HtmlContent must contain only one top-level block. T
 All blocks inside HtmlContent are integrated into the layout, so external blocks can refer to them and vice verse.
 
 ## Structure
+
 The HtmlContent UI component comprises the following files:
 
 - JS component: [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
@@ -64,7 +64,6 @@ HtmlContent-specific options:
     <td><code>true</code></td>
   </tr>
 </table>
-
 
 ## Example of the HtmlContent component configuration
 

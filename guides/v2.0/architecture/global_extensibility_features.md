@@ -6,7 +6,6 @@ menu_title: Global features that support extensibility
 menu_node:
 menu_order:
 version: 2.0
-github_link: architecture/global_extensibility_features.md
 ---
 
 ## Overview

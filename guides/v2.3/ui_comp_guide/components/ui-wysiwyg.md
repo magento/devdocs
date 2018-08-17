@@ -4,7 +4,6 @@ subgroup: components
 title: WYSIWYG component
 menu_title: WYSIWYG component
 version: 2.2
-github_link: ui_comp_guide/components/ui-wysiwyg.md
 ---
 
 The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for [TinyMCE v4](https://www.tinymce.com/){:target="\_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
@@ -16,6 +15,7 @@ Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="\_bla
 </div>
 
 ## Configuration options
+
 Extends all `abstract` configuration.
 
 Wysiwyg-specific options:
@@ -87,8 +87,8 @@ The following are available events for use in the WYSIWYG component adapter for 
 * `tinymceChange` - fires when undo level is added to the editor
 * `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
 
-
 ## Add a default editor
+
 Adding the default Magento WYSIWYG editor to a page requires the following steps:
 
 1. Create a layout
@@ -156,6 +156,7 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
 Last, add your data provider, controller, and routes. Refer to [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) for more information.
 
 ## Modify the default editor
+
 The most common way to configure UI components in Magento is to add a configuration section inside the XMl element when declaring it on a form. If you need to apply dynamic modifications to a UI component, we recommend using PHP modifiers since Magento supports replacing the default WYSIWYG editor with other WYSIWYG libraries.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

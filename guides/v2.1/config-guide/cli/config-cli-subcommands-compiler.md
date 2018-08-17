@@ -6,7 +6,6 @@ menu_title: Code compiler
 menu_node:
 menu_order: 175
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-compiler.md
 functional_areas:
   - Configuration
   - System
@@ -16,6 +15,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of code compilation {#config-cli-subcommands-compile-overview}
+
 This section discusses the basics of code compilation. Code compilation consists of all of the following in no particular order:
 
 -   Application code generation (factories, proxies, and so on)
@@ -32,6 +32,7 @@ In this release, the Magento software doesn't support the multi-tenant compiler 
 </div>
 
 ## Run the single-tenant compiler {#config-cli-subcommands-single}
+
 Run the command as follows (there are no options):
 
 	bin/magento setup:di:compile
@@ -41,6 +42,7 @@ The following message displays to confirm success:
 	Generated code and dependency injection configuration successfully.
 
 ## Optional. Compile code before installing the Magento application {#config-cli-subcommands-single-before}
+
 In some cases, you might want to compile code before you install the Magento application. To do that, you must first enable modules; otherwise, the compiler has nothing to do. To compile code for only some modules, enable only those modules.
 
 The following command enables all modules:
@@ -52,6 +54,7 @@ Use the optional `[-c|--clear-static-content]` option to clear {% glossarytoolti
 [More information about enabling modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 ## Compile code {#config-cli-subcommands-single}
+
 Use this command to compile code.
 
 Run the command as follows (there are no options):

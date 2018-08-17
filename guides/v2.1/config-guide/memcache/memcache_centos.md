@@ -6,7 +6,6 @@ menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3
 menu_node:
 version: 2.1
-github_link: config-guide/memcache/memcache_ubuntu.md
 functional_areas:
   - Configuration
   - System
@@ -62,6 +61,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
 6.  Continue with the next section.
 
 ## Verify memcached works before installing Magento {#config-memcache-verify-its-cent}
+
 We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.
 
 ### Verify memcached is recognized by the web server

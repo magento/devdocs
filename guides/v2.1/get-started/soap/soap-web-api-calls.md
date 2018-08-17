@@ -6,13 +6,11 @@ menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: get-started/soap/soap-web-api-calls.md
 redirect_from:
   - /guides/v1.0/rest/soap/soap-web-api-calls.html
   - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
-
 
 ## WSDL File {#wsdl}
 
@@ -116,6 +114,7 @@ $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
 ## Related topics {#related}
+
 * <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 * <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 * <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>

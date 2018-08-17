@@ -4,7 +4,6 @@ subgroup: components
 title: urlInput component
 menu_title: urlInput component
 version: 2.3
-github_link: ui_comp_guide/components/ui-urlinput.md
 ---
 
 ## Overview
@@ -12,6 +11,7 @@ github_link: ui_comp_guide/components/ui-urlinput.md
 The urlInput component implements the `<urlInput>` form field.
 
 ## urlInput configuration
+
 Extends all `abstract` configuration.
 
 urlInput-specific options:

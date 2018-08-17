@@ -3,18 +3,19 @@ group: jsdg
 subgroup: 1_Javascript
 title: Use custom JavaScript
 version: 2.1
-github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
  - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 ## Overview {#custom_js_overview}
+
 This topic discusses how to use custom {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components with the components provided by Magento or having replaced them with custom implementations.
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
 ## Add a custom JS component 
+
 To add a custom JS component (module), take the following steps:
 
 1. Place the custom component source file in one of the following locations:
@@ -22,7 +23,6 @@ To add a custom JS component (module), take the following steps:
 	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
 
 2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource.
-
 
 ## Replace a default JS component {#js_replace}
 
@@ -71,6 +71,7 @@ of this procedure):
 This way your custom JS component is used instead of the {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} in all entries all over the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area.
 
 ## Extend a default JS component {#extend_js}
+
 You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
 ### Extend Magento widget {#extend_js_widget}

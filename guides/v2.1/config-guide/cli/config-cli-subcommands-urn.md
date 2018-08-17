@@ -6,7 +6,6 @@ menu_title: URN highlighter
 menu_node:
 menu_order: 215
 version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-urn.md
 functional_areas:
   - Configuration
   - System
@@ -31,6 +30,7 @@ Specifically, this command creates the following PHPStorm configuration:
 <img src="{{ site.baseurl }}/common/images/config_urn_settings.png" width="750px">
 
 ## Configure your IDE
+
 Currently, only PHPStorm is supported.
 
 Command syntax:

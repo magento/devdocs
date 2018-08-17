@@ -9,7 +9,6 @@ return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/index.md
 functional_areas:
   - Integration
 ---
@@ -35,7 +34,6 @@ The Order Processing with MSI tutorial is a draft. It will be expanded to includ
 * Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 
 * Obtain an admin authorization token. Multiple calls in this tutorial require administrator privileges. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
-
 
 ### Other resources
 

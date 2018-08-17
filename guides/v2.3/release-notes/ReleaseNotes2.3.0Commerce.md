@@ -5,7 +5,6 @@ title: Magento Commerce 2.3.0 Release Notes
 menu_title: Magento Commerce 2.3.0 Release Notes
 menu_order: 300
 version: 2.3
-github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 
   
 ---
@@ -18,7 +17,6 @@ For information about signing up for the Magento 2.3 Alpha Evaluation program, s
 ## About Magento 2.3.0 Alpha release
 
 We welcome all feedback from registered participants on this Alpha release, but would especially appreciate feedback on PageBuilder, our new drag-and-drop visual content editing tool. 
-
 
 ## Highlights
 
@@ -45,8 +43,6 @@ This release introduces significant tools to improve the developer experience: P
 
 * **Amazon Sales Channel**
 
-
-
 ### Core product improvements
 
 * **Updates to Magento's tech stack (including upgraded PHP support)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. 
@@ -69,16 +65,13 @@ This release introduces significant tools to improve the developer experience: P
 
 * **Change in versioning for B2B product** to match the versioning of the core product. 
 
-
 ## Known issues
 
 Magento 2.3.0 pre-release code is a work in progress, and readiness of different components may vary. See [Component Status]({{page.baseurl}}/release-notes/component-status.html) for an overview of the health of core code components and modules.
 
-
 ## Fixed issues
 
 We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of these fixes. Subsequent versions of these release notes will include a more comprehensive list. 
-
 
 ### Installation, upgrade, deployment
  
@@ -108,10 +101,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!---71359 -->* All `cron` schedule times are now saved in UTC and then displayed to the user in the expected time zone. Previously, the `cron` schedule times in the database were in local date time formats and not UTC, while the other system dates and times were saved as UTC in the database. This resulted in varying and potentially confusing *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10432*. [GitHub-4237](https://github.com/magento/magento2/issues/4237)
 
-
-
-
-
 ### Cart and checkout
 
 <!---83562 -->* `update button.phtml` has been simplified to optimize translation. *Fix submitted by [Karla Saaremäe](https://github.com/ChuckyK) in pull request 12155*. 
@@ -123,10 +112,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 <!--- 81175-->* The One Touch Ordering feature allows users to place orders without going through full checkout. *Fix submitted by [Daniel Korzeniowski](https://github.com/danielkorzeniowski)*. 
 
 <!--- 71761-->* You can now delete the last product in your shopping cart even when the **Minimum Order Amount** setting (**Admin > Sales**) is enabled. Previously, if you tried to delete the last item in your cart under these circumstances, Magento would throw an exception. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10601* [GitHub-6151](https://github.com/magento/magento2/issues/6151)
-
-
-
-
 
 ### Catalog
 
@@ -153,7 +138,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 <!--- 85618-->* Magento no longer displays a 404 error when you change category permissions from Product Detail pages when multistore view is enabled.
 <!---85617 -->* Magento no longer throws an exception when you add a product with a tiered price reduced to $0.00 to your shopping cart. 
 
-
 ### Configurable products
 
 <!--- 85177 -->* Magento now displays the price of a configurable product as expected even when its simple products are out-of-stock. Previously, Magento displayed a price of 0 for any configurable product price when its simple products were out-of-stock. [GitHub-12578](https://github.com/magento/magento2/issues/12578)
@@ -166,9 +150,7 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 71670 -->* You can now successfully add a new product that contains a custom attribute set with a multiselect attribute from the Admin.  *Fix submitted by [Teun Lassche](https://github.com/thlassche) in pull request 10575*. [GitHub-10565](https://github.com/magento/magento2/issues/10565)
 
-
 ### Frameworks
-
 
 #### Application framework
 
@@ -184,8 +166,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 82007-->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request 11503*.[GitHub-7678](https://github.com/magento/magento2/issues/7678)
 
-
-
 #### Configuration framework
 
 <!---83083 -->* An order's `relation_child_id` and `relation_child_real_id` fields are now accurately set during edit operations. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 11909*. [GitHub-10195](https://github.com/magento/magento2/issues/10195)
@@ -197,20 +177,18 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!---75458 -->* You can now assign a default value to config fields of type `image` or `file`.  *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10253*.[GitHub-10252](https://github.com/magento/magento2/issues/10252)
 
-
 #### JavaScript framework
 
 <!--- 85096-->* Magento now displays video and images as expected when you select a video or click to view a full-screen image for a configurable product. *Fix submitted by [Chumak Roman](https://github.com/roma84) in pull request 12556*. [GitHub-12268](https://github.com/magento/magento2/issues/12268)
 
 <!---81426 -->* We've removed duplicate parameters from a Magento UI LESS library mixin. *Fix submitted by [Bartek Igielski](https://github.com/Igloczek) in pull request 11276*.
 
-
 #### Session framework
 
 <!--- 88084 -->* We’ve removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.
 
-
 ### General fixes
+
 <!--- 84853-->* Magento now validates  custom layout update XML against the schema file when you save the XML. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11859*. 
 
 <!--- 88973-->* You can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if you chose full screen zoom for any product image, you could not close the full screen zoom.
@@ -262,13 +240,11 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
   
 
-
 ### Indexing
+
 <!---85225 -->* `indexer:status` now outputs information about the schedule mview backlog. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 12592*.
 
 <!---70883 -->* Magento no longer reindexes entities that have not been changed. Previously, Magento reindexed entries that were not changed but which had a MySQL UPDATE. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 4893*.[GitHub-2987](https://github.com/magento/magento2/issues/2987)
-
-
 
 ### Infrastructure
 
@@ -278,13 +254,9 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!---84908 -->* The`app/code/Magento/Downloadable/Helper/File.php` and `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` files no longer contain duplicate key arrays. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12520*.
 
-
-
-
-
 ### Newsletter
-<!--- 82942-->* Magento now sends confirmation-of-subscription email to new subscribers only. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11604*.[GitHub-5439](https://github.com/magento/magento2/issues/5439)
 
+<!--- 82942-->* Magento now sends confirmation-of-subscription email to new subscribers only. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11604*.[GitHub-5439](https://github.com/magento/magento2/issues/5439)
 
 ### Orders
 
@@ -308,51 +280,40 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports > By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11524*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
-
-
 ### Search 
+
 <!--- 83092-->* The unneeded `saveHandler` in the  CatalogSearch indexer declaration has been removed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11626*.
 
 <!--- 88082-->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive.
 
 <!--- 72863-->* Searching for a value of an attribute set on the store-view level of a product now returns results. Previously, Magento returned results  only if the attribute value was entered on the all store-view levels.
 
-
-
 ### Sample data
+
 <!---85584 -->* The `sampledata:deploy` and `remove` commands now have `no-update` options. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request*.
 
-
-
 ### Search
+
 <!---70316 -->* The **Catalog > Products** page now contains a keyword search. *Fix submitted by [Josef Behr](https://github.com/josefbehr) in pull request 10089*. [GitHub-5785](https://github.com/magento/magento2/issues/5785)
 
 <!---71801 -->* Magento no longer throws an asymmetric transaction error when you reindex in Magento deployments running Elasticsearch. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request 10610*. [GitHub-9930](https://github.com/magento/magento2/issues/9930)
 
-
-
 ### Sitemap
+
 <!--- 83292-->* Magento now correctly processes global product attributes when generating the sitemap. *Fix submitted by [Ričards Zālītis](https://github.com/therool) in pull request 8999*. [GitHub-5941](https://github.com/magento/magento2/issues/5941)
 
 
 <!--- 71372-->* It's now easier to add additional items to a sitemap. Previously, `SitemapPlugin` worked inconsistently with large sitemaps. *Fix submitted by [Piotr Kwiecinski](https://github.com/piotrkwiecinski) in pull request 10442*. [GitHub-10045](https://github.com/magento/magento2/issues/10045)
 
-
-
-
 ### Swatches
 
 <!--- 83292-->* You can now use REST to import visual swatch attribute options. Previously, you could not add swatch options using service contracts unless a swatch option already existed for the attribute. *Fix submitted by [gonzalopelon](https://github.com/gomencal) in pull request 12044*. [GitHub-9410](https://github.com/magento/magento2/issues/9410), [GitHub-10707](https://github.com/magento/magento2/issues/10707), [GitHub-10737](https://github.com/magento/magento2/issues/10737), [GitHub-11032](https://github.com/magento/magento2/issues/11032)
-
 
 ### Tax
 
 <!--- 83405 -->* Tax total amount is now equal to the sum of the tax details amounts. Previously, Magento displayed the wrong order tax amounts when using specific tax configurations. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11594*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
 
 <!---82746 -->*  You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11735*.
-
-
-
 
 ### Translation and locales
 
@@ -366,7 +327,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 71380-->* All messages in Customer Account Create are now translatable. Previously, warning messages about password validation appeared in locale language only. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 10445*. [GitHub-9967](https://github.com/magento/magento2/issues/9967)
 
-
 ### URL rewrites
 
 <!--- 85026-->* Magento now sets the value of `Store_Code` from the current store when this information is included in a URL. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12545*. [GitHub-12450](https://github.com/magento/magento2/issues/12450)
@@ -377,18 +337,13 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 88091-->* You can now reset a form by clicking **Reset** in **Marketing > SEO & Search > URL Rewrites**. [GitHub-10459](https://github.com/magento/magento2/issues/10459)
 
-
 ### Web API
 
 <!--- 82315 -->* When you use REST to update an existing product, Magento assists the update only to the websites that the was assigned to pre-update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11443*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
-
 ### Wishlist
 
 <!--- 85627 -->* Magento now displays an error message if you try to add products to a wishlist without first logging in. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 12681*. 
-
-
-
 
 ## Community contributions
 
@@ -398,7 +353,6 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 * If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
-
 
 ### Additional community fixes 
 
@@ -1086,25 +1040,19 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
     * [#14109](https://github.com/magento/magento2/issues/14109) -- `MAX_NUM_COOKIES` doesn't follow the open-closed principle  (fixed in [magento/magento2#14366](https://github.com/magento/magento2/pull/14366))
 
-
-
-
-
-
-
-
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
  For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
-
 
 ### Installation and upgrade instructions
 
 You can install Magento Commerce 2.3 Alpha  using Composer.
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

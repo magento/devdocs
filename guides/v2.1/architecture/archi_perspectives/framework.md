@@ -3,7 +3,6 @@ group: arch-guide
 title: Magento Framework
 menu_title: Magento Framework
 version: 2.1
-github_link: architecture/archi_perspectives/framework.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
@@ -52,7 +51,6 @@ lib/
 
 {:.bs-callout .bs-callout-tip}
 The `vendor/magento/framework` directory maps to the `Magento\Framework` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
-
 
 ## Highlights of Magento Framework
 

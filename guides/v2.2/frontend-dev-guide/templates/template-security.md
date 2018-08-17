@@ -5,7 +5,6 @@ title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
 version: 2.2
-github_link: frontend-dev-guide/templates/template-security.md
 functional_areas:
   - Frontend
 ---

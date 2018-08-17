@@ -40,7 +40,6 @@ Let’s create the folder app/code/Learning and inside this folder place another
 2. `mkdir app/code/Learning`
 3. `mkdirapp/code/Learning/FirstUnit`
 
-
 ## Make sure you have permission to create files and folders in your installation
 
 Next, you need to create an `etc/module.xml` file. This file is required for the module to exist.
@@ -81,7 +80,6 @@ Note that in the XML file we specified:
 * Version: 0.0.1 (initial version of our module)
 * Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put `<module name=”..” />` nodes under the sequence node.
 
-
 ## Create the registration.php file
 
 Each module must have this file, which tells Magento how to locate the module. Continuing our example, create the file
@@ -98,7 +96,6 @@ The `registration.php` is a standardized file that follows the same pattern for 
 
 The only thing that varies is the module name, which in our case is `Learning_FirstUnit`.
 
-
 ## Run the “setup:upgrade” command
 
 Running this command makes your new module active, notifying Magento of its presence.
@@ -110,6 +107,7 @@ php bin/magento setup:upgrade
 It should echo a large amount of output, one line of which should be `Learning_FirstUnit`. Verify that this line of code is there.
 
 ## Check that the new module is active
+
 So far, we haven't added any useful code to our module – it is still empty (and therefore invisible). In order to verify that it has been recognized, check the file `app/etc/config.php`. It has a list of auto-generated modules that are active.
 
 Never change this list manually!

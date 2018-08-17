@@ -6,15 +6,16 @@ menu_title: Layout
 menu_order: 1
 menu_node: parent
 version: 2.1
-github_link: frontend-dev-guide/layouts/layout-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Introduction
+
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
 <img src="{{ site.baseurl }}/common/images/layouts_block_containers_defn21.png"/>
@@ -75,7 +76,6 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
@@ -83,7 +83,6 @@ To ensure stability and secure your customizations from being deleted during upg
 To make the necessary changes, create [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){:target="_blank"} and [overriding]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"} layout files in your custom theme. 
 
 ## Layout files processing {#layout_processing}
-
 
 The Magento application processes layout files in the following order:
 
@@ -101,8 +100,6 @@ The Magento application processes layout files in the following order:
 <div class="bs-callout bs-callout-info" id="info">
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
 </div>
-
-
 
 ## Related topics
 

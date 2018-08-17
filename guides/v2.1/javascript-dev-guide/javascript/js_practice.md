@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 version: 2.1
-github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
@@ -86,9 +85,11 @@ OrangeCo wants to use the [jCarousel widget] to display product images on produc
 Let's look at each step in more detail.
 
 ### Step 1: Define what is the default implementation
+
 Using the approach described in the previous section, OrangeCo defines that the product images are displayed by [`gallery.js`], and the configuration path for it is `mage/gallery`.
 
 ### Step 2: Add the custom script to the file system
+
 For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a "wrapper" script.
 
@@ -113,6 +114,7 @@ To do this, OrangeCo adds the following files in the `app/design/OrangeCo/orange
     ```
 
 ### Step 3: Update RequireJS configuration
+
 In the `app/design/OrangeCo/orange` directory OrangeCo adds `requirejs-config.js` with the following content:
 
 ```javascript

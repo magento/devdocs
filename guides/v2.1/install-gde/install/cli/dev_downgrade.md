@@ -6,7 +6,6 @@ menu_title: Change to a released version
 menu_order: 200
 menu_node:
 version: 2.1
-github_link: install-gde/install/cli/dev_downgrade.md
 functional_areas:
   - Install
   - System
@@ -48,15 +47,15 @@ To change versions after cloning:
 
 		git checkout tags/2.0.6 -b 2.0.6
 
-5.	Install the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>.
+5.	Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
 
 ### Change versions by installing the Magento software in a new database instance {#downgrade-db}
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
-2.	Create a <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
-2.	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
+1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+2.	Create a [new database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) for your installation.
+2.	[Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
 3.	Change to [release tag](https://github.com/magento/magento2/tags){:target="_blank"} as follows:
@@ -73,9 +72,4 @@ To change versions after cloning:
 
 5.	Install the Magento software in your new database instance.
 
-	You can install using either the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>.
-
-<!-- ABBREVIATIONS -->
-
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
-*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+	You can install using either the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).

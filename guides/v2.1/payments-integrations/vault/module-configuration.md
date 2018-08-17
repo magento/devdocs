@@ -5,7 +5,6 @@ title: Add vault to module dependencies
 menu_title: Add vault to module dependencies
 menu_order: 1
 version: 2.1
-github_link: payments-integrations/vault/module-configuration.md
 functional_areas:
   - Integration
 ---

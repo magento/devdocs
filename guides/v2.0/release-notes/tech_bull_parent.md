@@ -6,7 +6,6 @@ menu_title: Magento 2.0 technical bulletins
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: release-notes/tech_bull_parent.md
 ---
 
 The following technical bulletins are available for the Magento 2.0 release:

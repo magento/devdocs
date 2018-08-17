@@ -8,7 +8,6 @@ version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-structures.md
 functional_areas:
   - B2B
   - Integration
@@ -286,7 +285,6 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 **Response**
 
 `[]` (an empty array)
-
 
 ## Related information
 

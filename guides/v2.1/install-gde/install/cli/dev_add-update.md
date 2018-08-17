@@ -6,16 +6,15 @@ menu_title: Add or update components
 menu_order: 5
 menu_node:
 version: 2.1
-github_link: install-gde/install/cli/dev_add-update.md
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-A contributing developer updates components by specifying components and their versions in Magento's `composer.json`. 
+A contributing developer updates components by specifying components and their versions in Magento's `composer.json`.
 
-To update components if you're *not* a contributing developer, see <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
+To update components if you're *not* a contributing developer, see [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
@@ -27,6 +26,7 @@ You can either add a `require` section to `composer.json` or you can use the `co
 You have the following options:
 
 ### Use the `composer require` command
+
 Command usage:
 
 	composer require <vendor>/<name>:<version>
@@ -38,6 +38,7 @@ For example,
 Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} updates dependencies and installs the component.
 
 ### Add a `require` section to `composer.json`
+
 Open `composer.json` in a text editor.
 
 Add a `require` section like the following:
@@ -56,4 +57,4 @@ If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/a
 
 <!-- ABBREVIATIONS -->
 
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.

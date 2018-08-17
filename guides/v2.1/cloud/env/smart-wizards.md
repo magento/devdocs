@@ -2,7 +2,6 @@
 group: cloud
 title: Smart wizards
 version: 2.1
-github_link: cloud/env/smart-wizards.md
 functional_areas:
   - Cloud
   - Setup

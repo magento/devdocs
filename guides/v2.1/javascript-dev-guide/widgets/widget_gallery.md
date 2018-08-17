@@ -3,7 +3,6 @@ group: jsdg
 subgroup: 3_Widgets
 title: Gallery widget
 version: 2.1
-github_link: javascript-dev-guide/widgets/widget_gallery.md
 ---
 
 ## Overview
@@ -455,7 +454,6 @@ The fullscreen and breakpoints options are set in a similar way:
 ```
 
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
-
 
 ## Gallery API {#gallery_api}
 
