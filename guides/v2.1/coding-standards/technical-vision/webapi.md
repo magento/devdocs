@@ -30,8 +30,8 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 
 #### Declare a new GraphQL query/mutation
 
-1. Create custom resolvers
-1. Declare a custom query/mutation and all necessary types in `schema.graphqls`
+1. Create custom resolvers.
+1. Declare a custom query/mutation and all necessary types in `schema.graphqls`.
 
 If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
