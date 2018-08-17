@@ -417,7 +417,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 

@@ -42,7 +42,7 @@ To translate words and phrases, you must:
 After that:
 
 1.  You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
-2.  In the Magento Admin, the store administrator <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation" target="\_blank">configures the translations</a>.
+2.  In the Magento Admin, the store administrator [configures the translations](http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation){:target="\_blank"}.
 
 Command options:
 
@@ -150,7 +150,7 @@ The following table explains this command's parameters and values:
 		</tr>
 		<tr>
 			<td><p>&lt;locale></p></td>
-			<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="\_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="\_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
+			<td><p>[ISO 639-1](http://www.iso.org/iso/home/standards/language_codes.htm){:target="\_blank"} (language) and [ISO 3166](http://www.iso.org/iso/country_codes.htm){:target="\_blank"} (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
 			</td>
 			<td>
 				<p>Yes</p>
@@ -189,7 +189,7 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 The entire path must be all lowercase.
 </div>
 
-For an example, see the <a href="{{ site.mage2000url }}app/i18n/magento/de_de/registration.php" target="\_blank"><code>de_de</code> language package</a>.
+For an example, see the [<code>de_de</code> language package]({{ site.mage2000url }}app/i18n/magento/de_de/registration.php){:target="\_blank"}.
 
 To create these files:
 
@@ -262,7 +262,7 @@ If the Magento application cannot find word or phrase in the `en_GB` package, it
 1.  `<vendorname>/en_ca_package`
 1.  `<vendorname>/en_us_package`
 
-Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="\_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
+Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use [Magento\Test\Integrity\App\Language\CircularDependencyTest]({{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php){:target="\_blank"} test to locate and fix such chains.
 
 ### Configure multiple packages for a language {#m2devgde-xlate-severalpacks}
 

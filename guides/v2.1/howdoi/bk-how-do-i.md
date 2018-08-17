@@ -15,8 +15,8 @@ This section documents some of the most commonly performed tasks and procedures 
 Please help us keep this list up-to-date by providing feedback in any of the following ways:
 
 *	Click **Edit this page in GitHub** to open a pull request with a solution of your own.
-*	Open an <a href="https://github.com/magento/devdocs/issues" target="_blank">issue</a> in the devdocs GitHub repository.
-*	Send us a <a href="https://twitter.com/MagentoDevDocs" target="_blank">tweet</a> or <a href="mailto:DL-Magento-Doc-Feedback@magento.com">e-mail</a>.
+*	Open an [issue](https://github.com/magento/devdocs/issues){:target="_blank"} in the devdocs GitHub repository.
+*	Send us a [tweet](https://twitter.com/MagentoDevDocs){:target="_blank"} or <a href="mailto:DL-Magento-Doc-Feedback@magento.com">e-mail</a>.
 
 If you'd like to contribute a new topic to the How Do I list, add your name and a topic to our <a href="{{ page.baseurl }}/howdoi/howdoi_contribute.html">sign-up sheet</a>.
 

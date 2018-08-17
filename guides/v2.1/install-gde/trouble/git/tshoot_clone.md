@@ -26,4 +26,4 @@ fatal: The remote end hung up unexpectedly
 
 ### Solution
 
-Upload your SSH key to GitHub as discussed in [the GitHub help page](https://help.github.com/articles/generating-ssh-keys" target="_blank).
+Upload your SSH key to GitHub as discussed in [the GitHub help page](https://help.github.com/articles/generating-ssh-keys){:target="_blank"}.

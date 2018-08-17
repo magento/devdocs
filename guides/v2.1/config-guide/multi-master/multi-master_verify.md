@@ -18,7 +18,7 @@ After configuration, the master databases are configured as follows:
 *	Magento {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} database: 10 tables
 *	Magento sales database: 54 tables
 
-To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:
+To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like [phpmyadmin]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin){:target="_blank"}:
 
 <table>
 <tbody>

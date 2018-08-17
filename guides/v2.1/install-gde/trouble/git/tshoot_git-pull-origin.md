@@ -37,7 +37,7 @@ Your solution depends on whether or not you intentionally modified files in the 
 
 #### You intentionally modified files
 
-Manually resolve the conflicts in the usual way. If you're not sure what to do, consult [GitHub help](https://help.github.com/).
+Manually resolve the conflicts in the usual way. If you're not sure what to do, consult [GitHub help](https://help.github.com/){:target="_blank"}.
 
 #### You didn't intentionally modify any files
 
