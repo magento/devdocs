@@ -1900,7 +1900,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This section discusses how configuration files are loaded and merged.</p>
 
 <h3 id="config-files-load">How Magento loads configuration files</h3>
-
 <p>Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):</p>
 
 <ul>
@@ -1939,7 +1938,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
-
 <p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code class="highlighter-rouge">$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
 
 <p>Magento’s merge algorithm follows:</p>
@@ -2012,7 +2010,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="config-files-classes-int">Configuration interfaces</h3>
-
 <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
 <p><code class="highlighter-rouge">Magento\Framework\Config</code> provides the following interfaces:</p>

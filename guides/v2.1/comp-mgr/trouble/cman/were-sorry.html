@@ -1027,7 +1027,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If that doesn’t work, try generating <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.</p>
 
 <h3 id="updater">Problem: the updater application isn’t initialized</h3>
-
 <p>In some cases (especially if you downloaded the Magento software from <a href="https://packagist.org/" target="_blank">packagist</a>), the updater application might not be initialized. (A common way for this to happen is to not specify our <code class="highlighter-rouge">https://repo.magento.com</code> repository in the <code class="highlighter-rouge">composer create-project</code> command.)</p>
 
 <p>The updater application uses a cron job to run the upgrade; if it’s not initialized, your update fails.</p>
