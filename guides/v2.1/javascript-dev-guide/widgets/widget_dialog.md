@@ -7,8 +7,8 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 ## Overview
+Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
-Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
 -   triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening
 -   delaying to automatically close the drop-down on mouse out
 -   clicking outside the area closes the drop-down
@@ -21,7 +21,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 ## Options {#dialog_options}
  
-Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
+Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/){:target="_blank"} options, plus several custom options:
 -   [autoPosition](#d_autoPosition)
 -   [autoSize](#d_autoSize)
 -   [closeOnClickOutside](#d_closeOnClickOutside)

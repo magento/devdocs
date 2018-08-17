@@ -13,7 +13,7 @@ functional_areas:
 
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.
 
-The `develop` branch is the default branch, which means you get it by default when you clone the Magento 2 GitHub repository. For some tasks, such as data migration from Magento 1.x to Magento 2.x, you must switch to a <a href="https://github.com/magento/magento2/tags" target="\_blank">release tag</a>.
+The `develop` branch is the default branch, which means you get it by default when you clone the Magento 2 GitHub repository. For some tasks, such as data migration from Magento 1.x to Magento 2.x, you must switch to a [release tag](https://github.com/magento/magento2/tags){:target="_blank"}.
 
 You have the following options:
 
@@ -38,7 +38,7 @@ To change versions after cloning:
 4.	If you haven't already done so, clone the Magento 2 GitHub repository as follows:
 
 		git clone git@github.com:magento/magento2.git
-5.	Change to [release tag](https://github.com/magento/magento2/tags){:target="\_blank") as follows:
+5.	Change to [release tag](https://github.com/magento/magento2/tags){:target="_blank"} as follows:
 
 		git checkout tags/<tag name>  [-b <branch name>]
 
@@ -57,7 +57,7 @@ To change versions after cloning:
 2.	[Back up]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back) the Magento file system, database, and media files:
 
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
-3.	Change to [release tag](https://github.com/magento/magento2/tags){:target="\_blank") as follows:
+3.	Change to [release tag](https://github.com/magento/magento2/tags){:target="_blank"} as follows:
 
 		git checkout tags/<tag name>  [-b <branch name>]
 

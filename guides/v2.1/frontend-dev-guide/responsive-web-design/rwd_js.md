@@ -11,7 +11,7 @@ functional_areas:
 
 ## What's in this topic
 
-This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
+This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the [breakpoint]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms){:target="_blank"}.
 
 ## Scripts general overview
 
@@ -21,7 +21,7 @@ The Blank and Luma themes use the following scripts to responsively relocate pag
 <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
 <li><a href="{{ site.mage2000url }}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
 
-<li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
+<li>[<code>matchMedia.js</code>](https://github.com/paulirish/matchMedia.js/){:target="_blank"}, used by <code>responsive.js</code> and <code>menu.js</code></li>
 </ul>
 
 The script files are located in the file system as follows:

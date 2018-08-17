@@ -11,7 +11,7 @@ functional_areas:
 ## What's in this topic
 
 <p>
-The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
+The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/){:target="_blank"} for compiling <code>.less</code> files in Magento 2. </p>
 
 ## Prerequisites
 
@@ -75,7 +75,7 @@ Where the following notation is used:
 <code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
 </li>
 <li>
-<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms){:target="_blank"}. If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 </li>
 

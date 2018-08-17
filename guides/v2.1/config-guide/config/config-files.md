@@ -29,7 +29,6 @@ Following are common terms used in this topic:
 This section discusses how configuration files are loaded and merged.
 
 ### How Magento loads configuration files {#config-files-load}
-
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration ([app/etc/di.xml]({{ site.mage2000url }}app/etc/di.xml)). This file is used to bootstrap Magento.
@@ -41,7 +40,6 @@ Magento loads configuration files in the following order (all paths are relative
 *     `<component-name>`: Name of your component as defined in [composer.json]({{ site.mage2000url }}composer.json).
 
 ### Configuration file merge {#config-files-load-merge-merge}
-
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
 
 Magento's merge algorithm follows:

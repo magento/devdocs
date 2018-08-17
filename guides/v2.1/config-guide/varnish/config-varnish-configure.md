@@ -76,6 +76,7 @@ To minimally configure Varnish:
 	Typically, this is your web server.
 
 	[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html)
+  
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
 
 	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
@@ -157,7 +158,6 @@ If you don't see output for `varnishd`, make sure Varnish is running.
 [More information about netstat options](http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html)
 
 ## Install the Magento 2 software {#config-varnish-install}
-
 Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
 
 Possible error installing Magento:
@@ -176,7 +176,6 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 	}
 
 ## Verify HTTP response headers {#config-varnish-verify-headers}
-
 Now you can verify that Varnish is serving pages by looking at {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} response headers returned from any Magento page.
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.

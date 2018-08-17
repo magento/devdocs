@@ -38,6 +38,7 @@ To translate words and phrases, you must:
 After that:
 
 1.  You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
+
 2.  In the Magento Admin, the store administrator [configures the translations](http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation).
 
 Command options:

@@ -50,6 +50,7 @@ The example Solr configuration is _not_ intended to be used in a production site
 		name=magento2
 
 	[More information about core.properties](https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29)
+
 3.	Save your changes to `core.properties` and exit the text editor.
 
 3.  *Task for Tomcat 6 with CentOS only*

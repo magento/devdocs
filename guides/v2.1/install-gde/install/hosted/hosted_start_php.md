@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-[PHP Hypertext Preprocessor (PHP)](http://php.net/manual/en/faq.general.php) is a scripting language that Magento is authored in. Magento requires {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.5 or 5.6 to run.
+[PHP Hypertext Preprocessor (PHP)](http://php.net/manual/en/faq.general.php){:target="_blank"} is a scripting language that Magento is authored in. Magento requires {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.5 or 5.6 to run.
 
 To configure PHP:
 

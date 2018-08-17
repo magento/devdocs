@@ -8,7 +8,7 @@ redirect_from:
 ---
 ## Overview
 
-The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento menu extends the default functionality with the following:
+The Magento menu widget is a customized [jQuery UI Menu widget](http://api.jqueryui.com/menu/){:target="_blank"}. Magento menu extends the default functionality with the following:
 
 -   expanding all layers of the menu tree past the second layer
 -   declaring a responsive menu
