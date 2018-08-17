@@ -746,7 +746,7 @@ Some actions drive browser elements, while others use REST APIs.</p>
 
 <p><code class="highlighter-rouge">myAction</code> will be executed after the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
 
-<h2 id="example">Example</h2>
+<h2 id="examples">Examples</h2>
 
 <p>The following example contains four actions:</p>
 
@@ -789,7 +789,7 @@ Here, <code class="highlighter-rouge">url</code> contains a pointer to a <code c
 
 <h3 id="example-step2">2. Enter a customer’s email</h3>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span> <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p><a href="#fillfield"><code class="highlighter-rouge">&lt;fillField&gt;</code></a> fills a text field with the given string.</p>
@@ -866,6 +866,8 @@ If the description of an element does not include a link to Codeception analogue
 
 <h3 id="acceptpopup">acceptPopup</h3>
 
+<p>Accepts the current popup visible on the page.</p>
+
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#acceptPopup" target="_blank">acceptPopup docs on codeception.com</a>.</p>
 
 <table>
@@ -899,7 +901,15 @@ If the description of an element does not include a link to Codeception analogue
   </tbody>
 </table>
 
+<h4 id="example">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Accept the current popup visible on the page. --&gt;</span>
+<span class="nt">&lt;acceptPopup</span> <span class="na">stepKey=</span><span class="s">"acceptPopup"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="amonpage">amOnPage</h3>
+
+<p>Opens the page by the URL relative to the one set in the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> configuration variable.</p>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnPage" target="_blank">amOnPage docs on codeception.com</a>.</p>
 
@@ -940,7 +950,15 @@ If the description of an element does not include a link to Codeception analogue
   </tbody>
 </table>
 
+<h4 id="example-1">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Open the `(baseURL)/admin` page. --&gt;</span>
+<span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"/admin"</span> <span class="na">stepKey=</span><span class="s">"goToLogoutPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="amonsubdomain">amOnSubdomain</h3>
+
+<p>Takes the base URL and changes the subdomain.</p>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnSubdomain" target="_blank">amOnSubdomain docs on codeception.com</a>.</p>
 
@@ -981,7 +999,19 @@ If the description of an element does not include a link to Codeception analogue
   </tbody>
 </table>
 
+<h4 id="example-2">Example</h4>
+
+<p>Pre-condition: the current base URL is <code class="highlighter-rouge">https://www.magento.com</code>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Change the sub-domain to `https://devdocs.magento.com`. --&gt;</span>
+<span class="nt">&lt;amOnSubdomain</span> <span class="na">url=</span><span class="s">"devdocs"</span> <span class="na">stepKey=</span><span class="s">"changeSubdomain"</span><span class="nt">/&gt;</span>
+<span class="c">&lt;!-- Open the page `https://devdocs.magento.com` --&gt;</span>
+<span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"/"</span> <span class="na">stepKey=</span><span class="s">"goToDataPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="amonurl">amOnUrl</h3>
+
+<p>Opens a page by the absolute URL.</p>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnUrl" target="_blank">amOnUrl docs on codeception.com</a>.</p>
 
@@ -1021,6 +1051,12 @@ If the description of an element does not include a link to Codeception analogue
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-3">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Set url to be used in the next steps to https://www.magento.com/ --&gt;</span>
+<span class="nt">&lt;amOnUrl</span> <span class="na">url=</span><span class="s">"https://www.magento.com/"</span> <span class="na">stepKey=</span><span class="s">"amOnUrl"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="appendfield">appendField</h3>
 
@@ -1069,6 +1105,12 @@ If the description of an element does not include a link to Codeception analogue
   </tbody>
 </table>
 
+<h4 id="example-4">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Append the "Sample Text" string to the selected input element --&gt;</span>
+<span class="nt">&lt;appendField</span> <span class="na">userInput=</span><span class="s">"Sample Text"</span> <span class="na">selector=</span><span class="s">"input#name"</span> <span class="na">stepKey=</span><span class="s">"appendSuffix"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="attachfile">attachFile</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#attachFile" target="_blank">attachFile docs on codeception.com</a>.</p>
@@ -1116,6 +1158,12 @@ If the description of an element does not include a link to Codeception analogue
   </tbody>
 </table>
 
+<h4 id="example-5">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Upload a file from the `tests/_data` directory with the `image.png` name to the selected input element. --&gt;</span>
+<span class="nt">&lt;attachFile</span> <span class="na">userInput=</span><span class="s">"image.png"</span> <span class="na">selector=</span><span class="s">"input#imgUpload"</span> <span class="na">stepKey=</span><span class="s">"uploadFile"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="cancelpopup">cancelPopup</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#cancelPopup" target="_blank">cancelPopup docs on codeception.com</a>.</p>
@@ -1150,6 +1198,12 @@ If the description of an element does not include a link to Codeception analogue
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-6">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Cancel the current popup visible on the page. --&gt;</span>
+<span class="nt">&lt;cancelPopup</span> <span class="na">stepKey=</span><span class="s">"cancelPopup"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="checkoption">checkOption</h3>
 
@@ -1191,6 +1245,12 @@ If the description of an element does not include a link to Codeception analogue
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-7">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Ensure the checkbox `&lt;input type="checkbox" id="checkbox" ... &gt;...&lt;/input&gt;` is checked. --&gt;</span>
+<span class="nt">&lt;checkOption</span> <span class="na">selector=</span><span class="s">"input#checkbox"</span> <span class="na">stepKey=</span><span class="s">"checkCheckbox"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="clearfield">clearField</h3>
 
@@ -1234,6 +1294,12 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
   </tbody>
 </table>
 
+<h4 id="example-8">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Clear the selected field. --&gt;</span>
+<span class="nt">&lt;clearField</span> <span class="na">selector=</span><span class="s">"input#name"</span> <span class="na">stepKey=</span><span class="s">"clearField"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="click">click</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#click" target="_blank">click docs on codeception.com</a>.</p>
@@ -1258,7 +1324,7 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
       <td><code class="highlighter-rouge">selectorArray</code></td>
       <td>string</td>
       <td>optional</td>
-      <td> </td>
+      <td>Selects an element as a key value array. See <a href="http://codeception.com/docs/modules/WebDriver#locating-elements" target="_blank">strict locator</a>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">userInput</code></td>
@@ -1286,6 +1352,16 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-9">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click the selected button. --&gt;</span>
+<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"button#clickable"</span> <span class="na">stepKey=</span><span class="s">"clickButton"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click on the "&lt;a href=...&gt;Login&lt;/a&gt;" link. --&gt;</span>
+<span class="nt">&lt;click</span> <span class="na">selectorArray=</span><span class="s">"['link' =&gt; 'Login']"</span> <span class="na">stepKey=</span><span class="s">"clickButton2"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="clickwithleftbutton">clickWithLeftButton</h3>
 
@@ -1346,6 +1422,20 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
   </tbody>
 </table>
 
+<h4 id="examples-1">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Left click on the center of the `&lt;button id="clickable" /&gt;` element. --&gt;</span>
+<span class="nt">&lt;clickWithLeftButton</span> <span class="na">selector=</span><span class="s">"button#clickable"</span> <span class="na">stepKey=</span><span class="s">"clickButton1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Left click on the point that is 50 px from the top of the window and 50 px from the left of the window. --&gt;</span>
+<span class="nt">&lt;clickWithLeftButton</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"clickButton2"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Left click on the point that is 50 px from the top and 50 px from the left of of the `&lt;button id="clickable" /&gt;` element.. --&gt;</span>
+<span class="nt">&lt;clickWithLeftButton</span> <span class="na">selector=</span><span class="s">"button#clickable"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"clickButton3"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="clickwithrightbutton">clickWithRightButton</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#clickWithRightButton">clickWithRightButton docs on codeception.com</a>.</p>
@@ -1405,6 +1495,20 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
   </tbody>
 </table>
 
+<h4 id="examples-2">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Right click on the center of the `&lt;button id="clickable" /&gt;` element. --&gt;</span>
+<span class="nt">&lt;clickWithRightButton</span> <span class="na">selector=</span><span class="s">"button#clickable"</span> <span class="na">stepKey=</span><span class="s">"clickButton1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Right click on the point that is 50 px from the top of the window and 50 px from the left of the window. --&gt;</span>
+<span class="nt">&lt;clickWithRightButton</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"clickButton2"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Right click on the point that is 50 px from the top and 50 px from the left of of the `&lt;button id="clickable" /&gt;` element.. --&gt;</span>
+<span class="nt">&lt;clickWithRightButton</span> <span class="na">selector=</span><span class="s">"button#clickable"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"clickButton3"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="closeadminnotification">closeAdminNotification</h3>
 
 <p>Remove from the DOM all elements with the CSS classes <code class="highlighter-rouge">.modal-popup</code> or <code class="highlighter-rouge">.modals-overlay</code>.</p>
@@ -1440,6 +1544,12 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
   </tbody>
 </table>
 
+<h4 id="example-10">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Remove elements of the `.modal-popup` or `.modals-overlay` CSS classes. --&gt;</span>
+<span class="nt">&lt;closeAdminNotification</span> <span class="na">stepKey=</span><span class="s">"closeAdminNotification"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="closetab">closeTab</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#closeTab" target="_blank">closeTab docs on codeception.com</a>.</p>
@@ -1474,6 +1584,12 @@ Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fil
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-11">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Close the active tab. --&gt;</span>
+<span class="nt">&lt;closeTab</span> <span class="na">stepKey=</span><span class="s">"closeTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="comment">comment</h3>
 
@@ -1518,14 +1634,14 @@ It is intended to aid documentation and clarity of tests.</p>
   </tbody>
 </table>
 
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Open the specified page and print a comment "I am on the login page" in the log during test execution. --&gt;</span>
+<span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"/login"</span> <span class="na">stepKey=</span><span class="s">"goToLoginPage"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;comment</span> <span class="na">userInput=</span><span class="s">"I am on the login page"</span> <span class="na">stepKey=</span><span class="s">"loginPageComment"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="conditionalclick">conditionalClick</h3>
 
-<p>Conditionally click on an element if, and only if, another element is visible or not.</p>
-
-<p>For example, to click on <code class="highlighter-rouge">#foo</code> if <code class="highlighter-rouge">#bar</code> is visible:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;conditionalClick</span> <span class="na">selector=</span><span class="s">"#foo"</span> <span class="na">dependentSelector=</span><span class="s">"#bar"</span> <span class="na">visible=</span><span class="s">"true"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
+<p>Conditionally clicks on an element if, and only if, another element is visible or not.</p>
 
 <table>
   <thead>
@@ -1576,15 +1692,16 @@ It is intended to aid documentation and clarity of tests.</p>
   </tbody>
 </table>
 
+<h4 id="examples-3">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click on the element with `id="foo"` if the element with `id="bar"` is visible. --&gt;</span>
+<span class="nt">&lt;conditionalClick</span> <span class="na">selector=</span><span class="s">"#foo"</span> <span class="na">dependentSelector=</span><span class="s">"#bar"</span> <span class="na">visible=</span><span class="s">"true"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="createdata">createData</h3>
 
-<p>Create an entity (for example, a category or product). In other words, make a <code class="highlighter-rouge">POST</code> request
-to the Magento API according to the data and metadata of the entity to be created.</p>
-
-<p>For example, you can create the entity with the name “SampleProduct”:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createSampleProduct"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
+<p>Creates an entity (for example, a category or product).
+To create an entity, the MFTF makes a <code class="highlighter-rouge">POST</code> request to the Magento API according to the <a href="../data.html">data</a> and <a href="../metadata.html">metadata</a> of the entity to be created.</p>
 
 <table>
   <thead>
@@ -1629,18 +1746,24 @@ to the Magento API according to the data and metadata of the entity to be create
   </tbody>
 </table>
 
-<p>This action can optionally contain one or more <code class="highlighter-rouge">requiredEntity</code> child elements.</p>
+<p>It can optionally contain one or more <code class="highlighter-rouge">requiredEntity</code> child elements.</p>
+
+<h4 id="example-12">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Create an entity with the "SampleProduct" name.  --&gt;</span>
+<span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createSampleProduct"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h4 id="requiredentity">requiredEntity</h4>
 
-<p>Specify relationships amongst data to be created. For example, a complex Product
-object may contain within it a pointer (an ID) to a complex Category object.</p>
+<p>Specify relationships amongst data to be created.
+For example, a complex Product object may contain within it a pointer (an ID) to a complex Category object.</p>
 
-<p>For example, first we create a category, then we create a product in that category
-by indicating the relationship.</p>
+<h5 id="example-13">Example</h5>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleCategory"</span> <span class="na">stepKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
-
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Create an entity with the "SampleCategory" name.  --&gt;</span>
+<span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleCategory"</span> <span class="na">stepKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
+<span class="c">&lt;!-- Create the "SampleProduct" product in that category. --&gt;</span>
 <span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;requiredEntity</span> <span class="na">createDataKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/createData&gt;</span>
@@ -1685,14 +1808,8 @@ by indicating the relationship.</p>
 
 <h4 id="field">field</h4>
 
-<p>Specify a custom field you’d like persisted to Magento (as a part of the entity) which will overwrite any other declaration in static data. This field will only replace at a top level (nested values such as custom attributes or extension attributes will not be replaceable via this annotation).</p>
-
-<p>For example, to overwrite the <code class="highlighter-rouge">name</code> field in a particular product specify a field element during its creation.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>myCustomProductName<span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;/createData&gt;</span>
-</code></pre></div></div>
+<p>Persists a custom field (as a part of the entity) overriding the matching declaration in static data.
+This field is replaced at a top level only (nested values such as custom attributes or extension attributes are not replaced).</p>
 
 <table>
   <thead>
@@ -1712,6 +1829,15 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h5 id="example-14">Example</h5>
+
+<p>To overwrite the <code class="highlighter-rouge">name</code> field in a particular product, specify a field element during its creation.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>myCustomProductName<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/createData&gt;</span>
+</code></pre></div></div>
 
 <h3 id="deletedata">deleteData</h3>
 
@@ -1766,7 +1892,7 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
-<h4 id="example-of-persisted-data-deletion">Example of persisted data deletion</h4>
+<h4 id="examples-4">Examples</h4>
 
 <p>Delete the entity that was previously created using <a href="#createdata"><code class="highlighter-rouge">createData</code></a> in the scope of the <a href="../test.html#test-tag">test</a>.</p>
 
@@ -1845,6 +1971,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-15">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Check that the page does not contain the `&lt;h2 id="title"&gt;Sample title&lt;/h2&gt;` element. --&gt;</span>
+<span class="nt">&lt;dontSee</span> <span class="na">userInput=</span><span class="s">"Sample title"</span> <span class="na">selector=</span><span class="s">"h2#title"</span> <span class="na">stepKey=</span><span class="s">"dontSeeTitle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseecheckboxischecked">dontSeeCheckboxIsChecked</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked" target="_blank">dontSeeCheckboxIsChecked docs on codeception.com</a>.</p>
@@ -1885,6 +2017,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-16">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the page does not contain the `&lt;input type="checkbox" id="option1" ... &gt;...&lt;/input&gt;` element. --&gt;</span>
+<span class="nt">&lt;dontSeeCheckboxIsChecked</span> <span class="na">selector=</span><span class="s">"input#option1"</span> <span class="na">stepKey=</span><span class="s">"checkboxNotChecked"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseecookie">dontSeeCookie</h3>
 
@@ -1933,6 +2071,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-5">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is no cookie with the given name `cookie1`. --&gt;</span>
+<span class="nt">&lt;dontSeeCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">stepKey=</span><span class="s">"cookie1NotPresent"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is no cookie with the given name `cookie1` from the domain `www.example.com`. --&gt;</span>
+<span class="nt">&lt;dontSeeCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">parameterArray=</span><span class="s">"['domainName' =&gt; '.example.com']"</span> <span class="na">stepKey=</span><span class="s">"dontSeeCookieInExampleDomain"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseecurrenturlequals">dontSeeCurrentUrlEquals</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals" target="_blank">dontSeeCurrentUrlEquals docs on codeception.com</a>.</p>
@@ -1974,6 +2122,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-17">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the relative URL of the current page does not match `/admin`. --&gt;</span>
+<span class="nt">&lt;dontSeeCurrentUrlEquals</span> <span class="na">url=</span><span class="s">"/admin"</span> <span class="na">stepKey=</span><span class="s">"notOnAdminPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseecurrenturlmatches">dontSeeCurrentUrlMatches</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches" target="_blank">dontSeeCurrentUrlMatches docs on codeception.com</a></p>
@@ -2014,6 +2168,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-18">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the relative URL of the current page does not match the `~$/users/(\d+)~` regular expression. --&gt;</span>
+<span class="nt">&lt;dontSeeCurrentUrlMatches</span> <span class="na">regex=</span><span class="s">"~$/users/(\d+)~"</span> <span class="na">stepKey=</span><span class="s">"dontSeeCurrentUrlMatches"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseeelement">dontSeeElement</h3>
 
@@ -2061,6 +2221,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-19">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;div id="box" ... &gt;...&lt;/div&gt;` is missing or invisible on the current page. --&gt;</span>
+<span class="nt">&lt;dontSeeElement</span> <span class="na">selectore=</span><span class="s">"div#box"</span> <span class="na">stepKey=</span><span class="s">"dontSeeBox"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseeelementindom">dontSeeElementInDOM</h3>
 
@@ -2115,6 +2281,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-20">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;div id="box" ... &gt;...&lt;/div&gt;` is completely missing on the current page. --&gt;</span>
+<span class="nt">&lt;dontSeeElementInDOM</span> <span class="na">selectore=</span><span class="s">"div#box"</span> <span class="na">stepKey=</span><span class="s">"dontSeeBoxInDOM"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseeincurrenturl">dontSeeInCurrentUrl</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl" target="_blank">dontSeeInCurrentUrl docs on codeception.com</a>.</p>
@@ -2155,6 +2327,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-21">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the url of the current active tab does not contain the string "/users/". --&gt;</span>
+<span class="nt">&lt;dontSeeInCurrentUrl</span> <span class="na">url=</span><span class="s">"/users/"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInCurrentUrl"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseeinfield">dontSeeInField</h3>
 
@@ -2209,6 +2387,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-22">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;input id="field" ... &gt;...&lt;/input&gt;` does not contain the text "Sample text". --&gt;</span>
+<span class="nt">&lt;dontSeeInField</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">selector=</span><span class="s">"input#field"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInField1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseeinformfields">dontSeeInFormFields</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields" target="_blank">dontSeeInFormFields docs on codeception.com</a>.</p>
@@ -2256,6 +2440,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-23">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;form name="myform" ... &gt;...&lt;/form&gt;` with the input elements `&lt;input name="input1"&gt;...&lt;/input&gt;` and `&lt;input name="input2"&gt;...&lt;/input&gt;`, do not have the values of `value1` and `value2` respectively. --&gt;</span>
+<span class="nt">&lt;dontSeeInFormFields</span> <span class="na">selector=</span><span class="s">"form[name=myform]"</span> <span class="na">parameterArray=</span><span class="s">"['input1' =&gt; 'value1', 'input2' =&gt; 'value2']"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInFormFields"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseeinpagesource">dontSeeInPageSource</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource" target="_blank">dontSeeInPageSource docs on codeception.com</a>.</p>
@@ -2296,6 +2486,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-24">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the page source does not contain the string "Sample text". --&gt;</span>
+<span class="nt">&lt;dontSeeInPageSource</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInPageSource"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseeinsource">dontSeeInSource</h3>
 
@@ -2338,6 +2534,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-25">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the page does not contain the raw source code `&lt;h1&gt;Sample text&lt;/h1&gt;`. --&gt;</span>
+<span class="nt">&lt;dontSeeInSource</span> <span class="na">userInput=</span><span class="s">"&lt;h1&gt;Sample text&lt;/h1&gt;"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInSource"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseeintitle">dontSeeInTitle</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInTitle" target="_blank">dontSeeInTitle docs on codeception.com</a>.</p>
@@ -2379,6 +2581,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-26">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the title of the current active window does not contain the text "Page Title". --&gt;</span>
+<span class="nt">&lt;dontSeeInTitle</span> <span class="na">userInput=</span><span class="s">"Page Title"</span> <span class="na">stepKey=</span><span class="s">"dontSeeInTitle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseejserror">dontSeeJsError</h3>
 
 <p>Ensure that there are no JavaScript errors.</p>
@@ -2413,6 +2621,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-27">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify there are no JavaScript errors in the current active window. --&gt;</span>
+<span class="nt">&lt;dontSeeJsError</span> <span class="na">stepKey=</span><span class="s">"dontSeeJsError"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="dontseelink">dontSeeLink</h3>
 
@@ -2461,6 +2675,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-6">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is no hyperlink tag on the page with the text "External link". --&gt;</span>
+<span class="nt">&lt;dontSeeLink</span> <span class="na">userInput=</span><span class="s">"External link"</span> <span class="na">stepKey=</span><span class="s">"dontSeeLink"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is no hyperlink tag with the text "External link" and the `href` attribute of `/admin`. --&gt;</span>
+<span class="nt">&lt;dontSeeLink</span> <span class="na">userInput=</span><span class="s">"External link"</span> <span class="na">url=</span><span class="s">"/admin"</span> <span class="na">stepKey=</span><span class="s">"dontSeeAdminLink"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="dontseeoptionisselected">dontSeeOptionIsSelected</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected" target="_blank">dontSeeOptionIsSelected docs on codeception.com</a>.</p>
@@ -2508,6 +2732,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-28">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;select id="myselect" ... &gt;...&lt;/select&gt;` does not have the option `option1` selected --&gt;</span>
+<span class="nt">&lt;dontSeeOptionIsSelected</span> <span class="na">userInput=</span><span class="s">"option1"</span> <span class="na">selector=</span><span class="s">"select#myselect"</span> <span class="na">stepKey=</span><span class="s">"dontSeeOption1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="doubleclick">doubleClick</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#doubleClick" target="_blank">doubleClick docs on codeception.com</a>.</p>
@@ -2548,6 +2778,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-29">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click the selected element twice in succession. --&gt;</span>
+<span class="nt">&lt;doubleClick</span> <span class="na">selector=</span><span class="s">"button#mybutton"</span> <span class="na">stepKey=</span><span class="s">"doubleClickButton"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="draganddrop">dragAndDrop</h3>
 
@@ -2608,6 +2844,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-7">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click and drag `&lt;div id="block1" ... &gt;...&lt;/div&gt;` to the middle of `&lt;div id="block2" ... &gt;...&lt;/div&gt;` --&gt;</span>
+<span class="nt">&lt;dragAndDrop</span> <span class="na">selector1=</span><span class="s">"div#block1"</span> <span class="na">selector2=</span><span class="s">"div#block2"</span> <span class="na">stepKey=</span><span class="s">"dragAndDrop"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Click and drag `&lt;div id="block1" ... &gt;...&lt;/div&gt;` to the middle of `&lt;div id="block2" ... &gt;...&lt;/div&gt;` with a left offset of 50px and top offset of 50px. --&gt;</span>
+<span class="nt">&lt;dragAndDrop</span> <span class="na">selector1=</span><span class="s">"#block1"</span> <span class="na">selector2=</span><span class="s">"#block2"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"dragAndDrop"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="executeinselenium">executeInSelenium</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#executeInSelenium" target="_blank">executeInSelenium docs on codeception.com</a>.</p>
@@ -2649,6 +2895,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-30">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Execute the Selenium function `function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver-&gt;get('http://google.com');}`. --&gt;</span>
+<span class="nt">&lt;executeInSelenium</span> <span class="na">function=</span><span class="s">"function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver-&gt;get('http://google.com');}"</span> <span class="na">stepKey=</span><span class="s">"executeInSelenium"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="executejs">executeJS</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#executeJS" target="_blank">executeJS docs on codeception.com</a>.</p>
@@ -2689,6 +2941,15 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-31">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function.
+To access this value, use `{$returnTime}` in later actions. --&gt;</span>
+<span class="nt">&lt;executeJS</span> <span class="na">function=</span><span class="s">"return Math.floor(new Date() / 1000);"</span> <span class="na">stepKey=</span><span class="s">"returnTime"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>To access this value you would use <code class="highlighter-rouge">{$returnTime}</code> in later actions.</p>
 
 <h3 id="fillfield">fillField</h3>
 
@@ -2743,56 +3004,11 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
-<h3 id="fillsecretfield">fillSecretField</h3>
+<h4 id="example-32">Example</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Type</th>
-      <th>Use</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">selector</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">selectorArray</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">userInput</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
-      <td>string</td>
-      <td>required</td>
-      <td>A unique identifier of the action.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">before</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">after</code></td>
-      <td>string</td>
-      <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Fill in `&lt;input id="myfield" ... &gt;...&lt;/input&gt;` with the text "Sample text". --&gt;</span>
+<span class="nt">&lt;fillField</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">selector=</span><span class="s">"input#myfield"</span> <span class="na">stepKey=</span><span class="s">"fillField"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="formatmoney">formatMoney</h3>
 
@@ -2892,18 +3108,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
-<h3 id="getdata">getData</h3>
+<h4 id="example-33">Example</h4>
 
-<p>Gets an entity (for example, a category, the Magento API according to the data and metadata of the entity type that is requested.</p>
-
-<p>For example, using <code class="highlighter-rouge">getData</code> in a test looks like this:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;getData</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;requiredEntity</span> <span class="na">createDataKey=</span><span class="s">"productAttributeHandle"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/getData&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Generate a date that is 1 minute after the current date using Pacific Standard Time. For example "07/11/2020 7:00 AM".
+To access this value, use `{$generateDate}` in later actions. --&gt;</span>
+<span class="nt">&lt;generateDate</span> <span class="na">date=</span><span class="s">"+1 minute"</span> <span class="na">format=</span><span class="s">"m/d/Y g:i A"</span> <span class="na">stepKey=</span><span class="s">"generateDate"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">ProductAttributeOptionGetter</code> entity must be defined in the corresponding <a href="../data.html">data <code class="highlighter-rouge">*.xml</code></a>.</p>
+<h3 id="getdata">getData</h3>
+
+<p>Gets an entity (for example, a category), from the Magento API according to the data and metadata of the entity type that is requested.</p>
 
 <table>
   <thead>
@@ -2954,6 +3168,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-34">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Get the product attribute that was created using `&lt;createData stepkey="productAttributeHandle" ... /&gt;`. --&gt;</span>
+<span class="nt">&lt;getData</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;requiredEntity</span> <span class="na">createDataKey=</span><span class="s">"productAttributeHandle"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/getData&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">ProductAttributeOptionGetter</code> entity must be defined in the corresponding <a href="../data.html">data <code class="highlighter-rouge">*.xml</code></a>.</p>
+
 <p>This action can optionally contain one or more <a href="#requiredentity">requiredEntity</a> child elements.</p>
 
 <h3 id="grabattributefrom">grabAttributeFrom</h3>
@@ -3003,6 +3227,13 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-35">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab the `title` attribute from `&lt;input id="myinput" ... &gt;...&lt;/input&gt;`.
+To access this value, use `{$grabAttributeFromInput}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabAttributeFrom</span> <span class="na">userInput=</span><span class="s">"title"</span> <span class="na">selector=</span><span class="s">"input#myinput"</span> <span class="na">stepKey=</span><span class="s">"grabAttributeFromInput"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="grabcookie">grabCookie</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#grabCookie" target="_blank">grabCookie docs on codeception.com</a>.</p>
@@ -3050,6 +3281,18 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-8">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab the cookie with the given name `cookie1`.
+To access this value, use `{$grabCookie1}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">stepKey=</span><span class="s">"grabCookie1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab the cookie with the given name `cookie1` from the domain `www.example.com`.
+To access this value, use `{$grabCookieExampleDomain}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">parameterArray=</span><span class="s">"['domainName' =&gt; '.example.com']"</span> <span class="na">stepKey=</span><span class="s">"grabCookieExampleDomain"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="grabfromcurrenturl">grabFromCurrentUrl</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl" target="_blank">grabFromCurrentUrl docs on codeception.com</a>..</p>
@@ -3090,6 +3333,13 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-36">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`.
+To access this value, use `{$grabFromCurrentUrl}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabFromCurrentUrl</span> <span class="na">regex=</span><span class="s">"~$/user/(\d+)/~"</span> <span class="na">stepKey=</span><span class="s">"grabFromCurrentUrl"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="grabmultiple">grabMultiple</h3>
 
@@ -3138,6 +3388,18 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-9">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab every element on the page with the class `myElement` and return them as an array.
+To access this value, use `{$grabAllMyElements}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabMultiple</span> <span class="na">selector=</span><span class="s">"div.myElement"</span> <span class="na">stepKey=</span><span class="s">"grabAllMyElements"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Grab the `href` tag from every `a` element on the page and return them as an array.
+To access this value, use `{$grabAllLinks}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabMultiple</span> <span class="na">userInput=</span><span class="s">"href"</span> <span class="na">selector=</span><span class="s">"a"</span> <span class="na">stepKey=</span><span class="s">"grabAllLinks"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="grabpagesource">grabPageSource</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#grabPageSource" target="_blank">grabPageSource docs on codeception.com</a>.</p>
@@ -3172,6 +3434,13 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-37">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Store the page source code as text
+To access this value, use `{$grabPageSource}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabPageSource</span> <span class="na">stepKey=</span><span class="s">"grabPageSource"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="grabtextfrom">grabTextFrom</h3>
 
@@ -3213,6 +3482,13 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-38">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Store the text currently displayed by the selected element.
+To access this value, use `{$grabTitle}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabTextFrom</span> <span class="na">selector=</span><span class="s">"h2#title"</span> <span class="na">stepKey=</span><span class="s">"grabTitle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="grabvaluefrom">grabValueFrom</h3>
 
@@ -3261,6 +3537,13 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-39">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Store the value currently entered in &lt;input id="name" ... &gt;...&lt;/input&gt;.
+To access this value, use `{$grabInputName}` in later actions. --&gt;</span>
+<span class="nt">&lt;grabValueFrom</span> <span class="na">selector=</span><span class="s">"input#name"</span> <span class="na">stepKey=</span><span class="s">"grabInputName"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="loadsessionsnapshot">loadSessionSnapshot</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot" target="_blank">loadSessionSnapshot docs on codeception.com</a>.</p>
@@ -3301,6 +3584,13 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-40">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Load all cookies saved via `&lt;saveSessionSnapshot name="savedSnapshot" ... /&gt;`.
+To access this value, use the `loadSessionSnapshot` action --&gt;</span>
+<span class="nt">&lt;loadSessionSnapshot</span> <span class="na">userInput=</span><span class="s">"savedSnapshot"</span> <span class="na">stepKey=</span><span class="s">"loadSnapshot"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="magentocli">magentoCLI</h3>
 
@@ -3349,6 +3639,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-41">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Re-index all indices via the command line.  --&gt;</span>
+<span class="nt">&lt;magentoCLI</span> <span class="na">command=</span><span class="s">"indexer:reindex"</span> <span class="na">stepKey=</span><span class="s">"reindex"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="makescreenshot">makeScreenshot</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#makeScreenshot" target="_blank">makeScreenshot docs on codeception.com</a>.</p>
@@ -3390,6 +3686,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-42">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Take a screenshot of the page and save it to the directory `tests/_output/debug` under the name `example.png`. --&gt;</span>
+<span class="nt">&lt;makeScreenshot</span> <span class="na">userInput=</span><span class="s">"example"</span> <span class="na">stepKey=</span><span class="s">"screenshotPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="maximizewindow">maximizeWindow</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#maximizeWindow" target="_blank">maximizeWindow docs on codeception.com</a>.</p>
@@ -3424,6 +3726,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-43">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Maximize the current window. --&gt;</span>
+<span class="nt">&lt;maximizeWindow</span> <span class="na">stepKey=</span><span class="s">"maximizeWindow"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="moveback">moveBack</h3>
 
@@ -3460,6 +3768,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-44">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move back one page in history. --&gt;</span>
+<span class="nt">&lt;moveBack</span> <span class="na">stepKey=</span><span class="s">"moveBack"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="moveforward">moveForward</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#moveForward" target="_blank">moveForward docs on codeception.com</a>..</p>
@@ -3494,6 +3808,10 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move forward one page in history. --&gt;</span>
+<span class="nt">&lt;moveForward</span> <span class="na">stepKey=</span><span class="s">"moveForward"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="movemouseover">moveMouseOver</h3>
 
@@ -3553,6 +3871,16 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-45">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move the mouse cursor over the selected element. --&gt;</span>
+<span class="nt">&lt;moveMouseOver</span> <span class="na">selector=</span><span class="s">"button#product1"</span> <span class="na">stepKey=</span><span class="s">"hoverOverProduct1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move the mouse cursor over the selected element with an offset of 50px from the top and 50px from the left. --&gt;</span>
+<span class="nt">&lt;moveMouseOver</span> <span class="na">selector=</span><span class="s">"button#product1"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"hoverOverProduct2"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="msetlocale">mSetLocale</h3>
 
@@ -3667,6 +3995,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-46">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Open and switch to a new browser tab. --&gt;</span>
+<span class="nt">&lt;openNewTab</span> <span class="na">stepKey=</span><span class="s">"openNewTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="parsefloat">parseFloat</h3>
 
 <p>Parses float number with thousands separator.</p>
@@ -3742,6 +4076,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-47">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Halt test execution until the `enter` key is pressed to continue. --&gt;</span>
+<span class="nt">&lt;pauseExecution</span> <span class="na">stepKey=</span><span class="s">"pause"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="performon">performOn</h3>
 
@@ -3843,6 +4183,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-10">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Press the `a` key within the selected area. --&gt;</span>
+<span class="nt">&lt;pressKey</span> <span class="na">userInput=</span><span class="s">"a"</span> <span class="na">selector=</span><span class="s">"#targetElement"</span> <span class="na">stepKey=</span><span class="s">"pressA"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Press the delete within the selected area uses key constants from the WebDriverKeys class. --&gt;</span>
+<span class="nt">&lt;pressKey</span> <span class="na">selector=</span><span class="s">"#targetElement"</span> <span class="na">parameterArray=</span><span class="s">"[\Facebook\WebDriver\WebDriverKeys::ENTER]"</span> <span class="na">stepKey=</span><span class="s">"pressDelete"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="reloadpage">reloadPage</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#reloadPage" target="_blank">reloadPage docs on codeception.com</a>.</p>
@@ -3878,6 +4228,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="example-48">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Reload the current page. --&gt;</span>
+<span class="nt">&lt;reloadPage</span> <span class="na">stepKey=</span><span class="s">"reloadPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="remove">remove</h3>
 
 <p>Removes action by its <code class="highlighter-rouge">stepKey</code>.</p>
@@ -3900,6 +4256,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-49">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Remove an action in the test with the stepKey of `stepKeyToRemove`. --&gt;</span>
+<span class="nt">&lt;remove</span> <span class="na">keyForRemoval=</span><span class="s">"stepKeyToRemove"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="resetcookie">resetCookie</h3>
 
@@ -3948,6 +4310,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-11">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Reset a cookie with the name `cookie1`. --&gt;</span>
+<span class="nt">&lt;resetCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">stepKey=</span><span class="s">"resetCookie1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Reset a cookie with the given name `cookie1` from the domain `www.example.com`. --&gt;</span>
+<span class="nt">&lt;resetCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">parameterArray=</span><span class="s">"['domainName' =&gt; '.example.com']"</span> <span class="na">stepKey=</span><span class="s">"resetCookieExampleDomain"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="resizewindow">resizeWindow</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#resizeWindow" target="_blank">resizeWindow docs on codeception.com</a>.</p>
@@ -3995,6 +4367,12 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-12">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Resize the current window to a width of 800px and a height of 600px. --&gt;</span>
+<span class="nt">&lt;resizeWindow</span> <span class="na">width=</span><span class="s">"800"</span> <span class="na">height=</span><span class="s">"600"</span> <span class="na">stepKey=</span><span class="s">"resizeWindow"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="savesessionsnapshot">saveSessionSnapshot</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot" target="_blank">saveSessionSnapshot docs on codeception.com</a>.</p>
@@ -4035,6 +4413,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-50">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Save all of the current cookies under the name `savedSnapshot`. --&gt;</span>
+<span class="nt">&lt;saveSessionSnapshot</span> <span class="na">userInput=</span><span class="s">"savedSnapshot"</span> <span class="na">stepKey=</span><span class="s">"saveCurrentCookies"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="scrollto">scrollTo</h3>
 
@@ -4095,6 +4479,16 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h4 id="examples-13">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move the page to the middle of the selected area. --&gt;</span>
+<span class="nt">&lt;scrollTo</span> <span class="na">selector=</span><span class="s">"div#anchor"</span> <span class="na">stepKey=</span><span class="s">"scrollToAnchor"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move the page to the middle of the selected area with an offset of 50px from the top and 50px from the left. --&gt;</span>
+<span class="nt">&lt;scrollTo</span> <span class="na">selector=</span><span class="s">"div#anchor"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">stepKey=</span><span class="s">"scrollToAnchor2"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="scrolltotopofpage">scrollToTopOfPage</h3>
 
 <p>A convenience function that executes <code class="highlighter-rouge">window.scrollTo(0,0)</code> as JavaScript, thus returning to the top of the page.</p>
@@ -4129,6 +4523,12 @@ by indicating the relationship.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="examples-14">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Move the page to the uppermost, leftmost position. --&gt;</span>
+<span class="nt">&lt;scrollToTopOfPage</span> <span class="na">stepKey=</span><span class="s">"scrollToTopOfPages"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="searchandmultiselectoption">searchAndMultiSelectOption</h3>
 
@@ -4184,9 +4584,10 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
-<p>Example:</p>
+<h4 id="example-51">Example</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;searchAndMultiSelectOption</span> <span class="na">selector=</span><span class="s">"#stuff"</span> <span class="na">parameterArray=</span><span class="s">"['Item 1', 'Item 2']"</span> <span class="na">stepKey=</span><span class="s">"searchAndMultiSelect1"</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Search and select for "Item 1" amd "Item 2" in the Magento multiselect element with the id of `multiSelect`. --&gt;</span>
+<span class="nt">&lt;searchAndMultiSelectOption</span> <span class="na">selector=</span><span class="s">"#multiSelect"</span> <span class="na">parameterArray=</span><span class="s">"['Item 1', 'Item 2']"</span> <span class="na">stepKey=</span><span class="s">"searchAndMultiSelect1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>On this test step the MFTF:</p>
@@ -4252,6 +4653,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-52">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the selected element contains the text "Sample title". --&gt;</span>
+<span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Sample title"</span> <span class="na">selector=</span><span class="s">"h2#title"</span> <span class="na">stepKey=</span><span class="s">"seeTitle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seecheckboxischecked">seeCheckboxIsChecked</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked" target="_blank">seeCheckboxIsChecked docs on codeception.com</a>.</p>
@@ -4292,6 +4699,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-53">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify `&lt;input type="checkbox" id="option1" ... &gt;...&lt;/input&gt;` is checked. --&gt;</span>
+<span class="nt">&lt;seeCheckboxIsChecked</span> <span class="na">selector=</span><span class="s">"input#option1"</span> <span class="na">stepKey=</span><span class="s">"seeCheckboxChecked"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seecookie">seeCookie</h3>
 
@@ -4340,6 +4753,16 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="examples-15">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is a cookie with the given name `cookie1`. --&gt;</span>
+<span class="nt">&lt;seeCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">stepKey=</span><span class="s">"cookie1Present"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is a cookie with the given name `cookie1` from the domain `www.example.com`. --&gt;</span>
+<span class="nt">&lt;seeCookie</span> <span class="na">userInput=</span><span class="s">"cookie1"</span> <span class="na">parameterArray=</span><span class="s">"['domainName' =&gt; 'www.example.com']"</span> <span class="na">stepKey=</span><span class="s">"seeCookieInExampleDomain"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seecurrenturlequals">seeCurrentUrlEquals</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals" target="_blank">seeCurrentUrlEquals docs on codeception.com</a>.</p>
@@ -4381,6 +4804,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-54">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the relative URL of the current page matches `/admin`. --&gt;</span>
+<span class="nt">&lt;seeCurrentUrlEquals</span> <span class="na">url=</span><span class="s">"/admin"</span> <span class="na">stepKey=</span><span class="s">"onAdminPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seecurrenturlmatches">seeCurrentUrlMatches</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches" target="_blank">seeCurrentUrlMatches docs on codeception.com</a>.</p>
@@ -4421,6 +4850,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-55">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the relative URL of the current page matches the `~$/users/(\d+)~` regular expression. --&gt;</span>
+<span class="nt">&lt;seeCurrentUrlMatches</span> <span class="na">regex=</span><span class="s">"~$/users/(\d+)~"</span> <span class="na">stepKey=</span><span class="s">"seeCurrentUrlMatches"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seeelement">seeElement</h3>
 
@@ -4475,6 +4910,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-56">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;div id="box" ... &gt;...&lt;/div&gt;` is available and visible on the current page. --&gt;</span>
+<span class="nt">&lt;seeElement</span> <span class="na">selectore=</span><span class="s">"div#box"</span> <span class="na">stepKey=</span><span class="s">"seeBox"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeelementindom">seeElementInDOM</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeElementInDOM" target="_blank">seeElementInDOM docs on codeception.com</a>.</p>
@@ -4522,6 +4963,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-57">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;div id="box" ... &gt;...&lt;/div&gt;` is available on the current page. --&gt;</span>
+<span class="nt">&lt;seeElementInDOM</span> <span class="na">selectore=</span><span class="s">"div#box"</span> <span class="na">stepKey=</span><span class="s">"seeBoxInDOM"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeincurrenturl">seeInCurrentUrl</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl" target="_blank">seeInCurrentUrl docs on codeception.com</a>.</p>
@@ -4562,6 +5009,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-58">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the url of the current active tab contains the string "/users/". --&gt;</span>
+<span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"/users/"</span> <span class="na">stepKey=</span><span class="s">"seeInCurrentUrl"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seeinfield">seeInField</h3>
 
@@ -4616,6 +5069,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-59">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;input id="field" ... &gt;...&lt;/input&gt;` contains the text "Sample text". --&gt;</span>
+<span class="nt">&lt;seeInField</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">selector=</span><span class="s">"input#field"</span> <span class="na">stepKey=</span><span class="s">"seeInField"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeinformfields">seeInFormFields</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInFormFields" target="_blank">seeInFormFields docs on codeception.com</a>.</p>
@@ -4663,6 +5122,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-60">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;form name="myform" ... &gt;...&lt;/form&gt;` with the input elements `&lt;input name="input1"&gt;...&lt;/input&gt;` and `&lt;input name="input2"&gt;...&lt;/input&gt;`, has the values of `value1` and `value2` respectively. --&gt;</span>
+<span class="nt">&lt;seeInFormFields</span> <span class="na">selector=</span><span class="s">"form[name=myform]"</span> <span class="na">parameterArray=</span><span class="s">"['input1' =&gt; 'value1', 'input2' =&gt; 'value2']"</span> <span class="na">stepKey=</span><span class="s">"seeInFormFields"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeinpagesource">seeInPageSource</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInPageSource" target="_blank">seeInPageSource docs on codeception.com</a>.</p>
@@ -4703,6 +5168,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-61">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the page source contains the string "Sample text". --&gt;</span>
+<span class="nt">&lt;seeInPageSource</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">stepKey=</span><span class="s">"seeInPageSource"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seeinpopup">seeInPopup</h3>
 
@@ -4745,6 +5216,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-62">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify the current popup on the page contains the string "Sample text". --&gt;</span>
+<span class="nt">&lt;seeInPopup</span> <span class="na">userInput=</span><span class="s">"Sample text"</span> <span class="na">stepKey=</span><span class="s">"seeInPopup"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeinsource">seeInSource</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInSource" target="_blank">seeInSource docs on codeception.com</a>.</p>
@@ -4786,6 +5263,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-63">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the page does contains the raw source code `&lt;h1&gt;Sample text&lt;/h1&gt;`. --&gt;</span>
+<span class="nt">&lt;seeInSource</span> <span class="na">userInput=</span><span class="s">"&lt;h1&gt;Sample text&lt;/h1&gt;"</span> <span class="na">stepKey=</span><span class="s">"seeInSource"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeintitle">seeInTitle</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInTitle" target="_blank">seeInTitle docs on codeception.com</a>.</p>
@@ -4826,6 +5309,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-64">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that the title of the current active window contains the text "Page Title". --&gt;</span>
+<span class="nt">&lt;seeInTitle</span> <span class="na">userInput=</span><span class="s">"Page Title"</span> <span class="na">stepKey=</span><span class="s">"seeInTitle"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seelink">seeLink</h3>
 
@@ -4873,6 +5362,16 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-65">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is a hyperlink tag on the page with the text "External link". --&gt;</span>
+<span class="nt">&lt;seeLink</span> <span class="na">userInput=</span><span class="s">"External link"</span> <span class="na">stepKey=</span><span class="s">"seeLink"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that there is a hyperlink tag with the text "External link" and the `href` attribute of `/admin`. --&gt;</span>
+<span class="nt">&lt;seeLink</span> <span class="na">userInput=</span><span class="s">"External link"</span> <span class="na">url=</span><span class="s">"/admin"</span> <span class="na">stepKey=</span><span class="s">"seeAdminLink"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="seenumberofelements">seeNumberOfElements</h3>
 
@@ -4927,6 +5426,16 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="examples-16">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify there are 10 `&lt;div id="product" ... &gt;...&lt;/div&gt;` elements on the page. --&gt;</span>
+<span class="nt">&lt;seeNumberOfElements</span> <span class="na">userInput=</span><span class="s">"10"</span> <span class="na">selector=</span><span class="s">"div.product"</span> <span class="na">stepKey=</span><span class="s">"seeTenProducts"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify there are between 5 and 10 `&lt;div id="product" ... &gt;...&lt;/div&gt;` elements on the page. --&gt;</span>
+<span class="nt">&lt;seeNumberOfElements</span> <span class="na">userInput=</span><span class="s">"[5, 10]"</span> <span class="na">selector=</span><span class="s">".product"</span> <span class="na">stepKey=</span><span class="s">"seeFiveToTenProducts"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="seeoptionisselected">seeOptionIsSelected</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected" target="_blank">seeOptionIsSelected docs on codeception.com</a>.</p>
@@ -4973,6 +5482,12 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-66">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Verify that `&lt;select id="myselect" ... &gt;...&lt;/select&gt;` has the option `option1` selected --&gt;</span>
+<span class="nt">&lt;seeOptionIsSelected</span> <span class="na">userInput=</span><span class="s">"option1"</span> <span class="na">selector=</span><span class="s">"select#myselect"</span> <span class="na">stepKey=</span><span class="s">"seeOption1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="selectoption">selectOption</h3>
 
@@ -5027,16 +5542,15 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
+<h4 id="example-67">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Select `option1` from `&lt;select id="mySelect" ... &gt;...&lt;/select&gt;`. --&gt;</span>
+<span class="nt">&lt;selectOption</span> <span class="na">userInput=</span><span class="s">"option1"</span> <span class="na">selector=</span><span class="s">"select#mySelect"</span> <span class="na">stepKey=</span><span class="s">"selectOption1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="selectmultipleoptions">selectMultipleOptions</h3>
 
 <p>Selects all given options in the given Magento drop-down element.</p>
-
-<p>Example:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;selectMultipleOptions</span> <span class="na">filterSelector=</span><span class="s">".filter"</span> <span class="na">optionSelector=</span><span class="s">".option"</span> <span class="na">stepKey=</span><span class="s">"selectMultipleOpts1"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;array&gt;</span>['opt1', 'opt2']<span class="nt">&lt;/array&gt;</span>
-<span class="nt">&lt;/selectMultipleOptions&gt;</span>
-</code></pre></div></div>
 
 <table>
   <thead>
@@ -5081,8 +5595,15 @@ For example, the drop-down menu you use to assign Products to Categories.</p>
   </tbody>
 </table>
 
-<p>It contains a child element <code class="highlighter-rouge">&lt;array&gt;</code> where you specify the options that must be selected using an array format like <code class="highlighter-rouge">['opt1', 'opt2']</code>.
-See the previous example.</p>
+<p>It contains a child element <code class="highlighter-rouge">&lt;array&gt;</code> where you specify the options that must be selected using an array format like <code class="highlighter-rouge">['opt1', 'opt2']</code>.</p>
+
+<h4 id="example-68">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Select the options `opt1` and `opt2` from `&lt;option class="option" ... &gt;...&lt;/option&gt;` and `&lt;input class="filter" ...&gt;...&lt;/input&gt;` --&gt;</span>
+<span class="nt">&lt;selectMultipleOptions</span> <span class="na">filterSelector=</span><span class="s">".filter"</span> <span class="na">optionSelector=</span><span class="s">".option"</span> <span class="na">stepKey=</span><span class="s">"selectMultipleOpts1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;array&gt;</span>['opt1', 'opt2']<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/selectMultipleOptions&gt;</span>
+</code></pre></div></div>
 
 <h3 id="setcookie">setCookie</h3>
 
@@ -5137,6 +5658,12 @@ See the previous example.</p>
   </tbody>
 </table>
 
+<h4 id="examples-17">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Set a cookie with the name of `cookieName` and value of `cookieValue`. --&gt;</span>
+<span class="nt">&lt;setCookie</span> <span class="na">userInput=</span><span class="s">"cookieName"</span> <span class="na">value=</span><span class="s">"cookieValue"</span> <span class="na">stepKey=</span><span class="s">"setCookie"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="submitform">submitForm</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#submitForm" target="_blank">submitForm docs on codeception.com</a>.</p>
@@ -5190,6 +5717,12 @@ See the previous example.</p>
   </tbody>
 </table>
 
+<h4 id="examples-18">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Submit a value of `admin` for `&lt;input name="username" ... &gt;...&lt;/input&gt;`, a value of `123123q` for `&lt;input name="password" ... &gt;...&lt;/input&gt;` for the form `&lt;form id="loginForm" ...&gt;...&lt;/form&gt;` and a submit button of `&lt;button id="submit" ... &gt;...&lt;/button&gt;` --&gt;</span>
+<span class="nt">&lt;submitForm</span> <span class="na">selector=</span><span class="s">"#loginForm"</span> <span class="na">parameterArray=</span><span class="s">"['username' =&gt; 'admin','password' =&gt; '123123q']"</span> <span class="na">button=</span><span class="s">"#submit"</span> <span class="na">stepKey=</span><span class="s">"submitForm"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="switchtoiframe">switchToIFrame</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToIFrame" target="_blank">switchToIFrame docs on codeception.com</a>.</p>
@@ -5237,6 +5770,12 @@ See the previous example.</p>
   </tbody>
 </table>
 
+<h4 id="example-69">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Set the focus to &lt;iframe name="embeddedFrame" ... /&gt; --&gt;</span>
+<span class="nt">&lt;switchToIFrame</span> <span class="na">userInput=</span><span class="s">"embeddedFrame"</span> <span class="na">stepKey=</span><span class="s">"switchToIFrame"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="switchtonexttab">switchToNextTab</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToNextTab" target="_blank">switchToNextTab docs on codeception.com</a>.</p>
@@ -5277,6 +5816,16 @@ See the previous example.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="examples-19">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Switch to the next tab. --&gt;</span>
+<span class="nt">&lt;switchToNextTab</span> <span class="na">stepKey=</span><span class="s">"switchToNextTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Switch to the third next tab. --&gt;</span>
+<span class="nt">&lt;switchToNextTab</span> <span class="na">userInput=</span><span class="s">"3"</span> <span class="na">stepKey=</span><span class="s">"switchToThirdNextTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="switchtoprevioustab">switchToPreviousTab</h3>
 
@@ -5319,6 +5868,16 @@ See the previous example.</p>
   </tbody>
 </table>
 
+<h4 id="examples-20">Examples</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Switch to the previous tab. --&gt;</span>
+<span class="nt">&lt;switchToPreviousTab</span> <span class="na">stepKey=</span><span class="s">"switchToPreviousTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Switch to the third previous tab. --&gt;</span>
+<span class="nt">&lt;switchToPreviousTab</span> <span class="na">userInput=</span><span class="s">"3"</span> <span class="na">stepKey=</span><span class="s">"switchToThirdPreviousTab"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="switchtowindow">switchToWindow</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToWindow" target="_blank">switchToWindow docs on codeception.com</a>.</p>
@@ -5359,6 +5918,12 @@ See the previous example.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-70">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Switch to a window with the `name` parameter of `newWindow`. --&gt;</span>
+<span class="nt">&lt;switchToWindow</span> <span class="na">userInput=</span><span class="s">"newWindow"</span> <span class="na">stepKey=</span><span class="s">"switchToWindow"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="typeinpopup">typeInPopup</h3>
 
@@ -5401,6 +5966,12 @@ See the previous example.</p>
   </tbody>
 </table>
 
+<h4 id="example-71">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Type the text "Sample Text" into the current popup visible on the page. --&gt;</span>
+<span class="nt">&lt;typeInPopup</span> <span class="na">userInput=</span><span class="s">"Sample Text"</span> <span class="na">stepKey=</span><span class="s">"typeInPopup"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="uncheckoption">uncheckOption</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#uncheckOption" target="_blank">uncheckOption docs on codeception.com</a>.</p>
@@ -5441,6 +6012,12 @@ See the previous example.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-72">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Ensure the checkbox `&lt;input type="checkbox" id="checkbox" ... &gt;...&lt;/input&gt;` is unchecked. --&gt;</span>
+<span class="nt">&lt;uncheckOption</span> <span class="na">selector=</span><span class="s">"input#checkbox"</span> <span class="na">stepKey=</span><span class="s">"uncheckCheckbox"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="unselectoption">unselectOption</h3>
 
@@ -5494,6 +6071,12 @@ See the previous example.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-73">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Unselect `option1` from `&lt;select id="mySelect" ... &gt;...&lt;/select&gt;`. --&gt;</span>
+<span class="nt">&lt;unselectOption</span> <span class="na">userInput=</span><span class="s">"option1"</span> <span class="na">selector=</span><span class="s">"select#myselect"</span> <span class="na">stepKey=</span><span class="s">"unselectOption1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="updatedata">updateData</h3>
 
@@ -5606,6 +6189,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </tbody>
 </table>
 
+<h4 id="example-74">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Halt test execution for 10 seconds before continuing. --&gt;</span>
+<span class="nt">&lt;wait</span> <span class="na">time=</span><span class="s">"10"</span> <span class="na">stepKey=</span><span class="s">"waitTenSeconds"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="waitforajaxload">waitForAjaxLoad</h3>
 
 <p>Wait for all AJAX calls to finish.</p>
@@ -5646,6 +6235,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-75">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for all AJAX calls to finish before continuing. --&gt;</span>
+<span class="nt">&lt;waitForAjaxLoad</span> <span class="na">stepKey=</span><span class="s">"waitForAjaxLoad"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="waitforelementchange">waitForElementChange</h3>
 
@@ -5700,6 +6295,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </tbody>
 </table>
 
+<h4 id="example-76">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for `&lt;div id="changedElement" ... &gt;...&lt;/div&gt;` to change to displayed before continuing. --&gt;</span>
+<span class="nt">&lt;waitForElementChange</span> <span class="na">selector=</span><span class="s">"div#changedElement"</span> <span class="na">function=</span><span class="s">"function(\WebDriverElement $el) {return $el-&gt;isDisplayed();}"</span> <span class="na">stepKey=</span><span class="s">"waitForElementChange"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="waitforelement">waitForElement</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElement" target="_blank">waitForElement docs on codeception.com</a>.</p>
@@ -5746,6 +6347,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-77">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for `&lt;div id="changedElement" ... &gt;...&lt;/div&gt;` to be appear on the page before continuing. --&gt;</span>
+<span class="nt">&lt;waitForElement</span> <span class="na">selector=</span><span class="s">"#changedElement"</span> <span class="na">stepKey=</span><span class="s">"waitForElement"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="waitforelementnotvisible">waitForElementNotVisible</h3>
 
@@ -5794,6 +6401,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </tbody>
 </table>
 
+<h4 id="example-78">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for `&lt;div id="changedElement" ... &gt;...&lt;/div&gt;` to become non-visible on the page before continuing. --&gt;</span>
+<span class="nt">&lt;waitForElementNotVisible</span> <span class="na">selector=</span><span class="s">"#changedElement"</span> <span class="na">stepKey=</span><span class="s">"waitForElementNotVisible"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="waitforelementvisible">waitForElementVisible</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementVisible" target="_blank">waitForElementVisible docs on codeception.com</a>.</p>
@@ -5841,6 +6454,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </tbody>
 </table>
 
+<h4 id="example-79">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for `&lt;div id="changedElement" ... &gt;...&lt;/div&gt;` to become visible on the page before continuing. --&gt;</span>
+<span class="nt">&lt;waitForElementVisible</span> <span class="na">selector=</span><span class="s">"#changedElement"</span> <span class="na">stepKey=</span><span class="s">"waitForElementVisible"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="waitforjs">waitForJS</h3>
 
 <p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForJS" target="_blank">waitForJS docs on codeception.com</a>.</p>
@@ -5887,6 +6506,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-80">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait for all jQuery AJAX requests to finish before continuing. --&gt;</span>
+<span class="nt">&lt;waitForJS</span> <span class="na">function=</span><span class="s">"return $.active == 0;"</span> <span class="na">stepKey=</span><span class="s">"waitForJS"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="waitforloadingmasktodisappear">waitForLoadingMaskToDisappear</h3>
 
@@ -5936,6 +6561,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
   </tbody>
 </table>
 
+<h4 id="example-81">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for all Magento loading overlays to disappear before continuing. --&gt;</span>
+<span class="nt">&lt;waitForLoadingMaskToDisappear</span> <span class="na">stepKey=</span><span class="s">"waitForLoadingMaskToDisappear"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
 <h3 id="waitforpageload">waitForPageLoad</h3>
 
 <p>Wait for AJAX, Magento loading overlays, and <code class="highlighter-rouge">document.readyState == "complete"</code>.</p>
@@ -5976,6 +6607,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-82">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait up to 30 seconds for the current page to fully load before continuing. --&gt;</span>
+<span class="nt">&lt;waitForPageLoad</span> <span class="na">stepKey=</span><span class="s">"waitForPageLoad"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="waitfortext">waitForText</h3>
 
@@ -6029,6 +6666,12 @@ The <code class="highlighter-rouge">updateData</code> action allows this.</p>
     </tr>
   </tbody>
 </table>
+
+<h4 id="example-83">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Wait for text "Sample Text" to appear in the selected area before continuing. --&gt;</span>
+<span class="nt">&lt;waitForText</span> <span class="na">userInput=</span><span class="s">"Sample Text"</span> <span class="na">selector=</span><span class="s">"div#page"</span> <span class="na">stepKey=</span><span class="s">"waitForText"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 			
 		</div>
