@@ -70,11 +70,12 @@ namespace :test do
 ################
 
     # Run htmlproofer to check for broken links
-
     desc "Validate links"
     task links: %w[build] do
 
-      # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting. Seems to prevent printing an error count though.
+      # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406).
+      # Wrapping task in a begin-rescue block prevents rake from aborting.
+      # Seems to prevent printing an error count though.
       begin
 
       puts 'Checking links with htmlproofer...'
@@ -82,7 +83,8 @@ namespace :test do
       # If you're running this for the first time, create the tmp/.htmlproofer directory first or the script fails.
       mkdir_p 'tmp/.htmlproofer' unless File.exists?('tmp/.htmlproofer')
 
-      # Write console output (stderr only) to a file. Use this if you need to also capture stdout: https://stackoverflow.com/a/2480439
+      # Write console output (stderr only) to a file.
+      # Use this if you need to also capture stdout: https://stackoverflow.com/a/2480439
       $stderr.reopen("tmp/.htmlproofer/bad-links.md", "w")
 
       # Configure htmlproofer parameters:
@@ -103,7 +105,9 @@ namespace :test do
       }
       HTMLProofer.check_directory("./_site", options).run
 
-      # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406). Wrapping task in a begin-rescue block prevents rake from aborting. Seems to prevent printing an error count though.
+      # We're expecting link validation errors, but unless we rescue from StandardError, rake will abort and won't run the transform task (https://stackoverflow.com/a/10048406).
+      # Wrapping task in a begin-rescue block prevents rake from aborting.
+      # Seems to prevent printing an error count though.
       rescue StandardError => e
         #lifeboats
       end
@@ -115,8 +119,8 @@ namespace :test do
 
     # Make 'tmp/.htmlproofer/bad-links.md' easier to read by transforming it to HTML and applying some CSS.
 
-    # We created this task to help us resolve the initial set of errors on the devdocs site. It shouldn't be necessary after we resolve all outstanding errors because we shouldn't expect a large number of errors after initial clean up.
-
+    # We created this task to help us resolve the initial set of errors on the devdocs site.
+    # It shouldn't be necessary after we resolve all outstanding errors because we shouldn't expect a large number of errors after initial clean up.
     desc "transform link validation error output to HTML"
     task :transform do
 
@@ -147,7 +151,9 @@ namespace :test do
         puts "Attempted to open #{uri} and failed because #{exception}"
       end
 
-      # Open the report and append CSS. When I try prepending it using the r+ mode (https://stackoverflow.com/a/3682374), which is where CSS content should go, it trucates part of the top error. This is good enough for now.
+      # Open the report and append CSS.
+      # When I try prepending it using the r+ mode (https://stackoverflow.com/a/3682374), which is where CSS content should go, it trucates part of the top error.
+      # This is good enough for now.
       File.open('./tmp/.htmlproofer/bad-links.html', 'a') { |file| file.write('<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <style>
 
@@ -184,7 +190,6 @@ namespace :test do
         ###############
 
         # Generate an HTML report of all link validation errors.
-
         desc "generate link validation html report"
         task report: %w[links transform] do
           puts "generating link validation HTML report..."
