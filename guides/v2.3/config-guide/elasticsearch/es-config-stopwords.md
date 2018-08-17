@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure Elasticsearch stopwords
-version: 2.3
 functional_areas:
   - Configuration
   - Search

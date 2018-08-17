@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure Magento to use memcached
-version: 2.1
 functional_areas:
   - Configuration
   - System

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Set up multiple websites, stores, and store views in the Admin
-version: 2.1
 functional_areas:
   - Configuration
   - System

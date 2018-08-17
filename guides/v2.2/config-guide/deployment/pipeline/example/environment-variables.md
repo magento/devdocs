@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Using environment variables
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

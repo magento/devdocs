@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Pipeline Deployment
-version: 2.2
 redirect_from: /guides/v2.2/config-guide/prod/prod_deploy.html
 functional_areas:
   - Configuration

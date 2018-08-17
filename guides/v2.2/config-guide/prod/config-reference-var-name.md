@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Use environment variables to override configuration settings
-version: 2.2
 functional_areas:
   - Configuration
   - System

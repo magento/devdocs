@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Deploy Magento to production
-version: 2.1
 functional_areas:
   - Configuration
   - System

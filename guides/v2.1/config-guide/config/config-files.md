@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Module configuration files
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration

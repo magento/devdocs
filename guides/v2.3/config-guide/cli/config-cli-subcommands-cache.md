@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Manage the cache
-version: 2.3
 functional_areas:
   - Configuration
   - System

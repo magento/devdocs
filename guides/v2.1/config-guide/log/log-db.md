@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Example&mdash;logging database activity
-version: 2.1
 functional_areas:
   - Configuration
   - System

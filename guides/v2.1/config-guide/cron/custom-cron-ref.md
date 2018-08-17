@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Custom cron job and cron group reference
-version: 2.1
 functional_areas:
   - Configuration
   - System

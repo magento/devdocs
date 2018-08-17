@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Set up optional database replication
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

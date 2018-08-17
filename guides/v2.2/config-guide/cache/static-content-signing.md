@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Static content signing
-version: 2.2
 functional_areas:
   - Configuration
   - System

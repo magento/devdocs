@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Run unit tests
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 functional_areas:
   - Configuration

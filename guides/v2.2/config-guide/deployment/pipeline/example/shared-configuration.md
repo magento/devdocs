@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Shared configuration
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

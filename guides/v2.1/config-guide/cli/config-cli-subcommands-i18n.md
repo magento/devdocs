@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Translation dictionaries and language packages
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 functional_areas:
   - Configuration

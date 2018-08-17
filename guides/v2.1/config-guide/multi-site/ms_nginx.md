@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Tutorial&mdash;Set up multiple websites or stores with nginx
-version: 2.1
 functional_areas:
   - Configuration
   - System

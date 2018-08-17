@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Generate data for performance testing
-version: 2.2
 functional_areas:
   - Configuration
   - System

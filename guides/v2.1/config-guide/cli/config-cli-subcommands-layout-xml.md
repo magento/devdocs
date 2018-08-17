@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Convert layout XML files
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html
 functional_areas:
   - Configuration

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Set the Magento mode
-version: 2.1
 functional_areas:
   - Configuration
   - System

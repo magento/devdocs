@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Overview
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Disable module output
-version: 2.2
 functional_areas:
   - Configuration
   - System

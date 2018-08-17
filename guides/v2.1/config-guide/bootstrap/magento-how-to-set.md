@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Set the value of bootstrap parameters
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 functional_areas:
   - Configuration

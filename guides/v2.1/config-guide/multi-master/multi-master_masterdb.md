@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Automatically configure master databases
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

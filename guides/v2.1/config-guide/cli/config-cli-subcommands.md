@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Get started with command-line configuration
-version: 2.1
 functional_areas:
   - Configuration
   - System

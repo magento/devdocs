@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Magento logging in more detail
-version: 2.1
 functional_areas:
   - Configuration
   - System

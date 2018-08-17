@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: File systems access permissions
-version: 2.2
 functional_areas:
   - Configuration
   - System

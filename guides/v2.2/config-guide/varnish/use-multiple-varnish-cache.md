@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: How Magento cache works with multiple Varnish instances
-version: 2.2
 redirect_from:
  - /guides/v2.0/config-guide/varnish/config-use-multiple-varnish.html
  - /guides/v2.1/config-guide/varnish/config-use-multiple-varnish.html

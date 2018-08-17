@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Troubleshooting 503 (Backend Fetch Failed) errors
-version: 2.1
 functional_areas:
   - Configuration
   - System

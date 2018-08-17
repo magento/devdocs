@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Split database performance solution (Magento Commerce only)
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

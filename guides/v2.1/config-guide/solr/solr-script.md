@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Prepare Solr for production
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

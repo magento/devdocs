@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Prevent cache poisoning
-version: 2.1
 functional_areas:
   - Configuration
   - System

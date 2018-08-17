@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Create or extend configuration types
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration

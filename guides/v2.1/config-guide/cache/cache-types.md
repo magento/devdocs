@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Associate cache frontends with cache types
-version: 2.1
 redirect_from:
   - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Troubleshooting 503 errors
-version: 2.2
 functional_areas:
   - Configuration
   - System

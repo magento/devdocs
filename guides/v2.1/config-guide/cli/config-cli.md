@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Command line configuration
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
 functional_areas:
   - Configuration

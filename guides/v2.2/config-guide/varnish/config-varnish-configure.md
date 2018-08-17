@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure Varnish and your web server
-version: 2.2
 functional_areas:
   - Configuration
   - System

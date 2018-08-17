@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure a custom cron job and cron group (tutorial)
-version: 2.1
 functional_areas:
   - Configuration
   - System

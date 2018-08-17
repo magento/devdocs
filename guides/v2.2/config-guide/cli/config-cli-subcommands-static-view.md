@@ -1,7 +1,7 @@
 ---
 group: config-guide
 title: Deploy static view files
-version: 2.2
+
 functional_areas:
   - Configuration
   - System

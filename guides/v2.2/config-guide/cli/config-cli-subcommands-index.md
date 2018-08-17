@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Manage the indexers
-version: 2.2
 functional_areas:
   - Configuration
   - System

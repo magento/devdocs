@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Secure cron.php to run in a browser
-version: 2.1
 functional_areas:
   - Configuration
   - System

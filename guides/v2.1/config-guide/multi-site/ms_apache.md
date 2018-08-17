@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Tutorial&mdash;Set up multiple websites with Apache
-version: 2.1
 functional_areas:
   - Configuration
   - System

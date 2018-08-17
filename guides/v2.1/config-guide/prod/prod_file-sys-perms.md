@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Magento ownership and permissions in development and production
-version: 2.1
 functional_areas:
   - Configuration
   - System

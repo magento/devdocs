@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure the database profiler
-version: 2.1
 contributor_name: Atish Goswami
 contributor_link: http://atishgoswami.com
 functional_areas:

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure Apache and Elasticsearch
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration

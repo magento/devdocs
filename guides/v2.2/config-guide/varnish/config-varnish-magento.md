@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Configure Magento to use Varnish
-version: 2.2
 functional_areas:
   - Configuration
   - System

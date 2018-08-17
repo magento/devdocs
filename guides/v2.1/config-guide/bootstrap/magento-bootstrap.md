@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Magento application initialization and bootstrap
-version: 2.1
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 functional_areas:
   - Configuration

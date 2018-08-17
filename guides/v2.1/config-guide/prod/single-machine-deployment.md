@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Single machine deployment
-version: 2.1
 functional_areas:
   - Configuration
   - Deploy

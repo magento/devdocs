@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Security settings
-version: 2.1
 functional_areas:
   - Configuration
   - System

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Payment configuration paths reference
-version: 2.1
 functional_areas:
   - Configuration
   - System

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Install, configure, verify memcached on Ubuntu
-version: 2.1
 functional_areas:
   - Configuration
   - System

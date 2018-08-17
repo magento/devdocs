@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Development System Setup
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

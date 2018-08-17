@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Static files deployment strategies
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy

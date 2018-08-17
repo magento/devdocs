@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Magento's deployment configuration
-version: 2.2
 functional_areas:
   - Configuration
   - System
