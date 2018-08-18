@@ -17,9 +17,9 @@ module Jekyll
         version = if matcher
                     matcher[1]
                   else
-                    nil
+                    ''
                   end
-        page.data['baseurl'] = if version
+        page.data['baseurl'] = unless version.empty?
                                  "#{baseurl}/guides/v#{version}"
                                else
                                  baseurl
