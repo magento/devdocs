@@ -39,7 +39,7 @@ Attribute | Data type | Description
 `product_count`| Int | The number of products in the category
 `default_sort_by`| String | The attribute to use for sorting
 `products(<attributes>)` | `CategoryProducts` | The list of products assigned to the category
-`breadcrumbs` | `Breadcrumb` | A `Breadcrumb` object contains information about each category that
+`breadcrumbs` | `Breadcrumb` | A `Breadcrumb` object contains information the categories that comprise the breadcrumb trail for the specified category
 `children` | `CategoryTree` | A `CategoryTree` object that contains information about a child category. You can specify up to 10 levels of child categories.
 
 
