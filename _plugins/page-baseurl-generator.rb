@@ -10,7 +10,6 @@ module Jekyll
 
     def generate(site)
       pattern = %r{guides\/v(\d\.\d)}
-      config_version = site.config['version']
       pages = site.pages
       baseurl = site.baseurl
       pages.each do |page|
@@ -18,16 +17,14 @@ module Jekyll
         version = if matcher
                     matcher[1]
                   else
-                    config_version
+                    nil
                   end
-        page.data['baseurl'] = "#{baseurl}/guides/v#{version}"
+        page.data['baseurl'] = if version
+                                 "#{baseurl}/guides/v#{version}"
+                               else
+                                 baseurl
+                               end
         page.data['guide_version'] = version
-      end
-
-      videos = site.collections['videos'].docs
-      videos.each do |video|
-        video.data['baseurl'] = "#{baseurl}/guides/v#{config_version}"
-        video.data['guide_version'] = config_version
       end
     end
   end

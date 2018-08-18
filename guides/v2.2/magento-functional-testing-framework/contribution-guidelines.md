@@ -5,6 +5,10 @@ functional_areas:
  - Testing
 ---
 
+{{page.baseurl}}
+
+{{page.guide_version}}
+
 ## Contribute to MFTF code
 
 Use the [fork] & [pull] model to contribute to the Magento Functional Testing Framework (MFTF) code base.
