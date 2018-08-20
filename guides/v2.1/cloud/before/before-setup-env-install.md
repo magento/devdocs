@@ -47,7 +47,7 @@ magento-cloud variable:get -e <environment-ID>
 
 ### Get Magento authentication keys
 
-You need Magento authentication keys to install Magento in your local development environment. These are different that the authentication keys included in the code repository `auth.json` file.
+You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html).
 
 #### To create authentication keys through the Magento Marketplace:
 
