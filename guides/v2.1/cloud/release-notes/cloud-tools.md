@@ -27,15 +27,15 @@ The following updates describe the latest improvements to the `ece-tools` packag
 #### Resolved Issues
 
 
--  **Deployment fixes**—Changed deploy phase processing and validation to minimize deployment failures and ensure that all files are successfully transferred after a successful deployment.
+-  **Deployment fixes**
 
    -  Updated validation checks to minimize deployment failures caused by non-critical environment configuration issues.
 
-      -  <!--MAGECLOUD-2603-->Downgraded errors that occur if the ADMIN_EMAIL and ADMIN_USER variables are used by another process from critical to warning. Now, this error generates a warning message in the cloud log without causing a deployment failure. 
+      -  <!--MAGECLOUD-2603-->Issue a warning if the ADMIN_EMAIL address is associated with another account.
 	  
-	  -  <!--MAGECLOUD-2603-->Downgraded errors caused by cloud variables configured through the user interface from critical to warning, Now, variables with incorrect values are ignored and a warning message is added to the cloud log.
+	  -  <!--MAGECLOUD-2603-->If the environment configuration contains incorrect values for cloud variables, ignore the incorrect values and issue a warning with a list of values that require update. 
 
-      -  <!--MAGECLOUD-2600-->Improved the Elasticsearch validation that occurs during the deploy phase. Now the deployment fails only if the Elasticsearch version on the Cloud infrastructure is incompatible with the elasticsearch/elasticsearch module configured for Magento Cloud. The error message now provides detailed information about how to correct the problem.  If the Magento application does not use Elasticsearch, for example if it's configured to use MySQL, the error is downgraded from critical to warning level. The warning message recommends removing the Elasticsearch service from the Cloud infrastructure if Elasticsearch will not be used in the future.
+      -  <!--MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
 	  
    -  We changed the deploy phase so that the entire process runs in maintenance mode. This change ensures that files are only copied to the final destination when the deploy phase completes. Previously, some files were transferred during deployment, which can cause issues if the deployment fails before all files are transferred. 
 
