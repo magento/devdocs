@@ -45,7 +45,7 @@ magento-cloud variable:get -e <environment-ID>
 +----------------+---------------+-----------+------+
 ```
 
-#### To et Magento authentication keys
+### Get Magento authentication keys
 
 You need Magento authentication keys to install Magento in your local development environment. These are different that the authentication keys included in the code repository `auth.json` file.
 
@@ -65,7 +65,7 @@ You need Magento authentication keys to install Magento in your local developmen
 
 1.  The keys generate a **Public** and **Private** key you can click to copy. Save this information or keep the page open when installing {{site.data.var.ee}}.
 
-## Set the docroot {#docroot}
+## Set the docroot
 
 Set the `docroot` to the `/magento` directory until you complete all setup. If you change the `docroot` to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
 
@@ -98,7 +98,7 @@ After you have installed Magento, you need to set the file system permissions an
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
-## Install Magento {#install}
+## Install Magento
 
 Prior to installing, you should [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
