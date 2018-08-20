@@ -102,7 +102,7 @@ All parameters shown in the following table are required.
 
   For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
 
-  For more information, see [Securing Jetty](https://wiki.eclipse.org/Jetty/Howto/Configure_SSL).
+  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL">Securing Jetty.</a>
 </td>
 </tr>
 <tr>
