@@ -61,7 +61,7 @@ Other topics of this chapter describe the following:
 * [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts 
 * [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library. 
 
-[The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}/common/images/css_over1.png
+[The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}}/common/images/css_over1.png
 [The customized view of a product page, with the grey Add to Cart button]: {{site.baseurl}}/common/images/css_over2.png
 
 
