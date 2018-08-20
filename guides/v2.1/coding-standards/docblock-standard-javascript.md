@@ -96,7 +96,7 @@ A description must be provided along with parameters. Method descriptions should
  *
  * @param {project.MyClass} obj Instance of MyClass which leads to a long
  *     comment that needs to be wrapped to two lines.
- * @return {boolean} Whether something occured.
+ * @return {boolean} Whether something occurred.
  */
 function someMethod(obj) {
     // ...
