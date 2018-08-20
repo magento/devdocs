@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)
-menu_title: Customize base directory paths (MAGE_DIRS)
-menu_order: 5
-menu_node:
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
 functional_areas:
   - Configuration
@@ -14,7 +10,7 @@ functional_areas:
 
 ## Introduction to Magento base directory paths {#dirs-introduction}
 
-The `MAGE_DIRS` environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. 
+The `MAGE_DIRS` environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs.
 
 ## Set MAGE_DIRS {#dirs-set}
 
@@ -28,7 +24,7 @@ You can set `MAGE_DIRS` in any of the following ways:
 	```php?start_inline=1
 	use Magento\Framework\App\Filesystem\DirectoryList;
 	use Magento\Framework\App\Bootstrap;
- 
+
 	require __DIR__ . '/app/bootstrap.php';
 	$params = $_SERVER;
 	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
@@ -43,5 +39,5 @@ You can set `MAGE_DIRS` in any of the following ways:
 	$app = $bootstrap->createApplication('Magento\Framework\App\Http');
 	$bootstrap->run($app);
 	```
-	
+
 The preceding example sets paths for `[cache]` and `[media]` directories to `/mnt/nfs/cache` and `/mnt/nfs/media`, respectively.

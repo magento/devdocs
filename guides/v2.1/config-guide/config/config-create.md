@@ -1,9 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Create or extend configuration types
-menu_title: Create or extend configuration types
-menu_order: 10
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration
@@ -18,7 +15,7 @@ To extend an existing configuration type, you need only create a configuration f
 For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
 
 Because the event configuration type already exists in Magento, the loader and the `events.xsd` validating schema are already present and functional.
-   
+
 Your new `events.xml` is automatically collected from your module and merged with other `events.xml` files for other modules.
 
 ## Create configuration types {#config-files-extend-create-create}
@@ -26,7 +23,7 @@ Your new `events.xml` is automatically collected from your module and merged wit
 To create new configuration type, you must add at minimum:
 
 *  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
-*  XSD validation schema 
+*  XSD validation schema
 *  A loader
 
 For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for a new search server that enables extensions to configure how its entities are indexed in that server, create:
@@ -38,7 +35,7 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
 *  `$fileResolver`. Implements `\Magento\Framework\Config\FileResolverInterface`. This parameter lists the files containing the configurations of your custom type.
 *  `$converter`. Implements `\Magento\Framework\Config\ConverterInterface`. This parameter converts the XML into the internal array representation of the configurations.
@@ -55,7 +52,7 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
        }
 
 * `$defaultScope`. Defines the configuration scope to be read by default. The default value for this parameter is global scope.
- 
+
  After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
 ## Validate a configuration type {#config-files-validate}
@@ -75,7 +72,7 @@ If you have an `events.xml` file and a first `events.xsd` file, the XSD files fo
 
 To ensure validation of an XML file by appropriate XSD file, you must the Uniform Resource Name (URN) to the XSD file in the XML file. For example:
 
-	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd">
 
 
@@ -83,5 +80,5 @@ Your IDE can validate your configuration files at both runtime and during develo
 
 #### Related topics
 
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Module configuration files</a>
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+*  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

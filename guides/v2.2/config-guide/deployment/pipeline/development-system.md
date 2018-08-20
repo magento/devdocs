@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 045_pipeline
 title: Development System Setup
-menu_title: Development System Setup
-menu_node:
-menu_order: 1300
 functional_areas:
   - Configuration
   - Deploy
