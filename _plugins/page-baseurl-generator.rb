@@ -7,19 +7,14 @@
 module Jekyll
   # Extending the Generator class of the Jekyll module
   class PageBaseUrlGenerator < Generator
-
     def generate(site)
       pattern = %r{guides\/v(\d\.\d)}
       pages = site.pages
       baseurl = site.baseurl
       pages.each do |page|
         matcher = pattern.match(page.path)
-        version = if matcher
-                    matcher[1]
-                  else
-                    ''
-                  end
-        page.data['baseurl'] = unless version.empty?
+        version = matcher[1] if matcher
+        page.data['baseurl'] = if version
                                  "#{baseurl}/guides/v#{version}"
                                else
                                  baseurl
