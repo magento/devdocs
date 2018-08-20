@@ -3,7 +3,7 @@ group: graphql
 title: category endpoint
 ---
 
-The `category` endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels.
+The `category` endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured. 
 
 ## Query structure
 
