@@ -1,11 +1,6 @@
 ---
 group: contributor
-subgroup: contributor_docs
 title: Magento Definition of Done
-menu_title: Magento Definition of Done
-menu_order: 2
-menu_node:
-redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
 ### Overview
@@ -45,7 +40,7 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 | ----------- | ------------------ | --------------------- |
 | description | example            | example               |
 
-### Tests 
+### Tests
 
 #### Automated Tests
 

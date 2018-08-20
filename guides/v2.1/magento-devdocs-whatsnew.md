@@ -11,6 +11,13 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+MFTF 2.3: Added example test steps for each [action](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/test/actions.html).|2.2.x|Major update|Aug 17
+Updated all GitHub labels used for community contributions and added information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.x|Major update|Aug 16
+Improve instructions for [configuring multi-site URLs](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html) with Magento Commerce Cloud.|2.1.x, 2.2.x|Technical changes|Aug 14
+Updated the Fastly plugin version requirement for Fastly image optimization to version 1.2.62.|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 14
+Added [Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) topic.|2.3.x|New topic|Aug 14
+Added topics on [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) and [Bulk operation status endpoints](https://devdocs.magento.com/guides/v2.3/rest/operation-status-endpoints.html).|2.3.x|New topic|Aug 14
+Update [nginx](https://devdocs.magento.com/guides/v2.2/install-gde/prereq/nginx.html) PHP versions and Composer installation steps|2.2.x, 2.3.x|Major update|Aug 13
 Added Events to [WYSIWYG component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html).<br/> Updated list of methods in [Add Custom Editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html#step-3-create-editor-adapter).|2.3.x|Major update|Aug 09
 Added CLI enable/disable commands for profiler in [Enable profiling (MAGE_PROFILER)](https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/mage-profiler.html) for 2.2 and 2.3|2.2.x, 2.3.x|Major update|Aug 08
 Added the [Order Processing for MSI tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/msi-order-processing/index.html)|2.3.x|New topic|Aug 08
