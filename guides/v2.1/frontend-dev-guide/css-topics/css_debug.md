@@ -118,6 +118,6 @@ The path to the CSS source maps configuration differs, depending on the browser.
 In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
 
 
-[inherits]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/themes/theme-inherit.html
+[inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
 [node.js]: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
