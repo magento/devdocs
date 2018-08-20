@@ -21,7 +21,7 @@ Here is the part of the code OrangeCo worked with:
 
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)
 
-They created a new Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and copied the `content.html` to the theme directory:
+They created a new Orange theme and copied the `content.html` to the theme directory:
 `app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html`.
 
 In their copy of the templates, they changed the order of the blocks as follows:

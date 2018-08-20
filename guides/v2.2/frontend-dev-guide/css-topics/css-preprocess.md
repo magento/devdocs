@@ -34,19 +34,19 @@ Description
 For example, in one of the <a href="https://github.com/magento/magento2/blob/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
 
 <pre>
-    &lt;head&gt;
-        &lt;css src=&quot;css/styles-m.css&quot; /&gt;
-        &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
-        &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt;
-    &lt;/head&gt;
+    <head>
+        <css src=&quot;css/styles-m.css&quot; />
+        <css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/>
+        <css src=&quot;css/print.css&quot; media=&quot;print&quot; />
+    </head>
 </pre>
 
 The root source files for the Blank theme:
 
 <ul>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/print.less</a></code></li>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank"><Magento_Blank_theme_dir>/web/css/styles-m.less</a></code></li>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank"><Magento_Blank_theme_dir&gt;/web/css/styles-l.less</a></code></li>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank"><Magento_Blank_theme_dir&gt;/web/css/print.less</a></code></li>
 </ul>
 </p>
 </td>
@@ -88,7 +88,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 <li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
 
-<li id="compile_last">All source files are passed to the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} LESS compiler. The resulting compiled <code>.css</code> files are published to <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
+<li id="compile_last">All source files are passed to the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} LESS compiler. The resulting compiled <code>.css</code> files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.</li>
 
 </ol>
 
@@ -96,7 +96,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 In server-side LESS compilation mode, to have your changes applied, you need to do the following:
 
-1. Clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system.
+1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system.
 2. Clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
 
@@ -137,7 +137,7 @@ See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topi
 
 ### Client-side LESS compilation {#client-side}
 
-The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
+The client-side compilation flow is similar to server-side. The difference is in the set of files, published to `pub/static` on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 <ul>
 <li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
@@ -145,7 +145,7 @@ The client-side compilation flow is similar to server-side. The difference is in
 <li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
+{:.bs-callout .bs-callout-info}
 <p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import>The @import directive usage</a> for more details.</p>
 </div>
 
@@ -159,7 +159,7 @@ In client-side compilation mode, most of the stylesheet customizations display i
 
 ##### When you need to clean static view files {#css_exception}
 
-There are certain types of changes, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.
+There are certain types of changes, that require you to clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory and trigger the compilation and <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.
 
 This is required in the following cases:
 <ul>
@@ -168,7 +168,7 @@ This is required in the following cases:
 
 </ul>
 
-To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
+To clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
 ## The `@import` directive rules of usage {#fedg_css-import}
 
@@ -248,7 +248,7 @@ In the scope of static resources preprocessing, the built-in LESS preprocessor d
 <li>Searches for all <code>@magento_import</code> directives.</li>
 <li>Replaces the original <code>@magento_import</code> directives with the standard <code>@import</code> directives. The latter specify the paths to the particular files that correspond to the pattern specified in <code>@magento_import</code>.</li>
 </ol>
-Example of how <code>@magento_import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:
+Example of how <code>@magento_import</code> is used and processed in `<Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:
 
 <table>
    <tbody>
@@ -257,7 +257,7 @@ Example of how <code>@magento_import</code> is used and processed in <code>&lt;M
          <th>After</th>
       </tr>
       <tr class="even">
-         <td> In <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code> there's a following directive:
+         <td> In <code><Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code> there's a following directive:
             <pre> ..
 //@magento_import 'source/_widgets.less'; // Theme widgets
 ..

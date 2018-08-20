@@ -30,7 +30,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{site.mage2100url}}app/code/Magento){:target="\_blank"}
+* [Checklist of modules]({{site.mage2100url}}app/code/Magento)
 * [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
@@ -43,13 +43,13 @@ To create the directory for your theme:
 
 4.	Under the `<vendor>` directory, create a directory named according to your theme.
 
-    <pre>
+    ```tree
     app/design/frontend/
-    ├──&nbsp;&lt;Vendor&gt;/
-    │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──...&lt;theme&gt;/
-    │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
-    │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
-    </pre>
+    ├── <Vendor>/
+    │   │   ├──...<theme>/
+    │   │   │   ├── ...
+    │   │   │   ├── ...
+    ```
 
 The folder name conventionally matches naming used in the theme's code: any alphanumeric set of characters, as the vendor sees fit, is acceptable. This convention is merely a recommendation, so nothing prevents naming this directory in another way.
 
@@ -84,9 +84,9 @@ If you change the theme title or parent theme information in `theme.xml` after a
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
-Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="\_blank"} packages.
+Magento default themes are distributed as [Composer](https://getcomposer.org/) packages.
 
-To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="\_blank"}.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/).
 
 The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
@@ -136,7 +136,7 @@ To register your theme in the system, add a `registration.php` file in your them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{site.mage2100url}}app/design/frontend/Magento/luma/registration.php){:target="\_blank"} file in the Magento Luma theme.
+For illustration, see the [registration.php]({{site.mage2100url}}app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 
@@ -169,20 +169,20 @@ Your theme will likely contain several types of static files:
 
 * Styles
 * Fonts
-* {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}
+* JavaScript
 * Images
 
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 
-<pre>
-app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
-├──&nbsp;web/
-│&nbsp;├──&nbsp;css/
-│&nbsp;│&nbsp;├──&nbsp;source/&nbsp;
-│&nbsp;├──&nbsp;fonts/
-│&nbsp;├──&nbsp;images/
-│&nbsp;├──&nbsp;js/
-</pre>
+```tree
+app/design/>area</<Vendor>/<theme>/
+├── web/
+│ ├── css/
+│ │ ├── source/ 
+│ ├── fonts/
+│ ├── images/
+│ ├── js/
+```
 
 In the `.../<theme>/web/images` directory, you store the general theme-related static files. For example, a theme logo is stored in `...<theme>/web/images`.
 
@@ -195,18 +195,18 @@ When you change files stored here during theme development, you need to clear th
 
 At this point your theme file structure looks as follows:
 
-<pre>
-app/design/frontend/&lt;Vendor&gt;/
-├──&nbsp;&lt;theme&gt;/
-│&nbsp;&nbsp;&nbsp;├──&nbsp;etc/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;view.xml
-│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;images
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;logo.svg
-│&nbsp;&nbsp;&nbsp;├──&nbsp;registration.php
-│&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
-│&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
-</pre>
+```tree
+app/design/frontend/<Vendor>/
+├── <theme>/
+│   ├── etc/
+│   │   ├── view.xml
+│   ├── web/
+│   │   ├── images
+│   │   │   ├── logo.svg
+│   ├── registration.php
+│   ├── theme.xml
+│   ├── composer.json
+```
 
 ## Theme logo {#theme_logo}
 

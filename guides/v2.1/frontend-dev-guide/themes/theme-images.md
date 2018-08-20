@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Configure images properties for a theme
-menu_title: Configure images properties for a theme
-menu_order: 90
 functional_areas:
   - Frontend
   - Theme
@@ -18,30 +15,31 @@ The properties for the images displayed on the product pages are defined by the 
 ## Configure image properties in view.xml {#view_xml_structure}
 
 The conventional location of `view.xml` for a theme is:
+
 {% raw %}
 	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml){target="&#95;blank"}.
+For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml).
 
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
 ...
 <images/>
-{% endhighlight xml %}
+```
 
 Image properties are configured for each image type defined by the `id` and `type` attributes of the `<image>` element:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
 	<image id="unique_image_id" type="image_type">
 	...
 	</image>
 <images/>
-{% endhighlight xml %}
+```
 
 <br>
 The following table describes the attributes in detail:
@@ -77,13 +75,13 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
       </td>
       <td>
         The type of the images defined by the specified <code>id</code>. Allowed values:
-
-<li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
-<li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
-<li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-<li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. </li>
-<li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
-</ul>
+        <ul>
+        <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
+        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li> 
+        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.</li>
+        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li> 
+        </ul>
 
       </td>
     </tr>
@@ -95,14 +93,14 @@ The following picture illustrates how image roles for product images are specifi
 
 Image properties are defined by the corresponding elements, for example:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
     <image id="unique_image_id" type="image">
         <width>100</width> <!-- Image width in px --> 
         <height>100</height> <!-- Image height in px -->
     </image>
 </images>
-{% endhighlight xml %}
+```
 
 <br>
 
