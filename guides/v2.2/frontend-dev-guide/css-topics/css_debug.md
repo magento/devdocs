@@ -58,7 +58,7 @@ Action
 <tr>
 <td>
 <pre>
-grunt clean:&lt;theme&gt;
+grunt clean:<theme>
 </pre>
 For example:
 <pre>
@@ -72,21 +72,21 @@ Removes the theme related {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c
 <tr>
 <td>
 <pre>
-grunt exec:&lt;theme&gt;
+grunt exec:<theme>
 </pre>
 </td>
 <td>
-Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
+Republishes symlinks to the source files to the <code>pub/static/frontend/<Vendor>/<theme>/<locale></code> directory.
 </td>
 </tr>
 <tr>
 <td>
 <pre>
-grunt less:&lt;theme&gt;
+grunt less:<theme>
 </pre>
 </td>
 <td>
-Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
+Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/<Vendor>/<theme>/<locale></code> directory
 </td>
 </tr>
 <tr>
