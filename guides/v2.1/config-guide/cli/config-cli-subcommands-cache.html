@@ -1680,88 +1680,77 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>Magento 2 has the following   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  types:</p>
 
-  <table>
-  <tbody>
-    <tr>
-      <th>Cache type "friendly" name</th>
-      <th>Cache type code name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td><p>Configuration</p></td>
-      <td><p>config</p></td>
-      <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-	<p>Clean or flush this cache type after modifying configuration files or settings within the admin panel.</p></td>
-    </tr>
-    <tr>
-      <td><p>Layout</p></td>
-      <td><p>layout</p></td>
-      <td><p>Compiled page layouts (that is, the layout components from all components).</p>
-	<p>Clean or flush this cache type after modifying layout files.</p></td>
-    </tr>
-    <tr>
-      <td><p>Block HTML output</p></td>
-      <td><p>block_html</p></td>
-      <td><p>HTML page fragments per block.</p>
-	<p>Clean or flush this cache type after modifying the view layer.</p></td>
-    </tr>
-    <tr>
-      <td><p>Collections data</p></td>
-      <td><p>collections</p></td>
-      <td><p>Results of database queries.</p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
-    </tr>
-    <tr>
-      <td><p>DDL</p></td>
-      <td><p>db_ddl</p></td>
-      <td><p>Database schema. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
-    </tr>
-    <tr>
-      <td><p>Entity attribute value (EAV)</p></td>
-      <td><p>eav</p></td>
-      <td><p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
-        <p>You should not typically need to clean or flush this cache type.</p></td>
-    </tr>
-    <tr>
-      <td><p>Page cache</p></td>
-      <td><p>full_page</p></td>
-      <td><p>Generated HTML pages. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</p></td>
-    </tr>
-    <tr>
-      <td><p>Reflection</p></td>
-      <td><p>reflection</p></td>
-      <td>Removes a dependency between the Webapi module and the Customer module.</td>
-    </tr>
-    <tr>
-      <td><p>Translations</p></td>
-      <td><p>translate</p></td>
-      <td><p>Merged translations from all modules.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration configuration</p></td>
-      <td><p>config_integration</p></td>
-      <td><p>Compiled integrations.</p>
-      	<p>Clean or flush this cache after changing or adding integrations.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration API configuration</p></td>
-      <td><p>config_integration_api</p></td>
-      <td><p>Compiled integration APIs.</p></td>
-    </tr>
-    <tr>
-      <td><p>Web services configuration</p></td>
-      <td><p>config_webservice</p></td>
-      <td><p>Web API structure.</p></td>
-    </tr>
-
-  </tbody>
-</table>
+  <table style="table-layout:auto;">
+    <thead>
+      <tr>
+        <th>Cache type “friendly” name</th>
+        <th>Cache type code name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Configuration</td>
+        <td>config</td>
+        <td>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database.<br /><br />Clean or flush this cache type after modifying configuration files or settings within the admin panel.</td>
+      </tr>
+      <tr>
+        <td>Layout</td>
+        <td>layout</td>
+        <td>Compiled page layouts (that is, the layout components from all components).<br /><br />Clean or flush this cache type after modifying layout files.</td>
+      </tr>
+      <tr>
+        <td>Block HTML output</td>
+        <td>block_html</td>
+        <td>HTML page fragments per block.<br /><br />Clean or flush this cache type after modifying the view layer.</td>
+      </tr>
+      <tr>
+        <td>Collections data</td>
+        <td>collections</td>
+        <td>Results of database queries.<br /><br />If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache.<br /><br />Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</td>
+      </tr>
+      <tr>
+        <td>DDL</td>
+        <td>db_ddl</td>
+        <td>Database schema.<br /><br />If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache.<br /><br />Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)<br /><br />One way to update the database schema automatically is using the <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-db.html"><code class="highlighter-rouge">magento setup:db-schema:upgrade command</code></a>.</td>
+      </tr>
+      <tr>
+        <td>Entity attribute value (EAV)</td>
+        <td>eav</td>
+        <td>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).<br /><br />You should not typically need to clean or flush this cache type.</td>
+      </tr>
+      <tr>
+        <td>Page cache</td>
+        <td>full_page</td>
+        <td>Generated HTML pages. <br /><br />If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache.<br /><br />Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</td>
+      </tr>
+      <tr>
+        <td>Reflection</td>
+        <td>reflection</td>
+        <td>Removes a dependency between the Webapi module and the Customer module.</td>
+      </tr>
+      <tr>
+        <td>Translations</td>
+        <td>translate</td>
+        <td>Merged translations from all modules.</td>
+      </tr>
+      <tr>
+        <td>Integration configuration</td>
+        <td>config_integration</td>
+        <td>Compiled integrations.<br /><br />Clean or flush this cache after changing or adding integrations.</td>
+      </tr>
+      <tr>
+        <td>Integration API configuration</td>
+        <td>config_integration_api</td>
+        <td>Compiled integration APIs.</td>
+      </tr>
+      <tr>
+        <td>Web services configuration</td>
+        <td>config_webservice</td>
+        <td>Web API structure.</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h2 id="view-the-cache-status">View the cache status</h2>
 
@@ -1769,8 +1758,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:status
 </code></pre></div>  </div>
-
-  <!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.1/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
   <p>A sample follows:</p>
 
@@ -1798,8 +1785,6 @@ bin/magento cache:disable [type] ... [type]
 
   <p>Where omitting <code class="highlighter-rouge">[type]</code> enables or disables all cache types at the same time. The <code class="highlighter-rouge">type</code> option is a space-separated list of cache types.</p>
 
-  <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.1/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
-
   <p>To list cache types and their status:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:status
@@ -1817,10 +1802,8 @@ bin/magento cache:disable [type] ... [type]
                  full_page: 1 -&gt; 0
 </code></pre></div>  </div>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>Enabling a   <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span>
+  <p class="bs-callout bs-callout-info">Enabling a   <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span>
  automatically clears that cache type.</p>
-  </div>
 
   <h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
 
@@ -1866,27 +1849,8 @@ config_integration_api
 config_webservice
 </code></pre></div>  </div>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>You can also clean and flush cache types in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+  <p class="bs-callout bs-callout-info">You can also clean and flush cache types in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 . Go to <strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Cache Management</strong>. <strong>Flush Cache Storage</strong> is equivalent to <code class="highlighter-rouge">bin/magento cache:flush</code>. <strong>Flush Magento Cache</strong> is equivalent to <code class="highlighter-rouge">bin/magento cache:clean</code>.</p>
-  </div>
-
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
 </div>
 
 			

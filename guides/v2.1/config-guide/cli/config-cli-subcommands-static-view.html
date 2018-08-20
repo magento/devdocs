@@ -1700,12 +1700,10 @@ Examples include images and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe
 
   <p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
 
-  <p class="bs-callout bs-callout-warning"><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on.
-To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+  <p class="bs-callout bs-callout-warning"><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .
 <br />
-You can clean generated static view files in several ways.
-Refer to <a href="/guides/v2.1/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
+You can clean generated static view files in several ways. Refer to <a href="/guides/v2.1/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
 
   <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 
@@ -1877,11 +1875,11 @@ Refer to <a href="/guides/v2.1/frontend-dev-guide/cache_for_frontdevs.html#clean
   <h2 id="tip-for-developers-customizing-the-static-content-deployment-tool">Tip for developers customizing the static content deployment tool</h2>
 
   <p>When creating a custom implementation of the   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
- deployment tool, use only <a href="https://en.wikipedia.org/wiki/Linearizability" target="\_blank">atomic</a> file writing for files that should be available on the client.
+ deployment tool, use only <a href="https://en.wikipedia.org/wiki/Linearizability">atomic</a> file writing for files that should be available on the client.
 If you use non-atomic file writing, those files might be loaded on the client with partial content.</p>
 
   <p>One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over.
-For details about writing to files, see <a href="http://php.net/manual/en/function.fwrite.php" target="\_blank">fwrite.php</a>.</p>
+For details about writing to files, see <a href="http://php.net/manual/en/function.fwrite.php">fwrite.php</a>.</p>
 
 </div>
 

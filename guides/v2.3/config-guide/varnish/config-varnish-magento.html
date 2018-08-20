@@ -1906,13 +1906,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tr>
 <tr>
     <td>Access list</td>
-    <td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
-        <p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank">More information</a></p></td>
+    <td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
+        <p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html">More information</a></p></td>
 </tr>
 <tr>
     <td>Backend host</td>
     <td><p>Enter the fully qualified hostname or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
-    <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank">More information</a></p></td>
+    <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html">More information</a></p></td>
 </tr>
 <tr>
     <td>Backend port</td>
@@ -1928,12 +1928,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
-<div class="bs-callout bs-callout-tip">
-  <p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using the Magento command-line interface tool:</p>
+<p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin—using the Magento command-line interface tool:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/caching_application 2
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/caching_application 2
+</code></pre></div></div>
 
 <h2 id="export-a-varnish-configuration-file">Export a Varnish configuration file</h2>
 
@@ -1996,8 +1994,10 @@ service httpd restart
 
 <h2 id="next-steps">Next steps</h2>
 
-<p><a href="/guides/v2.3/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> (Optional)</p>
-<p><a href="/guides/v2.3/config-guide/varnish/config-varnish-final.html">Final verification</a></p>
+<ul>
+  <li><a href="/guides/v2.3/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> (Optional)</li>
+  <li><a href="/guides/v2.3/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+</ul>
 
 			
 		</div>

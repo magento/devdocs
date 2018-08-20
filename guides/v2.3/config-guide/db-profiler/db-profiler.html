@@ -1889,16 +1889,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="step-1-modify-the-deployment-configuration">Step 1: Modify the deployment configuration</h2>
 
-<p>Modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php" target="_blank">database profiler class</a>:</p>
+<p>Modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php">database profiler class</a>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="s1">'profiler'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="s1">'profiler'</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="s1">'\Magento\Framework\DB\Profiler'</span><span class="p">,</span>
             <span class="s1">'enabled'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="p">],</span></code></pre></figure>
+        <span class="p">],</span>
+</code></pre></div></div>
 
 <p>An example follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">'db'</span> <span class="o">=&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s1">'db'</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">'table_prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
     <span class="s1">'connection'</span> <span class="o">=&gt;</span>
@@ -1920,7 +1921,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <span class="p">),</span>
     <span class="p">),</span>
   <span class="p">),</span>
-  </code></pre></figure>
+</code></pre></div></div>
 
 <h2 id="step-2-configure-the-output">Step 2: Configure the output</h2>
 
@@ -1936,7 +1937,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To configure the output, add the following after the <code class="highlighter-rouge">$bootstrap-&gt;run($app);</code> line in your bootstrap file:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var \Magento\Framework\App\ResourceConnection $res */</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/** @var \Magento\Framework\App\ResourceConnection $res */</span>
 <span class="nv">$res</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\ObjectManager</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'Magento\Framework\App\ResourceConnection'</span><span class="p">);</span>
 <span class="sd">/** @var Magento\Framework\DB\Profiler $profiler */</span>
 <span class="nv">$profiler</span> <span class="o">=</span> <span class="nv">$res</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">(</span><span class="s1">'read'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getProfiler</span><span class="p">();</span>
@@ -1954,7 +1955,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="k">echo</span> <span class="s1">'&lt;td&gt;'</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getQueryParams</span><span class="p">()),</span> <span class="s1">'&lt;/td&gt;'</span><span class="p">;</span>
     <span class="k">echo</span> <span class="s1">'&lt;/tr&gt;'</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">echo</span> <span class="s2">"&lt;/table&gt;"</span><span class="p">;</span></code></pre></figure>
+<span class="k">echo</span> <span class="s2">"&lt;/table&gt;"</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h2 id="step-3-view-the-results">Step 3: View the results</h2>
 

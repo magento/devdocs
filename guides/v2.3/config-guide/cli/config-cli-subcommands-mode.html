@@ -1897,13 +1897,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>Production mode also has better performance because static view files are populated in the <code class="highlighter-rouge">pub/static</code> directory and because of code compilation.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <ul>
-      <li>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.</li>
-      <li>Unlike other Magento modes, developer and production modes are set in <code class="highlighter-rouge">env.php</code>.</li>
-      <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.</li>
-    </ul>
-  </div>
+  <ul class="bs-callout bs-callout-info">
+    <li>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.</li>
+    <li>Unlike other Magento modes, developer and production modes are set in <code class="highlighter-rouge">env.php</code>.</li>
+    <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.</li>
+  </ul>
 
   <p>Refer to <a href="/guides/v2.3/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a> for more information.</p>
 
@@ -1923,9 +1921,7 @@ pub/static
     <li><code class="highlighter-rouge">pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
   </ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>By default, Magento uses the <code class="highlighter-rouge">var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it’s assumed to be <code class="highlighter-rouge">var</code>.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">By default, Magento uses the <code class="highlighter-rouge">var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it’s assumed to be <code class="highlighter-rouge">var</code>.</p>
 
   <h2 id="config-mode-show">Display the current mode</h2>
 
@@ -2040,23 +2036,6 @@ Enabled production mode.
   <p><a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Run Magento CLI commands from anywhere</a>.</p>
 
   <p>If you haven’t added <code class="highlighter-rouge">&lt;magento-install-directory&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>, then you can expect an error when running the Magento command by itself.</p>
-
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
 </div>
 
 			

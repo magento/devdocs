@@ -1679,7 +1679,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <h2 id="config-cli-spt-utils-over">Overview of the support utilities</h2>
 
-  <p>The Magento support utilities (also referred to as the <a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="\_blank"><em>Data Collector</em></a>) enable Magento Commerce users to gather troubleshooting information about your system that can be used by our Support team.</p>
+  <p>The Magento support utilities (also referred to as the <a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html"><em>Data Collector</em></a>) enable Magento Commerce users to gather troubleshooting information about your system that can be used by our Support team.</p>
 
   <p>Magento Support uses these backups (also referred to as <em>dumps</em>) to analyze issues that require access to your code. A typical scenario follows:</p>
 
@@ -1796,9 +1796,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
       <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
-&lt;/div&gt; 2.  `php bin/magento support:utility:paths` creates `&lt;your Magento install dir&gt;/var/support/Paths.php`, which lists the paths to all application used by the utility. 3.  `php bin/magento support:utility:check` displays the file system paths.
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{:.bs-callout .bs-callout-info}   The commands run properly _only_ from your Magento installation directory.
 </code></pre></div>      </div>
+
+      <ol>
+        <li><code class="highlighter-rouge">php bin/magento support:utility:paths</code> creates <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/support/Paths.php</code>, which lists the paths to all application used by the utility.</li>
+        <li><code class="highlighter-rouge">php bin/magento support:utility:check</code> displays the file system paths.</li>
+      </ol>
 
       <p>A sample follows:</p>
 
@@ -1814,23 +1818,6 @@ mysql =&gt; /usr/bin/mysql
 </code></pre></div>      </div>
 
       <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
-
-      <h4 id="related-topics">Related topics</h4>
-
-      <ul>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-        <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-      </ul>
     </div>
   </div>
 </div>

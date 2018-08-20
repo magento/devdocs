@@ -1915,12 +1915,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
-.</p>
-
-    <p>You can clean generated static view files in several ways. Refer to <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
-  </div>
+  <p class="bs-callout bs-callout-warning"><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module. You can clean generated static view files in several ways. Refer to <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
 
   <h2 id="config-cli-subcommands-staticview">Deploy static view files</h2>
 
@@ -1934,9 +1929,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-      <div class="bs-callout bs-callout-info" id="info">
-        <p>If you enable static view file merging in the Magento Admin, the <code class="highlighter-rouge">pub/static</code> directory system must be writable.</p>
-      </div>
+      <p class="bs-callout bs-callout-info">If you enable static view file merging in the Magento Admin, the <code class="highlighter-rouge">pub/static</code> directory system must be writable.</p>
     </li>
   </ol>
 
@@ -1969,7 +1962,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       </td>
       <td>
         <p>
-          Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-639</a> language codes for which to
+          Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to
           output static view files. (Default is
           <code>en_US</code>.)
         </p>
@@ -1992,7 +1985,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <p>
           Generate files only for the specified languages. The
           default, with no option specified, is to generate files
-          for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="\_blank">ISO-639</a> language codes. You can
+          for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can
           specify the name of one language code at a time.
         </p>
         <p>
@@ -2290,9 +2283,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>If you specify values for both <code class="highlighter-rouge">&lt;languages&gt;</code> and <code class="highlighter-rouge">--language</code>, <code class="highlighter-rouge">&lt;languages&gt;</code> takes precedence.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">If you specify values for both <code class="highlighter-rouge">&lt;languages&gt;</code> and <code class="highlighter-rouge">--language</code>, <code class="highlighter-rouge">&lt;languages&gt;</code> takes precedence.</p>
 
   <h3 id="examples">Examples</h3>
 
@@ -2385,42 +2376,14 @@ New version of deployed files: 1466711110
     </li>
     <li>Log in to the Magento server as, or <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.</li>
     <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, except for the <code class="highlighter-rouge">.htaccess</code> file. Do not delete this file.</li>
-    <li>
-      <p><a href="#config-cli-subcommands-staticview">Run the static view files deployment tool</a>.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
-
-      <!-- <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-</div> -->
-    </li>
+    <li><a href="#config-cli-subcommands-staticview">Run the static view files deployment tool</a>.</li>
   </ol>
 
   <h2 id="tip-for-developers-customizing-the-static-content-deployment-tool">Tip for developers customizing the static content deployment tool</h2>
 
-  <p>When creating a custom implementation of the static content deployment tool, use only <a href="https://en.wikipedia.org/wiki/Linearizability" target="\_blank">atomic</a> file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.</p>
+  <p>When creating a custom implementation of the static content deployment tool, use only <a href="https://en.wikipedia.org/wiki/Linearizability">atomic</a> file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.</p>
 
-  <p>One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see <a href="http://php.net/manual/en/function.fwrite.php" target="\_blank">http://php.net/manual/en/function.fwrite.php</a>.</p>
-
-  <!-- The default Magento implementation of [`Magento\Framework\Filesystem\Directory\WriteInterface::writeFile`](https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php#L118){:target="_blank"} uses non-atomic file writing.
- -->
-
-  <h2 id="related-topics">Related topics</h2>
-
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
+  <p>One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see <a href="http://php.net/manual/en/function.fwrite.php">http://php.net/manual/en/function.fwrite.php</a>.</p>
 </div>
 
 			

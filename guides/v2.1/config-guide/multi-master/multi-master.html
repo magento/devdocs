@@ -1678,11 +1678,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
  checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Commerce Cloud does <em>not</em> support this feature at this time.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento Commerce Cloud does <em>not</em> support this feature at this time.</p>
 
-<p>The <code class="highlighter-rouge">ResourceConnections</code> class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.</p>
+<p>The <code class="highlighter-rouge">ResourceConnections</code> class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.</p>
 
 <p>If you set up optional database replication, you get the following advantages:</p>
 
@@ -1713,11 +1711,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Use foreign keys to tables in the checkout, sales, or main databases</li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
-    <ul><li>Ask the component developers to update their components.</li>
-    	<li>Use the components as-is <em>without</em> the split database solution.</li>
-    	<li>Remove the components so you can use the split database solution.</li></ul>
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-warning" id="warning">
+  <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
+
+  <ul>
+    <li>Ask the component developers to update their components.</li>
+    <li>Use the components as-is <em>without</em> the split database solution.</li>
+    <li>Remove the components so you can use the split database solution.</li>
+  </ul>
 </div>
 
 <p>This also means you can either:</p>
@@ -1735,9 +1738,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
-</div>
+<p class="bs-callout bs-callout-warning">You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="/guides/v2.1/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 

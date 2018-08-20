@@ -1900,7 +1900,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>You use one virtual host per website; the virtual host configuration file is <code class="highlighter-rouge">/etc/httpd/httpd.conf</code></p>
 
-    <p>Different versions of Apache on different operating systems set up virtual hosts differently. Consult the <a href="https://httpd.apache.org/docs/2.4/vhosts" target="_blank">Apache documentation</a> or a network administrator if you’re not sure how to set up a virtual host.</p>
+    <p>Different versions of Apache on different operating systems set up virtual hosts differently. Consult the <a href="https://httpd.apache.org/docs/2.4/vhosts">Apache documentation</a> or a network administrator if you’re not sure how to set up a virtual host.</p>
   </li>
   <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code></li>
   <li>
@@ -1934,8 +1934,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For more information about <code class="highlighter-rouge">SetEnvIf</code>, see:</p>
 
 <ul>
-  <li><a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">Apache 2.2</a></li>
-  <li><a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">Apache 2.4</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html">Apache 2.2</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html">Apache 2.4</a></li>
 </ul>
 
 <div class="collapsible">
@@ -1950,24 +1950,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Create the following virtual hosts after any existing virtual hosts:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;VirtualHost *:80&gt;
-    ServerName          mysite.mg
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> &lt;VirtualHost *:80&gt;</span>
+<span class="go">    ServerName          mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
- &lt;/VirtualHost&gt;
-
- &lt;VirtualHost *:80&gt;
-    ServerName          french.mysite.mg
+</span><span class="gp"> &lt;/VirtualHost&gt;</span>
+<span class="go">
+</span><span class="gp"> &lt;VirtualHost *:80&gt;</span>
+<span class="go">    ServerName          french.mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
     SetEnv MAGE_RUN_CODE "french"
     SetEnv MAGE_RUN_TYPE "website"
- &lt;/VirtualHost&gt;
-
- &lt;VirtualHost *:80&gt;
-    ServerName          german.mysite.mg
+</span><span class="gp"> &lt;/VirtualHost&gt;</span>
+<span class="go">
+</span><span class="gp"> &lt;VirtualHost *:80&gt;</span>
+<span class="go">    ServerName          german.mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
     SetEnv MAGE_RUN_CODE "german"
     SetEnv MAGE_RUN_TYPE "website"
- &lt;/VirtualHost&gt;
+</span><span class="gp"> &lt;/VirtualHost&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">httpd.conf</code> and exit the text editor.</li>

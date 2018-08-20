@@ -1912,12 +1912,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
   <h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
-  <p>This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>We recommend using memcached version 3.0.5 or later.</p></span>
-</div>
+  <p>This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart">memcached wiki</a>.</p>
+
+  <p class="bs-callout bs-callout-info">We recommend using memcached version 3.0.5 or later.</p>
 
   <p>To install and configure memcached on Ubuntu:</p>
 
@@ -1997,11 +1995,11 @@ phpinfo();
  script to verify that memcached can store and retrieve   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  data.</p>
 
-  <p>For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04" target="_blank">this digitalocean tutorial</a>.</p>
+  <p>For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04">this digitalocean tutorial</a>.</p>
 
   <p>Create <code class="highlighter-rouge">cache-test.php</code> in the web server’s docroot with the following contents:</p>
 
-  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
+  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcached</span><span class="p">();</span>
@@ -2016,7 +2014,8 @@ phpinfo();
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s2">"No matching key found.  Refresh the browser to add it!"</span><span class="p">;</span>
     <span class="nv">$meminstance</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span> <span class="s2">"Successfully retrieved the data!"</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">"Couldn't save anything to memcached..."</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div>  </div>
 
   <p>where <code class="highlighter-rouge">&lt;memcache hostname or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache hostname or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
 
@@ -2058,9 +2057,10 @@ STAT items:2:evicted_unfetched 0
 quit
 </code></pre></div>  </div>
 
-  <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a></p>
+  <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/">Additional information about the Telnet test</a></p>
 
   <h4 id="next-step">Next step</h4>
+
   <p><a href="/guides/v2.3/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
 </div>
 

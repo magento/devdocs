@@ -1684,15 +1684,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:</p>
 
 <ul>
-  <li><a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a></li>
-  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql" target="_blank">How To Set Up Master Slave Replication in MySQL (digitalocean)</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html">MySQL documentation</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql">How To Set Up Master Slave Replication in MySQL (digitalocean)</a></li>
 </ul>
 
 <p>Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the <code class="highlighter-rouge">ResourceConnections</code> class <code class="highlighter-rouge">README.md</code>.</p>
 
 <p>The following is more advanced and is provided for your information only:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">	<span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
    <span class="c1">//...
 </span>  <span class="s1">'db'</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
@@ -1773,7 +1773,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="p">),</span>
     <span class="s1">'table_prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
   <span class="p">),</span>
-<span class="o">//.......</span></code></pre></figure>
+<span class="c1">//.......
+</span></code></pre></div></div>
 
 <h2 id="performance-improvement">Performance improvement</h2>
 
@@ -1785,8 +1786,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>replicate-wild-ignore-table=%.search\_tmp\_%
 </code></pre></div></div>
 
-<p>For more information about this setting, see <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table" target="_blank">MySQL documentation</a>.</p>
-
+<p>For more information about this setting, see <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table">MySQL documentation</a>.</p>
 
 			
 		</div>

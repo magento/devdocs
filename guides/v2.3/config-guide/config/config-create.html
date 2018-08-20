@@ -1919,7 +1919,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<p>To create a new configuration type, extend the <code class="highlighter-rouge">\Magento\Framework\Config\ReaderInterface</code>, which is <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:</p>
+<p>To create a new configuration type, extend the <code class="highlighter-rouge">\Magento\Framework\Config\ReaderInterface</code>, which is <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/Reader/Filesystem.php">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:</p>
 
 <ul>
   <li><code class="highlighter-rouge">$fileResolver</code>. Implements <code class="highlighter-rouge">\Magento\Framework\Config\FileResolverInterface</code>. This parameter lists the files containing the configurations of your custom type.</li>
@@ -1962,7 +1962,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To ensure validation of an XML file by appropriate XSD file, you must the Uniform Resource Name (URN) to the XSD file in the XML file. For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd"&gt;
 </code></pre></div></div>
 

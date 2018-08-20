@@ -2004,9 +2004,7 @@ For more information, see <a href="/guides/v2.3/install-gde/prereq/php-settings.
       </li>
     </ol>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>This command has no effect on cron jobs outside the <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">This command has no effect on cron jobs outside the <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
 
     <h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
 
@@ -2026,9 +2024,7 @@ For more information, see <a href="/guides/v2.3/install-gde/prereq/php-settings.
 
     <p>To set up custom cron jobs and groups, see <a href="/guides/v2.3/config-guide/cron/custom-cron.html">Configure custom cron jobs and cron groups</a>.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
 
     <h2 id="logging">Logging</h2>
 
@@ -2049,37 +2045,20 @@ For more information, see <a href="/guides/v2.3/install-gde/prereq/php-settings.
       </li>
     </ul>
 
-    <div class="bs-callout bs-callout-tip">
-      <p>All cron data is also written to the <code class="highlighter-rouge">cron_schedule</code> table in the Magento database. The table provides a history of cron jobs, including:</p>
+    <!-- Available note types: "info", "warning", "tip" -->
 
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>All cron data is also written to the <code class="highlighter-rouge">cron_schedule</code> table in the Magento database. The table provides a history of cron jobs, including:</p>
       <ul>
         <li>Job ID and code</li>
         <li>Status</li>
         <li>Created date</li>
         <li>Scheduled date</li>
         <li>Executed date</li>
-        <li>Finished date</li>
+        <li>Finished date
+To see records in the table, log in to the Magento database on the command line and enter <code class="highlighter-rouge">SELECT * from cron_schedule;</code>.</li>
       </ul>
-
-      <p>To see records in the table, log in to the Magento database on the command line and enter <code class="highlighter-rouge">SELECT * from cron_schedule;</code>.</p>
     </div>
-
-    <h4 id="related-topics">Related topics</h4>
-
-    <ul>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-      <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-    </ul>
   </div>
 </div>
 

@@ -1671,10 +1671,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:</p>
 
 <ul>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/categories.html" target="_blank">Categories</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html" target="_blank">Adding Websites</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html" target="_blank">Store URLs</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html" target="_blank">Content</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/categories.html">Categories</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html">Adding Websites</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html">Store URLs</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html">Content</a></li>
 </ul>
 
 <p class="bs-callout bs-callout-info">For example purposes only, we use a French   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
@@ -1697,7 +1697,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Make sure <strong>Enable Category</strong> is set to <strong>Yes</strong>.</p>
 
-    <p>For information about the other options on this page, see <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category" target="_blank">Root Categories</a>.</p>
+    <p>For information about the other options on this page, see <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category">Root Categories</a>.</p>
 
     <p>The following figure shows an example.</p>
 
@@ -1807,6 +1807,8 @@ The following figure shows an example.</li>
   </li>
   <li>
     <p>Repeat the previous step in the <em>Base URLs (Secure)</em> section.</p>
+
+    <p class="bs-callout bs-callout-info">If you’re setting up a base URL for deployment Magento Commerce Cloud, you must replace the first period with three dashes. For example, if your base URL is <code class="highlighter-rouge">french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french—branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>. If you’re setting up a base URL for local testing, use a period.</p>
   </li>
   <li>
     <p>Click <strong>Save Config</strong>.</p>
@@ -1822,7 +1824,7 @@ The following figure shows an example.</li>
 
 <p>This prevents <code class="highlighter-rouge">index.php</code> and <code class="highlighter-rouge">.htaccess</code> from getting out of sync with the Magento codebase in future upgrades.</p>
 
-<p>For more information, see the <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html" target="_blank">Magento User Guide</a>.</p>
+<p>For more information, see the <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html">Magento User Guide</a>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To add the store code to the base URL: </b>
@@ -1868,6 +1870,8 @@ The following figure shows an example.</li>
   </li>
   <li>
     <p>Repeat the previous step in the <strong>Base URLs (Secure)</strong> section.</p>
+
+    <p class="bs-callout bs-callout-info">If you’re setting up a base URL for Magento Commerce Cloud, you must replace the first period with three dashes. For example, if your base URL is <code class="highlighter-rouge">french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french—branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
@@ -1878,7 +1882,13 @@ The following figure shows an example.</li>
 
 <ul>
   <li>Magento Commerce Cloud: <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Magento Commerce Cloud websites or stores</a></li>
-  <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Tutorial: up multiple websites or stores with NGINX</a></li>
+</ul>
+
+<h4 id="related-information">Related information</h4>
+
+<ul>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html">Add content to your websites</a></li>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Tutorial: Set up multiple websites or stores with NGINX</a></li>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Tutorial: Set up multiple websites with Apache</a></li>
 </ul>
 

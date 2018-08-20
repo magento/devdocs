@@ -1913,71 +1913,67 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>The following table explains this command’s options, parameters, and values.</p>
 
-  <table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-	<tr>
-		<td><p>show-modules</p></td>
-		<td><p>Module dependencies report.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>show-modules-circular</p></td>
-		<td><p>Circular dependencies report.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>show-framework</p></td>
-		<td><p>Framework dependencies report.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>-d|--directory</p></td>
-		<td><p>Path to the base directory to start searching for report data.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>-o|--output</p></td>
-		<td><p>Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report.</p>
-		</td>
-		<td>
-			<p>No</p>
-		</td>
-	</tr>
-	</tbody>
-</table>
+  <table style="table-layout:auto;">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>Required?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">show-modules</code></td>
+        <td>Module dependencies report.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">show-modules-circular</code></td>
+        <td>Circular dependencies report.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">show-framework</code></td>
+        <td>Framework dependencies report.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-d --directory</code></td>
+        <td>Path to the base directory to start searching for report data.</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-o --output</code></td>
+        <td>Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report.</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
 
   <p>If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:</p>
 
-  <table>
-	<col width="50%" />
-	<col width="50%" />
-	<tbody>
-		<tr>
-			<th>Command</th>
-			<th>Filename</th>
-		</tr>
-		<tr>
-			<td>magento info:dependencies:show-modules</td>
-			<td>modules-dependencies.csv</td>
-		</tr>
-		<tr>
-			<td>magento info:dependencies:show-modules-circular</td>
-			<td>modules-circular-dependencies.csv</td>
-		</tr>
-		<tr>
-			<td>magento info:dependencies:show-framework</td>
-			<td>framework-dependencies.csv</td>
-		</tr>
-	</tbody>
-</table>
+  <table style="table-layout:auto;">
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Filename</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">magento info:dependencies:show-modules</code></td>
+        <td><code class="highlighter-rouge">modules-dependencies.csv</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">magento info:dependencies:show-modules-circular</code></td>
+        <td><code class="highlighter-rouge">modules-circular-dependencies.csv</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">magento info:dependencies:show-framework</code></td>
+        <td><code class="highlighter-rouge">framework-dependencies.csv</code></td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3 id="sample-module-dependencies-report">Sample module dependencies report</h3>
 
@@ -2051,23 +2047,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 "Magento\Reports","1"
 " -- Magento\Framework","553"
 </code></pre></div>  </div>
-
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
 </div>
 
 			

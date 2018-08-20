@@ -1669,11 +1669,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="examplelogging-database-activity">Example—logging database activity</h2>
 
-<p>To log database activity, use <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/LoggerInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
+<p>To log database activity, use <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/LoggerInterface.php"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
 
 <ul>
-  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/Quiet.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
-  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/File.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
+  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/Quiet.php"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
+  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/File.php"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
 </ul>
 
 <p>To change the preference to <code class="highlighter-rouge">\Magento\Framework\DB\Logger\File</code>, edit your <code class="highlighter-rouge">app/etc/di.xml</code>.</p>
@@ -1690,13 +1690,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>After that, add the following block to configure file-based logging:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\DB\Logger\File"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logAllQueries"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"debugFile"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>log/db.log<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></figure>
-
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"Magento\Framework\DB\Logger\File"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"logAllQueries"</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"boolean"</span><span class="o">&gt;</span><span class="kc">true</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"debugFile"</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nb">log</span><span class="o">/</span><span class="nx">db</span><span class="o">.</span><span class="nb">log</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 			
 		</div>

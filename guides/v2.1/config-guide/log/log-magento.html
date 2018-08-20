@@ -1669,7 +1669,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="config-log-monolog">Monolog</h2>
 
-<p>Magento 2 complies with the PSR-3 standard. By default, Magento uses <a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>. Monolog implemented as a preference for <code class="highlighter-rouge">Psr\Log\LoggerInterface</code> in the Magento application <a href="https://github.com/magento/magento2/blob/2.0/app/etc/di.xml#L9" target="_blank"><code class="highlighter-rouge">di.xml</code></a>.</p>
+<p>Magento 2 complies with the PSR-3 standard. By default, Magento uses <a href="https://github.com/Seldaek/monolog">Monolog</a>. Monolog implemented as a preference for <code class="highlighter-rouge">Psr\Log\LoggerInterface</code> in the Magento application <a href="https://github.com/magento/magento2/blob/2.0/app/etc/di.xml#L9"><code class="highlighter-rouge">di.xml</code></a>.</p>
 
 <p>Monolog is a popular   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.</p>
@@ -1696,7 +1696,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Another way follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SomeModel</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SomeModel</span>
  <span class="p">{</span>
      <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
@@ -1713,11 +1713,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
              <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="s1">'Error message'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'exception'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]);</span>
          <span class="p">}</span>
      <span class="p">}</span>
- <span class="p">}</span></code></pre></figure>
+ <span class="p">}</span>
+</code></pre></div></div>
 
 <p>The preceding example shows that <code class="highlighter-rouge">SomeModel</code> receives a <code class="highlighter-rouge">\Psr\Log\LoggerInterface</code> object using constructor injection. In a method <code class="highlighter-rouge">doSomething</code>, if some error occurred, it’s logged to a method <code class="highlighter-rouge">critical</code> (<code class="highlighter-rouge">$this-&gt;logger-&gt;critical($e);</code>).</p>
 
-<p><a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC 5424</a> defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).</p>
+<p><a href="https://tools.ietf.org/html/rfc5424">RFC 5424</a> defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).</p>
 
 <h4 id="next">Next</h4>
 <p><a href="/guides/v2.1/config-guide/log/log-db.html">Example—logging database activity</a></p>

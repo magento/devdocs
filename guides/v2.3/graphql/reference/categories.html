@@ -692,14 +692,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The <code class="highlighter-rouge">category</code> endpoint allows you to search for a single category definition or the entire category tree.</p>
+			<p>The <code class="highlighter-rouge">category</code> endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested <code class="highlighter-rouge">children</code> options. You cannot return the entire category tree if it contains more than 10 sublevels unless the <code class="highlighter-rouge">queryDepth</code> parameter in the GraphQL <code class="highlighter-rouge">di.xml</code> file has been reconfigured.</p>
 
 <h2 id="query-structure">Query structure</h2>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">category</span><span class="w"> </span><span class="err">(</span><span class="w">
-   </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w">
-</span><span class="err">)</span><span class="p">:</span><span class="w"> </span><span class="err">CategoryTree</span><span class="w">
-</span></code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category (
+   id: int
+): CategoryTree
+</code></pre></div></div>
 
 <h3 id="input-attributes">Input attributes</h3>
 
@@ -804,12 +804,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>The list of products assigned to the category</td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">breadcrumbs</code></td>
+      <td><code class="highlighter-rouge">Breadcrumb</code></td>
+      <td>A <code class="highlighter-rouge">Breadcrumb</code> object contains information the categories that comprise the breadcrumb trail for the specified category</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">children</code></td>
       <td><code class="highlighter-rouge">CategoryTree</code></td>
-      <td> </td>
+      <td>A <code class="highlighter-rouge">CategoryTree</code> object that contains information about a child category. You can specify up to 10 levels of child categories.</td>
     </tr>
   </tbody>
 </table>
+
+<h4 id="categoryproducts-object">CategoryProducts object</h4>
 
 <p>The <code class="highlighter-rouge">products</code> attribute can contain the following attributes:</p>
 
@@ -834,13 +841,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tr>
     <tr>
       <td><code class="highlighter-rouge">sort</code></td>
-      <td><code class="highlighter-rouge">ProductSortInput</code> Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See <a href="/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a> for more information.</td>
-      <td> </td>
+      <td><code class="highlighter-rouge">ProductSortInput</code></td>
+      <td>Specifies which attribute to sort on, and whether to return the results in ascending or descending order. <a href="/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a> describes sort orders.</td>
     </tr>
   </tbody>
 </table>
-
-<h4 id="categoryproducts">CategoryProducts</h4>
 
 <p>The <code class="highlighter-rouge">CategoryProducts</code> object contains the following attributes:</p>
 
@@ -871,62 +876,214 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<p>The response can contain up to ten nested <code class="highlighter-rouge">children</code> options that allow you to return multiple levels of the category tree. In most cases, the entire category tree can be returned in a single call. The following response definition returns two levels of categories:</p>
+<h4 id="breadcrumb-object">Breadcrumb object</h4>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="err">category_tree</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">id</span><span class="w">
-    </span><span class="err">level</span><span class="w">
-    </span><span class="err">name</span><span class="w">
-    </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="err">id</span><span class="w">
-      </span><span class="err">level</span><span class="w">
-      </span><span class="err">name</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<p>A breadcrumb trail is a set of links that shows customers where they are in relation to other pages in the
+store.</p>
 
-<h2 id="sample-query">Sample Query</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">category_id</code></td>
+      <td>Int</td>
+      <td>An ID that uniquely identifies the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">category_name</code></td>
+      <td>String</td>
+      <td>The display name of the category</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">category_level</code></td>
+      <td>Int</td>
+      <td>Indicates the depth of the category within the tree</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">category_url_key</code></td>
+      <td>String</td>
+      <td>The url key assigned to the category</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="categorytree-object">CategoryTree object</h4>
+
+<p>This <code class="highlighter-rouge">CategoryTree</code> object contains information about the next level of subcategories of the category specified in the original query.</p>
+
+<h2 id="sample-queries">Sample Queries</h2>
 
 <p>The following query returns information about category ID <code class="highlighter-rouge">20</code> and four levels of subcategories. In the sample data, category ID <code class="highlighter-rouge">20</code> is assigned to the “Women” category.</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="err">category(id</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">products</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="err">total_count</span><span class="w">
-      </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="err">current_page</span><span class="w">
-        </span><span class="err">page_size</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-    </span><span class="err">children_count</span><span class="w">
-    </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="err">id</span><span class="w">
-        </span><span class="err">level</span><span class="w">
-        </span><span class="err">name</span><span class="w">
-        </span><span class="err">path</span><span class="w">
-        </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="err">id</span><span class="w">
-          </span><span class="err">level</span><span class="w">
-          </span><span class="err">name</span><span class="w">
-          </span><span class="err">path</span><span class="w">
-          </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="err">id</span><span class="w">
-            </span><span class="err">level</span><span class="w">
-            </span><span class="err">name</span><span class="w">
-            </span><span class="err">path</span><span class="w">
-            </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="err">id</span><span class="w">
-              </span><span class="err">level</span><span class="w">
-              </span><span class="err">name</span><span class="w">
-              </span><span class="err">path</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+<p><strong>Request</strong></p>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  category(id: 20) {
+    products {
+      total_count
+      page_info {
+        current_page
+        page_size
+      }
+    }
+    children_count
+    children {
+        id
+        level
+        name
+        path
+        children {
+          id
+          level
+          name
+          path
+          children {
+            id
+            level
+            name
+            path
+            children {
+              id
+              level
+              name
+              path
+            }
+          }
+        }
+      }
+  }
+}
+</code></pre></div></div>
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"page_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"children_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tops"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/21"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bottoms"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/22"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jackets"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/21/23"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hoodies &amp; Sweatshirts"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/21/24"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tees"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/21/25"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bras &amp; Tanks"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/21/26"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pants"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/22/27"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shorts"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/20/22/28"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The following query returns breadcrumb information about the women’s tops category (<code class="highlighter-rouge">id</code> = 25).</p>
+
+<p><strong>Request</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  category (
+   id: 25
+) {
+    id
+    level
+    name
+    breadcrumbs {
+      category_id
+      category_name
+      category_level
+      category_url_key
+    }
+  }
+}
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tees"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"breadcrumbs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Women"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_url_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tops"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"category_url_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tops-women"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 			
 		</div>

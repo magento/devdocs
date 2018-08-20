@@ -1678,43 +1678,38 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Expand <strong>Varnish Configuration</strong> and enter the following information:</p>
 
-    <table>
-<col width="30%" />
-  	<col width="70%" />
-<tbody>
-    <tr>
-        <th>Field</th>
-        <th>Description</th>
-    </tr>
-<tr>
-    <td>Access list</td>
-    <td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
-        <p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank">More information</a></p></td>
-</tr>
-<tr>
-    <td>Backend host</td>
-    <td><p>Enter the fully qualified hostname or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
-    <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank">More information</a></p></td>
-</tr>
-<tr>
-    <td>Backend port</td>
-    <td>Origin server's listen port.</td>
-</tr>
-
-</tbody>
-</table>
+    <table style="table-layout:auto;">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Access list</td>
+          <td>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.<br /><br /><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html">More information</a></td>
+        </tr>
+        <tr>
+          <td>Backend host</td>
+          <td>Enter the fully qualified hostname or IP address and listen port of the Varnish backend or origin server; that is, the server providing the content Varnish will accelerate. Typically, this is your web server.<br /><br /><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html">More information</a></td>
+        </tr>
+        <tr>
+          <td>Backend port</td>
+          <td>Origin server’s listen port.</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
-<div class="bs-callout bs-callout-tip">
-  <p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using MySQL statement syntax:</p>
+<p>You can also activate Varnish from the command line–instead of logging in to the Magento Admin–using MySQL statement syntax:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-u</span> root <span class="nt">-p</span> <span class="nt">-D</span> magento <span class="nt">-e</span> <span class="s2">"INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"</span>
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">magento</code> is the name of your database.</p>
-</div>
+<p>Where <code class="highlighter-rouge">magento</code> is the name of your database.’</p>
 
 <h2 id="export-a-varnish-configuration-file">Export a Varnish configuration file</h2>
 

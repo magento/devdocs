@@ -1689,9 +1689,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
 
 <p>This topic uses the following naming conventions:</p>
 
@@ -1709,10 +1707,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they’re named is up to you. We hope our examples make the instructions easier to follow.</p>
 
 <h2 id="config-ee-multidb-backup">Back up the Magento system</h2>
 
@@ -1802,9 +1797,8 @@ exit
   <li>The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
-</div>
+<p>{:.bs-callout .bs-callout-info}&gt;
+This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 
 <p>For more information, see:</p>
 
@@ -1825,7 +1819,7 @@ exit
 
 <p>Create the following script and give it a name like <code class="highlighter-rouge">1_foreign-sales.sql</code>. Replace <code class="highlighter-rouge">&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">Magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">Magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_updated</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -1870,7 +1864,8 @@ exit
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">magento_sales_shipment_grid_archive</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">MAGENTO_SALES_SHIPMENT_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">downloadable_link_purchased_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">downloadable_link_purchased</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span>
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">paypal_billing_agreement_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span></code></pre></figure>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">paypal_billing_agreement_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="config-ee-multidb-sql-oms-run">Configure the sales database</h3>
 
@@ -1919,20 +1914,20 @@ exit
 </ul>
 
 <p><strong>Script 1</strong></p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">sales_bestsellers_aggregated_daily</span> <span class="n">sales_bestsellers_aggregated_monthly</span> <span class="n">sales_bestsellers_aggregated_yearly</span> <span class="n">sales_creditmemo</span> <span class="n">sales_creditmemo_comment</span> <span class="n">sales_creditmemo_grid</span> <span class="n">sales_creditmemo_item</span> <span class="n">sales_invoice</span> <span class="n">sales_invoice_comment</span> <span class="n">sales_invoice_grid</span> <span class="n">sales_invoice_item</span> <span class="n">sales_invoiced_aggregated</span> <span class="n">sales_invoiced_aggregated_order</span> <span class="n">sales_order</span> <span class="n">sales_order_address</span> <span class="n">sales_order_aggregated_created</span> <span class="n">sales_order_aggregated_updated</span> <span class="n">sales_order_grid</span> <span class="n">sales_order_item</span> <span class="n">sales_order_payment</span> <span class="n">sales_order_status</span> <span class="n">sales_order_status_history</span> <span class="n">sales_order_status_label</span> <span class="n">sales_order_status_state</span> <span class="n">sales_order_tax</span> <span class="n">sales_order_tax_item</span> <span class="n">sales_payment_transaction</span> <span class="n">sales_refunded_aggregated</span> <span class="n">sales_refunded_aggregated_order</span> <span class="n">sales_sequence_meta</span> <span class="n">sales_sequence_profile</span> <span class="n">sales_shipment</span> <span class="n">sales_shipment_comment</span> <span class="n">sales_shipment_grid</span> <span class="n">sales_shipment_item</span> <span class="n">sales_shipment_track</span> <span class="n">sales_shipping_aggregated</span> <span class="n">sales_shipping_aggregated_order</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sales</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-u</span> &lt;your database root username&gt; <span class="nt">-p</span> &lt;your main magento DB name&gt; sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order <span class="o">&gt;</span> /&lt;path&gt;/sales.sql
+</code></pre></div></div>
 
 <p><strong>Script 2</strong></p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">magento_sales_creditmemo_grid_archive</span> <span class="n">magento_sales_invoice_grid_archive</span> <span class="n">magento_sales_order_grid_archive</span> <span class="n">magento_sales_shipment_grid_archive</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">salesarchive</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-u</span> &lt;your database root username&gt; <span class="nt">-p</span> &lt;your main magento DB name&gt; magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive <span class="o">&gt;</span> /&lt;path&gt;/salesarchive.sql
+</code></pre></div></div>
 
 <p><strong>Script 3</strong></p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">magento_customercustomattributes_sales_flat_order</span> <span class="n">magento_customercustomattributes_sales_flat_order_address</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">customercustomattributes</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-u</span> &lt;your database root username&gt; <span class="nt">-p</span> &lt;your main magento DB name&gt; magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address <span class="o">&gt;</span> /&lt;path&gt;/customercustomattributes.sql
+</code></pre></div></div>
 
 <p><strong>Script 4</strong></p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">sequence_creditmemo_0</span> <span class="n">sequence_creditmemo_1</span> <span class="n">sequence_invoice_0</span> <span class="n">sequence_invoice_1</span> <span class="n">sequence_order_0</span> <span class="n">sequence_order_1</span> <span class="n">sequence_rma_item_0</span> <span class="n">sequence_rma_item_1</span> <span class="n">sequence_shipment_0</span> <span class="n">sequence_shipment_1</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sequence</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-u</span> &lt;your database root username&gt; <span class="nt">-p</span> &lt;your main magento DB name&gt; sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 <span class="o">&gt;</span> /&lt;path&gt;/sequence.sql
+</code></pre></div></div>
 
 <h3 id="sql-sales-restore">Restore sales data</h3>
 
@@ -1940,7 +1935,7 @@ exit
 
 <h4 id="ndb-requirement">NDB requirement</h4>
 
-<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
+<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html">Network Database (NDB)</a> cluster:</p>
 
 <ol>
   <li>
@@ -1958,10 +1953,11 @@ exit
 
 <p>Run the following commands:</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sales</span><span class="p">.</span><span class="k">sql</span>
-<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sequence</span><span class="p">.</span><span class="k">sql</span>
-<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">salesarchive</span><span class="p">.</span><span class="k">sql</span>
-<span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">customercustomattributes</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span> &lt;your sales DB name&gt; &lt; /&lt;path&gt;/sales.sql
+mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span> &lt;your sales DB name&gt; &lt; /&lt;path&gt;/sequence.sql
+mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span> &lt;your sales DB name&gt; &lt; /&lt;path&gt;/salesarchive.sql
+mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span> &lt;your sales DB name&gt; &lt; /&lt;path&gt;/customercustomattributes.sql
+</code></pre></div></div>
 
 <p>where</p>
 
@@ -1982,9 +1978,7 @@ exit
 
 <p>This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 
 <p>Quote database table names start with <code class="highlighter-rouge">quote</code>. The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
 
@@ -1996,10 +1990,11 @@ exit
     <b class="collapsible-title">Click to drop foreign keys from quote tables </b>
     <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID</span><span class="p">;</span>
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_ITEM_STORE_ID_STORE_STORE_ID</span><span class="p">;</span></code></pre></figure>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote_item</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_ITEM_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>Run the script as follows:</p>
 
@@ -2011,8 +2006,8 @@ exit
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:
-it`.
+    <p>At the <code class="highlighter-rouge">mysql &gt;</code> prompt, run the script as follows:
+it.
     source <path>/<script>.sql
 For example,</script></path></p>
 
@@ -2039,7 +2034,7 @@ For example,</script></path></p>
 
 <h3 id="ndb-requirement">NDB requirement</h3>
 
-<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
+<p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html">Network Database (NDB)</a> cluster:</p>
 
 <ol>
   <li>
@@ -2068,9 +2063,9 @@ For example,</script></path></p>
     <b class="collapsible-title">Click to drop sales and quote tables </b>
     <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">3_drop-tables.sql</code>:</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_quote</span><span class="p">;</span> 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_quote</span><span class="p">;</span>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_quote_address</span><span class="p">;</span>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote</span><span class="p">;</span>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">quote_address</span><span class="p">;</span>
@@ -2123,7 +2118,7 @@ For example,</script></path></p>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_order_grid_archive</span><span class="p">;</span>                          
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_sales_shipment_grid_archive</span><span class="p">;</span>                       
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_order</span><span class="p">;</span>         
-<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_order_address</span><span class="p">;</span> 
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">magento_customercustomattributes_sales_flat_order_address</span><span class="p">;</span>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_creditmemo_0</span><span class="p">;</span>                                     
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_creditmemo_1</span><span class="p">;</span>                                     
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_invoice_0</span><span class="p">;</span>                                        
@@ -2134,7 +2129,8 @@ For example,</script></path></p>
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_rma_item_1</span><span class="p">;</span>                                       
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_shipment_0</span><span class="p">;</span>                                       
 <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">sequence_shipment_1</span><span class="p">;</span>     
-<span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span></code></pre></figure>
+<span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>Run the script as follows:</p>
 
@@ -2184,7 +2180,7 @@ For example,</script></path></p>
 
 <p>Locate the block starting with <code class="highlighter-rouge">'default'</code> (under <code class="highlighter-rouge">'connection'</code>) and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">'default'</span> <span class="o">=&gt;</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s1">'default'</span> <span class="o">=&gt;</span>
       <span class="k">array</span> <span class="p">(</span>
         <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
         <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento'</span><span class="p">,</span>
@@ -2195,7 +2191,7 @@ For example,</script></path></p>
         <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
         <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
       <span class="p">),</span>
-      <span class="s1">'checkout'</span> <span class="o">=&gt;</span> 
+      <span class="s1">'checkout'</span> <span class="o">=&gt;</span>
       <span class="k">array</span> <span class="p">(</span>
         <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
         <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento_quote'</span><span class="p">,</span>
@@ -2206,7 +2202,7 @@ For example,</script></path></p>
         <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
         <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
       <span class="p">),</span>
-      <span class="s1">'sales'</span> <span class="o">=&gt;</span> 
+      <span class="s1">'sales'</span> <span class="o">=&gt;</span>
       <span class="k">array</span> <span class="p">(</span>
         <span class="s1">'host'</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span>
         <span class="s1">'dbname'</span> <span class="o">=&gt;</span> <span class="s1">'magento_sales'</span><span class="p">,</span>
@@ -2217,26 +2213,29 @@ For example,</script></path></p>
         <span class="s1">'initStatements'</span> <span class="o">=&gt;</span> <span class="s1">'SET NAMES utf8;'</span><span class="p">,</span>
         <span class="s1">'active'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
       <span class="p">),</span>
-    <span class="p">),</span></code></pre></figure>
+    <span class="p">),</span>
+</code></pre></div></div>
 
 <h3 id="update-resources">Update resources</h3>
 
 <p>Locate the block starting with <code class="highlighter-rouge">'resource'</code> and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections to it as follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'resource'</span> <span class="o">=&gt;</span> 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="s1">'resource'</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">'default_setup'</span> <span class="o">=&gt;</span> 
+    <span class="s1">'default_setup'</span> <span class="o">=&gt;</span>
     <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'default'</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="s1">'checkout'</span> <span class="o">=&gt;</span> 
+    <span class="s1">'checkout'</span> <span class="o">=&gt;</span>
     <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'checkout'</span><span class="p">,</span>
     <span class="p">),</span>
-    <span class="s1">'sales'</span> <span class="o">=&gt;</span> 
+    <span class="s1">'sales'</span> <span class="o">=&gt;</span>
     <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'sales'</span><span class="p">,</span>
-    <span class="p">),</span></code></pre></figure>
+    <span class="p">),</span>
+</code></pre></div></div>
 </div>
   </div>
 
@@ -2270,7 +2269,7 @@ For example,</script></path></p>
 
 <p>This script is the removes foreign keys that refer to non-sales tables from the sales database.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
     <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
     <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
     <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
@@ -2291,13 +2290,14 @@ For example,</script></path></p>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
 <span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|magento_sales|_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
     <span class="k">and</span> <span class="n">ref_name</span> <span class="k">not</span> <span class="k">like</span>  <span class="s1">'&lt;your main magento DB name&gt;/|sales|_%'</span> <span class="k">escape</span> <span class="s1">'|'</span>
-<span class="p">;</span></code></pre></figure>
+<span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="remove-foreign-keys-quote-tables">Remove foreign keys (quote tables)</h3>
 
 <p>This script removes foreign keys that refer to non-quote tables from quote tables.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
     <span class="s1">'ALTER TABLE '</span><span class="p">,</span>
     <span class="k">replace</span><span class="p">(</span><span class="n">for_name</span><span class="p">,</span> <span class="s1">'&lt;your main magento DB name&gt;/'</span><span class="p">,</span> <span class="s1">''</span><span class="p">),</span>
     <span class="s1">' DROP FOREIGN KEY '</span><span class="p">,</span>
@@ -2329,13 +2329,14 @@ For example,</script></path></p>
 <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">INNODB_SYS_FOREIGN</span>
 <span class="k">where</span> <span class="n">for_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/%'</span>
     <span class="k">and</span> <span class="n">ref_name</span> <span class="k">like</span> <span class="s1">'&lt;your main magento DB name&gt;/magento_customercustomattributes</span><span class="se">\_</span><span class="s1">%'</span>
-<span class="p">;</span></code></pre></figure>
+<span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="drop-sales-tables">Drop sales tables</h3>
 
 <p>This script drops sales tables from the Magento database.</p>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">select</span> <span class="s1">' SET foreign_key_checks = 0;'</span> <span class="k">as</span> <span class="n">querytext</span>
 <span class="k">union</span> <span class="k">all</span>
 <span class="k">select</span>
@@ -2362,7 +2363,8 @@ For example,</script></path></p>
 <span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">'&lt;your main magento DB name&gt;'</span>
 <span class="k">and</span> <span class="k">table_name</span> <span class="k">like</span> <span class="s1">'sequence/_%'</span> <span class="k">escape</span> <span class="s1">'/'</span>
 <span class="k">union</span> <span class="k">all</span>
-<span class="k">select</span> <span class="s1">'SET foreign_key_checks = 1;'</span><span class="p">;</span></code></pre></figure>
+<span class="k">select</span> <span class="s1">'SET foreign_key_checks = 1;'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="drop-quote-tables">Drop quote tables</h3>
 

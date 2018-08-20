@@ -1877,7 +1877,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
 
-<p>To use the <a href="https://github.com/magento/magento2/blob/2.2/setup/performance-toolkit" target="\_blank">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
+<p>To use the <a href="https://github.com/magento/magento2/blob/2.2/setup/performance-toolkit">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
 
 <p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
 
@@ -2069,9 +2069,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="config-cli-perf-run">Run the data generator</h3>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
 
 <p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
 
@@ -2474,23 +2472,6 @@ Generating simple products...  done in &lt;time&gt;
   <li>
     <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTermsLarge.xml</code>—Larger number of search terms to use in short and full description.</p>
   </li>
-</ul>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
 </ul>
 
 			

@@ -1880,19 +1880,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This topic discusses how Varnish caching works with Magento using:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code class="highlighter-rouge">nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample"><code class="highlighter-rouge">nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
   <li><code class="highlighter-rouge">.htaccess</code> distributed configuration file for Apache provided with Magento</li>
   <li><code class="highlighter-rouge">default.vcl</code> configuration for Varnish generated using the <a href="/guides/v2.2/config-guide/varnish/config-varnish-magento.html">Magento Admin</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
-</div>
+<p class="bs-callout bs-callout-info">This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
 
 <p>On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.</p>
 
 <p>In addition, Varnish uses an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">Entity</span>
- Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+ Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag">ETag</a>) for static assets. The ETag provides a way to determine when   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  change on the server. As a result, static assets are sent to the client when they change on the server—either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.</p>
 
 <p>More detail is provided in the sections that follow.</p>
@@ -1914,9 +1912,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  and   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
  assets are cached on the client browser.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
-</div>
+<p class="bs-callout bs-callout-info">Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
 
 <h3 id="config-varnish-cache-browser-second">Second browser request</h3>
 
@@ -1931,6 +1927,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following example shows response headers for a particular static asset.</p>
 
 <p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
+
 <p><code class="highlighter-rouge">calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
 
 <p>In addition, static assets are returned with a 304 (Not Modified) HTTP status code, as the following figure shows.</p>
@@ -1940,7 +1937,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser.</p>
 
 <p>If the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.</p>
-
 
 			
 		</div>

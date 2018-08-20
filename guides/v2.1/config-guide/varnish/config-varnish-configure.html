@@ -1689,7 +1689,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Change the value of the listen port to <code class="highlighter-rouge">8080</code>. (You can use any available listen port.)</li>
   <li>Save your changes to <code class="highlighter-rouge">ports.conf</code> and exit the text editor.</li>
   <li>Open <code class="highlighter-rouge">/etc/apache2/sites-enabled/000-default.conf</code> in a text editor.</li>
-  <li>change &lt;VirtualHost *:80&gt; to &lt;VirtualHost *:8080&gt;</li>
+  <li>Change <code class="highlighter-rouge">&lt;VirtualHost *:80&gt;</code> to <code class="highlighter-rouge">&lt;VirtualHost *:8080&gt;</code>.</li>
   <li>Save your changes to <code class="highlighter-rouge">000-default.conf</code> and exit the text editor.</li>
 </ol>
 
@@ -1756,7 +1756,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p>Typically, this is your web server.</p>
 
-    <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a></p>
+    <p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html">More information</a></p>
   </li>
   <li>
     <p>Replace the value of <code class="highlighter-rouge">.port</code> with the web server’s listen port (8080 in this example).</p>
@@ -1769,9 +1769,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 }
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code>localhost</code>.</p>
-</div>
+    <p class="bs-callout bs-callout-info">If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code class="highlighter-rouge">localhost</code>.</p>
   </li>
   <li>
     <p>Save your changes to <code class="highlighter-rouge">default.vcl</code> and exit the text editor.</p>
@@ -1791,12 +1789,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>This should display error messages.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
-		<ul><li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/" target="_blank">flatlinesecurity</a></li>
-			<li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a></li>
-			<li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html" target="_blank">CentOS documentation</a></li></ul>
-</div>
+<p class="bs-callout bs-callout-info">If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
+<ul>
+  <li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/">flatlinesecurity</a></li>
+  <li><a href="https://wiki.centos.org/HowTos/SELinux">CentOS wiki</a></li>
+  <li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html">CentOS documentation</a></li>
+</ul>
 
 <h2 id="config-varnish-verify">Verify Varnish is working</h2>
 
@@ -1857,7 +1855,7 @@ tcp        0      0 ::1:48509                   :::*                        LIST
 
 <p>If you don’t see output for <code class="highlighter-rouge">varnishd</code>, make sure Varnish is running.</p>
 
-<p><a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a></p>
+<p><a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html">More information about netstat options</a></p>
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
 <p>Install the Magento 2 software if you haven’t already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.</p>
@@ -1917,8 +1915,9 @@ Varnish cache server
 <p>If headers like these do <em>not</em> display, stop Varnish, check your <code class="highlighter-rouge">default.vcl</code>, and try again.</p>
 
 <h4 id="look-at-html-response-headers">Look at HTML response headers</h4>
+
 <p>There are several ways to look at response headers, including using a browser   <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span>
- like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.</p>
+ like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/">Firefox</a>) or a browser inspector.</p>
 
 <p>The following example uses <code class="highlighter-rouge">curl</code>. You can enter this command from any machine that can access the Magento server using HTTP.</p>
 

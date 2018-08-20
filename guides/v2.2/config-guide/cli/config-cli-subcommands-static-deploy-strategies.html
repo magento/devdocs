@@ -1890,7 +1890,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="static-file-standard">Standard strategy</h2>
 
-<p>When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/View/Asset/Publisher.php" target="\_blank"><code class="highlighter-rouge">\Magento\Framework\App\View\Asset\Publisher</code></a>.</p>
+<p>When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/View/Asset/Publisher.php"><code class="highlighter-rouge">\Magento\Framework\App\View\Asset\Publisher</code></a>.</p>
 
 <p>For more information, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>.</p>
 
@@ -1908,9 +1908,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>By <em>similar</em>, we mean files that are independent of the locale, theme, or area. These files might include CSS, images, and fonts.</p>
-</div>
+<p class="bs-callout bs-callout-info">By <em>similar</em>, we mean files that are independent of the locale, theme, or area. These files might include CSS, images, and fonts.</p>
 
 <p>This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.</p>
 
@@ -2004,7 +2002,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">requirejs-map.js</code></li>
 </ul>
 
-<p><code class="highlighter-rouge">map.php</code> is used by <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/View/Asset/Repository.php" target="\_blank"><code class="highlighter-rouge">Magento\Framework\View\Asset\Repository</code></a> to build correct URLs.</p>
+<p><code class="highlighter-rouge">map.php</code> is used by <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/View/Asset/Repository.php"><code class="highlighter-rouge">Magento\Framework\View\Asset\Repository</code></a> to build correct URLs.</p>
 
 <p><code class="highlighter-rouge">requirejs-map.js</code> is used by the <code class="highlighter-rouge">baseUrlResolver</code> plugin for RequireJS.</p>
 
@@ -2037,7 +2035,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="tips-for-extension-developers">Tips for extension developers</h2>
 
-<p>To build URLs to static view files, use <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213" target="\_blank"><code class="highlighter-rouge">\Magento\Framework\View\Asset\Repository::createAsset()</code></a>.</p>
+<p>To build URLs to static view files, use <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213"><code class="highlighter-rouge">\Magento\Framework\View\Asset\Repository::createAsset()</code></a>.</p>
 
 <p>Do not use   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  concatenations to avoid problems with   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>

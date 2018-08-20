@@ -1672,9 +1672,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#overview" target="_blank">Overview of Elasticsearch</a></li>
-  <li><a href="#es-prereq" target="_blank">Install prerequisites and Elasticsearch</a></li>
-  <li><a href="#es-resources" target="_blank">Additional resources</a></li>
+  <li><a href="#overview">Overview of Elasticsearch</a></li>
+  <li><a href="#es-prereq">Install prerequisites and Elasticsearch</a></li>
+  <li><a href="#es-resources">Additional resources</a></li>
   <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
   <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
   <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></li>
@@ -1682,7 +1682,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="overview">Overview of Elasticsearch</h2>
 
-<p>In Magento 2.1 for the first time, you can use <a href="https://www.elastic.co" target="_blank">Elasticsearch</a> for searching your   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+<p>In Magento 2.1 for the first time, you can use <a href="https://www.elastic.co">Elasticsearch</a> for searching your   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
 .</p>
 
 <ul>
@@ -1707,7 +1707,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.</li>
-  <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="_blank">Elasticsearch-PHP repository</a>, we support the <code class="highlighter-rouge">2.0</code> branch.</li>
+  <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php">Elasticsearch-PHP repository</a>, we support the <code class="highlighter-rouge">2.0</code> branch.</li>
 </ul>
 
 <p>We also support version 1.7 but recommend you use a later version.</p>
@@ -1716,7 +1716,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following figure shows our recommended configuration. All of the tasks we discuss assume you’ve configured your system this way.</p>
 
-<p><img src="/common/images/elastic_config.png" width="500px" /></p>
+<p><img src="/common/images/elastic_config.png" alt="" width="500px" /></p>
 
 <p>The preceding diagram shows:</p>
 
@@ -1724,7 +1724,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>The Magento application and Elasticsearch are installed on different hosts.</p>
 
-    <p>Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html" target="_blank">Elasticsearch documentation</a>.)</p>
+    <p>Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html">Elasticsearch documentation</a>.)</p>
   </li>
   <li>
     <p>Each host has its own web server; the web servers don’t have to be the same.</p>
@@ -1762,7 +1762,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li><a href="#firewall-selinux">Firewall and SELinux</a></li>
-  <li><a href="#prereq-java" target="_blank">Install the Java Software Development Kit (JDK)</a></li>
+  <li><a href="#prereq-java">Install the Java Software Development Kit (JDK)</a></li>
   <li><a href="#es-install-es">Install Elasticsearch</a></li>
   <li><a href="#configure-magento-to-use-elasticsearch">Configure Magento to use Elasticsearch</a></li>
 </ul>
@@ -1831,7 +1831,7 @@ apt-get install -y oracle-java8-installer
 
     <p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
 
-    <p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html" target="_blank">2.0 reference</a>).</p>
+    <p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html">2.0 reference</a>).</p>
 
     <p>To install Elasticsearch:</p>
 
@@ -1863,9 +1863,9 @@ chkconfig --add elasticsearch
       <li>
         <p><em>Ubuntu</em>: Enter the following commands in the order shown:</p>
 
-        <p>Find the <a href="https://www.elastic.co/downloads/past-releases" target="_blank">latest 2.x version of Elasticsearch</a>.</p>
+        <p>Find the <a href="https://www.elastic.co/downloads/past-releases">latest 2.x version of Elasticsearch</a>.</p>
 
-        <p>Install the latest 2.x version using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html" target="_blank">Elasticsearch documentation</a></p>
+        <p>Install the latest 2.x version using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html">Elasticsearch documentation</a></p>
 
         <p>For example, to install Elasticsearch version 2.4.4, enter the following commands in the order shown:</p>
 
@@ -1876,7 +1876,7 @@ cd elasticsearch-2.4.4/bin
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>Open the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings" target="_blank">Elasticsearch configuration file</a>, <code class="highlighter-rouge">elasticsearch.yml</code>, in a text editor.</p>
+        <p>Open the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings">Elasticsearch configuration file</a>, <code class="highlighter-rouge">elasticsearch.yml</code>, in a text editor.</p>
 
         <p>For example, it might be located in <code class="highlighter-rouge">/etc/elasticsearch</code> or <code class="highlighter-rouge">&lt;elasticsearch install dir&gt;/config</code>.</p>
       </li>
@@ -1886,10 +1886,10 @@ cd elasticsearch-2.4.4/bin
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>indices.query.bool.max_clause_count: 10024
 </code></pre></div>        </div>
 
-        <p>For more information, see <a href="http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch" target="_blank">Setting the BooleanQuery maxClauseCount in Elasticsearch</a>.</p>
+        <p>For more information, see <a href="http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch">Setting the BooleanQuery maxClauseCount in Elasticsearch</a>.</p>
       </li>
       <li>Save your changes to <code class="highlighter-rouge">elasticsearch.yml</code> and exit the text editor.</li>
-      <li>Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.</li>
+      <li>Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html">Elasticsearch service</a>.</li>
       <li>
         <p>Start Elasticsearch:</p>
 
@@ -1911,7 +1911,7 @@ cd elasticsearch-2.4.4/bin
 
     <h2 id="es-resources">Additional resources</h2>
 
-    <p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html" target="_blank">Elasticsearch documentation</a></p>
+    <p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html">Elasticsearch documentation</a></p>
 
     <h4 id="next">Next</h4>
 

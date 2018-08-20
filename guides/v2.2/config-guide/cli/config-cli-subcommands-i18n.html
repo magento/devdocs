@@ -1920,8 +1920,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>After that:</p>
 
   <ol>
-    <li>You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.</li>
-    <li>In the Magento Admin, the store administrator <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation" target="\_blank">configures the translations</a>.</li>
+    <li>
+      <p>You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.</p>
+    </li>
+    <li>
+      <p>In the Magento Admin, the store administrator <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation">configures the translations</a>.</p>
+    </li>
   </ol>
 
   <p>Command options:</p>
@@ -1931,47 +1935,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>The following table explains this command’s parameters and values:</p>
 
-  <table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
+  <table style="table-layout:auto;">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>Required?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">&lt;path to directory to translate&gt;</code></td>
+        <td>Path to a directory that has translatable code; in other words, PHP, PHTML, or XML files that have phrases to translate.<br /><br />The tool starts searching at the path you enter and searches all files and subdirectories it contains.<br /><br />Do not use this parameter if you use <code class="highlighter-rouge">-m --magento</code>.</td>
+        <td>Yes (dictionaries), no (packages).</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-m --magento</code></td>
+        <td>Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br /><br />A sample follows:<br /><br />“No Items Found”,”No Items Found”,module,Magento_Wishlist</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-o --output="&lt;path&gt;"</code></td>
+        <td>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters’ case.<br /><br />If you omit this parameter, the output is directed to stdout.</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
 
-	<tr>
-		<td><p>&lt;path to directory to translate&gt;</p></td>
-		<td><p>Path to a directory that has translatable code; in other words, PHP, PHTML, or XML files that have phrases to translate.</p>
-		<p>The tool starts searching at the path you enter and searches all files and subdirectories it contains. </p>
-	<p>Do not use this parameter if you use <code>-m|--magento</code>.</p></td>
-
-		<td><p>Yes (dictionaries), no (packages).</p></td>
-	</tr>
-	<tr>
-		<td><p>-m|--magento</p></td>
-		<td><p><em>Required to create a language package from this translation dictionary</em>. If used, searches the directories that contain <code>bin/magento</code>. This option adds themes or modules to each line in the dictionary. </p>
-			<p>A sample follows:</p>
-			<p><pre>"No Items Found","No Items Found",module,Magento_Wishlist</pre></p></td>
-			<td><p>No</p></td>
-</tr>
-<tr>
-		<td><p>-o|--output="&lt;path&gt;"</p></td>
-		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>. The name of the .csv file must <em>exactly match</em> the locale name, including the characters' case.</p>
-			<p>If you omit this parameter, the output is directed to stdout.</p>
-		</td>
-		<td>
-			<p>No</p>
-		</td>
-	</tr>
-	</tbody>
-</table>
-
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>To create a language pack from a translation dictionary, you <em>must</em> use the <code class="highlighter-rouge">-m|--magento</code> option.</p>
-  </div>
+  <p>To create a language pack from a translation dictionary, you <em>must</em> use the <code class="highlighter-rouge">-m|--magento</code> option.</p>
 
   <h3 id="config-cli-subcommands-xlate-dict-trans">Translation guidelines</h3>
 
@@ -2024,49 +2015,37 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
   <p>The following table explains this command’s parameters and values:</p>
 
-  <table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		<tr>
-			<td><p>&lt;source&gt;</p></td>
-			<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>
-			<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">bin/magento i18n:collect-phrases</a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>. </p></td>
-			<td><p>Yes</p></td>
-		</tr>
-		<tr>
-			<td><p>&lt;locale&gt;</p></td>
-			<td><p>[ISO 639-1](http://www.iso.org/iso/home/standards/language_codes.htm){:target="\_blank"} (language) and [ISO 3166](http://www.iso.org/iso/country_codes.htm){:target="\_blank"} (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
-			</td>
-			<td>
-				<p>Yes</p>
-			</td>
-		</tr>
-		<tr>
-			<td><p>-m|--mode</p></td>
-			<td><p>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. </p>
-				<p>Values: <code>merge</code> or <code>replace</code> (the default).</p>
-			</td>
-			<td>
-				<p>No</p>
-			</td>
-		</tr>
-		<tr>
-			<td><p>-d|--allow-duplicates</p></td>
-			<td><p>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</p>
-			</td>
-			<td>
-				<p>No</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+  <table style="table-layout:auto;">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>Required?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">&lt;source&gt;</code></td>
+        <td>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.<br /><br />Use <a href="#config-cli-subcommands-xlate-dict-dict"><code class="highlighter-rouge">bin/magento i18n:collect-phrases</code></a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">&lt;locale&gt;</code></td>
+        <td><a href="http://www.iso.org/iso/home/standards/language_codes.htm">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code class="highlighter-rouge">de_DE</code>, <code class="highlighter-rouge">pt_PT</code>, <code class="highlighter-rouge">pt_BR</code>.</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-m --mode</code></td>
+        <td>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. <br /><br />Values: merge or replace (the default).</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">-d --allow-duplicates</code></td>
+        <td>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3 id="m2devgde-xlate-files">Create directories and files</h3>
 
@@ -2079,11 +2058,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li><a href="#config-cli-subcommands-xlate-pack-meta-xml"><code class="highlighter-rouge">language.xml</code></a> meta-information file</li>
   </ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The entire path must be all lowercase.</p>
-  </div>
-
-  <p>For an example, see the <a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/registration.php" target="\_blank"><code>de_de</code> language package</a>.</p>
+  <p class="bs-callout bs-callout-info">The entire path must be all lowercase. For an example, see the <a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/registration.php"><code class="highlighter-rouge">de_de</code> language package</a>.</p>
 
   <p>To create these files:</p>
 
@@ -2164,7 +2139,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_us_package</code></li>
   </ol>
 
-  <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="\_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
+  <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
 
   <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 
@@ -2192,9 +2167,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
       <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
 </code></pre></div>      </div>
 
-      <div class="bs-callout bs-callout-info" id="info">
-        <p>The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
-      </div>
+      <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
     </li>
     <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
     <li>If necessary, copy <code class="highlighter-rouge">xx_YY.csv</code> to <code class="highlighter-rouge">/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n</code> or to the module’s theme directory (depending on whether the translation dictionary is for a module or a theme).</li>
@@ -2211,9 +2184,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
       <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
 </code></pre></div>      </div>
 
-      <div class="bs-callout bs-callout-info" id="info">
-        <p>The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
-      </div>
+      <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
     </li>
     <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
     <li>
@@ -2288,23 +2259,6 @@ Product 'Multimeter-2000' has been added to shopping cart.
 </code></pre></div>      </div>
     </li>
   </ol>
-
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
 </div>
 
 			

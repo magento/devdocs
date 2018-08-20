@@ -1669,30 +1669,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div class="bs-callout bs-callout-warning">
-  <p>Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
-In a future release, Solr compatibility will be removed.</p>
-
-  <p>If possible, use <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elastic Search</a> as an alternative catalog search engine.</p>
-</div>
+			<p class="bs-callout bs-callout-warning">Solr is deprecated in Magento 2.1 and will not be supported in 2.2. In a future release, Solr compatibility will be removed. If possible, use <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elastic Search</a> as an alternative catalog search engine.</p>
 
 <p>After you’ve tested the Solr solution, you should perform the following tasks to get it ready for production:</p>
 
 <ul>
   <li>See more Solr configuration options in the Magento Commerce User Guide (available with the Magento Commerce release)</li>
-  <li>Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">firewall rules</a> to enable Solr and Magento to communicate</li>
+  <li>Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules">firewall rules</a> to enable Solr and Magento to communicate</li>
   <li>Implement a custom web application deployed to a scalable application server</li>
   <li>Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento</li>
-  <li>Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a></li>
+  <li>Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud">clustering Solr</a></li>
   <li>
-    <p><a href="http://wiki.apache.org/solr" target="_blank">Customize Solr</a></p>
+    <p><a href="http://wiki.apache.org/solr">Customize Solr</a></p>
 
-    <div class="bs-callout bs-callout-warning">
-    <p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
-</div>
+    <p class="bs-callout bs-callout-warning">Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/">Apache Solr Wiki</a>.</p>
   </li>
   <li>
-    <p>If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other</p>
+    <p>If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux">rules</a> to allow Magento and Solr to communicate with each other</p>
 
     <p>SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.</p>
   </li>
@@ -1709,13 +1702,11 @@ In a future release, Solr compatibility will be removed.</p>
 
 <p>In a production environment, you should start and stop Solr using a script.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
-</div>
+<p class="bs-callout bs-callout-info">You must perform all tasks discussed in this section as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <p>Create a script named <code>/etc/init.d/solr</code> with options similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
 <span class="c">#Starts, stops, and restarts Apache Solr.</span>
 <span class="c">#chkconfig: 35 92 08</span>
@@ -1772,7 +1763,7 @@ sleep 1
 
   For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
 
-  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
+  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL">Securing Jetty.</a>
 </td>
 </tr>
 <tr>
@@ -1788,7 +1779,7 @@ sleep 1
 
 <p>An example follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
 <span class="c">#Starts, stops, and restarts Apache Solr.</span>
 <span class="c">#chkconfig: 35 92 08</span>
@@ -1841,16 +1832,6 @@ sleep 1
   </li>
   <li>Restart Solr: <code class="highlighter-rouge">/etc/init.d/solr restart</code></li>
 </ul>
-
-<!-- ## </a>Next steps {#next}
-For additional information about Solr, see the following:
-
-*	For more information about performance, see "Using Solr as a Search Engine" in [Maximizing Performance and Scalability with Magento Commerce](http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf){:target="_blank"}
-*	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
-
-<!-- ## Related Information {#related}
-*	[Frequently Asked Questions (FAQ) About Using Solr with Magento Commerce](http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq){:target="_blank"}
-*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and Magento Commerce Best Practices</a> -->
 
 			
 		</div>

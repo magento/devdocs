@@ -1903,12 +1903,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <li><code class="highlighter-rouge">german.mysite.mg</code> with website code <code class="highlighter-rouge">german</code> and store view code <code class="highlighter-rouge">de</code></li>
       <li><code class="highlighter-rouge">mysite.mg</code> is the default website and default store view</li>
     </ul>
-
-    <div class="bs-callout bs-callout-tip">
-      <p>Refer to <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#step-2-create-websites">Create websites</a> and <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#step-4-create-store-views">Create store views</a> for help locating these values.</p>
-    </div>
   </li>
 </ul>
+
+<p class="bs-callout bs-callout-tip">Refer to <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#step-2-create-websites">Create websites</a> and <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#step-4-create-store-views">Create store views</a> for help locating these values.</p>
 
 <h3 id="roadmap-for-setting-up-multiple-websites-with-nginx">Roadmap for setting up multiple websites with nginx</h3>
 
@@ -1950,22 +1948,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="collapsible-content"><p>This configuration expands upon <a href="/guides/v2.2/install-gde/prereq/nginx.html">Magento Nginx Configuration</a>. To create one virtual host:</p>
 
 <ol>
-  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/magento</code>:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
-    default '';
-    french.mysite.mg french;
-    german.mysite.mg german;
-}
+  <li>
+    <p>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/magento</code>:</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">map $</span>http_host <span class="nv">$MAGE_RUN_CODE</span> <span class="o">{</span>
+<span class="gp">    default '';</span>
+<span class="gp">    french.mysite.mg french;</span>
+<span class="gp">    german.mysite.mg german;</span>
+<span class="go">}
 
 server {
-    listen 80;
-    server_name mysite.mg french.mysite.mg german.mysite.mg;
-    set $MAGE_ROOT /var/www/html/magento2;
-    set $MAGE_MODE developer;
-    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-    include /var/www/html/magento2/nginx.conf;
-}
-</code></pre></div>    </div>
+</span><span class="gp">    listen 80;</span>
+<span class="gp">    server_name mysite.mg french.mysite.mg german.mysite.mg;</span>
+<span class="gp">    set $</span>MAGE_ROOT /var/www/html/magento2<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_MODE developer<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_RUN_TYPE website<span class="p">;</span> <span class="c">#or set $MAGE_RUN_TYPE store;</span>
+<span class="gp">    include /var/www/html/magento2/nginx.conf;</span>
+<span class="go">}
+</span></code></pre></div>    </div>
   </li>
   <li>Save your changes to the files and exit the text editor.</li>
   <li>
@@ -1991,7 +1991,7 @@ ln -s /etc/nginx/sites-available/magento magento
   </li>
 </ol>
 
-<p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+<p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map">nginx documentation on the map directive</a>.</p>
 </div>
   </div>
 
@@ -2000,35 +2000,39 @@ ln -s /etc/nginx/sites-available/magento magento
     <div class="collapsible-content"><p>To create multiple virtual hosts:</p>
 
 <ol>
-  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg</code>:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
-    french.mysite.mg french;
-}
+  <li>
+    <p>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg</code>:</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">map $</span>http_host <span class="nv">$MAGE_RUN_CODE</span> <span class="o">{</span>
+<span class="gp">    french.mysite.mg french;</span>
+<span class="go">}
 
 server {
-    listen 80;
-    server_name french.mysite.mg;
-    set $MAGE_ROOT /var/www/html/magento2;
-    set $MAGE_MODE developer;
-    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-    include /var/www/html/magento2/nginx.conf;
-}
-</code></pre></div>    </div>
+</span><span class="gp">    listen 80;</span>
+<span class="gp">    server_name french.mysite.mg;</span>
+<span class="gp">    set $</span>MAGE_ROOT /var/www/html/magento2<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_MODE developer<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_RUN_TYPE website<span class="p">;</span> <span class="c">#or set $MAGE_RUN_TYPE store;</span>
+<span class="gp">    include /var/www/html/magento2/nginx.conf;</span>
+<span class="go">}
+</span></code></pre></div>    </div>
   </li>
-  <li>Create another file named <code class="highlighter-rouge">german.mysite.mg</code> in the same directory with the following contents:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
-    german.mysite.mg german;
-}
+  <li>
+    <p>Create another file named <code class="highlighter-rouge">german.mysite.mg</code> in the same directory with the following contents:</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">map $</span>http_host <span class="nv">$MAGE_RUN_CODE</span> <span class="o">{</span>
+<span class="gp">    german.mysite.mg german;</span>
+<span class="go">}
 
 server {
-    listen 80;
-    server_name german.mysite.mg;
-    set $MAGE_ROOT /var/www/html/magento2;
-    set $MAGE_MODE developer;
-    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
-    include /var/www/html/magento2/nginx.conf;
-}
-</code></pre></div>    </div>
+</span><span class="gp">    listen 80;</span>
+<span class="gp">    server_name german.mysite.mg;</span>
+<span class="gp">    set $</span>MAGE_ROOT /var/www/html/magento2<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_MODE developer<span class="p">;</span>
+<span class="gp">    set $</span>MAGE_RUN_TYPE website<span class="p">;</span> <span class="c">#or set $MAGE_RUN_TYPE store;</span>
+<span class="gp">    include /var/www/html/magento2/nginx.conf;</span>
+<span class="go">}
+</span></code></pre></div>    </div>
   </li>
   <li>Save your changes to the files and exit the text editor.</li>
   <li>
@@ -2055,7 +2059,7 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
   </li>
 </ol>
 
-<p>For more details about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+<p>For more details about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map">nginx documentation on the map directive</a>.</p>
 </div>
   </div>
 
@@ -2074,30 +2078,30 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
   <li>
     <p>Open a text editor and review the <code class="highlighter-rouge">nginx.conf.sample</code> file ,<code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Look for the following section:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
-location ~ (index|get|static|report|404|503|health_check)\.php$ {
-    try_files $uri =404;
-    fastcgi_pass   fastcgi_backend;
-    fastcgi_buffers 1024 4k;
-
-    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
-    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
-    fastcgi_read_timeout 600s;
-    fastcgi_connect_timeout 600s;
-
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
-}
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span> PHP entry point <span class="k">for </span>main application
+<span class="gp">location ~ (index|get|static|report|404|503|health_check)\.php$</span> <span class="o">{</span>
+<span class="gp">    try_files $</span>uri <span class="o">=</span>404<span class="p">;</span>
+<span class="gp">    fastcgi_pass   fastcgi_backend;</span>
+<span class="gp">    fastcgi_buffers 1024 4k;</span>
+<span class="go">
+</span><span class="gp">    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";</span>
+<span class="gp">    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";</span>
+<span class="gp">    fastcgi_read_timeout 600s;</span>
+<span class="gp">    fastcgi_connect_timeout 600s;</span>
+<span class="go">
+</span><span class="gp">    fastcgi_index  index.php;</span>
+<span class="gp">    fastcgi_param  SCRIPT_FILENAME  $</span>document_root<span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+<span class="gp">    include        fastcgi_params;</span>
+<span class="go">}
+</span></code></pre></div>    </div>
   </li>
   <li>
     <p>Update the <code class="highlighter-rouge">nginx.conf.sample</code> file with the following two lines before the include statement:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
-     fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">     fastcgi_param MAGE_RUN_TYPE $</span>MAGE_RUN_TYPE<span class="p">;</span>
+<span class="gp">     fastcgi_param MAGE_RUN_CODE $</span>MAGE_RUN_CODE<span class="p">;</span>
 </code></pre></div>    </div>
     <p>An example updated PHP entry point for the main application looks like:
-```</p>
+```terminal</p>
     <h1 id="php-entry-point-for-main-application">PHP entry point for main application</h1>
   </li>
 </ol>

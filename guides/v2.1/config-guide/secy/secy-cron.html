@@ -1802,28 +1802,28 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
   <li>
     <p>Add the following to your Magento <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="&#95;blank"><code class="highlighter-rouge">nginx.sample.conf</code></a> file:</p>
 
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Securing cron</span>
-location ~ cron<span class="se">\.</span>php<span class="nv">$ </span><span class="o">{</span>
-   auth_basic <span class="s2">"Cron Authentication"</span><span class="p">;</span>
-   auth_basic_user_file /etc/nginx/.htpasswd<span class="p">;</span>
-
-   try_files <span class="nv">$uri</span> <span class="o">=</span>404<span class="p">;</span>
-   fastcgi_pass   fastcgi_backend<span class="p">;</span>
-   fastcgi_buffers 1024 4k<span class="p">;</span>
-
-   fastcgi_read_timeout 600s<span class="p">;</span>
-   fastcgi_connect_timeout 600s<span class="p">;</span>
-
-   fastcgi_index  index.php<span class="p">;</span>
-   fastcgi_param  SCRIPT_FILENAME  <span class="nv">$document_root$fastcgi_script_name</span><span class="p">;</span>
-   include        fastcgi_params<span class="p">;</span>
-<span class="o">}</span>
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span>Securing cron
+<span class="gp">location ~ cron\.php$</span> <span class="o">{</span>
+<span class="gp">   auth_basic "Cron Authentication";</span>
+<span class="gp">   auth_basic_user_file /etc/nginx/.htpasswd;</span>
+<span class="go">
+</span><span class="gp">   try_files $</span>uri <span class="o">=</span>404<span class="p">;</span>
+<span class="gp">   fastcgi_pass   fastcgi_backend;</span>
+<span class="gp">   fastcgi_buffers 1024 4k;</span>
+<span class="go">
+</span><span class="gp">   fastcgi_read_timeout 600s;</span>
+<span class="gp">   fastcgi_connect_timeout 600s;</span>
+<span class="go">
+</span><span class="gp">   fastcgi_index  index.php;</span>
+<span class="gp">   fastcgi_param  SCRIPT_FILENAME  $</span>document_root<span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+<span class="gp">   include        fastcgi_params;</span>
+<span class="go">}
+</span></code></pre></div>    </div>
   </li>
   <li>
     <p>Restart nginx:</p>
 
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart nginx
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl restart nginx
 </code></pre></div>    </div>
   </li>
   <li>
@@ -1884,7 +1884,7 @@ location ~ cron<span class="se">\.</span>php<span class="nv">$ </span><span clas
   <li>
     <p>Verify that rows were added to the table:</p>
 
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT <span class="k">*</span> from cron_schedule<span class="p">;</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT <span class="k">*</span> from cron_schedule<span class="p">;</span>
 
 mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</span>
 +-------------+-----------------------------------------------+---------+----------+---------------------+---------------------+-------------+-------------+

@@ -1912,7 +1912,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Sample entry point script that modifies the bootstrap object:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
 <span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/app/bootstrap.php'</span><span class="p">;</span>
 <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
 <span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">PARAM_REQUIRE_MAINTENANCE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// default false
@@ -1920,7 +1920,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span><span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 <span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
 <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">'Magento\Framework\App\Http'</span><span class="p">);</span>
-<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span></code></pre></figure>
+<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+</code></pre></div></div>
 
 <h2 id="config-boot-exception">Default exception handling</h2>
 

@@ -1738,9 +1738,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-apache">Secure communication with Apache</a>.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
-</div>
+  <p class="bs-callout bs-callout-info">The reason the proxy is not secured in this example is it’s easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
 
   <p>See one of the following sections:</p>
 
@@ -1770,10 +1768,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <li>
       <p>Add the following at the bottom of the file:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost *:8080&gt;
-   ProxyPass "/" "http://localhost:9200/"
-   ProxyPassReverse "/" "http://localhost:9200/"
-&lt;/VirtualHost&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
+       ProxyPass "/" "http://localhost:9200/"
+       ProxyPassReverse "/" "http://localhost:9200/"
+    &lt;/VirtualHost&gt;
 </code></pre></div>      </div>
     </li>
     <li>
@@ -1785,7 +1783,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <li>
       <p>Verify the proxy works by entering the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>      </div>
 
       <p>For example, if your proxy uses port 8080:</p>
@@ -1824,10 +1822,10 @@ Connection: keep-alive
     <li>
       <p>Scroll to the bottom of the file and add the following lines:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost *:8080&gt;
-    ProxyPass http://localhost:9200/
-    ProxyPassReverse http://localhost:9200/
-&lt;/VirtualHost&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
+        ProxyPass http://localhost:9200/
+        ProxyPassReverse http://localhost:9200/
+    &lt;/VirtualHost&gt;
 </code></pre></div>      </div>
     </li>
     <li>
@@ -1841,7 +1839,7 @@ Connection: keep-alive
     <li>
       <p>Verify the proxy works by entering the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>      </div>
 
       <p>For example, if your proxy uses port 8080:</p>
@@ -1983,11 +1981,12 @@ Connection: keep-alive
 </div>
 
     <h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
-    <p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
+
+    <p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
 
     <ul>
-      <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a></li>
-      <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a></li>
+      <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html">Apache 2.2 authentication and authorization tutorial</a></li>
+      <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html">Apache 2.4 authentication and authorization tutorial</a></li>
     </ul>
 
     <p>See one of the following sections:</p>
@@ -2083,7 +2082,7 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
 
       <h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
 
-      <p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
+      <p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
 
       <p>This section discusses how to specify who can access the Apache server.</p>
 
@@ -2097,25 +2096,25 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
             </li>
             <li>
               <p>Apache 2.4: Edit <code class="highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></p>
-
-              <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Proxy *&gt;
-  Order deny,allow
-  Allow from all
-
- AuthType Basic
- AuthName "Elastic Server"
- AuthBasicProvider file
- AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
- Require valid-user
-
-# This allows OPTIONS-requests without authorization
- &lt;LimitExcept OPTIONS&gt;
-   Require valid-user
- &lt;/LimitExcept&gt;
- &lt;/Proxy&gt;
-</code></pre></div>              </div>
             </li>
           </ul>
+
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;Proxy *&gt;
+      Order deny,allow
+      Allow from all
+
+     AuthType Basic
+     AuthName "Elastic Server"
+     AuthBasicProvider file
+     AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
+     Require valid-user
+
+    # This allows OPTIONS-requests without authorization
+     &lt;LimitExcept OPTIONS&gt;
+       Require valid-user
+     &lt;/LimitExcept&gt;
+     &lt;/Proxy&gt;
+</code></pre></div>          </div>
         </li>
         <li>If you added the preceding to your secure virtual host, remove <code class="highlighter-rouge">Listen 8080</code> and the <code class="highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
         <li>Save your changes, exit the text editor, and restart Apache:</li>

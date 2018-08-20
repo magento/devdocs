@@ -1875,16 +1875,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The following example shows how to log database activity using the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/LoggerInterface.php" target="\_blank"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
+			<p>The following example shows how to log database activity using the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/LoggerInterface.php"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
 
 <ul>
-  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/Quiet.php" target="\_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
-  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/File.php" target="\_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
+  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/Quiet.php"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
+  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/File.php"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
 </ul>
 
-<div class="bs-callout bs-callout-tip">
-  <p>You can also use the Magento CLI to <a href="/guides/v2.2/config-guide/cli/logging.html#database-logging">enable and disable database logging</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">You can also use the Magento CLI to <a href="/guides/v2.2/config-guide/cli/logging.html#database-logging">enable and disable database logging</a>.</p>
 
 <p>To change the default configuration of <code class="highlighter-rouge">\Magento\Framework\DB\Logger\LoggerProxy</code>, edit your <code class="highlighter-rouge">app/etc/di.xml</code>.</p>
 

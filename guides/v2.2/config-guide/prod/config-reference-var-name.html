@@ -1932,8 +1932,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <ul>
       <li><a href="#deploy-system-vars-scopes">Step 1: Find the website or store view scope value</a></li>
-      <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html" target="_blank">Magento User Guide</a></li>
-      <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html" target="_blank">Scope quick reference</a></li>
+      <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html">Magento User Guide</a></li>
+      <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html">Scope quick reference</a></li>
     </ul>
   </li>
 </ul>
@@ -2187,7 +2187,7 @@ SELECT * FROM STORE_WEBSITE;
 
 <h2 id="how-to-use-environment-variables">How to use environment variables</h2>
 
-<p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php" target="\_blank"><code class="highlighter-rouge">$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code class="highlighter-rouge">index.php</code>.</p>
+<p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php"><code class="highlighter-rouge">$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code class="highlighter-rouge">index.php</code>.</p>
 
 <p>An example of setting two values follows:</p>
 
@@ -2197,19 +2197,17 @@ $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '123
 
 <p>A step-by-step example is shown in <a href="/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Set configuration values using environment variables</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <ul>
-    <li>To use values you set in the <code class="highlighter-rouge">$_ENV</code> array, you must set <code class="highlighter-rouge">variables_order = "EGPCS"</code> in your <code class="highlighter-rouge">php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order" target="\_blank">PHP documentation</a>.</li>
-    <li>For Magento Commerce Cloud, if you’re attempting to override Magento configuration settings using the <a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code>. For example:
+<ul class="bs-callout bs-callout-warning">
+  <li>To use values you set in the <code class="highlighter-rouge">$_ENV</code> array, you must set <code class="highlighter-rouge">variables_order = "EGPCS"</code> in your <code class="highlighter-rouge">php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order">PHP documentation</a>.</li>
+  <li>For Magento Commerce Cloud, if you’re attempting to override Magento configuration settings using the <a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code>. For example:
 <img src="/common/images/cloud_env_var_example.png" alt="Environment variable example" /></li>
-  </ul>
-</div>
+</ul>
 
 <h4 id="related-information">Related information</h4>
 
 <ul>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html" target="_blank">Magento User Guide discussion of scope</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html" target="_blank">Magento User Guide scope quick reference</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html">Magento User Guide discussion of scope</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html">Magento User Guide scope quick reference</a></li>
 </ul>
 
 			

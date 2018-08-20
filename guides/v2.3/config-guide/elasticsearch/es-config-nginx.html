@@ -1952,9 +1952,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>This section discusses how to configure nginx as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-nginx">Secure communication with nginx</a>.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure server block configuration.</p>
-</div>
+  <p class="bs-callout bs-callout-info">The reason the proxy is not secured in this example is it’s easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure server block configuration.</p>
 
   <p>See one of the following sections for more information:</p>
 
@@ -1996,24 +1994,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <li>
       <p>Verify the proxy works by entering the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>      </div>
 
       <p>For example, if your proxy uses port 8080:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> http://localhost:8080/_cluster/health
 </code></pre></div>      </div>
 
       <p>Messages similar to the following display to indicate success:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+      <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
-Content-Type: application/json; charset=UTF-8
-Content-Length: 389
+</span><span class="gp">Content-Type: application/json;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="go">Content-Length: 389
 Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
-</code></pre></div>      </div>
+</span></code></pre></div>      </div>
     </li>
     <li>
       <p>Continue with the next section.</p>
@@ -2142,16 +2140,16 @@ Connection: keep-alive
 
     <h2 id="es-ws-secure-nginx">Secure communication with nginx</h2>
 
-    <p>This section discusses how to set up <a href="http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html" target="_blank">HTTP Basic authentication</a> with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
+    <p>This section discusses how to set up <a href="http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html">HTTP Basic authentication</a> with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
 
-    <p>Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, <a href="https://www.nginx.com/resources/wiki/modules/auth_digest/" target="_blank">Digest authentication</a>, which isn’t recommended in production.</p>
+    <p>Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, <a href="https://www.nginx.com/resources/wiki/modules/auth_digest/">Digest authentication</a>, which isn’t recommended in production.</p>
 
     <p>Additional resources:</p>
 
     <ul>
-      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)</a></li>
-      <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication With Nginx (HowtoForge)</a></li>
-      <li><a href="https://gist.github.com/karmi/b0a9b4c111ed3023a52d" target="_blank">Example Nginx Configurations for Elasticsearch</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)</a></li>
+      <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx">Basic HTTP Authentication With Nginx (HowtoForge)</a></li>
+      <li><a href="https://gist.github.com/karmi/b0a9b4c111ed3023a52d">Example Nginx Configurations for Elasticsearch</a></li>
     </ul>
 
     <p>See the following sections for more information:</p>
@@ -2193,17 +2191,7 @@ Connection: keep-alive
 htpasswd -c /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 </code></pre></div>        </div>
 
-        <div class="bs-callout bs-callout-info" id="info">
-    <p>For security reasons, <code>&lt;filename&gt;</code> should be hidden; that is, it must start with a period. An example follows. </p>
-</div>
-
-        <p>Example:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /etc/nginx/passwd
-htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
-</code></pre></div>        </div>
-
-        <p>Follow the prompts on your screen to create the user’s password.</p>
+        <p class="bs-callout bs-callout-warning">For security reasons, <code class="highlighter-rouge">&lt;filename&gt;</code> should be hidden; that is, it must start with a period.</p>
       </li>
       <li>
         <p><em>(Optional).</em> To add another user to your password file, enter the same command without the <code class="highlighter-rouge">-c</code> (create) option:</p>
@@ -2220,9 +2208,7 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 
     <p>This section discusses how to specify who can access the nginx server.</p>
 
-    <div class="bs-callout bs-callout-warning">
-    <p>The example shown is for an <em>unsecure</em> proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.</p>
-</div>
+    <p class="bs-callout bs-callout-warning">The example shown is for an <em>unsecure</em> proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.</p>
 
     <p>Use a text editor to modify either <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> (unsecure) or your secure server block with the following contents:</p>
 
@@ -2254,9 +2240,7 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 }
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
-	<p>The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.</p>
-</div>
+    <p class="bs-callout bs-callout-info">The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.</p>
 
     <h3 id="es-ws-secure-nginx-context">Step 4: Set up a restricted context for Elasticsearch</h3>
 

@@ -1904,19 +1904,17 @@ This was done to facilitate <a href="/guides/v2.3/config-guide/deployment/">pipe
 
 <p>Together, <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento 2 deployment configuration replaces <code class="highlighter-rouge">local.xml</code> in Magento 1.x.</p>
-</div>
+<p class="bs-callout bs-callout-info">The Magento 2 deployment configuration replaces <code class="highlighter-rouge">local.xml</code> in Magento 1.x.</p>
 
 <p>Unlike other <a href="/guides/v2.3/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are merged with each other, however.)</p>
 
 <h2 id="config-php-contents">Details about the deployment configuration</h2>
 <p><code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
+ files that return a <a href="http://www.w3schools.com/php/php_arrays.asp">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
 <p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/DeploymentConfig.php">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
 <p>On the next hierarchy level, items in each segment are ordered according to the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  sequence definition, which is obtained by merging all modules’ configuration files, with the   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
@@ -1935,8 +1933,8 @@ This was done to facilitate <a href="/guides/v2.3/config-guide/deployment/">pipe
 <p>Examples:</p>
 
 <ul>
-  <li>Uninstall components: <a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
-  <li>Enable or disable components: <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
+  <li>Uninstall components: <a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html"><code class="highlighter-rouge">bin/magento setup:uninstall</code></a></li>
+  <li>Enable or disable components: <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="highlighter-rouge">bin/magento module:disable</code></a>, <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="highlighter-rouge">bin/magento module:enable</code></a>.</li>
   <li><a href="/guides/v2.3/comp-mgr/module-man/compman-start.html">Component Manager</a></li>
   <li><a href="/guides/v2.3/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
 </ul>

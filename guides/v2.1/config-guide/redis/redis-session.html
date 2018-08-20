@@ -1671,10 +1671,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Before you continue, <a href="/guides/v2.1/config-guide/redis/config-redis.html#config-redis-install">install Redis</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">You can use Redis for session storage in Magento versions 2.0.6 and later only.</p>
 
 <h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
 
@@ -1739,7 +1736,7 @@ array (
 <tr>
 	<td>persistent_identifier</td>
 	<td><p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
-		<p><a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p></td>
+		<p><a href="https://github.com/nicolasff/phpredis/issues/70">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p></td>
 	<td>empty</td>
 </tr>
 <tr>
@@ -1750,8 +1747,8 @@ array (
 </tr>
 <tr>
 	<td>compression_threshold</td>
-	<td><p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features" target="_blank"><code>suhosin.session.encrypt = On</code></a>).</p>
-	<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18" target="_blank">Known issue with strings of more than 64KB</a>.</p></td>
+	<td><p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features"><code>suhosin.session.encrypt = On</code></a>).</p>
+	<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18">Known issue with strings of more than 64KB</a>.</p></td>
 		<td>2048</td>
 </tr>
 <tr>

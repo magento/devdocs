@@ -1885,7 +1885,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
 
-<p>To use the <a href="https://github.com/magento/magento2/blob/2.3-develop/setup/performance-toolkit" target="\_blank">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
+<p>To use the <a href="https://github.com/magento/magento2/blob/2.3-develop/setup/performance-toolkit">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
 
 <p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
 
@@ -2077,9 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="config-cli-perf-run">Run the data generator</h3>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
 
 <p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
 

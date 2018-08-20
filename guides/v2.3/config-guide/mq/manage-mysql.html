@@ -1893,19 +1893,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><em>/app/code/Magento/MessageQueue/etc/crontab.xml</em></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"consumers_runner"</span> <span class="na">instance=</span><span class="s">"Magento\MessageQueue\Model\Cron\ConsumersRunner"</span> <span class="na">method=</span><span class="s">"run"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
 <span class="nt">&lt;/job&gt;</span>
-...</code></pre></figure>
+...
+</code></pre></div></div>
 
-<div class="bs-callout bs-callout-tip" id="info">
-  <p>How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code class="highlighter-rouge">cron</code> schedules according to your business needs.</p>
-
-  <p>It can be configured in Admin Panel <strong>Stores &gt; Configuration &gt; Advanced &gt; System &gt; Cron configuration options for group: consumers</strong></p>
-
-  <p>See <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code class="highlighter-rouge">cron</code> with Magento.</p>
-</div>
+<p class="bs-callout bs-callout-info">How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code class="highlighter-rouge">cron</code> schedules according to your business needs.<br /><br />It can be configured in Admin Panel <strong>Stores &gt; Configuration &gt; Advanced &gt; System &gt; Cron configuration options for group: consumers</strong><br /><br />See <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code class="highlighter-rouge">cron</code> with Magento.</p>
 
 <p>You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the command line to restart the processes as needed.</p>
 

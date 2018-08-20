@@ -2074,9 +2074,7 @@ SELECT * FROM store_website;
     </tbody>
   </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>If you use the <code class="highlighter-rouge">--lock</code>, <code class="highlighter-rouge">--lock-env</code>, or <code class="highlighter-rouge">--lock-config</code> option to set or change a value, you must use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code class="highlighter-rouge">bin/magento app:config:import</code> command</a> to import the setting before you access the Admin or storefront.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">If you use the <code class="highlighter-rouge">--lock</code>, <code class="highlighter-rouge">--lock-env</code>, or <code class="highlighter-rouge">--lock-config</code> option to set or change a value, you must use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html"><code class="highlighter-rouge">bin/magento app:config:import</code> command</a> to import the setting before you access the Admin or storefront.</p>
 
   <p>If you enter an incorrect configuration path, this command returns an error:</p>
 
@@ -2120,9 +2118,7 @@ SELECT * FROM store_website;
 
   <p>You can use the <code class="highlighter-rouge">--lock-env</code> or <code class="highlighter-rouge">--lock</code> parameter to set configuration values if Magento is not installed. However, you can set values only for the default scope.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The <code class="highlighter-rouge">env.php</code> file is system specific. You should not transfer it to another system. You can use it to overwrite configuration values from the database. For example, you can take a database dump from another system and overwrite the <code class="highlighter-rouge">base_url</code> and other values so you don’t have to modify the database.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">env.php</code> file is system specific. You should not transfer it to another system. You can use it to overwrite configuration values from the database. For example, you can take a database dump from another system and overwrite the <code class="highlighter-rouge">base_url</code> and other values so you don’t have to modify the database.</p>
 
   <p>If you use the <code class="highlighter-rouge">--lock-config</code> option as follows, the configuration value is saved in <code class="highlighter-rouge">&lt;Magento base dir&gt;/app/etc/config.php</code>. The field for editing this value in Admin page is disabled.</p>
 
@@ -2131,9 +2127,7 @@ SELECT * FROM store_website;
 
   <p>You can use <code class="highlighter-rouge">--lock-config</code> to set configuration values if Magento is not installed. However, you can set values only for the default scope.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>You can transfer <code class="highlighter-rouge">config.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code class="highlighter-rouge">config.php</code> means you don’t have to set the same configuration values again.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">You can transfer <code class="highlighter-rouge">config.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code class="highlighter-rouge">config.php</code> means you don’t have to set the same configuration values again.</p>
 
   <h2 id="config-cli-config-show">Display the value of configuration settings</h2>
 
@@ -2150,9 +2144,7 @@ SELECT * FROM store_website;
     <li><code class="highlighter-rouge">path</code> is the configuration path in format <code class="highlighter-rouge">first_part/second_part/third_part/etc</code> <em>(required)</em>.</li>
   </ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The <code class="highlighter-rouge">bin/magento config:show</code> command displays the values of any <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">encrypted values</a> as a series of asterisks: <code class="highlighter-rouge">******</code>.</p>
-  </div>
+  <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">bin/magento config:show</code> command displays the values of any <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">encrypted values</a> as a series of asterisks: <code class="highlighter-rouge">******</code>.</p>
 
   <h3 id="examples">Examples</h3>
 

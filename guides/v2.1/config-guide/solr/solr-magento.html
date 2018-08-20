@@ -1669,12 +1669,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div class="bs-callout bs-callout-warning">
-  <p>Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
-In a future release, Solr compatibility will be removed.</p>
-
-  <p>If possible, use <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elastic Search</a> as an alternative catalog search engine.</p>
-</div>
+			<p class="bs-callout bs-callout-warning">Solr is deprecated in Magento 2.1 and will not be supported in 2.2. In a future release, Solr compatibility will be removed. If possible, use <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elastic Search</a> as an alternative catalog search engine.</p>
 
 <p>The following topics discuss how to configure Solr to work with Magento Commerce:</p>
 
@@ -1687,9 +1682,7 @@ In a future release, Solr compatibility will be removed.</p>
 
 <p>Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you’ll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
-</div>
+<p class="bs-callout bs-callout-info">The example Solr configuration is <em>not</em> intended to be used in a production site. It’s for testing and development only. It’s simple to use which makes it a great way for you to learn more about Solr.</p>
 
 <ol>
   <li>
@@ -1709,9 +1702,7 @@ cd magento2
 cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
- <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento Commerce install dir&gt;/vendor/magento/module-solr/conf/* .</code></p>
-</div>
+    <p class="bs-callout bs-callout-info">If you’re prompted to overwrite files, try the command <code class="highlighter-rouge">\cp -R &lt;your Magento Commerce install dir&gt;/vendor/magento/module-solr/conf/* .</code>.</p>
   </li>
   <li>
     <p>After copying files, open the <code class="highlighter-rouge">&lt;your Solr install dir&gt;/example/solr/magento2/core.properties</code> file in a text editor and change:</p>
@@ -1724,7 +1715,7 @@ cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name=magento2
 </code></pre></div>    </div>
 
-    <p><a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&amp;redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank">More information about core.properties</a></p>
+    <p><a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&amp;redirect=Core+Discovery+%284.3+and+beyond%29">More information about core.properties</a></p>
   </li>
   <li>
     <p>Save your changes to <code class="highlighter-rouge">core.properties</code> and exit the text editor.</p>
@@ -1753,9 +1744,7 @@ cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 java -jar start.jar
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-warning">
-        <p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="/guides/v2.1/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
-</div>
+    <p class="bs-callout bs-callout-warning">This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="/guides/v2.1/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
   </li>
 </ol>
 
@@ -1797,7 +1786,7 @@ java -jar start.jar
 </tr>
 <tr>
 	<td>Solr Server Username</td>
-	<td><em>Optional.</em> Enter a username for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
+	<td><em>Optional.</em> Enter a username for <a href="http://wiki.apache.org/solr/SolrSecurity">Solr authentication</a>, if desired.</td>
 </tr>
 <tr>
 	<td>Solr Server Password</td>
@@ -1840,8 +1829,8 @@ java -jar start.jar
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
-	<li>Verify that [<code>allow_url_fopen = On</code>](http://php.net/manual/en/filesystem.configuration.php){:target="_blank"} is present in your server's <code>php.ini</code>.<br />
-	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
+	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
+	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs">create a <code>phpinfo.php</code> page</a> to locate it.</li>
 	<li>Make sure that <a href="/guides/v2.1/config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
@@ -1855,7 +1844,7 @@ java -jar start.jar
 </tbody>
 </table>
 
-<p>Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.</p>
+<p>Only after the test connection succeeds, click <strong>Save Config&lt;</strong> and continue with the next section.</p>
 
 <h2 id="solr-reindex">Reindexing catalog search and refreshing the full page cache</h2>
 
@@ -1870,7 +1859,7 @@ java -jar start.jar
   <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
   <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
     The following figure shows an example.<br />
-    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
+    <img src="/common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
 </ol>
 
 <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
@@ -1893,9 +1882,7 @@ java -jar start.jar
   <li>Wait while the indexers are reindexed.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
-</div>
+<p class="bs-callout bs-callout-info">Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
 
 <h2 id="solr-verify">Verify Solr is working</h2>
 
@@ -1904,7 +1891,7 @@ java -jar start.jar
 
 <p>The following figure shows an example of a storefront search.</p>
 
-<p><img src="/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront" /></p>
+<p><img src="/common/images/solr_verify.png" alt="Verify Solr works by searching the storefront" /></p>
 
 <p>The following excerpt from the Solr command window shows the same search:</p>
 
