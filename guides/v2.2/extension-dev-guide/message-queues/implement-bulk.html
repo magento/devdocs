@@ -1652,7 +1652,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="k">try</span> <span class="p">{</span>
             <span class="c1">//add here your own logic for async operations
 </span>        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Zend_Db_Adapter_Exception</span>  <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//here sample how to process exceptions if they occured
+            <span class="c1">//here sample how to process exceptions if they occurred
 </span>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
             <span class="c1">//you can add here your own type of exception when operation can be retried
 </span>            <span class="k">if</span> <span class="p">(</span>
