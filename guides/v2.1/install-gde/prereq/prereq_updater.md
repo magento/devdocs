@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: Set up the updater
-github_link: install-gde/prereq/prereq_updater.md
 functional_areas:
   - Install
   - System
