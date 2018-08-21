@@ -11,10 +11,6 @@ The Range component implements the range for filtering rows in a grid. Visually,
 
 ## Configuration options
 
-Extends all [Multiline]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html) configuration.
-
-Range-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -36,7 +32,8 @@ Range-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`Multiline`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)

@@ -13,10 +13,6 @@ The ActionDelete component provides a user interface for deleting records of the
 
 ## ActionDelete options
 
-Extends all `abstract` configuration.
-
-ActionDelete-specific configuration:
-
 <table>
   <tr>
     <th>

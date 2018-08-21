@@ -11,10 +11,6 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
 
 ## Configuration options
 
-Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-DynamicRows-specific  configuration:
-
 <table>
   <tr>
     <th>

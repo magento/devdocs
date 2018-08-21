@@ -11,10 +11,6 @@ The Checkboxset component implements a group of `<input type="checkbox">` or `<i
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Checkboxset-specific configuration:
-
 <table>
   <tr>
     <th>Option </th>

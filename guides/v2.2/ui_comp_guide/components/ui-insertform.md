@@ -11,10 +11,6 @@ The InsertForm component inserts the [Form component]({{ page.baseurl }}/ui_comp
 
 ## Сonfiguration options
 
-Extends all [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-InsertForm-specific options:
-
 <table>
   <tr>
     <th>

@@ -11,10 +11,6 @@ The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/c
 
 ## Configuration options
 
-Extends all [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-InsertListing-specific configuration:
-
 <table>
   <tr>
     <th>

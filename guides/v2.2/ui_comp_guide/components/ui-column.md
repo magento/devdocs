@@ -11,10 +11,6 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 
 ## Configuration options
 
-Extends all [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-Column-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -143,7 +139,8 @@ Column-specific configuration:
 </table>
 
 
-## API reference
+## Source files
 
-Source files:
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
 - [`Magento/Ui/view/base/web/js/grid/columns/column.js`](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)

@@ -11,10 +11,6 @@ The Paging component implements pagination in grids implemented using [Listing](
 
 ## Configuration options
 
-Extends all [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-Paging-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -51,7 +47,8 @@ Paging-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)

@@ -11,10 +11,6 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ## Configuration options
 
-Extends all [UiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-ExportButton-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -88,7 +84,7 @@ To enable the ExportButton сomponent, add the `exportButton` element with a `se
 {% endhighlight %}
 
 
-The following is an example of configuring the component using the`sales_order_grid` `selectProvider` item,`<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`. 
+The following is an example of configuring the component using the`sales_order_grid` `selectProvider` item, `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`. 
 
 {% highlight XML %}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -114,8 +110,9 @@ To add new export format:
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 
-## API reference
+## Source files
 
-Source files:
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
 - [`app/code/Magento/Ui/view/base/web/js/grid/export.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/export.js)
 

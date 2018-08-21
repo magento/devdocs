@@ -11,10 +11,6 @@ The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-WYSIWYG-specific options:
-
 <table>
   <tr>
     <th>Option </th>

@@ -11,10 +11,6 @@ The Toolbar component implements a container for the listing-related elements li
 
 ## Configuration options
 
-Extends all [UiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Toolbar-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -48,7 +44,8 @@ Toolbar-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)

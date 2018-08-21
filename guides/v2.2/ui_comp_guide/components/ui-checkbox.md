@@ -11,8 +11,6 @@ The Checkbox component implements a form field that is an {% glossarytooltip a2a
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
 <table>
   <tr>
     <th>Option </th>

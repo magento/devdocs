@@ -13,7 +13,7 @@ See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-
 
 ## Dependencies
 
-Dependency on the following components:
+The MassActions component has dependencies on the following components:
 
 * Collapsible: `app\code\Magento\Ui\view\base\web\js\lib\collapsible.js`
 * Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
@@ -21,7 +21,6 @@ Dependency on the following components:
 
 ## Configuration options
 
-Extends <code>Collapsible</code> configuration with the following options:
 <table>
   <tr>
     <th>Option</th>
@@ -171,9 +170,10 @@ Redefine link to constructor.
 </massaction>
 {% endhighlight %}
 
-## API reference
+## Source files
 
-Source files:
+Extends `Collapsible`:
+
 - [app\code\Magento\Ui\view\base\web\js\grid\massactions.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
 - [app\code\Magento\Ui\view\base\web\templates\grid\actions.html](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 

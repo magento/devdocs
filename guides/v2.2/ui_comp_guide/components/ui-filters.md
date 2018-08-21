@@ -13,10 +13,6 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
 
 ## Configuration options
 
-Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Filters-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -67,8 +63,9 @@ To add a new customer attribute to the customer grid and make it filterable, you
 3. Сreate etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
 4. Set is_used_in_grid to true for the attribute
 
-## API reference
+## Source files
 
-Source files:
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
 

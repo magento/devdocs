@@ -11,8 +11,6 @@ The Text component displays text data in the components like [Form]({{ page.base
 
 ## Configuration options
 
-Extends all [uiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
 <table>
   <tr>
     <th>Option </th>

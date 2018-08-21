@@ -11,10 +11,6 @@ The SelectColumn component receives an array of values and displays the column w
 
 ## Configuration options
 
-Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
-
-SelectColumn-specific configuration:
-
 <table>
   <tr>
     <th>
@@ -96,7 +92,8 @@ SelectColumn-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)

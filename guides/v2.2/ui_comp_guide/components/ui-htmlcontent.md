@@ -14,10 +14,6 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 ## Configuration options
 
-Extends all `uiComponent` configuration.
-
-HtmlContent-specific options:
-
 <table>
   <tr>
     <th>Option </th>
@@ -88,8 +84,9 @@ HtmlContent-specific options:
 </form>
 {%endhighlight%}
 
-## API reference
+## Source files
 
-Source files:
+Extends `uiComponent`:
+
 - [app/code/Magento/Ui/view/base/web/js/form/components/html.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
 - [app/code/Magento/Ui/view/base/web/templates/content/content.html](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/content/content.html)

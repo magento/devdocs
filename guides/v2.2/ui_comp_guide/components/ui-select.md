@@ -11,10 +11,6 @@ The Select component provides the interface for a list or a data set. With this 
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Select-specific options:
-
 <table>
   <tr>
     <th>

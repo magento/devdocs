@@ -11,10 +11,6 @@ The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_com
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Radioset-specific options:
-
 <table>
   <tr>
     <th>
