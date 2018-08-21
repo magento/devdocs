@@ -13,10 +13,6 @@ See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library
 
 ## Configuration options
 
-Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `tab` configuration.
-
-Tab-specific options:
-
 <table>
   <tr>
     <th>Option </th>

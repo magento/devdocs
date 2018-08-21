@@ -11,10 +11,6 @@ The Textarea component implements the `<textarea>` form field.
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Textarea-specific options:
-
 <table>
   <tr>
     <th>

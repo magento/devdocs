@@ -13,10 +13,6 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
 
 ## Configuration options
 
-Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
-
-MultiselectColumn-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -149,9 +145,10 @@ Instance Replacement: One Instance of a Component
 </column>
 {% endhighlight %}
 
-## API reference
+## Source files
 
-Source files:
+Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
+
 - [app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
 - [app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/grid/cells/multiselect.html) - defines each field in the grid; provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
 - [app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/grid/columns/multiselect.html) - defines the grid header with dropdown lists and Select All, Deselect All, and other options.

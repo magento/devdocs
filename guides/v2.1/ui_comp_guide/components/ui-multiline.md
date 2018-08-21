@@ -11,10 +11,6 @@ The Multiline component is a collection of form elements that displays multiple 
 
 ## Configuration options
 
-Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Multiline-specific options:
-
 <table>
   <tr>
     <th>

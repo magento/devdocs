@@ -28,6 +28,6 @@ The DateColumn component implements a table column that displays dates.
 
 ## Source files
 
-Extends [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
+Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
 - [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)

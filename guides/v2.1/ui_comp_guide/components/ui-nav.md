@@ -13,10 +13,6 @@ See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library
 
 ## Configuration options
 
-Extends all `uiComponent` and `collapsible` configuration.
-
-Nav-specific options:
-
 <table>
   <tr>
     <th>Option </th>

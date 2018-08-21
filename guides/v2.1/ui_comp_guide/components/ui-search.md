@@ -11,10 +11,6 @@ The Search component allows searching through the grid records. It is a generic 
 
 ## Configuration options
 
-Extends all [UiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-Search-specific configuration:
-
 <table>
   <tr>
     <th>
@@ -93,7 +89,8 @@ Search-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/search/search.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/search/search.js)

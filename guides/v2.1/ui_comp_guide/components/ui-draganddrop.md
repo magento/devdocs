@@ -46,5 +46,6 @@ The DragAndDrop component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc
 
 ## Source files
 
-Extends [UiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
 - [`app/code/Magento/Ui/view/base/web/js/grid/dnd.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/dnd.js)

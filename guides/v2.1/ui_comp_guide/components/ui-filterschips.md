@@ -30,5 +30,6 @@ The FiltersChips component provides UI controls that allows users to remove the 
 
 ## Source files
 
-Extends [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)

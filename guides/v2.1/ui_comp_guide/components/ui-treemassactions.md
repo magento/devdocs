@@ -11,10 +11,6 @@ The TreeMassActions component is a decorator for [MassActions]({{ page.baseurl }
 
 ## Configuration options
 
-Extends all [MassActions]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html) configuration.
-
-TreeMassActions-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -70,7 +66,8 @@ TreeMassActions-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
- Source files:
+Extends [`MassActions`]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html):
+
  - [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)

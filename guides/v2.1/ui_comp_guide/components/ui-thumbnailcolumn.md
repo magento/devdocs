@@ -11,10 +11,6 @@ The ThumbnailColumn component implements a column containing images associated w
 
 ## Configuration options
 
-Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
-
-ThumbnailColumn-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -36,7 +32,8 @@ ThumbnailColumn-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
+
 - [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
