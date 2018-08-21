@@ -11,10 +11,6 @@ The Bookmarks component stores active and changed state of a grid implemented us
 
 ## Configuration options
 
-Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Bookmarks-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -42,7 +38,8 @@ Bookmarks-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
 - [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)

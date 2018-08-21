@@ -11,10 +11,6 @@ The ActionsColumns component implements a table's column responsible for display
 
 ## Configuration options
 
-Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
-
-ActionsColumn-specific configuration:
-
 <table>
   <tr>
     <th>Option</th>
@@ -95,7 +91,8 @@ ActionsColumn-specific configuration:
   </tr>
 </table>
 
-## API reference
+## Source files
 
-Source files:
+Extends [Column](/guides/v2.2/ui_comp_guide/components/ui-column.html):
+
 - [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
