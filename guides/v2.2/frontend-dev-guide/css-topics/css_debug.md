@@ -19,9 +19,8 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
 
-{%highlight js%}
+```javascript
 module.exports = {
-    ...
     %theme%: {
         area: 'frontend',
         name: '%Vendor%/%theme%',
@@ -33,8 +32,7 @@ module.exports = {
         dsl: 'less'
     ...
     },
-
-{%endhighlight%}
+```
 
 Where:
 

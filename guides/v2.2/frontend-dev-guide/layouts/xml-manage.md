@@ -97,11 +97,11 @@ A sample follows:
 
 This adds an IE conditional comment in the generated HTML, like in the following example:
 
-{%highlight html%}
+```html
 <!--[if IE 9]>
 <link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
 <![endif]-->
-{%endhighlight html%}
+```
 
 In this example, `orange` is a custom theme created by the OrangeCo vendor.
 
@@ -164,6 +164,7 @@ Use the following examples to include in your own layout themes.
 	<!-- This will create a tag like '<meta name="my_custom_type" content="my_custom_value"/>' -->
         <meta name="my_custom_type" content="my_custom_value"/>
    </head>
+</page>   
 ```
 
 ## Create a container {#create_cont}
@@ -233,7 +234,7 @@ Both approaches are demonstrated in the following examples of changing the templ
 
 ```xml
  <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
-{%endhighlight%}
+```
 
 **Example 2:** 
 
@@ -243,7 +244,7 @@ Both approaches are demonstrated in the following examples of changing the templ
             <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
         </arguments>
  </referenceBlock>
-{%endhighlight%}
+```
 
 In both example, the template is specified according to the following:
 
@@ -264,19 +265,16 @@ Example: change the value of the existing block argument and add a new argument.
 Initial block declaration:
 
 ```xml
-...
 <block class="Namespace_Module_Block_Type" name="block.example">
     <arguments>
         <argument name="label" xsi:type="string">Block Label</argument>
     </arguments>
 </block>
-...
 ```
 
 Extending layout:
 
 ```xml
-...
 <referenceBlock name="block.example">
     <arguments>
         <!-- Modified block argument -->
@@ -285,7 +283,6 @@ Extending layout:
         <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
     </arguments>
 </referenceBlock> 
-...
 ```
 
 ## Use block object methods to set block properties {#layout_markup_block-properties}
@@ -300,12 +297,12 @@ Example 1: Set a CSS class and add an attribute for the product page using `<arg
 Extending layout:
 
 ```xml
-	<referenceBlock name="page.main.title">
-		<arguments>
-		    <argument name="css_class" xsi:type="string">product</argument>
-		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
-		</arguments>
-	</referenceBlock>
+<referenceBlock name="page.main.title">
+    <arguments>
+        <argument name="css_class" xsi:type="string">product</argument>
+        <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+    </arguments>
+</referenceBlock>
 ```
 
 Example 2: Set a page title using `<action>`. 
@@ -317,13 +314,11 @@ Do not use `<action>` if the method implementation allows calling it using `<arg
 Extending layout:
 
 ```xml
-	...
-	<referenceBlock name="page.main.title">
-	    <action method="setPageTitle">
-	        <argument translate="true" name="title" xsi:type="string">Catalog Advanced Search</argument>
-	    </action>
-	</referenceBlock>
-	...
+<referenceBlock name="page.main.title">
+    <action method="setPageTitle">
+        <argument translate="true" name="title" xsi:type="string">Catalog Advanced Search</argument>
+    </action>
+</referenceBlock>
 ```
 
 ## Rearrange elements {#layout_markup_rearrange}
@@ -407,8 +402,8 @@ To replace an element, [remove it] and add a new one.
 *	[Extend a layout]
 
 
-[page configuration]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
-[remove it]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem
-[Layout instructions]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/layouts/xml-instructions.html
-[Extend a layout]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/layouts/layout-extend.html
-[Locate templates, layouts, and styles]: %7B%7B%20page.baseurl%20%7D%7D/frontend-dev-guide/themes/debug-theme.html
+[page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
+[remove it]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem
+[Layout instructions]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html
+[Extend a layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
+[Locate templates, layouts, and styles]: {{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html
