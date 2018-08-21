@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 14_Elastic
 title: Configure Elasticsearch stopwords
-menu_title: Configure Elasticsearch stopwords
-menu_order: 10
-menu_node:
 ee_only: True
 functional_areas:
   - Configuration
@@ -12,12 +8,6 @@ functional_areas:
   - System
   - Setup
 ---
-
-#### Contents
-
-*	[What are stopwords?](#stopword-overview)
-*	[Configure stopwords](#config-stopwords)
-*	[Change the stopword directory](#config-stopword-dir)
 
 ## What are stopwords? {#stopword-overview}
 
@@ -29,10 +19,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html){:target="_blank"}
-*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html){:target="_blank"}
-*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html){:target="_blank"}
-*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html){:target="_blank"}
+*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html)
+*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html)
+*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html)
+*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html)
 
 ## Configure stopwords {#config-stopwords}
 
@@ -114,13 +104,12 @@ To change the directory:
 
 2.	Change the value of `fileDir` to the desired directory:
 
-{% highlight xml %}
-
-<type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
-    <arguments>
-        <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
-    </arguments>
-</type>
-{% endhighlight %}
+    ```xml
+    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+        <arguments>
+            <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
+        </arguments>
+    </type>
+    ```
 
 Save your changes to `di.xml` and exit the text editor.

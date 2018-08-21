@@ -22,13 +22,15 @@ This flexible solution enables one Magento codebase and {% glossarytooltip 18b93
 
 A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.
 
+You configure the websites, stores, and store views in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in virtual hosts to start the Magento application using these websites or store views.
+
 Consider the following terms:
 
 -   **Website**—is the top-level container for sites, shipping methods, payment methods, and more. To create completely separate sites that do not share cart, shipping methods, or other you must create separate websites.
 
     Website customer accounts can be shared between multiple websites within a single Magento instance. A website contains at least one store. Catalog prices should be managed at the website level.
 
--   **Store**—is contained by a website. In turn, a store contains at least one *store view*. 
+-   **Store**—is contained by a website. In turn, a store contains at least one *store view*.
 
     Multiple stores can share cart, user sessions, payment gateways, and more, but they have separate catalog structures and Catalog price.
 

@@ -1,20 +1,17 @@
 ---
 group: mftf
 title: Codeception commands
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/commands/codeception.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+ {:.bs-callout .bs-callout-warning}
 We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
 All the Codeception commands you need are wrapped using Robo.
-</div>
 
 See the [list of Robo commands](robo.html). If you'd like to run the Codeception tests directly without using Robo, run:
 
