@@ -13,11 +13,11 @@ Before preparing your project and importing code, push all pending changes from 
 The import preparation steps include the following:
 
 -  [Prepare and add required files](#required-files)
--  [Add Authentication Keys to `auth.json`.](#auth-json)
+-  [Add Authentication Keys to `auth.json`](#auth-json)
 -  [Modify your existing `composer.json`](#composer-json)
--  [Transfer media files to Cloud.](#media)
+-  [Transfer media files to Cloud](#media)
 -  [Add your {{site.data.var.ee}} authentication credentials](#encryption-key)
--  [Migrate your {{site.data.var.ee}} data.](#migrate-db)
+-  [Migrate your {{site.data.var.ee}} data](#migrate-db)
 
 ## Prepare and add required files {#required-files}
 
