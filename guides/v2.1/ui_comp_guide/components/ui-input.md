@@ -11,10 +11,6 @@ The Input component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Input-specific options:
-
 <table>
   <tr>
     <th>Option </th>

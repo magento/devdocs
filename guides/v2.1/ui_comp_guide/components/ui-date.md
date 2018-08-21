@@ -12,8 +12,6 @@ The Date component implements a custom date input field. It uses a date picker i
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
 <table>
   <tr>
     <th>Option </th>

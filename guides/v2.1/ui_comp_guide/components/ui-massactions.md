@@ -21,7 +21,6 @@ Dependency on the following components:
 
 ## Configuration options
 
-Extends <code>Collapsible</code> configuration with the following options:
 <table>
   <tr>
     <th>Option</th>
@@ -171,9 +170,9 @@ Redefine link to constructor.
 </massaction>
 {% endhighlight %}
 
-## API reference
+## Source files
 
-Source files: 
+Extends `Collapsible`:
 - [app\code\Magento\Ui\view\base\web\js\grid\massactions.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
 - [app\code\Magento\Ui\view\base\web\templates\grid\actions.html](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 

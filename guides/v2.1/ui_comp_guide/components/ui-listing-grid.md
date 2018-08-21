@@ -74,7 +74,6 @@ The listing component requires the data source to be properly configured and ass
 </listing>    
 {% endhighlight %}    
 
-## API reference
+## Source files
 
-Source files:
 - [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)

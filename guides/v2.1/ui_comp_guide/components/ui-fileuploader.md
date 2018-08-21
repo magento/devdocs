@@ -11,10 +11,6 @@ The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Fileuploader-specific configuration:
-
 <table>
   <tbody>
     <tr>
@@ -213,9 +209,9 @@ Here is an example of how File Uploader component integrates with [Form]({{ site
 </form>
 {% endhighlight %}
 
-## API reference
+## Source files
 
-Source files:
+Extends `abstract`:
 - [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
 - [`jquery/fileUploader/jquery.fileupload-fp`](https://github.com/magento/magento2ce/blob/2.1/lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
 - [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)

@@ -14,10 +14,6 @@ Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#ge
 
 ## Configuration options
 
-Form configuration extends the [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Form-specific configuration:
-
 <table>
   <tbody>
     <tr>
@@ -411,7 +407,7 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 </form>
 {% endhighlight %}
 
-## API reference
+## Source files
 
-Source files:
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 - [app/code/Magento/Ui/view/base/web/js/form/form.js](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/form.js)

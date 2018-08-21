@@ -11,10 +11,6 @@ The Columns component is a collection of columns. It renders the `<table>` eleme
 
 ## Configuration options
 
-Extends all UiCollection options.
-
-Columns-specific options:
-
 <table>
   <tr>
     <th>

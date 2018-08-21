@@ -11,10 +11,6 @@ The Fieldset component implements a container for visually-grouped form elements
 
 ## Configuration options
 
-Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `collapsible` configuration.
-
-Fieldset-specific options:
-
 <table>
   <tr>
     <th>Option</th>

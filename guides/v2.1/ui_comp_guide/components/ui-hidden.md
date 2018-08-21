@@ -11,10 +11,6 @@ The Hidden component is a form element that implements the {% glossarytooltip a2
 
 ## Configuration options
 
-Extends all `abstract` configuration.
-
-Hidden-specific configuration:
-
 <table>
   <tr>
     <th>Option </th>
