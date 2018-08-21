@@ -7,15 +7,13 @@ functional_areas:
   - Setup
 ---
 
-The Magento 2 Updater uses Composer to manage the Magento packages.
-
-{:.bs-callout .bs-callout-info}
-This topic is for contributing developers *only*; that is, anyone who clones the Magento 2 GitHub repository so they can contribute to the Magento 2 codebase.
-If you did not clone the Magento repository, you should skip this topic.
+The Magento 2 Updater enables you to use the Web Setup Wizard to manage the Magento system components.
+The updater uses the cron jobs `update/cron.php` and `bin/magento setup:cron:run`.
+Learn more about the cron setup in [Configure the Magento application].
 
 ## Clone the updater
 
-Clone the [Magento 2 updater](https://github.com/magento/magento2-updater) to `<your Magento install dir>/update`.
+Clone the [Magento 2 updater] to `<your Magento install dir>/update`.
 
 Example:
 
@@ -29,7 +27,7 @@ git clone git@github.com:magento/magento2-updater.git update
 ## Install the updater
 
 The Magento 2 updater contains the `composer.json` with dependencies that it requires to process.
-Install tthe dependencies using Composer:
+Install the dependencies using Composer:
 
 ```bash
 cd update
@@ -40,8 +38,10 @@ composer install
     
 ## Next step
 
-* [Installation options]({{ page.baseurl }}/install-gde/continue-to-install.html)
+* [Installation options]
 
 <!-- Link definitions -->
 
 [Magento 2 updater]: https://github.com/magento/magento2-updater
+[Configure the Magento application]: {{ page.baseurl }}/install-gde/install/post-install-config.html
+[Installation options]: {{ page.baseurl }}/install-gde/continue-to-install.html
