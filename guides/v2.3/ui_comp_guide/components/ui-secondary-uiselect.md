@@ -128,7 +128,7 @@ The following configuration can be passed in as arguments:
 
 ## Examples
 
-### Using cms_page_listing.xml
+### Use `cms_page_listing.xml`
 
 > `<Magento_Cms>/view/adminhtml/ui_component/cms_page_listing.xml`
 
@@ -151,7 +151,7 @@ The following configuration can be passed in as arguments:
 {% endhighlight %}
 
 
-### View of configured select component
+### Configured select component view
 
 The following is an example of the configuration of a select component. It is used as a column filter with three levels of options, with no selectable label for every level, without checkboxes:
 
