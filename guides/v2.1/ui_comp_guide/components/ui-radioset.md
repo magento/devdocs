@@ -28,7 +28,7 @@ The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_com
   </tr>
   <tr>
     <td>
-      <code>component&lt;.code&gt;</code>
+      <code>component&lt;code&gt;</code>
     </td>
     <td>
       The path to the component’s <code>.js</code> file in terms of

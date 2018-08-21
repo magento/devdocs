@@ -158,7 +158,7 @@ Callback is provided by another component.
 
 ### Instance replacement (one instance of a component)
 
-Redefine link to constructor.
+Redefine link to constructor:
 
 {% highlight xml %}
 <massaction name="listing_massaction">

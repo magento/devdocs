@@ -365,9 +365,9 @@ An example of the configuration of the DataSource object:
 
 Component configuration:
 
-* argument "dataProvider" - contains configuration, class name and arguments
+* argument `"dataProvider"` - contains configuration, class name, and arguments
 
-* js_config -> component - > JS indication of a responsible component
+* `"js_config"` -> `"component"` -> JavaScript indication of a responsible component
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
