@@ -601,6 +601,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  user to return information for most endpoints. See <a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
 </div>
 
+<h2 id="return-the-json-schema-for-a-specific-store-in-swagger">Return the JSON schema for a specific store in Swagger</h2>
+
+<p>Through Swagger it is possible to test the different REST API Calls. By default the resources will be fetched for all storeviews as shown in the example below. To return the JSON Schema for a specific store by adding a store parameter to the url with the <code class="highlighter-rouge">store_code</code> of the specific store.</p>
+
+<p>Default Swagger Url:
+  <code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
+
+<p>Fetched JSON schema url:
+  <code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/all/schema?services=all</code></p>
+
+<hr />
+
+<p>Specified Storecode in Swagger Url:
+  <code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger?store=default</code></p>
+
+<p>Fetched JSON schema url:
+  <code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=all</code></p>
+
 <h2 id="related-topics">Related topics</h2>
 
 <p><a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a></p>
