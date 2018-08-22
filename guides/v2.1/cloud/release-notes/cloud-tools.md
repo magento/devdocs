@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-<!-- Assigning liquid variables for placeholder values
+<!-- Assigning liquid variables for placeholder valuesst
 {% assign base_url = "{{base_url}}" %}
 {% assign unsecure_base_url = "{{unsecure_base_url}}" %}
 
@@ -24,7 +24,6 @@ php ./vendor/bin/ece-tools list
 ```
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
-
 
 	
 ## v2002.0.14
