@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 02_Security
 title: Secure cron.php to run in a browser
-menu_title: Secure cron.php to run in a browser
-menu_order: 2
-menu_node:
 functional_areas:
   - Configuration
   - System
@@ -120,7 +116,7 @@ Magento provides an optimized sample nginx configuration file out of the box. We
 
 1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2000url }}nginx.conf.sample){:target="&#95;blank"} file:
 
-    ``` shell
+    ```terminal
     #Securing cron
     location ~ cron\.php$ {
        auth_basic "Cron Authentication";
@@ -141,7 +137,7 @@ Magento provides an optimized sample nginx configuration file out of the box. We
 
 2.  Restart nginx:
 
-    ``` shell
+    ```bash
     systemctl restart nginx
     ```
 
@@ -186,7 +182,7 @@ To verify cron is secure:
 
 6.  Verify that rows were added to the table:
 
-    ``` shell
+    ```bash
     SELECT * from cron_schedule;
 
     mysql> SELECT * from cron_schedule;

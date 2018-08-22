@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Payment configuration paths reference
-menu_title: Payment configuration paths reference
-menu_order: 5200
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
 functional_areas:
   - Configuration
   - System
@@ -352,9 +346,8 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}/common/im
 
 ### International paths {#vars-intl-list}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The available paths are determined by your choice of [Merchant country]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html#vars-merch-country).
-</div>
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|

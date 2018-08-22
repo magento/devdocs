@@ -79,7 +79,7 @@ Textarea-specific options:
       <code>rows</code>
     </td>
     <td>
-      The number of columns that will be specified in the
+      The number of rows that will be specified in the
       <code>rows</code> attribute of the textarea DOM element.
     </td>
     <td>

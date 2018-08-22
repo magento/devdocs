@@ -5,7 +5,7 @@ title: Magento Commerce 2.1.11 Release Notes
 menu_title: Magento Commerce 2.1.11 Release Notes
 menu_order: 254
 level3_menu_node: level3child
-level3_subgroup: ee21-relnotes 
+level3_subgroup: ee21-relnotes
 ---
 
 *	TOC
@@ -26,7 +26,7 @@ Look for the following highlights in this release:
 
 * **Support for the Indian Rupee (INR) in PayPal Express Checkout**
 
-* **New commands and functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command, and added the ability to handle CLI setup interactively (with prompts). 
+* **New commands and functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command, and added the ability to handle CLI setup interactively (with prompts).
 
 ### Fixes and enhancements (highlights)
 
@@ -65,7 +65,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82487 -->* `GET v1/products/attribute-sets/sets/list` now returns a full list of attribute sets. *Fix submitted by [David Verholen](https://github.com/davidverholen) in pull request 11432*. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
-<!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart. 
+<!--- MAGETWO-70498 -->* If a configurable product is part of a shipment being created via REST, only the parent's quantity will be counted towards total shipment item quantity. Previously, Magento counted both the parent and child product of the configurable product, which resulted in a count of two products added to the shopping cart.
 
 <!--- MAGETWO-82756 -->* The **Add-to-cart** checkboxes in Related Products are no longer visible on the storefront when `$canItemsAddToCart` is set to **false**. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*.  [GitHub-689](https://github.com/magento/magento2/issues/689)
 
@@ -79,9 +79,9 @@ Look for the following highlights in this release:
 
 ### Configurable products
 
-<!--- MAGETWO-61133 -->* Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source. 
+<!--- MAGETWO-61133 -->* Magento now displays the correct drop-down option labels for configurable products when you create attributes for products with a custom source.
 
-<!--- MAGETWO-58034 -->*  Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options. 
+<!--- MAGETWO-58034 -->*  Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options.
 
 
 <!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be **as low as** as the lowest price.   Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with the lowest available price.
@@ -98,7 +98,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83155 -->* New orders now appear as expected in the Order table after you migrate data. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11932*. [GitHub-10185](https://github.com/magento/magento2/issues/10185)
 
-<!--- MAGETWO-83096 -->* We've added an extra API call to the interface for managing customer accounts, and it permits you to implement the full reset password process. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11920*. 
+<!--- MAGETWO-83096 -->* We've added an extra API call to the interface for managing customer accounts, and it permits you to implement the full reset password process. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11920*.
 
 
 <!--- MAGETWO-83052 -->* We no longer hard-code the array index of `Magento_Backend::admin` in the resources ACL tree. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11739*.
@@ -117,13 +117,13 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82657 -->* We removed a typo in the Paypal Module. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11674*. [GitHub-7591](https://github.com/magento/magento2/issues/7591)
 
-<!--- MAGETWO-82646 -->* The Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11678*. 
+<!--- MAGETWO-82646 -->* The Customer Groups are now located in the Magento Admin under **Customers > Customer Groups**. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11678*.
 
 <!--- MAGETWO-82762 -->* We've fixed the dashboard graph's y-axis range. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11753*. [GitHub-7927](https://github.com/magento/magento2/issues/7927)
 
-<!--- MAGETWO-82980 -->* We've fixed an error in the  `\Magento\Customer\Test\Unit\Model\AccountManagementTest class:` unit tests. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11606*. 
+<!--- MAGETWO-82980 -->* We've fixed an error in the  `\Magento\Customer\Test\Unit\Model\AccountManagementTest class:` unit tests. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11606*.
 
-<!--- MAGETWO-83100 -->* Magento no longer assigns multiple blocks the same ID. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11804*. 
+<!--- MAGETWO-83100 -->* Magento no longer assigns multiple blocks the same ID. *Fix submitted by [Thiago](https://github.com/thiagolima-bm) in pull request 11804*.
 
 <!--- MAGETWO-83205 -->* If you add a new value for an EAV attribute, Magento checks to make sure it is unique for the attribute. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11621*.
 
@@ -139,11 +139,11 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83500 -->* Magento no longer converts special characters in a store name to numerical character references in the email subject line. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12115*. [GitHub-6597](https://github.com/magento/magento2/issues/6597), [GitHub-8094](https://github.com/magento/magento2/issues/8094)
 
-<!--- MAGETWO-83475 -->* We've simplified the `update button.phtml` translation. *Fix submitted by [@ChuckyK](https://github.com/ChuckyK) in pull request 12106*. 
+<!--- MAGETWO-83475 -->* We've simplified the `update button.phtml` translation. *Fix submitted by [@ChuckyK](https://github.com/ChuckyK) in pull request 12106*.
 
 <!--- MAGETWO-57166 -->*  Magento no longer generates the sitemap in the wrong folder when `vhost` is connected to `/pub`. Previously, Magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
 
-<!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*. 
+<!--- MAGETWO-82947 -->* Magento now throws a PHP 500 Error when `$optionsArray['delete'][$optionId]` is not set. *Fix submitted by [@angelo983](https://github.com/angelo983) in pull request 11728*.
 
 * Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
@@ -155,9 +155,9 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-69857 -->*  Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error.
 
-<!--- MAGETWO-69718 -->* Magento no longer changes custom options IDs each time the product is imported or saved. 
+<!--- MAGETWO-69718 -->* Magento no longer changes custom options IDs each time the product is imported or saved.
 
-<!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
+<!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file.
 
 ### Index
 
@@ -188,7 +188,7 @@ Look for the following highlights in this release:
 
 ### SalesRule
 
-<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule. 
+<!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule.
 
 <!--- MAGETWO-82242 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount.
 
@@ -200,7 +200,7 @@ Look for the following highlights in this release:
 
 ### Shipping
 
-<!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*. 
+<!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*.
 
 ### Tax
 
@@ -210,17 +210,17 @@ Look for the following highlights in this release:
 
 ### Translations
 
-<!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
+<!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules).
 
-### Visual Merchandiser 
+### Visual Merchandiser
 
 <!--- MAGETWO-70287 -->*  We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 ## Known issue
 
-<!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
+<!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.
 
-**Workaround**: Use the Devdocs [static Swagger site]({{ site.baseurl }}/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
+**Workaround**: Use the Devdocs [static Swagger site]({{ site.baseurl }}/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.
 
 
 <!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545 MAGETWO-72376   MAGETWO-69512 MAGETWO-69344  MAGETWO-69107   MAGETWO-67681    MAGETWO-65466 MAGETWO-65049    MAGETWO-64429 MAGETWO-64459  MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-77969    MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522  MAGETWO-75526-->
@@ -417,7 +417,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11919">11919</a></td>
-    <td>[8172](https://github.com/magento/magento2/issues/8172){:target="_blank"}, [8089](https://github.com/magento/magento2/issues/8089){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/8172" target="_blank">8172</a>, <a href="https://github.com/magento/magento2/issues/8089" target="_blank">8089</a>, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
@@ -441,6 +441,4 @@ The [Code Migration Toolkit](https://github.com/magento/code-migration){:target=
 
 ## Credits
 
-Dear community members, thank you for your suggestions and bug reports. 
-
-
+Dear community members, thank you for your suggestions and bug reports.

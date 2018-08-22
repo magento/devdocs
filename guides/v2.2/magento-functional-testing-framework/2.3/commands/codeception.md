@@ -5,12 +5,13 @@ title: |
 functional_areas:
  - Testing
 mftf-release: 2.3.0
+redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/commands/codeception.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
- {:.bs-callout .bs-callout-warning}
+{:.bs-callout .bs-callout-warning}
 We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
 All the Codeception commands you need are wrapped using the `mftf` tool.
 
@@ -28,10 +29,10 @@ Run all tests in `app/code`:
 vendor/bin/codecept run functional
 ```
 
-Run all tests without the `<group value="skipThese"/>` [annotation](../test/annotations.html):
+Run all tests without the `<group value="skip"/>` [annotation](../test/annotations.html):
 
 ```bash
-vendor/bin/codecept run functional --skip-group skipThese
+vendor/bin/codecept run functional --skip-group skip
 ```
 
 Run all tests with the `<group value="example"/>` [annotation](../test/annotations.html) but with no `<group value="skpip"/>`:
