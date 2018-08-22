@@ -729,7 +729,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
 
-<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.3/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
+<p>To view the Swagger documentation for a specific store view, use this URL:</p>
+
+<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger?store=&lt;store_code&gt;</code></p>
+
+<p>The value of <code class="highlighter-rouge">store_code</code> must be one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">default</code></li>
+  <li>The assigned store code</li>
+  <li><code class="highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
+ and Product modules. If this value is specified, the API call affects all the merchant’s stores.</li>
+</ul>
+
+<p>By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid value in the <code class="highlighter-rouge">api_key</code> text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/guides/v2.3/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
 
 <p>The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
  token has been specified.</p>
@@ -743,15 +756,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema?services=&lt;serviceName1,serviceName2,..&gt;</code></p>
 
-<p>The value of <code class="highlighter-rouge">store_code</code> must be one of the following:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">default</code></li>
-  <li>The assigned store code</li>
-  <li><code class="highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
- and Product modules. If this value is specified, the API call affects all the merchant’s stores.</li>
-</ul>
-
 <p>For example:</p>
 
 <p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=catalogProductRepositoryV1</code></p>
@@ -762,6 +766,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p class="bs-callout bs-callout-info">You must specify an authorization token for an   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  user to return information for most endpoints. See <a href="/guides/v2.3/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
+
+<h2 id="return-the-complete-json-schema">Return the complete JSON schema</h2>
+
+<p>To return the complete JSON schema, specify the <code class="highlighter-rouge">?services=all</code> parameter in the URL. The default <code class="highlighter-rouge">store_code</code> is <code class="highlighter-rouge">all</code>, but you can also specify <code class="highlighter-rouge">default</code> or a store code defined on the system. For example: <code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=all</code></p>
 
 <h2 id="related-topics">Related topics</h2>
 
