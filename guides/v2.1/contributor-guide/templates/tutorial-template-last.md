@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: contributor
 title: Step X. Finish the tutorial
 subtitle: Sample template tutorial
 menu_order: 2
@@ -21,7 +20,6 @@ The {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglos
 Parameter | Description
 --- | ---
 `layout:` | Must be `tutorial`.
-`group:` | The group, or book, to which the topic belongs.
 `title:` | The title of the topic. This value should be in the form _Step X. Perform this task_. (For example, `Step 1. Configure the Store`)
 `menu_title:`| Optional. Use this parameter only if you don't want the title in the left navigation to match the topic title.
 `subtitle` | The title of the tutorial. This value should match the `title` value in the index file.

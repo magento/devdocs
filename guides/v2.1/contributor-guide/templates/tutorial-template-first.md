@@ -1,7 +1,5 @@
 ---
 layout: tutorial
-group: contributor
-subgroup: templates
 title: Sample template tutorial
 menu_title: Initial tasks
 menu_order: 0
@@ -24,7 +22,6 @@ The following table lists the {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa
 Parameter | Description
 --- | ---
 `layout:` | Must be `tutorial`.
-`group:` | The group, or book, to which the topic belongs.
 `title:` | The title of the tutorial.
 `menu_title:` | On the index page of the tutorial, specify `Initial tasks`.
 `level3_subgroup:` | A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.
