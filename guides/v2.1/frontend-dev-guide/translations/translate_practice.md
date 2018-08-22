@@ -33,7 +33,7 @@ So OrangeCo take the following steps:
     php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
     ```
 2. Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
-    ```
+    ```text
     "Add to Cart", "Purchase"
     "Add to Compare", "Compare"
     "Add to Wish List", "Wishlist"
@@ -63,3 +63,4 @@ For example:
 [Product page where the customized Compare string is displayed]: {{site.baseurl}}/common/images/fdg_translations_bag2.png {width="700px"}
 [Translation dictionaries and language packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Using translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html

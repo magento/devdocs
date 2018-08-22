@@ -26,11 +26,11 @@ In a [theme directory], stylesheets are stored in the following locations:
 
 <table>
 <tr>
-<th>Directory, relative to <code><theme_dir></code></th>
+<th>Directory, relative to <code>&lt;theme_dir&gt;</code></th>
 <th>Description</th>
 </tr>
 <tr>
-<td> <code>/<Namespace>_<Module>/web/css</code>
+<td> <code>/&lt;Namespace&gt;_&lt;Module&gt;/web/css</code>
 </td>
 <td> Module-specific styles
 </td>
@@ -92,7 +92,7 @@ For example, the following illustrates how stylesheets are included in the defau
 
 
 {:.bs-callout .bs-callout-info}
-If the system does not find the included CSS files, it searches for the same file names with a `.less` {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
+If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
 
 
 

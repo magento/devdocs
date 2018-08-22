@@ -19,13 +19,13 @@ To ensure that your new string is added to the dictionary and translated, use th
 For example:
 
 ```php
-	### <?php echo __('Create Backup') ?>
+### <?php echo __('Create Backup') ?>
 ```
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 ```php
-    ### <?php echo sprintf(__('Hello %s'), $yourVariable) ?>
+### <?php echo sprintf(__('Hello %s'), $yourVariable) ?>
 ```
 
 In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
@@ -44,19 +44,19 @@ To ensure that the text you add in `.html` templates of UI components is added t
 - when a string is added in the scope of an HTML element:
 
 ```html
-    <span data-bind="i18n: 'Sign In'"></span>
+<span data-bind="i18n: 'Sign In'"></span>
 ```
 
 - when a string is added with no binding to an HTML element:
 
 ```html
-    <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+<!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
 ```
 
 - when a string is added as an attribute of an HTML element:
 
 ```html
-    <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
+<input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
 ```
 
 ## Strings added in UI components configuration files {#add_strings_ui_xml}
@@ -64,7 +64,7 @@ To ensure that the text you add in `.html` templates of UI components is added t
 To ensure that the text you add in UI components configuration `.xml` files is added to the dictionary, use the `translate` attribute: set `translate=true` for the corresponding element. The following code sample is an illustration:
 
 ```xml
-    <item name="label" xsi:type="string" translate="true">Delete</item>
+<item name="label" xsi:type="string" translate="true">Delete</item>
 ```
 
 In this example, the *Delete* string is added to the dictionary when the i18n tool is run.

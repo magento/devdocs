@@ -105,7 +105,6 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 ## Using the @import directive in Sass
 
 In the source .`scss` files you can use the `@import` directive, to import other `.scss` files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main `.scss` file. For example, if you create a `_catalogstls.scss` file for styles of the `Magento_Catalog` module and put it in `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/styles `, you can import it using the following notation:
-
-    ```scss
-    @import '../Magento_Theme/styles/module`
-    ```
+```css
+@import '../Magento_Theme/styles/module`
+```

@@ -27,13 +27,13 @@ If there are different translations for one string, the theme dictionary transla
 
 The translations priority described earlier is applied for the default en_US locale as well. So you can use the `en_US.csv` dictionary to customize the strings used in the default locale.
 
-[ ]{#luma_example}For example, this approach is used in the Magento Luma theme. It has the [`<Magento_Luma_theme_dir>/i18n/en_US.csv`] file, where the left column contains the default values (keys), and the right column contains the values to be used instead when the Luma theme is applied:
-    ```
-    "Add to Wish List",	"Wish List"
-    "Add to Compare",	"Compare"
-    "Your Checkout Progress",	"Checkout Progress"
-    "Card Verification Number",	"CVV"
-    ```
+For example, this approach is used in the Magento Luma theme. It has the [`<Magento_Luma_theme_dir>/i18n/en_US.csv`] file, where the left column contains the default values (keys), and the right column contains the values to be used instead when the Luma theme is applied:
+```text
+"Add to Wish List",	"Wish List"
+"Add to Compare",	"Compare"
+"Your Checkout Progress",	"Checkout Progress"
+"Card Verification Number",	"CVV"
+```
 
 It is important to remember that if you generate a dictionary for your theme using the [i18n tool] with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
 
@@ -49,12 +49,12 @@ See the [Create a translation dictionary for a theme] topic for the practical il
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
 Continuing the [previous example](#luma_example) with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
-    ```
-    "Add to Wish List",	<translation>
-    "Add to Compare",	<translation>
-    "Your Checkout Progress",	<translation>
-    "Card Verification Number",	<translation>
-    ```
+```text
+"Add to Wish List",	<translation>
+"Add to Compare",	<translation>
+"Your Checkout Progress",	<translation>
+"Card Verification Number",	<translation>
+```
 
 The default values (keys) are used in the left column.
 

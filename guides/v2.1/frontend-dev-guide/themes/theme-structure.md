@@ -66,7 +66,7 @@ The directories and files structure described below is the most extended one. It
     <tr>
       <td colspan="1">
         <code>
-          /<Vendor>_<Module>
+          /&lt;Vendor&gt;_&lt;Module&gt;
         </code>
       </td>
       <td colspan="1">
@@ -78,7 +78,7 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/<Vendor>_<Module>/web/css/source</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/source</code>
       </td>
       <td colspan="1">
         optional
@@ -89,18 +89,18 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/<Vendor>_<Module>/layout</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout</code>
       </td>
       <td colspan="1">
         optional
       </td>
       <td colspan="1">
-        Layout files which extend the default module or parent theme layouts. <!--ADDLINK-->
+        Layout files which extend the default module or parent theme layouts.
       </td>
     </tr>
     <tr>
       <td colspan="1">
-        <code>/<Vendor>_<Module>/layout/override/base</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/base</code>
       </td>
       <td colspan="1">
         optional
@@ -111,7 +111,7 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/<Vendor>_<Module>/layout/override/<parent_theme></code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/&lt;parent_theme&gt;</code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
@@ -120,7 +120,7 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/<Vendor>_<Module>/templates</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/templates</code>
       </td>
       <td colspan="1">
         optional
@@ -176,7 +176,7 @@ The directories and files structure described below is the most extended one. It
         <code>less</code>
          configuration files that invoke mixins for global elements from the Magento UI library, and
         <code>theme.less</code>
-         file which overrides the default variables values. <!--ADDLINK-->
+         file which overrides the default variables values.
       </td>
     </tr>
     <tr>

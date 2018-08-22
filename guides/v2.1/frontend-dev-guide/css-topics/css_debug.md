@@ -61,30 +61,13 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 
 The following table describes the grunt commands you can use performing different customization tasks. Run all commands from your Magento installation directory.
 
-+-----------------------------------+-----------------------------------+
-| Grunt task                        | Action                            |
-+===================================+===================================+
-|     grunt clean:                  | Removes the theme related         |
-|                                   | static files in the               |
-|                                   | `pub/static` and `var`            |
-|                                   | directories.                      |
-+-----------------------------------+-----------------------------------+
-|     grunt exec:                   | Republishes symlinks to the       |
-|                                   | source files to the               |
-|                                   | `pub/static/frontend///`          |
-|                                   | directory.                        |
-+-----------------------------------+-----------------------------------+
-|     grunt less:                   | Compiles `.css` files using the   |
-|                                   | symlinks published in the         |
-|                                   | `pub/static/frontend///`          |
-|                                   | directory                         |
-+-----------------------------------+-----------------------------------+
-|     grunt watch                   | Tracks the changes in the source  |
-|                                   | files, recompiles `.css` files,   |
-|                                   | and reloads the page in the       |
-|                                   | browser pages (you need to have   |
-|                                   | installed for you browser)        |
-+-----------------------------------+-----------------------------------+
+Grunt task | Action 
+---------- | ------- 
+grunt clean | Removes the theme related static files in the `pub/static` and `var` directories.
+grunt exec | Republishes symlinks to the source files to the `pub/static/frontend///` directory.
+grunt less | Compiles `.css` files using the symlinks published in the `pub/static/frontend///` directory.
+grunt watch | Tracks the changes in the source files, recompiles `.css` files, and reloads the page in the browser.
+{:style="table-layout:auto"}
 
 ## Use cases of tracking changes using Grunt {#use_cases}
 

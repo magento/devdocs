@@ -25,10 +25,10 @@ Page layout declares the wireframe of a page inside the `<body>` section, for ex
 
 Allowed layout instructions:
 
-* [<container>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
-* [<referenceContainer>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
-* [<move>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
-* [<update>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd) 
+* [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
+* [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
+* [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
+* [`<update>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd) 
 
 Sample page layout:
 
@@ -112,7 +112,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td>
-        <code><span><page></page></span></code>
+        <code>&lt;span&gt;&lt;page&gt;&lt;/page&gt;&lt;/span&gt;</code>
       </td>
       <td colspan="1">
         <ul>
@@ -126,22 +126,22 @@ The following table describes the instructions specific for page configuration f
       </td>
       <td colspan="1">
         <ul>
-          <li><code><html></code></li>
-          <li><code><head></code></li>
-          <li><code><body></code></li>
-          <li><code><update></code></li>
+          <li><code>&lt;html&gt;</code></li>
+          <li><code>&lt;head&gt;</code></li>
+          <li><code>&lt;body&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
         </ul>
       </td>
       <td>Mandatory root element.</td>
     </tr>
     <tr>
-      <td colspan="1"><code><html></html></code></td>
+      <td colspan="1"><code>&lt;html&gt;&lt;/html&gt;</code></td>
       <td colspan="1">
         <p>none</p>
       </td>
       <td colspan="1">
         <ul>
-          <li><code><attribute></code></li>
+          <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
       <td colspan="1">
@@ -149,37 +149,37 @@ The following table describes the instructions specific for page configuration f
       </td>
     </tr>
     <tr>
-      <td colspan="1"><code><head></head></code></td>
+      <td colspan="1"><code>&lt;head&gt;&lt;/head&gt;</code></td>
       <td colspan="1">none</td>
       <td colspan="1">
         <ul>
-          <li><code><title></code></li>
-          <li><code><meta></code></li>
-          <li><code><link></code></li>
-          <li><code><css></code></li>
-          <li><code><script></code></li>
+          <li><code>&lt;title&gt;</code></li>
+          <li><code>&lt;meta&gt;</code></li>
+          <li><code>&lt;link&gt;</code></li>
+          <li><code>&lt;css&gt;</code></li>
+          <li><code>&lt;script&gt;</code></li>
         </ul>
       </td>
       <td colspan="1"></td>
     </tr>
     <tr>
-      <td colspan="1"><code><body></body></code></td>
+      <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
       <td colspan="1">none</td>
       <td colspan="1">
         <ul>
-          <li><code><block></code></li>
-          <li><code><container></code></li>
-          <li><code><move></code></li>
-       <li><code><attribute></code></li>
-          <li><code><referenceBlock></code></li>
-          <li><code><referenceContainer></code></li>
-          <li><code><action></code></li>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;move&gt;</code></li>
+       <li><code>&lt;attribute&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          <li><code>&lt;action&gt;</code></li>
         </ul>
       </td>
       <td colspan="1"></td>
     </tr>
     <tr>
-      <td colspan="1"><code><attribute></code></td>
+      <td colspan="1"><code>&lt;attribute&gt;</code></td>
       <td colspan="1">
         <ul>
           <li><code>name = {arbitrary_name}</code>
@@ -190,13 +190,13 @@ The following table describes the instructions specific for page configuration f
       </td>
       <td colspan="1"></td>
       <td colspan="1">
-        <p>Specified for <code><html></code>, rendered like following:</p>
-        <p><code><html name="value'></code></p>
+        <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
+        <p><code>&lt;html name="value'&gt;</code></p>
       </td>
     </tr>
     <tr>
       <td colspan="1">
-        <p><code><title></code></p>
+        <p><code>&lt;title&gt;</code></p>
       </td>
       <td colspan="1">none</td>
       <td colspan="1">none</td>
@@ -204,7 +204,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td colspan="1">
-        <p><code><meta></code></p>
+        <p><code>&lt;meta&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
@@ -232,7 +232,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td colspan="1">
-        <p><code><link></code></p>
+        <p><code>&lt;link&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
@@ -281,7 +281,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td colspan="1">
-        <span><code><css></code></span>
+        <span><code>&lt;css&gt;</code></span>
       </td>
       <td colspan="1">
         <ul>
@@ -330,7 +330,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td colspan="1">
-        <p><code><script></code></p>
+        <p><code>&lt;script&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
@@ -390,7 +390,7 @@ The following table describes the instructions specific for generic layout files
     </tr>
     <tr>
       <td>
-        <code> <layout></layout> </code>
+        <code> &lt;layout&gt;&lt;/layout&gt; </code>
       </td>
       <td colspan="1">
         <ul>
@@ -403,8 +403,8 @@ The following table describes the instructions specific for generic layout files
       </td>
       <td colspan="1">
         <ul>
-          <li><code><container></code></li>
-          <li><code><update></code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
 
         </ul>
       </td>
@@ -412,7 +412,7 @@ The following table describes the instructions specific for generic layout files
     </tr>
     <tr>
       <td>
-        <code> <update> </code>
+        <code> &lt;update&gt; </code>
       </td>
       <td colspan="1">
         <ul>
@@ -427,26 +427,24 @@ none
 <td></td>
     </tr>
     <tr>
-      <td colspan="1"><code><container></code></td>
+      <td colspan="1"><code>&lt;container&gt;</code></td>
       <td colspan="1">
 <ul>
 <li><code>name="root"</code></li>
-<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#container">Layout instructions</a></li>
 </ul>
 </td>
       <td colspan="1">
         <ul>
-          <li><code><block></code></li>
-          <li><code><container></code></li>
-          <li><code><referenceBlock></code></li>
-          <li><code><referenceContainer></code></li>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
           
         </ul>
       </td>
       <td colspan="1"> Mandatory element</td>
     </tr>
-
-
   </tbody>
 </table>
 

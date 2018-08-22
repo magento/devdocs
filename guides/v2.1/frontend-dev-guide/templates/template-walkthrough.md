@@ -51,4 +51,4 @@ In the theme `form.phtml` file they add the HTML snippet with the message before
 
 Here's how the form will look when the Orange theme is applied in a store:
 
-![Review form with the new message added]({{ site.baseurl }}/common/images/template_with_text.png)
+![Review form with the new message added]({{site.baseurl}}/common/images/template_with_text.png)

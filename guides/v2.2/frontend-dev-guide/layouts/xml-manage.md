@@ -35,8 +35,6 @@ The type of page layout to be used for a certain page is defined in the page con
 Example:
 Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
 
-`app/design/frontend/<Vendor>/<theme>/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml`
-
 ```xml
 <page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 ...
@@ -45,10 +43,8 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 ## Include static resources (JavaScript, CSS, fonts) {#layout_markup_css}
 
-JavaScript, CSS, and other static assets are added in the `<head>` section of a [page configuration] file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
+JavaScript, CSS, and other static assets are added in the `<head>` section of a [page configuration] file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
-
-`<theme_dir>/Magento_Theme/layout/default_head_blocks.xml`
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -68,22 +64,17 @@ The following file is a sample of a file you must add:
 </page>
 ```
 
-
 When adding external resources, specifying the `src_type="url"` argument value is a must.
-
 
 You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
 
 The path to assets is specified relatively to one the following locations:
-<ul>
 - `<theme_dir>/web`- 
 - `<theme_dir>/<Namespace>_<Module>/web`- 
 
-</ul>
-
 ### Adding conditional comments
 
-<a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
+[Conditional comments] are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
@@ -107,9 +98,7 @@ In this example, `orange` is a custom theme created by the OrangeCo vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
-To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending file:
-
-`app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
+To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -177,7 +166,7 @@ Use the following sample to create (declare) a container:
 
 ## Reference a container {#ref_container}
 
-To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+To update a container use the [`<referenceContainer>`] instruction.
 
 Example: add links to the page header panel.
 
@@ -193,7 +182,7 @@ Example: add links to the page header panel.
 
 ## Create a block {#xml-manage-block}
 
-Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+Blocks are created (declared) using the [`<block>`] instruction.
 
 Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
 
@@ -209,7 +198,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
 
 ## Reference a block {#xml-manage-ref-block}
 
-To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+To update a block use the [`<referenceBlock>`] instruction.
 
 Example: pass the image to the `logo` block.
 
@@ -252,9 +241,9 @@ In both example, the template is specified according to the following:
  * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
+
 
 ## Modify block arguments {#layout_markup_modify-block}
 
@@ -289,8 +278,8 @@ Extending layout:
 
 There are two ways to access block object methods:
 
-- using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#argument">`<argument>`</a> instruction for `<block>` or `<referenceBlock>`
-- using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act">`<action>`</a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+- using the [`<argument>`] instruction for `<block>` or `<referenceBlock>`
+- using the [`<action>`] instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
 
 Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
 
@@ -325,8 +314,8 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
+* [`<move>` instruction]: allows changing elements' order and parent.
+* [`before` and `after` attributes of `<block>`]: allows changing elements' order within one parent.
 
 
 Example of `<move>` usage:
@@ -407,3 +396,14 @@ To replace an element, [remove it] and add a new one.
 [Layout instructions]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html
 [Extend a layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
 [Locate templates, layouts, and styles]: {{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html
+[Conditional comments]: http://en.wikipedia.org/wiki/Conditional_comment
+[`<referenceContainer>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref
+[`<block>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block
+[`<referenceBlock>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref
+[`<argument>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#argument
+[`<action>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act
+[`<move>` instruction]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv
+[`before` and `after` attributes of `<block>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after
+
+
+

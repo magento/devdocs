@@ -11,40 +11,40 @@ There are two possible ways to customize page layout in Magento:
 * Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
 * Altering templates
 
-To change the page wireframe, modify the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
+To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
 
 Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
 
-The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.
+The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types] topic.
 
 ## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
 Use the following layout instructions to customize your layout:
 
-*  <a href="#fedg_layout_xml-instruc_ex_block">`<block>`</a>
-*  <a href="#fedg_layout_xml-instruc_ex_cont">`<container>`</a>
-*  <a href="#fedg_xml-instrux_before-after">`before` and `after` attributes</a>
-*  <a href="#fedg_layout_xml-instruc_ex_act">`<action>`</a>
-*  <a href="#fedg_layout_xml-instruc_ex_ref">`<referenceBlock>` and `<referenceContainer>`</a>
-*  <a href="#fedg_layout_xml-instruc_ex_mv">`<move>`</a>
-*  <a href="#fedg_layout_xml-instruc_ex_rmv">`<remove>`</a>
-*  <a href="#fedg_layout_xml-instruc_ex_upd">`<update>`</a>
-*  <a href="#argument">`<argument>`</a>
-*  <a href="#arguments">`<arguments>`</a>
+* [`<block>`](#fedg_layout_xml-instruc_ex_block) 
+* [`<container>`](#fedg_layout_xml-instruc_ex_cont) 
+* [`before` and `after` attributes](#fedg_xml-instrux_before-after)
+* [`<action>`](#fedg_layout_xml-instruc_ex_act)
+* [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
+* [`<move>`](#fedg_layout_xml-instruc_ex_mv)
+* [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
+* [`<update>`](#fedg_layout_xml-instruc_ex_upd)
+* [`<argument>`](#argument)
 
-### <block> {#fedg_layout_xml-instruc_ex_block}
+
+### \<block\> {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
 
-<p><b>Details:</b> A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
+**Details:** A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
 
-Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.</p>
+Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
 
 {:.bs-callout .bs-callout-info}
-  The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
+The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
 
 <table>
    <tbody>
@@ -99,11 +99,14 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
    </tbody>
 </table>
 
-To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
+To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
-### <container> {#fedg_layout_xml-instruc_ex_cont}
+### \<container\> {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
-<p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+
+**Details:** 
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+
 <table>
    <tbody>
       <tr>
@@ -157,17 +160,18 @@ A structure without content that holds other layout elements such as blocks and 
       <tr class="odd">
          <td><code>htmlId</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 `<id></code> value.</td>
+         <td>Any valid HTML 5 <code>id</code> value.</td>
          <td>no</td>
       </tr>
       <tr class="even">
          <td><code>htmlClass</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5  `<class></code> value.</td>
+         <td>Any valid HTML 5 <code>class</code> value.</td>
          <td>no</td>
       </tr>
    </tbody>
 </table>
+
 
 Sample of usage in layout:
 ```xml
@@ -180,10 +184,10 @@ This would add a new column to the page layout.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
-<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
-<p>These optional attributes can be used in layout {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files to control the order of elements in their common parent.
+To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the `before` and `after` layout attributes.
+These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 
-The following tables give a detailed description of the results you can get using the <code>before</code> and <code>after</code> attributes. The first table uses a block a as positioned element.
+The following tables give a detailed description of the results you can get using the `before` and `after` attributes. The first table uses a block a as positioned element.
 
 <table>
    <tbody>
@@ -252,16 +256,14 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### <action> {#fedg_layout_xml-instruc_ex_act}
+### \<action\> {#fedg_layout_xml-instruc_ex_act}
 
 {:.bs-callout .bs-callout-warning}
-<span class="glyphicon-class">
- <p>The `<action>` instruction is deprecated. If the method implementation allows, use the <a href="#argument">`<argument>`</a> for <a href="#fedg_layout_xml-instruc_ex_block">`<block>`</a> or <a href="#fedg_layout_xml-instruc_ex_ref">`<referenceBlock>`</a> to access block public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p></span>
-</div>
+The `<action>` instruction is deprecated. If the method implementation allows, use the [`<argument>`](#argument) for [`<block>`](#fedg_layout_xml-instruc_ex_block) or [`<referenceBlock>`](#fedg_layout_xml-instruc_ex_ref) to access the block public API.
 
 Calls public methods on the block API.
 
-<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
+**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
 
 
 Example:
@@ -277,8 +279,7 @@ Example:
 </block>
 ```
 
-
-<p>`<action>` child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under `<action>`, they are passed as one array.</p>
+`<action>` child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under `<action>`, they are passed as one array.
 
 <table>
    <tbody>
@@ -297,13 +298,14 @@ Example:
    </tbody>
 </table>
 
-To pass parameters, use the <a href="#argument">`<argument></argument>`</a> instruction.
+To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
-### <referenceBlock> and <referenceContainer> {#fedg_layout_xml-instruc_ex_ref}
-<p>Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.</p>
-<p>For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.</p>
+### \<referenceBlock\> and \<referenceContainer\> {#fedg_layout_xml-instruc_ex_ref}
+Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
-To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
+
+To pass parameters to a block use the [`<argument></argument>`](#argument) instruction.
 
 <table>
    <tbody>
@@ -330,23 +332,24 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
 
 - The `remove` attribute is optional and its default value is `false`.
 
-    This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code>true</code>, or to cancel the removal of a block or container by setting the value to `false`.
+    This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
      
     Example:
-    
-    `<referenceBlock name="block.name" remove="true" />`
+    ```xml
+    <referenceBlock name="block.name" remove="true" />
+    ```
 
-- The <code>display</code> attribute is optional and its default value is true.- 
+- The `display` attribute is optional and its default value is true.- 
 
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
      
     Example:
-    
-    `<referenceContainer name="container.name" display="false" />`
- 
+    ```xml
+    <referenceContainer name="container.name" display="false" />
+    ```
 
-### <move> {#fedg_layout_xml-instruc_ex_mv}
+### \<move\> {#fedg_layout_xml-instruc_ex_mv}
 Sets the declared block or container element as a child of another element in the specified order.
 **Example:**
 
@@ -355,7 +358,7 @@ Sets the declared block or container element as a child of another element in th
 ```
 
 - `<move>` is skipped if the element to be moved is not defined.
-- If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.
+- If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
 - During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
 
 <table>
@@ -393,10 +396,10 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-### <remove> {#fedg_layout_xml-instruc_ex_rmv}
+### \<remove\> {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
-For removing blocks or containers, use the `<remove>` attribute for <a href="#fedg_layout_xml-instruc_ex_ref">`<referenceBlock>` and `<referenceContainer>`</a>.
+For removing blocks or containers, use the `<remove>` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
 
 Example of usage:
 
@@ -416,7 +419,7 @@ Example of usage:
 </page>
 ```
 
-### <update> {#fedg_layout_xml-instruc_ex_upd}
+### \<update\> {#fedg_layout_xml-instruc_ex_upd}
 
 Includes a certain layout file.
 
@@ -426,10 +429,10 @@ Used as follows:
 <update handle="{name_of_handle_to_include}"/>
 ```
 
-The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
+The specified [handle] is "included" and executed recursively.
 
-### <argument> {#argument}
-Used to pass an argument. Must be always enclosed in<a href="#arguments">`<arguments>`</a>.
+### &lt;argument&gt; {#argument}
+Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).
  
 <table>
    <tbody>
@@ -480,11 +483,11 @@ To pass an argument that is an array use the following construction:
 </argument>
 ```
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+Arguments values set in a layout file can be accessed in [templates] using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. The latter returns a boolean defining whether there's any value set. 
 `{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getSomeString()`.
 
 Example:
-Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+Setting a value of `css_class` in the `[app/code/Magento/Theme/view/frontend/layout/default.xml]` layout file:
 
 ```xml
 <arguments>
@@ -493,13 +496,13 @@ Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000
 ```
 
 
-Using the value of <code>css_class</code> in <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+Using the value of `css_class` in `[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]`:
 
 ```php
 $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ```
 
-### <arguments> {#arguments}
+### \<arguments\> {#arguments}
 
 `<arguments>` is a required container for `<argument>`. It does not have its own attributes.
 
@@ -510,3 +513,13 @@ Example:
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ```
+
+[page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
+[page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
+[generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
+[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#handle
+[templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
+[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
+[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml
+[Layout file types]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html
+

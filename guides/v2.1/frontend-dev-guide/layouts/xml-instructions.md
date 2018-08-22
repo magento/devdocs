@@ -33,7 +33,7 @@ Use the following layout instructions to customize your layout:
 - [remove](#fedg_layout_xml-instruc_ex_rmv) 
 - [update](#fedg_layout_xml-instruc_ex_upd)
 
-### <block> {#fedg_layout_xml-instruc_ex_block}
+### \<block\> {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
 
@@ -96,7 +96,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a {% glossa
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
-### <container> {#fedg_layout_xml-instruc_ex_cont}
+### \<container\> {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
 **Details:** A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
 <table>
@@ -152,13 +152,13 @@ A structure without content that holds other layout elements such as blocks and 
       <tr class="odd">
          <td><code>htmlId</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 <code><id></code> value.</td>
+         <td>Any valid HTML 5 <code>\<id\></code> value.</td>
          <td>no</td>
       </tr>
       <tr class="even">
          <td><code>htmlClass</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5  <code><class></code> value.</td>
+         <td>Any valid HTML 5  <code>\<class\></code> value.</td>
          <td>no</td>
       </tr>
    </tbody>

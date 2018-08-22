@@ -12,14 +12,14 @@ The Magento application enables you to localize your store for multiple regions 
 ### Terms used {#translate_terms}
 
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
-    ```
-	"Add to Cart","Zum Warenkorb hinzufügen"
-	"Add to Compare","Hinzufügen um zu vergleichen"
-	"Add to Wishlist","Zum Wunschzettel hinzufügen"
-	"Additional Product Info","Zusätzliche Angaben zum Produkt"
-	"Address","Adresse"
-	"Address %1 of %2","Adresse %1 von %2"
-    ```
+```text
+"Add to Cart","Zum Warenkorb hinzufügen"
+"Add to Compare","Hinzufügen um zu vergleichen"
+"Add to Wishlist","Zum Wunschzettel hinzufügen"
+"Additional Product Info","Zusätzliche Angaben zum Produkt"
+"Address","Adresse"
+"Address %1 of %2","Adresse %1 von %2"
+```
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 

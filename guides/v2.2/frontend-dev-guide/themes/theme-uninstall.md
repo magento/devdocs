@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Uninstall a storefront theme
-menu_title: Uninstall a storefront theme
-menu_order: 40
 functional_areas:
   - Frontend
   - Theme

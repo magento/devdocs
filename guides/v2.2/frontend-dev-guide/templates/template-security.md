@@ -77,7 +77,6 @@ If your text contains special characters, they must be encoded as HTML entities,
   </script>
 ```
 
-
 **Case:** Strings inside JavaScript\\
 **Function:** In a JavaScript context, use the `escapeJs` function.
 
@@ -100,10 +99,8 @@ For example, when a URL output string is inside a JavaScript context, use both `
   alert('<?php echo $block->escapeJs(__('You are not authorized to perform this action.')) ?>');
 ```
 
-
 **Case:** Strings inside HTML attributes\\
 **Function:** `escapeHtmlAttr`
-
 
 ```html
   <span class="<?php echo $block->escapeHtmlAttr($block->getSpanClass()) ?>">Product Description</span>
