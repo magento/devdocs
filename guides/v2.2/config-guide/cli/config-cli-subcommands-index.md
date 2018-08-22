@@ -127,7 +127,7 @@ The following indexes can be run in parallel mode:
 - Category Product is paralleled by store views.
 - Catalog Price can be paralleled by website and customer groups.
 
-To reindex in parallel mode, run the reindex command using the environment variable MAGE_INDEXER_THREADS_COUNT or add an environment variable to env.php. This variable sets the number of threads for the reindex processing.
+To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT` or add an environment variable to env.php. This variable sets the number of threads for the reindex processing.
 
 For example, the following command runs the Catalog Search Fulltext indexer across three threads:
 
