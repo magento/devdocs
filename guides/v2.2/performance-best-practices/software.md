@@ -56,6 +56,8 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-pdo`
 * `php-soap`
 * `php-xml`
+* `php-xsl`
+* `php-zip`
 
 Adding more extensions increases library load times.
 
