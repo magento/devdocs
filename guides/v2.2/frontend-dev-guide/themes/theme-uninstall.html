@@ -1215,7 +1215,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Remove the theme record from database. If you are using MySQL, run the following command to do this:</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;user&gt; -p -e "delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-u</span> &lt;user&gt; <span class="nt">-p</span> <span class="nt">-e</span> <span class="s2">"delete from &lt;dbname&gt;.theme where theme_path ='&lt;Vendor&gt;/&lt;theme&gt;' AND area ='frontend' limit 1"</span>
 </code></pre></div></div>
 <p>Where:</p>
 
@@ -1242,31 +1242,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Open the <code class="highlighter-rouge">&lt;Magento root dir&gt;/composer.json</code> file.</li>
-  <li>Find a line with a reference to theme package and delete it. The reference would look like following:</li>
-</ol>
+  <li>
+    <p>Find a line with a reference to theme package and delete it. The reference would look like following:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">   </span><span class="err">...</span><span class="w">
-   </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-       </span><span class="s2">"&lt;vendor&gt;/&lt;theme-name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;version&gt;"</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="err">...</span><span class="w">
-   </span></code></pre></figure>
-
-<ol>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="err">...</span><span class="w">
+    </span><span class="s2">"&lt;vendor&gt;/&lt;theme-name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;version&gt;"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
   <li>
     <p>To update the project dependencies, run:</p>
 
     <p>composer update</p>
   </li>
-  <li>
-    <p>Use the <code class="highlighter-rouge">magento theme:uninstall</code> CLI command as described in the <a href="/guides/v2.2/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes Composer package</a> topic.</p>
-  </li>
+  <li>Use the <code class="highlighter-rouge">magento theme:uninstall</code> CLI command as described in the <a href="/guides/v2.2/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes Composer package</a> topic.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You can use the Composer remove command to remove the dependency, but in that case, you must delete the theme record from the database manually.</p>
-</div>
+<p class="bs-callout bs-callout-info">You can use the Composer remove command to remove the dependency, but in that case, you must delete the theme record from the database manually.</p>
 
 <h2 id="uninstall-a-theme-extension">Uninstall a theme extension</h2>
 

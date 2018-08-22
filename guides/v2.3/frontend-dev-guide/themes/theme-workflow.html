@@ -1184,214 +1184,114 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div class="flow-intro">
-  <p>Continue From:<br />
+			<p>Continue From:
 <strong>Install Magento</strong></p>
-</div>
 
-<div class="flow-arrow"> </div>
+<h3 id="enable-development-mode">Enable development mode</h3>
 
-<div class="flow-block">
+<p>In the Magento root directory, run:</p>
 
-  <h3 id="enable-development-mode">Enable development mode</h3>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">php</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">magento</span> <span class="nx">deploy</span><span class="o">:</span><span class="nx">mode</span><span class="o">:</span><span class="nx">set</span> <span class="nx">developer</span>
+</code></pre></div></div>
 
-  <p>In the Magento root directory, run:</p>
+<p>See:</p>
+<ul>
+  <li><a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+</ul>
 
-  <p><code class="highlighter-rouge">php bin/magento deploy:mode:set developer</code></p>
+<p class="bs-callout bs-callout-tip">To check the current mode of your Magento instance, in the root directory, run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento deploy:mode:show
+</code></pre></div></div>
 
-  <p>See</p>
+<h3 id="create-basic-theme-files">Create basic theme files</h3>
 
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
-  </ul>
+<p>In the <code class="highlighter-rouge">&lt;magento_root&gt;/app/design/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code> directory, create the following files:</p>
 
-  <div class="bs-callout bs-callout-tip">
-    <p>To check the current mode of your Magento instance, in the root directory, run:</p>
+<ul>
+  <li><code class="highlighter-rouge">theme.xml</code></li>
+  <li><code class="highlighter-rouge">registration.php</code></li>
+  <li>(optionally) <code class="highlighter-rouge">composer.json</code></li>
+</ul>
 
-    <p><code class="highlighter-rouge">php bin/magento deploy:mode:show</code></p>
-  </div>
-</div>
+<p>For details, see <a href="/guides/v2.3/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></p>
 
-<div class="flow-arrow"> </div>
+<h3 id="apply-the-theme">Apply the theme</h3>
 
-<div class="flow-block">
+<ol>
+  <li>In the Admin Panel, go to <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong></li>
+  <li>Find the record corresponding to your store view and click <strong>Edit</strong>.</li>
+  <li>In the <strong>Applied Theme</strong> drop-down, select your newly created theme.</li>
+  <li>Click <strong>Save Configuration</strong>.</li>
+</ol>
 
-  <h3 id="create-basic-theme-files">Create basic theme files</h3>
+<p>For details, see <a href="/guides/v2.3/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a></p>
 
-  <p>In the <code class="highlighter-rouge">&lt;magento_root&gt;/app/design/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code> directory, create the following files:</p>
+<h3 id="choose-less-compilation-mode">Choose .less compilation mode</h3>
 
-  <ul>
-    <li><code class="highlighter-rouge">theme.xml</code></li>
-    <li><code class="highlighter-rouge">registration.php</code></li>
-    <li>(optionally) <code class="highlighter-rouge">composer.json</code></li>
-  </ul>
+<h4 id="grunt-recommended">Grunt (recommended)</h4>
 
-  <p>For details, see <a href="/guides/v2.3/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></p>
-</div>
+<ul>
+  <li><a href="/guides/v2.3/frontend-dev-guide/tools/using_grunt.html">Setup Grunt</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#add_theme">Add the theme to Grunt configuration</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#grunt_commands">Track changes</a></li>
+</ul>
 
-<div class="flow-arrow"> </div>
+<h4 id="client-side-compilation">Client-side compilation</h4>
 
-<div class="flow-block">
+<p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#client-side">CSS preprocessing#client-side compilation mode</a></p>
 
-  <h3 id="apply-the-theme">Apply the theme</h3>
+<h4 id="server-side-compilation-default">Server-side compilation (default)</h4>
 
-  <ol>
-    <li>In the Admin Panel, go to <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong></li>
-    <li>Find the record corresponding to your store view and click <strong>Edit</strong>.</li>
-    <li>In the <strong>Applied Theme</strong> drop-down, select your newly created theme.</li>
-    <li>Click <strong>Save Configuration</strong>.</li>
-  </ol>
+<p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#server-side">CSS preprocessing#server-side compilation mode</a></p>
 
-  <p>For details, see <a href="/guides/v2.3/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a></p>
-</div>
+<h4 id="custom-preprocessor">Custom preprocessor</h4>
 
-<div class="flow-arrow"></div>
+<p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/custom-preprocess-parent.html">Using custom CSS preprocessor</a></p>
 
-<div class="flow-block">
+<h3 id="create-your-styles">Create your styles</h3>
 
-  <h3 id="choose-less-compilation-mode">Choose .less compilation mode</h3>
+<p>See:</p>
+<ul>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to working with styles</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css-overview.html">All about styles in Magento themes</a></li>
+</ul>
 
-</div>
-<div class="flow-arrow"></div>
+<h3 id="debug">Debug</h3>
 
-<div class="flow-row">
+<p>See:</p>
+<ul>
+  <li><a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html">Locate the CSS/Less file you need to change</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#source_maps">CSS source maps</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#use_cases">Track changes using Grunt</a></li>
+</ul>
 
-<div class="flow-column">
-<div class="flow-block">
+<h3 id="clean-cache-andor-static-files-if-necessary">Clean cache and/or static files if necessary</h3>
 
-      <h4 id="grunt-recommended">Grunt (recommended)</h4>
+<ul>
+  <li>
+    <p>Certain changes in styles require cleaning previously pre-processed and published static view files. Run <code class="highlighter-rouge">grunt clean &lt;theme&gt;</code> or manually clear the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">Сlean static files</a> for details.</p>
+  </li>
+  <li>
+    <p>Changes in layout and templates requires cleaning cache. See <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_cache">Clean cache</a> for details.</p>
+  </li>
+</ul>
 
-      <ul>
-        <li><a href="/guides/v2.3/frontend-dev-guide/tools/using_grunt.html">Setup Grunt</a></li>
-        <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#add_theme">Add the theme to Grunt configuration</a></li>
-        <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#grunt_commands">Track changes</a></li>
-      </ul>
+<h3 id="make-sure-that-the-same-styles-are-delivered-to-production-optional">Make sure that the same styles are delivered to production (optional)</h3>
 
-    </div>
-<div class="flow-nav top-bottom"></div>
-</div>
+<p>When you finish developing and your styles are ready to go to production, you can configure your Grunt/Gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to <code class="highlighter-rouge">/app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css</code> directory next to source files. They will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).</p>
 
-<div class="flow-column">
-<div class="flow-block">
+<h3 id="switch-to-production-mode">Switch to production mode</h3>
 
-      <h4 id="client-side-compilation">Client-side compilation</h4>
+<p>In the Magento root directory, run:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">php</span> <span class="nx">bin</span><span class="o">/</span><span class="nx">magento</span> <span class="nx">deploy</span><span class="o">:</span><span class="nx">mode</span><span class="o">:</span><span class="nx">set</span> <span class="nx">production</span>
+</code></pre></div></div>
 
-      <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#client-side">CSS preprocessing#client-side compilation mode</a></p>
-    </div>
+<p>See <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">Magento modes</a> for details.</p>
 
-</div>
-<div class="flow-column">
-<div class="flow-block">
+<h3 id="deploy-static-content">Deploy static content</h3>
 
-      <h4 id="server-side-compilation-default">Server-side compilation (default)</h4>
-
-      <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#server-side">CSS preprocessing#server-side compilation mode</a></p>
-    </div>
-
-</div>
-
-<div class="flow-column">
-<div class="flow-block">
-
-      <h4 id="custom-preprocessor">Custom preprocessor</h4>
-
-      <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/custom-preprocess-parent.html">Using custom CSS preprocessor</a></p>
-    </div>
-
-</div>
-
-
-</div>
-
-<div class="flow-row">
-
-<div class="flow-column">
-<div class="flow-nav turn-right"></div>
-</div>
-<div class="flow-column">
-<div class="flow-nav turn-left-right"></div>
-</div>
-<div class="flow-column">
-<div class="flow-nav turn-left-right"></div>
-</div>
-<div class="flow-column">
-<div class="flow-nav turn-left"></div>
-</div>
-
-</div>
-
-<div class="flow-arrow"></div>
-
-<div class="flow-block">
-
-  <h3 id="create-your-styles">Create your styles</h3>
-
-  <p>See</p>
-
-  <ul>
-    <li><a href="/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to working with styles</a></li>
-    <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css-overview.html">All about styles in Magento themes</a></li>
-  </ul>
-</div>
-<div class="flow-arrow"></div>
-
-<div class="flow-block">
-
-  <h3 id="debug">Debug</h3>
-
-  <p>See:</p>
-
-  <ul>
-    <li><a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html">Locate the CSS/Less file you need to change</a></li>
-    <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#source_maps">CSS source maps</a></li>
-    <li><a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#use_cases">Track changes using Grunt</a></li>
-  </ul>
-</div>
-<div class="flow-arrow"></div>
-
-<div class="flow-block">
-
-  <h3 id="clean-cache-andor-static-files-if-necessary">Clean cache and/or static files if necessary</h3>
-
-  <ul>
-    <li>
-      <p>Certain changes in styles require cleaning previously pre-processed and published static view files. Run <code class="highlighter-rouge">grunt clean &lt;theme&gt;</code> or manually clear the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">Сlean static files</a> for details.</p>
-    </li>
-    <li>
-      <p>Changes in layout and templates requires cleaning cache. See <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_cache">Clean cache</a> for details.</p>
-    </li>
-  </ul>
-
-</div>
-<div class="flow-arrow"></div>
-
-<div class="flow-block flow-block-optional">
-
-  <h3 id="make-sure-that-the-same-styles-are-delivered-to-production-optional">Make sure that the same styles are delivered to production (optional)</h3>
-
-  <p>When you finish developing and your styles are ready to go to production, you can configure your Grunt/Gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to <code class="highlighter-rouge">/app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css</code> directory next to source files. They will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).</p>
-</div>
-<div class="flow-arrow"></div>
-
-<div class="flow-block">
-
-  <h3 id="switch-to-production-mode">Switch to production mode</h3>
-
-  <p>In the Magento root directory, run:</p>
-
-  <p><code class="highlighter-rouge">php bin/magento deploy:mode:set production</code></p>
-
-  <p>See <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">Magento modes</a> for details.</p>
-</div>
-<div class="flow-arrow"></div>
-
-<div class="flow-block">
-
-  <h3 id="deploy-static-content">Deploy static content</h3>
-
-  <p>To publish your static files to the <code class="highlighter-rouge">pub/static</code> directory when your Magento instance is set to production mode, <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">run the static content deployment tool</a>.</p>
-</div>
+<p>To publish your static files to the <code class="highlighter-rouge">pub/static</code> directory when your Magento instance is set to production mode, <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">run the static content deployment tool</a>.</p>
 
 			
 		</div>

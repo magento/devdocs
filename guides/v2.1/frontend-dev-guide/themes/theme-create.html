@@ -1169,7 +1169,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="recommended-reading">Recommended reading</h2>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento" target="\_blank">Checklist of modules</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento">Checklist of modules</a></li>
   <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">Static view files processing</a></li>
 </ul>
 
@@ -1187,13 +1187,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Under the <code class="highlighter-rouge">&lt;vendor&gt;</code> directory, create a directory named according to your theme.</p>
 
-    <pre>
-app/design/frontend/
-├──&nbsp;&lt;Vendor&gt;/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──...&lt;theme&gt;/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
-</pre>
+    <pre><code class="language-tree">app/design/frontend/
+├── &lt;Vendor&gt;/
+│   │   ├──...&lt;theme&gt;/
+│   │   │   ├── ...
+│   │   │   ├── ...
+</code></pre>
   </li>
 </ol>
 
@@ -1234,9 +1233,9 @@ app/design/frontend/
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
 
-<p>Magento default themes are distributed as <a href="https://getcomposer.org/" target="\_blank">Composer</a> packages.</p>
+<p>Magento default themes are distributed as <a href="https://getcomposer.org/">Composer</a> packages.</p>
 
-<p>To distribute your theme as a package, add a <code class="highlighter-rouge">composer.json</code> file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="\_blank">https://packagist.org/</a>.</p>
+<p>To distribute your theme as a package, add a <code class="highlighter-rouge">composer.json</code> file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/">https://packagist.org/</a>.</p>
 
 <p>The <code class="highlighter-rouge">composer.json</code> file provides theme dependency information. Refer to a current <code class="highlighter-rouge">theme.xml</code> file for the correct dependancies and their versions. If your parent theme is something other than <code class="highlighter-rouge">Magento/blank</code>, you may need additional modules in the <code class="highlighter-rouge">"require"</code> section.</p>
 
@@ -1284,7 +1283,7 @@ app/design/frontend/
 
 <p>Where <code class="highlighter-rouge">&lt;Vendor&gt;</code> is your vendor name and <code class="highlighter-rouge">&lt;theme&gt;</code> is the theme code.</p>
 
-<p>For illustration, see the <a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/luma/registration.php" target="\_blank">registration.php</a> file in the Magento Luma theme.</p>
+<p>For illustration, see the <a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/luma/registration.php">registration.php</a> file in the Magento Luma theme.</p>
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
@@ -1326,23 +1325,20 @@ app/design/frontend/
 <ul>
   <li>Styles</li>
   <li>Fonts</li>
-  <li>
-    <p><span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span></p>
-  </li>
+  <li>JavaScript</li>
   <li>Images</li>
 </ul>
 
 <p>Each type should be stored in a separate sub-directory of <code class="highlighter-rouge">web</code> in your theme folder:</p>
 
-<pre>
-app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
-├──&nbsp;web/
-│&nbsp;├──&nbsp;css/
-│&nbsp;│&nbsp;├──&nbsp;source/&nbsp;
-│&nbsp;├──&nbsp;fonts/
-│&nbsp;├──&nbsp;images/
-│&nbsp;├──&nbsp;js/
-</pre>
+<pre><code class="language-tree">app/design/&gt;area&lt;/&lt;Vendor&gt;/&lt;theme&gt;/
+├── web/
+│ ├── css/
+│ │ ├── source/ 
+│ ├── fonts/
+│ ├── images/
+│ ├── js/
+</code></pre>
 
 <p>In the <code class="highlighter-rouge">.../&lt;theme&gt;/web/images</code> directory, you store the general theme-related static files. For example, a theme logo is stored in <code class="highlighter-rouge">...&lt;theme&gt;/web/images</code>.</p>
 
@@ -1354,18 +1350,17 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <p>At this point your theme file structure looks as follows:</p>
 
-<pre>
-app/design/frontend/&lt;Vendor&gt;/
-├──&nbsp;&lt;theme&gt;/
-│&nbsp;&nbsp;&nbsp;├──&nbsp;etc/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;view.xml
-│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;images
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;logo.svg
-│&nbsp;&nbsp;&nbsp;├──&nbsp;registration.php
-│&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
-│&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
-</pre>
+<pre><code class="language-tree">app/design/frontend/&lt;Vendor&gt;/
+├── &lt;theme&gt;/
+│   ├── etc/
+│   │   ├── view.xml
+│   ├── web/
+│   │   ├── images
+│   │   │   ├── logo.svg
+│   ├── registration.php
+│   ├── theme.xml
+│   ├── composer.json
+</code></pre>
 
 <h2 id="theme_logo">Theme logo</h2>
 

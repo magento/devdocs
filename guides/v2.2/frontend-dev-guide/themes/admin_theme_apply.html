@@ -1188,18 +1188,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  are cached by Magento.</li>
   <li><a href="/guides/v2.2/frontend-dev-guide/themes/admin_theme_create.html">Create a custom theme for the Admin panel</a>.</li>
-  <li><a href="/guides/v2.2/extension-dev-guide/build/build.html">Add a new custom module</a> or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in <code class="highlighter-rouge">&lt;your_custom_module_dir&gt;/etc/module.xml</code> (replace placeholders with your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- information):</li>
+  <li>
+    <p><a href="/guides/v2.2/extension-dev-guide/build/build.html">Add a new custom module</a> or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in <code class="highlighter-rouge">&lt;your_custom_module_dir&gt;/etc/module.xml</code> (replace placeholders with your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ information):</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"%YourVendor_YourModule%"</span> <span class="na">setup_version=</span><span class="s">"2.0.1"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Example: "Magento_Backend" --&gt;</span>
+     <span class="nt">&lt;sequence&gt;</span>
+         <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Theme"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Enterprise"</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- For Enterprise versions only --&gt;</span>
+     <span class="nt">&lt;/sequence&gt;</span>
+ <span class="nt">&lt;/module&gt;</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"%YourVendor_YourModule%"</span> <span class="na">setup_version=</span><span class="s">"2.0.1"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Example: "Magento_Backend" --&gt;</span>
-        <span class="nt">&lt;sequence&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Theme"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Enterprise"</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- For Enterprise versions only --&gt;</span>
-        <span class="nt">&lt;/sequence&gt;</span>
-    <span class="nt">&lt;/module&gt;</span></code></pre></figure>
-
-<p class="bs-callout bs-callout-info">If you choose to create a separate dedicated module, you can use the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal">Magento_SampleMinimal module from the Magento 2 sample modules repository</a> as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the <code class="highlighter-rouge">&amp;lt;your_module_dir&amp;gt;/etc/module.xml</code>, <code class="highlighter-rouge">&amp;lt;your_module_dir&gt;/registration.php</code>, <code class="highlighter-rouge">and &amp;lt;your_module_dir&gt;/composer.json</code> files .</p>
+<p class="bs-callout bs-callout-info">If you choose to create a separate dedicated module, you can use the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal">Magento_SampleMinimal module from the Magento 2 sample modules repository</a> as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/module.xml</code>, <code class="highlighter-rouge">&lt;your_module_dir&gt;/registration.php</code>, <code class="highlighter-rouge">and &lt;your_module_dir&gt;/composer.json</code> files.</p>
 
 <p>If you decide to use the existing module, keep in mind, that theme declaring might be affected when the module is changed.</p>
 
@@ -1222,7 +1225,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> add the following (replace the placeholders with the vendor name and theme code of your Admin theme):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- Admin theme. Start --&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Theme\Model\View\Design"</span><span class="nt">&gt;</span>
@@ -1233,7 +1236,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
          <span class="nt">&lt;/arguments&gt;</span> 
     <span class="nt">&lt;/type&gt;</span>
     <span class="c">&lt;!-- Admin theme. End --&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <h2 id="update-components-to-actually-apply-the-admin-theme">Update components to actually apply the Admin theme</h2>
 

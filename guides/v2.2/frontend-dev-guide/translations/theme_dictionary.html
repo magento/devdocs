@@ -1205,15 +1205,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The translations priority described earlier is applied for the default en_US locale as well. So you can use the <code class="highlighter-rouge">en_US.csv</code> dictionary to customize the strings used in the default locale.</p>
 
-<p><span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
-<a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/i18n/en_US.csv"><code>&lt;Magento_Luma_theme_dir&gt;/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
-</span></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Wish List",	"Wish List"
+<p>For example, this approach is used in the Magento Luma theme. It has the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/i18n/en_US.csv"><code class="highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right column contains the values to be used instead when the Luma theme is applied:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Wish List",	"Wish List"
 "Add to Compare",	"Compare"
 "Your Checkout Progress",	"Checkout Progress"
 "Card Verification Number",	"CVV"
-...
 </code></pre></div></div>
 
 <p>It is important to remember that if you generate a dictionary for your theme using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten.</p>
@@ -1232,12 +1228,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Even if your theme uses <code class="highlighter-rouge">en_US.csv</code> to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones.</p>
 
 <p>Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the <code class="highlighter-rouge">de_DE.csv</code> dictionary will be added for the Luma theme, it will look like following:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Wish List",	&lt;translation&gt;
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Wish List",	&lt;translation&gt;
 "Add to Compare",	&lt;translation&gt;
 "Your Checkout Progress",	&lt;translation&gt;
 "Card Verification Number",	&lt;translation&gt;
-...
 </code></pre></div></div>
 
 <p>The default values (keys) are used in the left column.</p>
@@ -1248,6 +1242,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.2/frontend-dev-guide/translations/xlate.html">Translations overview</a></li>
   <li><a href="/guides/v2.2/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a></li>
 </ul>
+
 
 			
 		</div>

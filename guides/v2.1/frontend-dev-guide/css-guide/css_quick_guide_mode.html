@@ -1139,7 +1139,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>After you <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">create a theme</a>, you need to decide which LESS compilation mode to use before changing styles. You can choose between <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes">two modes</a>:</p>
+			<p>After you <a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">create a theme</a>, you need to decide which LESS compilation mode to use before changing styles. You can choose between <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#LESS">two compilation modes</a>:</p>
 
 <ul>
   <li>Server-side compilation mode (default)</li>
@@ -1170,13 +1170,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the color of the buttons by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+     }
+ }
+</code></pre>
   </li>
   <li><a href="/guides/v2.1/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache</a>.</li>
   <li>
@@ -1187,14 +1187,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the button font size by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.5em</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+         font-size: 1.5em;
+     }
+ }
+</code></pre>
   </li>
   <li>
     <p>Delete all files in the following directories:</p>
@@ -1231,13 +1231,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the color of the buttons by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+     }
+ }
+</code></pre>
   </li>
   <li>
     <p>Refresh the page and verify your changes.</p>
@@ -1247,14 +1247,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the button font size by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.5em</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+         font-size: 1.5em;
+     }
+ }
+</code></pre>
   </li>
   <li>
     <p>Refresh the page and verify your changes.</p>
@@ -1274,13 +1274,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the color of the buttons by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+     }
+ }
+</code></pre>
   </li>
   <li>
     <p>Refresh the page and verify your changes.</p>
@@ -1290,14 +1290,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the button font size by adding the following code in the <code class="highlighter-rouge">_extend.less</code> file:</p>
 
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.action</span> <span class="p">{</span>
-     <span class="err">&amp;.primary</span> <span class="err">{</span>
-         <span class="nl">background-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">border-color</span><span class="p">:</span> <span class="no">palevioletred</span><span class="p">;</span>
-         <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.5em</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="err">}</span>
-</code></pre></div>    </div>
+    <pre><code class="language-less"> .action {
+     &amp;.primary {
+         background-color: palevioletred;
+         border-color: palevioletred;
+         font-size: 1.5em;
+     }
+ }
+</code></pre>
   </li>
   <li>
     <p>Refresh the page and verify your changes.</p>
@@ -1307,6 +1307,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <p class="bs-callout bs-callout-info">Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the <code class="highlighter-rouge">pub/static/frontend</code> directory. See <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html#css_debug_client">Styles debugging</a>.</p>
+
 
 			
 		</div>

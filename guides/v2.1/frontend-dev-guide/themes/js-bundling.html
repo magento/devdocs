@@ -1144,7 +1144,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 <h2 id="enable-javascript-bundling">Enable JavaScript bundling</h2>
 
-<p>Magento must be set to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a> in order for bundling to work.</p>
+<p>Magento must be set to [production mode] in order for bundling to work.</p>
 
 <p>To activate JavaScript bundling:</p>
 
@@ -1174,11 +1174,11 @@ JavaScript files excluded from bundling are loaded asynchronously by RequireJS a
 
 <p>Do not bundle JavaScript files used for testing or development because these will get loaded on every page.</p>
 
-<p>The following code snippet from <a href="https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270" target="_blank">Magento’s Luma theme</a> shows the types of files you should exclude in your theme.</p>
+<p>The following code snippet from <a href="https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270">Magento’s Luma theme</a> shows the types of files you should exclude in your theme.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show example </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">"Js_Bundle"</span><span class="nt">&gt;</span>
+    <div class="collapsible-content"><div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">"Js_Bundle"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"bundle_size"</span><span class="nt">&gt;</span>1MB<span class="nt">&lt;/var&gt;</span>
 <span class="nt">&lt;/vars&gt;</span>
 <span class="nt">&lt;exclude&gt;</span>
@@ -1230,7 +1230,8 @@ JavaScript files excluded from bundling are loaded asynchronously by RequireJS a
     <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::less<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::mage/adminhtml<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">"directory"</span><span class="nt">&gt;</span>Lib::mage/backend<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/exclude&gt;</span></code></pre></figure>
+<span class="nt">&lt;/exclude&gt;</span>
+</code></pre></div></div>
 </div>
   </div>
 

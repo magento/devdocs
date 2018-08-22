@@ -1206,36 +1206,28 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#layout_markup_replace_elements">Replace elements</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p class="bs-callout bs-callout-info">To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- layouts. To customize your layout, create extending and overriding layout files in your custom theme.</p></span>
-</div>
+ layouts. To customize your layout, create extending and overriding layout files in your custom theme.</p>
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
 
-<p>The type of page layout to be used for a certain page is defined in the page configuration file, in the <code class="highlighter-rouge">layout</code> attribute of the root <code>&lt;page&gt;</code> node.</p>
+<p>The type of page layout to be used for a certain page is defined in the page configuration file, in the <code class="highlighter-rouge">layout</code> attribute of the root <code class="highlighter-rouge">&lt;page&gt;</code> node.</p>
 
 <p>Example:
 Change the layout of Advanced Search page from default “1-column” to “2-column with left bar”. To do this, extend <code class="highlighter-rouge">catalogsearch_advanced_index.xml</code> in your theme by adding the following layout:</p>
 
-<p><b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">"2columns-left"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">"2columns-left"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
 ...
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
-<p>JavaScript,   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
- and other static assets are added in the <code class="highlighter-rouge">&lt;head&gt;</code> section of a <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page <code class="highlighter-rouge">&lt;head&gt;</code> is defined by <code class="highlighter-rouge">app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
- is to extend this file in your custom theme, and add the assets there.
+<p>JavaScript, CSS, and other static assets are added in the <code class="highlighter-rouge">&lt;head&gt;</code> section of a <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-conf">page configuration</a> file. The default look of a Magento store page <code class="highlighter-rouge">&lt;head&gt;</code> is defined by <code class="highlighter-rouge">app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:</p>
 
-<p><code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Add local resources --&gt;</span>
     	<span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"css/my-styles.css"</span><span class="nt">/&gt;</span>
@@ -1249,46 +1241,46 @@ The following file is a sample of a file you must add:</p>
         <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"</span> <span class="na">src_type=</span><span class="s">"url"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">src=</span><span class="s">"http://fonts.googleapis.com/css?family=Montserrat"</span> <span class="na">src_type=</span><span class="s">"url"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
-<p>When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.</p>
+<p>When adding external resources, specifying the <code class="highlighter-rouge">src_type="url"</code> argument value is a must.</p>
 
 <p>You can use either <code class="highlighter-rouge">&lt;link src="js/sample.js"/&gt;</code> or <code class="highlighter-rouge">&lt;script src="js/sample.js"/&gt;</code> instruction to add a locally stored JavaScript file to your theme.</p>
 
 <p>The path to assets is specified relatively to one the following locations:</p>
 <ul>
-<li><code>&lt;theme_dir&gt;/web</code></li>
-<li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
-
+  <li><code class="highlighter-rouge">&lt;theme_dir&gt;/web</code>-</li>
+  <li><code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>-</li>
 </ul>
 
 <h3 id="adding-conditional-comments">Adding conditional comments</h3>
 
-<p><a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
+<p><a href="http://en.wikipedia.org/wiki/Conditional_comment">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"css/ie-9.css"</span> <span class="na">ie_condition=</span><span class="s">"IE 9"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <p>This adds an IE conditional comment in the generated HTML, like in the following example:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--[if IE 9]&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--[if IE 9]&gt;
 &lt;link rel="stylesheet" type="text/css" media="all" href="&lt;your_store_web_address&gt;/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" /&gt;
-&lt;![endif]--&gt;</span></code></pre></figure>
+&lt;![endif]--&gt;</span>
+</code></pre></div></div>
 
-<p>In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.</p>
+<p>In this example, <code class="highlighter-rouge">orange</code> is a custom theme created by the OrangeCo vendor.</p>
 
 <h2 id="layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts)</h2>
 
-<p>To remove the static resources, linked in a page <code class="highlighter-rouge">&lt;head&gt;</code>, make a change similar to the following in a theme extending file:</p>
+<p>To remove the static resources, linked in a page <code class="highlighter-rouge">&lt;head&gt;</code>, make a change similar to the following in a theme extending <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>:</p>
 
-<p><code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Remove local resources --&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"css/styles-m.css"</span> <span class="nt">/&gt;</span>
@@ -1300,7 +1292,8 @@ A sample follows:</p>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"http://fonts.googleapis.com/css?family=Montserrat"</span> <span class="nt">/&gt;</span> 
    <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <p>Note, that if a static asset is added with a module path (for example <code class="highlighter-rouge">Magento_Catalog::js/sample.js</code>) in the initial layout, you need to specify the module path as well when removing the asset.</p>
 
@@ -1320,8 +1313,7 @@ A sample follows:</p>
 
 <p><strong>Examples:</strong>
 Use the following examples to include in your own layout themes.</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- This will create a tag like '&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;' --&gt;</span>
         <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"x_ua_compatible"</span> <span class="na">content=</span><span class="s">"IE=edge,chrome=1"</span><span class="nt">/&gt;</span>
@@ -1340,54 +1332,60 @@ Use the following examples to include in your own layout themes.</p>
         
 	<span class="c">&lt;!-- This will create a tag like '&lt;meta name="my_custom_type" content="my_custom_value"/&gt;' --&gt;</span>
         <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"my_custom_type"</span> <span class="na">content=</span><span class="s">"my_custom_value"</span><span class="nt">/&gt;</span>
-   <span class="nt">&lt;/head&gt;</span></code></pre></figure>
+   <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/page&gt;</span>   
+</code></pre></div></div>
 
 <h2 id="create_cont">Create a container</h2>
 
 <p>Use the following sample to create (declare) a container:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"some.container"</span> <span class="na">as=</span><span class="s">"someContainer"</span> <span class="na">label=</span><span class="s">"Some Container"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"some-container"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"some.container"</span> <span class="na">as=</span><span class="s">"someContainer"</span> <span class="na">label=</span><span class="s">"Some Container"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"some-container"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h2 id="ref_container">Reference a container</h2>
 
-<p>To update a container use the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank"><code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a> instruction.</p>
+<p>To update a container use the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a> instruction.</p>
 
 <p>Example: add links to the page header panel.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"header.panel"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"header.panel"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Html\Links"</span> <span class="na">name=</span><span class="s">"header.links"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;arguments&gt;</span>
                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/block&gt;</span>
-<span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
+<span class="nt">&lt;/referenceContainer&gt;</span>
+</code></pre></div></div>
 
 <h2 id="xml-manage-block">Create a block</h2>
 
-<p>Blocks are created (declared) using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank"><code class="highlighter-rouge">&lt;block&gt;</code></a> instruction.</p>
+<p>Blocks are created (declared) using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a> instruction.</p>
 
 <p>Example: add a block with a product   <span term-uuid="fd4bed67-7130-4415-8a6f-ad8d8ef8f25e" class="glossary-term" data-toggle="popover">SKU</span>
  information.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Block\Product\View\Description"</span> <span class="na">name=</span><span class="s">"product.info.sku"</span> <span class="na">template=</span><span class="s">"product/view/attribute.phtml"</span> <span class="na">after=</span><span class="s">"product.info.type"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Block\Product\View\Description"</span> <span class="na">name=</span><span class="s">"product.info.sku"</span> <span class="na">template=</span><span class="s">"product/view/attribute.phtml"</span> <span class="na">after=</span><span class="s">"product.info.type"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"at_call"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>getSku<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"at_code"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>sku<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>sku<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/block&gt;</span></code></pre></figure>
+<span class="nt">&lt;/block&gt;</span>
+</code></pre></div></div>
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
 
-<p>To update a block use the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code></a> instruction.</p>
+<p>To update a block use the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code></a> instruction.</p>
 
 <p>Example: pass the image to the <code class="highlighter-rouge">logo</code> block.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"logo"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"logo"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logo_file"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>images/logo.png<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
+<span class="nt">&lt;/referenceBlock&gt;</span>
+</code></pre></div></div>
 
 <h2 id="set_template">Set the template used by a block</h2>
 
@@ -1402,15 +1400,17 @@ Use the following examples to include in your own layout themes.</p>
 
 <p><strong>Example 1:</strong></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span> <span class="na">template=</span><span class="s">"%Namespace_Module::new_template.phtml%"</span><span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span> <span class="na">template=</span><span class="s">"%Namespace_Module::new_template.phtml%"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Example 2:</strong></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%Namespace_Module::new_template.phtml%<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
- <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
+ <span class="nt">&lt;/referenceBlock&gt;</span>
+</code></pre></div></div>
 
 <p>In both example, the template is specified according to the following:</p>
 
@@ -1419,9 +1419,7 @@ Use the following examples to include in your own layout themes.</p>
   <li><code class="highlighter-rouge">new_template.phtml</code>: the path to the template relatively to the <code class="highlighter-rouge">templates</code> directory. It might be <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/templates</code> or <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace_Module&gt;/templates</code>.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
-</div>
+<p class="bs-callout bs-callout-info">Template values specified as attributes have higher priority during layout generation, than the ones specified using <code class="highlighter-rouge">&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code class="highlighter-rouge">&lt;argument&gt;</code> for the same block.</p>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -1431,18 +1429,16 @@ Use the following examples to include in your own layout themes.</p>
 
 <p>Initial block declaration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Namespace_Module_Block_Type"</span> <span class="na">name=</span><span class="s">"block.example"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Namespace_Module_Block_Type"</span> <span class="na">name=</span><span class="s">"block.example"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Block Label<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/block&gt;</span>
-...</code></pre></figure>
+</code></pre></div></div>
 
 <p>Extending layout:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"block.example"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"block.example"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
         <span class="c">&lt;!-- Modified block argument --&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>New Block Label<span class="nt">&lt;/argument&gt;</span>
@@ -1450,80 +1446,74 @@ Use the following examples to include in your own layout themes.</p>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"custom_label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Custom Block Label<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/referenceBlock&gt;</span> 
-...</code></pre></figure>
+</code></pre></div></div>
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
 <p>There are two ways to access block object methods:</p>
 
 <ul>
-  <li>using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;referenceBlock&gt;</code></li>
-  <li>using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through <code class="highlighter-rouge">&lt;argument&gt;</code>.</li>
+  <li>using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a> instruction for <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;referenceBlock&gt;</code></li>
+  <li>using the <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code class="highlighter-rouge">&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through <code class="highlighter-rouge">&lt;argument&gt;</code>.</li>
 </ul>
 
 <p>Example 1: Set a CSS class and add an attribute for the product page using <code class="highlighter-rouge">&lt;argument&gt;</code>.</p>
 
 <p>Extending layout:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">	<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;arguments&gt;</span>
-		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product<span class="nt">&lt;/argument&gt;</span>
-		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"add_base_attribute"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>itemprop="name"<span class="nt">&lt;/argument&gt;</span>
-		<span class="nt">&lt;/arguments&gt;</span>
-	<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"add_base_attribute"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>itemprop="name"<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/referenceBlock&gt;</span>
+</code></pre></div></div>
 
 <p>Example 2: Set a page title using <code class="highlighter-rouge">&lt;action&gt;</code>.</p>
 
-<div class="bs-callout bs-callout-warning" id="info">
-<span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code>&lt;/a&gt; for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
-</div>
+<p class="bs-callout bs-callout-warning">Do not use <code class="highlighter-rouge">&lt;action&gt;</code> if the method implementation allows calling it using <code class="highlighter-rouge">&lt;argument&gt;</code> for <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;referenceBlock&gt;</code>.</p>
 
 <p>Extending layout:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">	...
-	<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
-	    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setPageTitle"</span><span class="nt">&gt;</span>
-	        <span class="nt">&lt;argument</span> <span class="na">translate=</span><span class="s">"true"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Catalog Advanced Search<span class="nt">&lt;/argument&gt;</span>
-	    <span class="nt">&lt;/action&gt;</span>
-	<span class="nt">&lt;/referenceBlock&gt;</span>
-	...</code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"page.main.title"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setPageTitle"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">translate=</span><span class="s">"true"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Catalog Advanced Search<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/referenceBlock&gt;</span>
+</code></pre></div></div>
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
 <p>In layout files you can change the elements order on a page. This can be done using one of the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank"><code class="highlighter-rouge">&lt;move&gt;</code> instruction</a>: allows changing elements’ order and parent.</li>
-  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes of <code class="highlighter-rouge">&lt;block&gt;</code></a>: allows changing elements’ order within one parent.</li>
+  <li></li>
+  <li></li>
 </ul>
 
-<p></p>
 <p>Example of <code class="highlighter-rouge">&lt;move&gt;</code> usage:
 put the stock availability and SKU blocks next to the product price on a product page.</p>
 
 <p>In the Magento Blank theme these elements are located as follows:</p>
 
-<p><img src="/common/images/layout_image1.png" /></p>
+<p><img src="/common/images/layout_image1.png" alt="" /></p>
 
 <p>Let’s place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending <code class="highlighter-rouge">catalog_product_view.xml</code> in the <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/</code> directory:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">"product.info.stock.sku"</span> <span class="na">destination=</span><span class="s">"product.info.price"</span> <span class="na">after=</span><span class="s">"product.price.final"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">"product.info.review"</span> <span class="na">destination=</span><span class="s">"product.info.main"</span> <span class="na">before=</span><span class="s">"product.info.price"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <p>This would make the product page look like following:</p>
 
-<p><img src="/common/images/layout_image2.png" /></p>
+<p><img src="/common/images/layout_image2.png" alt="" /></p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">To learn how to locate the layout file you need to customize, see <a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a>.</p>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
@@ -1534,7 +1524,7 @@ To do this, add the extending <code class="highlighter-rouge">catalog_product_vi
 
 <p>This block is declared in <code class="highlighter-rouge">app/code/Magento/Catalog/view/frontend/layout/default.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 ...
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"sidebar.additional"</span><span class="nt">&gt;</span>
@@ -1542,31 +1532,34 @@ To do this, add the extending <code class="highlighter-rouge">catalog_product_vi
         <span class="nt">&lt;/referenceContainer&gt;</span>
 ...
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <p>To remove the block, add the extending <code class="highlighter-rouge">default.xml</code> in your theme:
 <code class="highlighter-rouge">&lt;theme_dir&gt;/Magento_Catalog/layout/default.xml</code></p>
 
 <p>In this file, reference the element having added the <code class="highlighter-rouge">remove</code> attribute:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
 ...
         <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"catalog.compare.sidebar"</span> <span class="na">remove=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
 ...
     <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-<p>To replace an element, <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.</p>
+<p>To replace an element, <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem">remove it</a> and add a new one.</p>
 
 <h4 id="related-topics">Related topics:</h4>
 
 <ul>
-  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a></li>
-  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+  <li><a href="/guides/v2.3/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
 </ul>
+
 
 			
 		</div>

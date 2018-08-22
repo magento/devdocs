@@ -1213,10 +1213,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Configure it using the following example (replace placeholders with your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  information):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/theme.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/theme.xsd"</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>%Theme title%<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme's name --&gt;</span>
      <span class="nt">&lt;parent&gt;</span>%vendor_dir%/%parent_theme_dir%<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme. Example: Magento/backend --&gt;</span>
-<span class="nt">&lt;/theme&gt;</span></code></pre></figure>
+<span class="nt">&lt;/theme&gt;</span>
+</code></pre></div></div>
 
 <p>If you change the theme title or parent theme information in <code class="highlighter-rouge">theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  page for your changes to be saved in the database.</p>
@@ -1226,7 +1227,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In your theme directory, create a <code class="highlighter-rouge">registration.php</code> file.
 In this file, add the following code, having replaced placeholders with your theme information:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1235,7 +1236,8 @@ In this file, add the following code, having replaced placeholders with your the
     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
     <span class="s1">'adminhtml/%vendor_dir/your_theme_dir%'</span><span class="p">,</span> <span class="c1">// Example: 'adminhtml/Magento/backend'
 </span>    <span class="nx">__DIR__</span>
-<span class="p">);</span>  </code></pre></figure>
+<span class="p">);</span>  
+</code></pre></div></div>
 
 <h2 id="make_composer">Optionally add <code class="highlighter-rouge">composer.json</code></h2>
 

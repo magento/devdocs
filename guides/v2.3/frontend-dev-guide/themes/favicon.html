@@ -1210,15 +1210,15 @@ If both favicons exist, the one you uploaded in the   <span term-uuid="29ddb393-
 <ol>
   <li>Navigate to <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>.</li>
   <li>
-    <p>In the scope grid, decide on which level you will configure the favicon and click <strong>Edit</strong>     in the corresponding row.</p>
+    <p>In the scope grid, decide on which level you will configure the favicon and click <strong>Edit</strong> in the corresponding row.</p>
 
-    <p><img style="border: 1px solid #ABABAB" src="/common/images/favicon_2_21.png" /></p>
+    <p><img src="/common/images/favicon_2_21.png" alt="favicon 1" /></p>
   </li>
   <li>Under the <strong>Other Settings</strong> title, expand the <strong>HTML Head</strong> options.</li>
   <li>
     <p>Next to <strong>Favicon Icon</strong>, click <strong>Upload</strong>, and select the file.</p>
 
-    <p><img style="border: 1px solid #ABABAB" src="/common/images/favicon_1_21.png" /></p>
+    <p><img src="/common/images/favicon_1_21.png" alt="favicon 2" /></p>
   </li>
   <li>Click <strong>Save Configuration</strong> in the upper right corner to save the changes.</li>
 </ol>
@@ -1239,11 +1239,12 @@ If both favicons exist, the one you uploaded in the   <span term-uuid="29ddb393-
 
 <p>For example, if you added a <code class="highlighter-rouge">favicon-32x32.png</code> icon and want it to be used as a 32px x 32px favicon, your <code class="highlighter-rouge">default_head_blocks.xml</code> would be like following:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">"Magento_Theme::favicon-32x32.png"</span> <span class="na">rel=</span><span class="s">"icon"</span> <span class="na">sizes=</span><span class="s">"32x32"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
 <p>For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the <code class="highlighter-rouge">.htaccess</code> file!):</p>
 

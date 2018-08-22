@@ -1191,21 +1191,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;theme_dir&gt;/etc/view.xml
 </code></pre></div></div>
 
-<p>For example, here is the <code class="highlighter-rouge">view.xml</code> of the Magento Blank theme: <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml"><code class="highlighter-rouge">app/design/frontend/Magento/blank/etc/view.xml</code></a>{target=”_blank”}.</p>
+<p>For example, here is the <code class="highlighter-rouge">view.xml</code> of the Magento Blank theme: <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml"><code class="highlighter-rouge">app/design/frontend/Magento/blank/etc/view.xml</code></a>.</p>
 
 <p>In <code class="highlighter-rouge">view.xml</code>, image properties are configured in the scope of <code class="highlighter-rouge">&lt;images module="Magento_Catalog"&gt;</code> element:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
 ...
-<span class="nt">&lt;images/&gt;</span></code></pre></figure>
+<span class="nt">&lt;images/&gt;</span>
+</code></pre></div></div>
 
 <p>Image properties are configured for each image type defined by the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">type</code> attributes of the <code class="highlighter-rouge">&lt;image&gt;</code> element:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">"unique_image_id"</span> <span class="na">type=</span><span class="s">"image_type"</span><span class="nt">&gt;</span>
 	...
 	<span class="nt">&lt;/image&gt;</span>
-<span class="nt">&lt;images/&gt;</span></code></pre></figure>
+<span class="nt">&lt;images/&gt;</span>
+</code></pre></div></div>
 
 <p><br />
 The following table describes the attributes in detail:</p>
@@ -1242,14 +1244,14 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
       </td>
       <td>
         The type of the images defined by the specified <code>id</code>. Allowed values:
-
-<li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
-<li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
-<li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-<li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
-. </li>
-<li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
-&lt;/ul&gt;
+        <ul>
+        <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
+        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li> 
+        <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+.</li>
+        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li> 
+        </ul>
 
       </td>
     </tr>
@@ -1261,12 +1263,13 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 
 <p>Image properties are defined by the corresponding elements, for example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;images</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">"unique_image_id"</span> <span class="na">type=</span><span class="s">"image"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;width&gt;</span>100<span class="nt">&lt;/width&gt;</span> <span class="c">&lt;!-- Image width in px --&gt;</span> 
         <span class="nt">&lt;height&gt;</span>100<span class="nt">&lt;/height&gt;</span> <span class="c">&lt;!-- Image height in px --&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
-<span class="nt">&lt;/images&gt;</span></code></pre></figure>
+<span class="nt">&lt;/images&gt;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 

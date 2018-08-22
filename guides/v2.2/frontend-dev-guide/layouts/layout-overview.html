@@ -1231,14 +1231,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
+  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
   <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, <code class="highlighter-rouge">&lt;head&gt;</code>, and <code class="highlighter-rouge">&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page   <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>
-. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
 
-<p>For details, refer to <a target="_blank" href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a>.</p>
+<p>For details, refer to <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a>.</p>
 
 <p>In this guide we use <em>layout files</em> when talking about concepts which are similarly applied to all of these types of layout files.</p>
 
@@ -1265,7 +1263,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and theme layouts.
-To make the necessary changes, create <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme.</p>
+To make the necessary changes, create <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html">extending</a> and <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-override.html">overriding</a> layout files in your custom theme.</p>
 
 <h2 id="layout_processing">Layout files processing</h2>
 
@@ -1273,7 +1271,7 @@ To make the necessary changes, create <a href="/guides/v2.2/frontend-dev-guide/l
 
 <ol>
   <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code class="highlighter-rouge">app/etc/config.php</code>.</li>
-  <li>Determines the sequence of <a target="_blank" href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherited</a> themes <code class="highlighter-rouge">[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
+  <li>Determines the sequence of <a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherited</a> themes <code class="highlighter-rouge">[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
   <li>
     <p>Iterates the sequence of themes from last ancestor to current:</p>
 
@@ -1297,8 +1295,7 @@ To make the necessary changes, create <a href="/guides/v2.2/frontend-dev-guide/l
     <p>developer mode: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files, and <code class="highlighter-rouge">.xml</code> files are validated according to the xsd schema. If any validation fails, the hard failure with process halt occurs.</p>
   </li>
   <li>
-    <p>production or default modes: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files. If validation fails, errors are logged to the <code class="highlighter-rouge">var/log</code> directory without throwing   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
-. The validation according to the xsd schema is not performed.</p>
+    <p>production or default modes: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files. If validation fails, errors are logged to the <code class="highlighter-rouge">var/log</code> directory without throwing an exception. The validation according to the xsd schema is not performed.</p>
   </li>
 </ul>
 

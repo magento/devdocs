@@ -1141,21 +1141,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>This article describes the basic concepts you need to know to create layouts for your custom   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
-.</p>
+<p>This article describes the basic concepts you need to know to create layouts for your custom theme.</p>
 
 <h2 id="introduction">Introduction</h2>
 
 <p>In Magento, the basic components of page design are layouts, containers, and blocks. A <em>layout</em> represents the structure of a web page (1). <em>Containers</em> represent the placeholders within that web page structure (2). And <em>blocks</em> represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.</p>
 
-<p><img src="/common/images/layouts_block_containers_defn21.png" /></p>
+<p><img src="/common/images/layouts_block_containers_defn21.png" alt="layouts overview" /></p>
 
 <p>(1) <em>Layouts</em> provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.</p>
 
 <p>(2) <em>Containers</em> assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
 
-<p>(3) <em>Blocks</em> render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- to insert into its parent structural block. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+<p>(3) <em>Blocks</em> render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the HTML to insert into its parent structural block. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  list, a mini cart, product tags, and product listing.</p>
 
 <h2 id="basic-layouts">Basic layouts</h2>
@@ -1173,8 +1171,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can also <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">extend</a> or <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html">override</a> these files in your custom theme.</p>
 
 <h2 id="layout-over-terms">Layout handles</h2>
-
-<p><span id="handle"></span></p>
 
 <p>A <em>layout handle</em> is a uniquely identified set of   <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span>
  that serves as a name of a layout file.</p>
@@ -1196,14 +1192,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
+  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
   <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, <code class="highlighter-rouge">&lt;head&gt;</code>, and <code class="highlighter-rouge">&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page   <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>
-. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
 
-<p>For details, refer to <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
+<p>For details, refer to <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-types.html">Layout file types</a>.</p>
 
 <p>In this guide we use <em>layout files</em> when talking about concepts which are similarly applied to all of these types of layout files.</p>
 
@@ -1231,7 +1225,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and theme layouts.</p>
 
-<p>To make the necessary changes, create <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme.</p>
+<p>To make the necessary changes, create <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">extending</a> and <a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html">overriding</a> layout files in your custom theme.</p>
 
 <h2 id="layout_processing">Layout files processing</h2>
 
@@ -1239,29 +1233,28 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code class="highlighter-rouge">app/etc/config.php</code>.</li>
-  <li>Determines the sequence of <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes <code class="highlighter-rouge">[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
+  <li>Determines the sequence of <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inherited</a> themes <code class="highlighter-rouge">[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
   <li>
     <p>Iterates the sequence of themes from last ancestor to current:</p>
 
-    <p>a.	Adds all extending theme layout files to the list.</p>
-
-    <p>b.	Replaces overridden layout files in the list.</p>
+    <p>a.	Adds all extending theme layout files to the list.
+b.	Replaces overridden layout files in the list.</p>
   </li>
-  <li>Merges all layout files from the list.</li>
-</ol>
+  <li>
+    <p>Merges all layout files from the list.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
-</div>
+    <p class="bs-callout bs-callout-info">Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
+  </li>
+</ol>
 
 <h2 id="related-topics">Related topics</h2>
 
 <ul>
-  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a></li>
-  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a></li>
-  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a></li>
-  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a></li>
-  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/layouts/layout-practice.html">Customizing layout - step-by-step illustration</a></li>
 </ul>
 
 

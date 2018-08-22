@@ -1193,7 +1193,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Altering templates</li>
 </ul>
 
-<p>To change the page wireframe, modify the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files.</p>
+<p>To change the page wireframe, modify the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-page">page layout</a> files; all other customizations are performed in the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-conf">page configuration</a> or <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html#layout-types-gen">generic layout</a> files.</p>
 
 <p>Use these   <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span>
  to:</p>
@@ -1203,38 +1203,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Remove a page element.</li>
 </ul>
 
-<p>The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.</p>
+<p>The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html">Layout file types</a> topic.</p>
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
 
 <p>Use the following layout instructions to customize your layout:</p>
 
 <ul>
-  <li><a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a></li>
-  <li><a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a></li>
-  <li><a href="#argument"><code>&lt;argument&gt;</code></a></li>
-  <li><a href="#arguments"><code>&lt;arguments&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code class="highlighter-rouge">&lt;container&gt;</code></a></li>
+  <li><a href="#fedg_xml-instrux_before-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes</a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_act"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code class="highlighter-rouge">&lt;move&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_rmv"><code class="highlighter-rouge">&lt;remove&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code class="highlighter-rouge">&lt;update&gt;</code></a></li>
+  <li><a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a></li>
 </ul>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
 
 <p>Defines a block.</p>
 
-<p><b>Details:</b> A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
+<p><strong>Details:</strong> A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.</p>
 
-Blocks employ templates to generate   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
-. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+<p>Blocks employ templates to generate HTML. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  list, a mini cart, product tags, and product listing.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>The <code class="highlighter-rouge">class</code> attribute is no longer required in versions <code class="highlighter-rouge">2.2.1</code> and above as it will default to <code class="highlighter-rouge">Magento\Framework\View\Element\Template</code>. <strong>In versions lower than <code class="highlighter-rouge">2.2.1</code>, the <code class="highlighter-rouge">class</code> attribute is still required.</strong></p>
-</div>
+<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">class</code> attribute is no longer required in versions <code class="highlighter-rouge">2.2.1</code> and above as it will default to <code class="highlighter-rouge">Magento\Framework\View\Element\Template</code>. <strong>In versions lower than <code class="highlighter-rouge">2.2.1</code>, the <code class="highlighter-rouge">class</code> attribute is still required.</strong></p>
 
 <table>
    <tbody>
@@ -1293,7 +1289,10 @@ Blocks employ templates to generate   <span term-uuid="a2aff425-07dd-4bd6-9671-2
 
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
 <p>A structure without content that holds other layout elements such as blocks and containers.</p>
-<p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
+
+<p><strong>Details:</strong> 
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;block&gt;</code> elements.</p>
+
 <table>
    <tbody>
       <tr>
@@ -1347,36 +1346,32 @@ Blocks employ templates to generate   <span term-uuid="a2aff425-07dd-4bd6-9671-2
       <tr class="odd">
          <td><code>htmlId</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 <code>&lt;id&gt;</code> value.</td>
+         <td>Any valid HTML 5 <code>id</code> value.</td>
          <td>no</td>
       </tr>
       <tr class="even">
          <td><code>htmlClass</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5  <code>&lt;class&gt;</code> value.</td>
+         <td>Any valid HTML 5 <code>class</code> value.</td>
          <td>no</td>
       </tr>
    </tbody>
 </table>
 
-Sample of usage in layout:
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"div.sidebar.additional"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"sidebar sidebar-additional"</span> <span class="na">after=</span><span class="s">"div.sidebar.main"</span><span class="nt">&gt;</span>
+<p>Sample of usage in layout:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"div.sidebar.additional"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"sidebar sidebar-additional"</span> <span class="na">after=</span><span class="s">"div.sidebar.main"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"sidebar.additional"</span> <span class="na">as=</span><span class="s">"sidebar_additional"</span> <span class="na">label=</span><span class="s">"Sidebar Additional"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/container&gt;</span>
-...</code></pre></figure>
+</code></pre></div></div>
 
+<p>This would add a new column to the page layout.</p>
 
-This would add a new column to the page layout.
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 
-### before and after attributes {#fedg_xml-instrux_before-after}
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> layout attributes.
+These optional attributes can be used in layout XML files to control the order of elements in their common parent.</p>
 
-<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
-<p>These optional attributes can be used in layout   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- files to control the order of elements in their common parent.
-
-The following tables give a detailed description of the results you can get using the <code>before</code> and <code>after</code> attributes. The first table uses a block a as positioned element.
+<p>The following tables give a detailed description of the results you can get using the <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes. The first table uses a block a as positioned element.</p>
 
 <table>
    <tbody>
@@ -1418,7 +1413,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### Examples {#examples}
+<h3 id="examples">Examples</h3>
 
 <table>
    <tbody>
@@ -1445,34 +1440,27 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### &lt;action&gt; {#fedg_layout_xml-instruc_ex_act}
+<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action&gt;</h3>
 
-<div class="bs-callout bs-callout-warning" id="info">
-<span class="glyphicon-class">
- <p>The <code>&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code>&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code></a> to access block public   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
-.</p></span>
-</div>
+<p class="bs-callout bs-callout-warning">The <code class="highlighter-rouge">&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code></a> to access the block public API.</p>
 
-Calls public methods on the block API.
+<p>Calls public methods on the block API.</p>
 
-<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action&gt;</code> node must be located in the scope of the <code>&lt;block&gt;</code> node.</p>
+<p><strong>Details:</strong> Used to set up the execution of a certain method of the block during block generation; the <code class="highlighter-rouge">&lt;action&gt;</code> node must be located in the scope of the <code class="highlighter-rouge">&lt;block&gt;</code> node.&lt;/p&gt;</p>
 
+<p>Example:</p>
 
-Example:
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Module\Block\Class"</span> <span class="na">name=</span><span class="s">"block"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Module\Block\Class"</span> <span class="na">name=</span><span class="s">"block"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setText"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"text"</span> <span class="na">translate=</span><span class="s">"true"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
     <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setEnabled"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"enabled"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/action&gt;</span>
-<span class="nt">&lt;/block&gt;</span></code></pre></figure>
+<span class="nt">&lt;/block&gt;</span>
+</code></pre></div></div>
 
-
-
-<p><code>&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action&gt;</code>, they are passed as one array.</p>
+<p><code class="highlighter-rouge">&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code class="highlighter-rouge">&lt;action&gt;</code>, they are passed as one array.</p>
 
 <table>
    <tbody>
@@ -1491,13 +1479,14 @@ Example:
    </tbody>
 </table>
 
-To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+<p>To pass parameters, use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
-### &lt;referenceBlock&gt; and &lt;referenceContainer&gt; {#fedg_layout_xml-instruc_ex_ref}
-<p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
-<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
+<p>Updates in <code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code> are applied to the corresponding <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;container&gt;</code>.</p>
 
-To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+<p>For example, if you make a reference by <code class="highlighter-rouge">&lt;referenceBlock name="right"&gt;</code>, you’re targeting the block <code class="highlighter-rouge">&lt;block name="right"&gt;</code>.</p>
+
+<p>To pass parameters to a block use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
 <table>
    <tbody>
@@ -1523,43 +1512,40 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
 </table>
 
 <ul>
-<li>The <code>remove</code> attribute is optional and its default value is <code>false</code>.</li>
+  <li>
+    <p>The <code class="highlighter-rouge">remove</code> attribute is optional and its default value is <code class="highlighter-rouge">false</code>.</p>
 
-    This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code>true</code>, or to cancel the removal of a block or container by setting the value to <code>false</code>.
-     
-    Example: 
-    
-    <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
+    <p>This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code class="highlighter-rouge">true</code>, or to cancel the removal of a block or container by setting the value to <code class="highlighter-rouge">false</code>.</p>
 
-<li>The <code>display</code> attribute is optional and its default value is true.</li>
+    <p>Example:</p>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"block.name"</span> <span class="na">remove=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">display</code> attribute is optional and its default value is true.-</p>
 
-    You are always able to overwrite this value in your layout.
-    In situation when remove value is true, the display attribute is ignored.
-     
-    Example: 
-    
-    <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
-</ul>  
+    <p>You are always able to overwrite this value in your layout.
+  In situation when remove value is true, the display attribute is ignored.</p>
 
-### &lt;move&gt; {#fedg_layout_xml-instruc_ex_mv}
-Sets the declared block or container element as a child of another element in the specified order.
-<p><b>Example:</b></p>
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">"name.of.an.element"</span> <span class="na">destination=</span><span class="s">"name.of.destination.element"</span> <span class="na">as=</span><span class="s">"new_alias"</span> <span class="na">after=</span><span class="s">"name.of.element.after"</span> <span class="na">before=</span><span class="s">"name.of.element.before"</span><span class="nt">/&gt;</span></code></pre></figure>
-
-
-
-<ul>
-   <li><code>&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
-   <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
-  <li>During layout generation, the <code>&lt;move&gt;</code>
-  instruction is processed before the removal (set using the <code>
-    remove</code> attribute). This means if any elements are moved
-    to the element scheduled for removal, they will be removed as
-    well.
+    <p>Example:</p>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"container.name"</span> <span class="na">display=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+</code></pre></div>    </div>
   </li>
 </ul>
+
+<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
+<p>Sets the declared block or container element as a child of another element in the specified order.
+<strong>Example:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">"name.of.an.element"</span> <span class="na">destination=</span><span class="s">"name.of.destination.element"</span> <span class="na">as=</span><span class="s">"new_alias"</span> <span class="na">after=</span><span class="s">"name.of.element.after"</span> <span class="na">before=</span><span class="s">"name.of.element.before"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
+  <li>If the <code class="highlighter-rouge">as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code class="highlighter-rouge">name</code> attribute is used instead.</li>
+  <li>During layout generation, the <code class="highlighter-rouge">&lt;move&gt;</code> instruction is processed before the removal (set using the <code class="highlighter-rouge">remove</code> attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+</ul>
+
 <table>
    <tbody>
       <tr>
@@ -1595,15 +1581,14 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-### &lt;remove&gt; {#fedg_layout_xml-instruc_ex_rmv}
+<h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
 
-<code>&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
-For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
+<p><code class="highlighter-rouge">&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code class="highlighter-rouge">&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code class="highlighter-rouge">&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a>.</p>
 
-Example of usage:
+<p>Example of usage:</p>
 
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;head&gt;</span>
         <span class="c">&lt;!-- Remove local resources --&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"css/styles-m.css"</span> <span class="nt">/&gt;</span>
@@ -1615,24 +1600,23 @@ Example of usage:
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"http://fonts.googleapis.com/css?family=Montserrat"</span> <span class="nt">/&gt;</span> 
    <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
+<h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
 
-### &lt;update&gt; {#fedg_layout_xml-instruc_ex_upd}
+<p>Includes a certain layout file.</p>
 
-Includes a certain layout file.
+<p>Used as follows:</p>
 
-Used as follows:
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">"{name_of_handle_to_include}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
+<p>The specified <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html#handle">handle</a> is “included” and executed recursively.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">"{name_of_handle_to_include}"</span><span class="nt">/&gt;</span></code></pre></figure>
+<h3 id="argument">&lt;argument&gt;</h3>
+<p>Used to pass an argument. Must be always enclosed in <a href="#arguments"><code class="highlighter-rouge">&lt;arguments&gt;</code></a>.</p>
 
-
-The specified <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
-
-### &lt;argument&gt; {#argument}
-Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
- 
 <table>
    <tbody>
       <tr>
@@ -1663,62 +1647,50 @@ Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&
    </tbody>
 </table>
 
-To pass multiple arguments use the following construction:
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
+<p>To pass multiple arguments use the following construction:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;arguments&gt;</span>
    <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
    <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
    ...
-<span class="nt">&lt;/arguments&gt;</span></code></pre></figure>
+<span class="nt">&lt;/arguments&gt;</span>
+</code></pre></div></div>
 
+<p>To pass an argument that is an array use the following construction:</p>
 
-To pass an argument that is an array use the following construction:
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;argument&gt;</span>
    <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
    <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
    ...
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+<span class="nt">&lt;/argument&gt;</span>
+</code></pre></div></div>
 
+<p>Arguments values set in a layout file can be accessed in <a href="/guides/v2.3/frontend-dev-guide/templates/template-overview.html">templates</a> using the <code class="highlighter-rouge">get{ArgumentName}()</code> and <code class="highlighter-rouge">has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there’s any value set. 
+<code class="highlighter-rouge">{ArgumentName}</code> is obtained from the <code class="highlighter-rouge">name</code> attribute the following way: for getting the value of <code class="highlighter-rouge">&lt;argument name="some_string"&gt;</code> the method name is <code class="highlighter-rouge">getSomeString()</code>.</p>
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="/guides/v2.3/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
-<code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
+<p>Example:
+Setting a value of <code class="highlighter-rouge">css_class</code> in the <code class="highlighter-rouge">[app/code/Magento/Theme/view/frontend/layout/default.xml]</code> layout file:</p>
 
-Example:
-Setting a value of <code>css_class</code> in the <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;arguments&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;arguments&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/arguments&gt;</span>
-...</code></pre></figure>
+</code></pre></div></div>
 
+<p>Using the value of <code class="highlighter-rouge">css_class</code> in <code class="highlighter-rouge">[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]</code>:</p>
 
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
+</code></pre></div></div>
 
-Using the value of <code>css_class</code> in <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+<h3 id="arguments">&lt;arguments&gt;</h3>
 
+<p><code class="highlighter-rouge">&lt;arguments&gt;</code> is a required container for <code class="highlighter-rouge">&lt;argument&gt;</code>. It does not have its own attributes.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
-<span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
-<span class="o">...</span></code></pre></figure>
+<p>Example:</p>
 
-
-### &lt;arguments&gt; {#arguments}
-
-<code>&lt;arguments&gt;</code> is a required container for <code>&lt;argument&gt;</code>. It does not have its own attributes.
-
-Example:
-
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;arguments&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;arguments&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/arguments&gt;</span>
-...</code></pre></figure>
+</code></pre></div></div>
 
-</p></p></p>
 
 			
 		</div>

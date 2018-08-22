@@ -1195,9 +1195,16 @@ Also, it gives information how to add a theme independent logo for your store.</
 <p>To apply a theme:</p>
 
 <ol>
-  <li>In Admin, go to <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example: <br /><img src="/common/images/design_conf1.png" alt="Design Configuration page" /></li>
-  <li>In the configuration record corresponding to your store view, click <strong>Edit</strong>. The page with design configuration for the selected scope opens. For example:
-<br /><img src="/common/images/fdg/applied_theme.png" alt="Design Configuration page for a particular scope" /></li>
+  <li>
+    <p>In Admin, go to <strong>CONTENT</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example:</p>
+
+    <p><img src="/common/images/design_conf1.png" alt="Design Configuration page" /></p>
+  </li>
+  <li>
+    <p>In the configuration record corresponding to your store view, click <strong>Edit</strong>. The page with design configuration for the selected scope opens. For example:</p>
+
+    <p><img src="/common/images/fdg/applied_theme.png" alt="Design Configuration page for a particular scope" /></p>
+  </li>
   <li>On the <strong>Default Theme</strong> tab, in the <strong>Applied Theme</strong> drop-down, select your newly created theme.</li>
   <li>Click <strong>Save Configuration</strong>.</li>
   <li>If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.</li>
@@ -1242,8 +1249,7 @@ To add a permanent theme-independent logo:</p>
 
 <h2 id="theme-apply-clear">Clear the cache</h2>
 
-<p>If caching is enabled in Magento Admin, you must clear the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
- after you apply the theme, add a design exception, add a logo, and perform other tasks.</p>
+<p>If caching is enabled in Magento Admin, you must clear the cache after you apply the theme, add a design exception, add a logo, and perform other tasks.</p>
 
 <p>A system message notifies you that invalidated cache types must be refreshed.</p>
 
@@ -1255,6 +1261,7 @@ To add a permanent theme-independent logo:</p>
 <h2 id="troubleshooting-if-the-changes-do-not-get-applied">Troubleshooting (if the changes do not get applied)</h2>
 
 <p>If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the <code class="highlighter-rouge">pub/static/frontend</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code class="highlighter-rouge">grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+
 
 			
 		</div>

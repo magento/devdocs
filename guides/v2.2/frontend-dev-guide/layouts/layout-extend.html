@@ -1178,64 +1178,65 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>
 
-<p>Rather than copy extensive page   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
- or page configuration code and then modify what you want to change, in the Magento system, you only need to create an <em>extending layout file</em> that contains the changes you want.</p>
+<p>Rather than copy extensive page layout or page configuration code and then modify what you want to change, in the Magento system, you only need to create an <em>extending layout file</em> that contains the changes you want.</p>
 
-<p>To add an extending <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> file:</p>
-
-<ol>
-  <li>Put the layout file in the following location:</li>
-</ol>
-<pre>
-&lt;theme_dir&gt;
-&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
-&nbsp;&nbsp;&nbsp;|__/layout
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
-</pre>
-
-<p>For example, to customize the layout defined in <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_product_view.xml</code>, you need to add a layout file with the same name in your custom theme, like following:</p>
-
-<p><code>&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code></p>
-
-<p>To add an extending <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:</p>
+<p>To add an extending <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-conf">page configuration</a> or <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-gen">generic layout</a> file:</p>
 
 <ol>
-  <li>Put the file in the following location:</li>
+  <li>Put the layout file in the following location:
+    <pre><code class="language-tree">&lt;theme_dir&gt;
+ |__/&lt;Namespace&gt;_&lt;Module&gt;
+   |__/layout
+     |--&lt;layout1&gt;.xml
+     |--&lt;layout2&gt;.xml
+</code></pre>
+  </li>
 </ol>
-<pre>
-&lt;theme_dir&gt;
-&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
-&nbsp;&nbsp;&nbsp;|__/page_layout
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
-</pre>
 
-<!--
+<p>For example, to customize the layout defined in <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_product_view.xml</code>, you need to add a layout file with the same name in your custom theme, such as: <code class="highlighter-rouge">&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code></p>
 
-## Processing extending layouts {#fedg_layout_extend_merge}
+<p>To add an extending <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html#layout-types-page">page layout</a> file:</p>
 
-Magento merges layout files as follows:
+<ol>
+  <li>Put the file in the following location:
+    <pre><code class="language-tree">&lt;theme_dir&gt;
+ |__/&lt;Namespace&gt;_&lt;Module&gt;
+   |__/page_layout
+     |--&lt;layout1&gt;.xml
+     |--&lt;layout2&gt;.xml
+</code></pre>
+  </li>
+</ol>
 
-1. For each layout file in the list:
-	1. Loads layout handle declaration and layout instructions.
-	2. Appends to the result in the following format:
+<h2 id="fedg_layout_extend_merge">Processing extending layouts</h2>
 
-<pre>
-&lt;layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_cart_index&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_cart_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_onepage_index&quot;&nbsp;label=&quot;One&nbsp;Page&nbsp;Checkout&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_onepage_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;...&nbsp;--&gt;
-&lt;/layouts&gt;
-</pre>
-Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
+<p>Magento merges layout files as follows:</p>
 
-2. Replaces the base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- placeholders in the result. -->
+<ol>
+  <li>For each layout file in the list:
+    <ol>
+      <li>Loads layout handle declaration and layout instructions.</li>
+      <li>Appends to the result in the following format:</li>
+    </ol>
+  </li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;layouts</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;handle</span> <span class="na">id=</span><span class="s">"checkout_cart_index"</span> <span class="na">label=</span><span class="s">"Shopping Cart"</span> <span class="na">type=</span><span class="s">"page"</span> <span class="na">parent=</span><span class="s">"default"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Layout instructions from checkout_cart_index.xml --&gt;</span>
+    <span class="nt">&lt;/handle&gt;</span>
+    <span class="nt">&lt;handle</span> <span class="na">id=</span><span class="s">"checkout_onepage_index"</span> <span class="na">label=</span><span class="s">"One Page Checkout"</span> <span class="na">type=</span><span class="s">"page"</span> <span class="na">parent=</span><span class="s">"default"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Layout instructions from checkout_onepage_index.xml --&gt;</span>
+    <span class="nt">&lt;/handle&gt;</span>
+    <span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/layouts&gt;</span>
+</code></pre></div></div>
+
+<p>Where a <code class="highlighter-rouge">handle ID</code> is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.</p>
+
+<ol>
+  <li>Replaces the base URL placeholders in the result.</li>
+</ol>
 
 <h4 id="related-topics">Related topics:</h4>
 

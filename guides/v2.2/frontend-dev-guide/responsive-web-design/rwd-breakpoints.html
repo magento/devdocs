@@ -1178,8 +1178,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
-.</p>
+<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your theme.</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -1187,8 +1186,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Define a variable for the new breakpoint.</li>
-  <li>Override the   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
- <code class="highlighter-rouge">_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
+  <li>Override the library <code class="highlighter-rouge">_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
   <li>Implement the screen changes for the new breakpoint.</li>
 </ol>
 
@@ -1230,25 +1228,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <p>Example:</p>
+<pre><code class="language-less">&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
-…
     @media all and (min-width: @your__breakpoint) {
         .media-width('min', @your__breakpoint);
     }
 }
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code class="highlighter-rouge">.media-width()</code> calls for the new breakpoint</h2>
 
 <p>Now you can add a new <code class="highlighter-rouge">.media-width()</code> mixin call where necessary in your theme <code class="highlighter-rouge">.less </code> files.</p>
 
 <p>Example:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
+<pre><code class="language-less">.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
     //  Customization for @your__breakpoint breakpoint
 }
-</code></pre></div></div>
+</code></pre>
 
 <h2 id="related-reading">Related reading</h2>
 

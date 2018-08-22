@@ -1149,11 +1149,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  files.
 Each layout block has an associated template. 
 The template is specified in the <code class="highlighter-rouge">template</code> attribute of the <code class="highlighter-rouge">&lt;block&gt;</code> layout instruction. 
-For example, from <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank"><code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</code></a></p>
+For example, from <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml"><code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</code></a></p>
 
-<pre>
-&lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
-</pre>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Block\Category\View"</span> <span class="na">name=</span><span class="s">"category.image"</span> <span class="na">template=</span><span class="s">"Magento_Catalog::category/image.phtml"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>This means that the <code class="highlighter-rouge">category.image</code> block is rendered by the <code class="highlighter-rouge">image.phtml</code> template, which is located in the <code class="highlighter-rouge">category</code> subdirectory of the <code class="highlighter-rouge">Magento_Catalog</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  templates directory.</p>

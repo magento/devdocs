@@ -1237,8 +1237,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Set up a Gulp task for Sass compilation by placing the file with the task code in the root of your theme directory (<code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code>). Create an empty <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;/gulpfile.js</code> file and copy-paste this <code class="highlighter-rouge">package.json</code> code into it (no changes needed):</p>
 
-    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="kd">var</span> <span class="nx">gulp</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">),</span>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">gulp</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">),</span>
      <span class="nx">sass</span>         <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-sass'</span><span class="p">),</span>
      <span class="nx">plumber</span>      <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-plumber'</span><span class="p">),</span>
      <span class="nx">notify</span>       <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-notify'</span><span class="p">);</span>
@@ -1261,16 +1260,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  <span class="p">};</span>
 
  <span class="c1">// Compile CSS</span>
-  <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'styles'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-   <span class="kd">var</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">gulp</span>
-       <span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="nx">config</span><span class="p">.</span><span class="nx">src</span><span class="p">])</span>
-       <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">plumber</span><span class="p">({</span><span class="na">errorHandler</span><span class="p">:</span> <span class="nx">onError</span><span class="p">}))</span>
-       <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">sass</span><span class="p">.</span><span class="nx">logError</span><span class="p">));</span>
-
-   <span class="k">return</span> <span class="nx">stream</span>
-       <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./web/css/'</span><span class="p">));</span>
-  <span class="p">});</span>
+   <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'styles'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">gulp</span>
+           <span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="nx">config</span><span class="p">.</span><span class="nx">src</span><span class="p">])</span>
+           <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">plumber</span><span class="p">({</span><span class="na">errorHandler</span><span class="p">:</span> <span class="nx">onError</span><span class="p">}))</span>
+           <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">sass</span><span class="p">.</span><span class="nx">logError</span><span class="p">));</span>
+    
+       <span class="k">return</span> <span class="nx">stream</span>
+           <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./web/css/'</span><span class="p">));</span>
+   <span class="p">});</span>
 </code></pre></div>    </div>
+
     <p>This task uses <code class="highlighter-rouge">styles.scss</code>, stored in the <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/</code> directory, as the source of Sass. It stores the generated CSS in <code class="highlighter-rouge">styles.css</code> in the <code class="highlighter-rouge">app/code/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory.</p>
   </li>
   <li>
@@ -1295,8 +1295,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="using-the-import-directive-in-sass">Using the @import directive in Sass</h2>
 
 <p>In the source .<code class="highlighter-rouge">scss</code> files you can use the <code class="highlighter-rouge">@import</code> directive, to import other <code class="highlighter-rouge">.scss</code> files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main <code class="highlighter-rouge">.scss</code> file. For example, if you create a <code class="highlighter-rouge">_catalogstls.scss</code> file for styles of the <code class="highlighter-rouge">Magento_Catalog</code> module and put it in <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/styles </code>, you can import it using the following notation:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@import '../Magento_Theme/styles/module
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="err">'</span><span class="p">../</span><span class="n">Magento_Theme</span><span class="p">/</span><span class="n">styles</span><span class="p">/</span><span class="n">module</span><span class="err">`</span>
 </code></pre></div></div>
 
 			

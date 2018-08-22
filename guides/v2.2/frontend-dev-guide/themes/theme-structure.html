@@ -1178,7 +1178,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="theme-structure-intro">What’s in this topic</h2>
 
-<p>A <a href="/guides/v2.2/frontend-dev-guide/themes/theme-general.html#theme-gen-overview">design theme</a>{target=”_blank”} is an important part of the Magento application. This topic describes the file structure of a Magento   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+<p>A <a href="/guides/v2.2/frontend-dev-guide/themes/theme-general.html#theme-gen-overview">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
 .</p>
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
@@ -1187,42 +1187,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  repository.</p>
 
 <p>Each theme must be stored in a separate directory:</p>
-<pre>
-app/design/frontend/&lt;Vendor&gt;/
-├──&nbsp;&lt;theme1&gt;
-├──&nbsp;&lt;theme2&gt;/
-├──&nbsp;&lt;theme3&gt;
+
+<pre><code class="language-tree">app/design/frontend/&lt;Vendor&gt;/
+├── &lt;theme1&gt;
+├── &lt;theme2&gt;/
+├── &lt;theme3&gt;
 ├--...
-</pre>
+</code></pre>
 
 <h2 id="theme-structure-comp">Theme components</h2>
 
 <p>The structure of a Magento theme directory typically would be like following:</p>
-<pre>
-&lt;theme_dir&gt;/
-├──&nbsp;&lt;Vendor&gt;_&lt;Module&gt;/&nbsp;
-│	├──&nbsp;web/
-│	│	├──&nbsp;css/
-│	│	│	├──&nbsp;source/
-│	├──&nbsp;layout/
-│	│	├──&nbsp;override/
-│	├──&nbsp;templates/
-├──&nbsp;etc/
-├──&nbsp;i18n/&nbsp;
-├──&nbsp;media/
-├──&nbsp;web/
-│	├──&nbsp;css/
-│	│	├──&nbsp;source/&nbsp;
-│	├──&nbsp;fonts/
-│	├──&nbsp;images/
-│	├──&nbsp;js/
-├──&nbsp;composer.json&nbsp;
-├──&nbsp;registration.php&nbsp;
-├──&nbsp;theme.xml&nbsp;
-</pre>
+
+<pre><code class="language-tree">&lt;theme_dir&gt;/
+├── &lt;Vendor&gt;_&lt;Module&gt;/
+│	├── web/
+│	│	├── css/
+│	│	│	├── source/
+│	├── layout/
+│	│	├── override/
+│	├── templates/
+├── etc/
+├── i18n/ 
+├── media/
+├── web/
+│	├── css/
+│	│	├── source/ 
+│	├── fonts/
+│	├── images/
+│	├── js/
+├── composer.json 
+├── registration.php 
+├── theme.xml 
+</code></pre>
+
 <p>Let’s have a closer look at each particular sub-directory.</p>
 
 <p class="bs-callout bs-callout-info">The directories and files structure described below is the most extended one. It may not coincide with the structure of your store.</p>
+
 <table>
   <tbody>
     <tr>
@@ -1262,7 +1264,7 @@ app/design/frontend/&lt;Vendor&gt;/
         optional
       </td>
       <td colspan="1">
-        Layout files which extend the default module or parent theme layouts. <!--ADDLINK-->
+        Layout files which extend the default module or parent theme layouts.
       </td>
     </tr>
     <tr>
@@ -1343,7 +1345,7 @@ app/design/frontend/&lt;Vendor&gt;/
         <code>less</code>
          configuration files that invoke mixins for global elements from the Magento UI library, and
         <code>theme.less</code>
-         file which overrides the default variables values. <!--ADDLINK-->
+         file which overrides the default variables values.
       </td>
     </tr>
     <tr>
@@ -1438,40 +1440,40 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <p><span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">Static files</span>
  can be located in a theme directory as follows:</p>
-<pre>
-&lt;theme_dir&gt;/
-├──&nbsp;media/
-├──&nbsp;web
-│	├──&nbsp;css/&nbsp;(except&nbsp;the&nbsp;&quot;source&quot;&nbsp;sub-directory)
-│	├──&nbsp;fonts/
-│	├──&nbsp;images/
-│	├──&nbsp;js/
-</pre>
+
+<pre><code class="language-tree">&lt;theme_dir&gt;/
+├── media/
+├── web
+│	├── css/ (except the &amp;quot;source&amp;quot; sub-directory)
+│	├── fonts/
+│	├── images/
+│	├── js/
+</code></pre>
+
 <p>The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.</p>
 
 <p>Static view files that can be accessed by a direct link from the storefront, are distinguished as public theme files.</p>
 
-<p class="bs-callout bs-callout-info">To be actually accessible for browsers public static files are <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code class="highlighter-rouge">/pub/static/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;theme&amp;gt;/&amp;lt;language&amp;gt;/css/</code> directory.</p>
+<p class="bs-callout bs-callout-info">To be actually accessible for browsers public static files are <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code class="highlighter-rouge">/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 
 <h3 id="dynamic-view-files">Dynamic view files</h3>
 
 <p>View files that are processed or executed by the server in order to provide result to the client. These are: <code class="highlighter-rouge">.less</code> files, templates, and layouts.</p>
 
 <p>Dynamic view files are located in a theme directory as follows:</p>
-<pre>
-&lt;theme_dir&gt;/
-├──&nbsp;Magento_&lt;module&gt;/&nbsp;
-│	├──&nbsp;web/
-│	│	├──&nbsp;css/
-│	│	│	├──&nbsp;source/
-│	├──&nbsp;layout/
-│	│	├──&nbsp;override/
-│	├──&nbsp;templates/
-├──&nbsp;web/
-│	├──&nbsp;css/
-│	│	├──&nbsp;source/
 
-</pre>
+<pre><code class="language-tree">&lt;theme_dir&gt;/
+├── Magento_&lt;module&gt;/ 
+│	├── web/
+│	│	├── css/
+│	│	│	├── source/
+│	├── layout/
+│	│	├── override/
+│	├── templates/
+├── web/
+│	├── css/
+│	│	├── source/
+</code></pre>
 
 			
 		</div>

@@ -1189,8 +1189,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To compile <code class="highlighter-rouge">.less</code> files, add your theme to <code class="highlighter-rouge">module.exports</code> in the Grunt configuration, either in the default <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code> or in the <a href="/guides/v2.2/frontend-dev-guide/tools/using_grunt.html#grunt_config">custom configuration file</a>. For example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">...</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="o">%</span><span class="nx">theme</span><span class="o">%</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">area</span><span class="p">:</span> <span class="s1">'frontend'</span><span class="p">,</span>
         <span class="na">name</span><span class="p">:</span> <span class="s1">'%Vendor%/%theme%'</span><span class="p">,</span>
@@ -1201,10 +1200,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="p">],</span>
         <span class="na">dsl</span><span class="p">:</span> <span class="s1">'less'</span>
     <span class="p">...</span>
-    <span class="p">},</span></code></pre></figure>
+    <span class="p">}</span>
+</code></pre></div></div>
 
 <p>Where:</p>
-
 <ul>
   <li><code class="highlighter-rouge">%theme%</code>: corresponds to your theme directory name.</li>
   <li><code class="highlighter-rouge">%language%</code>: the locale or language for the theme, such as <code class="highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create another theme declaration with another value for <code class="highlighter-rouge">%language%</code>.</li>
@@ -1215,80 +1214,47 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following table describes the grunt commands you can use to perform different customization tasks. Run all commands from your Magento installation directory.</p>
 
-<table>
-<tr>
-<th>
-Grunt task
-</th>
-<th>
-Action
-</th>
-</tr>
-<tr>
-<td>
-<pre>
-grunt clean:&lt;theme&gt;
-</pre>
-For example:
-<pre>
-grunt clean:blank
-</pre>
-</td>
-<td>
-Removes the theme related   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
- in the <code>pub/static</code> and <code>var</code> directories.
-</td>
-</tr>
-<tr>
-<td>
-<pre>
-grunt exec:&lt;theme&gt;
-</pre>
-</td>
-<td>
-Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
-</td>
-</tr>
-<tr>
-<td>
-<pre>
-grunt less:&lt;theme&gt;
-</pre>
-</td>
-<td>
-Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
-</td>
-</tr>
-<tr>
-<td>
-<pre>
-grunt watch
-</pre>
-</td>
-<td>
-Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser
-</td>
-</tr>
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Grunt task</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grunt clean</td>
+      <td>Removes the theme related static files in the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var</code> directories.</td>
+    </tr>
+    <tr>
+      <td>grunt exec</td>
+      <td>Republishes symlinks to the source files to the <code class="highlighter-rouge">pub/static/frontend///</code> directory.</td>
+    </tr>
+    <tr>
+      <td>grunt less</td>
+      <td>Compiles <code class="highlighter-rouge">.css</code> files using the symlinks published in the <code class="highlighter-rouge">pub/static/frontend///</code> directory.</td>
+    </tr>
+    <tr>
+      <td>grunt watch</td>
+      <td>Tracks the changes in the source files, recompiles <code class="highlighter-rouge">.css</code> files, and reloads the page in the browser.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2 id="use_cases">Use cases of tracking changes using Grunt</h2>
 
 <p>The following shows which Grunt tasks to use for debugging:</p>
-
 <ul>
-<li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
-<li>
-After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
-<li>After you <a href="/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
+  <li>After you switch the compilation mode from client-side to server-side, run the <code class="highlighter-rouge">exec</code> command.</li>
+  <li>After you customize the content of any <code class="highlighter-rouge">.less</code> file, except the root source files, run the <code class="highlighter-rouge">less</code> task and reload the page.</li>
+  <li>After you [customize the root source files or move the files included to the root files], run the <code class="highlighter-rouge">exec</code> command and reload the page.</li>
 </ul>
 
-<p>If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:</p>
+<p>If you have LiveReload installed, run the <code class="highlighter-rouge">grunt watch</code> command, and the flow is even simpler:</p>
+
 <ul>
-<li>
-After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
-
-<li>After you <a href="/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, which reloads the page in the browser.</li>
-
+  <li>After you customize the content of any <code class="highlighter-rouge">.less</code> file, changes are applied and the page reloads automatically. No additional changes</li>
+  <li>After you [customize the root source files or move the files included to the root files], run the <code class="highlighter-rouge">clean</code> and <code class="highlighter-rouge">exec</code> commands, which reloads the page in the browser.</li>
 </ul>
 
 <h2 id="source_maps">CSS source maps</h2>
@@ -1304,6 +1270,7 @@ After you customize the content of any <code>.less</code> file, changes are appl
 <p><img src="/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
 <p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the <strong>Settings</strong> panel, select <strong>Preferences</strong>, then check the <strong>Enable CSS source maps</strong> checkbox.</p>
+
 
 			
 		</div>

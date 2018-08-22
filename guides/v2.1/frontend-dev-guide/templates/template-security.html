@@ -1145,18 +1145,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>
-    <p>If a method indicates that the contents is escaped, do not escape: <code class="highlighter-rouge">getTitleHtml()</code>, <code class="highlighter-rouge">getHtmlTitle()</code> (the title is ready for the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- output)</p>
+    <p>If a method indicates that the contents is escaped, do not escape: <code class="highlighter-rouge">getTitleHtml()</code>, <code class="highlighter-rouge">getHtmlTitle()</code> (the title is ready for the HTML output)</p>
   </li>
   <li>
-    <p>Type casting and   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">php</span>
- function <code class="highlighter-rouge">count()</code> don’t need escaping  (for example <code class="highlighter-rouge">echo (int)$var</code>, <code class="highlighter-rouge">echo (bool)$var</code>, <code class="highlighter-rouge">echo count($var)</code>)</p>
+    <p>Type casting and php function <code class="highlighter-rouge">count()</code> don’t need escaping (for example <code class="highlighter-rouge">echo (int)$var</code>, <code class="highlighter-rouge">echo (bool)$var</code>, <code class="highlighter-rouge">echo count($var)</code>)</p>
   </li>
   <li>
-    <p>Output in single quotes doesn’t need escaping (for example <code class="highlighter-rouge">echo 'some text'</code>)</p>
+    <p>Output in single quotes does not need escaping (for example <code class="highlighter-rouge">echo 'some text'</code>)</p>
   </li>
   <li>
-    <p>Output in double quotes without variables doesn’t need escaping (for example <code class="highlighter-rouge">echo "some text"</code>)</p>
+    <p>Output in double quotes without variables does not need escaping (for example <code class="highlighter-rouge">echo "some text"</code>)</p>
   </li>
   <li>
     <p>For all other cases, escape the data using <a href="#escape-functions-for-templates">specific escape functions</a>.</p>
@@ -1165,7 +1163,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following code sample illustrates the XSS-safe output in templates:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitleHtml</span><span class="p">()</span> <span class="cp">?&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getHtmlTitle</span><span class="p">()</span> <span class="cp">?&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeHtml</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">())</span> <span class="cp">?&gt;</span>
 # <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()</span> <span class="cp">?&gt;</span>
@@ -1173,51 +1171,52 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">'some text'</span> <span class="cp">?&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">"some text"</span> <span class="cp">?&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">escapeXssInUrl</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">())</span> <span class="cp">?&gt;</span><span class="s">"</span><span class="nt">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getAnchorTextHtml</span><span class="p">()</span> <span class="o">?</span>
-<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span></code></pre></figure>
+<span class="o">&gt;&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <h4 id="escape-functions-for-templates">Escape functions for templates</h4>
 
 <p>For the following output cases, use the specified function to generate XSS-safe output.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>The upcoming release of Magento 2.2 will deprecate these functions.</p>
-
-  <p>Please check back on this page after the 2.2 release for updated documentation on new escape functions.</p>
-</div>
+<p class="bs-callout bs-callout-warning">The upcoming release of Magento 2.2 will deprecate these functions.
+Please check back on this page after the 2.2 release for updated documentation on new escape functions.</p>
 
 <p><strong>Case:</strong> JSON output<br />
 <strong>Function:</strong> No function needed for JSON output.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="c">&lt;!-- In this example $postData is a JSON string --&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"action"</span> <span class="na">data-post=</span><span class="s">'&lt;?php /* @noEscape */ echo $postData ?&gt;'</span> <span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c">&lt;!-- In this example $postData is a JSON string --&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"action"</span> <span class="na">data-post=</span><span class="s">'&lt;?php /* @noEscape */ echo $postData ?&gt;'</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Case:</strong> String output that should not contain HTML<br />
 <strong>Function:</strong> <code class="highlighter-rouge">escapeHtml</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $block-&gt;escapeHtml($block-&gt;getLabel()) ?&gt;</span><span class="nt">&lt;/span&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $block-&gt;escapeHtml($block-&gt;getLabel()) ?&gt;</span><span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
 
-<p><strong>Case:</strong>   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- output<br />
+<p><strong>Case:</strong> URL output<br />
 <strong>Function:</strong> <code class="highlighter-rouge">escapeUrl</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"&lt;?php echo $block-&gt;escapeUrl($block-&gt;getCategoryUrl()) ?&gt;"</span><span class="nt">&gt;</span>Some Link<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"&lt;?php echo $block-&gt;escapeUrl($block-&gt;getCategoryUrl()) ?&gt;"</span><span class="nt">&gt;</span>Some Link<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Case:</strong> HTML attributes<br />
 <strong>Function:</strong> <code class="highlighter-rouge">escapeQuote</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"&lt;?php $block-&gt;escapeQuote($block-&gt;getSpanClass()) ?&gt;"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/span&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"&lt;?php $block-&gt;escapeQuote($block-&gt;getSpanClass()) ?&gt;"</span><span class="nt">&gt;</span>Product Description<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
 
 <h4 id="static-test">Static Test</h4>
 
 <p>To check your template for XSS vulnerabilities, you can use the static test <code class="highlighter-rouge">XssPhtmlTemplateTest.php</code> in <code class="highlighter-rouge">dev\tests\static\testsuite\Magento\Test\Php\</code>.</p>
 
-<p>This static test finds all echo calls in PHTML-templates and determines if the output is properly escaped.</p>
+<p>This static test finds all echo calls in PHTML templates and determines if the output is properly escaped.</p>
 
 <p>It covers the following cases:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">/* @noEscape */</code> before output. Output doesn’t require escaping. Test is green.</p>
+    <p><code class="highlighter-rouge">/* @noEscape */</code> before output. Output does not require escaping. Test is green.</p>
   </li>
   <li>
     <p><code class="highlighter-rouge">/* @escapeNotVerified */</code> before output. Output escaping is not checked and should be verified. Test is green.</p>
@@ -1241,6 +1240,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Other of previously mentioned. Output is not escaped. Test is red.</p>
   </li>
 </ul>
+
 
 			
 		</div>
