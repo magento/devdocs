@@ -13,10 +13,10 @@ Before preparing your project and importing code, push all pending changes from 
 The import preparation steps include the following:
 
 -  [Prepare and add required files](#required-files)
--  [Add Authentication Keys to `auth.json`](#auth-json)
+-  [Add Magento authentication keys](#auth-json)
 -  [Modify your existing `composer.json`](#composer-json)
 -  [Transfer media files to Cloud](#media)
--  [Add your {{site.data.var.ee}} authentication credentials](#encryption-key)
+-  [Add your {{site.data.var.ee}} encryption key](#encryption-key)
 -  [Migrate your {{site.data.var.ee}} data](#migrate-db)
 
 ## Prepare and add required files {#required-files}
@@ -70,12 +70,12 @@ Add these files to your {{site.data.var.ee}} code:
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
-## Add Magento authentication keys
+## Add Magento authentication keys {#auth-json}
 
 You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
 -  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
--  **environment variable**—Alternatively, you can set up authentication keys in your {{site.data.var.ece}} project using an environment variable.
+-  **environment variable**—Alternatively, you can use an environment variable to set up authentication keys in your {{site.data.var.ece}} project to prevent accidental exposure.
 
 #### To create a new `auth.json` file:
 
@@ -127,7 +127,7 @@ This method is best to prevent accidental exposure of credentials, such as pushi
 
 1.  Click **Add Variable**.
 
-1.  You can remove the `auth.json` file from each environment.
+1.  Remove the `auth.json` file from each environment.
 
 
 ## Edit `composer.json` {#composer-json}
@@ -190,7 +190,7 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
 
 ## Copy the encryption key {#encryption-key}
 
-To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment inIntegration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
+To decrypt the encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` in the `crypt` array.
