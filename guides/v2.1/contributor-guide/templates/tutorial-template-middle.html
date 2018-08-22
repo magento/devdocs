@@ -292,8 +292,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       
       <ul>
         <li class="level-0">
-          <a href="/guides/v2.1/">
-            &larr; 
+          <a href="/guides/v2.1/contributor-guide/contributing.html">
+            &larr; Code Contributions
           </a>
         </li>
       
@@ -334,11 +334,71 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The <code class="highlighter-rouge">title</code> and <code class="highlighter-rouge">subtitle</code> parameters provide the top-level headings on this page. Add the content as you see fit.</p>
+			<p>Add the content for each step as you see fit.</p>
+
+<h2 id="metadata-parameters">Metadata parameters</h2>
+
+<p>The procedural steps of a tutorial use the <code class="highlighter-rouge">subtitle</code>   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
+ parameter.</p>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">layout:</code></td>
+      <td>Must be <code class="highlighter-rouge">tutorial</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">level3_subgroup:</code></td>
+      <td>A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title:</code></td>
+      <td>The title of the topic. This value should be in the form <em>Step X. Perform this task</em>. (For example, <code class="highlighter-rouge">Step 1. Configure the Store</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">menu_title:</code></td>
+      <td>Optional. Use this parameter only if you don’t want the title in the left navigation to match the topic title.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">subtitle</code></td>
+      <td>The title of the tutorial. This value should match the <code class="highlighter-rouge">title</code> value in the index file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">menu_order:</code></td>
+      <td>The sequence number of the topic. For the index page in a multi-step tutorial, set this 0. Otherwise set it to the step number.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">return_to:</code></td>
+      <td>Defines the tutorial’s parent page. The parent page title is displayed in the left navigation above the tuturial steps. Do not specify a value for the <code class="highlighter-rouge">return_to:</code> parameter. Instead, specify values for these second-level parameters:<br /><br /><code class="highlighter-rouge">title:</code> The title of the parent topic<br /><br /><code class="highlighter-rouge">url:</code> The URL of the parent topic</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ee_only:</code></td>
+      <td>Optional. If set to <code class="highlighter-rouge">true</code>, graphics/cues indicating that the article applies to Magento Commerce are displayed on devdocs.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: tutorial
+level3_subgroup: order-tutorial
+title: Step 1. Configure the store
+subtitle: Order processing tutorial
+return_to:
+  title: REST tutorials
+  url: rest/tutorials/index.html
+menu_order: 1
+</code></pre></div></div>
 
 <h2 id="secondary-heading">Secondary heading</h2>
 
-<p>Use a Head2 (##) as the highest-leveling heading in this topic.</p>
+<p>Use a Head2 (<code class="highlighter-rouge">## Heading</code>) as the highest-level heading in this topic.</p>
 
 
       <div class="horisontal-nav">

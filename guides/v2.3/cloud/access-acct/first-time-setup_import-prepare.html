@@ -1951,7 +1951,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and patches</a>
     
 
     
@@ -2063,54 +2063,52 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>You need to prepare your existing Magento Commerce implementation to import it into a new Magento Commerce Cloud project. This includes updating and adding files, transferring media files, and migrating data.</p>
 
-<p>Before preparing your project and importing code, push all pending changes to Git. Your remote Magento Commerce Cloud branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.</p>
+<p>Before preparing your project and importing code, push all pending changes from your local workstation to your remote Magento Commerce Cloud repository. When you push, the build and deploy scripts run to update code, static content, and environment services.</p>
 
-<p>These import preparation steps include the following:</p>
+<p>The import preparation steps include the following:</p>
 
 <ul>
-  <li><a href="#required-files">Prepare and add required files</a>:</li>
-  <li>[Add Cloud-specific files and directories ]to Magento Commerce. Without these files and directories, your Magento Commerce code can’t be imported to Cloud.</li>
-  <li><a href="#auth-json">Add Authentication Keys to <code class="highlighter-rouge">auth.json</code>.</a></li>
-  <li><a href="#composer-json">Modify your existing <code class="highlighter-rouge">composer.json</code></a> to specify Cloud-specific dependencies. Make sure to include all modules. Cloud uses this file for <code class="highlighter-rouge">composer install</code> commands. Add <code class="highlighter-rouge">composer.lock</code> to Git. Cloud uses this file for <code class="highlighter-rouge">composer update</code> commands and during the build and deploy process.</li>
-  <li><a href="#media">Transfer media files to Cloud.</a></li>
-  <li><a href="#encryption-key">Add your Magento Commerce authentication credentials</a> to <code class="highlighter-rouge">auth.json</code> if you haven’t done so already.</li>
-  <li><a href="#migrate-db">Migrate your Magento Commerce data.</a></li>
+  <li><a href="#required-files">Prepare and add required files</a></li>
+  <li><a href="#auth-json">Add Magento authentication keys</a></li>
+  <li><a href="#composer-json">Modify your existing <code class="highlighter-rouge">composer.json</code></a></li>
+  <li><a href="#media">Transfer media files to Cloud</a></li>
+  <li><a href="#encryption-key">Add your Magento Commerce encryption key</a></li>
+  <li><a href="#migrate-db">Migrate your Magento Commerce data</a></li>
 </ul>
 
 <h2 id="required-files">Prepare and add required files</h2>
 
-<p>To import Magento Commerce code to a Magento Commerce Cloud project, you need to add a directory and the following files to your existing code.</p>
+<p>To import Magento Commerce code to a Magento Commerce Cloud project, you must add the following files to your existing code:</p>
 
 <ul>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> manages applications, service relationships, mounts for writable directories, and cron jobs</li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">.magento/services.yaml</code></a> for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)</li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a> for handling routes including redirections, caching, and server-side includes</li>
-  <li><a href="/guides/v2.3/cloud/project/project-multi-sites.html"><code class="highlighter-rouge">magento-vars.php</code></a> for multiple websites and stores</li>
+  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>—manages applications, service relationships, mounts for writable directories, and cron jobs</li>
+  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">.magento/services.yaml</code></a>—for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)</li>
+  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a>—for handling routes including redirections, caching, and server-side includes</li>
+  <li><a href="/guides/v2.3/cloud/project/project-multi-sites.html"><code class="highlighter-rouge">magento-vars.php</code></a>—for multiple websites and stores</li>
 </ul>
 
-<p>You need to add these files to your Magento Commerce code:</p>
+<p>Add these files to your Magento Commerce code:</p>
 
 <ol>
-  <li>Go to the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Commerce Cloud GitHub</a>.</li>
   <li>
-    <p>Select the branch corresponding to the Magento Commerce version you currently have.</p>
+    <p>In the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Commerce Cloud GitHub repository</a>, select the branch corresponding to the Magento Commerce version you currently have.</p>
 
     <p>The following figure shows an example of selecting the <code class="highlighter-rouge">2.1.4</code> branch.</p>
 
     <p><img src="/common/images/cloud_cloud-git-214.png" alt="Switch to your current Magento Commerce branch" width="600px" /></p>
-
-    <p>In the procedure that follows, you’ll copy the contents of some of these files to your Magento Commerce system.</p>
   </li>
   <li>Log in to your Magento Commerce system as, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p>Change to the Magento installation directory and create a <code class="highlighter-rouge">.magento</code> directory.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento installation dir&gt;
-mkdir .magento
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;Magento installation dir&gt;
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir .magento
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>One at a time, create the following files in your Magento Commerce system using the contents of the files in the Magento Commerce Cloud GitHub:</p>
+    <p>One at a time, create the following files in your Magento Commerce system using the contents of the files in the Magento Commerce Cloud repository:</p>
 
     <ul>
       <li><code class="highlighter-rouge">&lt;Magento Commerce install dir&gt;/.magento.app.yaml</code></li>
@@ -2143,43 +2141,82 @@ mkdir .magento
   </li>
 </ol>
 
-<p>Modify these files as necessary as discussed in the following topics:</p>
-
-<ul>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">.magento/services.yaml</code></a></li>
-  <li><a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-</ul>
-
 <p>When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.</p>
 
-<h2 id="auth-json">Add or update <code class="highlighter-rouge">auth.json</code> with Magento Authentication keys</h2>
+<h2 id="auth-json">Add Magento authentication keys</h2>
 
-<p>To enable install and update commands for Magento Commerce Cloud, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Commerce Cloud.</p>
+<p>You must have an authentication key to access the Magento Commerce repository and to enable install and update commands for your Magento Commerce Cloud project. There are two methods for specifying Composer authorization credentials.</p>
 
-<p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code>. Verify if you have the file and add your authentication credentials before you create a new one. It’s located in your Magento root directory. You can also <a href="https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample" target="\_blank">get a sample <code class="highlighter-rouge">auth.json</code></a>.</p>
+<ul>
+  <li><strong>authentication file</strong>—You must have an <code class="highlighter-rouge">auth.json</code> file that contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> in your Magento Commerce Cloud root directory.</li>
+  <li><strong>environment variable</strong>—Alternatively, you can use an environment variable to set up authentication keys in your Magento Commerce Cloud project to prevent accidental exposure.</li>
+</ul>
 
-<p>To create a new <code class="highlighter-rouge">auth.json</code> in the   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
- you don’t have one:</p>
+<h4 id="to-create-a-new-authjson-file">To create a new <code class="highlighter-rouge">auth.json</code> file:</h4>
+
+<p>First, verify if you have an <code class="highlighter-rouge">auth.json</code> file, located in your Magento root directory. You can also <a href="https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample" target="\_blank">get a sample <code class="highlighter-rouge">auth.json</code></a>.</p>
 
 <ol>
-  <li>Use a text editor to create a file named <code class="highlighter-rouge">auth.json</code> in your Magento root directory.</li>
+  <li>
+    <p>Using a text editor, create an <code class="highlighter-rouge">auth.json</code> file and save it in your Magento root directory.</p>
+  </li>
   <li>
     <p>Replace <code class="highlighter-rouge">&lt;public-key&gt;</code> and <code class="highlighter-rouge">&lt;private-key&gt;</code> with your Magento Commerce authentication credentials.</p>
 
-    <p>See the following example:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-   "http-basic": {
-      "repo.magento.com": {
-      "username": "&lt;public-key&gt;",
-      "password": "&lt;private-key&gt;"
-    }
-  }
-}
-</code></pre></div>    </div>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public-key&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private-key&gt;"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">auth.json</code> and exit the text editor.</li>
+  <li>
+    <p>Save your changes to <code class="highlighter-rouge">auth.json</code> file and exit the text editor.</p>
+  </li>
+</ol>
+
+<h4 id="to-add-authentication-keys-using-an-environment-variable">To add authentication keys using an environment variable:</h4>
+
+<p>This method is best to prevent accidental exposure of credentials, such as pushing an <code class="highlighter-rouge">auth.json</code> file to a public repository.</p>
+
+<ol>
+  <li>
+    <p>In the <em>Project Web UI</em>, click the configuration icon in the upper left corner.</p>
+  </li>
+  <li>
+    <p>In the <em>Configure Project</em> view, click the <strong>Variables</strong> tab.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add Variable</strong>.</p>
+  </li>
+  <li>
+    <p>In the <em>Name</em> field, enter <code class="highlighter-rouge">env:COMPOSER_AUTH</code>.</p>
+  </li>
+  <li>
+    <p>In the <em>Value</em> field, add the following and replace <code class="highlighter-rouge">&lt;public-key&gt;</code> and <code class="highlighter-rouge">&lt;private-key&gt;</code> with your Magento Commerce authentication credentials:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;public-key&gt;"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;private-key&gt;"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Select <strong>Visible during build</strong> and deselect <strong>Visible at run</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add Variable</strong>.</p>
+  </li>
+  <li>
+    <p>Remove the <code class="highlighter-rouge">auth.json</code> file from each environment.</p>
+  </li>
 </ol>
 
 <h2 id="composer-json">Edit <code class="highlighter-rouge">composer.json</code></h2>
@@ -2261,7 +2298,7 @@ mkdir .magento
 
 <h2 id="encryption-key">Copy the encryption key</h2>
 
-<p>To be able to decrypt encrypted data from your imported database, copy your encryption from your existing <code class="highlighter-rouge">env.php</code> file. Every environment inIntegration, Staging, and Production has an <code class="highlighter-rouge">env.php</code> of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.</p>
+<p>To decrypt the encrypted data from your imported database, copy your encryption from your existing <code class="highlighter-rouge">env.php</code> file. Every environment in Integration, Staging, and Production has an <code class="highlighter-rouge">env.php</code> of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.</p>
 
 <ol>
   <li>Open <code class="highlighter-rouge">&lt;Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>

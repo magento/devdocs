@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Title | Magento 2 Developer Documentation</title>
+	<title>Sample template tutorial | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -300,8 +300,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       
       <ul>
         <li class="level-0">
-          <a href="/guides/v2.2/">
-            &larr; 
+          <a href="/guides/v2.2/contributor-guide/contributing.html">
+            &larr; Code Contributions
           </a>
         </li>
       
@@ -332,10 +332,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	
 
 	
-		<h1 class="page-subtitle">Subtitle</h1>
-	
 
-	<h1 class="page-heading">Title</h1>
+	<h1 class="page-heading">Sample template tutorial</h1>
 
   
 
@@ -345,17 +343,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:</p>
 
 <ul>
-  <li>When a user clicks on a tutorial title from the left navigation area, the Devdocs   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
- replaces the navigation with a table of contents that is specific to the tutorial.</li>
+  <li>A tutorial replaces the navigation with a table of contents that is specific to the tutorial.</li>
+  <li>The bottom of the index page contains a <strong>Begin Tutorial</strong> button.</li>
   <li><strong>Next</strong> and <strong>Previous</strong> buttons are displayed at the bottom of each topic.</li>
 </ul>
 
 <h2 id="metadata-parameters">Metadata parameters</h2>
 
-<p>The following table lists the   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
- parameters that are used in a tutorial.</p>
+<p>You must use the following   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
+ parameters on the tutorial index page.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Parameter</th>
@@ -368,44 +366,43 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>Must be <code class="highlighter-rouge">tutorial</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">group:</code></td>
-      <td>The group, or book, to which the topic belongs.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">subgroup:</code></td>
-      <td>First page only. Places a link with the specified text to the   <span term-uuid="31751771-8163-434b-88bc-c5f94d859fc3" class="glossary-term" data-toggle="popover">sidebar</span></td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
-    <tr>
       <td><code class="highlighter-rouge">level3_subgroup:</code></td>
       <td>A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">title:</code></td>
-      <td>The title of the tutorial. For all other topics in the tutorial, this value should be in the form <em>Step X. Perform this task</em>. (For example, <code class="highlighter-rouge">Step 1. Configure the Store</code>)</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">subtitle</code></td>
-      <td>Displays the tutorial name. The value must be specified on each topic in the tutorial.</td>
+      <td>The title of the tutorial.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">menu_title:</code></td>
-      <td>On the first page of the tutorial, specify <code class="highlighter-rouge">Initial tasks</code>. Otherwise, leave this line blank.</td>
+      <td>On the index page of the tutorial, specify <code class="highlighter-rouge">Initial tasks</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">menu_order:</code></td>
-      <td>The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.</td>
+      <td>The sequence number of the topic. For the index page in a multi-step tutorial, set this 0.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">return_to:</code></td>
+      <td>Defines the tutorial’s parent page. The parent page title is displayed in the left navigation above the tuturial steps. Do not specify a value for the <code class="highlighter-rouge">return_to:</code> parameter. Instead, specify values for these second-level parameters:<br /><br /><code class="highlighter-rouge">title:</code> The title of the parent topic<br /><br /><code class="highlighter-rouge">url:</code> The URL of the parent topic</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">ee_only:</code></td>
-      <td>If set to <code class="highlighter-rouge">true</code>, graphics/cues indicating that the article applies to EE are displayed on devdocs.</td>
+      <td>Optional. If set to <code class="highlighter-rouge">true</code>, graphics/cues indicating that the article applies to Magento Commerce are displayed on devdocs.</td>
     </tr>
   </tbody>
 </table>
+
+<p>The following example shows the completed frontmatter section for an index page:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>layout: tutorial
+level3_subgroup: order-tutorial
+title: Order processing tutorial
+menu_title: Initial tasks
+return_to:
+  title: REST tutorials
+  url: rest/tutorials/index.html
+menu_order: 0
+</code></pre></div></div>
 
 <h2 class="tutorial-before" id="before-you-begin">Before you begin…</h2>
 
