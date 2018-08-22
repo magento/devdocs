@@ -1,4 +1,5 @@
 {% assign item = include.item %}
+{% assign base = '' %}
 
 {% if item.versions.size == nil or item.versions contains page.guide_version %}
   {% if item.url contains 'http' %}
