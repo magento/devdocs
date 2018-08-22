@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-<!-- Assigning liquid variables for placeholder values
+<!-- Assigning liquid variables for placeholder valuesst
 {% assign base_url = "{{base_url}}" %}
 {% assign unsecure_base_url = "{{unsecure_base_url}}" %}
 
@@ -24,7 +24,6 @@ php ./vendor/bin/ece-tools list
 ```
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
-
 
 	
 ## v2002.0.14
@@ -102,8 +101,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Environment configuration checks**—Improved validation of the environment configuration to warn customers about version incompatibilities and configuration errors before building and deploying {{site.data.var.ece}}.
 
-   -  <!--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated environment variables
-   and values.
+   -  <!--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated environment variables and values.
 
    -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with {{site.data.var.ee}}. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.
    
@@ -144,8 +142,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 - <!--MAGECLOUD-2097-->Fixed permission checks that caused `Missing write permissions` errors during the upgrade process.
 
-- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.local.php` file during the dump process if the store locale is not specified.
-Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.local.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.local.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.local.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 - <!--MAGECLOUD-2556-->Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/){:target="_blank"} domain to a `www` domain.
 
