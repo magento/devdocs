@@ -48,15 +48,17 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-bcmath`
 * `php-cli`
 * `php-common`
+* `php-curl`
 * `php-gd`
 * `php-intl`
 * `php-mbstring`
 * `php-mcrypt`
 * `php-opcache`
+* `php-openssl`
 * `php-pdo`
 * `php-soap`
 * `php-xml`
-* `php-xls`
+* `php-xsl`
 * `php-zip`
 
 Adding more extensions increases library load times.
