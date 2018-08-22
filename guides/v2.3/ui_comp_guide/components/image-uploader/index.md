@@ -1,7 +1,6 @@
 ---
 group: UI_Components_guide
 title: ImageUploader component
-github_link: ui_comp_guide/components/image-uploader/index.md
 ---
 
 The ImageUploader UI component gives users the ability to upload images to the Magento Media Gallery.

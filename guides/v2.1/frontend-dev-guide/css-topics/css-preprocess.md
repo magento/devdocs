@@ -4,8 +4,6 @@ subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
-version: 2.1
-github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
   - Frontend
@@ -29,9 +27,9 @@ Description
 <p>Root source files</p>
 </td>
 <td>
-<p>The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled.
+<p>The <code>.less</code> files from which the <code>.css</code> files [included in layout]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html){:target="_blank"} are compiled.
 
-For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+For example, in one of the [layout files of the Magento Blank theme](https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml){:target="_blank"}, the following <code>.css</code> files are included:
 
 <pre>
     &lt;head&gt;
@@ -52,7 +50,6 @@ The root source files for the Blank theme are:
 </td>
 </tr>
 </table>
-
 
 ## LESS compilation modes {#less_modes}
 
@@ -87,7 +84,7 @@ In server-side LESS compilation mode, to have your changes applied, clear `pub/s
 <div class="bs-callout bs-callout-info" id="info">
 <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
 </div>
-Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
+Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the [Grunt JavaScript task runner](http://gruntjs.com/){:target="_blank"}.
 
 See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure, and use Grunt.
 
@@ -100,7 +97,6 @@ The client-side compilation flow is similar to the server-side flow. The differe
 *   symlinks to all other `.less` files imported recursively by the `@magento_import` and `@import` directives
 
 Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons for this difference might be the usage of the `@import` directive without the file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
-
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
@@ -119,6 +115,7 @@ This is required if:
 To clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
 ## The `@import` directive rules of usage {#fedg_css-import}
+
 You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
 According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 

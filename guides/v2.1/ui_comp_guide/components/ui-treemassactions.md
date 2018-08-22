@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: TreeMassActions component
 menu_title: TreeMassActions component
-version: 2.1
-github_link: ui_comp_guide/components/ui-treemassactions.md
 ---
 
 The TreeMassActions component is a decorator for [MassActions]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html) that adds the support of nested actions.
@@ -39,6 +37,7 @@ The TreeMassActions component is a decorator for [MassActions]({{ page.baseurl }
 </table>
 
 ### MassActionContainer interface
+
 <table>
   <tr>
     <th>Option</th>

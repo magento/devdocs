@@ -5,8 +5,6 @@ title: Get your authentication keys
 menu_title: Get your authentication keys
 menu_order: 26
 menu_node:
-version: 2.1
-github_link: install-gde/prereq/connect-auth.md
 functional_areas:
   - Install
   - System
@@ -16,6 +14,7 @@ functional_areas:
 {% include install/auth-tokens-get.md %}
 
 #### Related topics:
+
 *	Use your authentication keys to:
 
 	*	[Get the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage (integrators, packagers)]({{ page.baseurl }}/install-gde/composer.html)

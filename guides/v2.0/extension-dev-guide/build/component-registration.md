@@ -4,19 +4,19 @@ subgroup: 03_Build
 title: Register your component
 menu_title: Register your component
 menu_order: 4000
-version: 2.0
-github_link: extension-dev-guide/build/component-registration.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/build/component-registration.html
   - /guides/v2.0/extension-dev-guide/component-registration.html
 ---
 
 ## Registration overview {#register-overview}
+
 Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento `ComponentRegistrar` class.
 
 Each component must have a file called `registration.php` in its root directory. For example, here is the `registration.php` file for Magento's [AdminNotification module]({{ site.mage2000url }}app/code/Magento/AdminNotification/registration.php). Depending on the type of component, registration is performed through `registration.php` by adding to it as follows:
 
 ## Register modules {#register-modules}
+
 Register modules with:
 
      ComponentRegistrar::register(ComponentRegistrar::MODULE, '<VendorName_ModuleName>', __DIR__);
@@ -30,20 +30,20 @@ Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code>
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
 ## Register themes {#register-themes}
+
 Register themes with:
 
      ComponentRegistrar::register(ComponentRegistrar::THEME, '<area>/<vendor>/<theme name>', __DIR__);
 
 where &lt;area> is the functional area of the module (frontend, controller, and so on.), &lt;vendor> is the name of the company providing the theme, and &lt;theme name> is the name of the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-
 ### Example
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 
 <p>&nbsp;</p>
 
-
 ## Register language packages {#register-lagpacks}
+
 Register language packages with:
 
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '<VendorName>_<packageName>', __DIR__);
@@ -56,6 +56,7 @@ where &lt;VendorName> is the name of the company providing the package and &lt;p
 <p>&nbsp;</p>
 
 ## Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
+
 After you create your `registration.php` file and you are creating [your component's composer.json file]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
      {

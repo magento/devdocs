@@ -4,18 +4,18 @@ subgroup: A_Themes
 title: Magento theme structure
 menu_title: Magento theme structure
 menu_order: 60
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-structure.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="theme-structure-intro">What's in this topic</h2>
+## What\'s in this topic   {#theme-structure-intro}
+
 A <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-<h2 id="theme-structure-loc">Magento theme location</h2>
+## Magento theme location   {#theme-structure-loc}
+
 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} repository.
 
 Each theme must be stored in a separate directory:
@@ -27,7 +27,8 @@ app/design/frontend/&lt;Vendor&gt;/
 ├--...
 </pre>
 
-<h2 id="theme-structure-comp">Theme components</h2>
+## Theme components   {#theme-structure-comp}
+
 The structure of a Magento theme directory typically would be like following:
 <pre>
 &lt;theme_dir&gt;/
@@ -255,14 +256,15 @@ Let's have a closer look at each particular sub-directory.
   </tbody>
 </table>
 
-<h2 id="theme-structure-files">Theme files</h2>
+## Theme files   {#theme-structure-files}
 
 Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} file, all theme files fall into the following two categories:
 
 * Static view files
 * Dynamic view files
 
-<h3 id="theme-structure-pub">Static view files</h3>
+### Static view files   {#theme-structure-pub}
+
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
 {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static files{% endglossarytooltip %} can be located in a theme directory as follows:
@@ -283,7 +285,8 @@ Static view files that can be accessed by a direct link from the storefront, are
   <p>To be actually accessible for browsers public static files are <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
-<h3>Dynamic view files</h3>
+### Dynamic view files
+
 View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, and layouts.
 
 Dynamic view files are located in a theme directory as follows:

@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_GiftWrappingStaging module
 menu_title: GiftWrappingStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/GiftWrappingStaging.md
 ---
 
 

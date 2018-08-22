@@ -1,14 +1,11 @@
 ---
 group: fedg
 title: Layout instructions
-version: 2.2
-github_link: frontend-dev-guide/layouts/xml-instructions.md
 functional_areas:
   - Frontend
 ---
 
-<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
-
+## What's in this topic {#fedg_layout_xml-instruc_overview}
 
 There are two possible ways to customize page layout in Magento:
 * Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
@@ -23,8 +20,7 @@ Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instr
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.
 
-
-<h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
+## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
 Use the following layout instructions to customize your layout:
 
@@ -39,7 +35,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 *  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
 
-<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
+### &lt;block&gt; {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
 
@@ -106,7 +102,7 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
 
 To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
 
-<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
+### &lt;container&gt; {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
 <p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
 <table>
@@ -185,8 +181,8 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
+### before and after attributes {#fedg_xml-instrux_before-after}
 
-<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files to control the order of elements in their common parent.
 
@@ -231,7 +227,9 @@ The following tables give a detailed description of the results you can get usin
       </tr>
    </tbody>
 </table>
-<h3 id="examples">Examples</h3>
+
+### Examples {#examples}
+
 <table>
    <tbody>
       <tr>
@@ -257,7 +255,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action&gt;</h3>
+### &lt;action&gt; {#fedg_layout_xml-instruc_ex_act}
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
@@ -304,7 +302,7 @@ Example:
 
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
+### &lt;referenceBlock&gt; and &lt;referenceContainer&gt; {#fedg_layout_xml-instruc_ex_ref}
 <p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
 <p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
 
@@ -352,7 +350,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
     <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
 </ul>  
 
-<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
+### &lt;move&gt; {#fedg_layout_xml-instruc_ex_mv}
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
@@ -406,7 +404,7 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
+### &lt;remove&gt; {#fedg_layout_xml-instruc_ex_rmv}
 
 <code>&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
 For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
@@ -429,7 +427,7 @@ Example of usage:
 </page>
 {%endhighlight xml%}
 
-<h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
+### &lt;update&gt; {#fedg_layout_xml-instruc_ex_upd}
 
 Includes a certain layout file.
 
@@ -441,7 +439,7 @@ Used as follows:
 
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
-<h3 id="argument">&lt;argument&gt;</h3>
+### &lt;argument&gt; {#argument}
 Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
  
 <table>
@@ -516,7 +514,7 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ...
 {%endhighlight %}
 
-<h3 id="arguments">&lt;arguments&gt;</h3>
+### &lt;arguments&gt; {#arguments}
 
 <code>&lt;arguments&gt;</code> is a required container for <code>&lt;argument&gt;</code>. It does not have its own attributes.
 

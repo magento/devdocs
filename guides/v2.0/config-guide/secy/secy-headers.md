@@ -5,8 +5,6 @@ title: Prevent cache poisoning
 menu_title: Prevent cache poisoning
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: config-guide/secy/secy-headers.md
 functional_areas:
   - Configuration
   - System
@@ -27,6 +25,7 @@ This solution applies to the following Magento versions:
 </div>
 
 ### Description
+
 The issue results if {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
 
 *	`X-Rewrite-Url`
@@ -38,6 +37,7 @@ The issue results if {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}U
 If these headers are changed, the resulting URL and content are cached, resulting in potential vulnerabilities.
 
 ### Solution
+
 We provide the option to remove the values of all of the preceding headers based on the IIS server setting for `Enable_IIS_Rewrites`.
 
 *	If `Enable_IIS_Rewrites` is set to `0`,  the values of the headers are removed.

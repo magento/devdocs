@@ -3,9 +3,7 @@ group: fedg
 subgroup: A_Themes
 title: Apply and configure a storefront theme
 menu_title: Apply and configure a storefront theme
-version: 2.1
 menu_order: 30
-github_link: frontend-dev-guide/themes/theme-apply.md
 functional_areas:
   - Frontend
   - Theme
@@ -20,8 +18,8 @@ Also, it gives information how to add a theme independent logo for your store.
 
 Make sure that you [set]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html).
 
-
 ## Apply a theme {#theme-apply-apply}
+
 After you [add your theme to the file system]({{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
@@ -34,8 +32,8 @@ To apply a theme:
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the storefront pages.
 
-
 ## Add a design exception {#theme-apply-except}
+
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
@@ -48,8 +46,8 @@ To add a design exception:
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
 6. To see your changes applied, reload the storefront pages.
 
-
 ## Add a theme-independent logo {#theme-apply-logo}
+
 You might want to set a permanent store logo that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
@@ -68,8 +66,8 @@ The logo you add here is stored in the `/pub/media/logo/default/` directory.
 {:.bs-callout .bs-callout-warning}
 To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview.
 
-
 ## Clear the cache {#theme-apply-clear}
+
 If caching is enabled in Magento Admin, you must clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} after you apply the theme, add a design exception, add a logo, and perform other tasks.
 
 A system message notifies you that invalidated cache types must be refreshed.

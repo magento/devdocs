@@ -2,7 +2,6 @@
 layout: full-width
 group: whatsnew
 title: What's new on DevDocs
-github_link: magento-devdocs-whatsnew.md
 ---
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
@@ -45,10 +44,10 @@ Release Notes for Magento 2.0.18 [Open Source]({{ site.baseurl }}/guides/v2.0/re
 Release Notes for Magento 2.1.12 [Open Source]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).|2.1.x|New|Feb 27
 Release Notes 2.2.3 [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)|2.2.x|New|Feb 27
 Added supported MySQL technologies to the [MySQL]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/mysql.html) topic.|2.2.x|Updated|Feb 27
-Updated the [DevDocs contributions]({{ site.baseurl }}/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
+Updated the [DevDocs contributions](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
 Formatting to improve consistency in the [Configuration Guide]({{ site.baseurl }}/guides/v2.0/config-guide/bootstrap/magento-modes.html).||Updated|Feb 26
 Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
-Added reference and [examples]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
+Added reference and [examples]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20
 Listed the `adminhtml` option in the [Observers best practices]({{ site.baseurl }}/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html) topic.|2.x|Updated|Feb 09
 The [MFTF-2 Guide]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) has been added to Magento 2.2 documentation|2.2.x|Updated|Feb 09
 Learn how to customize and extend the acceptance functional tests using [Merging]({{ site.baseurl }}/guides/v2.3/magento-functional-testing-framework/release-2/merging.html) in the MFTF 2.|2.3 pre-release|New|Feb 07
@@ -416,7 +415,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Update performance test data]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.x  | Updated  | Mar 21  |
 | [Versioning and compatibility]({{ page.baseurl }}/extension-dev-guide/versioning/index.html){:target="_blank"} | 2.x  |  New |  Mar 31 |
 | [How to test a block]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html){:target="_blank"}  | 2.x  |  Updated | Mar 24  |
-| [Tutorial: Order processing with REST APIs]({{ site.gdeurl21 }}get-started/order-tutorial/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  |
+| [Tutorial: Order processing]({{ site.gdeurl21 }}/rest/tutorials/orders/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  |
 | [Magento U video tutorials]({{ site.baseurl }}/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
 | [Top quarterly devdocs contributors]({{ page.baseurl }}/contributor-guide/quarterly-contributors.html){:target="_blank"}  |  2.x | Updated  | Mar 15  |
 |  [Community contribution to adding attributes to an entity]({{ page.baseurl }}/extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |

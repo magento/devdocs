@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: HtmlContent component
 menu_title: HtmlContent component
-version: 2.2
-github_link: ui_comp_guide/components/ui-htmlcontent.md
 ---
 
 The HtmlContent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} provides the ability to process and render a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.
@@ -52,7 +50,6 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
     <td><code>true</code></td>
   </tr>
 </table>
-
 
 ## Examples
 

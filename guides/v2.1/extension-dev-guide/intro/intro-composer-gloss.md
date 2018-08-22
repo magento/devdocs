@@ -5,8 +5,6 @@ title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
 menu_node:
-version: 2.1
-github_link: extension-dev-guide/intro/intro-composer-gloss.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
@@ -14,7 +12,7 @@ redirect_from:
 ---
 
 ### Component {#gloss-component}
-We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} can be classified into the following *types*:
+We refer to what you're coding as *components*. (Composer refers to them as [*packages*](https://getcomposer.org/doc/05-repositories.md#packages){:target="_blank"}; the terms component and package are equivalent.) A {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} can be classified into the following *types*:
 
 *	{% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} (extend Magento capabilities)
 *	{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
@@ -23,7 +21,7 @@ We refer to what you're coding as *components*. (Composer refers to them as <a h
 You can *package* your components as follows:
 
 *	Individually
-*	As a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">metapackage</a>, which is a Magento Marketplace requirement if you're developing a product that has more than one component.
+*	As a [metapackage](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"}, which is a Magento Marketplace requirement if you're developing a product that has more than one component.
 
 	A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on.
 
@@ -34,6 +32,7 @@ You can *package* your components as follows:
 </div>
 
 ### Metapackage {#gloss-meta}
+
 Magento Marketplace requires more than one component to be packaged as a *metapackage*, which consists of only a `composer.json` that specifies individual components and their dependencies. (Magento Marketplace also refers to a metapackage as an *extension*.)
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
@@ -47,10 +46,12 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
+
 *	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
 *	<a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
+
 Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall

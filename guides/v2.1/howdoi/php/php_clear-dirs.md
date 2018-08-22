@@ -5,16 +5,16 @@ title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
 menu_order: 200
-version: 2.1
-github_link: howdoi/php/php_clear-dirs.md
 ---
 
 #### Contents
+
 *	<a href="#howdoi-clear-over">Overview of directory clearing</a>
 *	<a href="#howdoi-clear-what">What directories to clear</a>
 *	<a href="#howdoi-clear-how">How to clear the directories</a>
 
-<h2 id="howdoi-clear-over">Overview of directory clearing</h2>
+## Overview of directory clearing {#howdoi-clear-over}
+
 While you're developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won't function properly.
 
 This topic provides guidelines on what directories to clear and when to clear them.
@@ -62,7 +62,8 @@ When you're developing Magento components (modules, themes, and language package
 </tbody>
 </table>
 
-<h2 id="howdoi-clear-what">What directories to clear</h2>
+## What directories to clear {#howdoi-clear-what}
+
 The following table provides guidelines on what you should clear and when.
 
 <table>
@@ -73,7 +74,7 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22){:target="_blank"} declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
@@ -99,7 +100,8 @@ The following table provides guidelines on what you should clear and when.
 </tbody>
 </table>
 
-<h2 id="howdoi-clear-how">How to clear the directories</h2>
+## How to clear the directories {#howdoi-clear-how}
+
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
 	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*

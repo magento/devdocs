@@ -2,27 +2,23 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Confirmation widget
-menu_order: 5
-menu_title: Confirmation widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
 ## Overview
 
-The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
+The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the [Magento modal widget].
 
-The confirmation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/confirm.js</a>
+The confirmation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [\<Magento\_Ui\_module\_dir\>/view/base/web/js/modal/confirm.js].
 
-The widget can be used for implementing confirmation windows for both, Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a>
+The widget can be used for implementing confirmation windows for both, Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
-<h2 id="confirm_initialize">Initialize the confirmation widget</h2>
+## Initialize the confirmation widget {#confirm_initialize}
 
 The confirmation widget can be initialized with or without binding to a certain element.
 
 **Example1**: initialization on an element
 
-{% highlight js %}
+```javascript
 $('#confirm_init').confirm({
     title: 'Confirmation title',
     actions: {
@@ -31,11 +27,10 @@ $('#confirm_init').confirm({
         always: function(){}
     }
 });
-{% endhighlight %}
+```
 
 **Example2**: standalone initialization
-{% highlight js %}
-
+```javascript
 require([
     'Magento_Ui/js/modal/confirm'
 ], function(confirmation) { // Variable that represents the `confirm` widget
@@ -51,44 +46,43 @@ require([
     });
 
 });
-{% endhighlight %}
+```
 
+For details about how to initialize a widget in a`.phtml` template, refer to the [Javascript initialization] topic.
 
-For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+## Options {#confirm_options}
 
-<h2 id="confirm_options">Options</h2>
+-   [actions](#confirm_actions)
+-   [autoOpen](#confirm_autoopen)
+-   [clickableOverlay](#confirm_clickableOverlay)
+-   [content](#confirm_content)
+-   [focus](#confirm_focus)
+-   [title](#confirm_title)
 
-<ul>
-<li><a href="#confirm_actions">actions</a></li>
-<li><a href="#confirm_autoopen">autoOpen</a></li>
-<li><a href="#confirm_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#confirm_content">content</a></li>
-<li><a href="#confirm_focus">focus</a></li>
-<li><a href="#confirm_title">title</a></li>
-</ul>
-
-<h3 id="confirm_actions"><code>actions</code></h3>
+### `actions` {#confirm_actions}
 Widget callbacks.
 
 **Type**: Object
 
 **Default value**:
-{% highlight js %}
+```javascript
 actions: {
     confirm: function(){},
     cancel: function(){},
     always: function(){}
 }
-{% endhighlight %}
+```
 
-<h3 id="confirm_autoopen">autoOpen</h3>
+### autoOpen {#confirm_autoopen}
+
 Automatically open the confirmation window when the widget is initialized.
 
 **Type**: Boolean
 
 **Default value**: `false`
 
-<h3 id="confirm_clickableOverlay">clickableOverlay</h3>
+### clickableOverlay {#confirm_clickableOverlay}
+
 Close the confirmation window when a user clicks on the overlay.
 
 **Type**: Boolean
@@ -96,13 +90,12 @@ Close the confirmation window when a user clicks on the overlay.
 **Default value**: `true`
 
 
-<h3 id="confirm_content"><code>content</code></h3>
-
+### `content` {#confirm_content}
 The confirmation window content.
 
 **Type**: String.
 
-<h3 id="confirm_focus"><code>focus</code></h3>
+### `focus` {#confirm_focus}
 The selector of the element to be in focus when the confirmation window opens.
 If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
 
@@ -110,16 +103,14 @@ If `focus` is not specified or set to empty string, the focus is on close button
 
 **Default value**: `''`
 
-<h3 id="confirm_title"><code>title</code></h3>
+### `title` {#confirm_title}
 The title of the confirmation window.
-
 
 **Type**: String.
 
 **Default value**: `''`
 
-
-<h2 id="confirm_events">Events</h2>
+## Events {#confirm_events}
 
 The confirmation widget implements the following events:
 
@@ -127,5 +118,13 @@ The confirmation widget implements the following events:
 - `cancel` callback: called when the cancel button is clicked.
 - `always` callback.
 
-<h2 id="confirm_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows is similar to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>
+## Keyboard navigation {#confirm_key_navigation}
+
+The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
+
+
+[Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
+[\<Magento\_Ui\_module\_dir\>/view/base/web/js/modal/confirm.js]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js
+[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
+[Javascript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

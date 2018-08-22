@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
-menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
-menu_order: 500
-menu_node:
-version: 2.1
-github_link: config-guide/varnish/tshoot-varnish-503.md
 functional_areas:
   - Configuration
   - System
@@ -20,9 +14,8 @@ If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache
 
 To resolve this issue, increase the default value of the `http_resp_hdr_len` parameter in your Varnish configuration file. The `http_resp_hdr_len` parameter specifies the max header length _within_ the total default response size of 32768 bytes.
 
-<div class="bs-callout bs-callout-info" id="info">
-	If the <code>http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code>http_resp_size</code> parameter.
-</div>
+{:.bs-callout .bs-callout-info}
+If the `http_resp_hdr_len` value exceeds 32768 bytes, you must also increase the default response size using the `http_resp_size` parameter.
 
 1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
 

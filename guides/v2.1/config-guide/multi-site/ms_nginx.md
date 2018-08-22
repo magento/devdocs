@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites or stores with nginx
-menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
-menu_order: 3
-menu_node:
-version: 2.1
-github_link: config-guide/multi-site/ms_nginx.md
 functional_areas:
   - Configuration
   - System
@@ -14,9 +8,11 @@ functional_areas:
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
+
 This tutorial shows you step-by-step how to set up multiple websites using {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
 
 ### Assumptions
+
 We assume that:
 
 *	You are working on a development machine (laptop, virtual machine, or similar).
@@ -33,11 +29,11 @@ We assume that:
 	*	`german.mysite.mg` with website code `german` and store view code `de`
     *   `mysite.mg` is the default website and default store view
 
-    <div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-tip}
 Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
-    </div>
 
 ### Roadmap for setting up multiple websites with nginx
+
 To set up multiple stores:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -52,16 +48,18 @@ To set up multiple stores:
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`.
 
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
+
 This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `sudo` privileges.
 
 By using just one [nginx virtual host file](#ms-nginx-vhosts), you can keep your nginx configuration simple and clean. By using several virtual host files, you can customize each store (to use a custom location for `french.mysite.mg` for instance).
 
 {% collapsible To use one virtual host (simplified): %}
 
-This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}/install-gde/prereq/nginx.html). To create one virtual host: 
+This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}/install-gde/prereq/nginx.html). To create one virtual host:
 
 1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/magento`:
-    ```
+
+    ```terminal
     map $http_host $MAGE_RUN_CODE {
         default '';
         french.mysite.mg french;
@@ -77,6 +75,7 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
         include /var/www/html/magento2/nginx.conf;
     }
     ```
+
 2.	Save your changes to the files and exit the text editor.
 3.	Verify the server configuration:
 
@@ -92,15 +91,16 @@ This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}
 		cd /etc/nginx/sites-enabled
 		ln -s /etc/nginx/sites-available/magento magento
 
-For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
+For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
 {% endcollapsible %}
 
 {% collapsible To create multiple virtual hosts (customize per website): %}
-To create multiple virtual hosts: 
+To create multiple virtual hosts:
 
 1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
-    ```
+
+    ```terminal
     map $http_host $MAGE_RUN_CODE {
         french.mysite.mg french;
     }
@@ -114,8 +114,10 @@ To create multiple virtual hosts:
         include /var/www/html/magento2/nginx.conf;
     }
     ```
+
 2.	Create another file named `german.mysite.mg` in the same directory with the following contents:
-    ```
+
+    ```terminal
     map $http_host $MAGE_RUN_CODE {
         german.mysite.mg german;
     }
@@ -129,6 +131,7 @@ To create multiple virtual hosts:
         include /var/www/html/magento2/nginx.conf;
     }
     ```
+
 3.	Save your changes to the files and exit the text editor.
 4.	Verify the server configuration:
 
@@ -145,7 +148,7 @@ To create multiple virtual hosts:
 		ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
 		ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 
-For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
+For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map).
 
 {% endcollapsible %}
 
@@ -161,7 +164,7 @@ To modify the `nginx.conf.sample` file:
 
 1.	Open a text editor and review the `nginx.conf.sample` file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
 
-    ```
+    ```terminal
     # PHP entry point for main application
     location ~ (index|get|static|report|404|503|health_check)\.php$ {
         try_files $uri =404;
@@ -180,13 +183,14 @@ To modify the `nginx.conf.sample` file:
     ```
 
 2. Update the `nginx.conf.sample` file with the following two lines before the include statement:
-    ```
+    ```terminal
         fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
         fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
     ```
 An example updated PHP entry point for the main application looks like:
-```
+```terminal
 # PHP entry point for main application
+
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
     try_files $uri =404;
     fastcgi_pass   fastcgi_backend;

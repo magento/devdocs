@@ -7,8 +7,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: step3
 menu_order: 11
-version: 2.1
-github_link: comp-mgr/module-man/compman-enable-disable.md
 redirect_from: /guides/v2.0/comp-mgr/compman-enable-disable.html
 functional_areas:
   - Upgrade

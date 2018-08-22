@@ -1,10 +1,6 @@
 ---
 group: jsdg
 title: Conventional notations used in this Guide
-menu_title: Conventional notations used in this Guide
-menu_order: 2
-version: 2.1
-github_link: javascript-dev-guide/conventions_js.md
 ---
 
 ## Conventional notations for paths to modules and themes
@@ -29,4 +25,4 @@ Module directory. When talking about a particular Magento module, also notation 
 For Magento modules, the absolute path is usually one of the following:
 
  - `app/code/Magento/<Module>`
-  - `vendor/magento/module-<module>-<name>`
+ - `vendor/magento/module-<module>-<name>`

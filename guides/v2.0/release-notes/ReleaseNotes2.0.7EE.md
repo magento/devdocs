@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.0.7 Release Notes
 menu_order: 288
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.7EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. This release includes  several functional fixes.
@@ -15,8 +13,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. 
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-<h3>Fixed issues</h3>
+### Fixed issues
 
 * Resolved multiple issues with the accurate display of the contents of the cart, mini cart, and checkout,  including:
 
@@ -32,17 +29,15 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 * The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} now works as expected in a Magento installation running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page would become unresponsive, and the transaction would not appear in the payment gateway.  <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.
 
+### System requirements
 
-
-
-<h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="{{ site.baseurl }}/magento-system-requirements.html" target="_blank">System Requirements</a>.
 
+### Installation instructions
 
-<h3>Installation instructions</h3>
+#### New installations
 
-<h4>New installations</h4>
 New users can now complete a full installation of Magento Commerce 2.0.7 from an archive file.
 
 ##### <b>Download a new installation</b>#####
@@ -58,7 +53,8 @@ New users can now complete a full installation of Magento Commerce 2.0.7 from an
 3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
 
 
-<h4><b>Upgrade existing installations</b></h4>
+#### **Upgrade existing installations**
+
 
 This section discusses how to upgrade to Magento Commerce 2.0.7.
 
@@ -103,8 +99,8 @@ To upgrade to Magento Commerce 2.0.7 using the command line:
 
 		php bin/magento cache:enable
 
+### Migration toolkits
 
-<h3>Migration toolkits</h3>
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

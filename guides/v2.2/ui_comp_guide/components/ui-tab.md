@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Tab component
 menu_title: Tab component
-version: 2.2
-github_link: ui_comp_guide/components/ui-tab.md
 ---
 
 The Tab component implements a tab content area.

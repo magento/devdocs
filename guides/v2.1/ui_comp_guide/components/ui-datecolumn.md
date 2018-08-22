@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DateColumn component
 menu_title: DateColumn component
-version: 2.1
-github_link: ui_comp_guide/components/ui-datecolumn.md
 ---
 
 The DateColumn component implements a table column that displays dates.

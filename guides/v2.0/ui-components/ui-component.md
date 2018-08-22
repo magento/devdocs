@@ -5,14 +5,13 @@ title: Overview
 landing-page: UI Components
 menu_title: Overview
 menu_node: parent
-version: 2.0
-github_link: ui-components/ui-component.md
 redirect_from: 
   - /guides/v2.0/ui-library/ui-library-component.html
   - /guides/v2.0/ui_comp_guide/bk-ui_comps.html
 ---
 
-<h2 id="general">Overview of UI components</h2>
+## Overview of UI components   {#general}
+
 Magento UI components are designed for simple and flexible UI rendering. They allow you to configure the page manipulating the UI components.
 
 Magento UI components are implemented as a standard {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and can be found under Magento\UI {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
@@ -23,8 +22,8 @@ Components are responsible for rendering result page fragments and providing/sup
 This guide is actual for Magento 2.0 UI components. You might be also interested in the [UI Components Guide for Magento 2.1]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html), as it has more conceptual topics.   
 </div>
 
-
 ### General structure
+
 In Magento 2 there are basic and secondary UI components. 
 
 Basic components are: 
@@ -40,7 +39,8 @@ All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-
   <p>You need to configure styles manually for components on storefront.</p>
 </div>
 
-<h3>Using UI component in layout file</h3>
+### Using UI component in layout file
+
 Using {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is as simple as adding the following code to the appropriate {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} section:
 
 `<uiСomponent name="some_ui_component_instance_name"/>`

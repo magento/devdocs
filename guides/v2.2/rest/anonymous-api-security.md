@@ -1,12 +1,6 @@
 ---
 group: rest
-subgroup: A_rest
 title: Restricting access to anonymous web APIs
-menu_title: Restricting access to anonymous web APIs
-menu_node:
-menu_order: 6
-version: 2.0
-github_link: rest/anonymous-api-security.md
 ---
 
 Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} without having to log in.
@@ -50,12 +44,15 @@ The following table lists the APIs that are no longer available to an anonymous 
 | Open Source | Store | /V1/store/storeGroups | GET |
 | Open Source | Store | /V1/store/websites | GET |
 | Open Source | Store | /V1/store/storeConfigs | GET |
+{:style="table-layout:auto;"}
 
-<div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.</p>
-    <p>To disable this feature, log in to the Admin panel and navigate to <b>Stores > Configuration > Services > Magento Web API > Web API Security</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
-</div>
+{%
+include note.html
+type='warning'
+content='Preventing anonymous access to these endpoints could cause third-party integrations to fail. If a third-party integration calls any of these endpoints, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.
 
+To disable this feature, log in to the Admin panel and navigate to **Stores** > **Configuration** > **Services** > **Magento Web API** > **Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.'
+%}
 
 If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
 
@@ -108,3 +105,4 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Commerce | GiftCardAccount | /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode | GET |
 | Commerce | GiftRegistry | /V1/guest-giftregistry/:cartId/estimate-shipping-methods | POST |
 | Commerce | WorldPay | /V1/worldpay-guest-carts/{cartId}/payment-information | POST
+{:style="table-layout:auto;"}

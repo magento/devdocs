@@ -4,16 +4,13 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.0.17 Release Notes
 menu_title: Magento Commerce 2.0.17 Release Notes
 menu_order: 262
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.17EE.md
 ---
 
 *Patch code and release notes were published on November 7, 2017.* 
 
 We are pleased to present Magento Commerce 2.0.17. This release includes almost 40 security fixes and enhancements to your Magento software.
-
 
 ## Highlights
 
@@ -26,10 +23,10 @@ Magento 2.0.17 contains almost 40 security fixes and enhancements.  Look for the
 * multiple enhancements to product security. See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information. 
 
 ## Security enhancements
+
 Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
-
 
 ## Known issue
 
@@ -38,9 +35,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ## Fixed issues
 
 ### Cart
+
 <!--- 61066 -->*  Magento now permits a customer to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of a shopping cart  when the customer switched between store views on different websites.
  
-
 
 ### Catalog
 
@@ -66,6 +63,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
  
 
 ### Configurable products 
+
 <!--- 62593 -->* Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
 
 <!--- 61960 -->* Magento now saves and filters configurable products by their specific options. 
@@ -76,17 +74,14 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57165 -->* The **Add Products Manually** option now lets you add existing products as well as generate new variations. 
 
-
-
 ### Framework
+
 <!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) 
 
 <!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
 
-
-
-
 ### General
+
 <!--- 63651 -->* Magento now moves the `sequence_*` table to the correct database after implementing a split database. 
 
 <!--- 61564 -->* When you edit a product list widget on a CMS page, Magento now shows previously set conditions. Previously, when you tried to edit a product list widget, the condition parameter was empty. [GitHub-6616](https://github.com/magento/magento2/issues/6616)
@@ -119,21 +114,22 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 56380 -->* Backtrace information no longer appears on the frontend.
 
-
 ### Gift card
+
 <!--- 64676 -->* Customers can no longer exceed a gift card balance by using the gift card twice.
 
 ### Gift message
+
 <!--- 62627 -->* Gift message options are no longer available at the order level when you’ve disabled them in the Admin.
 
-
 ### Gift wrap
+
 <!--- 62629 -->* Your gift wrapping selection now appears in the shopping cart regardless of whether you've selected a shipping method. Previously, Magento did not display your gift wrapping choice until you selected a shipping method. 
 
 <!--- 62624 -->* Magento no longer displays the gift wrap tax when no gift wrap is selected.
 
-
 ### Import/export
+
 <!--- 67343 -->*  We’ve improved the performance of importing up to 100,000 products from the Admin. 
 
 <!--- 63590 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
@@ -142,22 +138,19 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 58392 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
-
 ### Order management
+
 <!--- 63585 -->* Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails. 
 
-
-
 ### Shipping
+
 <!--- 59249 -->*  The Free Shipping rule now works correctly with the table shipping method. Previously, Magento displayed an error at checkout (**This shipping method is not available. To use this shipping method, please contact us.**) instead of assigning a $0 shipping rate. [GitHub-6346](https://github.com/magento/magento2/issues/6346)
 
-
 ### TargetRule
+
 <!--- 63831 -->*  Magento now saves a new product rule when its SKU attribute is enabled for **Use for Promo Rule Conditions**. Previously, you could not save a new rule under these conditions. 
 
 <!--- 63666 -->*  You can now base a Related Product rule on a product attribute, such as color. 
-
-
 
 ### Web API Framework
 
@@ -175,18 +168,16 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- NOT NEEDED 58771  -->
 
-
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. See
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 An updated version of this toolkit is typically available several days after the patch release.

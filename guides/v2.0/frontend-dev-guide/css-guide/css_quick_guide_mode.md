@@ -4,8 +4,6 @@ subgroup: D_CSS_G
 title: Simple style changes with client-side LESS compilation vs. server-side
 menu_title: Simple style changes with client-side LESS compilation vs. server-side
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 functional_areas:
   - Frontend
 ---
@@ -22,14 +20,14 @@ In our examples we will change the color and font of the primary buttons. The de
 
 <img src="{{ site.baseurl }}/common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
 
-<h2 id="first_step">First step: Create and apply a theme</h2>
+## First step: Create and apply a theme   {#first_step}
 
 1. Create a new theme as described in the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.
 2. <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode.
 
-<h2 id="server-side">Making simple style changes in server-side compilation mode</h2>
+## Making simple style changes in server-side compilation mode   {#server-side}
 
 The following is an illustration of how the process of making simple changes looks like with the server-side LESS compilation mode:
 <ol>
@@ -62,7 +60,7 @@ The following is an illustration of how the process of making simple changes loo
 
 If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
-<h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
+## Making simple style changes in server-side compilation mode using Grunt   {#server-side-grunt}
 
 <ol>
 <li>Create and apply a theme. </li>
@@ -90,7 +88,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 </li>
 </ol>
 
-<h2 id="client-side">Making simple style changes in client-side compilation mode</h2>
+## Making simple style changes in client-side compilation mode   {#client-side}
 
 <ol>
 <li>Create and apply a theme.</li>
@@ -119,6 +117,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
 
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

@@ -1,12 +1,6 @@
 ---
 group: get-started
-subgroup: 40_Authentication
 title: Token-based authentication
-menu_title: Token-based authentication
-menu_order: 1
-version: 2.1
-github_link: get-started/authentication/gs-authentication-token.md
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 functional_areas:
   - Integration
 ---
@@ -20,7 +14,7 @@ Token type | Description | Default lifetime
 Integration | The merchant determines which Magento resources the integration has access to. | Indefinite. It lasts until it is manually revoked.
 Admin | The merchant determines which Magento resources an admin user has access to. | 4 hours
 Customer | Magento grants access to resources with the `anonymous` or `self` permission. Merchants cannot edit these settings. | 1 hour
-
+{:style="table-layout:auto;"}
 
 ## Integration tokens
 
@@ -51,6 +45,7 @@ Request|REST|SOAP
 ---|---|---
 Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminTokenServiceV1`
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
+{:style="table-layout:auto;"}
 
 For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
 
@@ -60,36 +55,12 @@ A cron job that runs hourly removes all expired tokens.
 
 A access token request contains three basic elements:
 
-<table style="width:100%">
-   <tr bgcolor="lightgray">
-      <th>Component</th>
-      <th>Specifies</th>
-   </tr>
-   <tr>
-      <td>Endpoint</td>
-      <td>
-         <p>A combination of the <i>server</i> that fulfills the request, the web service, and the <i>resource</i> against which the request is being made.</p>
-         <p>For example, in the <code>POST https://magento.host/index.php/rest/V1/integration/customer/token</code> endpoint:</p>
-         <p>The server is <code>magento.host/index.php/</code></p>
-         <p>the web service is <code>rest</code></p>
-          the resource is <code>/V1/integration/customer/token</code>.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>Content&nbsp;type</td>
-      <td>
-         <p>The content type of the request body. Set this value to either <code>"Content-Type:application/json"</code> or <code>"Content-Type:application/xml"</code>.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>Credentials</td>
-      <td>
-         <p>The username and password for a Magento account.</p>
-         <p>To specify these credentials in a JSON request body, include <code>'{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
-         <p> To specify these credentials in XML, include <code>&lt;login>&lt;username>customer1@example.com&lt;/username>&lt;password>customer1pw&lt;/password>&lt;/login></code> in the call.</p>
-      </td>
-   </tr>
-</table>
+Component | Specifies
+--- | ---
+Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST https://magento.host/index.php/rest/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
+Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
+Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
+{:style="table-layout:auto;"}
 
 #### Examples {#token-example}
 
@@ -128,6 +99,7 @@ Any web API call that accesses a resource that requires a permission level highe
 `Authorization: Bearer <authentication token>`
 
 ### Admin access {#admin-access}
+
 Admins can access any resources for which they are authorized.
 
 For example, to make a web API call with an admin token:
@@ -135,6 +107,7 @@ For example, to make a web API call with an admin token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"`
 
 ### Customer access
+
 Customers can access only resources with `self` permissions.
 
 For example, to make a web API call with a customer token:

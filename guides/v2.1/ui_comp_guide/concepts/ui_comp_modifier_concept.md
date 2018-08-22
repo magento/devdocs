@@ -4,8 +4,6 @@ subgroup: concepts
 title: About PHP modifiers in UI components
 menu_title: About PHP modifiers in UI components
 menu_order: 40
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ---
 
 ## What's in this topic
@@ -110,7 +108,6 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 **Step 3**
 
 To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2100url }}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2100url }}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
-
 
 ## Related reading
 

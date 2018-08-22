@@ -51,7 +51,7 @@ pages:
 
         - label: Expandable column component
           versions: ["2.2","2.3"]
-          url: /ui_comp_guide/components/ui-actiondelete.html
+          url: /ui_comp_guide/components/ui-expandable-column.html
 
         - label: ExportButton component
           url: /ui_comp_guide/components/ui-exportbutton.html

@@ -4,8 +4,6 @@ title: Serialize Library
 subgroup: Framework
 menu_title: Serialize Library
 menu_order: 1000
-version: 2.2
-github_link: extension-dev-guide/framework/serializer.md
 ---
 
 ## Overview
@@ -13,7 +11,6 @@ github_link: extension-dev-guide/framework/serializer.md
 This {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.
 
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
-
 
 ## Serialization
 
@@ -45,7 +42,6 @@ Magento discourages using the Serialize implementation directly because it can l
 Always use the `SerializerInterface` for serializing and unserializing.
 
 </div>
-
 
 ## Usage
 

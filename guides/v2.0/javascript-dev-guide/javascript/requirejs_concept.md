@@ -4,8 +4,6 @@ subgroup: 1_Javascript
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS
 menu_order: 8
-version: 2.0
-github_link: javascript-dev-guide/javascript/requirejs_concept.md
 functional_areas:
   - Tools
 ---

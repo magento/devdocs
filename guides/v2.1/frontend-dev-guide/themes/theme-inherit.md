@@ -4,8 +4,6 @@ subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 70
-version: 2.1
-github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
@@ -24,7 +22,6 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
-
 
 ## Set a parent theme
 
@@ -96,7 +93,6 @@ Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/
 
 ![]({{ site.baseurl }}/common/images/inh-background2.jpg)
 
-
 ## Override templates {#theme-inherit-templates}
 
 The fallback scheme for templates is the following (module context is always known for them):
@@ -156,7 +152,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){target="&#95;blank"} article.
+For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

@@ -5,13 +5,12 @@ title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
 menu_node:
 menu_order: 5
-version: 2.0
-github_link: comp-mgr/upgrader/upgrade-main-pg.md
 functional_areas:
   - Upgrade
 ---
 
-<h2 id="upgrade-access">System upgrade options</h2>
+## System upgrade options   {#upgrade-access}
+
 To choose which components to upgrade:
 
 1.	After you <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
@@ -58,7 +57,8 @@ To choose which components to upgrade:
 	</tbody>
 	</table>
 
-<h2 id="upgr-comps">Upgrade components</h2>
+## Upgrade components   {#upgr-comps}
+
 To upgrade components:
 
 1.	From the **Magento Core Components** list, click the core component version to which to upgrade.

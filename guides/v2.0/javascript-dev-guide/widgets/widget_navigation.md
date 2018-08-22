@@ -4,14 +4,13 @@ subgroup: 3_Widgets
 title: Navigation widget
 menu_order: 11
 menu_title: Navigation widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_navigation.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
 ---
 
 ## Overview
+
 Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:
 <ul>
 <li>Expanding all layers of the menu tree past the second layer.</li>
@@ -21,10 +20,12 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 
 The navigation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
-<h2 id="navigation_init">Initialize the navigation widget</h2>
+## Initialize the navigation widget   {#navigation_init}
+
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
-<h2 id="navigation_options">Options</h2>
+## Options   {#navigation_options}
+
 The navigation widget has the following options:
 <ul>
 <li><a href="#n_breakpoint">breakpoint</a></li>
@@ -34,7 +35,8 @@ The navigation widget has the following options:
 <li><a href="#n_responsiveAction">responsiveAction</a></li>
 </ul>
 
-<h3 id="n_breakpoint"><code>breakpoint</code></h3>
+### `breakpoint`   {#n_breakpoint}
+
 
 Width of user's window in px for which the menu switches between mobile view and desktop view.
 
@@ -42,7 +44,8 @@ Width of user's window in px for which the menu switches between mobile view and
 
 **Default value**: `768`
 
-<h3 id="n_container"><code>container</code></h3>
+### `container`   {#n_container}
+
 
 Container to track the menu overflow on responsive navigation.
 
@@ -50,7 +53,8 @@ Container to track the menu overflow on responsive navigation.
 
 **Default value**: `#menu`
 
-<h3 id="n_maxItems"><code>maxItems</code></h3>
+### `maxItems`   {#n_maxItems}
+
 
 The number of top level navigational items in main menu.
 
@@ -58,7 +62,8 @@ The number of top level navigational items in main menu.
 
 **Default value**: `null`
 
-<h3 id="n_moreText"><code>moreText</code></h3>
+### `moreText`   {#n_moreText}
+
 
 Set the text for the overflow menu (i.e. more)
 
@@ -66,7 +71,8 @@ Set the text for the overflow menu (i.e. more)
 
 **Default value**: `more`
 
-<h3 id="n_responsiveAction"><code>responsiveAction</code></h3>
+### `responsiveAction`   {#n_responsiveAction}
+
 
 The default responsive handler for the navigation widget.
 
@@ -76,16 +82,18 @@ The default responsive handler for the navigation widget.
 
 **Accepted values**: `wrap`, `onResize`, `onLoad`
 
+## Methods   {#navigation_methods}
 
-<h2 id="navigation_methods">Methods</h2>
 <ul>
 <li><a href="#nav_setMaxItems">setMaxItems()</a></li>
 <li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
 
-<h3 id="nav_setMaxItems"><code>setMaxItems()</code></h3>
+### `setMaxItems()`   {#nav_setMaxItems}
+
 Moves the list items that are more than the total max item number set by the user option.
 
-<h3 id="nav_setupMoreMenu"><code>setupMoreMenu()</code></h3>
+### `setupMoreMenu()`   {#nav_setupMoreMenu}
+
 Builds the more overflowing menu by cloning the main menu items.

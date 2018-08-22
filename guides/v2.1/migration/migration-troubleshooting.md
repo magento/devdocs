@@ -5,8 +5,6 @@ title: Troubleshooting
 menu_title: Troubleshooting
 menu_node: parent
 menu_order: 6
-version: 2.1
-github_link: migration/migration-troubleshooting.md
 functional_areas:
   - Tools
 ---

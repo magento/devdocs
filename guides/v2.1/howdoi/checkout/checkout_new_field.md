@@ -6,8 +6,6 @@ title: Add a new field in address form
 subtitle: Customize Checkout
 menu_order: 9
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_new_field.md
 functional_areas:
   - Checkout
 ---
@@ -147,6 +145,7 @@ The following is a sample `extension_attributes.xml`:
 Now clear the `var/generation` directory when you run `setup:di:compile` command, new getter and setter methods will be added in `/var/generation/Magento/Quote/Api/Data/AddressInterface.php`
 
 ## Step 5: Access the value of the custom field on server side {#access}
+
 If you took all the steps described in the previous paragraphs, Magento will generate the interface that includes your custom attribute and you can access your field value like this:
 
 Now you can set/get these attributes value by creating the instance of `Magento/Quote/Api/Data/AddressInterface.php interface`.

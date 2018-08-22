@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Constraint
-version: 2.1
-github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
 The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.

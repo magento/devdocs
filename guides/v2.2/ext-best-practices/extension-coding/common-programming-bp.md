@@ -1,8 +1,6 @@
 ---
 group: ext-best-practices
 title: Programming Best Practices
-version: 2.2
-github_link: ext-best-practices/extension-coding/common-programming-bp.md
 functional_areas:
   - Standards
 ---
@@ -12,6 +10,7 @@ You should follow common programming best practices to reduce bugs and improve t
 The following list of best practices addresses commonly reported issues in third-party extensions.
 
 ### Follow a set of coding standards
+
 Coding standards are a set of guidelines that describe how code should be written. These standards define coding practices that determine the style of the code. Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.
 
 [Magento's Coding Standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) are based on the following:
@@ -23,6 +22,7 @@ Coding standards are a set of guidelines that describe how code should be writte
 To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
 
 ### Write and utilize reusable code
+
 Avoid using redundant or duplicate code, which can be hard to maintain. Instead of copying and pasting the same code throughout your extension, create a single class or method and reference it when needed.
 
 As a general rule, reuse code as much as possible to prevent code duplication.
@@ -30,11 +30,13 @@ As a general rule, reuse code as much as possible to prevent code duplication.
 The code you write should be small, focused, and provide a generic solution. This will help you reuse code in future development.
 
 ### Design your code to be replaceable
+
 Designing and writing your code to be replaceable is just as important as making it reusable. Having a replaceable design means your code is modular and loosely coupled, which makes updates and improvements easier.
 
 It is common practice to replace parts of your codebase with newer and better pieces as bugs are found or newer strategies become available. Writing replaceable code in your codebase makes this practice easier and more efficient.
 
 ### Avoid creating helper classes
+
 Helper or utility classes are classes filled with static methods that do not quite fit anywhere else. These classes are considered an anti-pattern and violate the principles of object-oriented programming.
 
 If you have `ClassA` and a `ClassAHelper` with static functions that work on `ClassA`, you should consider refactoring those functions into `ClassA`.
@@ -42,6 +44,7 @@ If you have `ClassA` and a `ClassAHelper` with static functions that work on `Cl
 A helper class that functions as a catch-all for random methods violates the single responsibility principle because it is an attempt to solve multiple problems in a single class. You should refactor your code and move those functions into the appropriate classes.
 
 ### Be consistent with case and naming conventions
+
 You should be consistent in your naming conventions for files, folder names, classes, and methods. Following standard conventions makes your code easier to read and look professional.
 
 Not following this practice is a code standards violation and impacts your extension's readability and  maintainability.
@@ -54,6 +57,7 @@ Not following this practice is a code standards violation and impacts your exten
 For Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} development, we encourage the use of object composition over class inheritance. Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 
 ### Using around plugins
+
 Avoid using [around method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance. The only use case for around method plugins is when you need to terminate the execution of all further plugins and original methods.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

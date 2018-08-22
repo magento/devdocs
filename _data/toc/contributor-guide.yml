@@ -5,32 +5,32 @@ pages:
       url: /contributor-guide/contributing.html
 
       children:
+        - label: Magento Definition of Done
+          url: /contributor-guide/contributing_dod.html
+          
         - label: Backward compatible development
           url: /contributor-guide/backward-compatible-development
 
     - label: DevDocs Contributions
       children:
         - label: Contribution Guidelines
-          url: https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md
-
-        - label: Magento Definition of Done
-          url: /contributor-guide/contributing_dod.html
+          url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 
         - label: Suggested topics for contribution
           url: /contributor-guide/contributing_docs_suggested.html
 
-        - label: DevDocs Contributors
-          url: /contributor-guide/quarterly-contributors.html
+        - label: Templates
+          children:
+            - label: Basic template
+              url: /contributor-guide/templates/basic_template.html
 
-        - label: Community Maintainers
-          url: /contributor-guide/devdocs-maintainers.html
-          versions: ["2.1","2.2","2.3"]
+            - label: Sample template tutorial
+              class: tutorial
+              url: /contributor-guide/templates/tutorial-template-first.html
 
-    - label: Templates
-      children:
-        - label: Basic template
-          url: /contributor-guide/templates/basic_template.html
+    - label: Contributors
+      url: /contributor-guide/contributors.html
 
-        - label: Sample template tutorial
-          class: tutorial
-          url: /contributor-guide/templates/tutorial-template-first.html
+    - label: Maintainers
+      url: /contributor-guide/maintainers.html
+      versions: ["2.1","2.2","2.3"]

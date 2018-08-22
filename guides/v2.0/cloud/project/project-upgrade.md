@@ -5,8 +5,6 @@ title: Upgrade Magento Commerce (Cloud)
 menu_title: Upgrade Magento Commerce (Cloud)
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: cloud/project/project-upgrade.md
 redirect_from:
   - /guides/v2.0/cloud/howtos/upgrade-magento.html
 functional_areas:
@@ -27,9 +25,11 @@ Always apply and test a patch your local system in an active branch. You can pus
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
+
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
+
 Back up your integration system database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
@@ -55,6 +55,7 @@ Back up your staging or production system database:
         mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ## Verify other changes {#verify-changes}
+
 Verify other changes you're going to submit to source control before you start the upgrade:
 
 1.  If you haven't done so already, change to your project root directory.
@@ -90,6 +91,7 @@ Verify other changes you're going to submit to source control before you start t
 6.  [Verify your upgrade](#upgrade-verify).
 
 ## Verify your upgrade {#upgrade-verify}
+
 This section discusses how to verify your upgrade and to troubleshoot any issues you might find.
 
 To verify the upgrade in your integration, staging, or production system:
@@ -100,6 +102,7 @@ To verify the upgrade in your integration, staging, or production system:
         php bin/magento --version
 
 ## Verify and upgrade your extensions {#extensions}
+
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
 We recommend [backing up your database]({{ page.baseurl }}/cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
@@ -115,6 +118,7 @@ We recommend [backing up your database]({{ page.baseurl }}/cloud/project/project
 Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.
 
 ## Troubleshoot your upgrade {#upgrade-verify-tshoot}
+
 In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:
 
     There has been an error processing your request
@@ -122,11 +126,13 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
+
 To view the error in your integration system, [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
 ### Resolve the error
+
 One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:
 
     a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
@@ -144,6 +150,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
+
 * [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html)
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 * [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)

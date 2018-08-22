@@ -4,16 +4,16 @@ subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
-version: 2.1
-github_link: frontend-dev-guide/layouts/layout-practice.md
 functional_areas:
   - Frontend
 ---
 
 ## What's in this topic
+
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 ## Moving customer account links
+
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
@@ -79,7 +79,7 @@ The markup required for the drop-down is the following:
 
 ### Step 1: Define the layout blocks
 
-OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in
+OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html){:target="_blank"}. Using the approach described in [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html){:target="_blank"} they find out that the original block responsible for displaying the header links is defined in
 
 `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`:
 
@@ -128,7 +128,6 @@ The links that should be in header, but outside the drop-down menu are added in 
 </referenceContainer>
 ...
 {%endhighlight xml%}
-
 
 ### Step 2: Define the templates
 
@@ -184,7 +183,7 @@ defines the template which is used as the drop-down container : `<Magento_Custom
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
 
-So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
+So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){:target="_blank"} layout is added in the Orange theme:
 
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
@@ -203,7 +202,6 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 </page>
 
 {%endhighlight xml%}
-
 
 ### Step 4: Move links
 

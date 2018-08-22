@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Column component
 menu_title: Column component
-version: 2.2
-github_link: ui_comp_guide/components/ui-column.md
 ---
 
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
@@ -56,7 +54,7 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: String]: Boolean}</td>
     <td><code>''</code></td>
   </tr>
@@ -111,6 +109,7 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 </table>
 
 ### ColumnAction interface {#column_action}
+
 <table>
   <tr>
     <th>Option</th>
@@ -137,7 +136,6 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
     <td>Required</td>
   </tr>
 </table>
-
 
 ## Source files
 

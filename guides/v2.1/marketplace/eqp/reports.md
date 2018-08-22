@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Reports
-version: 2.1
-github_link: marketplace/eqp/reports.md
 ---
 
 This resource provides information on aggregated reports across the Marketplace sites. It may include aggregated metrics on overall page views, category-specific page views, EQP process-related metrics and more.

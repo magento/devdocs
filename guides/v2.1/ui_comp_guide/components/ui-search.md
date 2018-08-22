@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Search component
 menu_title: Search component
-version: 2.1
-github_link: ui_comp_guide/components/ui-search.md
 ---
 
 The Search component allows searching through the grid records. It is a generic tool for filtering content that aggregates all other filter elements.

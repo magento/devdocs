@@ -2,8 +2,6 @@
 group: arch-guide
 title: Ease of frontend customization
 menu_title: Ease of frontend customization
-version: 2.1
-github_link: architecture/frontend_custom_strategies.md
 ---
 
 ## Overview {#m2arch-whatis-overview}
@@ -29,6 +27,7 @@ See the [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-fronte
 The Magento blank theme template provides a launchpad for storefront customization. You can use this boilerplate as a robust starting point for your own theme development.
 
 ### Magento UI components
+
 Using Magento standard coding and styling tools can help:
 
 * enforce for consistency in design across your storefronts

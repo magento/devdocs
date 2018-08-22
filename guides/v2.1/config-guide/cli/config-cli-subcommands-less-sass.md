@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Create symlinks to LESS files
-menu_title: Create symlinks to LESS files
-menu_node:
-menu_order: 350
-version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-less-sass.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html
 functional_areas:
   - Configuration
@@ -17,6 +11,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Create LESS files {#config-cli-subcommands-less-sass}
+
 Use this command to create symlinks to LESS files.
 
 Command options:
@@ -78,18 +73,3 @@ The following messages display to confirm success:
 To create LESS files for the adminhtml, enter the following command:
 
 	bin/magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
-
-#### Related topics
-
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

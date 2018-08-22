@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DynamicRows component
 menu_title: DynamicRows component
-version: 2.1
-github_link: ui_comp_guide/components/ui-dynamicrows.md
 ---
 
 The DynamicRows component is a dynamic collection of records. The user can edit the records, change their position, and navigate through the collection.

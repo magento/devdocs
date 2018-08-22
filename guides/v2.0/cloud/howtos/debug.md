@@ -5,8 +5,6 @@ title: Configure Xdebug
 menu_title: Configure Xdebug
 menu_order: 100
 menu_node:
-version: 2.0
-github_link: cloud/howtos/debug.md
 functional_areas:
   - Cloud
   - Setup
@@ -19,9 +17,11 @@ To set up Xdebug, you need to [configure](#configure) a file in your Git repo, c
 Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include [additional instructions](#pro-debug) for Xdebug on those environments.
 
 ## Requirements {#usexdebug}
+
 To run and use Xdebug, you will need the environment's SSH URL. You can locate the information through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) or your spreadsheet.
 
 ## Configure Xdebug {#configure}
+
 To configure Xdebug, you need to do the following:
 
 * [Work in a branch](#branch) to push file updates
@@ -32,11 +32,13 @@ To configure Xdebug, you need to do the following:
 For configuring on Pro plan Staging and Production, you need to enter a [ticket for Staging and Production](#pro).
 
 ### Get started with a branch {#branch}
+
 To add Xdebug, we recommend creating a branch to work in and add the files.
 
 {% include cloud/cli-get-started.md %}
 
 ### Enable Xdebug in your environment {#enable}
+
 Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.
 
 You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to have it enabled. We will get Xdebug enabled onto those environments for you.
@@ -70,6 +72,7 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
 When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see [Configure PhpStorm](#phpstorm).
 
 ### Configure PhpStorm {#phpstorm}
+
 You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properly work with Xdebug.
 
 1. Open your PhpStorm project.
@@ -95,6 +98,7 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
         * Staging:  `/app/<project_code>_stg/`
 
 ### Set up port forwarding {#port}
+
 You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and xdebug locally can track along with it
 
 To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
@@ -103,6 +107,7 @@ To do any type of debugging, you must forward port 9000 from your {{site.data.va
 *	[Port forwarding on Windows](#portwindows)
 
 #### Port forwarding on Mac or UNIX {#portmac}
+
 To set up port forwarding on a Mac or in a Unix environment, you will enter a command in a terminal.
 
 1. Open a terminal.
@@ -138,6 +143,7 @@ To troubleshoot the connection:
         kill 3664
 
 #### Port forwarding on Windows {#portwindows}
+
 To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}. You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.
 
 To set up an SSH tunnel on Windows using Putty:
@@ -173,11 +179,13 @@ If an "unable to connect" error displays, verify all of the following:
 *	You are running Putty on the machine on which your private {{site.data.var.ece}} SSH keys are located
 
 ### Configure Pro Staging and Production {#pro}
+
 To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
 
 We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.
 
 ## SSH access to Xdebug environments {#ssh}
+
 For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
 
 For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:
@@ -193,6 +201,7 @@ For example,
 	ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 
 ## Debug for Pro Staging and Production {#pro-debug}
+
 To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.
 
 You will need the following:
@@ -225,6 +234,7 @@ To start debugging, use the following commands with the environment URL:
 Please note, `XDEBUG_SESSION_START`passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}
+
 This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.
 
 1. SSH into the server you want to debug using CLI commands.
@@ -240,6 +250,7 @@ These variables will be removed when SSH session is over. When adding the variab
 If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
 
 ## For debugging web requests {#webrequests}
+
 The following steps help you debug web requests.
 
 1. On the Extension menu, click **Debug** to enable.
@@ -247,6 +258,7 @@ The following steps help you debug web requests.
 3. Install the Xdebug client on the browser. Configure and enable it.
 
 ### Example set up on Chrome {#chrome}
+
 This section discusses how to use Xdebug in Chrome using the Xdebug Helper extension. For information about Xdebug tools for other browsers, consult the browser documentation.
 
 To use Xdebug Helper with Chrome:
@@ -269,6 +281,7 @@ To use Xdebug Helper with Chrome:
 10.	In the PhpStorm navigation pane, double-click the PHP file to test.
 
 ## Debug code locally {#code}
+
 Due to your environments being read-only, you need to pull code locally from an environment or specific Git branch/repository to perform debugging.
 
 The method you choose is up to you. You have the following options:
@@ -301,6 +314,7 @@ To compress files and copy them to your local machine:
 		tar xzf <file name>.tgz
 
 ## Troubleshooting Xdebug {#trouble}
+
 If you you suspend your laptop (like closing your lid on a Mac), then your SSH session may no longer work when your computer resumes. But the TCP session for the SSH connection on the server might not timeout on the server, leaving any open debug sessions active and preventing you from using the nginx server.
 
 Due to not having access to manually restart the nginx server, you need to locate and terminate SSH processes that haven't timed out yet.

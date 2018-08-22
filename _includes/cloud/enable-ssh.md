@@ -1,5 +1,3 @@
-<div markdown="1">
-
 You must create an SSH key pair on every machine and workspace you and your team expect to work with and access {{site.data.var.ece}} and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
 
 The SSH keys require the following:
@@ -14,6 +12,7 @@ For more information on SSH keys, see the following:
 *	[ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen){:target="_blank"}
 
 ## Locate an existing SSH key pair {#existing}
+
 An existing SSH key pair is typically located in the `.ssh` subdirectory of the user's home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.
 
 You can quickly verify if you have SSH keys by entering commands using terminal access.
@@ -33,6 +32,7 @@ If you already have SSH keys, continue to:
 * [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 ## Create a new SSH key pair {#ssh-create-new-key-pair}
+
 Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
 To create an SSH key pair:
@@ -88,14 +88,15 @@ After adding the SSH keys, test the SSH connection to GitHub:
 
 3. If successful, you should receive a success message. If you receive a permission denied error, see [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey) troubleshooting on GitHub.
 
-
 ## Add a public SSH key to your Magento account {#ssh-add-to-account}
+
 You can add SSH keys to your account in any of the following ways:
 
 *	Using the [{{site.data.var.ece}} CLI](#add-key-cli)
 *	Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
 
 ### Add a key using the CLI {#add-key-cli}
+
 To add an SSH key using the CLI:
 
 1.	Open a terminal application on your local.
@@ -110,6 +111,7 @@ To add an SSH key using the CLI:
 		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 
 #### Add a key using the Project Web Interface {#add-key-web}
+
 You will select and add your SSH public key to each environment in your account.
 
 * Starter: Add to Master (Production) and any environments you create by branching from Master
@@ -130,6 +132,7 @@ To add an SSH key using the Project Web Interface:
 5.	Follow the prompts on your screen to complete the task.
 
 ## Set global Git variables
+
 Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.
 
 To set variables, enter the following commands on every workspace:
@@ -138,4 +141,3 @@ To set variables, enter the following commands on every workspace:
 	git config --global user.email <your e-mail address>
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
-</div>

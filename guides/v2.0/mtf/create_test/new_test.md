@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
-version: 2.0
-github_link: mtf/create_test/new_test.md
 ---
 
 The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.

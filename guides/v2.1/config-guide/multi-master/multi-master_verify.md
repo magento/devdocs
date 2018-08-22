@@ -1,13 +1,7 @@
 ---
 group: config-guide
-subgroup: 20_cqrs
 title: Verify split databases
-menu_title: Verify split databases
-menu_order: 5
-menu_node:
-version: 2.1
 ee_only: True
-github_link: config-guide/multi-master/multi-master_verify.md
 functional_areas:
   - Configuration
   - System
@@ -20,31 +14,17 @@ After configuration, the master databases are configured as follows:
 *	Magento {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} database: 10 tables
 *	Magento sales database: 54 tables
 
-To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:
+To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like [phpmyadmin]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin):
 
-<table>
-<tbody>
-	<col width="25%">
-	<col width="75%">
-	<tr>
-		<th>What to verify</th>
-		<th>How to verify</th>
-	</tr>
-<tr>
-	<td>quote database is working</td>
-	<td>Add items to a cart. Verify that rows have been added to your quote database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
-</tr>
-<tr>
-	<td>sales database is working</td>
-	<td>Complete an order (any payment method, including check/money order). Verify that rows have been added to your sales database's <code>sales_order_address</code>, <code>sales_order_item</code>, and <code>sales_order_payment</code> tables.</td>
-</tr>
-</tbody>
-</table>
+|What to verify|How to verify|
+|--- |--- |
+|quote database is working|Add items to a cart. Verify that rows have been added to your quote database's quote, quote_address, and quote_item tables.|
+|sales database is working|Complete an order (any payment method, including check/money order). Verify that rows have been added to your sales database's sales_order_address, sales_order_item, and sales_order_payment tables.|
+{:style="table-layout:auto;"}
 
-<div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
-</div>
-
+{:.bs-callout .bs-callout-warning}
+You must back up the two additional database instances manually. Magento backs up only the main database instance. The [<code>'magento setup:backup --db</code>]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
 
 #### Next step (optional)
-<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
+
+[Set up optional database replication]({{ page.baseurl }}/config-guide/multi-master/multi-master_slavedb.html)

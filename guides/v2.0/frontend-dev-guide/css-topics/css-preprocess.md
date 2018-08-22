@@ -4,8 +4,6 @@ subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
-version: 2.0
-github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
   - Frontend
@@ -52,7 +50,6 @@ The root source files for the Blank theme:
 </td>
 </tr>
 </table>
-
 
 ## LESS compilation modes {#less_modes}
 
@@ -121,7 +118,6 @@ The client-side compilation flow is similar to server-side. The difference is in
 <p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import">The @import directive usage</a> for more details.</p>
 </div>
 
-
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 
 Client-side LESS compilation is implemented using the native `less.js` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed.
@@ -142,6 +138,7 @@ This is required in the following cases:
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
 ## The `@import` directive rules of usage {#fedg_css-import}
+
 You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
 According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 

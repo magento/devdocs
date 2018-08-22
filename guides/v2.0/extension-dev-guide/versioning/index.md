@@ -5,8 +5,6 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-version: 2.0
-github_link: extension-dev-guide/versioning/index.md
 redirect_from: 
   - /guides/v2.0/architecture/versioning.html
   - /guides/v2.1/architecture/versioning.html

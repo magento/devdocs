@@ -4,8 +4,6 @@ subgroup: 40_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
 menu_order: 4
-version: 2.0
-github_link: get-started/authentication/gs-authentication-session.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-session.html
 functional_areas:
   - Integration

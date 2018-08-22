@@ -4,8 +4,6 @@ subgroup: concepts
 title: About the uiClass library
 menu_title: About the uiClass library
 menu_order: 60
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
 
 ## What is `uiClass`?
@@ -15,6 +13,7 @@ The `uiClass` is an abstract class from which all components are extended. The `
 `uiClass` source code is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/class.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/class.js)
 
 ## Commonly used uiClass methods
+
 The uiClass class introduces the architecture of UI components through the following methods:
 
 *  The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.

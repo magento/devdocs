@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_GroupedSharedCatalog module
 menu_title: GroupedSharedCatalog
 menu_order: 150
-version: 2.2
-github_link: mrg/b2b/GroupedSharedCatalog.md
 functional_areas:
   - B2B
 ---
@@ -19,7 +17,6 @@ The `Magento_GroupedSharedCatalog` module provides the following features:
 * Display base and custom prices for grouped products within a shared catalog. There is no ability to edit the price of a grouped product.
 
 * Control the visibility of grouped products in quotes and orders. Only those grouped products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
-
 
 ## Installation details
 

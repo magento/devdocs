@@ -4,8 +4,6 @@ subgroup: 40_Authentication
 title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
-version: 2.0
-github_link: get-started/authentication/gs-authentication-oauth.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 functional_areas:
   - Integration
@@ -18,6 +16,7 @@ In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b6
 As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
 
 ## OAuth overview {#overview}
+
 The following diagram shows the OAuth authentication process. Each step is described further.
 ![OAuth flow]({{ page.baseurl }}/get-started/authentication/images/oauthflow.png)
 

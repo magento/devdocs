@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.1
-github_link: ui_comp_guide/components/ui-form.md
 redirect_from: /guides/v2.1/ui-components/ui-form.html
 ---
 
@@ -311,6 +309,7 @@ To group components you can use the component container as in example below:
 {% endhighlight %}
 
 ### Configure DataSource
+
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
@@ -361,9 +360,9 @@ An example of the configuration of the DataSource object:
 
 Component configuration:
 
-* argument "dataProvider" - contains configuration, class name and arguments
+* argument `"dataProvider"` - contains configuration, class name and arguments
 
-* js_config -> component - > JS indication of a responsible component
+* `js_config` -> `component` -> JavaScript indication of a responsible component
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 

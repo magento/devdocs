@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Text component
 menu_title: Text component
-version: 2.2
-github_link: ui_comp_guide/components/ui-text.md
 ---
 
 The Text component displays text data in the components like [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) and [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html).

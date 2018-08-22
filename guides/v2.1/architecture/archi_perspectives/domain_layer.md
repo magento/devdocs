@@ -2,8 +2,6 @@
 group: arch-guide
 title: Domain layer
 menu_title: Domain layer
-version: 2.1
-github_link: architecture/archi_perspectives/domain_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/domain_layer.html
 ---
 
@@ -18,7 +16,6 @@ The {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossa
 
 {:.bs-callout .bs-callout-tip}
 **Best practice:** Use service contracts to communicate with the domain layer by passing data types through strongly typed objects. This helps you avoid the need to replace presentation layer code when replacing business layer logic.
-
 
 ## Models
 

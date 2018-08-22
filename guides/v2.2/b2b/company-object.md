@@ -4,16 +4,13 @@ subgroup: 10_REST
 title: Manage company objects
 menu_title: Manage company objects
 menu_order: 12
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-object.md
 functional_areas:
   - B2B
   - Integration
 ---
-
 
 ## Manage company objects
 
@@ -25,63 +22,42 @@ This section describes the REST endpoints used to manage `Company` objects.
 
 **REST Endpoints**
 
-{% highlight json %}
+``` json
 POST /V1/company/
 PUT /V1/company/:companyId
 GET /V1/company/:companyId
 DELETE /V1/company/:companyId
 GET /V1/company/
-{% endhighlight %}
+```
 
 **CompanyInterface Parameters**
 
 The following table lists the parameters defined in `CompanyInterface`.
 
-<table>
-<tr>
-<th>Name</th><th>Description</th><th>Format</th><th>Requirements</th></tr>
-<tr>
-<td><code>id</code></td><td>System-generated company ID </td><td>integer </td><td>Required for updates and deletes. </td></tr>
-<tr>
-<td><code>status</code></td><td>0 - Pending approval<br>1 - Approved<br>2 - Rejected<br>3 - Blocked </td><td>integer </td><td>Optional </td></tr>
-<tr>
-<td><code>company_name </code></td><td>Company name </td><td>string </td><td>Required to create or update a company. </td></tr>
-<tr>
-<td><code>legal_name </code></td><td>Legal name </td><td>string </td><td>Optional </td></tr>
-<tr>
-<td><code>company_email </code></td><td>Official e-mail address of the company. It does not have to be unique. </td><td>string</td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>vat_tax_id </code></td><td>The company's Value Added Tax ID </td><td>string </td><td>Optional </td></tr>
-<tr>
-<td><code>reseller_id </code></td><td>Unique ID of the company reseller </td><td>string </td><td>Optional </td></tr>
-<tr>
-<td><code>comment </code></td><td>Additional details about the company</td><td>string</td><td>Optional </td></tr>
-<tr>
-<td><code>street</code></td><td>Street address where the company is registered. The array can contain one or two lines.</td><td>Array[string]</td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>city</code></td><td>The company's city </td><td>string </td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>country_id</code></td><td>The country where the company is registered.</td><td>string </td><td>Required to create or update a company. </td></tr>
-<tr>
-<td><code>region</code></td><td>State or province</td><td>string</td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>region_id</code></td><td>An ID assigned to a state or province</td><td>string </td><td>Optional</td></tr>
-<tr>
-<td><code>postcode</code></td><td>The company's ZIP or postal code</td><td>string </td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>telephone</code></td><td>The company contact's phone number</td><td>string</td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>customer_group_id </code></td><td>Defines the company's shared catalog. A value of `1` assigns the default shared catalog.</td><td>integer</td><td>Required to create or update a company.</td></tr>
-<tr>
-<td><code>sales_representative_id</code></td><td>User ID of the Sales Representative for the company</td><td>integer</td><td>Optional</td></tr>
-<tr>
-<td><code>reject_reason</code></td><td>Specifies why a company's request to be a B2B customer is rejected</td><td>string</td><td>Optional </td></tr>
-<tr>
-<td><code>rejected_at</code></td><td>A timestamp incdicating when the company was rejected.</td><td>string</td><td>Optional</td></tr>
-<tr>
-<td><code>super_user_id</code></td><td>The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist. </td><td>integer</td><td>Required to create or update a company.</td></tr>
-</table>
 
+Name | Description | Format | Requirements
+--- | --- | --- | ---
+`id` | System-generated company ID | integer | Required for updates and deletes.
+`status` | 0 - Pending approval<br/>1 - Approved<br/>2 - Rejected<br/>3 - Blocked | integer | Optional
+`company_name` | Company name  | string  | Required to create or update a company.
+`legal_name`  | Legal name  | string  | Optional
+`company_email`  | Official e-mail address of the company. It does not have to be unique.  | string | Required to create or update a company.
+`vat_tax_id`  | The company's Value Added Tax ID  | string  | Optional
+`reseller_id`  | Unique ID of the company reseller  | string  | Optional
+`comment`  | Additional details about the company | string | Optional
+`street` | Street address where the company is registered. The array can contain one or two lines. | Array[string] | Required to create or update a company.
+`city` | The company's city  | string  | Required to create or update a company.
+`country_id` | The country where the company is registered. | string  | Required to create or update a company.
+`region` | State or province | string | Required to create or update a company.
+`region_id` | An ID assigned to a state or province | string  | Optional
+`postcode` | The company's ZIP or postal code | string  | Required to create or update a company.
+`telephone` | The company contact's phone number | string | Required to create or update a company.
+`customer_group_id`  | Defines the company's shared catalog. A value of `1` assigns the default shared catalog. | integer | Required to create or update a company.
+`sales_representative_id` | User ID of the Sales Representative for the company | integer | Optional
+`reject_reason` | Specifies why a company's request to be a B2B customer is rejected | string | Optional
+`rejected_at` | A timestamp indicating when the company was rejected. | string | Optional
+`super_user_id` | The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist.  | integer | Required to create or update a company.
+{:style="table-layout:auto;"}
 
 ### Create a company
 
@@ -93,7 +69,7 @@ The following example creates a company and assigns the default shared catalog (
 
 **Payload**
 
-{% highlight json %}
+``` json
 {
   "company": {
     "company_name": "Test company",
@@ -111,12 +87,11 @@ The following example creates a company and assigns the default shared catalog (
     "customer_group_id": 1
   }
 }
-
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+``` json
 {
   "id": 2,
   "company_name": "Test company",
@@ -142,7 +117,7 @@ The following example creates a company and assigns the default shared catalog (
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Update the company
 
@@ -154,7 +129,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Payload**
 
-{% highlight json %}
+``` json
 {
   "company": {
   	"id": 2,
@@ -176,11 +151,11 @@ The following call changes the company status to Rejected (`2`) and explains why
 
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+``` json
 {
   "id": 2,
   "company_name": "Test company",
@@ -206,7 +181,7 @@ The following call changes the company status to Rejected (`2`) and explains why
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Return all information about a company
 
@@ -221,7 +196,7 @@ None
 
 **Response**
 
-{% highlight json %}
+``` json
 {
   "id": 2,
   "status": 0,
@@ -248,8 +223,7 @@ None
     }
   }
 }
-{% endhighlight %}
-
+```
 
 ### Delete a company
 
@@ -284,7 +258,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+``` json
 {
     "items": [
         {
@@ -362,7 +336,7 @@ None
     },
     "total_count": 2
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Related information

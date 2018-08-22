@@ -5,8 +5,6 @@ title: Create and manage users
 menu_title: Create and manage users
 menu_order: 15
 menu_node:
-version: 2.1
-github_link: cloud/project/user-admin.md
 functional_areas:
   - Cloud
   - Configuration
@@ -20,41 +18,44 @@ redirect_from:
 {% include cloud/wings-management.md %}
 
 ## Account owner role {#cloud-role-acct-owner}
+
 The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
 
 The account has super user access and additional capabilities for managing all aspects of your project and environments.
 
 ## Project-level roles {#cloud-role-project}
+
 You can assign users to the following roles per project:
 
 * Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
 *  Project reader can view all environments in a project but cannot execute any actions on them.
 
 ## Environment-level roles {#cloud-role-env}
+
 A project reader can have one of the following roles per environment:
 
 * Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
 * Environment contributor can push code to this environment and branch the environment.
 * Environment reader can view this environment only.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you limit the environment administrator role to as few users as possible.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+We recommend you limit the environment administrator role to as few users as possible.
 
 ## Role management best practices
+
 When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the `master` environment.
 
 For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to "Contributor".
 
-
-<div class="bs-callout bs-callout-warning">
-    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in `.magento.app.yaml` by specifying `ssh: contributor`.
 
 ## Create and manage users
+
 You can create and manage users using the Magento Cloud CLI or the Web Interface.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
+
 You can use the {{site.data.var.ece}} command line client to fully manage your users and integrate this with any other automated system.
 
 Available commands:
@@ -119,6 +120,7 @@ To create user accounts using the Web Interface:
 The users you add receive an e-mail inviting them to join the {{site.data.var.ece}} project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.
 
 ## Rebuild the environment {#rebuild}
+
 After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command `git commit --allow-empty -m "redeploy" && git push <branch name>` to create an empty commit and "force" rebuilding the environment.
 
 When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.

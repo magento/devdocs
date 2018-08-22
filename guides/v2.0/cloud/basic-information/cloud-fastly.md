@@ -5,8 +5,6 @@ title: Fastly
 menu_title: Fastly
 menu_node:
 menu_order: 15
-version: 2.0
-github_link: cloud/basic-information/cloud-fastly.md
 functional_areas:
   - Cloud
   - Setup
@@ -34,6 +32,7 @@ We highly recommend enabling and using Fastly for your caching and CDN. The only
 We strongly recommend installing Fastly module 1.2.33 or later.
 
 ## Fastly and 503 timeouts {#timeouts}
+
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
 
 If you receive a 503 error, make the request directly to the origin or review logs. For details, see [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html#timeouts).
@@ -43,6 +42,7 @@ Fastly can be bypassed for the Magento Admin to perform long running or bulk act
 We provide [VCL snippet instructions]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html) for extending the timeout for the Magento Admin.
 
 ## Backends and Origin shields {#backend}
+
 Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
@@ -50,16 +50,19 @@ _Origin shielding_ routes all requests for your store to a specific Point of Pre
 We provide detailed instructions for configuring backends when you [configure Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
 
 ## Basic authentication {#basic-auth}
+
 Basic authentication is a feature to protect every page and asset on your site with a username and password. We **do not recommend** activating basic authentication on your Production environment. You can configure it on Staging to protect your site when completing development.
 
 If you add user access and enable basic authentication on Staging, you can still access the Magento Admin without requiring additional credentials to enter.
 
 ## Custom VCLs and actions {#custom-vcl}
+
 Fastly provides an extremely custom code friendly method for creating lists of items like IPs and domains to complete actions via Fastly and Varnish code blocks. For example, with edge and ACL dictionaries and VCL code, you could allow, block, or redirect access for specific users or IPs.
 
 After you have [set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html), you can create [custom VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html) using these edge dictionaries and ACLs.
 
 ### Edge dictionaries {#dictionary}
+
 Save key-value pairs on Fastly Edge nodes of dictionary containers and items to invoke with VCL snippets in your site. You have up to 1,000 entries per dictionary.
 
 You create an edge dictionary then add items to it of a key and its value. For example, you could create an edge dictionary of banned bad refer sites from accessing your site. The key-value pairs would be the refer site URLs (www.example.com) and a value of 1. Then create a custom VCL snippet to return a 403 Forbidden to those sites when they access your site.
@@ -67,9 +70,11 @@ You create an edge dictionary then add items to it of a key and its value. For e
 Another example routes to a different WordPress backend for an edge dictionary of WordPress URLs.
 
 ### Edge ACLs {#acl}
+
 ACLs are access control lists that allow you to manage IP addresses to allow or block access to resources. You could use edge ACLs with VCL snippets to block IP addresses or provide access. For example, use edge ACLs and a custom VCL snippet to white list IPs to access your site.
 
 ### VCL snippets {#vcl}
+
 With edge dictionaries and edge ACLs, you can create custom Varnish Configuration Language (VCL) snippets to Fastly and your site. VCL snippets are small chunks of logic and code that can be included directly into your service configuration. They are generated, compiled, and transmitted to all Fastly caches, loaded, and activated without waiting for maintenance windows without server downtime.
 
 For a few examples, you can create VCL snippets to:
@@ -82,12 +87,15 @@ For a few examples, you can create VCL snippets to:
 After you have [set up Fastly](#install-configure), we provide detailed instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
+
 Fastly supports forcing unencrypted requests to TLS through the Force TLS feature. Set up a secure base URL in Magento and turn on the Force TLS option in the Fastly extension. For details and instructions, see Fastly's [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="_blank"}.
 
 ## GeoIP service support {#geoip}
+
 Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP handling manages visitor redirection (automatically) and store matching (select from list) based on their obtained country code. For more information, see Fastly's [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling){:target="_blank"}.
 
 ## Installation and configuration {#install-configure}
+
 The installation and configuration process is:
 
 * Install the Fastly module in an Integration branch, without configuring settings or entering credentials.

@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_BundleRequisitionList module
 menu_title: BundleRequisitionList
 menu_order: 30
-version: 2.2
-github_link: mrg/b2b/BundleRequisitionList.md
 ---
 
 ## Overview

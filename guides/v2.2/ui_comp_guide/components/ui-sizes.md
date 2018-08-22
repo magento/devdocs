@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Sizes component
 menu_title: Sizes component
-version: 2.2
-github_link: ui_comp_guide/components/ui-sizes.md
 ---
 
 The Sizes component defines the maximum number of displayed records in a table (grid).

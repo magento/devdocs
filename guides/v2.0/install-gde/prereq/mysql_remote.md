@@ -4,15 +4,14 @@ subgroup: Prerequisites
 title: Set up a remote MySQL database connection
 menu_title: Set up a remote MySQL database connection
 menu_order: 175
-version: 2.0
-github_link: install-gde/prereq/mysql_remote.md
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-<h2 id="instgde-prereq-mysql-remote-over">When to set up a remote database connection</h2>
+## When to set up a remote database connection   {#instgde-prereq-mysql-remote-over}
+
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -20,6 +19,7 @@ This topic discusses how to set up a connection from your Magento web node to a 
 </div>
 
 ### Prerequisites
+
 Before you begin, you must:
 
 *	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
@@ -27,6 +27,7 @@ Before you begin, you must:
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
+
 Use the following guidelines to configure remote database connections if your web server or database server are clustered:
 
 *	You must configure a connection for each web server node
@@ -35,9 +36,11 @@ Use the following guidelines to configure remote database connections if your we
 	For more information, see <a href="https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">MySQL documentation</a>.
 
 ### Resolving connection issues
+
 If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
-<h2 id="instgde-prereq-mysql-remote-create">Create the remote connection</h2>
+## Create the remote connection   {#instgde-prereq-mysql-remote-create}
+
 To create a remote connection:
 
 1.	On your database server, as a user with `root` privileges, open your MySQL configuration file.
@@ -76,7 +79,8 @@ To create a remote connection:
   	<p>If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address" target="_blank">MySQL documentation</a> or another authoritative source.</p>
 </div>
 
-<h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
+## Grant access to a database user   {#instgde-prereq-mysql-remote-access}
+
 To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.
 
 This example grants the `root` database user full access to the database on the remote host.
@@ -97,7 +101,8 @@ To grant access to a database user:
   <p>If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.</p>
 </div>
 
-<h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
+## Verify database access   {#instgde-prereq-mysql-remote-verify}
+
 On your web node host, enter the following command to verify the connection works:
 
 	mysql -u <local database username> -h <database server ip address> -p
@@ -118,8 +123,8 @@ If the MySQL monitor displays as follows, the database is ready for the Magento 
 
 If your web server is clustered, enter the command on each web server host.
 
+## Install the Magento software   {#instgde-prereq-mysql-remote-install}
 
-<h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
 *	The Base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
@@ -127,7 +132,6 @@ When you install the Magento software using either the command line or Setup Wiz
 *	Database username is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password
 *	Database name is the name of the database on the remote server
-
 
 #### Related topics
 

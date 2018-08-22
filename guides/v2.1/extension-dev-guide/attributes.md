@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: EAV and extension attributes
-version: 2.1
-github_link: extension-dev-guide/attributes.md
 ---
 
 There are two types of attributes you can use to extend Magento functionality:
@@ -85,8 +83,6 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
     }
 }
 {% endhighlight %}
-
-
 
 ## Extension attributes {#extension}
 
@@ -260,4 +256,5 @@ However, if an extension similar to the following has been defined, the interfac
 {% endhighlight %}
 
 ### Troubleshoot EAV attributes {#troubleshooting}
+
 If you have issues when using `setup:upgrade`, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. You should not directly inject `EavSetup` in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.

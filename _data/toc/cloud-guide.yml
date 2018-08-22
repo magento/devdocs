@@ -148,7 +148,7 @@ pages:
           versions: ["2.2"]
 
     - label: Configure Fastly
-      url: /cloud/basic-information/cloud-fastly.html
+      url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html
@@ -374,15 +374,15 @@ pages:
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: ECE-tools release notes
+        - label: ece-tools release notes
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Upgrade to use ECE-tools
+        - label: Upgrade to use ece-tools
           url: /cloud/project/ece-tools-upgrade-project.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Update ECE-tools version
+        - label: Update ece-tools version
           url: /cloud/project/ece-tools-update.html
           versions: ["2.1","2.2","2.3"]
 

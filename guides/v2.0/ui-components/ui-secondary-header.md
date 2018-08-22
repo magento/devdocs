@@ -5,12 +5,10 @@ title: Sticky Header Component
 menu_title: Sticky Header Component
 menu_node:
 menu_order: 11
-version: 2.0
-github_link: ui-components/ui-secondary-header.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 ---
 
-<h2 id="filter">Overview</h2>
+## Overview   {#filter}
 
 The sticky header component is responsible for rendering additional <a href="{{ page.baseurl }}/ui-library/ui-listing-grid.html">grid</a> header and grid toolbar.
 
@@ -20,7 +18,7 @@ The following image is an illustration of a grid with a sticky header:
 
 <img src="{{ page.baseurl }}/pattern-library/displaying-data/datatable/img/datatable13.jpg" alt="a grid with a sticky header">
 
-<h2 id="enable_header">Enable sticky header for a grid</h2>
+## Enable sticky header for a grid   {#enable_header}
 
 To enable the sticky header functionality for a certain grid, declare it as a child element in the grid configuration file using the following notation:
 
@@ -62,7 +60,7 @@ Enabling a sticky header for the CMS pages grid, configured in `<Magento_Cms_mod
     </listing>
 {% endhighlight %}
 
-<h2 id="sticky_config">Sticky header configuration</h2>
+## Sticky header configuration   {#sticky_config}
 
 Any component of a sticky header can use a particular, not default template. This template is set in the `stickyTmpl` option. If the sticky template is not set, the default component's template is used for displaying in a sticky header.
 
@@ -83,7 +81,8 @@ The toolbar component should use the `ui/grid/sticky/toolbar` template for the s
     </listing>
 {% endhighlight %}
 
-<h2 id="sticky_elements">Component elements</h2>
+## Component elements   {#sticky_elements}
+
 The sticky header component consists of the following elements:
 
 - Constructor: <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`</a>
@@ -94,7 +93,8 @@ The sticky header component consists of the following elements:
 	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
 	
 
-<h2 id="sticky_dependencies">Dependencies</h2>
+## Dependencies   {#sticky_dependencies}
+
 The sticky header component depends on the following components:
 
  - Listing

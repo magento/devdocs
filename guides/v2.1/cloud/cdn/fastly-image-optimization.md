@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Fastly image optimization
-version: 2.1
-github_link: cloud/cdn/fastly-image-optimization.md
 functional_areas:
   - Cloud
   - Setup
@@ -11,6 +9,7 @@ functional_areas:
 Fastly provides image optimization support for common image formats: PNG, JPEG, GIF. The Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
 ## Enable Fastly IO
+
 You can enable Fastly image optimization (Fastly IO) from the Admin panel by
 uploading the Fastly IO VCL snippet. When you upload the VCL snippet, it
 provides the Fastly service with configuration instructions to process all
@@ -18,7 +17,7 @@ images through image optimizers, using default configurations.
 
 **Prerequisites**
 
--  Install or upgrade to Fastly module version 1.2.52 or later
+-  Install or upgrade to Fastly module version 1.2.62 or later
 -  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
 
 #### To enable Fastly IO:
@@ -43,6 +42,7 @@ images through image optimizers, using default configurations.
     -  Click **Upload** to upload the VCL snippet to your server.
 
 ## Configure Fastly IO
+
 You can review and update the default IO configuration settings for image optimization as needed. For example, you might want to change WebP and JPEG quality levels for lossy formats or change the format for serving JPEG images to *Progressive* or *Baseline*. Also, you can use Fastly IO for more granular image optimization features, such as:
 
 - Force lossy conversion
@@ -124,6 +124,7 @@ You can review and update the default IO configuration settings for image optimi
 1.  Click **Save Configuration**.
 
 ### Force lossy conversion
+
 By default the Fastly IO service forces conversion of lossless formats such
 as PNG, BMP, or WEBP into JPEG/WEBP format.
 
@@ -143,6 +144,7 @@ changed. For example, if the original image is PNG the output from the
 Fastly IO service is PNG.
 
 ### Deep image optimization
+
 Deep image optimization is off by default. Enabling this option turns off the
 built-in Magento resizing and offloads it completely to the Fastly IO service.
 This feature only resizes *product* images. CMS images are not resized.

@@ -5,8 +5,6 @@ title: DocBlock standard
 landing-page: Coding standards
 menu_title: DocBlock standard
 menu_order: 4
-version: 2.0
-github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 functional_areas:
   - Standards
@@ -258,7 +256,6 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 require_once __DIR__ . '/../../functions.php';
 {% endhighlight %}
 
-
 ### Classes and interfaces
 {:#classes-interfaces}
 
@@ -308,7 +305,6 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 }
 {% endhighlight %}
 
-
 ### Class attributes
 {:#class-attributes}
 
@@ -328,7 +324,6 @@ class Profiler
      */
     protected static $instance = null;
 {% endhighlight %}
-
 
 ### Functions and methods
 {:#functions-methods}
@@ -419,7 +414,6 @@ protected function merge($configFiles)
     $this->_dom = $domConfig->getDom();
 }
 {% endhighlight %}
-
 
 #### Divergence in @throws tag
 {:#throws}
@@ -526,7 +520,6 @@ class Profiler
      */
     const NESTING_SEPARATOR = '->';
 {% endhighlight %}
-
 
 ### DocBlock templates
 {:#DocBlock-templates}
@@ -712,7 +705,6 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
  */
 {% endhighlight %}
 
-
 ### Other tags
 {:#other-tags}
 
@@ -736,7 +728,6 @@ If there are two or more tags together in one DocBlock, their values may be padd
  * @link   http://example.com
  */
 {% endhighlight %}
-
 
 ### Formatting consistency
 {:#format-consistency}

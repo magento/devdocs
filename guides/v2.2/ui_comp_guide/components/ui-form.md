@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.1
-github_link: ui_comp_guide/components/ui-form.md
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
@@ -30,7 +28,6 @@ The following components can be used in the scope of the Form component:
 * Text
 * Textarea
 * {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}Wysiwyg{% endglossarytooltip %}
-
 
 ## Configuration options
 
@@ -209,7 +206,6 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
   </tbody>
 </table>
 
-
 ## Examples
 
 ### Create an instance
@@ -315,7 +311,8 @@ To group components you can use the component container as in example below:
 {% endhighlight %}
 
 ### Configure DataSource
-You need to configure component's DataSource in order to provide data and meta information for your Form component.
+
+You must configure a component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
 

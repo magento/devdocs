@@ -6,8 +6,6 @@ landing-page: Installation Guide
 menu_title: How to get the Magento software
 menu_node:
 menu_order: 1
-version: 2.1
-github_link: install-gde/bk-install-guide.md
 redirect_from:
   - /guides/v2.0/install-gde/continue.html
   - /guides/v2.1/install-gde/continue.html

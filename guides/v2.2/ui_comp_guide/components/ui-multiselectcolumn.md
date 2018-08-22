@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: MultiselectColumn component
 menu_title: MultiselectColumn component
-version: 2.2
-github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 ---
 
 The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.
@@ -40,7 +38,7 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td>{<br><code>'data-grid-checkbox-cell': true</code><br>}</td>
   </tr>

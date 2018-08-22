@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Expandable sections
-version: 2.1
-github_link: pattern-library/controls/Expandable_Sections/expand-collapse.md
 redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
 ---
 _(AKA Expand-Collapse, Collapsible panels)_

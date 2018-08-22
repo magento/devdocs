@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: InsertForm component
 menu_title: InsertForm component
-version: 2.2
-github_link: ui_comp_guide/components/ui-form.md
 ---
 
 The InsertForm component inserts the [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) into other components.

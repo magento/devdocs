@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Generate data for performance testing
-menu_title: Generate data for performance testing
-menu_node:
-menu_order: 800
-version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 functional_areas:
   - Configuration
   - System
@@ -14,7 +8,8 @@ functional_areas:
 ---
 
 ## Overview of performance testing data {#config-cli-perf-overview}
-To use the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit){:target="\_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
+
+To use the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit) or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
@@ -27,6 +22,7 @@ The following figure shows how a product is displayed on the {% glossarytooltip 
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
 ## About profiles {#config-cli-perf-prof}
+
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
 Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
@@ -168,9 +164,9 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 </table>
 
 ### Run the data generator {#config-cli-perf-run}
-<div class="bs-callout bs-callout-warning" markdown="1">
+
+{:.bs-callout .bs-callout-warning}
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
-</div>
 
 Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 
@@ -232,15 +228,18 @@ Current supported fixtures:
 *   [Tax rates](#config-cli-gen-taxrate)
 
 ## Detailed information about fixtures
+
 The following sections discuss additional details about the performance fixtures.
 
 ### Admin users {#config-cli-gen-admin}
+
 Generates {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} users. {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} profile node:
 
 <pre class="no-copy">&lt;!-- Number of admin users -->
 &lt;admin_users>{int}</admin_users></pre>
 
 ### Attribute sets {#config-cli-gen-attrib}
+
 Generates attribute sets with specified configuration. XML profile node:
 
 <pre class="no-copy">&lt;!-- Number of product attribute sets -->
@@ -253,6 +252,7 @@ Generates attribute sets with specified configuration. XML profile node:
 &lt;product_attribute_sets_attributes_values>{int}&lt;/product_attribute_sets_attributes_values></pre>
 
 ### Bundle products {#config-cli-gen-bundle}
+
 Generates bundle products. Generated bundle selections are not displayed individually in {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}. Products will be uniformly distributed per categories and websites. If  `assign_entities_to_all_websites` from the profile is set to `1`. products will be assigned to all websites.
 
 XML profile node:
@@ -267,6 +267,7 @@ XML profile node:
 &lt;bundle_products_variation>{int}&lt;/bundle_products_variation></pre>
 
 ### Cart price rules {#config-cli-gen-cartrules}
+
 Generates cart price rules. XML profile node:
 
 <pre class="no-copy">&lt;!-- Number of cart price rules -->
@@ -276,12 +277,14 @@ Generates cart price rules. XML profile node:
 &lt;cart_price_rules_floor>{int}&lt;/cart_price_rules_floor></pre>
 
 ### Catalog price rules {#config-cli-gen-pricerules}
+
 Generates catalog price rules. XML profile node:
 
 <pre class="no-copy">&lt;!-- Number of catalog price rules -->
 &lt;catalog_price_rules>{int}&lt;/catalog_price_rules></pre>
 
 ### Categories {#config-cli-gen-cat}
+
 Generates categories. If `assign_entities_to_all_websites` is set to `0`, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}.
 
 XML profile node:
@@ -293,6 +296,7 @@ XML profile node:
 &lt;categories_nesting_level>{int}&lt;/categories_nesting_level></pre>
 
 ### Configs {#config-cli-gen-config}
+
 Sets values for config fields. XML profile node:
 
 <pre class="no-copy">
@@ -310,6 +314,7 @@ Sets values for config fields. XML profile node:
 </pre>
 
 ### Configurable products {#config-cli-gen-configprod}
+
 Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If `assign_entities_to_all_websites` is set to `1`, products will be assigned to all websites.
 
 We support the following XML node formats:
@@ -406,6 +411,7 @@ We support the following XML node formats:
     &lt;/configurable_products></pre>
 
 ### Customers {#config-cli-gen-cust}
+
 Generates customers. Customers have a normal distribution on all available websites. Each customer has the same data except customer email, customer group, and customer addresses.
 
 XML profile node:
@@ -421,6 +427,7 @@ You can also use the following XML to change the customer configuration:
 &lt;/customer-config></pre>
 
 ### Product images {#config-cli-gen-prodimg}
+
 Generates product images. Generation does not include resizing.
 
 XML profile node:
@@ -434,6 +441,7 @@ XML profile node:
 &lt;/product-images></pre>
 
 ### Indexers state {#config-cli-gen-index}
+
 Updates indexers' state. XML profile node:
 
 <pre class="no-copy">&lt;indexer>
@@ -443,6 +451,7 @@ Updates indexers' state. XML profile node:
 &lt;/indexer></pre>
 
 ### Orders {#config-cli-gen-orders}
+
 Generates orders with configurable number of different types of order items. Optionally generates inactive quotes for generated orders.
 
 XML profile node:
@@ -472,6 +481,7 @@ XML profile node:
 &lt;orders>{int}&lt;/orders></pre>
 
 ### Simple products {#config-cli-gen-simp}
+
 Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: `<product_attribute_sets>{int}</product_attribute_sets>`, products are also distributed per additional attribute sets.
 
 Products are uniformly distributed per categories and websites. If `assign_entities_to_all_websites` is set to `1`, products are assigned to all websites.
@@ -482,12 +492,14 @@ XML profile node:
 &lt;simple_products>{int}&lt;/simple_products></pre>
 
 ### Websites {#config-cli-gen-websites}
+
 Generates websites. XML profile node:
 
 <pre class="no-copy">&lt;!-- Number of websites to be generated -->
 &lt;websites>{int}&lt;/websites></pre>
 
 ### Store groups {#config-cli-gen-stores}
+
 Generates store groups (referred to in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as _stores_). Store groups are distributed normally among websites.
 
 XML profile node:
@@ -496,6 +508,7 @@ XML profile node:
 &lt;store_groups>{int}&lt;/store_groups></pre>
 
 ### Store views {#config-cli-gen-storeview}
+
 Generates store views. Store views are distributed normally among store groups. XML profile node:
 
 <pre class="no-copy">&lt;!-- Number of store views to be generated -->
@@ -505,12 +518,14 @@ Generates store views. Store views are distributed normally among store groups. 
 &lt;assign_entities_to_all_websites>{0|1}&lt;assign_entities_to_all_websites/></pre>
 
 ### Tax rates {#config-cli-gen-taxrate}
+
 Generates tax rates. XML profile node:
 
 <pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/&#95;files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
 ## Additional information    
+
 Additional configuration information:
 
 *   `<Magento root dir>/setup/performance-toolkit/config/attributeSets.xml`&mdash;Default attribute sets
@@ -526,18 +541,3 @@ Additional configuration information:
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
-
-
-#### Related topics
-*   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
-*   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
-*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
-*   [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-*   [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
-*   [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
-*   [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
-*   [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
-*   [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
-*   [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-*   [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)

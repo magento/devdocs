@@ -2,8 +2,6 @@
 group: arch-guide
 title: Extensibility and modularity
 menu_title: Extensibility and modularity
-version: 2.1
-github_link: architecture/extensibility.md
 ---
 
 ## Overview

@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_accordion.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
@@ -19,11 +17,12 @@ Accordions are generally used to break content into multiple sections that can b
 
 The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
 
-<h2 id="accordion_init">Initialize the accordion widget</h2>
+## Initialize the accordion widget   {#accordion_init}
 
-<h3>Initialize accordion in JS components</h3>
+### Initialize accordion in JS components
 
-<h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
+#### Initialize accordion with `data-*` attributes specified
+
 Generally the accordion widget is instantiated like following:
 <pre>
 $("#element").accordion();
@@ -94,8 +93,8 @@ Mark-up examples:
 
 {%endhighlight%}
 
+#### Initialize accordion with option
 
-<h4>Initialize accordion with option</h4>
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
 <pre>
@@ -107,12 +106,12 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion in a template</h3>
+### Initialize accordion in a template
 
 The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
+## Options   {#accordion_options}
 
-<h2 id="accordion_options">Options</h2>
 Accordion options coincide with <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
 <ul>
 <li><a href="#collaps_active">active</a></li>
@@ -120,7 +119,8 @@ Accordion options coincide with <a href="{{ page.baseurl }}/javascript-dev-guide
 <li><a href="#collaps_open">openOnFocus</a></li>
 </ul>
 
-<h3 id="collaps_active"><code>active</code></h3>
+### `active`   {#collaps_active}
+
 
 Defines which tab is active when the widget gets instantiated.
 
@@ -135,7 +135,8 @@ $("#element").accordion({ active: [0,1]});
 </pre>
 
 
-<h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
+### `multipleCollapsible`   {#collaps_multi}
+
 Defines if multiple panels can be expanded at the same time.
 
 **Type**: Boolean
@@ -155,7 +156,8 @@ var multipleCollapsible = $("#element").accordion("option","multipleCollapsible"
 $("#element").tabs("option","multipleCollapsible",false);
 </pre>
 
-<h3 id="collaps_open"><code>openOnFocus</code></h3>
+### `openOnFocus`   {#collaps_open}
+
 
 For keyboard navigation defines if the accordion expands when the title gets in focus.
 
@@ -163,8 +165,8 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 
 **Default value**: `false`
 
+## Methods   {#accordion_methods}
 
-<h2 id="accordion_methods">Methods</h2>
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
 The custom accordion methods are the following:
@@ -174,7 +176,8 @@ The custom accordion methods are the following:
 <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act"><code>activate(index)</code></h3>
+### `activate(index)`   {#meth_act}
+
 Activate a tab with the specified `index`.
 
 **Type**: Number, Array.
@@ -188,7 +191,8 @@ $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
-<h3 id="meth_deact"><code>deactivate(index)</code></h3>
+### `deactivate(index)`   {#meth_deact}
+
 Deactivate a tab with the specified `index`.
 
 

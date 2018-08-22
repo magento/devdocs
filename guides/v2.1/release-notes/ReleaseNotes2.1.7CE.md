@@ -6,8 +6,6 @@ menu_title: Magento Open Source 2.1.7 Release Notes
 menu_order: 162
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.7CE.md
 ---
 
 *	TOC
@@ -29,7 +27,6 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 
 Looking for the <a href= "{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
-
 ## Highlights
 
 Magento 2.1.7 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
@@ -40,7 +37,6 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 * **Reversion of the changes to image resizing that we introduced in 2.1.6**. Certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
 
 ### Guidelines for upgrading from 2.1.6 to 2.1.7
-
 
 <table>
   <tr>
@@ -84,19 +80,20 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 **Note**: As of June 30, 2017, MasterCard may fine merchants who do not support cards that use their recently expanded range of BIN numbers. Transactions for customers that use cards with these new BINs will fail if your software does not support these new BIN numbers. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.  **If you are running Magento 2.1.3 or later, your Magento software already provides support for these new BINs.** 
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ce_install_21.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
+
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 

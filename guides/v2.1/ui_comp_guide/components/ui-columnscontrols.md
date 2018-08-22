@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ColumnsControls component
 menu_title: ColumnsControls component
-version: 2.1
-github_link: ui_comp_guide/components/ui-columnscontrols.md
 ---
 
 The ColumnsControls component is a collection of columns. It provides an interface for showing and hiding columns. The interface contains:

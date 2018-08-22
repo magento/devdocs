@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Configuration management for store settings
-version: 2.2
-github_link: cloud/live/sens-data-over.md
 functional_areas:
   - Cloud
   - Deploy
@@ -18,11 +16,11 @@ These methods are optional, but strongly recommended. The process ensures faster
 
 To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 For extended technical information, see [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
-</div>
 
 ## How it works {#cloud-confman-over}
+
 The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: `app/etc/config.php`.
 
 To generate the file, use one of the following:
@@ -30,9 +28,8 @@ To generate the file, use one of the following:
 * `php vendor/bin/m2-ece-scd-dump`—**Recommended** Exports only modified configuration settings
 * `php ./vendor/bin/ece-tools config:dump`—Exports every configuration setting, including modified and default settings
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 For {{site.data.var.ece}}, we **do not recommend** using the `app:config:dump` command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.
-</div>
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.
 
@@ -41,6 +38,7 @@ By using the `scd-dump` command, you can configure only the settings you want co
 If sensitive data is found in your configurations, it is generated as environment variables to `env.php`. This file remains in the environment and should not be added to your Git environment.
 
 ### Switching between commands {#commands}
+
 Can you switch between using `php vendor/bin/m2-ece-scd-dump` and `php ./vendor/bin/ece-tools config:dump`? Only in one specific way.
 
 In 2.2 and later, you cannot delete the `config.php` file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.
@@ -48,28 +46,29 @@ In 2.2 and later, you cannot delete the `config.php` file to regenerate it. You 
 If you use `php vendor/bin/m2-ece-scd-dump` to generate the file, you can switch to `php ./vendor/bin/ece-tools config:dump`. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.
 
 ### Configuration data {#data}
+
 System settings refer to the configurations in the Magento Admin in **Stores** > **Settings** > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
 
 This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in `app/etc/config.php`. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
 
 Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configurations should export to `app/etc/config.php` during the `scd-dump` process. You can also create environment variables using CLI commands or the Project Web Interface.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
-</div>
 
 For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
+
 Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
-</div>
+{:.bs-callout .bs-callout-info}
+Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 ## Configuration selection flow
+
 All system configurations are set during deployment according to the following override scheme:
 
 1. If an environment variable exists, use the custom configuration and ignore the default configuration.
@@ -77,6 +76,7 @@ All system configurations are set during deployment according to the following o
 1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
 
 ## Configuration settings you can change {#cloud-clp-settings}
+
 The following table shows the configuration settings affected by the `php vendor/bin/m2-ece-scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported including default and modified settings.
 
 The `config.php` file includes the following settings and configuration values:
@@ -123,6 +123,7 @@ The `config.php` file includes the following settings and configuration values:
 </table>
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
+
 Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.php` file, which contains a number of configuration properties that you can adjust as needed. 
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
@@ -138,6 +139,7 @@ The **Pro plan** environment high-level overview of this process:
 ![Overview of Pro configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-pro-2-2.png)
 
 ### Step 1: Configure your store {#config-store}
+
 Complete all configurations for your stores in the Admin console:
 
 1. Log in to the Magento Admin for one of the environments:
@@ -151,6 +153,7 @@ Complete all configurations for your stores in the Admin console:
     `ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"`
 
 ### Step 2: Transfer and add the file to Git {#transfer-file}
+
 Push the `config.php` file to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
 
 1. Transfer the `config.php` file to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
@@ -161,12 +164,13 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
 
     `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
 
-When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy).
+When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
 
 {: .bs-callout .bs-callout-info}
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
 
 ### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
+
 Log in to the Magento Admin panel in those environments to verify the settings. Only configured settings display when you use the `scd-dump` command. Continue configuring the environment, if needed.
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
@@ -174,17 +178,16 @@ For Starter, when you push, the updated code pushes to the active environment. M
 For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 ## Update configurations
+
 If you need to modify or remove any existing configuration settings in the `config.php` file, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.
 
 To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
-
-Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
-</div>
+{:.bs-callout .bs-callout-warning}
+While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 
 ## Migrate configurations
+
 If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate settings from the `config.local.php` file to your new `config.php` file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the `config.php` file.
 
 If they differ, you can append content from the `config.local.php` file to your new `config.php` file:
@@ -198,6 +201,7 @@ If they differ, you can append content from the `config.local.php` file to your 
 You only need to complete this migration once. When you need to update the file, always update the `config.php` file.
 
 ## Change locales
+
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
 You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment. 
@@ -221,9 +225,5 @@ This process **overwrites** the store configuration; only do the following if th
 
 1.  Push code changes to the remote.
 
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
-
-Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
-</div>
+{:.bs-callout .bs-callout-warning}
+While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.

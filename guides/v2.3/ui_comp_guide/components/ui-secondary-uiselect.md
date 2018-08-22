@@ -4,9 +4,6 @@ subgroup: components
 title: UI-select component
 menu_title: UI-select component
 menu_node:
-version: 2.3
-github_link: ui-components/ui-secondary-uiselect.md
-
 ---
 
 The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all `abstract` configuration and can be configured in two modes:
@@ -170,3 +167,8 @@ Navigation keys:
 * **`PageUp`**: sets focus to the previous option
 * **`PageDown`**: sets focus to the next option
 
+## Source files
+
+- [app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js)
+- [Magento/Ui/view/base/web/js/form/element/abstract.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
+- [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html)

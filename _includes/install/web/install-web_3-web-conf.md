@@ -1,6 +1,6 @@
 <div markdown="1">
 
-<h2 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h2>
+## Step 3: Web Configuration   {#instgde-install-magento-web-step3}
 
 1.	Enter the following information:
 

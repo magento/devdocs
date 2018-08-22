@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Users
-version: 2.1
-github_link: marketplace/eqp/users.md
 ---
 
 The `users` resource accesses and updates your user profile. You can also access reports you own.
@@ -206,7 +204,6 @@ POST    /rest/v1/users/:mage_id/keys
 PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
-
 
 ### Get keys
 

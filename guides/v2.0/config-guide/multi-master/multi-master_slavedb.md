@@ -5,9 +5,7 @@ title: Set up optional database replication
 menu_title: Set up optional database replication
 menu_order: 10
 menu_node:
-version: 2.0
 ee_only: True
-github_link: config-guide/multi-master/multi-master_slavedb.md
 functional_areas:
   - Configuration
   - System
@@ -22,7 +20,8 @@ Setting up database replication provides the following benefits:
 
 MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master. 
 
-<h2 id="config-ee-multidb-slave-conf">Configure database replication</h2>
+## Configure database replication   {#config-ee-multidb-slave-conf}
+
 An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:
 
 *	<a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a>
@@ -118,6 +117,7 @@ The following is more advanced and is provided for your information only:
 {% endhighlight %}
 
 ## Performance improvement
+
 To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern `search\_tmp\_%` that are used for {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search.
 
 To do this, add the following line to your `my.cnf` file on your slave instances:

@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
-version: 2.0
-github_link: mtf/create_test/out-of-the-box.md
 ---
 
 The out-of-the-box tests are the ready to use functional tests developed by Magento. You can find them in the `<magento2_root_dir>/dev/tests/functional` directory.

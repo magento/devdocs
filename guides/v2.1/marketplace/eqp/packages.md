@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Packages
-version: 2.1
-github_link: marketplace/eqp/packages.md
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the [Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html). You can provide all metadata associated with a package—both the technical and the marketing information—in a single step or in several steps using incremental updates.

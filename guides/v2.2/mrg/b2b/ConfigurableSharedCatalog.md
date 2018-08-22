@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_ConfigurableSharedCatalog module
 menu_title: ConfigurableSharedCatalog
 menu_order: 100
-version: 2.2
-github_link: mrg/b2b/ConfigurableSharedCatalog.md
 functional_areas:
   - B2B
 ---
@@ -19,7 +17,6 @@ The `Magento_ConfigurableSharedCatalog` module provides the following features:
 * Display base and custom prices for configurable products within a shared catalog. There is no ability to edit the price of a configurable product.
 
 * Control the visibility of configurable products in quotes and orders. Only those configurable products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
-
 
 ## Installation details
 

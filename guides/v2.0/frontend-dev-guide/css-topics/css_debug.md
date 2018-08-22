@@ -4,8 +4,6 @@ subgroup: D_CSS
 title: Compile LESS with Grunt
 menu_order: 4
 menu_title: Compile LESS with Grunt
-version: 2.0
-github_link: frontend-dev-guide/css-topics/css_debug.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 functional_areas:
   - Frontend
@@ -19,8 +17,8 @@ functional_areas:
 The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
 
 ## Prerequisites
-Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
+Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 ## Installing and configuring Grunt {#grunt_prereq}
 
@@ -82,7 +80,6 @@ Where the following notation is used:
 
 </li>
 </ol>
-
 
 ## Grunt commands {#grunt_commands}
 

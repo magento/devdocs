@@ -6,8 +6,6 @@ menu_title: Magento Open Source 2.1.11 Release Notes
 menu_order: 154
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.11CE.md
 ---
 
 *	TOC
@@ -21,17 +19,15 @@ github_link: release-notes/ReleaseNotes2.1.11CE.md
 
 We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!
 
-
 ## Highlights
-Look for the following highlights in this release:
 
+Look for the following highlights in this release:
 
 ### New features
 
 * **Support for the Indian Rupee (INR) in PayPal Express Checkout**
 
 * **New commands and functionality for the command-line interface**. We've added interactivity to the `admin:user:create` command, and added the ability to handle CLI setup interactively (with prompts). 
-
 
 ### Fixes and enhancements (highlights)
 
@@ -43,21 +39,20 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-58503 -->* You can now add a configurable product to your cart from the Category page. Previously, you had to review the product on the Product page before adding it to your cart. [GitHub-2574](https://github.com/magento/magento2/issues/2574), [GitHub-5850](https://github.com/magento/magento2/issues/5850), [GitHub-5882](https://github.com/magento/magento2/issues/5882), [GitHub-6572](https://github.com/magento/magento2/issues/6572), [GitHub-5558](https://github.com/magento/magento2/issues/5558), [GitHub-8470](https://github.com/magento/magento2/issues/8470)
 
-
 ## Fixed issues
 
 ### Setup
+
 <!--- MAGETWO-82780 -->*  The  `/.user.ini` and `/pub/.user.ini` files now specify a `memory_limit` value of at least 1G to 2G for debugging purposes. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11761*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
 
 <!--- MAGETWO-83020 -->*  Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento downloaded the most recent backup. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11596*. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
-
-
 ### Cache
+
 <!--- MAGETWO-72798 -->* We’ve resolved an issue where store websites do not work when Redis cache is installed and the PhpRedis extension is enabled.
 
-
 ### Catalog
+
 <!--- MAGETWO-70373 -->* A user who does not have permission to view a category (based on category permissions) can no longer view it in the menu even if it were cached.
 
 <!--- MAGETWO-62040 -->* You can now place orders when the **Use deferred Stock update setting** is set to **Yes**.
@@ -75,15 +70,11 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-82756 -->* The **Add-to-cart** checkboxes in Related Products are no longer visible on the storefront when `$canItemsAddToCart` is set to **false**. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11610*.  [GitHub-689](https://github.com/magento/magento2/issues/689)
 
-
-
 ### Cart and checkout
 
 <!--- MAGETWO-66447 -->* Magento no longer applies free shipping when you remove a free shipping coupon code from the checkout page.
 
 <!--- MAGETWO-83195 -->* Magento now permits zip codes for the Netherlands to contain spaces. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11960*. [GitHub-11898](https://github.com/magento/magento2/issues/11898)
-
-
 
 ### Configurable products
 
@@ -94,8 +85,6 @@ Look for the following highlights in this release:
 
 
 <!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be could be **as low as** as the lowest price. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with the lowest available price.
-
-
 
 ### Framework
 
@@ -113,8 +102,8 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83052 -->* We no longer hard-code the array index of `Magento_Backend::admin` in the resources ACL tree. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request 11739*.
 
-
 ### General
+
 <!--- MAGETWO-83760 -->* The  **Stores > Configuration > General > Design** page now displays as expected. [GitHub-5256](https://github.com/magento/magento2/issues/5256)
 
 <!--- MAGETWO-72206 -->* After confirming a customer’s account, the Magento welcome message now displays the customer's first and last name.
@@ -157,7 +146,6 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83488 -->* Magento now correctly displays storefront search fields in Magento installations running in Safari. Previously, the search field shifted unexpectedly after you viewed shopping cart contents  in Magento installations running either desktop or mobile versions of Safari. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12111*. [GitHub-8178](https://github.com/magento/magento2/issues/8178)
 
-
 ### Import/export
 
 <!--- MAGETWO-82554 -->* You can now import customer addresses from websites with country restrictions.
@@ -168,19 +156,16 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-83956 -->* When you export customer details into CSV format, Magento now displays the values of the Confirmed email and Account Lock columns in the Customer table. Previously, Magento displayed a blank value for these columns in the CSV file. 
 
-
 ### Index
+
 <!--- MAGETWO-84444 -->* We've fixed an issue that lead to wrong products being indexed. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
-
-
 
 ### Order management
 
 <!--- MAGETWO-82759 -->* We've corrected the block class defined in the XML layout for order items on the order print page is definitely not correct. As a result, you cannot see the order item's information upon the order printing. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request 11631*. [GitHub-9830](https://github.com/magento/magento2/issues/9830), [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
-
-
 ### Payment methods
+
 <!--- MAGETWO-83149 -->* Magento PayPal integration now supports the Indian Rupee currency (INR).
 
 <!--- MAGETWO-71185 -->* Braintree online refunds now work when you are using two Braintree accounts on two separate websites. Previously, when using two Braintree accounts for two separate websites, Magento did not process the refund, and displayed this message: **Sorry, but something went wrong**.
@@ -191,38 +176,37 @@ Look for the following highlights in this release:
 <!--- MAGETWO-83956 -->* Magento no longer throws an exception when you choose an Order page in the Admin, or set a transaction ID in a payment module. *Fix submitted by [Alex](https://github.com/madonzy) in pull request 12284*. [GitHub-3596](https://github.com/magento/magento2/issues/3596)
 
 ### Performance
+
 <!--- MAGETWO-82527 -->*  We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request 11640*. [GitHub-9007](https://github.com/magento/magento2/issues/9007)
 
-
 ### Reports
+
 <!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports > By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
-
 ### SalesRule
+
 <!--- MAGETWO-64066 -->* Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule. 
 
 <!--- MAGETWO-82242 -->* Products in the cart with a price of $0.00 no longer cause an extra cent to be applied to the discount amount.
 
 <!--- MAGETWO-83689 -->* We've fixed a range of issues that affect shipping when Sales rules and Cart rules are involved. For example,  the free shipping coupon previously did not work with Table Rates shipping. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11919*. [GitHub-8172](https://github.com/magento/magento2/issues/8172), [GitHub-8089](https://github.com/magento/magento2/issues/8089), [GitHub-10507](https://github.com/magento/magento2/issues/10507)
 
-
-
 ### Shipping
+
 <!--- MAGETWO-83429 -->* Magento no longer throws an error (`Undefined variable: responseAjax`) when you try to save a shipment package. *Fix submitted by [Joe Constant](https://github.com/lazyguru) in pull request 12092*. 
 
-
 ### Tax
+
 <!--- MAGETWO-72280 -->* Magento now correctly calculates the tier price percentage when displayed prices include tax. [GitHub-8833](https://github.com/magento/magento2/issues/8833)
 
 <!--- MAGETWO-83403 -->* The total tax amount displayed in the Full Tax Summary now equals the sum of the relevant individual taxes. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11593*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
 
-
 ### Translations
+
 <!--- MAGETWO-71591 -->* You can now implement translations from themes (in contrast to translations from modules). 
 
-
-
 ## Known issue
+
 <!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
 **Workaround**: Use the Devdocs [static Swagger site]({{ site.baseurl }}/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
@@ -233,7 +217,6 @@ Look for the following highlights in this release:
 
 
 <!--- WON'T FIX MAGETWO-82982   -->
-
 
 ## Community contributions
 
@@ -405,7 +388,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11631">11631</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/9830" target="_blank">9830</a>, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
+    <td>[9830](https://github.com/magento/magento2/issues/9830){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
     <td><a target="_blank" href="https://github.com/rogyar">Yaroslav Rogoza</a></td>
   </tr>
   <tr>
@@ -415,7 +398,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12115">12115</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/6597" target="_blank">6597</a>, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
+    <td>[6597](https://github.com/magento/magento2/issues/6597){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
@@ -425,7 +408,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11919">11919</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8172" target="_blank">8172</a>, <a href="https://github.com/magento/magento2/issues/8089" target="_blank">8089</a>, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
+    <td>[8172](https://github.com/magento/magento2/issues/8172){:target="_blank"}, [8089](https://github.com/magento/magento2/issues/8089){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
@@ -436,21 +419,21 @@ The following table identifies contributions from our community members. This ta
 </table>
 
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ce_install_21.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 

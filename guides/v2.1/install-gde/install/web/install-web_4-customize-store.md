@@ -5,8 +5,6 @@ title: Step 4. Customize Your Store
 menu_title: Step 4. Customize Your Store
 menu_node:
 menu_order: 5
-version: 2.1
-github_link: install-gde/install/web/install-web_4-customize-store.md
 functional_areas:
   - Install
   - System

@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Button component
 menu_title: Button component
-version: 2.2
-github_link: ui_comp_guide/components/ui-button.md
 ---
 
 The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<button>` element, which be configured to display a link.

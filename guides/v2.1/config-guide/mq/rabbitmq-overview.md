@@ -1,13 +1,7 @@
 ---
 group: config-guide
-subgroup: 15_RabbitMQ
 title: Message Queues Overview
-menu_title: Message Queues (Magento Commerce only)
-menu_order: 1
-menu_node: parent
-version: 2.1
 ee_only: True
-github_link: config-guide/mq/rabbitmq-overview.md
 functional_areas:
   - Configuration
   - System
@@ -18,7 +12,7 @@ The Message Queue Framework (MQF) is a system within {{site.data.var.ee}} that a
 
 The following diagram illustrates the Message Queue Framework.
 
-<img src="{{ site.baseurl }}/common/images/mq.png">
+![]({{ site.baseurl }}/common/images/mq.png)
 
 * A {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.
 
@@ -32,7 +26,7 @@ The following diagram illustrates the Message Queue Framework.
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
+See [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html) for information about setting up the message queue system.
 
 #### Related Topics
 

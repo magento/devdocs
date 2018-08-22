@@ -4,18 +4,17 @@ subgroup: D_UI Library Form Component
 title: Form Component
 menu_title: Form Component
 menu_node: parent
-version: 2.0
-github_link: ui-components/ui-form.md
 redirect_from: /guides/v2.0/ui-library/ui-form.html
 redirect_from: /guides/v2.0/ui_comp_guide/components/ui-form.html
 ---
 
 ## Overview
+
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. 
 
 The following are the components element, the constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`
 
-<h4>Related UI components</h4>
+#### Related UI components
 
 The following components are used to extend the Form component:
 

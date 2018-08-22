@@ -1,20 +1,21 @@
 ---
 group: cloud
 title: Go live checklist
-version: 2.2
-github_link: cloud/live/go-live-checklist.md
 functional_areas:
   - Cloud
   - Testing
 ---
 
 ## Pre-Launch Checklist {#checklist}
+
 Prior to go live and switching the DNS, you should download and complete the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `master` branch to the Production environment. 
 
 ## Completely test in Production {#test}
+
 See [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.
 
 ## DNS configurations {#dns}
+
 You need to complete configurations for your DNS including:
 
 *  Set all necessary redirects, especially if you are migrating from an existing site
@@ -25,9 +26,8 @@ You need to complete configurations for your DNS including:
 
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+This does not work for an [apex] domain(https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="_blank"} (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 
@@ -46,11 +46,13 @@ Another option for apex domain is to add A records, which maps a domain name to 
 * `151.101.193.124`
 
 ### TLS and Fastly {#fastly-tls}
+
 If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
 
 ## Verify Production configurations
+
 Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.
 
 The following are recommended changes and checks:
@@ -64,6 +66,7 @@ The following are recommended changes and checks:
 *	[Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"} for JS, CSS, and HTTP
 
 ## Verify Fastly caching {#verifyfastly}
+
 Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
 *	Make sure that pages are being correctly cached in the page cache and Fastly
@@ -71,6 +74,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
+
 We recommend that you review the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:

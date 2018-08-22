@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Prepare environment for test run
-version: 2.1
-github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
 
 ## Run the Selenium Server on default browser {#mtf_quickstart_env_selenium}
@@ -49,7 +47,7 @@ Enter in terminal:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Next Steps {#mtf_install_pre}
 
 [&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
 

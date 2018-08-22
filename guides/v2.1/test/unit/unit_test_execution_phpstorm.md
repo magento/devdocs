@@ -3,8 +3,6 @@ group: unit-testing
 title: Running Unit Tests in PHPStorm
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-version: 2.1
-github_link: test/unit/unit_test_execution_phpstorm.md
 functional_areas:
   - Testing
   - test

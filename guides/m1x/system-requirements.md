@@ -6,13 +6,16 @@ title: System Requirements for Magento Enterprise Edition and Community Edition 
 Magento requires a LAMP or LNMP stack.
  
 #### Operating System
+
 Linux x86-64
  
 #### Web Server
+
 *   Apache 2.x
 *   Nginx 1.7.x
  
 #### Database
+
 MySQL 5.6 (Oracle or Percona)
  
 #### PHP
@@ -26,10 +29,12 @@ MySQL 5.6 (Oracle or Percona)
 	*   PHP 5.5.x
  
 #### SSL
+
 *   A valid security certificate is required for HTTPS.
 *   Self-signed SSL certificates are not supported.
  
 #### Magento can utilize the following technologies:
+
 *   [Redis]({{ site.baseurl }}/guides/m1x/ce18-ee113/using_redis.html)
     
 	Redis can be used for session or cache storage

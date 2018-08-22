@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Snapshots and backup management
-version: 2.1
-github_link: cloud/project/project-webint-snap.md
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
@@ -14,9 +12,8 @@ You can back up and restore specific environments at any time using a snapshot. 
 
 A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code).
-</div>
 
 You have up to **7 days** to _restore_ a snapshot.
 
@@ -117,6 +114,7 @@ We provide two methods for creating and managing snapshots:
     ```
 
 ## Dump your database {#db-dump}
+
 You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
 
 #### To create a database dump:
@@ -135,18 +133,17 @@ You can create a copy of your database using [`magento/ece-tools`]({{ site.baseu
     vendor/bin/ece-tools db-dump
     ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info}
 -   We recommend putting the application in maintenance mode before doing a database dump in Production environments.
 -   The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
 -   If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`/var/log/cloud.log`).
 -   For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
-</div>
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-tip}
 If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
-</div>
 
 ## Rollbacks to remove code {#rollback-code}
+
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.

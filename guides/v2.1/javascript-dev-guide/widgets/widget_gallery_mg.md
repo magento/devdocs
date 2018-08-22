@@ -2,10 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Magnifier widget 
-menu_order: 8
-menu_title: Magnifier widget 
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_gallery_mg.md
 ---
 
 ## Overview
@@ -17,9 +13,9 @@ In Magento it is used by the [gallery]({{ page.baseurl }}/javascript-dev-guide/w
 
 The magnifier widget is initialized as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#init_phtml).
 
-When initializing the gallery Widget on an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
+When initializing the gallery Widget on an HTML element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
 
-{%highlight js%}
+```javascript
 <script type="text/x-magento-init">
 "<element_selector>": {
         "mage/gallery/gallery": {
@@ -43,7 +39,7 @@ When initializing the gallery Widget on an {% glossarytooltip a2aff425-07dd-4bd6
         }
    }
 </script>
-{% endhighlight %}
+```
 
 ## Options {#magnifier_options}
 
@@ -74,7 +70,7 @@ Type: Integer
 
 ### `left` {#opt_left}
 
-The value for the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} `left` property for the magnifier block positioning.
+The value for the CSS `left` property for the magnifier block positioning.
 
 **Type**: Integer
 

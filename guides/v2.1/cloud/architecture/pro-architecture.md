@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Pro architecture
-version: 2.1
-github_link: cloud/architecture/pro-architecture.md
 redirect_from:
   - /guides/v2.0/cloud/discover-arch.html
   - /guides/v2.1/cloud/discover-arch.html
@@ -84,6 +82,7 @@ Your project is a single Git repository with three, main environment branches fo
 ![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-wings.png)
 
 ## Integration environment {#cloud-arch-int}
+
 Developers use the Integration environment to develop, deploy, and test:
 
 -   Magento application code
@@ -93,30 +92,32 @@ Developers use the Integration environment to develop, deploy, and test:
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info}
 The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.
-</div>
 
 ### Global Master
+
 The Global Master branch is a part of the Integration environment. You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.
 
 Do **not** create a branch from Global Master. Use the Integration environment branch to create new, active branches.
 
 ## Staging environment {#cloud-arch-stage}
+
 The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
-</div>
 
 ## Production environment {#cloud-arch-prod}
+
 The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.
 
 You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.
 
 ### Redundant hardware
+
 Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
 Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
@@ -129,6 +130,7 @@ The three gateways map to the three servers in your Production environment clust
 -   Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
+
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
 
 In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
@@ -152,6 +154,7 @@ the initial period, the RPO is 6 hours (maximum time to last backup).
 EBS volumes take more time to restore.
 
 ### Production technology stack
+
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
 
 -   **Fastly CDN**—HTTP caching and CDN

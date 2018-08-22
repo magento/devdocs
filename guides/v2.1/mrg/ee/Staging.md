@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_Staging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/Staging.md
 ---
 
 The Magento_Staging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} enables you to work with the future [campaigns](#campaign) in {{site.data.var.ee}}.
@@ -153,6 +151,7 @@ The lower expandable list in the form represent types of [staging](#staging) ent
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
+
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### Update

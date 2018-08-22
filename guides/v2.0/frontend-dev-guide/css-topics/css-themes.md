@@ -3,15 +3,13 @@ group: fedg
 subgroup: D_CSS
 title: Include CSS
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="fedg_css-in-themes_overview">What's in this topic</h2>
+## What\'s in this topic   {#fedg_css-in-themes_overview}
 
 <p>In the Magento application, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files are included in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout files</a>. </p>
 
@@ -23,7 +21,6 @@ The CSS class names can be assigned in both templates and layouts.</span></p>
 </div>
 
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
-
 
 ## How Magento stylesheet files are organized
 
@@ -70,8 +67,7 @@ Contains the following:
 
 </table>
 
-
-<h2 id="fedg_css-in-themes_xml">Include CSS</h2>
+## Include CSS   {#fedg_css-in-themes_xml}
 
 <p>In the Magento application, the recommended way to include stylesheets is to specify them in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. 
 

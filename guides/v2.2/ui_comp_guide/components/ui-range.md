@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Range component
 menu_title: Range component
-version: 2.2
-github_link: ui_comp_guide/components/ui-range.md
 ---
 
 The Range component implements the range for filtering rows in a grid. Visually, this component represents two input fields of `date` or `text` type, for entering the "from" and "to" range limits.

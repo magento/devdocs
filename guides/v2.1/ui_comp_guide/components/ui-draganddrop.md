@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: DragAndDrop component
 menu_title: DragAndDrop component
-version: 2.1
-github_link: ui_comp_guide/components/ui-draganddrop.md
 ---
 
 The DragAndDrop component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html), allowing users to change columns position in the table.

@@ -5,8 +5,6 @@ title: Get the Magento Open Source metapackage
 menu_title: Get the Magento Open Source metapackage
 menu_order: 3
 menu_node:
-version: 2.0
-github_link: install-gde/prereq/integrator_install_ce.md
 functional_areas:
   - Install
   - System
@@ -38,6 +36,7 @@ To get the {{site.data.var.ce}} metapackage:
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

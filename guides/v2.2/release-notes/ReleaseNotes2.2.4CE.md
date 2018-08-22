@@ -1,13 +1,10 @@
 ---
 group: release-notes
 title: Magento Open Source 2.2.4 Release Notes
-version: 2.2
-github_link: release-notes/ReleaseNotes2.2.4CE.md
 ---
 *Patch code and release notes published on May 2, 2018.* *Release notes revised on July 1, 2018.*
 
 We are pleased to present Magento Open Source 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
-
 
 ## Highlights
 
@@ -30,9 +27,8 @@ Look for the following highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
-
-
 ### Enhancements
+
 This section describes changes in this release that are not full-fledged features or bug fixes, but that add noticeable improvements to product performance or ease-of-use.
 
 
@@ -46,10 +42,8 @@ This section describes changes in this release that are not full-fledged feature
 
 <!--- MAGETWO-86744, MAGETWO-86743, MAGETWO-86746, MAGETWO-86742-->* We've replaced `is_null` with strict comparison only for models and block in the following modules: `Catalog`, `Tax`, `Sales`, and `EAV`. *Fixes submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull requests 13171, 13170, 1163*.
 
-
-
-
 #### dotmailer enhancements
+
 The dotmailer bundled extension features the following enhancements for this release:
 
 * New Abandoned Cart report table
@@ -72,11 +66,10 @@ Magento multi-store installations do not use the store view-specific values from
 
 We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple websites. Note that this problem is not triggered if you have only a single website with multiple stores or store views.
 
-
-
 ## Fixes
 
 ### Installation, setup, and deployment
+
 <!--- MAGETWO-86496 -->* The `backup` command now works as expected.  *Fix submitted by [Jagriti Joshi](https://github.com/jagritijoshi) in pull request 13066*. [GitHub-12877](https://github.com/magento/magento2/issues/12877)
 
 <!--- MAGETWO-86045 -->* Links to Magento installation documentation in `setup/view/magento/readiness-check/progress.html` are now correct. *Fix submitted by [Jonas Hünig](https://github.com/jonashrem) in pull request 12857*.
@@ -132,13 +125,11 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-82666 -->* A database backup created by `setup:backup --db` and restored with `setup:rollback -d` now includes triggers as expected.  Previously, the restored database did not include triggers, which meant that indexes could not work correctly. *Fix submitted by [Denis Ristic](https://github.com/denisristic) in pull request 11369*. [GitHub-9036](https://github.com/magento/magento2/issues/9036)
 
-
 ### Bundle products
+
 <!--- MAGETWO-86022 -->* Save operations now work as expected for bundle products. *Fix submitted by [dzianis-yurevich](https://github.com/dzianis-yurevich) in pull request 12734*. [GitHub-6916](https://github.com/magento/magento2/issues/6916)
 
 <!--- MAGETWO-86882 -->* You can now duplicate a bundle product without stripping the original bundle product of its options.  *Fix submitted by [MattUnity](https://github.com/MattUnity) in pull request 1217*.
-
-
 
 ### Catalog
 
@@ -237,9 +228,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-85575 -->* Magento now correctly sets a `product_links` position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type were shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. *Fix submitted by [Mohammad Haj-Salem](https://github.com/mohammedsalem) in pull request 12650*.
 
-
-
-
 ### Cart and checkout
 
 <!--- MAGETWO-83780 -->* Magento no longer adds addresses with `saveInAddressBook` set to **0**  to the address book for new customers. Previously, if you placed an order as a guest and set the `save_in_address_book` setting for an address to **0**, Magento still copied that address  to the customer address book when registering as a new customer on the checkout success page. [GitHub-7691](https://github.com/magento/magento2/issues/7691)
@@ -262,9 +250,8 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-87196 -->* The Check Out with Multiple Addresses page now displays an empty state field as expected when a customer changes from one address to another. *Fix submitted by [enriquei4](https://github.com/enriquei4) in pull request 13364*. [GitHub-8621](https://github.com/magento/magento2/issues/8621)
 
-
-
 ### Configurable products
+
 <!--- MAGETWO-86781 -->* You can now use custom price symbols when assigning prices to configurable prices. Previously, Magento did not properly display prices for configurable products when you used a custom price symbol when assigning prices. *Fix submitted by [pradeep-wagento](https://github.com/pradeep-wagento) in pull request 13025*. [GitHub-12430](https://github.com/magento/magento2/issues/12430)
 
 <!--- MAGETWO-86311 -->*  Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request 12963*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
@@ -280,8 +267,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-82888 -->* The product price indexer (`catalog_product_price reindex`) no longer stalls during reindexing.
 
 <!--- MAGETWO-86918 -->* Product records inside the `catalog_product_super_link` table are no longer updated needlessly when you save a configurable product. Previously, saving configurable product erased and then reinserted records in the `catalog_product_super_link` table even when child products were not changed. This practice quickly resulted in an unnecessarily large `catalog_product_super_link` table, especially in multi-website installations.
-
-
 
 ### Customer accounts
 
@@ -314,17 +299,13 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-71829 -->* The `is_subscribed` extended parameter is now returned when a web API is used to modify or return information about a customer.
 
-
-
 ### Dashboard
+
 <!--- MAGETWO-86443 -->* The `top destinations` configuration field is now configurable on a store level. Previously, it was configurable on the global level only. *Fix submitted by [Andreas von Studnitz](https://github.com/avstudnitz) in pull request 13052*.
 
 <!--- MAGETWO-86205 -->* When multiple validation errors occur while saving a customer address, Magento now shows unique messages in the `adminhtml` customer edit page. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 12922*.
 
 <!--- MAGETWO-86203 -->* The scroll bar on the Admin store switcher is now scrollable on machines running OSX. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 12931*.
-
-
-
 
 ### Directory
 
@@ -333,9 +314,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-85583 -->* Magento now requires that customers select State/Province when shipping orders to India, and the checkout page now provides a drop-down field with appropriate values. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request*. [GitHub-12378](https://github.com/magento/magento2/issues/12378)
 
 <!--- MAGETWO-86170 -->* You can now disable the **State is Required for** field. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request 12917*. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
-
-
-
 
 ### EAV attributes
 
@@ -359,15 +337,11 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-87354 -->* The deprecated `each()` function has been removed from the code. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request*.
 
-
-
-
 ### Email
 
 <!--- MAGETWO-83741 -->* Order confirmation emails from the Admin in multistore environments no longer default to the primary store, but instead are sent from the store that the customer used. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request*. [GitHub-11740](https://github.com/magento/magento2/issues/11740)
 
 <!--- MAGETWO-86881 -->* Magento no longer sends misleading feedback when sending tracking information email. Previously, instead of sending a notice that a shipment was underway, this response was sent, **You sent the shipment**. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1245*. [GitHub-5697](https://github.com/magento/magento2/issues/5697)
-
 
 ### Frameworks
 
@@ -398,8 +372,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-82069 -->* The report processor now returns an HTTP 500 status code (which better communicates the need for user action) instead of a 503 status code. *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request 11513*. [GitHub-11512](https://github.com/magento/magento2/issues/11512)
 
-
-
 #### App framework
 
 <!--- MAGETWO-81802 -->* The customer grid indexer now works as expected.  Previously, this indexer did not work when reindexing using the command-line interface during upgrade. *Fix submitted by [Leonid Poluyanov](https://github.com/le0n4eg) in pull request 10838*. [GitHub-10838](https://github.com/magento/magento2/issues/10838)
@@ -414,22 +386,15 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-84372 -->* Validation of South Korean zip codes now supports current South Korean zip code format. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 903*. [GitHub-9515](https://github.com/magento/magento2/issues/9515)
 
-
-
-
 #### Configuration framework
 
 <!--- MAGETWO-84464 -->* Scope-based configuration now decrypts data as expected. Previously, scope-based configuration failed to decrypt data on the default store only. *Fix submitted by [DubovykOleksandr](https://github.com/odubovyk) in pull request 8591*.
-
-
-
 
 #### JavaScript framework
 
 <!--- MAGETWO-83401 -->* The `depends` field now works for fields of type `radio` in `system.xml`. *Fix submitted by [Javier Villanueva](https://github.com/jahvi) in pull request 11539*.
 
 <!--- MAGETWO-83993 -->* Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a `ui_component` and add a sort order attribute with an amount that falls between the other elements' amount. *Fix submitted by [Harald Deiser](https://github.com/deiserh) in pull request 11846*.
-
 
 #### Session framework
 
@@ -438,8 +403,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-83287 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12038*. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
 
 <!--- MAGETWO-86880 -->* Anonymous calls using REST no longer trigger the creation of PHP sessions. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1247*. [GitHub-7213](https://github.com/magento/magento2/issues/7213)
-
-
 
 #### Web API framework
 
@@ -455,17 +418,11 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-84666 -->* Anonymous Web API access to the Admin now unlocks REST catalog calls without requiring `auth` tokens. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 904*. [GitHub-9468](https://github.com/magento/magento2/issues/9468)
 
-
 #### Zend framework
 
 <!--- MAGETWO-86654 -->* `vendor/magento/framework/composer.json` now declares a dependency on `magento/zendframework1`. Previously, packages depending on `magento/framework` packages failed to execute. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12990*.
 
-
-
-
-
 ### General
-
 
 <!--- MAGETWO-86727 -->*  A customer can now successfully log out of a session and then immediately log back in. Previously, if a customer logged out and then attempted to log in without the logout success page first completing its timeout, Magento displayed the logout page. *Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request 13040*.
 
@@ -568,8 +525,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-88435 -->* Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, `\u0020`). *Fix submitted by [Julien Anquetil](https://github.com/julienanquetil) in pull request 13844*. [GitHub-13827](https://github.com/magento/magento2/issues/13827), [GitHub-13350](https://github.com/magento/magento2/issues/13350)
 
-
-
 ### Import/export
 
 <!--- MAGETWO-81368 -->* You can now successfully import product images and image labels from CSV files. Previously after import, the  alt text field on the Admin was empty, even though the label was imported and was visible on the product list page as alt attribute, and the Product Detail page missed the alt attribute on image fields. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request 11323*. [GitHub-9931](https://github.com/magento/magento2/issues/9931)
@@ -598,14 +553,11 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-88435 -->* Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, `\u0020`). *Fix submitted by [Julien Anquetil](https://github.com/julienanquetil) in pull request 13844*. [GitHub-13827](https://github.com/magento/magento2/issues/13827), [GitHub-13350](https://github.com/magento/magento2/issues/13350)
 
-
 ### Indexing
 
 <!--- MAGETWO-86446 -->* The URL that points to Magento `crontab` documentation has been updated to reflect current cron documentation in `app/code/Magento/Indexer/Model/Message/Invalid.php`. *Fix submitted by [Robbie Thompson](https://github.com/robbie-thompson) in pull request 13050*.
 
 <!--- MAGETWO-83503 -->* You can now view the state of the mview queue in real time, which can be useful when debugging indexing issues. You can now view how many items are in the queue pending processing, as well as view information from the `mview_state` table. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 12122*.
-
-
 
 ### Infrastructure
 
@@ -624,8 +576,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-85179 -->* We’ve resolved naming collisions that previously occurred  in the Javascript UI registry. Previously, these naming collisions resulted in the following behaviors: Magento displayed the `element.disabled is not a function` message, and did not create product variations as expected. [GitHub-12555](https://github.com/magento/magento2/issues/12555)
 
-
-
 ### Newsletters
 
 <!--- MAGETWO-83999 -->* The **About Us** and **Customer Service** links of the Order Confirmation email (and  other emails sent to the customer) now work as expected. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request*. [GitHub-12261](https://github.com/magento/magento2/issues/12261)
@@ -638,8 +588,6 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 <!--- MAGETWO-86562 -->* Magento no longer sends multiple confirmation emails when a customer successfully subscribes to a newsletter. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request 13044*. [GitHub-12876](https://github.com/magento/magento2/issues/12876)
 
 <!--- MAGETWO-86447 -->* The text of the  **Subscribe to Newsletter** button now wraps correctly. *Fix submitted by [monaemipro](https://github.com/monaemipro) in pull request 13041*. [GitHub-12320](https://github.com/magento/magento2/issues/12320)
-
-
 
 ### Orders
 
@@ -677,8 +625,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-83868 -->* Invoices now display the exact quantity of a product ordered, even if it is a fractional unit (for example,  6.5). Previously, when Magento tried to invoice an order that had products with quantities that required decimals, it rounded down the quantity to the nearest whole number in the invoice. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11997*.  [GitHub-11941](https://github.com/magento/magento2/issues/11941)
 
-
-
 ### Payment methods
 
 <!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However,  as part of the process of adding CyberSource support, we've made improvements to the Multishipping module to simplify integration process for other payment methods.
@@ -712,11 +658,6 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-87289 -->* Magento now correctly updates the credit memo total when a merchant issues a refund. *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request 1185*. [GitHub-11798](https://github.com/magento/magento2/issues/11798)
 
-
-
-
-
-
 ### Performance
 
 <!--- MAGETWO-84480 -->* The addition of a cache for the `getimagesize()` function has improved product image loading.
@@ -727,11 +668,8 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-75769 -->* Magento now caches  search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached. This enhancement can result in up to a 36% improvement for cacheable search terms. 
 
-
-
-
-
 ### Quote
+
 <!--- MAGETWO-86439 -->* If a customer changes the currency type of his order-in-progress while viewing the shopping cart, Magento displays a message that shows the minimum order necessary in the new currency. Previously, this minimum was calculated incorrectly. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request 13039*.
 
 <!--- MAGETWO-86434 -->* Magento no longer truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 13015*. [GitHub-10869](https://github.com/magento/magento2/issues/10869)
@@ -743,17 +681,13 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-86595 -->* An integrity constraint violation error no longer occurs after you reorder a product with custom options. *Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request 13036*. [GitHub-12705](https://github.com/magento/magento2/issues/12705)
 
-
-
 ### Reports
 
 <!--- MAGETWO-84981 -->* The Products in Cart report is now accurate. Previously, if you created a Products in Cart report (**Open Reports > Marketing > Products in Cart**) after deleting a product from the catalog, the report displayed a blank list of products. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12539*.
 
 <!--- MAGETWO-88173 -->* You can now successfully export the Ordered Products report to a CSV file. Previously, the export file contained no report data.
 
-
 ### SalesRule
-
 
 <!--- MAGETWO-71393 -->* Magento now displays the correct catalog rule price for bundle products with custom options.
 
@@ -765,9 +699,8 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-85960-->* Coupon codes that a customer applies to a subsequently canceled order are now available for re-use as expected. Previously, once a customer canceled this order, he could not apply the coupon code to another order. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request*. [GitHub-12817](https://github.com/magento/magento2/issues/12817)
 
-
-
 ### Search
+
 <!--- MAGETWO-85637 -->* Magento now displays popular search terms in **SEO & Search > Search Terms** as expected. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 1024*. [GitHub-10743](https://github.com/magento/magento2/issues/10743)
 
 <!--- MAGETWO-84370-->* Layered navigation now displays the correct product count. Previously, the layered navigation product count incorrectly included only in-stock products. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12063*. [GitHub-11946](https://github.com/magento/magento2/issues/11946)
@@ -775,10 +708,8 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 <!--- MAGETWO-85827-->* Grid filtration now handles MySQL special characters as expected. *Fix submitted by [laconica-sergey](https://github.com/laconica-sergey) in pull request 12749*.
 
-
-
-
 ### Shipping
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
@@ -794,7 +725,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-85586 -->* DHL product codes now match those published in the latest DHL products and services guide. Previously, three  DHL product codes in the DHL Shipping module were incorrect. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 12666*.
 
-
 ### Sitemap
 
 <!--- MAGETWO-86349 -->*  `sitemap.xml` now displays URLs without `/home` appended. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12649*. [GitHub-12446](https://github.com/magento/magento2/issues/12446)
@@ -803,21 +733,20 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-81525 -->* Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former `_translateModel` property is not used anymore, and the inline translation is correctly suspended using the `inlineTranslation` property instead. *Fix submitted by [Marina Gociu](https://github.com/marinagociu) in pull request*. [GitHub-10502](https://github.com/magento/magento2/issues/10502)
 
-
 ### Swagger
+
 <!--- MAGETWO-87444 -->* The code formatting in the Swagger block and template has been updated. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13485*.
 
-
-
 ### Swatches
+
 <!--- MAGETWO-83290-->* You can now use REST to import visual swatch attribute options. Previously, you could not add swatch options using service contracts unless a swatch option already existed for the attribute.  *Fix submitted by [gonzalopelon](https://github.com/gonzalopelon) in pull request 12044*. [GitHub-9410](https://github.com/magento/magento2/issues/9410), [GitHub-10707](https://github.com/magento/magento2/issues/10707), [GitHub-10737](https://github.com/magento/magento2/issues/10737), [GitHub-11032](https://github.com/magento/magento2/issues/11032)
 
 <!--- MAGETWO-86576 -->* Visual swatches that have a color assigned now show that color in the swatch box. Previously, Magento did not display any color in the color swatch box. *Fix submitted by [Chris Pook](https://github.com/chris-pook) in pull request 13101*. [GitHub-11828](https://github.com/magento/magento2/issues/11828)
 
 <!--- MAGETWO-86665 -->* The error message displayed when you do not supply enough information during swatch creation has been edited for clarity and grammatical accuracy. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1117*. [GitHub-5550](https://github.com/magento/magento2/issues/5550)
 
-
 ### Tax
+
 <!--- MAGETWO-87941 -->*  The default selector on the Admin's tax rule edit page now selects only the correct container (tax rate) following the Tax Rate multiselect. Previously, the default selector selected three elements, which resulted in inaccurate results. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13643*. [GitHub-12791](https://github.com/magento/magento2/issues/12791)
 
 <!--- MAGETWO-87352 -->* We've removed the redundant default discount tax calculation (`tax/calculation/discount_tax`) from `Magento/Tax/etc/config.xml`. *Fix submitted by [Vincent Marmiesse](https://github.com/VincentMarmiesse) in pull request 13449*.
@@ -826,9 +755,8 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-83402 -->* Magento no longer displays incorrect tax amounts for orders when using a non-default tax configuration.. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 12639*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
 
-
-
 ### Testing
+
 <!--- MAGETWO-87290 -->* `ConfigurationTest` no longer fails when you install Magento using Composer. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1161*. [GitHub-12574](https://github.com/magento/magento2/issues/12574)
 
 <!--- MAGETWO-87984 -->* We've added `MagentoStyle` as console Input/output in Travis tests.
@@ -845,7 +773,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-88174 -->* We've added integration tests for product URL rewrite generation. *Fix submitted by [Adrien Louis-Rossignol](https://github.com/adrien-louis-r) in pull request 13567*. [GitHub-5863](https://github.com/magento/magento2/issues/5863), [GitHub-8227](https://github.com/magento/magento2/issues/8227), [GitHub-8957](https://github.com/magento/magento2/issues/8957), [GitHub-10073](https://github.com/magento/magento2/issues/10073), [GitHub-13240](https://github.com/magento/magento2/issues/13240)
 
-
 ### Themes
 
 <!--- MAGETWO-72898 -->* Magento no longer caches warning messages as often as a customer clicks the  **Update Shopping Cart** button while the  shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while  the page loaded in FireFox or Chrome, and this action  resulted in multiple warning messages appearing on the top of the shopping cart page.
@@ -858,7 +785,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-85708 -->* Customers  can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if a customer chose full screen zoom for any product image, he  could not close the full screen zoom.
 
-
 ### Translations and locale
 
 <!--- MAGETWO-86286 -->* Inline translations and custom translators now work for Knockout templates. *Fix submitted by [Dmitry Fedyuk](https://github.com/dmitry-fedyuk) in pull request 12953*. [GitHub-2156](https://github.com/magento/magento2/issues/2156)
@@ -870,7 +796,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-86436 -->* Newsletter labels can now handle Chinese language. *Fix submitted by [Dasharth patel](https://github.com/dasharath-wagento) in pull request 13029*. [GitHub-12320](https://github.com/magento/magento2/issues/12320)
 
 <!--- MAGETWO-87575 -->* The module responsible for generating the `js-translations.json` file now contains a routine that translates strings in tags such as `<translate args="This won't be translated"`.  *Fix submitted by [Matti Vapa](https://github.com/mattijv) in pull request 13528*. [GitHub-12081](https://github.com/magento/magento2/issues/12081)
-
 
 ### User interface
 
@@ -892,16 +817,16 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-87994 -->* Inconsistency in the animation of the Admin spinner progress indicator has been corrected. *Fix submitted by [Neill Robson](https://github.com/RNanoware) in pull request 13700*.
 
-
 ### URL rewrites
+
 <!--- MAGETWO-84955 -->* When using a store code in a URL, Magento now retrieves the value of `Store_Code` from the store if the store code value is empty. Previously, under these circumstances, Magento threw an error. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 12529*. [GitHub-8615](https://github.com/magento/magento2/issues/12450)
 
-
 ### Web API framework
+
 <!--- MAGETWO-85287 -->* You can now use the REST API  to make requests that include a slash (/) in an SKU. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 949*. [GitHub-8615](https://github.com/magento/magento2/issues/8615)
 
-
 ### Wish list
+
 <!--- MAGETWO-69634 -->* Magento now correctly displays a product's special price when you add it to a wish list. Previously, if you added a product with a special price to the wish list, Magento displayed the product with its regular price.
 
 <!--- MAGETWO-85303 -->* You can now remove an item description from a wish list. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 981*. [GitHub-12582](https://github.com/magento/magento2/issues/12582)
@@ -914,8 +839,8 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- CANNOT REPRODUCE MAGETWO-58206  MAGETWO-83676 MAGETWO-73275-->
 
-
 ## Known issue 
+
 Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme, but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**:  Merchants who are running Magento 2.2.4 should **upgrade to 2.2.5, then apply [patch MAGETWO-93036]( https://magento.com/tech-resources/download#download2224)**.
 
 ## Community contributions
@@ -1910,21 +1835,16 @@ The following table identifies contributions from our community members. This ta
 
 </table>
 
-
-
-
-
-
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
-
 ### Installation and upgrade instructions
+
 See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

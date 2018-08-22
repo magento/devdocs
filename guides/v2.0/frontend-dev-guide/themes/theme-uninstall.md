@@ -4,8 +4,6 @@ subgroup: A_Themes
 title: Uninstall a storefront theme
 menu_title: Uninstall a storefront theme
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-uninstall.md
 functional_areas:
   - Frontend
   - Theme
@@ -27,7 +25,6 @@ The following sections describe the flow for uninstalling themes in each case.
 1. [Set your Magento application to the developer or default mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 2. Make sure that the theme is not applied on the storefront. To do this, in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel navigate to **STORES** > **Configuration**>**Design** and make sure that your custom theme is not applied for any {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
 2. Make sure that the theme is not defined as a parent for any registered theme. To do this, in the Admin panel, navigate to **Content** > **Design** > **Themes**. Make sure that your theme is not mentioned in the **Parent Theme** column. If it is mentioned, you need to uninstall the child theme first.
-
 
 ## Uninstall a manually added theme
 

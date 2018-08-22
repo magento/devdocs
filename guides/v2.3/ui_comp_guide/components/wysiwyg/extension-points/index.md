@@ -1,7 +1,6 @@
 ---
 group: UI_Components_guide
 title: WYSIWYG Extension Points
-github_link: ui_comp_guide/components/wysiwyg/extension-points/index.md
 ---
 
 This topic goes over the extension points for Magento entities.

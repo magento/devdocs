@@ -3,9 +3,11 @@
 This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ee}} (formerly Enterprise Edition (EE) as well.
 
 ## General category
+
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### B2B Features paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
@@ -19,9 +21,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Payment Methods | `btob/default_b2b_payment_methods/available_payment_methods` | | | |
 
 ## Customers category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
 ### Company configuration paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
@@ -59,6 +63,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Reverted Email Template | `company/email/credit_reverted_email_template` | | | |
 
 ### Requisition lists paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
@@ -66,9 +71,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Number of Requisition Lists | `requisitionlist/general/number_requisition_lists` | | | |
 
 ## Sales category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
 ### Sales Emails paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
@@ -85,6 +92,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send Quote Email Copy Method | `sales_email/quote/copy_method` | | | |
 
 ### Quotes paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
@@ -101,6 +109,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Maximum file size | `quote/attached_files/maximum_file_size` | | | |
 
 ## Payment method paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

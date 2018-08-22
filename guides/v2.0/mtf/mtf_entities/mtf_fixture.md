@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Fixture
-version: 2.0
-github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 
 An FTF fixture is a list of properties of the Magento {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} under test.

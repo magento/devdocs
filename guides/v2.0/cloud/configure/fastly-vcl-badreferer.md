@@ -5,8 +5,6 @@ title: Custom block bad referer VCL
 menu_title: Custom block bad referer VCL
 menu_order:
 menu_node:
-version: 2.0
-github_link: cloud/configure/fastly-vcl-badreferer.md
 functional_areas:
   - Cloud
   - Setup
@@ -24,6 +22,7 @@ This information is just the code portion for setting up your VCL. Use this info
 </div>
 
 ## Create an Edge Dictionary {#edge-dictionary}
+
 Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.
 
 1. Log in to the Magento Admin.
@@ -37,6 +36,7 @@ Edge Dictionaries create key-value pairs for running against your VCL snippet. F
 For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries){:target="_blank"} and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples){:target="_blank"}.
 
 ## Create badreferer.json {#vcl}
+
 For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.
 
 Create an `badreferer.json` file with the following JSON content:
@@ -63,5 +63,6 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
+
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 

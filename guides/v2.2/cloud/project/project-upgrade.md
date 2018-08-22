@@ -1,32 +1,16 @@
 ---
 group: cloud
 title: Upgrade Magento version
-version: 2.2
-github_link: cloud/project/project-upgrade.md
 functional_areas:
   - Cloud
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from any of the following supported versions:
+You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from version 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
 
--  2.0.14 and later
--  2.1.7 and later
+Prepare your environment with the following tasks:
 
-If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
-
-## Prepare the environment
-
-Upgrading from **2.0.X** requires the following tasks:
-
--  Upgrade your PHP version to 7.0 or later
--  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Verify or set the `ADMIN_EMAIL` variable
--  Upgrade to the latest supported version of Fastly
-
-Upgrading from **2.1.X** requires the following tasks:
-
--  Upgrade your PHP version to 7.0 or later
+-  Upgrade your PHP version to 7.1 or later
 -  Create a new `config.php` file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
 -  Verify or set the `ADMIN_EMAIL` variable
@@ -38,7 +22,7 @@ Upgrading from **2.1.X** requires the following tasks:
 {% include cloud/note-ece-tools-package.md %}
 
 ### Upgrade PHP version
-{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
+{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
 * [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
 * [Migrating PHP](http://php.net/manual/en/migration71.php){:target="\_blank"}
@@ -48,6 +32,7 @@ Upgrading from **2.1.X** requires the following tasks:
 For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### Configuration management
+
 If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate the `config.local.php` file. Previous versions with Configuration Management used a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) uses the `config.php` file.
 
 #### To create a temporary `config.php` file:
@@ -64,7 +49,14 @@ After you finish upgrading, you can remove the `config.php` file and create a ne
 You can only delete this file to replace it this one time. After generating a correct `config.php` file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
 
 ### Update the .magento.app.yaml file
+
 If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
+
+1.  Update the PHP options.
+
+    ```yaml
+    type: php:7.1
+    ```
 
 1.  Modify the hook commands in the `magento.app.yaml` file.
 
@@ -130,6 +122,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
     ```
 
 ## Create a new config.php file
+
 After upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
 
 1.  From the terminal, use an SSH command to generate the `/app/etc/config.php` file for the environment.
@@ -162,6 +155,7 @@ After upgrading, you need to create an updated `config.php` file. Complete any a
 For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
 
 ## Verify and upgrade your extensions {#extensions}
+
 If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.2.
 
 1.  Create a new branch on your local workstation.
@@ -178,6 +172,7 @@ We strongly recommend upgrading your Production environment _before_ including t
 We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
 
 ## Troubleshoot upgrade
+
 If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:
 
 ```terminal

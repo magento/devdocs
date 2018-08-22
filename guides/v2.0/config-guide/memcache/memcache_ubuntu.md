@@ -5,8 +5,6 @@ title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: config-guide/memcache/memcache_ubuntu.md
 functional_areas:
   - Configuration
   - System
@@ -16,7 +14,8 @@ functional_areas:
 
 {% include config/php-memcache.md %}
 
-<h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
+## Install and configure memcached on Ubuntu   {#config-memcache-install}
+
 This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -49,7 +48,8 @@ To install and configure memcached on Ubuntu:
 
 4.  Continue with the next section.
 
-<h2 id="config-memcache-verify-its-ub">Verify memcached works before installing Magento</h2>
+## Verify memcached works before installing Magento   {#config-memcache-verify-its-ub}
+
 We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.
 
 ### Verify memcached is recognized by the web server
@@ -76,6 +76,7 @@ To verify memcached is recognized by the web server:
     If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcache` extension.
 
 ### Verify memcached can cache data
+
 This test uses a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script to verify that memcached can store and retrieve {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} data.
 
 For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04" target="_blank">this digitalocean tutorial</a>.
@@ -140,4 +141,5 @@ Flush memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

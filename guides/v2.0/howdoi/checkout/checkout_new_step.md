@@ -6,8 +6,6 @@ title: Add a new checkout step
 subtitle: Customize Checkout
 menu_order: 1
 level3_subgroup: checkout-tutorial
-version: 2.0
-github_link: howdoi/checkout/checkout_new_step.md
 functional_areas:
   - Checkout
 ---
@@ -24,7 +22,6 @@ You can add a custom checkout step, it should be implemented as a {% glossarytoo
 1. [Create the view part of the checkout step component](#create-view).
 2. [Add your step to the Checkout page layout](#checkout).
 3. [Create mixins for payment and shipping steps (optional)](#create-mixin).
-
 
 ## Step 1: Create the view part of the checkout step component {#create-view}
 

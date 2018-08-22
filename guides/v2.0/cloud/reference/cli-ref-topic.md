@@ -5,8 +5,6 @@ title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
 menu_order: 30
 menu_node:
-version: 2.0
-github_link: cloud/reference/cli-ref-topic.md
 functional_areas:
   - Cloud
 redirect_from:
@@ -78,6 +76,7 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 The `magento-cloud list` displays all available commands.
 
 ## Help for a command {#help}
+
 You can preface or append any command with `help` or `--help` to see more information on how to use that command.
 
 	$ magento-cloud domain:add --help
@@ -104,6 +103,7 @@ You can preface or append any command with `help` or `--help` to see more inform
 	 --shell (-s)          Launch the shell
 
 ## List of Magento CLI commands {#cloud-cli-commands}
+
 The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`. The listed commands are for Magento Cloud CLI version 1.11.1 and later.
 
 The following table lists general commands.
@@ -435,4 +435,5 @@ The following table lists all commands for interacting with your environments an
 </table>
 
 ## Upgrade Magento Cloud CLI {#upgrade}
+
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.

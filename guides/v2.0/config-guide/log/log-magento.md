@@ -5,17 +5,14 @@ title: Magento logging in more detail
 menu_title: Magento logging in more detail
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: config-guide/log/log-magento.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-
-
 ## Monolog {#config-log-monolog}
+
 Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog){:target="_blank"}. Monolog implemented as a preference for `Psr\Log\LoggerInterface` in the Magento application [`di.xml`]({{ site.mage2000url }}app/etc/di.xml#L9){:target="_blank"}.
 
 Monolog is a popular {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.
@@ -35,6 +32,7 @@ Log messages can be processed in many different ways. For example, you can store
 Other channels can have a different set of handlers and logic.
 
 ## Get started with logging {#config-log-start}
+
 To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 
 Another way follows:

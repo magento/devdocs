@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Prepare environment for test run
-version: 2.0
-github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
 
 ## Run the Selenium Server on default browser {#mtf_quickstart_env_selenium}
@@ -41,7 +39,6 @@ Example for Google Chrome with Selenium 2:
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument: `java -jar <path_to_selenium_directory>/selenium-server.jar`
 </div>
 
-
 ## Run generator {#mtf_quickstart_env_generator}
 
 Generator generates [fixtures], [repositories], and [page objects]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in alphabetical order.
@@ -51,7 +48,7 @@ Enter in terminal:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Next Steps   {#mtf_install_pre}
 
 [&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
 

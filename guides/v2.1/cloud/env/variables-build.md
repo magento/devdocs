@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Build variables
-version: 2.1
-github_link: cloud/env/variables-build.md
 functional_areas:
   - Cloud
   - Configuration

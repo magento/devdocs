@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: ThumbnailColumn component
 menu_title: ThumbnailColumn component
-version: 2.2
-github_link: ui_comp_guide/components/ui-thumbnailcolumn.md
 ---
 
 The ThumbnailColumn component implements a column containing images associated with records of the table. Each field of this column contains an image preview. When a user click on the preview, a pop up window with the detailed view opens.
@@ -26,7 +24,7 @@ The ThumbnailColumn component implements a column containing images associated w
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td><code>{[name: string]: boolean}</code></td>
     <td><code>{'data-grid-thumbnail-cell': true}</code></td>
   </tr>

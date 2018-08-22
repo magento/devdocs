@@ -5,8 +5,6 @@ title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node:
 menu_order: 7
-version: 2.1
-github_link: comp-mgr/trouble/cman/cron.md
 functional_areas:
   - Upgrade
 ---

@@ -5,20 +5,20 @@ title: Upgrade from Open Source to Commerce
 menu_title: Upgrade from Open Source to Commerce
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 functional_areas:
   - Upgrade
 ---
 
-<h2 id="compman-overview">Overview of {{site.data.var.ce}} to {{site.data.var.ee}} upgrade</h2>
+## Overview of \{\{site.data.var.ce}} to \{\{site.data.var.ee}} upgrade   {#compman-overview}
+
 This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee}}.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.</p>
 </div>
 
-<h2 id="compman-prereq">Prerequisites</h2>
+## Prerequisites   {#compman-prereq}
+
 Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by {{site.data.var.ee}}. Examples follow:
@@ -30,7 +30,8 @@ In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9
 	<p>Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
 </div>
 
-<h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
+## Start System Upgrade from the Magento Admin   {#compman-access}
+
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
@@ -53,6 +54,7 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 	service varnish restart
 
 #### Errors
+
 *	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
 	<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
@@ -68,7 +70,6 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 	For more information, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.
 
+## Continue your upgrade   {#ce-ee-continue}
 
-
-<h2 id="ce-ee-continue">Continue your upgrade</h2>
 From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.

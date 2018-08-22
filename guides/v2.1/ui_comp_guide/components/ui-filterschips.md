@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: FiltersChips component
 menu_title: FiltersChips component
-version: 2.1
-github_link: ui_comp_guide/components/ui-filterschips.md
 ---
 
 The FiltersChips component provides UI controls that allows users to remove the previously-applied values of the [Filters]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html) and [Search]({{ page.baseurl }}/ui_comp_guide/components/ui-search.html) components.

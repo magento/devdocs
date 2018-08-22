@@ -6,8 +6,6 @@ landing-page: PHP Developer Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: extension-dev-guide/bk-extension-dev-guide.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html

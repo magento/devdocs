@@ -5,24 +5,25 @@ title: Start System Upgrade
 menu_title: Start System Upgrade
 menu_node:
 menu_order: 3
-version: 2.1
-github_link: comp-mgr/upgrader/upgrade-start.md
 functional_areas:
   - Upgrade
 ---
 
 ## Prerequisites {#compman-prereq}
+
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
 {:.bs-callout .bs-callout-warning}
 If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).
 
 ## Optional custom maintenance page
+
 During the time you're upgrading, your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} is partially available. Users can see a list of files and so on but cannot shop or check out.
 
 To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see [Maintenance mode options for upgrade]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
+
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
@@ -53,6 +54,7 @@ To run System Upgrade:
 4. 	Continue with [Step 1. Select versions to upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html).
 
 #### Error
+
 The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the Magento Admin:
 
 ![]({{ site.baseurl }}/common/images/upgr-sorry.png)
@@ -60,6 +62,7 @@ The following error can indicate one of several issues, including that you haven
 For suggested solutions to other causes indicated by this message, see [troubleshooting]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html).
 
 #### Sample data
+
 The System Upgrade utility installs sample data for you but doesn't display it, if you:
 
 *	Used the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data

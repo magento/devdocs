@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_title: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 411
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
-github_link: release-notes/ReleaseNotes2.1_RC2EE.md
 ---
 
 We are pleased to present Magento 2.1 Release Candidate 2 (RC2). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
@@ -30,7 +28,7 @@ This Release Candidate is available from `repo.magento.com` if you have a Magent
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Commerce 2.1 includes several new and exciting features:
 
@@ -45,8 +43,8 @@ Magento Commerce 2.1 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
 
+### Known issues
 
-<h3>Known issues</h3>
 Magento 2.1 RC2 includes the following known issues:
 
 
@@ -55,19 +53,18 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 53536 -->* You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
 
+### Fixed issues
 
-
-<h3>Fixed issues</h3>
 <!--- P0 issues -->
 
-<h4>Solr search</h4>
+#### Solr search
+
 <!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. 
 
 <!--- 50701 --> * Solr search results now displays all products as expected in search results. 
 
+#### Checkout
 
-
-<h4>Checkout</h4>
 <!--- 53193 --> * Several address-related issues associated with Checkout have been resolved. 
 
 
@@ -79,18 +76,14 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session.
 
-
-
-<h4>Bundle products</h4>
+#### Bundle products
 
 <!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}Bundle product{% endglossarytooltip %}.
 
 <!--- 52832 --> * Quotation marks can now be included in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a>
 
+#### Miscellaneous
 
-
-
-<h4>Miscellaneous</h4>
 <!--- 50755 --> * Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} data.  
 
 <!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard.
@@ -178,9 +171,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a>
 
-
-
-<h4>Messages and documentation</h4>
+#### Messages and documentation
 
 <!--- 52340 --> * The `getList` method documentation has been enhanced. 
 
@@ -190,9 +181,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 51378 --> * Message serialization now complies with AMPQ specifications. 
 
-
-
-<h4>Staging</h4>
+#### Staging
 
 <!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".) 
 
@@ -213,9 +202,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 <!--- 52963 --> * You can now create and successfully save a future update for a {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}downloadable product{% endglossarytooltip %} associated with links and file content. 
 
-
-
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -226,8 +213,8 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 We do not support PHP 5.5.x or 7.0.5. 
 
-
 ## Installation and upgrade instructions
+
 You can install Magento Commerce 2.1 Release Candidate 2 (RC2) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
@@ -239,11 +226,13 @@ See one of the following sections:
 *	[Upgrade to an RC with sample data](#upgrade-rc-samp) 
 
 ### Install using Composer {#install-rc-composer}
+
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
+
 This section discusses how to upgrade to a Release Candidate *without* sample data.
 
 If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
@@ -253,9 +242,11 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
+
 Use the instructions in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade an existing installation from the GitHub repository
+
 Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -297,4 +288,5 @@ Developers who contribute to the Open Source codebase can <a href="{{ page.baseu
 {% include install/sampledata/sample-data-rc1-cli.md %}
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: SelectColumn component
 menu_title: SelectColumn component
-version: 2.2
-github_link: ui_comp_guide/components/ui-selectcolumn.md
 ---
 
 The SelectColumn component receives an array of values and displays the column with corresponding labels. The value-label correspondence is set in the component's configuration.

@@ -4,13 +4,12 @@ subgroup: E_rwd
 title: Create a responsive mobile theme based on a default theme
 menu_title: Create a responsive mobile theme based on a default theme
 menu_order: 4
-version: 2.0
-github_link: frontend-dev-guide/responsive-web-design/rwd_mobile.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
 functional_areas:
   - Frontend
 ---
 ## What's in this topic
+
 The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 
 
 ## Creating a mobile-specific theme
@@ -32,9 +31,8 @@ To create a mobile-specific theme:
 
 This will remove the desktop-specific files from your theme.
 
-
-
 ## Recommended reading
+
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a></li>
 </ul>

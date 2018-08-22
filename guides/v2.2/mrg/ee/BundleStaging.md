@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_BundleStaging module
 menu_title: BundleStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/BundleStaging.md
 ---
 
 

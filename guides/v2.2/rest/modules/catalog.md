@@ -1,8 +1,6 @@
 ---
 group: rest
 title: Catalog module
-version: 2.2
-github_link: rest/modules/catalog.md
 redirect_from: /guides/v2.2/rest/catalog-notes.html
 functional_areas:
   - Integration

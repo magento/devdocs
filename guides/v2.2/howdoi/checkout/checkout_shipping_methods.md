@@ -6,8 +6,6 @@ title: Customize the list of shipping methods
 subtitle: Customize Checkout
 menu_order: 100
 level3_subgroup: checkout-tutorial
-version: 2.2
-github_link: howdoi/checkout/checkout_shipping_methods.md
 ---
 
 This topic describes how to customize list of shipping methods displayed on the checkout page.

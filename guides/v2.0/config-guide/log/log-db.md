@@ -5,16 +5,14 @@ title: Example&mdash;logging database activity
 menu_title: Example&mdash;logging database activity
 menu_node:
 menu_order: 3
-version: 2.0
-github_link: config-guide/log/log-db.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-
 ## Example&mdash;logging database activity
+
 To log database activity, use [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/LoggerInterface.php){:target="_blank"}, which has two implementations:
 
 *	Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/Logger/Quiet.php){:target="_blank"}

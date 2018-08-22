@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Magento Cloud CLI reference
-version: 2.1
-github_link: cloud/reference/cli-ref-topic.md
 functional_areas:
   - Cloud
 redirect_from:
@@ -48,6 +46,7 @@ magento-cloud environment:list
 The `magento-cloud environment:list` command displays environment hierarchies, whereas `git branch` does not. If you have any nested environments, use the `magento-cloud environment:list` command.
 
 ## Git commands
+
 You may notice that some of these commands are similar to Git commands. The `magento-cloud` Git commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.
 
 #### To push an empty commit and force a redeployment:
@@ -65,6 +64,7 @@ magento-cloud environment:branch <NAME> <PARENT_BRANCH>
 ```
 
 ## Environment commands
+
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
 
 An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
@@ -76,6 +76,7 @@ magento-cloud environment:checkout <ENVIRONMENT_ID>
 ```
 
 #### To redeploy the environment:
+
 Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state. 
 
 ```bash
@@ -108,6 +109,7 @@ magento-cloud variable:set <VARIABLE_NAME> <VARIABLE_VALUE>
 ```
 
 ## Common commands 
+
 The listed commands are for Magento Cloud CLI version 1.11.1 and later.
 
 Command | Description
@@ -164,6 +166,7 @@ Help:
 ```
 
 ## Update Magento Cloud CLI
+
 The Magento Cloud CLI checks for available updates upon login, but you can also check for updates using the `self:update` command. If there is an update available, follow the instructions and enter `Y` for _yes_ to update the CLI.
 
 If your Magento Cloud CLI is up to date, you see the following response:

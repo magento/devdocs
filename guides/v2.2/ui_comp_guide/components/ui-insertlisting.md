@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: InsertListing component
 menu_title: InsertListing component
-version: 2.2
-github_link: ui_comp_guide/components/ui-insertlisting.md
 ---
 
 The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) into other components.

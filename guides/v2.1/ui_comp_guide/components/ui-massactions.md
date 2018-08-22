@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: MassActions component
 menu_title: MassActions component
-version: 2.1
-github_link: ui_comp_guide/components/ui-massactions.md
 ---
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

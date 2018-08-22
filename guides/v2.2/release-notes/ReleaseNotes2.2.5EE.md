@@ -1,9 +1,6 @@
 ---
-layout: default
 group: release-notes
 title: Magento Commerce 2.2.5 Release Notes
-version: 2.2
-github_link: release-notes/ReleaseNotes2.2.5EE.md
 ---
 *Patch code and release notes published on July 1, 2018.*
 
@@ -15,8 +12,6 @@ We are pleased to present Magento Commerce 2.2.5. This release includes multiple
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
-
-
 
 ## Highlights
 
@@ -36,8 +31,8 @@ Look for the following highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
-
 ### Core code highlights
+
 This release includes significant performance improvements to the core Magento code: 
 
 * <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
@@ -47,9 +42,8 @@ This release includes significant performance improvements to the core Magento c
 
 * <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options). 
 
-
-
 ### Community contribution highlights
+
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
 * <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
@@ -60,8 +54,8 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 * <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
-
 ### Highlights (Magento Shipping)
+
 This release of Magento Shipping adds the following new capabilities: 
 
 • With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
@@ -74,27 +68,22 @@ This release of Magento Shipping adds the following new capabilities:
 
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API. 
 
-
-
-
 ## Fixes
+
 In addition to security enhancements, this release contains the following functional fixes. 
 
 ### Installation, setup, and deployment
 
 <!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by [Paavo Pokkinen](https://github.com/paveq) in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
 
-
-
-
 ### Bundle products
+
 <!--- MAGETWO-86354 -->* You can now successfully delete an option from a bundle product. 
 
 <!--- MAGETWO-73479 -->* Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected. 
 
-
-
 ### Catalog
+
 <!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
 
 <!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by [Alessandro Pagnin](https://github.com/alepane21) in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
@@ -109,11 +98,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-54740 -->* When you import new products using CSV, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock. 
 
-
 ### CMS content
+
 <!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there was a validation check that used `realpath` to test whether the file was outside the media directory base path. Since `realpath` resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.
-
-
 
 ### Configurable products
 
@@ -125,65 +112,59 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-71662 -->* The **Update on Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved. 
 
-
 ### Frameworks
+
 <!--- MAGETWO-87964 -->* We've bumped the required minimal PHP version to 7.0.13.
 
-
 ### General
+
 <!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
 
 <!--- MAGETWO-82417 -->* The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
 
 <!--- MAGETWO-77754 -->* The Related Products rule for up-sell products with customer segments set to **Specified** now works as expected. 
 
-
-
 ### Gift card 
+
 <!--- MAGETWO-85536 -->* Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to his cart. 
 
-
 ### Import/export
+
 <!--- MAGETWO-88265 -->* The data check on imported customer information now completes as expected. Previously, when you clicked **Check Data** on a large CSV file created by **System** > **Data Transfer** > **Import**, the request failed, and Magento displayed the timeout spinner. 
 
 <!--- MAGETWO- 84942-->* If you remove a product's custom options from the CSV file created during product import,  Magento no longer displays the custom options on the storefront. 
 
-
-
 ### Indexing
+
 <!--- MAGETWO-80789 -->* The search indexer is now scoped and multithreaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.
 
-
 ### Orders
+
 <!--- MAGETWO-87197 -->* Magento now filters recent orders by store on the customer account page  as expected. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13257*. 
 
 <!--- MAGETWO-86399 -->* The performance and logic of `Magento\Sales\Helper\Guest` has been improved. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 12893*. 
 
-
 ### Payment methods
+
 <!--- MAGETWO-87832 -->* In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials that are configured for the default store. 
 
-
-
 ### Performance
+
 <!--- MAGETWO-86745 -->* We've removed the `count()` method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request 13173*. 
 
-
 ### Search
+
 <!--- MAGETWO-81901 -->* Out-of-stock options for configurable products no longer show up in search and layered navigation results.
 
 <!--- MAGETWO-75769 -->* Magento now caches popular search results for faster response time on popular searches. A system administrator can configure how many top search queries can be cached.
 
-
 ### Shipping
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
 <!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
-
-
-
 
 ### Staging
 
@@ -191,28 +172,28 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-85559 -->* You can now successfully edit the start date and time for a Catalog Price Rule schedule update. Previously, if you edited this date or time, Magento threw a 404 error when the new start time arrived. 
 
-
 ### Swagger
+
 <!--- MAGETWO-84921 -->* Swagger now displays the text area that contains the payload structure of all POST and PUT operations. 
 
-
 ### Swatches
+
 <!--- MAGETWO-86332 -->*  You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12929*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
-
 ### Testing
+
 <!--- MAGETWO-88291 -->* You can now use REST to update the `available_payment_methods` company extension attribute. Previously, Magento set to null whatever  value you passed to the database  `company_payment` table. 
 
 <!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`). 
 
 <!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [Adrian Martinez](https://github.com/adrian-martinez-interactiv4) in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
-
 ### URL rewrites
+
 <!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store. 
 
-
 ### Vertex
+
 <!--- BUNDLE-841 -->* The correct tax amount is now included as expected in the Order Total that is listed under the Order Summary section of the Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
 
 <!--- BUNDLE-966 -->* The **including tax** and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields. 
@@ -233,8 +214,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 <!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud. 
-
-
 
 ### Visual Merchandiser
 
@@ -275,8 +254,8 @@ The Amazon Pay. dotmailer, Magento Shipping, and Vertex extensions have the foll
 
 <!-- BUNDLE--1424 -->* Customers cannot add a new shipping address to an order that contains virtual products.
 
-
 ### dotmailer known issues
+
 The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases: 
 
 <!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
@@ -291,9 +270,8 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 
 <!-- BUNDLE--526 -->* Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer. 
 
-
-
 ### Magento Shipping known issues
+
 <!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
 
 
@@ -317,9 +295,6 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 <!-- BUNDLE--1325 -->* Magento does not display the Vertex customer code field on the All Customers page as expected, which undermines the ability to filter by customer code.
 
 <!-- BUNDLE--1432 -->* Magento does not display the tax section of the Order Summary that is included on the Review and Payments page during checkout when the shopping cart includes a virtual product.
-
-
-
 
 ## Community contributions
 
@@ -974,20 +949,16 @@ The following table highlights contributions made by Partners. This table lists 
 
 </table>
 
-
-
-
-
-
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 ### Installation and upgrade instructions
 
 See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

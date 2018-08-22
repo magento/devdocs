@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Filters
-version: 2.1
-github_link: pattern-library/filters/data-table-filters/filtering.md
 redirect_from: /guides/v1.0/pattern-library/filters/data-table-filters/filtering.html
 ---
 Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.

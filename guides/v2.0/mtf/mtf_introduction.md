@@ -2,8 +2,6 @@
 group: mtf-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
-version: 2.0
-github_link: mtf/mtf_introduction.md
 ---
 
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.
@@ -16,7 +14,7 @@ You can run a single test independently, many tests together (that is, a test su
 
 FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
 
-<h3 id="mtf_intro_extratools">What tools should I use to run tests with FTF?</h3>
+### What tools should I use to run tests with FTF?   {#mtf_intro_extratools}
 
 -   [PHPUnit][] (downloaded via {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} during installation)
 
@@ -24,7 +22,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 -   Web browser
 
-<h3 id="mtf_intro_mtf-output">What do I have as output after running tests with FTF?</h3>
+### What do I have as output after running tests with FTF?   {#mtf_intro_mtf-output}
 
 -   Tested application
 
@@ -34,16 +32,16 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 -   Logs of failures
 
-<h2 id="mtf_intro_audi">Audience</h2>
+## Audience   {#mtf_intro_audi}
 
 This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} developers, and system integrators.
 
-<h2 id="mtf_intro_goal">Goal</h2>
+## Goal   {#mtf_intro_goal}
 
 Facilitate functional testing and minimize efforts to perform
 regression testing.
 
-<h2 id="mtf_intro_scope">Scope</h2>
+## Scope   {#mtf_intro_scope}
 
 FTF is purposed to test user interactions with web application under
 test.
@@ -60,13 +58,13 @@ Relative to your software development lifecycle, the FTF can help you:
 
 1.    During the maintenance phase, for periodic automated regression testing.
 
-<h3 id="mtf_intro_scope_use-case-ex">FTF use cases examples</h3>
+### FTF use cases examples   {#mtf_intro_scope_use-case-ex}
 
 1.    As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
 
 1.    As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
 
-<h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
+### Non-functional testing   {#mtf_intro_scope_non-func-test}
 
 FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
@@ -80,8 +78,7 @@ For other tests please see the following topics:
 
 - <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
-
-<h2 id="mtf_intro_github-link">FTF on GitHub</h2>
+## FTF on GitHub   {#mtf_intro_github-link}
 
 Follow the FTF project and contribute on GitHub
 <https://github.com/magento/mtf>.

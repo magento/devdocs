@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Select From List
-version: 2.1
-github_link: pattern-library/getting-user-input/select_from_list/select_from_list.md
 ---
 In the Magento Admin, user will often times need to select item(s) from a list of items. This pattern address the variations of list pattern.
 

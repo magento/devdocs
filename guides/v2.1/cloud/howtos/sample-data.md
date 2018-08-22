@@ -5,8 +5,6 @@ title: Optional - Install sample data
 menu_title: Optional - Install sample data
 menu_order: 70
 menu_node:
-version: 2.1
-github_link: cloud/howtos/sample-data.md
 functional_areas:
   - Cloud
   - Setup
@@ -17,11 +15,13 @@ If you need some example data when developing your store, you can install our sa
 We recommend installing sample data in your local Integration branches and environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.
 
 ## Get started in a branch {#branch}
+
 We recommend working in a branch to add the sample data. The following information details how to set up a branch.
 
 {% include cloud/cli-get-started.md %}
 
 ## Install sample data {#data}
+
 To install sample data:
 
 1.	If you have not done so already, check out the environment in which to install sample data.

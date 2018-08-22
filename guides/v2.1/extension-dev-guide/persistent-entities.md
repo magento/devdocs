@@ -4,8 +4,6 @@ subgroup:
 title: Persistent entities
 menu_title: Persistent entities
 menu_order: 1000
-version: 2.1
-github_link: extension-dev-guide/persistent-entities.md
 ---
 
 ### Overview
@@ -19,6 +17,7 @@ Starting in Magento 2.1, we no longer recommend using the deprecated save, load,
 In Magento, data interfaces, data models, and models all represent entities.
 
 #### Data Interfaces
+
 A data interface is the interface for an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
 
 To allow the addition of [custom EAV attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\CustomAttributesDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php){:target="_blank"} class.
@@ -26,6 +25,7 @@ To allow the addition of [custom EAV attributes]({{ page.baseurl }}/extension-de
 To allow the use of [extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\ExtensibleDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php){:target="_blank"} class. We recommend using this approach when you define the data interface for your entity.
 
 #### Data Models
+
 A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. [Repositories](#repositories) use data models and resource models for entity persistence. We recommend you put data model classes in the `Model/Data` directory inside your module's root directory.
 
 An example of a data model is the [`\Magento\Customer\Model\Data\Customer`]({{ site.mage2100url }}app/code/Magento/Customer/Model/Data/Customer.php){:target="_blank"} class.

@@ -3,9 +3,7 @@ group: fedg
 subgroup: A_Themes
 title: Apply an Admin theme
 menu_title: Apply an Admin theme
-version: 2.1
 menu_order: 10
-github_link: frontend-dev-guide/themes/admin_theme_apply.md
 functional_areas:
   - Frontend
   - Theme
@@ -77,7 +75,6 @@ For details about performing command line tasks, view the following topics:
 ## Open Admin in browser
 
 The last step is to open the Admin in browser and view the new theme applied.
-
 
 ## See also
 

@@ -7,13 +7,12 @@ menu_node:
 menu_order: 8
 level3_menu_node: level3child
 level3_subgroup: readiness
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-readiness-multi.md
 functional_areas:
   - Upgrade
 ---
 
 ## Readiness check with multiple extension updates {#extensman-readiness-multi}
+
 If you're updating multiple extensions, the readiness check displays success and failure as discussed in this topic.
 
 ### Successful readiness check {#extensman-readiness-multi-success}

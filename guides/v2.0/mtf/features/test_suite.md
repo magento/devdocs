@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Test suite in the Functional Testing Framework
-version: 2.0
-github_link: mtf/features/test_suite.md
 ---
 
 ## Overview {#overview}

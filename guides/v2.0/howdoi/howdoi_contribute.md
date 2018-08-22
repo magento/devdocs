@@ -5,17 +5,15 @@ title: Contributor sign-up sheet
 menu_title: Contributor sign-up sheet
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: howdoi/howdoi_contribute.md
 ---
 
 Please sign up to write a How Do I topic for us!
 
-We'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{ page.baseurl }}/contributor-guide/quarterly-contributors.html">ring of honor</a> as one of our featured contributors.
+We'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! Your GitHub avatar will also appear on the [Contributors]({{page.baseurl}}/contributor-guide/contributors.html) page.
 
-To add your name to this table, all you need to do is to submit a <a href="{{ site.githuburl }}howdoi/howdoi_contribute.md">pull request on this page</a> or <a href="mailto:DL-Magento-Doc-Feedback@magento.com">e-mail us</a>.
+To add your name to this table, all you need to do is [submit a pull request]({{site.githuburl}}howdoi/howdoi_contribute.md) on this page.
 
-Use <a href="{{ page.baseurl }}/howdoi/howdoi_template.html">this template</a> if you'd like. You can get a copy of the <a href="{{ site.githuburl }}howdoi/howdoi_template.md">.md file  on Github</a>.
+You can use [this template]({{page.baseurl}}/howdoi/howdoi_template.html). You can get a copy of the [markdown file]({{site.githuburl}}howdoi/howdoi_template.md) on Github.
 
 Submissions should be {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} is welcome also.
 

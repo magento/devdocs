@@ -1,8 +1,6 @@
 ---
 group: arch-guide
 title: Module dependency types
-version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_depend_types.md
 redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
@@ -37,8 +35,6 @@ A module with a *soft dependency* on another module can function properly withou
 {:.bs-callout .bs-callout-tip} 
 If a module uses code from another module, it should declare the dependency explicitly.
 
-
-
 ## Inappropriate dependencies {#m2devgde-moddep-inapp-dep}
 
 Avoid creating these dependencies:
@@ -58,8 +54,8 @@ A module belonging to the Magento Framework can be used in the application layer
 {:.bs-callout .bs-callout-tip} 
 In this case, using interfaces is preferable to using classes. You can build dependencies between classes in the Magento Framework even if they belong to different modules.
 
-
 ## Dependencies in the application layer {#m2devgde-moddep-app-layer}
+
 A module belonging to the application layer cannot be used in the Magento Framework.
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).

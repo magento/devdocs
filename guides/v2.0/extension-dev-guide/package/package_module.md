@@ -4,19 +4,19 @@ subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
 menu_order: 2
-version: 2.0
-github_link: extension-dev-guide/package/package_module.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/package_module.html
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
 #### Contents
+
 *   <a href="#package-over">Overview of packaging</a>
 *   <a href="#composer">Create a Magento Composer file</a>
 *   <a href="#packaging">Package and publish your extension</a>
 
-<h2 id="package-over">Overview of packaging</h2>
+## Overview of packaging   {#package-over}
+
 The Magento application uses {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages to distribute, install, and upgrade components in an application instance.
 
 To package a component, you must:
@@ -27,8 +27,8 @@ To package a component, you must:
 
     Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 
+## Create a Magento Composer file   {#composer}
 
-<h2 id="composer">Create a Magento Composer file</h2>
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
@@ -43,15 +43,16 @@ Element | Description
 
 {% include php-dev/composer-types.md %}
 
-<h3 id="package-metapackage">Using metapackages</h3>
+### Using metapackages   {#package-metapackage}
+
 Metapackages allow you to group an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.</p>
 </div>
 
-
 #### Metapackage example
+
 The following example is a `composer.json` for a metapackage:
 
 
@@ -100,6 +101,7 @@ The following example is a `composer.json` for a metapackage:
 {% endhighlight %}
 
 ### Sample composer.json file
+
 The following example is a `composer.json` file for a module:
 
 {% highlight JSON %}
@@ -126,7 +128,8 @@ The following example is a `composer.json` file for a module:
 
 {% endhighlight %}
 
-<h2 id="packaging">Package and publish your extension</h2>
+## Package and publish your extension   {#packaging}
+
 Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
 
     zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
@@ -147,9 +150,8 @@ Magento can retrieve your extension package from any valid GitHub {% glossarytoo
   <p>Third party repositories are supported.</p></span>
 </div>
 
+### Hosting on GitHub and Packagist   {#hosting}
 
-
-<h3 id="hosting">Hosting on GitHub and Packagist</h3>
 Prerequisite: git must be set up on your machine.
 
 1. Navigate to your component directory, with the `composer.json` file in the root, and make it a new git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details.
@@ -159,7 +161,7 @@ Prerequisite: git must be set up on your machine.
     1. Register an account at [packagist.org](https://packagist.org/).
     2. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, because this is required solely using GitHub.
 
-<h3 id="private_repos">Hosting on a private repository</h3>
+### Hosting on a private repository   {#private_repos}
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

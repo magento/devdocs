@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Files
-version: 2.1
-github_link: marketplace/eqp/files.md
 ---
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
@@ -74,8 +72,6 @@ Details on the response fields:
 {:.style="table-layout: auto;"}
 
 ### Upload files
-
-
 
 You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 

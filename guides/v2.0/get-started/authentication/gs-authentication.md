@@ -5,21 +5,19 @@ title: Authentication
 menu_title: Authentication
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: get-started/authentication/gs-authentication.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 functional_areas:
   - Integration
 ---
 
-<h2 id="overview-authenticate">Web API authentication overview</h2>
+## Web API authentication overview   {#overview-authenticate}
 
 Magento allows developers to define web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
 Before you can make {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 
-<h3 id="accessible-resources">Accessible resources</h3>
+### Accessible resources   {#accessible-resources}
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
 Each administrator or integration user can have a unique set of permissions which is configured in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -31,17 +29,18 @@ Administrator or Integration | Resources for which administrators or integrators
 Customer | Resources with `anonymous` or `self` permission.
 Guest user | Resources with `anonymous` permission.
 
+### Relation between acl.xml and webapi.xml   {#acl-webapi-relation}
 
-<h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
 The <code>acl.xml</code> file defines the access control list (ACL) for a given {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. It defines available set of permissions to access the resources.
 `acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} role resources or third party Integration's access (System > {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} > Integration > Add New Integration > Available APIs).
 
-<h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
+#### Sample customer acl.xml   {#acl-webapi-relation}
+
 For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code><a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
-<h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
+#### Sample (truncated) customer webapi.xml   {#acl-webapi-relation}
 
 {% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -99,7 +98,7 @@ A guest or anonymous is a special permission that doesn't need to be defined in 
 Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, `GET /V1/customers/me` fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets.
 </div>
 
-<h3 id="webapi-clients">Web API clients and authentication methods</h3>
+### Web API clients and authentication methods   {#webapi-clients}
 
 You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.
 
@@ -168,7 +167,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
    </tr>
 </table>
 
-<h2 id="related">Related topics</h2>
+## Related topics   {#related}
 
 Proceed to the authentication method for your preferred client:
 

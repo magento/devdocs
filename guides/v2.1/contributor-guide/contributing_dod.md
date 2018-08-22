@@ -1,13 +1,7 @@
 ---
 group: contributor
-subgroup: contributor_docs
 title: Magento Definition of Done
-menu_title: Magento Definition of Done
-menu_order: 2
-menu_node:
-version: 2.1
-github_link: contributor-guide/contributing_dod.md
-redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
+redirect_from: /guides/v2.0/contributor-guide/contributing_dod.html
 ---
 
 ## Overview
@@ -21,7 +15,6 @@ We encourage our community contributors to also follow the Magento DoD.
 At a high level, the criteria defined in our "definition of done" revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.
 
 The following sections provide additional details about each of these criteria:
-
 
 ## Functional Backward Compatibility
 
@@ -60,6 +53,7 @@ Before committing code changes, author must ensure successful execution of all t
 Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
 ### Functional Tests
+
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
 
@@ -109,10 +103,10 @@ Examples:
 * APIs:
   - Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly).
   - Cover each implementation if an interface suggests multiple implementations.
-* SPIs
+* SPIs:
   - Same as APIs.
   - We recommend creating tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure the interface’s implementations can be swapped without breaking the application.
-* Models/Resource Models
+* Models/Resource Models:
   - Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API
 
 See: [Running Integration Tests][3].
@@ -159,10 +153,12 @@ Not all changes can be covered.
 For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
 ### Functional Manual Tests
+
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.
 
 ## Review
+
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
 The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 

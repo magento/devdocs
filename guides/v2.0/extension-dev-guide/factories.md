@@ -6,8 +6,6 @@ menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.0
-github_link: extension-dev-guide/factories.md
 ---
 
 ## Overview
@@ -53,7 +51,6 @@ class BaseFactory
 }
 {% endhighlight %}
 
-
 ## Writing factories
 
 Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) class type.
@@ -62,7 +59,6 @@ When you reference a factory in a class constructor, Magento's [object manager](
 Factories follow the naming convention `<class-type>Factory` where `<class-type>` is the name of the class the factory instantiates.
 
 For example the automatically generated `Magento\Cms\Model\BlockFactory` class is a factory that instantiates the class [`Magento\Cms\Model\Block`]({{ site.mage2000url }}app/code/Magento/Cms/Model/Block.php).
-
 
 ## Using factories
 

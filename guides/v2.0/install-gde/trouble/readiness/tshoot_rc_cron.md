@@ -5,8 +5,6 @@ title: cron readiness check issues
 menu_title: cron readiness check issues
 menu_node:
 menu_order: 40
-version: 2.0
-github_link: comp-mgr/trouble/cman/cron.md
 functional_areas:
   - Install
   - System

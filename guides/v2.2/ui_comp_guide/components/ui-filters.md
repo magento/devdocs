@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: Filters component
 menu_title: Filters component
-version: 2.2
-github_link: ui_comp_guide/components/ui-filters.md
 ---
 
 The Filters component renders UI controls for filtering and applies filtering. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

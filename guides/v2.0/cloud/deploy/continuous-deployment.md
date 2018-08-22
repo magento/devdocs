@@ -5,8 +5,6 @@ title: Continuous integration
 menu_title: Continuous integration
 menu_order: 15
 menu_node:
-version: 2.0
-github_link: cloud/deploy/continuous-deployment.md
 functional_areas:
   - Cloud
   - Deploy
@@ -52,6 +50,7 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 
 #### Related topics
+
 * [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
 *	[Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html)
 * [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)

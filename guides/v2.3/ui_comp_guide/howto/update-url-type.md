@@ -2,14 +2,13 @@
 subgroup: howtos
 group: UI_Components_guide
 title: Update the page URL type
-version: 2.3
-github_link: ui_comp_guide/howto/update-url-type.md
 ---
 ## What's in this topic
 
 This topic describes how to extend the existing [`UrlInput` component](../components/ui-urlinput.html) to implement a new link type, or update an existing one, for your module.
 
 ## Overview
+
 To update a page URL type, you must:
 
 1. [Create the link class](#link-class).

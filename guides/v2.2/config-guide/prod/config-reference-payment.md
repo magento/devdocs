@@ -1,14 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Payment configuration paths reference
-menu_title: Payment configuration paths reference
-menu_order: 5200
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.2
-github_link: config-guide/prod/config-reference-payment.md
 functional_areas:
   - Configuration
   - System
@@ -25,6 +17,7 @@ For a list of other configuration paths, see:
 To optionally override any configuration settings or to set sensitive settings, see [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 ## Payment methods paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 The settings are further organized by payment method.
@@ -105,8 +98,8 @@ API Uses Proxy | `paypal/wpp/use_proxy` | <!-- ![Not EE-only]({{ site.baseurl }}
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
-
 ### Payments Pro Hosted Solution (United Kingdom)
+
 These options are available only if you chose the United Kingdom as the [merchant country]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html#vars-merch-country).
 
 Name  | Config path | EE only? | Encrypted? |
@@ -161,7 +154,6 @@ Enable SSL verification | `payment/payflow_advanced/verify_peer` | <!-- ![Not EE
 CVV Entry is Editable | `payment/payflow_advanced/csc_editable` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Require CVV Entry | `payment/payflow_advanced/csc_required` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Send Email Confirmation | `payment/payflow_advanced/email_confirmation` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-
 
 ### PayPal Payflow Link
 
@@ -354,9 +346,8 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}/common/im
 
 ### International paths {#vars-intl-list}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The available paths are determined by your choice of [Merchant country]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html#vars-merch-country).
-</div>
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|

@@ -4,8 +4,6 @@ title: Getting started with Magento
 menu_title: Getting started with Magento
 menu_order: 1
 menu_node:
-version: 2.1
-github_link: bk-get-started-magento.md
 redirect_from: /guides/v1.0/bk-get-started-magento.html
 functional_areas:
   - Integration
@@ -33,6 +31,7 @@ by creating pull requests, or open a discussion by creating an issue.
 For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-dev-guide/Contribute_edg.html).
 
 ## Contact us {#contact-us}
+
 Feel free to contact the documentation team directly at
 [DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
 

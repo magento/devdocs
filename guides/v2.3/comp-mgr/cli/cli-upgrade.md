@@ -1,8 +1,6 @@
 ---
 group: compman
 title: Command-line upgrade
-version: 2.3
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---

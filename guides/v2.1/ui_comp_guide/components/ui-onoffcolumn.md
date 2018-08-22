@@ -3,8 +3,6 @@ group: UI_Components_guide
 subgroup: components
 title: OnOffColumn component
 menu_title: OnOffColumn component
-version: 2.1
-github_link: ui_comp_guide/components/ui-onoffcolumn.md
 ---
 
 The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselectcolumn.html). It displays toggle switch elements instead of checkboxes.
@@ -26,7 +24,7 @@ The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{<br><code>[name: string]: boolean</code><br>}</td>
     <td>{<br>'<code>admin__scope-old': true,</code><br><code>'data-grid-onoff-cell': true,</code><br><code>'data-grid-checkbox-cell': false</code><br>}</td>
   </tr>
