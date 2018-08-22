@@ -50,7 +50,7 @@ Activating the integration submits the credentials to the endpoint specified whe
 * `store_base_url` For example, `http://my-magento-store.com/`.
 * `oauth_verifier`
 * `oauth_consumer_key`
-* `oauth_consumer_key_secret`
+* `oauth_consumer_secret`
 
 Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 
