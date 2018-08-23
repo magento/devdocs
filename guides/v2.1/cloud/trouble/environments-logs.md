@@ -36,8 +36,8 @@ For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the 
 Logs from the deploy hook are located on the server in the following locations:
 
 *	Integration: `/var/log/deploy.log`
-*	Staging: `/var/log/platform/<project ID>_stg/post_deploy.log`
-*	Production: `/var/log/platform/<project ID>/post_deploy.log`
+*	Staging: `/var/log/platform/<project ID>_stg/deploy.log`
+*	Production: `/var/log/platform/<project ID>/deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 
