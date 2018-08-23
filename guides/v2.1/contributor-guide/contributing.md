@@ -1,13 +1,7 @@
 ---
 group: contributor
-subgroup: contributor
 title: Code Contributions
-menu_title: Code Contributions
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: contributor-guide/contributing.md
-redirect_from: /guides/v1.0/contributor-guide/contributing.html
+redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
 
 The following topics are included in this guide:
@@ -18,6 +12,7 @@ The following topics are included in this guide:
 - [Contribution requirements](#requirements)
 - [Fork a repository](#fork)
 - [Create a pull request](#pull_request)
+- [Magento Contributor Assistant](#contributor-assist)
 - [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
@@ -35,9 +30,8 @@ The Community Engineering Team reviews all issues and contributions submitted by
 
 Often when the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. If you're ever curious what the different labels mean, see the [table](#labels) below for an explanation of each one.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
-</div>
+{:.bs-callout .bs-callout-tip}
+Please refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
 ## GitHub and Two-Factor Authentication {#two-factor}
 
@@ -57,11 +51,11 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
-| | Fix for Existing Issue | Test Coverage | Refactoring| New Feature | Code Cleanup
-| --- | :---: | :---: | :---: | :---: | :---: |
-2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png)| ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png)
-2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png)
-2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png)
+|     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
+|:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
+| 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
+| 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
+| 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
 
 ## Contribution requirements {#requirements}
 
@@ -72,7 +66,7 @@ Please review the following supported and accepted pull request rules. We define
 1. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 1. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed [documentation]({{page.baseurl}}/contributor-guide/contributing_docs.html){:target="\_blank"} updates. [Documentation]({{site.baseurl}}/){:target="\_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
+  * Proposed [documentation](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md){:target="\_blank"} updates. [Documentation]({{site.baseurl}}/){:target="\_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
 1. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 1. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines){:target="\_blank"}.
 1. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="\_blank"} must be green).
@@ -83,7 +77,9 @@ To fork a repository on Github:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="\_blank"}.
-3. Click **Fork** at the top right: <br><img src="{{ site.baseurl }}/common/images/fork.png" alt="fork a repository">
+3. Click **Fork** at the top right:
+
+    ![Fork a Repository]({{site.baseurl}}/common/images/fork.png)
 
 4. Clone the repo into your development environment and start playing.
 
@@ -120,6 +116,94 @@ To create a pull request:
 1. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the Magento 2 repository’s [Pull Requests panel](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+
+## Magento Contributor Assistant {#contributor-assist}
+
+The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento/magento2` repository. It helps automate different issue and pull request workflows using commands entered as comments.
+
+Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issues. We plan on adding features in the future.
+
+* [Deploy vanilla Magento instance](#vanilla-pr)
+* [Deploy instance based on PR changes](#deploy-pr)
+* [Combine multiple pull requests](#combine-pr)
+
+### Deploy vanilla Magento instance {#vanilla-pr}
+
+When you need to verify an issue or pull request, enter a command to generate an issue verification instance, or vanilla Magento. This instance is a clean Magento installation of a specified version tag or the develop branch of a specified release line.
+
+**Command:** To deploy a vanilla Magento instance, add the following command as a comment to the GitHub Pull Request or Issue:
+
+```
+@magento-engcom-team give me {$version} instance
+```
+
+For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and develop branches starting with 2.2.0 and 2.2-develop.
+
+**Actions:** The following actions complete for the command:
+
+- If the instance does not exist, it will be deployed. Deploymnent takes ~2 minutes.
+- If the instance exists, a fresh instance will be redeployed.
+- By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
+
+**Admin access:**
+
+- http://i-xxx.engcom.dev.magento.com/admin
+- Credentials: Username: admin | Password: 123123q
+
+**Permissions:**
+
+- All permissions granted for all users
+
+### Deploy instance based on PR changes {#deploy-pr}
+
+To verify and test changes completed in a pull request, enter a command to generate a Magento instance using the code based in the PR.
+
+**Command:** To deploy, [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members), a [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) member, or contributor under the existing Pull Request enters the following command as a comment to the pull request:
+
+```
+@magento-engcom-team give me test instance
+```
+
+**Actions:**
+* It deploys a new Magento instance based on Pull Request changes.
+* Deployment takes ~2 minutes.
+
+**Admin access:**
+
+- http://pr-xxx.engcom.dev.magento.com/admin
+- Credentials: Username: admin | Password: 123123q
+
+**Permissions:**
+
+- [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+- [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+- Contributor
+
+### Combine multiple pull requests {#combine-pr}
+
+To optimize the pull request queue, enter a command with a series of related pull requests to verify and combine the code. If all tests pass, the entered PRs are merged into the current PR.
+
+**Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members) or [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) under the existing Pull Request enters the following command:
+
+```
+@magento-engcom-team combine {xxx} {yyy} {zzz}
+```
+
+The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into the current pull request. For example: `@magento-engcom-team combine 1234 1238 1239`
+
+**actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
+
+- Current pull request allows changes from maintainers
+- All mentioned pull requests are open
+- All mentioned pull requests have been created by the same contributor (author)
+- All mentioned pull requests have same target (base) branch
+- All mentioned pull requests are mergeable with each other
+
+**Permissions:**
+
+- [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+- [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+
 
 ## Porting code contributions across Magento versions {#porting}
 
@@ -227,107 +311,98 @@ To add an issue:
 1. Fill in the Title and Issue description.
 1. Click **Submit new issue**.
 
-## Help triage issues {#triage} <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a>
+## Help triage issues  <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a> {#triage}
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
 
 ## Labels applied by the Magento team {#labels}
 
-Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
+We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.
 
-<table style="width:100%">
-   <colgroup>
-      <col width="30%">
-      <col width="70%">
-   </colgroup>
-   <thead>
-      <tr style="background-color:lightgray">
-         <th>Label image</th>
-         <th>Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-        <th colspan="2">Pull Request Resolution Status</th>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_accept.png" alt="the Accept button"/></td>
-         <td>The pull request has been accepted and will be merged into mainline code.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_rejected.png" alt="the Reject button"/></td>
-         <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button"/></td>
-         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
-      </tr>
-      <tr>
-        <th colspan="2">Issue Resolution Status</th>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
-         <td>Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
-         <td>Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
-         <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G3_Passed.png" alt="G3 Passed"/></td>
-         <td>The Community Engineering Team has validated and confirmed the issue.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.0.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x"/></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x"/></td>
-         <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x"/></td>
-         <td>The issue has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x"/></td>
-         <td>The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x"/></td>
-         <td>The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x"/></td>
-         <td>The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
-         <td>The Community Engineering Team has created internal ticket.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button"/></td>
-         <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
-         <td>The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_non-issue.png" alt="Non Issue"/></td>
-         <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
-      </tr>
-   </tbody>
-</table>
+### Release Lines
+
+Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.2.6, you would apply the Release Line: 2.2. This effectively includes all releases in this line.
+
+* `Release Line: 2.1`
+* `Release Line: 2.2`
+* `Release Line: 2.3`
+
+### Progress
+
+Progress labels indicate the Pull Request status on each review stage:
+
+* `Progress: needs update` - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request. <!-- needs update -->
+* `Progress: on hold` - The pull request is on hold due and will be further reviewed to accept or reject.
+* `Progress: accept` - The pull request has been accepted and will be merged into mainline code. <!-- accept -->
+* `Progress: reject` - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject -->
+
+### Contribution Rewards
+
+The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.
+
+* `Award: complex`
+* `Award: advanced`
+* `Award: special achievement`
+* `Award: category of expertise`
+* `Award: test coverage`
+* `Award: devdocs update`
+* `Award: MFTF test coverage`
+* `Award: bug fix`
+* `Cleanup`
+* `Port` - For up-port and back-port work
+<!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). -->
+
+### Partners
+
+All partners Pull Requests should be marked with label `partners-contribution`. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: `Partner: <PartnerName>`. The following are Partner examples:
+
+* `partners-contribution`
+* `Partner: Atwix`
+* `Partner: Comwrap`
+* `Partner: Interactiv4`
+* `Partner: Wagento`
+* `etc`
+
+### Components
+
+Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment).
+
+* `Component: Catalog`
+* `Component: Report`
+* `Component: Checkout`
+* `etc`
+
+### Events
+
+Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a [Community Engineering Slack](https://magentocommeng.slack.com) channel using the same label.
+
+* `Event: mm18in`
+* `Event: mm17es`
+* `Event: mlau18`
+* `etc`
+
+### General Labels
+
+General labels include a variety of tasks and definitions for pull requests and issues.
+
+* `good first issue` - Indicates a good issue for first-time contributors.
+* `help wanted` - Indicates the creator or author needs help with a decision, advice for resolving, and so on.
+* `triage wanted` - Indicates the issues are under triage. See this information to learn more about the [Triage Wanted program](https://github.com/magento/magento2/wiki/Triage-Wanted).
+
+### Issue Resolution Status
+<!-- old labels -->
+
+* `G1 Passed` - Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
+* `G1 Failed` - Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
+* `G2 Passed` - The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.
+* `G3 Passed` - The Community Engineering Team has validated and confirmed the issue.
+* `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
+* `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
+* `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
+* `Fixed in 2.1.x` - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.
+* `Fixed in 2.2.x` - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.
+* `Fixed in 2.3.x` - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.
+* `acknowledged` - The Community Engineering Team has created internal ticket.
+* `needs update` - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.
+* `Cannot Reproduce` - The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.
+* `non-issue` - A described behavior in the issue description is valid and shouldn't be changed in Magento code base.

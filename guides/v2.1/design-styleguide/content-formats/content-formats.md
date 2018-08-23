@@ -5,8 +5,6 @@ title: Admin Content Formats
 menu_title: Content Formats
 menu_order: 7
 menu_node:
-version: 2.1
-github_link: design-styleguide/content-formats/content-formats.md
 functional_areas:
   - Content
 ---

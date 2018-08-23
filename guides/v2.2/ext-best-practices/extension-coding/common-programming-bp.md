@@ -1,8 +1,6 @@
 ---
 group: ext-best-practices
 title: Programming Best Practices
-version: 2.2
-github_link: ext-best-practices/extension-coding/common-programming-bp.md
 functional_areas:
   - Standards
 ---

@@ -1,8 +1,6 @@
 ---
 group: mrg
 title: Magento_Sales module
-version: 2.1
-github_link: mrg/ce/Sales.md
 redirect_from:
  - /guides/v2.1/mrg/ce/Sales/description.html
  - /guides/v2.1/mrg/ce/Sales/dependencies.html

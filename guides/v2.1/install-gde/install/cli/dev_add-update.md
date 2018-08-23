@@ -5,8 +5,6 @@ title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node:
-version: 2.1
-github_link: install-gde/install/cli/dev_add-update.md
 functional_areas:
   - Install
   - System
@@ -54,5 +52,8 @@ Add a `require` section like the following:
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
 ### For more information
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+
+<!-- ABBREVIATIONS -->
 
 If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.

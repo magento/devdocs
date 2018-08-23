@@ -4,8 +4,6 @@ subgroup: D_UI Library Form Component
 title: Form Component
 menu_title: Form Component
 menu_node: parent
-version: 2.0
-github_link: ui-components/ui-form.md
 redirect_from: /guides/v2.0/ui-library/ui-form.html
 redirect_from: /guides/v2.0/ui_comp_guide/components/ui-form.html
 ---

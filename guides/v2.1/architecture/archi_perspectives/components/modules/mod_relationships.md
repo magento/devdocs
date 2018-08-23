@@ -2,8 +2,6 @@
 group: arch-guide
 title: Module relationships
 menu_title: Module relationships
-version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_relationships.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_relationships.html
   - /guides/v2.0/architecture/modules/mod_relationships.html

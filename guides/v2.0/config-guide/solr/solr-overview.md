@@ -5,9 +5,7 @@ title: Install and configure Solr
 menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.0
 ee_only: True
-github_link: config-guide/solr/solr-overview.md
 functional_areas:
   - Configuration
   - Search

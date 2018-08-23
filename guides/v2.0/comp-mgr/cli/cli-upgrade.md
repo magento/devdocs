@@ -5,8 +5,6 @@ title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---

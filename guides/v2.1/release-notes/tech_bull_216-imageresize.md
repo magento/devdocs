@@ -1,13 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: Image Resize Issue with Magento version 2.1.6
 menu_title: Image resize issue Magento version 2.1.6 (May 17, 2017)
 menu_node: 
 menu_order: 4
-version: 2.1
-github_link: release-notes/tech_bull_216-imageresize.md
 ---
 
 *Technical bulletin updated on May 17, 2017.*

@@ -5,8 +5,6 @@ title: JavaScript DocBlock standard
 landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
-version: 2.0
-github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 functional_areas:
   - Standards
@@ -87,7 +85,7 @@ A description must be provided along with parameters. Method descriptions should
 &nbsp;*
 &nbsp;*&nbsp;@param&nbsp;{project.MyClass}&nbsp;obj&nbsp;Instance&nbsp;of&nbsp;MyClass&nbsp;which&nbsp;leads&nbsp;to&nbsp;a&nbsp;long
 &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment&nbsp;that&nbsp;needs&nbsp;to&nbsp;be&nbsp;wrapped&nbsp;to&nbsp;two&nbsp;lines.
-&nbsp;*&nbsp;@return&nbsp;{boolean}&nbsp;Whether&nbsp;something&nbsp;occured.
+&nbsp;*&nbsp;@return&nbsp;{boolean}&nbsp;Whether&nbsp;something&nbsp;occurred.
 &nbsp;*/
 function&nbsp;someMethod(obj)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...

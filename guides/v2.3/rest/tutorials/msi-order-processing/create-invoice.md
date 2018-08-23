@@ -9,8 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
-github_link: rest/tutorials/msi-order-processing/create-invoice.md
 functional_areas:
   - Integration
 ---

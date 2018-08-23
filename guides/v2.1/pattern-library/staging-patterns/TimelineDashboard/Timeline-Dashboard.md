@@ -1,9 +1,7 @@
 ---
 group: pattern
 title: Timeline Dashboard
-version: 2.1
 ee_only: true
-github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
 This dashboard provides a page where events and processes can be viewed and managed in one place.
 

@@ -5,8 +5,6 @@ title: Go live checklist
 menu_title: Go live checklist
 menu_order: 10
 menu_node:
-version: 2.3
-github_link: cloud/live/go-live-checklist.md
 functional_areas:
   - Cloud
   - Testing

@@ -2,8 +2,6 @@
 subgroup: howtos
 group: UI_Components_guide
 title: Update the page URL type
-version: 2.3
-github_link: ui_comp_guide/howto/update-url-type.md
 ---
 ## What's in this topic
 

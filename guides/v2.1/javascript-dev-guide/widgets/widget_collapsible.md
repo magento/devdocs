@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Collapsible widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_collapsible.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html

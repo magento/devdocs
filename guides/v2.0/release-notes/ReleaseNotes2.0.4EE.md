@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.0.4 Release Notes
 menu_order: 298
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.4EE.md
 ---
 
 We are pleased to present Magento Commerce 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 

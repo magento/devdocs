@@ -1,8 +1,6 @@
 ---
 group: jstf
 title: JavaScript unit testing with Jasmine
-version: 2.2
-github_link: test/js/jasmine.md
 functional_areas:
   - Testing
   - test

@@ -2,8 +2,6 @@
 group: arch-guide
 title: Presentation Layer
 menu_title: Presentation layer
-version: 2.1
-github_link: architecture/archi_perspectives/present_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---
 

@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Migrate install/upgrade scripts to declarative schema
-version: 2.3
-github_link: extension-dev-guide/declarative-schema/migration-commands.md
 ---
 
 Magento provides several commands to help convert your installation and upgrade scripts to declarative schema. These commands also help you test your changes, roll back your changes if anything goes wrong, and help your module maintain backward compatibility.

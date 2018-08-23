@@ -5,8 +5,6 @@ title: Admin Headings and Organization
 menu_title: Headings and Organization
 menu_order: 6
 menu_node:
-version: 2.0
-github_link: design-styleguide/headings-and-organization/headings-and-organization.md
 ---
 Use consistent heading structure and content prioritization to create a hierarchy for users to easily navigate Magento Admin.
 

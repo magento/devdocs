@@ -5,8 +5,6 @@ title: Sorry, we can't take that action right now
 menu_title: Sorry, we can't take that action right now
 menu_node:
 menu_order: 2
-version: 2.1
-github_link: comp-mgr/trouble/cman/were-sorry.md
 functional_areas:
   - Upgrade
 ---
@@ -32,8 +30,7 @@ Enter your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">a
 If that doesn't work, try generating <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.
 
 ### Problem: the updater application isn't initialized {#updater}
-
-In some cases (especially if you downloaded the Magento software from <a href="https://packagist.org/" target="_blank">packagist</a>), the updater application might not be initialized. (A common way for this to happen is to not specify our `https://repo.magento.com` repository in the `composer create-project` command.)
+In some cases (especially if you downloaded the Magento software from [packagist](https://packagist.org/){:target="_blank"}), the updater application might not be initialized. (A common way for this to happen is to not specify our `https://repo.magento.com` repository in the `composer create-project` command.)
 
 The updater application uses a cron job to run the upgrade; if it's not initialized, your update fails.
 

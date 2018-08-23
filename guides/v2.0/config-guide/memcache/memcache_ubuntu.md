@@ -5,8 +5,6 @@ title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: config-guide/memcache/memcache_ubuntu.md
 functional_areas:
   - Configuration
   - System

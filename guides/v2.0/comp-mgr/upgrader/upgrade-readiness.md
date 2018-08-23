@@ -5,8 +5,6 @@ title: Step 2. Readiness check
 menu_title: Step 2. Readiness check
 menu_node:
 menu_order: 10
-version: 2.0
-github_link: comp-mgr/upgrader/upgrade-readiness.md
 functional_areas:
   - Upgrade
 ---

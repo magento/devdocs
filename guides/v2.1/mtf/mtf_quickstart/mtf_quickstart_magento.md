@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Prepare Magento application
-version: 2.1
-github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 ---
 
 ## Change WYSIWYG settings

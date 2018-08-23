@@ -4,8 +4,6 @@ subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 25
-version: 2.1
-github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 functional_areas:
   - Install

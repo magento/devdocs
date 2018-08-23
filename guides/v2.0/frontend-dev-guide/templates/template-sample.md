@@ -4,8 +4,6 @@ subgroup: C_Templates
 title: Illustration of customizing templates
 menu_title: Illustration of customizing templates
 menu_order: 3
-version: 2.0
-github_link: frontend-dev-guide/templates/template-sample.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 functional_areas:
   - Frontend

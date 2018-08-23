@@ -5,8 +5,6 @@ title: Configure your hosted system
 menu_title: Configure your hosted system
 menu_order: 1
 menu_node: parent
-version: 2.1
-github_link: install-gde/install/hosted/hosted_start.md
 functional_areas:
   - Install
   - System

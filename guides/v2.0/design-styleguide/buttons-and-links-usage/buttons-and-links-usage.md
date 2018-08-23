@@ -5,8 +5,6 @@ title: Admin Buttons and Links Usage
 menu_title: Buttons and Links Usage
 menu_order: 3
 menu_node:
-version: 2.0
-github_link: design-styleguide/buttons-and-links-usage/buttons-and-links-usage.md
 ---
 Buttons are primarily used for task-based navigation, and links are primarily used for site navigation.
 

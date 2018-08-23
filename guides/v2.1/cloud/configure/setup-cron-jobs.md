@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Set up cron jobs
-version: 2.1
-github_link: cloud/configure/setup-cron-jobs.md
 functional_areas:
   - Cloud
   - Setup

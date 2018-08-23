@@ -1,15 +1,7 @@
 ---
 group: contributor
-subgroup: templates
 title: Basic template
-menu_title: Basic template
-menu_order: 1
-version: 2.0
-GitHub_link: contributor-guide/templates/basic_template.md
-redirect_from: contributor-guide/basic_template.html
 ---
-
-## Overview
 
 Introductory text that gives an overview of the topic you will be writing about.
 
@@ -51,8 +43,8 @@ Lists are useful for organizing and displaying related items. Below are examples
 *Output:*
 
 * List Item 1
-*	List Item 2
-*	List Item 3
+* List Item 2
+* List Item 3
 
 **Ordered List:**
 
@@ -64,9 +56,9 @@ Lists are useful for organizing and displaying related items. Below are examples
 
 *Output:*
 
-1.	First Step
-2.	Second Step
-3.	Third Step
+1. First Step
+2. Second Step
+3. Third Step
 
 ### Images {#images}
 
@@ -74,7 +66,7 @@ Please add any images you may need to the [`common/images`](https://GitHub.com/m
 
 Once the image is added, you can use it in your documentation:
 
-*Example:* `{%raw%}![Image]({{ site.baseurl }}/common/images/install_cygwin.png){%endraw%}`
+*Example:* `![Image]({{ site.baseurl }}/common/images/install_cygwin.png)`
 
 *Output:*
 
@@ -82,7 +74,7 @@ Once the image is added, you can use it in your documentation:
 
 You can even scale the image if it is too large:
 
-*Example:* `{%raw%}![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}{%endraw%}`
+*Example:* `![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}`
 
 *Output:*
 
@@ -119,36 +111,28 @@ You can read more about table syntax [here](http://kramdown.gettalong.org/syntax
 
 Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/){:target="_blank"}. View the .md file of this template for examples.
 
-For inline code, surround the content with single backticks: <code>`example`</code>.
+For inline code, surround the content with single backticks: `` `example` ``.
 
 For blocks of code, surround content with 3 backticks and an optional [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
 
 *Example:*
 
-{% highlight html %}
-{%raw%}
+````
 ```html
 <div class="container">
-
-#### Title
-{: .title}
-
+  <h4 class="title">Title</h4>
   <div class="content">
     <p>Paragraph content.</p>
   </div>
 </div>
 ```
-{%endraw%}
-{% endhighlight %}
+````
 
 *Output:*
 
 ```html
 <div class="container">
-
-#### Title
-{: .title}
-
+  <h4 class="title">Title</h4>
   <div class="content">
     <p>Paragraph content.</p>
   </div>
@@ -161,7 +145,7 @@ Use these messages to highlight or bring attention to a piece of information.
 
 **Notes:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -169,7 +153,7 @@ type='info'
 content='This is a note callout. You can use these to provide important information on a topic.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -181,7 +165,7 @@ content='This is a note callout. You can use these to provide important informat
 
 **Warnings:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -189,7 +173,7 @@ type='warning'
 content='This is a warning callout. This can be used to convey important information to the reader.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -201,7 +185,7 @@ content='This is a warning callout. This can be used to convey important informa
 
 **Tips:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -209,7 +193,7 @@ type='tip'
 content='This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -223,16 +207,17 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
-<div class="bs-callout bs-callout-info">
-  <p>The <code>{%raw%}{% collapsible %}{%endraw%}</code> tag must be preceded by a blank line.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The `{%raw%}{% collapsible %}{%endraw%}` tag must be preceded by a blank line.
 
 *Example:*
 
 ```liquid
+{%raw%}
 {% collapsible This is the title %}
 Markdown content goes in this area.
 {% endcollapsible %}
+{%endraw%}
 ```
 
 *Output:*

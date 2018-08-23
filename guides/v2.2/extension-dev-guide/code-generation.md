@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Code generation
-version: 2.2
-github_link: extension-dev-guide/code-generation.md
 ---
 
 ## Overview of code generation {#codegen-over}

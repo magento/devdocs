@@ -1,8 +1,6 @@
 ---
 group: install_cli
 title: Enable or disable maintenance mode
-version: 2.1
-github_link: install-gde/install/cli/install-cli-subcommands-maint.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-maint.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html

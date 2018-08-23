@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Progress Indicator
-version: 2.1
-github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
 redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---
 Within the Magento application, users sometimes need to wait for a process to be completed by the system. In such case, it is best to communicate that to the user that the system is working the process that the user requested. There are two types of progress indicator: 1.) a progress bar and 2.) a spinner.

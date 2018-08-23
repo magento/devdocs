@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: QuickSearch widget
 menu_order: 13
 menu_title: QuickSearch widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html

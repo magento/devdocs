@@ -5,8 +5,6 @@ title: Ease of frontend customization
 menu_title: Ease of frontend customization
 menu_node:
 menu_order:
-version: 2.0
-github_link: architecture/frontend_custom_strategies.md
 ---
 
 ## Overview {#m2arch-whatis-overview}

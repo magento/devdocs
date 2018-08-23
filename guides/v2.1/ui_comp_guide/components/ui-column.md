@@ -3,19 +3,11 @@ group: UI_Components_guide
 subgroup: components
 title: Column component
 menu_title: Column component
-version: 2.1
-github_link: ui_comp_guide/components/ui-column.md
 ---
-
-## Overview
 
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
-## Configuration
-
-Extends all [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-Column-specific configuration:
+## Configuration options
 
 <table>
   <tr>
@@ -145,6 +137,8 @@ Column-specific configuration:
   </tr>
 </table>
 
-## Reference API
+## Source files
 
-JS constructor: `Magento/Ui/view/base/web/js/grid/columns/column.js`.
+Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
+
+- [`Magento/Ui/view/base/web/js/grid/columns/column.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)

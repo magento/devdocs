@@ -5,8 +5,6 @@ title: Component deployment failure
 menu_title: Component deployment failure
 menu_order: 15
 menu_node:
-version: 2.0
-github_link: cloud/trouble/trouble_comp-deploy-fail.md
 functional_areas:
   - Cloud
   - Deploy

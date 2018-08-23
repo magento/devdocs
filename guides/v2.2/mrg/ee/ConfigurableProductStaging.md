@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_ConfigurableProductStaging module
 menu_title: ConfigurableProductStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/ConfigurableProductStaging.md
 ---
 
 The Magento_ConfigurableProductStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}Configurable Product{% endglossarytooltip %} updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.

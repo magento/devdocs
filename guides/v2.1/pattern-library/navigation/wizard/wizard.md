@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Wizard
-version: 2.1
-github_link: pattern-library/navigation/wizard/wizard.md
 ---
 Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.
 

@@ -5,8 +5,6 @@ title: Configure Xdebug
 menu_title: Configure Xdebug
 menu_order: 100
 menu_node:
-version: 2.0
-github_link: cloud/howtos/debug.md
 functional_areas:
   - Cloud
   - Setup

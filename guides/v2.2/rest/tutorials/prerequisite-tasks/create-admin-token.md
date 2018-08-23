@@ -1,9 +1,6 @@
 ---
-layout: default
 group: rest
 title: Generate the admin token
-version: 2.2
-github_link: rest/tutorials/prerequisite-tasks/create-admin-token.md
 functional_areas:
   - Integration
   - Orders

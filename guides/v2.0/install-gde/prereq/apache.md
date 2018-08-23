@@ -4,8 +4,6 @@ subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-version: 2.0
-github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install

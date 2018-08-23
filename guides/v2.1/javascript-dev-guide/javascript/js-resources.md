@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
-version: 2.1
-github_link: javascript-dev-guide/javascript/js-resources.md
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html
@@ -80,21 +78,23 @@ These relative paths are also used in for [mapping and setting `paths` in requir
 
 To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
  - `requirejs-config.js`
-        ```javascript
-        var config = {
-          "shim": {
-            "3-rd-party-plugin": ["jquery"]
-          }
-        };
-        ```
+
+    ```javascript
+    var config = {
+        "shim": {
+        "3-rd-party-plugin": ["jquery"]
+        }
+    };
+    ```
 
  - `<third-party-plugin>.js`
-        ```javascript
-        !(function($){
-          // plugin code
-          // where $ == jQuery
-        })(jQuery);
-        ```
+ 
+    ```javascript
+    !(function($){
+        // plugin code
+        // where $ == jQuery
+    })(jQuery);
+    ```
 
 ## RequireJS library
 

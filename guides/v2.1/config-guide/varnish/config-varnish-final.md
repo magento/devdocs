@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Varnish
 title: Final verification
-menu_title: Final verification
-menu_order: 100
-menu_node:
-version: 2.1
-github_link: config-guide/varnish/config-varnish-final.md
 functional_areas:
   - Configuration
   - System
@@ -31,9 +25,8 @@ Important headers:
 	Age: 0
 	X-Magento-Cache-Debug: MISS
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
-</div>
+{:.bs-callout .bs-callout-info}
+This value is also acceptable: `X-Magento-Cache-Debug: HIT`.
 
 ### Check page load times {#config-varnish-final-response}
 
@@ -51,13 +44,13 @@ For example, to use the Chrome inspector:
 6.	Scroll to the top of the inspector pane so you can see the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the page you are viewing.
 
 	The following figure shows an example of loading the `magento2` index page.<br><br>
-	<img src="{{ site.baseurl }}/common/images/config_varnish_inspector.png" alt="Click the page you're viewing">
+	![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
 
 	The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.
 
 7.	To view HTTP response headers, click the page URL (in the Name column).
 
-	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
+	You can view HTTP headers which are discussed in more detail in [Verify HTTP response headers](#config-varnish-final-verify-headers).
 
 ### Verify the Magento cache {#config-varnish-final-verify-cache}
 
@@ -74,11 +67,10 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).
 
 #### Next steps
 
-*	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
-*	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
+*	[How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
+*	[How Varnish caching works]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html)

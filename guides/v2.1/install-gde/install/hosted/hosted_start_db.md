@@ -5,8 +5,6 @@ title: Configure a database and a database user
 menu_title: Configure a database and a database user
 menu_order: 2
 menu_node:
-version: 2.1
-github_link: install-gde/install/hosted/hosted_start_db.md
 functional_areas:
   - Install
   - System

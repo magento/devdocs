@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Adjust configuration
-version: 2.0
-github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
 ---
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}

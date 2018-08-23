@@ -2,8 +2,6 @@
 group: arch-guide
 title: Module dependencies
 menu_title: Module dependencies
-version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_depend.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_depend.html
   - /guides/v2.0/architecture/modules/mod_depend.html

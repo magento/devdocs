@@ -5,8 +5,6 @@ title: Set up an account and project
 menu_title: Set up an account and project
 menu_order:
 menu_node:
-version: 2.0
-github_link: cloud/before/before-workspace-cloud-account.md
 ---
 
 <!-- This file isn't linked to the main TOC -->

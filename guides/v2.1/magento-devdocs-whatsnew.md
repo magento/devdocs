@@ -2,16 +2,25 @@
 layout: full-width
 group: whatsnew
 title: What's new on DevDocs
-github_link: magento-devdocs-whatsnew.md
 ---
 
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## Augusts 2018
+## August 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+MFTF 2.3: Added example test steps for each [action](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/test/actions.html).|2.2.x|Major update|Aug 17
+Updated all GitHub labels used for community contributions and added information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.x|Major update|Aug 16
+Improve instructions for [configuring multi-site URLs](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html) with Magento Commerce Cloud.|2.1.x, 2.2.x|Technical changes|Aug 14
+Updated the Fastly plugin version requirement for Fastly image optimization to version 1.2.62.|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 14
+Added [Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) topic.|2.3.x|New topic|Aug 14
+Added topics on [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) and [Bulk operation status endpoints](https://devdocs.magento.com/guides/v2.3/rest/operation-status-endpoints.html).|2.3.x|New topic|Aug 14
+Update [nginx](https://devdocs.magento.com/guides/v2.2/install-gde/prereq/nginx.html) PHP versions and Composer installation steps|2.2.x, 2.3.x|Major update|Aug 13
+Added Events to [WYSIWYG component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html).<br/> Updated list of methods in [Add Custom Editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html#step-3-create-editor-adapter).|2.3.x|Major update|Aug 09
+Added CLI enable/disable commands for profiler in [Enable profiling (MAGE_PROFILER)](https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/mage-profiler.html) for 2.2 and 2.3|2.2.x, 2.3.x|Major update|Aug 08
+Added the [Order Processing for MSI tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/msi-order-processing/index.html)|2.3.x|New topic|Aug 08
 Corrected the path of the `PUT /V1/companyCredits/:id` [endpoint](https://devdocs.magento.com/guides/v2.2/b2b/credit-manage.html#update-a-company-credit-limit).|2.2.x, 2.3.x|Technical changes|Aug 06
 Updated the Inbound and Outbound [Integration environment IP address tables](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress).|2.x|Technical changes|Aug 06
 Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/webapi/custom-routes.html).|2.3.x|New topic|Aug 03
@@ -160,7 +169,7 @@ Release Notes for Magento 2.0.18 [Open Source]({{ site.baseurl }}/guides/v2.0/re
 Release Notes for Magento 2.1.12 [Open Source]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).|2.1.x|New|Feb 27
 Release Notes 2.2.3 [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html) and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)|2.2.x|New|Feb 27
 Added supported MySQL technologies to the [MySQL]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/mysql.html) topic.|2.2.x|Updated|Feb 27
-Updated the [DevDocs contributions]({{ site.baseurl }}/guides/v2.2/contributor-guide/contributing_docs.html) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
+Updated the [DevDocs contributions](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) topic and published a new list of suggested topics for community contributions.|2.x|Updated|Feb 27
 Formatting to improve consistency in the [Configuration Guide]({{ site.baseurl }}/guides/v2.0/config-guide/bootstrap/magento-modes.html).||Updated|Feb 26
 Added upgrade path for Magento Cloud metapackage. | 2.1.x, 2.2.x | Updated | Feb 23
 Added reference and [examples]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis) for two, new [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html)—`CACHE_CONFIGURATION` and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default caching configuration. | 2.1.x, 2.2.x | Updated | Feb 20

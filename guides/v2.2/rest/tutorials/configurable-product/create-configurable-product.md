@@ -9,8 +9,6 @@ level3_subgroup: configurable-product-tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
-version: 2.2
-github_link: rest/tutorials/configurable-product/create-configurable-product.md
 functional_areas:
   - Integration
 ---
@@ -21,9 +19,9 @@ The sample payload does not contain the price or the size. These attributes will
 
 The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching. This value will be changed for the simple products.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+
+{:.bs-callout .bs-callout-info}
 Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
-</div>
 
 **Endpoint**
 
@@ -31,7 +29,7 @@ Before you using this code sample, verify that the attribute values are the same
 
 **Payload**
 
-{% highlight json %}
+``` json
 {
   "product": {
     "sku": "MS-Champ",
@@ -81,13 +79,12 @@ Before you using this code sample, verify that the attribute values are the same
     ]
   }
 }
-
-{% endhighlight  %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+``` json
 {
     "id": 2078,
     "sku": "MS-Champ",
@@ -204,7 +201,7 @@ Before you using this code sample, verify that the attribute values are the same
         }
     ]
 }
-{% endhighlight  %}
+```
 {% endcollapsible %}
 
 ## Verify this step

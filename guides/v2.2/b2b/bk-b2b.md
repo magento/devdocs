@@ -6,9 +6,7 @@ landing-page: B2B
 menu_title: B2B Developer Guide
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
-github_link: b2b/bk-b2b.md
 functional_areas:
   - B2B
   - Integration

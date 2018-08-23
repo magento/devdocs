@@ -9,8 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
-github_link: rest/tutorials/msi-order-processing/create-cart-add-products.md
 functional_areas:
   - Integration
 ---
@@ -74,7 +72,7 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 
@@ -100,7 +98,7 @@ Use the same endpoint to check the quantity available for product `sp2`.
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 

@@ -4,8 +4,6 @@ subgroup: 02_Extension-Coding
 title: Creating a Magento admin page
 menu_title: Creating a Magento admin page
 menu_order: 1000
-version: 2.0
-github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 functional_areas:
   - Standards
 ---

@@ -4,11 +4,9 @@ subgroup: 10_REST
 title: Manage company users
 menu_title: Manage company users
 menu_order: 13
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-users.md
 functional_areas:
   - B2B
   - Integration

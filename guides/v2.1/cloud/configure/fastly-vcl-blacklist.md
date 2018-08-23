@@ -5,8 +5,6 @@ title: Custom blacklist VCL
 menu_title: Custom blacklist VCL
 menu_order:
 menu_node:
-version: 2.1
-github_link: cloud/configure/fastly-vcl-blacklist.md
 functional_areas:
   - Cloud
   - Setup

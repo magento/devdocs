@@ -5,8 +5,6 @@ title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node:
 menu_order: 500
-version: 2.2
-github_link: install-gde/trouble/tshoot_sample-data.md
 functional_areas:
   - Install
   - System

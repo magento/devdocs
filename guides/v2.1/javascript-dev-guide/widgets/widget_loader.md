@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Loader widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_loader.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_loader.html

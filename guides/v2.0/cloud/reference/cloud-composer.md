@@ -5,8 +5,6 @@ title: Composer
 menu_title: Composer
 menu_node:
 menu_order: 5
-version: 2.0
-github_link: cloud/reference/cloud-composer.md
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html

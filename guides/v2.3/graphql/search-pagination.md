@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Searches and pagination in GraphQL
-version: 2.3
-github_link: graphql/search-pagination.md
 ---
 
 A GraphQL search query can contain the following components:
@@ -28,9 +26,8 @@ Search filters are logically ANDed unless an `or` statement is specified. The se
 
 Each object type defines which fields can be searched. See the object-specific documentation for details.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You cannot specify the same search field twice in a GraphQL query.
-</div>
 
 ### Condition types and search values
 
@@ -113,7 +110,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         }
       }
 }
-{% endhighlight  %}
+{% endhighlight %}
 
 The search returns 45 items.
 

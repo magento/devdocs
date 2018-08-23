@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Update the Functional Testing Framework
-version: 2.1
-github_link: mtf/mtf_update.md
 ---
 
 Two types of updates are available.

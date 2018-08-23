@@ -4,8 +4,6 @@ subgroup: Configuration
 title: Configuration importers
 menu_title: Configuration importers
 menu_order: 2000
-version: 2.2
-github_link: extension-dev-guide/configuration/importers.md
 functional_areas:
   - Configuration
 ---

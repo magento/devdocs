@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Indexing overview
-version: 2.1
-github_link: extension-dev-guide/indexing.md
 redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html

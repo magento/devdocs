@@ -1,8 +1,6 @@
 ---
 group: install_pre
 title: Install Magento using Composer
-version: 2.1
-github_link: install-gde/composer.md
 redirect_from:
   - guides/v2.1/install-gde/prereq/integrator_install.html
   - guides/v2.1/install-gde/prereq/integrator_install_composer.html

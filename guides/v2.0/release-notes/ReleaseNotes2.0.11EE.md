@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.0.11 Release Notes
 menu_title: Magento Commerce 2.0.11 Release Notes
 menu_order: 268
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.11EE.md
 ---
 
 We are pleased to present Magento Commerce 2.0.11. This release includes many functional fixes and enhancements. 

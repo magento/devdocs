@@ -4,8 +4,6 @@ subgroup: Tutorials
 title: Serialized to JSON data upgrade
 menu_title: Serialized to JSON data upgrade
 menu_order: 1000
-version: 2.2
-github_link: ext-best-practices/tutorials/serialized-to-json-data-upgrade.md
 ---
 
 ## Overview

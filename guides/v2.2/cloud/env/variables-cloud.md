@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Cloud variables
-version: 2.2
-github_link: cloud/env/variables-cloud.md
 redirect_from:
   - /guides/v2.1/cloud/env/environment-vars_cloud.html
   - /guides/v2.2/cloud/env/environment-vars_cloud.html

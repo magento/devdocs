@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Tile Pattern
-version: 2.1
-github_link: pattern-library/displaying-data/tile/tile.md
 ---
 This topic contains examples of the Tile pattern used in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 

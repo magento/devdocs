@@ -5,8 +5,6 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 350
-version: 2.1
-github_link: install-gde/trouble/php/tshoot_php-set.md
 functional_areas:
   - Install
   - System
@@ -75,8 +73,7 @@ Error text is typically:
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
-
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml) for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml){:target="_blank"} for displaying a product image:
 
 ```php?start_inline=1
 <img
@@ -86,6 +83,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
     alt="<%- data.label %>" />
 ```
 
-More information about [asp_tags](http://php.net/manual/en/ini.core.php#ini.asp-tags).
+More information about [asp_tags](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}.
 
 Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).

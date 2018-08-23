@@ -4,8 +4,6 @@ subgroup: troubleshoot
 title: Debug UI components JavaScript
 menu_title: Debug UI components JavaScript
 menu_order: 1
-version: 2.2
-github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
 ## Overview

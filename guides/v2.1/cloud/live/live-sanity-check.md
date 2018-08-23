@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Build and deploy on local
-version: 2.1
-github_link: cloud/live/live-sanity-check.md
 functional_areas:
   - Cloud
   - Testing

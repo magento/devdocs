@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Manage variables
-version: 2.0
-github_link: cloud/env/variables-intro.md
 redirect_from:
   - /guides/v2.1/cloud/live/config-reference-most.html
   - /guides/v2.2/cloud/live/config-reference-most.html

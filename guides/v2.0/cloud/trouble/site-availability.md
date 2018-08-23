@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Site availability
-version: 2.0
-github_link: cloud/trouble/site-availability.md
 functional_areas:
   - Cloud
   - Configuration

@@ -5,9 +5,7 @@ title: Split database performance solution (Magento Commerce only)
 menu_title: Split database performance solution (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.0
 ee_only: True
-github_link: config-guide/multi-master/multi-master.md
 functional_areas:
   - Configuration
   - System

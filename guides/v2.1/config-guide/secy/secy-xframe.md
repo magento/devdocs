@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 02_Security
 title: X-Frame-Options header
-menu_title: X-Frame-Options header
-menu_order: 5
-menu_node:
-version: 2.1
-github_link: config-guide/secy/secy-xframe.md
 functional_areas:
   - Configuration
   - System
@@ -15,7 +9,7 @@ functional_areas:
 
 ## Overview
 
-To help prevent [clickjacking](https://www.owasp.org/index.php/Clickjacking){:target="_blank"} exploits, we added an option to use the [X-Frame-Options](https://tools.ietf.org/html/rfc7034){:target="_blank"} HTTP request header in requests to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+To help prevent [clickjacking](https://www.owasp.org/index.php/Clickjacking) exploits, we added an option to use the [X-Frame-Options](https://tools.ietf.org/html/rfc7034) HTTP request header in requests to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 The `X-Frame-Options` header enables you to specify whether or not a browser should be allowed to render a page in a `<frame>`, `<iframe>`, or `<object>` as follows:
 
@@ -48,7 +42,6 @@ Look for the `X-Frame-Options` value in the headers.
 
 ## For more information
 
-*	[mozilla.org](https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options){:target="_blank"}
-*	[security.stackexchange.com](http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes){:target="_blank"}
-*	[MSDN blog](http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx){:target="_blank"}
-
+*	[mozilla.org](https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options)
+*	[security.stackexchange.com](http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes)
+*	[MSDN blog](http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx)

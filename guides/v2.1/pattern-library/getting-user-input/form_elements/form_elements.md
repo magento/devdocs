@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Form Elements
-version: 2.1
-github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---
 Form elements are central to the Magento platform, particularly in the ‘Admin’ interface. This article contains examples of the various types of form elements encountered throughout the application to collect data input from its users.

@@ -8,8 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 3
 level3_subgroup: order-tutorial
-version: 2.1
-github_link: rest/tutorials/orders/order-create-customer.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-create-customer.html
   - /guides/v2.2/get-started/order-tutorial/order-create-customer.html
@@ -32,9 +30,8 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 Creating a customer account requires {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} permissions.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
-</div>
 
 **Endpoint**
 
@@ -51,7 +48,7 @@ This example shows a simplified way of creating a customer account. Typically, y
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
 {% collapsible Show code sample %}
-{% highlight json %}
+``` json
 {
 	"customer": {
 		"email": "jdoe@example.com",
@@ -76,7 +73,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 	},
   "password": "Password1"
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 **Response**
@@ -84,7 +81,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 Magento assigned this user `id` value of `2`.
 
 {% collapsible Show code sample %}
-{% highlight json %}
+``` json
 {
   "id": 2,
   "group_id": 1,
@@ -123,7 +120,7 @@ Magento assigned this user `id` value of `2`.
   ],
   "disable_auto_group_change": 0
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 You can log in to the Luma store using the username `jdoe@example.com` and password `Password1`.
@@ -145,12 +142,12 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Payload**
 
-{% highlight json %}
+``` json
 {
 "username": "jdoe@example.com",
 "password": "Password1"
 }
-{% endhighlight %}
+```
 
 **Response**
 

@@ -5,8 +5,6 @@ title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
 menu_order: 200
-version: 2.0
-github_link: howdoi/php/php_clear-dirs.md
 ---
 
 #### Contents

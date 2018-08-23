@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.0.7 Release Notes
 menu_order: 288
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.7EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. This release includes  several functional fixes.

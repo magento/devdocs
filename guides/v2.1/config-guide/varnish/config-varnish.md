@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Varnish
 title: Configure and use Varnish
-menu_title: Configure and use Varnish
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: config-guide/varnish/config-varnish.md
 functional_areas:
   - Configuration
   - System
@@ -87,22 +81,22 @@ We know of the following issues with Varnish:
 
 <!-- Link Definitions -->
 [Varnish Cache]: https://www.varnish-cache.org/
-{:target="_blank"}
+
 [Redis]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [database]: {{ page.baseurl }}/config-guide/database/database.html
 [Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
-{:target="_blank"}
+
 [The Big Varnish Picture]: https://www.varnish-cache.org/docs/trunk/users-guide/intro.html
-{:target="_blank"}
+
 [Varnish startup options]: https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options
-{:target="_blank"}
+
 [Varnish and Website Performance]: https://www.varnish-cache.org/docs/trunk/users-guide/performance.html#users-performance
-{:target="_blank"}
+
 [`magento cache:clean`]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html
 [Varnish does not support SSL]: https://www.varnish-cache.org/docs/3.0/phk/ssl.html
-{:target="_blank"}
+
 [SSL termination proxy]: https://en.wikipedia.org/wiki/TLS_termination_proxy
-{:target="_blank"}
+
 
 <!-- image Definitions -->
 [Basic Varnish diagram]: {{ site.baseurl }}/common/images/varnish_basic.png

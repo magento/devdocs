@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 3
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_calendar.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html

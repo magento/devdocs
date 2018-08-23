@@ -4,8 +4,6 @@ subgroup: Optimization
 title: Magento Optimization Guide
 menu_title: Magento Optimization Guide
 menu_order: 100
-version: 2.0
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System

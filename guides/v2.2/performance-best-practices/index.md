@@ -1,8 +1,6 @@
 ---
 group: perf-best-practices
 title: Performance Best Practices
-version: 2.2
-github_link: performance-best-practices/index.md
 landing-page: Performance Best Practices
 redirect_from: /guides/v2.2/config-guide/prod/prod_perf-optimize.html
 functional_areas:

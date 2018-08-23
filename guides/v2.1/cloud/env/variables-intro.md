@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Environment variables
-version: 2.1
-github_link: cloud/env/variables-intro.md
 functional_areas:
   - Cloud
   - Configuration

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: GitHub integration
-version: 2.1
-github_link: cloud/integrations/github-integration.md
 functional_areas:
   - Cloud
   - Setup

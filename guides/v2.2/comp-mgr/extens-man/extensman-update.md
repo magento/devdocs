@@ -7,8 +7,6 @@ menu_node:
 menu_order: 30
 level3_menu_node: level3child
 level3_subgroup: step3-ext
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-update.md
 functional_areas:
   - Upgrade
 ---

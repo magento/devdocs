@@ -1,8 +1,6 @@
 ---
 group: perf-best-practices
 title: Advanced setup
-version: 2.2
-github_link: performance-best-practices/advanced-setup.md
 functional_areas:
   - Configuration
   - System

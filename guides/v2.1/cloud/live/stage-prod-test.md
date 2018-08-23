@@ -5,8 +5,6 @@ title: Test deployment
 menu_title: Test deployment
 menu_order: 60
 menu_node:
-version: 2.1
-github_link: cloud/live/stage-prod-test.md
 functional_areas:
   - Cloud
   - Testing

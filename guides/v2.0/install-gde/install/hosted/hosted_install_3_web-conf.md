@@ -5,8 +5,6 @@ title: Step 3. Web configuration
 menu_title: Step 3. Web configuration
 menu_order: 6
 menu_node:
-version: 2.0
-github_link: install-gde/install/hosted/hosted_install_3_web-conf.md
 functional_areas:
   - Install
   - System

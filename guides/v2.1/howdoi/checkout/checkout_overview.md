@@ -7,8 +7,6 @@ menu_title: Initial Tasks
 menu_node:
 level3_subgroup: checkout-tutorial
 menu_order: 0
-version: 2.1
-github_link: howdoi/checkout/checkout_overview.md
 functional_areas:
   - Checkout
 ---

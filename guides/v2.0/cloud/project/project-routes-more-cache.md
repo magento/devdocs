@@ -7,8 +7,6 @@ menu_order: 35
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.0
-github_link: cloud/project/project-routes-more-cache.md
 functional_areas:
   - Cloud
   - Setup

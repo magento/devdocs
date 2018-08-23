@@ -1,9 +1,6 @@
 ---
-layout: default
 group: release-notes
 title: Magento Commerce 2.2.5 Release Notes
-version: 2.2
-github_link: release-notes/ReleaseNotes2.2.5EE.md
 ---
 *Patch code and release notes published on July 1, 2018.*
 

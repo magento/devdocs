@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_title: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 421
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
-github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
 We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 

@@ -1,8 +1,6 @@
 ---
 group: reporting
 title: Modules providing advanced reporting
-version: 2.2
-github_link: advanced-reporting/modules.md
 functional_areas:
     - Reports
 ---

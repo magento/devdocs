@@ -1,8 +1,6 @@
 ---
 group: install_cli
 title: Uninstall modules
-version: 2.1
-github_link: install-gde/install/cli/install-cli-uninstall-mods.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
@@ -60,7 +58,8 @@ The module uninstall command performs the following tasks:
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php).
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
+
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
 5.	Removes code from the codebase using `composer remove`.

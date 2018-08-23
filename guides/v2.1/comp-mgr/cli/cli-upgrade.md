@@ -1,8 +1,6 @@
 ---
 group: compman
 title: Command-line upgrade
-version: 2.1
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---
@@ -67,16 +65,16 @@ To enable maintenance mode:
    composer update
    ```
 
-   For example, to upgrade to {{ site.data.var.ce }} version {{ page.version }}.13, enter:
+   For example, to upgrade to {{ site.data.var.ce }} version {{ page.guide_version }}.13, enter:
    ```bash
-   composer require magento/product-community-edition {{ page.version }}.13 --no-update
+   composer require magento/product-community-edition {{ page.guide_version }}.13 --no-update
    ```
    ```bash
    composer update
    ```
-   To upgrade to {{ site.data.var.ee }} version {{ page.version }}.13, enter:
+   To upgrade to {{ site.data.var.ee }} version {{ page.guide_version }}.13, enter:
    ```bash
-   composer require magento/product-enterprise-edition {{ page.version }}.13 --no-update
+   composer require magento/product-enterprise-edition {{ page.guide_version }}.13 --no-update
    ```
    ```bash
    composer update

@@ -1,8 +1,6 @@
 ---
 group: release-notes
 title: Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes
-version: 2.1
-github_link: cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.md
 functional_areas:
   - Cloud
 ---

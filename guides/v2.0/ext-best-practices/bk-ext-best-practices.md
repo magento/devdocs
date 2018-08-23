@@ -4,8 +4,6 @@ title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
-version: 2.0
-github_link: ext-best-practices/bk-ext-best-practices.md
 redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
@@ -33,14 +31,6 @@ The table below is data from a recent poll that shows the distribution of the am
 | Enterprise| 9%  | 32%   | 27%   | 32% |
 
 This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.
-
-### Sections
-
-{% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
-
-{% for node in subgroup %}
-*  [{{ node.menu_title }}]({{ page.baseurl }}/{{ node.github_link | replace: ".md",".html" }})
-{% endfor %}
 
 ### Related Content
 

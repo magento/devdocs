@@ -5,8 +5,6 @@ title: Data Migration Tool
 menu_title: Data Migration Tool
 menu_node: parent
 menu_order: 3
-version: 2.1
-github_link: migration/migration-tool.md
 redirect_from: /guides/v1.0/migration/migration-tool.html
 functional_areas:
   - Tools

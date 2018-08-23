@@ -1,9 +1,6 @@
 ---
-layout: default
 group: release-notes
 title: Magento Open Source 2.1.14 Release Notes
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.14CE.md
 ---
 
 *	TOC
@@ -384,7 +381,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements](http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 

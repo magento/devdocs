@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.0.16 Release Notes
 menu_title: Magento Commerce 2.0.16 Release Notes
 menu_order: 262
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.16EE.md
 ---
 
 *Patch code and release notes were published on September 14, 2017.* 

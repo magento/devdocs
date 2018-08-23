@@ -9,8 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
-github_link: rest/tutorials/msi-order-processing/run-ssa.md
 functional_areas:
   - Integration
 ---
@@ -40,7 +38,7 @@ Currently, MSI supports only the default SSA for priority. Third-party developer
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 

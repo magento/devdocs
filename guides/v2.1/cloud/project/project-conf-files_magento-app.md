@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Application
-version: 2.1
-github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
@@ -270,7 +268,7 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only workers and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Technologies and requirements
-version: 2.2
-github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
   - /guides/v2.1/cloud/discover-tools.html
@@ -77,7 +75,6 @@ This software is *not* upgradable but versions for the following software is con
 
 * [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) 7.0 and 7.1
 * [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
-* [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html) 4.10
 * [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, 2.4, and 5.2

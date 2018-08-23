@@ -6,8 +6,6 @@ menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
-github_link: extension-dev-guide/factories.md
 ---
 
 ## Overview

@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Create a new storefront theme
-version: 2.2
-github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
   - Frontend
@@ -11,9 +9,8 @@ functional_areas:
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the [Apply and configure a theme in Admin]({{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html) topic.
-</div>
 
 ## Prerequisites
 
@@ -48,8 +45,8 @@ To create the directory for your theme:
 
     <pre>
     app/design/frontend/
-    ├──&nbsp;&lt;Vendor&gt;/
-    │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──...&lt;theme&gt;/
+    ├──&nbsp;<Vendor&gt;/
+    │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──...<theme&gt;/
     │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
     │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
     </pre>
@@ -178,7 +175,7 @@ Your theme will likely contain several types of static files:
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 
 <pre>
-app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
+app/design/<area&gt;/<Vendor&gt;/<theme&gt;/
 ├──&nbsp;web/
 │&nbsp;├──&nbsp;css/
 │&nbsp;│&nbsp;├──&nbsp;source/&nbsp;
@@ -191,16 +188,15 @@ In the `.../<theme>/web/images` directory, you store the general theme-related s
 
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../<theme>/<Namespace_Module>/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this guide.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 When you change files stored here during theme development, you need to clear the `pub/static` and `var/view_preprocessed` directories, and then reload the pages. Otherwise, the old versions of files are displayed on the storefront.
-</div>
 
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 
 At this point your theme file structure looks as follows:
 
 <pre>
-app/design/frontend/&lt;Vendor&gt;/
+app/design/frontend/<Vendor&gt;/
 ├──&nbsp;&lt;theme&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;etc/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;view.xml

@@ -1,8 +1,6 @@
 ---
 group: install_cli
 title: Update the Magento database schema and data
-version: 2.1
-github_link: install-gde/install/cli/install-cli-subcommands-db-upgr.md
 functional_areas:
   - Install
   - System

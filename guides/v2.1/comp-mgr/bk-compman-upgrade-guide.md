@@ -1,8 +1,6 @@
 ---
 group: compman
 title: Upgrade the Magento application and components
-version: 2.1
-github_link: comp-mgr/bk-compman-upgrade-guide.md
 functional_areas:
   - Upgrade
 ---
@@ -13,7 +11,7 @@ functional_areas:
 -->
 
 This topic discusses the ways you can:
-* Upgrade (that is, *patch*) the Magento software from version {{ page.version }}.0 to {{ page.version }}.1, for example
+* Upgrade (that is, *patch*) the Magento software from version {{ page.guide_version }}.0 to {{ page.guide_version }}.1, for example
 * Update *components*, which can be any of the following:
   *	Modules (extend Magento capabilities)
   *	Themes (change the look and feel of your storefront and Admin)

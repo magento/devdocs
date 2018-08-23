@@ -6,8 +6,6 @@ title: Customize the view of a checkout step
 subtitle: Customize Checkout
 menu_order: 2
 level3_subgroup: checkout-tutorial
-version: 2.0
-github_link: howdoi/checkout/checkout_customize.md
 functional_areas:
   - Checkout
 ---

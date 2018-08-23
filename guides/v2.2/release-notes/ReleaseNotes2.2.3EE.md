@@ -1,8 +1,6 @@
 ---
 group: release-notes
 title: Magento Commerce 2.2.3 Release Notes
-version: 2.2
-github_link: release-notes/ReleaseNotes2.2.3EE.md
 ---
 *Patch code and release notes published on February 27, 2018.* 
 

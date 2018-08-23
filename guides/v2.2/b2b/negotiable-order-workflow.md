@@ -4,11 +4,9 @@ subgroup: 10_REST
 title: Place a negotiable quote order
 menu_title: Place a negotiable quote order
 menu_order: 35
-version: 2.2
 ee_only: true
 level3_menu_node: level3child
 level3_subgroup: nq
-github_link: b2b/negotiable-order-workflow.md
 ---
 
 This topic describes how REST calls can be used to place items in a shopping cart, initiate and complete the process of negotiating a quote, and reimbursing the buyer's credit upon receipt of payment.

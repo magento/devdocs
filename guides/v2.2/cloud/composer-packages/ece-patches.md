@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: vendor/magento/ece-patches
-version: 2.2
-github_link: cloud/composer-packages/ece-patches.md
 functional_areas:
   - Cloud
   - Setup

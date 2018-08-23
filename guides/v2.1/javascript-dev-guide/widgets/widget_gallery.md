@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Gallery widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_gallery.md
 ---
 
 ## Overview

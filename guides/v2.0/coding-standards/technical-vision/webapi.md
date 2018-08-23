@@ -1,8 +1,6 @@
 ---
 group: coding-standards
 title: Web API technical vision
-version: 2.0
-github_link: coding-standards/technical-vision/webapi.md
 ---
 
 Web API is crucial for Magento because of the need to integrate with order management, customer management, and other enterprise management software systems.

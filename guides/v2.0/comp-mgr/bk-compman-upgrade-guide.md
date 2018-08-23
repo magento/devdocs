@@ -6,8 +6,6 @@ landing-page: System Upgrade Guide
 menu_title: Upgrade the Magento application and components
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/bk-compman-upgrade-guide.md
 functional_areas:
   - Upgrade
 ---

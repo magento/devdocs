@@ -1,9 +1,6 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Extension Repository Structure
-version: 2.3
-github_link: extension-dev-guide/prepare/ext-repo-structure.md
 ---
 
 ## Extension Repository Structure

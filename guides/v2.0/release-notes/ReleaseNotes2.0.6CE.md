@@ -6,8 +6,6 @@ menu_title: Magento Open Source 2.0.6 Release Notes
 menu_order: 189
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 

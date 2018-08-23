@@ -5,8 +5,6 @@ title: Run the Component Manager
 menu_title: Run the Component Manager
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/module-man/compman-checklist.md
 redirect_from: /guides/v2.0/comp-mgr/compman-checklist.html
 functional_areas:
   - Upgrade

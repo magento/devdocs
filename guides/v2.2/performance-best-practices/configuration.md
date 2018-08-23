@@ -1,8 +1,6 @@
 ---
 group: perf-best-practices
 title: Configuration best practices
-version: 2.2
-github_link: performance-best-practices/configuration.md
 functional_areas:
   - Configuration
   - System

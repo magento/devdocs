@@ -8,8 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 4
 level3_subgroup: order-tutorial
-version: 2.1
-github_link: rest/tutorials/orders/order-create-quote.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-create-quote.html
   - /guides/v2.2/get-started/order-tutorial/order-create-quote.html
@@ -59,9 +57,8 @@ None
 
 The response is the `quoteId`: `4`
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
-</div>
 
 ### Verify this step {#verify-step}
 

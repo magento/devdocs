@@ -5,8 +5,6 @@ title: Set up cron jobs
 menu_title: Set up cron jobs
 menu_order: 17
 menu_node:
-version: 2.0
-github_link: cloud/configure/setup-cron-jobs.md
 functional_areas:
   - Cloud
   - Setup

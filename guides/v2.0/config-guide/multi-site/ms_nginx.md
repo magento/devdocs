@@ -5,8 +5,6 @@ title: Tutorial&mdash;Set up multiple websites or stores with nginx
 menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
 menu_order: 3
 menu_node:
-version: 2.0
-github_link: config-guide/multi-site/ms_nginx.md
 functional_areas:
   - Configuration
   - System

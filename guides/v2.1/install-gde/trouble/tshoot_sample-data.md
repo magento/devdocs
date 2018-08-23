@@ -5,8 +5,6 @@ title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node:
 menu_order: 500
-version: 2.1
-github_link: install-gde/trouble/tshoot_sample-data.md
 functional_areas:
   - Install
   - System
@@ -71,8 +69,8 @@ During installation of optional sample data, a  message similar to the following
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2)
-*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html)
+*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2){:target="_blank"}
+*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html){:target="_blank"}
 
 ### Symptom (develop branch) {#trouble-samp-dev}
 

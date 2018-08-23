@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: ConfigurableProduct endpoint
-version: 2.3
-github_link: graphql/reference/configurable-product.md
 ---
 
 The `ConfigurableProduct` endpoint defines which configurable product-specific attributes are returned when performing a `products` search.

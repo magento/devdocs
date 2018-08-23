@@ -5,8 +5,6 @@ title: Get your authentication keys
 menu_title: Get your authentication keys
 menu_order: 26
 menu_node:
-version: 2.0
-github_link: install-gde/prereq/connect-auth.md
 functional_areas:
   - Install
   - System

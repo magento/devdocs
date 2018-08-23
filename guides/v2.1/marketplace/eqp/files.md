@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Files
-version: 2.1
-github_link: marketplace/eqp/files.md
 ---
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:

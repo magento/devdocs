@@ -1,8 +1,6 @@
 ---
 group: install_pre
 title: PHP
-version: 2.3
-github_link: install-gde/prereq/php-centos-ubuntu.md
 functional_areas:
   - Install
   - System

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Magento Cloud CLI reference
-version: 2.1
-github_link: cloud/reference/cli-ref-topic.md
 functional_areas:
   - Cloud
 redirect_from:

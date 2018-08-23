@@ -4,8 +4,6 @@ subgroup: concepts
 title: About XML сonfiguration of UI сomponents
 menu_title: About XML сonfiguration of UI сomponents
 menu_order: 13
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.md
 ---
 
 ## Overview

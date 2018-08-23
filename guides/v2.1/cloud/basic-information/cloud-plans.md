@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Subscriptions and plans
-version: 2.1
-github_link: cloud/basic-information/cloud-plans.md
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.
@@ -27,7 +25,7 @@ github_link: cloud/basic-information/cloud-plans.md
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/products/business-intelligence/essentials">Business Intelligence Pro</a></li>
+          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>

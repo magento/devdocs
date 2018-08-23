@@ -6,8 +6,6 @@ title: Add custom validations before order placement
 subtitle: Customize Checkout
 menu_order: 4
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_order.md
 functional_areas:
   - Checkout
 ---

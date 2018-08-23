@@ -4,8 +4,6 @@ subgroup: 3_Widgets
 title: Prompt widget
 menu_order: 12
 menu_title: Prompt widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
 
 ## Overview

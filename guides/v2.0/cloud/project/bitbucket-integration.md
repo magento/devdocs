@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Bitbucket integration
-version: 2.0
-github_link: cloud/project/bitbucket-integration.md
 functional_areas:
   - Cloud
   - Setup

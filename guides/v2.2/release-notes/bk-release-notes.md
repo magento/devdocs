@@ -5,8 +5,6 @@ title: 2.2.x Release Information
 menu_title: 2.2.x Release Information
 menu_order: 1
 menu_node: parent
-version: 2.2
-github_link: release-notes/bk-release-notes.md
 ---
 
 

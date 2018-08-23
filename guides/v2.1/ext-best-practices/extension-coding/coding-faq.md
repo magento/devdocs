@@ -4,8 +4,6 @@ subgroup: 02_Extension-Coding
 title: Coding FAQ
 menu_title: Coding FAQ
 menu_order: 1000
-version: 2.1
-github_link: ext-best-practices/extension-coding/coding-faq.md
 functional_areas:
   - Standards
 ---

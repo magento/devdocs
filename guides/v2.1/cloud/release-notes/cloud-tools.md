@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Release notes for ece-tools
-version: 2.1
-github_link: cloud/release-notes/cloud-tools.md
 redirect_from:
   - guides/v2.1/cloud/composer-packages/ece-tools.html
 functional_areas:
@@ -47,8 +45,11 @@ The following updates describe the latest improvements to the `ece-tools` packag
    -  <!--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated environment variables
    and values.
 
-   -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check. Now, the deployment fails if the `.magento/services.yaml` file specifies an Elasticsearch version that is incompatible with the [elasticsearch composer package](https://packagist.org/packages/elasticsearch/elasticsearch) used to install {{site.data.var.ee}} v2.1.4 and later. Previously, you could deploy with an unsupported version of the Elasticsearch service, which caused product catalog issues after site deployment. See [Setup Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
+   -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with {{site.data.var.ee}}. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.
+   
+      You can resolve the incompatiblity by [submitting a Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to upgrade Elasticsearch to a compatible version. For {{site.data.var.ee}} version 2.1.x and later, upgrade Elasticsearch to version 2.4. If you have Elasticsearch version 1.x or 2.x and do not want to upgrade, you can change the {{site.data.var.ee}} elasticsearch/elasticsearch requirement in composer.json to `elasticsearch/elasticsearch: "~2.0"`.
 
+	 
    -  <!--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.
 
 -  **Environment variable updates**—Changed the following environment variables:

@@ -4,8 +4,6 @@ subgroup: A_Themes
 title: Themes overview
 menu_title: Themes overview
 menu_order: 1
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-overview.md
 functional_areas:
   - Frontend
   - Theme

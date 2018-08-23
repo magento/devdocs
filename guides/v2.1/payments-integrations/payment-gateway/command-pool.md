@@ -5,8 +5,6 @@ title: Gateway Command Pool
 menu_title:  Gateway Command Pool
 menu_node: 
 menu_order: 3
-version: 2.1
-github_link: payments-integrations/payment-gateway/command-pool.md
 ---
 
 ## Gateway command pool

@@ -6,8 +6,6 @@ title: Add a custom shipping address renderer
 subtitle: Customize Checkout
 menu_order: 10
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_address.md
 functional_areas:
   - Checkout
 ---

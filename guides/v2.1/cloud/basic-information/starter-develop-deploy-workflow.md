@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Starter develop and deploy workflow
-version: 2.1
-github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 functional_areas:
   - Cloud
 ---

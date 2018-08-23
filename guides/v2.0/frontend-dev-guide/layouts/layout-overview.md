@@ -5,8 +5,6 @@ title: Layout overview
 menu_title: Layout
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: frontend-dev-guide/layouts/layout-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 functional_areas:
   - Frontend

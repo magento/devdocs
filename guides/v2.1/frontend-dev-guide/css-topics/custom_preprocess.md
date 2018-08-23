@@ -1,13 +1,6 @@
 ---
 group: fedg
-subgroup: D_CSS
 title: Add custom CSS preprocessor
-menu_order: 8
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: custom-preprocess
-version: 2.1
-github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 functional_areas:
   - Frontend
 ---
@@ -51,8 +44,8 @@ You can view the default Magento processors for reference: [lib/internal/Magento
 The content of your `di.xml` will be similar to the following:
 
 **`<your_module_dir>/etc/di.xml`**
-{%highlight xml%}
 
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <virtualType name="AlternativeSourceProcessors">
@@ -93,7 +86,7 @@ The content of your `di.xml` will be similar to the following:
         </arguments>
     </type>
 </config>
-{%endhighlight%}
+```
 
 ## Related reading
 

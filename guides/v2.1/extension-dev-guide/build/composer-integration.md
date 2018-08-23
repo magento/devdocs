@@ -4,8 +4,6 @@ subgroup: 03_Build
 title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
-version: 2.1
-github_link: extension-dev-guide/build/composer-integration.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/composer-integration.html
   - /guides/v2.0/extension-dev-guide/composer-integration.html

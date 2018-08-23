@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.0.15 Release Notes
 menu_title: Magento Open Source 2.0.15 Release Notes
 menu_order: 164
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.15CE.md
 ---
 
 *Patch code and release notes were published on June 21, 2017.* 

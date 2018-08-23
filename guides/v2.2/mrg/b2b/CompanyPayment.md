@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_CompanyPayment module
 menu_title: CompanyPayment
 menu_order: 70
-version: 2.2
-github_link: mrg/b2b/CompanyPayment.md
 functional_areas:
   - B2B
 ---

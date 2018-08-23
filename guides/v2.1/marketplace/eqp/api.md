@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Introduction
-version: 2.1
-github_link: marketplace/eqp/api.md
 ---
 
 <div class="bs-callout bs-callout-info">

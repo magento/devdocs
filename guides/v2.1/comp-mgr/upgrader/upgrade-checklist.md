@@ -5,8 +5,6 @@ title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: comp-mgr/upgrader/upgrade-checklist.md
 functional_areas:
   - Upgrade
 ---

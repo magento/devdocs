@@ -5,8 +5,6 @@ title: Set up multiple websites, stores, and store views in the Admin
 menu_title: Set up multiple websites, stores, and store views in the Admin
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: config-guide/multi-site/ms_websites.md
 functional_areas:
   - Configuration
   - System

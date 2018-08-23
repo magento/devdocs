@@ -4,8 +4,6 @@ subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 6000
-version: 2.0
-github_link: extension-dev-guide/build/create_component.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html

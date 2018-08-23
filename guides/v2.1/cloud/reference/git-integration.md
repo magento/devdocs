@@ -5,8 +5,6 @@ title: Git
 menu_title: Git
 menu_node:
 menu_order:
-version: 2.1
-github_link: cloud/reference/git-integration.md
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:
@@ -22,8 +20,7 @@ If you need help understand Git, you can review the following resources:
 *	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="\_blank"} with DevForge to understand how people use the repo and commands with a fun story
 
 ## Git CLI and clients {#clients}
-
-You can interact with Git using [CLI commands](https://git-scm.com/documentation){:target="\_blank"} or using a Git client. Git provides a <a href="https://git-scm.com/downloads" target="\_blank">Git client</a> option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.
+You can interact with Git using [CLI commands](https://git-scm.com/documentation){:target="\_blank"} or using a Git client. Git provides a [Git client](https://git-scm.com/downloads){:target="\_blank"} option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.
 
 Not everyone remembers [Git](https://git-scm.com/docs){:target="\_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="\_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="\_blank"}.
 

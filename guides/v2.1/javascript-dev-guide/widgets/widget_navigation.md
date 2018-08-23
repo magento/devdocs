@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Navigation widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_navigation.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html

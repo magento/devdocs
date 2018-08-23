@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Starter develop and deploy workflow
-version: 2.0
-github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
 
 The {{site.data.var.ece}} includes a single Git repository with a master branch for the Production environment that can be branched to create Staging and Integration environments for testing and development work. You can have up to four active environments, including a `master` environment for your production server. See [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) for an overview.

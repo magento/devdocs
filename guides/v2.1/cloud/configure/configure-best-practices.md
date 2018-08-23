@@ -5,8 +5,6 @@ title: Best practices for store configuration
 menu_title: Best practices for store configuration
 menu_order:
 menu_node:
-version: 2.1
-github_link: cloud/configure/configure-best-practices.md
 functional_areas:
   - Cloud
   - Configuration

@@ -5,8 +5,6 @@ title: Protective block
 menu_title: Protective block
 menu_order: 20
 menu_node:
-version: 2.0
-github_link: cloud/live/live-prot.md
 functional_areas:
   - Cloud
   - Configuration

@@ -4,8 +4,6 @@ subgroup: 40_Authentication
 title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
-version: 2.0
-github_link: get-started/authentication/gs-authentication-oauth.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 functional_areas:
   - Integration
@@ -56,7 +54,7 @@ Activating the integration submits the credentials to the endpoint specified whe
 * `store_base_url` For example, `http://my-magento-store.com/`.
 * `oauth_verifier`
 * `oauth_consumer_key`
-* `oauth_consumer_key_secret`
+* `oauth_consumer_secret`
 
 Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 

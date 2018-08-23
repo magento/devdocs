@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
-version: 2.1
-github_link: mtf/create_test.md
 ---
 
 The Magento testing framework (FTF) works with functional tests only. Functional tests check that an application meets business requirements. These requirements usually are collected in the functional specifications that describe expected behavior of the application.

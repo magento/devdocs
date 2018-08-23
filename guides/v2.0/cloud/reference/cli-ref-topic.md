@@ -5,8 +5,6 @@ title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
 menu_order: 30
 menu_node:
-version: 2.0
-github_link: cloud/reference/cli-ref-topic.md
 functional_areas:
   - Cloud
 redirect_from:

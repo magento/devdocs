@@ -5,8 +5,6 @@ title: JavaScript coding standard
 landing-page: Coding standards
 menu_title: JavaScript coding standard
 menu_order: 5
-version: 2.1
-github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 functional_areas:
   - Standards

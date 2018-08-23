@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Onboarding tasks
-version: 2.1
-github_link: cloud/onboarding/onboarding-tasks.md
 functional_areas:
   - Cloud
   - Setup

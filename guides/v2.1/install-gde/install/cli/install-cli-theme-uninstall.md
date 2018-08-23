@@ -1,8 +1,6 @@
 ---
 group: install_cli
 title: Uninstall themes Composer packages
-version: 2.1
-github_link: install-gde/install/cli/install-cli-theme-uninstall.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html

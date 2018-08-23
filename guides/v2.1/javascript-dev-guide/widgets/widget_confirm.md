@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Confirmation widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
 ## Overview

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Add Staging and Production to Pro projects UI
-version: 2.1
-github_link: cloud/trouble/pro-env-management.md
 ---
 
 Previously, you accessed Pro Staging and Production environments by using an SSH login or submitting a ticket. We added features to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) to directly manage these environments without using an SSH login for specific options.

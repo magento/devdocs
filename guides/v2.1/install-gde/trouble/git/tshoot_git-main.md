@@ -5,8 +5,6 @@ title: GitHub errors
 menu_title: GitHub errors
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: install-gde/trouble/git/tshoot_git-main.md
 functional_areas:
   - Install
   - System

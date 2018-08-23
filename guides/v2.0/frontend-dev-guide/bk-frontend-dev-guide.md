@@ -4,8 +4,6 @@ title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
 menu_title: Introduction
 menu_order: 1
-version: 2.0
-github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 functional_areas:
   - Frontend

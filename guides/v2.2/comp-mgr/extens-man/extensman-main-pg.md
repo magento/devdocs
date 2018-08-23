@@ -5,8 +5,6 @@ title: Start the Extension Manager
 menu_title: Start the Extension Manager
 menu_node:
 menu_order: 2
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-main-pg.md
 functional_areas:
   - Upgrade
 ---

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Fastly image optimization
-version: 2.1
-github_link: cloud/cdn/fastly-image-optimization.md
 functional_areas:
   - Cloud
   - Setup
@@ -19,7 +17,7 @@ images through image optimizers, using default configurations.
 
 **Prerequisites**
 
--  Install or upgrade to Fastly module version 1.2.52 or later
+-  Install or upgrade to Fastly module version 1.2.62 or later
 -  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
 
 #### To enable Fastly IO:

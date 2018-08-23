@@ -5,8 +5,6 @@ title: Configure your store
 menu_title: Configure your store
 menu_order: 1
 menu_node: parent
-version: 2.2
-github_link: cloud/configure/configuration-overview.md
 functional_areas:
   - Cloud
   - Configuration
@@ -27,6 +25,7 @@ The following options, tools, and features can be set up and configured in your 
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 * [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html) for your site and store
+* Install the [Magento Google reCAPTCHA and Two-Factor Authentication extensions](https://docs.magento.com/m2/ee/user_guide/magento/magento-extensions.html){:target="\_blank"} to provide additional security for account access to the Magento Admin panel and storefront.
 
 ## Configure your deploy: build hooks, services, and routes {#deploy}
 

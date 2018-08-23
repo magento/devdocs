@@ -5,8 +5,6 @@ title: Start System Upgrade
 menu_title: Start System Upgrade
 menu_node:
 menu_order: 3
-version: 2.1
-github_link: comp-mgr/upgrader/upgrade-start.md
 functional_areas:
   - Upgrade
 ---

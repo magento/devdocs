@@ -6,8 +6,6 @@ menu_title: Proxies
 menu_order: 7
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
-github_link: extension-dev-guide/proxies.md
 ---
 
 Magento's <a href="{{ page.baseurl }}/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)
@@ -56,7 +54,7 @@ Assume that class `SlowLoading` has a non-trivial performance impact when instan
 
 ### Proxies are generated code
 
-Magento has a solution for this situation: proxies. <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">Proxies</a> extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends is created only after one of the class's methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.
+Magento has a solution for this situation: proxies. [Proxies](http://en.wikipedia.org/wiki/Proxy_pattern){:target="_blank"} extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends is created only after one of the class's methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.
 
 Proxies are generated code and therefore do not need to be manually written.  (See <a href="{{ page.baseurl }}/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form `\Original\Class\Name\Proxy`, and the class is generated if it does not exist.
 
@@ -74,4 +72,4 @@ With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not 
 
 Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements _removed_ - without touching application code.
 
-As a practical example of a proxy, you can see the <a href="{{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated `StoreManager` proxy class.
+As a practical example of a proxy, you can see the [StoreManager]({{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php){:target="_blank"} class and then see the generated `StoreManager` proxy class.

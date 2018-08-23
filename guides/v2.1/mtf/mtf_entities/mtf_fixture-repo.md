@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Fixture repository
-version: 2.1
-github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
 The repository stores pre-defined data for the fixture.

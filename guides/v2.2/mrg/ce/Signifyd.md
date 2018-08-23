@@ -4,8 +4,6 @@ subgroup: 10_Community Edition
 title: Magento_Signifyd module
 menu_title: Signifyd
 menu_order: 2
-version: 2.2
-github_link: mrg/ce/Signifyd.md
 redirect_from: /guides/v2.2/mrg/ee/Signifyd.html
 ---
 

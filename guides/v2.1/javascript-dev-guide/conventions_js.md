@@ -1,8 +1,6 @@
 ---
 group: jsdg
 title: Conventional notations used in this Guide
-version: 2.1
-github_link: javascript-dev-guide/conventions_js.md
 ---
 
 ## Conventional notations for paths to modules and themes

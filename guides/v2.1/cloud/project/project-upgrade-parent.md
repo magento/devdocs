@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Upgrades and patches
-version: 2.1
-github_link: cloud/project/project-upgrade-parent.md
 functional_areas:
   - Cloud
   - Upgrade

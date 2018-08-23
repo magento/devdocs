@@ -1,8 +1,6 @@
 ---
 group:
 title: Merge and delete an environment (tutorial)
-version: 2.1
-github_link: cloud/howtos/environment-tutorial-env-merge.md
 functional_areas:
   - Cloud
   - Configuration

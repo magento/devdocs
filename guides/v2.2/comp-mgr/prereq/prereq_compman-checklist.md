@@ -1,8 +1,6 @@
 ---
 group: compman
 title: Update and upgrade checklist
-version: 2.2
-github_link: comp-mgr/prereq/prereq_compman-checklist.md
 functional_areas:
   - Upgrade
 ---
@@ -19,7 +17,7 @@ Do not continue without performing these checks. Failure to do so could result i
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
 
-Magento {{ page.version }} includes security enhancements that require some data to be converted from serialized data format to JSON encoded format.
+Magento {{ page.guide_version }} includes security enhancements that require some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.
 
 The following tables are affected the most:

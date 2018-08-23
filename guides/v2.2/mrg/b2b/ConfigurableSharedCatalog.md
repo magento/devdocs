@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_ConfigurableSharedCatalog module
 menu_title: ConfigurableSharedCatalog
 menu_order: 100
-version: 2.2
-github_link: mrg/b2b/ConfigurableSharedCatalog.md
 functional_areas:
   - B2B
 ---

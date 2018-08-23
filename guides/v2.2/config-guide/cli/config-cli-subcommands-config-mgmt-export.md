@@ -1,14 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Export the configuration
-menu_title: Export the configuration
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: cli-config-mgmt
-menu_order: 251
-version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
 functional_areas:
   - Configuration
   - System
@@ -44,4 +36,4 @@ See: [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-e
 
 To set the sensitive settings written to `env.php`, use the [`bin/magento config:sensitive:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
 
-Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="\_blank"} in the module's [`di.xml`]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.
+Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php) in the module's [`di.xml`]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.

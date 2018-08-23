@@ -8,8 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 2
 level3_subgroup: order-tutorial
-version: 2.1
-github_link: rest/tutorials/orders/order-admin-token.md
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-admin-token.html
   - /guides/v2.2/get-started/order-tutorial/order-admin-token.html

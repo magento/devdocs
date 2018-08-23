@@ -4,8 +4,6 @@ subgroup: D_CSS_G
 title: Simple ways to customize a theme's styles
 menu_title: Simple ways to customize a theme's styles
 menu_order: 1
-version: 2.0
-github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 functional_areas:
   - Frontend
 ---

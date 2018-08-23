@@ -1,8 +1,6 @@
 ---
 group: install_pre
 title: System 2.3.x requirements
-version: 2.3
-github_link: install-gde/system-requirements2.md
 redirect_from:
   - /guides/v2.3/install-gde/system-requirements.html
   - /magento-system-requirements.html

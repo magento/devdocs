@@ -1,9 +1,7 @@
 ---
 group: pattern
 title: Scheduled Changes Module
-version: 2.1
 ee_only: true
-github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
 For all stage-able entities, a Scheduled Changes {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates.
 

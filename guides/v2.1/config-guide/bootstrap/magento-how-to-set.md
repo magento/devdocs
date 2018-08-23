@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
-menu_title: Set the value of bootstrap parameters
-menu_order: 2
-menu_node:
-version: 2.1
-github_link: config-guide/bootstrap/magento-how-to-set.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 functional_areas:
   - Configuration
@@ -20,26 +14,11 @@ This topic discusses how to set the values of Magento application bootstrap para
 
 The following table discusses the bootstrap parameters you can set:
 
-<table>
-	<col width="40%">
-  	<col width="30%">
-	<tbody>
-		<tr>
-			<th>Bootstrap parameter</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
-		<td>Specifies custom directory and URL paths</td>
-	</tr>	
-	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
-		<td>Enables dependency graphs and HTML profiling</td>
-	</tr>
-
-	
-	</tbody>
-</table>
+| Bootstrap parameter | Description                                  |
+| ------------------- | -------------------------------------------- |
+| MAGE_DIRS           | Specifies custom directory and URL paths     |
+| MAGE_PROFILER       | Enables dependency graphs and HTML profiling |
+{:style="table-layout:auto;"}
 
 {:.bs-callout .bs-callout-info}
 *   Not all bootstrap parameters are documented at this time.

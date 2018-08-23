@@ -5,8 +5,6 @@ title: Install a theme
 menu_title: Install a theme
 menu_order: 60
 menu_node:
-version: 2.1
-github_link: cloud/howtos/custom-theme.md
 functional_areas:
   - Cloud
   - Setup

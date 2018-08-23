@@ -5,8 +5,6 @@ title: Resolve issues with encryption key
 menu_title: Resolve issues with encryption key
 menu_order: 25
 menu_node:
-version: 2.1
-github_link: cloud/trouble/trouble-crypt-key-variable.md
 functional_areas:
   - Cloud
   - Setup

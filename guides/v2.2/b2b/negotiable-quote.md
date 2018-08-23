@@ -4,11 +4,9 @@ subgroup: 10_REST
 title: Integrate with the NegotiableQuote module
 menu_title: Integrate with the NegotiableQuote module
 menu_order: 31
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
-github_link: b2b/negotiable-quote.md
 functional_areas:
   - B2B
   - Integration
@@ -18,7 +16,7 @@ Negotiable quotes are a mechanism that allows a company user (buyer) and a selle
 
 The negotiable quote lifecycle includes a number of stages, as shown on the diagram below.
 
-![Negotiable quote workflow]({{ page.baseurl }}/b2b/images/quote-workflow.jpg)
+![Negotiable quote workflow]({{ site.baseurl }}/common/images/b2b/quote-workflow.jpg)
 
 The quoting process itself can be a continuous process, with a number of repeating cycles until the agreement is reached.
 
@@ -27,9 +25,8 @@ The quoting process itself can be a continuous process, with a number of repeati
 * The buyer reviews the seller's counteroffer
 * Upon agreement, the buyer begins the checkout process and the system converts the negotiable quote into an order
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You cannot negotiate prices on individual items.
-</div>
 
 ## Quote statuses
 
@@ -37,67 +34,18 @@ The quote life cycle is managed via quote statuses. The quoting interface allows
 
 The negotiated price set in the negotiable quote is exactly the price that will be applied on a quote during checkout, order generation, and invoice generation.
 
-<table>
-<tr>
-<th>Status</th><th>Description</th><th>Available actions to seller</th></tr>
-<tr>
-<td>New </td>
-<td><p>The buyer submitted the quote, but the seller has not opened it yet. The buyer can edit the quote.</p>
-<p>The system creates a new quote record with its own ID.</p>
- </td>
-<td>View</td>
-</tr>
-
-<tr>
-<td>Open </td>
-<td>The seller has opened the submitted quote and is reviewing/modifying it. The seller can edit the quote, but the buyer cannot.	 </td>
-<td><p>View, submit, decline, save as draft.</p>
-<p>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</p> </td>
-</tr>
-
-<tr>
-<td>Submitted </td>
-<td>The seller has reviewed the quote and has sent it back to buyer. The seller cannot edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Client reviewed </td>
-<td>The buyer has opened the quote submitted by seller and is modifying it, by changing items or adding a shipping address. The seller cannot edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Updated </td>
-<td>The buyer has re-submitted the quote to seller. The seller can edit the quote, but the buyer cannot. </td>
-<td><p>View, submit, decline, save as draft.</p>
-<p>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.</p></td>
-</tr>
-
-<tr>
-<td>Ordered </td>
-<td>The buyer has purchased the quote, and Magento converts the quote to an order. Neither the seller nor the buyer can edit the quote. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Closed </td>
-<td><p>The buyer has cancelled the quote and thus stopped the negotiation process. Neither the seller nor the buyer can edit the quote.</p><p>The buyer clicks the <b>Close</b> button from the Quote details page. (Not available using Web API) </p></td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Declined </td>
-<td>The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing. </td>
-<td>View </td>
-</tr>
-
-<tr>
-<td>Expired </td>
-<td>The quote is on the buyer's side, and the quote's expiration date has passed. </td>
-<td>View </td>
-</tr>
-</table>
+Status | Description | Available actions to seller
+--- | --- | ---
+New | The buyer submitted the quote, but the seller has not opened it yet. The buyer can edit the quote. <br/><br/>The system creates a new quote record with its own ID. | View
+Open | The seller has opened the submitted quote and is reviewing/modifying it. The seller can edit the quote, but the buyer cannot. | View, submit, decline, save as draft. <br/><br/>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.
+Submitted | The seller has reviewed the quote and has sent it back to buyer. The seller cannot edit the quote. | View
+Client reviewed | The buyer has opened the quote submitted by seller and is modifying it, by changing items or adding a shipping address. The seller cannot edit the quote. | View
+Updated | The buyer has re-submitted the quote to seller. The seller can edit the quote, but the buyer cannot. | View, submit, decline, save as draft.<br/><br/>Edit the expiration date, item quantity, add/remove product items, enter a proposed price, add shipping method and shipping price, add comments.
+Ordered | The buyer has purchased the quote, and Magento converts the quote to an order. Neither the seller nor the buyer can edit the quote. | View
+Closed | The buyer has cancelled the quote and thus stopped the negotiation process. Neither the seller nor the buyer can edit the quote. <br/><br/>The buyer clicks the **Close** button from the Quote details page. (Not available using Web API) | View
+Declined | The seller has declined the quote. All custom pricing (if any) is removed from the quote. In admin panel, the quote is locked for editing. | View
+Expired | The quote is on the buyer's side, and the quote's expiration date has passed. | View
+{:style="table-layout:auto;"}
 
 The following table maps the internal Magento system state to the statuses displayed on the Storefront and Admin.
 
@@ -112,10 +60,11 @@ Ordered | Ordered | Ordered
 Expired | Expired | Expired
 Declined | Declined | Declined
 Closed | Closed | Closed
+{:style="table-layout:auto;"}
 
 The following diagram shows the negotiable quote lifecycle from the perspective of statuses.
 
-![Negotiable quote status]({{ page.baseurl }}/b2b/images/quote-statuses.png)
+![Negotiable quote status]({{ site.baseurl }}/common/images/b2b/quote-statuses.png)
 
 ## Related information
 

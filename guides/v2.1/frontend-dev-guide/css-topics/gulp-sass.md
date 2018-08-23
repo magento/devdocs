@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Use Sass preprocessor and Gulp task runner
-version: 2.1
-github_link: frontend-dev-guide/css-topics/gulp-sass.md
 functional_areas:
   - Frontend
   - Tools
@@ -54,7 +52,6 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 2. Set up a Gulp task for Sass compilation by placing the file with the task code in the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). Create an empty `app/code/frontend/<Vendor>/<theme>/gulpfile.js` file and copy-paste this `package.json` code into it (no changes needed):
 
    ```js
-
     var gulp         = require('gulp'),
         sass         = require('gulp-sass'),
         plumber      = require('gulp-plumber'),
@@ -78,16 +75,17 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
     };
 
     // Compile CSS
-  gulp.task('styles', function () {
-      var stream = gulp
-          .src([config.src])
-          .pipe(plumber({errorHandler: onError}))
-          .pipe(sass().on('error', sass.logError));
-
-      return stream
-          .pipe(gulp.dest('./web/css/'));
-  });
+      gulp.task('styles', function () {
+          var stream = gulp
+              .src([config.src])
+              .pipe(plumber({errorHandler: onError}))
+              .pipe(sass().on('error', sass.logError));
+    
+          return stream
+              .pipe(gulp.dest('./web/css/'));
+      });
    ```
+   
    This task uses `styles.scss`, stored in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory, as the source of Sass. It stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
 
 5. Put the source `styles.scss` file in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.
@@ -107,5 +105,6 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 ## Using the @import directive in Sass
 
 In the source .`scss` files you can use the `@import` directive, to import other `.scss` files. You can put the module-related stylesheets in the module directories in the theme, and then include them in the main `.scss` file. For example, if you create a `_catalogstls.scss` file for styles of the `Magento_Catalog` module and put it in `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/styles `, you can import it using the following notation:
-
-    @import '../Magento_Theme/styles/module
+```css
+@import '../Magento_Theme/styles/module`
+```

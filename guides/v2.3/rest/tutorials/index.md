@@ -1,8 +1,6 @@
 ---
 group: rest
 title: REST tutorials
-version: 2.3
-github_link: rest/tutorials/index.md
 functional_areas:
   - Integration
   - Orders

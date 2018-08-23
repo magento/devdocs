@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Row Pattern (Table)
-version: 2.1
-github_link: pattern-library/getting-user-input/row_pattern/row_pattern.md
 ---
 The "row pattern" (also referred to as _table light_ and _mini grid_) is used in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
 

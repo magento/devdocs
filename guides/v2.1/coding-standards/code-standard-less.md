@@ -5,8 +5,6 @@ title: LESS coding standard
 landing-page: Coding standards
 menu_title: LESS coding standard
 menu_order: 8
-version: 2.1
-github_link: coding-standards/code-standard-less.md
 functional_areas:
   - Standards
 ---

@@ -1,8 +1,6 @@
 ---
 group: config-guide
 title: Use memcached for session storage
-version: 2.0
-github_link: config-guide/memcache/memcache.md
 functional_areas:
   - Configuration
   - System

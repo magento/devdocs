@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Import URL Rewrites
-version: 2.2
-github_link: cloud/configure/import-url-rewrites.md
 functional_areas:
   - Cloud
   - Setup

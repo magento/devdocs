@@ -5,8 +5,6 @@ title: Incorrect credentials
 menu_title: Incorrect credentials
 menu_order: 7
 menu_node:
-version: 2.0
-github_link: cloud/trouble/trouble_ce-creds.md
 functional_areas:
   - Cloud
   - Configuration

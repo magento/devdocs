@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Pro architecture
-version: 2.0
-github_link: cloud/architecture/pro-architecture.md
 redirect_from:
   - /guides/v2.0/cloud/discover-arch.html
   - /guides/v2.1/cloud/discover-arch.html

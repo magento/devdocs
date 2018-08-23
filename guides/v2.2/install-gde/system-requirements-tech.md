@@ -5,8 +5,6 @@ title: Magento 2.2.x technology stack requirements
 menu_title: Magento 2.2.x technology stack requirements
 menu_node:
 menu_order: 2
-version: 2.2
-github_link: install-gde/system-requirements-tech.md
 functional_areas:
   - Install
   - System

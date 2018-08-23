@@ -5,8 +5,6 @@ title: Resolve an illegal offset error
 menu_title: Resolve an illegal offset error
 menu_node:
 menu_order: 2
-version: 2.1
-github_link: install-gde/trouble/php/tshoot_opcache.md
 functional_areas:
   - Install
   - System
