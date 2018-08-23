@@ -120,20 +120,22 @@ Reindexing all indexers can take a long time for stores with large numbers of pr
 
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
-As of Magento 2.2.6, indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
+As of Magento 2.2.5, indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
 
 The following indexes can be run in parallel mode:
-- Catalog Search Fulltext is paralleled by store views.
-- Category Product is paralleled by store views.
-- Catalog Price can be paralleled by website and customer groups.
+- Catalog Search Fulltext can be paralleled by store views.
+- Category Product can be paralleled by store views.
 
-To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT` or add an environment variable to env.php. This variable sets the number of threads for the reindex processing.
+To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT`. This variable sets the number of threads for the reindex processing.
 
 For example, the following command runs the Catalog Search Fulltext indexer across three threads:
 
 ```bash
 MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
 ```
+
+{:.bs-callout .bs-callout-info}
+Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
 
 ## Configure indexers
 
