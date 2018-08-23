@@ -121,7 +121,7 @@ After submitting your PR, you can head over to the Magento 2 repository’s [Pul
 
 The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento/magento2` repository. It helps automate different issue and pull request workflows using commands entered as comments.
 
-Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issuess. We plan on adding features in the future.
+Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issues. We plan on adding features in the future.
 
 * [Deploy vanilla Magento instance](#vanilla-pr)
 * [Deploy instance based on PR changes](#deploy-pr)
