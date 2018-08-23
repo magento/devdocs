@@ -1175,7 +1175,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#fedg_layout_xml-instruc_ex_upd">update</a></li>
 </ul>
 
-<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
+<h3 id="fedg_layout_xml-instruc_ex_block">block</h3>
 
 <p>Defines a block.</p>
 
@@ -1239,7 +1239,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To pass parameters use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
-<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
+<h3 id="fedg_layout_xml-instruc_ex_cont">container</h3>
 <p>A structure without content that holds other layout elements such as blocks and containers.
 <strong>Details:</strong> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;block&gt;</code> elements.</p>
 <table>
@@ -1363,7 +1363,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
    </tbody>
 </table>
 
-<h3 id="examples">Examples</h3>
+<h4 id="examples">Examples</h4>
 
 <table>
    <tbody>
@@ -1390,7 +1390,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
    </tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_act">fedg_layout_xml-instruc_ex_act</h3>
+<h3 id="fedg_layout_xml-instruc_ex_act">action</h3>
 
 <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code></a> to access block public API.</p>
 
@@ -1431,7 +1431,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To pass parameters, use the <a href="#argument"><code class="highlighter-rouge">&lt;/argument&gt;</code></a> instruction.</p>
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">fedg_layout_xml-instruc_ex_ref</h3>
+<h3 id="fedg_layout_xml-instruc_ex_ref">referenceBlock and referenceContainer</h3>
 
 <p>Updates in <code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code> are applied to the corresponding <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;container&gt;</code>.
 For example, if you make a reference by <code class="highlighter-rouge">&lt;referenceBlock name="right"&gt;</code>, you’re targeting the block <code class="highlighter-rouge">&lt;block name="right"&gt;</code>.</p>
@@ -1481,7 +1481,7 @@ For example, if you make a reference by <code class="highlighter-rouge">&lt;refe
   </li>
 </ul>
 
-<h3 id="fedg_layout_xml-instruc_ex_mv">fedg_layout_xml-instruc_ex_mv</h3>
+<h3 id="fedg_layout_xml-instruc_ex_mv">move</h3>
 
 <p>Sets the declared block or container element as a child of another element in the specified order.
 <strong>Example:</strong></p>
@@ -1530,7 +1530,7 @@ For example, if you make a reference by <code class="highlighter-rouge">&lt;refe
    </tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_rmv">fedg_layout_xml-instruc_ex_rmv</h3>
+<h3 id="fedg_layout_xml-instruc_ex_rmv">remove</h3>
 
 <p><code class="highlighter-rouge">&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code class="highlighter-rouge">&lt;head&gt;</code> section.
 For removing blocks or containers, use the <code class="highlighter-rouge">&lt;remove&gt;</code> attribute for [<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).</referenceContainer></referenceBlock></p>
@@ -1552,7 +1552,7 @@ For removing blocks or containers, use the <code class="highlighter-rouge">&lt;r
 <span class="nt">&lt;/page&gt;</span>
 </code></pre></div></div>
 
-<h3 id="fedg_layout_xml-instruc_ex_upd">fedg_layout_xml-instruc_ex_upd</h3>
+<h3 id="fedg_layout_xml-instruc_ex_upd">update</h3>
 
 <p>Includes a certain layout file.</p>
 
