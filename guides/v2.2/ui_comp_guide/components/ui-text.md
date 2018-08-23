@@ -5,13 +5,9 @@ title: Text component
 menu_title: Text component
 ---
 
-## Overview
-
 The Text component displays text data in the components like [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) and [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html).
 
-## Text configuration
-
-Extends all [uiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+## Configuration options
 
 <table>
   <tr>

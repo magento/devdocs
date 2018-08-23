@@ -5,15 +5,9 @@ title:  Email component
 menu_title: Email component
 ---
 
-## Overview
-
 The Email component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="email">` form field.
 
-## Email configuration
-
-Extends all `abstract` configuration.
-
-Email-specific configuration:
+## Configuration options
 
 <table>
   <tr>
