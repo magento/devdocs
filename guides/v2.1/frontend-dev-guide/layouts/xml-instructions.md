@@ -35,7 +35,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 *  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
 
-### &lt;block&gt; {#fedg_layout_xml-instruc_ex_block}
+### \<block\> {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
 
@@ -98,7 +98,7 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
 
 To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
 
-### &lt;container&gt; {#fedg_layout_xml-instruc_ex_cont}
+### \<container\> {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
 <p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
 <table>
