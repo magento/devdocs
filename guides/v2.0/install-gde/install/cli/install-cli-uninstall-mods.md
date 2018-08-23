@@ -32,7 +32,7 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Uninstall modules   {#instgde-cli-uninst-mod-uninst}
