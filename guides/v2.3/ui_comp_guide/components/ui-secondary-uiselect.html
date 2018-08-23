@@ -338,6 +338,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -520,6 +534,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -694,6 +722,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.3/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1394,102 +1436,26 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all <code class="highlighter-rouge">abstract</code> configuration and can be configured in two modes:</p>
+			<p>The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all <code class="highlighter-rouge">abstract</code> configuration and can be configured in two modes:</p>
 <ul>
   <li>Single - checkbox isn’t displayed</li>
   <li>Multiple - checkboxes are displayed</li>
 </ul>
 
-<h3 id="examples">Examples</h3>
+<h2 id="configuration-options">Configuration options</h2>
 
-<p>Example 1:</p>
+<!-- Available note types: "info", "warning", "tip" -->
 
-<blockquote>
-  <p><code class="highlighter-rouge">&lt;Magento_Cms&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
-</blockquote>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">"uiSelect"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;/argument&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataScope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
-                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;/filterSelect&gt;</span>
-<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
-
-<p>Example 2:</p>
-
-<p>The following is an example of the configuration of a select component. It is used as a column filter with three levels of options, with no selectable label for every level, without checkboxes:</p>
-
-<p><img src="/common/images/ui-select21.jpg" alt="view the configuration" /></p>
-
-<h3 id="configuration">Configuration</h3>
-
-<p>The following configuration can be passed in as arguments:</p>
-
-<ul>
-  <li>Link to any of the UI component templates</li>
-  <li>Link to the constructor</li>
-  <li>Label to ui-select</li>
-  <li>Default caption</li>
-  <li>Caption if more than one element is selected</li>
-</ul>
-
-<h3 id="navigation">Navigation</h3>
-
-<p>The UI-select component supports keyboard navigation.</p>
-
-<p>Navigation keys:</p>
-
-<ul>
-  <li><strong><code class="highlighter-rouge">Enter</code></strong>: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option</li>
-  <li><strong><code class="highlighter-rouge">Space</code></strong>: copies the <code class="highlighter-rouge">Enter</code> key functionality</li>
-  <li><strong><code class="highlighter-rouge">Escape</code></strong>: closes the list of options</li>
-  <li><strong><code class="highlighter-rouge">PageUp</code></strong>: sets focus to the previous option</li>
-  <li><strong><code class="highlighter-rouge">PageDown</code></strong>: sets focus to the next option</li>
-</ul>
-
-<h3 id="ui-select-js-component-structure">UI-select JS component structure</h3>
-
-<table style="table-layout:auto;">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Filename</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>JavaScript class</td>
-      <td><code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js</code></td>
-    </tr>
-    <tr>
-      <td>Dependencies</td>
-      <td><code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/element/abstract.js</code></td>
-    </tr>
-    <tr>
-      <td>Template</td>
-      <td><code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="ui-select-component-specific-configuration">UI-select component-specific configuration</h3>
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>You must create a controller for <code class="highlighter-rouge">searchUrl</code>. If you’d like to use other data for the request, you can override the <code class="highlighter-rouge">processRequest</code> method in your component.</p>
+</div>
 
 <table style="table-layout:auto;">
   <tr>
     <th>Option</th>
     <th>Description</th>
     <th>Default</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td><code>imports</code></td>
@@ -1500,6 +1466,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nl">options</span><span class="p">:</span> <span class="s1">'${ $.optionsConfig.name }:options'</span>
     <span class="p">}</span></code></pre></figure>
 </td>
+    <td>Yes</td>
   </tr>
   <tr>
     <td><code>actions</code></td>
@@ -1528,169 +1495,200 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
         </code>
     </td>
+    <td>Yes</td>
   </tr>  
 </table>
 
-<h2 id="component-options">Component options</h2>
-
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-tip" id="tip">
-  <p>You must create a controller for <code class="highlighter-rouge">searchUrl</code>. If you’d like to use other data for the request, you can override the <code class="highlighter-rouge">processRequest</code> method in your component.</p>
-</div>
+<h3 id="optional-configuration">Optional configuration</h3>
 
 <table style="table-layout:auto;">
-<tbody>
-<tr>
-    <th>Title</th>
-    <th>Type</th>
-    <th>Default Value</th>
-    <th>Description</th>
-</tr>
-<tr>
-    <td><code>chipsEnabled</code></td>
-    <td>Boolean</td>
-    <td>True</td>
-    <td>Selected options are shown in UI-select's header as deletable chips.</td>
-</tr>
-<tr>
-    <td><code>closeBtn</code></td>
-    <td>Boolean</td>
-    <td>True</td>
-    <td>Shows the button that closes the dropdown</td>
-</tr>
-<tr>
-    <td><code>closeBtnLabel</code></td>
-    <td>String</td>
-    <td><code>$t('Done')</code></td>
-    <td>Label of the close button</td>
-</tr>
-<tr>
-    <td><code>deviation</code></td>
-    <td>Number</td>
-    <td>30</td>
-    <td>Handles scroll download behavior</td>
-</tr>
-<tr>
-    <td><code>emptyOptionsHtml</code></td>
-    <td>String</td>
-    <td>Empty string</td>
-    <td>Specifies the HTML to display content if there are no options to display</td>
-</tr>
-<tr>
-    <td><code>filterPlaceholder</code></td>
-    <td>String</td>
-    <td>Empty string</td>
-    <td>Specifies captions for the filter placeholder</td>
-</tr>
-<tr>
-    <td><code>isDisplayMissingValuePlaceholder</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Specifies whether the display is missing the value placeholder</td>
-</tr>
-<tr>
-    <td><code>isRemoveSelectedIcon</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Specifies whether the "x" is present to enable removal of chosen entity</td>
-</tr>
-<tr>
-    <td><code>levelsVisibility</code></td>
-    <td>Boolean/number</td>
-    <td>True</td>
-    <td>If true, all levels are visible; if it is a number, the number of levels are visible.</td>
-</tr>
-<tr>
-    <td><code>loading</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Displays a loader to find options if a request is sent to the backend</td>
-</tr>
-<tr>
-    <td><code>missingValuePlaceholder</code></td>
-    <td>String</td>
-    <td><code>'Entity with ID: %s doesn\'t exist'</code></td>
-    <td>Specifies the text to display if the entity that was chosen no longer exists</td>
-</tr>
-<tr>
-    <td><code>options.&lt; option name &gt;.label</code></td>
-    <td>String</td>
-    <td>Undefined</td>
-    <td>Options label</td>
-</tr>
-<tr>
-    <td><code>options.&lt; option name &gt;.value</code></td>
-    <td>String</td>
-    <td>Undefined</td>
-    <td>Options value</td>
-</tr>
-<tr>
-    <td><code>options.&lt; option name &gt;.optgroup</code></td>
-    <td>Object</td>
-    <td>Undefined</td>
-    <td>Nested level of options</td>
-</tr>
-<tr>
-    <td><code>openLevelsAction</code></td>
-    <td>Boolean</td>
-    <td>True</td>
-    <td>Expands a tree to the child level</td>
-</tr>
-<tr>
-    <td><code>pageLimit</code></td>
-    <td>Number</td>
-    <td>50</td>
-    <td>Page limit for search</td>
-</tr>
-<tr>
-    <td><code>searchOptions</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Include search options</td>
-</tr>
-<tr>
-    <td><code>searchUrl</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Sends a request to load options</td>
-</tr>
-<tr>
-    <td><code>separator</code></td>
-    <td>String</td>
-    <td><code>optgroup</code></td>
-    <td>Group options in select</td>
-</tr>
-<tr>
-    <td><code>showCheckbox</code></td>
-    <td>Boolean</td>
-    <td>True</td>
-    <td>Shows the checkbox just before the option label; select options by checking</td>
-</tr>
-<tr>
-    <td><code>showOpenLevelsActionIcon</code></td>
-    <td>Boolean</td>
-    <td>True</td>
-    <td>-</td>
-</tr>
-<tr>
-    <td><code>showTree</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>-</td>
-</tr>
-<tr>
-    <td><code>validationLoading</code></td>
-    <td>Boolean</td>
-    <td>False</td>
-    <td>Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to <code>true</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">chipsEnabled</code></td>
+      <td>Selected options are shown in UI-select’s header as deletable chips.</td>
+      <td>Boolean</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">closeBtn</code></td>
+      <td>Shows the button that closes the dropdown</td>
+      <td>Boolean</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">closeBtnLabel</code></td>
+      <td><code class="highlighter-rouge">$t('Done')</code></td>
+      <td>Label</td>
+      <td>String</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">deviation</code></td>
+      <td>Handles scroll download behavior</td>
+      <td>Number</td>
+      <td>30</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">emptyOptionsHtml</code></td>
+      <td>Specifies the HTML to display content if there are no options to display</td>
+      <td>String</td>
+      <td>Empty string</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">filterPlaceholder</code></td>
+      <td>Specifies captions for the filter placeholder</td>
+      <td>String</td>
+      <td>Empty string</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isDisplayMissingValuePlaceholder</code></td>
+      <td>Specifies whether the display is missing the value placeholder</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">isRemoveSelectedIcon</code></td>
+      <td>Specifies whether the “x” is present to enable removal of chosen entity</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">levelsVisibility</code></td>
+      <td>If true, all levels are visible; if it is a number, the number of levels are visible.</td>
+      <td>Boolean/number</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">loading</code></td>
+      <td>Displays a loader to find options if a request is sent to the backend</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">missingValuePlaceholder</code></td>
+      <td>Specifies the text to display if the entity that was chosen no longer exists</td>
+      <td>String</td>
+      <td><code class="highlighter-rouge">'Entity with ID: %s doesn\'t exist'</code></td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">options.&lt; option name &gt;.label</code></td>
+      <td>Options label</td>
+      <td>String</td>
+      <td>Undefined</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">options.&lt; option name &gt;.value</code></td>
+      <td>Options value</td>
+      <td>String</td>
+      <td>Undefined</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">options.&lt; option name &gt;.optgroup</code></td>
+      <td>Nested level of options</td>
+      <td>Object</td>
+      <td>Undefined</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">openLevelsAction</code></td>
+      <td>Expands a tree to the child level</td>
+      <td>Boolean</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">pageLimit</code></td>
+      <td>Page limit for search</td>
+      <td>Number</td>
+      <td>50</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">searchOptions</code></td>
+      <td>Include search options</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">searchUrl</code></td>
+      <td>Sends a request to load options</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">separator</code></td>
+      <td>Group options in select</td>
+      <td>String</td>
+      <td><code class="highlighter-rouge">optgroup</code></td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">showCheckbox</code></td>
+      <td>Shows the checkbox just before the option label; select options by checking</td>
+      <td>Boolean</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">showOpenLevelsActionIcon</code></td>
+      <td>—</td>
+      <td>Boolean</td>
+      <td>True</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">showTree</code></td>
+      <td>—</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">validationLoading</code></td>
+      <td>Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to true</td>
+      <td>Boolean</td>
+      <td>False</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
 </table>
 
-<h3 id="mode">Mode</h3>
+<p>The following configuration can be passed in as arguments:</p>
 
-<h4 id="simple-mode"><strong><code class="highlighter-rouge">simple</code> mode</strong></h4>
+<ul>
+  <li>Link to any of the UI component templates</li>
+  <li>Link to the constructor</li>
+  <li>Label to ui-select</li>
+  <li>Default caption</li>
+  <li>Caption if more than one element is selected</li>
+</ul>
+
+<h2 id="modes">Modes</h2>
+
+<h3 id="simple-mode"><strong><code class="highlighter-rouge">simple</code> mode</strong></h3>
 
 <p><code class="highlighter-rouge">simple</code> mode sets the following values to <code class="highlighter-rouge">false</code>:</p>
 <ul>
@@ -1699,7 +1697,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">closeBtn</code></li>
 </ul>
 
-<h4 id="optgroup-mode"><strong><code class="highlighter-rouge">optgroup</code> mode</strong></h4>
+<h3 id="optgroup-mode"><strong><code class="highlighter-rouge">optgroup</code> mode</strong></h3>
 
 <p><code class="highlighter-rouge">optgroup</code> mode sets the following values to <code class="highlighter-rouge">false</code>:</p>
 <ul>
@@ -1714,6 +1712,57 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">labelsDecoration</code></li>
 </ul>
 
+<h2 id="examples">Examples</h2>
+
+<h3 id="use-cms_page_listingxml">Use <code class="highlighter-rouge">cms_page_listing.xml</code></h3>
+
+<blockquote>
+  <p><code class="highlighter-rouge">&lt;Magento_Cms&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">"uiSelect"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataScope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/filterSelect&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></figure>
+
+<h3 id="configured-select-component-view">Configured select component view</h3>
+
+<p>The following is an example of the configuration of a select component. It is used as a column filter with three levels of options, with no selectable label for every level, without checkboxes:</p>
+
+<p><img src="/common/images/ui-select21.jpg" alt="view the configuration" /></p>
+
+<h2 id="navigation">Navigation</h2>
+
+<p>The UI-select component supports keyboard navigation.</p>
+
+<p>Navigation keys:</p>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">Enter</code></strong>: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option</li>
+  <li><strong><code class="highlighter-rouge">Space</code></strong>: copies the <code class="highlighter-rouge">Enter</code> key functionality</li>
+  <li><strong><code class="highlighter-rouge">Escape</code></strong>: closes the list of options</li>
+  <li><strong><code class="highlighter-rouge">PageUp</code></strong>: sets focus to the previous option</li>
+  <li><strong><code class="highlighter-rouge">PageDown</code></strong>: sets focus to the next option</li>
+</ul>
+
+<h2 id="source-files">Source files</h2>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js">app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js">Magento/Ui/view/base/web/js/form/element/abstract.js</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html">app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html</a></li>
+</ul>
 
 			
 		</div>

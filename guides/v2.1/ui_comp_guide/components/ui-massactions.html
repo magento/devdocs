@@ -322,6 +322,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -504,6 +506,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -670,6 +674,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
         </li>
+        
+        
         
         
         
@@ -1272,22 +1278,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The MassActions component allows performing actions with multiple selected items. Must be a child of the <a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing component</a>.</p>
+			<p>The MassActions component allows performing actions with multiple selected items. Must be a child of the <a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing component</a>.</p>
 
 <p>See the <a href="/guides/v2.1/pattern-library/displaying-data/datatable/datatable.html#massactions">Admin Design Pattern Library (MassActions)</a> topic for information about the UI design patterns that can be implemented using the MassActions component.</p>
 
-<h4 id="component-elements-classes-files">Component Elements (classes, files)</h4>
-
-<p>The following are the component elements:</p>
-
-<ul>
-  <li>Constructor <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
-  <li>Template: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\actions.html</code></li>
-</ul>
-
-<h4 id="dependencies-on-other-components">Dependencies on Other Components</h4>
+<h2 id="dependencies">Dependencies</h2>
 
 <p>Dependency on the following components:</p>
 
@@ -1297,9 +1292,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Modal window with alert: <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\modal\alert.js</code></li>
 </ul>
 
-<h4 id="massactions-configuration">MassActions configuration</h4>
+<h2 id="configuration-options">Configuration options</h2>
 
-<p>Extends <code>Collapsible</code> configuration with the following options:</p>
 <table>
   <tr>
     <th>Option</th>
@@ -1333,7 +1327,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
-<h5 id="massaction-interface">MassAction interface</h5>
+<h3 id="massaction-interface">MassAction interface</h3>
 
 <table>
   <tr>
@@ -1374,21 +1368,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
-<h5 id="methods-and-events">Methods and Events</h5>
+<h2 id="examples">Examples</h2>
 
-<p>The following   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
- methods are available:</p>
-
-<ul>
-  <li><code>getAction</code> - returns the action instance found by the provided identifier</li>
-  <li><code>addAction</code> - adds a new action to the actions</li>
-  <li><code>applyAction</code> - applies the specified action as identifier action</li>
-  <li><code>getSelections</code> - returns the object with current selections</li>
-</ul>
-
-<h4 id="example-configuration-modifications">Example configuration modifications:</h4>
-
-<h5 id="redefining-the-link-to-the-template">Redefining the link to the template</h5>
+<h3 id="redefine-the-link-to-the-template">Redefine the link to the template</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -1399,7 +1381,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
-<h5 id="specifying-action-with-confirmation">Specifying action with confirmation</h5>
+<h3 id="specify-action-with-confirmation">Specify action with confirmation</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -1419,7 +1401,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/action&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
-<h5 id="action-with-a-custom-callback">Action with a custom callback</h5>
+<h3 id="action-with-a-custom-callback">Action with a custom callback</h3>
 
 <p>Callback is provided by another component.</p>
 
@@ -1441,7 +1423,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/action&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
 
-<h5 id="instance-replacement-one-instance-of-a-component">Instance replacement: one instance of a component</h5>
+<h3 id="instance-replacement-one-instance-of-a-component">Instance replacement (one instance of a component)</h3>
 
 <p>Redefine link to constructor.</p>
 
@@ -1452,6 +1434,26 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/massaction&gt;</span></code></pre></figure>
+
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <code class="highlighter-rouge">Collapsible</code>:</p>
+<ul>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/massactions.js">app\code\Magento\Ui\view\base\web\js\grid\massactions.js</a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/grid/actions.html">app\code\Magento\Ui\view\base\web\templates\grid\actions.html</a></li>
+</ul>
+
+<h3 id="methods-and-events">Methods and Events</h3>
+
+<p>The following   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ methods are available:</p>
+
+<ul>
+  <li><code>getAction</code> - returns the action instance found by the provided identifier</li>
+  <li><code>addAction</code> - adds a new action to the actions</li>
+  <li><code>applyAction</code> - applies the specified action as identifier action</li>
+  <li><code>getSelections</code> - returns the object with current selections</li>
+</ul>
 
 
 			

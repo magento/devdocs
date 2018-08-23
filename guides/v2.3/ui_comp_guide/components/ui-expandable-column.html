@@ -338,6 +338,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -520,6 +534,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2 active " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -694,6 +722,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.3/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1394,9 +1436,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The Expandable Column   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
+			<p>The Expandable Column   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
  is an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  for <a href="/guides/v2.3/ui_comp_guide/components/ui-column.html">Column</a>. It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>.</p>
 
@@ -1404,18 +1444,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  and the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
 .</p>
 
-<h2 id="structure">Structure</h2>
-
-<p>The Expandable Column UI component includes the following files:</p>
-
-<ul>
-  <li>JS component: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/expandable.js</code></li>
-  <li>Template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable.html</code></li>
-  <li>Template for tooltip content: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable/content.html</code></li>
-</ul>
-
-<h2 id="configuration-settings">Configuration Settings</h2>
-
+<h2 id="configuration-options">Configuration options</h2>
 <table>
     <tr>
         <th>Option</th>
@@ -1462,25 +1491,29 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/column&gt;</span></code></pre></figure>
 
-<h2 id="dependencies-on-other-components">Dependencies on Other Components</h2>
+<h2 id="dependencies">Dependencies</h2>
 
-<p>This component has a dependency on the following component:</p>
+<p>This component has a dependency on the Column component, <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/column.js</code>.</p>
+
+<h2 id="source-files">Source files</h2>
 
 <ul>
-  <li>Column: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/column.js</code></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/grid/columns/expandable.js</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/grid/cells/expandable/content.html</code></a></li>
 </ul>
 
-<h2 id="methods-and-events">Methods and Events</h2>
+<h3 id="methods-and-events">Methods and events</h3>
 
 <p>The following   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  methods are available:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">getFullLabel()</code>: gets a label from a full list of options.</li>
-  <li><code class="highlighter-rouge">getShortLabel()</code>: gets a label from a list of options limited by <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
-  <li><code class="highlighter-rouge">getLabelsArray()</code>: extracts an array of labels associated with provided values and sorts these labels alphabetically.</li>
-  <li><code class="highlighter-rouge">isExpandable()</code>: checks if the amount of options associated with a record is greater than a <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
-  <li><code class="highlighter-rouge">flatOptions()</code>: transforms the tree options structure to a linear array.</li>
+  <li><code class="highlighter-rouge">getFullLabel()</code> - gets a label from a full list of options.</li>
+  <li><code class="highlighter-rouge">getShortLabel()</code> - gets a label from a list of options limited by <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
+  <li><code class="highlighter-rouge">getLabelsArray()</code> - extracts an array of labels associated with provided values and sorts these labels alphabetically.</li>
+  <li><code class="highlighter-rouge">isExpandable()</code> - checks if the amount of options associated with a record is greater than a <code class="highlighter-rouge">visibeItemsLimit</code> value.</li>
+  <li><code class="highlighter-rouge">flatOptions()</code> - transforms the tree options structure to a linear array.</li>
 </ul>
 
 			

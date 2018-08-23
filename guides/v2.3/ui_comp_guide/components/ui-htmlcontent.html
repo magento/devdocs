@@ -338,6 +338,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -520,6 +534,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -694,6 +722,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.3/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1394,27 +1436,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The HtmlContent UI component provides the ability to process and render a layout structure or a Magento block directly inside a UI component configuration. The block for the component is processed on the server side, but the HTML content inside the block (using Knockout bindings as applicable) is rendered on the client-side.</p>
+			<p>The HtmlContent   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
+ provides the ability to process and render a   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+ structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the   <span term-uuid="ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9" class="glossary-term" data-toggle="popover">server side</span>
+.</p>
 
 <p>The layout structure inside HtmlContent must contain only one top-level block. The top-level block may contain as many child blocks or containers as required.
 All blocks inside HtmlContent are integrated into the layout, so external blocks can refer to them and vice verse.</p>
 
-<h2 id="structure">Structure</h2>
-
-<p>The HtmlContent UI component comprises the following files:</p>
-
-<ul>
-  <li>JS component: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/html.js">app/code/Magento/Ui/view/base/web/js/form/components/html.js</a></li>
-  <li>template: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/content/content.html">app/code/Magento/Ui/view/base/web/templates/content/content.html</a></li>
-</ul>
-
 <h2 id="configuration-options">Configuration options</h2>
-
-<p>Extends all <code class="highlighter-rouge">uiComponent</code> configuration.</p>
-
-<p>HtmlContent-specific options:</p>
 
 <table>
   <tr>
@@ -1455,9 +1485,9 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
   </tr>
 </table>
 
-<h2 id="example-of-the-htmlcontent-component-configuration">Example of the HtmlContent component configuration</h2>
+<h2 id="examples">Examples</h2>
 
-<h3 id="how-to-render-layout-in-scope-of-ui-configuration">How to render layout in scope of UI configuration</h3>
+<h3 id="render-layout">Render layout</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">"customer_edit_tab_view"</span><span class="nt">&gt;</span>
@@ -1471,7 +1501,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
     <span class="nt">&lt;/htmlContent&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<h2 id="how-to-render-simple-magento-block-in-scope-of-ui-configuration">How to render simple magento block in scope of UI configuration</h2>
+<h3 id="render-simple-magento-block">Render simple Magento block</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;htmlContent</span> <span class="na">name=</span><span class="s">"giftregistry"</span><span class="nt">&gt;</span>
@@ -1479,6 +1509,14 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
     <span class="nt">&lt;/htmlContent&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <code class="highlighter-rouge">uiComponent</code>:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/html.js">app/code/Magento/Ui/view/base/web/js/form/components/html.js</a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/content/content.html">app/code/Magento/Ui/view/base/web/templates/content/content.html</a></li>
+</ul>
 
 			
 		</div>

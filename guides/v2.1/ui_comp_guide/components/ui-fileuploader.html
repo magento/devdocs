@@ -322,6 +322,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -504,6 +506,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -670,6 +674,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
         </li>
+        
+        
         
         
         
@@ -1272,25 +1278,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The File Uploader component is an   <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>
+			<p>The File Uploader component is an   <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>
  for the <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. This component integrates file upload functionality with UI components.</p>
 
-<h2 id="structure">Structure</h2>
-
-<ul>
-  <li>Constructor: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/element/file-uploader.js</code></li>
-  <li>JQuery file upload plugin: <code class="highlighter-rouge">jquery/fileUploader/jquery.fileupload-fp</code></li>
-  <li>Default template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/uploader.html</code></li>
-  <li>Preview template: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/preview.html</code></li>
-</ul>
-
-<h2 id="configuration-settings">Configuration settings</h2>
-
-<p>Extends all <code class="highlighter-rouge">abstract</code> configuration.</p>
-
-<p>Fileuploader-specific configuration:</p>
+<h2 id="configuration-options">Configuration options</h2>
 
 <table>
   <tbody>
@@ -1460,7 +1451,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<h2 id="example">Integration</h2>
+<h2 id="example">Example</h2>
 
 <p>Here is an example of how File Uploader component integrates with <a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form</a> component:</p>
 
@@ -1487,6 +1478,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <code class="highlighter-rouge">abstract</code>:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/form/element/file-uploader.js</code></a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/lib/web/jquery/fileUploader/jquery.fileupload-fp.js"><code class="highlighter-rouge">jquery/fileUploader/jquery.fileupload-fp</code></a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/uploader.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/form/element/uploader/preview.html</code></a></li>
+</ul>
 
 
 			

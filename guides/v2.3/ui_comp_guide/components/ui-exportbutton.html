@@ -338,6 +338,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -520,6 +534,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2 active " id="exportbutton-component">
 
             
@@ -694,6 +722,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.3/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1394,19 +1436,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
+			<p>The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).</p>
 
-<p>The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).</p>
-
-<h2 id="structure">Structure</h2>
-
-<p>Constructor: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/export.js">app/code/Magento/Ui/view/base/web/js/grid/export.js</a></p>
-
-<h2 id="exportbutton-configuration">ExportButton configuration</h2>
-
-<p>Extends all <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html">UiElement</a> configuration.</p>
-
-<p>ExportButton-specific configuration:</p>
+<h2 id="configuration-options">Configuration options</h2>
 
 <table>
   <tr>
@@ -1435,7 +1467,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
-<h3 id="exportoption"><code class="highlighter-rouge">ExportOption</code> interface</h3>
+<h3 id="exportoption">ExportOption interface</h3>
 
 <table>
   <tr>
@@ -1464,9 +1496,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
-<h2 id="how-to-use">How to use</h2>
+<h2 id="examples">Examples</h2>
 
-<p>To enable the ExportButton сomponent, add the <code class="highlighter-rouge">exportButton</code> element with a <code class="highlighter-rouge">selectProvider</code> item to the listing configuration file.</p>
+<h3 id="configure-component">Configure component</h3>
+
+<p>To enable the ExportButton сomponent, add the <code class="highlighter-rouge">exportButton</code> element with a <code class="highlighter-rouge">selectProvider</code> item to the listing configuration file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">"export_button"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -1476,9 +1510,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/exportButton&gt;</span></code></pre></figure>
 
-<h2 id="example">Example</h2>
-
-<p>Example: <code class="highlighter-rouge">&lt;Magento_Sales_module_dir&gt;/view/adminhtml/ui_component/sales_order_grid.xml</code></p>
+<p>The following is an example of configuring the component using the<code class="highlighter-rouge">sales_order_grid</code> <code class="highlighter-rouge">selectProvider</code> item, <code class="highlighter-rouge">&lt;Magento_Sales_module_dir&gt;/view/adminhtml/ui_component/sales_order_grid.xml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"listing_top"</span><span class="nt">&gt;</span>
@@ -1496,7 +1528,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  and Excel   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  export data formats.</p>
 
-<h4 id="how-to-add-new-export-format">How to add new export format</h4>
+<h3 id="add-new-export-format">Add new export format</h3>
 
 <p>To add new export format:</p>
 
@@ -1505,6 +1537,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Add controller for new format processing <code class="highlighter-rouge">\Magento\Ui\Controller\Adminhtml\Export\GridToFoo</code></li>
   <li>Add converter <code class="highlighter-rouge">\Magento\Ui\Model\Export\ConvertToFoo</code></li>
 </ul>
+
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="highlighter-rouge">UiElement</code></a>:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/export.js"><code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/grid/export.js</code></a></li>
+</ul>
+
 
 			
 		</div>

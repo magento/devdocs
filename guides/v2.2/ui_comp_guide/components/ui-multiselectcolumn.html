@@ -330,6 +330,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -512,6 +526,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -674,6 +702,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1292,28 +1334,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.</p>
+			<p>The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.</p>
 
 <p>MultiselectColumn is a child of the <a href="/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">Listing component</a> and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.</p>
 
-<h4 id="multiselectcolumn-js-component-structure">MultiselectColumn JS Component Structure</h4>
-
-<p>The MultiselectColumn component is implemented in the class <code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js.</code></p>
-
-<p>Templates used by this component are:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</code> - The template defines each field in the grid. It provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.</li>
-  <li><code class="highlighter-rouge">app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</code> - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.</li>
-</ul>
-
-<h2 id="multiselectcolumn-configuration">MultiselectColumn configuration</h2>
-
-<p>Extends all <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column</a> configuration.</p>
-
-<p>MultiselectColumn-specific configuration:</p>
+<h2 id="configuration-options">Configuration options</h2>
 
 <table>
   <tr>
@@ -1366,11 +1391,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tr>
 </table>
 
-<h4 id="methods-and-events">Methods and Events</h4>
+<h2 id="examples">Examples</h2>
 
-<p>No events are generated. Any other component that can retrieve access to this component and its properties can get data and track its changes using subscription.</p>
-
-<h4 id="how-to-configure-a-multiselectcolumn-сomponent-already-used-in-code">How to configure a MultiselectColumn сomponent already used in code</h4>
+<h3 id="configure-a-multiselectcolumn-сomponent-already-used-in-code">Configure a MultiselectColumn сomponent already used in code</h3>
 
 <p>Sample of code where component configurations are performed:</p>
 
@@ -1431,7 +1454,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
-<h4 id="how-to-add-a-new-component">How to add a new component</h4>
+<h3 id="add-a-new-component">Add a new component</h3>
 
 <p>Instance Replacement: One Instance of a Component</p>
 
@@ -1447,6 +1470,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span>    <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/column&gt;</span></code></pre></figure>
 
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html"><code class="highlighter-rouge">Column</code></a>:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js">app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js</a></li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/cells/multiselect.html">app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</a> - defines each field in the grid; provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.</li>
+  <li><a href="https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/columns/multiselect.html">app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</a> - defines the grid header with dropdown lists and Select All, Deselect All, and other options.</li>
+</ul>
+
+<h3 id="methods-and-events">Methods and Events</h3>
+
+<p>No events are generated. Any other component that can retrieve access to this component and its properties can get data and track its changes using subscription.</p>
 
 			
 		</div>

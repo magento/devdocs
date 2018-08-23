@@ -330,6 +330,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="actiondelete-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-actiondelete.html">ActionDelete component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="actionscolumn-component">
 
             
@@ -512,6 +526,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="expandable-column-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-expandable-column.html">Expandable column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="exportbutton-component">
 
             
@@ -674,6 +702,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linkcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html">LinkColumn component</a>
             
 
             
@@ -1292,18 +1334,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations.</p>
+			<p>The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations.</p>
 
 <p>Form is a <a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html#general-structure">basic component</a>.</p>
 
-<h2 id="structure">Structure</h2>
-
-<p><span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span>
- constructor: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/form.js">form.js</a></p>
-
-<h3 id="related-ui-components">Related UI components</h3>
+<h2 id="related-components">Related components</h2>
 
 <p>The following components can be used in the scope of the Form component:</p>
 
@@ -1325,11 +1360,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">Wysiwyg</span></li>
 </ul>
 
-<h2 id="component-options">Component options</h2>
-
-<p>Form configuration extends the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code></a> configuration.</p>
-
-<p>Form-specific configuration:</p>
+<h2 id="configuration-options">Configuration options</h2>
 
 <table>
   <tbody>
@@ -1506,7 +1537,9 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
   </tbody>
 </table>
 
-<h2 id="create-an-instance-of-the-form-component">Create an instance of the Form component</h2>
+<h2 id="examples">Examples</h2>
+
+<h3 id="create-an-instance">Create an instance</h3>
 
 <p>To create an instance of the Form component, you need to do the following:</p>
 
@@ -1522,8 +1555,6 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
   </li>
 </ol>
 
-<p>Example:</p>
-
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
@@ -1533,7 +1564,7 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<h2 id="configure-the-form-component">Configure the Form component</h2>
+<h3 id="configure-the-component">Configure the component</h3>
 
 <p>Component could be configured in two ways:</p>
 
@@ -1617,9 +1648,9 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
     <span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/container&gt;</span></code></pre></figure>
 
-<h2 id="creating-datasource">Creating DataSource</h2>
+<h3 id="configure-datasource">Configure DataSource</h3>
 
-<p>You need to configure component’s DataSource in order to provide data and meta information for your Form component.</p>
+<p>You must configure a component’s DataSource in order to provide data and meta information for your Form component.</p>
 
 <p>DataSource aggregates an object of class implements the interface <code class="highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code></p>
 
@@ -1669,10 +1700,10 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <ul>
   <li>
-    <p>argument “dataProvider” - contains configuration, class name and arguments</p>
+    <p>argument <code class="highlighter-rouge">"dataProvider"</code> - contains configuration, class name, and arguments</p>
   </li>
   <li>
-    <p>js_config -&gt; component - &gt; JS indication of a responsible component</p>
+    <p><code class="highlighter-rouge">"js_config"</code> -&gt; <code class="highlighter-rouge">"component"</code> -&gt; JavaScript indication of a responsible component</p>
   </li>
 </ul>
 
@@ -1681,7 +1712,7 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 <p>Data Source is another   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI Component</span>
  that provides data in specific format which is shared among all UI Components.</p>
 
-<h2 id="replacing">Replacing</h2>
+<h3 id="replace-instances-of-component">Replace instances of component</h3>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
@@ -1689,7 +1720,7 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <h4 id="global-replacement">Global replacement</h4>
 
-<p>To replace all instances of a UI Form with a custom implementation redefine link to a constructor in <code class="highlighter-rouge">definition.xml</code>.</p>
+<p>To replace all instances, globally, of a UI Form with a custom implementation redefine link to a constructor in <code class="highlighter-rouge">definition.xml</code>.</p>
 
 <p><code class="highlighter-rouge">app/code/Magento/Ui/view/base/ui_component/etc/definition.xml</code></p>
 
@@ -1701,7 +1732,7 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<h2 id="instance-replacement">Instance Replacement</h2>
+<h4 id="single-replacement">Single replacement</h4>
 
 <p>To replace one instance of a UI Form Component redefine link to a constructor in your module’s form configuration file:</p>
 
@@ -1715,6 +1746,13 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
         <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
+<h2 id="source-files">Source files</h2>
+
+<p>Extends <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code></a>:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/form.js">app/code/Magento/Ui/view/base/web/js/form/form.js</a></li>
+</ul>
 
 			
 		</div>
