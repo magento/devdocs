@@ -34,8 +34,7 @@ Use the following layout instructions to customize your layout:
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
 
-
-### \<block\> {#fedg_layout_xml-instruc_ex_block}
+### block {#fedg_layout_xml-instruc_ex_block}
 
 Defines a block.
 
@@ -101,7 +100,7 @@ The `class` attribute is no longer required in versions `2.2.1` and above as it 
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
-### \<container\> {#fedg_layout_xml-instruc_ex_cont}
+### container {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
 
 **Details:** 
@@ -229,7 +228,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### Examples {#examples}
+#### Examples {#examples}
 
 <table>
    <tbody>
@@ -256,7 +255,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### \<action\> {#fedg_layout_xml-instruc_ex_act}
+### action {#fedg_layout_xml-instruc_ex_act}
 
 {:.bs-callout .bs-callout-warning}
 The `<action>` instruction is deprecated. If the method implementation allows, use the [`<argument>`](#argument) for [`<block>`](#fedg_layout_xml-instruc_ex_block) or [`<referenceBlock>`](#fedg_layout_xml-instruc_ex_ref) to access the block public API.
@@ -300,7 +299,7 @@ Example:
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
-### \<referenceBlock\> and \<referenceContainer\> {#fedg_layout_xml-instruc_ex_ref}
+### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
 Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
 For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
@@ -349,7 +348,7 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
     <referenceContainer name="container.name" display="false" />
     ```
 
-### \<move\> {#fedg_layout_xml-instruc_ex_mv}
+### move {#fedg_layout_xml-instruc_ex_mv}
 Sets the declared block or container element as a child of another element in the specified order.
 **Example:**
 
@@ -396,7 +395,7 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-### \<remove\> {#fedg_layout_xml-instruc_ex_rmv}
+### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
 For removing blocks or containers, use the `<remove>` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
@@ -419,7 +418,7 @@ Example of usage:
 </page>
 ```
 
-### \<update\> {#fedg_layout_xml-instruc_ex_upd}
+### update {#fedg_layout_xml-instruc_ex_upd}
 
 Includes a certain layout file.
 
@@ -431,7 +430,7 @@ Used as follows:
 
 The specified [handle] is "included" and executed recursively.
 
-### &lt;argument&gt; {#argument}
+### argument {#argument}
 Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).
  
 <table>
@@ -502,7 +501,7 @@ Using the value of `css_class` in `[app/code/Magento/Theme/view/frontend/templat
 $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ```
 
-### \<arguments\> {#arguments}
+### arguments {#arguments}
 
 `<arguments>` is a required container for `<argument>`. It does not have its own attributes.
 
