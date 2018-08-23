@@ -270,7 +270,7 @@ Use these options _only_ if you have more than one locale:
 
 -  `standard`—deploys all static view files for all packages.
 -  `quick`—minimizes deployment time. This is the default command option, if not specified.
--  `compact`—conserves disk space on the server and overrides the value for `scd_threads` with a value of `1`. This strategy does not work with multi-threads.
+-  `compact`—conserves disk space on the server and overrides the value for `scd_threads` with a value of `1`.
 
 ```yaml
 stage:
