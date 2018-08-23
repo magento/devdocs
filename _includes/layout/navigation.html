@@ -122,6 +122,9 @@
         {% unless page.guide_version == "2.0" %}
           <li><a href="{{ page.baseurl }}/extension-dev-guide/staging.html">Staging</a></li>
         {% endunless %}
+        {% if page.guide_version == "2.1" or page.guide_version == "2.2" %}
+        <li><a href="{{ page.baseurl }}/security/security-overview.html">Security</a></li>
+        {%endif%}
       </ul>
     </div>
 
