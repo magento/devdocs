@@ -24,7 +24,7 @@ Parameter | Description
 `menu_title:`| Optional. Use this parameter only if you don't want the title in the left navigation to match the topic title.
 `subtitle` | The title of the tutorial. This value should match the `title` value in the index file.
 `menu_order:` | The sequence number of the topic. For the index page in a multi-step tutorial, set this 0. Otherwise set it to the step number.
-`return_to:` | Defines the tutorial's parent page. The parent page title is displayed in the left navigation above the tuturial steps. Do not specify a value for the `return_to:` parameter. Instead, specify values for these second-level parameters:<br/><br/>`title:` The title of the parent topic<br/><br/>`url:` The URL of the parent topic
+`return_to:` | Defines the tutorial's parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the `return_to:` parameter. Instead, specify values for these second-level parameters:<br/><br/>`title:` The title of the parent topic<br/><br/>`url:` The URL of the parent topic
 `ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
 {:style="table-layout:auto;"}
 
