@@ -1572,6 +1572,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a <code class="highlighter-rouge">&lt;Vendor&gt;/&lt;Module_Name&gt;/Setup/Patch/Schema/&lt;Patch_Name&gt;.php</code> file and implements <code class="highlighter-rouge">\Magento\Setup\Model\Patch\SchemaPatchInterface</code>.</p>
 
+<p>Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the <code class="highlighter-rouge">patch_list</code> database table. An unapplied patch will be applied when running the <code class="highlighter-rouge">setup:upgrade</code> from the Magento CLI.</p>
+
 <p>Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement <code class="highlighter-rouge">\Magento\Setup\Model\Patch\PatchRevertableInterface</code>.</p>
 
 <p>The declarative schema approach removes the version from the <code class="highlighter-rouge">setup_module</code> table (in a backward compatible way), leaving only the Composer version. Therefore, you can create all new patches and modules without specifying a <code class="highlighter-rouge">setup_module</code> version.</p>
