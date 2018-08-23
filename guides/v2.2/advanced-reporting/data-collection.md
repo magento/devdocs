@@ -198,10 +198,6 @@ It cannot contain any parameters.
 ...
 ```
 
-## Related topics
-
-[Modules providing advanced reporting][modules]
-
 
 <!-- LINK DEFINITIONS -->
 
