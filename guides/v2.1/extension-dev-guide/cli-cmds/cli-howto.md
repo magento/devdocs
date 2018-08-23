@@ -13,7 +13,7 @@ redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
 
 ### About the Magento CLI
-{% include install/new-cli-intro.html %}
+{% include install/new-cli-intro.md %}
 
 ### Prerequisites
 

@@ -18,7 +18,7 @@ The following figure shows how a product is displayed on the {% glossarytooltip 
 ![Sample storefront with generated data]({{ site.baseurl }}/common/images/config_generate-data.png){:width="550px"}
 
 ## First steps {#config-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
 ## About profiles {#config-cli-perf-prof}

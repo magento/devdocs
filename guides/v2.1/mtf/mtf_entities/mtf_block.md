@@ -491,7 +491,7 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
 
 #### Run the page generator {#mtf_run_page_gen}
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ### Use blocks inside blocks {#mtf_block_in_block}
 
@@ -584,7 +584,7 @@ Details:
 
 **Step 4**. Run the page generator
 
-{%include mtf/page-generator.html%}
+{%include mtf/page-generator.md%}
 
 #### Use a render {#mtf_block_render_use}
 

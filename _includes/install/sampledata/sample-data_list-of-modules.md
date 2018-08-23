@@ -1,4 +1,4 @@
-<div markdown="1">
+
 
 {{site.data.var.ce}} and {{site.data.var.ee}}:
 

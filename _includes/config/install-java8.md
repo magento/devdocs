@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ### Install the Java Software Development Kit (JDK)   {#prereq-java}
 
 To determine if Java is already installed, enter the following command:
@@ -10,20 +8,19 @@ If the message `java: command not found` displays, you must install the Java SDK
 
 See one of the following sections:
 
-* <a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a>
-* <a href="#install-prereq-java-ubuntu">Install the latest JDK on Ubuntu</a>
+* [Install the latest JDK on CentOS](#install-prereq-java-centos)
+* [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu)
 
 #### Install the JDK on CentOS   {#install-prereq-java-centos}
 
-See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8" target="_blank">this article on digitalocean</a>.
+See [this article on digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8).
 
 Be sure to install the JDK and *not* the JRE.
 
 	yum -y install java-1.8.0-openjdk
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Java version 8 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/" target="_blank">search the list of available packages for Ubuntu</a>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+Java version 8 might not be available for all operating systems. For example, you can [search the list of available packages for Ubuntu](http://packages.ubuntu.com/).
 
 #### Install the JDK on Ubuntu   {#install-prereq-java-ubuntu}
 
@@ -33,4 +30,4 @@ To install JDK 1.8 on Ubuntu, enter the following commands as a user with `root`
 	apt-get -y update
 	apt-get install -y oracle-java8-installer
 
-For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
+For other options, see [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html).
