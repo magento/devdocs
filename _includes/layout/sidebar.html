@@ -120,6 +120,9 @@
 		{% elsif page.group == "marketplace-api" %}
 		        {% assign toc = site.data.toc.marketplace-api %}
 
+		{% elsif page.group == "security" %}
+						{% assign toc = site.data.toc.security %}
+
 		{% endif %}
 
 		<h4 class="guide-title">{{ toc.label }}</h4>

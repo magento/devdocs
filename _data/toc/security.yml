@@ -1,6 +1,6 @@
-abel: Security
+label: Security
 pages:
-    - label: Introduction
+    - label: Security Overview
       url: /security/security-overview.html
 
     - label: Two Factor Authentication
