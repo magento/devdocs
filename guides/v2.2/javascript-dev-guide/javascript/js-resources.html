@@ -803,23 +803,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:</p>
 <ul>
   <li>
-    <p><code class="highlighter-rouge">requirejs-config.js</code>
-     <code class="highlighter-rouge">javascript
-     var config = {
-       "shim": {
-         "3-rd-party-plugin": ["jquery"]
-       }
-     };
-    </code></p>
+    <p><code class="highlighter-rouge">requirejs-config.js</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s2">"shim"</span><span class="p">:</span> <span class="p">{</span>
+     <span class="s2">"3-rd-party-plugin"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"jquery"</span><span class="p">]</span>
+     <span class="p">}</span>
+ <span class="p">};</span>
+</code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">&lt;third-party-plugin&gt;.js</code>
-     <code class="highlighter-rouge">javascript
-     !(function($){
-       // plugin code
-       // where $ == jQuery
-     })(jQuery);
-    </code></p>
+    <p><code class="highlighter-rouge">&lt;third-party-plugin&gt;.js</code></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">!</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+     <span class="c1">// plugin code</span>
+     <span class="c1">// where $ == jQuery</span>
+ <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
