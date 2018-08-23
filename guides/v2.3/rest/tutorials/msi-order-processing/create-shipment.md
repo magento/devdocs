@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 13. Create a shipment
 menu_title: Step 13. Create a shipment
 subtitle: Order processing with MSI
@@ -108,4 +107,4 @@ The shipment ID, such as `19`.
 ## Verify this step {#verify-step}
 
 1. Click **Sales** > **Shipments**. The two shipments for this order are displayed in the grid.
-2. Click **Catalog** > **Products** to verify **Quantity per Source** values for each product has been deducted according to the selections made at shipment.
+2. Click **Catalog** > **Products**. Verify that the **Quantity per Source** values are correct for each product, based on the selections you made at shipment.

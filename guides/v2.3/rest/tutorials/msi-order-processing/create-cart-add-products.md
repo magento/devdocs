@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 8. Create a cart and add products to it
 subtitle: Order processing with MSI
 menu_title: Step 8. Create a cart and add products to it
@@ -49,6 +48,7 @@ Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---
 `sp1` | 50 | 10 | 100
 `sp2` | 25 | 0 | 50
+{:style="table-layout:auto;"}
 
 Later in this step, we'll order 20 `sp1` items and 60 `sp2` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
@@ -140,7 +140,7 @@ In this call, we'll add 20 `sp1` items. This portion of the order can be fulfill
 
 **Response**
 
-Make a note of the `item_id`. It will be used in subsequent steps.
+Note the `item_id` for use in subsequent steps.
 
 ``` json
 {
@@ -182,7 +182,7 @@ Use the same endpoint to add 60 items of `sp2` to the cart. Multiple sources wil
 }
 ```
 
-### Add a virtual product_type
+### Add a virtual product
 
 Finally, we'll add a single instance of a virtual product to the cart.
 

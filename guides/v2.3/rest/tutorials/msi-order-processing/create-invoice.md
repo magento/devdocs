@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 11. Create an invoice
 subtitle: Order processing with MSI
 menu_title: Step 11. Create an invoice
@@ -48,7 +47,7 @@ where `5` is the `orderid`
 
 **Response**
 
-An invoice `id`, such as `5`.
+An invoice `id`, such as `1`.
 
 ## Verify this step {#verify-step}
 
