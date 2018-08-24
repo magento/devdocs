@@ -64,12 +64,12 @@ Additional logins to the Admin from new devices always requires an entered code 
 
 ### Supported authenticators
 
-| Provider | Authentication Type |
-| --------- : | --------- : |
-| [Google Authenticator](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en)  | Generate and enter code from mobile app Requirements: Enable in Admin  |
-| [Authy](https://authy.com/)  | SMS, call, token, and one touch <br/>Requirements: Enable and API keys  |
-| [U2F Keys](https://docs.magento.com/m2/2.1/ee/user_guide/stores/security-two-factor-authentication-use.html)   | Physical device to authenticate, [YubiKey](https://www.yubico.com/) and other models supported. <br/>Requirements: Enable in Admin  |
-| [Duo Security](https://duo.com/)  | SMS and push notification. <br/>Requirements: Enable, Integration and Secret keys, API hostname  |
+| Provider | Authentication Type | `<provider>` |
+| : --------- | : --------- | : ------- |
+| [Google Authenticator](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en)  | Generate and enter code from mobile app Requirements: Enable in Admin  | `google`|
+| [Authy](https://authy.com/)  | SMS, call, token, and one touch <br/>Requirements: Enable and API keys  | `authy` |
+| [U2F Keys](https://docs.magento.com/m2/2.1/ee/user_guide/stores/security-two-factor-authentication-use.html)   | Physical device to authenticate, [YubiKey](https://www.yubico.com/) and other models supported. <br/>Requirements: Enable in Admin  | `u2fkey` |
+| [Duo Security](https://duo.com/)  | SMS and push notification. <br/>Requirements: Enable, Integration and Secret keys, API hostname  | `duo` |
 
 ## Troubleshooting
 
@@ -90,12 +90,6 @@ If you need to manually reset a single user configuration, enter the following c
 ``` bash
 php bin/magento msp:security:tfa:reset <username> <provider>
 ```
-
-Example reset commands:
-
-- Google Authenticator: `php bin/magento msp:security:tfa:reset admin google`
-- U2F Device: `php bin/magento msp:security:tfa:reset admin u2fkey`
-- Authy: `hp bin/magento msp:security:tfa:reset admin authy`
 
 ### Advanced emergency steps
 

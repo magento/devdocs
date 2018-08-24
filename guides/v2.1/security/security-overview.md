@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
 ---
 
-We have added security functionality for Magento Open Source, Commerce, and Commerce (Cloud).  These modules enhance access security to protect your Magento instance from  unauthorized access, which can significantly reduce spam.
+We have added security functionality for Magento Open Source, Commerce, and Commerce Cloud.  These modules enhance access security to protect your Magento instance from  unauthorized access, which can significantly reduce spam.
 
 ## Google reCAPTCHA
 
