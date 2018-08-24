@@ -199,12 +199,13 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the community member who contributed the pull request, the external pull request, and the GitHub issue number associated with the pull request (if available).
 
-
+{% include release-notes-2-1-15.md %}
 
 
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
+
 
 <table>
   <tr>
@@ -216,13 +217,13 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Aligent</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17092">17092</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16585">16585</a></td>
-    <td>N/A<td>
+    <td>N/A</td>
 </tr>
 
 <tr>
     <td>Ampersand</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17105">17105</a></td>
-     <td>N/A<td>
+     <td>N/A</td>
 </tr>
 
 <tr>
@@ -282,7 +283,6 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17022">17022</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17015">17015</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17029">17029</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16992">16992</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16526">16526</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16797">16797</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17088">17088</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17240">17240</a></td>
     <td>N/A</td>
   </tr>
-
 
 </table>
 

@@ -306,13 +306,13 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Aligent</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17092">17092</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16585">16585</a></td>
-    <td>N/A<td>
+    <td>N/A</td>
 </tr>
 
 <tr>
     <td>Ampersand</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17105">17105</a></td>
-     <td>N/A<td>
+     <td>N/A</td>
 </tr>
 
 <tr>
