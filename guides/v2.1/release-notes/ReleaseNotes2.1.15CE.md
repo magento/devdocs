@@ -72,7 +72,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1908 -->* Magento now supports Malaysian locales. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15927](https://github.com/magento/magento2/pull/15927)*. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
-#### Customer 
+### Customer 
 
 <!--- ENGCOM-1337 -->* Magento now preserves the user group ID when using `/V1/customers/:customerId` (PUT). Previously, Magento set the customer group ID to 1 when you called  `/V1/customers/:customerId` (PUT) and the customer had an assigned group ID. *Fix submitted by [André Ferraz](https://github.com/ferrazzuk) in pull request [14757](https://github.com/magento/magento2/pull/14757)*. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
 
@@ -105,9 +105,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1930, ENGCOM-2096 -->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull requests [15874](https://github.com/magento/magento2/pull/15874) and[16297](https://github.com/magento/magento2/pull/16297)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
-* Customer Account Login page email field
-* Customer Account create page
-* Customer Authentication popup when the **Allow Guest Checkout** is  set to **No**
+	* Customer Account Login page email field
+
+	* Customer Account create page
+
+	* Customer Authentication popup when the **Allow Guest Checkout** is  set to **No**
 
 
 <!--- ENGCOM-1881 -->* `.limiter` now has the same parent selectors (similar to `.pages`) to prevent clashes between styles and layouts. Previously, `.limiter` was too generic and was used as single selector for floating the element. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15880](https://github.com/magento/magento2/pull/15880)*. [GitHub-15323](https://github.com/magento/magento2/issues/15323)
@@ -135,7 +137,7 @@ In addition to security enhancements, this release contains the following functi
 <!--- MAGETWO-86935 -->* Users assigned a Restricted User role no longer receive this message, `Something went wrong` when viewing orders. 
 
 
-!--- MAGETWO-70329 -->* Magento no longer unnecessarily displays this warning when a customer opens a product page: `The property price is not valid`. [GitHub-7173](https://github.com/magento/magento2/issues/7173)
+<!--- MAGETWO-70329 -->* Magento no longer unnecessarily displays this warning when a customer opens a product page: `The property price is not valid`. [GitHub-7173](https://github.com/magento/magento2/issues/7173)
 
 
 
@@ -194,9 +196,9 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-2036 -->* You can now translate the `moreButtonText` text string. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16229](https://github.com/magento/magento2/pull/16229)*. [GitHub-16079](https://github.com/magento/magento2/issues/16079)
 
 
-<!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  -->* 
+<!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  --> 
 
-<!---  cannot reproduce MAGETWO-83344 -->* 
+<!---  cannot reproduce MAGETWO-83344 -->
 
 ## Community contributions
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
