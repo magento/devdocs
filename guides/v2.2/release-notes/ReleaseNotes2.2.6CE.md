@@ -2,7 +2,10 @@
 
 group: release-notes
 title: Magento Open Source 2.2.6 Release Notes
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c1f993f1746ebd93cc835aab23fe5d67872f275
 ---
 *Patch code and release notes published on  2018.* 
 
@@ -50,7 +53,6 @@ Seven  performance tuning enhancements related to catalog indexing  
 
 <!-- MAGETWO-89222-->* The speed at which Magento places an order is no longer affected by how many shipping methods are available. Previously, when a customer placed an order for which multiple shipping methods were available, Magento took more than 20 seconds to place the order.
 
-<!-- MAGETWO-89264-->* The Checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 
 #### Additional enhancements
@@ -178,65 +180,78 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-2078 -->* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the default configuration for all store views. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request [15929](https://github.com/magento/magento2/pull/15929)*. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245) ASK ABOUT CONTRIBUTOR
 
 
+<!-- ENGCOM-2407 -->* Update nginx.config.sample to exclude php5-fpm
+title: Update nginx.config.sample to exclude php5-fpm
+url: magento/magento2#16883
+contributor name: @sean-wcb
+contributor link: https://github.com/sean-wcb
 
-### B2B
+M2.2.x is not compatible with php5.x so there's no reason to include it as an option in the nginx.config.sample
 
-<!-- MAGETWO-92388 -->* Company blocked warnings are no longer included in the source code. Previously, source code included these warning strings, which search indexers detected and treated as text. 
-
-<!-- MAGETWO-92375 -->* Category pages now display as expected all products whose SKUs contain either single or double quotation marks. Previously, Magento threw an error when trying to set pricing and structure on a shared catalog when product SKUs contained these characters. 
-
-<!-- MAGETWO-92040 -->* You can now save a company address in a country that is on the allowed list of countries for the non-default website only. Previously, if a customer tried to save an address for a country  allowed on the non-default website only,  Magento threw this error, `Invalid value of "UA" provided for the country_id field`.
-
-
-
-
-<!-- MAGETWO-90824 -->* Companies are now listed as Resource Access 
-
-This permits users to see  companies in the user roles permissions without being a full Admin with "all" resources selected.
+This does not fix any issues. However, it does prevent someone from thinking that M2.2.x is compatible with php5.
 
 
+<!-- ENGCOM-2315 -->*
+Add generated code to the psr-0 autoloader section so when optimizing … the autoloader on a production environment the autoloader will find more classes in its classmap. This should result in fewer file_exists calls and might increase the performance a tiny bit.
 
-The new Company resource so that administrators with limited permissions can 
-
-When creating B2B user roles, 
-
-
-Can only see companies if the user roll is full administrator
-Added "Company" resource for using in user role.
-Merchant pointed out there is no option in the permissions to see or not see companies in the user roles permissions unless you are a full admin with "all" resources selected.
-
-When creating b2b user roles, Companies should be listed as Resource Access
+title: Add generated code to the psr-0 autoloader section so when optimizing?
+url: magento/magento2#16435
+contributor name: @hostep
+contributor link: https://github.com/hostep
 
 
 
-actual results: When creating b2b user roles, Companies is not listed as Resource Access and thus, the role has to be created providing full access to all resources, making financial information or other sensible data accessible to all admin users with such role.
+<!-- ENGCOM-2029 -->*
 
+title: Setting deploy mode to production with --skip-compilation flag should not clear generated code
+url: magento/magento2#16211
+contributor name: @platformvaimo
+contributor link: https://github.com/platformvaimo
 
-This provides the Company resource for administrators with limited privileges. These administrators  can now be granted permissions to see or not see companies in the user roles without having full administrator permissions
+Setting deploy mode to production with --skip-compilation flag should not clear generated code
 
+Changing the deploy mode to production using the --skip-compilation flag will remove the generated code in generated/code/ and generated/metadata/.
 
-Merchant also stated that this is major issue since b2b role has to be assigned all permissions in order to see companies, every backend user in Magento can see the financial results and figures.
-
-
-When creating b2b user roles, Companies should be listed as Resource Access
-
-
-
-add link to UG
+The expected result is that generated/code/ and generated/metadata/ should not be cleared.
 
 
 
 
+<!-- ENGCOM-1673 -->*
+
+title: Fixes in config module
+url: magento/magento2#15511
+contributor name: @mhauri
+contributor link: https://github.com/mhauri
+
+This PR fixes two issues in the Magento/Config Module:
+
+The method Magento/Config/Test/Unit/Block/System/Config/Form/Field/ImageTest.php::testGetElementHtmlWithValue() references to a invalid Backend Model on line 77
+
+The anonymous function has an unused use $data in Magento/Config/Model/Config/Importer.php on line 127
 
 
 
+<!-- ENGCOM-1448 -->*
 
-<!-- MAGETWO-89971 -->* Magento now displays the correct product total price value on all websites in a B2B deployment. 
+title: fix: set message-success in setup if we already have the latest version
+url: magento/magento2#15012
+contributor name: @DanielRuf
+contributor link: https://github.com/DanielRuf
 
-<!-- MAGETWO-89888 -->* When **Website Restrictions** are set to **Private Sales: Login Only**, access to the storefront is now restricted to customers who log in, and merchants can still create new companies in the Admin. Previously, when a merchant tried to create a company when this setting was enabled, Magento threw this error, `Can not register new customer due to restrictions are enabled`. 
+Currently the upgrade check in the setup uses message-error even if we already have the latest version.
 
-<!-- MAGETWO-87349 -->* Configurable products can now be added to the requisition list directly from the Category page.
+set message-success in setup if we already have the latest version
 
+
+<!-- ENGCOM-1431 -->*
+Renamed "Add Block Names to Hints" config setting to represent what it actually does
+title: Renamed "Add Block Names to Hints" config setting to represent what it actually does
+url: magento/magento2#14939
+contributor name: @chris-pook
+contributor link: https://github.com/chris-pook
+
+This config name is notoriously misleading as it does not show the block name at all, instead it shows the block class type. Worse still there is a question about this in the Magento2 certification exam which is utterly confusing due to the poor naming of the config setting.
 
 
 
@@ -251,6 +266,15 @@ add link to UG
 <!--  ENGCOM-1863-->* Fixed set template syntax issue  *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15825](https://github.com/magento/magento2/pull/15825)*. 
 
 
+<!--  ENGCOM-2176-->* Variable as a method parameter might be overridden by the loop
+
+title: Variable as a method parameter might be overridden by the loop
+url: magento/magento2#16143
+contributor name: @lfluvisotto
+contributor link: https://github.com/lfluvisotto
+
+Variable as a method parameter might be overridden by the loop.
+Rename the variable in the loop let the code more readable.
 
 
 ### Catalog
@@ -364,25 +388,7 @@ First star rating is showing.
 
 
 
-<!--  ENGCOM-2213 -->* Fix of invalid price for integer currencies when amount less than group size 
-
-After correct fixes in magento/magento2#15909 (magento/magento2#15540) client-side formatting starts corrupt prices in currencies without minor units if price amount is less then number group size (usually equal to 3 numbers).
-
-STR:
-
-Install Magento
-Set USD as a base currency
-Set JPY as display currency (it also should be enabled as available currency)
-Add product with price 0.01 USD
-Add currency rate as 110 JPY for 1 USD
-Open product page
-AC: price 0,001 is displayed (wrongly added 0 to have group separator visible)
-
-ER: price 1 is displayed (no decimal part, no preceding 0)
-
-
-
- *Fix submitted by [Volodymyr Kublytskyi](https://github.com/vkublytskyi) in pull request [16590](https://github.com/magento/magento2/pull/16590)*. [GitHub-11711](https://github.com/magento/magento2/issues/11711)
+<!--  ENGCOM-2213 -->* 
 
 
 
@@ -424,6 +430,230 @@ should show product name as brower title and should have meta title tag in html 
 <!-- ENGCOM-2042 -->* Magento now maintains the default products sort order of “newest first” when you upgrade your Magento deployment to 2.2.4. Previously, after upgrade, the default products order in categories changed from “newest first” to “oldest first”. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15629](https://github.com/magento/magento2/pull/15629)*. [GitHub-15627](https://github.com/magento/magento2/issues/15627)
 
 
+<!-- ENGCOM-1909-->* 
+
+Fixed the check for allowed HTML tags OR wysiwyg for textarea attribute types.
+Fix for options so that they can be rendered as HTML as well.
+
+title: Fixes for #15393
+url: magento/magento2#15687
+contributor name: @simonjanguapa
+contributor link: https://github.com/simonjanguapa
+
+
+[GitHub-15393](https://github.com/magento/magento2/issues/15393)
+
+
+Multiple Select" product attributes do not render HTML tags on the storefront view
+
+Steps to reproduce
+I recently update from Magento 2.2.3 to Magento 2.2.4, and then found this error.
+On product page, there is an error.
+
+Expected result
+Full product page without error. The links on "More Information" tab is clickable. And then after click browser will load and go to the page on link.
+
+Actual result
+The links are broken. Not clickable, but to be a plain text. 
+
+
+<!-- ENGCOM-2408-->* 
+Replacing Usage of Deprecated Methods for Message Manager
+
+title: Replacing Usage of Deprecated Methods for Message Manager.
+url: magento/magento2#16924
+contributor name: @tiagosampaio
+contributor link: https://github.com/tiagosampaio
+
+Replacing usage of deprecated methods for message manager.
+
+
+<!-- ENGCOM-2390-->* 
+
+title: Array short syntax
+url: magento/magento2#16880
+contributor name: @lfluvisotto
+contributor link: https://github.com/lfluvisotto
+
+Array short syntax, uniformity with other codes using [ ]
+
+ app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php
+ app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php
+ setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php
+
+<!-- ENGCOM-2270-->*
+title: Smallest codestyle fix in Option/Type/Text.php
+url: magento/magento2#16566
+contributor name: @likemusic
+contributor link: https://github.com/likemusic
+
+Seems that it have misplaced bracket position but without bug thanx to dynamic type casting.
+
+
+
+
+<!-- ENGCOM-2132-->* Use correct error message for duplicate error key in product import
+
+title: [Backport 2.2] Use correct error message for duplicate error key in product import
+url: magento/magento2#16389
+contributor name: @gelanivishal
+contributor link: https://github.com/gelanivishal
+
+
+During product CSV import, when a Url key duplicate is detected after the validation phase, the error message display only the error template but not the actual error details.
+
+<!-- ENGCOM-2093-->* 
+title: Admin controller product set save refactor
+url: magento/magento2#16217
+contributor name: @AnshuMishra17
+contributor link: https://github.com/AnshuMishra17
+
+Remove direct use of object manager for admin attribute set save controller using constructor based dependency injection.
+
+
+<!-- ENGCOM-1703-->* Move breadcrumb json configuration to viewmodel and serialize it using Magento json serializer
+
+title: Move breadcrumb json configuration to viewmodel
+url: magento/magento2#15521
+contributor name: @diedburn
+contributor link: https://github.com/diedburn
+
+
+<!-- ENGCOM-1464-->* 
+Added row_id to the flat action indexer so the value isn't s et to 0 for new products when using index on save
+
+If you use the \Magento\Framework\Api\SearchCriteriaBuilder and the flat product row_id is set to 0. The product isn't shown in the getList of the ProductRepository
+
+title: [BUGFIX] Added row_id to the flat action indexer so the value isn't s?
+url: magento/magento2#15010
+contributor name: @lewisvoncken
+contributor link: https://github.com/lewisvoncken
+
+
+<!-- ENGCOM-1444-->* 
+
+When a product is opened from a homepage and menu has a link to the homepage,
+two home links will be inserted into breadcrumbs.
+
+title: Prevent double home links in breadcrumbs at product page
+url: magento/magento2#14994
+contributor name: @vovayatsyuk
+contributor link: https://github.com/vovayatsyuk
+
+<!-- ENGCOM-1553-->* 
+
+
+title: [Backport 2.2] Fix for displaying a negative price for a custom option.
+url: magento/magento2#15202
+contributor name: @dverkade
+contributor link: https://github.com/dverkade
+
+Fix for displaying a negative price for a custom option.
+
+Description
+Currently a negative price is displayed as +-€ 5,51 for instance. By changing the template to check of the value is actually positive, a negative value will be displayed as -€ 5,51 and a positive value will be displayed as +€ 5,51. When the value is exactly 0 nothing will be displayed after the label.
+
+
+<!-- ENGCOM-1530-->* 
+
+title: Fixed js error when product has double quote in its name
+url: magento/magento2#15162
+contributor name: @vovayatsyuk
+contributor link: https://github.com/vovayatsyuk
+
+When a product has " symbol in its name - js error appears on the page.
+
+
+<!-- ENGCOM-1404-->* 
+Fixed issue products grid operations in admin cart price rule edit page for user which has no access to CatalogRule module
+
+title: Fixed issue products grid operations in admin cart price rule edit page for user which has no access to CatalogRule module
+url: magento/magento2#14886
+contributor name: @Neos2007
+contributor link: https://github.com/Neos2007
+
+Magento 2.2 have multiple admin user roles with access restrictions to some resources. Role has access to cart price rules, but it restricted to catalog rules rules.
+
+
+Modify method `Magento\CatalogRule\Block\Adminhtml\Promo\Widget\Chooser\Sku::getGridUrl()` method. Change route parameter which it pass in `getUrl` method from `catalog_rule//chooser` to `/*/chooser`.
+
+
+<!-- ENGCOM-1302-->* 
+
+Optimize ID to SKU lookup of tier prices
+
+
+title: [2.2] Optimize ID to SKU lookup of tier prices
+url: magento/magento2#14699
+contributor name: @toddbc
+contributor link: https://github.com/toddbc
+
+Previously, with a large number of tier or group prices, each tier would separately make a database query to lookup the associated SKU.
+
+This instead load the ID to SKU mapping once, and uses it for all tiers.
+
+When lookup up a batch of 100 SKUs with hundreds of tier prices per SKU, this cuts lookup time from on the order of 4s to on the order of 0.1s or less.
+
+When editing a B2B shared catalog with many assigned products that have many associated tiered pricing rules, this results in a 50% decrease in load time.
+
+
+<!-- ENGCOM-1336-->* Display Wrong Data On Cart Update Page
+
+title: Display Wrong Data On Cart Update Page
+url: magento/magento2#14765
+contributor name: @nit-it
+contributor link: https://github.com/nit-it
+
+
+If we add configurable product in cart with different options And We need to update 1st item from the cart. So we click edit icon and open Update Cart Page But Quantity and Options display wrong on this page.
+
+Description
+This request proposes to set Product options and quantity by checking Item Id.
+
+
+<!-- ENGCOM-1239-->* 
+Fix HTML tags in meta description
+
+title: [Forwardport] Fix HTML tags in meta description
+url: magento/magento2#14538
+contributor name: @davidwindell
+contributor link: https://github.com/davidwindell
+
+fixes issue with HTML tags in meta description if no meta description is provided.
+
+Fixed Issues
+HTML tags in meta description
+Manual testing scenarios
+Ensure a product has no meta description but does have a product description with HTML in it
+Visit product on front-end and view page source
+
+
+<!-- ENGCOM-1909-->* 
+
+
+Fixed the check for allowed HTML tags OR wysiwyg for textarea attribute types.
+Fix for options so that they can be rendered as HTML as well.
+title: Fixes for #15393
+url: magento/magento2#15687
+contributor name: @simonjanguapa
+contributor link: https://github.com/simonjanguapa
+
+
+Steps to reproduce
+I recently update from Magento 2.2.3 to Magento 2.2.4, and then found this error.
+On product page, there is an error.
+
+Expected result
+Full product page without error. The links on "More Information" tab is clickable. And then after click browser will load and go to the page on link.
+
+Actual result
+The links are broken. Not clickable, but to be a plain text.
+
+
+[GitHub-15393](https://github.com/magento/magento2/issues/15393)
+
+
+
 
 
 ### CAPTCHA
@@ -449,9 +679,63 @@ Added unit test for captcha string resolver
  *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [16160](https://github.com/magento/magento2/pull/16160)*.
 
 
+ <!-- ENGCOM-2531 -->* Disable autocomplete for captcha inputs
+ This PR removes captcha input autocomplete
+
+
+title: Disable autocomplete for captcha inputs
+url: magento/magento2#17114
+contributor name: @denistrator
+contributor link: https://github.com/denistrator
+
+
+<!-- ENGCOM-2268 -->* Added unit test for CheckGuestCheckoutObserver
+
+This PR adds a missing unit test for \Magento\Captcha\Observer\CheckGuestCheckoutObserver class.
+
+
+
+title: Captcha: Added unit test for CheckGuestCheckoutObserver
+url: magento/magento2#16680
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
+
+
+<!-- ENGCOM-2090 -->*
+The integration test checks that the customer login attempts are being removed after a successful login or account details edit
+
+Added integration tests for checking customer login attempts cleanup
+
+title: Captcha: Added integration tests for checking customer login attempts cleanup
+url: magento/magento2#16306
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
+
+
+
+add to test
+
+
+<!-- ENGCOM-2087 -->*
+
+title: Captcha: Added integration test for checking admin login attempts cleanup
+url: magento/magento2#16300
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
+
+The integration test checks that the admin login attempts are being removed after a successful login
+
+
+
+
 
 ### Cart and checkout
 
+
+title: Captcha: Added unit test for CheckGuestCheckoutObserver
+url: magento/magento2#16680
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
 
 <!-- ENGCOM-2126 -->* Wrong placeholder for password field in the checkout page
 
@@ -556,10 +840,562 @@ The checkbox stays checked regardless click on label
 <!-- MAGETWO-86490 -->* Magento no longer empties a customer's shopping cart if the checkout page is reloaded several times. Previously, when the checkout page is reloaded several times, Magento empties the cart, and the page reloads to an empty cart page.
 
 
+<!-- ENGCOM-2255 -->* This PR adds an unit test for \Magento\Checkout\Model\Cart\CollectQuote class.
+title: Covered Magento\Checkout\Model\Cart\CollectQuote by Unit Test
+url: magento/magento2#16271
+contributor name: @eduard13
+contributor link: https://github.com/eduard13
+
+move to test 
+
+
+
+<!-- ENGCOM-2097 -->*
+title: Update webapi.xml to fix typo
+url: magento/magento2#15845
+contributor name: @mhaack
+contributor link: https://github.com/mhaack
+
+Update webapi.xml to fix typo
+
+app/code/Magento/Checkout/etc/webapi.xml
+
+
+<!-- ENGCOM-840 -->*
+
+Add a link to the cart to the success message when adding a product 
+
+title: Add a link to the cart to the success message when adding a product
+url: magento/magento2#13904
+contributor name: @avstudnitz
+contributor link: https://github.com/avstudnitz
+
+
+If I add a product to the shopping cart, I want to go to the cart directly after that in many cases without having to search for a link. Thus, the link has been added to the success message now.
+
+
+<!-- ENGCOM-1430 -->*
+title: Change 'Update'-button visibility on change qty event.
+url: magento/magento2#14935
+contributor name: @likemusic
+contributor link: https://github.com/likemusic
+
+When qty value in minicat updated by js, Update-button should have the same behavior like when qty is manually edited.
+
+
+Change 'Update'-button visibility on change qty event
+
+
+<!-- ENGCOM-1399 -->*
+Fix infinite checkout loader when some script wasn't loaded correctly because of network error
+
+title: Fix infinite checkout loader when some script wasn't loaded correctly because of network error
+url: magento/magento2#14874
+contributor name: @vovayatsyuk
+contributor link: https://github.com/vovayatsyuk
+
+
+Infinite checkout loader may appear when some module makes a require call but the dependency wasn't returned (Network error).
+
+The patch changes how Magento treats isPending modules. If all dependencies are errored - treat it as loaded.
+
+
+<!-- ENGCOM-1299 -->* minicart label fixed size issue
+
+title: [2.2] Fix - minicart label fixed size issue
+url: magento/magento2#14716
+contributor name: @Karlasa
+contributor link: https://github.com/Karlasa
+
+minicart qty label had fixed size and with longer translation phrases input field was covering label.
+
+Description
+Removed row with width attribute.
+
+
+### Cleanup
+
+<!-- ENGCOM-2385 -->* Remove extra spaces from Magento/Ui
+title: Remove extra spaces from Magento/Ui
+url: magento/magento2#16872
+contributor name: @ronak2ram
+contributor link: https://github.com/ronak2ram
+
+
+<!-- ENGCOM-2354 -->*
+title: Code improvement
+url: magento/magento2#16821
+contributor name: @mage2pratik
+contributor link: https://github.com/mage2pratik
+
+
+<!-- ENGCOM-2305 -->*
+Remove commented code & remove space
+title: Remove commented code & remove space
+url: magento/magento2#16748
+contributor name: @ronak2ram
+contributor link: https://github.com/ronak2ram
+
+
+<!-- ENGCOM-2290 -->*
+Add spelling correction: formatedPrice to formattedPrice 
+title: [Backport 2.3] Add spelling correction: formatedPrice to formattedPrice
+url: magento/magento2#16726
+contributor name: @arnoudhgz
+contributor link: https://github.com/arnoudhgz
+
+<!-- ENGCOM-2280 -->*
+Corrected return message from ProductRuleTest.php
+title: Corrected return message from ProductRuleTest.php
+url: magento/magento2#16721
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+<!-- ENGCOM-2283 -->*
+Removed space before ending sentence throughout codebase
+title: Removed space before ending sentence.
+url: magento/magento2#16717
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+<!-- ENGCOM-2297 -->* Replacing the method proccessAdditionalValidation by processAdditionalValidation. It's was mistype error.
+title: Fixing a Mistype Error
+url: magento/magento2#16414
+contributor name: @tiagosampaio
+contributor link: https://github.com/tiagosampaio
+
+<!-- ENGCOM-2276 -->* 
+Fixed typo in SynonymGroupRepositoryInterface
+
+title: Fixed typo in SynonymGroupRepositoryInterface
+url: magento/magento2#16711
+contributor name: @AnshuMishra17
+contributor link: https://github.com/AnshuMishra17
+
+<!-- ENGCOM-2249 -->* 
+title: Improved code and remove unnecessary space
+url: magento/magento2#16678
+contributor name: @ronak2ram
+contributor link: https://github.com/ronak2ram
+
+https://github.com/magento/magento2/pull/15129
+
+ app/code/Magento/Catalog/Pricing/Price/ConfiguredRegularPrice.php
+
+
+<!-- ENGCOM-2238 -->* Removed double occurrences from Magento modules
+Removed below double occurrences from Magento_Catalog, Magento_Customer, Magento_Downloadable, Magento_Sales , lib and dev test function comments.
+title: Removed double occurrences from Magento modules.
+url: magento/magento2#16644
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+
+<!-- ENGCOM-2177 -->* 
+
+Looks like the execution of dev:di:info duplicates info about plugins by for the or the Preference if the same plugin class and its type were introduced in plugins by class name section.
+
+title: [FIX] dev:di:info duplicates plugin info
+url: magento/magento2#16474
+contributor name: @Coderimus
+contributor link: https://github.com/Coderimus
+
+<!-- ENGCOM-2206 -->* Removed double occurrences from files
+Removed double occurrences from jQuery, angular JS files and Magento Setup module's scan function's comment.
+redundant field and test case names
+
+title: Removed double occurrences from files.
+url: magento/magento2#16581
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+<!-- ENGCOM-2195 -->*
+
+Updated SynonymGroup.xml by removing extra space from the value of is_required XML node.
+
+title: Updated SynonymGroup.xml
+url: magento/magento2#16557
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+Updated SynonymGroup.xml
+
+<!-- ENGCOM-2186 -->*
+Removed unused data
+
+app/code/Magento/Ui/Model/Export/ConvertToCsv.php
+ app/code/Magento/Ui/Model/Export/ConvertToXml.php
+
+ title: Clear converted file data
+url: magento/magento2#16524
+contributor name: @gelanivishal
+contributor link: https://github.com/gelanivishal
+
+
+<!-- ENGCOM-2086 -->*
+Added and removed unnecessary translation for label/comment tags
+
+Added translation for label and/or comment tags.
+Removed unnecessary translation for label and/or comment tags.
+
+
+
+title: Added and removed unnecessary translation for label/comment tags
+url: magento/magento2#16090
+contributor name: @Yogeshks
+contributor link: https://github.com/Yogeshks
+
+
+
+<!-- ENGCOM-2170 -->*
+Fixed spell issue in the library file.
+
+title: Fixed spell issue in library
+url: magento/magento2#16495
+contributor name: @sanganinamrata
+contributor link: https://github.com/sanganinamrata
+
+
+<!-- ENGCOM-2165 -->*
+
+Properly hyphenate "third-party" in message on this page CONTENT > Design > Configuration
+
+
+title: Properly hyphenate "third-party"
+url: magento/magento2#16489
+contributor name: @erikhansen
+contributor link: https://github.com/erikhansen
+
+<!-- ENGCOM-2057 -->*
+
+title: Removed double occurrence of 'it' from sentences.
+url: magento/magento2#16240
+contributor name: @NamrataChangani
+contributor link: https://github.com/NamrataChangani
+
+Removed double occurrence of 'it' from sentences.
+Correct grammar mistakes in sentences. Replaced Is is to It is.
+Fixed wrong input string into csv of Magento_Paypal module for en_US locale.
+
+<!-- ENGCOM-2055 -->*
+title: Fixed typo error
+url: magento/magento2#16247
+contributor name: @vgelani
+contributor link: https://github.com/vgelani
+
+
+<!-- ENGCOM-2040 -->*
+
+
+title: Correct spelling mistakes in Model and library files.
+url: magento/magento2#16230
+contributor name: @NamrataChangani
+contributor link: https://github.com/NamrataChangani
+
+Correct spelling mistakes(Ex: incorrects, atttribute, appropriate) in Model and library files.
+
+
+<!-- ENGCOM-1797 -->*
+title: BACKPORT 2.2 #15695 Fixed a couple of typos
+url: magento/magento2#15715
+contributor name: @dverkade
+contributor link: https://github.com/dverkade
+
+
+<!-- ENGCOM-1711 -->*
+
+title: Remove extra semicolon from the files
+url: magento/magento2#15594
+contributor name: @saurabh-aureate
+contributor link: https://github.com/saurabh-aureate
+
+
+
+
+<!-- ENGCOM-1700 -->*
+Fixed typo error in method description
+
+
+
+title: Fixed typo error
+url: magento/magento2#15549
+contributor name: @vgelani
+contributor link: https://github.com/vgelani
+
+
+<!-- ENGCOM-1697 -->*
+title: Remove extra space and format the code in translation file
+url: magento/magento2#15552
+contributor name: @saurabh-aureate
+contributor link: https://github.com/saurabh-aureate
+
+
+
+<!-- ENGCOM-1692 -->*
+
+title: Typo correction
+url: magento/magento2#15519
+contributor name: @saurabh-aureate
+contributor link: https://github.com/saurabh-aureate
+
+
+<!-- ENGCOM-1676 -->*
+Fix typos in Multishipping and User module
+
+title: Fix typos in Multishipping and User module
+url: magento/magento2#15513
+contributor name: @avoelkl
+contributor link: https://github.com/avoelkl
+
+
+<!-- ENGCOM-1651 -->*
+
+title: [Backport] Removed redundant else statement
+url: magento/magento2#15435
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
+
+The "else" statement removed within a scope of app/code/Magento/ConfigurableImportExport/Model/Import/Product/Type/Configurable.php
+
+
+<!-- ENGCOM-1647 -->*
+
+title: typo correction
+url: magento/magento2#15431
+contributor name: @AnshuMishra17
+contributor link: https://github.com/AnshuMishra17
+
+Changed requere to require in comments for public function addTaxPercents()
+
+ app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php
+
+
+ <!-- ENGCOM-1637 -->*
+
+
+title: [Backport-2.2] Fixed abstract.js typo
+url: magento/magento2#15411
+contributor name: @VitaliyBoyko
+contributor link: https://github.com/VitaliyBoyko
+
+
+MagentoUI abstract.js:223 typo in doc block
+
+
+ <!-- ENGCOM-1592 -->*
+
+ title: Removed duplicate line and added comment on variable
+url: magento/magento2#15362
+contributor name: @vgelani
+contributor link: https://github.com/vgelani
+
+app/code/Magento/Sales/Block/Adminhtml/Order/Create/Totals/Discount.php
+
+
+
+ <!-- ENGCOM-1593 -->*
+
+`lib/web/css/source/lib/variables/_typography.less`
+
+title: [Backport-2.2] Unused variable removed
+url: magento/magento2#15386
+contributor name: @VitaliyBoyko
+contributor link: https://github.com/VitaliyBoyko
+
+
+
+<!-- ENGCOM-1602-->*
+title: Fix typos in variable names
+url: magento/magento2#15294
+contributor name: @dmytro-ch
+contributor link: https://github.com/dmytro-ch
+
+
+<!-- ENGCOM-1599-->*
+Fixed typo mistake in function comment
+title: Fixed typo mistake in function comment in  app/code/Magento/Paypal/Model/Api/Nvp.php
+
+url: magento/magento2#15302
+contributor name: @NamrataChangani
+contributor link: https://github.com/NamrataChangani
+
+
+
+<!-- ENGCOM-1588-->*
+
+Fix typos in PHPDocs and comments
+
+title: Fix typos in PHPDocs and comments
+url: magento/magento2#15293
+contributor name: @dmytro-ch
+contributor link: https://github.com/dmytro-ch
+
+
+<!-- ENGCOM-1580-->*
+ typo in method name _getCharg[e]ableOptionPrice
+
+ title: [fix] typo in method name _getCharg[e]ableOptionPrice
+url: magento/magento2#15276
+contributor name: @mhauri
+contributor link: https://github.com/mhauri
+
+
+
+<!-- ENGCOM-1587-->*
+
+Fix typo in property name
+title: Fix typo in property name
+url: magento/magento2#15292
+contributor name: @dmytro-ch
+contributor link: https://github.com/dmytro-ch
+
+ dev/tests/static/testsuite/Magento/Test/Integrity/Magento/Backend/ControllerAclTest.php
+
+
+
+<!-- ENGCOM-1586-->* Fix typo in database column comment
+
+title: [Backport] Fix typo in database column comment
+url: magento/magento2#15291
+contributor name: @VitaliyBoyko
+contributor link: https://github.com/VitaliyBoyko
+
+app/code/Magento/Catalog/Setup/InstallSchema.php
+
+
+<!-- ENGCOM-1584-->*
+typo in private method name getUniq[ue]ImageIndex
+
+title: [fix] typo in private method name getUniq[ue]ImageIndex
+url: magento/magento2#15282
+contributor name: @mhauri
+contributor link: https://github.com/mhauri
+Private method name \Magento\Catalog\Console\Command\ImagesResizeCommand::getUniqImageIndex contained typo/misspelling.
+
+
+<!-- ENGCOM-1582-->*
+
+
+title: Fix typo in Image::open exception message
+url: magento/magento2#15269
+contributor name: @t-richards
+contributor link: https://github.com/t-richards
+
+Fixes a typo in the \Magento\Framework\Image::open exception message.
+
+
+<!-- ENGCOM-1572-->*
+
+Removed non-existing argument from constructor's comment block
+Added space between to member variables
+
+ app/code/Magento/Translation/Block/Html/Head/Config.php
+  app/code/Magento/Translation/Model/Json/PreProcessor.php
+
+title: Removed non-existing argument
+url: magento/magento2#15249
+contributor name: @Yogeshks
+contributor link: https://github.com/Yogeshks
+ app/code/Magento/Translation/Model/Json/PreProcessor.php
+
+<!-- ENGCOM-1575-->*
+title: Fixed typo in method name
+url: magento/magento2#15256
+contributor name: @olmer
+contributor link: https://github.com/olmer
+
+Method name \Magento\Framework\App\Request\Http::removeRepitedSlashes contained typo
+
+
+
+<!-- ENGCOM-1470-->*
+title: Fixes typo
+url: magento/magento2#15053
+contributor name: @jee1mr
+contributor link: https://github.com/jee1mr
+
+ app/code/Magento/CatalogSearch/Block/Advanced/Form.php
+
+
+<!-- ENGCOM-1458-->*
+
+title: Fixed typos in .less files
+url: magento/magento2#15023
+contributor name: @kalpmehta
+contributor link: https://github.com/kalpmehta
+
+Fixed few typos in .less files.
+
+
+<!-- ENGCOM-1427-->*
+Removed extra close tag
+title: Removed extra close tag
+url: magento/magento2#14928
+contributor name: @Yogeshks
+contributor link: https://github.com/Yogeshks
+
+Removed extra close tag (</a>) from view file.
+
+
+app/code/Magento/Review/view/frontend/templates/view.phtml
+
+
+
+<!-- ENGCOM-1409-->*
+Removed extra spaces from language file
+
+title: Removed extra spaces from language file
+url: magento/magento2#14896
+contributor name: @Yogeshks
+contributor link: https://github.com/Yogeshks
+
+
+Removed extra spaces from a key-value in en_US.csv file. Because of this extra spaces, it's not translated properly.
+
+<!-- ENGCOM-1406-->*
+
+Fix typo in doc for updateSpecificCoupons
+
+title: Fix typo in doc for updateSpecificCoupons
+url: magento/magento2#14891
+contributor name: @sjb9774
+contributor link: https://github.com/sjb9774
+
+Just a tiny typo correction in the ResourceModel\Coupon.php:updateSpecificCoupons doc, as "its" is the possessive form of "it" and "it's" is a contraction of "it" and "is".
+
+
+<!-- ENGCOM-1306-->*
+Code cleanup, add more visibility
+
+title: Code cleanup, add more visibility
+url: magento/magento2#14609
+contributor name: @thomas-blackbird
+contributor link: https://github.com/thomas-blackbird
+
+I was reading some piece of code when I see te "foreach" and "break" statements. I know that the "break" should be avoided, so here my suggestion to retrieve the key of the first element of the array.
+Is there a goal to do it via a foreach and break?
+
+I've fixed also some useless "else" statements and add some ternary operators to replace the conditions where there's only a value assignment.
+
+<!--  ENGCOM-1384 -->*
+
+
+
+
 
 ### CMS content
 
 <!-- MAGETWO-92611-->* Page layout issues that resulted from incorrect module sequence have been corrected. Previously, the  `Magento_theme` module was loaded too late, which resulted in unexpected display issues. 
+
+<!-- ENGCOM-1407-->* Fix aggregations use statements and return values
+
+title: [Backport] Fix aggregations use statements and return values
+url: magento/magento2#14893
+contributor name: @rogyar
+contributor link: https://github.com/rogyar
+
+Several classes have wrong use statements for AggregationInterface (Magento\Framework\Search\AggregationInterface instead of Magento\Framework\Api\Search\AggregationInterface).
+Also, setAggregations methods don't return a correct value (incompatible with interface annotation).
 
 
 ### Configurable products
@@ -732,7 +1568,6 @@ Magento's lib/web/mage/dropdowns.js has a bug that prevents a developer from spe
  *Fix submitted by [Brian LaBelle](https://github.com/brian-labelle) in pull request [15499](https://github.com/magento/magento2/pull/15499)*. [GitHub-15469](https://github.com/magento/magento2/issues/15469)
 
 
-<!-- MAGETWO-89264 -->* Checkout now works when the AdBlock extension and Google Analytics are enabled. Previously, the Checkout page was not accessible,  and Magento displayed the loading spinner.
 
 <!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user can not view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
 
@@ -2012,564 +2847,13 @@ This release includes a fix that optimizes image resizing.
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. 
 
-old table
+{% include release-notes/engcomm-2-2-6.md %}
 
 
 ### Individual contributor contributions
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-<table>
-  <tr>
-    <th>Pull request</th>
-    <th>Related GitHub issue</th>
-    <th>Contributing community member</th>
-  </tr>
 
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
-    <td>15205, 15245</td>
-    <td><a target="_blank" href="https://github.com/fmarangi">Francesco Marangi</a></td>
-  </tr>
-
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13956">13956</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/koenner01">Koen V.</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13691">13691</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13556" target="_blank">13556</a></td>
-    <td><a target="_blank" href="https://github.com/nuzil">nuzil</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13878">13878</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13769" target="_blank">13769</a></td>
-    <td><a target="_blank" href="https://github.com/pawcioma">pawcioma</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13943">13943</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/12405" target="_blank">12405</a>, <a href="https://github.com/magento/magento2/issues/12421" target="_blank">12421</a></td>
-    <td><a target="_blank" href="https://github.com/hostep">Pieter Hoste</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13855">13855</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13804" target="_blank">13804</a></td>
-    <td><a target="_blank" href="https://github.com/ankurvr">Ankur Raiyani</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14011">14011</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/chedaroo">Richard Jesudason</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14013">14013</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/sandermangel">Sander Mangel</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13977">13977</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/hostep">Pieter Hoste</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13607">13607</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13385" target="_blank">13385</a></td>
-    <td><a target="_blank" href="https://github.com/shyamranpara">Shyam Ranpara</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a></td>
-    <td><a target="_blank" href="https://github.com/enriquei4">enriquei4</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/simpleadm">Sergey P</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13024">13024</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/3483" target="_blank">3483</a></td>
-    <td><a target="_blank" href="https://github.com/pradeep-wagento">pradeep-wagento</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14044">14044</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/avstudnitz">Andreas von Studnitz</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12929">12929</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10559" target="_blank">10559</a></td>
-    <td><a target="_blank" href="https://github.com/srenon">Renon Stewart</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13884">13884</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/5463" target="_blank">5463</a></td>
-    <td><a target="_blank" href="https://github.com/k4emic">Mads Nielsen</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13894">13894</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/evgk">evgk</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13989">13989</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13988" target="_blank">13988</a></td>
-    <td><a target="_blank" href="https://github.com/krzksz">Mateusz Krzeszowiak</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14029">14029</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/4919" target="_blank">4919</a></td>
-    <td><a target="_blank" href="https://github.com/tdgroot">Timon de Groot</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14042">14042</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/RomaKis">Roman K.</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14062">14062</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/jasperzeinstra">jasperzeinstra</a></td>
-  </tr>
-
-   <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14083">14083</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/RandeKnight">RandeKnight</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14105">14105</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13820" target="_blank">13820</a></td>
-    <td><a target="_blank" href="https://github.com/Frodigo">Marcin Kwiatkowski</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14121">14121</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14010" target="_blank">14010</a></td>
-    <td><a target="_blank" href="https://github.com/Yogeshks">Yogesh Suhagiya</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14041">14041</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/KarlDeux">Carlos Lizaga</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14106">14106</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14136">14136</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/ccasciotti">Cristiano Casciotti</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14154">14154</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/nfourteen">nfourteen</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14189">14189</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/EliasZ">Elias</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/11707">11707</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/gwharton">gwharton</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14156">14156</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/aschrammel">Andreas Schrammel</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13653">13653</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/JeroenVanLeusden">Jeroen</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14091">14091</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14138" target="_blank">14138</a></td>
-    <td><a target="_blank" href="https://github.com/orlangur">Vlad Veselov</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14128">14128</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14109" target="_blank">14109</a></td>
-    <td><a target="_blank" href="https://github.com/brideo">Nathan McBride</a></td>
-  </tr>
-
- <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13716">13716</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13704" target="_blank">13704</a></td>
-    <td><a target="_blank" href="https://github.com/alepane21">Alessandro Pagnin</a></td>
-  </tr>
-
- <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14230">14230</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/cstergianos">cstergianos</a></td>
- </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14306">14306</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14089" target="_blank">14089</a></td>
-    <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14303">14303</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13992" target="_blank">13992</a></td>
-    <td><a target="_blank" href="https://github.com/cream-julian">cream-julian</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a></td>
-    <td><a target="_blank" href="https://github.com/crisdiaz">cristina-diaz</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14358">14358</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/mageprince">Prince Patel</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13414">13414</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/VincentMarmiesse">Vincent Marmiesse</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14308">14308</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Yogeshks">Yogesh Suhagiya</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14327">14327</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10057" target="_blank">10057</a></td>
-    <td><a target="_blank" href="https://github.com/swnsma">Oleksandr Kravchuk</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14347">14347</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/simpleadm">Sergey P.</a></td>  
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14361">14361</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11930" target="_blank">11930</a>, <a href="https://github.com/magento/magento2/issues/10700" target="_blank">10700</a> </td>
-    <td><a target="_blank" href="https://github.com/xtremeperf">Doug</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14388">14388</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14060">14060</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14299">14299</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14072" target="_blank">14072</a></td>
-    <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14325">14325</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7816" target="_blank">7816</a>, <a href="https://github.com/magento/magento2/issues/12852" target="_blank">12852</a></td>
-    <td><a target="_blank" href="https://github.com/mikewhitby">Mike Whitby</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12497">12497</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10650" target="_blank">10650</a></td>
-    <td><a target="_blank" href="https://github.com/paveq">Paavo Pokkinen</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14288">14288</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/tdgroot">Timon de Groot</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14385">14385</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13716" target="_blank">13716</a></td>
-    <td><a target="_blank" href="https://github.com/orlangur">Vlad Veselov</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14309">14309</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14307" target="_blank">14307</a></td>
-    <td><a target="_blank" href="https://github.com/ArjenMiedema">Arjen Miedema</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14350">14350</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14249" target="_blank">14249</a></td>
-    <td><a target="_blank" href="https://github.com/cdiacon">Calin</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14403">14403</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/edie-pasek">edie-pasek</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14440">14440</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Yogeshks">Yogesh Suhagiya</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13942">13942</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13582" target="_blank">13582</a></td>
-    <td><a target="_blank" href="https://github.com/bordeo">Alex</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14293">14293</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8837" target="_blank">8837</a></td>
-    <td><a target="_blank" href="https://github.com/KravetsAndriy">Andriy Kravets</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14439">14439</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/sanderjongsma">Sander Jongsma</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14445">14445</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14455">14455</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Karlasa">Karla Saaremäe</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14452">14452</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14466">14466</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/NamrataChangani">NamrataChangani</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14473">14473</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/JDavidVR">David</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13808">13808</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/simpleadm">Sergey P</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14360">14360</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13010" target="_blank">13010</a></td>
-    <td><a target="_blank" href="https://github.com/afirlejczyk">afirlejczyk</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14457">14457</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/simpleadm">Sergey P</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14498">14498</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Karlasa">Karla Saaremäe</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14504">14504</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/quisse">Tommy Quissens</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13629">13629</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Corefix">Theis Corfixen</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13831">13831</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/irs">Vadim Kusakin</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2ce/pull/14176">14176</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14049" target="_blank">14049</a></td>
-    <td><a target="_blank" href="https://github.com/joost-florijn-kega">joost-florijn-kega</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14319">14319</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/6879" target="_blank">6879</a></td>
-    <td><a target="_blank" href="https://github.com/MateuszChrapek">MateuszChrapek</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13257">13257</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14559">14559</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13950" target="_blank">13950</a></td>
-    <td><a target="_blank" href="https://github.com/nuzil">nuzil</a></td>
-  </tr>
-
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14552">14552</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/tkotosz">Tibor Kotosz</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14599">14599</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14572" target="_blank">14572</a></td>
-    <td><a target="_blank" href="https://github.com/PierreLeMaguer">Pierre LeMaguer</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13016">13016</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/9666" target="_blank">9666</a>, <a href="https://github.com/magento/magento2/issues/12323" target="_blank">12323</a></td>
-    <td><a target="_blank" href="https://github.com/rossmc">Ross</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14048">14048</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14035" target="_blank">14035</a></td>
-    <td><a target="_blank" href="https://github.com/kamilszewczyk">Kamil Szewczyk</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14629">14629</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/AnshuMishra17">AnshuMishra17</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14635">14635</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14465" target="_blank">14465</a></td>
-    <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev </a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14668">14668</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/surya07081995">Suraj kumar prasad </a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14678">14678</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/strell">Roman Strelenko </a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14681">14681</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13652" target="_blank">13652</a></td>
-    <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev </a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14688">14688</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/net32">Isaias</a></td>
-  </tr>
-<tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14696">14696</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
-  </tr>
-
- 
-</table>
 
 ### Partner contributions
 
@@ -2583,84 +2867,69 @@ The following table highlights contributions made by Partners. This table lists 
   </tr>
 
 <tr>
-    <td>Balance Internet</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14128">14128</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14109" target="_blank">14109</a></td>
+    <td>Atwix</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16468">16468</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16680">16680</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17063">17063</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17137">17137</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16401">16401</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/16372">16372</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16271">16271</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16086">16086</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/16468" target="_blank">16468</a>, <a href="https://github.com/magento/magento2/issues/3535" target="_blank">3535</a>, <a href="https://github.com/magento/magento2/issues/14517" target="_blank">14517</a></td>
+  </tr>
+
+<tr>
+    <td>Basecom</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16890">16890</a></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>Comwrap</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14559">14559</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13691">13691</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13556" target="_blank">13556</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15464">15464</a>,<a target="_blank" href="https://github.com/magento/magento2/pull/15479">15479</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16554">16554</a></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>Convert</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14457">14457</a>,<a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14347">14347</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13808">13808</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14379">14379</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/14351" target="_blank">14351</a></td>
   </tr>
 
+
 <tr>
-    <td>Divante</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14360">14360</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14105">14105</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13010" target="_blank">13010</a>, <a href="https://github.com/magento/magento2/issues/13820" target="_blank">13820</a></td>
+    <td>H&O</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16553">16553</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13569">13569</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/5607" target="_blank">5607</a></td>
   </tr>
 
   <tr>
-    <td>H&O</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13653">13653</a></td>
-    <td>N/A</td>
+    <td>ISM eCompany</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16386">16386</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16693">16693</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16916">16916</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/70">70</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/72">72</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/74">74</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/5316" target="_blank">5316</a></td>
   </tr>
 
   <tr>
     <td>Interactiv4</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14452">14452</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14299">14299</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14306">14306</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a>,<a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a> </td>
-    <td><a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a>, <a href="https://github.com/magento/magento2/issues/14089" target="_blank">14089</a>, <a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a>, <a href="https://github.com/magento/magento2/issues/14072" target="_blank">14072</a></td>
-  </tr>
-
-<tr>
-    <td>Inviqa</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14552">14552</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/17098">17098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17099">17099</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16946">16946</a> </td>
     <td>N/A</td>
   </tr>
 
 <tr>
-    <td>ISM eCompany</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14327">14327</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10057" target="_blank">10057</a></td>
+    <td>MageSpecialist</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16393">16393</a></td>
+    <td>N/A</td>
   </tr>
 
-
-  <tr>
+<tr>
     <td>MediaCT</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14309">14309</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14062">14062</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14230">14230</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14307" target="_blank">14307</a></td>
-  </tr>
-
-<tr>
-    <td>Something Digital</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13898">13898</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/12792" target="_blank">12792</a>, <a href="https://github.com/magento/magento2/issues/13778" target="_blank">13778</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16726">16726</a></td>
+    <td>N/A</td>
   </tr>
 
 
   <tr>
-    <td>Vaimo</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13257">13257</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14106">14106</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14388">14388</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12497">12497</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14447">14447</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10650" target="_blank">10650</a></td>
-
-  </tr>
-
-<tr>
     <td>Wagento</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14473">14473</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13024">13024</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/3483" target="_blank">3483</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16903">16903</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17019">17019</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16732">16732</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16959">16959</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/15848" target="_blank">15848</a>, <a href="https://github.com/magento/magento2/issues/14476" target="_blank">14476</a></td>
   </tr>
-
 
 
 </table>
-
 
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
