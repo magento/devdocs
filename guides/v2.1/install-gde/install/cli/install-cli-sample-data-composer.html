@@ -2286,64 +2286,53 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			
+<p>This section discusses how to install sample data if you got the Magento software in any of the following ways:</p>
 
-  <p>This section discusses how to install sample data if you got the Magento software in any of the following ways:</p>
+<ul>
+  <li>
+    <p>Downloaded a compressed archive from <a href="https://magento.com/tech-resources/download">Magento</a>.</p>
 
-  <ul>
-    <li>
-      <p>Downloaded a compressed archive from <a href="https://magento.com/tech-resources/download">Magento</a>.</p>
+    <p>If you downloaded an archive from Github, this method won’t work because the <code class="highlighter-rouge">composer.json</code> file doesn’t contain the <code class="highlighter-rouge">repo.magento.com</code> URL.</p>
+  </li>
+  <li>
+    <p>Used <code class="highlighter-rouge">composer create-project</code></p>
+  </li>
+</ul>
 
-      <p>If you downloaded an archive from Github, this method won’t work because the <code class="highlighter-rouge">composer.json</code> file doesn’t contain the <code class="highlighter-rouge">repo.magento.com</code> URL.</p>
-    </li>
-    <li>
-      <p>Used <code class="highlighter-rouge">composer create-project</code></p>
-    </li>
-  </ul>
+<p>You can use this method of getting sample data for both Magento Open Source or Magento Commerce, but you must use the same <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a> you used to install Magento.</p>
 
-  <p>You can use this method of getting sample data for both Magento Open Source or Magento Commerce, but you must use the same <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a> you used to install Magento.</p>
+<p class="bs-callout bs-callout-info">If you encounter errors, such as <code class="highlighter-rouge">Could not find package...</code> or <code class="highlighter-rouge">...no matching package found...</code>, make sure there aren’t any typos in your command. If you still encounter errors, you may not have access to the right Composer repositories, especially if your using Magento Commerce. Contact <a href="https://magento.com/support">Magento support</a> for help.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>If you encounter errors, such as <code class="highlighter-rouge">Could not find package...</code> or <code class="highlighter-rouge">...no matching package found...</code>, make sure there aren’t any typos in your command. If you still encounter errors, you may not have access to the right Composer repositories, especially if your using Magento Commerce. Contact <a href="https://magento.com/support" target="&#95;blank">Magento support</a> for help.</p>
-  </div>
+<p>You can use Composer to install sample data either before or after installing Magento; however, there might be <a href="/guides/v2.1/install-gde/install/sample-data.html">additional tasks</a>.</p>
 
-  <p>You can use Composer to install sample data either before or after installing Magento; however, there might be <a href="/guides/v2.1/install-gde/install/sample-data.html">additional tasks</a>.</p>
+<p>If you’re a contributing developer, refer to <a href="">Install by cloning repositories</a>.</p>
 
-  <p>If you’re a contributing developer, refer to <a href="">Install by cloning repositories</a>.</p>
+<p class="bs-callout bs-callout-warning">Do not install sample data if your Magento application is set for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>. Switch to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a> first. Installing sample data in production mode <a href="/guides/v2.1/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Do not install sample data if your Magento application is set for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>. Switch to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a> first. Installing sample data in production mode <a href="/guides/v2.1/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
-</div>
+<p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
-  <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
-</code></pre></div>  </div>
+<p class="bs-callout bs-callout-warning">If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema: <code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento setup:upgrade</code></p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
+<p>You are required to <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
-</code></pre></div>    </div>
-  </div>
+<h2 id="authentication-error">Authentication error</h2>
 
-  <p>You are required to <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
+<p>The following authentication error might display:</p>
 
-  <h2 id="authentication-error">Authentication error</h2>
-
-  <p>The following authentication error might display:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Composer\Downloader\TransportException]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Composer\Downloader\TransportException]
 The 'https://repo.magento.com/packages.json' URL required authentication.
 You must be using the interactive console to authenticate
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>If the error displays, change to your Magento installation directory and run <code class="highlighter-rouge">composer update</code>, which will prompt you for your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+<p>If the error displays, change to your Magento installation directory and run <code class="highlighter-rouge">composer update</code>, which will prompt you for your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 
-  <h3 id="install-the-magento-software">Install the Magento software</h3>
+<h3 id="install-the-magento-software">Install the Magento software</h3>
 
-  <p>After sample data installation is complete, install the Magento software using the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">command line</a>.</p>
-</div>
+<p>After sample data installation is complete, install the Magento software using the <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
 			
 		</div>

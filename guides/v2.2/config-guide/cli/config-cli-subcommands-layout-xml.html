@@ -1877,43 +1877,38 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="overview-of-layout-xml-conversion">Overview of layout XML conversion</h2>
 
-  <h2 id="overview-of-layout-xml-conversion">Overview of layout XML conversion</h2>
-
-  <p>Use this command to update your   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+<p>Use this command to update your   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
    <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.</p>
 
-  <p>For more information about layout XML files, see:</p>
+<p>For more information about layout XML files, see:</p>
 
-  <ul>
-    <li><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-    <li><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+  <li><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+</ul>
 
-  <h2 id="convert-layout-xml-files">Convert layout XML files</h2>
+<h2 id="convert-layout-xml-files">Convert layout XML files</h2>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+</code></pre></div></div>
 
-  <p>here:</p>
+<p>here:</p>
 
-  <ul>
-    <li><strong><code class="highlighter-rouge">{xml file}</code></strong> is the full path and file name of a layout XML file to convert (required)</li>
-    <li><strong><code class="highlighter-rouge">{xslt stylesheet}</code></strong> is the full path and file name of an XSLT stylesheet file to use for   <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span>
+<ul>
+  <li><strong><code class="highlighter-rouge">{xml file}</code></strong> is the full path and file name of a layout XML file to convert (required)</li>
+  <li><strong><code class="highlighter-rouge">{xslt stylesheet}</code></strong> is the full path and file name of an XSLT stylesheet file to use for   <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span>
  (required)</li>
-    <li><strong><code class="highlighter-rouge">-o|--overwrite</code></strong> include this option to overwrite the existing XML file</li>
-  </ul>
-</div>
+  <li><strong><code class="highlighter-rouge">-o|--overwrite</code></strong> include this option to overwrite the existing XML file</li>
+</ul>
 
 			
 		</div>

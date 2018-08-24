@@ -2305,21 +2305,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 See also <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
-<div>
+## Completely secure installation {#instgde-cli-fully-secure}
 
-        <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
+To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:
 
-        <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
+*	`--use-secure`: Set to `1`
+*	`--base-url-secure`: Set to a secure URL (that is, starting with `https://`)
+*	`--use-secure-admin` Set to `1`
+<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) -->
 
-        <ul>
-          <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
-          <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
-          <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
-<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
-        </ul>
+More details about these parameters can be found later in this topic.
 
-        <p>More details about these parameters can be found later in this topic.</p>
-      </div>
 
 ## Installer help commands {#instgde-cli-help-cmds}
 
@@ -2577,27 +2573,21 @@ The following table discusses the meanings of installation option names and valu
   	</span>
 </div>
 
-<div>
+#### What is sensitive data? {#sens-data}
 
-                <h4 id="sens-data">What is sensitive data?</h4>
+Magento uses your encryption key to encrypt the following:
 
-                <p>Magento uses your encryption key to encrypt the following:</p>
+*	Credit card information
+*	Usernames and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)
+*	CAPTCHA values sent over the network
 
-                <ul>
-                  <li>Credit card information</li>
-                  <li>Usernames and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
-                  <li>CAPTCHA values sent over the network</li>
-                </ul>
+Magento does *not* encrypt:
 
-                <p>Magento does <em>not</em> encrypt:</p>
+*	Administrative and customer usernames and passwords (these passwords are hashed)
+*	Address
+*	Phone number
+*	Other types of personally identifiable information except for credit card numbers
 
-                <ul>
-                  <li>Administrative and customer usernames and passwords (these passwords are hashed)</li>
-                  <li>Address</li>
-                  <li>Phone number</li>
-                  <li>Other types of personally identifiable information except for credit card numbers</li>
-                </ul>
-              </div>
 
 #### Sample localhost installations   {#install-cli-example}
 

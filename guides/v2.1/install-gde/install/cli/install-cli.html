@@ -2291,74 +2291,73 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">If you chose to enable SELinux, see <a href="/guides/v2.1/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 
 <h2 id="new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
-<p>Magento has one command-line interface that performs both installation and configuration tasks: <code>&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
-<ul><li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on)</li>
-	<li>Clearing the cache</li>
-	<li>Managing indexes, including reindexing</li>
-	<li>Creating translation dictionaries and translation packages</li>
-	<li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
-	<li>Deploying static view files</li>
-	<li>Creating CSS from LESS</li></ul>
+<p>Magento has one command-line interface that performs both installation and configuration tasks: <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
+
+<ul>
+  <li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on).</li>
+  <li>Clearing the cache.</li>
+  <li>Managing indexes, including reindexing.</li>
+  <li>Creating translation dictionaries and translation packages.</li>
+  <li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
+  <li>Deploying static view files.</li>
+  <li>Creating CSS from LESS.</li>
+</ul>
+
 <p>Other benefits:</p>
-<ul><li>A single command (php <code>&lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands</li>
-<li>Consistent user interface based on Symfony</li>
-<li>The CLI is extensible so third party developers can "plug in" to it<br />
-This has the additional benefit of eliminating users' learning curve</li>
-<li>Commands for disabled modules do not display.</li></ul>
+
+<ul>
+  <li>A single command (<code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands.</li>
+  <li>Consistent user interface based on Symfony.</li>
+  <li>The CLI is extensible so third party developers can “plug in” to it. This has the additional benefit of eliminating users’ learning curve.</li>
+  <li>Commands for disabled modules do not display.</li>
+</ul>
 
 <p>This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see the <a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a>.</p>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 <p>Before you begin, make sure that:</p>
-<ol><li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
-<li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
-<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li></ol>
 
-<!-- <div class="bs-callout bs-callout-warning">
-	<span class="glyphicon-class">
-		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
-  		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
-</div> -->
+<ol>
+  <li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a></li>
+  <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
+  <li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li>
+</ol>
 
 <p class="bs-callout bs-callout-tip">If you chose to enable SELinux, see <a href="/guides/v2.1/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 
 <h2 id="instgde-install-cli-first">First steps</h2>
-<div>
+<ol>
+  <li>
+    <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+    <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre></div>      </div>
+    <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
+    <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables">unix.stackexchange.com</a>.</p>
 
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+    <p>bash shell example for CentOS:</p>
 
-      <p>bash shell example for CentOS:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-</div>
+<p class="bs-callout bs-callout-info">You can also run the commands in the following ways:&lt;/p&gt;</p>
+<ul>
+  <li><code class="highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="highlighter-rouge">./magento &lt;command name&gt;</code></li>
+  <li><code class="highlighter-rouge">php &amp;lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code>`</li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
+</ul>
 
 <h4 id="next-steps">Next steps</h4>
 

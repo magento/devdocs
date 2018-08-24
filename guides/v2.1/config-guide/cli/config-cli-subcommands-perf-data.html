@@ -1669,36 +1669,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.1/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.1/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
 
-  <h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
+<p>To use the <a href="https://github.com/magento/magento2/blob/2.1/setup/performance-toolkit">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
 
-  <p>To use the <a href="https://github.com/magento/magento2/blob/2.1/setup/performance-toolkit">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
+<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
 
-  <p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
-
-  <p>The following figure shows how a product displays on the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+<p>The following figure shows how a product displays on the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  using the small profile:</p>
 
-  <p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" width="550px" /></p>
+<p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" width="550px" /></p>
 
-  <p>This gives you an idea about what the data looks like.</p>
+<p>This gives you an idea about what the data looks like.</p>
 
-  <h2 id="config-cli-perf-prof">About profiles</h2>
+<h2 id="config-cli-perf-prof">About profiles</h2>
 
-  <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
+<p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-  <p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
+<p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
-  <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
+<p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
-  <table>
+<table>
     <tbody>
         <tr>
             <th>Parameter</th>
@@ -1809,27 +1805,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tbody>
 </table>
 
-  <h2 id="config-cli-perf-run">Run the data generator</h2>
+<h2 id="config-cli-perf-run">Run the data generator</h2>
 
-  <p class="bs-callout bs-callout-warning">Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
+<p class="bs-callout bs-callout-warning">Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
 
-  <p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
+<p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures {path to profile}
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures {path to profile}
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
+<p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
 
-  <p>For example,</p>
+<p>For example,</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+</code></pre></div></div>
 
-  <p>Sample output for the small profile:</p>
+<p>Sample output for the small profile:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generating profile with following params:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generating profile with following params:
  |- Websites: 1
  |- Store Groups: 1
  |- Store Views: 1
@@ -1845,8 +1841,7 @@ Generating categories...  done in &lt;time&gt;
 Generating simple products...  done in &lt;time&gt;
 Generating configurable EAV variations...  done in &lt;time&gt;
 ... more ...
-</code></pre></div>  </div>
-</div>
+</code></pre></div></div>
 
 			
 		</div>

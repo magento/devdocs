@@ -1011,38 +1011,35 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><img src="/common/images/cman_update_readiness.png" alt="The readiness check enables you to find out if your server and environment are ready to proceed" width="650px" /></p>
 
-<div>
+<p>After the readiness check completes, see one of the following:</p>
 
-  <p>After the readiness check completes, see one of the following:</p>
+<ul>
+  <li><a href="#compman-readiness-success">Readiness check success</a></li>
+  <li><a href="#compman-readiness-fail">Readiness check failure</a></li>
+</ul>
 
-  <ul>
-    <li><a href="#compman-readiness-success">Readiness check success</a></li>
-    <li><a href="#compman-readiness-fail">Readiness check failure</a></li>
-  </ul>
+<h3 id="compman-readiness-success">Readiness check success</h3>
 
-  <h3 id="compman-readiness-success">Readiness check success</h3>
+<p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with the next step.</p>
 
-  <p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with the next step.</p>
+<p><img src="/common/images/extensman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
 
-  <p><img src="/common/images/extensman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+<h3 id="compman-readiness-fail">Readiness check failure</h3>
 
-  <h3 id="compman-readiness-fail">Readiness check failure</h3>
+<p>Messages similar to the following display if any readiness check fails.</p>
 
-  <p>Messages similar to the following display if any readiness check fails.</p>
+<p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
 
-  <p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
+<p>In the event of failure, see one of the following sections:</p>
 
-  <p>In the event of failure, see one of the following sections:</p>
-
-  <ul>
-    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-    <li><a href="/guides/v2.1/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
-    <li><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-    <li><a href="/guides/v2.1/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
+  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
+  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
+  <li><a href="/guides/v2.1/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
+  <li><a href="/guides/v2.1/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+  <li><a href="/guides/v2.1/install-gde/system-requirements.html">PHP extensions check failure</a></li>
+</ul>
 
 			
 		</div>

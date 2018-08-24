@@ -1877,147 +1877,142 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
 
-  <h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
+<p>Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it’s important to decode which to use:</p>
 
-  <p>Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it’s important to decode which to use:</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">memcache</code> (no <em>d</em>), an older but very popular extension that is not maintained regularly. The <code class="highlighter-rouge">memcache</code> extension currently <em>does not</em> work with PHP 7.</p>
 
-  <ul>
-    <li>
-      <p><code class="highlighter-rouge">memcache</code> (no <em>d</em>), an older but very popular extension that is not maintained regularly. The <code class="highlighter-rouge">memcache</code> extension currently <em>does not</em> work with PHP 7.</p>
+    <p><a href="http://php.net/manual/en/book.memcache.php">PHP documentation for memcache</a></p>
 
-      <p><a href="http://php.net/manual/en/book.memcache.php" target="_blank">PHP documentation for memcache</a></p>
+    <p>The exact name is <code class="highlighter-rouge">php5-memcache</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcache</code> for CentOS</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">memcached</code> (with a <code class="highlighter-rouge">d</code>), a newer and maintained extension that should be compatible with PHP 7.</p>
 
-      <p>The exact name is <code class="highlighter-rouge">php5-memcache</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcache</code> for CentOS</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">memcached</code> (with a <code class="highlighter-rouge">d</code>), a newer and maintained extension that should be compatible with PHP 7.</p>
+    <p><a href="http://php.net/memcached">PHP documentation for memcached</a></p>
 
-      <p><a href="http://php.net/memcached" target="_blank">PHP documentation for memcached</a></p>
+    <p>The exact name is <code class="highlighter-rouge">php5-memcached</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcached</code> for CentOS</p>
+  </li>
+</ul>
 
-      <p>The exact name is <code class="highlighter-rouge">php5-memcached</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcached</code> for CentOS</p>
-    </li>
-  </ul>
+<p class="bs-callout bs-callout-info">For simplicity, we use the PHP <code class="highlighter-rouge">memcache</code> extension in this guide although we provide examples for both when configuring Magento to use memcache.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>For simplicity, we use the PHP <code>memcache</code> extension in this guide although we provide examples for both when configuring Magento to use memcache.</p></span>
-</div>
+<h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
 
-  <h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
+<p>This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki">memcached wiki</a>.</p>
 
-  <p>This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki">memcached wiki</a>.</p>
+<p class="bs-callout bs-callout-info">We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p>
 
-  <p class="bs-callout bs-callout-info">We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p>
+<p>To install memcached on CentOS, perform the following tasks as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <p>To install memcached on CentOS, perform the following tasks as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<ol>
+  <li>
+    <p>Install memcached and its dependencies:</p>
 
-  <ol>
-    <li>
-      <p>Install memcached and its dependencies:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y update
 yum install -y libevent libevent-devel
 yum install -y memcached
 yum install -y php-pecl-memcache
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code class="highlighter-rouge">yum search memcache|grep php</code> to find the appropriate package name.</p>
-    </li>
-    <li>
-      <p>Change the memcached configuration setting for <code class="highlighter-rouge">CACHESIZE</code> and <code class="highlighter-rouge">OPTIONS</code>:</p>
+    <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code class="highlighter-rouge">yum search memcache|grep php</code> to find the appropriate package name.</p>
+  </li>
+  <li>
+    <p>Change the memcached configuration setting for <code class="highlighter-rouge">CACHESIZE</code> and <code class="highlighter-rouge">OPTIONS</code>:</p>
 
-      <ol>
-        <li>Open <code class="highlighter-rouge">/etc/sysconfig/memcached</code> in a text editor.</li>
-        <li>
-          <p>Locate the value for <code class="highlighter-rouge">CACHESIZE</code> and change it to at least 1GB.</p>
+    <ol>
+      <li>Open <code class="highlighter-rouge">/etc/sysconfig/memcached</code> in a text editor.</li>
+      <li>
+        <p>Locate the value for <code class="highlighter-rouge">CACHESIZE</code> and change it to at least 1GB.</p>
 
-          <p>For example,</p>
+        <p>For example,</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CACHESIZE="1GB"
-</code></pre></div>          </div>
-        </li>
-        <li>Locate the value for <code class="highlighter-rouge">OPTIONS</code> and change it to <code class="highlighter-rouge">localhost</code> or <code class="highlighter-rouge">127.0.0.1</code></li>
-      </ol>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CACHESIZE="1GB"
+</code></pre></div>        </div>
+      </li>
+      <li>Locate the value for <code class="highlighter-rouge">OPTIONS</code> and change it to <code class="highlighter-rouge">localhost</code> or <code class="highlighter-rouge">127.0.0.1</code></li>
+    </ol>
 
-      <p>For more information about configuring memcached, see <a href="https://code.google.com/p/memcached/wiki/NewConfiguringServer">the memcached wiki</a>.</p>
-    </li>
-    <li>Save your changes to <code class="highlighter-rouge">memcached</code> and exit the text editor.</li>
-    <li>
-      <p>Restart memcached.</p>
+    <p>For more information about configuring memcached, see <a href="https://code.google.com/p/memcached/wiki/NewConfiguringServer">the memcached wiki</a>.</p>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">memcached</code> and exit the text editor.</li>
+  <li>
+    <p>Restart memcached.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service memcached restart
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Restart your web server.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service memcached restart
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart your web server.</p>
 
-      <p>For Apache, <code class="highlighter-rouge">service httpd restart</code></p>
-    </li>
-    <li>Continue with the next section.</li>
-  </ol>
+    <p>For Apache, <code class="highlighter-rouge">service httpd restart</code></p>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
 
-  <h2 id="config-memcache-verify-its-cent">Verify memcached works before installing Magento</h2>
+<h2 id="config-memcache-verify-its-cent">Verify memcached works before installing Magento</h2>
 
-  <p>We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.</p>
+<p>We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.</p>
 
-  <h3 id="verify-memcached-is-recognized-by-the-web-server">Verify memcached is recognized by the web server</h3>
+<h3 id="verify-memcached-is-recognized-by-the-web-server">Verify memcached is recognized by the web server</h3>
 
-  <p>To verify memcached is recognized by the web server:</p>
+<p>To verify memcached is recognized by the web server:</p>
 
-  <ol>
-    <li>
-      <p>Create a <code class="highlighter-rouge">phpinfo.php</code> file in the web server’s docroot:</p>
+<ol>
+  <li>
+    <p>Create a <code class="highlighter-rouge">phpinfo.php</code> file in the web server’s docroot:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
 // Show all information, defaults to INFO_ALL
 phpinfo();
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Go to that page in your web browser.</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Go to that page in your web browser.</p>
 
-      <p>For example, <code class="highlighter-rouge">http://192.0.2.1/phpinfo.php</code></p>
-    </li>
-    <li>
-      <p>Make sure memcache displays as follows:</p>
+    <p>For example, <code class="highlighter-rouge">http://192.0.2.1/phpinfo.php</code></p>
+  </li>
+  <li>
+    <p>Make sure memcache displays as follows:</p>
 
-      <p><img src="/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server" /></p>
+    <p><img src="/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server" /></p>
 
-      <p>Verify you’re using memcached version 3.0.5 or later.</p>
+    <p>Verify you’re using memcached version 3.0.5 or later.</p>
 
-      <p>If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the <code class="highlighter-rouge">php-pecl-memcache</code> extension.</p>
-    </li>
-  </ol>
+    <p>If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the <code class="highlighter-rouge">php-pecl-memcache</code> extension.</p>
+  </li>
+</ol>
 
-  <h3 id="create-a-memcache-test-consisting-of-a-mysql-database-and-php-script">Create a memcache test consisting of a MySQL database and PHP script</h3>
+<h3 id="create-a-memcache-test-consisting-of-a-mysql-database-and-php-script">Create a memcache test consisting of a MySQL database and PHP script</h3>
 
-  <p>The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p>The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  script first searches the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
 . If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the <code class="highlighter-rouge">set</code> command.</p>
 
-  <p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04">More details about this test</a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04">More details about this test</a></p>
 
-  <p>Create the MySQL database:</p>
+<p>Create the MySQL database:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p
+</code></pre></div></div>
 
-  <p>At the <code class="highlighter-rouge">mysql</code> prompt, enter the following commands:</p>
+<p>At the <code class="highlighter-rouge">mysql</code> prompt, enter the following commands:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create database memcache_test;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>create database memcache_test;
 GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
 use memcache_test;
 create table example (id int, name varchar(30));
 insert into example values (1, "new_data");
 exit
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Create <code class="highlighter-rouge">cache-test.php</code> in your web server’s docroot:</p>
+<p>Create <code class="highlighter-rouge">cache-test.php</code> in your web server’s docroot:</p>
 
-  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcached</span><span class="p">();</span>
@@ -2044,53 +2039,52 @@ exit
 <span class="p">}</span>
 <span class="k">print</span> <span class="s2">"got result from memcached</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
 <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>where <code class="highlighter-rouge">&lt;memcache hostname or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache hostname or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
+<p>where <code class="highlighter-rouge">&lt;memcache hostname or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache hostname or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
 
-  <p>Run the script from the command line.</p>
+<p>Run the script from the command line.</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;web server docroot&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;web server docroot&gt;
 php cache-test.php
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>The first result is <code class="highlighter-rouge">got result from mysql</code>. This means that the key didn’t exist in memcache but it was retrieved from MySQL.</p>
+<p>The first result is <code class="highlighter-rouge">got result from mysql</code>. This means that the key didn’t exist in memcache but it was retrieved from MySQL.</p>
 
-  <p>The second result is <code class="highlighter-rouge">got result from memcached</code>, which verifies that the value is stored successfully in memcache.</p>
+<p>The second result is <code class="highlighter-rouge">got result from memcached</code>, which verifies that the value is stored successfully in memcache.</p>
 
-  <p>Finally, you can view the memcache keys using Telnet:</p>
+<p>Finally, you can view the memcache keys using Telnet:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
+</code></pre></div></div>
 
-  <p>At the prompt, enter</p>
+<p>At the prompt, enter</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stats items
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stats items
+</code></pre></div></div>
 
-  <p>The result is similar to the following:</p>
+<p>The result is similar to the following:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STAT items:3:number 1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STAT items:3:number 1
 STAT items:3:age 1075
 STAT items:3:evicted 0
 STAT items:3:evicted_nonzero 0
 STAT items:3:evicted_time 0
 STAT items:3:outofmemory 0
 STAT items:3:tailrepairs 0
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Flush the memcache storage and quit Telnet:</p>
+<p>Flush the memcache storage and quit Telnet:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flush_all
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flush_all
 quit
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/">Additional information about the Telnet test</a></p>
+<p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/">Additional information about the Telnet test</a></p>
 
-  <h4 id="next-step">Next step</h4>
+<h4 id="next-step">Next step</h4>
 
-  <p><a href="/guides/v2.2/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
-</div>
+<p><a href="/guides/v2.2/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
 
 			
 		</div>

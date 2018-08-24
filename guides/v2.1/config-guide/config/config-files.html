@@ -1705,32 +1705,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Area-specific configuration from modules (<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
 </ul>
 
-<div>
-
-  <p>where</p>
-
-  <ul>
-    <li><code class="highlighter-rouge">&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code class="highlighter-rouge">app/code</code> or <code class="highlighter-rouge">vendor</code> relative to the Magento installation directory.</li>
-    <li><code class="highlighter-rouge">&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code class="highlighter-rouge">magento</code>.</li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;component-type&gt;</code> is one of the following:</p>
-
-      <ul>
-        <li><code class="highlighter-rouge">module-</code>: An extension or module.</li>
-        <li><code class="highlighter-rouge">theme-</code>: Theme.</li>
-        <li><code class="highlighter-rouge">language-</code>: Language package.</li>
-      </ul>
-
-      <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>Currently, themes are located under <code>&lt;your Magento install dir&gt;/app/design/frontend</code> or <code>&lt;your Magento install dir&gt;/app/design/adminhtml</code></p></span>
-</div>
-    </li>
-  </ul>
-
-</div>
+<p>where</p>
 
 <ul>
+  <li><code class="highlighter-rouge">&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code class="highlighter-rouge">app/code</code> or <code class="highlighter-rouge">vendor</code> relative to the Magento installation directory.</li>
+  <li><code class="highlighter-rouge">&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code class="highlighter-rouge">magento</code>.</li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;component-type&gt;</code> is one of the following:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">module-</code>: An extension or module.</li>
+      <li><code class="highlighter-rouge">theme-</code>: Theme.</li>
+      <li><code class="highlighter-rouge">language-</code>: Language package.</li>
+    </ul>
+
+    <p class="bs-callout bs-callout-info">Currently, themes are located under <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/frontend</code> or <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/adminhtml</code>.</p>
+  </li>
   <li><code class="highlighter-rouge">&lt;component-name&gt;</code>: Name of your component as defined in <a href="https://github.com/magento/magento2/blob/2.0/composer.json">composer.json</a>.</li>
 </ul>
 

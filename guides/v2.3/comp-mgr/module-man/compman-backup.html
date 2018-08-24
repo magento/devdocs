@@ -1087,50 +1087,45 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="step-2-back-up-the-file-system-and-database">Step 2. Back up the file system and database</h2>
 
-<div>
+<p>After you pass all readiness checks, you can back up:</p>
 
-  <p>After you pass all readiness checks, you can back up:</p>
+<ul>
+  <li>The Magento 2 file system (excluding <code class="highlighter-rouge">var</code> and <code class="highlighter-rouge">pub/static</code> directories)</li>
+  <li>The <code class="highlighter-rouge">pub/media</code> directory</li>
+  <li>The Magento 2 database</li>
+</ul>
 
-  <ul>
-    <li>The Magento 2 file system (excluding <code class="highlighter-rouge">var</code> and <code class="highlighter-rouge">pub/static</code> directories)</li>
-    <li>The <code class="highlighter-rouge">pub/media</code> directory</li>
-    <li>The Magento 2 database</li>
-  </ul>
+<p>Backups are stored in the <code class="highlighter-rouge">var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll"><code class="highlighter-rouge">magento setup:rollback</code></a> or using the Magento Admin.</p>
 
-  <p>Backups are stored in the <code class="highlighter-rouge">var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll"><code class="highlighter-rouge">magento setup:rollback</code></a> or using the Magento Admin.</p>
+<p>To back up:</p>
 
-  <p>To back up:</p>
+<ol>
+  <li>
+    <p>Select the checkbox of each item to back up and click <strong>Create Backup</strong>.</p>
 
-  <ol>
-    <li>
-      <p>Select the checkbox of each item to back up and click <strong>Create Backup</strong>.</p>
+    <p>The following figure shows an example of backing up everything.</p>
 
-      <p>The following figure shows an example of backing up everything.</p>
+    <p><img src="/common/images/modman_create-backup.png" alt="You can back up the Magento 2 file system, media directory, and database" width="550px" /></p>
 
-      <p><img src="/common/images/modman_create-backup.png" width="550px" alt="You can back up the Magento 2 file system, media directory, and database" /></p>
+    <p>(If you choose not to back up, clear all checkboxes and click <strong>Next</strong>.)</p>
 
-      <p>(If you choose not to back up, clear all checkboxes and click <strong>Next</strong>.)</p>
+    <p class="bs-callout bs-callout-info">We strongly recommend you <em>do</em> back up in the event of issues.</p>
+  </li>
+  <li>
+    <p>Wait while backups are created and continue with any of the following:</p>
+  </li>
+</ol>
 
-      <div class="bs-callout bs-callout-info" id="info">
-  <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
-</div>
-    </li>
-    <li>
-      <p>Wait while backups are created and continue with any of the following:</p>
-    </li>
-  </ol>
+<p>The following page displays to confirm a successful backup.</p>
 
-  <p>The following page displays to confirm a successful backup.</p>
+<p><img src="/common/images/extensman_backup-success.png" alt="A page displays to confirm your backup was a success" width="650px" /></p>
 
-  <p><img src="/common/images/extensman_backup-success.png" alt="A page displays to confirm your backup was a success" width="650px" /></p>
+<p>If errors display, see <a href="/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></p>
 
-  <p>If errors display, see <a href="/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></p>
+<h4 id="next-step">Next step</h4>
 
-  <h4 id="next-step">Next step</h4>
+<p>After your backup is complete, continue with <a href="/guides/v2.3/comp-mgr/module-man/modman-enable-disable.html">Step 3. Enable/disable modules</a></p>
 
-  <p>After your backup is complete, continue with <a href="/guides/v2.3/comp-mgr/module-man/modman-enable-disable.html">Step 3. Enable/disable modules</a></p>
-
-</div>
 
 			
 		</div>

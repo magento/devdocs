@@ -1299,45 +1299,43 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>Each component type has a different <a href="/guides/v2.1/extension-dev-guide/build/module-file-structure.html">directory structure</a> and different contents for <a href="/guides/v2.1/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a>.</p>
 
-<div>
+<p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="highlighter-rouge">type</code> column in the following table specifies the value of the <code class="highlighter-rouge">type</code> field you must add to <code class="highlighter-rouge">composer.json</code> for that type of component.</p>
 
-  <p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="highlighter-rouge">type</code> column in the following table specifies the value of the <code class="highlighter-rouge">type</code> field you must add to <code class="highlighter-rouge">composer.json</code> for that type of component.</p>
-
-  <table>
-<tbody>
-<tr>
-<th>Friendly name</th>
-<th>composer.json <code>type</code></th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Metapackage</td>
-<td>metapackage</td>
-<td><p>Technically, a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">Composer <em>package</em> type</a>, not a Magento component type. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. </p>
-<p>For example, both Magento Open Source and Magento Commerce are metapackages.</p></td>
-</tr>
-<tr>
-<td>Module</td>
-<td>magento2-module</td>
-<td>Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package.</td>
-</tr>
-<tr>
-<td>Theme</td>
-<td>magento2-theme</td>
-<td>Code that modifies the look and feel of the storefront or Magento Admin.</td>
-</tr>
-<tr>
-<td>Language package</td>
-<td>magento2-language</td>
-<td>Translations for the storefront or Admin.</td>
-</tr>
-</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Friendly name</th>
+      <th>composer.json type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metapackage</td>
+      <td>metapackage</td>
+      <td>Technically, a Composer package type, not a Magento component type. A metapackage consists of only a <code class="highlighter-rouge">composer.json</code> file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages.</td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>magento2-module</td>
+      <td>Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package.</td>
+    </tr>
+    <tr>
+      <td>Theme</td>
+      <td>magento2-theme</td>
+      <td>Code that modifies the look and feel of the storefront or Magento Admin.</td>
+    </tr>
+    <tr>
+      <td>Language package</td>
+      <td>magento2-language</td>
+      <td>Translations for the storefront or Admin.</td>
+    </tr>
+  </tbody>
 </table>
 
-  <h4 id="next">Next</h4>
-  <p><a href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></p>
+<h4 id="next">Next</h4>
+<p><a href="/guides/v2.1/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a></p>
 
-</div>
 
 			
 		</div>

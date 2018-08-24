@@ -1225,92 +1225,86 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can install Magento Commerce 2.2 General Availability (GA) using Composer.</p>
 
-<div>
+<h2 id="install-the-magento-software">Install the Magento software</h2>
 
-  <h2 id="install-the-magento-software">Install the Magento software</h2>
+<p>See one of the following sections:</p>
 
-  <p>See one of the following sections:</p>
+<ul>
+  <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
+  <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
+  <li><a href="#install-complete">Complete the installation</a></li>
+</ul>
 
-  <ul>
-    <li><a href="#install-rc-composer">Get Magento Commerce using Composer</a></li>
-    <li><a href="#get-zip">Get Magento Commerce using a compressed archive</a></li>
-    <li><a href="#install-complete">Complete the installation</a></li>
-  </ul>
+<h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
 
-  <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
+<p>Magento Commerce (formerly Enterprise Edition) is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.2/install-gde/composer.html">prerequisites</a>, then run:</p>
 
-  <p>Magento Commerce (formerly Enterprise Edition) is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/guides/v2.2/install-gde/composer.html" target="_blank">prerequisites</a>, then run:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre></div>  </div>
+<p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
 
-  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
+<p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
-</code></pre></div>  </div>
+<h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
 
-  <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
+<p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
-  <div>
+<ul>
+  <li>Magento Commerce software only</li>
+  <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
+</ul>
 
-    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+<p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+
+<p>To get the Magento Commerce archive:</p>
+
+<ol>
+  <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+  <li>Log in with your Magento username and password.</li>
+  <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+  <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
+  <li>
+    <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
 
     <ul>
-      <li>Magento Commerce software only</li>
-      <li>Magento Commerce software with sample data (designed to help you learn Magento faster)</li>
+      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
+  </li>
+  <li>Transfer the installation package to your development system.</li>
+</ol>
 
-    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+<h3 id="install-complete" class="no_toc">Complete the installation</h3>
 
-    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+<p>After you get the Commerce software:</p>
 
-    <p>To get the Magento Commerce archive:</p>
+<ol>
+  <li><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+  <li>
+    <p>Install the software:</p>
 
-    <ol>
-      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
-      <li>Log in with your Magento username and password.</li>
-      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-      <li>In the right pane, click <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Commerce 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
-      <li>
-        <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
+    <ul>
+      <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+      <li><a href="/guides/v2.2/install-gde/install/cli/install-cli.html">Command line</a></li>
+    </ul>
+  </li>
+</ol>
 
-        <ul>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
-        </ul>
-      </li>
-      <li>Transfer the installation package to your development system.</li>
-    </ol>
+<h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
 
-    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+<p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.2/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
-    <p>After you get the Commerce software:</p>
+<h2 id="migration-toolkits">Migration toolkits</h2>
 
-    <ol>
-      <li><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
-      <li>
-        <p>Install the software:</p>
+<p>The <a href="/guides/v2.2/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.2/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
-        <ul>
-          <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
-          <li><a href="/guides/v2.2/install-gde/install/cli/install-cli.html">Command line</a></li>
-        </ul>
-      </li>
-    </ol>
-
-    <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
-
-    <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.2/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
-
-    <h2 id="migration-toolkits">Migration toolkits</h2>
-
-    <p>The <a href="/guides/v2.2/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.2/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
-
-    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
-  </div>
-</div>
+<p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
 
 			
 		</div>

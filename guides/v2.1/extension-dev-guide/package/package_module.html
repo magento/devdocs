@@ -1352,56 +1352,55 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<div>
+<p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="highlighter-rouge">type</code> column in the following table specifies the value of the <code class="highlighter-rouge">type</code> field you must add to <code class="highlighter-rouge">composer.json</code> for that type of component.</p>
 
-  <p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="highlighter-rouge">type</code> column in the following table specifies the value of the <code class="highlighter-rouge">type</code> field you must add to <code class="highlighter-rouge">composer.json</code> for that type of component.</p>
-
-  <table>
-<tbody>
-<tr>
-<th>Friendly name</th>
-<th>composer.json <code>type</code></th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Metapackage</td>
-<td>metapackage</td>
-<td><p>Technically, a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">Composer <em>package</em> type</a>, not a Magento component type. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. </p>
-<p>For example, both Magento Open Source and Magento Commerce are metapackages.</p></td>
-</tr>
-<tr>
-<td>Module</td>
-<td>magento2-module</td>
-<td>Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package.</td>
-</tr>
-<tr>
-<td>Theme</td>
-<td>magento2-theme</td>
-<td>Code that modifies the look and feel of the storefront or Magento Admin.</td>
-</tr>
-<tr>
-<td>Language package</td>
-<td>magento2-language</td>
-<td>Translations for the storefront or Admin.</td>
-</tr>
-</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Friendly name</th>
+      <th>composer.json type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metapackage</td>
+      <td>metapackage</td>
+      <td>Technically, a Composer package type, not a Magento component type. A metapackage consists of only a <code class="highlighter-rouge">composer.json</code> file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages.</td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>magento2-module</td>
+      <td>Code that modifies Magento application behavior. You can upload a single module to the Magento Marketplace or your module can be dependent on some parent package.</td>
+    </tr>
+    <tr>
+      <td>Theme</td>
+      <td>magento2-theme</td>
+      <td>Code that modifies the look and feel of the storefront or Magento Admin.</td>
+    </tr>
+    <tr>
+      <td>Language package</td>
+      <td>magento2-language</td>
+      <td>Translations for the storefront or Admin.</td>
+    </tr>
+  </tbody>
 </table>
 
-  <h3 id="package-metapackage">Using metapackages</h3>
+<h3 id="package-metapackage">Using metapackages</h3>
 
-  <p>Metapackages allow you to group an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+<p>Metapackages allow you to group an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  that consists of multiple packages into a cohesive unit. This works exactly as described in standard <a href="https://getcomposer.org/doc/04-schema.md#type">composer.json documentation</a>. If you have an extension that uses more than one package you must use a   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
  as the <em>root package</em>. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage <code class="highlighter-rouge">composer.json</code> file.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.</p>
 </div>
 
-  <h4 id="metapackage-example">Metapackage example</h4>
+<h4 id="metapackage-example">Metapackage example</h4>
 
-  <p>The following example is a <code class="highlighter-rouge">composer.json</code> for a metapackage:</p>
+<p>The following example is a <code class="highlighter-rouge">composer.json</code> for a metapackage:</p>
 
-  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/product-community-edition"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample metapackage"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
@@ -1440,11 +1439,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-  <h3 id="sample-composerjson-file">Sample composer.json file</h3>
+<h3 id="sample-composerjson-file">Sample composer.json file</h3>
 
-  <p>The following example is a <code class="highlighter-rouge">composer.json</code> file for a module:</p>
+<p>The following example is a <code class="highlighter-rouge">composer.json</code> file for a module:</p>
 
-  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/sample-module-newpage"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Magento 2 module that creates a new page"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
@@ -1465,59 +1464,59 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-  <h2 id="packaging">Package and publish your extension</h2>
+<h2 id="packaging">Package and publish your extension</h2>
 
-  <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
+<p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
+</code></pre></div></div>
 
-  <p>Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
+<p>Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
 
-  <p>Magento can retrieve your extension package from any valid GitHub   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+<p>Magento can retrieve your extension package from any valid GitHub   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
 .</p>
 
-  <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
+<!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Third party repositories are supported.</p></span>
 </div>
 
-  <h3 id="hosting">Hosting on GitHub and Packagist</h3>
+<h3 id="hosting">Hosting on GitHub and Packagist</h3>
 
-  <p>Prerequisite: git must be set up on your machine.</p>
+<p>Prerequisite: git must be set up on your machine.</p>
 
-  <ol>
-    <li>Navigate to your component directory, with the <code class="highlighter-rouge">composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details.</li>
-    <li>When you have committed and pushed your component to your GitHub repository, you can either:
-      <ul>
-        <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or</li>
-        <li>Use the following steps to refer to the package through Packagist.</li>
-      </ul>
-      <ol>
-        <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-        <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
-      </ol>
-    </li>
-  </ol>
+<ol>
+  <li>Navigate to your component directory, with the <code class="highlighter-rouge">composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details.</li>
+  <li>When you have committed and pushed your component to your GitHub repository, you can either:
+    <ul>
+      <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or</li>
+      <li>Use the following steps to refer to the package through Packagist.</li>
+    </ul>
+    <ol>
+      <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
+      <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
+    </ol>
+  </li>
+</ol>
 
-  <h3 id="private_repos">Hosting on a private repository</h3>
+<h3 id="private_repos">Hosting on a private repository</h3>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you use the Setup Wizard, you must use the Magento Marketplace repository.
 A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).</p></span>
 </div>
 
-  <ol>
-    <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://packagist.com/">Private Packagist</a>.</li>
-    <li>Create the package in a way similar to the described above.</li>
-    <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
-    <li>To use the private packaging repository in a project, add the following to your <code class="highlighter-rouge">composer.json</code>file:</li>
-  </ol>
+<ol>
+  <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://packagist.com/">Private Packagist</a>.</li>
+  <li>Create the package in a way similar to the described above.</li>
+  <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
+  <li>To use the private packaging repository in a project, add the following to your <code class="highlighter-rouge">composer.json</code>file:</li>
+</ol>
 
-  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="s2">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
@@ -1526,11 +1525,10 @@ A private repository can be used for development or private code but installatio
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-  <p>All packages on the private repository can now be referenced within the <code class="highlighter-rouge">require</code> field.</p>
+<p>All packages on the private repository can now be referenced within the <code class="highlighter-rouge">require</code> field.</p>
 
-  <p>Refer to the <a href="https://packagist.com/features/private-vcs-packages">official documentation</a> for more details on how to configure your project to use Private Packagist.
+<p>Refer to the <a href="https://packagist.com/features/private-vcs-packages">official documentation</a> for more details on how to configure your project to use Private Packagist.
 <!-- ##Submitting your module to Marketplace --></p>
-</div>
 
 			
 		</div>

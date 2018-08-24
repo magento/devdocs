@@ -1877,61 +1877,56 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="overview-of-tests">Overview of tests</h2>
 
-  <h2 id="overview-of-tests">Overview of tests</h2>
+<p>This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select. Whenever an unsupported type is specified, the program terminates and lists all available types. Following execution, a detailed report displays showing the test run and results.</p>
 
-  <p>This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select. Whenever an unsupported type is specified, the program terminates and lists all available types. Following execution, a detailed report displays showing the test run and results.</p>
+<h3 id="prerequisites">Prerequisites</h3>
 
-  <h3 id="prerequisites">Prerequisites</h3>
+<p>Before you run this command, all of the following must be true:</p>
 
-  <p>Before you run this command, all of the following must be true:</p>
-
-  <ul>
-    <li>
-      <p>The <code class="highlighter-rouge">Magento_Developer</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<ul>
+  <li>
+    <p>The <code class="highlighter-rouge">Magento_Developer</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  must be enabled. You can enable it as follows:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:enable [--force] Magento_Developer
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:enable [--force] Magento_Developer
+</code></pre></div>    </div>
 
-      <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
-    </li>
-    <li>
-      <p>Your system must be set up to run the desired tests.</p>
-    </li>
-  </ul>
+    <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
+  </li>
+  <li>
+    <p>Your system must be set up to run the desired tests.</p>
+  </li>
+</ul>
 
-  <p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
+<p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
 
-  <h2 id="running-tests">Running tests</h2>
+<h2 id="running-tests">Running tests</h2>
 
-  <p>Command usage:</p>
+<p>Command usage:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run &lt;test&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run &lt;test&gt;
+</code></pre></div></div>
 
-  <p>To list the available test types:</p>
+<p>To list the available test types:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run --help
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run --help
+</code></pre></div></div>
 
-  <p>This gives you a list similar to the following:</p>
+<p>This gives you a list similar to the following:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
+</code></pre></div></div>
 
-  <p>For example, to run integration tests:</p>
+<p>For example, to run integration tests:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run integration
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento dev:tests:run integration
+</code></pre></div></div>
 
 			
 		</div>

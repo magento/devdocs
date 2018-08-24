@@ -1877,112 +1877,101 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as <em>pipeline deployment</em> because the deployment process occurs on different systems.</p>
 
-  <p>In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as <em>pipeline deployment</em> because the deployment process occurs on different systems.</p>
+<p>We also provide the ability to maintain consistent configurations for all pipeline deployment systems. It’s a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).</p>
 
-  <p>We also provide the ability to maintain consistent configurations for all pipeline deployment systems. It’s a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).</p>
+<h2 id="reduced-downtime-deployment">Reduced downtime deployment</h2>
 
-  <h2 id="reduced-downtime-deployment">Reduced downtime deployment</h2>
+<p>Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.</p>
 
-  <p>Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.</p>
+<h2 id="deployment-systems">Deployment systems</h2>
 
-  <h2 id="deployment-systems">Deployment systems</h2>
+<p>We use the following terms to describe the systems involved with deployment.</p>
 
-  <p>We use the following terms to describe the systems involved with deployment.</p>
+<dl>
+  <dt>Development system</dt>
+  <dd>Machine on which developers work to customize code; and install extensions, themes, and language packages from Magento Marketplace. In addition, you make all configuration changes on your development system. You can have many development systems.</dd>
+  <dt>Build system</dt>
+  <dd>One system on which you deploy static assets and compile code for your production system. Because you build these assets on a system not in production, your production system’s downtime is minimized.</dd>
+</dl>
 
-  <dl>
-    <dt>Development system</dt>
-    <dd>Machine on which developers work to customize code; and install extensions, themes, and language packages from Magento Marketplace. In addition, you make all configuration changes on your development system. You can have many development systems.</dd>
-    <dt>Build system</dt>
-    <dd>One system on which you deploy static assets and compile code for your production system. Because you build these assets on a system not in production, your production system’s downtime is minimized.</dd>
-  </dl>
+<p>Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required. Also, your build system doesn’t need to be a physically separate server.</p>
 
-  <p>Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required. Also, your build system doesn’t need to be a physically separate server.</p>
+<dl>
+  <dt>Staging system</dt>
+  <dd><em>Optional</em>. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doesn’t process orders from customers, it’s identical to production.</dd>
+  <dt>Production system</dt>
+  <dd>Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.</dd>
+</dl>
 
-  <dl>
-    <dt>Staging system</dt>
-    <dd><em>Optional</em>. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doesn’t process orders from customers, it’s identical to production.</dd>
-    <dt>Production system</dt>
-    <dd>Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.</dd>
-  </dl>
+<h2 id="other-deployment-methods">Other deployment methods</h2>
 
-  <h2 id="other-deployment-methods">Other deployment methods</h2>
+<p>You can optionally use other deployment methods, including:</p>
 
-  <p>You can optionally use other deployment methods, including:</p>
+<ul>
+  <li>Secure copying with SCP or rsync</li>
+  <li><a href="http://capistranorb.com/documentation/overview/what-is-capistrano">Capistrano</a></li>
+  <li>The <a href="https://deployer.org/">Deployer tool</a></li>
+  <li>Other methods discussed on the <a href="/community/resources/#installdeploy">Community resources page</a></li>
+</ul>
 
-  <ul>
-    <li>Secure copying with SCP or rsync</li>
-    <li><a href="http://capistranorb.com/documentation/overview/what-is-capistrano">Capistrano</a></li>
-    <li>The <a href="https://deployer.org/">Deployer tool</a></li>
-    <li>Other methods discussed on the <a href="/community/resources/#installdeploy">Community resources page</a></li>
-  </ul>
+<h2 id="manage-the-configuration">Manage the configuration</h2>
 
-  <h2 id="manage-the-configuration">Manage the configuration</h2>
+<p>Modeling after <a href="https://12factor.net/config">factor 3 in the 12-factor app design</a>, Magento now stores the configuration for each system in the system itself. (Development configuration settings are stored on the development system, production settings are stored on the production system.)</p>
 
-  <p>Modeling after <a href="https://12factor.net/config">factor 3 in the 12-factor app design</a>, Magento now stores the configuration for each system in the system itself. (Development configuration settings are stored on the development system, production settings are stored on the production system.)</p>
+<p>We also provide a way to synchronize the configuration of your systems:</p>
 
-  <p>We also provide a way to synchronize the configuration of your systems:</p>
+<ul>
+  <li>
+    <p><em>Shared configuration</em>, which is all settings that are neither system-specific nor sensitive.</p>
 
-  <div>
+    <p>Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or Magento Commerce Cloud <em>integration</em>) system.</p>
 
-    <ul>
-      <li>
-        <p><em>Shared configuration</em>, which is all settings that are neither system-specific nor sensitive.</p>
+    <p>The shared configuration file, <code class="highlighter-rouge">app/etc/config.php</code>, should be included in source control so it can be shared between development, build, and production systems.</p>
+  </li>
+  <li>
+    <p><em>System-specific</em> configuration, which is all settings that vary by system; for example, search engine hostnames and ports.</p>
+  </li>
+  <li>
+    <p><em>Sensitive</em> configuration, which is all settings that should not be in source control because they expose personally-identifiable information (PII) or settings such as API keys or passwords.</p>
 
-        <p>Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or Magento Commerce Cloud <em>integration</em>) system.</p>
+    <p>The system-specific configuration file, <code class="highlighter-rouge">app/etc/env.php</code>, should <em>not</em> be included in source control or otherwise shared between systems. Instead, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> and <code class="highlighter-rouge">magento:sensitive:set</code> commands</a> to provide values for those settings in your production system.</p>
+  </li>
+</ul>
 
-        <p>The shared configuration file, <code class="highlighter-rouge">app/etc/config.php</code>, should be included in source control so it can be shared between development, build, and production systems.</p>
-      </li>
-      <li>
-        <p><em>System-specific</em> configuration, which is all settings that vary by system; for example, search engine hostnames and ports.</p>
-      </li>
-      <li>
-        <p><em>Sensitive</em> configuration, which is all settings that should not be in source control because they expose personally-identifiable information (PII) or settings such as API keys or passwords.</p>
+<p class="bs-callout bs-callout-info">These new methods to manage your configuration are optional. You don’t have to use them, although we strongly recommend you do.</p>
 
-        <p>The system-specific configuration file, <code class="highlighter-rouge">app/etc/env.php</code>, should <em>not</em> be included in source control or otherwise shared between systems. Instead, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> and <code class="highlighter-rouge">magento:sensitive:set</code> commands</a> to provide values for those settings in your production system.</p>
-      </li>
-    </ul>
+<p>Most of the time, the configuration options you set in the shared, system-specific, or sensitive configuration cannot be edited in the Magento Admin. This helps keep your settings consistent across all systems. (You can optionally use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> command</a> without the <code class="highlighter-rouge">--lock</code> option to configure settings that are editable in the Admin.)</p>
 
-    <div class="bs-callout bs-callout-info">
-      <p>These new methods to manage your configuration are optional. You don’t have to use them, although we strongly recommend you do.</p>
-    </div>
+<p>Each Magento configuration option has a unique <em>configuration path</em>. To set a value for a configuration option, you can use either a CLI command or an environment variable to set the value for that configuration path on a specific system.</p>
 
-    <p>Most of the time, the configuration options you set in the shared, system-specific, or sensitive configuration cannot be edited in the Magento Admin. This helps keep your settings consistent across all systems. (You can optionally use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set</code> command</a> without the <code class="highlighter-rouge">--lock</code> option to configure settings that are editable in the Admin.)</p>
+<p>For a complete list of configuration paths, see the following references:</p>
 
-    <p>Each Magento configuration option has a unique <em>configuration path</em>. To set a value for a configuration option, you can use either a CLI command or an environment variable to set the value for that configuration path on a specific system.</p>
+<ul>
+  <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
+  <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
+  <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
+  <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+</ul>
 
-    <p>For a complete list of configuration paths, see the following references:</p>
+<h2 id="assumptions">Assumptions</h2>
 
-    <ul>
-      <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
-      <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
-      <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
-      <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
-    </ul>
+<p>To use pipeline deployment, we assume you are:</p>
 
-    <h2 id="assumptions">Assumptions</h2>
+<ul>
+  <li>An experienced system integrator with excellent knowledge of Magento configuration options.</li>
+  <li>Managing a large Magento site (thousands of stock-keeping units (SKUs)) and want to keep production site downtime to a minimum.</li>
+  <li>Somewhat knowledgeable about PHP programming.</li>
+  <li>
+    <p>Experienced with source control methods.</p>
 
-    <div>
+    <p>To use pipeline deployment, we assume your Magento code is in a source control repository. In this guide, we assume you’re using Git but the choice of repositories is up to you.</p>
+  </li>
+</ul>
 
-      <p>To use pipeline deployment, we assume you are:</p>
-
-      <ul>
-        <li>An experienced system integrator with excellent knowledge of Magento configuration options.</li>
-        <li>Managing a large Magento site (thousands of stock-keeping units (SKUs)) and want to keep production site downtime to a minimum.</li>
-        <li>Somewhat knowledgeable about PHP programming.</li>
-        <li>
-          <p>Experienced with source control methods.</p>
-
-          <p>To use pipeline deployment, we assume your Magento code is in a source control repository. In this guide, we assume you’re using Git but the choice of repositories is up to you.</p>
-        </li>
-      </ul>
-
-      <h4 id="next-step">Next step</h4>
-      <p><a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html">Deployment technical overview (implementation details)</a></p>
-    </div>
-  </div>
-</div>
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html">Deployment technical overview (implementation details)</a></p>
 
 			
 		</div>

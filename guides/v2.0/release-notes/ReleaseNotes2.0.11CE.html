@@ -1650,99 +1650,93 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Our technology stack is built on PHP and MySQL. For more information, see
 <a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
-<div>
+<h2 id="install-the-magento-software">Install the Magento software</h2>
 
-  <h2 id="install-the-magento-software">Install the Magento software</h2>
+<p>See one of the following sections:</p>
 
-  <p>See one of the following sections:</p>
+<ul>
+  <li><a href="#install-ce-composer">Get Magento Open Source using Composer</a></li>
+  <li><a href="#get-zip">Get Magento Open Source using a compressed archive</a></li>
+  <li><a href="#install-complete">Complete the installation</a></li>
+</ul>
 
-  <ul>
-    <li><a href="#install-ce-composer">Get Magento Open Source using Composer</a></li>
-    <li><a href="#get-zip">Get Magento Open Source using a compressed archive</a></li>
-    <li><a href="#install-complete">Complete the installation</a></li>
-  </ul>
+<h3 id="install-ce-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
 
-  <h3 id="install-ce-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
+<p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Open Source software using Composer, familiarize yourself with the Composer <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">metapackage</a>, then run:</p>
 
-  <p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Open Source software using Composer, familiarize yourself with the Composer <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">metapackage</a>, then run:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
-</code></pre></div>  </div>
+<p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
 
-  <p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
+<p>For example, to install Magento Open Source 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
 
-  <p>For example, to install Magento Open Source 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
-</code></pre></div>  </div>
+<h3 id="get-zip" class="no_toc">Get Magento Open Source using a compressed archive</h3>
 
-  <h3 id="get-zip" class="no_toc">Get Magento Open Source using a compressed archive</h3>
+<p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
-  <div>
+<ul>
+  <li>Magento Open Source software only</li>
+  <li>Magento Open Source software with sample data (designed to help you learn Magento faster)</li>
+</ul>
 
-    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+<p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-    <ul>
-      <li>Magento Open Source software only</li>
-      <li>Magento Open Source software with sample data (designed to help you learn Magento faster)</li>
-    </ul>
+<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
 
-    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+<p>To get the Magento Open Source software archive:</p>
 
-    <p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
-
-    <p>To get the Magento Open Source software archive:</p>
-
-    <ol>
-      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
-      <li>
-        <p>Choose either the software or the software and sample data:</p>
-
-        <ul>
-          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
-        </ul>
-
-        <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
-      </li>
-    </ol>
-
-    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
-
-    <p>After you get the Open Source software:</p>
-
-    <ol>
-      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
-      <li>
-        <p>Install the Magento software:</p>
-
-        <ul>
-          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
-          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
-        </ul>
-      </li>
-    </ol>
-
-    <h2 id="upgrade">Upgrade from an earlier version</h2>
-
-    <p>To upgrade to version 2.0.x from an earlier version:</p>
+<ol>
+  <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+  <li>
+    <p>Choose either the software or the software and sample data:</p>
 
     <ul>
-      <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
-      <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
 
-    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
+  </li>
+</ol>
 
-    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+<h3 id="install-complete" class="no_toc">Complete the installation</h3>
 
-    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+<p>After you get the Open Source software:</p>
 
-    <h2 id="credits">Credits</h2>
+<ol>
+  <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+  <li>
+    <p>Install the Magento software:</p>
 
-    <p>Dear community members, thank you for your suggestions and bug reports.</p>
-  </div>
-</div>
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="upgrade">Upgrade from an earlier version</h2>
+
+<p>To upgrade to version 2.0.x from an earlier version:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
+  <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+</ul>
+
+<h2 id="migration-toolkits">Migration toolkits</h2>
+
+<p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+<p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>Dear community members, thank you for your suggestions and bug reports.</p>
 
 			
 		</div>

@@ -1776,53 +1776,48 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="optionally-set-magento_umask">Optionally set <code class="highlighter-rouge">magento_umask</code></h3>
 
-<div>
+<p>The web server group must have write permissions to certain directories in the Magento file system; however, you might want tighter security, especially in production. We provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html">umask</a>.</p>
 
-  <p>The web server group must have write permissions to certain directories in the Magento file system; however, you might want tighter security, especially in production. We provide the flexibility for you to further restrict those permissions using a <a href="http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html" target="_blank">umask</a>.</p>
+<p>Our solution is to enable you to optionally create a file named <code class="highlighter-rouge">magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else.</p>
 
-  <p>Our solution is to enable you to optionally create a file named <code class="highlighter-rouge">magento_umask</code> in your Magento root directory that restricts permissions for the web server group and everyone else.</p>
+<p class="bs-callout bs-callout-info">We recommend changing the umask on a one-user or shared hosting system only. If you have a private Magento server, the group must have write access to the Magento file system; the umask removes write access from the group.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend changing the umask on a one-user or shared hosting system only. If you have a private Magento server, the group must have write access to the Magento file system; the umask removes write access from the group.</p>
-</div>
+<p>The default umask (with no <code class="highlighter-rouge">magento_umask</code> specified) is <code class="highlighter-rouge">002</code>, which means:</p>
 
-  <p>The default umask (with no <code class="highlighter-rouge">magento_umask</code> specified) is <code class="highlighter-rouge">002</code>, which means:</p>
+<ul>
+  <li>
+    <p>775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.</p>
+  </li>
+  <li>
+    <p>664 for files, which means writable by the user, writable by the group, and read-only for everyone else</p>
+  </li>
+</ul>
 
-  <ul>
-    <li>
-      <p>775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.</p>
-    </li>
-    <li>
-      <p>664 for files, which means writable by the user, writable by the group, and read-only for everyone else</p>
-    </li>
-  </ul>
+<p>A common suggestion is to use a value of <code class="highlighter-rouge">022</code> in the <code class="highlighter-rouge">magento_umask</code> file, which means:</p>
 
-  <p>A common suggestion is to use a value of <code class="highlighter-rouge">022</code> in the <code class="highlighter-rouge">magento_umask</code> file, which means:</p>
+<ul>
+  <li>755 for directories: full control for the user, and everyone else can traverse directories.</li>
+  <li>644 for files: read-write permissions for the user, and read-only for everyone else.</li>
+</ul>
 
-  <ul>
-    <li>755 for directories: full control for the user, and everyone else can traverse directories.</li>
-    <li>644 for files: read-write permissions for the user, and read-only for everyone else.</li>
-  </ul>
+<p>To set <code class="highlighter-rouge">magento_umask</code>:</p>
 
-  <p>To set <code class="highlighter-rouge">magento_umask</code>:</p>
+<ol>
+  <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Set the value of <code class="highlighter-rouge">magento_umask</code>:</p>
 
-  <ol>
-    <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-    <li>
-      <p>Set the value of <code class="highlighter-rouge">magento_umask</code>:</p>
+    <ol>
+      <li>Use a text editor to create a new file <code class="highlighter-rouge">&lt;your Magento install dir&gt;/magento_umask</code></li>
+      <li>
+        <p>Set <code class="highlighter-rouge">magento_umask</code> to the desired value.</p>
 
-      <ol>
-        <li>Use a text editor to create a new file <code class="highlighter-rouge">&lt;your Magento install dir&gt;/magento_umask</code></li>
-        <li>
-          <p>Set <code class="highlighter-rouge">magento_umask</code> to the desired value.</p>
-
-          <p>For example, <code class="highlighter-rouge">022</code></p>
-        </li>
-      </ol>
-    </li>
-    <li>Save your changes to <code class="highlighter-rouge">magento_umask</code> and exit the text editor.</li>
-  </ol>
-</div>
+        <p>For example, <code class="highlighter-rouge">022</code></p>
+      </li>
+    </ol>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">magento_umask</code> and exit the text editor.</li>
+</ol>
 </div>
   </div>
 

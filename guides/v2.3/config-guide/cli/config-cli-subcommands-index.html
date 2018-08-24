@@ -1885,24 +1885,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="view-a-list-of-indexers">View a list of indexers</h2>
 
-  <h2 id="view-a-list-of-indexers">View a list of indexers</h2>
+<p>To view a list of all indexers:</p>
 
-  <p>To view a list of all indexers:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
+</code></pre></div></div>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
-</code></pre></div>  </div>
+<p>The list displays as follows:</p>
 
-  <p>The list displays as follows:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>design_config_grid                       Design Config Grid
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
@@ -1912,32 +1908,32 @@ catalogrule_rule                         Catalog Rule Product
 catalogrule_product                      Catalog Product Rule
 cataloginventory_stock                   Stock
 catalogsearch_fulltext                   Catalog Search
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h2 id="view-indexer-status">View indexer status</h2>
+<h2 id="view-indexer-status">View indexer status</h2>
 
-  <p>Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.</p>
+<p>Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.</p>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status <span class="o">[</span>indexer]
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status <span class="o">[</span>indexer]
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to view the status of all indexers.</p>
+<p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to view the status of all indexers.</p>
 
-  <p>To list all indexers:</p>
+<p>To list all indexers:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
+</code></pre></div></div>
 
-  <p>A sample follows:</p>
+<p>A sample follows:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:status
+</code></pre></div></div>
 
-  <p>Sample result:</p>
+<p>Sample result:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------------+------------------+-----------+---------------------+---------------------+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Catalog Product Rule | Reindex required | Save      |                     |                     |
@@ -1951,34 +1947,34 @@ catalogsearch_fulltext                   Catalog Search
 | Product Price        | Reindex required | Save      |                     |                     |
 | Stock                | Reindex required | Save      |                     |                     |
 +----------------------+------------------+-----------+---------------------+---------------------+
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
+<h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
 
-  <p>Use this command to reindex all or selected indexers one time only.</p>
+<p>Use this command to reindex all or selected indexers one time only.</p>
 
-  <p class="bs-callout bs-callout-info">This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p>
+<p class="bs-callout bs-callout-info">This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex <span class="o">[</span>indexer]
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex <span class="o">[</span>indexer]
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
+<p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
 
-  <p>To view a list of all indexers:</p>
+<p>To view a list of all indexers:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
+</code></pre></div></div>
 
-  <p>A sample follows:</p>
+<p>A sample follows:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:reindex
+</code></pre></div></div>
 
-  <p>Sample result:</p>
+<p>Sample result:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Category Products index has been rebuilt successfully in &lt;time&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Category Products index has been rebuilt successfully in &lt;time&gt;
 Product Categories index has been rebuilt successfully in &lt;time&gt;
 Product Price index has been rebuilt successfully in &lt;time&gt;
 Product EAV index has been rebuilt successfully in &lt;time&gt;
@@ -1986,11 +1982,11 @@ Stock index has been rebuilt successfully in &lt;time&gt;
 Catalog Rule Product index has been rebuilt successfully in &lt;time&gt;
 Catalog Product Rule index has been rebuilt successfully in &lt;time&gt;
 Catalog Search index has been rebuilt successfully in &lt;time&gt;
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p class="bs-callout bs-callout-info">Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. --></p>
+<p class="bs-callout bs-callout-info">Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. --></p>
 
-  <!-- Content for 2.3:
+<!-- Content for 2.3:
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
 Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
@@ -2011,34 +2007,34 @@ MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fu
 Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
 -->
 
-  <h2 id="configure-indexers">Configure indexers</h2>
+<h2 id="configure-indexers">Configure indexers</h2>
 
-  <p>Use this command to set the following indexer options:</p>
+<p>Use this command to set the following indexer options:</p>
 
-  <ul>
-    <li><strong>Update on save (<code class="highlighter-rouge">realtime</code>):</strong> Indexed data is updated as soon as a change is made in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+<ul>
+  <li><strong>Update on save (<code class="highlighter-rouge">realtime</code>):</strong> Indexed data is updated as soon as a change is made in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 . (For example, the   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  products index is reindex after products are added to a category in the Admin.) This is the default.</li>
-    <li><strong>Update by schedule (<code class="highlighter-rouge">schedule</code>):</strong> Data is indexed according to the schedule set by your Magento cron job.</li>
-  </ul>
+  <li><strong>Update by schedule (<code class="highlighter-rouge">schedule</code>):</strong> Data is indexed according to the schedule set by your Magento cron job.</li>
+</ul>
 
-  <p><a href="/guides/v2.3/extension-dev-guide/indexing.html">Learn more about indexing</a></p>
+<p><a href="/guides/v2.3/extension-dev-guide/indexing.html">Learn more about indexing</a></p>
 
-  <h3 id="display-the-current-configuration">Display the current configuration</h3>
+<h3 id="display-the-current-configuration">Display the current configuration</h3>
 
-  <p>To view the current indexer configuration:</p>
+<p>To view the current indexer configuration:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode <span class="o">[</span>indexer]
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode <span class="o">[</span>indexer]
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to show all indexers’ modes. For example, to show the mode of all indexers:</p>
+<p>Where <code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to show all indexers’ modes. For example, to show the mode of all indexers:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:show-mode
+</code></pre></div></div>
 
-  <p>Sample result:</p>
+<p>Sample result:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Category Products:                                 Update on Save
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
 Product EAV:                                       Update on Save
@@ -2046,56 +2042,55 @@ Stock:                                             Update on Save
 Catalog Rule Product:                              Update on Save
 Catalog Product Rule:                              Update on Save
 Catalog Search:                                    Update on Save
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="configure-indexers-1">Configure indexers</h3>
+<h3 id="configure-indexers-1">Configure indexers</h3>
 
-  <p>To specify the indexer configuration:</p>
+<p>To specify the indexer configuration:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode <span class="o">{</span>realtime|schedule<span class="o">}</span> <span class="o">[</span>indexer]
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode <span class="o">{</span>realtime|schedule<span class="o">}</span> <span class="o">[</span>indexer]
+</code></pre></div></div>
 
-  <p>Where:</p>
+<p>Where:</p>
 
-  <ul>
-    <li><strong><code class="highlighter-rouge">realtime</code></strong> - Sets the selected indexers to update on save.</li>
-    <li><strong><code class="highlighter-rouge">schedule</code></strong> - Sets the specified indexers to save according to the cron schedule.</li>
-    <li><strong><code class="highlighter-rouge">indexer</code></strong> - Is a space-separated list of indexers. Omit <code class="highlighter-rouge">indexer</code> to configure all indexers the same way.</li>
-  </ul>
+<ul>
+  <li><strong><code class="highlighter-rouge">realtime</code></strong> - Sets the selected indexers to update on save.</li>
+  <li><strong><code class="highlighter-rouge">schedule</code></strong> - Sets the specified indexers to save according to the cron schedule.</li>
+  <li><strong><code class="highlighter-rouge">indexer</code></strong> - Is a space-separated list of indexers. Omit <code class="highlighter-rouge">indexer</code> to configure all indexers the same way.</li>
+</ul>
 
-  <p>To view the list of indexers:</p>
+<p>To view the list of indexers:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:info
+</code></pre></div></div>
 
-  <p>For example, to change only the category products and product categories indexers to update on schedule, enter:</p>
+<p>For example, to change only the category products and product categories indexers to update on schedule, enter:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode schedule catalog_category_product catalog_product_category
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento indexer:set-mode schedule catalog_category_product catalog_product_category
+</code></pre></div></div>
 
-  <p>Sample result:</p>
+<p>Sample result:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h4 id="related-topics">Related topics</h4>
+<h4 id="related-topics">Related topics</h4>
 
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html&quot;">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html&quot;">Convert layout XML files</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+</ul>
 
 			
 		</div>

@@ -944,65 +944,62 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in <em>app/design/adminhtml/Magento/backend/web/fonts/admin-icons</em></p>
 
-<div>
+<p>If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:</p>
 
-  <p>If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:</p>
-
-  <ol>
-    <li>
-      <p>Go to <a href="https://icomoon.io/app/" target="\_blank"> https://icomoon.io/app/ </a> or download this app in Chrome web store.</p>
-    </li>
-    <li>
-      <p>Upload your icons in SVG format into the app.</p>
-    </li>
-    <li>
-      <p>Specify desired font names and specify the Unicode characters to map the icons. Setting the icons to Private User Area will disable screen-readers or other accessibility tools to read your icon’s characters (read “Unicode” section here).</p>
-    </li>
-    <li>
-      <p>Then initialize a download in the app to generate the icon font and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
+<ol>
+  <li>
+    <p>Go to <a href="https://icomoon.io/app/">https://icomoon.io/app/</a> or download this app in Chrome web store.</p>
+  </li>
+  <li>
+    <p>Upload your icons in SVG format into the app.</p>
+  </li>
+  <li>
+    <p>Specify desired font names and specify the Unicode characters to map the icons. Setting the icons to Private User Area will disable screen-readers or other accessibility tools to read your icon’s characters (read “Unicode” section here).</p>
+  </li>
+  <li>
+    <p>Then initialize a download in the app to generate the icon font and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  style sheet.</p>
-    </li>
-  </ol>
+  </li>
+</ol>
 
-  <h2 id="accessibility">Accessibility</h2>
+<h2 id="accessibility">Accessibility</h2>
 
-  <p>Efforts should be made to optimize icons and/or icon fonts for assistive technology.</p>
+<p>Efforts should be made to optimize icons and/or icon fonts for assistive technology.</p>
 
-  <p>Use “aria-hidden” attribute:
+<p>Use “aria-hidden” attribute:
 Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers hide them with the aria-hidden=”true” attribute.</p>
 
-  <p>From: <a href="http://getbootstrap.com/components/">http://getbootstrap.com/components/</a></p>
+<p>From: <a href="http://getbootstrap.com/components/">http://getbootstrap.com/components/</a></p>
 
-  <h3 id="example-of-aria-hidden-attribute">Example of “aria-hidden” attribute</h3>
+<h3 id="example-of-aria-hidden-attribute">Example of “aria-hidden” attribute</h3>
 
-  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
   <span class="nc">.icon-star</span><span class="nd">:before</span> <span class="p">{</span> <span class="nl">content</span><span class="p">:</span> <span class="s1">"★ "</span><span class="p">;</span> <span class="p">}</span>
 <span class="nt">&lt;/style&gt;</span>
 
 <span class="nt">&lt;span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"icon-star"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>Favorite<span class="nt">&lt;/span&gt;</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>From: <a href="http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html" target="_blank">http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html</a></p>
+<p>From: <a href="http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html" target="_blank">http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html</a></p>
 
-  <h3 id="how-to-make-your-icon-font-accessible-in-three-easy-steps">How to make your icon font accessible in three easy steps</h3>
+<h3 id="how-to-make-your-icon-font-accessible-in-three-easy-steps">How to make your icon font accessible in three easy steps</h3>
 
-  <p>Icons, if in fonts or not, should be very descriptive, especially if they stand on their own. If in doubt, add a descriptive text so users can find out what it means. (In the pre-touch era of web design I’d just have recommended a `title attribute, but those times are over.)</p>
+<p>Icons, if in fonts or not, should be very descriptive, especially if they stand on their own. If in doubt, add a descriptive text so users can find out what it means. (In the pre-touch era of web design I’d just have recommended a `title attribute, but those times are over.)</p>
 
-  <ol>
-    <li>Don’t ever use “regular letters” for icons. Use a service like Icomoon and use the private use area (PUA) of the font. Those areas are specifically made for this usage and don’t have any letters attached to it. Screen readers won’t read letters in the PUA.</li>
-    <li>Use colors with enough contrast for your icons.</li>
-    <li>Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.</li>
-  </ol>
+<ol>
+  <li>Don’t ever use “regular letters” for icons. Use a service like Icomoon and use the private use area (PUA) of the font. Those areas are specifically made for this usage and don’t have any letters attached to it. Screen readers won’t read letters in the PUA.</li>
+  <li>Use colors with enough contrast for your icons.</li>
+  <li>Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.</li>
+</ol>
 
-  <p>From: <a href="http://modernwebaccessibility.com/en/blog/demystify-speak-none" target="_blank">http://modernwebaccessibility.com/en/blog/demystify-speak-none</a></p>
+<p>From: <a href="http://modernwebaccessibility.com/en/blog/demystify-speak-none" target="_blank">http://modernwebaccessibility.com/en/blog/demystify-speak-none</a></p>
 
-  <h2 id="additional-resources">Additional resources</h2>
+<h2 id="additional-resources">Additional resources</h2>
 
-  <ul>
-    <li><a href="https://yatil.net/the-best-way-to-use-icon-fonts/" target="_blank">https://yatil.net/the-best-way-to-use-icon-fonts/</a></li>
-    <li><a href="http://pictos.cc/articles/using-icon-fonts/" target="_blank">http://pictos.cc/articles/using-icon-fonts/</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="https://yatil.net/the-best-way-to-use-icon-fonts/" target="_blank">https://yatil.net/the-best-way-to-use-icon-fonts/</a></li>
+  <li><a href="http://pictos.cc/articles/using-icon-fonts/" target="_blank">http://pictos.cc/articles/using-icon-fonts/</a></li>
+</ul>
 
 			
 		</div>

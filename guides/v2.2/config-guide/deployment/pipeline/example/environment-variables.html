@@ -1953,295 +1953,285 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Now that you’ve changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.</p>
 
-<div>
+<ol>
+  <li>
+    <p>Log in to your development system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</p>
+  </li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
 
-  <ol>
-    <li>Log in to your development system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
-.</li>
-    <li>
-      <p>Enter the following commands in the order shown:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;Magento root dir&gt;
 php bin/magento app:config:dump
-</code></pre></div>      </div>
-
-      <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2
-php bin/magento app:config:dump
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
-</code></pre></div>      </div>
-
-      <p>You should see output similar to the following:</p>
-
-      <pre class="no-copy"># On branch m2.2_deploy
-# Changed but not updated:
-#   (use "git add &lt;file&gt;..." to update what will be committed)
-#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-#
-#       modified:   app/etc/config.php
-#</pre>
-
-      <div class="bs-callout bs-callout-warning" id="warning">
-        <p><em>Do not</em> submit changes to the <code class="highlighter-rouge">generated</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
-      </div>
-    </li>
-    <li>
-      <p>Check in your changes to <code class="highlighter-rouge">app/etc/config.php</code> only to source control.</p>
-
-      <p>The Git command follows:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Updated shared configuration" &amp;&amp; git push mconfig m2.2_deploy
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
-
-  <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
-
-  <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.</p>
-
-  <div>
-
-    <p>To update your build system:</p>
-
-    <ol>
-      <li>Log in to your build system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
-.</li>
-      <li>Change to the build system’s Magento root directory.</li>
-      <li>
-        <p>Pull the changes to <code class="highlighter-rouge">app/etc/config.php</code> from source control.</p>
-
-        <p>The Git command follows:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Compile code:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:di:compile
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>After code has been compiled, generate static view files:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:static-content:deploy -f
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Check the changes into source control.</p>
-
-        <p>The Git command follows:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
-</code></pre></div>        </div>
-      </li>
-    </ol>
-
-    <h2 id="step-4-update-the-production-system">Step 4: Update the production system</h2>
-
-    <p>The last step in the process is to update your production system. You must do it in two parts:</p>
-
-    <ul>
-      <li><a href="#config-split-verify-sens">Update the sensitive and system-specific settings</a></li>
-      <li><a href="#config-split-verify-shared">Update the shared settings</a></li>
-    </ul>
-
-    <h3 id="config-split-verify-sens">Update the sensitive and system-specific settings</h3>
-
-    <p>To set the sensitive and system-specific settings using environment variables, you must know the following:</p>
-
-    <ul>
-      <li>
-        <p>Each setting’s scope</p>
-
-        <p>If you followed the instructions in <a href="#deploy-sens-setconfig">Step 1</a>, the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website.</p>
-
-        <p>You must know the website’s code to set the Default Email Domain configuration value. See <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a> for more information on finding it.</p>
-      </li>
-      <li>
-        <p>Each setting’s configuration path</p>
-
-        <p>The configuration paths used in this example follow:</p>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Setting name</th>
-              <th>Configuration path</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Send Emails To</td>
-              <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
-            </tr>
-            <tr>
-              <td>Default Email Domain</td>
-              <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>You can find all sensitive and system-specific configuration paths in <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a>.</p>
-      </li>
-    </ul>
-
-    <h4 id="convert-configuration-paths-to-variable-names">Convert configuration paths to variable names</h4>
-
-    <p>As discussed in <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>, the format of variables is:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;
 </code></pre></div>    </div>
 
-    <p>The value of <code class="highlighter-rouge">&lt;SCOPE&gt;</code> is <code class="highlighter-rouge">CONFIG__DEFAULT__</code> for global scope or <code class="highlighter-rouge">CONFIG__WEBSITES__&lt;WEBSITE CODE&gt;</code> for website scope.</p>
+    <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
 
-    <p>To find the value of <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code>, replace each <code class="highlighter-rouge">/</code> character in the configuration path with two underscores.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/magento2
+php bin/magento app:config:dump
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
 
-    <p>The variable names follow:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>    </div>
+
+    <p>You should see output similar to the following:</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">On branch m2.2_deploy
+Changed but not updated:
+</span><span class="gp">  (use "git add &amp;lt;</span>file&gt;...<span class="s2">" to update what will be committed)
+</span><span class="gp">  (use "git checkout -- &amp;lt;</span><span class="s2">file&gt;..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+<span class="go">       modified:   app/etc/config.php
+</span></code></pre></div>    </div>
+
+    <p class="bs-callout bs-callout-warning">Do <em>not</em> submit changes to the <code class="highlighter-rouge">generated</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
+  </li>
+  <li>
+    <p>Check in your changes to <code class="highlighter-rouge">app/etc/config.php</code> only to source control.</p>
+
+    <p>The Git command follows:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Updated shared configuration"</span> <span class="o">&amp;&amp;</span> git push mconfig m2.2_deploy
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
+
+<h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
+
+<p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.</p>
+
+<p>To update your build system:</p>
+
+<ol>
+  <li>Log in to your build system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</li>
+  <li>Change to the build system’s Magento root directory.</li>
+  <li>
+    <p>Pull the changes to <code class="highlighter-rouge">app/etc/config.php</code> from source control.</p>
+
+    <p>The Git command follows:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Compile code:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:di:compile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>After code has been compiled, generate static view files:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:static-content:deploy -f
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check the changes into source control.</p>
+
+    <p>The Git command follows:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="step-4-update-the-production-system">Step 4: Update the production system</h2>
+
+<p>The last step in the process is to update your production system. You must do it in two parts:</p>
+
+<ul>
+  <li><a href="#config-split-verify-sens">Update the sensitive and system-specific settings</a></li>
+  <li><a href="#config-split-verify-shared">Update the shared settings</a></li>
+</ul>
+
+<h3 id="config-split-verify-sens">Update the sensitive and system-specific settings</h3>
+
+<p>To set the sensitive and system-specific settings using environment variables, you must know the following:</p>
+
+<ul>
+  <li>
+    <p>Each setting’s scope</p>
+
+    <p>If you followed the instructions in <a href="#deploy-sens-setconfig">Step 1</a>, the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website.</p>
+
+    <p>You must know the website’s code to set the Default Email Domain configuration value. See <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a> for more information on finding it.</p>
+  </li>
+  <li>
+    <p>Each setting’s configuration path</p>
+
+    <p>The configuration paths used in this example follow:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Config path</th>
-          <th>Variable name</th>
+          <th>Setting name</th>
+          <th>Configuration path</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Send Emails To</td>
           <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
-          <td><code class="highlighter-rouge">CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL</code></td>
         </tr>
         <tr>
           <td>Default Email Domain</td>
           <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
-          <td><code class="highlighter-rouge">CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN</code></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="bs-callout bs-callout-info">The preceding table has a sample website code, <code class="highlighter-rouge">BASE</code>, for the Default Email Domain configuration setting. Replace <code class="highlighter-rouge">BASE</code> with the appropriate website code for your store.</p>
+    <p>You can find all sensitive and system-specific configuration paths in <a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a>.</p>
+  </li>
+</ul>
 
-    <h4 id="set-the-variables-using-environment-variables">Set the variables using environment variables</h4>
+<h4 id="convert-configuration-paths-to-variable-names">Convert configuration paths to variable names</h4>
 
-    <p>You can set the variable values in the Magento <code class="highlighter-rouge">index.php</code> using the following format:</p>
+<p>As discussed in <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>, the format of variables is:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['VARIABLE'] = 'value';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;
+</code></pre></div></div>
+
+<p>The value of <code class="highlighter-rouge">&lt;SCOPE&gt;</code> is <code class="highlighter-rouge">CONFIG__DEFAULT__</code> for global scope or <code class="highlighter-rouge">CONFIG__WEBSITES__&lt;WEBSITE CODE&gt;</code> for website scope.</p>
+
+<p>To find the value of <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code>, replace each <code class="highlighter-rouge">/</code> character in the configuration path with two underscores.</p>
+
+<p>The variable names follow:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Variable name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Send Emails To</td>
+      <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
+      <td><code class="highlighter-rouge">CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL</code></td>
+    </tr>
+    <tr>
+      <td>Default Email Domain</td>
+      <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
+      <td><code class="highlighter-rouge">CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="bs-callout bs-callout-info">The preceding table has a sample website code, <code class="highlighter-rouge">BASE</code>, for the Default Email Domain configuration setting. Replace <code class="highlighter-rouge">BASE</code> with the appropriate website code for your store.</p>
+
+<h4 id="set-the-variables-using-environment-variables">Set the variables using environment variables</h4>
+
+<p>You can set the variable values in the Magento <code class="highlighter-rouge">index.php</code> using the following format:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['VARIABLE'] = 'value';
+</code></pre></div></div>
+
+<p>To set variable values:</p>
+
+<ol>
+  <li>Log in to your production system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</li>
+  <li>Open <code class="highlighter-rouge">&lt;Magento root dir&gt;/index.php</code> in a text editor.</li>
+  <li>
+    <p>Anywhere in <code class="highlighter-rouge">index.php</code>, set values for the variables similar to the following:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
+$_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
+</code></pre></div>    </div>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">index.php</code> and exit the text editor.</li>
+  <li>Continue with the next section.</li>
+</ol>
+
+<h3 id="config-split-verify-shared">Update the shared settings</h3>
+
+<p>This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).</p>
+
+<p>To update the production system:</p>
+
+<ol>
+  <li>Log in to your production system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</li>
+  <li>
+    <p>Start maintenance mode:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
+php bin/magento maintenance:enable
 </code></pre></div>    </div>
 
-    <p>To set variable values:</p>
+    <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
+  </li>
+  <li>If you use Magento Commerce, stop queue workers. TBD</li>
+  <li>
+    <p>Pull code from source control.</p>
 
-    <ol>
-      <li>Log in to your production system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
-.</li>
-      <li>Open <code class="highlighter-rouge">&lt;Magento root dir&gt;/index.php</code> in a text editor.</li>
-      <li>
-        <p>Anywhere in <code class="highlighter-rouge">index.php</code>, set values for the variables similar to the following:</p>
+    <p>The Git command follows:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
-$_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
-</code></pre></div>        </div>
-      </li>
-      <li>Save your changes to <code class="highlighter-rouge">index.php</code> and exit the text editor.</li>
-      <li>Continue with the next section.</li>
-    </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update the configuration:</p>
 
-    <h3 id="config-split-verify-shared">Update the shared settings</h3>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento app:config:import
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Clean the cache:</p>
 
-    <p>This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>End maintenance mode:</p>
 
-    <div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento maintenance:disable
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-      <p>To update the production system:</p>
+<h3 id="verify-configuration-settings-in-the-magento-admin">Verify configuration settings in the Magento Admin</h3>
 
-      <ol>
-        <li>Log in to your production system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
-.</li>
-        <li>
-          <p>Start maintenance mode:</p>
+<p>This section discusses how you can verify the configuration settings in your production system Admin.</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;Magento root dir&gt;
-php bin/magento maintenance:enable
-</code></pre></div>          </div>
+<p>To verify the configuration settings:</p>
 
-          <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
-        </li>
-        <li>If you use Magento Commerce, stop queue workers. TBD</li>
-        <li>
-          <p>Pull code from source control.</p>
+<ol>
+  <li>Log in to your production system’s Magento Admin.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
+  <li>
+    <p>Use the <strong>Store View</strong> list in the upper left corner to switch to a different website.</p>
 
-          <p>The Git command follows:</p>
+    <p>The shared configuration options you set in the development system are displayed similar to the following.</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull mconfig m2.2_deploy
-</code></pre></div>          </div>
-        </li>
-        <li>
-          <p>Update the configuration:</p>
+    <p><img src="/common/images/config_split-deploy_verify_storeinfo.png" alt="Check settings in the production system" width="650px" /></p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento app:config:import
-</code></pre></div>          </div>
-        </li>
-        <li>
-          <p>Clean the cache:</p>
+    <p class="bs-callout bs-callout-info">The <strong>Store Name</strong> field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of <strong>VAT Number</strong> is not editable in website scope.</p>
+  </li>
+  <li>If you haven’t already done so, switch to Default Config scope.</li>
+  <li>
+    <p>In the left navigation, under General, click <strong>Contacts</strong>.</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cache:clean
-</code></pre></div>          </div>
-        </li>
-        <li>
-          <p>End maintenance mode:</p>
+    <p>The <strong>Send Emails To</strong> field is not editable, as the following figure shows. This is a sensitive setting.</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento maintenance:disable
-</code></pre></div>          </div>
-        </li>
-      </ol>
+    <p><img src="/common/images/config_split-deploy_verify_contacts.png" alt="Check settings in the production system" width="400px" /></p>
+  </li>
+  <li>In the left pane, click Customers &gt; <strong>Customer Configuration</strong>.</li>
+  <li>
+    <p>In the right pane, expand <strong>Create New Account Options</strong>.</p>
 
-      <h3 id="verify-configuration-settings-in-the-magento-admin">Verify configuration settings in the Magento Admin</h3>
+    <p>The value of the <strong>Default Email Domain</strong> field is displayed as follows. This is a system-specific setting.</p>
 
-      <p>This section discusses how you can verify the configuration settings in your production system Admin.</p>
-
-      <p>To verify the configuration settings:</p>
-
-      <ol>
-        <li>Log in to your production system’s Magento Admin.</li>
-        <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
-        <li>
-          <p>Use the <strong>Store View</strong> list in the upper left corner to switch to a different website.</p>
-
-          <p>The shared configuration options you set in the development system are displayed similar to the following.</p>
-
-          <p><img src="/common/images/config_split-deploy_verify_storeinfo.png" alt="Check settings in the production system" width="650px" /></p>
-
-          <p class="bs-callout bs-callout-info">The <strong>Store Name</strong> field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of <strong>VAT Number</strong> is not editable in website scope.</p>
-        </li>
-        <li>If you haven’t already done so, switch to Default Config scope.</li>
-        <li>
-          <p>In the left navigation, under General, click <strong>Contacts</strong>.</p>
-
-          <p>The <strong>Send Emails To</strong> field is not editable, as the following figure shows. This is a sensitive setting.</p>
-
-          <p><img src="/common/images/config_split-deploy_verify_contacts.png" alt="Check settings in the production system" width="400px" /></p>
-        </li>
-        <li>In the left pane, click Customers &gt; <strong>Customer Configuration</strong>.</li>
-        <li>
-          <p>In the right pane, expand <strong>Create New Account Options</strong>.</p>
-
-          <p>The value of the <strong>Default Email Domain</strong> field is displayed as follows. This is a system-specific setting.</p>
-
-          <p><img src="/common/images/config_split-defaultdomain.png" alt="Check settings in the production system" width="400px" /></p>
-        </li>
-      </ol>
-    </div>
-  </div>
-</div>
+    <p><img src="/common/images/config_split-defaultdomain.png" alt="Check settings in the production system" width="400px" /></p>
+  </li>
+</ol>
 
 			
 		</div>

@@ -1898,1276 +1898,1271 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To optionally override any configuration settings or to set sensitive settings, see <a href="/guides/v2.3/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>.</p>
 
-<div>
+<p>This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Open Source (formerly Community Edition (CE) and Magento Commerce (formerly Enterprise Edition (EE) as well.</p>
 
-  <p>This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Open Source (formerly Community Edition (CE) and Magento Commerce (formerly Enterprise Edition (EE) as well.</p>
+<h2 id="general-category">General category</h2>
 
-  <h2 id="general-category">General category</h2>
+<p>This section lists variable names and configuration paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong>.</p>
 
-  <p>This section lists variable names and configuration paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong>.</p>
+<h3 id="b2b-features-paths">B2B Features paths</h3>
 
-  <h3 id="b2b-features-paths">B2B Features paths</h3>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>B2B Features</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>B2B Features</strong>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enable Company</td>
+      <td><code class="highlighter-rouge">btob/website_configuration/company_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Shared Catalog</td>
+      <td><code class="highlighter-rouge">btob/website_configuration/sharedcatalog_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable B2B Quote</td>
+      <td><code class="highlighter-rouge">btob/website_configuration/negotiablequote_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Quick Order</td>
+      <td><code class="highlighter-rouge">btob/website_configuration/quickorder_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Requisition List</td>
+      <td><code class="highlighter-rouge">btob/website_configuration/requisition_list_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Applicable Payment Methods</td>
+      <td><code class="highlighter-rouge">btob/default_b2b_payment_methods/applicable_payment_methods</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment Methods</td>
+      <td><code class="highlighter-rouge">btob/default_b2b_payment_methods/available_payment_methods</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Enable Company</td>
-        <td><code class="highlighter-rouge">btob/website_configuration/company_active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enable Shared Catalog</td>
-        <td><code class="highlighter-rouge">btob/website_configuration/sharedcatalog_active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enable B2B Quote</td>
-        <td><code class="highlighter-rouge">btob/website_configuration/negotiablequote_active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enable Quick Order</td>
-        <td><code class="highlighter-rouge">btob/website_configuration/quickorder_active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enable Requisition List</td>
-        <td><code class="highlighter-rouge">btob/website_configuration/requisition_list_active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Applicable Payment Methods</td>
-        <td><code class="highlighter-rouge">btob/default_b2b_payment_methods/applicable_payment_methods</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment Methods</td>
-        <td><code class="highlighter-rouge">btob/default_b2b_payment_methods/available_payment_methods</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<h2 id="customers-category">Customers category</h2>
 
-  <h2 id="customers-category">Customers category</h2>
+<p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong>.</p>
 
-  <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong>.</p>
+<h3 id="company-configuration-paths">Company configuration paths</h3>
 
-  <h3 id="company-configuration-paths">Company configuration paths</h3>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Company Configuration</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Company Configuration</strong>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Allow Company Registration from the Storefront</td>
+      <td><code class="highlighter-rouge">company/general/allow_company_registration</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Registration Email Recipient</td>
+      <td><code class="highlighter-rouge">company/email/company_registration</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Company Registration Email Copy To</td>
+      <td><code class="highlighter-rouge">company/email/company_registration_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="highlighter-rouge">company/email/company_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Registration Email</td>
+      <td><code class="highlighter-rouge">company/email/company_notify_admin_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Customer-Related Emails</td>
+      <td><code class="highlighter-rouge">company/email/heading_customer</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Sales Rep Assigned Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_sales_representative_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Assign Company to Customer Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_company_customer_assign_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Assign Company Admin Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_assign_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Admin Inactive Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_inactivate_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Admin Changed To Member Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_remove_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Customer Status Active Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_account_activated_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Customer Status Inactive Email</td>
+      <td><code class="highlighter-rouge">company/email/customer_account_locked_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Status Change</td>
+      <td><code class="highlighter-rouge">company/email/heading_company_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Status Change Email Recipient</td>
+      <td><code class="highlighter-rouge">company/email/company_status_change</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Company Status Change Email Copy To</td>
+      <td><code class="highlighter-rouge">company/email/company_status_change_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="highlighter-rouge">company/email/company_status_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Active 1 Email</td>
+      <td><code class="highlighter-rouge">company/email/company_status_pending_approval_to_active_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Active 2 Email</td>
+      <td><code class="highlighter-rouge">company/email/company_status_rejected_blocked_to_active_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Rejected Email</td>
+      <td><code class="highlighter-rouge">company/email/company_status_rejected_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Blocked Email</td>
+      <td><code class="highlighter-rouge">company/email/company_status_blocked_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Pending Approval Email</td>
+      <td><code class="highlighter-rouge">company/email/company_status_pending_approval_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Credit</td>
+      <td><code class="highlighter-rouge">company/email/heading_company_credit</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Credit Change Email Sender</td>
+      <td><code class="highlighter-rouge">company/email/company_credit_change</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Company Credit Change Email Copy To</td>
+      <td><code class="highlighter-rouge">company/email/company_credit_change_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="highlighter-rouge">company/email/company_credit_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Allocated Email Template</td>
+      <td><code class="highlighter-rouge">company/email/credit_allocated_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Email Template</td>
+      <td><code class="highlighter-rouge">company/email/credit_updated_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reimbursed Email Template</td>
+      <td><code class="highlighter-rouge">company/email/credit_reimbursed_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Refunded Email Template</td>
+      <td><code class="highlighter-rouge">company/email/credit_refunded_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reverted Email Template</td>
+      <td><code class="highlighter-rouge">company/email/credit_reverted_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Allow Company Registration from the Storefront</td>
-        <td><code class="highlighter-rouge">company/general/allow_company_registration</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Company Registration Email Recipient</td>
-        <td><code class="highlighter-rouge">company/email/company_registration</code></td>
-        <td> </td>
-        <td> </td>
-        <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
-      </tr>
-      <tr>
-        <td>Send Company Registration Email Copy To</td>
-        <td><code class="highlighter-rouge">company/email/company_registration_copy</code></td>
-        <td> </td>
-        <td> </td>
-        <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
-      </tr>
-      <tr>
-        <td>Send Email Copy Method</td>
-        <td><code class="highlighter-rouge">company/email/company_copy_method</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Registration Email</td>
-        <td><code class="highlighter-rouge">company/email/company_notify_admin_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Customer-Related Emails</td>
-        <td><code class="highlighter-rouge">company/email/heading_customer</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Sales Rep Assigned Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_sales_representative_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Assign Company to Customer Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_company_customer_assign_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Assign Company Admin Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_assign_super_user_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Admin Inactive Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_inactivate_super_user_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Admin Changed To Member Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_remove_super_user_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Customer Status Active Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_account_activated_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Customer Status Inactive Email</td>
-        <td><code class="highlighter-rouge">company/email/customer_account_locked_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Company Status Change</td>
-        <td><code class="highlighter-rouge">company/email/heading_company_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Company Status Change Email Recipient</td>
-        <td><code class="highlighter-rouge">company/email/company_status_change</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Send Company Status Change Email Copy To</td>
-        <td><code class="highlighter-rouge">company/email/company_status_change_copy</code></td>
-        <td> </td>
-        <td> </td>
-        <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
-      </tr>
-      <tr>
-        <td>Send Email Copy Method</td>
-        <td><code class="highlighter-rouge">company/email/company_status_copy_method</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Status Change To Active 1 Email</td>
-        <td><code class="highlighter-rouge">company/email/company_status_pending_approval_to_active_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Status Change To Active 2 Email</td>
-        <td><code class="highlighter-rouge">company/email/company_status_rejected_blocked_to_active_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Status Change To Rejected Email</td>
-        <td><code class="highlighter-rouge">company/email/company_status_rejected_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Status Change To Blocked Email</td>
-        <td><code class="highlighter-rouge">company/email/company_status_blocked_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Company Status Change To Pending Approval Email</td>
-        <td><code class="highlighter-rouge">company/email/company_status_pending_approval_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Company Credit</td>
-        <td><code class="highlighter-rouge">company/email/heading_company_credit</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Company Credit Change Email Sender</td>
-        <td><code class="highlighter-rouge">company/email/company_credit_change</code></td>
-        <td> </td>
-        <td> </td>
-        <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
-      </tr>
-      <tr>
-        <td>Send Company Credit Change Email Copy To</td>
-        <td><code class="highlighter-rouge">company/email/company_credit_change_copy</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Send Email Copy Method</td>
-        <td><code class="highlighter-rouge">company/email/company_credit_copy_method</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Allocated Email Template</td>
-        <td><code class="highlighter-rouge">company/email/credit_allocated_email_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Updated Email Template</td>
-        <td><code class="highlighter-rouge">company/email/credit_updated_email_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Reimbursed Email Template</td>
-        <td><code class="highlighter-rouge">company/email/credit_reimbursed_email_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Refunded Email Template</td>
-        <td><code class="highlighter-rouge">company/email/credit_refunded_email_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Reverted Email Template</td>
-        <td><code class="highlighter-rouge">company/email/credit_reverted_email_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<h3 id="requisition-lists-paths">Requisition lists paths</h3>
 
-  <h3 id="requisition-lists-paths">Requisition lists paths</h3>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Requisition Lists</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Requisition Lists</strong>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Number of Requisition Lists</td>
+      <td><code class="highlighter-rouge">requisitionlist/general/number_requisition_lists</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Number of Requisition Lists</td>
-        <td><code class="highlighter-rouge">requisitionlist/general/number_requisition_lists</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<h2 id="sales-category">Sales category</h2>
 
-  <h2 id="sales-category">Sales category</h2>
+<p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong>.</p>
 
-  <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong>.</p>
+<h3 id="sales-emails-paths">Sales Emails paths</h3>
 
-  <h3 id="sales-emails-paths">Sales Emails paths</h3>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Sales Emails</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Sales Emails</strong>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">sales_email/quote/enabled</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Quote Template (to Buyer)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/updated_buyer_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Declined Quote Template (to Buyer)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/declined_buyer_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Quote Template (to Seller)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/new_seller_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Quote Template (to Seller)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/updated_seller_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quote Expiration (in 48 hrs)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/expire_two_days_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quote Expiration (in 24 hrs)</td>
+      <td><code class="highlighter-rouge">sales_email/quote/expire_one_day_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Expiration Date Reset</td>
+      <td><code class="highlighter-rouge">sales_email/quote/expire_reset_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Quote Email Copy To</td>
+      <td><code class="highlighter-rouge">sales_email/quote/copy_to</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Quote Email Copy Method</td>
+      <td><code class="highlighter-rouge">sales_email/quote/copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">sales_email/quote/enabled</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Updated Quote Template (to Buyer)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/updated_buyer_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Declined Quote Template (to Buyer)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/declined_buyer_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Quote Template (to Seller)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/new_seller_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Updated Quote Template (to Seller)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/updated_seller_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Quote Expiration (in 48 hrs)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/expire_two_days_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Quote Expiration (in 24 hrs)</td>
-        <td><code class="highlighter-rouge">sales_email/quote/expire_one_day_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Expiration Date Reset</td>
-        <td><code class="highlighter-rouge">sales_email/quote/expire_reset_template</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Send Quote Email Copy To</td>
-        <td><code class="highlighter-rouge">sales_email/quote/copy_to</code></td>
-        <td> </td>
-        <td> </td>
-        <td><img src="/common/images/cloud_sens.png" alt="Sensitive" /></td>
-      </tr>
-      <tr>
-        <td>Send Quote Email Copy Method</td>
-        <td><code class="highlighter-rouge">sales_email/quote/copy_method</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<h3 id="quotes-paths">Quotes paths</h3>
 
-  <h3 id="quotes-paths">Quotes paths</h3>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Quotes</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Quotes</strong>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum Amount</td>
+      <td><code class="highlighter-rouge">quote/general/minimum_amount</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount Message</td>
+      <td><code class="highlighter-rouge">quote/general/minimum_amount_message</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Expiration Period</td>
+      <td><code class="highlighter-rouge">quote/general/default_expiration_period</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File formats for upload</td>
+      <td><code class="highlighter-rouge">quote/attached_files/file_formats</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum file size</td>
+      <td><code class="highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount</td>
+      <td><code class="highlighter-rouge">quote/general/minimum_amount</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount Message</td>
+      <td><code class="highlighter-rouge">quote/general/minimum_amount_message</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Expiration Period</td>
+      <td><code class="highlighter-rouge">quote/general/default_expiration_period</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File formats for upload</td>
+      <td><code class="highlighter-rouge">quote/attached_files/file_formats</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum file size</td>
+      <td><code class="highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Minimum Amount</td>
-        <td><code class="highlighter-rouge">quote/general/minimum_amount</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Amount Message</td>
-        <td><code class="highlighter-rouge">quote/general/minimum_amount_message</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Expiration Period</td>
-        <td><code class="highlighter-rouge">quote/general/default_expiration_period</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>File formats for upload</td>
-        <td><code class="highlighter-rouge">quote/attached_files/file_formats</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum file size</td>
-        <td><code class="highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Amount</td>
-        <td><code class="highlighter-rouge">quote/general/minimum_amount</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Amount Message</td>
-        <td><code class="highlighter-rouge">quote/general/minimum_amount_message</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Default Expiration Period</td>
-        <td><code class="highlighter-rouge">quote/general/default_expiration_period</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>File formats for upload</td>
-        <td><code class="highlighter-rouge">quote/attached_files/file_formats</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum file size</td>
-        <td><code class="highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<h2 id="payment-method-paths">Payment method paths</h2>
 
-  <h2 id="payment-method-paths">Payment method paths</h2>
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Payment Methods</strong>.</p>
 
-  <p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Payment Methods</strong>.</p>
+<p class="bs-callout bs-callout-info">The available paths are determined by your choice of Merchant country.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The available paths are determined by your choice of Merchant country.</p>
-  </div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/au/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/es/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/nz/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/us/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/gb/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/de/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/other/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/ca/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/hk/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/jp/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/fr/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="highlighter-rouge">payment/it/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Config path</th>
-        <th>Encrypted?</th>
-        <th>System-specific?</th>
-        <th>Sensitive?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/au/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/es/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/nz/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/us/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/gb/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/de/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/other/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/ca/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/hk/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/jp/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/fr/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Enabled</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/active</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Title</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/title</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>New Order Status</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/order_status</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Applicable Countries</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/allowspecific</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Payment from Specific Countries</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/specificcountry</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Minimum Order Total</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/min_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Maximum Order Total</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/max_order_total</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>Sort Order</td>
-        <td><code class="highlighter-rouge">payment/it/companycredit/sort_order</code></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
 
 			
 		</div>

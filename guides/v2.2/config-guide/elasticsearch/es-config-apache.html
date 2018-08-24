@@ -1889,209 +1889,203 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#es-ws-secure-verify">Verify communication is secure</a></li>
 </ul>
 
-<div>
+<h2 id="es-ws-secure-over">Overview of secure web server communication</h2>
 
-  <h2 id="es-ws-secure-over">Overview of secure web server communication</h2>
+<p>This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617">HTTP basic authentication</a>. You can optionally configure other types of authentication as well; we provide references for that information.</p>
 
-  <p>This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.</p>
+<p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
 
-  <p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
+<p class="bs-callout bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Unless otherwise noted, all commands in this topic must be entered as a user with <code>root</code> privileges.</p>
-</div>
+<h3 id="recommendations">Recommendations</h3>
 
-  <h3 id="recommendations">Recommendations</h3>
+<p>We recommend the following:</p>
 
-  <p>We recommend the following:</p>
+<ul>
+  <li>
+    <p>Your web server uses TLS.</p>
 
-  <ul>
-    <li>
-      <p>Your web server uses TLS.</p>
+    <p>TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.</p>
+  </li>
+  <li>
+    <p>Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.</p>
 
-      <p>TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.</p>
-    </li>
-    <li>
-      <p>Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.</p>
+    <p>The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server doesn’t have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.</p>
+  </li>
+</ul>
 
-      <p>The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server doesn’t have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.</p>
-    </li>
-  </ul>
+<h3 id="more-information-about-tls">More information about TLS</h3>
 
-  <h3 id="more-information-about-tls">More information about TLS</h3>
+<p>See one of the following resources:</p>
 
-  <p>See one of the following resources:</p>
+<ul>
+  <li>
+    <p>Apache</p>
 
-  <ul>
-    <li>
-      <p>Apache</p>
+    <ul>
+      <li><a href="https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html">Apache 2.4 strong encryption how-to</a></li>
+      <li><a href="https://httpd.apache.org/docs/2.2/en/ssl/">Apache 2.2 SSL/TLS page</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04">How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+      <li><a href="https://wiki.centos.org/HowTos/Https">Setting up an SSL secured Webserver with CentOS (CentOS wiki)</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Nginx</p>
 
-      <ul>
-        <li><a href="https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html" target="_blank">Apache 2.4 strong encryption how-to</a></li>
-        <li><a href="https://httpd.apache.org/docs/2.2/en/ssl/" target="_blank">Apache 2.2 SSL/TLS page</a></li>
-        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04" target="_blank">How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
-        <li><a href="https://wiki.centos.org/HowTos/Https" target="_blank">Setting up an SSL secured Webserver with CentOS (CentOS wiki)</a></li>
-      </ul>
-    </li>
-    <li>
-      <p>nginx</p>
+    <ul>
+      <li><a href="https://www.nginx.com/resources/admin-guide/nginx-ssl-termination/">Nginx SSL termination</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04">How To Create an SSL Certificate on Nginx for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+      <li><a href="https://www.digicert.com/ssl-certificate-installation-nginx.htm">Nginx SSL Certificate Installation (digicert)</a></li>
+    </ul>
+  </li>
+</ul>
 
-      <ul>
-        <li><a href="https://www.nginx.com/resources/admin-guide/nginx-ssl-termination/" target="_blank">nginx SSL termination</a></li>
-        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04" target="_blank">How To Create an SSL Certificate on Nginx for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
-        <li><a href="https://www.digicert.com/ssl-certificate-installation-nginx.htm" target="_blank">Nginx SSL Certificate Installation (digicert)</a></li>
-      </ul>
-    </li>
-  </ul>
+<h2 id="es-apache-proxy">Set up a proxy</h2>
 
-  <h2 id="es-apache-proxy">Set up a proxy</h2>
+<p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-apache">Secure communication with Apache</a>.</p>
 
-  <p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-apache">Secure communication with Apache</a>.</p>
+<p class="bs-callout bs-callout-info">The reason the proxy is not secured in this example is it’s easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
 
-  <p class="bs-callout bs-callout-info">The reason the proxy is not secured in this example is it’s easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
+<p>See one of the following sections:</p>
 
-  <p>See one of the following sections:</p>
+<ul>
+  <li><a href="#es-apache-proxy-24">Set up a proxy for Apache 2.4</a></li>
+  <li><a href="#es-apache-proxy-22">Set up a proxy for Apache 2.2</a></li>
+</ul>
 
-  <ul>
-    <li><a href="#es-apache-proxy-24">Set up a proxy for Apache 2.4</a></li>
-    <li><a href="#es-apache-proxy-22">Set up a proxy for Apache 2.2</a></li>
-  </ul>
+<h3 id="es-apache-proxy-24">Set up a proxy for Apache 2.4</h3>
 
-  <h3 id="es-apache-proxy-24">Set up a proxy for Apache 2.4</h3>
+<p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
 
-  <p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
+<ol>
+  <li>
+    <p>Enable <code class="highlighter-rouge">mod_proxy</code> as follows:</p>
 
-  <ol>
-    <li>
-      <p>Enable <code class="highlighter-rouge">mod_proxy</code> as follows:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a2enmod proxy_http
+</code></pre></div>    </div>
+  </li>
+  <li>Use a text editor to open <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
+  <li>
+    <p>Add the following directive at the top of the file:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a2enmod proxy_http
-</code></pre></div>      </div>
-    </li>
-    <li>Use a text editor to open <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
-    <li>
-      <p>Add the following directive at the top of the file:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Listen 8080
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the following at the bottom of the file:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Listen 8080
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Add the following at the bottom of the file:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
        ProxyPass "/" "http://localhost:9200/"
        ProxyPassReverse "/" "http://localhost:9200/"
     &lt;/VirtualHost&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Restart Apache:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart Apache:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service apache2 restart
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Verify the proxy works by entering the following command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service apache2 restart
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify the proxy works by entering the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+</code></pre></div>    </div>
 
-      <p>For example, if your proxy uses port 8080:</p>
+    <p>For example, if your proxy uses port 8080:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
+</code></pre></div>    </div>
 
-      <p>Messages similar to the following display to indicate success:</p>
+    <p>Messages similar to the following display to indicate success:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
 Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
-</code></pre></div>      </div>
-    </li>
-    <li>Continue with <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a>.</li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+  <li>Continue with <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a>.</li>
+</ol>
 
-  <h3 id="es-apache-proxy-22">Set up a proxy for Apache 2.2</h3>
+<h3 id="es-apache-proxy-22">Set up a proxy for Apache 2.2</h3>
 
-  <p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
+<p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
 
-  <ol>
-    <li>
-      <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
-    </li>
-    <li>
-      <p>Locate the <code class="highlighter-rouge">Listen</code> directive and add another listen port; for example:</p>
+<ol>
+  <li>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
+  </li>
+  <li>
+    <p>Locate the <code class="highlighter-rouge">Listen</code> directive and add another listen port; for example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Listen 8080
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Scroll to the bottom of the file and add the following lines:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Listen 8080
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Scroll to the bottom of the file and add the following lines:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;VirtualHost *:8080&gt;
         ProxyPass http://localhost:9200/
         ProxyPassReverse http://localhost:9200/
     &lt;/VirtualHost&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Restart Apache:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart Apache:</p>
 
-      <ul>
-        <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-        <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Verify the proxy works by entering the following command:</p>
+    <ul>
+      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Verify the proxy works by entering the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+</code></pre></div>    </div>
 
-      <p>For example, if your proxy uses port 8080:</p>
+    <p>For example, if your proxy uses port 8080:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
+</code></pre></div>    </div>
 
-      <p>Messages similar to the following display to indicate success:</p>
+    <p>Messages similar to the following display to indicate success:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
 Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
-</code></pre></div>      </div>
-    </li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h2 id="elastic-m2-configure">Configure Magento to use Elasticsearch</h2>
+<h2 id="elastic-m2-configure">Configure Magento to use Elasticsearch</h2>
 
-  <div>
+<p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html">Magento Commerce User Guide</a>.</p>
 
-    <p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html" target="_blank">Magento Commerce User Guide</a>.</p>
+<p>To configure Magento to use Elasticsearch:</p>
 
-    <p>To configure Magento to use Elasticsearch:</p>
+<ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
+  <li>
+    <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> or <strong>Elasticsearch 5.0+</strong> as the following figure shows. (The <strong>Elasticsearch 5.0+</strong> option is not available for Magento 2.1.)</p>
 
-    <ol>
-      <li>Log in to the Magento Admin as an administrator.</li>
-      <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
-      <li>
-        <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> or <strong>Elasticsearch 5.0+</strong> as the following figure shows. (The <strong>Elasticsearch 5.0+</strong> option is not available for Magento 2.1.)</p>
+    <p><img src="/common/images/elastic_choose-in-admin.png" alt="" width="650px" /></p>
+  </li>
+  <li>
+    <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
 
-        <p><img src="/common/images/elastic_choose-in-admin.png" width="650px" /></p>
-      </li>
-      <li>
-        <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
+    <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
 
-        <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
-
-        <table>
+    <table>
     <tbody>
     <tr><th>Option</th>
     <th>Description</th>
@@ -2116,13 +2110,13 @@ Connection: keep-alive
 </tr>
 </tbody>
 </table>
-      </li>
-      <li>Click <strong>Test Connection</strong>.</li>
-    </ol>
+  </li>
+  <li>Click <strong>Test Connection</strong>.</li>
+</ol>
 
-    <p>One of the following displays:</p>
+<p>One of the following displays:</p>
 
-    <table>
+<table>
 <tbody>
 	<tr><th>Result</th>
 	<th>Meaning</th>
@@ -2150,166 +2144,162 @@ Connection: keep-alive
 </tbody>
 </table>
 
-    <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+<h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
 
-    <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
+<p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
 
-    <p>To refresh the cache using the Admin:</p>
+<p>To refresh the cache using the Admin:</p>
 
-    <ol>
-      <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
-      <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
-      <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+<ol>
+  <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+  <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
+  <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
     The following figure shows an example.<br />
-    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
-    </ol>
+    <img src="/common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
+</ol>
 
-    <p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
+<p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
-    <p>To reindex using the command line:</p>
+<p>To reindex using the command line:</p>
 
-    <ol>
-      <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-      <li>
-        <p>Enter any of the following commands:</p>
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Enter any of the following commands:</p>
 
-        <p>Enter the following command to reindex the catalog search index only:</p>
+    <p>Enter the following command to reindex the catalog search index only:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
-</code></pre></div>        </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+</code></pre></div>    </div>
 
-        <p>Enter the following command to reindex all indexers:</p>
+    <p>Enter the following command to reindex all indexers:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
-</code></pre></div>        </div>
-      </li>
-      <li>Wait while the reindexing completes.</li>
-    </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+</code></pre></div>    </div>
+  </li>
+  <li>Wait while the reindexing completes.</li>
+</ol>
 
-    <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
-</div>
+<p class="bs-callout bs-callout-info">Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 
-    <h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
+<h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
 
-    <p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
+<p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
+
+<ul>
+  <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html">Apache 2.2 authentication and authorization tutorial</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html">Apache 2.4 authentication and authorization tutorial</a></li>
+</ul>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#es-ws-secure-apache-pwd">Step 1: Create a password file</a></li>
+  <li><a href="#es-ws-secure-finish">Step 2: Configure your secure virtual host</a></li>
+  <li><a href="#es-ws-secure-verify">Verify communication is secure</a></li>
+</ul>
+
+<h3 id="es-ws-secure-apache-pwd">Step 1: Create a password</h3>
+<p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.</p>
+
+<h4 id="install-htpasswd-if-necessary">Install htpasswd if necessary</h4>
+
+<p>First, see if you have the Apache <code class="highlighter-rouge">htpasswd</code> utility is installed as follows:</p>
+
+<ol>
+  <li>
+    <p>Enter the following command to determine if <code class="highlighter-rouge">htpasswd</code> is already installed:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which htpasswd
+</code></pre></div>    </div>
+
+    <p>If a path displays, it is installed; if the command returns no output, <code class="highlighter-rouge">htpasswd</code> is not installed.</p>
+  </li>
+  <li>
+    <p>If necessary, install <code class="highlighter-rouge">htpasswd</code>:</p>
 
     <ul>
-      <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html">Apache 2.2 authentication and authorization tutorial</a></li>
-      <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html">Apache 2.4 authentication and authorization tutorial</a></li>
+      <li>Ubuntu: <code class="highlighter-rouge">apt-get -y install apache2-utils</code></li>
+      <li>CentOS: <code class="highlighter-rouge">yum -y install httpd-tools</code></li>
     </ul>
+  </li>
+</ol>
 
-    <p>See one of the following sections:</p>
+<h4 id="create-a-password-file">Create a password file</h4>
 
-    <ul>
-      <li><a href="#es-ws-secure-apache-pwd">Step 1: Create a password file</a></li>
-      <li><a href="#es-ws-secure-finish">Step 2: Configure your secure virtual host</a></li>
-      <li><a href="#es-ws-secure-verify">Verify communication is secure</a></li>
-    </ul>
+<p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-    <h3 id="es-ws-secure-apache-pwd">Step 1: Create a password</h3>
-    <div>
-
-      <p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.</p>
-
-      <h4 id="install-htpasswd-if-necessary">Install htpasswd if necessary</h4>
-
-      <p>First, see if you have the Apache <code class="highlighter-rouge">htpasswd</code> utility is installed as follows:</p>
-
-      <ol>
-        <li>
-          <p>Enter the following command to determine if <code class="highlighter-rouge">htpasswd</code> is already installed:</p>
-
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which htpasswd
-</code></pre></div>          </div>
-
-          <p>If a path displays, it is installed; if the command returns no output, <code class="highlighter-rouge">htpasswd</code> is not installed.</p>
-        </li>
-        <li>
-          <p>If necessary, install <code class="highlighter-rouge">htpasswd</code>:</p>
-
-          <ul>
-            <li>Ubuntu: <code class="highlighter-rouge">apt-get -y install apache2-utils</code></li>
-            <li>CentOS: <code class="highlighter-rouge">yum -y install httpd-tools</code></li>
-          </ul>
-        </li>
-      </ol>
-
-      <h4 id="create-a-password-file">Create a password file</h4>
-
-      <p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&gt;
-</code></pre></div>      </div>
+</code></pre></div></div>
 
-      <p>where</p>
+<p>where</p>
 
-      <ul>
-        <li>
-          <p><code class="highlighter-rouge">&lt;username&gt;</code> can be:</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">&lt;username&gt;</code> can be:</p>
 
-          <ul>
-            <li>
-              <p>Setting up cron: the web server user or another user.</p>
+    <ul>
+      <li>
+        <p>Setting up cron: the web server user or another user.</p>
 
-              <p>In this example, we use the web server user but the choice of user is up to you.</p>
-            </li>
-            <li>
-              <p>Setting up Elasticsearch: the user is named <code class="highlighter-rouge">magento_elasticsearch</code> in this example</p>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p><code class="highlighter-rouge">&lt;password file name&gt;</code> must be a hidden file (starts with <code class="highlighter-rouge">.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
-        </li>
-      </ul>
+        <p>In this example, we use the web server user but the choice of user is up to you.</p>
+      </li>
+      <li>
+        <p>Setting up Elasticsearch: the user is named <code class="highlighter-rouge">magento_elasticsearch</code> in this example</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;password file name&gt;</code> must be a hidden file (starts with <code class="highlighter-rouge">.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
+  </li>
+</ul>
 
-      <p>Follow the prompts on your screen to create a password for the user.</p>
+<p>Follow the prompts on your screen to create a password for the user.</p>
 
-      <h4 id="examples">Examples</h4>
+<h4 id="examples">Examples</h4>
 
-      <p><strong>Example 1: cron</strong>
+<p><strong>Example 1: cron</strong>
 You must set up authentication for only one user for cron; in this example, we use the web server user. To create a password file for the web server user, enter the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.htpasswd apache
-</code></pre></div>      </div>
+</code></pre></div></div>
 
-      <p><strong>Example 2: Elasticsearch</strong>
+<p><strong>Example 2: Elasticsearch</strong>
 You must set up authentication for two users: one with access to nginx and one with access to Elasticsearch. To create password files for these users, enter the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
-</code></pre></div>      </div>
+</code></pre></div></div>
 
-      <h4 id="add-additional-users">Add additional users</h4>
+<h4 id="add-additional-users">Add additional users</h4>
 
-      <p>To add another user to your password file, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To add another user to your password file, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
-</code></pre></div>      </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
+</code></pre></div></div>
 
-      <h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
+<h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
 
-      <p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
+<p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
 
-      <p>This section discusses how to specify who can access the Apache server.</p>
+<p>This section discusses how to specify who can access the Apache server.</p>
 
-      <ol>
-        <li>
-          <p>Use a text editor to add the following contents to your secure virtual host.</p>
+<ol>
+  <li>
+    <p>Use a text editor to add the following contents to your secure virtual host.</p>
 
-          <ul>
-            <li>
-              <p>Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> or <code class="highlighter-rouge">/etc/httpd/conf.d/ssl.conf</code>.</p>
-            </li>
-            <li>
-              <p>Apache 2.4: Edit <code class="highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></p>
-            </li>
-          </ul>
+    <ul>
+      <li>
+        <p>Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> or <code class="highlighter-rouge">/etc/httpd/conf.d/ssl.conf</code>.</p>
+      </li>
+      <li>
+        <p>Apache 2.4: Edit <code class="highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></p>
+      </li>
+    </ul>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;Proxy *&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;Proxy *&gt;
       Order deny,allow
       Allow from all
 
@@ -2324,94 +2314,88 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
        Require valid-user
      &lt;/LimitExcept&gt;
      &lt;/Proxy&gt;
-</code></pre></div>          </div>
-        </li>
-        <li>If you added the preceding to your secure virtual host, remove <code class="highlighter-rouge">Listen 8080</code> and the <code class="highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
-        <li>Save your changes, exit the text editor, and restart Apache:</li>
-      </ol>
+</code></pre></div>    </div>
+  </li>
+  <li>If you added the preceding to your secure virtual host, remove <code class="highlighter-rouge">Listen 8080</code> and the <code class="highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
+  <li>Save your changes, exit the text editor, and restart Apache:</li>
+</ol>
 
-      <ul>
-        <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-        <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
-      </ul>
+<ul>
+  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+</ul>
 
-      <div>
+<h2 id="es-ws-secure-verify">Verify communication is secure</h2>
 
-        <h2 id="es-ws-secure-verify">Verify communication is secure</h2>
+<p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
 
-        <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
+<ul>
+  <li>Using a <code class="highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
+  <li>Configuring HTTP Basic authentication in the Magento Admin</li>
+</ul>
 
-        <ul>
-          <li>Using a <code class="highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
-          <li>Configuring HTTP Basic authentication in the Magento Admin</li>
-        </ul>
+<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
 
-        <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
+<p>Enter the following command:</p>
 
-        <p>Enter the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</code></pre></div></div>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
-</code></pre></div>        </div>
+<p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
 
-        <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> http://localhost:8080/_cluster/health
+</code></pre></div></div>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://localhost:8080/_cluster/health
-</code></pre></div>        </div>
+<p>The following message displays to indicate authentication failed:</p>
 
-        <p>The following message displays to indicate authentication failed:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 401 Unauthorized
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">HTTP/1.1 401 Unauthorized
 Date: Tue, 23 Feb 2016 20:35:29 GMT
 Content-Type: text/html
 Content-Length: 194
 Connection: keep-alive
 WWW-Authenticate: Basic realm="Restricted"
 
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;&lt;title&gt;</span>401 Authorization Required<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
-<span class="nt">&lt;body</span> <span class="na">bgcolor=</span><span class="s">"white"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;center&gt;&lt;h1&gt;</span>401 Authorization Required<span class="nt">&lt;/h1&gt;&lt;/center&gt;</span>
+</span><span class="gp">&lt;html&gt;</span>
+<span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+<span class="gp">&lt;body bgcolor="white"&gt;</span>
+<span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+<span class="go">
+</span><span class="gp">&lt;/body&gt;</span>
+<span class="gp">&lt;/html&gt;</span>
+</code></pre></div></div>
 
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>        </div>
+<p>Now try the following command:</p>
 
-        <p>Now try the following command:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</code></pre></div></div>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -u &lt;username&gt;:&lt;password&gt; http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
-</code></pre></div>        </div>
+<p>For example:</p>
 
-        <p>For example:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
+</code></pre></div></div>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -u magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
-</code></pre></div>        </div>
+<p>This time the command succeeds with a message similar to the following:</p>
 
-        <p>This time the command succeeds with a message similar to the following:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
-Content-Type: application/json; charset=UTF-8
-Content-Length: 389
+</span><span class="gp">Content-Type: application/json;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="go">Content-Length: 389
 Connection: keep-alive
 
 {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
-</code></pre></div>        </div>
+</span></code></pre></div></div>
 
-        <h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
+<h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
 
-        <p>Perform the same tasks as discussed in <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your username and password in the provided fields.</p>
+<p>Perform the same tasks as discussed in <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your username and password in the provided fields.</p>
 
-        <p>Click <strong>Test Connection</strong> to make sure it works and then click <strong>Save Config</strong>.</p>
+<p>Click <strong>Test Connection</strong> to make sure it works and then click <strong>Save Config</strong>.</p>
 
-        <p>You must flush the Magento cache and reindex before you continue.</p>
+<p>You must flush the Magento cache and reindex before you continue.</p>
 
-        <h4 id="next">Next</h4>
+<h4 id="next">Next</h4>
 
-        <p><a href="/guides/v2.2/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+<p><a href="/guides/v2.2/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></p>
 
 			
 		</div>

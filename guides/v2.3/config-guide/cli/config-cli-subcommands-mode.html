@@ -1885,88 +1885,84 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="config-mode-over">Overview of setting Magento modes</h2>
 
-  <h2 id="config-mode-over">Overview of setting Magento modes</h2>
+<p>To improve security and ease-of-use, we added a command that switches <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.</p>
 
-  <p>To improve security and ease-of-use, we added a command that switches <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa.</p>
+<p>Production mode also has better performance because static view files are populated in the <code class="highlighter-rouge">pub/static</code> directory and because of code compilation.</p>
 
-  <p>Production mode also has better performance because static view files are populated in the <code class="highlighter-rouge">pub/static</code> directory and because of code compilation.</p>
+<ul class="bs-callout bs-callout-info">
+  <li>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.</li>
+  <li>Unlike other Magento modes, developer and production modes are set in <code class="highlighter-rouge">env.php</code>.</li>
+  <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.</li>
+</ul>
 
-  <ul class="bs-callout bs-callout-info">
-    <li>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.</li>
-    <li>Unlike other Magento modes, developer and production modes are set in <code class="highlighter-rouge">env.php</code>.</li>
-    <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.</li>
-  </ul>
+<p>Refer to <a href="/guides/v2.3/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a> for more information.</p>
 
-  <p>Refer to <a href="/guides/v2.3/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a> for more information.</p>
+<p>When you change to developer or production mode, we clear the contents of following directories:</p>
 
-  <p>When you change to developer or production mode, we clear the contents of following directories:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/cache
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/cache
 generated/metadata
 generated/code
 var/view_preprocessed
 pub/static
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Exceptions:</p>
+<p>Exceptions:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">.htaccess</code> files are not removed</li>
-    <li><code class="highlighter-rouge">pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">.htaccess</code> files are not removed</li>
+  <li><code class="highlighter-rouge">pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
+</ul>
 
-  <p class="bs-callout bs-callout-info">By default, Magento uses the <code class="highlighter-rouge">var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it’s assumed to be <code class="highlighter-rouge">var</code>.</p>
+<p class="bs-callout bs-callout-info">By default, Magento uses the <code class="highlighter-rouge">var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it’s assumed to be <code class="highlighter-rouge">var</code>.</p>
 
-  <h2 id="config-mode-show">Display the current mode</h2>
+<h2 id="config-mode-show">Display the current mode</h2>
 
-  <p>The easiest way to do that is to run this command as the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it’s typically a local user account on the Magento server.</p>
+<p>The easiest way to do that is to run this command as the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>. If you have shared hosting, this is the user your provider gives you to log in to the server. If you have a private server, it’s typically a local user account on the Magento server.</p>
 
-  <p>Command usage:</p>
+<p>Command usage:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:show
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:show
+</code></pre></div></div>
 
-  <p>A message similar to the following displays:</p>
+<p>A message similar to the following displays:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current application mode: developer.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current application mode: developer.
+</code></pre></div></div>
 
-  <h2 id="config-mode-change">Change modes</h2>
+<h2 id="config-mode-change">Change modes</h2>
 
-  <p>Command usage:</p>
+<p>Command usage:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set <span class="o">{</span>mode<span class="o">}</span> <span class="o">[</span><span class="nt">-s</span>|--skip-compilation]
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set <span class="o">{</span>mode<span class="o">}</span> <span class="o">[</span><span class="nt">-s</span>|--skip-compilation]
+</code></pre></div></div>
 
-  <p>where:</p>
+<p>where:</p>
 
-  <ul>
-    <li>
-      <p><strong><code class="highlighter-rouge">{mode}</code></strong> is required; it can be either <code class="highlighter-rouge">developer</code> or <code class="highlighter-rouge">production</code></p>
-    </li>
-    <li>
-      <p><strong><code class="highlighter-rouge">--skip-compilation</code></strong> is an optional parameter you can use to skip <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.</p>
-    </li>
-  </ul>
+<ul>
+  <li>
+    <p><strong><code class="highlighter-rouge">{mode}</code></strong> is required; it can be either <code class="highlighter-rouge">developer</code> or <code class="highlighter-rouge">production</code></p>
+  </li>
+  <li>
+    <p><strong><code class="highlighter-rouge">--skip-compilation</code></strong> is an optional parameter you can use to skip <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">code compilation</a> when you change to production mode.</p>
+  </li>
+</ul>
 
-  <p>Examples follow.</p>
+<p>Examples follow.</p>
 
-  <h3 id="change-to-production-mode">Change to production mode</h3>
+<h3 id="change-to-production-mode">Change to production mode</h3>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set production
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set production
+</code></pre></div></div>
 
-  <p>Messages similar to the following display:</p>
+<p>Messages similar to the following display:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enabled maintenance mode
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enabled maintenance mode
 Requested languages: en_US
 === frontend -&gt; Magento/luma -&gt; en_US ===
 ... more ...
@@ -1998,47 +1994,46 @@ Static content deployment complete Gathering css/styles-m.less sources. Successf
 Compilation complete
 Disabled maintenance mode
 Enabled production mode.
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="change-to-developer-mode">Change to developer mode</h3>
+<h3 id="change-to-developer-mode">Change to developer mode</h3>
 
-  <p>When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:</p>
+<p>When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:</p>
 
-  <ol>
-    <li>
-      <p>If you’re changing from production mode to developer mode, delete the contents of the <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">generated/metadata</code> directories:</p>
+<ol>
+  <li>
+    <p>If you’re changing from production mode to developer mode, delete the contents of the <code class="highlighter-rouge">generated/code</code> and <code class="highlighter-rouge">generated/metadata</code> directories:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Set the mode:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;your Magento install dir&gt;/generated/metadata/* &lt;your Magento install dir&gt;/generated/code/*
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Set the mode:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set developer
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set developer
+</code></pre></div>    </div>
 
-      <p>The following message displays:</p>
+    <p>The following message displays:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to developer mode.
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to developer mode.
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h3 id="change-to-default-mode">Change to default mode</h3>
+<h3 id="change-to-default-mode">Change to default mode</h3>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set default
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento deploy:mode:set default
+</code></pre></div></div>
 
-  <p>The following message displays:</p>
+<p>The following message displays:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enabled default mode.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enabled default mode.
+</code></pre></div></div>
 
-  <h3 id="run-magento-cli-commands-from-anywhere">Run Magento CLI commands from anywhere</h3>
-  <p><a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Run Magento CLI commands from anywhere</a>.</p>
+<h3 id="run-magento-cli-commands-from-anywhere">Run Magento CLI commands from anywhere</h3>
+<p><a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Run Magento CLI commands from anywhere</a>.</p>
 
-  <p>If you haven’t added <code class="highlighter-rouge">&lt;magento-install-directory&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>, then you can expect an error when running the Magento command by itself.</p>
-</div>
+<p>If you haven’t added <code class="highlighter-rouge">&lt;magento-install-directory&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>, then you can expect an error when running the Magento command by itself.</p>
 
 			
 		</div>

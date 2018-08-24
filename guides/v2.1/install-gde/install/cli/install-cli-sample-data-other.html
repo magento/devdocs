@@ -2286,74 +2286,68 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
 
-  <h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
+<p>This topic discusses how to:</p>
 
-  <p>This topic discusses how to:</p>
+<ul>
+  <li>
+    <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code class="highlighter-rouge">composer.json</code></p>
 
-  <ul>
-    <li>
-      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code class="highlighter-rouge">composer.json</code></p>
+    <p>This option does <em>not</em> remove sample data from the database.</p>
+  </li>
+  <li>
+    <p><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
+  </li>
+</ul>
 
-      <p>This option does <em>not</em> remove sample data from the database.</p>
-    </li>
-    <li>
-      <p><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
-    </li>
-  </ul>
+<h2 id="sample-first">First steps</h2>
 
-  <h2 id="sample-first">First steps</h2>
+<ol>
+  <li>
+    <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
 
-  <div>
+    <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-    <ol>
-      <li>
-        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre></div>    </div>
 
-        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+    <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre></div>        </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
 
-        <p>If the Magento file system owner does not allow logins you can do the following:</p>
+    <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables">unix.stackexchange.com</a>.</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
+    <p>bash shell example for CentOS:</p>
 
-        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-        <p>bash shell example for CentOS:</p>
+<p class="bs-callout bs-callout-info">You can also run the commands in the following ways:&lt;/p&gt;</p>
+<ul>
+  <li><code class="highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="highlighter-rouge">./magento &lt;command name&gt;</code></li>
+  <li><code class="highlighter-rouge">php &amp;lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code>`</li>
+  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
+</ul>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre></div>        </div>
-      </li>
-    </ol>
+<h2 id="inst-sample-remove">Remove sample data modules</h2>
 
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-  </div>
+<p>Enter the following command:</p>
 
-  <h2 id="inst-sample-remove">Remove sample data modules</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento sampledata:remove
+</code></pre></div></div>
 
-  <p>Enter the following command:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento sampledata:remove 
-</code></pre></div>  </div>
-
-  <!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
+<!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
 
 The complete list of sample data modules follows:
 
-<div markdown="1">
+
 
 Magento Open Source and Magento Commerce:
 
@@ -2389,17 +2383,17 @@ Magento Commerce only:
 *	magento/module-target-rule-sample-data
  -->
 
-  <h2 id="inst-sample-reset">Prepare to update sample data</h2>
+<h2 id="inst-sample-reset">Prepare to update sample data</h2>
 
-  <p>This command enables you to update sample data before you update the Magento application.</p>
+<p>This command enables you to update sample data before you update the Magento application.</p>
 
-  <p>To prepare sample data for updating, enter the following command:</p>
+<p>To prepare sample data for updating, enter the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento sampledata:reset
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento sampledata:reset
+</code></pre></div></div>
 
-  <p>After that, <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
-</div>
+<p>After that, <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
+
 
 			
 		</div>

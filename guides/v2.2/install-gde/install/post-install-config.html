@@ -2300,134 +2300,129 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>cron—the UNIX task scheduler—is critical to Magento’s day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A <em>crontab</em> is a cron configuration.</p>
 
-<div>
+<h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
 
-  <h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
+<p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
 
-  <p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
+<p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
 
-  <p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
+<p>To create the Magento crontab:</p>
 
-  <p>To create the Magento crontab:</p>
+<ol>
+  <li>Log in as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-  <ol>
-    <li>Log in as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-    <li>Change to your Magento installation directory.</li>
-    <li>
-      <p>Enter the following command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
-</code></pre></div>      </div>
-    </li>
-  </ol>
+<p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab.</p>
 
-  <p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab.</p>
+<ul class="bs-callout bs-callout-info">
+  <li><code class="highlighter-rouge">magento cron:install</code> does not rewrite an existing crontab inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</li>
+  <li><code class="highlighter-rouge">magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
+</ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <ul>
-      <li><code class="highlighter-rouge">magento cron:install</code> does not rewrite an existing crontab inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</li>
-      <li><code class="highlighter-rouge">magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
-    </ul>
-  </div>
+<p>To view the crontab, enter the following command as the Magento file system owner:</p>
 
-  <p>To view the crontab, enter the following command as the Magento file system owner:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
-</code></pre></div>  </div>
+<p>A sample follows:</p>
 
-  <p>A sample follows:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/update/cron.php &gt;&gt; /var/www/html/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2/var/log/setup.cron.log
 #~ MAGENTO END
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>For more information about cron, including how to remove a crontab and run cron from the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>.</p>
+<p>For more information about cron, including how to remove a crontab and run cron from the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>.</p>
 
-  <h2 id="post-install-secy">Security settings</h2>
+<h2 id="post-install-secy">Security settings</h2>
 
-  <p>After installation, we recommend the following:</p>
+<p>After installation, we recommend the following:</p>
 
-  <ul>
-    <li>Make sure your file ownership and permissions are set properly</li>
-    <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code class="highlighter-rouge">admin</code> to something else</li>
-    <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code class="highlighter-rouge">X-Frame-Option</code> HTTP header</a> is set properly.</li>
-    <li>Take precautions against cross-site scripting (XSS) by <a href="/guides/v2.2/frontend-dev-guide/templates/template-security.html">securing your templates</a>
+<ul>
+  <li>Make sure your file ownership and permissions are set properly</li>
+  <li>We strongly recommend <a href="/guides/v2.2/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from <code class="highlighter-rouge">admin</code> to something else</li>
+  <li>Make sure the <a href="/guides/v2.2/config-guide/secy/secy-xframe.html"><code class="highlighter-rouge">X-Frame-Option</code> HTTP header</a> is set properly.</li>
+  <li>Take precautions against cross-site scripting (XSS) by <a href="/guides/v2.2/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) --></li>
-  </ul>
+</ul>
 
-  <h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
+<h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
 
-  <p>If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you’ll see pages without styles and other issues.</p>
+<p>If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you’ll see pages without styles and other issues.</p>
 
-  <p><a href="/guides/v2.2/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a></p>
+<p><a href="/guides/v2.2/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a></p>
 
-  <h2 id="config-redis">Caching in a multi-webnode environment</h2>
+<h2 id="config-redis">Caching in a multi-webnode environment</h2>
 
-  <p>If you have multiple webnodes, you <em>cannot</em> use Magento’s default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode’s file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.</p>
+<p>If you have multiple webnodes, you <em>cannot</em> use Magento’s default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode’s file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.</p>
 
-  <p>Instead, use <a href="/guides/v2.2/config-guide/redis/config-redis.html">Redis</a> for both the default   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+<p>Instead, use <a href="/guides/v2.2/config-guide/redis/config-redis.html">Redis</a> for both the default   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and the page cache.</p>
 
-  <h2 id="post-install-server">Server settings</h2>
+<h2 id="post-install-server">Server settings</h2>
 
-  <p>This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.</p>
+<p>This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.</p>
 
-  <h4 id="log-rotation">Log rotation</h4>
+<h4 id="log-rotation">Log rotation</h4>
 
-  <p>The UNIX <code class="highlighter-rouge">logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
+<p>The UNIX <code class="highlighter-rouge">logrotate</code> utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.</p>
 
-  <p>For more information, see one of the following:</p>
+<p>For more information, see one of the following:</p>
 
-  <ul>
-    <li><a href="http://www.thegeekstuff.com/2010/07/logrotate-examples">HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples</a></li>
-    <li><a href="http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app">stackexchange</a></li>
-    <li><a href="http://linuxconfig.org/logrotate-8-manual-page">logrotate man page</a></li>
-  </ul>
+<ul>
+  <li><a href="http://www.thegeekstuff.com/2010/07/logrotate-examples">HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples</a></li>
+  <li><a href="http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app">stackexchange</a></li>
+  <li><a href="http://linuxconfig.org/logrotate-8-manual-page">logrotate man page</a></li>
+</ul>
 
-  <h4 id="set-up-iptables-rules-to-enable-various-magento-services-to-communicate">Set up iptables rules to enable various Magento services to communicate.</h4>
+<h4 id="set-up-iptables-rules-to-enable-various-magento-services-to-communicate">Set up iptables rules to enable various Magento services to communicate.</h4>
 
-  <p>Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with Magento Commerce, you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.</p>
+<p>Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with Magento Commerce, you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.</p>
 
-  <p>More information:</p>
+<p>More information:</p>
 
-  <ul>
-    <li>Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo">Ubuntu documentation page</a>.</li>
-    <li>CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables&quot;&gt;CentOS how-to&lt;/a&gt; and &lt;a href=&quot;http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html">CentOS reference page</a>.</li>
-  </ul>
+<ul>
+  <li>Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo">Ubuntu documentation page</a>.</li>
+  <li>CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables&quot;&gt;CentOS how-to&lt;/a&gt; and &lt;a href=&quot;http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html">CentOS reference page</a>.</li>
+</ul>
 
-  <h4 id="security-enhanced-linux-selinux-rules">Security Enhanced Linux (SELinux) rules</h4>
+<h4 id="security-enhanced-linux-selinux-rules">Security Enhanced Linux (SELinux) rules</h4>
 
-  <p>We don’t recommend whether or not you use SELinux at all; however, if you use it, you must configure Magento services to communicate with each other similar to configuring iptables.</p>
+<p>We don’t recommend whether or not you use SELinux at all; however, if you use it, you must configure Magento services to communicate with each other similar to configuring iptables.</p>
 
-  <p>More information:</p>
+<p>More information:</p>
 
-  <ul>
-    <li>Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html">Debian handbook</a></li>
-    <li>CentOS: <a href="https://wiki.centos.org/HowTos/SELinux">CentOS wiki</a></li>
-  </ul>
+<ul>
+  <li>Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html">Debian handbook</a></li>
+  <li>CentOS: <a href="https://wiki.centos.org/HowTos/SELinux">CentOS wiki</a></li>
+</ul>
 
-  <h4 id="set-up-an-e-mail-server">Set up an e-mail server</h4>
+<h4 id="set-up-an-e-mail-server">Set up an e-mail server</h4>
 
-  <p>Magento requires an e-mail server. We don’t recommend a particular server but you can try any of the following:</p>
+<p>Magento requires an e-mail server. We don’t recommend a particular server but you can try any of the following:</p>
 
-  <ul>
-    <li>Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html">CentOS documentation</a>)</li>
-    <li>Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer">Ubuntu documentation</a>)</li>
-  </ul>
+<ul>
+  <li>Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html">CentOS documentation</a>)</li>
+  <li>Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer">Ubuntu documentation</a>)</li>
+</ul>
 
-  <h2 id="post-install-ee">Settings for Magento Commerce only</h2>
+<h2 id="post-install-ee">Settings for Magento Commerce only</h2>
 
-  <p>You can configure the following only if you use Magento Commerce:</p>
+<p>You can configure the following only if you use Magento Commerce:</p>
 
-  <ul>
-    <li><a href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Elasticsearch</a></li>
-    <li><a href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a></li>
-    <li><a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message queues</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Elasticsearch</a></li>
+  <li><a href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a></li>
+  <li><a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message queues</a></li>
+</ul>
 
 			
 		</div>

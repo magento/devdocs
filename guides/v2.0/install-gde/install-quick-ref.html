@@ -2332,23 +2332,19 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 	<p>Alternatively, you can also download a <a href="/guides/v2.0/install-gde/install/get-software.html">Magento software archive</a>.</p>
 </div>
 
-<div>
+<h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
 
-  <h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
+<p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
 
-  <p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
+<p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
 
-  <p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
+<p class="bs-callout bs-callout-info">If you’re using a Magento version<em>earlier than</em> 2.0.6, see <a href="/guides/v2.0/install-gde/install/legacy-file-system-perms.html">Appendix—Magento file system ownership and appendix (legacy)</a> instead.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're using a Magento version <em>earlier than</em> 2.0.6, see <a href="/guides/v2.0/install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead.</p>
-</div>
+<h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
 
-  <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
+<p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
 
-  <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
-
-  <div class="collapsible">
+<div class="collapsible">
     <b class="collapsible-title">To set ownership and permissions for a one-user system: </b>
     <div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
 
@@ -2398,18 +2394,16 @@ chmod u+x bin/magento
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To further restrict permissions after installing the Magento software, you <a href="/guides/v2.0/install-gde/install/post-install-umask.html">configure a Magento umask</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">To further restrict permissions after installing the Magento software, you <a href="/guides/v2.0/install-gde/install/post-install-umask.html">configure a Magento umask</a>.</p>
 
 </div>
   </div>
 
-  <h2 id="perms-private">Set ownership and permissions for two users</h2>
+<h2 id="perms-private">Set ownership and permissions for two users</h2>
 
-  <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
+<p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
 
-  <div class="collapsible">
+<div class="collapsible">
     <b class="collapsible-title">To set ownership and permissions for a two-user system: </b>
     <div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
 
@@ -2428,9 +2422,7 @@ chmod u+x bin/magento
 
 <p>This section discusses how to create a new Magento file system owner and put that user in the web server’s group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.</p>
 
-<div class="bs-callout bs-callout-info">
-	Skip to <a href="#install-update-depend-user-findgroup">step 2</a> if you plan on using an existing user account.
-</div>
+<p class="bs-callout bs-callout-info">Skip to <a href="#install-update-depend-user-findgroup">step 2</a> if you plan on using an existing user account.</p>
 
 <h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
 
@@ -2448,9 +2440,7 @@ chmod u+x bin/magento
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If you don’t have <code class="highlighter-rouge">root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 
 <p>For example, to create a user named <code class="highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
 
@@ -2458,9 +2448,7 @@ chmod u+x bin/magento
 sudo passwd magento_user
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="&#95;blank">strong password</a>.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength">strong password</a>.</p>
 
 <h3 id="install-update-depend-user-findgroup">Step 2: Find the web server user’s group</h3>
 
@@ -2488,9 +2476,7 @@ sudo passwd magento_user
   <li>Ubuntu: <code class="highlighter-rouge">usermod -a -G www-data &lt;username&gt;</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code class="highlighter-rouge">-a -G</code> options are important because they add <code class="highlighter-rouge">apache</code> or <code class="highlighter-rouge">www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
-</div>
+<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">-a -G</code> options are important because they add <code class="highlighter-rouge">apache</code> or <code class="highlighter-rouge">www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
 
 <p>For example, to add <code class="highlighter-rouge">apache</code> as a secondary group to user <code class="highlighter-rouge">magento_user</code> on CentOS:</p>
 
@@ -2507,9 +2493,7 @@ sudo passwd magento_user
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento_user : magento_user apache
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Typically, the username and primary group name are the same.</p>
-</div>
+<p class="bs-callout bs-callout-info">Typically, the username and primary group name are the same.</p>
 
 <p>To complete the task, restart the web server:</p>
 
@@ -2546,18 +2530,15 @@ chmod u+x bin/magento
   </li>
 </ol>
 
-<div>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
-</code></pre></div>  </div>
+<p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+</code></pre></div></div>
 
 <h3 id="next-step">Next step</h3>
 
@@ -2570,20 +2551,19 @@ chmod u+x bin/magento
 </div>
   </div>
 
-  <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+<h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 
-  <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
+<p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
-  <ul>
-    <li>Ubuntu: <code class="highlighter-rouge">su &lt;username&gt;</code></li>
-    <li>CentOS: <code class="highlighter-rouge">su - &lt;username&gt;</code></li>
-  </ul>
+<ul>
+  <li>Ubuntu: <code class="highlighter-rouge">su &lt;username&gt;</code></li>
+  <li>CentOS: <code class="highlighter-rouge">su - &lt;username&gt;</code></li>
+</ul>
 
-  <p>For example,</p>
+<p>For example,</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user
+</code></pre></div></div>
 
 <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
 

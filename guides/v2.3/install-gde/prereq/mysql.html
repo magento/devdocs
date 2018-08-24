@@ -2368,7 +2368,8 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+</code></pre></div>    </div>
 
     <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
@@ -2429,7 +2430,8 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+</code></pre></div>    </div>
 
     <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
@@ -2493,7 +2495,8 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+</code></pre></div>    </div>
 
     <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
@@ -2632,26 +2635,21 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
   <li>
     <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
 
-    <div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To increase the value, open `/etc/mysql.cnf` in a text editor and add search for `max_allowed_packet`. Set the value to `16M` or larger.
+</code></pre></div>    </div>
 
-      <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql.cnf</code> in a text editor and add search for <code class="highlighter-rouge">max_allowed_packet</code>. Set the value to <code class="highlighter-rouge">16M</code> or larger.</p>
+    <p>If it does not exist, add it before <code class="highlighter-rouge">[mysqld_safe]</code>.</p>
 
-      <p>If it does not exist, add it before <code class="highlighter-rouge">[mysqld_safe]</code>.</p>
+    <p>Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysqld restart</code>).</p>
 
-      <p>Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysqld restart</code>).</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
-</code></pre></div>      </div>
-
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre></div>    </div>
   </li>
-</ol>
-<p>&lt;/div&gt;</p>
-
-<ol>
-  <li>Configure the Magento database instance as discussed in the next section.</li>
+  <li>
+    <p>Configure the Magento database instance as discussed in the next section.</p>
+  </li>
 </ol>
 
 <h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>

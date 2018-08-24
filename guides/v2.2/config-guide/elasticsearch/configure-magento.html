@@ -1877,26 +1877,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html">Magento Commerce User Guide</a>.</p>
 
-  <p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html" target="_blank">Magento Commerce User Guide</a>.</p>
+<p>To configure Magento to use Elasticsearch:</p>
 
-  <p>To configure Magento to use Elasticsearch:</p>
+<ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
+  <li>
+    <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> or <strong>Elasticsearch 5.0+</strong> as the following figure shows. (The <strong>Elasticsearch 5.0+</strong> option is not available for Magento 2.1.)</p>
 
-  <ol>
-    <li>Log in to the Magento Admin as an administrator.</li>
-    <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
-    <li>
-      <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> or <strong>Elasticsearch 5.0+</strong> as the following figure shows. (The <strong>Elasticsearch 5.0+</strong> option is not available for Magento 2.1.)</p>
+    <p><img src="/common/images/elastic_choose-in-admin.png" alt="" width="650px" /></p>
+  </li>
+  <li>
+    <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
 
-      <p><img src="/common/images/elastic_choose-in-admin.png" width="650px" /></p>
-    </li>
-    <li>
-      <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
+    <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
 
-      <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
-
-      <table>
+    <table>
     <tbody>
     <tr><th>Option</th>
     <th>Description</th>
@@ -1921,13 +1919,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tr>
 </tbody>
 </table>
-    </li>
-    <li>Click <strong>Test Connection</strong>.</li>
-  </ol>
+  </li>
+  <li>Click <strong>Test Connection</strong>.</li>
+</ol>
 
-  <p>One of the following displays:</p>
+<p>One of the following displays:</p>
 
-  <table>
+<table>
 <tbody>
 	<tr><th>Result</th>
 	<th>Meaning</th>
@@ -1955,47 +1953,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tbody>
 </table>
 
-  <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+<h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
 
-  <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
+<p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
 
-  <p>To refresh the cache using the Admin:</p>
+<p>To refresh the cache using the Admin:</p>
 
-  <ol>
-    <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
-    <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
-    <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+<ol>
+  <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+  <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
+  <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
     The following figure shows an example.<br />
-    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
-  </ol>
+    <img src="/common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
+</ol>
 
-  <p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
+<p>To clean the cache using the command line, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
 
-  <p>To reindex using the command line:</p>
+<p>To reindex using the command line:</p>
 
-  <ol>
-    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-    <li>
-      <p>Enter any of the following commands:</p>
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Enter any of the following commands:</p>
 
-      <p>Enter the following command to reindex the catalog search index only:</p>
+    <p>Enter the following command to reindex the catalog search index only:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+</code></pre></div>    </div>
 
-      <p>Enter the following command to reindex all indexers:</p>
+    <p>Enter the following command to reindex all indexers:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
-</code></pre></div>      </div>
-    </li>
-    <li>Wait while the reindexing completes.</li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+</code></pre></div>    </div>
+  </li>
+  <li>Wait while the reindexing completes.</li>
+</ol>
 
-  <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
-</div>
+<p class="bs-callout bs-callout-info">Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 
-</div>
 
 			
 		</div>

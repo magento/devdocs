@@ -1885,75 +1885,70 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="debug-logging">Debug logging</h2>
 
-  <h2 id="debug-logging">Debug logging</h2>
+<p>By default, Magento writes debug logs to the <code class="highlighter-rouge">var/log/debug.log</code> file inside the Magento application directory.</p>
 
-  <p>By default, Magento writes debug logs to the <code class="highlighter-rouge">var/log/debug.log</code> file inside the Magento application directory.</p>
+<p>To enable debug logging:</p>
 
-  <p>To enable debug logging:</p>
+<ol>
+  <li>
+    <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">1</code>.</p>
 
-  <ol>
-    <li>
-      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">1</code>.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 1
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Flush the cache.</p>
 
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 1
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Flush the cache.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
-</code></pre></div>      </div>
-    </li>
-  </ol>
+<p>To disable debug logging:</p>
 
-  <p>To disable debug logging:</p>
+<ol>
+  <li>
+    <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">0</code>.</p>
 
-  <ol>
-    <li>
-      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">0</code>.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 0
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Flush the cache.</p>
 
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 0
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Flush the cache.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
-</code></pre></div>      </div>
-    </li>
-  </ol>
+<h2 id="database-logging">Database logging</h2>
 
-  <h2 id="database-logging">Database logging</h2>
+<p>By default, Magento writes database activity logs to the <code class="highlighter-rouge">var/debug/db.log</code> file inside the Magento application directory.</p>
 
-  <p>By default, Magento writes database activity logs to the <code class="highlighter-rouge">var/debug/db.log</code> file inside the Magento application directory.</p>
+<p>To enable database logging:</p>
 
-  <p>To enable database logging:</p>
+<ol>
+  <li>
+    <p>Use the <code class="highlighter-rouge">dev:query-log</code> command to enable or disable database logging.</p>
 
-  <ol>
-    <li>
-      <p>Use the <code class="highlighter-rouge">dev:query-log</code> command to enable or disable database logging.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:enable
+</code></pre></div>    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:disable
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Flush the cache.</p>
 
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:enable
-</code></pre></div>      </div>
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:disable
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Flush the cache.</p>
-
-      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 			
 		</div>

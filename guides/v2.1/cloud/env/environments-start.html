@@ -2336,41 +2336,41 @@ git push origin &lt;branch name&gt;
   <li>
     <p>SSH to the integration environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Find the database login information:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-r</span> <span class="s1">'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'</span>
 </code></pre></div>    </div>
 
     <p>Sample output follows:</p>
 
-    <pre class="no-copy">
-Array
-   (
-      [0] =&gt; stdClass Object
-        (
-           [username] =&gt; user
-           [password] =&gt;
-           [ip] =&gt; 192.0.2.60
-           [host] =&gt; database.internal
-           [query] =&gt; stdClass Object
-              (
-                [is_master] =&gt; 1
-              )
-
-           [path] =&gt; main
-           [scheme] =&gt; mysql
-           [port] =&gt; 3306
-        )
-    )</pre>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Array</span>
+ <span class="p">(</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="k">stdClass</span> <span class="nx">Object</span>
+        <span class="p">(</span>
+           <span class="p">[</span><span class="nx">username</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">user</span>
+           <span class="p">[</span><span class="nx">password</span><span class="p">]</span> <span class="o">=&gt;</span>
+           <span class="p">[</span><span class="nx">ip</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mf">192.0</span><span class="o">.</span><span class="mf">2.60</span>
+           <span class="p">[</span><span class="nx">host</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">database</span><span class="o">.</span><span class="nx">internal</span>
+           <span class="p">[</span><span class="nx">query</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="k">stdClass</span> <span class="nx">Object</span>
+              <span class="p">(</span>
+                <span class="p">[</span><span class="nx">is_master</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+              <span class="p">)</span>
+           <span class="p">[</span><span class="nx">path</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nb">main</span>
+           <span class="p">[</span><span class="nx">scheme</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">mysql</span>
+           <span class="p">[</span><span class="nx">port</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3306</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Use the following command to connect to the database:</p>
 
-    <pre class="no-copy">mysql --host=&lt;host&gt; --user='&lt;database username&gt;' --password='&lt;user password&gt;' --port='&lt;port&gt;' --database='&lt;path&gt;'</pre>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">--host</span><span class="o">=</span>&lt;host&gt; <span class="nt">--user</span><span class="o">=</span><span class="s1">'&lt;database username&gt;'</span> <span class="nt">--password</span><span class="o">=</span><span class="s1">'&lt;user password&gt;'</span> <span class="nt">--port</span><span class="o">=</span><span class="s1">'&lt;port&gt;'</span> <span class="nt">--database</span><span class="o">=</span><span class="s1">'&lt;path&gt;'</span>
+</code></pre></div>    </div>
   </li>
 </ol>
 

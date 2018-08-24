@@ -1506,47 +1506,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 
-<div>
+<p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
 
-  <p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
+<ul>
+  <li>Catalog price rules</li>
+  <li>Newsletters</li>
+  <li>Generating Google sitemaps</li>
+  <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
+  <li>Reindexing</li>
+  <li>Private sales (Magento Commerce only)</li>
+  <li>Automatic updating of currency rates</li>
+  <li>All Magento e-mails (including order confirmation and transactional)</li>
+</ul>
 
-  <ul>
-    <li>Catalog price rules</li>
-    <li>Newsletters</li>
-    <li>Generating Google sitemaps</li>
-    <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
-    <li>Reindexing</li>
-    <li>Private sales (Magento Commerce only)</li>
-    <li>Automatic updating of currency rates</li>
-    <li>All Magento e-mails (including order confirmation and transactional)</li>
-  </ul>
+<p>We recommend you run cron as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>; we also recommend against running cron as the web server user.</p>
 
-  <p>We recommend you run cron as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>; we also recommend against running cron as the web server user.</p>
+<p class="bs-callout bs-callout-warning">You can no longer run <code class="highlighter-rouge">dev/tools/cron.sh</code> because the script has been removed.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won’t function as expected.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won’t function as expected.</p>
-  </div>
+<p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to “run this command at this time on this date”. Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.</p>
 
-  <p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to “run this command at this time on this date”. Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.</p>
+<h2 id="config-cli-cron-group-conf">Configure cron groups</h2>
 
-  <h2 id="config-cli-cron-group-conf">Configure cron groups</h2>
+<p>This section discusses how to optionally create a cron group for a custom module. If you don’t need to do this, continue with the next section.</p>
 
-  <p>This section discusses how to optionally create a cron group for a custom module. If you don’t need to do this, continue with the next section.</p>
+<p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code class="highlighter-rouge">default</code> cron group; some modules use the <code class="highlighter-rouge">index</code> group.</p>
 
-  <p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code class="highlighter-rouge">default</code> cron group; some modules use the <code class="highlighter-rouge">index</code> group.</p>
+<p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code class="highlighter-rouge">default</code> group or a different group.</p>
 
-  <p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code class="highlighter-rouge">default</code> group or a different group.</p>
-
-  <p>To configure a cron group for your module, create a <code class="highlighter-rouge">crontab.xml</code> file in your module directory:
+<p>To configure a cron group for your module, create a <code class="highlighter-rouge">crontab.xml</code> file in your module directory:
 <code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/crontab.xml</code></p>
 
-  <p>For one group, the file should have the following contents:</p>
+<p>For one group, the file should have the following contents:</p>
 
-  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"&lt;group_name&gt;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;&lt;time&gt;&lt;/schedule&gt;</span>
@@ -1554,42 +1548,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-  <p>where:</p>
+<p>where:</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Value</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">group_name</code></td>
-        <td>Name of the cron group. The group name doesn’t have to be unique. You can run cron for one group at a time.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">job_name</code></td>
-        <td>Unique ID for this cron job.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">classpath</code></td>
-        <td>Class to be instantiated (classpath).</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">method</code></td>
-        <td>Method in <code class="highlighter-rouge">classpath</code> to call.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">time</code></td>
-        <td>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>. Omit this parameter if the schedule is defined in the Magento database or other storage.</td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">group_name</code></td>
+      <td>Name of the cron group. The group name doesn’t have to be unique. You can run cron for one group at a time.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">job_name</code></td>
+      <td>Unique ID for this cron job.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">classpath</code></td>
+      <td>Class to be instantiated (classpath).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">method</code></td>
+      <td>Method in <code class="highlighter-rouge">classpath</code> to call.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>. Omit this parameter if the schedule is defined in the Magento database or other storage.</td>
+    </tr>
+  </tbody>
+</table>
 
-  <p>The resulting <code class="highlighter-rouge">crontab.xml</code> with two groups may look like this:</p>
+<p>The resulting <code class="highlighter-rouge">crontab.xml</code> with two groups may look like this:</p>
 
-  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"default"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"&lt;job_1_name&gt;"</span> <span class="na">instance=</span><span class="s">"&lt;classpath&gt;"</span> <span class="na">method=</span><span class="s">"&lt;method_name&gt;"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;schedule&gt;</span>* * * * *<span class="nt">&lt;/schedule&gt;</span>
@@ -1608,18 +1602,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-  <p>As an example, see <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.</p>
+<p>As an example, see <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.</p>
 
-  <h4 id="specify-cron-group-options">Specifying Cron group options</h4>
+<h4 id="specify-cron-group-options">Specifying Cron group options</h4>
 
-  <p>You may declare a new group and specify its configuration options (all of which run in   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
+<p>You may declare a new group and specify its configuration options (all of which run in   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
  scope) via the <code class="highlighter-rouge">cron_groups.xml</code> file, located in:</p>
 
-  <p><code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/cron_groups.xml</code></p>
+<p><code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/module-&lt;name&gt;/etc/cron_groups.xml</code></p>
 
-  <p>Below is an example of the <code class="highlighter-rouge">cron_groups.xml</code> file:</p>
+<p>Below is an example of the <code class="highlighter-rouge">cron_groups.xml</code> file:</p>
 
-  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"&lt;group_name&gt;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;schedule_generate_every&gt;</span>1<span class="nt">&lt;/schedule_generate_every&gt;</span>
         <span class="nt">&lt;schedule_ahead_for&gt;</span>4<span class="nt">&lt;/schedule_ahead_for&gt;</span>
@@ -1631,51 +1625,50 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-  <p>where:</p>
+<p>where:</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Option</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">schedule_generate_every</code></td>
-        <td>Frequency (in minutes) that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">schedule_ahead_for</code></td>
-        <td>Time (in minutes) in advance that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">schedule_lifetime</code></td>
-        <td>Window of time (in minutes) that cron job must start or will be considered missed (“too late” to run).</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">history_cleanup_every</code></td>
-        <td>Time (in minutes) that cron history is kept in the database.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">history_success_lifetime</code></td>
-        <td>Time (in minutes) that the record of successfully completed cron jobs are kept in the database.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">history_failure_lifetime</code></td>
-        <td>Time (in minutes) that the record of failed cron jobs are kept in the database.</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">use_separate_process</code></td>
-        <td>This feature is available only for Magento 2.1 and later.</td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">schedule_generate_every</code></td>
+      <td>Frequency (in minutes) that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">schedule_ahead_for</code></td>
+      <td>Time (in minutes) in advance that schedules are written to the <code class="highlighter-rouge">cron_schedule</code> table.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">schedule_lifetime</code></td>
+      <td>Window of time (in minutes) that cron job must start or will be considered missed (“too late” to run).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">history_cleanup_every</code></td>
+      <td>Time (in minutes) that cron history is kept in the database.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">history_success_lifetime</code></td>
+      <td>Time (in minutes) that the record of successfully completed cron jobs are kept in the database.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">history_failure_lifetime</code></td>
+      <td>Time (in minutes) that the record of failed cron jobs are kept in the database.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">use_separate_process</code></td>
+      <td>This feature is available only for Magento 2.1 and later.</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h4 id="related-topic">Related topic</h4>
-  <p><a href="/guides/v2.0/config-guide/cron/custom-cron-tut.html">Tutorial—configure custom cron jobs and cron groups</a></p>
+<h4 id="related-topic">Related topic</h4>
+<p><a href="/guides/v2.0/config-guide/cron/custom-cron-tut.html">Tutorial—configure custom cron jobs and cron groups</a></p>
 
-</div>
 
 			
 		</div>

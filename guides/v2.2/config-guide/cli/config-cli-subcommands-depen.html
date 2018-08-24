@@ -1877,103 +1877,99 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="overview-of-dependency-reports">Overview of dependency reports</h2>
 
-  <h2 id="overview-of-dependency-reports">Overview of dependency reports</h2>
+<p>You can run the following types of reports:</p>
 
-  <p>You can run the following types of reports:</p>
-
-  <ul>
-    <li><span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover"><strong>Module</strong></span>
+<ul>
+  <li><span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover"><strong>Module</strong></span>
  dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.</li>
-    <li><strong>Circular dependencies:</strong> Shows the total number of dependency chains and the number and list of circular dependencies for each module.</li>
-    <li><strong>Framework dependencies:</strong> Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).</li>
-  </ul>
+  <li><strong>Circular dependencies:</strong> Shows the total number of dependency chains and the number and list of circular dependencies for each module.</li>
+  <li><strong>Framework dependencies:</strong> Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library).</li>
+</ul>
 
-  <p>A dependency in a comment is also a dependency.</p>
+<p>A dependency in a comment is also a dependency.</p>
 
-  <h2 id="run-dependency-reports">Run dependency reports</h2>
+<h2 id="run-dependency-reports">Run dependency reports</h2>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="&lt;path&gt;"] [-o|--output="&lt;path and filename"]
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="&lt;path&gt;"] [-o|--output="&lt;path and filename"]
+</code></pre></div></div>
 
-  <p>The following table explains this command’s options, parameters, and values.</p>
+<p>The following table explains this command’s options, parameters, and values.</p>
 
-  <table style="table-layout:auto;">
-    <thead>
-      <tr>
-        <th>Parameter</th>
-        <th>Value</th>
-        <th>Required?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">show-modules</code></td>
-        <td>Module dependencies report.</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">show-modules-circular</code></td>
-        <td>Circular dependencies report.</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">show-framework</code></td>
-        <td>Framework dependencies report.</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-d --directory</code></td>
-        <td>Path to the base directory to start searching for report data.</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-o --output</code></td>
-        <td>Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report.</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">show-modules</code></td>
+      <td>Module dependencies report.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">show-modules-circular</code></td>
+      <td>Circular dependencies report.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">show-framework</code></td>
+      <td>Framework dependencies report.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-d --directory</code></td>
+      <td>Path to the base directory to start searching for report data.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-o --output</code></td>
+      <td>Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 
-  <p>If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:</p>
+<p>If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:</p>
 
-  <table style="table-layout:auto;">
-    <thead>
-      <tr>
-        <th>Command</th>
-        <th>Filename</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">magento info:dependencies:show-modules</code></td>
-        <td><code class="highlighter-rouge">modules-dependencies.csv</code></td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">magento info:dependencies:show-modules-circular</code></td>
-        <td><code class="highlighter-rouge">modules-circular-dependencies.csv</code></td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">magento info:dependencies:show-framework</code></td>
-        <td><code class="highlighter-rouge">framework-dependencies.csv</code></td>
-      </tr>
-    </tbody>
-  </table>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Filename</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">magento info:dependencies:show-modules</code></td>
+      <td><code class="highlighter-rouge">modules-dependencies.csv</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento info:dependencies:show-modules-circular</code></td>
+      <td><code class="highlighter-rouge">modules-circular-dependencies.csv</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento info:dependencies:show-framework</code></td>
+      <td><code class="highlighter-rouge">framework-dependencies.csv</code></td>
+    </tr>
+  </tbody>
+</table>
 
-  <h3 id="sample-module-dependencies-report">Sample module dependencies report</h3>
+<h3 id="sample-module-dependencies-report">Sample module dependencies report</h3>
 
-  <p>The following is a portion of the output for a sample module dependencies report:</p>
+<p>The following is a portion of the output for a sample module dependencies report:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"","All","Hard","Soft"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"","All","Hard","Soft"
 "Total number of dependencies","602","587","15"
 
 "Dependencies for each module:","All","Hard","Soft"
@@ -1990,13 +1986,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 " -- magento/module-eav","","1","0"
 " -- magento/module-indexer","","1","0"
 " -- magento/module-import-export","","1","0"
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="sample-circular-dependencies-report">Sample circular dependencies report</h3>
+<h3 id="sample-circular-dependencies-report">Sample circular dependencies report</h3>
 
-  <p>The following is a portion of the output for a sample circular dependencies report:</p>
+<p>The following is a portion of the output for a sample circular dependencies report:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Circular dependencies:","Total number of chains"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Circular dependencies:","Total number of chains"
 "","848"
 
 "Circular dependencies for each module:",""
@@ -2015,13 +2011,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 "magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-payment-&gt;magento/module-config"
 "magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-checkout-&gt;magento/module-customer-&gt;magento/module-review-&gt;magento/module-catalog-&gt;magento/module-themeax-&gt;magento/module-config"
 "magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-checkout-&gt;magento/module-customer-&gt;magento/module-review-&gt;magento/module-catalog-&gt;magento/module-catalog-rule-&gt;magento/module-rule-&gt;magento/module-eav-&gt;magento/module-config"
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="sample-framework-dependencies-report">Sample framework dependencies report</h3>
+<h3 id="sample-framework-dependencies-report">Sample framework dependencies report</h3>
 
-  <p>The following is a portion of the output for a sample framework dependencies report:</p>
+<p>The following is a portion of the output for a sample framework dependencies report:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Dependencies of framework:","Total number"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Dependencies of framework:","Total number"
 "","111"
 
 "Dependencies for each module:",""
@@ -2040,8 +2036,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 "Magento\Reports","1"
 " -- Magento\Framework","553"
-</code></pre></div>  </div>
-</div>
+</code></pre></div></div>
 
 			
 		</div>

@@ -1574,44 +1574,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In addition, you can choose the component root directory to start development. The following sections have more information.</p>
 
-<div>
+<h3 id="root-directory-location">Root directory location</h3>
 
-  <h3 id="root-directory-location">Root directory location</h3>
+<p>A component’s root directory matches the component’s name and contains all its subdirectories and files. Based on how you installed Magento, you can put your component’s root directory in one of two places:</p>
 
-  <p>A component’s root directory matches the component’s name and contains all its subdirectories and files. Based on how you installed Magento, you can put your component’s root directory in one of two places:</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can set up this environment by <a href="/guides/v2.3/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
 
-  <ul>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can set up this environment by <a href="/guides/v2.3/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
+    <ul>
+      <li>For modules, use <code class="highlighter-rouge">app/code</code>.</li>
+      <li>For storefront themes, use <code class="highlighter-rouge">app/design/frontend</code>.</li>
+      <li>For Admin themes, use <code class="highlighter-rouge">app/design/adminhtml</code>.</li>
+      <li>For language packages, use <code class="highlighter-rouge">app/i18n</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/vendor</code>: You will find this location for installations that use the <a href="/guides/v2.3/install-gde/composer.html"><code class="highlighter-rouge">composer create-project</code></a> to install the Magento 2 metapackage (which downloads the CE or EE code). You will also find this location if you install Magento by extracting the <a href="/guides/v2.3/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.</p>
+  </li>
+</ul>
 
-      <ul>
-        <li>For modules, use <code class="highlighter-rouge">app/code</code>.</li>
-        <li>For storefront themes, use <code class="highlighter-rouge">app/design/frontend</code>.</li>
-        <li>For Admin themes, use <code class="highlighter-rouge">app/design/adminhtml</code>.</li>
-        <li>For language packages, use <code class="highlighter-rouge">app/i18n</code>.</li>
-      </ul>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/vendor</code>: You will find this location for installations that use the <a href="/guides/v2.3/install-gde/composer.html"><code class="highlighter-rouge">composer create-project</code></a> to install the Magento 2 metapackage (which downloads the CE or EE code). You will also find this location if you install Magento by extracting the <a href="/guides/v2.3/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.</p>
-    </li>
-  </ul>
+<p>Magento installs third-party components in the <code class="highlighter-rouge">vendor</code> directory. But we recommend adding your components to the <code class="highlighter-rouge">app/code</code> directory. If you put your component in the <code class="highlighter-rouge">vendor</code> directory, git will ignore it because Magento adds the <code class="highlighter-rouge">vendor</code> directory to the <code class="highlighter-rouge">.gitignore</code> file.</p>
 
-  <p>Magento installs third-party components in the <code class="highlighter-rouge">vendor</code> directory. But we recommend adding your components to the <code class="highlighter-rouge">app/code</code> directory. If you put your component in the <code class="highlighter-rouge">vendor</code> directory, git will ignore it because Magento adds the <code class="highlighter-rouge">vendor</code> directory to the <code class="highlighter-rouge">.gitignore</code> file.</p>
+<h3 id="required-files">Required files</h3>
 
-  <h3 id="required-files">Required files</h3>
+<p>All components require these three files:</p>
 
-  <p>All components require these three files:</p>
+<ul>
+  <li><code class="highlighter-rouge">registration.php</code>: This file registers your component with Magento. It uses the component’s root directory name as the component name. By default, the composer installs components in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
+  <li><code class="highlighter-rouge">etc/module.xml</code>: This file defines basic information about the component, such as component dependencies and version number. Magento uses the version number to determine which schema and data to update when executing <code class="highlighter-rouge">bin/magento setup:upgrade</code>.</li>
+  <li><code class="highlighter-rouge">composer.json</code>: This file defines the dependencies that the component needs at runtime. For more information, see <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
+</ul>
 
-  <ul>
-    <li><code class="highlighter-rouge">registration.php</code>: This file registers your component with Magento. It uses the component’s root directory name as the component name. By default, the composer installs components in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
-    <li><code class="highlighter-rouge">etc/module.xml</code>: This file defines basic information about the component, such as component dependencies and version number. Magento uses the version number to determine which schema and data to update when executing <code class="highlighter-rouge">bin/magento setup:upgrade</code>.</li>
-    <li><code class="highlighter-rouge">composer.json</code>: This file defines the dependencies that the component needs at runtime. For more information, see <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
-  </ul>
+<h4 id="related-topic">Related topic</h4>
 
-  <h4 id="related-topic">Related topic</h4>
-
-  <p><a href="/guides/v2.3/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></p>
-</div>
+<p><a href="/guides/v2.3/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a></p>
 
 			
 		</div>

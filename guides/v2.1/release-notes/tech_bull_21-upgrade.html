@@ -1122,24 +1122,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">To get the patch: </b>
-    <div class="collapsible-content"><div>
-
-  <table>
-		
+    <div class="collapsible-content"><table>
 <tbody>
-	<tr> 
+	<tr>
 		<th>Magento edition</th>
 		<th>Patch location</th>
 	</tr>
-	<tr> 
+	<tr>
 	<td>Magento Open Source</td>
-	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
+	<td><p><a href="http://www.magento.com/download">www.magento.com/download</a></p>
 		<p>Follow the instructions on your screen to download the desired patch.</p></td>
 	</tr>
-	<tr> 
+	<tr>
 		<td>Magento Commerce merchant portal</td>
 		<td>Use the following steps:
-		<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
+		<ol><li>Go to <a href="http://www.magento.com">www.magento.com</a></li>
 		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
 		<li>Log in with your Magento username and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
@@ -1152,7 +1149,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	<tr>
 		<td>Magento EE partner portal</td>
 		<td>Use the following steps:
-		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
+		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx">partners.magento.com</a></li>
 		<li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Follow the instructions on your screen to download the desired patch.</li>
@@ -1160,7 +1157,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		</tr>
 </tbody>
 </table>
-</div>
 </div>
   </div>
 
@@ -1170,42 +1166,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">To apply the patch: </b>
-    <div class="collapsible-content"><div>
+    <div class="collapsible-content"><p>To apply a patch:</p>
 
-  <p>To apply a patch:</p>
+<ol>
+  <li>Copy the patch file to your Magento installation directory.</li>
+  <li>As the Magento file system owner, use one of the following commands to extract it:</li>
+</ol>
 
-  <ol>
-    <li>Copy the patch file to your Magento installation directory.</li>
-    <li>As the Magento file system owner, use one of the following commands to extract it:</li>
-  </ol>
-
-  <table>
-<tbody>
-<tr> 
-	<th>Patch file format</th>
-	<th>Command to extract</th>
-</tr>
-<tr><td><code>.zip</code></td>
-	<td><code>unzip -o &lt;patch name&gt;.zip</code></td>
-</tr>
-<tr><td><code>.tar.gz</code></td>
-	<td><code>tar -zxf &lt;patch name&gt;.tar.gz</code></td>
-</tr>
-<tr><td><code>.tar.bz2</code></td>
-	<td><code>tar -jxf &lt;patch name&gt;.tar.bz2</code></td>
-</tr>
-</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Patch file format</th>
+      <th>Command to extract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.zip</td>
+      <td><code class="highlighter-rouge">unzip -o &lt;patch name&gt;.zip</code></td>
+    </tr>
+    <tr>
+      <td>.tar.gz</td>
+      <td><code class="highlighter-rouge">tar -zxf &lt;patch name&gt;.tar.gz</code></td>
+    </tr>
+    <tr>
+      <td>.tar.bz2</td>
+      <td><code class="highlighter-rouge">tar -jxf &lt;patch name&gt;.tar.bz2</code></td>
+    </tr>
+  </tbody>
 </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  	<p>If you don't have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>   
-</div>
+<p class="bs-callout bs-callout-info">If you don’t have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>
 
-  <p>For example, to change to the <code class="highlighter-rouge">magento_user</code> and extract <code class="highlighter-rouge">MDVA-532.zip</code> into <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
+<p>For example, to change to the <code class="highlighter-rouge">magento_user</code> and extract <code class="highlighter-rouge">MDVA-532.zip</code> into <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip -o MDVA-532.zip
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip -o MDVA-532.zip
+</code></pre></div></div>
 </div>
   </div>
 
@@ -1369,35 +1365,32 @@ Failure to do so will cause your upgrade to fail.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To get the patch: </b>
-    <div class="collapsible-content"><div>
+    <div class="collapsible-content"><p>You can get a Magento Commerce patch in any of the following ways:</p>
 
-  <p>You can get a Magento Commerce patch in any of the following ways:</p>
+<h4 id="from-the-magento-commerce-merchant-portal">From the Magento Commerce merchant portal</h4>
 
-  <h4 id="from-the-magento-commerce-merchant-portal">From the Magento Commerce merchant portal</h4>
+<p>To get a patch from the Magento Commerce merchant portal:</p>
 
-  <p>To get a patch from the Magento Commerce merchant portal:</p>
+<ol>
+  <li>Go to <a href="http://www.magento.com">www.magento.com</a>.</li>
+  <li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
+  <li>Log in with your Magento username and password.</li>
+  <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+  <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
+  <li>Transfer the patch to your development system.</li>
+</ol>
 
-  <ol>
-    <li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a>.</li>
-    <li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
-    <li>Log in with your Magento username and password.</li>
-    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-    <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
-    <li>Transfer the patch to your development system.</li>
-  </ol>
+<h4 id="from-the-magento-commerce-partner-portal">From the Magento Commerce partner portal</h4>
 
-  <h4 id="from-the-magento-commerce-partner-portal">From the Magento Commerce partner portal</h4>
+<p>To get a patch from the Magento Commerce partner portal:</p>
 
-  <p>To get a patch from the Magento Commerce partner portal:</p>
-
-  <ol>
-    <li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a>.</li>
-    <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
-    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-    <li>Follow the instructions on your screen to download the desired patch.</li>
-    <li>Transfer the patch to your development system.</li>
-  </ol>
-</div>
+<ol>
+  <li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx">partners.magento.com</a>.</li>
+  <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
+  <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+  <li>Follow the instructions on your screen to download the desired patch.</li>
+  <li>Transfer the patch to your development system.</li>
+</ol>
 </div>
   </div>
 
@@ -1407,42 +1400,42 @@ Failure to do so will cause your upgrade to fail.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To apply the patch: </b>
-    <div class="collapsible-content"><div>
+    <div class="collapsible-content"><p>To apply a patch:</p>
 
-  <p>To apply a patch:</p>
+<ol>
+  <li>Copy the patch file to your Magento installation directory.</li>
+  <li>As the Magento file system owner, use one of the following commands to extract it:</li>
+</ol>
 
-  <ol>
-    <li>Copy the patch file to your Magento installation directory.</li>
-    <li>As the Magento file system owner, use one of the following commands to extract it:</li>
-  </ol>
-
-  <table>
-<tbody>
-<tr> 
-	<th>Patch file format</th>
-	<th>Command to extract</th>
-</tr>
-<tr><td><code>.zip</code></td>
-	<td><code>unzip -o &lt;patch name&gt;.zip</code></td>
-</tr>
-<tr><td><code>.tar.gz</code></td>
-	<td><code>tar -zxf &lt;patch name&gt;.tar.gz</code></td>
-</tr>
-<tr><td><code>.tar.bz2</code></td>
-	<td><code>tar -jxf &lt;patch name&gt;.tar.bz2</code></td>
-</tr>
-</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Patch file format</th>
+      <th>Command to extract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.zip</td>
+      <td><code class="highlighter-rouge">unzip -o &lt;patch name&gt;.zip</code></td>
+    </tr>
+    <tr>
+      <td>.tar.gz</td>
+      <td><code class="highlighter-rouge">tar -zxf &lt;patch name&gt;.tar.gz</code></td>
+    </tr>
+    <tr>
+      <td>.tar.bz2</td>
+      <td><code class="highlighter-rouge">tar -jxf &lt;patch name&gt;.tar.bz2</code></td>
+    </tr>
+  </tbody>
 </table>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  	<p>If you don't have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>   
-</div>
+<p class="bs-callout bs-callout-info">If you don’t have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>
 
-  <p>For example, to change to the <code class="highlighter-rouge">magento_user</code> and extract <code class="highlighter-rouge">MDVA-532.zip</code> into <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
+<p>For example, to change to the <code class="highlighter-rouge">magento_user</code> and extract <code class="highlighter-rouge">MDVA-532.zip</code> into <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip MDVA-532.zip
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip MDVA-532.zip
+</code></pre></div></div>
 </div>
   </div>
 

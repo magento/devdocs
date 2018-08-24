@@ -1497,71 +1497,67 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 
-  <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-
-  <p>The static view files deployment command enables you to write   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+<p>The static view files deployment command enables you to write   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  to the Magento file system when the Magento software is set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>.</p>
 
-  <p>The term <em>static view file</em> refers to the following:</p>
+<p>The term <em>static view file</em> refers to the following:</p>
 
-  <ul>
-    <li>“Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
+<ul>
+  <li>“Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  generated from LESS.</li>
-    <li>“View” refers to the presentation layer (from MVC).</li>
-  </ul>
+  <li>“View” refers to the presentation layer (from MVC).</li>
+</ul>
 
-  <p>Static view files are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
+<p>Static view files are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
 
-  <p>Static view file deployment is affected by Magento modes as follows:</p>
+<p>Static view file deployment is affected by Magento modes as follows:</p>
 
-  <ul>
-    <li><strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#default-mode">Default</a></strong> and <strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#developer-mode">developer</a></strong> modes: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
-    <li><strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode">Production</a></strong> mode: Static files are <em>not</em> generated or cached.</li>
-  </ul>
+<ul>
+  <li><strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#default-mode">Default</a></strong> and <strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#developer-mode">developer</a></strong> modes: Magento generates them on demand, but the rest are cached in a file for speed of access.</li>
+  <li><strong><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode">Production</a></strong> mode: Static files are <em>not</em> generated or cached.</li>
+</ul>
 
-  <p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
+<p>You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<div class="bs-callout bs-callout-warning">
+  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
 
-    <p>You can clean generated static view files in several ways. Refer to <a href="/guides/v2.0/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
-  </div>
+  <p>You can clean generated static view files in several ways. Refer to <a href="/guides/v2.0/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">Clean static files cache topic for details</a> for more information.</p>
+</div>
 
-  <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
+<h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 
-  <p>To deploy static view files:</p>
+<p>To deploy static view files:</p>
 
-  <ol>
-    <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+<ol>
+  <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
 .</li>
-    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>.</li>
-    <li>
-      <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
+  <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>.</li>
+  <li>
+    <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-      <div class="bs-callout bs-callout-info" id="info">
-        <p>If you enable static view file merging in the Magento Admin, the <code class="highlighter-rouge">pub/static</code> directory system must be writable.</p>
-      </div>
-    </li>
-  </ol>
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>If you enable static view file merging in the Magento Admin, the <code class="highlighter-rouge">pub/static</code> directory system must be writable.</p>
+    </div>
+  </li>
+</ol>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run]
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run]
+</code></pre></div></div>
 
-  <p>The following table explains this command’s parameters and values.</p>
+<p>The following table explains this command’s parameters and values.</p>
 
-  <table>
+<table>
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -1582,14 +1578,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 	</tbody>
 </table>
 
-  <p>For example, to deploy static view files for the <code class="highlighter-rouge">pt_BR</code> language:</p>
+<p>For example, to deploy static view files for the <code class="highlighter-rouge">pt_BR</code> language:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento --ansi setup:static-content:deploy pt_BR
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento --ansi setup:static-content:deploy pt_BR
+</code></pre></div></div>
 
-  <p>The following are some sample messages that display to indicate successful deployment:</p>
+<p>The following are some sample messages that display to indicate successful deployment:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requested languages: pt_BR
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Requested languages: pt_BR
 === frontend -&gt; Magento/luma -&gt; pt_BR ===
 ... progress indicator ...
 Successful: 1613 files; errors: 0
@@ -1607,68 +1603,67 @@ Successful: 1626 files; errors: 0
 Successful: 858 files modified
 ---
 New version of deployed files: 1430773903
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
-  <p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
+<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+<p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
 
-  <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
+<p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR: You need to install the Magento application before running this utility.
+</code></pre></div></div>
 
-  <p><strong>Solution</strong>:</p>
+<p><strong>Solution</strong>:</p>
 
-  <p>Use the following steps:</p>
+<p>Use the following steps:</p>
 
-  <ol>
-    <li>
-      <p>Install the Magento software in any of the following ways:</p>
+<ol>
+  <li>
+    <p>Install the Magento software in any of the following ways:</p>
 
-      <ul>
-        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
-        <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup wizard</a></li>
-      </ul>
-    </li>
-    <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-    <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
-    <li>
-      <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup wizard</a></li>
+    </ul>
+  </li>
+  <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
+  <li>
+    <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-      <!-- <div class="bs-callout bs-callout-info" id="info">
+    <!-- <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 </div> -->
-    </li>
-  </ol>
+  </li>
+</ol>
 
-  <h2 id="tips-for-developers-customizing-the-static-content-deployment-tool">Tips for developers customizing the static content deployment tool</h2>
+<h2 id="tips-for-developers-customizing-the-static-content-deployment-tool">Tips for developers customizing the static content deployment tool</h2>
 
-  <p>When creating a custom implementation of the   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
+<p>When creating a custom implementation of the   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
  deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content.</p>
 
-  <p>One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see <a href="http://php.net/manual/en/function.fwrite.php" target="\_blank">http://php.net/manual/en/function.fwrite.php</a>.</p>
+<p>One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see <a href="http://php.net/manual/en/function.fwrite.php" target="\_blank">http://php.net/manual/en/function.fwrite.php</a>.</p>
 
-  <p>Please note, that the default Magento implementation of <code class="highlighter-rouge">\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
+<p>Please note, that the default Magento implementation of <code class="highlighter-rouge">\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
 
-  <h2 id="related-topics">Related topics</h2>
+<h2 id="related-topics">Related topics</h2>
 
-  <ul>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+</ul>
 
 			
 		</div>

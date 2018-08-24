@@ -900,59 +900,58 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
   </tbody>
 </table>
 
-<div>
+<p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
 
-  <p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th><code class="highlighter-rouge">block</code> attribute</th>
-        <th>Description</th>
-        <th>Is required</th>
-        <th>Values</th>
-        <th>Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">name</code></td>
-        <td>Name of the block</td>
-        <td>Required</td>
-        <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
-        <td><code class="highlighter-rouge">widgetGrid</code></td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">class</code></td>
-        <td>Full name of the block class</td>
-        <td>Required</td>
-        <td>Class name</td>
-        <td><code class="highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">locator</code></td>
-        <td>CSS selector or XPath locator of the block</td>
-        <td>Required</td>
-        <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
-        <td>CSS: <code class="highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">strategy</code></td>
-        <td>Selector strategy</td>
-        <td>Required</td>
-        <td><code class="highlighter-rouge">css selector</code> or <code class="highlighter-rouge">xpath</code></td>
-        <td><code class="highlighter-rouge">css selector</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
+<table>
+  <thead>
+    <tr>
+      <th><code class="highlighter-rouge">block</code> attribute</th>
+      <th>Description</th>
+      <th>Is required</th>
+      <th>Values</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td>Name of the block</td>
+      <td>Required</td>
+      <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
+      <td><code class="highlighter-rouge">widgetGrid</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">class</code></td>
+      <td>Full name of the block class</td>
+      <td>Required</td>
+      <td>Class name</td>
+      <td><code class="highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">locator</code></td>
+      <td>CSS selector or XPath locator of the block</td>
+      <td>Required</td>
+      <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
+      <td>CSS: <code class="highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">strategy</code></td>
+      <td>Selector strategy</td>
+      <td>Required</td>
+      <td><code class="highlighter-rouge">css selector</code> or <code class="highlighter-rouge">xpath</code></td>
+      <td><code class="highlighter-rouge">css selector</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <p>Also, block can contain a <code class="highlighter-rouge">render</code> node. <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
 
-<p>To apply all changes you've made to the page (XML file), run the class generator.</p>
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
-<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+<p>To apply all changes you’ve made to the page (XML file), run the class generator.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
+</code></pre></div></div>
+
+<p>The page will be updated in the <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
 
 <h2 id="mtf_page_types">Page types</h2>
 

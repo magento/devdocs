@@ -2286,73 +2286,68 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div>
+<h3 id="check-your-existing-crontab">Check your existing crontab</h3>
 
-  <h3 id="check-your-existing-crontab">Check your existing crontab</h3>
+<p>This section discusses how to see if cron is currently running and to verify whether it’s set up properly.</p>
 
-  <p>This section discusses how to see if cron is currently running and to verify whether it’s set up properly.</p>
+<p>To verify whether or not your crontab is set up:</p>
 
-  <p>To verify whether or not your crontab is set up:</p>
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>
+    <p>See if the following file exists:</p>
 
-  <ol>
-    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-    <li>
-      <p>See if the following file exists:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al &lt;your Magento install dir&gt;/var/.setup_cronjob_status
-</code></pre></div>      </div>
+    <p>If the file exists, cron has run successfully in the past. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
+  </li>
+  <li>
+    <p>Get more detail about cron.</p>
 
-      <p>If the file exists, cron has run successfully in the past. If the file <em>does not</em> exist, either you haven’t yet installed Magento or cron isn’t running. In either case, continue with the next step.</p>
-    </li>
-    <li>
-      <p>Get more detail about cron.</p>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following command:</p>
 
-      <p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;Magento file system owner name&gt; -l
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;Magento file system owner name&gt; -l
-</code></pre></div>      </div>
+    <p>For example, on CentOS</p>
 
-      <p>For example, on CentOS</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
-</code></pre></div>      </div>
+    <p>If no crontab has been set up for the user, the following message displays:</p>
 
-      <p>If no crontab has been set up for the user, the following message displays:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no crontab for magento_user
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>no crontab for magento_user
-</code></pre></div>      </div>
+    <p>Your crontab tells you the following:</p>
 
-      <p>Your crontab tells you the following:</p>
+    <ul>
+      <li>What PHP binary you’re using (in some cases, you have more than one)</li>
+      <li>What Magento cron scripts you’re running (in particular, the paths to those scripts)</li>
+      <li>Where your cron logs are located</li>
+    </ul>
 
-      <ul>
-        <li>What PHP binary you’re using (in some cases, you have more than one)</li>
-        <li>What Magento cron scripts you’re running (in particular, the paths to those scripts)</li>
-        <li>Where your cron logs are located</li>
-      </ul>
+    <p>See one of the following sections for a solution to your issue.</p>
+  </li>
+</ol>
 
-      <p>See one of the following sections for a solution to your issue.</p>
-    </li>
-  </ol>
+<h3 id="solution-crontab-not-set-up">Solution: crontab not set up</h3>
 
-  <h3 id="solution-crontab-not-set-up">Solution: crontab not set up</h3>
+<p>To verify your cron jobs are set up properly, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
 
-  <p>To verify your cron jobs are set up properly, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
+<h3 id="solution-cron-running-from-incorrect-php-binary">Solution: cron running from incorrect PHP binary</h3>
 
-  <h3 id="solution-cron-running-from-incorrect-php-binary">Solution: cron running from incorrect PHP binary</h3>
+<p>If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display. To resolve the issue, set identical PHP settings for both the PHP command line and the PHP web server plug-in.</p>
 
-  <p>If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display. To resolve the issue, set identical PHP settings for both the PHP command line and the PHP web server plug-in.</p>
+<p>For more information about PHP settings, see <a href="/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
-  <p>For more information about PHP settings, see <a href="/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
+<h3 id="solution-cron-running-with-errors">Solution: cron running with errors</h3>
 
-  <h3 id="solution-cron-running-with-errors">Solution: cron running with errors</h3>
+<p>Try running each command manually because the command might display helpful error messages. See <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
 
-  <p>Try running each command manually because the command might display helpful error messages. See <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
+<p class="bs-callout bs-callout-info">You must run cron at least <em>twice</em> for the job to execute; the first time to queue jobs, the second time to execute the jobs.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-	<p>You must run cron at least <em>twice</em> for the job to execute; the first time to queue jobs, the second time to execute the jobs.</p>
-</div>
-
-</div>
 
 			
 		</div>

@@ -1497,74 +1497,70 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.0/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 
-  <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+<p>This section discusses the basics of code compilation. Code compilation consists of all of the following (in no particular order):</p>
 
-  <p>This section discusses the basics of code compilation. Code compilation consists of all of the following (in no particular order):</p>
-
-  <ul>
-    <li>Application code generation (factories, proxies, and so on)</li>
-    <li>Area configuration aggregation (that is, optimized   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
+<ul>
+  <li>Application code generation (factories, proxies, and so on)</li>
+  <li>Area configuration aggregation (that is, optimized   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
  configurations per area)</li>
-    <li>Interceptor generation (that is, optimized code generation of interceptors)&lt;/li&gt;</li>
-    <li>Interception   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+  <li>Interceptor generation (that is, optimized code generation of interceptors)&lt;/li&gt;</li>
+  <li>Interception   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  generation</li>
-    <li>Repositories code generation (that is, generated code for APIs)</li>
-    <li>Service data attributes generation (that is, generated   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+  <li>Repositories code generation (that is, generated code for APIs)</li>
+  <li>Service data attributes generation (that is, generated   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  classes for data objects)</li>
-  </ul>
+</ul>
 
-  <p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/2.0/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/2.0/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
 .</p>
 
-  <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
+<h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
 
-  <p>Run the command as follows (there are no options):</p>
+<p>Run the command as follows (there are no options):</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div></div>
 
-  <p>The following message displays to confirm success:</p>
+<p>The following message displays to confirm success:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
+</code></pre></div></div>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you’re preparing to deploy to production, you must use the multi-tenant compiler.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>In Magento versions 2.0.5 and earlier, there is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you’re preparing to deploy to production, you must use the multi-tenant compiler.</p>
 
-    <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
-  </div>
+  <p>The issue was resolved in Magento versions 2.0.6 and later.</p>
+</div>
 
-  <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
+<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 
-  <p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
+<p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
 
-  <ul>
-    <li>There is one Magento 2 code base instance</li>
-    <li>There is one database instance per tenant</li>
-    <li>Independent configurations in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+<ul>
+  <li>There is one Magento 2 code base instance</li>
+  <li>There is one database instance per tenant</li>
+  <li>Independent configurations in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  per tenant</li>
-    <li>The storefronts are independent of each other</li>
-  </ul>
+  <li>The storefronts are independent of each other</li>
+</ul>
 
-  <p>If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.</p>
+<p>If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.</p>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and
 filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>The following table discusses the meanings of this command’s parameters and values.</p>
+<p>The following table discusses the meanings of this command’s parameters and values.</p>
 
-  <table>
+<table>
 	<col width="25%" />
 	<col width="65%" />
 	<col width="10%" />
@@ -1604,14 +1600,14 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 	</tbody>
 </table>
 
-  <p>For example, to run the compiler and specify the <code class="highlighter-rouge">igbinary</code> serializer:</p>
+<p>For example, to run the compiler and specify the <code class="highlighter-rouge">igbinary</code> serializer:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant --serializer=igbinary
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile-multi-tenant --serializer=igbinary
+</code></pre></div></div>
 
-  <p>Messages similar to the following display:</p>
+<p>Messages similar to the following display:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated classes:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated classes:
     Magento\Rss\Controller\Adminhtml\Feed\Interceptor
     Magento\Quote\Model\Quote\Config\Interceptor
     Magento\Checkout\Block\Cart\Shipping\Interceptor
@@ -1631,25 +1627,24 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
     On \*nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory.
     For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user
     (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h4 id="related-topics">Related topics</h4>
+<h4 id="related-topics">Related topics</h4>
 
-  <ul>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+</ul>
 
 			
 		</div>

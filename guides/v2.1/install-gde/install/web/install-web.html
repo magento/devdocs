@@ -2290,83 +2290,92 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p class="bs-callout bs-callout-info">If you chose to enable SELinux, see <a href="/guides/v2.1/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 
-<div>
+<p>This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>.</p>
 
-  <p>This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>.</p>
+<h2 id="instgde-install-prereq">Before you start your installation</h2>
 
-  <h2 id="instgde-install-prereq">Before you start your installation</h2>
+<p>Before you begin, make sure that:</p>
 
-  <p>Before you begin, make sure that:</p>
+<ol>
+  <li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
+  <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
+  <li>After you log in to the Magento server, <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li>
+</ol>
 
-  <ol>
-    <li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
-    <li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
-    <li>After you log in to the Magento server, <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li>
-  </ol>
+<h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
 
-  <h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
+<p>The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.</p>
 
-  <p>The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.</p>
+<p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>
 
-  <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>
-  <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
-  <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
-  <p>Examples:</p>
-  <ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
-	<li>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</li>
-	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
+<p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules.</p>
 
-  <p>Dependencies are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
-  <ul><li><code>A-&gt;B</code> means module A depends on module B.</li>
-	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A-&gt;B-&gt;C</code>.</li></ul>
-  <p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>It's possible that module A's <code>composer.json</code> declares a conflict with module B but not vice versa.</p></span>
-</div>
+<p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
 
-  <p><em>Command line <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional <code>--force</code> argument.</p>
+<p>Examples:</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Using <code>--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
-</div>
+<ul>
+  <li>
+    <p>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</p>
+  </li>
+  <li>
+    <p>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</p>
+  </li>
+  <li>
+    <p>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</p>
+  </li>
+  <li>
+    <p>Dependencies are declared in the <code class="highlighter-rouge">require</code> field in Magento’s <code class="highlighter-rouge">composer.json</code> file for each module. Conflicts are declared in the <code class="highlighter-rouge">conflict</code> field in modules’ <code class="highlighter-rouge">composer.json</code> files. We use that information to build a dependency graph:
+<code class="highlighter-rouge">A-&gt;B</code> means module A depends on module B.</p>
+  </li>
+  <li>
+    <p>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code class="highlighter-rouge">A-&gt;B-&gt;C</code>.</p>
+  </li>
+</ul>
 
-  <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
+<p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
 
-  <p>The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You <em>cannot</em> skip pages, and you must enter all required information on every page before you can proceed to the next page.</p>
+<p class="bs-callout bs-callout-info">It’s possible that module A’s <code class="highlighter-rouge">composer.json</code> declares a conflict with module B but not vice versa.</p>
 
-  <p>In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.</p>
+<p><em>Command line <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional<code class="highlighter-rouge">--force</code> argument.</p>
 
-  <h3 id="instgde-install-magento-web-step0">Getting started</h3>
+<p class="bs-callout bs-callout-info">Using <code class="highlighter-rouge">--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
 
-  <p>To install the Magento software using the Setup Wizard:</p>
+<h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
-  <ol>
-    <li>
-      <p>Start a web browser.</p>
-    </li>
-    <li>
-      <p>Enter the following URL in the browser’s address or location bar:</p>
+<p>The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You <em>cannot</em> skip pages, and you must enter all required information on every page before you can proceed to the next page.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup
-</code></pre></div>      </div>
+<p>In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.</p>
 
-      <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <tt>magento2</tt> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
+<h3 id="instgde-install-magento-web-step0">Getting started</h3>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://192.0.2.10/magento2/setup
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>On the initial page, click <strong>Agree and Set Up Magento</strong>.</p>
-    </li>
-    <li>
-      <p>Continue with the following topics in the order presented to complete the installation.</p>
-    </li>
-  </ol>
+<p>To install the Magento software using the Setup Wizard:</p>
 
-  <h4 id="next-step">Next step</h4>
-  <p><a href="/guides/v2.1/install-gde/install/web/install-web_1-readiness.html">Step 1: Readiness Check</a></p>
-</div>
+<ol>
+  <li>
+    <p>Start a web browser.</p>
+  </li>
+  <li>
+    <p>Enter the following URL in the browser’s address or location bar:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup
+</code></pre></div>    </div>
+
+    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <code class="highlighter-rouge">magento2/</code> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://192.0.2.10/magento2/setup
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On the initial page, click <strong>Agree and Set Up Magento</strong>.</p>
+  </li>
+  <li>
+    <p>Continue with the following topics in the order presented to complete the installation.</p>
+  </li>
+</ol>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.1/install-gde/install/web/install-web_1-readiness.html">Step 1: Readiness Check</a></p>
 
 			
 		</div>

@@ -1005,71 +1005,67 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="checklist">Checklist</h2>
-<div>
+<p>Before you continue, to avoid errors during your installation or update, make sure you verify <em>all</em> of the following:</p>
 
-  <p>Before you continue, to avoid errors during your installation or update, make sure you verify <em>all</em> of the following:</p>
+<ul>
+  <li>You set up a <a href="#magento-owner-group">Magento file system owner</a> and shared that owner’s group with the web server user group</li>
+  <li>Your <a href="#magento-cron">cron jobs</a> are set up and running</li>
+  <li><a href="#perms">File system permissions</a> are set properly</li>
+</ul>
 
-  <ul>
-    <li>You set up a <a href="#magento-owner-group">Magento file system owner</a> and shared that owner’s group with the web server user group</li>
-    <li>Your <a href="#magento-cron">cron jobs</a> are set up and running</li>
-    <li><a href="#perms">File system permissions</a> are set properly</li>
-  </ul>
+<p class="bs-callout bs-callout-warning">Do not continue without performing these checks. Failure to do so could result in errors.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
-</div>
+<h3 id="magento-owner-group">Magento file system owner and group</h3>
 
-  <h3 id="magento-owner-group">Magento file system owner and group</h3>
+<p>The <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> group must have write access to Magento directories and files.</p>
 
-  <p>The <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> group must have write access to Magento directories and files.</p>
+<h3 id="magento-cron">Cron jobs are running</h3>
 
-  <h3 id="magento-cron">Cron jobs are running</h3>
+<p>Magento requires three cron jobs, all running as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
-  <p>Magento requires three cron jobs, all running as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
+<p>To verify your cron jobs are set up properly, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <p>To verify your cron jobs are set up properly, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;magento file system owner&gt; -l
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u &lt;magento file system owner&gt; -l
-</code></pre></div>  </div>
+<p>For example, if your Magento file system owner is named <code class="highlighter-rouge">magento_user</code>, enter:</p>
 
-  <p>For example, if your Magento file system owner is named <code class="highlighter-rouge">magento_user</code>, enter:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -u magento_user -l
-</code></pre></div>  </div>
+<p>Results similar to the following should display:</p>
 
-  <p>Results similar to the following should display:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
+<p>Another symptom of cron not running is the following error in the Magento Admin:</p>
 
-  <p><img src="/common/images/compman-cron-not-running.png" alt="cron isn't running" width="500px" /></p>
+<p><img src="/common/images/compman-cron-not-running.png" alt="cron isn't running" width="500px" /></p>
 
-  <p>To see the error, you might need to click <strong>System Messages</strong> at the top of the window as follows:</p>
+<p>To see the error, you might need to click <strong>System Messages</strong> at the top of the window as follows:</p>
 
-  <p><img src="/common/images/compman_sys-messages.png" alt="System Messages" /></p>
+<p><img src="/common/images/compman_sys-messages.png" alt="System Messages" /></p>
 
-  <p>For details, see <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
+<p>For details, see <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
 
-  <h3 id="perms">File system permissions</h3>
+<h3 id="perms">File system permissions</h3>
 
-  <p>For security reasons, Magento requires certain permissions on the file system. Permissions are different from <a href="#magento-owner-group"><em>ownership</em></a>. Ownership determines <em>who</em> can perform actions on the file system; permissions determine <em>what</em> the user can do.</p>
+<p>For security reasons, Magento requires certain permissions on the file system. Permissions are different from <a href="#magento-owner-group"><em>ownership</em></a>. Ownership determines <em>who</em> can perform actions on the file system; permissions determine <em>what</em> the user can do.</p>
 
-  <p>Directories in the Magento file system must be writable by the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner’s</a> group.</p>
+<p>Directories in the Magento file system must be writable by the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner’s</a> group.</p>
 
-  <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
+<p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
 
-  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2
+</code></pre></div></div>
 
-  <p>A sample result follows:</p>
+<p>A sample result follows:</p>
 
-  <figure class="highlight"><pre><code class="language-xml" data-lang="xml">total 1028
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">total 1028
 drwxrwx---. 12 magento_user apache   4096 Jun  7 07:55 .
 drwxr-xr-x.  3 root         root     4096 May 11 14:29 ..
 drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 app
@@ -1102,17 +1098,17 @@ drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
 drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor</code></pre></figure>
 
-  <p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>. Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
+<p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>. Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
 
-  <p>To get more detailed information, you can optionally enter the following command:</p>
+<p>To get more detailed information, you can optionally enter the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -al /var/www/html/magento2/pub
+</code></pre></div></div>
 
-  <p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
+<p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 
-  <p>For more information, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">File system permissions and ownership</a>.</p>
-</div>
+<p>For more information, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">File system permissions and ownership</a>.</p>
+
 
 			
 		</div>

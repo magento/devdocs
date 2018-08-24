@@ -1912,38 +1912,35 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="install-composer">Install Composer</h3>
 
-<div>
+<p>First, check  if Composer is already installed:</p>
 
-  <p>First, check  if Composer is already installed:</p>
+<p>In a command prompt, enter any of the following commands:</p>
 
-  <p>In a command prompt, enter any of the following commands:</p>
+<ul>
+  <li><code class="highlighter-rouge">composer --help</code></li>
+  <li><code class="highlighter-rouge">composer list --help</code></li>
+</ul>
 
-  <ul>
-    <li><code class="highlighter-rouge">composer --help</code></li>
-    <li><code class="highlighter-rouge">composer list --help</code></li>
-  </ul>
+<p>If command help displays, Composer is already installed.</p>
 
-  <p>If command help displays, Composer is already installed.</p>
+<p>If an error displays, use the following steps to install Composer.</p>
 
-  <p>If an error displays, use the following steps to install Composer.</p>
+<p>To install Composer:</p>
 
-  <p>To install Composer:</p>
+<ol>
+  <li>
+    <p>Change to or create an empty directory on your Magento server.</p>
+  </li>
+  <li>
+    <p>Enter the following commands:</p>
 
-  <ol>
-    <li>
-      <p>Change to or create an empty directory on your Magento server.</p>
-    </li>
-    <li>
-      <p>Enter the following commands:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | php
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
-    </li>
-  </ol>
-</div>
+    <p>For additional installation options, see the <a href="https://getcomposer.org/download/">Composer installation documentation</a>.</p>
+  </li>
+</ol>
 
 <h3 id="install-php">Install PHP</h3>
 

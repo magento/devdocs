@@ -1885,123 +1885,118 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
 
-  <h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
+<p>Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it’s important to decode which to use:</p>
 
-  <p>Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it’s important to decode which to use:</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">memcache</code> (no <em>d</em>), an older but very popular extension that is not maintained regularly. The <code class="highlighter-rouge">memcache</code> extension currently <em>does not</em> work with PHP 7.</p>
 
-  <ul>
-    <li>
-      <p><code class="highlighter-rouge">memcache</code> (no <em>d</em>), an older but very popular extension that is not maintained regularly. The <code class="highlighter-rouge">memcache</code> extension currently <em>does not</em> work with PHP 7.</p>
+    <p><a href="http://php.net/manual/en/book.memcache.php">PHP documentation for memcache</a></p>
 
-      <p><a href="http://php.net/manual/en/book.memcache.php" target="_blank">PHP documentation for memcache</a></p>
+    <p>The exact name is <code class="highlighter-rouge">php5-memcache</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcache</code> for CentOS</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">memcached</code> (with a <code class="highlighter-rouge">d</code>), a newer and maintained extension that should be compatible with PHP 7.</p>
 
-      <p>The exact name is <code class="highlighter-rouge">php5-memcache</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcache</code> for CentOS</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">memcached</code> (with a <code class="highlighter-rouge">d</code>), a newer and maintained extension that should be compatible with PHP 7.</p>
+    <p><a href="http://php.net/memcached">PHP documentation for memcached</a></p>
 
-      <p><a href="http://php.net/memcached" target="_blank">PHP documentation for memcached</a></p>
+    <p>The exact name is <code class="highlighter-rouge">php5-memcached</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcached</code> for CentOS</p>
+  </li>
+</ul>
 
-      <p>The exact name is <code class="highlighter-rouge">php5-memcached</code> for Ubuntu and <code class="highlighter-rouge">php-pecl-memcached</code> for CentOS</p>
-    </li>
-  </ul>
+<p class="bs-callout bs-callout-info">For simplicity, we use the PHP <code class="highlighter-rouge">memcache</code> extension in this guide although we provide examples for both when configuring Magento to use memcache.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>For simplicity, we use the PHP <code>memcache</code> extension in this guide although we provide examples for both when configuring Magento to use memcache.</p></span>
-</div>
+<h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
 
-  <h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
+<p>This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart">memcached wiki</a>.</p>
 
-  <p>This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart">memcached wiki</a>.</p>
+<p class="bs-callout bs-callout-info">We recommend using memcached version 3.0.5 or later.</p>
 
-  <p class="bs-callout bs-callout-info">We recommend using memcached version 3.0.5 or later.</p>
+<p>To install and configure memcached on Ubuntu:</p>
 
-  <p>To install and configure memcached on Ubuntu:</p>
+<ol>
+  <li>
+    <p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following command:</p>
 
-  <ol>
-    <li>
-      <p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following command:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get -y update
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get -y update
 apt-get -y install php5-memcache memcached
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Change the memcached configuration setting for <code class="highlighter-rouge">CACHESIZE</code> and <code class="highlighter-rouge">-l</code>:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Change the memcached configuration setting for <code class="highlighter-rouge">CACHESIZE</code> and <code class="highlighter-rouge">-l</code>:</p>
 
-      <ol>
-        <li>Open <code class="highlighter-rouge">/etc/memcached.conf</code> in a text editor.</li>
-        <li>Locate the <code class="highlighter-rouge">-m</code> parameter.</li>
-        <li>Change its value to at least <code class="highlighter-rouge">1GB</code></li>
-        <li>Locate the <code class="highlighter-rouge">-l</code> parameter.</li>
-        <li>Change its value to <code class="highlighter-rouge">127.0.0.1</code> or <code class="highlighter-rouge">localhost</code></li>
-        <li>Save your changes to <code class="highlighter-rouge">memcached.conf</code> and exit the text editor.</li>
-        <li>
-          <p>Restart memcached.</p>
+    <ol>
+      <li>Open <code class="highlighter-rouge">/etc/memcached.conf</code> in a text editor.</li>
+      <li>Locate the <code class="highlighter-rouge">-m</code> parameter.</li>
+      <li>Change its value to at least <code class="highlighter-rouge">1GB</code></li>
+      <li>Locate the <code class="highlighter-rouge">-l</code> parameter.</li>
+      <li>Change its value to <code class="highlighter-rouge">127.0.0.1</code> or <code class="highlighter-rouge">localhost</code></li>
+      <li>Save your changes to <code class="highlighter-rouge">memcached.conf</code> and exit the text editor.</li>
+      <li>
+        <p>Restart memcached.</p>
 
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service memcached restart
-</code></pre></div>          </div>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <p>Restart your web server.</p>
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service memcached restart
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Restart your web server.</p>
 
-      <p>For Apache, <code class="highlighter-rouge">service apache2 restart</code></p>
-    </li>
-    <li>
-      <p>Continue with the next section.</p>
-    </li>
-  </ol>
+    <p>For Apache, <code class="highlighter-rouge">service apache2 restart</code></p>
+  </li>
+  <li>
+    <p>Continue with the next section.</p>
+  </li>
+</ol>
 
-  <h2 id="config-memcache-verify-its-ub">Verify memcached works before installing Magento</h2>
+<h2 id="config-memcache-verify-its-ub">Verify memcached works before installing Magento</h2>
 
-  <p>We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.</p>
+<p>We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.</p>
 
-  <h3 id="verify-memcached-is-recognized-by-the-web-server">Verify memcached is recognized by the web server</h3>
+<h3 id="verify-memcached-is-recognized-by-the-web-server">Verify memcached is recognized by the web server</h3>
 
-  <p>To verify memcached is recognized by the web server:</p>
+<p>To verify memcached is recognized by the web server:</p>
 
-  <ol>
-    <li>
-      <p>Create a <code class="highlighter-rouge">phpinfo.php</code> file in the web server’s docroot:</p>
+<ol>
+  <li>
+    <p>Create a <code class="highlighter-rouge">phpinfo.php</code> file in the web server’s docroot:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
 
 // Show all information, defaults to INFO_ALL
 phpinfo();
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Go to that page in your web browser.</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Go to that page in your web browser.</p>
 
-      <p>For example, <code class="highlighter-rouge">http://192.0.2.1/phpinfo.php</code></p>
-    </li>
-    <li>
-      <p>Make sure memcached displays as follows:</p>
+    <p>For example, <code class="highlighter-rouge">http://192.0.2.1/phpinfo.php</code></p>
+  </li>
+  <li>
+    <p>Make sure memcached displays as follows:</p>
 
-      <p><img src="/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server" /></p>
+    <p><img src="/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server" /></p>
 
-      <p>Verify you’re using memcached version 3.0.5 or later.</p>
+    <p>Verify you’re using memcached version 3.0.5 or later.</p>
 
-      <p>If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the <code class="highlighter-rouge">php-pecl-memcache</code> extension.</p>
-    </li>
-  </ol>
+    <p>If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the <code class="highlighter-rouge">php-pecl-memcache</code> extension.</p>
+  </li>
+</ol>
 
-  <h3 id="verify-memcached-can-cache-data">Verify memcached can cache data</h3>
+<h3 id="verify-memcached-can-cache-data">Verify memcached can cache data</h3>
 
-  <p>This test uses a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p>This test uses a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  script to verify that memcached can store and retrieve   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  data.</p>
 
-  <p>For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04">this digitalocean tutorial</a>.</p>
+<p>For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04">this digitalocean tutorial</a>.</p>
 
-  <p>Create <code class="highlighter-rouge">cache-test.php</code> in the web server’s docroot with the following contents:</p>
+<p>Create <code class="highlighter-rouge">cache-test.php</code> in the web server’s docroot with the following contents:</p>
 
-  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">class_exists</span><span class="p">(</span><span class="s1">'Memcache'</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$meminstance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcached</span><span class="p">();</span>
@@ -2017,31 +2012,31 @@ phpinfo();
     <span class="k">echo</span> <span class="s2">"No matching key found.  Refresh the browser to add it!"</span><span class="p">;</span>
     <span class="nv">$meminstance</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span> <span class="s2">"Successfully retrieved the data!"</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">"Couldn't save anything to memcached..."</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>where <code class="highlighter-rouge">&lt;memcache hostname or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache hostname or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
+<p>where <code class="highlighter-rouge">&lt;memcache hostname or ip&gt;</code> is either <code class="highlighter-rouge">localhost</code>, <code class="highlighter-rouge">127.0.0.1</code>, or the memcache hostname or IP address. <code class="highlighter-rouge">&lt;memcache port&gt;</code> is its listen port; by default, <code class="highlighter-rouge">11211</code>.</p>
 
-  <p>Go to that page in a web browser.</p>
+<p>Go to that page in a web browser.</p>
 
-  <p>For example, <code class="highlighter-rouge">http://192.0.2.1/cache-test.php</code></p>
+<p>For example, <code class="highlighter-rouge">http://192.0.2.1/cache-test.php</code></p>
 
-  <p>The first time you go to the page, the following displays: <code class="highlighter-rouge">No matching key found. Refresh the browser to add it!</code></p>
+<p>The first time you go to the page, the following displays: <code class="highlighter-rouge">No matching key found. Refresh the browser to add it!</code></p>
 
-  <p>Refresh the browser. The message changes to <code class="highlighter-rouge">Successfully retrieved the data!</code></p>
+<p>Refresh the browser. The message changes to <code class="highlighter-rouge">Successfully retrieved the data!</code></p>
 
-  <p>Finally, you can view the memcache keys using Telnet:</p>
+<p>Finally, you can view the memcache keys using Telnet:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>telnet localhost &lt;memcache port&gt;
+</code></pre></div></div>
 
-  <p>At the prompt, enter</p>
+<p>At the prompt, enter</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stats items
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stats items
+</code></pre></div></div>
 
-  <p>The result is similar to the following:</p>
+<p>The result is similar to the following:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STAT items:2:number 1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STAT items:2:number 1
 STAT items:2:age 106
 STAT items:2:evicted 0
 STAT items:2:evicted_nonzero 0
@@ -2051,20 +2046,19 @@ STAT items:2:tailrepairs 0
 STAT items:2:reclaimed 0
 STAT items:2:expired_unfetched 0
 STAT items:2:evicted_unfetched 0
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Flush memcache storage and quit Telnet:</p>
+<p>Flush memcache storage and quit Telnet:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flush_all
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flush_all
 quit
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/">Additional information about the Telnet test</a></p>
+<p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/">Additional information about the Telnet test</a></p>
 
-  <h4 id="next-step">Next step</h4>
+<h4 id="next-step">Next step</h4>
 
-  <p><a href="/guides/v2.3/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
-</div>
+<p><a href="/guides/v2.3/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
 
 			
 		</div>

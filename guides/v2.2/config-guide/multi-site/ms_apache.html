@@ -1978,45 +1978,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
 <h2 id="ms-apache-verify">Verify your site</h2>
-<div>
+<p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code class="highlighter-rouge">hosts</code> file:</p>
 
-  <p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code class="highlighter-rouge">hosts</code> file:</p>
+<ol>
+  <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system"><code class="highlighter-rouge">hosts</code> file</a>.</li>
+  <li>
+    <p>Add the static route in the format:</p>
 
-  <ol>
-    <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system" target="_blank"><code class="highlighter-rouge">hosts</code> file</a>.</li>
-    <li>
-      <p>Add the static route in the format:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ip address&gt; french.mysite.mg
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ip address&gt; french.mysite.mg
 &lt;ip address&gt; german.mysite.mg
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Go to one of the following URLs in your browser:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Go to one of the following URLs in your browser:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mysite.mg/admin
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mysite.mg/admin
 http://french.mysite.mg/frenchstoreview
 http://german.mysite.mg/germanstoreview
-</code></pre></div>      </div>
-    </li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>You’re done!</p>
+<p>You’re done!</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
-    <li>Additional tasks are required to set up Magento Commerce Cloud; for more information, see <a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
-</div>
+<ul class="bs-callout bs-callout-info">
+  <li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
+  <li>Additional tasks are required to set up Magento Commerce Cloud; for more information, see <a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+</ul>
 
-  <h3 id="troubleshooting">Troubleshooting</h3>
+<h3 id="troubleshooting">Troubleshooting</h3>
 
-  <ul>
-    <li>If your French and German sites return 404s but your Admin loads, make sure you completed <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl">Step 6: Add the store code to the base URL</a>.</li>
-    <li>If all URLs return 404s, make sure you restarted your web server.</li>
-    <li>If the Magento Admin doesn’t function properly, make sure you set up your virtual hosts properly.</li>
-  </ul>
+<ul>
+  <li>If your French and German sites return 404s but your Admin loads, make sure you completed <a href="/guides/v2.2/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl">Step 6: Add the store code to the base URL</a>.</li>
+  <li>If all URLs return 404s, make sure you restarted your web server.</li>
+  <li>If the Magento Admin doesn’t function properly, make sure you set up your virtual hosts properly.</li>
+</ul>
 
-</div>
 
 			
 		</div>

@@ -1885,115 +1885,111 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
-
-  <p>When you set up a production system using the Magento 2.2 <a href="/guides/v2.3/config-guide/deployment/pipeline/">pipeline deployment model</a>, you must <em>import</em> configuration settings from <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> into the database.
+<p>When you set up a production system using the Magento 2.2 <a href="/guides/v2.3/config-guide/deployment/pipeline/">pipeline deployment model</a>, you must <em>import</em> configuration settings from <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> into the database.
 These settings include configuration paths and values, websites, stores, store views, and themes.</p>
 
-  <p>After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.</p>
+<p>After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.</p>
 
-  <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">bin/magento app:config:import</code> command does not process configuration stored in environment variables.</p>
+<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">bin/magento app:config:import</code> command does not process configuration stored in environment variables.</p>
 
-  <h2 id="import-configuration-data">Import configuration data</h2>
+<h2 id="import-configuration-data">Import configuration data</h2>
 
-  <p>On your production system, run the following command to import data from the configuration files (<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code>) to the database:</p>
+<p>On your production system, run the following command to import data from the configuration files (<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code>) to the database:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:import [-n, --no-interaction]
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:import [-n, --no-interaction]
+</code></pre></div></div>
 
-  <p>Use the optional <code class="highlighter-rouge">[-n, --no-interaction]</code> flag to import data without any interaction.</p>
+<p>Use the optional <code class="highlighter-rouge">[-n, --no-interaction]</code> flag to import data without any interaction.</p>
 
-  <p>If you enter <code class="highlighter-rouge">bin/magento app:config:import</code> without the optional flag, you’re required to confirm the changes.</p>
+<p>If you enter <code class="highlighter-rouge">bin/magento app:config:import</code> without the optional flag, you’re required to confirm the changes.</p>
 
-  <p>For example, if configuration file contains one new   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+<p>For example, if configuration file contains one new   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
  and one new store, the following  message is displayed:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>These Websites will be created: New Website
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>These Websites will be created: New Website
 These Groups will be created: New Store
 Do you want to continue [yes/no]?
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>To continue the import, enter <code class="highlighter-rouge">yes</code>.</p>
+<p>To continue the import, enter <code class="highlighter-rouge">yes</code>.</p>
 
-  <p>If deployment configuration files contain some data to import, a message similar to the following is displayed:</p>
+<p>If deployment configuration files contain some data to import, a message similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
 Some information about importing
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>If deployment configuration files do not contain any data to import, a message similar to the following is displayed:</p>
+<p>If deployment configuration files do not contain any data to import, a message similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start import:
 Nothing to import
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h2 id="what-we-import">What we import</h2>
+<h2 id="what-we-import">What we import</h2>
 
-  <p>The following sections discuss in detail what data we import.</p>
+<p>The following sections discuss in detail what data we import.</p>
 
-  <h3 id="system-configuration">System configuration</h3>
+<h3 id="system-configuration">System configuration</h3>
 
-  <p>Magento directly uses values in the <code class="highlighter-rouge">system</code> array in the <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> files instead of importing them into the database because they require some pre- and post-processing actions.</p>
+<p>Magento directly uses values in the <code class="highlighter-rouge">system</code> array in the <code class="highlighter-rouge">config.php</code> or <code class="highlighter-rouge">env.php</code> files instead of importing them into the database because they require some pre- and post-processing actions.</p>
 
-  <p>For example, the value of the configuration path <code class="highlighter-rouge">web/secure/base_url</code> must be validated with   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
+<p>For example, the value of the configuration path <code class="highlighter-rouge">web/secure/base_url</code> must be validated with   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
  models.</p>
 
-  <h4 id="backend-models">Backend models</h4>
+<h4 id="backend-models">Backend models</h4>
 
-  <p>Backend models are the mechanism for processing changes in system configuration.
+<p>Backend models are the mechanism for processing changes in system configuration.
 You define backend modules in <code class="highlighter-rouge">&lt;module_name&gt;/adminhtml/system.xml</code>.</p>
 
-  <p>All backend models must extend the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Config/Value.php"><code class="highlighter-rouge">Magento\Framework\App\Config\Value</code></a> class.</p>
+<p>All backend models must extend the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Config/Value.php"><code class="highlighter-rouge">Magento\Framework\App\Config\Value</code></a> class.</p>
 
-  <p>When we import backend models, we don’t save the configuration values.</p>
+<p>When we import backend models, we don’t save the configuration values.</p>
 
-  <h3 id="websites-stores-and-store-groups-configuration">Websites, stores, and store groups configuration</h3>
+<h3 id="websites-stores-and-store-groups-configuration">Websites, stores, and store groups configuration</h3>
 
-  <p>We import the following types of configurations.
+<p>We import the following types of configurations.
 (These configurations are under the <code class="highlighter-rouge">scopes</code> array in <code class="highlighter-rouge">config.php</code>.)</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">websites</code>: websites related configuration</li>
-    <li><code class="highlighter-rouge">groups</code>: stores related configuration</li>
-    <li><code class="highlighter-rouge">stores</code>: store views related configuration</li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">websites</code>: websites related configuration</li>
+  <li><code class="highlighter-rouge">groups</code>: stores related configuration</li>
+  <li><code class="highlighter-rouge">stores</code>: store views related configuration</li>
+</ul>
 
-  <p>The preceding configurations can be imported in the following modes:</p>
+<p>The preceding configurations can be imported in the following modes:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">create</code>: <code class="highlighter-rouge">config.php</code> contains new entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are absent in the production environment</li>
-    <li><code class="highlighter-rouge">update</code>: <code class="highlighter-rouge">config.php</code> contains entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are different from the production environment</li>
-    <li><code class="highlighter-rouge">delete</code>: <code class="highlighter-rouge">config.php</code> does <em>not</em> contain entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are present on production environment</li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">create</code>: <code class="highlighter-rouge">config.php</code> contains new entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are absent in the production environment</li>
+  <li><code class="highlighter-rouge">update</code>: <code class="highlighter-rouge">config.php</code> contains entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are different from the production environment</li>
+  <li><code class="highlighter-rouge">delete</code>: <code class="highlighter-rouge">config.php</code> does <em>not</em> contain entities (<code class="highlighter-rouge">websites</code>, <code class="highlighter-rouge">groups</code>, <code class="highlighter-rouge">stores</code>) that are present on production environment</li>
+</ul>
 
-  <p class="bs-callout bs-callout-info">We don’t import the root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+<p class="bs-callout bs-callout-info">We don’t import the root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  associated with stores. You must associate a root category with a store using the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 .</p>
 
-  <h3 id="theme-configuration">Theme configuration</h3>
+<h3 id="theme-configuration">Theme configuration</h3>
 
-  <p>Theme configuration includes all themes registered in your Magento system; the data comes directly from the <code class="highlighter-rouge">theme</code> database table.
+<p>Theme configuration includes all themes registered in your Magento system; the data comes directly from the <code class="highlighter-rouge">theme</code> database table.
 (Theme configuration is in the <code class="highlighter-rouge">themes</code> array in <code class="highlighter-rouge">config.php</code>.)</p>
 
-  <h4 id="structure-of-theme-data">Structure of theme data</h4>
+<h4 id="structure-of-theme-data">Structure of theme data</h4>
 
-  <p>The key of array is full theme path: <code class="highlighter-rouge">area</code> + <code class="highlighter-rouge">theme path</code></p>
+<p>The key of array is full theme path: <code class="highlighter-rouge">area</code> + <code class="highlighter-rouge">theme path</code></p>
 
-  <p>For example, <code class="highlighter-rouge">frontend/Magento/luma</code>.
+<p>For example, <code class="highlighter-rouge">frontend/Magento/luma</code>.
 <code class="highlighter-rouge">frontend</code> is area and <code class="highlighter-rouge">Magento/luma</code> is   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  path.</p>
 
-  <p>The value of array is data about theme: code, title, path, parent id and etc.</p>
+<p>The value of array is data about theme: code, title, path, parent id and etc.</p>
 
-  <p>Full example:</p>
+<p>Full example:</p>
 
-  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'frontend/Magento/luma'</span> <span class="o">=&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'frontend/Magento/luma'</span> <span class="o">=&gt;</span>
    <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'parent_id'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/blank'</span><span class="p">,</span>
       <span class="s1">'theme_path'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/luma'</span><span class="p">,</span>
@@ -2003,20 +1999,19 @@ You define backend modules in <code class="highlighter-rouge">&lt;module_name&gt
       <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
       <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'Magento/luma'</span><span class="p">,</span>
 <span class="p">),</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <ul class="bs-callout bs-callout-info">
-    <li><em>Theme registration</em>. If a theme data is defined in <code class="highlighter-rouge">config.php</code> but the theme’s source code is  not present in the file system, the theme is ignored (that is, not registered).</li>
-    <li><em>Theme removal</em>. If a theme is not present in <code class="highlighter-rouge">config.php</code> but the source code is present on the file system, the theme is not removed.</li>
-  </ul>
+<ul class="bs-callout bs-callout-info">
+  <li><em>Theme registration</em>. If a theme data is defined in <code class="highlighter-rouge">config.php</code> but the theme’s source code is  not present in the file system, the theme is ignored (that is, not registered).</li>
+  <li><em>Theme removal</em>. If a theme is not present in <code class="highlighter-rouge">config.php</code> but the source code is present on the file system, the theme is not removed.</li>
+</ul>
 
-  <h4 id="for-more-information">For more information</h4>
+<h4 id="for-more-information">For more information</h4>
 
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/deployment/pipeline/">Deployment general overview</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">bin/magento app:config:dump</code></a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.3/config-guide/deployment/pipeline/">Deployment general overview</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">bin/magento app:config:dump</code></a></li>
+</ul>
 
 			
 		</div>

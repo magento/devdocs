@@ -1885,215 +1885,211 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="overview-of-translations">Overview of translations</h2>
 
-  <h2 id="overview-of-translations">Overview of translations</h2>
+<p>Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced the amount of code coupling and duplication.</p>
 
-  <p>Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced the amount of code coupling and duplication.</p>
+<p>This topic discusses how to generate:</p>
 
-  <p>This topic discusses how to generate:</p>
-
-  <ul>
-    <li>Translation dictionaries, which are a convenient way to translate <em>some</em> words and phrases, such as those for a custom   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<ul>
+  <li>Translation dictionaries, which are a convenient way to translate <em>some</em> words and phrases, such as those for a custom   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  or   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
 .</li>
-    <li>Language packages, which enable you to translate <em>any or all</em> words and phrases in the Magento application.</li>
-  </ul>
+  <li>Language packages, which enable you to translate <em>any or all</em> words and phrases in the Magento application.</li>
+</ul>
 
-  <p>For more information, see <a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html">Translation</a>.</p>
+<p>For more information, see <a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html">Translation</a>.</p>
 
-  <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
+<h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
 
-  <p>You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
+<p>You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
 . See one of the following sections:</p>
 
-  <ul>
-    <li><a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a></li>
-    <li><a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a></li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a></li>
+  <li><a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a></li>
+</ul>
 
-  <h3 id="config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</h3>
+<h3 id="config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</h3>
 
-  <p>To translate words and phrases, you must:</p>
+<p>To translate words and phrases, you must:</p>
 
-  <ol>
-    <li>Run the translation collection command to extract translatable words and phrases from enabled components.</li>
-    <li>Translate the words and phrases.</li>
-  </ol>
+<ol>
+  <li>Run the translation collection command to extract translatable words and phrases from enabled components.</li>
+  <li>Translate the words and phrases.</li>
+</ol>
 
-  <p>After that:</p>
+<p>After that:</p>
 
-  <ol>
-    <li>
-      <p>You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.</p>
-    </li>
-    <li>
-      <p>In the Magento Admin, the store administrator <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation">configures the translations</a>.</p>
-    </li>
-  </ol>
+<ol>
+  <li>
+    <p>You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.</p>
+  </li>
+  <li>
+    <p>In the Magento Admin, the store administrator <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation">configures the translations</a>.</p>
+  </li>
+</ol>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases [-o|--output="&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
+</code></pre></div></div>
 
-  <p>The following table explains this command’s parameters and values:</p>
+<p>The following table explains this command’s parameters and values:</p>
 
-  <table style="table-layout:auto;">
-    <thead>
-      <tr>
-        <th>Parameter</th>
-        <th>Value</th>
-        <th>Required?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">&lt;path to directory to translate&gt;</code></td>
-        <td>Path to a directory that has translatable code; in other words, PHP, PHTML, or XML files that have phrases to translate.<br /><br />The tool starts searching at the path you enter and searches all files and subdirectories it contains.<br /><br />Do not use this parameter if you use <code class="highlighter-rouge">-m --magento</code>.</td>
-        <td>Yes (dictionaries), no (packages).</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-m --magento</code></td>
-        <td>Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br /><br />A sample follows:<br /><br />“No Items Found”,”No Items Found”,module,Magento_Wishlist</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-o --output="&lt;path&gt;"</code></td>
-        <td>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters’ case.<br /><br />If you omit this parameter, the output is directed to stdout.</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;path to directory to translate&gt;</code></td>
+      <td>Path to a directory that has translatable code; in other words, PHP, PHTML, or XML files that have phrases to translate.<br /><br />The tool starts searching at the path you enter and searches all files and subdirectories it contains.<br /><br />Do not use this parameter if you use <code class="highlighter-rouge">-m --magento</code>.</td>
+      <td>Yes (dictionaries), no (packages).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-m --magento</code></td>
+      <td>Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br /><br />A sample follows:<br /><br />“No Items Found”,”No Items Found”,module,Magento_Wishlist</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-o --output="&lt;path&gt;"</code></td>
+      <td>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters’ case.<br /><br />If you omit this parameter, the output is directed to stdout.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 
-  <p>To create a language pack from a translation dictionary, you <em>must</em> use the <code class="highlighter-rouge">-m|--magento</code> option.</p>
+<p>To create a language pack from a translation dictionary, you <em>must</em> use the <code class="highlighter-rouge">-m|--magento</code> option.</p>
 
-  <h3 id="config-cli-subcommands-xlate-dict-trans">Translation guidelines</h3>
+<h3 id="config-cli-subcommands-xlate-dict-trans">Translation guidelines</h3>
 
-  <p>Use the following guidelines when translating words and phrases:</p>
+<p>Use the following guidelines when translating words and phrases:</p>
 
-  <ul>
-    <li>Change the contents of the second column only. Translate the phrases from English (<code class="highlighter-rouge">US</code>) to the desired language.</li>
-    <li>
-      <p>While translating, pay attention to placeholders like <code class="highlighter-rouge">%1</code>, <code class="highlighter-rouge">%2</code> and so on.</p>
+<ul>
+  <li>Change the contents of the second column only. Translate the phrases from English (<code class="highlighter-rouge">US</code>) to the desired language.</li>
+  <li>
+    <p>While translating, pay attention to placeholders like <code class="highlighter-rouge">%1</code>, <code class="highlighter-rouge">%2</code> and so on.</p>
 
-      <p>They are used by the Magento application to insert context values; they are <em>not</em> used for translations. For example:</p>
+    <p>They are used by the Magento application to insert context values; they are <em>not</em> used for translations. For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Product '%1' has been added to shopping cart.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Product '%1' has been added to shopping cart.
 -&gt;
 Product 'Multimeter-2000' has been added to shopping cart.
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>The resulting phrase must contain at least one of each placeholder. For example, suppose there are placeholders from <code class="highlighter-rouge">%1</code> to <code class="highlighter-rouge">%3</code> in the original phrase. The translation can have as many of these placeholders in any order, but there must be at least one occurrence of <code class="highlighter-rouge">%1</code>, <code class="highlighter-rouge">%2</code>, or <code class="highlighter-rouge">%3</code>. The translation cannot contain placeholder values not present in the original value (for example, <code class="highlighter-rouge">%4</code>, <code class="highlighter-rouge">%5</code>, and so on).</p>
+    <p>The resulting phrase must contain at least one of each placeholder. For example, suppose there are placeholders from <code class="highlighter-rouge">%1</code> to <code class="highlighter-rouge">%3</code> in the original phrase. The translation can have as many of these placeholders in any order, but there must be at least one occurrence of <code class="highlighter-rouge">%1</code>, <code class="highlighter-rouge">%2</code>, or <code class="highlighter-rouge">%3</code>. The translation cannot contain placeholder values not present in the original value (for example, <code class="highlighter-rouge">%4</code>, <code class="highlighter-rouge">%5</code>, and so on).</p>
 
-      <p>An example of translating a phrase:</p>
+    <p>An example of translating a phrase:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
-</code></pre></div>      </div>
-    </li>
-  </ul>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-  <h2 id="config-cli-subcommands-xlate-pack">Create a language package</h2>
+<h2 id="config-cli-subcommands-xlate-pack">Create a language package</h2>
 
-  <p>As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component—like a module or a theme—using a translation dictionary.) <a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.</p>
+<p>As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component—like a module or a theme—using a translation dictionary.) <a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.</p>
 
-  <p>This section discusses how to create a language package, which writes <code class="highlighter-rouge">.csv</code> files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:</p>
+<p>This section discusses how to create a language package, which writes <code class="highlighter-rouge">.csv</code> files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:</p>
 
-  <ol>
-    <li>
-      <p><a href="#config-cli-subcommands-xlate-dict">Collect and translate words and phrases</a>.</p>
+<ol>
+  <li>
+    <p><a href="#config-cli-subcommands-xlate-dict">Collect and translate words and phrases</a>.</p>
 
-      <p>(The <code class="highlighter-rouge">--magento</code> parameter is required.)</p>
-    </li>
-    <li><a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.</li>
-    <li><a href="#m2devgde-xlate-files">Create directories and files</a>.</li>
-    <li>(Optional.) <a href="#m2devgde-xlate-severalpacks">Configure multiple packages for a language</a>.</li>
-  </ol>
+    <p>(The <code class="highlighter-rouge">--magento</code> parameter is required.)</p>
+  </li>
+  <li><a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.</li>
+  <li><a href="#m2devgde-xlate-files">Create directories and files</a>.</li>
+  <li>(Optional.) <a href="#m2devgde-xlate-severalpacks">Configure multiple packages for a language</a>.</li>
+</ol>
 
-  <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
+<h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 
-  <p>Command usage:</p>
+<p>Command usage:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
+</code></pre></div></div>
 
-  <p>The following table explains this command’s parameters and values:</p>
+<p>The following table explains this command’s parameters and values:</p>
 
-  <table style="table-layout:auto;">
-    <thead>
-      <tr>
-        <th>Parameter</th>
-        <th>Value</th>
-        <th>Required?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code class="highlighter-rouge">&lt;source&gt;</code></td>
-        <td>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.<br /><br />Use <a href="#config-cli-subcommands-xlate-dict-dict"><code class="highlighter-rouge">bin/magento i18n:collect-phrases</code></a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>.</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">&lt;locale&gt;</code></td>
-        <td><a href="http://www.iso.org/iso/home/standards/language_codes.htm">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code class="highlighter-rouge">de_DE</code>, <code class="highlighter-rouge">pt_PT</code>, <code class="highlighter-rouge">pt_BR</code>.</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-m --mode</code></td>
-        <td>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. <br /><br />Values: merge or replace (the default).</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td><code class="highlighter-rouge">-d --allow-duplicates</code></td>
-        <td>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;source&gt;</code></td>
+      <td>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.<br /><br />Use <a href="#config-cli-subcommands-xlate-dict-dict"><code class="highlighter-rouge">bin/magento i18n:collect-phrases</code></a> to create the .csv file then create the language package as discussed in <a href="#m2devgde-xlate-files">Create directories and files</a>.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;locale&gt;</code></td>
+      <td><a href="http://www.iso.org/iso/home/standards/language_codes.htm">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code class="highlighter-rouge">de_DE</code>, <code class="highlighter-rouge">pt_PT</code>, <code class="highlighter-rouge">pt_BR</code>.</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-m --mode</code></td>
+      <td>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. <br /><br />Values: merge or replace (the default).</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-d --allow-duplicates</code></td>
+      <td>Include this option to allow duplicates in the language pack. Otherwise, the command fails with an error if it encounters the same phrase is translated in different ways in different lines.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h3 id="m2devgde-xlate-files">Create directories and files</h3>
+<h3 id="m2devgde-xlate-files">Create directories and files</h3>
 
-  <p>A language package is a directory under <code class="highlighter-rouge">app/i18n/&lt;VendorName&gt;</code> in the Magento file system with the following contents:</p>
+<p>A language package is a directory under <code class="highlighter-rouge">app/i18n/&lt;VendorName&gt;</code> in the Magento file system with the following contents:</p>
 
-  <ul>
-    <li>Required license files</li>
-    <li><code class="highlighter-rouge">composer.json</code></li>
-    <li><code class="highlighter-rouge">registration.php</code> that <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">registers</a> the language package</li>
-    <li><a href="#config-cli-subcommands-xlate-pack-meta-xml"><code class="highlighter-rouge">language.xml</code></a> meta-information file</li>
-  </ul>
+<ul>
+  <li>Required license files</li>
+  <li><code class="highlighter-rouge">composer.json</code></li>
+  <li><code class="highlighter-rouge">registration.php</code> that <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">registers</a> the language package</li>
+  <li><a href="#config-cli-subcommands-xlate-pack-meta-xml"><code class="highlighter-rouge">language.xml</code></a> meta-information file</li>
+</ul>
 
-  <p class="bs-callout bs-callout-info">The entire path must be all lowercase. For an example, see the <a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/registration.php"><code class="highlighter-rouge">de_de</code> language package</a>.</p>
+<p class="bs-callout bs-callout-info">The entire path must be all lowercase. For an example, see the <a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/registration.php"><code class="highlighter-rouge">de_de</code> language package</a>.</p>
 
-  <p>To create these files:</p>
+<p>To create these files:</p>
 
-  <ol>
-    <li>
-      <p>Create a directory under <code class="highlighter-rouge">app/i18n</code>.</p>
+<ol>
+  <li>
+    <p>Create a directory under <code class="highlighter-rouge">app/i18n</code>.</p>
 
-      <p>For example, Magento language packages are located in <code class="highlighter-rouge">app/i18n/magento</code></p>
-    </li>
-    <li>Add any license files you require.</li>
-    <li>Add <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a> that specifies dependencies for your language package.</li>
-    <li>Register the language package with <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html"><code class="highlighter-rouge">registration.php</code></a></li>
-    <li>Add <code class="highlighter-rouge">language.xml</code> meta-information file as discussed in the next section.</li>
-  </ol>
+    <p>For example, Magento language packages are located in <code class="highlighter-rouge">app/i18n/magento</code></p>
+  </li>
+  <li>Add any license files you require.</li>
+  <li>Add <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a> that specifies dependencies for your language package.</li>
+  <li>Register the language package with <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html"><code class="highlighter-rouge">registration.php</code></a></li>
+  <li>Add <code class="highlighter-rouge">language.xml</code> meta-information file as discussed in the next section.</li>
+</ol>
 
-  <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
+<h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
 
-  <p>When declaring a language package in the <code class="highlighter-rouge">language.xml</code> configuration file, you must specify the sequence of the language inheritance for this package.</p>
+<p>When declaring a language package in the <code class="highlighter-rouge">language.xml</code> configuration file, you must specify the sequence of the language inheritance for this package.</p>
 
-  <p>Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the <em>parent</em>). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If a child translation lacks a phrase or a word, this phrase or word is taken from the parent   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>
+<p>Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the <em>parent</em>). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If a child translation lacks a phrase or a word, this phrase or word is taken from the parent   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>
 . <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.</p>
 
-  <p>To declare a package, specify the following information:</p>
+<p>To declare a package, specify the following information:</p>
 
-  <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
@@ -2101,27 +2097,27 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;sort_order&gt;</span>100<span class="nt">&lt;/sort_order&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">"oxford-university"</span> <span class="na">package=</span><span class="s">"en_us"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Where:</p>
+<p>Where:</p>
 
-  <ul>
-    <li><strong><code class="highlighter-rouge">&lt;code&gt;</code>:</strong> Language package locale (required)</li>
-    <li><strong><code class="highlighter-rouge">&lt;vendor&gt;</code>:</strong> Module’s vendor name (required)</li>
-    <li><strong><code class="highlighter-rouge">&lt;package&gt;</code>:</strong> Language package name (required)</li>
-    <li><strong><code class="highlighter-rouge">&lt;sort_order&gt;</code>:</strong> Priority of uploading a package when there are several language packages available for a store</li>
-    <li><strong><code class="highlighter-rouge">&lt;use&gt;</code>:</strong> Parent language package locale from which to inherit dictionaries</li>
-  </ul>
+<ul>
+  <li><strong><code class="highlighter-rouge">&lt;code&gt;</code>:</strong> Language package locale (required)</li>
+  <li><strong><code class="highlighter-rouge">&lt;vendor&gt;</code>:</strong> Module’s vendor name (required)</li>
+  <li><strong><code class="highlighter-rouge">&lt;package&gt;</code>:</strong> Language package name (required)</li>
+  <li><strong><code class="highlighter-rouge">&lt;sort_order&gt;</code>:</strong> Priority of uploading a package when there are several language packages available for a store</li>
+  <li><strong><code class="highlighter-rouge">&lt;use&gt;</code>:</strong> Parent language package locale from which to inherit dictionaries</li>
+</ul>
 
-  <p>If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.</p>
+<p>If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.</p>
 
-  <h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
+<h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
 
-  <p>Suppose a language package descends from two other packages, and that those packages also have parent and “grandparent” packages.</p>
+<p>Suppose a language package descends from two other packages, and that those packages also have parent and “grandparent” packages.</p>
 
-  <p>If a language package descends from two packages, its <code class="highlighter-rouge">language.xml</code> might look like the following:</p>
+<p>If a language package descends from two packages, its <code class="highlighter-rouge">language.xml</code> might look like the following:</p>
 
-  <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/Language/package.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>language_pack<span class="nt">&lt;/package&gt;</span>
@@ -2129,97 +2125,97 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">"parent-package-one"</span> <span class="na">package=</span><span class="s">"language_package_one"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">vendor=</span> <span class="s">"parent-package-two"</span> <span class="na">package=</span><span class="s">"language_package_two"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>In the preceding example:</p>
+<p>In the preceding example:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">language_package_one</code> descends from <code class="highlighter-rouge">en_au_package</code> and <code class="highlighter-rouge">en_au_package</code> descends from <code class="highlighter-rouge">en_ie_package</code></li>
-    <li><code class="highlighter-rouge">language_package_two</code> descends from <code class="highlighter-rouge">en_ca_package</code> and <code class="highlighter-rouge">en_ca_package</code> descends from <code class="highlighter-rouge">en_us_package</code></li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">language_package_one</code> descends from <code class="highlighter-rouge">en_au_package</code> and <code class="highlighter-rouge">en_au_package</code> descends from <code class="highlighter-rouge">en_ie_package</code></li>
+  <li><code class="highlighter-rouge">language_package_two</code> descends from <code class="highlighter-rouge">en_ca_package</code> and <code class="highlighter-rouge">en_ca_package</code> descends from <code class="highlighter-rouge">en_us_package</code></li>
+</ul>
 
-  <p>If the Magento application cannot find word or phrase in the <code class="highlighter-rouge">en_GB</code> package, it looks in other packages in following sequence:</p>
+<p>If the Magento application cannot find word or phrase in the <code class="highlighter-rouge">en_GB</code> package, it looks in other packages in following sequence:</p>
 
-  <ol>
-    <li><code class="highlighter-rouge">parent-package-one/language_package_one</code></li>
-    <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_au_package</code></li>
-    <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_ie_package</code></li>
-    <li><code class="highlighter-rouge">parent-package-two/language_package_two</code></li>
-    <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_ca_package</code></li>
-    <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_us_package</code></li>
-  </ol>
+<ol>
+  <li><code class="highlighter-rouge">parent-package-one/language_package_one</code></li>
+  <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_au_package</code></li>
+  <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_ie_package</code></li>
+  <li><code class="highlighter-rouge">parent-package-two/language_package_two</code></li>
+  <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_ca_package</code></li>
+  <li><code class="highlighter-rouge">&lt;vendorname&gt;/en_us_package</code></li>
+</ol>
 
-  <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
+<p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
 
-  <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
+<h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 
-  <p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.</p>
+<p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.</p>
 
-  <p>To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package’s <code class="highlighter-rouge">language.xml</code> meta-information file as discussed in the next section.</p>
+<p>To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package’s <code class="highlighter-rouge">language.xml</code> meta-information file as discussed in the next section.</p>
 
-  <h2 id="examples-of-using-translation-commands">Examples of using translation commands</h2>
+<h2 id="examples-of-using-translation-commands">Examples of using translation commands</h2>
 
-  <p>The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:</p>
+<p>The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:</p>
 
-  <ul>
-    <li><a href="#config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</a></li>
-    <li><a href="#config-cli-subcommands-xlate-example2">Example: Create a language package</a></li>
-  </ul>
+<ul>
+  <li><a href="#config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</a></li>
+  <li><a href="#config-cli-subcommands-xlate-example2">Example: Create a language package</a></li>
+</ul>
 
-  <h3 id="config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</h3>
+<h3 id="config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</h3>
 
-  <p>To add a German translation to a module or theme that you want to distribute to other merchants:</p>
+<p>To add a German translation to a module or theme that you want to distribute to other merchants:</p>
 
-  <ol>
-    <li>
-      <p>Collect phrases from your module:</p>
+<ol>
+  <li>
+    <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+</code></pre></div>    </div>
 
-      <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
-    </li>
-    <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
-    <li>If necessary, copy <code class="highlighter-rouge">xx_YY.csv</code> to <code class="highlighter-rouge">/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n</code> or to the module’s theme directory (depending on whether the translation dictionary is for a module or a theme).</li>
-  </ol>
+    <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
+  </li>
+  <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
+  <li>If necessary, copy <code class="highlighter-rouge">xx_YY.csv</code> to <code class="highlighter-rouge">/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n</code> or to the module’s theme directory (depending on whether the translation dictionary is for a module or a theme).</li>
+</ol>
 
-  <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
+<h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
 
-  <p>Similar to the preceding example, generate a .csv file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.</p>
+<p>Similar to the preceding example, generate a .csv file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.</p>
 
-  <ol>
-    <li>
-      <p>Collect phrases from your module:</p>
+<ol>
+  <li>
+    <p>Collect phrases from your module:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+</code></pre></div>    </div>
 
-      <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
-    </li>
-    <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
-    <li>
-      <p>Create the language package.</p>
+    <p class="bs-callout bs-callout-info">The .csv file name must <em>exactly match</em> the locale, including the characters’ case.</p>
+  </li>
+  <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
+  <li>
+    <p>Create the language package.</p>
 
-      <p>bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY</p>
-    </li>
-    <li>
-      <p>Create a directory for the language package.</p>
+    <p>bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY</p>
+  </li>
+  <li>
+    <p>Create a directory for the language package.</p>
 
-      <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/app/i18n/ExampleCorp/xx_yy</code></p>
-    </li>
-    <li>
-      <p>In that directory, add all of the following:</p>
+    <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/app/i18n/ExampleCorp/xx_yy</code></p>
+  </li>
+  <li>
+    <p>In that directory, add all of the following:</p>
 
-      <ul>
-        <li>A license, if required</li>
-        <li><code class="highlighter-rouge">composer.json</code> (sample following)</li>
-        <li><code class="highlighter-rouge">registration.php</code> (sample following)</li>
-        <li><code class="highlighter-rouge">language.xml</code> (sample following)</li>
-      </ul>
+    <ul>
+      <li>A license, if required</li>
+      <li><code class="highlighter-rouge">composer.json</code> (sample following)</li>
+      <li><code class="highlighter-rouge">registration.php</code> (sample following)</li>
+      <li><code class="highlighter-rouge">language.xml</code> (sample following)</li>
+    </ul>
 
-      <p><strong>Sample <code class="highlighter-rouge">composer.json</code>:</strong></p>
+    <p><strong>Sample <code class="highlighter-rouge">composer.json</code>:</strong></p>
 
-      <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"examplecorp/language-xx_yy"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample language"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0.2"</span><span class="p">,</span><span class="w">
@@ -2237,11 +2233,11 @@ Product 'Multimeter-2000' has been added to shopping cart.
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div>      </div>
+</span></code></pre></div>    </div>
 
-      <p><strong>Sample <code class="highlighter-rouge">registration.php</code>:</strong></p>
+    <p><strong>Sample <code class="highlighter-rouge">registration.php</code>:</strong></p>
 
-      <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -2250,11 +2246,11 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="s1">'magento_xx_yy'</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
 <span class="p">);</span>
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p><strong>Sample <code class="highlighter-rouge">language.xml</code>:</strong></p>
+    <p><strong>Sample <code class="highlighter-rouge">language.xml</code>:</strong></p>
 
-      <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2266,10 +2262,9 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;vendor&gt;</span>examplecorp<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>xx_yy<span class="nt">&lt;/package&gt;</span>
 <span class="nt">&lt;/language&gt;</span>
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 			
 		</div>

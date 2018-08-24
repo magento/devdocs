@@ -1669,71 +1669,66 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<p>In addition to the command arguments described in this topic, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p class="bs-callout bs-callout-warning">Run all Magento CLI commands as the <a href="/guides/v2.1/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>Run all Magento CLI commands as the <a href="/guides/v2.1/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
-  </div>
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 
-  <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+<p>This section discusses the basics of code compilation. Code compilation consists of all of the following in no particular order:</p>
 
-  <p>This section discusses the basics of code compilation. Code compilation consists of all of the following in no particular order:</p>
-
-  <ul>
-    <li>Application code generation (factories, proxies, and so on)</li>
-    <li>Area configuration aggregation (that is, optimized   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
+<ul>
+  <li>Application code generation (factories, proxies, and so on)</li>
+  <li>Area configuration aggregation (that is, optimized   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
  configurations per area)</li>
-    <li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-    <li>Interception   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+  <li>Interceptor generation (that is, optimized code generation of interceptors)</li>
+  <li>Interception   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  generation</li>
-    <li>Repositories code generation (that is, generated code for APIs)</li>
-    <li>Service data attributes generation (that is, generated   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+  <li>Repositories code generation (that is, generated code for APIs)</li>
+  <li>Service data attributes generation (that is, generated   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  classes for data objects)</li>
-  </ul>
+</ul>
 
-  <p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/2.1/setup/src/Magento/Setup/Module/Di/App/Task/Operation"><code class="highlighter-rouge">\Magento\Setup\Module\Di\App\Task\Operation</code></a>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/2.1/setup/src/Magento/Setup/Module/Di/App/Task/Operation"><code class="highlighter-rouge">\Magento\Setup\Module\Di\App\Task\Operation</code></a>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
 .</p>
 
-  <p class="bs-callout bs-callout-warning">Run the command as follows (there are no options):</p>
+<p class="bs-callout bs-callout-warning">Run the command as follows (there are no options):</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div></div>
 
-  <p>The following message displays to confirm success:</p>
+<p>The following message displays to confirm success:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
+</code></pre></div></div>
 
-  <h2 id="config-cli-subcommands-single-before">Optional. Compile code before installing the Magento application</h2>
+<h2 id="config-cli-subcommands-single-before">Optional. Compile code before installing the Magento application</h2>
 
-  <p>In some cases, you might want to compile code before you install the Magento application. To do that, you must first enable modules; otherwise, the compiler has nothing to do. To compile code for only some modules, enable only those modules.</p>
+<p>In some cases, you might want to compile code before you install the Magento application. To do that, you must first enable modules; otherwise, the compiler has nothing to do. To compile code for only some modules, enable only those modules.</p>
 
-  <p>The following command enables all modules:</p>
+<p>The following command enables all modules:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:enable --all [-c|--clear-static-content]
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:enable --all [-c|--clear-static-content]
+</code></pre></div></div>
 
-  <p>Use the optional <code class="highlighter-rouge">[-c|--clear-static-content]</code> option to clear   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
+<p>Use the optional <code class="highlighter-rouge">[-c|--clear-static-content]</code> option to clear   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
 . This is necessary if you’ve previously enabled or disabled modules and you must clear static content previously generated for them.</p>
 
-  <p><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">More information about enabling modules</a>.</p>
+<p><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">More information about enabling modules</a>.</p>
 
-  <h2 id="config-cli-subcommands-single">Compile code</h2>
+<h2 id="config-cli-subcommands-single">Compile code</h2>
 
-  <p>Use this command to compile code.</p>
+<p>Use this command to compile code.</p>
 
-  <p>Run the command as follows (there are no options):</p>
+<p>Run the command as follows (there are no options):</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div></div>
 
-  <p>The following message displays to confirm success:</p>
+<p>The following message displays to confirm success:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated code and dependency injection configuration successfully.
+</code></pre></div></div>
 
 			
 		</div>

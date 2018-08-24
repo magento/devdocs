@@ -2294,93 +2294,84 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<h2 id="umask-over">Overview of ownership and permissions</h2>
 
-  <h2 id="umask-over">Overview of ownership and permissions</h2>
+<p>Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.</p>
 
-  <p>Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.</p>
+<p class="bs-callout bs-callout-info">If you’re using an Magento version 2.0.5 or earlier, see <a href="/guides/v2.2/install-gde/install/legacy-file-system-perms.html">Appendix—Magento file system ownership and appendix (legacy)</a> instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're using an Magento version 2.0.5 or earlier, see <a href="/guides/v2.2/install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead of this topic.</p>
-  <p>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.</p>
-</div>
+<p>This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:</p>
 
-  <p>This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:</p>
+<ul>
+  <li><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a></li>
+  <li><a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
+</ul>
 
-  <ul>
-    <li><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a></li>
-    <li><a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a></li>
-  </ul>
+<h3 id="magento-file-system-owner">Magento file system owner</h3>
 
-  <h3 id="magento-file-system-owner">Magento file system owner</h3>
+<p>We refer to the <em>Magento file system owner</em> as a user who owns and can write to files in the Magento file system.</p>
 
-  <p>We refer to the <em>Magento file system owner</em> as a user who owns and can write to files in the Magento file system.</p>
+<p class="bs-callout bs-callout-info">The Magento file system owner is sometimes referred to as the <em>command-line user</em>.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento file system owner is sometimes referred to as the <em>command-line user</em>.</p>
-</div>
+<p>The Magento file system owner is any of the following:</p>
 
-  <p>The Magento file system owner is any of the following:</p>
+<ul>
+  <li>
+    <p>A single user, which is typical of shared hosting.</p>
 
-  <ul>
-    <li>
-      <p>A single user, which is typical of shared hosting.</p>
+    <p>Shared hosting providers enable you to log in to the Magento server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.</p>
 
-      <p>Shared hosting providers enable you to log in to the Magento server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.</p>
+    <p>If you use one Magento user, you have the option of setting a <a href="#restrict">umask</a> to further restrict access, particularly in production.</p>
+  </li>
+  <li>
+    <p>Users that belong to a shared group, which is typical of private hosting or having your own Magento server.</p>
 
-      <p>If you use one Magento user, you have the option of setting a <a href="#restrict">umask</a> to further restrict access, particularly in production.</p>
-    </li>
-    <li>
-      <p>Users that belong to a shared group, which is typical of private hosting or having your own Magento server.</p>
+    <p>In this situation, you typically <em>cannot</em> log in to the server as, or switch to, the web server user. Instead, you have separate users:</p>
 
-      <p>In this situation, you typically <em>cannot</em> log in to the server as, or switch to, the web server user. Instead, you have separate users:</p>
+    <ul>
+      <li>
+        <p>The web server user, which runs the Magento Admin and storefront.</p>
+      </li>
+      <li>
+        <p>A <em>command-line user</em>, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.</p>
 
-      <ul>
-        <li>
-          <p>The web server user, which runs the Magento Admin and storefront.</p>
-        </li>
-        <li>
-          <p>A <em>command-line user</em>, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.</p>
+        <p>The web server user and the command-line user might need write permissions to the Magento file system. (The users require write access in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">developer mode</a> but not in production mode.) You give permissions to both users by way of a shared group to which they both belong.</p>
 
-          <p>The web server user and the command-line user might need write permissions to the Magento file system. (The users require write access in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">developer mode</a> but not in production mode.) You give permissions to both users by way of a shared group to which they both belong.</p>
+        <p>For private hosting, we recommend you use the default <code class="highlighter-rouge">002</code> <a href="#restrict">umask</a>; otherwise, the group won’t be able to write to the Magento file system.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-          <p>For private hosting, we recommend you use the default <code class="highlighter-rouge">002</code> <a href="#restrict">umask</a>; otherwise, the group won’t be able to write to the Magento file system.</p>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<p>Before you install the Magento software, see <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>.</p>
 
-  <p>Before you install the Magento software, see <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>.</p>
+<h3 id="restrict">Restrict access with a umask</h3>
 
-  <h3 id="restrict">Restrict access with a umask</h3>
+<p>To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask—also referred to as a <em>file system creation mask</em>—is a set of bits, each of which restricts how its corresponding permission is set for newly created files.</p>
 
-  <p>To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask—also referred to as a <em>file system creation mask</em>—is a set of bits, each of which restricts how its corresponding permission is set for newly created files.</p>
+<p class="bs-callout bs-callout-warning">File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
-</div>
+<p>Magento uses a three-bit mask, by default <code class="highlighter-rouge">002</code>, that you subtract from the UNIX defaults of 666 for files and 777 for directories.</p>
 
-  <p>Magento uses a three-bit mask, by default <code class="highlighter-rouge">002</code>, that you subtract from the UNIX defaults of 666 for files and 777 for directories.</p>
+<p>Here’s what that means:</p>
 
-  <p>Here’s what that means:</p>
+<ul>
+  <li>
+    <p>775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.</p>
+  </li>
+  <li>
+    <p>664 for files, which means writable by the user, writable by the group, and read-only for everyone else.</p>
+  </li>
+</ul>
 
-  <ul>
-    <li>
-      <p>775 for directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.</p>
-    </li>
-    <li>
-      <p>664 for files, which means writable by the user, writable by the group, and read-only for everyone else.</p>
-    </li>
-  </ul>
+<p>For more information about <code class="highlighter-rouge">magento_umask</code>, see <a href="/guides/v2.2/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
 
-  <p>For more information about <code class="highlighter-rouge">magento_umask</code>, see <a href="/guides/v2.2/install-gde/install/post-install-umask.html">Optionally set a umask</a>.</p>
+<h2 id="permissions-ownership-and-magento-modes">Permissions, ownership, and Magento modes</h2>
 
-  <h2 id="permissions-ownership-and-magento-modes">Permissions, ownership, and Magento modes</h2>
+<p>We recommend different permissions and ownership for default mode, developer mode, and production mode.</p>
 
-  <p>We recommend different permissions and ownership for default mode, developer mode, and production mode.</p>
+<p>We discuss these recommendations in <a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a>.</p>
 
-  <p>We discuss these recommendations in <a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">Magento ownership and permissions in development and production</a>.</p>
-</div>
 
 			
 		</div>

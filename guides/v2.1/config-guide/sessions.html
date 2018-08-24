@@ -1669,42 +1669,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div>
+			<h2 id="session-where">Locate your session storage</h2>
 
-  <h2 id="session-where">Locate your session storage</h2>
+<p>This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:</p>
 
-  <p>This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:</p>
+<ul>
+  <li>If you configured memcached, sessions are stored in RAM; for more information, see <a href="/guides/v2.1/config-guide/memcache/memcache.html">Use memcached for session storage</a>.</li>
+  <li>If you configured Redis, sessions are stored on the Redis server; for more information, see <a href="/guides/v2.1/config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.</li>
+  <li>
+    <p>If you’re using the default file-based session storage, we store sessions in the following locations in the order shown:</p>
 
-  <ul>
-    <li>If you configured memcached, sessions are stored in RAM; for more information, see <a href="/guides/v2.1/config-guide/memcache/memcache.html">Use memcached for session storage</a>.</li>
-    <li>If you configured Redis, sessions are stored on the Redis server; for more information, see <a href="/guides/v2.1/config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.</li>
-    <li>
-      <p>If you’re using the default file-based session storage, we store sessions in the following locations in the order shown:</p>
+    <ol>
+      <li>Directory defined in <a href="#session-where-env"><code class="highlighter-rouge">env.php</code></a></li>
+      <li>Directory defined in <a href="#session-where-phpini"><code class="highlighter-rouge">php.ini</code></a></li>
+      <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code> directory</li>
+    </ol>
+  </li>
+</ul>
 
-      <ol>
-        <li>Directory defined in <a href="#session-where-env"><code class="highlighter-rouge">env.php</code></a></li>
-        <li>Directory defined in <a href="#session-where-phpini"><code class="highlighter-rouge">php.ini</code></a></li>
-        <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code> directory</li>
-      </ol>
-    </li>
-  </ul>
+<h3 id="session-where-env"><code class="highlighter-rouge">env.php</code> example</h3>
+<p>A sample snippet from <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> follows:</p>
 
-  <h3 id="session-where-env"><code class="highlighter-rouge">env.php</code> example</h3>
-  <p>A sample snippet from <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> follows:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'session' =&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'session' =&gt;
    array (
      'save' =&gt; 'files',
      'save_path' =&gt; '/var/www/session',
 ),
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>The preceding example stores session files in <code class="highlighter-rouge">/var/www/session</code></p>
+<p>The preceding example stores session files in <code class="highlighter-rouge">/var/www/session</code></p>
 
-  <h3 id="session-where-phpini"><code class="highlighter-rouge">php.ini</code> example</h3>
-  <p>As a user with <code class="highlighter-rouge">root</code> privileges, open your <code class="highlighter-rouge">php.ini</code> file and search for the value of <code class="highlighter-rouge">session.save_path</code>. This identifies where sessions are stored.</p>
+<h3 id="session-where-phpini"><code class="highlighter-rouge">php.ini</code> example</h3>
+<p>As a user with <code class="highlighter-rouge">root</code> privileges, open your <code class="highlighter-rouge">php.ini</code> file and search for the value of <code class="highlighter-rouge">session.save_path</code>. This identifies where sessions are stored.</p>
 
-</div>
 
 			
 		</div>

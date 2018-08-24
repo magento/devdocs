@@ -1769,161 +1769,153 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#configure-magento-to-use-elasticsearch">Configure Magento to use Elasticsearch</a></li>
 </ul>
 
-<div>
+<h3 id="firewall-selinux">Firewall and SELinux</h3>
 
-  <h3 id="firewall-selinux">Firewall and SELinux</h3>
+<p>Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.</p>
 
-  <p>Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.</p>
+<h4 id="set-up-rules-for-iptables-and-selinux">Set up rules for iptables and SELinux</h4>
 
-  <h4 id="set-up-rules-for-iptables-and-selinux">Set up rules for iptables and SELinux</h4>
+<p>To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:</p>
 
-  <p>To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:</p>
+<ul>
+  <li><a href="https://help.ubuntu.com/community/IptablesHowTo">iptables how-to</a></li>
+  <li><a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules">How to edit iptables rules (fedora project)</a></li>
+  <li><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+  <li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html">Introduction to SELinux (CentOS.org)</a></li>
+  <li><a href="https://wiki.centos.org/HowTos/SELinux">SELinux How-To Wiki (CentOS.org)</a></li>
+</ul>
 
-  <ul>
-    <li><a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a></li>
-    <li><a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">How to edit iptables rules (fedora project)</a></li>
-    <li><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" target="_blank">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
-    <li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a></li>
-    <li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux How-To Wiki (CentOS.org)</a></li>
-  </ul>
+<h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
 
-  <div>
+<p>To determine if Java is already installed, enter the following command:</p>
 
-    <h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+</code></pre></div></div>
 
-    <p>To determine if Java is already installed, enter the following command:</p>
+<p>If the message <code class="highlighter-rouge">java: command not found</code> displays, you must install the Java SDK as discussed in the next section.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
-</code></pre></div>    </div>
+<p>See one of the following sections:</p>
 
-    <p>If the message <code class="highlighter-rouge">java: command not found</code> displays, you must install the Java SDK as discussed in the next section.</p>
+<ul>
+  <li><a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a></li>
+  <li><a href="#install-prereq-java-ubuntu">Install the latest JDK on Ubuntu</a></li>
+</ul>
 
-    <p>See one of the following sections:</p>
+<h4 id="install-prereq-java-centos">Install the JDK on CentOS</h4>
 
-    <ul>
-      <li><a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a></li>
-      <li><a href="#install-prereq-java-ubuntu">Install the latest JDK on Ubuntu</a></li>
-    </ul>
+<p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8">this article on digitalocean</a>.</p>
 
-    <h4 id="install-prereq-java-centos">Install the JDK on CentOS</h4>
+<p>Be sure to install the JDK and <em>not</em> the JRE.</p>
 
-    <p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8" target="_blank">this article on digitalocean</a>.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install java-1.7.0-openjdk
+</code></pre></div></div>
 
-    <p>Be sure to install the JDK and <em>not</em> the JRE.</p>
+<p class="bs-callout bs-callout-info">Java version 7 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/">search the list of available packages for Ubuntu</a>.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install java-1.7.0-openjdk
-</code></pre></div>    </div>
+<h4 id="install-prereq-java-ubuntu">Install the JDK on Ubuntu</h4>
 
-    <div class="bs-callout bs-callout-info" id="info">
-	<p>Java version 7 might not be available for all operating systems. For example, you can <a href="http://packages.ubuntu.com/" target="_blank">search the list of available packages for Ubuntu</a>.</p>
-</div>
+<p>To install JDK 1.8 on Ubuntu, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-    <h4 id="install-prereq-java-ubuntu">Install the JDK on Ubuntu</h4>
-
-    <p>To install JDK 1.8 on Ubuntu, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add-apt-repository -y ppa:webupd8team/java
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add-apt-repository -y ppa:webupd8team/java
 apt-get -y update
 apt-get install -y oracle-java8-installer
+</code></pre></div></div>
+
+<p>For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html">Oracle documentation</a>.</p>
+
+<h3 id="es-install-es">Install Elasticsearch</h3>
+
+<p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
+
+<p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html">2.0 reference</a>).</p>
+
+<p>To install Elasticsearch:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+  <li>
+    <p><em>CentOS</em>: Enter the following commands in the order shown:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+vim /etc/yum.repos.d/Elasticsearch.repo
 </code></pre></div>    </div>
 
-    <p>For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.</p>
+    <p>Add the following:</p>
 
-    <h3 id="es-install-es">Install Elasticsearch</h3>
-
-    <p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
-
-    <p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html">2.0 reference</a>).</p>
-
-    <p>To install Elasticsearch:</p>
-
-    <ol>
-      <li>Log in to your Magento server as a user with <code class="highlighter-rouge">root</code> privileges.</li>
-      <li>
-        <p><em>CentOS</em>: Enter the following commands in the order shown:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-vim /etc/yum.repos.d/Elasticsearch.repo
-</code></pre></div>        </div>
-
-        <p>Add the following:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[elasticsearch-2.x]
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[elasticsearch-2.x]
 name=Elasticsearch repository for 2.x packages
 baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
 gpgcheck=1
 gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1
-</code></pre></div>        </div>
+</code></pre></div>    </div>
 
-        <p>Enter the following commands:</p>
+    <p>Enter the following commands:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install elasticsearch
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install elasticsearch
 chkconfig --add elasticsearch
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p><em>Ubuntu</em>: Enter the following commands in the order shown:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><em>Ubuntu</em>: Enter the following commands in the order shown:</p>
 
-        <p>Find the <a href="https://www.elastic.co/downloads/past-releases">latest 2.x version of Elasticsearch</a>.</p>
+    <p>Find the <a href="https://www.elastic.co/downloads/past-releases">latest 2.x version of Elasticsearch</a>.</p>
 
-        <p>Install the latest 2.x version using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html">Elasticsearch documentation</a></p>
+    <p>Install the latest 2.x version using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html">Elasticsearch documentation</a></p>
 
-        <p>For example, to install Elasticsearch version 2.4.4, enter the following commands in the order shown:</p>
+    <p>For example, to install Elasticsearch version 2.4.4, enter the following commands in the order shown:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz
 tar -xvf elasticsearch-2.4.4.tar.gz
 cd elasticsearch-2.4.4/bin
 ./elasticsearch
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Open the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings">Elasticsearch configuration file</a>, <code class="highlighter-rouge">elasticsearch.yml</code>, in a text editor.</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Open the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings">Elasticsearch configuration file</a>, <code class="highlighter-rouge">elasticsearch.yml</code>, in a text editor.</p>
 
-        <p>For example, it might be located in <code class="highlighter-rouge">/etc/elasticsearch</code> or <code class="highlighter-rouge">&lt;elasticsearch install dir&gt;/config</code>.</p>
-      </li>
-      <li>
-        <p>Add the following parameter to the <code class="highlighter-rouge">Memory</code> section:</p>
+    <p>For example, it might be located in <code class="highlighter-rouge">/etc/elasticsearch</code> or <code class="highlighter-rouge">&lt;elasticsearch install dir&gt;/config</code>.</p>
+  </li>
+  <li>
+    <p>Add the following parameter to the <code class="highlighter-rouge">Memory</code> section:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>indices.query.bool.max_clause_count: 10024
-</code></pre></div>        </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>indices.query.bool.max_clause_count: 10024
+</code></pre></div>    </div>
 
-        <p>For more information, see <a href="http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch">Setting the BooleanQuery maxClauseCount in Elasticsearch</a>.</p>
-      </li>
-      <li>Save your changes to <code class="highlighter-rouge">elasticsearch.yml</code> and exit the text editor.</li>
-      <li>Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html">Elasticsearch service</a>.</li>
-      <li>
-        <p>Start Elasticsearch:</p>
+    <p>For more information, see <a href="http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch">Setting the BooleanQuery maxClauseCount in Elasticsearch</a>.</p>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">elasticsearch.yml</code> and exit the text editor.</li>
+  <li>Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html">Elasticsearch service</a>.</li>
+  <li>
+    <p>Start Elasticsearch:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service elasticsearch start
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Verify that Elasticsearch is working by entering the following command on the server on which it’s running:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service elasticsearch start
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify that Elasticsearch is working by entering the following command on the server on which it’s running:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://127.0.0.1:9200/_cluster/health
-</code></pre></div>        </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://127.0.0.1:9200/_cluster/health
+</code></pre></div>    </div>
 
-        <p>Messages similar to the following display if Elasticsearch is running:</p>
+    <p>Messages similar to the following display if Elasticsearch is running:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
-</code></pre></div>        </div>
-      </li>
-    </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-    <h2 id="es-resources">Additional resources</h2>
+<h2 id="es-resources">Additional resources</h2>
 
-    <p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html">Elasticsearch documentation</a></p>
+<p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html">Elasticsearch documentation</a></p>
 
-    <h4 id="next">Next</h4>
+<h4 id="next">Next</h4>
 
-    <ul>
-      <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
-      <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
-      <li><a href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
-    </ul>
-  </div>
-</div>
+<ul>
+  <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
+  <li><a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
+  <li><a href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
+</ul>
 
 			
 		</div>

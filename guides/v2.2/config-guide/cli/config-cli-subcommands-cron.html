@@ -1878,182 +1878,163 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-cli-cron-overview">Overview of cron</h2>
-<div>
+<p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
 
-  <p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
+<ul>
+  <li>Catalog price rules</li>
+  <li>Newsletters</li>
+  <li>Generating Google sitemaps</li>
+  <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
+  <li>Reindexing</li>
+  <li>Private sales (Magento Commerce only)</li>
+  <li>Automatic updating of currency rates</li>
+  <li>All Magento e-mails (including order confirmation and transactional)</li>
+</ul>
 
-  <ul>
-    <li>Catalog price rules</li>
-    <li>Newsletters</li>
-    <li>Generating Google sitemaps</li>
-    <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
-    <li>Reindexing</li>
-    <li>Private sales (Magento Commerce only)</li>
-    <li>Automatic updating of currency rates</li>
-    <li>All Magento e-mails (including order confirmation and transactional)</li>
-  </ul>
+<p>We recommend you run cron as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>; we also recommend against running cron as the web server user.</p>
 
-  <p>We recommend you run cron as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>; we also recommend against running cron as the web server user.</p>
+<p class="bs-callout bs-callout-warning">You can no longer run <code class="highlighter-rouge">dev/tools/cron.sh</code> because the script has been removed.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won’t function as expected.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won’t function as expected.</p>
-  </div>
+<p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to “run this command at this time on this date”. Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.</p>
 
-  <p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to “run this command at this time on this date”. Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.</p>
+<p>To run cron in a web browser, see <a href="/guides/v2.2/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></p>
 
-  <p>To run cron in a web browser, see <a href="/guides/v2.2/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></p>
+<h2 id="create-or-remove-the-magento-crontab">Create or remove the Magento crontab</h2>
 
-  <h2 id="create-or-remove-the-magento-crontab">Create or remove the Magento crontab</h2>
+<p>This section discusses how to create or remove your Magento crontab (that is, the configuration for Magento cron jobs).</p>
 
-  <p>This section discusses how to create or remove your Magento crontab (that is, the configuration for Magento cron jobs).</p>
+<h3 id="about-the-magento-crontab">About the Magento crontab</h3>
 
-  <h3 id="about-the-magento-crontab">About the Magento crontab</h3>
+<p>The Magento <em>crontab</em> is the configuration used to run Magento cron jobs.</p>
 
-  <p>The Magento <em>crontab</em> is the configuration used to run Magento cron jobs.</p>
+<p>Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:</p>
 
-  <p>Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:</p>
+<ul>
+  <li>
+    <p>PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.</p>
+  </li>
+  <li>
+    <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.</p>
+  </li>
+</ul>
 
-  <ul>
-    <li>
-      <p>PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.</p>
-    </li>
-    <li>
-      <p>Web server PHP plug-in configuration: Two other cron jobs are used by the <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.</p>
-    </li>
-  </ul>
+<ul class="bs-callout bs-callout-warning">
+  <li>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in’s configuration. For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</li>
+  <li>In a multi-node system, crontab can run on only one node. This applies to you only if you set up more than one webnode for reasons related to performance or scalability.</li>
+</ul>
 
-  <div class="bs-callout bs-callout-warning">
-    <ul>
-      <li>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in’s configuration. 
-For more information, see <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</li>
-      <li>
-        <p>In a multi-node system, crontab can run on only one node.</p>
+<h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
 
-        <p>This applies to you only if you set up more than one webnode for reasons related to performance or scalability.</p>
-      </li>
-    </ul>
-  </div>
+<p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
 
-  <div>
+<p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
 
-    <h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
+<p>To create the Magento crontab:</p>
 
-    <p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
+<ol>
+  <li>Log in as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-    <p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
-
-    <p>To create the Magento crontab:</p>
-
-    <ol>
-      <li>Log in as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-      <li>Change to your Magento installation directory.</li>
-      <li>
-        <p>Enter the following command:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
-</code></pre></div>        </div>
-      </li>
-    </ol>
-
-    <p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab.</p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-      <ul>
-        <li><code class="highlighter-rouge">magento cron:install</code> does not rewrite an existing crontab inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</li>
-        <li><code class="highlighter-rouge">magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
-      </ul>
-    </div>
-
-    <p>To view the crontab, enter the following command as the Magento file system owner:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento cron:install [--force]
 </code></pre></div>    </div>
+  </li>
+</ol>
 
-    <p>A sample follows:</p>
+<p>Use <code class="highlighter-rouge">--force</code> to rewrite an existing Magento crontab.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
+<ul class="bs-callout bs-callout-info">
+  <li><code class="highlighter-rouge">magento cron:install</code> does not rewrite an existing crontab inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</li>
+  <li><code class="highlighter-rouge">magento cron:install --force</code> has no effect on any cron jobs outside the Magento comments.</li>
+</ul>
+
+<p>To view the crontab, enter the following command as the Magento file system owner:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -l
+</code></pre></div></div>
+
+<p>A sample follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#~ MAGENTO START
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento cron:run 2&gt;&amp;1 | grep -v Ran jobs by schedule &gt;&gt; /var/www/html/magento2/var/log/magento.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/update/cron.php &gt;&gt; /var/www/html/magento2/var/log/update.cron.log
 * * * * * /usr/bin/php /var/www/html/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2/var/log/setup.cron.log
 #~ MAGENTO END
-</code></pre></div>    </div>
+</code></pre></div></div>
 
-    <h3 id="config-cron-remove">Remove the Magento crontab</h3>
+<h3 id="config-cron-remove">Remove the Magento crontab</h3>
 
-    <p>You should remove the Magento crontab only before uninstalling the Magento application.</p>
+<p>You should remove the Magento crontab only before uninstalling the Magento application.</p>
 
-    <p>To remove the Magento crontab:</p>
+<p>To remove the Magento crontab:</p>
 
-    <ol>
-      <li>Log in as or switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-      <li>Change to the Magento installation directory.</li>
-      <li>
-        <p>Enter the following command:</p>
+<ol>
+  <li>Log in as or switch to the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Change to the Magento installation directory.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-        <p>php bin/magento cron:remove</p>
-      </li>
-    </ol>
+    <p>php bin/magento cron:remove</p>
+  </li>
+</ol>
 
-    <p class="bs-callout bs-callout-info">This command has no effect on cron jobs outside the <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
+<p class="bs-callout bs-callout-info">This command has no effect on cron jobs outside the <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
 
-    <h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
+<h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
 
-    <p>Command options:</p>
+<p>Command options:</p>
 
-    <p>bin/magento cron:run [–group=”<cron group="" name="">"]</cron></p>
+<p>bin/magento cron:run [–group=”<cron group="" name="">"]</cron></p>
 
-    <p>where <code class="highlighter-rouge">--group</code> specifies the cron group to run (omit this option to run cron for all groups)</p>
+<p>where <code class="highlighter-rouge">--group</code> specifies the cron group to run (omit this option to run cron for all groups)</p>
 
-    <p>To run the indexing cron job, enter:</p>
+<p>To run the indexing cron job, enter:</p>
 
-    <p><code class="highlighter-rouge">php bin/magento cron:run --group index</code></p>
+<p><code class="highlighter-rouge">php bin/magento cron:run --group index</code></p>
 
-    <p>To run the default cron job, enter:</p>
+<p>To run the default cron job, enter:</p>
 
-    <p><code class="highlighter-rouge">php bin/magento cron:run --group default</code></p>
+<p><code class="highlighter-rouge">php bin/magento cron:run --group default</code></p>
 
-    <p>To set up custom cron jobs and groups, see <a href="/guides/v2.2/config-guide/cron/custom-cron.html">Configure custom cron jobs and cron groups</a>.</p>
+<p>To set up custom cron jobs and groups, see <a href="/guides/v2.2/config-guide/cron/custom-cron.html">Configure custom cron jobs and cron groups</a>.</p>
 
-    <p class="bs-callout bs-callout-info">You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
+<p class="bs-callout bs-callout-info">You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
 
-    <h2 id="logging">Logging</h2>
+<h2 id="logging">Logging</h2>
 
-    <p>System logs provide detailed information for debugging. The following attributes apply to Magento cron logs:</p>
+<p>System logs provide detailed information for debugging. The following attributes apply to Magento cron logs:</p>
 
-    <ul>
-      <li>
-        <p>All exceptions from cron jobs are logged by <code class="highlighter-rouge">\Magento\Cron\Observer\ProcessCronQueueObserver::execute</code>.</p>
-      </li>
-      <li>
-        <p>Failed jobs with <code class="highlighter-rouge">ERROR</code> and <code class="highlighter-rouge">MISSED</code> statuses are logged to the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory.</p>
-      </li>
-      <li>
-        <p>Jobs with an <code class="highlighter-rouge">ERROR</code> status are always logged as <code class="highlighter-rouge">CRITICAL</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log/exception.log</code>.</p>
-      </li>
-      <li>
-        <p>Jobs with a <code class="highlighter-rouge">MISSED</code> status are logged as <code class="highlighter-rouge">INFO</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory (developer mode only).</p>
-      </li>
-    </ul>
+<ul>
+  <li>
+    <p>All exceptions from cron jobs are logged by <code class="highlighter-rouge">\Magento\Cron\Observer\ProcessCronQueueObserver::execute</code>.</p>
+  </li>
+  <li>
+    <p>Failed jobs with <code class="highlighter-rouge">ERROR</code> and <code class="highlighter-rouge">MISSED</code> statuses are logged to the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory.</p>
+  </li>
+  <li>
+    <p>Jobs with an <code class="highlighter-rouge">ERROR</code> status are always logged as <code class="highlighter-rouge">CRITICAL</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log/exception.log</code>.</p>
+  </li>
+  <li>
+    <p>Jobs with a <code class="highlighter-rouge">MISSED</code> status are logged as <code class="highlighter-rouge">INFO</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/log</code> directory (developer mode only).</p>
+  </li>
+</ul>
 
-    <!-- Available note types: "info", "warning", "tip" -->
+<!-- Available note types: "info", "warning", "tip" -->
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>All cron data is also written to the <code class="highlighter-rouge">cron_schedule</code> table in the Magento database. The table provides a history of cron jobs, including:</p>
-      <ul>
-        <li>Job ID and code</li>
-        <li>Status</li>
-        <li>Created date</li>
-        <li>Scheduled date</li>
-        <li>Executed date</li>
-        <li>Finished date
+<div class="bs-callout bs-callout-info" id="info">
+  <p>All cron data is also written to the <code class="highlighter-rouge">cron_schedule</code> table in the Magento database. The table provides a history of cron jobs, including:</p>
+  <ul>
+    <li>Job ID and code</li>
+    <li>Status</li>
+    <li>Created date</li>
+    <li>Scheduled date</li>
+    <li>Executed date</li>
+    <li>Finished date
 To see records in the table, log in to the Magento database on the command line and enter <code class="highlighter-rouge">SELECT * from cron_schedule;</code>.</li>
-      </ul>
-    </div>
-  </div>
+  </ul>
 </div>
 
 			
