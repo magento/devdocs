@@ -51,7 +51,7 @@ This reduces the quantity of the changed lines in a diff and makes code safer in
 
 ### Indentation
 
-Indentation in Magento code uses two spaces.
+Indentation in Magento code uses four spaces.
 
 Tabs are not allowed as indentation.
 
