@@ -5,7 +5,7 @@ functional_areas:
   - Configuration
 ---
 
-The Magento Admin provides all access to your store, orders, and customer data. To further increase security to your Magento instance, add Magento Two-Factor Authentication (2FA), v3.0.0. Installing and enabling this module adds two-step authentication for all users attempting to access the Admin for all devices. All features and requirements are restricted to Admin user accounts, not extended to customer accounts.
+Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento Admin UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. It applies to Magento Admin UI users only; it does not apply to storefront customer accounts.
 
 At this time, Two-Factor Authentication can be installed only from the command line.
 
