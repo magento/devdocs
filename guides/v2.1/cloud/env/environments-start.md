@@ -73,10 +73,7 @@ You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
-This section discusses how to delete an environment in the following ways:
-
--  Make the environment *inactive*, but let it remain in the project
--  Delete the environment and remove it from the project
+When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
 #### To delete an environment:
 
