@@ -11,7 +11,7 @@ We have added security functionality for Magento Open Source, Commerce, and Comm
 
 [Google reCAPTCHA]({{ page.baseurl }}/security/google-recaptcha.html) helps restrict access to the Magento Admin and store to humans only, not robots. It provides enhanced security over Magento CAPTCHA with additional benefits including Invisible reCAPTCHA.
 
-You will need to install the extension using composer for v2.1 and v2.2. The features will be included in default installations and upgrades of v2.3.
+You will need to install the extension using composer for v2.1 and v2.2. Features will be included in default installations and upgrades of v2.3.
 
 ## Two-Faction Authentication
 

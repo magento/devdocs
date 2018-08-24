@@ -25,7 +25,7 @@ The following options, tools, and features can be set up and configured in your 
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 * [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html) for your site and store
-* Install Magento security extensions including [Google reCAPTCHA]({{ page.baseurl }}/security/google-recaptcha.html) and [Two-Factor Authentication]({{ page.baseurl }}/security/two-factor-authentication.html) for authorized access to the Magento Admin and storefront
+* Install Magento security extensions including [Google reCAPTCHA]({{ page.baseurl }}/security/google-recaptcha.html) and [Two-Factor Authentication]({{ page.baseurl }}/security/two-factor-authentication.html) to enhance secure access to the Magento Admin UI and storefront
 
 ## Configure your deploy: build hooks, services, and routes {#deploy}
 
