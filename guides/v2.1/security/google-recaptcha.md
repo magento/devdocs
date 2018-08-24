@@ -36,7 +36,7 @@ See the [Magento Admin User Guide](https://docs.magento.com/m2/ce/user_guide/sto
 
 ## Troubleshooting
 
-The extension supports a command line option for disabling reCAPTCHA and allow backend access. Use this commands when you cannot access the Magento Admin UI.
+The extension supports a command line option for disabling reCAPTCHA. Use this command when you cannot access the Magento Admin UI.
 
 ``` bash
 php bin/magento msp:security:recaptcha:disable
