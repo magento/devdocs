@@ -68,7 +68,7 @@ After completing development, you can merge this branch to the parent:
 
 Before you delete an environment, make sure you do not need it anymore. You cannot recover a deleted environment later.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout .bs-callout-warning}
 You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
@@ -128,7 +128,7 @@ magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
 ```
 
 {:.bs-callout .bs-callout-info}
-To activate an inactive environment later, use the `magento-cloud environment:activate` command.
+To activate an inactive environment, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}
 
