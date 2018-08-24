@@ -1,9 +1,8 @@
 ---
-layout: default
+
 group: release-notes
 title: Magento Open Source 2.2.6 Release Notes
-version: 2.2
-github_link: release-notes/ReleaseNotes2.2.6CE.md
+
 ---
 *Patch code and release notes published on  2018.* 
 
