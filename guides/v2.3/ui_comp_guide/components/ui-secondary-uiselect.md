@@ -169,6 +169,6 @@ Navigation keys:
 
 ## Source files
 
-- [app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js)
-- [Magento/Ui/view/base/web/js/form/element/abstract.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
-- [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html)
+- [app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/element/ui-select.js)
+- [Magento/Ui/view/base/web/js/form/element/abstract.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
+- [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/ui-select.html)
