@@ -5,18 +5,18 @@ title: How to add CLI commands
 menu_title: How to add CLI commands
 menu_node: 
 menu_order: 3
-version: 2.0
-github_link: extension-dev-guide/cli-cmds/cli-howto.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
-<h2 id="cli-add-over">Overview of adding CLI commands</h2>
+## Overview of adding CLI commands   {#cli-add-over}
+
 Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
 
 ### About the Magento CLI
-{% include install/new-cli-intro.html %}
+{% include install/new-cli-intro.md %}
 
 ### Prerequisites
+
 Before you begin, make sure you understand the following:
 
 *	All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
@@ -27,7 +27,8 @@ Before you begin, make sure you understand the following:
 	*	<a href="#cli-sample">Add CLI commands using dependency injection</a>
 	*	<a href="#cli-autoload">Add CLI commands using the Composer autoloader</a>
 
-<h2 id="cli-sample">Add CLI commands using dependency injection</h2>
+## Add CLI commands using dependency injection   {#cli-sample}
+
 The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank">`sample-module-command`</a> for an example. The module's <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.
 
 Following is a summary of the process:
@@ -41,9 +42,11 @@ Following is a summary of the process:
 		cd <your Magento install dir>/var
 		rm -rf cache/* page_cache/* di/* generation/* 
 
-<h2 id="cli-autoload">Add CLI commands using the Composer autoloader</h2>
+## Add CLI commands using the Composer autoloader   {#cli-autoload}
+
 To be added at a later time.
 
 #### Related topic
+
 <a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 

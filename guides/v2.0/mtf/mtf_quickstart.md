@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start with the Functional Testing Framework
-version: 2.0
-github_link: mtf/mtf_quickstart.md
 ---
 
 In this chapter you will learn how to:

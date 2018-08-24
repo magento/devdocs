@@ -1,19 +1,13 @@
 ---
 group: config-guide
-subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
-menu_title: Configure a custom cron job and cron group (tutorial)
-menu_order: 3
-menu_node:
-version: 2.1
-github_link: config-guide/cron/custom-cron-tut.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
+This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can use a module you already have or you can use a sample module from our [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
 Running the cron job results in a row being added to the `cron_schedule` table with the name of the cron job, `custom_cron`.
 
@@ -26,6 +20,7 @@ In this tutorial, we assume the following:
 *   You perform all actions as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Step 1: Get a sample module {#cron-tut-get}
+
 To set up a custom cron job, you need a sample module. We suggest the `magento-module-minimal` module.
 
 If you already have a sample module, you can use it; skip this step and the next step and continue with [Step 3: Create a class to run cron](#cron-tut-class).
@@ -34,14 +29,14 @@ If you already have a sample module, you can use it; skip this step and the next
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to a directory that is not in your Magento application root (for example, your home directory).
-2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
+2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples).
 
     For example,
 
         cd ~
         git clone git@github.com:magento/magento2-samples.git
 
-    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to github.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account){:target="_blank"}.
+    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to github.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account).
 4.  Make a directory to which to copy the sample code:
 
         mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
@@ -70,6 +65,7 @@ If you already have a sample module, you can use it; skip this step and the next
 {% endcollapsible %}
 
 ## Step 2: Verify the sample module {#cron-tut-verify}
+
 Before you continue, make sure the sample module is registered and enabled.
 
 {% collapsible To verify the sample module: %}
@@ -85,6 +81,7 @@ If the module doesn't display, review [step 1](#cron-tut-get) carefully. Make su
 {% endcollapsible %}
 
 ## Step 3: Create a class to run cron {#cron-tut-class}
+
 This step shows a simple class to create a cron job. The class only writes a row to the `cron_schedule` table that confirms it's set up successfully.
 
 {% collapsible To create a class: %}
@@ -146,6 +143,7 @@ The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class
 {% endcollapsible %}
 
 ## Step 5: Verify the cron job {#cron-tut-cronver}
+
 This step shows how to verify the custom cron job successfully using a SQL query on the `cron_schedule` database table.
 
 {% collapsible To verify cron: %}
@@ -153,7 +151,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1.  Run Magento cron jobs:
 
         php /var/www/html/magento2/bin/magento cron:run
-2.  Enter the `magento cron:run` command two or three times. 
+2.  Enter the `magento cron:run` command two or three times.
 
     The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command _at least_ twice.
 2.  Run the SQL query `SELECT * from cron_schedule WHERE job_code like '%custom%'` as follows:
@@ -191,6 +189,7 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 {% endcollapsible %}
 
 ## Step 6 (optional): Set up a custom cron group
+
 This step shows how to optionally set up a custom cron group. You should set up a custom cron group you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
 
 {% collapsible To set up a custom cron group: %}
@@ -210,6 +209,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
         <history_cleanup_every>10</history_cleanup_every>
         <history_success_lifetime>60</history_success_lifetime>
         <history_failure_lifetime>600</history_failure_lifetime>
+        <use_separate_process>1</use_separate_process>
     </group>
 </config>
 {% endhighlight %}
@@ -219,6 +219,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 {% endcollapsible %}
 
 ## Step 7 (optional): Verify your custom cron group
+
 This step shows how to verify your custom cron group using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 {% collapsible To verify your custom cron group: %}
@@ -242,4 +243,3 @@ This step shows how to verify your custom cron group using the {% glossarytoolti
 
 
 {% endcollapsible %}
-

@@ -1,11 +1,9 @@
 ---
 group: release-notes
 title: Component Status
-version: 2.3
-github_link: release-notes/component-status.md
 ---
 
-**Last Updated: July 18, 2018**
+**Last Updated: August 20, 2018**
 
 This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
 
@@ -25,6 +23,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Catalog                                | <span class='status red'>Red</span>       |
 | Infrastructure/ Performance                    | <span class='status yellow'>Yellow</span> |
 | Module/ Bundle                                 | <span class='status yellow'>Yellow</span> |
+| Module/ Checkout/ One Page Checkout            | <span class='status yellow'>Yellow</span> |
 | Module/ Cms/ CMS Content                       | <span class='status yellow'>Yellow</span> |
 | Module/ ConfigurableProduct                    | <span class='status yellow'>Yellow</span> |
 | Module/ ImportExport                           | <span class='status yellow'>Yellow</span> |
@@ -77,7 +76,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ CatalogUrlRewrite                      | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Guest Checkout               | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Mini Shopping Cart           | <span class='status green'>Green</span>   |
-| Module/ Checkout/ One Page Checkout            | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Shopping Cart                | <span class='status green'>Green</span>   |
 | Module/ Cms/ CMS Hierarchy                     | <span class='status green'>Green</span>   |
 | Module/ Config                                 | <span class='status green'>Green</span>   |
@@ -136,7 +134,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Tools/ Console                                 | <span class='status green'>Green</span>   |
 | Tools/ Dev Tools                               | <span class='status green'>Green</span>   |
 | Tools/ Web Server Configuration                | <span class='status green'>Green</span>   |
-
 {:style="table-layout:auto"}
 
 ## EE Modules
@@ -180,7 +177,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ TargetRule                | <span class='status green'>Green</span>   |
 | Module/ VersionsCms               | <span class='status green'>Green</span>   |
 | Module/ VisualMerchandiser        | <span class='status green'>Green</span>   |
-
 {:style="table-layout:auto"}
 
 ## B2B Modules
@@ -190,7 +186,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Company         | <span class='status green'>Green</span> |
 | Module/ NegotiableQuote | <span class='status green'>Green</span> |
 | Module/ SharedCatalog   | <span class='status green'>Green</span> |
-
 {:style="table-layout:auto"}
 
 ## Misc Modules
@@ -219,5 +214,4 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ ReleaseNotification       | <span class='status green'>Green</span>   |
 | None                              | <span class='status green'>Green</span>   |
 | Tools/ Utilities                  | <span class='status green'>Green</span>   |
-
 {:style="table-layout:auto"}

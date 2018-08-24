@@ -5,10 +5,7 @@ title: Magento Commerce 2.0.10 Release Notes
 menu_title: Magento Commerce 2.0.10 Release Notes
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
 menu_order: 270
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.10EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.10. This release includes multiple security and functional enhancements as well as enhancements to the Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. New Sales API methods allow third party solutions, such as shipping or ERP applications, to use APIs when they create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} or {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %}.
@@ -28,15 +25,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <i>These new interfaces will not break any existing customizations or extensions.</i>   See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.
 
-
-
-
 ## Security enhancements
 
 This release includes enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-2010-and-212-security-update" target="_blank">Magento Security Center</a>.
-
 
 ### General security
 {:.no_toc}
@@ -70,16 +63,12 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56905 -->* Fixed issue with retrieving potentially sensitive information through the use of {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} media.
 
-
-
 #### Denial-of-service (DoS) attacks and brute force attacks
 {:.no_toc}
 
 <!--- 57464 -->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
 <!--- 57303 -->* Fixed vulnerability to DoS attacks by full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} poisoning.
-
-
 
 ### Cross-Site Request Forgery (CSRF)
 {:.no_toc}
@@ -88,8 +77,6 @@ The following list provides an overview of the security issues fixed in this rel
 <!--- 45757 -->* Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.
 
 <!--- 57580/1433 -->* Resolved a potential  vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.
-
-
 
 ### Cross-site scripting (XSS)
 {:.no_toc}
@@ -100,14 +87,9 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 57363 -->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)
 
-
-
-
 ## Functional fixes
 
 We address the following functional issues in this release.
-
-
 
 ### Sales API enhancements
 {:.no_toc}
@@ -137,15 +119,12 @@ We address the following functional issues in this release.
 
 For more information on these API enhancements, see <a href="{{ page.baseurl }}/mrg/ce/Sales.html" target="_blank">Magento Sales API</a>.
 
-
 ### Performance
 {:.no_toc}
 
 <!--- 55300 -->* We've improved the load speed of the {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} form.
 
 <!--- 55791 -->* We've improved the load speed of the review step for the wizard used to create a configurable product.
-
-
 
 ### Tracking and shipping
 {:.no_toc}
@@ -157,8 +136,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 <!--- 57461 -->* Magento no longer throws an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} if you enter an invalid FedEx shipment tracking number.
 
-
-
 ### Cart and checkout
 {:.no_toc}
 
@@ -167,8 +144,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 
 <!--- 56911 -->* You can now use an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}Merchant Account{% endglossarytooltip %} ID when using Braintree as a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
-
-
 
 ### General fixes
 {:.no_toc}
@@ -207,7 +182,6 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 ## Known issues
 
-
 * **Issue**:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>. **Workaround**: Create a header template and reference the image location absolutely.
 
 
@@ -222,17 +196,16 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 <!--- 57004 -->
 
-
 ## System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

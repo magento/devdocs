@@ -5,8 +5,6 @@ title: git pull origin develop fails when updating the Magento software
 menu_title: git pull origin develop fails when updating the Magento software
 menu_node:
 menu_order: 410
-version: 2.1
-github_link: install-gde/trouble/git/tshoot_git-pull-origin.md
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
   - /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
@@ -39,9 +37,10 @@ Your solution depends on whether or not you intentionally modified files in the 
 
 #### You intentionally modified files
 
-Manually resolve the conflicts in the usual way. If you're not sure what to do, consult <a href="https://help.github.com/" target="_blank">GitHub help</a>.
+Manually resolve the conflicts in the usual way. If you're not sure what to do, consult [GitHub help](https://help.github.com/){:target="_blank"}.
 
 #### You didn't intentionally modify any files
+
 Try any of the following:
 
 *	If you're certain you didn't modify any files and you don't mind removing or overwriting the changes in the Magento file system, enter:
@@ -60,10 +59,7 @@ Try any of the following:
 
 		git config --system core.eol LF
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>Magento does <em>not</em> recommend or endorse any particular GitHub configuration settings. The preceding are suggestions only. For more information, consult the <a href="https://help.github.com/" target="_blank">GitHub help</a>.</p></span>
-	</div>
+	{:.bs-callout .bs-callout-info}
+  Magento does <em>not</em> recommend or endorse any particular GitHub configuration settings. The preceding are suggestions only. For more information, consult the [GitHub help](https://help.github.com/).
 
 	Continue where you left off with your Magento 2 update.
-

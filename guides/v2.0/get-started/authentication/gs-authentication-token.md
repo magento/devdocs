@@ -4,8 +4,6 @@ subgroup: 40_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
-version: 2.0
-github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 functional_areas:
   - Integration
@@ -20,7 +18,6 @@ Token type | Description | Default lifetime
 Integration | The merchant determines which Magento resources the integration has access to. | Indefinite. It lasts until it is manually revoked.
 Admin | The merchant determines which Magento resources an admin user has access to. | 4 hours
 Customer | Magento grants access to resources with the `anonymous` or `self` permission. Merchants cannot edit these settings. | 1 hour
-
 
 ## Integration tokens
 
@@ -128,6 +125,7 @@ Any web API call that accesses a resource that requires a permission level highe
 `Authorization: Bearer <authentication token>`
 
 ### Admin access {#admin-access}
+
 Admins can access any resources for which they are authorized.
 
 For example, to make a web API call with an admin token:
@@ -135,6 +133,7 @@ For example, to make a web API call with an admin token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"`
 
 ### Customer access
+
 Customers can access only resources with `self` permissions.
 
 For example, to make a web API call with a customer token:

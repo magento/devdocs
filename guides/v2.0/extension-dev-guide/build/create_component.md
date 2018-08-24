@@ -4,8 +4,6 @@ subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 6000
-version: 2.0
-github_link: extension-dev-guide/build/create_component.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
@@ -13,9 +11,11 @@ redirect_from:
 ---
 
 ## Overview of naming a component {#overview-naming}
+
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
 
 ## Prerequisites {#prereq}
+
 Before you continue, make sure you have completed all of the following tasks:
 
 *   Created a [file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
@@ -23,6 +23,7 @@ Before you continue, make sure you have completed all of the following tasks:
 *   [Registered]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}
+
 Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
 
 A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
@@ -102,8 +103,6 @@ where:
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
   <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
  </div> -->
-
-
 
 #### Next
 

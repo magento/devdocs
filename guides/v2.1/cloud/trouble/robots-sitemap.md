@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Add site map and search engine robots
-version: 2.1
-github_link: cloud/trouble/robots-sitemap.md
 functional_areas:
   - Cloud
   - Configuration
@@ -50,6 +48,7 @@ For versions earlier than  2.1.10, you must use the `pub/media` path. When you g
  If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
+
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.
 
 ```json

@@ -5,8 +5,6 @@ title: Adding a new payment integration (payment method)
 menu_title: Adding a new payment integration (payment method)
 menu_order: 5
 menu_node: parent
-version: 2.1
-github_link: payments-integrations/base-integration/integration-intro.md
 functional_areas:
   - Integration
 ---

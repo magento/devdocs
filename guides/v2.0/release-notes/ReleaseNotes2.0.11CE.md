@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.0.11 Release Notes
 menu_title: Magento Open Source 2.0.11 Release Notes
 menu_order: 168
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.11CE.md
 ---
 We are pleased to present Magento Open Source Edition 2.0.11. 
 
@@ -15,8 +13,8 @@ We are pleased to present Magento Open Source Edition 2.0.11.
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
 
-
 ## Highlights
+
 Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these highlights:
 
 
@@ -38,12 +36,9 @@ Magento 2.0.11 contains more than 70 bug fixes and enhancements, including these
 
 	REST integrators can use `POST /V1/invoice/{invoiceId}/refund` and `/V1/order/{orderId}/refund` to perform these actions. SOAP integrators can call `salesRefundInvoiceV1` and `salesRefundOrderV1`.
 
-
-
 ## Functional fixes
 
 We address the following functional issues in this release.
-
 
 ### Cart and checkout
 {:.no_toc} 
@@ -68,8 +63,6 @@ We address the following functional issues in this release.
 
 <!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
 
-
-
 ### Configurable products
 {:.no_toc} 
 
@@ -93,9 +86,6 @@ We address the following functional issues in this release.
 
 <!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
 
-
-
-
 ### Email
 {:.no_toc} 
 
@@ -104,7 +94,6 @@ We address the following functional issues in this release.
 <!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento did not save this information, and you encountered an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
 
 <!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
-
 
 ### General fixes
 {:.no_toc} 
@@ -160,18 +149,12 @@ We address the following functional issues in this release.
 
 <!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now requires a customer to confirm his subsciption. 
 
-
-
-
-
-
 ### Images
 {:.no_toc} 
 
 <!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
 
 <!--- 56171-->* You can now preview uploaded images. 
-
 
 ### Import/Export
 {:.no_toc} 
@@ -191,9 +174,6 @@ We address the following functional issues in this release.
 
 <!--- 56803-->* We've fixed an issue with the representation of date and time zones of items in the product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} during import or export. Previously, Magento converted all data into the default format (UTC-8), including values that you set to be displayed using another standard. 
 
-
-
-
 ### Installation, upgrade, and deployment
 {:.no_toc} 
 
@@ -204,7 +184,6 @@ We address the following functional issues in this release.
 <!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
 
 <!--- 61178-->* We've fixed an issue with how information in the `sales_order_item` attribute is handled after upgrade.
-
 
 ### Orders
 {:.no_toc} 
@@ -221,9 +200,6 @@ We address the following functional issues in this release.
 
 <!--- 58833-->* We've removed redundancy in the orders comment history display. Previously, Magento would display the time at which the customer entered the comment twice.
 
-
-
-
 ### Payment methods
 {:.no_toc} 
 
@@ -234,8 +210,6 @@ We address the following functional issues in this release.
 <!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
 
 <!--- 58377-->* PayPal Payflow Pro now uses the currency you have specified in your store. Previously, under some conditions, PayPal Payflow Pro defaulted to calculating charges in U.S. dollars, no matter which currency you specified. 
-
-
 
 ### Performance
 {:.no_toc} 
@@ -253,8 +227,6 @@ We address the following functional issues in this release.
  
 <!--- 57509-->* We've also streamlined the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
 
-
-
 ### Scope
 {:.no_toc}
 
@@ -271,33 +243,7 @@ We address the following functional issues in this release.
 
 <!---59547-->* Static asset signing now works under {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Known issues
-
 
 * **Issue**: When editing a product, you cannot edit customizable options on the store view level. That is, a change to one option affects products on all stores. Also, the ‘Use Default Value’ checkbox for the option title does not work. Unchecking this box and then changing the title affects all store views. 
 
@@ -342,17 +288,15 @@ We address the following functional issues in this release.
 
 <!---  OMIT 58461-->
 
-
-
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
 
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

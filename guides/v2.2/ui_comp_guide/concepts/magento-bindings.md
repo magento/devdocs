@@ -2,11 +2,10 @@
 group: UI_Components_guide
 subgroup: concepts
 title: Magento binding syntax
-version: 2.2
-github_link: ui_comp_guide/concepts/magento-bindings.md
 ---
 
 ## Overview
+
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
 ### Knockout syntax
@@ -37,18 +36,18 @@ or
 
 If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or `data-bind` attributes during the loading of the HTML template. 
 
-
-
 ## Binding map
 
-The table below shows how the Knockout bindings map to their Magento binding counterparts.
+The table below shows examples of how the Knockout bindings map to their Magento binding counterparts.
 
 |Name| Knockout Syntax | Magento Syntax |
 |--- | -------- | -------|
 |if             |`<!-- ko if: isVisible--><!-- /ko -->`                                         | `<if args="isVisible"></if>`                                          |
-|               |`<div data-bind="if: isVisible"></div>`                                        | `<div if="isVisible"></div>`                                          |
+|               |`<div data-bind="if: isVisible"></div>`                                        | `<div if="isVisible"></div>`
+|               |`<!-- ko if: getCartParam('summary_count') -->`                                        | `<if args="getCartParam('summary_count')">`                                          |
 |ifnot          |`<!-- ko ifnot: isVisible--><!-- /ko -->`                                      | `<ifnot args="isVisible"></ifnot>`                                    |
-|               |`<div data-bind="ifnot: isVisible"></div>`                                     | `<div ifnot="isVisible"></div>`                                       |
+|               |`<div data-bind="ifnot: isVisible"></div>`                                     | `<div ifnot="isVisible"></div>`
+|               |`<!-- ko ifnot: getCartParam('summary_count') -->`                                        | `<ifnot args="getCartParam('summary_count')">`                                       |
 |text           |`<!-- ko text: 'Some text' --><!-- /ko -->`                                    | `<text args="'Some text'">`                                           |
 |               |`<div data-bind="text: 'Some text'"></div>`                                    | `<div text="'Some text'"></div>`                                      |
 |with           |`<!-- ko with: element --><!-- /ko -->`                                        | `<with args="element">`                                               |
@@ -75,5 +74,6 @@ The table below shows how the Knockout bindings map to their Magento binding cou
 |textInput      |`<input data-bind="textInput: value"/>`                                        | `<input textInput="value"/>`                                          |
 |value          |`<input data-bind="value: value"/>`                                            | `<input ko-value="value"/>`                                           |
 |checked        |`<input type="checkbox" data-bind="checked: isChecked"/>`                      | `<input type="checkbox" ko-checked="isChecked"/>`                     |
+|                |`<input type="radio" data-bind="value: value,checked: isSelected" />`                      | `<input type="radio" ko-checked="element.isSelected" ko-value="value" />`                     |
 |checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" checked="isChecked"/>`   |
 {:style="table-layout:auto"}

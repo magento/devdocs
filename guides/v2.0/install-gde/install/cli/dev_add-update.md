@@ -5,8 +5,6 @@ title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node:
-version: 2.0
-github_link: install-gde/install/cli/dev_add-update.md
 functional_areas:
   - Install
   - System
@@ -27,6 +25,7 @@ You can either add a `require` section to `composer.json` or you can use the `co
 You have the following options:
 
 ### Use the `composer require` command
+
 Command usage:
 
 	composer require <vendor>/<name>:<version>
@@ -38,6 +37,7 @@ For example,
 Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} updates dependencies and installs the component.
 
 ### Add a `require` section to `composer.json`
+
 Open `composer.json` in a text editor.
 
 Add a `require` section like the following:
@@ -52,6 +52,7 @@ Add a `require` section like the following:
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
 ### For more information
+
 If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
 
 <!-- ABBREVIATIONS -->

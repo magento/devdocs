@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_GiftCardRequisitionList module
 menu_title: GiftCardRequisitionList
 menu_order: 120
-version: 2.2
-github_link: mrg/b2b/GiftCardRequisitionList.md
 functional_areas:
   - B2B
 ---

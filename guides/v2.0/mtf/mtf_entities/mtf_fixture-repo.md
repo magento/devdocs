@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Fixture Repository
-version: 2.0
-github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
 The repository stores pre-defined data for the fixture.
@@ -77,14 +75,14 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 <a href="#mtf_repo_widgetxml">See entire repository code</a>.
 
-<h4 id="mtf_repo_ex_set">Settings form</h4>
+#### Settings form   {#mtf_repo_ex_set}
 
 ![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png)
 
 - Set the **Type** field (`field name="code"`) to "CMS Page Link". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="code" xsi:type="string">CMS Page Link</field>`.
 - Set the **Design Theme** field (`field name="theme_id"`) to "Magento Blank". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="theme_id" xsi:type="string">Magento Blank</field>`.
 
-<h4 id="mtf_repo_ex_store">Storefront Properties form</h4>
+#### Storefront Properties form   {#mtf_repo_ex_store}
 
 ![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
 
@@ -104,7 +102,7 @@ To create a new CMS page link the user must enter data of all required fields. T
     - Set the **Container** field to "Main content area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set the **Template** field to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
 
-<h4 id="mtf_repo_ex_front">Frontend App Options</h4>  
+#### Frontend App Options   {#mtf_repo_ex_front}
 
 ![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
@@ -142,7 +140,7 @@ The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 
 The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
-<h4 id="mtf_repo_widgetxml">Widget.xml</h4>
+#### Widget.xml   {#mtf_repo_widgetxml}
 
 Now we can create a repository XML file `Widget.xml`. In our case the file should be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
 

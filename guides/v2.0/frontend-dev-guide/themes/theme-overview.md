@@ -4,14 +4,13 @@ subgroup: A_Themes
 title: Themes overview
 menu_title: Themes overview
 menu_order: 1
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-overview.md
 functional_areas:
   - Frontend
   - Theme
 ---
 
 ## Themes overview
+
 A *theme* is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or Magento admin) using a combination of custom templates, layouts, styles or images.
 
 Themes are designed to override or customize view layer resources, provided initially by modules or libraries.

@@ -6,8 +6,6 @@ menu_title: Create and display a category attribute with UI components
 menu_order: 3
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.2
-github_link: ui_comp_guide/howto/add_category_attribute.md
 ---
 
 Category attributes were automatically displayed in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %}. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.

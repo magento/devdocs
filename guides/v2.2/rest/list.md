@@ -4,8 +4,6 @@ subgroup: A_rest
 title: List of REST endpoints by module
 menu_title: List of REST endpoints by module
 menu_order: 3
-version: 2.2
-github_link: rest/list.md
 functional_areas:
   - Integration
 ---

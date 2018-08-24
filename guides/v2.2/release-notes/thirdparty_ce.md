@@ -4,8 +4,6 @@ subgroup: Third-party licenses
 menu_title: Magento Open Source third-party licenses
 title: Magento Open Source third-party licenses
 menu_order: 1
-version: 2.2
-github_link: release-notes/thirdparty_ce.md
 ---
 
 This page contains links to license agreements of the third party components used within Magento Open Source.  Click the **License** links to view the end user license agreement for the corresponding software.

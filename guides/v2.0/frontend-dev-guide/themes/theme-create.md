@@ -4,15 +4,13 @@ subgroup: A_Themes
 title: Create a new storefront theme
 menu_title: Create a new storefront theme
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
+## What\'s in this topic   {#layout_theme_how-to_overview}
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
@@ -28,6 +26,7 @@ This topic discusses how to create the files that make up a theme, how to add a 
 2. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
 
 ## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
+
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
@@ -37,12 +36,10 @@ The high-level steps required to add a new theme in the Magento system are the f
 3. Create directories for CSS, JavaScript, images, and fonts.
 4. Configure your theme in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel.
 
-<h2 id="theme-gen-read">Recommended reading</h2>
+## Recommended reading   {#theme-gen-read}
 
 * <a href="{{ site.mage2000url }}app/code/Magento" target="_blank">Checklist of modules</a>
 * <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Static view files processing</a>
-
-
 
 ## Create a theme directory {#layout_theme_how-to_dirs}
 
@@ -85,7 +82,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
 ## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
-
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
 
@@ -143,7 +139,6 @@ Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
 
 For illustration, see the <a href="{{ site.mage2000url }}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
 
-
 ## Configure images {#fedg_create_theme_how-to-images}
 
 Product image sizes and other properties used on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
@@ -196,7 +191,6 @@ During theme development, when you change any files stored here, you need to cle
 </p></span>
 </div>
 
-
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 
 At this point your theme file structure looks as follows:
@@ -213,8 +207,6 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>
-
-
 
 ## Theme logo {#theme_logo}
 
@@ -263,13 +255,14 @@ Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
-
 ## What's next {#next}
 
 ### Theme registration {#register_theme}
+
 Once you open the Magento Admin (or reload any  Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
 ### Applying a theme
+
 For information on how to apply the theme for the storefront, see the [Apply and configure a theme in Admin]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html) topic.
 
 ## See also

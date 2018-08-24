@@ -23,16 +23,15 @@ To set permissions before you install the Magento software:
 3.	If you haven't done so already, get the Magento software in one of the following ways:
 
 	*	[Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-	*	[Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+	*	[Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 	*	[Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 4.	After you have set file system ownership and permissions, continue with any of the following:
 
 	*	[Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 	*	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To further restrict permissions after installing the Magento software, you <a href="{{ page.baseurl }}/install-gde/install/post-install-umask.html">configure a Magento umask</a>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+To further restrict permissions after installing the Magento software, you [configure a Magento umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase

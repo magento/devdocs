@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Buttons
-version: 2.1
-github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento.

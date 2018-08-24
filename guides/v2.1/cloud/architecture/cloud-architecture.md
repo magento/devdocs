@@ -1,14 +1,13 @@
 ---
 group: cloud
 title: Magento Commerce (Cloud) architecture
-version: 2.1
-github_link: cloud/architecture/cloud-architecture.md
 functional_areas:
   - Cloud
 ---
 Each plan has a unique architecture to drive your Magento development and deployment process. Both, the Starter plan architecture and the Pro plan architecture, deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.
 
 ### Starter projects
+
 The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) has four environments:
 
 -  **Integration**—The Integration environment provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
@@ -17,6 +16,7 @@ The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/start
 -  **Inactive**—You can have an unlimited number of inactive branches. 
 
 ### Pro projects
+
 The [Pro plan architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
 -  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.

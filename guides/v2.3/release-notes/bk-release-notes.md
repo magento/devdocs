@@ -2,14 +2,10 @@
 group: release-notes
 subgroup: 2.3.x_Release_Information
 title: 2.3.x Release Information
-version: 2.3
-github_link: release-notes/bk-release-notes.md
 ---
 
 
 **Magento 2.3.0 is currently in pre-release**. Check out [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start) for information on participating in our pre-release evaluation program.
-
-
 
 ## Magento 2.3.x Release Notes
 
@@ -35,8 +31,6 @@ You can apply patches as they become available to update Magento Commerce (Cloud
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
 </div>
-
-
 
 ## Third-party license agreements
 

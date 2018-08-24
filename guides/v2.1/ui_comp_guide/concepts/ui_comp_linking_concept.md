@@ -4,8 +4,6 @@ subgroup: concepts
 title: Linking properties of UI components
 menu_title: Linking properties of UI components
 menu_order: 100
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_linking_concept.md
 ---
 
 ## Linking properties implementation

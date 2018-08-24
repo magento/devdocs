@@ -114,7 +114,10 @@
 		{% elsif "mftf" contains page.group %}
 		        {% assign toc = site.data.toc.magento-functional-testing-framework-guide %}
 
-		        {% elsif page.group == "marketplace-api" %}
+		{% elsif "mftf-2.3" contains page.group %}
+				{% assign toc = site.data.toc.magento-functional-testing-framework-guide-2_3 %}
+
+		{% elsif page.group == "marketplace-api" %}
 		        {% assign toc = site.data.toc.marketplace-api %}
 
 		{% endif %}

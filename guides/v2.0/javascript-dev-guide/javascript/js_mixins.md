@@ -1,8 +1,6 @@
 ---
 group: jsdg
 title: JavaScript mixins
-version: 2.0
-github_link: javascript-dev-guide/javascript/js_mixins.md
 ---
 
 A [mixin] is a class whose methods are added to, or mixed in, with another class.

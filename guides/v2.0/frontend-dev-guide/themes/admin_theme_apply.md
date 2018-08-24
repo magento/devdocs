@@ -3,14 +3,12 @@ group: fedg
 subgroup: A_Themes
 title: Apply an Admin theme
 menu_title: Apply an Admin theme
-version: 2.0
 menu_order: 10
-github_link: frontend-dev-guide/themes/admin_theme_apply.md
 functional_areas:
   - Frontend
   - Theme
 ---
-<h2 id="favicon-intro">What's in this topic</h2>
+## What\'s in this topic   {#favicon-intro}
 
 This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
@@ -20,7 +18,7 @@ This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-4
 2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html). 
 3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} information):
 {%highlight xml%}
-    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend -->"
+    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend" -->
         <sequence>
             <module name="Magento_Theme"/>
             <module name="Magento_Enterprise"/> <!-- For Enterprise versions only -->
@@ -77,7 +75,6 @@ For details about performing command line tasks, view the following topics:
 ## Open Admin in browser
 
 The last step is to open the Admin in browser and view the new theme applied.
-
 
 ## See also
 

@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_b2b module
 menu_title: B2b
 menu_order: 10
-version: 2.2
-github_link: mrg/b2b/B2b.md
 ---
 
 ## Overview
@@ -27,7 +25,6 @@ This module must be installed to use and to configure the other B2B modules. It 
 Extension developers can interact with the Magento_B2b module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_B2b module.
-
 
 ## Additional information
 

@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Illustration of customizing templates
-version: 2.1
-github_link: frontend-dev-guide/templates/template-sample.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 functional_areas:
   - Frontend
@@ -11,13 +9,14 @@ functional_areas:
 This topic contains a step-by-step illustration of solving a typical design customization task using templates.
 
 ## Sample template customization: changing a layout of the mini shopping cart
+
 In the Magento basic Blank theme, in the mini shopping cart, products are listed under the **Go to Checkout** button, like following:
 
 ![An image of a mini shopping cart where products are listed under the Go to Checkout button]({{site.baseurl}}/common/images/inherit_mini121.png)
 
 OrangeCo decided they want to change this and display the product list before the **Go to Checkout** button.
 
-The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2100url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="\_blank"}.
+The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2100url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html).
 Here is the part of the code OrangeCo worked with:
 
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)

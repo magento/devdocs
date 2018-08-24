@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: ADMIN variables
-version: 2.1
-github_link: cloud/env/environment-vars_magento.md
 functional_areas:
   - Cloud
   - Configuration
@@ -22,3 +20,4 @@ for the administrative user account and Admin panel. See [Set environment and pr
 | ADMIN_PASSWORD  | Password for the administrative user. When the project is created a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might need to contact the Project Owner for the updated password. |
 | ADMIN_URL       | The relative URL to access the Admin panel. For example: `/admin`. For security reasons, we recommend you choose a value other than `admin`,`backend`, or another term that is easy to guess.                                                                                                          |
 | ADMIN_USERNAME  | Username for the administrative user. The administrative user can create other users, including other administrative users. The default hardcoded username is the Project Owner email address. You can use this value, or change it to another secure username.                                        |
+{:style="table-layout:auto;"}

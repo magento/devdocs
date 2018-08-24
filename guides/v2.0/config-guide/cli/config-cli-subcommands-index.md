@@ -5,8 +5,6 @@ title: Manage the indexers
 menu_title: Manage the indexers
 menu_node:
 menu_order: 90
-version: 2.0
-github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 functional_areas:
   - Configuration
@@ -17,6 +15,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## View a list of indexers
+
 To view a list of all indexers:
 
 	bin/magento indexer:info
@@ -33,6 +32,7 @@ The list displays as follows:
 	catalogsearch_fulltext                   Catalog Search
 
 ## View indexer status
+
 Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.
 
 Command options:
@@ -61,6 +61,7 @@ Sample result:
 	Catalog Search:                                    Reindex required
 
 ## Reindex {#config-cli-subcommands-index-reindex}
+
 Use this command to reindex all or selected indexers one time only.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -97,6 +98,7 @@ Reindexing all indexers can take a long time for stores with large numbers of pr
 </div>
 
 ## Configure indexers
+
 Use this command to set the following indexer options:
 
 -   **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
@@ -105,6 +107,7 @@ Use this command to set the following indexer options:
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
 ### Display the current configuration
+
 To view the current indexer configuration:
 
 	bin/magento indexer:show-mode [indexer]
@@ -125,6 +128,7 @@ Sample result:
 	Catalog Search:                                    Update on Save
 
 ### Configure indexers
+
 To specify the indexer configuration:
 
 	bin/magento indexer:set-mode {realtime|schedule} [indexer]

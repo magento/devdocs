@@ -5,8 +5,6 @@ title: Uninstall modules
 menu_title: Uninstall modules
 menu_node:
 menu_order: 8
-version: 2.0
-github_link: install-gde/install/cli/install-cli-uninstall-mods.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
@@ -16,10 +14,12 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
+## Prerequisites   {#instgde-cli-uninst-prereq}
+
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
-<h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
+## Overview of uninstalling modules   {#instgde-cli-uninst-mod-over}
+
 This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules' code, database schema, and database data. You can create backups first so you can recover the data at a later time.
 
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.
@@ -30,11 +30,13 @@ You should uninstall a module only if you're certain you won't use it. Instead o
   <p>As an alternative, you can <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
 </div>
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+## First steps   {#instgde-cli-before}
+
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
+## Uninstall modules   {#instgde-cli-uninst-mod-uninst}
+
 Command usage:
 
 	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
@@ -149,7 +151,8 @@ Messages similar to the following display:
 	<p>Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p></span>
 </div>
 
-<h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
+## Roll back the file system, database, or media files   {#instgde-cli-uninst-mod-roll}
+
 To restore the Magento codebase to the state at which you backed it up, use the following command:
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]

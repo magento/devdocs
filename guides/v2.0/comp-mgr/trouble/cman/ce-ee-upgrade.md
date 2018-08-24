@@ -5,13 +5,12 @@ title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
 menu_node:
 menu_order: 500
-version: 2.0
-github_link: comp-mgr/trouble/cman/ce-ee-upgrade.md
 functional_areas:
   - Upgrade
 ---
 
 ### Problem: Error upgrading from CE to EE {#ce-ee}
+
 Your upgrade from **Magento Open Source** (formerly Community Edition) to **Magento Commerce** (formerly Enterprise Edition) might fail with the following error:
 
 	[2016-01-19 23:33:24 UTC] An error occurred while executing job 

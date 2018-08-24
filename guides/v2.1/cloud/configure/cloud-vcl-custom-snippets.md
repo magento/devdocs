@@ -5,8 +5,6 @@ title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets
 menu_order: 7
 menu_node:
-version: 2.1
-github_link: cloud/configure/cloud-vcl-custom-snippets.md
 functional_areas:
   - Cloud
   - Setup
@@ -27,6 +25,7 @@ Review the following sections:
 -   [The custom VCL snippet process](#process)—Walks you through the entire process, including links to custom VCL snippets you can create with ease.
 
 ## Understand VCL snippet values {#vcl-curl}
+
 You can use the following key/value pairs in JSON snippets in VCL files and in `cURL` commands.
 
 <table>
@@ -94,6 +93,7 @@ The following is an example of a returned JSON for a customer VCL snippet:
 ```
 
 ## The custom VCL snippet process {#process}
+
 To create custom VCL snippets, prepare the VCL configurations, save them to files, and continue with the following:
 
 1.  [Locate the active VCL version](#list). Use this version to clone.
@@ -109,6 +109,7 @@ The following are **best practices and recommendations**:
 -   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs. We provide an example for [Custom extend Admin timeout VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html).
 
 ## Export Fastly Service ID and API Token
+
 You can save Fastly service credentials into the bash environment variables and use them in cURL commands:
 
     export FASTLY_SERVICE_ID=<Service ID>
@@ -119,6 +120,7 @@ The exported environment variables are available only in the current bash sessio
     export | grep FASTLY
 
 ## Locate the currently active VCL snippet version {#list}
+
 To view a list of all VCL snippets by version:
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/active
@@ -128,6 +130,7 @@ Look for the `active` key from the returned list. You need the version to perfor
 For more information on this Fastly API, see this [get version command](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987){:target="\_blank"}.
 
 ## Clone the active VCL version and all snippets {#clone}
+
 Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version using a new version number. After you clone the version, you can [modify and add](#create-snippet) VCL snippets. Save the new version number for the bash script.
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/{Current Active Version #}/clone -X PUT
@@ -139,6 +142,7 @@ You can save the new version into a bash environment variable for use in cURL co
 For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="\_blank"}.
 
 ### Create custom VCL snippets {#create-snippet}
+
 Create a JSON file with the following content and format:
 
 ```json
@@ -168,6 +172,7 @@ For detailed examples and custom code, see the following:
 -   [Custom block bad referer VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-badreferer.html)
 
 ## Add VCL snippets to Fastly configuration {#add-snippet}
+
 To upload a prepared VCL snippet:
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet -H 'Content-Type: application/json' -X POST --data @<filename.json>
@@ -177,6 +182,7 @@ The `<filename.vcl>` is the name of the file you prepared in the previous step. 
 If you receive a `500 Internal Server Error` response from the Fastly service, check if you are trying to upload a valid JSON file.
 
 ## Validate and activate snippets for a version {#validate}
+
 When you add the VCL snippets to the version, Fastly creates and assigns it to your service according to the version number. Next, validate the VCL snippets for the version using with Fastly:
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/validate
@@ -190,6 +196,7 @@ Assuming there were no errors (if there are errors, fix them before proceeding),
 All VCL snippets associated with the version become active. This deactivates snippets using a previous version.
 
 ## Manage regular VCL snippets with curl {#manage-vcl}
+
 To list all regular VCL snippets attached to a service:
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet
@@ -211,6 +218,7 @@ To delete an individual VCL snippet using the API, get a list of snippets and en
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/<snippet_name> -X DELETE
 
 #### Fastly resources
+
 You can learn more about creating VCL snippets with the following Fastly resources:
 
 -   [All Fastly VCL content](https://docs.fastly.com/guides/vcl/){:target="\_blank"}

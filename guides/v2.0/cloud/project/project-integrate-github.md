@@ -5,14 +5,13 @@ title: GitHub integration
 menu_title: GitHub
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: cloud/project/project-integrate-github.md
 functional_areas:
   - Cloud
   - Setup
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}
+
 The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
 
 We strongly recommend you use a *private* GitHub repository.
@@ -26,6 +25,7 @@ This integration enables you to:
 To set up the integration, you must obtain a GitHub token and a webhook. The following sections walk you through the process.
 
 ## Generate a GitHub token {#cloud-int-gh-token}
+
 To perform this task, you must be a member of a group that can write to the GitHub repository. (In other words, you must be able to push to the repository.)
 
 To generate a token:
@@ -48,14 +48,17 @@ To generate a token:
 	![Create a GitHub token for a private repository]({{ site.baseurl }}/common/images/cloud_github-token-copy.png){:width="600px"}
 
 ## Enable the GitHub integration {#cloud-int-gh-enable}
+
 This section discusses how to enable the GitHub integration.
 
 ### Get started
+
 To get started:
 
 {% include cloud/cli-get-started.md %}
 
 ### Enable the integration
+
 To enable the GitHub integration for your environment:
 
 1.	Enable the integration:
@@ -96,6 +99,7 @@ To enable the GitHub integration for your environment:
 5.	Copy the Payload {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
+
 To add the webhook to your GitHub repository:
 
 1.	In your GitHub repository, click **Settings** as the following figure shows.
@@ -119,12 +123,13 @@ To add the webhook to your GitHub repository:
 5.	Click **Add webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
+
 To verify the integration works:
 
 1.	Make a change in the GitHub repository with which you integrated.
 2.	In the Magento Cloud CLI, pull the change to an environment.
 
-
 #### Related topics
+
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)

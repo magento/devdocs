@@ -2,8 +2,6 @@
 group: arch-guide
 title: Presentation Layer
 menu_title: Presentation layer
-version: 2.1
-github_link: architecture/archi_perspectives/present_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---
 
@@ -12,8 +10,6 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 When you interact with the Magento web interface, you are interacting with *presentation layer* code. The presentation layer is the top layer of the four layers (presentation, service, domain, and persistence layers) described by the Magento architecture.
 
 The presentation layer contains both view elements **(layouts, blocks, templates)** and **controllers**, which process commands to and from the user interface. Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files to modify elements of the presentation layer. Basically, the presentation layer represents the customization of HTML, CSS, JavaScript, Magento UI, PHTML files, and block files.
-
-
 
 ## Who uses the Presentation layer?
 

@@ -1,14 +1,6 @@
 ---
 group: config-guide
-subgroup: 045_pipeline
 title: Using environment variables
-menu_title: Using environment variables
-menu_node:
-menu_order: 6300
-level3_menu_node: level3child
-level3_subgroup: deployment-examples
-version: 2.2
-github_link: config-guide/deployment/pipeline/example/environment-variables.md
 functional_areas:
   - Configuration
   - Deploy
@@ -35,9 +27,11 @@ You can use the same procedure to configure any settings in the following refere
 *	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
+
 Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Assumptions
+
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
 
 For the purposes of this example, we assume the following:
@@ -47,6 +41,7 @@ For the purposes of this example, we assume the following:
 *	Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}
+
 To set the default locale and weight units in your development system:
 
 1.	Log in to the Magento Admin.
@@ -74,6 +69,7 @@ To set the default locale and weight units in your development system:
 11.	If prompted, flush the cache.
 
 ## Step 2: Update the configuration
+
 Now that you've changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.
 
 {% include config/split-deploy/example_save-shared-config.md %}
@@ -81,29 +77,32 @@ Now that you've changed the configuration in the Magento Admin, write the shared
 Note that even though `app/etc/env.php` (the system-specific configuration) was updated, don't check it in to source control. You'll create the same configuration settings on your production system later in this procedure.
 
 ## Step 3: Update your build system and generate files
+
 Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.
 
 {% include config/split-deploy/example_build-sync.md %}
 
 ## Step 4: Update the production system
+
 The last step in the process is to update your production system. You must do it in two parts:
 
 *	[Update the sensitive and system-specific settings](#config-split-verify-sens)
 *	[Update the shared settings](#config-split-verify-shared)
 
 ### Update the sensitive and system-specific settings {#config-split-verify-sens}
+
 To set the sensitive and system-specific settings using environment variables, you must know the following:
 
-*	Each setting's scope 
+*	Each setting's scope
 
-	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website. 
+	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website.
 
 	You must know the website's code to set the Default Email Domain configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html) for more information on finding it.
 *	Each setting's configuration path
 
 	The configuration paths used in this example follow:
 
-	| Setting name  | Configuration path | 
+	| Setting name  | Configuration path |
 	|--------------|--------------|
 	| Send Emails To | `contact/email/recipient_email` |
 	| Default Email Domain | `customer/create_account/email_domain` |
@@ -111,9 +110,12 @@ To set the sensitive and system-specific settings using environment variables, y
 	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 
 #### Convert configuration paths to variable names
+
 As discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html), the format of variables is:
 
-<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
+```
+<SCOPE>__<SYSTEM__VARIABLE__NAME>
+```
 
 The value of `<SCOPE>` is `CONFIG__DEFAULT__` for global scope or `CONFIG__WEBSITES__<WEBSITE CODE>` for website scope.
 
@@ -126,11 +128,11 @@ The variable names follow:
 | Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
 | Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
-</div>
 
 #### Set the variables using environment variables
+
 You can set the variable values in the Magento `index.php` using the following format:
 
 	$_ENV['VARIABLE'] = 'value';
@@ -147,11 +149,13 @@ To set variable values:
 5.	Continue with the next section.
 
 ### Update the shared settings {#config-split-verify-shared}
+
 This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).
 
 {% include config/split-deploy/example_update-prod.md %}
 
 ### Verify configuration settings in the Magento Admin
+
 This section discusses how you can verify the configuration settings in your production system Admin.
 
 To verify the configuration settings:
@@ -164,16 +168,14 @@ To verify the configuration settings:
 
 	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-	The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system.
+	{:.bs-callout .bs-callout-info}
+	The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of **VAT Number** is not editable in website scope.
 
-	The value of **VAT Number** is not editable in website scope.
-	</div>
 4.	If you haven't already done so, switch to Default Config scope.
 5.	In the left navigation, under General, click **Contacts**.
 
 	The **Send Emails To** field is not editable, as the following figure shows. This is a sensitive setting.
-	
+
 	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_contacts.png){:width="400px"}
 
 

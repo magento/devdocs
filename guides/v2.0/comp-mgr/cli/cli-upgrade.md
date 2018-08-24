@@ -5,13 +5,12 @@ title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---
 
 ## Command-line upgrade
+
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
 *	Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
@@ -29,6 +28,7 @@ You can upgrade Magento from the command line if you installed the software usin
 </div>
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
+
 This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`. If you did not do this, skip this section and continue with the next section.
 
 {% collapsible If you use pub as your Magento root directory: %}
@@ -41,6 +41,7 @@ This section applies to you *only* if you set the Magento root directory to `<yo
 {% endcollapsible %}
 
 ## Put your store in maintenance mode {#upgrade-cli-maint}
+
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
 
 <div class="bs-callout bs-callout-info" id="info">

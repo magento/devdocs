@@ -5,8 +5,6 @@ title: Go live checklist
 menu_title: Go live checklist
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: cloud/live/go-live-checklist.md
 functional_areas:
   - Cloud
   - Testing
@@ -15,12 +13,15 @@ functional_areas:
 Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.
 
 ## Completely test in Production {#test}
+
 See [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.
 
 ## Go Live Prep call with support {#call}
+
 Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.
 
 ## Enter a ticket with domain names {#domainticket}
+
 You may [need information]({{ page.baseurl }}/cloud/live/live.html#goliveinfo) for this ticket.
 
 1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud){:target="_blank"}.
@@ -30,6 +31,7 @@ You may [need information]({{ page.baseurl }}/cloud/live/live.html#goliveinfo) f
 4. (Optional) If you purchased a Domain-Validated SSL (HTTP) certificate as part of your subscription, provide the certificate files in an attachment to the ticket. We will provide the certificate to Fastly for deployment.
 
 ## DNS configurations {#dns}
+
 You need to complete configurations for your DNS including:
 
 * Set all necessary redirects, especially if you are migrating from an existing site
@@ -61,11 +63,13 @@ Another option for apex domain is to add A records, which maps a domain name to 
 * `151.101.193.124`
 
 ### TLS and Fastly {#fastly-tls}
+
 If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="_blank"}.
 
 ## Verify Production configurations
+
 Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.
 
 The following are recommended changes and checks:
@@ -79,6 +83,7 @@ The following are recommended changes and checks:
 *	[Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"} for JS, CSS, and HTTP
 
 ## Verify Fastly caching {#verifyfastly}
+
 Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
 *	Make sure that pages are being correctly cached in the page cache and Fastly
@@ -86,6 +91,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
+
 We recommend that you review the [Magento Performance Toolkit]({{ site.mage2000url }}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:

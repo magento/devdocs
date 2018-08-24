@@ -4,13 +4,12 @@ subgroup: 99_Module Development
 title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
-version: 2.2
-github_link: extension-dev-guide/plugins.md
 redirect_from:
 
 ---
 
 ### Overview
+
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
@@ -53,11 +52,13 @@ The following elements are optional:
 * `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
 
 ### Defining a plugin
+
 By applying code before, after, or around a public method, a plugin extends or modifies that method's behavior.
 
 The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
 #### Before methods
+
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
 You can use before methods to change the arguments of an observed method by returning a modified argument. If there is more than one argument, the method should return an array of those arguments. If the method does not change the argument for the observed method, it should return `null`.
@@ -77,6 +78,7 @@ class ProductAttributesUpdater
 {% endhighlight %}
 
 #### After methods
+
 Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
 
 You can use these methods to change the result of an observed method by modifying the original result and returning it at the end of the method.
@@ -154,8 +156,8 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
   <p>If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
 </div>
 
-
 #### Around methods
+
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
 <div class="bs-callout bs-callout-warning">
@@ -262,12 +264,15 @@ The prioritization rules for ordering plugins:
 
 Given the following plugins observing the same method with the following properties:
 
-|               | PluginA          | PluginB          | PluginC          |
-| :-----------: | :--------------: | :--------------: | :--------------: |
-| **sortOrder** | 10               | 20               | 30               |
-| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
-| **around**    |                  | aroundDispatch() | aroundDispatch() |
-| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+|                          | PluginA          | PluginB                        | PluginC                        | Action           |
+| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
+| **sortOrder**            | 10               | 20                             | 30                             |                  |
+| **before**               | beforeDispatch() | beforeDispatch()               | beforeDispatch()               |                  |
+| **around (first half)**  |                  | aroundDispatch() [first half]  | aroundDispatch() [first half]  |                  |
+| **original**             |                  |                                |                                | dispatch()       |
+| **around (second half)** |                  | aroundDispatch() [second half] | aroundDispatch() [second half] |                  |
+| **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
+| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
 
 The execution flow will be as follows:
 
@@ -286,7 +291,6 @@ The execution flow will be as follows:
   * `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
-
 
 ### Configuration inheritance
 

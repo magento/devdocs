@@ -4,9 +4,6 @@ subgroup: Contributor Guide
 title: Contribute to Magento DevDocs
 menu_title: Contribute to Magento DevDocs
 menu_order: 
-version: 2.0
-github_link: extension-dev-guide/Contribute_edg.md
-
 ---
 
 We encourage our users to add or correct Magento DevDoc content. Write a full topic, add a new section to an existing topic, or even just add a few sentences about something you know on an existing topic. Don't worry about grammar or form; we can fix that for you!

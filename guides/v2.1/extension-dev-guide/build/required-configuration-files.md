@@ -4,8 +4,6 @@ subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 2000
-version: 2.1
-github_link: extension-dev-guide/build/required-configuration-files.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
   - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
@@ -23,7 +21,6 @@ Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{
 </div>
 
 {% include php-dev/component-root.md %}
-
 
 ## Use /etc for your configuration files
 
@@ -51,13 +48,11 @@ In addition to those files, a Magento 2 module also has nested configuration dir
 *	`<your module root dir>/etc/webapi_soap/`
 
 ### Configuration files
+
 *	Configuration files that are in the top level of that module's `etc` directory are global to that component.
 *	Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
 
-
-
 ### Tailor your configuration files for what your module does
-
 
 The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel, or as a {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
 
@@ -75,7 +70,6 @@ If the module is a service that may call an API, or does some other work that is
 *	`<your module root dir>/etc/webapi_soap/di.xml`
 
 Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
-
 
 #### Next
 

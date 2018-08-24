@@ -5,8 +5,6 @@ title: SSH and sFTP
 menu_title: SSH and sFTP
 menu_order: 35
 menu_node:
-version: 2.1
-github_link: cloud/env/environments-ssh.md
 functional_areas:
   - Cloud
   - Setup
@@ -27,11 +25,13 @@ You create an SSH key pair including a public and private key:
 * The _private key_ should remain private on your workspace that you use for remote accessing environments. **Never share your private key.** Don't add it to a ticket, copy it to a chat, or attach it to emails.
 
 ## How SSH keys work {#work}
+
 When you enter an SSH command to connect your client to the remote host, the host and your workspace begin tests back and forth to verify and allow access. These tests use the public and private keys you generated. Your entered command initiates SSH key authentication to request access to the server, indicating the public key to use. The server checks for authorized keys in its list for your public key. When found, it generates a message string and encrypts it with the public key the host has for you. Your system receives the message, decrypts it using your local private key, and merges the message with a session ID. Your system generates an MD5 of the message and session ID, sending it back to the host. If everything checks out, this passes the connection test and completes full SSH access to the host.
 
 {% include cloud/enable-ssh.md %}
 
 ## SSH to an environment {#ssh}
+
 You can connect using SSH in any of the following ways:
 
 * [SSH using Magento Cloud CLI](#magento-cli)
@@ -39,6 +39,7 @@ You can connect using SSH in any of the following ways:
 * [Git SSH commands for Pro Staging and Production](#pro)
 
 ### SSH using Magento Cloud CLI {#magento-cli}
+
 Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:
 
 * Starter environments
@@ -60,6 +61,7 @@ To SSH to an environment using the Magento Cloud command line:
 		magento-cloud ssh -p <project ID> -e <environment ID>
 
 ### Locate the SSH command in the Project Web Interface {#web-interface}
+
 You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.
 
 To copy the SSH command:
@@ -78,6 +80,7 @@ Example SSH command:
 	ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
+
 You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
 
 With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.
@@ -94,6 +97,7 @@ For example, to log in to the Staging environment, use the following command: `s
 {% include cloud/ssh-tunnel.md %}
 
 ## sFTP to environments {#sftp}
+
 Typically, you want to use SSH for secure access to your environments and [migrate files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
 You need the following requirements to sFTP into cloud environments:

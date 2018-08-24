@@ -4,14 +4,10 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.0.12 Release Notes
 menu_title: Magento Open Source 2.0.12 Release Notes
 menu_order: 167
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.12CE.md
 ---
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.12. 
-
-
 
 ## Highlights
 
@@ -26,12 +22,9 @@ Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one 
 
 This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
-
-
 ## Functional fixes
 
 We address the following functional issues in this release.
-
 
 ### Catalog
 
@@ -41,10 +34,7 @@ We address the following functional issues in this release.
 
 <!--- 62647 -->* Magento now successfully saves a product even when you include an empty Custom Options row (**Products > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} > Custom Options**). Previously, under these conditions, Magento displayed the `Invalid option value` error message, and did not save the product.  
 
-
-
 ### Checkout
-
 
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
@@ -53,8 +43,6 @@ We address the following functional issues in this release.
 
 <!--- 61022 -->* You can now create a new order from the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
 
-
-
 ### Import/export
 
 <!--- 61264 -->* Magento can now import `additional_images` that are tagged with labels that contain a comma separator.
@@ -62,8 +50,6 @@ We address the following functional issues in this release.
 <!--- 61075 -->* Magento  no longer deletes a product after you select the Replace option while importing a product. Previously,  Magento deleted the product rather than replacing it.  
 
 <!--- 63243 -->* You can now use {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager to uninstall extensions that were installed using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
-
-
 
 ### Miscellaneous
 
@@ -81,14 +67,11 @@ We address the following functional issues in this release.
 		Command returned non-zero exit code:
 		`php -f /var/www/html/20ce/bin/magento setup:di:compile-multi-tenant 2>&1`
 
-
-
 ### Payment methods
 
 <!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displayed this message, **No {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} available**.
 
 ### Sales
-
 
 <!--- 61151 -->* Magento now displays an error message as expected when a user tries to add less than the specified minimum quantity of a product to his shopping cart. 
 
@@ -97,10 +80,6 @@ We address the following functional issues in this release.
 <!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a>
 
 <!--- 61146 -->* An Admin user with restricted permissions no longer has access to all orders. 
-
-
-
-
 
 ### Travis builds
 
@@ -175,15 +154,15 @@ We address the following functional issues in this release.
 
 <!--- 61150 -->* **Issue**: When editing a product description, you cannot delete a product image across multiple stores. When you try to save your edits, Magento displays this message: **The image cannot be removed as it has been assigned to the other image role**. 
 
-
 ## System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
 
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

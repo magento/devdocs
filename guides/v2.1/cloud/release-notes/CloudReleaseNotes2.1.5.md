@@ -7,8 +7,6 @@ menu_order: 373
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.1
-github_link: cloud/release-notes/CloudReleaseNotes2.1.5.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.5.html
 functional_areas:
@@ -23,9 +21,10 @@ These Release Notes provide up-to-date information about changes, additions, and
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
 ## Fixes in this release
+
 <!--MAGECLOUD-1427-->* We fixed an issue that was causing the wrong products to be indexed in 2.1.5. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
 
-<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services. Previously, the deployment process was overwriting these settings in the `env.php` file if the `QUEUE_CONFIGURATION` and/or `SEARCH_CONFIGURATION` [environment variables]({{ site.baseurl }}/guides/v2.1/cloud/env/environment-vars_magento.html#deploy) were not set in 2.1.5.
+<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services. Previously, the deployment process was overwriting these settings in the `env.php` file if the `QUEUE_CONFIGURATION` and/or `SEARCH_CONFIGURATION` [environment variables]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html) were not set in 2.1.5.
 
 <!--MAGECLOUD-1246-->* The RabbitMQ configuration process now obtains all required parameters automatically in 2.1.5.
 
@@ -35,5 +34,6 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 
 ### {{site.data.var.ee}} Release Notes
+
 *	[{{site.data.var.ee}} 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html)
 *	[{{site.data.var.ee}} 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5EE.html)

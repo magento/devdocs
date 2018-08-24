@@ -5,8 +5,6 @@ title: Custom blacklist VCL
 menu_title: Custom blacklist VCL
 menu_order:
 menu_node:
-version: 2.1
-github_link: cloud/configure/fastly-vcl-blacklist.md
 functional_areas:
   - Cloud
   - Setup
@@ -19,11 +17,11 @@ You must have the following information to complete this VCL code snippet:
 * List of client IPs to blacklist, or block access
 * Account access and URL to the Magento Admin for the Staging or Production environment
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
-</div>
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
+
 Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an Edge ACL of IPs to block from accessing your site. Then create a custom VCL snippet to manage access.
 
 If you want to allow access to Staging and Production, create the Edge ACL in both Magento Admins with the same name. You can have different IPs in the two environments. The VCL snippet code will apply to both environments.
@@ -38,11 +36,12 @@ If you want to allow access to Staging and Production, create the Edge ACL in bo
 You will use the Edge ACL by name in your VCL snippet code.
 
 ## Create blocklist.json {#vcl}
+
 To block blacklisted IPs from access to Staging and Production environments, you can use the same VCL snippet file without edits.
 
 Create an `blocklist.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "blocklist",
   "dynamic": "0",
@@ -50,7 +49,7 @@ Create an `blocklist.json` file with the following JSON content:
   "priority": "5",
   "content": "if ( client.ip ~ blocklist) { error 403 \"Forbidden\"; }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 
@@ -59,10 +58,10 @@ Review the following values for the code to determine if you need to make change
 * `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
 * `content`: The snippet of VCL code to run, which verifies the client IP. If the IP is in the Edge ACL, it is blocked from access with a 403 Forbidden error for the entire website. All other client IPs are allowed access.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
-</div>
 
 ## Finish adding the VCL {#complete}
+
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 

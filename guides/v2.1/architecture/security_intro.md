@@ -4,8 +4,6 @@ subgroup: Architectural Basics
 title: Security overview
 menu_title: Security
 menu_order:
-version: 2.1
-github_link: architecture/security_intro.md
 ---
 
 ## Enhanced password management

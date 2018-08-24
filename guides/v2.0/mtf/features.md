@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Functional Testing Framework Features
-version: 2.0
-github_link: mtf/features.md
 ---
 
 The Functional Testing Framework is:

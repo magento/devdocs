@@ -1,36 +1,28 @@
 ---
 group: fedg
-subgroup: D_CSS
 title: Include CSS
-menu_order: 2
-version: 2.1
-github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="fedg_css-in-themes_overview">What's in this topic</h2>
+## What's in this topic {#fedg_css-in-themes_overview}
 
-<p>In the Magento application, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files are included in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout files</a>. </p>
+In the Magento application, CSS files are included in [layout files].
 
 Technically there is an option to include them in template files, but we strongly recommend avoiding this.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p><span class="glyphicon-class">
-The CSS class names can be assigned in both templates and layouts.</span></p>
-</div>
+{:.bs-callout .bs-callout-info}
+The CSS class names can be assigned in both templates and layouts.
 
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
-
 
 ## How Magento stylesheet files are organized
 
 Conventionally, CSS and LESS files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
 
-<p>In a <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-structure.html" target="_blank">theme directory</a>, stylesheets are stored in the following locations:</p>
-
+In a [theme directory], stylesheets are stored in the following locations:
 
 <table>
 <tr>
@@ -70,25 +62,25 @@ Contains the following:
 
 </table>
 
+## Include CSS {#fedg_css-in-themes_xml}
 
-<h2 id="fedg_css-in-themes_xml">Include CSS</h2>
+In the Magento application, the recommended way to include stylesheets is to specify them in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. 
 
-<p>In the Magento application, the recommended way to include stylesheets is to specify them in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. 
+Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in `default_head_blocks.xml` of the `Magento_Theme` module, which defines the default `<head>` page section for all Magento pages. 
+The recommended way to do this is adding an [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) `default_head_blocks.xml` in your theme, and including the required stylesheets in this file.
 
-<p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. 
-The recommended way to do this is adding an <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>default_head_blocks.xml</code> in your theme, and including the required stylesheets in this file. </p>
+Your custom `default_head_blocks.xml` should be located as follows:
 
-Your custom <code>default_head_blocks.xml</code> should be located as follows:
+`<theme_dir>/Magento_Theme/layout/default_head_blocks.xml`.
 
-<code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>.
+To include a CSS file, add the `<css src="<path>/<file>" media="print|<option>"/>` block in `<head>` section in a layout file. `<path>` is specified relative to the theme web directory (`<theme_dir>/web`)
 
-<p>To include a CSS file, add the <code>&lt;css src=&quot;&lt;path&gt;/&lt;file&gt;&quot; media=&quot;print|&lt;option&gt;&quot;/&gt;</code> block in <code>&lt;head&gt;</code> section in a layout file. <code>&lt;path&gt;</code> is specified relative to the theme web directory (<code>&lt;theme_dir&gt;/web</code>)
+For example, the following illustrates how stylesheets are included in the default Blank theme: 
 
-For example, the following illustrates how stylesheets are included in the default Blank theme: </p>
+[`/Magento_Theme/layout/default_head_blocks.xml`]
 
-<p><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="css/styles-m.css" />
@@ -96,13 +88,14 @@ For example, the following illustrates how stylesheets are included in the defau
         <css src="css/print.css" media="print" />
     </head>
 </page>
-{%endhighlight xml%}
+```
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p> If the system does not find the included CSS files, it searches for the same file names with a <code>.less</code> {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. This is part of the built-in preprocessing mechanism. You can find more information about it in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a> topic.
-</p></span> 
-</div>
+{:.bs-callout .bs-callout-info}
+If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
 
 
+
+[layout files]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html
+[theme directory]: {{page.baseurl}}/frontend-dev-guide/themes/theme-structure.html
+[CSS Preprocessing]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html

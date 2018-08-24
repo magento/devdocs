@@ -2,8 +2,6 @@
 group: arch-guide
 title: Magento Framework
 menu_title: Magento Framework
-version: 2.1
-github_link: architecture/archi_perspectives/framework.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
@@ -11,7 +9,7 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 
 The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
 
-This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} of code to help implement a resource model.)
 
 {:.bs-callout .bs-callout-tip}
@@ -53,7 +51,6 @@ lib/
 {:.bs-callout .bs-callout-tip}
 The `vendor/magento/framework` directory maps to the `Magento\Framework` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
-
 ## Highlights of Magento Framework
 
 The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, you may be interested in this subset of Framework namespaces.
@@ -69,30 +66,30 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Model</code>
+         <td><code>Magento\Framework\Model</code>
          </td>
          <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\AbstractModel</code>
+         <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\AbstractResource</code></td>
+         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\Controller</code></td>
+         <td><code>Magento\Framework\Controller</code></td>
          <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\View</code></td>
+         <td><code>Magento\Framework\View</code></td>
          <td>Contains code to render pages and layouts.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Data</code></td>
+         <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>

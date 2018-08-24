@@ -6,14 +6,13 @@ menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.0
-github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---
 
-<h2 id="overview-web-service">Overview</h2>
+## Overview   {#overview-web-service}
+
 <p>You can configure a Magento or third-party service as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p>
 <p>To <a href="#configure-webapi">configure a web API</a>, you define {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} elements and attributes in the <code>webapi.xml</code> XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service.
    The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
@@ -39,12 +38,15 @@ functional_areas:
       <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
    </li>
 </ul>
-<h2 id="configure-webapi">Configure a web API</h2>
+
+## Configure a web API   {#configure-webapi}
+
 <p>To configure a web API for a service, you define XML elements and attributes in the
    <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE&gt;</code> is the module name.
    For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.
 </p>
-<h2 id="service-interface-requirements">Service Interface Requirements</h2>
+
+## Service Interface Requirements   {#service-interface-requirements}
 
 After a service class is configured using the `webapi.xml` file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.
 
@@ -91,7 +93,8 @@ Following are some examples of various types and what they would look like in th
   <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
 </div>
 
-<h2 id="configuration-options">webapi.xml configuration options</h2>
+## webapi.xml configuration options   {#configuration-options}
+
 <p>To define web API components, set these attributes on these XML elements in the
    <code>webapi.xml</code> configuration file, as follows:
 </p>
@@ -222,7 +225,9 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
-<h2 id="sample-webapi">Sample webapi.xml file</h2>
+
+## Sample webapi.xml file   {#sample-webapi}
+
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
 ``` xml
 <?xml version="1.0"?>
@@ -301,10 +306,14 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
-<h2 id="validate-webapi">webapi.xsd XML schema file</h2>
+
+## webapi.xsd XML schema file   {#validate-webapi}
+
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
-<h2 id="forced-parameters">Forcing Request Paramters</h2>
+
+## Forcing Request Paramters   {#forced-parameters}
+
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
    always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>
    parameter is forced to match the ID of the currently logged in user.</p>

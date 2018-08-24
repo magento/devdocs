@@ -7,14 +7,13 @@ menu_order: 40
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.1
-github_link: cloud/project/project-routes-more-redir.md
 functional_areas:
   - Cloud
   - Setup
 ---
 
 ## Overview of redirection {#cloud-route-redir}
+
 Managing redirection rules is a common requirement for web applications,
 especially in cases where you do not want to lose incoming links that have
 changed or been removed over time. This topic discusses how you can manage redirection rules on your
@@ -23,6 +22,7 @@ changed or been removed over time. This topic discusses how you can manage redir
 If the redirection methods discussed in this topic don't work for you, you can use caching headers to do the same thing.
 
 ## Whole-route redirects {#cloud-route-whole}
+
 Using whole-route redirects, you can define very basic routes in `routes.yaml`. For example, you can redirect from a naked domain to a `www` subdomain as follows:
 
 	http://{default}/:
@@ -30,6 +30,7 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
+
 In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
 to existing routes:
 
@@ -76,8 +77,7 @@ Optional, defaults to `false`. Specifies whether the path key should be interpre
 
 In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
 
-{% highlight yaml %}
-
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -85,7 +85,7 @@ http://{default}/:
           "/regexp/(.*)/match":
           to: "http://example.com/$1"
           regexp: true
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -96,7 +96,7 @@ Specifies whether or not to redirect both the path and all its children or just 
 
 For example,
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
        redirects:
@@ -104,7 +104,7 @@ http://{default}/:
           "/from":
           to: "http://{default}/to"
           partial: true
-{% endhighlight %}
+```
 
 In the preceding example, if `partial` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
 
@@ -119,7 +119,7 @@ Determines if the suffix is carried over with the redirect. Defaults to `true`, 
 
 For example,
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -127,7 +127,7 @@ http://{default}/:
           "/from":
           to: "http://{default}/to"
           append_suffix: false
-{% endhighlight %}
+```
 
 The preceding example results in `/from/path/suffix` redirecting to just `/to`.
 
@@ -141,7 +141,7 @@ Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently
 ### `expires` {#cloud-route-partial-expires}
 Optional, the duration the redirect will be cached. Defaults to the `expires` value defined directly under the `redirects` key, but at this level we can fine-tune the expiration of individual partial redirects:
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -149,6 +149,6 @@ http://{default}/:
        paths:
           "/from": { "to": "http://example.com/" }
           "/here": { "to": "http://example.com/there", "expires": "2w" }
-{% endhighlight %}
+```
 
 In the preceding example, redirects from `/from` expire in one day, but redirects from `/here` expire in two weeks.

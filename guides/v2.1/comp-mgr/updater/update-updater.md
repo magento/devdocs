@@ -5,8 +5,6 @@ title: Update the updater application
 menu_title: Update the updater application
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: comp-mgr/updater/update-updater.md
 functional_areas:
   - Upgrade
 ---

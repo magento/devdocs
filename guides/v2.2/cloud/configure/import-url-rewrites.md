@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Import URL Rewrites
-version: 2.2
-github_link: cloud/configure/import-url-rewrites.md
 functional_areas:
   - Cloud
   - Setup
@@ -56,6 +54,7 @@ This module is available for Magento version 2.2.x only.
     ```
 
 ## Import the URL Rewrites file
+
 The URL Rewrites module exports custom rewrites using the following CSV file format:
 
 ```csv

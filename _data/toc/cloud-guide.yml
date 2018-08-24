@@ -148,7 +148,7 @@ pages:
           versions: ["2.2"]
 
     - label: Configure Fastly
-      url: /cloud/basic-information/cloud-fastly.html
+      url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html
@@ -371,17 +371,25 @@ pages:
           url: /cloud/trouble/message-queues.html
           versions: ["2.1","2.2","2.3"]
 
-    - label: Upgrades and Patches
+    - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Cloud tools release notes
+        - label: ece-tools release notes
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Patch Magento Commerce (Cloud)
+        - label: Upgrade to use ece-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Update ece-tools version
+          url: /cloud/project/ece-tools-update.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Apply custom patches
           url: /cloud/project/project-patch.html
 
-        - label: Upgrade Magento Commerce (Cloud)
+        - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)

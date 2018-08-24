@@ -5,8 +5,6 @@ title: Enable SSH keys
 menu_title: Enable SSH keys
 menu_order: 20
 menu_node:
-version: 2.1
-github_link: cloud/before/before-workspace-ssh.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-1_get-start.html
   - /guides/v2.1/cloud/before/before-setup-env-1_get-start.html
@@ -27,7 +25,6 @@ When initially setting up your local environment, you need to add the SSH keys t
 * Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments through the Project Web Interface or via SSH and CLI commands.
 
 {% include cloud/enable-ssh.md %}
-
 
 #### Next step:
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)

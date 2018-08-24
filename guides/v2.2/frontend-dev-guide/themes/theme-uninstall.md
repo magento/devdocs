@@ -1,11 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Uninstall a storefront theme
-menu_title: Uninstall a storefront theme
-menu_order: 40
-version: 2.2
-github_link: frontend-dev-guide/themes/theme-uninstall.md
 functional_areas:
   - Frontend
   - Theme
@@ -28,7 +23,6 @@ The following sections describe the flow for uninstalling themes in each case.
 2. Make sure that the theme is not applied on the storefront. To do this, in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel navigate to **Content** > **Design** > **Configuration** and make sure that your custom theme is not applied for any {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
 2. Make sure that the theme is not defined as a parent for any registered theme. To do this, in the Admin panel, navigate to **Content** > **Design** > **Themes**. Make sure that your theme is not mentioned in the **Parent Theme** column. If it is mentioned, you need to uninstall the child theme first. 
 
-
 ## Uninstall a manually added theme
 
 In case if your theme was created or installed manually, the uninstall procedure is the same, regardless the way Magento was installed.
@@ -39,7 +33,7 @@ To uninstall a manually added theme:
 2. Remove the theme directory.
 3. Remove the theme record from database. If you are using MySQL, run the following command to do this:
 
-```
+```bash
 mysql -u <user> -p -e "delete from <dbname>.theme where theme_path ='<Vendor>/<theme>' AND area ='frontend' limit 1"
 ```
 Where:
@@ -65,14 +59,12 @@ Take the following steps:
 1. Open the `<Magento root dir>/composer.json` file.
 2. Find a line with a reference to theme package and delete it. The reference would look like following:
 
-   {%highlight json%}
-   ...
+   ```json
    "require": {
     ...
        "<vendor>/<theme-name>": "<version>"
    },
-   ...
-   {%endhighlight%}
+   ```
  
 3. To update the project dependencies, run:  
  
@@ -80,9 +72,8 @@ Take the following steps:
 
 4. Use the `magento theme:uninstall` CLI command as described in the [Uninstall themes Composer package]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html) topic.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can use the Composer remove command to remove the dependency, but in that case, you must delete the theme record from the database manually.
-</div>
 
 ## Uninstall a theme extension
 

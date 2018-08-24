@@ -1,11 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Locate templates, layouts, and styles
-menu_title: Locate templates, layouts, and styles
-menu_order: 50
-version: 2.1
-github_link: frontend-dev-guide/themes/debug-theme.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 functional_areas:
   - Frontend
@@ -55,8 +50,8 @@ A search through the app directory for occurrences of "minicart-wrapper" in `.ph
 
 Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to [Customizing Theme Template]({{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html).
 
-
 ## Locate layouts {#debug-theme-layout}
+
 Just like templates, layouts are saved on a per-module basis. You can easily locate the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
 After you have determined the module, you can search for the layout in the following locations:
@@ -80,10 +75,10 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file `theme.xml`, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){target="&#95;blank"} or [overriding]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){target="&#95;blank"} content. Please see [Customizing Theme Layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html){target="&#95;blank"} for more details.
-
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) or [overriding]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) content. Please see [Customizing Theme Layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) for more details.
 
 ## Locate styles {#debug-theme-style}
+
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 
@@ -106,4 +101,4 @@ So, let's search for occurrences of "`minicart-wrapper`" in according to the fal
 1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
 2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less`
 
-<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see [CSS in themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html).
+After you determine which `.css` or `.less` file defines the class, you can override the default class definition in your custom `.css` or `.less` files.  For details, see [CSS in themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html).

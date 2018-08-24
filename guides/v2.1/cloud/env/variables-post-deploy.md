@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Post-deploy variables
-version: 2.1
-github_link: cloud/env/variables-post-deploy.md
 functional_areas:
   - Cloud
   - Configuration

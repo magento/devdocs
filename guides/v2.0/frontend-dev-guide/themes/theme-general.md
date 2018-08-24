@@ -5,8 +5,6 @@ title: Themes
 menu_title: Themes
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-general.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-general.html
 functional_areas:
   - Frontend

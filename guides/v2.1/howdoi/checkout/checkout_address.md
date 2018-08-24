@@ -6,8 +6,6 @@ title: Add a custom shipping address renderer
 subtitle: Customize Checkout
 menu_order: 10
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_address.md
 functional_areas:
   - Checkout
 ---
@@ -86,7 +84,6 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/w
 The template should contain a button for setting the address to be used for shipping.
 
 You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
-
 
 ## Step 3: Create the JS model for the shipping rate processor {#rate_processor}
 

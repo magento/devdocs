@@ -1,8 +1,6 @@
 ---
 group: release-notes
 title: Magento 2.2 backward incompatible changes
-version: 2.2
-github_link: release-notes/backward-incompatible-changes/index.md
 redirect_from: /guides/v2.2/release-notes/backward-incompatible-changes.html
 ---
 
@@ -41,7 +39,6 @@ New unique and required field `code` was added to the Store Group.
 **Class:** [`Magento\Store\Api\Data\GroupInterface`]({{ site.mage2200url }}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
 **Action:** Added two methods `getCode()` and `setCode($code)`<br/>
 
-
 ### Customer module
 
 Change was done in order to add default values to customer attributes.
@@ -54,12 +51,10 @@ Change was done in order to add default values to customer attributes.
 
 **Description:** Retrieve and set default values to customer attributes<br/>
 
-
 ### Wishlist module
 
 **Class:** [`Magento\Wishlist\Model\Wishlist`]({{ site.mage2200url }}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
-
 
 ### Recently Viewed and Recently Compared Widgets
 
@@ -117,7 +112,6 @@ Deprecated method | Use instead | Subsequent calls
   * Method `execute` has been reworked and now throws an `\Exception` instead of logging it
   * Method `__construction` no longer has the `\Psr\Log\LoggerInterface` dependency
   * The `report_date` column from the `paypal_settlement_report` table has been changed from `timestamp` format to `date`.
-
 
 ## Changes in repositories
 
@@ -215,7 +209,6 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 - `\Magento\Sales\Model\Order\Payment\Transaction\Repository::getList`
 - `\Magento\Quote\Model\QuoteRepository::getList`
 
-
 ### Affected {{site.data.var.ee}} repositories
 
 - `\Magento\Signifyd\Api\CaseRepositoryInterface::getList`
@@ -228,7 +221,6 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 - `\Magento\Signifyd\Model\CaseRepository::getList`
 - `\Magento\Rma\Model\Service\RmaManagement::search`
 - `\Magento\GiftWrapping\Model\WrappingRepository::getList`
-
 
 ## Compiler changes
 

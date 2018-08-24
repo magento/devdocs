@@ -1,6 +1,7 @@
-<div markdown="1">
- 
+
+
 ## Install the Magento software
+
 See one of the following sections:
 
 *	[Get Magento Open Source using Composer](#install-ce-composer)
@@ -10,7 +11,7 @@ See one of the following sections:
 ### Get the Magento Open Source software using Composer {#install-ce-composer}
 {:.no_toc}
 
-This software is available from `repo.magento.com`. Before installing the Open Source software using Composer, familiarize yourself with the Composer metapackage  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This software is available from `repo.magento.com`. Before installing the Open Source software using Composer, familiarize yourself with the Composer [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html), then run:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
@@ -37,6 +38,7 @@ After you get the Open Source software:
 	*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 ## Upgrade from an earlier version {#upgrade}
+
 To upgrade to version 2.0.x from an earlier version:
 
 *	[Web Setup Wizard (System Upgrade)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

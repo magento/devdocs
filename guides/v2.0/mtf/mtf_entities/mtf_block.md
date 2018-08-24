@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Block
-version: 2.0
-github_link: mtf/mtf_entities/mtf_block.md
 ---
 
 In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
@@ -493,7 +491,7 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
 
 #### Run the page generator {#mtf_run_page_gen}
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ### Use blocks inside blocks {#mtf_block_in_block}
 
@@ -586,7 +584,7 @@ Details:
 
 **Step 4**. Run the page generator
 
-{%include mtf/page-generator.html%}
+{%include mtf/page-generator.md%}
 
 #### Use a render {#mtf_block_render_use}
 

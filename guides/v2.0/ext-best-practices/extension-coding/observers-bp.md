@@ -4,8 +4,6 @@ subgroup: 02_Extension-Coding
 title: Observers Best Practices
 menu_title: Observers best practices
 menu_order: 4
-version: 2.0
-github_link: ext-best-practices/extension-coding/observers-bp.md
 functional_areas:
   - Standards
 ---
@@ -43,4 +41,5 @@ Cyclical event loops occur when your observer calls the method of an object that
 Your observer should not make assumptions about the order in which it will be invoked nor should it rely on the execution of another observer. Observers listening to the same event may be invoked in any order when that event is dispatched.
 
 ### Recommended Reading
+
 * [Events and Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)

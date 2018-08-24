@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Form Elements
-version: 2.1
-github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---
 Form elements are central to the Magento platform, particularly in the ‘Admin’ interface. This article contains examples of the various types of form elements encountered throughout the application to collect data input from its users.
@@ -80,6 +78,7 @@ Often times a text field will be paired with a checkbox to enable some behavior 
 ![](img/field_checkbox.png)
 
 ### Text Field with Icon Trigger or Button
+
 A control may be placed inside (overlaid on) a text field to "trigger" a more sophisticated
 or robust interaction, as in the case of something like **date picker**. The icon should appear on the far right end of the field. Once a user has interacted with the control and a value is set, the value should display in the field, as well as the control (icon). This of course allows the user to edit the field if they so desire.
 

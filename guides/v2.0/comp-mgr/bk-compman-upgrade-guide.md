@@ -6,8 +6,6 @@ landing-page: System Upgrade Guide
 menu_title: Upgrade the Magento application and components
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: comp-mgr/bk-compman-upgrade-guide.md
 functional_areas:
   - Upgrade
 ---
@@ -22,6 +20,7 @@ This topic discusses the ways you can:
 	*	Language packages (localize the storefront and Admin)
 
 ## Upgrade the Magento application
+
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
 *	{{site.data.var.ce}} and {{site.data.var.ee}}: If you used [Composer]({{ page.baseurl }}/install-gde/prereq/integrator_install.html) to install the Magento application or if you downloaded an [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), use the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) or the [command line]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
@@ -45,9 +44,11 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 </div>
 
 ## Update components
+
 To update Magento components, use the <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-start.html">Component Manager</a>.
 
 ### Next step
+
 Complete the tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 

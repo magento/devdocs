@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Varnish
 title: Configure Magento to use Varnish
-menu_title: Configure Magento to use Varnish
-menu_order: 15
-menu_node:
-version: 2.1
-github_link: config-guide/varnish/config-varnish-magento.md
 functional_areas:
   - Configuration
   - System
@@ -21,46 +15,27 @@ To configure Magento to use Varnish:
 4.	Enter a value in the **TTL for public content** field.
 5.	Expand **Varnish Configuration** and enter the following information:
 
-	<table>
-	<col width="30%">
-  	<col width="70%">
-	<tbody>
-		<tr>
-			<th>Field</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td>Access list</td>
-		<td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
-			<p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank">More information</a></p></td>
-	</tr>
-	<tr>
-		<td>Backend host</td>
-		<td><p>Enter the fully qualified hostname or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
-		<p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank">More information</a></p></td>
-	</tr>
-	<tr>
-		<td>Backend port</td>
-		<td>Origin server's listen port.</td>
-	</tr>
-
-	</tbody>
-	</table>
+    |Field|Description|
+    |--- |--- |
+    |Access list|Enter the fully qualified hostname, IP address, or [Classless Inter-Domain Routing (CIDR)](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) notation IP address range for which to invalidate content.<br><br>[More information](https://www.varnish-cache.org/docs/3.0/tutorial/purging.html)|
+    |Backend host|Enter the fully qualified hostname or IP address and listen port of the Varnish backend or origin server; that is, the server providing the content Varnish will accelerate. Typically, this is your web server.<br><br>[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html)|
+    |Backend port|Origin server's listen port.|
+    {:style="table-layout:auto;"}
 
 6.	Click **Save Config**.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+
 You can also activate Varnish from the command line--instead of logging in to the Magento Admin--using MySQL statement syntax:
 
-```
+```bash
 mysql -u root -p -D magento -e "INSERT INTO core_config_data ( scope, scope_id, path, value ) VALUES ( 'default', '0', 'system/full_page_cache/caching_application', '2') ON DUPLICATE KEY UPDATE value = 2;"
 ```
 
-Where `magento` is the name of your database.
-</div>
+Where `magento` is the name of your database.'
 
 ## Export a Varnish configuration file
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
+
+This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the [previous section]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html).
 
 To export a Varnish configuration file from the Admin panel:
 
@@ -69,7 +44,7 @@ To export a Varnish configuration file from the Admin panel:
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 	The following figure shows an example.<br><br>
-	<img src="{{ site.baseurl }}/common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
+	![Configure Magento to use Varnish in the Admin]({{ site.baseurl }}/common/images/config_varnish_admin.png)
 
 2.	Replace your existing <code>default.vcl</code> with the one you just exported.
 3.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
@@ -86,4 +61,5 @@ To export a Varnish configuration file from the Admin panel:
 		service httpd restart
 
 #### Last step
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>
+
+[Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

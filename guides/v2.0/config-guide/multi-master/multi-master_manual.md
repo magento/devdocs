@@ -5,9 +5,7 @@ title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
 menu_node:
-version: 2.0
 ee_only: True
-github_link: config-guide/multi-master/multi-master_manual.md
 functional_areas:
   - Configuration
   - System
@@ -15,6 +13,7 @@ functional_areas:
 ---
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
+
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
 
 Manually splitting databases involves:
@@ -46,6 +45,7 @@ This topic uses the following naming conventions:
 </div>
 
 ## Back up the Magento system {#config-ee-multidb-backup}
+
 We strongly recommend you back up your current database and file system so you can restore it later in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues during the process.
 
 {% collapsible Click to show how to back up Magento %}
@@ -60,6 +60,7 @@ To back up your system:
 {% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
+
 This section discusses how to create database instances for sales and {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} tables.
 
 {% collapsible Click to show how to create database instances %}
@@ -98,6 +99,7 @@ Create sales and OMS quote databases as follows:
 {% endcollapsible %}
 
 ## Configure the sales database {#config-ee-multidb-oms}
+
 This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.
 
 Sales database table names start with:
@@ -122,6 +124,7 @@ For more information, see:
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
 #### Remove foreign keys
+
 This script removes foreign keys that refer to non-sales tables from the sales database. 
 
 Create the following script and give it a name like `1_foreign-sales.sql`. Replace `<your main Magento DB name>` with the name of your Magento database.
@@ -176,6 +179,7 @@ ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREE
 {% endhighlight %}
 
 ### Configure the sales database {#config-ee-multidb-sql-oms-run}
+
 Run the preceding script:
 
 1.  Log in to your MySQL database as the `root` or administrative user:
@@ -192,6 +196,7 @@ Run the preceding script:
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
+
 This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.
 
 {% collapsible Click to back up and restore sales data %}
@@ -226,9 +231,11 @@ mysqldump -u <your database root username> -p <your main magento DB name> sequen
 {% endhighlight %}
 
 ### Restore sales data {#sql-sales-restore}
+
 This script restores sales data in your quote database.
 
 #### NDB requirement
+
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
@@ -238,6 +245,7 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
 
 #### Restore the data
+
 Run the following commands:
 
 {% highlight sql %}
@@ -259,6 +267,7 @@ where
 {% endcollapsible %}
 
 ## Configure the quote database {#config-ee-multidb-checkout}
+
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -268,6 +277,7 @@ This section discusses tasks required to drop foreign keys from sales database t
 Quote database table names start with `quote`. The `magento_customercustomattributes_sales_flat_quote` and `magento_customercustomattributes_sales_flat_quote_address` tables are also affected
 
 ### Drop foreign keys from quote tables
+
 This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main magento DB name> with the name of your Magento database.
 
 {% collapsible Click to drop foreign keys from quote tables %}
@@ -296,6 +306,7 @@ it`.
 {% endcollapsible %}
 
 ### Back up quote tables
+
 This section discusses how to back up quote tables from the main Magento database and restore them in your quote database.
 
 {% collapsible Click to back up and restore quote tables %}
@@ -305,6 +316,7 @@ Run the following command from a command prompt:
     mysqldump -u <your database root username> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
 
 ### NDB requirement
+
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
@@ -320,6 +332,7 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 {% endcollapsible %}
 
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
+
 This script sales and quote tables from the Magento database. Replace <your main magento DB name> with the name of your Magento database.
 
 {% collapsible Click to drop sales and quote tables %}
@@ -412,6 +425,7 @@ Run the script as follows:
 {% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
+
 The final step in manually splitting databases is to add connection and resource information to Magento's deployment configuration, `env.php`. 
 
 {% collapsible Click to update the Magento deployment configuration %}
@@ -464,6 +478,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
 {% endhighlight %}
 
 ### Update resources
+
 Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
 
 {% highlight php startinline=true %}
@@ -486,6 +501,7 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
 {% endcollapsible %}
 
 ## Reference scripts {#split-db-ref}
+
 This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}.
 
 {% collapsible Click to view reference SQL scripts %}
@@ -504,6 +520,7 @@ To use these scripts:
     Running this second script performs the actions in your main Magento database.
 
 ### Remove foreign keys (sales tables)
+
 This script is the removes foreign keys that refer to non-sales tables from the sales database. 
 
 {% highlight sql %}
@@ -532,6 +549,7 @@ where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
 {% endhighlight %}
 
 ### Remove foreign keys (quote tables)
+
 This script removes foreign keys that refer to non-quote tables from quote tables. 
 
 {% highlight sql %}
@@ -571,6 +589,7 @@ where for_name like '<your main magento DB name>/%'
 {% endhighlight %}
 
 ### Drop sales tables
+
 This script drops sales tables from the Magento database. 
 
 {% highlight SQL %}
@@ -605,8 +624,10 @@ select 'SET foreign_key_checks = 1;';
 {% endhighlight %}
 
 ### Drop quote tables
+
 Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
+
 <a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

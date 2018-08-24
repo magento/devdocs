@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Onboarding tasks
-version: 2.1
-github_link: cloud/onboarding/onboarding-tasks.md
 functional_areas:
   - Cloud
   - Setup
@@ -28,6 +26,7 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
+
 Once you have an account, you can use the Magento Project Portal to manage the
 project for your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
@@ -44,6 +43,7 @@ site.
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
+
 Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}.
 We will create your account and send you a welcome email that provides instructions to access the project.
 
@@ -51,6 +51,7 @@ The person who signs up for a {{site.data.var.ece}} account is referred to as
 the _Project Owner_.
 
 ## Your welcome e-mail {#email}
+
 Magento sends a welcome email to the Project Owner using the address that was
 provided during the sign up process. The email contains a link to access your
 {{site.data.var.ece}} project and complete initial project set up.
@@ -58,6 +59,7 @@ provided during the sign up process. The email contains a link to access your
 You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="\_blank"}.
 
 ## Project access and users {#users}
+
 The Project Owner can add user accounts to provide access to code, manage
 branches, enter tickets, and support environments. These user accounts can
 include in-house development, consultants, and Magento solution specialists.
@@ -75,10 +77,11 @@ on using the web interface and command line,
 see [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html).
 
 ## Get started with the Project Web Interface {#project-setup}
+
 When you sign up for a Pro or Starter subscription plan, we provision
 your initial project environment with a template {{site.data.var.ece}}
 repository to build and manage your site. For information about what is included
-in Pro and Starter plans, see [Starter Architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ site.baseurl }}/cloud/basic-information/pro-architecture.html).
+in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 You can use the Project Web Interface to manage your project, add user accounts,
 and begin developing your store(s). The Project Owner, Technical Admin users,
@@ -90,6 +93,7 @@ environment variables, environment settings, and routes.
 For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
 
 ## Sign up for Magento status {#status}
+
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
 [Status page](https://status.magento.cloud){:target="\_blank"}.
@@ -107,6 +111,7 @@ want to track. Sign up from the
 [Subscription page](https://status.magento.cloud/subscribe){:target="\_blank"}.
 
 ## Access your Magento Admin panel {#admin}
+
 Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
 
 For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the Project Owner

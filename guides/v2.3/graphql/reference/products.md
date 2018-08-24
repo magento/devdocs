@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Products endpoint
-version: 2.3
-github_link: graphql/reference/products.md
 ---
 
 The `products` endpoint allows you to search for catalog items.
@@ -130,8 +128,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
-This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids`attributes.
-
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
 ## ProductInterface {#ProductInterface}
 
@@ -196,6 +193,7 @@ Attribute | Data type | Description
 `website_ids` | [Int] | An array of website IDs in which the product is available
 
 ### ProductPrices object {#ProductPrices}
+
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description

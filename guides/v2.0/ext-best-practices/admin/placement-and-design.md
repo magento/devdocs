@@ -4,8 +4,6 @@ subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design
 menu_order: 1
-version: 2.0
-github_link: ext-best-practices/admin/placement-and-design.md
 functional_areas:
   - Standards
 ---
@@ -19,6 +17,7 @@ Magento’s flexible platform lets you place an {% glossarytooltip 55774db9-bf9d
 We discourage practices that diminish the user experience in the Admin. The following design decisions that have been seen in some extensions create a negative user experience and should be avoided.
 
 ### Icons in the Primary Navigation
+
 Icons should not be added to the primary navigation panel in the Admin. If every extension added its own icon to the primary navigation panel, the interface will quickly become cluttered and unusable.
 
 Icons should not be used in any of the navigation submenu panels to bring attention to your extension. Your navigation listing should conform to the look and feel of its surroundings and not look out of place.
@@ -28,16 +27,19 @@ Your extension's settings and configuration area is an appropriate place to use 
 For more information about icon design and Magento's icon library, see the article about  [Iconography]({{ page.baseurl }}/design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
 
 ### Advertising in Navigation
+
 It is not appropriate to use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} navigation for marketing or to {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
 
 Do not use the name of your company or marketing jargon as part of an extension name or the extension name itself in the Admin. You should create a unique feature name that users will understand because people usually search for extensions by feature or function keywords, not by a company or brand name.
 
 ## Placement guidelines for extension types
+
 From the list of extension types below, determine the type of extension you have and read the guidance for placement and style.
 
 *The names for the types of extensions listed below are for reference purposes only.*
 
 ### Standard Connector
+
 These extensions provide additional {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} over Magento's existing API and is responsible for providing settings between Magento and another system.
 
 **Placement**
@@ -54,6 +56,7 @@ All required settings for this connector type should appear in the **Stores > Se
 ---
 
 ### Store Feature Connector
+
 These extensions are responsible for integrating with different systems and need additional
 settings displayed under specific entries in the **Store > Settings > Configuration** section.
 
@@ -68,6 +71,7 @@ For example, if the extension is for Shipping, then you can place it under **Sto
 ---
 
 ### Connector with additional features
+
 These extensions are responsible for integrating with different systems and need additional settings and configurations for synchronizing with these systems.
 
 **Placement**

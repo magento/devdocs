@@ -5,8 +5,6 @@ title: Overview of UI components
 landing-page: UI Components
 menu_title: Overview of UI components
 menu_order: 1
-version: 2.1
-github_link: ui_comp_guide/bk-ui_comps.md
 redirect_from:
   - /guides/v2.1/ui-components/ui-component.html
   - /guides/v2.2/ui-components/ui-component.html
@@ -19,6 +17,7 @@ redirect_from:
 ---
 
 ## Overview of UI components
+
 *Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others*.
 
 They are designed for simple and flexible user interface (UI) rendering. Components are responsible for rendering result page fragments and providing/supporting further interactions of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and server.
@@ -34,6 +33,7 @@ The following XSD file contains rules and limitations shared between all compone
 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.
 
 ### General structure
+
 In Magento 2 there are basic and secondary UI components.
 
 Basic components are:

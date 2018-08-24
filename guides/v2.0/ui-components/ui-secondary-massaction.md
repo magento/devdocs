@@ -5,8 +5,6 @@ title: MassActions Component
 menu_title: MassActions Component
 menu_node:
 menu_order: 3
-version: 2.0
-github_link: ui-components/ui-secondary-massaction.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
 
 ---
@@ -40,7 +38,7 @@ The following options are available:
 * selectProvider - option that defines the component with selections data
 * actions - array that contains initially available actions
 
-<h5>Methods and Events</h5>
+##### Methods and Events
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 

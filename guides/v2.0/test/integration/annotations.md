@@ -1,8 +1,6 @@
 ---
 group: integration-testing
-version: 2.0
 title: Using DocBlock Annotations
-github_link: test/integration/annotations.md
 ---
 
 DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations], the Integration testing framework provides custom annotations described in this topic.

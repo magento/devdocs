@@ -2,8 +2,6 @@
 group: arch-guide
 title: Magento Components
 menu_title: Components
-version: 2.1
-github_link: architecture/archi_perspectives/components/AComponents.md
 redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
 

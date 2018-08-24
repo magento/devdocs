@@ -1,8 +1,6 @@
 ---
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Commerce
-github_link: release-notes/backward-incompatible-changes/commerce.md
 ---
 
 <div class="bs-callout bs-callout-info" markdown="1">

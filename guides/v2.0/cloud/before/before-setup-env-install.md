@@ -4,8 +4,6 @@ subgroup: 080_setup
 title: Install Magento
 menu_title: Install Magento
 menu_order: 50
-version: 2.0
-github_link: cloud/before/before-setup-env-install.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
   - /guides/v2.1/cloud/before/before-setup-env-perms.html
@@ -31,6 +29,7 @@ To be able to customize the Magento software on your local machine, you should i
 *	Magento authentication keys for installing Magento locally
 
 ### Get Magento Admin environment variables {#variables}
+
 You will need the Admin environment variable values for the installation command line.
 
 1. Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
@@ -53,6 +52,7 @@ The following results provides an example of variables:
 	+----------------+---------------+-----------+------+
 
 ### Get Magento authentication keys {#keys}
+
 You need Magento authentication keys to install Magento locally for your local environment. These are separate to the authentication keys included in the cloud code repository in `auth.json`.
 
 To create authentication keys through the Magento Marketplace:
@@ -66,11 +66,13 @@ To create authentication keys through the Magento Marketplace:
 5. The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when installing {{site.data.var.ee}}.
 
 ## Set the docroot {#docroot}
+
 Set the docroot to the `/magento` directory until you complete all setup. If you change the docroot to `/magento/pub` prior to completion, you will encounter issues running the Web Setup Wizard.
 
 For the Production environment, you should set the docroot to `/magento/pub`, which helps restrict access to vulnerable areas of the system. The webserver docroot should be set to `/magento/pub` only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in `/magento/pub`. Alternatively, you could also create a subdomain (for example, `install.domain.com`) and configure your webserver's docroot to the Magento installed root folder.
 
 ## Set file system permissions and ownership {#file-system-permissions}
+
 After you have installed Magento, you need to set the file system permissions and ownership.
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
@@ -85,6 +87,7 @@ After you have installed Magento, you need to set the file system permissions an
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
 ## Install Magento {#install}
+
 Prior to installing, you should [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
 You should be ready to install Magento using one of the following options:
@@ -119,6 +122,7 @@ The following example installs using the command line method:
       --use-rewrites=1</pre>
 
 ## Post-install configurations
+
 After installing Magento, run the commands for [compile]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. If you are not in the correct Magento user, switch:
@@ -138,6 +142,7 @@ Optionally, if you used Vagrant with the hostmanager plugin, update the hosts fi
 2. Enter the command `vagrant hostmanager` to update the hosts file.
 
 ## Additional software and services
+
 For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 * [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
@@ -146,6 +151,7 @@ For development and testing in an environment as close to Integration as possibl
 * [Additional software]({{ page.baseurl }}/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
+
 To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:
 
 	php bin/magento info:adminuri
@@ -164,6 +170,7 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps:
+
 For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html).
 
 For **Starter projects**, you are ready to start developing.

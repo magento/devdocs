@@ -5,13 +5,12 @@ title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
-version: 2.2
-github_link: comp-mgr/upgrader/upgrade-checklist.md
 functional_areas:
   - Upgrade
 ---
 
 ## Overview of System Upgrade {#compman-overview}
+
 This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
 
 You can upgrade in any of the following ways:

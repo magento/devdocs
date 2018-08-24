@@ -5,8 +5,6 @@ title: Admin Errors and Messages Writing
 menu_title: Errors and Messages Writing
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: design-styleguide/errors-and-messages/errors-and-messages.md
 ---
 Magento uses different types of dynamic messaging to alert users when:
 
@@ -16,11 +14,11 @@ Magento uses different types of dynamic messaging to alert users when:
 
 ## Types of Errors and Messages
 
-* **Information information.** This messaging is not an error. It's used when a person can continue with the task, but needs to be alerted regarding information critical to completing a task.
+* **Information information.** This messaging is not an error. It's used when a person can continue with the task but needs to be alerted regarding information critical to completing a task.
 
 * **Recoverable error.** Used when a person is blocked and can only continue by taking an action to fix the problem.
 
-* **Not recoverable / catastrophic error.** Used when a person can’t complete the task currently. Usually, it’s due to system error, server being down, etc. For ideal next steps for users, include a contact method to fix the issue. If a contact method isn't available, provide guidance for the user to try again at a later time.
+* **Not recoverable / catastrophic error.** Used when a person can’t complete the task currently. Usually, it’s due to system error, the server is down, etc. For ideal next steps for users, include a contact method to fix the issue. If a contact method isn't available, provide guidance for the user to try again at a later time.
 
 ## How to Write Errors Content
 

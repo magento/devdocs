@@ -7,8 +7,6 @@ menu_node:
 menu_order: 115
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.1
-github_link: install-gde/basics/basics_module.md
 functional_areas:
   - Install
   - System
@@ -16,6 +14,7 @@ functional_areas:
 ---
  
 ## What's the difference between a module and a component?
+
 A *module* is a type of *component*. A component can be:
 
 *	A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} (code that extends Magento behavior)

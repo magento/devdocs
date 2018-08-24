@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_GiftMessageStaging module
 menu_title: GiftMessageStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/GiftMessageStaging.md
 ---
 
 The Magento_GiftMessageStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_GiftMessage module functionality to be used in the Schedule Update form.

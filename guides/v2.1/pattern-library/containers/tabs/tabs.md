@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Tabs
-version: 2.1
-github_link: pattern-library/containers/tabs/tabs.md
 ---
 Tabs should be used when the user needs to alternate between views within the same context.
 

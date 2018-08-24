@@ -4,8 +4,6 @@ subgroup: A_rest
 title: Generate a local REST API reference
 menu_title: Generate a local API reference
 menu_order: 5
-version: 2.0
-github_link: rest/generate-local.md
 functional_areas:
   - Integration
 ---
@@ -54,6 +52,26 @@ To return information about all services:
 
 <p>You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
 </div>
+
+
+## Return the JSON schema for a specific store in Swagger
+
+Through Swagger it is possible to test the different REST API Calls. By default the resources will be fetched for all storeviews as shown in the example below. To return the JSON Schema for a specific store by adding a store parameter to the url with the `store_code` of the specific store.
+
+Default Swagger Url:
+  `http://<magento_host>/swagger`
+
+Fetched JSON schema url:
+  `http://<magento_host>/rest/all/schema?services=all`
+  
+---
+
+Specified Storecode in Swagger Url:
+  `http://<magento_host>/swagger?store=default`
+  
+Fetched JSON schema url:
+  `http://<magento_host>/rest/default/schema?services=all`
+
 
 ## Related topics
 

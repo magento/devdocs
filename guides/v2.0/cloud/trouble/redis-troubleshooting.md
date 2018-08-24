@@ -5,8 +5,6 @@ title: Redis troubleshooting
 menu_title: Redis troubleshooting
 menu_order: 23
 menu_node:
-version: 2.0
-github_link: cloud/trouble/redis-troubleshooting.md
 functional_areas:
   - Cloud
   - Configuration
@@ -16,6 +14,7 @@ functional_areas:
 Redis is an optional backend cache solution for {{site.data.var.ece}}. This information helps you troubleshoot errors and issues you encounter with Redis. These issues and resolutions affect Starter and Pro plans.
 
 ## Redis error on deploy {#update}
+
 You may receive the following error when deploying your Git branch:
 
     Redis::pipeline(): Already in pipeline mode in /var/www/html/magento2ce/vendor/colinmollenhour/credis/Client.php on line 1037
@@ -35,7 +34,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
 
 * 2.0.x: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
 * 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
-* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
+* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
   If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update completes, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 
@@ -49,6 +48,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
 For details on MCC and the update command, see [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Redis and static-content deployment {#static-content}
+
 This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
 
     Error: RedisException: read error on connection

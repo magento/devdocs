@@ -7,8 +7,6 @@ menu_order: 360
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.1
-github_link: cloud/release-notes/CloudReleaseNotes101.8.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.8.html
 functional_areas:
@@ -18,6 +16,7 @@ functional_areas:
 These Release Notes provide up-to-date information about changes, additions, and fixes to the {{site.data.var.ece}}  version 2.1.8, `magento-cloud-configuration` release 101.8.0.
 
 ## Changes and enhancements in this release
+
 In `magento-cloud-configuration` releases 101.8.0 and 101.8.1, we provide the following improvements:
 
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
@@ -38,11 +37,11 @@ In `magento-cloud-configuration` releases 101.8.0 and 101.8.1, we provide the fo
 
 <!--- MAGECLOUD-459 -->* The `deploy.log` file now contains the Magento version and `mcc` version.
 
-
 ## How to get `magento-cloud-configuration` release 101.8.x
 {{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
 ### Magento Commerce Release Notes
+
 This {{site.data.var.ece}} release corresponds to Magento Commerce 2.1.8.

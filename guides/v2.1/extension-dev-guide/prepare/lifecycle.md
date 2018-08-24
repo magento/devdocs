@@ -2,8 +2,6 @@
 group: extension-dev-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
-version: 2.1
-github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 
 This topic describes a module's lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.

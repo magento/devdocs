@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_CatalogUrlRewriteStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/CatalogUrlRewriteStaging.md
 ---
 
 The Magento_CatalogUrlRewriteStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_CatalogUrlRewrite module.

@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_order: 406
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
-github_link: release-notes/ReleaseNotes2.1_RC3EE.md
 ---
 
 We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
@@ -30,7 +28,7 @@ This Release Candidate is available from `repo.magento.com` if you have a Commer
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Enterprise Edition 2.1 includes several new and exciting features:
 
@@ -45,23 +43,19 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
 
+### Fixed issues
 
-<h3>Fixed issues</h3>
-
-<h4>Security enhancement</h4>
+#### Security enhancement
 
 <!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has been requested. 
 
+#### Performance enhancements
 
-
-<h4>Performance enhancements</h4>
 <!--- 53530-->* {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page performance has significantly improved when categories contain more than 30000 items. 
 
 <!--- 53223-->* Setting the Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
 
-
-<h4>Staging</h4>
-
+#### Staging
 
 <!--- 53424 -->  Changing the update start or end time on one {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} no longer overwrites update settings on other stores. Previously, changing the update start or end time on one page would overwrite settings on other stores. 
 
@@ -69,22 +63,15 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 50468-->* You can now filter products by Category ID as expected.
 
-
-
-<h4>Google Tag Manager</h4>
+#### Google Tag Manager
 
 <!--- 53170-->* The Update Cart Quantity {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} now correctly observes add or remove cart actions. 
 
-
-
-
-
-<h4>Import/Export</h4>
+#### Import/Export
 
 <!--- 54200-->* Magento now successfully imports products with a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
 
-
-<h4>Cache</h4>
+#### Cache
 
 <!--- 52923-->* Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
@@ -94,17 +81,15 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
 
+#### Messages and documentation
 
-
-<h4>Messages and documentation</h4>
 <!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
 
 <!--- 53008-->* The Swagger-generated docs for the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
 
 <!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
 
-
-<h4>Payment methods</h4>
+#### Payment methods
 
 <!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
 
@@ -112,8 +97,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
 
-
-<h4>Miscellaneous</h4>
+#### Miscellaneous
 
 <!--- 51753-->* You can now re-install Magento and use a different Admin email address than you had previously used.
 
@@ -173,8 +157,8 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 54211 DUPLICATE-->
 
+### Known issues
 
-<h3>Known issues</h3>
 Magento Commerce 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
@@ -202,8 +186,7 @@ Magento Commerce 2.1, Release Candidate 3 includes the following known issues:
 
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
-
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -214,7 +197,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 We do not support PHP 5.5.x or 7.0.5. 
 
-
 ## Installation and upgrade instructions
 
 You can install Magento Commerce 2.1 Release Candidate 3 (RC3) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
@@ -224,9 +206,9 @@ This Release Candidate is for test purposes only. Do not install it in a product
 {% include install/releasenotes/ee_install_21.md %}
 
 ### Upgrades
+
 To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

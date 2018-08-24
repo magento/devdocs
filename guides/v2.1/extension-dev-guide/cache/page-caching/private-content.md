@@ -5,8 +5,6 @@ title: Private content
 menu_title: Private content
 menu_order: 18
 menu_node:
-version: 2.1
-github_link: extension-dev-guide/cache/page-caching/private-content.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html
@@ -28,6 +26,7 @@ Use our [customer-data](https://github.com/magento/magento2/blob/2.0/app/code/Ma
 This example shows a customer's name on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
+
 The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target=" &#95;blank"} interface.
 
 The public method `getSectionData` must return an array with data for private block.
@@ -47,6 +46,7 @@ Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c
 ```
 
 ## Create a block and template {#config-cache-priv-how-block}
+
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -66,6 +66,7 @@ Initialize the component as follows:
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="&#95;blank"}
 
 ## Configure a UI component {#config-cache-priv-how-ui}
+
 The UI component renders block data on the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. To initialize the UI component, you must call the initialization method `_super()`.
 
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="&#95;blank"}
@@ -75,6 +76,7 @@ All properties are available in the template.
 [Example of defining a UI component in a layout]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22){:target="&#95;blank"}
 
 ## Invalidate private content
+
 Specify actions that trigger cache invalidation for private content blocks in a `sections.xml` configuration file in the `Vendor/ModuleName/etc/frontend` directory. Magento invalidates the cache on a POST or PUT request.
 
 The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2000url }}app/code/Magento/Catalog/etc/frontend/sections.xml){:target="&#95;blank"} to show you what the code is doing.
@@ -106,7 +108,7 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
 ```
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) {:target="&#95;blank"}
+Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="&#95;blank"}
 </div>
 
 Other examples:
@@ -116,6 +118,7 @@ Other examples:
 -   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="&#95;blank"}
 
 ## Version private content {#config-priv-vers}
+
 Private content, which is stored in the browser local storage, uses the `private_content_version` cookie to store the version.
 
 Versioning works as follows:

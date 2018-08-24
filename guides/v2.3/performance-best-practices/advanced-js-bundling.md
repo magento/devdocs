@@ -1,15 +1,13 @@
 ---
-layout: default
 group: perf-best-practices
 title: Advanced JavaScript bundling
-version: 2.3
-github_link: performance-best-practices/advanced-js-bundling.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 ## Introduction
+
 Bundling JavaScript modules for better performance is about reducing two things:
 
 1. The number of server requests.
@@ -20,11 +18,13 @@ In a modular application, the number of server requests can reach into the hundr
 ![noBundling](images/noBundling.png)
 
 ### Magento merging and bundling
+
 Out of the box, Magento provides two ways to reduce the number of server requests: merging and bundling. These settings are turned off by default. You can turn them on within Magento's Admin UI in **Stores** > **Configuration** > **Advanced** > **Developer** > **JavaScript Settings**, or from the command line.
 
 ![bundlingImage](images/bundlingImage.png)
 
 #### Basic bundling
+
 To enable Magento's built-in bundling from the command line:
 
 ```bash
@@ -40,6 +40,7 @@ Better, but the browser still loads ALL the JavaScript bundles, not just the one
 Magento bundling reduces the number of connections per page, but for each page request it loads all bundles, even when the requested page may only depend on files within one or two of the bundles. Performance improves after the browser caches the bundles. But, because the browser loads these bundles synchronously, the user's first visit to a Magento storefront could take a while to render and hurt the user experience.
 
 #### Basic merging
+
 To enable Magento's built-in merging from the command line:
 
 ```bash
@@ -51,6 +52,7 @@ This command merges all synchronous JavaScript files into one file. Enabling mer
 ![magentoMergingRealWorld](images/magentoMergingDevWorld.png)
 
 ### Real-world render times
+
 The previous bundled and merged load times look great in a development environment. But in the real world, many things can slow down rendering: slow connections, large connection thresholds, limited networks. In addition, mobile devices do not render as fast as desktops.
 
 To test and prepare your storefront deployment for the real world, we recommend you test with Chrome's native throttling profile of "Slow 3G." With Slow 3G, our previous bundled output times now reflect many users' connection realities:
@@ -66,6 +68,7 @@ The same is true when merging the bundles into a single file. Users could still 
 With a more advanced approach to JavaScript bundling, we can improve these load times.
 
 ## Advanced bundling
+
 Remember, the goal of JavaScript bundling is to reduce the number and size of requested assets for each page loaded in the browser. To do that, we want to build our bundles so that each page in our store will only need to download a common bundle and a page-specific bundle for each page accessed.
 
 One way to achieve this is to define your bundles by page types. You can categorize Magento's pages into several page types, including Category, Product, CMS, Customer, Cart, and Checkout. Each page categorized into one of these page types has a different set of RequireJS module dependencies. When you bundle your RequireJS modules by page type, you will end up with only a handful of bundles that cover the dependencies of any page in your store. 
@@ -336,7 +339,6 @@ This example reuses `mage/bootstrap` and `requirejs/require` assets, placing hig
 *   `bundles/checkout`—everything for checkout
 *   `bundles/catalog`—everything for product and category pages
 
-
 ### Part 2: Generate bundles
 
 The steps below describe the basic process for generating more efficient Magento bundles. You can automate this process any way you want, but you will still need to use `nodejs` and `r.js` to actually generate your bundles. And if your themes have JavaScript-related customizations and cannot reuse the same `build.js` file, you may need to create several `build.js` configurations per theme.
@@ -399,6 +401,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 ```
 
 #### 4. Configure RequireJS to use bundles
+
 To get RequireJS to use your bundles, add a `onModuleBundleComplete`callback after the `modules` node in the `build.js` file:
 ```javascript
 [
@@ -456,7 +459,7 @@ After the page loads, you should notice the browser loading different dependenci
 
 ![TwiceAsFast](images/TwiceAsFast.png)
 
-The the page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
+The page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
 
 #### 7. Optimize the bundles
 

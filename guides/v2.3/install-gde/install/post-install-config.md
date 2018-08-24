@@ -1,8 +1,6 @@
 ---
 group: install
 title: Configure the Magento application
-version: 2.3
-github_link: install-gde/install/post-install-config.md
 functional_areas:
   - Install
   - System
@@ -12,32 +10,37 @@ functional_areas:
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
 
 ## Set up cron {#post-install-cron}
+
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
 
 {% include config/setup-cron_2.2_how-to.md %}
 
 For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
-<h2 id="post-install-secy">Security settings</h2>
+## Security settings {#post-install-secy}
+
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
-*	We strongly recommend <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
-*	Make sure the <a href="{{page.baseurl}}/config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
-*	Take precautions against cross-site scripting (XSS) by <a href="{{page.baseurl}}/frontend-dev-guide/templates/template-security.html">securing your templates</a>
+*	We strongly recommend [changing the default Admin URL]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html) from `admin` to something else
+*	Make sure the [`X-Frame-Option` HTTP header]({{page.baseurl}}/config-guide/secy/secy-xframe.html) is set properly.
+*	Take precautions against cross-site scripting (XSS) by [securing your templates]({{page.baseurl}}/frontend-dev-guide/templates/template-security.html)
 <!-- Set up roles and restricted users (Admin) -->
 
-<h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
+## Enable Apache server rewrites {#post-install-rewrites}
+
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
-<a href="{{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+[Section on Apache server rewrites]({{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite)
 
 ## Caching in a multi-webnode environment {#config-redis}
+
 If you have multiple webnodes, you *cannot* use Magento's default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode's file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.
 
 Instead, use [Redis]({{page.baseurl}}/config-guide/redis/config-redis.html) for both the default {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and the page cache.
 
-<h2 id="post-install-server">Server settings</h2>
+## Server settings {#post-install-server}
+
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
 
 #### Log rotation
@@ -46,9 +49,9 @@ The UNIX `logrotate` utility enables you to administer systems that generate lar
 
 For more information, see one of the following:
 
-*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples){:target="_blank"}
-*	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app){:target="_blank"}
-*	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page){:target="_blank"}
+*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples)
+*	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
+*	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
 
 #### Set up iptables rules to enable various Magento services to communicate.
 
@@ -56,8 +59,8 @@ Whether you have one server or many, you must open ports in the firewall to enab
 
 More information:
 
-*	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.
-*	CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.
+*	Ubuntu: [Ubuntu documentation page](https://help.ubuntu.com/community/IptablesHowTo).
+*	CentOS: [CentOS how-to](http://wiki.centos.org/HowTos/Network/IPTables) and [CentOS reference page](http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html).
 
 #### Security Enhanced Linux (SELinux) rules
 
@@ -65,30 +68,30 @@ We don't recommend whether or not you use SELinux at all; however, if you use it
 
 More information:
 
-*	Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html" target="_blank">Debian handbook</a>
-*	CentOS: <a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a>
+*	Ubuntu: [Debian handbook](https://debian-handbook.info/browse/stable/sect.selinux.html)
+*	CentOS: [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 
 #### Set up an e-mail server
 
 Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
 
-*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)
-*	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
+*	Postfix for CentOS ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6), [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html))
+*	Postfix for Ubuntu ([digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04), [Ubuntu documentation](https://help.ubuntu.com/community/MailServer))
 
 #### Set up an Elasticsearch as search engine for enhanced performance:
 
 Elasticsearch available in {{site.data.var.ee}} since 2.1.0 and in {{site.data.var.ce}} since 2.3.0:
 
-*	<a href="{{page.baseurl}}/config-guide/elasticsearch/es-overview.html">Elasticsearch</a>
+*	[Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
 #### Set up an message queue
 
 Since 2.3.0 {{site.data.var.ce}} includes message queue functionality. In earlier versions it is available only for {{site.data.var.ee}}.
 
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a>
+*	[RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
 
-<h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
+## Settings for {{site.data.var.ee}} only {#post-install-ee}
 
 You can configure the following only if you use {{site.data.var.ee}}:
 
-*	<a href="{{page.baseurl}}/config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
+*	[Split databases for checkout, order management, and other Magento database tables]({{page.baseurl}}/config-guide/multi-master/multi-master.html)

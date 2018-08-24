@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Magento configuration files
-menu_title: Magento configuration files
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: config-guide/config/config-magento.md
 functional_areas:
   - Configuration
   - System

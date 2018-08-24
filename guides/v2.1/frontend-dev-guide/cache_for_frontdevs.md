@@ -1,10 +1,6 @@
 ---
 group: fedg
 title: Magento cache overview
-menu_title: Magento cache overview
-menu_order: 10
-version: 2.1
-github_link: frontend-dev-guide/cache_for_frontdevs.md
 functional_areas:
   - Frontend
 ---
@@ -12,6 +8,7 @@ functional_areas:
 {% include cache/page-cache-overview.md%}
 
 ## Cache types
+
 The following cache types mostly have impact on frontend development process:
 
 | Cache type "friendly" name | Cache type code name | Description                                                                                                                                                                                                                                                                                                                                       |

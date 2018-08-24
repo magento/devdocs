@@ -5,8 +5,6 @@ title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: migration/migration-tool-install.md
 redirect_from: /guides/v1.0/migration/migration-tool-install.html
 functional_areas:
   - Tools

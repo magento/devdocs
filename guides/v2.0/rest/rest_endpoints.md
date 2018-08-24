@@ -4,13 +4,12 @@ subgroup: A_rest
 title: List of service names per module
 menu_title: List of service names per module
 menu_order: 4
-version: 2.0
-github_link: rest/rest_endpoints.md
 functional_areas:
   - Integration
 ---
 
 ## REST Schema Endpoint Format
+
 To specify one or more services:
 
 `http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`

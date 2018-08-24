@@ -1,8 +1,6 @@
 ---
 group: contributor
 title: Community maintainers
-version: 2.1
-github_link: contributor-guide/devdocs-maintainers.md
 ---
 
 We do our best to process all issues and pull requests that the community opens on the [devdocs](https://github.com/magento/devdocs){:target="_blank"} GitHub repository, but keeping up with all the activity can be a challenge.

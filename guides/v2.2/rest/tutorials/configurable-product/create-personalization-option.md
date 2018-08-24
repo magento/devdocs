@@ -2,14 +2,13 @@
 layout: tutorial
 group: rest
 title: Step 5. Create the personalization option
+subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option
 menu_order: 50
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
-version: 2.2
-github_link: rest/tutorials/configurable-product/create-personalization-option.md
+  title: REST tutorials
+  url: rest/tutorials/index.html
 functional_areas:
   - Integration
 ---
@@ -76,4 +75,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ## Related topics
 
-  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/get-started/order-tutorial/order-intro.html)
+  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

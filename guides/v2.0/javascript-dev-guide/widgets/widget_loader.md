@@ -4,22 +4,23 @@ subgroup: 3_Widgets
 title: Loader widget
 menu_order: 8
 menu_title: Loader widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_loader.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
 ## Overview
+
 The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is <a href="{{ site.mage2000url }}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
-<h2 id="loader_init">Initialize the loader widget</h2>
+## Initialize the loader widget   {#loader_init}
+
 The loader widget is initialized as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
 
-<h2 id="loader_options">Options</h2>
+## Options   {#loader_options}
+
 The loader widget has the following options:
 <ul>
 <li><a href="#l_icon">icon</a></li>
@@ -27,7 +28,8 @@ The loader widget has the following options:
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_icon"><code>icon</code></h3>
+### `icon`   {#l_icon}
+
 The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
 
 **Type**: String 
@@ -35,7 +37,8 @@ The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossaryt
 **Default value**: No image by default.
 
 
-<h3 id="l_template"><code>template</code></h3>
+### `template`   {#l_template}
+
 {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} wrapper for the output, or a DOM element selector. 
 
 **Default value**:
@@ -48,7 +51,8 @@ The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossaryt
 '&lt;/div&gt;'
 </pre>
 
-<h3 id="l_texts"><code>texts</code></h3>
+### `texts`   {#l_texts}
+
 
 An object that contains translations for loader text:
 <ul>
@@ -62,6 +66,7 @@ The text that is displayed under the loader image. <br>
 </ul>
 
 ## Events
+
 Loader is subscribed to the following events:
 <ul>
 <li><a href="#l_processStart">processStart</a></li>
@@ -69,8 +74,10 @@ Loader is subscribed to the following events:
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_processStart"><code>processStart</code></h3>
+### `processStart`   {#l_processStart}
+
 Display the loader. Can be triggered on any page element.
 
-<h3 id="l_processStop"><code>processStop</code></h3>
+### `processStop`   {#l_processStop}
+
 Hide the loader. Can be triggered on any page element.

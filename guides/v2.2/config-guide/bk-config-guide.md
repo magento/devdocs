@@ -1,13 +1,6 @@
 ---
 group: config-guide
-subgroup: 01_Introduction
 title: Configuration Guide
-landing-page: Configuration Guide
-menu_title: Introduction
-menu_order: 1
-menu_node: parent
-version: 2.2
-github_link: config-guide/bk-config-guide.md
 functional_areas:
   - Configuration
   - System
@@ -15,6 +8,7 @@ functional_areas:
 ---
 
 ## Configure the Magento application {#configuration}
+
 You can configure the Magento application in any of the following ways:
 
 *	General configuration

@@ -5,8 +5,6 @@ title: Configure the store
 menu_title: Configure the store
 menu_node:
 menu_order: 20
-version: 2.0
-github_link: install-gde/install/cli/install-cli-subcommands-store.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
@@ -16,12 +14,13 @@ functional_areas:
   - Setup
 ---
 
+## First steps   {#instgde-cli-before}
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites {#instgde-cli-subcommands-store-prereq}
+
 Before you run this command, you must do all of the following *or* you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
@@ -29,7 +28,8 @@ Before you run this command, you must do all of the following *or* you must <a h
 
 {% include install/fully-secure.md %}
 
-<h2 id="instgde-cli-storeconfig">Configure the store</h2>
+## Configure the store   {#instgde-cli-storeconfig}
+
 Command usage:
 
 	magento setup:store-config:set [--<parameter_name>=<value>, ...]

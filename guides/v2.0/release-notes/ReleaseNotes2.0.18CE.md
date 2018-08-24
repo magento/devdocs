@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.0.18 Release Notes
 menu_title: Magento Open Source 2.0.18 Release Notes
 menu_order: 158
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.18CE.md
 ---
 
 *Patch code and release notes were published on February 27, 2018.* 
@@ -40,15 +38,15 @@ Look for the following highlights in this release:
 
 * **Updated copyright for 2018**.
 
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ce_install_20.md %}
 
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 An updated version of this toolkit is typically available several days after the patch release.

@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Data Table
-version: 2.1
-github_link: pattern-library/displaying-data/datatable/datatable.md
 ---
 The data-table organizes {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data.
 
@@ -256,6 +254,7 @@ Users may remove a filter setting by clicking/tapping the remove control next to
 
 <!---
 ### Quick Filters
+
 In some instances, pre-determined "quick filters" may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
 
 <strong>Step 1:</strong> Starting state. User click on a quick filter link.
@@ -332,6 +331,7 @@ As items are selected on the gird, a count for the number of items selected shou
 ![](img/datatable40.jpg)
 
 ### Select
+
 For tables which require a select column:
 
 * The select column will always be the first column appearing on the left side of the table.
@@ -409,6 +409,7 @@ content='Inline editing functionality should not be available for tables that re
 ![](img/datatable48.jpg)
 
 ### Thumbnails
+
 In cases where an image is associated with the data, as in the case of a product, the data-table will display a thumbnail view of the primary or default image (typically the first image in a series of image). By default the thumbnail image will appear to the far left of the table (after select checkboxes when present). The thumbnail image is a ‘clickable target’ independent of the typical click behavior of the row.
 
 ![](img/datatable49.jpg)

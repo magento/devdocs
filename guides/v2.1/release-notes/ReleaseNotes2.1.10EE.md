@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.1.10 Release Notes
 menu_order: 254
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.10EE.md
 ---
 
 *	TOC
@@ -17,8 +15,6 @@ github_link: release-notes/ReleaseNotes2.1.10EE.md
 
 
 We are pleased to present Magento Commerce  2.1.10. This release includes important enhancements to your Magento software.
-
-
 
 ## Highlights
 
@@ -40,11 +36,7 @@ Magento 2.1.10 includes multiple security enhancements. Although this release in
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-
-
 ## Fixed issues
-
-
 
 ### Installation, setup, and deployment
 
@@ -68,8 +60,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 69797 -->* Credit card information now persists as expected after a customer enters a promotion code during checkout. Previously, after a customer entered credit card information and a discount code, and then clicked **Place Order**, Magento emptied the credit card information fields.
 
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
-
-
 
 ### Catalog
 
@@ -112,8 +102,8 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website.
 
-
 ### General
+
 <!--- 63816 -->* We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites.
 
 
@@ -156,9 +146,8 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 70591 -->* You can now generate unsecure URL if current URL is secure. *Fix submitted by [Arshad M](https://github.com/arshadpkm) in pull request 10188*. [GitHub-6175](https://github.com/magento/magento2/issues/6175)
 
-
-
 ### Google
+
 <!--- 70892 -->* We’ve fixed an Ajax issue that prevented Add to Cart and Remove from Cart events from firing in Google Tag Manager as expected.
 
 ### Import/export
@@ -169,14 +158,14 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 65066 -->* Customer imports can still complete when  the error count is below the set value in **Allowed Errors Count**, and import behavior is set to **Skip Error Entries**.
 
-
 ### Order management
+
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
 <!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront.
 
-
 ### Payment methods
+
 <!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address.
 
 <!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product.
@@ -185,8 +174,8 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 69724 -->* Payment methods now retrieve new order status from config as expected. [GitHub-5860](https://github.com/magento/magento2/issues/5860)
 
-
 ### Shipping
+
 <!--- 69898 -->* Magento now handles tracking for FedEx shipments with valid tracking numbers as expected. Previously, Magento displayed an error when you clicked **Track this Shipment**, even when the tracking number was valid.
 
 <!--- 81975 -->* Shipping method radios have duplicate IDs on cart page. *Fix submitted by @peterjaap in pull request 11456*. [GitHub-10795](https://github.com/magento/magento2/issues/10795)
@@ -194,6 +183,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 81716 -->* Shipment API won't append comment to email. *Fix submitted by @JeroenVanLeusden in pull request 11386*. [GitHub-11207](https://github.com/magento/magento2/issues/11207)
 
 ### Search
+
 <!--- 72106 -->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive.
 
 #### Elasticsearch
@@ -206,6 +196,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 71569 -->* Search by attribute now works as expected with Elasticsearch.
 
 ### Staging
+
 <!--- 64924 -->* The **Set Product as New** checkbox now works as expected.
 
 <!--- 64521 -->* Magento now saves scheduled updates for products with custom options as expected.
@@ -216,7 +207,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 64924 -->* The **Set Product as New** checkbox now works as expected. Previously, Magento did not display the product as new on the  frontend,  and the checked box reverted to unchecked when you saved your changes.
 
-
 ### Translations
 
 <!--- 69935 -->* You can now save scheduled changes when running a store with a Japanese locale. Previously, Magento displayed this error, `error: : Future Update Start Time cannot be earlier than current time`.
@@ -224,17 +214,19 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 70543 -->* Product attributes' labels are not translated on product edit page. *Fix submitted by [Fernando Fauth](https://github.com/fernandofauth) in pull request 10184*. [GitHub-1980](https://github.com/magento/magento2/issues/1980)
 
 ### URL rewrites
+
 <!--- 70505 -->* Slash as category URL suffix gives 404 error on all category pages. Multiple URLs causes duplicated content. Product URL Suffix "/" results in 404 error . Custom URL Rewrite where the request path ends with a forward slash is not matched. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 10164*. [GitHub-3872](https://github.com/magento/magento2/issues/3872), [GitHub-1980](https://github.com/magento/magento2/issues/1980), [GitHub-4660](https://github.com/magento/magento2/issues/4660), [GitHub-4876](https://github.com/magento/magento2/issues/4876), [GitHub-8264](https://github.com/magento/magento2/issues/8264)
 
 <!---  82312-->* Custom URL Rewrite Not working. *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request 11469* [GitHub-10231](https://github.com/magento/magento2/issues/10231)
 
 ### Visual Merchandiser
+
 <!--- 57613 -->* Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren't on the first page, Magento returned you to the first page.
 
 <!--- 70287 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
-
 ### Wishlist
+
 <!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist.
 
 <!--- 63698 -->* The wishlist now displays the correct price for bundle products.
@@ -507,18 +499,17 @@ The following table identifies contributions from our community members. This ta
  </table>
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 {% include install/releasenotes/ee_install_21.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports.

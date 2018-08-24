@@ -6,8 +6,6 @@ menu_title: Module dependency types
 menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: modules
-version: 2.0
-github_link: architecture/archi_perspectives/components/modules/mod_depend_types.md
 redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
@@ -73,6 +71,7 @@ Modules belonging to the Magento Framework can be used in the application layer 
 </div>
 
 ## Dependencies in the Application layer {#m2devgde-moddep-app-layer}
+
 Modules belonging to the application layer cannot be used in the Magento Framework.
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).

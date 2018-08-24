@@ -5,8 +5,6 @@ title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: config-guide/bootstrap/magento-bootstrap.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 functional_areas:
   - Configuration
@@ -14,7 +12,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-boot-overview">Overview of bootstrapping</h2>
+## Overview of bootstrapping   {#config-boot-overview}
+
 To run the Magento application, the following actions are implemented in <a href="{{ site.mage2000url }}index.php" target="_blank">index.php</a>:
 
 *	Include <a href="{{ site.mage2000url }}app/bootstrap.php" target="_blank">app/bootstrap.php</a> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
@@ -22,7 +21,7 @@ To run the Magento application, the following actions are implemented in <a href
 *	Create a Magento application instance (<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).
 *	Run Magento
 
-<h2 id="config-boot-logic">Bootstrap run logic</h2>
+## Bootstrap run logic   {#config-boot-logic}
 
 <a href="{{ site.mage2000url }}app/bootstrap.php" target="_blank">The bootstrap object</a> uses the following algorithm to run the Magento application:
 
@@ -57,21 +56,24 @@ $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
 {% endhighlight %}
 
-<h2 id="config-boot-exception">Default exception handling</h2>
+## Default exception handling   {#config-boot-exception}
+
 The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:
 
 *	In <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a>, displays the {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} as-is.
 *	In any other mode, attempts to log exception and display a generic error message.
 *	Terminates Magento with error code `1`
 
-<h2 id="config-boot-entry">Entry point applications</h2>
+## Entry point applications   {#config-boot-entry}
+
 We have the following entry point applications (that is, applications defined by Magento that are used by the web server as a directory index):
 
 *	<a href="#config-boot-entry-http">HTTP entry point</a>
 *	<a href="#config-boot-entry-static">Static resource entry point</a>
 *	<a href="#config-boot-entry-media">Media resource entry point</a>
 
-<h3 id="config-boot-entry-http">HTTP entry point</h3>
+### HTTP entry point   {#config-boot-entry-http}
+
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:
 
 1.	Determines the <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>.
@@ -87,7 +89,8 @@ We have the following entry point applications (that is, applications defined by
 	5.	If there is any other application initialization error, display a user-friendly "Page Not Found" page with HTTP status code 404 (Not Found).
 	6.	On any other error, display a user-friendly "Service Unavailable" page with HTTP response 503 and generate an error report and display its ID on the page.
 
-<h3 id="config-boot-entry-static">Static resource entry point</h3>
+### Static resource entry point   {#config-boot-entry-static}
+
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php" target="_blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -103,12 +106,14 @@ When the request is redirected to the entry point, the Magento application parse
 
 	All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed; as a result, files are automatically republished with the next request.
 
-<h3 id="config-boot-entry-media">Media resource entry point</h3>
+### Media resource entry point   {#config-boot-entry-media}
+
 <a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a {% glossarytooltip d95142d7-023f-451c-a2e9-dd88763dcd70 %}media storage{% endglossarytooltip %}.
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 
 #### Related topics
+
 This topic discussed the basics of Magento application initialization and bootstrapping. To find out how to set bootstrap environment variables, see one of the following topics:
 
 *	<a href="{{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>

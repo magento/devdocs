@@ -4,8 +4,6 @@ subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
-version: 2.0
-github_link: config-guide/config/config-create.md
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration
@@ -13,7 +11,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-files-extend-create">Extend configuration types</h2>
+## Extend configuration types   {#config-files-extend-create}
+
 To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
@@ -22,7 +21,8 @@ Because the event configuration type already exists in Magento, the loader and t
    
 Your new `events.xml` is automatically collected from your module and merged with other `events.xml` files for other modules.
 
-<h2 id="config-files-extend-create-create">Create configuration types</h2>
+## Create configuration types   {#config-files-extend-create-create}
+
 To create new configuration type, you must add at minimum:
 
 *  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
@@ -58,7 +58,7 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
  
  After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
-<h2 id="config-files-validate">Validate a configuration type</h2>
+## Validate a configuration type   {#config-files-validate}
 
 Each configuration file is validated against a schema specific to its configuration type. Example: events, which, in earlier Magento versions, were configured in `config.xml`, are now configured in `events.xml`.
 

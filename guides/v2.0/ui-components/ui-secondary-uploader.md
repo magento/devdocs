@@ -5,23 +5,21 @@ title: File Uploader Component
 menu_title: File Uploader Component
 menu_node:
 menu_order: 13
-version: 2.0
-github_link: ui-components/ui-secondary-uploader.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-uploader.html
 ---
 
-<h2 id="filter">Overview</h2>
+## Overview   {#filter}
 
 UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
 
-<h2 id="elements">Component elements</h2>
+## Component elements   {#elements}
 
 * Constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`
 * JQuery file upload plugin: `jquery/fileUploader/jquery.fileupload-fp`
 * Default template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`
 * Preview template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`
 
-<h2 id="structure">Component options</h2>
+## Component options   {#structure}
 
 <table>
 <tbody>
@@ -84,7 +82,7 @@ UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0
 </tbody>
 </table>
 
-<h2 id="example">Integration</h2>
+## Integration   {#example}
 
 Here is an example of how File Uploader component integrates with <a href="{{ page.baseurl }}/ui-components/ui-form.html">Form</a> component:
 

@@ -1,8 +1,6 @@
 ---
 group: graphql
-version: 2.3
 title: Create a custom GraphQL urlResolver service
-github_link: graphql/develop/create-custom-url-resolver.md
 ---
 
 

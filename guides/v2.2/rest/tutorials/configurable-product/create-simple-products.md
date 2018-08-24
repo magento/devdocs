@@ -2,14 +2,13 @@
 layout: tutorial
 group: rest
 title: Step 3. Create the simple products
+subtitle: Create a configurable product tutorial
 menu_title: Step 3. Create the simple products
 menu_order: 30
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
-version: 2.2
-github_link: rest/tutorials/configurable-product/create-simple-products.md
+  title: REST tutorials
+  url: rest/tutorials/index.html
 functional_areas:
   - Integration
 ---

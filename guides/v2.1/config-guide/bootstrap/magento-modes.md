@@ -1,8 +1,6 @@
 ---
 group: config-guide
 title: About Magento modes
-version: 2.1
-github_link: config-guide/bootstrap/magento-modes.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:
   - Configuration
@@ -54,6 +52,7 @@ You can run Magento in any of the following *modes*:
 </table>
 
 ## Default mode
+
 As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
 
 To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
@@ -62,11 +61,12 @@ In default mode:
 
 -   Errors are logged to the file reports at server, and never shown to a user
 -   A symlink to a static view file is published to the `pub/static` directory for each requested file
--   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="\_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+-   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Developer mode
+
 You should run the Magento software in developer mode when you're extending or customizing it.
 
 {:.bs-callout .bs-callout-info}
@@ -83,6 +83,7 @@ In developer mode:
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Production mode
+
 You should run the Magento software in production mode when it is deployed to a production server. After optimizing the server environment, such as the database and web server, you should run the [static view files deployment tool]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to write static view files to the Magento `pub/static` directory.
 
 This improves performance by providing all necessary static files at deployment instead of forcing Magento to dynamically locate and copy (materialize) static files on demand during run time.
@@ -93,7 +94,9 @@ In production mode:
 -   Errors are logged to the file system and are never displayed to the user.
 
 #### Next step
+
 To set a mode, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 #### Related topic
+
 To generate static view files for production mode, see [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)

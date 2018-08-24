@@ -14,9 +14,11 @@ To get started, edit your local version of this file, using the {% glossarytoolt
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
 ## Overview 
+
 PROVIDE OVERVIEW OF TOPIC HERE
 
 ## HEADING 2 
+
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -26,13 +28,13 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 </div>
 
 ### HEADING 3 
+
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
-
-
 ## HEADING 2 
+
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 ADD DIAGRAM OR ILLUSTRATION
@@ -99,7 +101,7 @@ See the markdown version of this file for examples.
 {% endcollapsible %}
 
 {% collapsible Click to show/hide included content %}
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 {% endcollapsible %}
 
 {% collapsible Collapsible Code Examples%}
@@ -126,7 +128,6 @@ See the markdown version of this file for examples.
 </div>
 {% endhighlight %}
 {% endcollapsible %}
-
 
 ### Collapsible Group
 

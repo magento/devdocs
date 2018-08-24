@@ -5,8 +5,6 @@ title: Add Staging and Production to Pro projects UI
 menu_title: Add Staging and Production to Pro projects UI
 menu_order: 45
 menu_node:
-version: 2.0
-github_link: cloud/trouble/pro-env-management.md
 ---
 
 For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
@@ -24,6 +22,7 @@ All new projects already include these features.
 </div>
 
 ## New features {#features}
+
 The new Project Web Interface provides the following features for Pro plan Staging and Production environments:
 
 * Add and manage user access to the environments
@@ -35,6 +34,7 @@ The new Project Web Interface provides the following features for Pro plan Stagi
 * View build logs and deployment history
 
 ### Restricted features {#restricted}
+
 As an important note, while you can manage Staging and Production environments, you **cannot**:
 
 * Branch from these environments. Staging and Production only have a single branch for syncing and receiving code from Integration.
@@ -52,6 +52,7 @@ You will continue to use SSH for:
 * Deploy code to Staging and Production
 
 ### Branch changes {#branches}
+
 When converted, your branches will be updated. The current branches include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
 
 After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:
@@ -103,6 +104,7 @@ Be aware, the following actions will trigger a redeploy of the environment. This
 {% include cloud/wings-variables.md %}
 
 ## Prepare for adding Staging and Production {#prepare}
+
 When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration `master` environment.
 
 To prepare, ensure you have all settings and environment variables set correctly.
@@ -112,6 +114,7 @@ To prepare, ensure you have all settings and environment variables set correctly
 * [Prepare variables](#prep-variables)
 
 ### Verify Git code matches across environments {#matchcode}
+
 We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.
 
 Before entering a ticket, make sure your Git code matches and is synced.
@@ -121,6 +124,7 @@ The process will create a new Git branch of code for Staging and Production envi
 </div>
 
 ### Verify user account access {#prep-user}
+
 We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
@@ -132,6 +136,7 @@ We recommend verifying your user account access and permissions set in the Maste
 7. To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.
 
 ### Prepare variables {#prep-variables}
+
 When we convert your project to the new Project Web Interface, we add variables from Integration `master` to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
@@ -145,6 +150,7 @@ When we convert your project to the new Project Web Interface, we add variables 
 For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
+
 Enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
 
 We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.

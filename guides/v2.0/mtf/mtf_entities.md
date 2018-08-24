@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Functional Testing Framework Entities
-version: 2.0
-github_link: mtf/mtf_entities.md
 ---
 Functional Testing Framework entities enable you to create and modify functional tests. 
 For example, you want to cover with functional tests the process of creation the {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} Link.

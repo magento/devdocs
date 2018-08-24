@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Manage variables
-version: 2.0
-github_link: cloud/env/variables-intro.md
 redirect_from:
   - /guides/v2.1/cloud/live/config-reference-most.html
   - /guides/v2.2/cloud/live/config-reference-most.html
@@ -27,6 +25,7 @@ functional_areas:
 You can create all variables using the Magento Cloud CLI in all Starter environments and Pro Integration environments. You can create environment variables through the Project Web Interface for all Starter and Pro environments (created after October 23, 2017 or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html)).
 
 ## Additional information {#magevar}
+
 For additional information on Magento variables for v2.1.X and later, see the following:
 
 * [Sensitive and system-specific]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-sens.html)
@@ -62,6 +61,7 @@ Environment variables have an `env` {% glossarytooltip 621ef86b-7314-4fbc-a80d-a
 </div>
 
 ## CLI: List the current environment variables {#cloud-env-list}
+
 To list current environment variables using SSH:
 
 1.	Log in to your project using the CLI. Enter the command `magento-cloud login` and provide your credentials.
@@ -87,6 +87,7 @@ To list current environment variables using SSH:
 		echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 
 ## CLI: List environment variables for a project or branch {#env-project-branch}
+
 To list environment variables using Magento Cloud CLI:
 
 1. Login to the Magento Cloud CLI. Enter the command `magento-cloud login` and provide your credentials.
@@ -108,6 +109,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Project Web Interface: Add environment variables {#projectweb}
+
 You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">

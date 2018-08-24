@@ -5,8 +5,6 @@ title: Admin Buttons and Links Usage
 menu_title: Buttons and Links Usage
 menu_order: 3
 menu_node:
-version: 2.1
-github_link: design-styleguide/buttons-and-links-usage/buttons-and-links-usage.md
 ---
 Buttons are primarily used for task-based navigation, and links are primarily used for site navigation.
 
@@ -104,7 +102,6 @@ Use the following template to create content for a verify step:
 * **Verification content:** Are you sure you want to continue?
 
 * **Calls to action:** [ Task Label ], Cancel ... *Note:* The "Task Label" is the primary call to action and matches the Title's Task Label.
-
 
 ## Button Labels Used in Admin
 

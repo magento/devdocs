@@ -1,17 +1,13 @@
 ---
 group: fedg
-subgroup: C_Templates
 title: Templates customization walkthrough
-menu_title: Templates customization walkthrough
-menu_order: 2
-version: 2.1
-github_link: frontend-dev-guide/templates/template-walkthrough.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html
 functional_areas:
   - Frontend
 ---
 
 ## What's in this topic
+
 This topic walks you through how to customize a template.
 
 ## Prerequisites 
@@ -22,7 +18,7 @@ This topic walks you through how to customize a template.
 
 To customize a template:
 
-1. Locate the template which is associated with the page/block you want to change using [template hints]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ){:target=_blank}.
+1. Locate the template which is associated with the page/block you want to change using [template hints]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ).
 
 2. Copy the template to your theme folder according to the [template storing convention]({{ page.baseurl }}/frontend-dev-guide/templates/template-override.html#template-convention).
 
@@ -38,6 +34,7 @@ To add a new template in a theme:
 If you add a new `.html` template, and then edit it, the changes will not apply until you delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories and reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 ## Walkthrough illustration: adding a message to the customer review form
+
 A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. 
 
 The following image illustrates how the default review form looks like:
@@ -48,10 +45,10 @@ To add the text, OrangeCo needs to override the default review form template in 
 
 First, they copy the `form.phtml` template from `<Magento_Review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
 
-In the theme `form.phtml` file they add the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} snippet with the message before the <code>&lt;form&gt;</code>:
+In the theme `form.phtml` file they add the HTML snippet with the message before the `<form>`:
 
 ![HTML snippet to add]({{ site.baseurl }}/common/images/template-sample-code.png)
 
 Here's how the form will look when the Orange theme is applied in a store:
 
-![Review form with the new message added]({{ site.baseurl }}/common/images/template_with_text.png)
+![Review form with the new message added]({{site.baseurl}}/common/images/template_with_text.png)

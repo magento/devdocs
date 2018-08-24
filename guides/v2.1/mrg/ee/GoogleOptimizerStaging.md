@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_GoogleOptimizerStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/GoogleOptimizerStaging.md
 ---
 
 The Magento_GoogleOptimizerStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage values of the product {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %}.

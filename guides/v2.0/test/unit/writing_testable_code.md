@@ -3,15 +3,12 @@ group: unit-testing
 title: Writing Testable Code
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-version: 2.0
-github_link: test/unit/writing_testable_code.md
 functional_areas:
   - Testing
   - test
 ---
 
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
-
 
 ## Tests should be simple
 
@@ -24,6 +21,7 @@ A big part of making code testable is managing its dependencies. Dependencies ca
 The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.
 
 ### Creating new instances
+
 We strongly recommend you do *not*:
 
 *   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  

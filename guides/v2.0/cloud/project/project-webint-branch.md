@@ -5,8 +5,6 @@ title: Manage branches with the Project Web Interface
 menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
-version: 2.0
-github_link: cloud/project/project-webint-branch.md
 redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
@@ -33,6 +31,7 @@ You cannot create branches from Pro plan Staging and Production `master`. These 
 {% include cloud/wings-management.md %}
 
 ## Add or delete an environment {#project-branch-add}
+
 Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master.
 
 * For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
@@ -45,6 +44,7 @@ Your account supports a limited number of active Git branches and an unlimited n
 If you need additional environments for development, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) for more information.
 
 ## Add a branch {#add}
+
 To add a branch:
 
 1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
@@ -74,6 +74,7 @@ To add a branch:
 	*	[How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
 
 ## Delete to make a branch inactive {#inactive}
+
 To delete an environment and make it inactive:
 
 1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
@@ -91,6 +92,7 @@ To delete an environment and make it inactive:
 	![Delete an environment]({{ site.baseurl }}/common/images/cloud_environment-deleted.png)
 
 ## Sync from the environment's parent {#project-branch-sync}
+
 Syncing an environment (or branch) is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.
 
 For Pro plan, you can also sync from Staging and Production to your Integration `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
@@ -107,6 +109,7 @@ To sync an environment with its parent:
 4.	Select the checkbox next to each item to sync and click **Sync**.
 
 ## Merge with the environment's parent {#project-branch-merge}
+
 Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to `master`. You can also deploy to Staging and Production using the merge command.
 
 To merge an environment with its parent:
@@ -117,6 +120,7 @@ To merge an environment with its parent:
 4.	Click **Merge** to confirm the action.
 
 ## View logs {#logs}
+
 Through the Project Web Interface, you can review various logs for environments including build, deploy, and deployment history.
 
 For **Starter** environments, you can review build and deploy logs and the deployment history. These environments include Master (Production) and all branches created from it.
@@ -135,6 +139,7 @@ If you do not see your Pro plan Staging and Production environments in the Proje
 4.	To view the build log, select the Success or Failure link per deployment record on the account.
 
 ## Pull code from a private Git repository {#private}
+
 Your {{site.data.var.ece}} project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
 
 To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.
@@ -150,6 +155,7 @@ We highly recommend adding and merging this code to your project Git repositorie
 </div>
 
 ### Find your deploy key {#ssh}
+
 To find your project SSH public key (also referred to as a *deploy key*):
 
 1.	Log in to your project using the Web Interface.
@@ -164,6 +170,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 5.	See [Enter your GitHub deploy key](#cloud-deploykey-github).
 
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
+
 On GitHub, deploy keys are read-only by default. Your Magento project won't push code to the private repository.
 
 To enter your project's public key as a GitHub deploy key:
@@ -187,6 +194,7 @@ To enter your project's public key as a GitHub deploy key:
 In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 
 ### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+
 To enter your project's public key as a Bitbucket deploy key:
 
 1.	Log in to your Bitbucket repository as its administrator.
@@ -200,6 +208,7 @@ To enter your project's public key as a Bitbucket deploy key:
 5.	Follow the prompts on your screen to complete the task.
 
 ## Secure your environments and branches {#security}
+
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
 
 To secure your Starter environments and Pro Integration environments:
@@ -224,6 +233,7 @@ To secure Pro plan Staging environment, enter a [Support ticket]({{ page.baseurl
 We recommend testing your environments after completing security settings.
 
 #### Related topics
+
 *	[Basic project information]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
 *	[Project backup and restore (snapshot)]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)

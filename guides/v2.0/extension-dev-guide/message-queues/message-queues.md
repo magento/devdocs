@@ -7,8 +7,6 @@ menu_order: 17
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.0
-github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.0/extension-dev-guide/message-queues.html
 functional_areas:
   - Services
@@ -22,7 +20,6 @@ A basic message queue system can also be set up without using RabbitMQ. In this 
 
 See <a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.
 
-
 ## Send a message from the publisher to a queue
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`
@@ -33,12 +30,12 @@ $publisher->publish($topic, $message)
 
 In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
-
 ## Instantiate a consumer
 
 The procedure for instantiating a consumer differs, depending on which message queue system is being used.
 
-<h3>RabbitMQ</h3>
+### RabbitMQ
+
 This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`)listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 {% highlight php startinline=true %}
@@ -46,7 +43,7 @@ $this->consumerFactory->get('customer_created_listener')
     ->process();
 {% endhighlight %}
 
-<h3>MySQL adapter</h3>
+### MySQL adapter
 
 Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer.
 
@@ -58,6 +55,7 @@ Perform the following actions:
 4. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
 ## Override topic configuration
+
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
 {% highlight php startinline=true %}

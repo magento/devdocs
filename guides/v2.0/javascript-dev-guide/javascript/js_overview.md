@@ -5,8 +5,6 @@ title: JavaScript
 menu_title: JavaScript
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: javascript-dev-guide/javascript/js_overview.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_overview.html
@@ -18,7 +16,8 @@ You can follow the same approach when customizing Magento JavaScript, or <a href
 
 For information about how JS resources are located and configured, see <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript</a>
 
-<h2 id="#js_contents">What's in this chapter</h2>
+## What\'s in this chapter   {##js_contents}
+
 Topics of this chapter describe the following:
 
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
@@ -27,9 +26,7 @@ Topics of this chapter describe the following:
 - [Magento jQuery widgets]({{ page.baseurl }}/javascript-dev-guide/widgets/jquery-widgets-about.html): Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} documentation.
 - [Customizing JavaScript illustration]({{ page.baseurl }}/javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
-
-
-<h2 id="js_terms">Terms used</h2>
+## Terms used   {#js_terms}
 
 <table>
 <tr>

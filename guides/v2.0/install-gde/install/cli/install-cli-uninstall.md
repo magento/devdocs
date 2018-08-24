@@ -5,8 +5,6 @@ title: Uninstall or reinstall Magento
 menu_title: Uninstall or reinstall Magento
 menu_node:
 menu_order: 5
-version: 2.0
-github_link: install-gde/install/cli/install-cli-uninstall.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall.html
@@ -16,20 +14,24 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+## First steps   {#instgde-cli-before}
+
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+## Prerequisites   {#instgde-install-magento-prereq}
+
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
-<h2 id="instgde-install-magento-update">Update the Magento software</h2>
+## Update the Magento software   {#instgde-install-magento-update}
+
 To update the Magento software:
 
 *	If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
 *	If you are a contributing developer (that is, you used `git clone`), see <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
 
-<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
+## Reinstall the Magento software   {#instgde-install-magento-reinstall}
+
 This section discusses how to uninstall and then reinstall the Magento software with the latest version.
 
 The way you reinstall the Magento application from the command line depends on your role:
@@ -37,8 +39,8 @@ The way you reinstall the Magento application from the command line depends on y
 *	If you installed the software from an archive or if you used 'composer-create-project', see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.
 *	If you're a contributing developer (that is, you started using `composer clone`), see <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
 
+### Reinstall as a system integrator   {#instgde-install-reinst-update-sys}
 
-<h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
 To reinstall the Magento software as a system integrator:
 
 1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
@@ -59,7 +61,8 @@ To reinstall the Magento software as a system integrator:
 	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
 	*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
+## Uninstall the Magento software   {#instgde-install-uninstall}
+
 Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
 
 To uninstall the Magento software, enter the following command:
@@ -70,7 +73,8 @@ The following message displays to confirm a successful uninstallation:
 
 	[SUCCESS]: Magento uninstallation complete.
 
-<h2 id="instgde-install-keep">Optionally keeping generated files</h2>
+## Optionally keeping generated files   {#instgde-install-keep}
+
 By default, `magento setup:upgrade` clears compiled code and the cache. Typically, you use `magento setup:upgrade` to update components and each component can require different compiled classes.
 
 However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is still cleared.) To update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data *without* clearing compiled code, enter:

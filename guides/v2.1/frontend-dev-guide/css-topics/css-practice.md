@@ -1,37 +1,30 @@
 ---
 group: fedg
-subgroup: D_CSS
 title: Customizing styles illustration
-menu_order: 5
-menu_title: Customizing styles illustration
-version: 2.1
-github_link: frontend-dev-guide/css-topics/css-practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-practice.html
 functional_areas:
   - Frontend
 ---
 
-<h2 id ="practice_over">What's in this topic</h2>
+## What is in this topic   {#practice_over}
 
-This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI library.
 
 ## Changing theme color scheme
 
-OrangeCo created a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} that inherits from the Magento basic Blank theme.
+OrangeCo created a custom theme that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/practice_blank.png" alt="product page when Blank applied">
-</div>
-
+![product page when Blank applied]
 
 In their Grey theme, OrangeCo wants to change the color scheme from white to grey.
 
-The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.
+The Grey theme directory is `app/design/frontend/OrangeCo/grey`.
 
 OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
-To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:
-<pre>
+To do this, they added an overriding `_theme.less` file in the `app/design/frontend/OrangeCo/grey/web/css/source` directory, with the following content:
+
+```less
 //  Color nesting
 @page__background-color: @color-gray20;
 @sidebar__background-color: @color-gray40;
@@ -73,9 +66,12 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 //  Header icons
 @header-icons-color: @color-gray89;
 @header-icons-color-hover: @color-gray60;
+```
 
-</pre>
+After the Grey theme is applied (and [static files cache cleared]), store pages will look like following:
 
-After the Grey theme is applied (and [static files cache cleared]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)), store pages will look like following:
+![product page when Grey applied]
 
-<img src="{{ site.baseurl }}/common/images/css_practice.png" alt="product page when Grey applied">
+[product page when Blank applied]: {{site.baseurl}}/common/images/practice_blank.png
+[product page when Grey applied]: {{site.baseurl}}/common/images/css_practice.png
+[static files cache cleared]: {{page.baseurl}}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache

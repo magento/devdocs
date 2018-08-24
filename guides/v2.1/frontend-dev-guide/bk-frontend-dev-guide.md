@@ -2,16 +2,13 @@
 group: fedg
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
-menu_title: Introduction
-menu_order: 1
-version: 2.1
-github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 functional_areas:
   - Frontend
 ---
 
 ## Introduction {#overview-introduction}
+
 This document provides instructions for creating and installing custom {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} themes for a Magento application. It describes Magento's content rendering process and explains the view layer of the system to the extent required to build a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} efficiently. The document also walks through everyday {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer's tasks.
 
 Developing the view part of a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and customizing the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel design is out of the scope of this guide.

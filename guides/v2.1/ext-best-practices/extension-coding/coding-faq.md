@@ -4,8 +4,6 @@ subgroup: 02_Extension-Coding
 title: Coding FAQ
 menu_title: Coding FAQ
 menu_order: 1000
-version: 2.1
-github_link: ext-best-practices/extension-coding/coding-faq.md
 functional_areas:
   - Standards
 ---
@@ -19,7 +17,6 @@ This page is a compilation of frequently asked coding questions by the Magento C
 * [HTML](https://en.wikipedia.org/wiki/HTML){:target="_blank"}, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"}, and [JavaScript](https://www.javascript.com/){:target="_blank"} - Languages used for [frontend development]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html).
 * [Architecture basics overview]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html) - Developers should be familiar with the architectural concepts used in Magento such as the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} pattern and the [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html){:target="_blank"} principle.
 * [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) - An important {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} used in Magento to handle dependencies across classes and modules.
-
 
 ### In Magento 2, how can my extension distinguish between the {{site.data.var.ce}} and the {{site.data.var.ee}}?
 

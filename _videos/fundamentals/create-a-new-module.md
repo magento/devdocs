@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "Create a New Module"
 thumbnail: "fundamentals/thumbs/create-new-module.png"
 menu_order: 1
-github_link:
 ---
 
 Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
@@ -39,7 +38,6 @@ Let’s create the folder app/code/Learning and inside this folder place another
 1. `cd` to the root folder
 2. `mkdir app/code/Learning`
 3. `mkdirapp/code/Learning/FirstUnit`
-
 
 ## Make sure you have permission to create files and folders in your installation
 
@@ -81,7 +79,6 @@ Note that in the XML file we specified:
 * Version: 0.0.1 (initial version of our module)
 * Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put `<module name=”..” />` nodes under the sequence node.
 
-
 ## Create the registration.php file
 
 Each module must have this file, which tells Magento how to locate the module. Continuing our example, create the file
@@ -98,7 +95,6 @@ The `registration.php` is a standardized file that follows the same pattern for 
 
 The only thing that varies is the module name, which in our case is `Learning_FirstUnit`.
 
-
 ## Run the “setup:upgrade” command
 
 Running this command makes your new module active, notifying Magento of its presence.
@@ -110,6 +106,7 @@ php bin/magento setup:upgrade
 It should echo a large amount of output, one line of which should be `Learning_FirstUnit`. Verify that this line of code is there.
 
 ## Check that the new module is active
+
 So far, we haven't added any useful code to our module – it is still empty (and therefore invisible). In order to verify that it has been recognized, check the file `app/etc/config.php`. It has a list of auto-generated modules that are active.
 
 Never change this list manually!

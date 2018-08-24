@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Configure environments
-version: 2.0
-github_link: cloud/env/environments.md
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html
   - /guides/v2.1/cloud/deploy/configure-deploy.html
@@ -22,6 +20,7 @@ We provide options to:
 {% include cloud/wings-management.md %}
 
 ## Environments and branches {#env-branches}
+
 Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
 
 * For [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), we recommend branching from Integration.
@@ -36,6 +35,7 @@ We recommend using GitHub for maintaining your code branches.
 You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) commands.
 
 ## Active and inactive branches {#active-inactive}
+
 You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.
 
 You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:
@@ -49,6 +49,7 @@ You have unlimited inactive Git branches. These branches do not receive an envir
 When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.
 
 ## Branch hierarchy, development, and deployment {#hierarchy}
+
 For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
 
 * For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
@@ -71,11 +72,13 @@ For extensive details, see the following:
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
 
 ## Environment services {#services}
+
 Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. See [Configure your environments](#configenv).
 
 Additional services and drivers are automatically included in your environments.
 
 ### SQL Server extension driver {#sqldriver}
+
 We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
 
 These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with the request. You need to configure and provide the following:
@@ -90,6 +93,7 @@ The drivers and supported service only includes configuration and updates in {{s
 </div>
 
 ## Configure your environments {#configenv}
+
 After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.
 
 For Starter, you can push these files across all environments including Production `master`.

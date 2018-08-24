@@ -5,8 +5,6 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: migration/migration-migrate-data.md
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 functional_areas:
   - Tools
@@ -21,6 +19,7 @@ functional_areas:
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the data migration command {#migrate-data-cmd}
+
 To start migrating data, run:
 
     bin/magento migrate:data [-r|--reset] {<path to config.xml>}

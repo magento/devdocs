@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Installation of the Functional Testing Framework Entities
-version: 2.0
-github_link: mtf/mtf_installation.md
 ---
 
 Well, you are on the way to install the Functional Testing Framework!
@@ -18,6 +16,7 @@ Follow the next three steps:
 ## Check pre-installation conditions {#mtf_install_pre}
 
 ### Install the Magento application {#mtf_install_pre_inst-magento}
+
 To install the Magento application, see <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 ### Check if all required software installed and configured {#mtf_install_pre_tools}
@@ -56,7 +55,6 @@ The Functional Testing Framework requires Composer, which downloads libraries de
 And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
 </div>
 
-
 ## Check the installation {#mtf_install_check}
 
 ### Find the Functional Testing Framework directory {#mtf_install_check_dir}
@@ -75,4 +73,7 @@ Find the `mtf` directory.
 
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-<h2 id="mtf_install_next">Next Steps</h2> <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a>
+## Next Steps   {#mtf_install_next}
+
+[Adjust FTF configuration ]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
+

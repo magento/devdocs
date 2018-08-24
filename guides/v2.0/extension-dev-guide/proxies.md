@@ -6,8 +6,6 @@ menu_title: Proxies
 menu_order: 7
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.0
-github_link: extension-dev-guide/proxies.md
 ---
 
 Magento's [constructor injection pattern]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection) enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)
@@ -55,6 +53,7 @@ class FastLoading
 Assume that class `SlowLoading` has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of `FastLoading`, this impact is incurred if `FastLoading` is instantiated.  Note, however, that the `SlowLoading` instance is used only in the method `getSlowValue`, meaning that the resource cost is unnecessary if this method is never called on the `FastLoading` object.
 
 ### Proxies are generated code
+
 Magento has a solution for this situation: proxies. <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">Proxies</a> extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends created only after one of the class's methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.
 
 Proxies are generated code and therefore do not need to be manually written.  (See <a href="{{ page.baseurl }}/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form `\Original\Class\Name\Proxy`, and the class is generated if it does not exist.

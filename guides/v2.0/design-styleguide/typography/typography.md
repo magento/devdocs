@@ -5,13 +5,12 @@ title: Admin Typography
 menu_title: Typography
 menu_order: 4
 menu_node:
-version: 2.0
-github_link: design-styleguide/typography/typography.md
 ---
 
 Typography is used to establish page hierarchy.
 
 ## Heading Types
+
 <br>
 
 # H1 - Page title

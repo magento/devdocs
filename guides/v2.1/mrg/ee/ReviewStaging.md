@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_ReviewStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/ReviewStaging.md
 ---
 
 The Magento_ReviewStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It displays the Product Reviews grid on the Schedule Update form.

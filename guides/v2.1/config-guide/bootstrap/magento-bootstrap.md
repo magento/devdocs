@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 03_Bootstrap
 title: Magento application initialization and bootstrap
-menu_title: Magento application initialization and bootstrap
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: config-guide/bootstrap/magento-bootstrap.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-bootstrap.html
 functional_areas:
   - Configuration
@@ -15,6 +9,7 @@ functional_areas:
 ---
 
 ## Overview of bootstrapping {#config-boot-overview}
+
 To run the Magento application, the following actions are implemented in [index.php]({{ site.mage2000url }}index.php){:target="&#95;blank"}:
 
 *	Include [app/bootstrap.php]({{ site.mage2000url }}app/bootstrap.php){:target="&#95;blank"} which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
@@ -43,7 +38,7 @@ The assertions that the Magento application is installed and not in maintenance 
 
 Sample entry point script that modifies the bootstrap object:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 use Magento\Framework\App\Bootstrap;
 require __DIR__ . '/app/bootstrap.php';
 $params = $_SERVER;
@@ -53,9 +48,10 @@ $bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
-{% endhighlight %}
+```
 
 ## Default exception handling {#config-boot-exception}
+
 The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:
 
 *	In [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode), displays the {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} as-is.
@@ -63,6 +59,7 @@ The bootstrap object specifies how the Magento application handles uncaught exce
 *	Terminates Magento with error code `1`
 
 ## Entry point applications {#config-boot-entry}
+
 We have the following entry point applications (that is, applications defined by Magento that are used by the web server as a directory index):
 
 *	[HTTP entry point](#config-boot-entry-http)
@@ -105,6 +102,7 @@ When the request is redirected to the entry point, the Magento application parse
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 
 #### Related topics
+
 This topic discussed the basics of Magento application initialization and bootstrapping. To find out how to set bootstrap environment variables, see one of the following topics:
 
 *	[Customize base directory paths (MAGE_DIRS)]({{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html)

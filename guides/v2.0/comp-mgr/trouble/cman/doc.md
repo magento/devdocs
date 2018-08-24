@@ -5,8 +5,6 @@ title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure
 menu_node:
 menu_order: 500
-version: 2.0
-github_link: comp-mgr/trouble/cman/doc.md
 functional_areas:
   - Upgrade
 ---
@@ -29,6 +27,7 @@ When installing new purchases, you might see an error like the following during 
 	Read <http://getcomposer.org/doc/articles/troubleshooting.md> for further common problems.
 
 ### Workaround
+
 This issue is caused by two `doc`-related components we published by mistake. They can't be installed. 
 
 The workaround is to go back to the Component Manager and unselect the following components:

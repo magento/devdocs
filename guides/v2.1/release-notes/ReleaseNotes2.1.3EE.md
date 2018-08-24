@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.1.3 Release Notes
 menu_order: 269
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.3EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. This release includes many functional fixes and enhancements.
@@ -15,7 +13,6 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
-
 
 ## Highlights
 
@@ -59,13 +56,9 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 * **Enhanced performance in the processing of large catalogs**. The catalog/product indexer no longer requires a large temporary table memory allocation in MySQL for large catalogs.
 
-
-
-
 ## Functional fixes and enhancements
+
 We address the following functional fixes and enhancements in this release.
-
-
 
 ### Cart and checkout
 {:.no_toc} 
@@ -78,14 +71,14 @@ We address the following functional fixes and enhancements in this release.
 
 <!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
-<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
+<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from a wishlist. [(GITHUB-5282)](https://github.com/magento/magento2/issues/5282){:target="_blank"} 
 
-<!---59209-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
+<!---59209-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. [(GITHUB-6487)](https://github.com/magento/magento2/issues/6487){:target="_blank"} 
 
 
 <!---57062-->* The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products that you added to one {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} appeared in the other websites' minicarts.
 
-<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank"> (GITHUB-6294)</a> 
+<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.[ (GITHUB-6294)](https://github.com/magento/magento2/issues/7171){:target="_blank"} 
 
 <!---59024-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
@@ -96,7 +89,6 @@ We address the following functional fixes and enhancements in this release.
 
 <!---57168-->* We fixed a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
-
 ### Configurable products
 {:.no_toc} 
 
@@ -106,7 +98,7 @@ We've enhanced the performance of configurable products in several ways:
 
 
 
-<!---56998 -->* Magento no longer applies one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a>
+<!---56998 -->* Magento no longer applies one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [(GITHUB-4442)](https://github.com/magento/magento2/issues/4442){:target="_blank"}, [(GITHUB-5097)](https://github.com/magento/magento2/issues/5097){:target="_blank"}, [(GITHUB-6645)](https://github.com/magento/magento2/issues/6645){:target="_blank"}
 
 
 
@@ -119,18 +111,14 @@ We've enhanced the performance of configurable products in several ways:
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page failed to list the product at all, rather than listing it as out-of-stock. 
 
 
-<!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>,  <a href="https://github.com/magento/magento2/issues/5798" target="_blank">(GITHUB-5798)</a>, <a href="https://github.com/magento/magento2/issues/6041" target="_blank">(GITHUB-6041)</a>, <a href="https://github.com/magento/magento2/issues/6097" target="_blank">(GITHUB-6097)</a> 
-
-
+<!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products.  [(GITHUB-4588)](https://github.com/magento/magento2/issues/4588){:target="_blank"},  [(GITHUB-5798)](https://github.com/magento/magento2/issues/5798){:target="_blank"}, [(GITHUB-6041)](https://github.com/magento/magento2/issues/6041){:target="_blank"}, [(GITHUB-6097)](https://github.com/magento/magento2/issues/6097){:target="_blank"} 
 
 ### Email
 {:.no_toc}
 
-<!---57496-->* Magento now successfully loads the New Order Email templates. <a href="https://github.com/magento/magento2/issues/5101" target="_blank">(GITHUB-5101)</a>
+<!---57496-->* Magento now successfully loads the New Order Email templates. [(GITHUB-5101)](https://github.com/magento/magento2/issues/5101){:target="_blank"}
 
 <!---57204 -->* The **Send Welcome Email From** field now identifies the store that the customer is associated with. 
-
-
 
 ### General fixes
 {:.no_toc} 
@@ -138,7 +126,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 60890 -->* Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error when you logged in under these conditions.
 
 
-<!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition. <a href="https://github.com/magento/magento2/issues/5526" target="_blank">(GITHUB-5526)</a>
+<!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition. [(GITHUB-5526)](https://github.com/magento/magento2/issues/5526){:target="_blank"}
 
 
 <!---55662-->* We've removed the duplicated {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} settings from the sample web server configuration files. 
@@ -148,7 +136,7 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 59581-->* We've improved and streamlined the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} PayPal configuration interface. 
 
 
-<!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
+<!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [(GITHUB-5279)](https://github.com/magento/magento2/issues/5279){:target="_blank"}
 
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
@@ -163,7 +151,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57351-->* We've removed the sample password from the Setup Wizard.
 
-<!---56742-->* You can now sort and filter on the New Review page. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-5391)</a> 
+<!---56742-->* You can now sort and filter on the New Review page. [(GITHUB-5391)](https://github.com/magento/magento2/issues/6294){:target="_blank"} 
 
 <!---58511-->* Magento now displays server-side Ajax error messages. 
 
@@ -176,13 +164,12 @@ We've enhanced the performance of configurable products in several ways:
 <!---59879-->* Magento no longer displays the "as low as" label for a disabled price on the Category page.
 
 
-<!---58500-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
+<!---58500-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`.  [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442){:target="_blank"}
 
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
 
 <!---59397-->* Custom themes now inherit parent {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration information as expected.  
-
 
 ### Gift cards
 {:.no_toc} 
@@ -197,26 +184,19 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57353-->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously,  Magento did not permit you to add a gift card of an open value to this table.
 
-
-
 ### Images
 {:.no_toc} 
 
-<!---55447-->* Magento no longer encounters an error when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a>
+<!---55447-->* Magento no longer encounters an error when it cannot find a product image file. [(GITHUB-5184)](https://github.com/magento/magento2/issues/5184){:target="_blank"}, [(GITHUB-5497)](https://github.com/magento/magento2/issues/5497){:target="_blank"},  [(GITHUB-3545)](https://github.com/magento/magento2/issues/3545){:target="_blank"}, [(GITHUB-5871)](https://github.com/magento/magento2/issues/5871){:target="_blank"}
 
 <!---56944-->*  Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
 
 <!---58335-->* You can now preview uploaded images.
  
 
-<!---56972-->* You can now set an image size for product watermarks. <a href="https://github.com/magento/magento2/issues/5270" target="_blank">(GITHUB-5270)</a> 
+<!---56972-->* You can now set an image size for product watermarks. [(GITHUB-5270)](https://github.com/magento/magento2/issues/5270){:target="_blank"} 
 
-<!---55608-->*  Graphics now scroll as expected on mobile devices. <a href="https://github.com/magento/magento2/issues/5302" target="_blank">(GITHUB-5302)</a> 
-
-
-
-
-
+<!---55608-->*  Graphics now scroll as expected on mobile devices. [(GITHUB-5302)](https://github.com/magento/magento2/issues/5302){:target="_blank"} 
 
 ### Import/Export
 {:.no_toc} 
@@ -230,20 +210,15 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57052-->* You can now import negative quantities. Previously, when importing a product quantity  of '-1',  Magento returned an error. 
 
-<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. <a href="https://github.com/magento/magento2/issues/5573" target="_blank">(GITHUB-5573)</a> 
+<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. [(GITHUB-5573)](https://github.com/magento/magento2/issues/5573){:target="_blank"} 
 
-<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a>
+<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
 
 
-<!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  <a href="https://github.com/magento/magento2/issues/1471" target="_blank">(GITHUB-1471)</a> 
+<!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  [(GITHUB-1471)](https://github.com/magento/magento2/issues/1471){:target="_blank"} 
 
 
 <!---57981-->* You can now export a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
-
-
-
-
-
 
 ### Indexing
 {:.no_toc} 
@@ -254,8 +229,6 @@ We've enhanced the performance of configurable products in several ways:
 <!---57470 -->* Magento no longer displays an indexing error when Elasticsearch is enabled. Previously, Magento displayed this indexing error when Elasticsearch was enabled:  `mapper_parsing_exception`. 
 
 <!---58703-->* The category/product indexer now successfully completes a full reindexing of all indexes on large profiles with 500,000 or more products. Previously, Magento successfully generated a large profile, but failed to complete the reindexing of the categories or products, and displayed the following error:  "Error 1114: Table is full".
-
-
 
 ### Installation, upgrade, and deployment
 {:.no_toc} 
@@ -274,24 +247,12 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57343-->*  You can now deploy build processes on a different staging machine than the one you're running your production environment on. 
 
-<!---58312-->* Magento no longer incorrectly shows products as "out of stock" after you update your installation from 2.0.7 to 2.1.0. <a href="https://github.com/magento/magento2/issues/5222" target="_blank">(GITHUB-5222)</a> 
+<!---58312-->* Magento no longer incorrectly shows products as "out of stock" after you update your installation from 2.0.7 to 2.1.0. [(GITHUB-5222)](https://github.com/magento/magento2/issues/5222){:target="_blank"} 
 
-<!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a> 
+<!---57943-->* Magento 2.0.x and 2.1.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error:   "Duplicate key on write or update". [(GITHUB-5688)](https://github.com/magento/magento2/issues/5688){:target="_blank"} 
 
 
 <!---60832-->* You can now successfully upgrade your Magento installation from CE 2.1.1 to EE 2.1.3. Previously, Magento displayed this error, "Default website not defined" when upgrading because Magento read the list of websites from the database. It now reads from the config file. 
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Orders
 {:.no_toc} 
@@ -307,21 +268,10 @@ We've enhanced the performance of configurable products in several ways:
 	* change order status after a credit memo has been created.
 
 
-<!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. <a href="https://github.com/magento/magento2/issues/6162" target="_blank">(GITHUB-6162)</a> 
+<!--- 57077-->* You can now set the customer group when creating a new order from the Admin interface. [(GITHUB-6162)](https://github.com/magento/magento2/issues/6162){:target="_blank"} 
 
 
 <!---57387 -->* You can now print invoices and credit memos from the Order page. 
-
-
-
-
-
-
-
-
-
-
-
 
 ### Payment methods
 {:.no_toc} 
@@ -329,7 +279,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---56910-->* The Braintree payment method now works as expected with Vault table prefixing.  
 
 
-<!---57426-->* Magento no longer encounters an error when using the Braintree Vault payment GET order API call. <a href="https://github.com/magento/magento2/issues/6215" target="_blank">(GITHUB-6215)</a>
+<!---57426-->* Magento no longer encounters an error when using the Braintree Vault payment GET order API call. [(GITHUB-6215)](https://github.com/magento/magento2/issues/6215){:target="_blank"}
 
 
 <!---59578 -->* We've enhanced our PayPal and Braintree implementations so that merchants can now: 
@@ -343,29 +293,12 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---59353-->* You can now use JCB and Diners Club credit cards with the Authorize.net payment method.
 
-<!--- 59124-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. <a href="https://github.com/magento/magento2/issues/6716" target="_blank">(GITHUB-6716)</a> 
+<!--- 59124-->* Fixed issue with credit card capture information failing to remain associated with its first authorization. [(GITHUB-6716)](https://github.com/magento/magento2/issues/6716){:target="_blank"} 
 
-<!---57086-->* You can now successfully place orders with Braintree when using an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}merchant account{% endglossarytooltip %} ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a> 
+<!---57086-->* You can now successfully place orders with Braintree when using an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}merchant account{% endglossarytooltip %} ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) [(GITHUB-5910)](https://github.com/magento/magento2/issues/5910){:target="_blank"} 
 
 <!---59637-->*  Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
 `Uncaught Error: [paypal-container] is not a valid DOM Element`. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Performance
 {:.no_toc} 
@@ -377,42 +310,18 @@ We've improved the performance of these tasks:
 <!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}
 
 
-<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) <a href="https://github.com/magento/magento2/issues/6979" target="_blank">(GITHUB-6979)</a> 
+<!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) [(GITHUB-6979)](https://github.com/magento/magento2/issues/6979){:target="_blank"} 
 
 <!---60041-->* Resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}
 
 <!---57905-->We've optimized compiler performance (that is, the [`setup:di:compile`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) command). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Scope
 {:.no_toc} 
 <!---54704-->* Changing a product price under the website scope now updates the product price across all stores. Previously, any price you set on the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level overrode the price set in website scope. <a href="https://github.com/magento/magento2/issues/5133" target="_blank">(GITHUB-5133)
 
 
-<!---56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a>
+<!---56936 -->*  The list of allowed countries is now configured as part of website scope, not store view scope.  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946){:target="_blank"}
 
 
 <!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
@@ -421,15 +330,10 @@ We've improved the performance of these tasks:
 
 <!---59953-->* The price you set on the website scope no longer overrides any local settings you set on configurable products at the store view level.
 
-
-
-
 ### Staging
 {:.no_toc} 
 
 <!---57346-->*  The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page now refreshes as expected after an update. 
-
-
 
 ### Static file processing
 {:.no_toc} 
@@ -437,8 +341,7 @@ We've improved the performance of these tasks:
 
 <!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default. 
 
-<!---57904-->* We've improved the speed of static asset deployment. See <a href="{{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
-
+<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){:target="_blank"} for more information about available options. 
 
 ### Tier pricing
 {:.no_toc} 
@@ -446,20 +349,17 @@ We've improved the performance of these tasks:
 <!---57625-->* Magento no longer resets the tier price during {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for `row_id` and `entity_id` that didn't match.)
 
 
-<!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  <a href="https://github.com/magento/magento2/issues/5745" target="_blank">(GITHUB-5745)</a> 
-
-
+<!---56922-->*  Magento no longer adds a thousands separator ( , ) to representations of quantities that exceed 1000.  [(GITHUB-5745)](https://github.com/magento/magento2/issues/5745){:target="_blank"} 
 
 ### Tracking and shipping
 {:.no_toc}  
 
 <!---57037-->* UPS now generates shipping rates for Puerto Rico postal codes.
 
-
 ### Varnish
 {:.no_toc} 
 
-<!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. <a href="https://github.com/magento/magento2/issues/6401" target="_blank">(GITHUB-6401)</a>
+<!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [(GITHUB-6401)](https://github.com/magento/magento2/issues/6401){:target="_blank"}
 
 
  
@@ -473,14 +373,9 @@ We've improved the performance of these tasks:
 
 <!---57039-->* You can now update a product's media gallery through the REST API. 
 
-
-
-
-
 ## Breaking changes
+
 We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} configuration.
-
-
 
 ### New method
 {:.no_toc} 
@@ -526,15 +421,6 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---WON'T FIX: 57329, 57310, 56879, 58088,  55299, 58660, 59293, 58660, 58460, 59300, 60105, 59627, 60586, 58916, 56957, 60662, 60695, 60971, 61341, 60579, 57602, 57144, 60801 -->
 
 <!---CANNOT REPRODUCE: 57502, 60607, 60733, 60738, 60736, 61827, 60780, 61024, 60744, 61731, 60696-->
-
-
-
-
-
-
-
-
-
 
 ## Known issues
 
@@ -611,25 +497,24 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
  	}
  ```
 
-
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements-tech.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html){:target="_blank"}.
 
 
 
 
 {% include install/releasenotes/ee_install_21.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
+
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 
 

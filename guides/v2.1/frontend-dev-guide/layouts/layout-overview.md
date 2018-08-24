@@ -1,29 +1,25 @@
 ---
 group: fedg
-subgroup: B_Layouts
 title: Layout overview
-menu_title: Layout
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: frontend-dev-guide/layouts/layout-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 functional_areas:
   - Frontend
 ---
 ## What's in this topic
-This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+
+This article describes the basic concepts you need to know to create layouts for your custom theme.
 
 ## Introduction
+
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
-<img src="{{ site.baseurl }}/common/images/layouts_block_containers_defn21.png"/>
+![layouts overview]
 
 (1) *Layouts* provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.
 
 (2) *Containers* assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
-(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} to insert into its parent structural block. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
+(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the HTML to insert into its parent structural block. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
 
 ## Basic layouts 
 
@@ -37,8 +33,6 @@ These basic page configuration layouts are extended in other Magento modules and
 You can also [extend]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) or [override]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) these files in your custom theme. 
 
 ## Layout handles {#layout-over-terms}
-
-<span id="handle"></span>
 
 A *layout handle* is a uniquely identified set of {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} that serves as a name of a layout file.
 
@@ -56,15 +50,15 @@ For a particular page, its layout is defined by two major layout components: *pa
 
 Following are the definitions of each layout file type:
 
-* *Page layout*: an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file declaring a page wireframe inside the `<body>` section of the HTML page markup, for example, two-column page layout. 
+* *Page layout*: an XML file declaring a page wireframe inside the `<body>` section of the HTML page markup, for example, two-column page layout. 
 * *Page configuration*: an XML file declaring detailed structure, contents and meta-information of a page (includes the `<html>`, `<head>`, and `<body>` sections of the HTML page markup).
-* *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
+* *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
 
-For details, refer to <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
+For details, refer to [Layout file types]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html).
 
 In this guide we use *layout files* when talking about concepts which are similarly applied to all of these types of layout files.
 
-<h3 id="layout-loc">Module and theme layout files</h3>
+### Module and theme layout files {#layout-loc}
 
 The following terms are used to distinguish layouts provided by different application components:
 
@@ -75,42 +69,36 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
 
-To make the necessary changes, create <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
+To make the necessary changes, create [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) and [overriding]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) layout files in your custom theme. 
 
 ## Layout files processing {#layout_processing}
-
 
 The Magento application processes layout files in the following order:
 
 1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+2.	Determines the sequence of [inherited]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
 3.	Iterates the sequence of themes from last ancestor to current:
 
 	a.	Adds all extending theme layout files to the list.
-
 	b.	Replaces overridden layout files in the list.
 
 
-1.	Merges all layout files from the list.
+4.	Merges all layout files from the list.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
-</div>
-
-
+    {:.bs-callout .bs-callout-info}
+    Layout files that belong to inactive modules or modules with disabled output are ignored.
 
 ## Related topics
 
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a>
+*	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+*	[Common layout customization tasks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html)
+*	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
+*	[Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html)
+*	[Customizing layout - step-by-step illustration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html)
 
 
-
+[layouts overview]: {{site.baseurl}}/common/images/layouts_block_containers_defn21.png

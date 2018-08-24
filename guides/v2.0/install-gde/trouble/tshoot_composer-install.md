@@ -5,15 +5,12 @@ title: Cannot run 'composer install'
 menu_title: Cannot run 'composer install'
 menu_node:
 menu_order: 550
-version: 2.0
-github_link: install-gde/trouble/tshoot_composer-install.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 functional_areas:
   - Install
   - System
   - Setup
 ---
-
 
 ### Suggestion
 

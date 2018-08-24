@@ -5,8 +5,6 @@ title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: install-gde/install/cli/install-cli.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli.html
   - /guides/v2.0/install-gde/install/install-cli.html
@@ -24,21 +22,23 @@ functional_areas:
   <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
   
-<h2 id="new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
-{% include install/new-cli-intro.html %}
+## Introducing the Magento command-line interface (CLI)   {#new-cli-intro}
+
+{% include install/new-cli-intro.md %}
 
 This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see the <a href="{{ page.baseurl }}/config-guide/bk-config-guide.html">Configuration Guide</a>.
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
-{% include install/before-you-begin-cli.html %}
+## Before you start your installation   {#instgde-install-cli-prereq}
+
+{% include install/before-you-begin-cli.md %}
 
 <div class="bs-callout bs-callout-tip">
   <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
 
+## First steps   {#instgde-install-cli-first}
 
-<h2 id="instgde-install-cli-first">First steps</h2>
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 #### Next steps 
 

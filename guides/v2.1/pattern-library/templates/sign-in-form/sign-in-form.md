@@ -1,8 +1,6 @@
 ---
 group: pattern
 title: Sign-in form
-version: 2.1
-github_link: pattern-library/templates/sign-in-form/sign-in-form.md
 redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---
 "Sign in" is used to log into the system, or to recover a lost password.
@@ -46,7 +44,6 @@ typed by the user and be the active field and the password field will be blank
 
 ![](img/Sign-in_error.png)
 
-
 ### Password retrieval
 
 If the user opts to retrieve their password via the hyperlink ("Forgot your password?") the sign-in module will display
@@ -57,7 +54,6 @@ If the user opts to retrieve their password via the hyperlink ("Forgot your pass
 * a link to cancel the retrieval and return to the initial state of the sign-in module – "Back to Sign in"
 
 ![](img/Sign-in_password-retrieval.png)
-
 
 ### Confirmation of password retrieval
 
@@ -118,7 +114,6 @@ The module container should be centered in the browser and should be some percen
 #### Successful sign-out:
 
 ![](img/specs/Sign-in_successful-signout-SPECS.png)
-
 
 ## Assets
 

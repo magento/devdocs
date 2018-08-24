@@ -5,8 +5,6 @@ title: Public content
 menu_title: Public content
 menu_order: 17
 menu_node:
-version: 2.1
-github_link: extension-dev-guide/cache/page-caching/public-content.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html
@@ -24,6 +22,7 @@ redirect_from:
 By default, all pages in Magento are cacheable, but you can disable caching if necessary (e.g., payment method return page, debug page, or AJAX data source).
 
 ## Disable caching
+
 To disable caching, add a `cacheable="false"` attribute to any block in your layout.
 
 ``` xml
@@ -64,6 +63,7 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 ```
 
 ## Define caching policy
+
 You can use the Admin to define caching policies or you can define them programmatically in a controller:
 
 ``` php?start_inline=1
@@ -100,6 +100,7 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 </div>
 
 ## Configure page variations
+
 Most caching servers and proxies use a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} as a key for cache records; however, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
 -   Collisions in cache storage
@@ -162,6 +163,7 @@ The `subject->setValue` argument specifies the value for newcomer context and is
 For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http/Context.php){:target="&#95;blank"}.
 
 ## Invalidate public content
+
 You can clear cached content immediately after a entity changes. Magento uses  `IdentityInterface` to link entities in the application with cached content and to know what cache to clear when an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} changes.
 
 This section shows you how to tell Magento what cache to clear when you change an entity.

@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Layout overview
-version: 2.2
-github_link: frontend-dev-guide/layouts/layout-overview.md
 functional_areas:
   - Frontend
 ---
@@ -51,9 +49,9 @@ For a particular page, its layout is defined by two major layout components: *pa
 
 Following are the definitions of each layout file type:
 
-* *Page layout*: an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file declaring a page wireframe inside the `<body>` section of the HTML page markup, for example, two-column page layout.
+* *Page layout*: an XML file declaring a page wireframe inside the `<body>` section of the HTML page markup, for example, two-column page layout.
 * *Page configuration*: an XML file declaring detailed structure, contents and meta-information of a page (includes the `<html>`, `<head>`, and `<body>` sections of the HTML page markup).
-* *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
+* *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
 
 For details, refer to [Layout file types].
 
@@ -70,14 +68,12 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page configuration and generic layout files: `<theme_dir>/<Namespace>_<Module>/layout`
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
-
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
-To make the necessary changes, create [extending][extend]{:target="_blank"} and [overriding][override]{:target="_blank"} layout files in your custom theme.
+To make the necessary changes, create [extending][extend] and [overriding][override] layout files in your custom theme.
 
 ## Layout files processing {#layout_processing}
-
 
 The Magento application processes layout files in the following order:
 
@@ -102,7 +98,7 @@ Layout validations and error handling depends on the [application mode] in which
 
 - developer mode: syntax is validated in `.xml` and `.xsd` files, and `.xml` files are validated according to the xsd schema. If any validation fails, the hard failure with process halt occurs.
 
-- production or default modes: syntax is validated in `.xml` and `.xsd` files. If validation fails, errors are logged to the `var/log` directory without throwing {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %}. The validation according to the xsd schema is not performed.
+- production or default modes: syntax is validated in `.xml` and `.xsd` files. If validation fails, errors are logged to the `var/log` directory without throwing an exception. The validation according to the xsd schema is not performed.
 
 ## Related topics
 
@@ -116,9 +112,7 @@ Layout validations and error handling depends on the [application mode] in which
 [extend]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
 [override]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html
 [Layout file types]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html
-{:target="_blank"}
 [inherited]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
-{:target="_blank"}
 [application mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html
 [Common layout customization tasks]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html

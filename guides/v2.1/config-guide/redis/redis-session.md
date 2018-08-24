@@ -1,27 +1,21 @@
 ---
 group: config-guide
-subgroup: 09_Redis
 title: Use Redis for session storage
-menu_title: Use Redis for session storage
-menu_order: 10
-menu_node:
-version: 2.1
-github_link: config-guide/redis/redis-session.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-<h2 id="reds-cache-prereq">Prerequisite</h2>
+## Prerequisite {#reds-cache-prereq}
+
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
-<h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
+## Configure Magento to use Redis for session storage {#config-redis-config}
+
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
     'session' =>
@@ -82,7 +76,7 @@ where
 <tr>
 	<td>persistent_identifier</td>
 	<td><p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
-		<p><a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p></td>
+		<p><a href="https://github.com/nicolasff/phpredis/issues/70">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p></td>
 	<td>empty</td>
 </tr>
 <tr>
@@ -93,8 +87,8 @@ where
 </tr>
 <tr>
 	<td>compression_threshold</td>
-	<td><p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features" target="_blank"><code>suhosin.session.encrypt = On</code></a>).</p>
-	<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18" target="_blank">Known issue with strings of more than 64KB</a>.</p></td>
+	<td><p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features"><code>suhosin.session.encrypt = On</code></a>).</p>
+	<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18">Known issue with strings of more than 64KB</a>.</p></td>
 		<td>2048</td>
 </tr>
 <tr>
@@ -169,5 +163,5 @@ where
 
 #### Related topics
 
- *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+ *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

@@ -5,8 +5,6 @@ title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-version: 2.0
-github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 functional_areas:
   - Tools
@@ -197,4 +195,5 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 You can refer to <a href="{{ page.baseurl }}/migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification</a> for more details.
 
 ## Next step
+
 <a href="{{ page.baseurl }}/migration/migration-migrate-settings.html">Migrate using data migration tool</a>

@@ -4,8 +4,6 @@ subgroup: 02_Extension-Coding
 title: Programming Best Practices
 menu_title: Programming best practices
 menu_order: 1
-version: 2.0
-github_link: ext-best-practices/extension-coding/common-programming-bp.md
 functional_areas:
   - Standards
 ---
@@ -14,6 +12,7 @@ You should do your best to adhere to common programming best practices to reduce
 The following list of best practices addresses commonly reported issues found in third party extensions.
 
 ### Follow a set of coding standards
+
 Coding standards are a set of guidelines that describe how code should be written.
 These standards define coding practices that determine the style of the code.
 Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.
@@ -27,6 +26,7 @@ Whether you are a solo developer or part of a team, following a set of coding st
 To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
 
 ### Write and utilize re-usable code
+
 Avoid using redundant or duplicate code, which can be hard to maintain.
 Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed.
 As a general rule of thumb, be sure to reuse code as much as possible to save yourself the from the costs of duplication.
@@ -35,6 +35,7 @@ The code you write should be small, focused, and provides a generic solution.
 This will let you re-use these pieces again in future development.
 
 ### Design your code to be replaceable
+
 Designing and writing your code to be replaceable is just as important as making it re-usable.
 Having a replaceable design means your code is modular and loosely coupled, therefore allowing easy updates and improvements in the future.
 
@@ -42,6 +43,7 @@ It is common practice to replace parts of your codebase with newer and better pi
 Writing replaceable code in your codebase makes this practice easier and more efficient.
 
 ### Avoid creating helper classes
+
 Helper or utility classes are classes filled with static methods that do not quite fit anywhere else.
 These classes are considered an antipattern and go against the principles of object oriented programming.
 If you have `ClassA` and a `ClassAHelper` with static functions that work on `ClassA`, you should consider refactoring those functions into `ClassA`.
@@ -50,6 +52,7 @@ A helper class that functions as a catch-all for random methods breaks the singl
 You should refactor your code and move those functions into the appropriate classes they work on.
 
 ### Be consistent with case and naming conventions
+
 You should be consistent in your naming conventions for files, folder names, Classes, and Methods.
 Following standard conventions will make your code look professional and easy to read.
 
@@ -66,6 +69,7 @@ For Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extensio
 Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 
 ### Using around plugins
+
 Avoid using [around method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance.
 
 The only use case for around method plugins is when the execution of all further plugins and original methods need termination.

@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Build and deploy
-version: 2.1
-github_link: cloud/project/magento-env-yaml.md
 functional_areas:
   - Cloud
   - Configuration
@@ -34,7 +32,7 @@ The latest sample of the `.magento.env.yaml` file contains a detailed definition
     -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
 
-When a failure occurs because of an unexpected value in the the `.magento.env.yaml` configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:
+When a failure occurs because of an unexpected value in the `.magento.env.yaml` configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:
 
 ```terminal
   - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:

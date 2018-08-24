@@ -4,14 +4,12 @@ subgroup: 3_Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 3
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_calendar.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
-<h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>
+## Overview   {#fedg_jquery-widget_calendar-overview}
 
 The Calendar widget is a customized {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} <a href="http://api.jQueryui.com/datepicker/" target="_blank">Datepicker Widget</a> that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:
 
@@ -21,11 +19,11 @@ The Calendar widget is a customized {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-6
 *	Making the calendar initialization easier.
 *	The Calendar {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/calendar.js" target="_blank">lib/web/mage/calendar.js</a>.
 
-<h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
+## Initialize the calendar widget   {#fedg_calendar_init}
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
-<h2 id="fedg_calendar_config">Configure the calendar widget</h2>
+## Configure the calendar widget   {#fedg_calendar_config}
 
 The calendar widget's *global configuration* is a set of default options that are applied when each calendar instance is initialized. It includes the following:
 
@@ -48,8 +46,7 @@ Example of setting global widget configuration follows:
 });
 </pre>
 
-
-<h2 id="fedg_calendar_options">Options, methods, and events</h2>
+## Options, methods, and events   {#fedg_calendar_options}
 
 <p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/" target="_blank">Datepicker Widget</a> options.</p>
 

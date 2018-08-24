@@ -1,5 +1,3 @@
-<div markdown="1">
-
 The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
 To create authentication keys:
@@ -15,6 +13,7 @@ To create authentication keys:
 5.  New public and private keys are now associated with your account that you can click to copy. Save this information or keep the page open when working with your Magento project. Use the **Public key** as your username and the **Private key** as your password.
 
 ### Manage your authentication keys
+
 You can also disable or delete authentication keys. For example, you can disable or delete keys for security reasons after someone leaves your organization.
 
 *	To disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
@@ -29,4 +28,3 @@ You cannot delete or disable keys you created by signing in to your [magento.com
 
 	![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
 4.	Click **Generate new token** to replace and disable an existing token.
-</div>

@@ -1,13 +1,6 @@
 ---
 group: fedg
-subgroup: D_CSS
 title: Add custom CSS preprocessor
-menu_order: 8
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: custom-preprocess
-version: 2.1
-github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 functional_areas:
   - Frontend
 ---
@@ -21,7 +14,6 @@ This topic describes how to add a custom {% glossarytooltip 6c5cb4e9-9197-46f2-b
 Magento has a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} implementing the {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}Sass{% endglossarytooltip %} preprocessor.
 
 You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the [repository's Readme file](https://github.com/magento/magento2-samples/blob/master/README.md).
-
 
 ## Adding a custom preprocessor 
 
@@ -52,8 +44,8 @@ You can view the default Magento processors for reference: [lib/internal/Magento
 The content of your `di.xml` will be similar to the following:
 
 **`<your_module_dir>/etc/di.xml`**
-{%highlight xml%}
 
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <virtualType name="AlternativeSourceProcessors">
@@ -94,8 +86,7 @@ The content of your `di.xml` will be similar to the following:
         </arguments>
     </type>
 </config>
-{%endhighlight%}
-
+```
 
 ## Related reading
 

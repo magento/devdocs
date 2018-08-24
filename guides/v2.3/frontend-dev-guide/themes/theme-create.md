@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Create a new storefront theme
-version: 2.3
-github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
   - Frontend
@@ -21,6 +19,7 @@ A new theme you create is not applied for your store automatically. You need to 
 2. [Set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
 
 ## Create a storefront theme: walkthrough {#theme-gen-walkthrough}
+
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a directory for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
@@ -146,7 +145,7 @@ Product image sizes and other properties used on the {% glossarytooltip 1a70d3ac
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
 1.	Create the `etc` directory in your theme folder.
 
@@ -163,7 +162,7 @@ If the product image sizes of your theme differ from those of the parent theme, 
     ...
     ```
 
-For details about images configuration in the`view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
+For details about images configuration in the `view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
 
 ## Create directories for static files {#fedg_theme_how-to_static}
 
@@ -251,14 +250,17 @@ Declaring the logo size is optional.
 To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html) of this guide.
 
 ## Troubleshooting {#trouble}  
+
 When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
 
 ## What's next {#next}
 
 ### Theme registration {#register_theme}
+
 After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database.
 
 ### Applying a theme
+
 For information on how to apply the theme for the storefront, see the [Apply and configure a theme in Admin]({{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html) topic.
 
 ## See also

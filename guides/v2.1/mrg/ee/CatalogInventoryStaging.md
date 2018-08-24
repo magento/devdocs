@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_CatalogInventoryStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/CatalogInventoryStaging.md
 ---
 
 The Magento_CatalogInventoryStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_CatalogInventory module functionality, adding the capability to monitor the "Stock Status" field on the Schedule Update form of a product.

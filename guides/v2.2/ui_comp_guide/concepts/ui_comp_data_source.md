@@ -6,11 +6,10 @@ menu_title: Providing Data to UI Components
 menu_order: 20
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_data_source.md
 ---
 
 ## Overview
+
 Magento provides the DataSource object, which is designed to interact with data in your {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.
 
 In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.
