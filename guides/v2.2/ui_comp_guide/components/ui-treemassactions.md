@@ -69,4 +69,4 @@ The TreeMassActions component is a decorator for [MassActions]({{ page.baseurl }
 
 Extends [`MassActions`]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html):
 
- - [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)
+ - [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)

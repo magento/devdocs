@@ -40,4 +40,4 @@ The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl
 
 Extends [`MultiselectColumn`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselectcolumn.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)

@@ -366,5 +366,5 @@ var foo = 'bar',
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [jscs]: http://jscs.info/
-[eslint-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[jscs-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

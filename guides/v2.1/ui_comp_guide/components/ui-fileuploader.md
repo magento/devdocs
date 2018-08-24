@@ -211,9 +211,9 @@ Here is an example of how File Uploader component integrates with [Form]({{ site
 
 Extends `abstract`:
 
-- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
-- [`jquery/fileUploader/jquery.fileupload-fp`](https://github.com/magento/magento2ce/blob/2.1/lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)
+- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
+- [`jquery/fileUploader/jquery.fileupload-fp`]({{ site.mage2100url }}lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)
 
 

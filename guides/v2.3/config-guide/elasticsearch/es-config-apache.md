@@ -116,8 +116,8 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617" target="_blank) authentication with Apache. For more options, consult one of the following resources:
 
-*	[Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank)
-*	[Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank)
+*	[Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}
+*	[Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="_blank"}
 
 See one of the following sections:
 
