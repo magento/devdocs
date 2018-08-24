@@ -205,6 +205,7 @@ The following table identifies contributions from our community members. This ta
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
+
 <table>
   <tr>
     <th>Contributing Partner</th>
@@ -215,7 +216,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Aligent</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17092">17092</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16585">16585</a></td>
-     <td>N/A<td>
+    <td>N/A<td>
 </tr>
 
 <tr>
@@ -233,25 +234,28 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Comwrap</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16923">16923</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17179">17179</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17091">17091</a> </td>
+    <td>N/A</td>
+
   </tr>
 
 
 <tr>
     <td>Convert</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14380">14380</a> </td>
+    <td>N/A</td>
   </tr>
 
 
   <tr>
     <td>H&O</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17242">17242</a></td>
-    <td></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>Imagination Media</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/17216">17216</a></td>
-    <td>N/A<td>
+    <td>N/A</td>
 </tr>
 
 <tr>
@@ -270,7 +274,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Mage Specialist</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16948">16948</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16828">16828</a></td>
-    <td></td>
+    <td>N/A</td>
   </tr>
 
   <tr>
