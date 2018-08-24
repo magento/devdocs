@@ -7,8 +7,6 @@ functional_areas:
 
 Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento Admin UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. It applies to Magento Admin UI users only; it does not apply to storefront customer accounts.
 
-At this time, Two-Factor Authentication can be installed only from the command line.
-
 Two-Factor Authentication gives you the ability to:
 
 - Enable authenticator support for the Admin.
@@ -50,11 +48,11 @@ Administrators have options to:
 
 After enabling and configuring 2FA, your staff need to:
 
-1.	Install one of the supported authenticators to a mobile device or obtain a configured device.
+1.	Install one of the supported authenticators on a mobile device or obtain a configured device.
 
-    For example, you can install the Google Authenticator app to a mobile device such as a smart phone or tablet. Depending on the OS, you can download and install the authenticator from [Google Play](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en) or [iOS App Store](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DiOS&hl=en&oco=0).
+    For example, you can install the Google Authenticator app on a mobile device such as a smart phone or tablet. Depending on the OS, you can download and install the authenticator from [Google Play](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en) or [iOS App Store](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DiOS&hl=en&oco=0).
 
-1.	Log into the Magento Admin and configure their authenticator. The first login prompts to configure the authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
+1.	Log in to the Magento Admin and configure their authenticator. The first login prompts to configure the authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
 
     For example, Google Authenticators provide a QR code to configure access at Magento Admin login.
 

@@ -12,8 +12,6 @@ This extension adds the Google reCAPTCHA module to your Magento installation. Go
 
 Google reCAPTCHA reduces potential user error when entering a Captcha code and encourages cart conversion without adding hurdles during checkout.
 
-At this time, Google reCAPTCHA can be installed only from the command line.
-
 {:.bs-callout .bs-callout-info}
 **Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/id/129) for contributing these features as part of the Magento Community Engineering program.
 
