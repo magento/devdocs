@@ -5,9 +5,9 @@
   {% if item.url contains 'http' %}
   {% else %}
       {% if page.guide_version %}
-        {% assign base = page.guide_version | prepend: "guides/v" | prepend: site.baseurl | prepend: '/' %}
+        {% assign base = page.baseurl %}
       {% else %}
-        {% assign base = site.version | prepend: "guides/v" | prepend: site.baseurl | prepend: '/' %}
+        {% assign base = site.version | prepend: "/guides/v" | prepend: site.baseurl %}
       {% endif %}
   {% endif %}
   <li>
