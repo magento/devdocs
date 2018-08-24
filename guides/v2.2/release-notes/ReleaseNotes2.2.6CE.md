@@ -49,7 +49,6 @@ Seven  performance tuning enhancements related to catalog indexing  
 
 <!-- MAGETWO-89222-->* The speed at which Magento places an order is no longer affected by how many shipping methods are available. Previously, when a customer placed an order for which multiple shipping methods were available, Magento took more than 20 seconds to place the order.
 
-<!-- MAGETWO-89264-->* The Checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 
 #### Additional enhancements
@@ -385,25 +384,7 @@ First star rating is showing.
 
 
 
-<!--  ENGCOM-2213 -->* Fix of invalid price for integer currencies when amount less than group size 
-
-After correct fixes in magento/magento2#15909 (magento/magento2#15540) client-side formatting starts corrupt prices in currencies without minor units if price amount is less then number group size (usually equal to 3 numbers).
-
-STR:
-
-Install Magento
-Set USD as a base currency
-Set JPY as display currency (it also should be enabled as available currency)
-Add product with price 0.01 USD
-Add currency rate as 110 JPY for 1 USD
-Open product page
-AC: price 0,001 is displayed (wrongly added 0 to have group separator visible)
-
-ER: price 1 is displayed (no decimal part, no preceding 0)
-
-
-
- *Fix submitted by [Volodymyr Kublytskyi](https://github.com/vkublytskyi) in pull request [16590](https://github.com/magento/magento2/pull/16590)*. [GitHub-11711](https://github.com/magento/magento2/issues/11711)
+<!--  ENGCOM-2213 -->* 
 
 
 
@@ -1394,14 +1375,7 @@ I've fixed also some useless "else" statements and add some ternary operators to
 
 <!--  ENGCOM-1384 -->*
 
-Updated readme.md file 2.2-develop
 
-title: Updated readme.md file 2.2-develop
-url: magento/magento2#14844
-contributor name: @sidolov
-contributor link: https://github.com/sidolov
-
-Fixed grammar issues in the readme.md file
 
 
 
@@ -1590,7 +1564,6 @@ Magento's lib/web/mage/dropdowns.js has a bug that prevents a developer from spe
  *Fix submitted by [Brian LaBelle](https://github.com/brian-labelle) in pull request [15499](https://github.com/magento/magento2/pull/15499)*. [GitHub-15469](https://github.com/magento/magento2/issues/15469)
 
 
-<!-- MAGETWO-89264 -->* Checkout now works when the AdBlock extension and Google Analytics are enabled. Previously, the Checkout page was not accessible,  and Magento displayed the loading spinner.
 
 <!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user can not view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
 
@@ -2870,7 +2843,7 @@ This release includes a fix that optimizes image resizing.
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. 
 
-old table
+{% include release-notes/engcomm-2-2-6.md %}
 
 
 ### Individual contributor contributions
