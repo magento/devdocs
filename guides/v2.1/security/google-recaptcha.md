@@ -19,9 +19,7 @@ At this time, Google reCAPTCHA can be installed only from the command line.
 
 ## Install Module
 
-Install the extension using Composer for v2.1 and v2.2. Installations and upgrades of v2.3 include 2FA features.
-
-Use the following composer command to install:
+Install the extension using the following Composer command:
 
 ``` bash
 composer require msp/recaptcha:2.0.0

@@ -22,9 +22,7 @@ At this time, Two-Factor Authentication can be installed only from the command l
 
 ## Install 2FA
 
-Install the extension using Composer for v2.1 and v2.2. Installations and upgrades of v2.3 include 2FA features.
-
-Use the following composer command to install:
+Install the extension using the following Composer command:
 
 ``` bash
 composer require msp/twofactorauth:3.0.0

@@ -4,7 +4,7 @@ pages:
       url: /security/security-overview.html
       versions: ["2.1", "2.2"]
 
-    - label: Two Factor Authentication
+    - label: Two-Factor Authentication
       url: /security/two-factor-authentication.html
       versions: ["2.1", "2.2"]
 
