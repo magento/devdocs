@@ -220,14 +220,7 @@ https://github.com/magento/magento2/issues/7173
 
 ### Infrastructure
 
-<!--- MAGETWO-64616 -->* Layout::renderResult() issue
-
-Is there a reason that the eventManager dispatches the "layout_render_before" events AFTER $this->render($response);? It appears that this should come before the execution of $this->render($response); in order to be useful.
-
-vendor/magento/framework/View/Result/Layout.php
-
-
-ask BRUCE
+<!--- MAGETWO-64616 -->* "The `Layout.eventManager` now correctly dispatches the `layout_render_before` events *before* Magento renders the current layout."
 
 
 ### JavaScript
