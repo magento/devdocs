@@ -265,7 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   devdocs!
-  github-pages (= 191)
+  github-pages
   html-proofer
   launchy
 
