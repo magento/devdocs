@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', '183'
+gem 'github-pages', '191'
 gem 'wdm' if Gem.win_platform?
 gem 'html-proofer'
 gem 'launchy'
