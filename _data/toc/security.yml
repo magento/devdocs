@@ -2,9 +2,12 @@ label: Security
 pages:
     - label: Security Overview
       url: /security/security-overview.html
+      versions: ["2.1", "2.2"]
 
     - label: Two Factor Authentication
       url: /security/two-factor-authentication.html
+      versions: ["2.1", "2.2"]
 
     - label: Google reCAPTCHA
       url: /security/google-recaptcha.html
+      versions: ["2.1", "2.2"]
