@@ -52,7 +52,7 @@ After enabling and configuring 2FA for your Magento instance, your Admin users n
 
     For example, you can install the Google Authenticator app on a mobile device such as a smart phone or tablet. Depending on the OS, you can download and install the authenticator from [Google Play](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en) or [iOS App Store](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DiOS&hl=en&oco=0).
 
-1.	Log in to the Magento Admin and configure their authenticator. The first login attempt prompts the user to configure the authenticator.
+1.	Log in to the Magento Admin and configure the authenticator. The first login attempt prompts the user to configure the authenticator.
 
     For example, Google Authenticators provide a QR code to configure access and complete authentication.
 
