@@ -1,12 +1,12 @@
 module Converter
     # Define the Kramdown method to convert markdown to HTML.
     def kramdown( text )
-    Kramdown::Document.new( text ).to_html
+        Kramdown::Document.new( text ).to_html
     end
 
     # Read content in the given path
     def content(path)
-    File.read(path)
+        File.read(path)
     end
 
     # The CSS to append to the HTML report with broken links

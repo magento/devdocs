@@ -4,18 +4,18 @@ include Jekyll
 include Proofer
 include Converter
 
-desc "Same as 'rake preview'"
+desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
 
 desc "Same as 'test:report'"
 task test: %w[test:report]
 
 desc "Preview the devdocs locally"
-task preview: %w[install cleanup] do
+task preview: %w[install clean] do
   print "Generating devdocs locally ... ".magenta
   if File.exists?('_config.local.yml')
     print "enabled the additional configuration parameters from _config.local.yml: $ ".magenta
-  preview_local
+    preview_local
   else
     print "enabled the default configuration; generating the entire devdocs $ ".magenta
     preview
@@ -23,7 +23,7 @@ task preview: %w[install cleanup] do
 end
 
 desc "Remove the generated content"
-task :cleanup do
+task :clean do
   print "Cleaning after the last site generation: $ ".magenta
   jekyll 'clean'
   puts "Clean!".green
@@ -37,7 +37,7 @@ task :install do
 end
 
 desc "Build the entire web site"
-task build: %w[cleanup] do
+task build: %w[clean] do
   print 'Building the site with Jekyll: $ '.magenta
   jekyll 'build'
   puts 'Built!'.green

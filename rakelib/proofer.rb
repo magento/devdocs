@@ -16,7 +16,7 @@ module Proofer
             typhoeus: { :followlocation => true, :connecttimeout => 10, :timeout => 30 },
             hydra: { :max_concurrency => 50 },
             cache: { :timeframe => '30d' }
-            }
+        }
     end
 
     # Count the number of lines in the given file
