@@ -122,16 +122,15 @@ The `di.xml` file declares relationship between the <a href="#mtf_handler_interf
 See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
 ```xml
-
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
 ```
 
  In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
 
 See the directory structure mentioned for the case with the Widget cURL handler:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png">
+![]({{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png)
+
 
 ## How to create a cURL handler {#mtf_handler_howto-create-curl}
 
@@ -141,7 +140,6 @@ Let's create a cURL handler that creates a new widget.
 * In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -159,7 +157,6 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
 ```
 
 * Create `Curl.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.
@@ -168,7 +165,6 @@ The following code includes detailed comments for better understanding.
 {: #mtf_curl_script}
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -253,15 +249,12 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
 ```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/curl` directory of the Magento_Widget module.
 
 ```xml
-
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
 ```
 
 ### cURL authentication classes {#mtf_handler_decor}
@@ -304,7 +297,6 @@ Let's create a UI handler that creates a new widget.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -322,7 +314,6 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
 ```
 
 * Create `Ui.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.
@@ -330,7 +321,6 @@ interface WidgetInterface extends HandlerInterface
 The code has detailed comments for better understanding.
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -415,13 +405,11 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
 ```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/ui` directory of the Magento_Widget {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 ```xml
-
 <?xml version="1.0" ?>
 <!--
 /**
@@ -434,7 +422,6 @@ class Curl extends AbstractCurl
     <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
                 type="\Magento\Widget\Test\Handler\Widget\Ui" />
 </config>
-
 ```
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
@@ -445,7 +432,6 @@ Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -463,12 +449,10 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
 ```
 * Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.
 
 ```php
-
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -553,7 +537,6 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
 ```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/webapi` directory of the Magento_Tax module.
