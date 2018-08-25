@@ -11,7 +11,8 @@ functional_areas:
 
 The following error might display at the start of your upgrade:
 
-<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
+![]({{ site.baseurl }}/common/images/upgr-sorry.png){: width="600px"}
+
 
 See one of the following sections for possible solutions:
 
