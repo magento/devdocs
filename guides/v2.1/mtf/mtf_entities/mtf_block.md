@@ -183,7 +183,7 @@ class Messages extends Block
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Basic blocks {#mtf_block_basic}
@@ -205,13 +205,13 @@ You can use the `_rootElement` to find an element in the current block.
 
 Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:
 
-{%highlight php%}
+```php
 <?php
 protected function addLayoutUpdates()
 {
    $this->_rootElement->find($this->addLayoutUpdates)->click();
 }
-{%endhighlight%}
+```
 
 This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables search in the context of the block to which the element belongs.
 
@@ -231,7 +231,7 @@ The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/funct
 
 The mapping file defines the fields from the form.
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -248,7 +248,7 @@ The mapping file defines the fields from the form.
         <password />
     </fields>
 </mapping>
-{%endhighlight%}
+```
 
 See a description of the nodes in the following table.
 {:#mtf_block_form_xml_nodes}
@@ -285,7 +285,7 @@ Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/
 
 The file contains the following mapping:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -330,7 +330,7 @@ The file contains the following mapping:
         <strategy>css selector</strategy>
     </widget_instance>
 </tabs>
-{% endhighlight %}
+```
 
 See the following table to understand the node's purpose.
 
@@ -351,7 +351,7 @@ Example of `composite` field from [ProductForm.xml]({{ site.mage2000url }}dev/te
 
 In the mapping file: 
 
-{%highlight xml%}
+```xml
 <quantity_and_stock_status composite="1">
     <qty>
         <selector>[name="product[quantity_and_stock_status][qty]"]</selector>
@@ -361,7 +361,7 @@ In the mapping file:
         <input>select</input>
     </is_in_stock>
 </quantity_and_stock_status>
-{%endhighlight%}
+```
 
 On the UI:
 
@@ -434,7 +434,7 @@ If you want to change the representation of block details, you can change a <a h
 
 * Find the method
 
-{% highlight php5 %}
+```php5
 <?php
 protected function _toHtml()
 {
@@ -443,11 +443,11 @@ protected function _toHtml()
     }
     return $this->fetchView($this->getTemplateFile());
 }
-{% endhighlight php %}
+```
 
 * Change the code to the following
 
-{% highlight php %}
+```php
 <?php
 protected function _toHtml()
 {
@@ -461,7 +461,7 @@ protected function _toHtml()
         . $this->fetchView($template)
         . "<!-- END $name using $template -->";
 }
-{% endhighlight php %}
+```
 
 * Save the file
 
@@ -477,7 +477,7 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
 
 `block` is the node that adds the block to the page:
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="WidgetInstanceIndex" area="Adminhtml" mca="admin/widget_instance/index" module="Magento_Widget">
         ...
@@ -485,7 +485,7 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
         ...
     </page>
 </config>
-{%endhighlight%}
+```
 
 {% include mtf/block_attributes.md %}
 
@@ -499,7 +499,7 @@ You can get other blocks in the block using the <a href="https://github.com/mage
 
 See the following example:
 
-{%highlight php%}
+```php
 <?php
 protected function getTemplateBlock()
 {
@@ -508,7 +508,7 @@ protected function getTemplateBlock()
         ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
     );
 }
-{%endhighlight%}
+```
 
 In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
 
@@ -518,7 +518,7 @@ In this code we are creating the `Magento\Backend\Test\Block\Template` block wit
 
 Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the better readability we reduced a list of blocks to one block.
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -531,7 +531,7 @@ Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the
         <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>        
     </page>
 </config>
-{%endhighlight%}
+```
 
 This page relates to the Magento_Catalog module and contains `ViewBlock`. This block has reference to the [`Magento\Catalog\Test\Block\Product\View`] class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own `ViewBlock` in a corresponding module. And that is where you can use render!
 
@@ -543,7 +543,7 @@ Let's create render for the bundle product.
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -556,11 +556,11 @@ Let's create render for the bundle product.
                 
     </page>
 </config>
-{%endhighlight%}
+```
 
 **Step 3**. Insert `block` with the same name of block and add a render that indicates the type of product and the class that processes this block
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -575,7 +575,7 @@ Let's create render for the bundle product.
         </block>
     </page>
 </config>
-{%endhighlight%}
+```
 
 Details:
 
@@ -590,7 +590,7 @@ Details:
 
 Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View`, where a render calls the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View`.
 
-{%highlight php5%}
+```php5
 <?php
 public function getOptions(FixtureInterface $product)
 {
@@ -602,7 +602,7 @@ public function getOptions(FixtureInterface $product)
         ? $this->callRender($typeId, 'getOptions', ['product' => $product])
         : $this->getCustomOptionsBlock()->getOptions($product);
 }
-{%endhighlight%}
+```
 
 It contains the `getOptions()` method that:
 
