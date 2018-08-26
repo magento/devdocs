@@ -113,7 +113,7 @@ class InstallData implements InstallDataInterface
 
     /**
      * Init
-     * @param CategorySetupFactory $categorySetupFactory
+     * @param EavSetupFactory $eavSetupFactory
      */
     public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
     {
