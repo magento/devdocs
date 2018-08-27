@@ -9,4 +9,4 @@ menu_node:
 
 Our color palette reflects our brand personality. It meets accessibility standards and provides clear legibility, hierarchy, navigation, and messaging.
 
-<img src="img/ColorPalette.jpg">
+![](img/ColorPalette.jpg)

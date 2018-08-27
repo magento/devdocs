@@ -15,7 +15,7 @@ functional_areas:
 
 If you're upgrading the Magento 2 software, the following error can display during the readiness check:
 
-<img src="{{ site.baseurl }}/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
+![If all readiness checks pass, click Next and continue with the next step]({{ site.baseurl }}/common/images/upgr_readiness-success.png){: width="700px"}
 
 To resolve the error:
 

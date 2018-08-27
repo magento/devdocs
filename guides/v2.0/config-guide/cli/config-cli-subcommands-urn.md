@@ -19,15 +19,15 @@ Magento code references all XSD schemas as <a href="https://www.ietf.org/rfc/rfc
 
 By default, an IDE like PHPStorm is not configured to recognize URNs and, as a result, they display in red text as follows:
 
-<img src="{{ site.baseurl }}/common/images/config_urn_before.png" width="750px">
+![]({{ site.baseurl }}/common/images/config_urn_before.png){: width="750px"}
 
 The `bin/magento dev:urn-catalog:generate` command enables your IDE (currently, only PHPStorm) to recognize and highlight URNs like the following:
 
-<img src="{{ site.baseurl }}/common/images/config_urn_after.png" width="750px">
+![]({{ site.baseurl }}/common/images/config_urn_after.png){: width="750px"}
 
 Specifically, this command creates the following PHPStorm configuration:
 
-<img src="{{ site.baseurl }}/common/images/config_urn_settings.png" width="750px">
+![]({{ site.baseurl }}/common/images/config_urn_settings.png){: width="750px"}
 
 ## Configure your IDE
 
