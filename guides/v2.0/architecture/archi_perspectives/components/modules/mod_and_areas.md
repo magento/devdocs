@@ -59,4 +59,4 @@ After the area name, the URI segment specifies the *full front name*. When an HT
 
 ## Related topics {#m2arch-module-related}
 
-* <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+* [Module overview]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html)

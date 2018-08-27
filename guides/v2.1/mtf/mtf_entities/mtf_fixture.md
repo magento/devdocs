@@ -38,9 +38,8 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
 <p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
 </div>
 
-<div class="bs-callout bs-callout-warning">
-<p>To work with generateFixtureXml tool, <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
-</div>
+{: .bs-callout .bs-callout-warning}
+To work with generateFixtureXml tool, [Magento must beinstalled.]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 In the following table see `generateFixtureXml` arguments.
 
@@ -128,12 +127,12 @@ The following table describes `<field>` attributes.
 | `name`              | Field name.     |  string   | layout_updates  |  required      |
 | `is_required`       | Specifies whether field is required on the form.   | 1 - required, 0 - optional | 1  |optional     |
 | `group`    | Tab name that contains field (for example, `title` field is placed on **Storefront properties** tab on widget creation page).      |           string           |storefront_properties | optional      |
-| `source`    | Class that prepares field data for use. See <a href="#mtf_fixture_source">Add the data source to the fixture field</a>.      |    string |Magento\Widget\Test\Fixture\Widget\LayoutUpdates   |     optional      |
-| `repository`    | Reference to  the class that stores data sets for the field. <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>. |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
+| `source`    | Class that prepares field data for use. See [Add the data source to the fixture field](#mtf_fixture_source).      |    string |Magento\Widget\Test\Fixture\Widget\LayoutUpdates   |     optional      |
+| `repository`    | Reference to  the class that stores data sets for the field. [More details about therepository]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html). |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
 
 The following image shows how XML is connected with GUI of your new widget.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png" /></a>
+[![]({{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png)]({{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png)
 
 Orange arrows show relations between `<field>` nodes of fixture and GUI element of Magento widget, that we are going to test.
 
