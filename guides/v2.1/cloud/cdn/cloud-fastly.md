@@ -2,7 +2,6 @@
 group: cloud
 title: Fastly
 redirect_from:
-  - /guides/v2.0/cloud/basic-information/cloud-fastly.html
   - /guides/v2.1/cloud/basic-information/cloud-fastly.html
   - /guides/v2.2/cloud/basic-information/cloud-fastly.html
   - /guides/v2.3/cloud/basic-information/cloud-fastly.html
@@ -66,8 +65,7 @@ see [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.htm
 Fastly can be bypassed for the Magento Admin to perform long running or bulk
 actions and API access to avoid 503s.
 
-We provide [VCL snippet instructions]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html)
-for extending the timeout for the Magento Admin.
+You can update the Fastly configuration for your Magento store to [extend the time out]({{ page.baseurl }}cloud/access-acct/fastly.html#bulkaction).
 
 ## Backends and Origin shields {#backend}
 
