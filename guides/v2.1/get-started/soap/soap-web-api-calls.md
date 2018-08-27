@@ -22,32 +22,7 @@ Each Magento service interface that is part of a {% glossarytooltip cdf644c4-bc9
 To consume several services, you must specify them in the WSDL endpoint {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 
-<table style="width:100%">
-   <colgroup>
-      <col width="20%">
-      <col width="40%">
-      <col width="40%">
-   </colgroup>
-   <thead>
-      <tr>
-         <th>Service</th>
-         <th>WSDL endpoint URL</th>
-         <th>Available services</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>customer</td>
-         <td>http://magentohost/soap?wsdl&services=customerV1</td>
-         <td>\Magento\Customer\Service\V1\CustomerService</td>
-      </tr>
-       <tr>
-         <td>customer, catalogProduct</td>
-         <td>http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2</td>
-         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>
-      </tr>
-   </tbody>
-</table>
+<table style="width:100%">   <colgroup>      <col width="20%" />      <col width="40%" />      <col width="40%" />   </colgroup>   <thead>      <tr>         <th>Service</th>         <th>WSDL endpoint URL</th>         <th>Available services</th>      </tr>   </thead>   <tbody>      <tr>         <td>customer</td>         <td>http://magentohost/soap?wsdl&services=customerV1</td>         <td>\Magento\Customer\Service\V1\CustomerService</td>      </tr>       <tr>         <td>customer, catalogProduct</td>         <td>http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2</td>         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>      </tr>   </tbody></table>
 
 The WSDL URL follows the following pattern:
 
@@ -66,29 +41,11 @@ Service names use the following conventions:
 * The `Interface` suffix is omitted.
 * If the service name is the same as the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
 
-<table>
-<thead>
-<tr>
-<th>Original Service Interface Name</th>
-<th>Service Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerInterface</td>
-<td>customerV1</td>
-</tr>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface </td>
-<td>customerCustomerAccountServiceV1</td>
-</tr>
-<tr>
-<td>\Enterprise\Customer\Service\V3\Customer\AddressInterface</td>
-<td>enterpriseCustomerAddressV3</td>
-</tr>
-
-</tbody>
-</table>
+| Original Service Interface Name | Service Name |
+|----------
+| `\Magento\Customer\Service\V1\CustomerInterface` | `customerV1` |
+| `\Magento\Customer\Service\V1\CustomerAccountServiceInterface` | c`ustomerCustomerAccountServiceV1` |
+| `\Enterprise\Customer\Service\V3\Customer\AddressInterface` | `enterpriseCustomerAddressV3` |
 
 ## Authentication {#auth}
 

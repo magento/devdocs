@@ -85,37 +85,12 @@ For **Pro**, you will see a hierarchy of branches starting from Production to St
 
 The following table details the branches for Pro:
 
-<table>
-<thead>
-<tr>
-<th style="width: 125px;">Branch</th>
-<th style="width: 100px;">Environment</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>(no branch)</td>
-<td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
-</td>
-</tr>
-<tr>
-<td><code>production</code></td>
-<td>Production</td>
-<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</td>
-</tr>
-<tr>
-<td><code>staging</code></td>
-<td>Staging</td>
-<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</td>
-</tr>
-<tr>
-<td><code>master</code></td>
-<td>Integration master</td>
-<td>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code. When this code is complete, you merge to <code>staging</code> and <code>production</code>.</td>
-</tr>
-</tbody>
-</table>
+| Branch | Environment | Description |
+|----------
+| (no branch) | Global Master | This \"branch\" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
+| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
+| `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
+| `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 
 If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
 
