@@ -2056,13 +2056,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>Integration: <code class="highlighter-rouge">/var/log/deploy.log</code></li>
-  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg/post_deploy.log</code></li>
-  <li>Production: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;/post_deploy.log</code></li>
+  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg/deploy.log</code></li>
+  <li>Production: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;/deploy.log</code></li>
 </ul>
 
 <p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
 
-<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/deploy.log</code>.</p>
 
 <p>Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.</p>
 

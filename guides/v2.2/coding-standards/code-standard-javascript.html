@@ -549,10 +549,11 @@ It can use custom rules to enforce specific coding standards.</p>
 <p>When you declare an anonymous function as an argument in a function call, indent the body of the function by <em>four</em> spaces from the left edge of the statement or function   <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span>
  to increase readability.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myObject</span><span class="p">.</span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">//Function logic</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">});</span></code></pre></figure>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myObject</span><span class="p">.</span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">param1</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//Function logic</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h3 id="end-of-file">End of file</h3>
 
@@ -593,12 +594,13 @@ It can use custom rules to enforce specific coding standards.</p>
 
 <p>Use string concatenation for multi-line string literals:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myString</span> <span class="o">=</span> <span class="s1">'JavaScript was originally developed in Netscape, by Brendan Eich. '</span> <span class="o">+</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myString</span> <span class="o">=</span> <span class="s1">'JavaScript was originally developed in Netscape, by Brendan Eich. '</span> <span class="o">+</span>
     <span class="s1">'Battling with Microsoft over the Internet, Netscape considered their client-server solution '</span> <span class="o">+</span>
     <span class="s1">'as a distributed OS, running a portable version of Sun Microsystem&amp;#8217;s Java. '</span> <span class="o">+</span>
     <span class="s1">'Because Java was a competitor of C++ and aimed at professional programmers, '</span> <span class="o">+</span>
     <span class="s1">'Netscape also wanted a lightweight interpreted language that would complement Java '</span> <span class="o">+</span>
-    <span class="s1">'by appealing to nonprofessional programmers, like Microsoft&amp;#8217;s VB.[9] (see JavaScript and Java)'</span><span class="p">;</span></code></pre></figure>
+    <span class="s1">'by appealing to nonprofessional programmers, like Microsoft&amp;#8217;s VB.[9] (see JavaScript and Java)'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="parentheses">Parentheses</h3>
 
@@ -616,9 +618,9 @@ It can use custom rules to enforce specific coding standards.</p>
 
 <p>Use braces with all multiline blocks. May only omit braces if entire block can be written in one line and improves readability.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Wrong</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-  <span class="nx">blah</span><span class="p">();</span>
+    <span class="nx">blah</span><span class="p">();</span>
 
 <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
 
@@ -626,16 +628,18 @@ It can use custom rules to enforce specific coding standards.</p>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">blah</span><span class="p">();</span>
+    <span class="nx">blah</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <h3 id="semicolons">Semicolons</h3>
 
@@ -643,32 +647,37 @@ It can use custom rules to enforce specific coding standards.</p>
 
 <p>The following code examples show the dangers of missing semicolons:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example 1: JavaScript Error</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example 1: JavaScript Error</span>
 <span class="nx">MyClass</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myMethod</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
 <span class="p">}</span>  <span class="c1">// &lt;-- Missing semicolon</span>
 
 <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// Some initialization code wrapped in a function to create a scope for locals.</span>
-<span class="p">})();</span></code></pre></figure>
+    <span class="c1">// Some initialization code wrapped in a function to create a scope for locals.</span>
+<span class="p">})();</span>
+</code></pre></div></div>
 
 <p>Since there is semicolon to end the first statement, the first function returns 42 and the script interprets 42 as a function.
 When the script tries to call 42 as a function with the second function as a parameter, an error occurs.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example 2: Trying to do one thing on Internet Explorer and another on Firefox.</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example 2: Trying to do one thing on Internet Explorer and another on Firefox.</span>
 <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s1">'j'</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="s1">'i'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'j'</span><span class="p">:</span> <span class="mi">2</span>
  <span class="p">}</span>  <span class="c1">// &lt;-- Missing semicolon</span>
 
-<span class="p">[</span><span class="nx">normalVersion</span><span class="p">,</span> <span class="nx">ffVersion</span><span class="p">][</span><span class="nx">isIE</span><span class="p">]();</span></code></pre></figure>
+<span class="p">[</span><span class="nx">normalVersion</span><span class="p">,</span> <span class="nx">ffVersion</span><span class="p">][</span><span class="nx">isIE</span><span class="p">]();</span>
+</code></pre></div></div>
 
 <p>A ‘no such property in undefined’ error appears during runtime when the script tries to call <code class="highlighter-rouge">x[ffVersion][isIE]()</code>.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Example 3: Conditional execution a la bash</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// Example 3: Conditional execution a la bash</span>
 <span class="kd">var</span> <span class="nx">THINGS_TO_EAT</span> <span class="o">=</span> <span class="p">[</span><span class="nx">apples</span><span class="p">,</span> <span class="nx">oysters</span><span class="p">,</span> <span class="nx">sprayOnCheese</span><span class="p">]</span>  <span class="c1">// &lt;-- Missing semicolon</span>
 
-<span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="nx">resultOfOperation</span><span class="p">()</span> <span class="o">||</span> <span class="nx">die</span><span class="p">();</span></code></pre></figure>
+<span class="o">-</span><span class="mi">1</span> <span class="o">==</span> <span class="nx">resultOfOperation</span><span class="p">()</span> <span class="o">||</span> <span class="nx">die</span><span class="p">();</span>
+
+</code></pre></div></div>
 
 <p>The script calls <code class="highlighter-rouge">die</code> unless <code class="highlighter-rouge">resultOfOperation)_</code> is <code class="highlighter-rouge">NaN</code> and assigns <code class="highlighter-rouge">THING_TO_EAT</code> the result of <code class="highlighter-rouge">die()</code>.</p>
 
@@ -686,8 +695,8 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 <p>Use single quotes instead of double quotes for consistency.</p>
 
 <p>This is helpful when creating strings that include HTML:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">'&amp;lt;span class="text"&gt;Hello World!&amp;lt;/div&gt;'</span><span class="p">;</span></code></pre></figure>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">'&amp;lt;span class="text"&gt;Hello World!&amp;lt;/div&gt;'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h2 id="additional-naming-convention-standards">Additional naming convention standards</h2>
 
@@ -730,15 +739,16 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 
 <p>Use a variable initialized with a function expression to define a function within a block.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Wrong</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
 
 <span class="c1">// Correct</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="exceptions-and-custom-exceptions">Exceptions and custom exceptions</h3>
 
@@ -761,20 +771,23 @@ Feel free to use custom exceptions when appropriate.</p>
 
 <p>There are several ways to attach methods and properties to a constructor, but the preferred style is:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <p>Do not use:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">bar</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">},</span>
     <span class="na">circle</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+
+</code></pre></div></div>
 
 <p>Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.</p>
 
@@ -782,28 +795,30 @@ Feel free to use custom exceptions when appropriate.</p>
 
 <p>A closure keeps a pointer to its enclosing scope, so attaching a closure to a DOM element can create a circular reference and thus, a memory leak.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Wrong</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Wrong</span>
 <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">element</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// uses a and b</span>
-  <span class="p">};</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// uses a and b</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>The function closure keeps references to elements “a” and “b” even if it never uses them.</p>
 
 <p>Because elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection.
 In these situations, the code can be structured as follows:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Correct</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Correct</span>
 <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">element</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// uses a and b</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// uses a and b</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="additional-general-standards">Additional general standards</h2>
 
@@ -811,18 +826,20 @@ In these situations, the code can be structured as follows:</p>
 
 <p>Single-line array and object initializers are allowed when they fit on a line as follows:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>  <span class="c1">// No space after [ or before ].</span>
-    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">};</span>  <span class="c1">// No space after { or before }.  </span></code></pre></figure>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>  <span class="c1">// No space after [ or before ].</span>
+    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">};</span>  <span class="c1">// No space after { or before }.  </span>
+</code></pre></div></div>
 
 <p>Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.</p>
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">a</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
     <span class="na">b</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="na">lengthyName</span><span class="p">:</span> <span class="mi">2</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <h3 id="associative-arrays">Associative arrays</h3>
 
@@ -848,9 +865,10 @@ In these situations, the code can be structured as follows:</p>
 
 <p>Using only one var per scope promotes readability.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">,</span>
     <span class="nx">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span></code></pre></figure>
+    <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+</code></pre></div></div>
 
 
 			
