@@ -5,10 +5,6 @@ redirect_from:
   - /guides/v2.1/cloud/basic-information/cloud-fastly.html
   - /guides/v2.2/cloud/basic-information/cloud-fastly.html
   - /guides/v2.3/cloud/basic-information/cloud-fastly.html
-  - /guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html
-  - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
-  - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
-  
 functional_areas:
   - Cloud
   - Setup
@@ -66,10 +62,8 @@ If you receive a 503 error, try to submit the request directly to the origin
 shield URL and review logs to identify the source of the issue. For details,
 see [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html#timeouts).
 
-Fastly can be bypassed for the Magento Admin to perform long running or bulk
-actions and API access to avoid 503s.
+Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}cloud/access-acct/fastly.html#bulkaction).
 
-You can update the Fastly configuration for your Magento store to [extend the time out]({{ page.baseurl }}cloud/access-acct/fastly.html#bulkaction).
 
 ## Backends and Origin shields {#backend}
 

@@ -5,6 +5,8 @@ title: Set up Fastly
 menu_title: Set up Fastly
 menu_order: 5
 menu_node:
+redirect_from:
+  - /guides/v2.0/cloud/basic-information/cloud-fastly.html
 functional_areas:
   - Cloud
   - Setup
