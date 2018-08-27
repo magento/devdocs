@@ -22,9 +22,10 @@ See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migrat
 
 To start migrating data, run:
 
-    bin/magento migrate:data [-r|--reset] {<path to config.xml>}
+    bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
 
 where:
+* `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
