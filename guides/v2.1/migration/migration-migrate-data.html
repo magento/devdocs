@@ -631,12 +631,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To start migrating data, run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento migrate:data [-r|--reset] {&lt;path to config.xml&gt;}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento migrate:data [-r|--reset] [-a|--auto] {&lt;path to config.xml&gt;}
 </code></pre></div></div>
 
 <p>where:</p>
-
 <ul>
+  <li>
+    <p><code class="highlighter-rouge">[-a|--auto]</code> is an optional argument that prevents migration from stopping when it encounters integrity check errors.</p>
+  </li>
   <li>
     <p><code class="highlighter-rouge">[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
   </li>

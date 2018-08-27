@@ -1199,26 +1199,51 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To compile <code class="highlighter-rouge">.less</code> files, add your theme to <code class="highlighter-rouge">module.exports</code> in the Grunt configuration, either in the default <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code> or in the <a href="/guides/v2.3/frontend-dev-guide/tools/using_grunt.html#grunt_config">custom configuration file</a>. For example:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="o">%</span><span class="nx">theme</span><span class="o">%</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">area</span><span class="p">:</span> <span class="s1">'frontend'</span><span class="p">,</span>
-        <span class="na">name</span><span class="p">:</span> <span class="s1">'%Vendor%/%theme%'</span><span class="p">,</span>
-        <span class="na">locale</span><span class="p">:</span> <span class="s1">'%language%'</span><span class="p">,</span>
-        <span class="na">files</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s1">'%path_to_file1%'</span><span class="p">,</span> <span class="c1">//path to root source file</span>
-            <span class="s1">'%path_to_file2%'</span>
-        <span class="p">],</span>
-        <span class="na">dsl</span><span class="p">:</span> <span class="s1">'less'</span>
-    <span class="p">...</span>
-    <span class="p">}</span>
-</code></pre></div></div>
+<ol>
+  <li>
+    <p>Install [node.js] to any location on your machine.</p>
+  </li>
+  <li>Install the Grunt CLI globally:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm install <span class="nt">-g</span> grunt-cli
+</code></pre></div>    </div>
+  </li>
+  <li>Rename the following files in your Magento root directory:
+    <ul>
+      <li><code class="highlighter-rouge">package.json.sample</code> to <code class="highlighter-rouge">package.json</code></li>
+      <li><code class="highlighter-rouge">Gruntfile.js.sample</code> to <code class="highlighter-rouge">Gruntfile.js</code></li>
+    </ul>
+  </li>
+  <li>Install (or refresh) the <code class="highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd &lt;your_Magento_instance_directory&gt;
+ npm install
+ npm update
+</code></pre></div>    </div>
+  </li>
+  <li>Add your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+ to Grunt configuration. To do this, in the <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code> file, add your theme to <code class="highlighter-rouge">module.exports</code> like following:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
 
-<p>Where:</p>
-<ul>
-  <li><code class="highlighter-rouge">%theme%</code>: corresponds to your theme directory name.</li>
-  <li><code class="highlighter-rouge">%language%</code>: the locale or language for the theme, such as <code class="highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create another theme declaration with another value for <code class="highlighter-rouge">%language%</code>.</li>
-  <li><code class="highlighter-rouge">%path_to_file%</code>: path to the root source file, relative to the <code class="highlighter-rouge">app/design/frontend/%Vendor%/%theme%/web</code> directory. You need to specify all <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from another theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
-</ul>
+     <span class="o">&lt;</span><span class="nx">theme</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="na">area</span><span class="p">:</span> <span class="s1">'frontend'</span><span class="p">,</span>
+         <span class="na">name</span><span class="p">:</span> <span class="s1">'&lt;Vendor&gt;/&lt;theme&gt;'</span><span class="p">,</span>
+         <span class="na">locale</span><span class="p">:</span> <span class="s1">'&lt;language&gt;'</span><span class="p">,</span>
+         <span class="na">files</span><span class="p">:</span> <span class="p">[</span>
+             <span class="s1">'&lt;path_to_file1&gt;'</span><span class="p">,</span> <span class="c1">//path to root source file</span>
+             <span class="s1">'&lt;path_to_file2&gt;'</span>
+         <span class="p">],</span>
+         <span class="na">dsl</span><span class="p">:</span> <span class="s1">'less'</span>
+     <span class="p">},</span>
+</code></pre></div>    </div>
+
+    <p>Where the following notation is used:</p>
+    <ul>
+      <li><code class="highlighter-rouge">&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.</li>
+      <li><code class="highlighter-rouge">&lt;language&gt;</code>: specified in the <code class="highlighter-rouge">code_subtag</code> format, for example <code class="highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code class="highlighter-rouge">language</code></li>
+      <li><code class="highlighter-rouge">&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
+    </ul>
+  </li>
+  <li>(Optional) If you want to use Grunt for “watching” changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.</li>
+</ol>
 
 <h2 id="grunt_commands">Grunt commands</h2>
 
