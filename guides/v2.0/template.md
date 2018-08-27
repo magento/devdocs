@@ -99,7 +99,7 @@ See the markdown version of this file for examples.
 {% endcollapsible %}
 
 {% collapsible Click to show/hide included content %}
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 {% endcollapsible %}
 
 {% collapsible Collapsible Code Examples%}

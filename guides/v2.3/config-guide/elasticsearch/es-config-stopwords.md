@@ -24,10 +24,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html" target="_blank)
-*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html" target="_blank)
-*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html" target="_blank)
-*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank)
+*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html){:target="_blank"}
+*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html){:target="_blank"}
+*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html){:target="_blank"}
+*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html){:target="_blank"}
 
 ## Configure stopwords {#config-stopwords}
 

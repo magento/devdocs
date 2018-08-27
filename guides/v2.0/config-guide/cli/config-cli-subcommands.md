@@ -13,7 +13,7 @@ functional_areas:
 ---
 
 ## Before you configure the Magento application {#config-install-cli-prereq}
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 ## First steps {#config-cli-before}
 
@@ -114,10 +114,10 @@ Before you run any of these commands, you must either [install the Magento appli
 </table>
 
 ## Help commands {#config-cli-help}
-{% include install/cli_help-commands.html %}
+{% include install/cli_help-commands.md %}
 
 ## Common arguments {#config-cli-subcommands-common}
-{% include install/cli_common-commands.html %}
+{% include install/cli_common-commands.md %}
 
 ## Commands {#config-cli-subcommands}
 

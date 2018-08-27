@@ -26,7 +26,7 @@ Description
 <td>
 <p>The <code>.less</code> files from which the <code>.css</code> files [included in layout]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html) are compiled.
 
-For example, in one of the [layout files of the Magento Blank theme](https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml), the following <code>.css</code> files are included:
+For example, in one of the [layout files of the Magento Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml), the following <code>.css</code> files are included:
 
 <pre>
     <head>

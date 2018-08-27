@@ -147,8 +147,8 @@ The following sample is an example of the configuration for a simple modal windo
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 

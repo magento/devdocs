@@ -19,7 +19,7 @@ This component is a variation of the [FileUploader component]({{ page.baseurl }}
 
 Extends [`FileUploader`]({{ page.baseurl }}/ui_comp_guide/components/ui-fileuploader.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js)
-- [`app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html)
-- [`app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd)
-- [`app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php)
+- [`app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js)
+- [`app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html)
+- [`app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd)
+- [`app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php`]({{ site.mage2300url }}app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php)

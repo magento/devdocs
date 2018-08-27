@@ -32,7 +32,7 @@ This section shows how to run the Data Migration Tool to migrate settings, data,
 
 ### First steps {#migration-command-run-first}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 In addition to the command arguments mentioned here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common)
 
