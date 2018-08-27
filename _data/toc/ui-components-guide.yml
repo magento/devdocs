@@ -73,7 +73,7 @@ pages:
           url: /ui_comp_guide/components/ui-htmlcontent.html
 
         - label: ImageUploader component
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /ui_comp_guide/components/image-uploader/
 
         - label: Input component
@@ -149,19 +149,19 @@ pages:
           url: /ui_comp_guide/components/ui-treemassactions.html
 
         - label: UrlInput component
-          versions: "2.3"
+          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-urlinput.html
 
         - label: UI-select component
-          versions: "2.3"
+          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-secondary-uiselect.html
 
         - label: WYSIWYG component
-          versions: ["2.0","2.1","2.2"]
+          include_versions: ["2.0","2.1","2.2"]
           url: /ui_comp_guide/components/ui-wysiwyg.html
 
         - label: WYSIWYG component
-          versions: "2.3"
+          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-wysiwyg.html
           children:
 
@@ -196,7 +196,7 @@ pages:
           url: /ui_comp_guide/concepts/knockout-bindings.html
 
         - label: Magento binding syntax
-          versions: ["2.2","2.3"]
+          include_versions: ["2.2","2.3"]
           url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library
@@ -224,7 +224,7 @@ pages:
           url: /ui_comp_guide/howto/add_category_attribute.html
 
         - label: Update the page URL type
-          versions: "2.3"
+          include_versions: ["2.3"]
           url: /ui_comp_guide/howto/update-url-type.html
 
     - label: Troubleshoot

@@ -6,15 +6,15 @@
 
     - label: Extension Update and System Upgrade Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
-      versions: ['2.3', '2.3']
+      include_versions: ['2.2', '2.3']
 
     - label: Component Manager and System Upgrade Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
-      versions: ['2.0', '2.1']
+      include_versions: ['2.0', '2.1']
 
     - label: Performance Best Practices
       url: /performance-best-practices/
-      versions: ['2.2', '2.3']
+      exclude_versions: ['2.0','2.1']
 
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
@@ -24,7 +24,7 @@
 
     - label: Release Information
       url: /magento-release-information.html
-      versions: 0
+      versionless: true
 
 - label: Development
   children:
@@ -58,11 +58,11 @@
 
         - label: UI Components
           url: /ui-components/ui-component.html
-          versions: ['2.1','2.2','2.3']
+          exclude_versions: ['2.0']
 
         - label: UI Components Guide
           url: /ui_comp_guide/bk-ui_comps.html
-          versions: ['2.0']
+          include_versions: ['2.0']
 
         - label: JavaScript Developer Guide
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
@@ -73,9 +73,9 @@
         - label: Admin Style Guide
           url: /design-styleguide/bk-styleguide.html
 
-        - label: PWA Studios
-          url: /pwa/
-          versions: ['2.3']
+        - label: Magento PWA Documentation Site
+          url: https://magento-research.github.io/pwa-studio/
+          include_versions: ['2.3']
 
     - label: API
       children:
@@ -91,15 +91,15 @@
 
         - label: GraphQL Developer Guide
           url: /graphql/
-          versions: ['2.3']
+          include_versions: ['2.3']
 
         - label: Marketplace EQP API Reference
           url: /marketplace/eqp/api.html
-          versions: ['2.1','2.2','2.3']
+          exclude_versions: ['2.0']
 
         - label: Magento BI Import REST API
           url: https://developers.rjmetrics.com/
-          versions: ['2.1','2.2','2.3']
+          exclude_versions: ['2.0']
 
 - label: Testing
   children:
@@ -109,11 +109,11 @@
 
     - label: Functional Acceptance Testing
       url: /magento-functional-testing-framework/2.2/introduction.html
-      versions: ['2.2']
+      include_versions: ['2.2']
 
     - label: Functional Acceptance Testing
       url: /magento-functional-testing-framework/2.3/introduction.html
-      versions: ['2.3']
+      include_versions: ['2.3']
 
     - label: Functional Testing
       url: /mtf/mtf_introduction.html
@@ -137,11 +137,11 @@
 
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
-      versions: ['2.2','2.3']
+      exclude_versions: ['2.0','2.1']
 
     - label: B2B
       url: /b2b/bk-b2b.html
-      versions: ['2.2','2.3']
+      include_versions: ['2.2','2.3']
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
@@ -154,26 +154,26 @@
 
     - label: Staging
       url: /extension-dev-guide/staging.html
-      versions: ['2.1','2.2','2.3']
+      exclude_versions: ['2.0']
 
 - label: Tutorials
   children:
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
-      versions: ['2.1','2.2','2.3']
+      exclude_versions: ['2.1']
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
-      versions: ['2.1','2.2','2.3']
+      exclude_versions: ['2.0']
 
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html
 
     - label: Magento Support
       url: /community/resources/support.html
-      versions: 0
+      versionless: true
 
     - label: Video Tutorials
       url: /videos/
-      versions: 0
+      versionless: true

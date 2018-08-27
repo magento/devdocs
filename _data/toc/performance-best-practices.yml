@@ -1,5 +1,5 @@
 label: Performance Best Practices
-versions: ["2.2", "2.3"]
+include_versions: ["2.2", "2.3"]
 pages:
     - label: Introduction
       url: /performance-best-practices/index.html
@@ -27,4 +27,4 @@ pages:
 
     - label: Advanced JavaScript bundling
       url: /performance-best-practices/advanced-js-bundling.html
-      versions: ["2.3"]
+      include_versions: ["2.3"]

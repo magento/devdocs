@@ -1,23 +1,30 @@
 {% assign item = include.section %}
-{% if item.versions == nil or item.versions contains page.guide_version or item.versions == 0 %}
 {% assign children = item.children %}
-
-{% if item.versions == 0 %}
-  {% assign item_url = item.url %}
+{% if page.guide_version %}
+  {% assign compare_version = page.guide_version %}
 {% else %}
-  {% if page.guide_version %}
-    {% capture item_url %}{{ page.baseurl }}{{ item.url }}{% endcapture %}
-  {% else %}
-    {% capture item_url %}{{ site.baseurl }}/guides/v{{ site.version }}{{ item.url }}{% endcapture %}
-  {% endif %}
+  {% assign compare_version = site.version %}
 {% endif %}
 
-{% if item.url contains 'http' %}
-  {% assign item_url = item.url %}
-{% endif %}
+{% unless item.exclude_versions contains compare_version %}
+{% if item.include_versions.size == nil or item.include_versions contains compare_version %}
+  {% assign base = '' %}
+  {% if item.versionless %}
+    {% assign base = site.baseurl %}
+  {% else %}
+    {% if page.guide_version %}
+      {% assign base = page.baseurl %}
+    {% else %}
+      {% assign base = site.version | prepend: "/guides/v" | prepend: site.baseurl %}
+    {% endif %}
+  {% endif %}
+  {% if item.url contains 'http' %}
+    {% assign base = '' %}
+  {% endif %}
+
+  {% assign item_url = item.url | prepend: base %}
 
 <li class="{% if page.url == item_url %}active{% endif %} {{ item.class }}">
-
     {% if item.url %}
     <a href="{{ item_url }}">{{ item.label }}</a>
     {% else %}
@@ -32,4 +39,6 @@
     </ul>
     {% endif %}
 </li>
+
 {% endif %}
+{% endunless %}
