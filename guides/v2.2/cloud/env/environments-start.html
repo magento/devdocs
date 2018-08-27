@@ -2073,43 +2073,68 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="env-start-comm">Common Magento CLI commands</h2>
 
-<p>The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> versions directly connect with Magento Git, the Magento ECE project, and provide Git features.</p>
+<p>You can use the Magento CLI commands, which are very similar to Git commands, to directly connect to your Magento Commerce Cloud project and manage the Integration environments. The following Magento CLI commands can run from any directory, but it is a best practice to run the commands from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project-ID&gt;</code> parameter.</p>
 
-<p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>.</p>
+<p>All commands are shown with required options only. Use the <code class="highlighter-rouge">--help</code> option with any command to see more information.</p>
 
-<dl>
-  <dt><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code></dt>
-  <dd>Push an empty commit to force a redeployment. Some actions, like adding a user for example, don’t result in deployment.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud login</code></dt>
-  <dd>Log in to the project.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud project:get &lt;project ID&gt; &lt;directory&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment ID&gt;</code>.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project ID&gt;</code></dt>
-  <dd>List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).</dd>
-  <dt><code class="highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent branch&gt;</code></dt>
-  <dd>Create a new branch with a name and an ID. This information corresponds to the environment.</dd>
-</dl>
-
-<p class="bs-callout bs-callout-info">The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
-
-<dl>
-  <dt><code class="highlighter-rouge">magento-cloud environment:checkout &lt;environment ID&gt;</code></dt>
-  <dd>Check out an existing environment.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud environment:merge -p &lt;project ID&gt; -e &lt;environment ID&gt;</code></dt>
-  <dd>Merge changes in this environment with its parent.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud environment:synchronize -p &lt;project ID&gt; -e &lt;environment ID&gt; {code|data}</code></dt>
-  <dd>Synchronize (that is, <code class="highlighter-rouge">git pull</code>) code and/or data from the parent to this environment.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud variable:list</code></dt>
-  <dd>List variables in this environment.</dd>
-  <dt><code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></dt>
-  <dd>Set a value for an environment variable in this environment.</dd>
-</dl>
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch-name&gt;</code></td>
+      <td>Push an empty commit to force a redeployment. Some actions, such as adding a user, do not result in deployment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud login</code></td>
+      <td>Log in to the project.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud project:get &lt;project-ID&gt; &lt;directory&gt; -e &lt;environment-ID&gt;</code></td>
+      <td>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment-ID&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project-ID&gt;</code></td>
+      <td>List the environments in the current project.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent-branch&gt;</code></td>
+      <td>Create a new branch with a name and an ID. This information corresponds to the environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud environment:checkout &lt;environment-ID&gt;</code></td>
+      <td>Check out an existing environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud environment:merge -p &lt;project-ID&gt; -e &lt;environment ID&gt;</code></td>
+      <td>Merge changes in this environment with its parent.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud environment:synchronize -p &lt;project-ID&gt; -e &lt;environment-ID&gt; {code|data}</code></td>
+      <td>Synchronize (<code class="highlighter-rouge">git pull</code>) code and data from the parent to this environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud variable:list</code></td>
+      <td>List variables in this environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></td>
+      <td>Set a value for an environment variable.</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>For a full list of Magento cloud CLI commands, see the Magento cloud <a href="/guides/v2.2/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></p>
 
+<p class="bs-callout bs-callout-info">The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+
 <h2 id="getstarted">Get started creating branches</h2>
 
-<p>To begin, you’ll need a branch to work in.</p>
+<p>To begin, create a new branch.</p>
 
 <ol>
   <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -2171,106 +2196,91 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="merge">Merge a branch</h2>
 
-<p>After completing development, you can merge this branch to the parent. The following instructions provide an example.</p>
+<p>After completing development, you can merge this branch to the parent:</p>
 
 <ol>
-  <li>Complete code in your local branch.</li>
   <li>
-    <p>Add, commit, and push your change to the environment:</p>
+    <p>Complete code in your local branch.</p>
+  </li>
+  <li>
+    <p>Add, commit, and push changes to the environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "&lt;commit message&gt;"
-git push origin &lt;branch name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Commit message"</span> <span class="o">&amp;&amp;</span> git push origin &lt;branch-name&gt;
 </code></pre></div>    </div>
-
-    <p>Where <code class="highlighter-rouge">&lt;branch name&gt;</code> is the Git name of the environment (that is, the environment ID).</p>
   </li>
   <li>
     <p>Merge with the parent environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge &lt;environment ID&gt;
-</code></pre></div>    </div>
-
-    <p>For example,</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge master
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge &lt;environment-ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<h2 id="env-delete">Optionally delete the environment</h2>
+<h2 id="env-delete">Delete an environment</h2>
 
-<p>Before you delete an environment, make sure you don’t need it anymore. You cannot recover a deleted environment later.</p>
+<p>Before you delete an environment, make sure you do not need it anymore. You cannot recover a deleted environment later.</p>
 
-<p class="bs-callout bs-callout-info">You cannot delete the <code class="highlighter-rouge">master</code> environment of any project.</p>
+<p class="bs-callout bs-callout-warning">You cannot delete the <code class="highlighter-rouge">master</code> environment of any project.</p>
 
 <p>You must be a <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-project">project administrator</a>, <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a>, or <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-acct-owner">Project Owner</a> to perform this task.</p>
 
-<p>This section discusses how to optionally delete an environment in the following ways:</p>
+<p>When you delete an environment, the environment is set to <em>inactive</em>. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.</p>
 
-<ul>
-  <li>Make the environment <em>inactive</em> but let it remain in the project</li>
-  <li>Delete the environment entirely and remove it from the project</li>
-</ul>
-
-<p>To delete a environment:</p>
+<h4 id="to-delete-an-environment">To delete an environment:</h4>
 
 <ol>
-  <li>Log in to your project if you haven’t already done so.</li>
   <li>
-    <p>Fetch branches from the origin server.</p>
+    <p>Open a terminal and navigate to your project.</p>
+  </li>
+  <li>
+    <p>Fetch updates from the remote server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To delete the branch entirely (removing it from the project), check out the branch.</p>
+    <p>Checkout the environment branch.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment-ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Delete the environment:</p>
+    <p>Respond to the prompts to delete the local environment and the corresponding remote environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt;
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">The environment &lt;environment-ID&gt;</span> is currently active: deleting it will delete all associated data.
+<span class="gp">Are you sure you want to delete the environment &lt;environment-ID&gt;</span>? <span class="o">[</span>Y/n]
 </code></pre></div>    </div>
 
-    <p>For example, to delete the <code class="highlighter-rouge">deleteme</code> environment:</p>
+    <p>Deleting the environment places it in an <em>inactive</em> state.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete deleteme
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Delete the remote Git branch too? [Y/n]
+</span></code></pre></div>    </div>
 
-    <p>To delete more than one environment:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt; &lt;environmentID&gt;
-</code></pre></div>    </div>
-
-    <p>For additional options, see the command-line help:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete --help
-</code></pre></div>    </div>
+    <p>Deleting the remote Git branch removes the environment from the project.</p>
   </li>
   <li>
-    <p>Answer the prompt:</p>
+    <p>Wait for the environment to delete.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Are you sure you want to delete the remote Git branch deleteme? [Y/n]
-</code></pre></div>    </div>
-
-    <p>A <code class="highlighter-rouge">Y</code> answer makes the branch inactive but leaves it in the project.</p>
-  </li>
-  <li>
-    <p>Answer the prompt:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Delete the remote Git branch too? [Y/n]
-</code></pre></div>    </div>
-
-    <p>A <code class="highlighter-rouge">Y</code> answer completely removes the branch from the project.</p>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">Deleting environment &lt;environment-ID&gt;</span>
+<span class="go">Waiting for the activity...
+</span><span class="gp">  Deleting environment &lt;project-id&gt;</span>-&lt;environment-ID&gt;-xxxxxx
+<span class="go">    
+  [============================]  1 min (complete)
+Activity ID succeeded
+</span><span class="gp">Deleted remote Git branch &lt;environment-ID&gt;</span>
+<span class="go">Run git fetch --prune to remove deleted branches from your local cache.
+</span></code></pre></div>    </div>
   </li>
 </ol>
 
-<p>Wait for the environment to delete.</p>
+<h4 id="to-delete-more-than-one-environment">To delete more than one environment:</h4>
 
-<p class="bs-callout bs-callout-info">To activate the environment later, use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command.</p>
+<p>You can delete more than one environment at a time by adding multiple environment IDs to the delete command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment-1-ID&gt; &lt;environment-2-ID&gt;
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">To activate an inactive environment, use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command.</p>
 
 <h2 id="ipaddress">Integration environment IP addresses</h2>
 
