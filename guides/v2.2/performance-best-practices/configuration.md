@@ -17,6 +17,10 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 
 An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System > Index Management** configuration page.
 
+We advise to use index parallelization feature and to set threads count on index process based on these factors 
+- threads count >= max dimension count (across all indexers)
+- threads count <= cores count
+
 ## Caches
 
 When you launch your store in production, activate all the caches from the **System > Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
