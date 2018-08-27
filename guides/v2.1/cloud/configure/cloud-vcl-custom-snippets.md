@@ -5,8 +5,6 @@ title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets
 menu_order: 7
 menu_node:
-redirect_from:
-  - /guides/v2.0/cloud/configure/fastly-vcl-extend-timeout.html
 functional_areas:
   - Cloud
   - Setup
