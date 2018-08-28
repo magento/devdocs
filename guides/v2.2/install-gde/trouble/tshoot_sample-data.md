@@ -13,14 +13,6 @@ functional_areas:
 
 This topic discusses solutions to errors you might encounter installing optional sample data.
 
-#### Contents
-
-*	[Symptom (file system permissions)](#trouble-samp-perms)
-*	[Symptom (production mode)](#trouble-samp-prod)
-*	[Symptom (security)](#trouble-samp-secy)
-*	[Symptom (develop branch)](#trouble-samp-dev)
-*	[Symptom (max_execution_time)](#trouble-samp-max)
-
 ### Symptom (file system permissions) {#trouble-samp-perms}
 
 Error in the console log during sample data installation using the Setup Wizard:

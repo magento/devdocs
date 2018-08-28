@@ -58,7 +58,7 @@ To run System Upgrade:
 
 The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
-<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
+![]({{ site.baseurl }}/common/images/upgr-sorry.png){: width="600px"}
 
 For suggested solutions to other causes indicated by this message, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
 

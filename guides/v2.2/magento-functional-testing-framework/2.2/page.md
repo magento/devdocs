@@ -1,11 +1,9 @@
 ---
 group: mftf
 title: Page structure
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.2.0
-redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/page.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -178,7 +176,7 @@ Attributes|Type|Use|Description
 [`<section>`]: #section-tag
 [`<test>`]: test.html
 [actions]: test/actions.html
-[explicit page: #explicit-page
+[explicit page]: #explicit-page
 [PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 [parameterized page]: #parameterized-page
 [section]: section.html

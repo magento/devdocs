@@ -5,14 +5,9 @@ title: Multiselect component
 menu_title: Multiselect component
 ---
 
-## Overview
-
 The Multiselect component provides the interface for a list or a data set. Multiselect allows selecting multiple items.
 
 ## Сonfiguration options
-Extends all `abstract` and [Select]({{ page.baseurl }}/ui_comp_guide/components/ui-select.html) configurations.
-
-Multiselect-specific options:
 
 <table>
   <tr>

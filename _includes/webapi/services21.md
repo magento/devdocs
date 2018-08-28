@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
 The Web APIs for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
@@ -184,4 +182,3 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     taxTaxClassRepositoryV1
     taxTaxRateRepositoryV1
     taxTaxRuleRepositoryV1
-</div>

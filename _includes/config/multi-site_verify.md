@@ -1,8 +1,6 @@
-<div markdown="1">
-
 Unless you have DNS set up for your stores' URLs, you must add a static route to the host in your `hosts` file:
 
-1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system){:target="_blank"}.
+1.  Locate your operating system's [`hosts` file](https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system).
 2.  Add the static route in the format:
 
         <ip address> french.mysite.mg
@@ -15,10 +13,9 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 
 You're done!
 
-<div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</li>
-    <li>Additional tasks are required to set up {{site.data.var.ece}}; for more information, see <a href="{{ page.baseurl }}/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li></ul>
-</div>
+{:.bs-callout .bs-callout-info}
+* Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
+* Additional tasks are required to set up {{site.data.var.ece}}; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
 
 ### Troubleshooting
 

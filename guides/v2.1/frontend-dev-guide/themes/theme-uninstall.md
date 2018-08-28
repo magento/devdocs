@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Uninstall a storefront theme
-menu_title: Uninstall a storefront theme
-menu_order: 2
 functional_areas:
   - Frontend
   - Theme
@@ -36,9 +33,10 @@ To uninstall a manually added theme:
 2. Remove the theme directory.
 3. Remove the theme record from database. If you are using MySQL, run the following command to do this:
 
-```
+```bash
 mysql -u <user> -p -e "delete from <dbname>.theme where theme_path ='<Vendor>/<theme>' AND area ='frontend' limit 1"
 ```
+
 Where:
 
 - `<user>`: your Magento database username
@@ -62,24 +60,23 @@ Take the following steps:
 1. Open the `<Magento root dir>/composer.json` file.
 2. Find a line with a reference to theme package and delete it. The reference would look like following:
 
-   {%highlight json%}
-   ...
+   ```json
    "require": {
     ...
        "<vendor>/<theme-name>": "<version>"
    },
-   ...
-   {%endhighlight%}
+   ```
  
-3. To update the project dependencies, run:  
+3. To update the project dependencies, run: 
  
+    ```bash
     composer update
+    ```
 
 4. Use the `magento theme:uninstall` CLI command as described in the [Uninstall themes Composer package]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html) topic.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can use the Composer remove command to remove the dependency, but in that case you will also to delete theme record from database manually.
-</div>
 
 ## Uninstall a theme extension
 

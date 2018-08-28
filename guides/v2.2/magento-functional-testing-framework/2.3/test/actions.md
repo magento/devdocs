@@ -4,6 +4,7 @@ title: Test actions
 functional_areas:
  - Testing
 mftf-release: 2.2.0
+redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/test/actions.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -413,7 +414,7 @@ Attribute|Type|Use|Description
 
 ### clickWithRightButton
 
-See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target='"_blank"}.
+See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target="_blank"}.
 
 Attribute|Type|Use|Description
 ---|---|---|---

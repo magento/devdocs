@@ -15,7 +15,17 @@ The Swagger UI is installed automatically on your server. As a result, you can g
 
 `http://<magento_host>/swagger`
 
-By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` or `POST /V1/integration/admin/token` as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
+To view the Swagger documentation for a specific store view, use this URL:
+
+ `http://<magento_host>/swagger?store=<store_code>`
+
+ The value of `store_code` must be one of the following:
+
+ * `default`
+ * The assigned store code
+ * `all`. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the API call affects all the merchant's stores.
+
+By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid value in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` or `POST /V1/integration/admin/token` as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
 The generated Swagger documentation provides the capability to test REST requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token has been specified.
 
@@ -28,12 +38,6 @@ You can use a REST client to generate the JSON schema for one or more services. 
 
 `http://<magento_host>/rest/<store_code>/schema?services=<serviceName1,serviceName2,..>`
 
-The value of `store_code` must be one of the following:
-
-* `default`
-* The assigned store code
-* `all`. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the API call affects all the merchant's stores.
-
 For example:
 
 `http://<magento_host>/rest/default/schema?services=catalogProductRepositoryV1`
@@ -44,6 +48,11 @@ To return information about all services:
 
 {:.bs-callout .bs-callout-info}
 You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
+
+
+## Return the complete JSON schema
+
+To return the complete JSON schema, specify the `?services=all` parameter in the URL. The default `store_code` is `all`, but you can also specify `default` or a store code defined on the system. For example: `http://<magento_host>/rest/default/schema?services=all`
 
 ## Related topics
 

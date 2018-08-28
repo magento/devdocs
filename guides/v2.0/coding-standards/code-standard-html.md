@@ -48,7 +48,7 @@ Always close self-closing tags.
 **Recommended**
 {%highlight html%}
 <br />
-<img src="image.png" alt="image" />
+<img src="image.png" alt="image"/>
 <input type="text" name="username" />
 {%endhighlight%}
 
@@ -107,7 +107,7 @@ Use no space before the colon and one space after the colon for the sake of read
 
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
+![]({{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png)
 
 ## Class names
 

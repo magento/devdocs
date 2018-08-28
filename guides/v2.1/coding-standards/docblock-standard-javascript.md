@@ -15,7 +15,7 @@ functional_areas:
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){:target="_blank"} regulations.
 
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt){: target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Use JSDoc {#frontend-dev-guide-javascript-js-coding-docblock-use}
 
@@ -96,7 +96,7 @@ A description must be provided along with parameters. Method descriptions should
  *
  * @param {project.MyClass} obj Instance of MyClass which leads to a long
  *     comment that needs to be wrapped to two lines.
- * @return {boolean} Whether something occured.
+ * @return {boolean} Whether something occurred.
  */
 function someMethod(obj) {
     // ...

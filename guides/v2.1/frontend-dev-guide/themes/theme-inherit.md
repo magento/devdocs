@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Theme inheritance
-menu_title: Theme inheritance
-menu_order: 70
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
@@ -20,17 +17,16 @@ Theme inheritance is based on the fallback mechanism, which guarantees that if a
 
 The fallback order is slightly different for static assets (CSS, JavaScript, fonts and images) and other theme files, layouts and templates. The article describes the fallback for each type of theme files, and provides an overview of how to override ancestor themes and module designs.
 
-For comprehensive information about developing theme components, see
-subsequent chapters in this guide.
+For comprehensive information about developing theme components, see subsequent chapters in this guide.
 
 ## Set a parent theme
 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
 Example:
-the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
+The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
 
-{% highlight xml %}
+```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>Orange</title>
      <parent>Magento/blank</parent>
@@ -38,7 +34,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
          <preview_image>media/preview.jpg</preview_image>
      </media>
 </theme>
-{% endhighlight xml %}
+```
 
 {:.bs-callout .bs-callout-info}
 A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.
@@ -75,7 +71,7 @@ If module context is defined for a file:
 4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
 
-<u>Example</u>
+**Example**
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
@@ -106,7 +102,7 @@ So if you need to customize a certain template, you need to create an overriding
 
 For example, if you must override the `<Magento_Catalog_module_dir>/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
 
-<u>Example</u>
+**Example**
 By default, according to the module template, in the mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} products are listed under the Go to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} button:
 
 ![In the minishopping cart products are listed under the Go to Checkout button]({{ site.baseurl }}/common/images/inherit_mini1.png)
@@ -138,18 +134,18 @@ To add an extending layout file:
 
 * Put your custom layout file in the `<theme_dir>/<Vendor>_<Module>/layout/` directory.
 
-<u>Example</u>
+**Example**
 
 OrangeCo decided they should remove the "Report bugs" link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` :
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="report.bugs" remove="true"/>
     </body>
 </page>
-{%endhighlight xml%}
+```
 
 
 For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) article.

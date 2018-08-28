@@ -1,8 +1,6 @@
 ---
 group: fedg
 title: Conventional notations used in this Guide
-menu_title: Conventional notations used in this Guide
-menu_order: 2
 functional_areas:
   - Frontend
 ---

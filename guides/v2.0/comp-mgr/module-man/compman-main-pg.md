@@ -92,15 +92,15 @@ To install a new purchase:
 
 To see if any of your components can be updated, click **Sync**.
 
-<img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available"> displays in the left column of each component that you can update. 
+![An info icon means there is an update available]({{ site.baseurl }}/common/images/cman_comp-status-info.png) displays in the left column of each component that you can update. 
 
 The following figure shows an example.
 
-<img src="{{ site.baseurl }}/common/images/cman_component-needs-update.png" width="650px" alt="Example showing components that need updating">
+![Example showing components that need updating]({{ site.baseurl }}/common/images/cman_component-needs-update.png){: width="650px"}
 
 To update the component, click **Update** from the **Actions** list. A sample follows.
 
-<img src="{{ site.baseurl }}/common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
+![Click Update from the Actions menu]({{ site.baseurl }}/common/images/cman_actions_update.png)
 
 Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
@@ -110,7 +110,7 @@ To enable or disable a component, click the appropriate choice from the **Action
 
 The following figure shows an example of disabling a component.
 
-<img src="{{ site.baseurl }}/common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
+![Click Disable from the Actions menu]({{ site.baseurl }}/common/images/cman_actions-disable.png)
 
 Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
@@ -118,7 +118,7 @@ Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.
 
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
-<img src="{{ site.baseurl }}/common/images/cman_uninstall1.png" alt="Uninstall a component">
+![Uninstall a component]({{ site.baseurl }}/common/images/cman_uninstall1.png)
 
 Continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 

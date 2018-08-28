@@ -9,10 +9,10 @@ functional_areas:
 
 This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
--  [Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html){:target="_blank"}
--  [Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
--  [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
--  [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
+*	[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html)
+*	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html)
+*	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
+*	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
 {: .bs-callout .bs-callout-info}
 For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:  
@@ -31,7 +31,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 4.	In the **Category Name** field, enter a unique name to identify this category.
 5.	Make sure **Enable Category** is set to **Yes**.
 
-	For information about the other options on this page, see [Root Categories](http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category){:target="_blank"}.
+	For information about the other options on this page, see [Root Categories](http://docs.magento.com/m2/ce/user_guide/catalog/category-root.html?Highlight=create%20root%20category).
 
 	The following figure shows an example.
 
@@ -117,6 +117,9 @@ To access a website using a unique URL like `http://french.magento.mg`, you must
 
 1.  Repeat the previous step in the _Base URLs (Secure)_ section.
 
+	{:.bs-callout .bs-callout-info}
+  If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**. If you're setting up a base URL for local testing, use a period.
+
 1.  Click **Save Config**.
 
 1.  Repeat these tasks for other websites.
@@ -129,7 +132,7 @@ Magento gives you the option to add the store code to the site base URL, which s
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
-For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}.
+For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html).
 
 {% collapsible To add the store code to the base URL: %}
 
@@ -165,6 +168,9 @@ You must perform this step last because you will lose access to the Magento Admi
 
 1.  Repeat the previous step in the **Base URLs (Secure)** section.
 
+	{:.bs-callout .bs-callout-info}
+  If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**.
+
 1.  Click **Save Config**.
 
 {% endcollapsible %}
@@ -172,5 +178,9 @@ You must perform this step last because you will lose access to the Magento Admi
 #### Next step
 
 *	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
-*	[Tutorial: up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+
+#### Related information
+
+* [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
+*	[Tutorial: Set up multiple websites or stores with NGINX]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 *	[Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
