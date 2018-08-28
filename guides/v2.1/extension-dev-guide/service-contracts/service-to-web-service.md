@@ -29,7 +29,7 @@ To configure a web API, read these topics:
 
 -   [webapi.xsd XML schema file](#validate-webapi)
 
--   <a href="#forced-parameters">Forcing Request Parameters</a>
+-   [Forcing Request Parameters](#forced-parameters)
 
 ## Configure a web API {#configure-webapi}
 
