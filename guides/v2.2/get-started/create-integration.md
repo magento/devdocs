@@ -4,7 +4,6 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-version: 2.2
 redirect_from: /guides/v2.2/howdoi/webapi/integration.html
 
 ---
@@ -152,7 +151,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
          &#42; @param ConfigBasedIntegrationManager $integrationManager
          &#42;&#47;
 
-        public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
+        public function __construct(ConfigBasedIntegrationManager $integrationManager)
         {
             $this->integrationManager = $integrationManager;
         }

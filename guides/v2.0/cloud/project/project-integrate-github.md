@@ -5,7 +5,6 @@ title: GitHub integration
 menu_title: GitHub
 menu_order: 10
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

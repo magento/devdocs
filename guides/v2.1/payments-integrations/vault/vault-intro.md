@@ -5,7 +5,6 @@ title: Adding vault integration
 menu_title: Adding vault integration
 menu_order: 10
 menu_node: parent
-version: 2.1
 functional_areas:
   - Integration
 ---

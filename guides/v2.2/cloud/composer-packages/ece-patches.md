@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: vendor/magento/ece-patches
-version: 2.2
 functional_areas:
   - Cloud
   - Setup

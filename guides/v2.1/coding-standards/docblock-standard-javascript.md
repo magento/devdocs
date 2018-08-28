@@ -5,7 +5,6 @@ title: JavaScript DocBlock standard
 landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
-version: 2.1
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 functional_areas:
   - Standards
@@ -14,9 +13,9 @@ functional_areas:
 ## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){:target="_blank"} regulations.
 
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt){: target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Use JSDoc {#frontend-dev-guide-javascript-js-coding-docblock-use}
 
@@ -36,12 +35,15 @@ JSDoc comments requirements:
 
 Example:
 
-<pre>/**
-*&nbsp;A&nbsp;JSDoc&nbsp;comment&nbsp;should&nbsp;begin&nbsp;with&nbsp;a&nbsp;slash&nbsp;and&nbsp;2&nbsp;asterisks.
-*&nbsp;Inline&nbsp;tags&nbsp;should&nbsp;be&nbsp;enclosed&nbsp;in&nbsp;braces&nbsp;like{@code&nbsp;this}.
-*&nbsp;@desc&nbsp;Block&nbsp;tags&nbsp;should&nbsp;always&nbsp;start&nbsp;on&nbsp;their&nbsp;own&nbsp;line.
+```javascript
+
+/**
+* A testJSDoc comment should begin with a slash and 2 asterisks.
+* Inline tags should be enclosed in braces like {@code this}.
+* @desc Block tags should always start on their own line.
 */
-</pre>
+
+```
 
 Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} from JSDoc comments to validate and optimize the code.
 
@@ -49,59 +51,71 @@ Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}met
 
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
-<pre>/**
-&nbsp;*&nbsp;Illustrates&nbsp;line&nbsp;wrapping&nbsp;for&nbsp;long&nbsp;param/return&nbsp;descriptions.
-&nbsp;*
-&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;foo&nbsp;This&nbsp;is&nbsp;a&nbsp;param&nbsp;with&nbsp;a&nbsp;description&nbsp;too&nbsp;long&nbsp;to&nbsp;fit&nbsp;in
-&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;one&nbsp;line.
-&nbsp;*&nbsp;@return&nbsp;{number}&nbsp;This&nbsp;returns&nbsp;something&nbsp;that&nbsp;has&nbsp;a&nbsp;description&nbsp;too&nbsp;long&nbsp;to
-&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fit&nbsp;in&nbsp;one&nbsp;line.
-&nbsp;*/
-project.MyClass.prototype.method&nbsp;=&nbsp;function(foo)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;5;
+```javascript
+
+/**
+ * Illustrates line wrapping for long param/return descriptions.
+ *
+ * @param {string} foo This is a param with a description too long to fit in
+ *     one line.
+ * @return {number} This returns something that has a description too long to
+ *     fit in one line.
+ */
+project.MyClass.prototype.method = function(foo) {
+    return 5;
 };
-</pre>
+
+```
 
 ### Class comments {#frontend-dev-guide-javascript-js-coding-docblock-classcomments}
 
 Classes must be documented with a description, and appropriate type tags.
 
-<pre>/**
-&nbsp;*&nbsp;Class&nbsp;making&nbsp;something&nbsp;fun&nbsp;and&nbsp;easy.
-&nbsp;*&nbsp;@param&nbsp;{string}&nbsp;arg1&nbsp;An&nbsp;argument&nbsp;that&nbsp;makes&nbsp;this&nbsp;more&nbsp;interesting.
-&nbsp;*&nbsp;@param&nbsp;{Array.&lt;number&gt;}&nbsp;arg2&nbsp;List&nbsp;of&nbsp;numbers&nbsp;to&nbsp;be&nbsp;processed.
-&nbsp;*&nbsp;@constructor
-&nbsp;*/
-project.MyClass&nbsp;=&nbsp;function(arg1,&nbsp;arg2)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+```javascript
+
+/**
+ * Class making something fun and easy.
+ * @param {string} arg1 An argument that makes this more interesting.
+ * @param {Array.<number>} arg2 List of numbers to be processed.
+ * @constructor
+ */
+project.MyClass = function(arg1, arg2) {
+    // ...
 };
-</pre>
+
+```
 
 ### Method and function comments {#frontend-dev-guide-javascript-js-coding-docblock-methodcomments}
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
-<pre>/**
-&nbsp;*&nbsp;Operates&nbsp;on&nbsp;an&nbsp;instance&nbsp;of&nbsp;MyClass&nbsp;and&nbsp;returns&nbsp;something.
-&nbsp;*
-&nbsp;*&nbsp;@param&nbsp;{project.MyClass}&nbsp;obj&nbsp;Instance&nbsp;of&nbsp;MyClass&nbsp;which&nbsp;leads&nbsp;to&nbsp;a&nbsp;long
-&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment&nbsp;that&nbsp;needs&nbsp;to&nbsp;be&nbsp;wrapped&nbsp;to&nbsp;two&nbsp;lines.
-&nbsp;*&nbsp;@return&nbsp;{boolean}&nbsp;Whether&nbsp;something&nbsp;occured.
-&nbsp;*/
-function&nbsp;someMethod(obj)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+```javascript
+
+/**
+ * Operates on an instance of MyClass and returns something.
+ *
+ * @param {project.MyClass} obj Instance of MyClass which leads to a long
+ *     comment that needs to be wrapped to two lines.
+ * @return {boolean} Whether something occurred.
+ */
+function someMethod(obj) {
+    // ...
 }
-</pre>
+
+```
 
 ### Property comments {#frontend-dev-guide-javascript-js-coding-docblock-propertycomments}
 
-<pre>/**
-&nbsp;*&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;things&nbsp;per&nbsp;pane.
-&nbsp;*
-&nbsp;*&nbsp;@type&nbsp;{number}
-&nbsp;*/
-project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
-</pre>
+```javascript
+
+/**
+ * Maximum number of things per pane.
+ *
+ * @type {number}
+ */
+project.MyClass.prototype.someProperty = 4;
+
+```
 
 ### JSDoc tag reference {#frontend-dev-guide-javascript-js-coding-docblock-tagreference}
 
@@ -109,78 +123,90 @@ project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
 
 Marks a variable read-only and suitable for inlining. Generates warnings if it is rewritten. Constants should also be ALL_CAPS, but the annotation should help eliminate reliance on the naming convention.
 
-<pre>/**&nbsp;@const&nbsp;*/&nbsp;var&nbsp;DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
-&nbsp;
-/**&nbsp;@const&nbsp;*/&nbsp;MyClass.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
-&nbsp;
+```javascript
+
+/** @const */ var DEFAULT_TIMEZONE = 'GMT';
+ 
+/** @const */ MyClass.DEFAULT_TIMEZONE = 'GMT';
+ 
 /**
-&nbsp;*&nbsp;My&nbsp;namespace's&nbsp;default&nbsp;timezone.
-&nbsp;*
-&nbsp;*&nbsp;@const
-&nbsp;*&nbsp;@type&nbsp;{string}
-&nbsp;*/
-mynamespace.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
-</pre>
+ * My namespace's default timezone.
+ *
+ * @const
+ * @type {string}
+ */
+mynamespace.DEFAULT_TIMEZONE = 'GMT';
+
+```
 
 #### @extends {#frontend-dev-guide-javascript-js-coding-docblock-extends}
 
 Used with `@constructor` to indicate that a class inherits from another class.
 
-<pre>/**
-&nbsp;*&nbsp;Immutable&nbsp;empty&nbsp;node&nbsp;list.
-&nbsp;*
-&nbsp;*&nbsp;@constructor
-&nbsp;*&nbsp;@extends&nbsp;project.MyClass.BasicNodeList
-&nbsp;*/
-project.MyClass.EmptyNodeList&nbsp;=&nbsp;function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+```javascript
+
+/**
+ * Immutable empty node list.
+ *
+ * @constructor
+ * @extends project.MyClass.BasicNodeList
+ */
+project.MyClass.EmptyNodeList = function() {
+    // ...
 };
-</pre>
+
+```
 
 
 #### @interface {#frontend-dev-guide-javascript-js-coding-docblock-interface}
 
 Used to indicate that the function defines an interface.
 
-<pre>/**
-&nbsp;*&nbsp;A&nbsp;shape.
-&nbsp;*
-&nbsp;*&nbsp;@interface
-&nbsp;*/
-function&nbsp;Shape()&nbsp;{};
-Shape.prototype.draw&nbsp;=&nbsp;function()&nbsp;{};
-&nbsp;
+```javascript
+
 /**
-&nbsp;*&nbsp;A&nbsp;polygon.
-&nbsp;*
-&nbsp;*&nbsp;@interface
-&nbsp;*&nbsp;@extends&nbsp;{Shape}
-&nbsp;*/
-function&nbsp;Polygon()&nbsp;{};
-Polygon.prototype.getSides&nbsp;=&nbsp;function()&nbsp;{};
-</pre>
+ * A shape.
+ *
+ * @interface
+ */
+function Shape() {};
+Shape.prototype.draw = function() {};
+ 
+/**
+ * A polygon.
+ *
+ * @interface
+ * @extends {Shape}
+ */
+function Polygon() {};
+Polygon.prototype.getSides = function() {};
+
+```
 
 #### @implements {#frontend-dev-guide-javascript-js-coding-docblock-implements}
 
 Used with `@constructor` to indicate that a class implements an interface.
 
-<pre>/**
-&nbsp;*&nbsp;A&nbsp;shape.
-&nbsp;*
-&nbsp;*&nbsp;@interface
-&nbsp;*/
-function&nbsp;Shape()&nbsp;{};
-Shape.prototype.draw&nbsp;=&nbsp;function()&nbsp;{};
-&nbsp;
+```javascript
+
 /**
-&nbsp;*&nbsp;@constructor
-&nbsp;*&nbsp;@implements&nbsp;{Shape}
-&nbsp;*/
-function&nbsp;Square()&nbsp;{};
-Square.prototype.draw&nbsp;=&nbsp;function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+ * A shape.
+ *
+ * @interface
+ */
+function Shape() {};
+Shape.prototype.draw = function() {};
+ 
+/**
+ * @constructor
+ * @implements {Shape}
+ */
+function Square() {};
+Square.prototype.draw = function() {
+    // ...
 };
-</pre>
+
+```
 
 #### @lends {#frontend-dev-guide-javascript-js-coding-docblock-lends}
 
@@ -190,26 +216,32 @@ Please note that the name in braces is not a type name like in other annotations
 
 Please refer to <a href ="https://code.google.com/p/jsdoc-toolkit/wiki/TagLends" target="_blank">JSDoc Toolkit</a> for more information about this annotation.
 
-<pre>project.MyClass.extend(
-&nbsp;&nbsp;&nbsp;&nbsp;Button.prototype,
-&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;@lends&nbsp;{Button.prototype}&nbsp;*/&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isButton:&nbsp;function()&nbsp;{return&nbsp;true;}
-&nbsp;&nbsp;&nbsp;&nbsp;}
+```javascript
+
+project.MyClass.extend(
+    Button.prototype,
+    /** @lends {Button.prototype} */ {
+        isButton: function() {return true;}
+    }
 );
-</pre>
+
+```
 
 #### @override {#frontend-dev-guide-javascript-js-coding-docblock-override}
 
 Indicates that a method or property of a subclass intentionally hides a method or property of the superclass. If no other documentation is included, the method or property also inherits documentation from its superclass.
 
-<pre>/**
-&nbsp;*&nbsp;@return&nbsp;{string}&nbsp;Human-readable&nbsp;representation&nbsp;of&nbsp;project.SubClass.
-&nbsp;*&nbsp;@override
-&nbsp;*/
-project.SubClass.prototype.toString()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+```javascript
+
+/**
+ * @return {string} Human-readable representation of project.SubClass.
+ * @override
+ */
+project.SubClass.prototype.toString() {
+    // ...
 };
-</pre>
+
+```
 
 #### @param {#frontend-dev-guide-javascript-js-coding-docblock-param}
 
@@ -217,17 +249,20 @@ Used with method, function and constructor calls to document the arguments of a 
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the parameter.
 
-<pre>/**
-&nbsp;*&nbsp;Queries&nbsp;a&nbsp;Storage&nbsp;for&nbsp;items.
-&nbsp;*
-&nbsp;*&nbsp;@param&nbsp;{number}&nbsp;groupNum&nbsp;Subgroup&nbsp;id&nbsp;to&nbsp;query.
-&nbsp;*&nbsp;@param&nbsp;{string|number|null}&nbsp;term&nbsp;An&nbsp;itemName,
-&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;itemId,&nbsp;or&nbsp;null&nbsp;to&nbsp;search&nbsp;everything.
-&nbsp;*/
-{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
-&nbsp;&nbsp;&nbsp;//&nbsp;...
+```javascript
+
+/**
+ * Queries a Storage for items.
+ *
+ * @param {number} groupNum Subgroup id to query.
+ * @param {string|number|null} term An itemName,
+ *     or itemId, or null to search everything.
+ */
+{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.Storage.prototype.query = function(groupNum, term) {
+   // ...
 };
-</pre>
+
+```
 
 #### @return {#frontend-dev-guide-javascript-js-coding-docblock-return}
 
@@ -235,56 +270,68 @@ Used with method and function calls to document the return type. When writing de
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the return value.
 
-<pre>/**
-&nbsp;*&nbsp;@return&nbsp;{string}&nbsp;The&nbsp;hex&nbsp;ID&nbsp;of&nbsp;the&nbsp;last&nbsp;item.
-&nbsp;*/
-namespace.Storage.prototype.getLastId&nbsp;=&nbsp;function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
-&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;id;
+```javascript
+
+/**
+ * @return {string} The hex ID of the last item.
+ */
+namespace.Storage.prototype.getLastId = function() {
+    // ...
+    return id;
 };
-</pre>
+
+```
 
 #### @this {#frontend-dev-guide-javascript-js-coding-docblock-this}
 
 The type of the object in whose context a particular method is called. Required when the this {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} is referenced from a function that is not a prototype method.
 
-<pre>pinto.chat.RosterWidget.extern('getRosterElement',
-&nbsp;&nbsp;&nbsp;&nbsp;/**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;roster&nbsp;widget&nbsp;element.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@this&nbsp;pinto.chat.RosterWidget
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;{Element}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
-&nbsp;&nbsp;&nbsp;&nbsp;function()&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this._getWrappedComponent().getElement();
-&nbsp;&nbsp;&nbsp;&nbsp;}
+```javascript
+
+pinto.chat.RosterWidget.extern('getRosterElement',
+    /**
+     * Returns the roster widget element.
+     *
+     * @this pinto.chat.RosterWidget
+     * @return {Element}
+     */
+    function() {
+        return this._getWrappedComponent().getElement();
+    }
 );
-</pre>
+
+```
 
 #### @type {#frontend-dev-guide-javascript-js-coding-docblock-type}
 
 Identifies the type of a variable, property, or expression.
 
-<pre>/**
-&nbsp;*&nbsp;The&nbsp;message&nbsp;hex&nbsp;ID.
-&nbsp;*
-&nbsp;*&nbsp;@type&nbsp;{string}
-&nbsp;*/
-var&nbsp;hexId&nbsp;=&nbsp;hexId;
-</pre>
+```javascript
+
+/**
+ * The message hex ID.
+ *
+ * @type {string}
+ */
+var hexId = hexId;
+
+```
 
 #### @typedef {#frontend-dev-guide-javascript-js-coding-docblock-typedef}
 
 This annotation can be used to declare an alias of a more complex type.
 
-<pre>/**&nbsp;@typedef&nbsp;{(string|number)}&nbsp;*/
+```javascript
+
+/** @typedef {(string|number)} */
 namespace.NumberLike;
-&nbsp;
-/**&nbsp;@param&nbsp;{namespace.NumberLike}&nbsp;x&nbsp;A&nbsp;number&nbsp;or&nbsp;a&nbsp;string.&nbsp;*/
-namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+ 
+/** @param {namespace.NumberLike} x A number or a string. */
+namespace.readNumber = function(x) {
+    // ...
 }
-</pre>
+
+```
 
 ### JavaScript types {#frontend-dev-guide-javascript-js-coding-docblock-jstypes}
 

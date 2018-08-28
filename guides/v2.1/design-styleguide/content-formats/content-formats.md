@@ -5,7 +5,6 @@ title: Admin Content Formats
 menu_title: Content Formats
 menu_order: 7
 menu_node:
-version: 2.1
 functional_areas:
   - Content
 ---

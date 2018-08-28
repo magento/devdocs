@@ -5,7 +5,6 @@ title: Update the Magento database schema and data
 menu_title: Update the Magento database schema and data
 menu_node:
 menu_order: 16
-version: 2.0
 functional_areas:
   - Install
   - System
@@ -14,7 +13,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites   {#instgde-cli-subcommands-maint-prereq}

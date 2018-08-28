@@ -5,7 +5,6 @@ title: Test deployment
 menu_title: Test deployment
 menu_order: 60
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Testing
@@ -23,7 +22,7 @@ The following information provides information on verifying logs, testing Fastly
 
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
 
-The deployment log is located in `/var/log/platform/<prodject ID>/post_deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
+The deployment log is located in `/var/log/platform/<prodject ID>/deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
 
 When accessing logs in Production, you may need to SSH into each of the three nodes to locate the logs.
 

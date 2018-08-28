@@ -1,7 +1,6 @@
 ---
 group: mftf
 title: Contribution Guidelines for the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 ---
@@ -165,7 +164,7 @@ Label| Description
 [pull]: #pull-request
 
 [Definition of Done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
-[documentation update]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
+[documentation update]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [Magento coding standards]: {{ page.baseurl }}/coding-standards/bk-coding-standards.html
 
 [devdocs mftf]: https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework

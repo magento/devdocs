@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: RabbitMQ
-version: 2.2
 ee_only: true
 functional_areas:
   - Install

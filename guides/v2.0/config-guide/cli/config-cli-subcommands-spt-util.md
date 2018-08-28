@@ -5,7 +5,6 @@ title: Run the support utilities
 menu_title: Run the support utilities (Magento Commerce only)
 menu_node:
 menu_order: 900
-version: 2.0
 ee_only: True
 functional_areas:
   - Configuration
@@ -17,7 +16,7 @@ functional_areas:
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
 
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="\_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
+The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 

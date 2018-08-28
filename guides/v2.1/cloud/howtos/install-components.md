@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Install, manage, and upgrade extensions
-version: 2.1
 redirect_from:
   - /guides/v2.1/cloud/howtos/update-components.html
 functional_areas:

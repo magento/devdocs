@@ -5,7 +5,6 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-version: 2.2
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 
@@ -85,4 +84,4 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
 ## Next migration step
 
-<a href="{{ page.baseurl }}/migration/migration-migrate-delta.html">Migrate changes</a>
+[Migratechanges]({{ page.baseurl }}/migration/migration-migrate-delta.html)

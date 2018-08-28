@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: DownloadableProduct endpoint
-version: 2.3
 ---
 
 The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search.

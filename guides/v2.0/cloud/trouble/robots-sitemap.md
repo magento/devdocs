@@ -5,7 +5,6 @@ title: Add site map and search engine robots
 menu_title: Add sitemap and robots.txt
 menu_order: 40
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

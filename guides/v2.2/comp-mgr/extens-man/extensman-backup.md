@@ -5,7 +5,6 @@ title: Step 2. Back up the file system and database
 menu_title: Step 2. Back up the file system and database
 menu_node:
 menu_order: 10
-version: 2.2
 functional_areas:
   - Upgrade
 ---

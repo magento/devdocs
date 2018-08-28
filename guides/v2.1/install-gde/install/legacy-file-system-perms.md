@@ -5,7 +5,6 @@ title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_node: parent
 menu_order: 100
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -59,7 +58,7 @@ Use the following steps:
 
 		cd <web server docroot>/<magento2 base dir>
 
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ page.baseurl }}/install-gde/basics/basics_docroot.html">here</a>.<br>
+	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).<br>
 
 	Examples:
 

@@ -2,7 +2,6 @@
 group: extension-dev-guide
 subgroup: 03_Build
 title: Create your component file structure
-version: 2.3
 ---
 
 In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
@@ -33,7 +32,7 @@ Additional folders can be added for configuration and other ancillary functions 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 * `Console`: contains CLI commands. For more info, see [Add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html).
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed <a href="{{ page.baseurl }}/extension-dev-guide/plugins.html">plug-ins</a>.
+* `Plugin`: contains any needed [plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 ### Theme file structure

@@ -3,7 +3,6 @@ group: release-notes
 subgroup: 99_third
 menu_title: Magento Commerce third-party licenses
 menu_order: 2
-version: 2.1
 ---
 
 This page contains links to license agreements of the third party components used within Magento Commerce (formerly Enterprise Edition).  Click the **License** links to view the end user license agreement for the corresponding software.

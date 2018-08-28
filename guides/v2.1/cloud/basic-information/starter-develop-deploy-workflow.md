@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Starter develop and deploy workflow
-version: 2.1
 functional_areas:
   - Cloud
 ---
@@ -93,9 +92,9 @@ Configure your store settings from the Magento Admin panel for the Integration e
 For the best information on configurations, review the documentation for {{site.data.var.ee}} and the installed extensions. Here are some links and ideas to help you get kickstarted:
 
 * [Best practices for store configuration]({{ page.baseurl }}/cloud/configure/configure-best-practices.html) for specific best practices in the cloud
-* [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="\_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
-* [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="\_blank"} for your look and feel of the site and stores including CSS and layouts
-* [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="\_blank"} for roles, tools, notifications, and your encryption key for your database
+* [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
+* [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
+* [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="_blank"} for roles, tools, notifications, and your encryption key for your database
 * Extension settings using their documentation
 
 Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. For details, see [Configure Magento Commerce]({{ page.baseurl }}/cloud/configure/configuration-overview.html).

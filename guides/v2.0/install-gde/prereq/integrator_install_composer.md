@@ -5,7 +5,6 @@ title: Install Composer
 menu_title: Install Composer
 menu_order: 2
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

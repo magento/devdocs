@@ -1,13 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: config.php reference
-menu_title: config.php reference
-menu_order: 5800
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.2
 functional_areas:
   - Configuration
   - System

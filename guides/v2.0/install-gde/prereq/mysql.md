@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 25
-version: 2.0
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 functional_areas:
   - Install
@@ -30,9 +29,9 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
-*	Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="&#95;blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-*	Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="&#95;blank"} before you continue.
-*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="&#95;blank"}.
+*	Magento uses [MySQL database triggers](http://dev.mysql.com/doc/refman/5.0/en/triggers.html){:target="_blank"} to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
+*	Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
+*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -86,7 +85,7 @@ To install MySQL 5.7 on Ubuntu 16:
 
 		mysql>
 
-4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
@@ -124,7 +123,7 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		mysql>
 
-4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
@@ -132,7 +131,7 @@ To install MySQL 5.6 on Ubuntu 14:
 
 ### Installing MySQL 5.6 on Ubuntu 12 {#instgde-prereq-mysql56ubu12}
 
-To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04" target="&#95;blank">askubuntu.com</a>.
+To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04" target="_blank">askubuntu.com</a>.
 
 1.	Enter the following commands in the order shown:
 
@@ -165,7 +164,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 
 		mysql>
 
-4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
@@ -181,7 +180,7 @@ The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 ### Get MySQL 5.7 for CentOS 7
 
-The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="&#95;blank"}.
+The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
 
 As a user with `root` privileges, enter the following commands in the order shown:
 
@@ -192,7 +191,7 @@ Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos
 
 ### Get MySQL 5.7 for CentOS 6
 
-The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="&#95;blank"}.
+The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
 
 As a user with `root` privileges, enter the following commands in the order shown:
 
@@ -228,7 +227,7 @@ Continue with the next section.
 
 ## Installing and configuring MySQL 5.6 on CentOS {#instgde-prereq-mysql-centos}
 
-The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="&#95;blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
+The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
 1.	*CentOS 6* Install the MySQL database:
 
@@ -269,7 +268,7 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 
 		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-5.	If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank">`max_allowed_packet`</a> parameter. We recommend a value of at least 16MB.
+5.	If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> parameter. We recommend a value of at least 16MB.
 
 	{% include install/mysql_max-allowed-packet-centos.md %}
 

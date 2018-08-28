@@ -1,7 +1,6 @@
 ---
 group: arch-guide
 title: Magento 2.x GDPR compliance
-version: 2.1
 ---
 
 The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.

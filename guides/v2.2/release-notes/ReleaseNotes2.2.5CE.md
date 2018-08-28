@@ -1,8 +1,6 @@
 ---
-layout: default
 group: release-notes
 title: Magento Open Source 2.2.5 Release Notes
-version: 2.2
 ---
 *Patch code and release notes published on July 1, 2018.* 
 

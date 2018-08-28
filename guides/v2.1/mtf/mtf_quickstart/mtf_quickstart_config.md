@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Adjust configuration
-version: 2.1
 ---
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
@@ -29,9 +28,8 @@ Example:
 
 ### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration is set in <a href="{{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
-</div>
+{: #info .bs-callout .bs-callout-info}
+The default configuration is set in [`/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url}}dev/tests/functional/etc/config.xml.dist). It should be copied as `config.xml` for further changes.
 
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 
@@ -51,7 +49,7 @@ Enter actual data in `<browserName>` and `<browser>` attributes.
 
 Example for Google Chrome:
 
-{% highlight xml %}
+```xml
 
 <server>
 <item name="selenium"
@@ -68,7 +66,7 @@ Example for Google Chrome:
 </item>
 </server>
 
-{% endhighlight %}
+```
 
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 

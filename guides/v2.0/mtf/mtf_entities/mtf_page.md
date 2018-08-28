@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Page
-version: 2.0
 ---
 
 A page object is a class that serves to interact with the Magento page under test.
@@ -68,7 +67,7 @@ The following table explains `<page>` attributes.
 
 Also, block can contain a `render` node. [Read about renders in the Block topic]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ## Page types {#mtf_page_types}
 

@@ -5,7 +5,6 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node:
 menu_order: 2
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 ---
 
@@ -120,7 +119,7 @@ Where:
 
 `-f` is a shortcut for a non-value option `--force`
 
-`arg1`, `arg2`, `frontend`, `vendor` and `themename` are arguments (see <a href="#cli-args">Command options and arguments</a>).
+`arg1`, `arg2`, `frontend`, `vendor` and `themename` are arguments (see [Command options and arguments](#cli-args)).
 
 Use options for:
 
@@ -157,4 +156,4 @@ To avoid naming your command the same as another command, we recommend:
 
 #### Related topic
 
-<a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+[How to add CLIcommands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)

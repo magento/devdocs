@@ -2,7 +2,6 @@
 group: mtf-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
-version: 2.1
 ---
 
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.
@@ -71,13 +70,13 @@ FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- <a href="{{ page.baseurl }}/test/unit/unit_test_execution.html">How to run unit tests during development on the command line or PHPStorm.</a>
+- [How to run unit tests during development on the command line orPHPStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
 
-- <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using `bin/magento` in continuous integration.</a>
+- [How to run unit and integration tests using \`bin/magento\` incontinuousintegration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
 
-- <a href="{{ page.baseurl }}/test/js/test_js-unit.html">More information about JavaScript unit tests.</a>
+- [More information about JavaScript unittests.]({{ page.baseurl }}/test/js/test_js-unit.html)
 
-- <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
+- [More information about performancetesting.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
 
 ## FTF on GitHub {#mtf_intro_github-link}
 

@@ -1,11 +1,11 @@
-## Command-line upgrade to Magento {{page.version}} with sample data
+## Command-line upgrade to Magento {{ page.guide_version }} with sample data
 
 These instructions apply to {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ce}} (formerly Enterprise Edition (EE) users *only* if all of the following are true:
 
 *	You have installed optional sample data
-*	You are upgrading to Magento {{page.version}} (including a Release Candidate) from any earlier version using the command line
+*	You are upgrading to Magento {{ page.guide_version }} (including a Release Candidate) from any earlier version using the command line
 
-To upgrade to Magento {{page.version}} sample data using the command line:
+To upgrade to Magento {{ page.guide_version }} sample data using the command line:
 
 1. Log in to your Magento server as, or switch to, the [Magento file system owner].
 1. Change to the Magento installation directory.
@@ -22,14 +22,14 @@ To upgrade to Magento {{page.version}} sample data using the command line:
    ```
    - Example for {{site.data.var.ce}}:
      ```bash
-      composer require magento/product-community-edition {{page.version}}.0 --no-update
+      composer require magento/product-community-edition {{ page.guide_version }}.0 --no-update
       ```
       ```bash
       composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update 
       ```
    - Example for {{site.data.var.ee}}:
      ```bash
-     composer require magento/product-enterprise-edition {{page.version}}.0 --no-update
+     composer require magento/product-enterprise-edition {{ page.guide_version }}.0 --no-update
      ```
      ```bash
      composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 magento/module-gift-card-sample-data:100.1.0 magento/module-customer-balance-sample-data:100.1.0 magento/module-target-rule-sample-data:100.1.0 magento/module-gift-registry-sample-data:100.1.0 magento/module-multiple-wishlist-sample-data:100.1.0 --no-update

@@ -5,14 +5,7 @@ title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
 menu_order: 200
-version: 2.0
 ---
-
-#### Contents
-
-*	<a href="#howdoi-clear-over">Overview of directory clearing</a>
-*	<a href="#howdoi-clear-what">What directories to clear</a>
-*	<a href="#howdoi-clear-how">How to clear the directories</a>
 
 ## Overview of directory clearing   {#howdoi-clear-over}
 

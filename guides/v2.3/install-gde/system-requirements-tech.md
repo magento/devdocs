@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: Magento 2.3.x technology stack requirements
-version: 2.3
 functional_areas:
   - Install
   - System
@@ -48,24 +47,24 @@ Magento, with assistance from our community, is implementing PHP 7.2 compatibili
 {:.bs-callout .bs-callout-info}
 The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a step for installing these extensions.
 
-*	[bc-math](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} ({{site.data.var.ee}} only)
-* [ctype](http://php.net/manual/en/book.ctype.php){:target="&#95;blank"}
-*	[curl](http://php.net/manual/en/book.curl.php){:target="&#95;blank"}
-* [dom](http://php.net/manual/en/book.dom.php){:target="&#95;blank"}
-*	[gd](http://php.net/manual/en/book.image.php){:target="&#95;blank"}
-*	[intl](http://php.net/manual/en/book.intl.php){:target="&#95;blank"}
-*	[mbstring](http://php.net/manual/en/book.mbstring.php){:target="&#95;blank"}
-*	[hash](http://php.net/manual/en/book.hash.php){:target="&#95;blank"}
-*	[openssl](http://php.net/manual/en/book.openssl.php){:target="&#95;blank"}
-*	[PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="&#95;blank"}
-*	[SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="&#95;blank"}
-*	[soap](http://php.net/manual/en/book.soap.php){:target="&#95;blank"}
-* [spl](http://php.net/manual/en/book.spl.php){:target="&#95;blank"}
-*	[libxml](http://php.net/manual/en/book.libxml.php){:target="&#95;blank"}
-*	[xsl](http://php.net/manual/en/book.xsl.php){:target="&#95;blank"}
-*	[azip](http://php.net/manual/en/book.zip.php){:target="&#95;blank"}
-*	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"}
-*	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
+*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only)
+* [ctype](http://php.net/manual/en/book.ctype.php){:target="_blank"}
+*	[curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
+* [dom](http://php.net/manual/en/book.dom.php){:target="_blank"}
+*	[gd](http://php.net/manual/en/book.image.php){:target="_blank"}
+*	[intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
+*	[mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+*	[hash](http://php.net/manual/en/book.hash.php){:target="_blank"}
+*	[openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
+*	[PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
+*	[SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
+*	[soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
+* [spl](http://php.net/manual/en/book.spl.php){:target="_blank"}
+*	[libxml](http://php.net/manual/en/book.libxml.php){:target="_blank"}
+*	[xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
+*	[azip](http://php.net/manual/en/book.zip.php){:target="_blank"}
+*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 
@@ -102,14 +101,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
     {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-    *	Elasticsearch [5.2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
-    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
+    *	Elasticsearch [5.2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
 
-    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.2. (Before version 2.3, Magento used PHP client version 5.1.)
+    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.2. (Before version 2.3, Magento used PHP client version 5.1.)
 
 *	RabbitMQ 3.7.x (compatible with 2.0 and later)
 
-    [RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html){:target="&#95;blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
+    [RabbitMQ]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html){:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
 ####	{{site.data.var.ee}} only
 
@@ -119,10 +118,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ### Optional but recommended
 
-*	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="&#95;blank"} or later (development environments only; can have an adverse effect on performance)
+*	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
 
-* [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
+* [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
 *	PHPUnit (as a command-line tool) 6.2.0

@@ -1,7 +1,6 @@
 ---
 group: config-guide
 title: Using CLI commands
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy
@@ -105,7 +104,7 @@ To set the sensitive and system-specific settings using environment variables, y
 * Each setting's scope
 
   If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for **Send Emails To** is website and the scope for **Default Email Domain** is global (that is, the Default Config scope).
-  
+
   You need the website code to set the **Send Emails To** configuration value.
   For more information on finding this value, see: [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 * Configuration paths for the settings used in this example:
@@ -114,7 +113,7 @@ To set the sensitive and system-specific settings using environment variables, y
   | -------------------- | -------------------------------------- |
   | Send Emails To       | `contact/email/recipient_email`        |
   | Default Email Domain | `customer/create_account/email_domain` |
-  
+
   For all sensitive and system-specific configuration paths, see: [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 
 ### Set the variables using CLI commands
@@ -158,11 +157,9 @@ To verify the configuration settings:
 
    ![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
-   <div class="bs-callout bs-callout-info" id="info" markdown="1">
-   The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system.
+   {:.bs-callout .bs-callout-info}
+   The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of **VAT Number** is not editable in website scope.
 
-   The value of **VAT Number** is not editable in website scope.
-   </div>
 1. If you haven't already done so, switch to Default Config scope.
 1. In the left navigation, under General, click **Contacts**.
 

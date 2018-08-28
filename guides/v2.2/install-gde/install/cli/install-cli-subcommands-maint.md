@@ -5,7 +5,6 @@ title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
 menu_node:
 menu_order: 10
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-maint.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html
@@ -16,7 +15,7 @@ functional_areas:
 ---
 
 ## First steps {#instgde-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-maint-prereq}

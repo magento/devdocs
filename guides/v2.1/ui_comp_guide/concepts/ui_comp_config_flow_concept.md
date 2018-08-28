@@ -4,7 +4,6 @@ subgroup: concepts
 title: Configuration flow of UI components
 menu_title: Configuration flow of UI components
 menu_order: 10
-version: 2.1
 ---
 
 ## Overview

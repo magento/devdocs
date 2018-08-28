@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## Set up additional master databases {#config-ee-multidb-master-masters}
 
 Create checkout and OMS master databases as follows:
@@ -40,7 +38,7 @@ After setting up a total of three master databases, use the Magento command line
 
 ### First steps
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 ### Configure the checkout database   {#config-ee-multidb-master-cli-check}
 

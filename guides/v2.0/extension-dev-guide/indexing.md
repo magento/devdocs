@@ -4,20 +4,12 @@ subgroup: 99_Module Development
 title: Indexing overview
 menu_title: Indexing overview
 menu_order: 13
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: index
 redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
-
-#### Contents
-
-*	<a href="#m2devgde-indexing-intro">Introduction to indexing</a>
-*	<a href="#m2devgde-indexing-implementation">How Magento implements indexing</a>
-*	<a href="#m2devgde-indexing-outofbox">Magento indexers</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
 
 ## Introduction to indexing   {#m2devgde-indexing-intro}
 

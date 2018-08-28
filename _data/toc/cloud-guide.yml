@@ -148,7 +148,7 @@ pages:
           versions: ["2.2"]
 
     - label: Configure Fastly
-      url: /cloud/basic-information/cloud-fastly.html
+      url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html
@@ -371,7 +371,7 @@ pages:
           url: /cloud/trouble/message-queues.html
           versions: ["2.1","2.2","2.3"]
 
-    - label: Upgrades and Patches
+    - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
         - label: ece-tools release notes

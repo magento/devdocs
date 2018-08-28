@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Go live checklist
-version: 2.2
 functional_areas:
   - Cloud
   - Testing

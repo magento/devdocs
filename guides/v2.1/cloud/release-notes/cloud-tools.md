@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Release notes for ece-tools
-version: 2.1
 redirect_from:
   - guides/v2.1/cloud/composer-packages/ece-tools.html
 functional_areas:
@@ -23,7 +22,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  <!--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now {{site.data.var.ece}} queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
+-  <!--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now {{site.data.var.ece}} queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="_blank"}.
 
 -  **Docker Compose for Cloud**—Made the following improvements to the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
@@ -46,8 +45,11 @@ The following updates describe the latest improvements to the `ece-tools` packag
    -  <!--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated environment variables
    and values.
 
-   -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check. Now, the deployment fails if the `.magento/services.yaml` file specifies an Elasticsearch version that is incompatible with the [elasticsearch composer package](https://packagist.org/packages/elasticsearch/elasticsearch) used to install {{site.data.var.ee}} v2.1.4 and later. Previously, you could deploy with an unsupported version of the Elasticsearch service, which caused product catalog issues after site deployment. See [Setup Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
+   -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with {{site.data.var.ee}}. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.
+   
+      You can resolve the incompatiblity by [submitting a Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to upgrade Elasticsearch to a compatible version. For {{site.data.var.ee}} version 2.1.x and later, upgrade Elasticsearch to version 2.4. If you have Elasticsearch version 1.x or 2.x and do not want to upgrade, you can change the {{site.data.var.ee}} elasticsearch/elasticsearch requirement in composer.json to `elasticsearch/elasticsearch: "~2.0"`.
 
+	 
    -  <!--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.
 
 -  **Environment variable updates**—Changed the following environment variables:
@@ -85,7 +87,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 - <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.local.php` file during the dump process if the store locale is not specified.
 Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.local.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
-- <!--MAGECLOUD-2556-->Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/){:target="\_blank"} domain to a `www` domain.
+- <!--MAGECLOUD-2556-->Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/){:target="_blank"} domain to a `www` domain.
 
 -  <!--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if the updated `.magento.env.yaml` configuration file did not include the `engine` parameter value along with other updated values. Now, the merge operation correctly overwrites only the parameter values included in the updated `.magento.env.yaml` without requiring you to specify the `engine` parameter value.
 
@@ -295,7 +297,7 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
 
 -   **Build/deploy notifications**—We added a new configuration file that you can use to [set up Slack and/or email notifications]({{ site.baseurl }}/guides/v2.1/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
 
--   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-build.html) or [deploy variable]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html). See the following topics for more information:
+-   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-build.html) or [deploy variable]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html). See the following topics for more information:
 
     -   [Magento application environment variables]({{ site.baseurl }}/guides/v2.1/cloud/env/environment-vars_magento.html)
     -   [Static content deployment performance]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-scd-over)

@@ -7,7 +7,6 @@ menu_order: 35
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: umask
-version: 2.2
 functional_areas:
   - Install
   - System

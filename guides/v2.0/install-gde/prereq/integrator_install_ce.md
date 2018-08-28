@@ -5,7 +5,6 @@ title: Get the Magento Open Source metapackage
 menu_title: Get the Magento Open Source metapackage
 menu_order: 3
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

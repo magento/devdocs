@@ -1,8 +1,6 @@
 ---
-layout: default
 group: perf-best-practices
 title: Advanced JavaScript bundling
-version: 2.3
 functional_areas:
   - Configuration
   - System

@@ -1,6 +1,5 @@
 ---
 group: integration-testing
-version: 2.1
 title: Using DocBlock Annotations
 ---
 

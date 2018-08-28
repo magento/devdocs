@@ -7,7 +7,6 @@ menu_order: 19
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.1
 redirect_from: /guides/v2.1/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration
@@ -36,5 +35,5 @@ The structure of the `queue.xml` file is substantially different in Magento. 2.1
 
 #### Related topics
 
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
+*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure messagequeues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

@@ -5,7 +5,6 @@ title: Step 3. Web Configuration
 menu_title: Step 3. Web Configuration
 menu_node:
 menu_order: 4
-version: 2.0
 functional_areas:
   - Install
   - System
@@ -13,7 +12,7 @@ functional_areas:
 ---
 
 ## Before you begin
-{% include install/before-you-begin-web.html %}
+{% include install/before-you-begin-web.md %}
 
 {% include install/web/install-web_3-web-conf.md %}
 

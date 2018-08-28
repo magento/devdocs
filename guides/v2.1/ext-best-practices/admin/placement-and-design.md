@@ -4,7 +4,6 @@ subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design
 menu_order: 1
-version: 2.1
 functional_areas:
   - Standards
 ---

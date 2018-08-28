@@ -1,5 +1,3 @@
-<div markdown="1">
-
 where
 
 *	`<your component base dir>` is the base directory in which your component is located. Typical values are `app/code` or `vendor` relative to the Magento installation directory.
@@ -10,9 +8,5 @@ where
 	*	`theme-`: Theme.
 	*	`language-`: Language package.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>Currently, themes are located under <code>&lt;your Magento install dir>/app/design/frontend</code> or <code>&lt;your Magento install dir>/app/design/adminhtml</code></p></span>
-	</div>
-	
-</div>
+	{:.bs-callout .bs-callout-info}
+  Currently, themes are located under `<your Magento install dir>/app/design/frontend` or `<your Magento install dir>/app/design/adminhtml`.

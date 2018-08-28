@@ -4,7 +4,6 @@ title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
@@ -16,7 +15,7 @@ functional_areas:
 {:.bs-callout .bs-callout-info}
   DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
   
-We want your feedback; please do a pull request on [feedback-placement-and-design.md](https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md){target="&#95;blank"} and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
+We want your feedback; please do a pull request on [feedback-placement-and-design.md](https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md){target="_blank"} and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
   
 
 Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.

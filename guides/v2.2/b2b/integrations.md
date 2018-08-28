@@ -5,7 +5,6 @@ title: Integrate with B2B using REST
 menu_title: Integrate with B2B using REST
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
 functional_areas:
   - B2B

@@ -5,7 +5,6 @@ title: Onboarding tasks
 menu_title: Onboarding tasks
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Cloud
   - Setup
@@ -22,19 +21,19 @@ To quickly onboard your project to start developing your site and going live, yo
 
 The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can add user accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
 
-Typically, the only user the Project Owner must create is the _Technical Admin_. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="\_blank"}, or yourself.
+Typically, the only user the Project Owner must create is the _Technical Admin_. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"}, or yourself.
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
 
-Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}. We will create your account and send you a welcome email that provides instructions to access the project.
+Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. We will create your account and send you a welcome email that provides instructions to access the project.
 
-The person who signs up for a {{site.data.var.ece}} account is referred to as the _Project Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="\_blank"}.
+The person who signs up for a {{site.data.var.ece}} account is referred to as the _Project Owner_. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Your welcome e-mail {#email}
 
 After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your {{site.data.var.ece}} project.
 
-You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="\_blank"}.
+You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
 
 ## Get started with the Project Web Interface {#project-setup}
 
@@ -50,7 +49,7 @@ We recommend creating a user account with Super User access as your Technical Ad
 
 We provide an {{site.data.var.ece}} environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.
 
-The site location is [https://status.magento.cloud/](https://status.magento.cloud/){:target="\_blank"}. Scroll to the bottom and click [Subscribe](http://status.magento.cloud/subscribe){:target="\_blank"} at the bottom of the page. Complete the prompts with your email address and types of notifications you want to receive.
+The site location is [https://status.magento.cloud/](https://status.magento.cloud/){:target="_blank"}. Scroll to the bottom and click [Subscribe](http://status.magento.cloud/subscribe){:target="_blank"} at the bottom of the page. Complete the prompts with your email address and types of notifications you want to receive.
 
 The page lists all component and service status. Any issues, updates, and notices are displayed below these status tables by date. For example, any slow issues, outages, or upgraded services are listed with important information and any updates as available.
 

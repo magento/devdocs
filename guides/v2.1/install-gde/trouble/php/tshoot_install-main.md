@@ -5,7 +5,6 @@ title: Errors during installation
 menu_title: Errors during installation
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Install
   - System

@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript resources in Magento
 menu_title: JavaScript resources in Magento
 menu_order: 5
-version: 2.0
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html

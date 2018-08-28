@@ -5,7 +5,6 @@ title: Security settings
 menu_title: Security settings
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Configuration
   - System

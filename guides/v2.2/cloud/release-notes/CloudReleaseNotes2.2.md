@@ -6,7 +6,6 @@ menu_title: Magento Commerce (Cloud) 2.2.0 Release Notes
 menu_order: 400
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
@@ -53,7 +52,7 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
-[Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
+[Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
 ## Known issues {#known}
 
@@ -118,7 +117,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="\_blank"}.
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ## Installation and upgrade instructions {#install-upgrade}
 

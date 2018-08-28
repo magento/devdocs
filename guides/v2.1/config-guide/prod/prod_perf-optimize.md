@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: Optimization
 title: Magento Optimization Guide
-menu_title: Magento Optimization Guide
-menu_order: 100
-version: 2.1
 functional_areas:
   - Configuration
   - System
@@ -111,9 +107,9 @@ Switching to production mode improves storefront responsiveness and prevents lon
 
 Run the following commands to switch to production mode:
 
-~~~
+```bash
 bin/magento deploy:mode:set production
-~~~
+```
 
 [composer-install]: {{ page.baseurl }}/install-gde/composer.html
 [zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html

@@ -5,7 +5,6 @@ title: Reinstall the Magento software
 menu_title: Reinstall the Magento software
 menu_order: 200
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System

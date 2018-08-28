@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Routing
 menu_title: Routing
 menu_order: 11
-version: 2.0
 redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 

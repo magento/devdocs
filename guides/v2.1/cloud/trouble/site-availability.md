@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Site availability
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

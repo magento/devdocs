@@ -5,14 +5,13 @@ title: Sorry, we can't take that action right now
 menu_title: Sorry, we can't take that action right now
 menu_node:
 menu_order: 2
-version: 2.0
 functional_areas:
   - Upgrade
 ---
 
 The following error might display at the start of your upgrade:
 
-<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
+![]({{ site.baseurl }}/common/images/upgr-sorry.png){: width="600px"}
 
 See one of the following sections for possible solutions:
 

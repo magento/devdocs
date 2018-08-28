@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Constraint
-version: 2.0
 ---
 
 The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
@@ -44,15 +43,15 @@ An object that is not defined in the data set or isn't returned from the test ca
 
 Let's see the following images for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png){: width="800"}
 
 <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png){: width="800"}
 
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png" width="800"/>
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png){: width="800"}
 
 <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 

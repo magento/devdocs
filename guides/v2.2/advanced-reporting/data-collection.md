@@ -1,7 +1,6 @@
 ---
 group: reporting
 title: Data collection for advanced reporting
-version: 2.2
 functional_areas:
     - Reports
 ---
@@ -201,12 +200,12 @@ It cannot contain any parameters.
 
 ## Related topics
 
-[Modules providing advanced reporting][modules]
-
+ [Modules providing advanced reporting][modules]
+ 
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: data-collection.html
+[modules]: modules.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

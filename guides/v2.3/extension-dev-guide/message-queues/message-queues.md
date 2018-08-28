@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: Message Queues
-version: 2.3
 redirect_from: /guides/v2.3/extension-dev-guide/message-queues.html
 
 ---

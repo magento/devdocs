@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} is a software analytics product that helps you analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
+[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
 
 New Relic APM provides the following features to Magento:
 
@@ -25,7 +25,7 @@ Your Magento Commerce Cloud account includes the software for the New Relic APM 
 
 ## New Relic account credentials
 
-When Magento provisions your {{site.data.var.ece}} project, the Project Owner should receive an email from New Relic with the credentials and instructions for accessing the account. If you did not receive the email, you can use the Project Owner email address to [reset the password](https://rpm.newrelic.com/forgot_password){:target="_blank"}.
+When Magento provisions your {{site.data.var.ece}} project, the Project Owner should receive an email from New Relic with the credentials and instructions for accessing the account. If you did not receive the email, you can use the Project Owner email address to [reset the password](https://rpm.newrelic.com/forgot_password).
 
 If you cannot access the New Relic account, submit a [Magento support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
@@ -36,7 +36,7 @@ If you cannot access the New Relic account, submit a [Magento support ticket]({{
 
 We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and usage of the tool.
 
-1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login){:target="_blank"}.
+1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
 
 1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings > Account > Users and roles**.
 
@@ -86,8 +86,7 @@ Contact your Magento technical account manager or New Relic sales (sales@newreli
 
 1.  Copy the license key.
 
-
-You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html)
+You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
 
 
 #### To add a New Relic license key to an environment:

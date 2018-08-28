@@ -5,7 +5,6 @@ title: Start the Module Manager
 menu_title: Start the Module Manager
 menu_node:
 menu_order: 2
-version: 2.2
 functional_areas:
   - Upgrade
 ---
@@ -20,7 +19,7 @@ To run the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% en
 
 	![]({{ site.baseurl }}/common/images/modman_select.png){:width="550px"}
 
-To upgrade Magento system software instead, see <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
+To upgrade Magento system software instead, see [Run SystemUpgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 
 See one of the following sections:
 

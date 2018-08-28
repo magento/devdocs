@@ -5,7 +5,6 @@ title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node:
 menu_order: 8
-version: 2.2
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 functional_areas:
   - Install

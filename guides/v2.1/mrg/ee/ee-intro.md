@@ -2,9 +2,6 @@
 group: mrg
 ee_only: true
 title: Magento Commerce modules
-version: 2.1
-
-
 ---
 
 The following modules are described in detail:

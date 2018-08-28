@@ -1,10 +1,6 @@
 ---
 group: fedg
-subgroup: I_TOOLS
 title: Using Grunt for Magento tasks
-menu_order: 1
-menu_title: Using Grunt for Magento tasks
-version: 2.2
 functional_areas:
   - Frontend
   - Tools

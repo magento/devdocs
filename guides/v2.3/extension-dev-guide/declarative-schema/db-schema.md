@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: Configure declarative schema
-version: 2.3
 ---
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:

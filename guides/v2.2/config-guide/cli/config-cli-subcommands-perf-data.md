@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Generate data for performance testing
-menu_title: Generate data for performance testing
-menu_node:
-menu_order: 800
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -14,7 +9,7 @@ functional_areas:
 
 ## Overview of performance testing data {#config-cli-perf-overview}
 
-To use the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit){:target="\_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
+To use the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit) or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
@@ -23,7 +18,7 @@ The following figure shows how a product is displayed on the {% glossarytooltip 
 ![Sample storefront with generated data]({{ site.baseurl }}/common/images/config_generate-data.png){:width="550px"}
 
 ## First steps {#config-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
 ## About profiles {#config-cli-perf-prof}
@@ -170,9 +165,8 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 ### Run the data generator {#config-cli-perf-run}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
-</div>
 
 Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 
@@ -527,7 +521,7 @@ Generates store views. Store views are distributed normally among store groups. 
 
 Generates tax rates. XML profile node:
 
-<pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/&#95;files) -->
+<pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
 ## Additional information    
@@ -547,18 +541,3 @@ Additional configuration information:
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
 
 *   `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
-
-#### Related topics
-
-*   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
-*   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
-*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
-*   [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-*   [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
-*   [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
-*   [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
-*   [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
-*   [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
-*   [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-*   [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)

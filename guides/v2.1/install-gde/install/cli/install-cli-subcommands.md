@@ -5,7 +5,6 @@ title: Get started with the command-line installation
 menu_title: Get started with the command-line installation
 menu_node:
 menu_order: 2
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands.html
@@ -16,7 +15,7 @@ functional_areas:
 ---
 
 ## Before you start your installation {#instgde-install-cli-prereq}
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -28,7 +27,7 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 ## First steps {#instgde-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Command summary {#instgde-cli-summary}
@@ -54,10 +53,10 @@ Database (simplest way is to use magento setup:upgrade)|
 {:style="table-layout:auto;"}
 
 ## Help commands {#instgde-cli-help}
-{% include install/cli_help-commands.html %}
+{% include install/cli_help-commands.md %}
 
 ## Common arguments {#instgde-cli-subcommands-common}
-{% include install/cli_common-commands.html %}
+{% include install/cli_common-commands.md %}
 
 ## Commands {#instgde-cli-subcommands}
 

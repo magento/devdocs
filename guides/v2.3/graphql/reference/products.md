@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: Products endpoint
-version: 2.3
 ---
 
 The `products` endpoint allows you to search for catalog items.

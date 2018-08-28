@@ -5,7 +5,6 @@ title: Gateway Command Pool
 menu_title:  Gateway Command Pool
 menu_node: 
 menu_order: 3
-version: 2.1
 ---
 
 ## Gateway command pool

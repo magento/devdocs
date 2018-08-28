@@ -1,0 +1,79 @@
+label: Magento Functional Testing Framework Guide version 2.3
+versions: ["2.3"]
+pages:
+
+  - label: Introduction
+    url: /magento-functional-testing-framework/2.3/introduction.html
+
+  - label: Getting started
+    url: /magento-functional-testing-framework/2.3/getting-started.html
+
+  - label: Suite
+    url: /magento-functional-testing-framework/2.3/suite.html
+
+  - label: Test
+    url: /magento-functional-testing-framework/2.3/test.html
+    children:
+
+      - label: Annotations
+        url: /magento-functional-testing-framework/2.3/test/annotations.html
+
+      - label: Actions
+        url: /magento-functional-testing-framework/2.3/test/actions.html
+
+      - label: Action groups
+        url: /magento-functional-testing-framework/2.3/test/action-groups.html
+
+      - label: Assertions
+        url: /magento-functional-testing-framework/2.3/test/assertions.html
+
+  - label: Page
+    url: /magento-functional-testing-framework/2.3/page.html
+
+  - label: Section
+    url: /magento-functional-testing-framework/2.3/section.html
+    children:
+
+      - label: Parameterized selectors
+        url: /magento-functional-testing-framework/2.3/section/parameterized-selectors.html
+
+      - label: Locator functions
+        url: /magento-functional-testing-framework/2.3/section/locator-functions.html
+
+  - label: Data
+    url: /magento-functional-testing-framework/2.3/data.html
+
+  - label: Metadata
+    url: /magento-functional-testing-framework/2.3/metadata.html
+
+  - label: Merging
+    url: /magento-functional-testing-framework/2.3/merging.html
+
+  - label: Extending
+    url: /magento-functional-testing-framework/2.3/extending.html
+
+  - label: Configuration
+    url: /magento-functional-testing-framework/2.3/configuration.html
+
+  - label: CLI Commands
+    children:
+
+      - label: mftf
+        url: /magento-functional-testing-framework/2.3/commands/mftf.html
+      - label: codecept
+        url: /magento-functional-testing-framework/2.3/commands/codeception.html
+
+  - label: Update
+    url: /magento-functional-testing-framework/2.3/update.html
+
+  - label: Best practices
+    url: /magento-functional-testing-framework/2.3/best-practices.html
+
+  - label: Troubleshooting
+    url: /magento-functional-testing-framework/2.3/troubleshooting.html
+
+  - label: Contribution Guidelines
+    url: /magento-functional-testing-framework/contribution-guidelines.html
+
+  - label: Changelog
+    url: /magento-functional-testing-framework/changelog.html

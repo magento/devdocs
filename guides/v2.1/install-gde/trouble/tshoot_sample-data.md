@@ -5,7 +5,6 @@ title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node:
 menu_order: 500
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -13,14 +12,6 @@ functional_areas:
 ---
 
 This topic discusses solutions to errors you might encounter installing optional sample data.
-
-#### Contents
-
-*	[Symptom (file system permissions)](#trouble-samp-perms)
-*	[Symptom (production mode)](#trouble-samp-prod)
-*	[Symptom (security)](#trouble-samp-secy)
-*	[Symptom (develop branch)](#trouble-samp-dev)
-*	[Symptom (max_execution_time)](#trouble-samp-max)
 
 ### Symptom (file system permissions) {#trouble-samp-perms}
 
@@ -70,8 +61,8 @@ During installation of optional sample data, a  message similar to the following
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2)
-*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html)
+*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2){:target="_blank"}
+*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html){:target="_blank"}
 
 ### Symptom (develop branch) {#trouble-samp-dev}
 

@@ -5,7 +5,6 @@ title: Configure the store
 menu_title: Configure the store
 menu_node:
 menu_order: 20
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
@@ -17,7 +16,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites {#instgde-cli-subcommands-store-prereq}

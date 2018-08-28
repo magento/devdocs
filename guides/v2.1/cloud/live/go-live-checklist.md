@@ -5,7 +5,6 @@ title: Go live checklist
 menu_title: Go live checklist
 menu_order: 10
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Testing
@@ -44,7 +43,7 @@ You need to complete configurations for your DNS including:
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
 {:.bs-callout .bs-callout-info}
-This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="\_blank"} (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
+This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="_blank"} (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 

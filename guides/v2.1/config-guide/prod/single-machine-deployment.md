@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: 999_prod
 title: Single machine deployment
-menu_title: Single machine deployment
-menu_node:
-menu_order: 500
-version: 2.1
 functional_areas:
   - Configuration
   - Deploy
@@ -24,10 +19,8 @@ For less technical users, i.e. business users, we recommend using the [System Up
 * You installed Magento using [Composer][8] or a [compressed archive][7].
 * You are directly applying updates to the server.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-This guide does not apply if you used `git clone` to install Magento.
-Contributing developers should use [this guide][6] to update their Magento installation.
-</div>
+{:.bs-callout .bs-callout-warning}
+This guide does not apply if you used `git clone` to install Magento. Contributing developers should use [this guide][6] to update their Magento installation.
 
 ## Deployment steps
 

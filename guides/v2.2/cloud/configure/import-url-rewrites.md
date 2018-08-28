@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Import URL Rewrites
-version: 2.2
 functional_areas:
   - Cloud
   - Setup

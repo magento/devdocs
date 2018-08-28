@@ -1,10 +1,8 @@
-<div markdown="1">
-
 The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
 To create authentication keys:
 
-1.  Log in to the [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"}. If you don't have an account, click **Register**.
+1.  Log in to the [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}. If you don't have an account, click **Register**.
 2.  Click your account name in the top-right of the page and select **My Profile**.
 
 3.  Click **Access Keys** in the Marketplace tab.
@@ -22,12 +20,11 @@ You can also disable or delete authentication keys. For example, you can disable
 *	To enable a previously disabled key: Click **Enable**.
 *	To delete keys: Click **Delete**.
 
-You cannot delete or disable keys you created by signing in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="&#95;blank"}. To manage those keys:
+You cannot delete or disable keys you created by signing in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}. To manage those keys:
 
-1.	Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="&#95;blank"}.
+1.	Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"}.
 2.	Click **My Account** at the top of the page.
 3.	Click **Account Settings** > **Downloads Access Token**.
 
 	![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
 4.	Click **Generate new token** to replace and disable an existing token.
-</div>

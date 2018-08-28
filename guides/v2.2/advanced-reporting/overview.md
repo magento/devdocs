@@ -1,7 +1,6 @@
 ---
 group: reporting
 title: Advanced Reporting
-version: 2.2
 functional_areas:
     - Reports
 ---

@@ -1,7 +1,6 @@
 ---
 group: perf-best-practices
 title: Configuration best practices
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -17,6 +16,12 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 ## Indexers
 
 An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System > Index Management** configuration page.
+
+We recommend that you use index parallelization and that you set threads count for the index process based on: 
+- Threads count >= max dimension count (across all indexers)
+- Threads count <= cores count
+
+See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel) of [Manage the indexers](({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.
 
 ## Caches
 

@@ -5,7 +5,6 @@ title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
 menu_order: 7
 menu_node:
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 functional_areas:
   - Configuration
@@ -23,7 +22,7 @@ Magento profiling enables you to:
 
 	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.
 
-Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="\_blank">Magento\Framework\Profiler</a>.
+Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.
 
 ## Set MAGE_PROFILER
 `MAGE_PROFILER` supports the following values:
@@ -32,8 +31,8 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 
 	You can also use one of the following values to enable a specific profiler:
 
-    - `csvfile` which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="\_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a>
-    - Any other value (except `2`), including an empty value, which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="\_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a>
+    - `csvfile` which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a>
+    - Any other value (except `2`), including an empty value, which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a>
 
 -   `2` to enable dependency graphs.
 

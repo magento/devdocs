@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
 menu_order: 20
-version: 2.1
 ---
 
 Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
@@ -203,4 +202,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-<a href="https://github.com/magento/magento2-samples/tree/master/sample-external-links">Sample module on github</a>
+[Sample module ongithub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

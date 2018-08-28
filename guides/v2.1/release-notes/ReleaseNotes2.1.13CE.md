@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Open Source 2.1.13 Release Notes
-version: 2.1
 ---
 
 *	TOC
@@ -420,7 +419,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 

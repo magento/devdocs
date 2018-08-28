@@ -4,7 +4,6 @@ subgroup: Security
 title: Non-secure functions
 menu_title: Non-secure functions
 menu_order: 2100
-version: 2.2
 ---
 
 ## Overview

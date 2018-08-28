@@ -7,7 +7,6 @@ menu_order: 151
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html
@@ -92,7 +91,7 @@ The complete workflow for importing existing code includes the following steps:
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
 
-1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="\_blank"}.
+1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 
 1.  Click the _This project has no code yet_ link next to the project name.
 

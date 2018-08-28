@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Collapsible widget
 menu_order: 4
 menu_title: Collapsible widget
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html

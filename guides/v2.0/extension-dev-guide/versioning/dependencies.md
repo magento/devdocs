@@ -4,7 +4,6 @@ subgroup: Versioning
 title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
-version: 2.0
 redirect_from:
   - /guides/v2.0/extension-dev-guide/backward-compatibility.html
   - /guides/v2.1/extension-dev-guide/backward-compatibility.html

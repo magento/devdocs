@@ -5,7 +5,6 @@ title: Create and manage users
 menu_title: Create and manage users
 menu_order: 15
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

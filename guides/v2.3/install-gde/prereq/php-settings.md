@@ -1,7 +1,6 @@
 ---
 group: install_pre
 title: Required PHP settings
-version: 2.3
 functional_areas:
   - Install
   - System
@@ -23,14 +22,14 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 	*	Compiling code or deploying static assets, `756M`
     *	Installing and updating Magento components from Magento Marketplace, `2G`
     *	Testing, `~3-4G`
-*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="&#95;blank"}
+*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
 
 	If `asp_tags are` enabled, errors display when accessing PHTML templates.
 
 	`asp_tags` were removed in PHP 7.
-*	Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="&#95;blank"}, which is required for Magento 2.1 and later.
+*	Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"}, which is required for Magento 2.1 and later.
 
-	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="&#95;blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
 
 	Magento 2.1 and later use PHP code comments for code generation.
 
@@ -81,7 +80,7 @@ If you have more than one `opcache.ini`, modify all of them.
 To set PHP options:
 
 1.	Open a `php.ini` in a text editor.
-3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="&#95;blank"}
+3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
 4.	Locate the following setting and uncomment it if necessary:
 
 		date.timezone =

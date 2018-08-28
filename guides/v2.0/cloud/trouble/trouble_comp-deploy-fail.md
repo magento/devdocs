@@ -5,7 +5,6 @@ title: Component deployment failure
 menu_title: Component deployment failure
 menu_order: 15
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Deploy

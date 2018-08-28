@@ -5,7 +5,6 @@ title: Construct a request
 menu_title: Construct a request
 menu_order: 1
 
-version: 2.0
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 

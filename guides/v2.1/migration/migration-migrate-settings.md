@@ -5,7 +5,6 @@ title: Migrate settings
 menu_title: Migrate settings
 menu_node:
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 functional_areas:
   - Tools
@@ -47,7 +46,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 2.	Change to the following directory:
 
@@ -71,4 +70,4 @@ For more details, see the [Settings migration mode]({{ page.baseurl }}/migration
 
 ## Next migration step
 
-* <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">Migrate data</a>
+* [Migratedata]({{ page.baseurl }}/migration/migration-migrate-data.html)

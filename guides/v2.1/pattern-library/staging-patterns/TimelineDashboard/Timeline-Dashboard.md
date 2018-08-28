@@ -1,7 +1,6 @@
 ---
 group: pattern
 title: Timeline Dashboard
-version: 2.1
 ee_only: true
 ---
 This dashboard provides a page where events and processes can be viewed and managed in one place.

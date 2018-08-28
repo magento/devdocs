@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Manage the indexers
-menu_title: Manage the indexers
-menu_node:
-menu_order: 90
-version: 2.3
 functional_areas:
   - Configuration
   - System
@@ -84,9 +79,8 @@ Sample result:
 
 Use this command to reindex all or selected indexers one time only.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
-</div>
 
 Command options:
 
@@ -121,9 +115,8 @@ Catalog Product Rule index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. -->
-</div>
 
 <!-- Content for 2.3:
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
@@ -142,9 +135,8 @@ For example, the following command runs the Catalog Search Fulltext indexer acro
 MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
-</div>
 -->
 
 ## Configure indexers

@@ -5,7 +5,6 @@ title: Uninstall language packages
 menu_title: Uninstall language packages
 menu_node:
 menu_order: 500
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html
@@ -26,7 +25,7 @@ You can restore backups at any time using the <a href="{{ page.baseurl }}/instal
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Uninstall language packages   {#instgde-cli-uninst-lgpk-uninst}

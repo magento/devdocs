@@ -6,7 +6,6 @@ landing-page: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 functional_areas:
   - Configuration

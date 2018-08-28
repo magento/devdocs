@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Configure images properties for a theme
 menu_title: Configure images properties for a theme
 menu_order: 90
-version: 2.0
 functional_areas:
   - Frontend
   - Theme
@@ -92,7 +91,8 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{ site.baseurl }}/common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
+
+![Setting image role in Magento Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
 
 Image properties are defined by the corresponding elements, for example:
 
