@@ -474,6 +474,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>An indexer can run in either <strong>Update on Save</strong> or <strong>Update on Schedule</strong> mode. The <strong>Update on Save</strong> mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using <strong>Update on Schedule</strong> mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  <strong>System &gt; Index Management</strong> configuration page.</p>
 
+<p>We recommend that you use index parallelization and that you set threads count for the index process based on:</p>
+<ul>
+  <li>Threads count &gt;= max dimension count (across all indexers)</li>
+  <li>Threads count &lt;= cores count</li>
+</ul>
+
+<p>See the <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel">Reindex in parallel mode section</a> of [Manage the indexers]((/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html) for more information.</p>
+
 <h2 id="caches">Caches</h2>
 
 <p>When you launch your store in production, activate all the caches from the <strong>System &gt; Cache Management</strong> page. We highly recommend using Varnish, as it is an efficient production page cache solution.</p>
