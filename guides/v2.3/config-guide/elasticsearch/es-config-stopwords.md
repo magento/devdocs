@@ -8,12 +8,6 @@ functional_areas:
   - Setup
 ---
 
-#### Contents
-
-*	[What are stopwords?](#stopword-overview)
-*	[Configure stopwords](#config-stopwords)
-*	[Change the stopword directory](#config-stopword-dir)
-
 ## What are stopwords? {#stopword-overview}
 
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
