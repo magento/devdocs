@@ -158,7 +158,7 @@ Create a JSON file with the following content and format:
 The values include:
 
 -   `name`—Name for the VCL snippet.
--   `dynamic`—Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.
+-   `dynamic`—Indicates if this is a [dynamicsnippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets)or [regularsnippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets).
 -   `type`—Specifies a location for the generated snippet, such as `init` (above subroutines) and `recv` (within subroutines). See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="\_blank"} for information on these values.
 -   `priority`—Determines the order VCL snippets call. Lower values run first, from `1` to `100`. All uploaded snippets from a Magento module have a value of `50`. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as `100`. To have code occur immediately, use a lower value, such as `5`.
 -   `content`—The snippet of VCL code to run in one line, without line breaks.
