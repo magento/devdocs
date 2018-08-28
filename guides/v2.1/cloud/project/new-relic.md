@@ -55,7 +55,7 @@ See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Reli
 
 
 
-## Configure the New Relic extension
+## Add the New Relic extension to your project
 
 You must list the New Relic extension in the `.magento.app.yaml` file for your project. 
 
