@@ -1621,14 +1621,20 @@ The example below uses   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" 
      *
      * @param Filter $filter
      * @param AbstractDb $collection
-     * @return bool Whether to apply the filter
-     **/</span>
+     * @return bool Whether the filter is applied
+     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">apply</span><span class="p">(</span><span class="nx">Filter</span> <span class="nv">$filter</span><span class="p">,</span> <span class="nx">AbstractDb</span> <span class="nv">$collection</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$conditionType</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">?</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">:</span> <span class="s1">'eq'</span><span class="p">;</span>
-        <span class="nv">$categoryFilter</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$conditionType</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">()]];</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
+        <span class="nv">$conditionType</span> <span class="o">=</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">getConditionType</span><span class="p">()</span> <span class="o">?:</span> <span class="s1">'in'</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">((</span><span class="nv">$conditionType</span> <span class="o">===</span> <span class="s1">'in'</span> <span class="o">||</span> <span class="nv">$conditionType</span> <span class="o">===</span> <span class="s1">'nin'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">is_string</span><span class="p">(</span><span class="nv">$value</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$value</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$value</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$value</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="nv">$categoryFilter</span> <span class="o">=</span> <span class="p">[</span><span class="nv">$conditionType</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">];</span>
 
-        <span class="sd">/** @var Collection $collection **/</span>
+        <span class="sd">/** @var Collection $collection */</span>
         <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">addCategoriesFilter</span><span class="p">(</span><span class="nv">$categoryFilter</span><span class="p">);</span>
 
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
