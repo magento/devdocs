@@ -17,28 +17,28 @@ New Relic APM provides the following features to Magento:
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
-By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation. {{site.data.var.ece}} Pro plan customers also need to submit a support ticket to use New Relic on an Integration branch. 
+By default, the {site.data.var.ece}} Pro plan includes New Relic on the Staging and Production environments. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation. For {{site.data.var.ece}} Pro plan customers also need to submit a support ticket to use New Relic on an Integration branch. 
 
 
 {:.bs-callout .bs-callout-info}
-Your Magento Commerce Cloud account includes the software for the New Relic APM agent. You do not need to purchase or install the New Relic extension, which is different than the New Relic APM service. 
+Your Magento Commerce Cloud account includes the software for the New Relic APM agent along with a license key. You do not need to purchase or install any additional software.
 
 ## New Relic account credentials
 
 When Magento provisions your {{site.data.var.ece}} project, the Project Owner should receive an email from New Relic with the credentials and instructions for accessing the account. If you did not receive the email, you can use the Project Owner email address to [reset the password](https://rpm.newrelic.com/forgot_password){:target="_blank"}.
 
-If you cannot access the account, submit a [Magento support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+If you cannot access the New Relic account, submit a [Magento support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
 
 ## Add account users
 
 {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
-We recommend adding at least one account through New Relic to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all New Relic access and integrations.
+We recommend adding at least one user to your New Relic account to manage all access, integrations, and usage of the tool. We also recommend assigning the Admin role to another user on the account so they can manage all New Relic access and integrations.
 
 1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login){:target="_blank"}.
 
-1.  From the account dropdown, select **Account settings > Account > Users and roles**.
+1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown){:target="_blank"} menu, select **Account settings > Account > Users and roles**.
 
 1.  Click **New user**.
 
@@ -54,9 +54,10 @@ We recommend adding at least one account through New Relic to manage all access,
 See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Relic documentation for information about user roles, managing user accounts, and changing account ownership.
 
 
-## Add New Relic extension to your project
 
-If the `.magento.app.yaml` file for your project does not include the `newrelic` extension, you must add it. 
+## Add New Relic to your Magento application configuration
+
+You must list the New Relic extension in the `.magento.app.yaml` file for your project. 
 
 ```
 runtime:
@@ -66,7 +67,7 @@ runtime:
 
 ## Add New Relic APM to an environment
 
-The {{site.data.var.ece}} Starter and Pro plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice. 
+The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Pro Staging and Production environments, and you can add the license to one other environment of your choice. 
 
 {:.bs-callout .bs-callout-info}
 If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
@@ -77,11 +78,13 @@ Contact your Magento Launch manager or New Relic sales (sales@newrelic.com) if y
 
 1.  Open your [account page](https://accounts.magento.cloud/user/).
 
-1.  On the Projects tab, click **View Details** for the project you are working on.
+1.  On the Projects tab, find your project.
+
+1.  Click **View Details** to see the project provisioning information.
 
 1.  Expand the **NewRelic Service** section to view the license key.
 
-1.  Copy or save the license key.
+1.  Copy the license key.
 
 
 You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html)
