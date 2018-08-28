@@ -71,7 +71,7 @@ The {{site.data.var.ece}} plans support up to three instances of your New Relic 
 
 {:.bs-callout .bs-callout-info}
 If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
-Contact your Magento Launch manager or New Relic sales (sales@newrelic.com) if you want to use New Relic on more than three environments.
+Contact your Magento technical account manager or New Relic sales (sales@newrelic.com) if you want to use New Relic on more than three environments.
 
 
 #### To get your New Relic license key:
