@@ -15,7 +15,7 @@ functional_areas:
 
 ## Overview of URN highlighter
 
-Magento code references all XSD schemas as <a href="https://www.ietf.org/rfc/rfc2141.txt" target="\_blank">Uniform Resource Names (URNs)</a>. If you're developing code and need to reference XSDs, this command configures your integrated developer environment (IDE) to recognize and highlight URNs. This makes development easier.
+Magento code references all XSD schemas as <a href="https://www.ietf.org/rfc/rfc2141.txt" target="_blank">Uniform Resource Names (URNs)</a>. If you're developing code and need to reference XSDs, this command configures your integrated developer environment (IDE) to recognize and highlight URNs. This makes development easier.
 
 By default, an IDE like PHPStorm is not configured to recognize URNs and, as a result, they display in red text as follows:
 

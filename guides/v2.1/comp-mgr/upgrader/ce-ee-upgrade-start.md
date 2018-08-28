@@ -20,13 +20,13 @@ You must be authorized for {{site.data.var.ee}} to perform the tasks discussed i
 
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
+In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){:target="_blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 {:.bs-callout .bs-callout-info}
-Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="&#95;blank"} if you have questions.
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
 

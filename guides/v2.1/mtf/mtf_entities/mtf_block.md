@@ -18,7 +18,7 @@ This topic shows how to create a new block and explore its structure. It discuss
 
 ## Example {#mtf_block_class}
 
-A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
+A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target="_blank"} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
 ```php?start_inline=1
@@ -190,16 +190,16 @@ class Messages extends Block
 
 Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-* [`Magento\Mtf\Block\Block`]{:target=_blank}
-* [`Magento\Mtf\Block\Form`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Tab`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}
-* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target=_blank}
+* [`Magento\Mtf\Block\Block`]{:target="_blank"}
+* [`Magento\Mtf\Block\Form`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Tab`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Grid`]{:target="_blank"}
+* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target="_blank"}
 
 ## Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target=_blank} class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target="_blank"} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target="_blank"} class.
 
 You can use the `_rootElement` to find an element in the current block.
 

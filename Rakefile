@@ -39,7 +39,7 @@ end
 desc "Build the entire web site"
 task build: %w[clean] do
   print 'Building the site with Jekyll: $ '.magenta
-  jekyll 'build'
+  jekyll 'build --verbose'
   puts 'Built!'.green
 end
 

@@ -70,4 +70,4 @@ For more information, see the [Functional Testing Framework]({{page.baseurl}}/mt
 
 ## Related topics
 
-[Architecturalbasics]({{ page.baseurl%7D%7D/architecture/archi_perspectives/ABasics_intro.html)
+[Architecturalbasics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)

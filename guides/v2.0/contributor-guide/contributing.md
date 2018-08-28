@@ -39,9 +39,9 @@ Please refer to [Magento Contributor Agreement](http://www.magento.com/legaldocu
 
 ## Questions or enhancement requests?   {#question}
 
-We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/){:target="\_blank"} and the [Magento Forums](https://community.magento.com/){:target="\_blank"}, where Magento community members can quickly provide recommendations and advice.
+We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/){:target="_blank"} and the [Magento Forums](https://community.magento.com/){:target="_blank"}, where Magento community members can quickly provide recommendations and advice.
 
-Submit feature requests or enhancement suggestions to the new [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests){:target="\_blank"} (see details [here](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96){:target="\_blank"}).
+Submit feature requests or enhancement suggestions to the new [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests){:target="_blank"} (see details [here](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96){:target="_blank"}).
 
 ## Contribution requirements   {#requirements}
 
@@ -52,17 +52,17 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 4. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed [documentation]({{ page.baseurl }}/contributor-guide/contributing_docs.html) updates. [Documentation]({{ site.baseurl }}/) contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
-4. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-5. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
-5. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="\_blank"} must be green).
+  * Proposed [documentation]({{ page.baseurl }}/contributor-guide/contributing_docs.html) updates. [Documentation]({{ site.baseurl }}/) contributions can be submitted [here](https://github.com/magento/devdocs){:target="_blank"}.
+4. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
+5. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
+5. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="_blank"} must be green).
 
 ## Fork a repository   {#fork}
 
 To fork a repository on Github:
 
 1. Create or log in to your account on GitHub.
-2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="\_blank"}.
+2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.
 3. Click **Fork** at the top right:
 
     ![Fork a Repository]({{site.baseurl}}/common/images/fork.png)

@@ -16,11 +16,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository [migration-tool](https://github.com/magento/data-migration-tool){:target="&#95;blank"}
+Data Migration Tool repository [migration-tool](https://github.com/magento/data-migration-tool){:target="_blank"}
 
 ### System requirements {#system-requirements}
 
-Same as for [Magento 2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html){:target="&#95;blank"}
+Same as for [Magento 2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html){:target="_blank"}
 
 ## Internal structure {#migrate-is}
 

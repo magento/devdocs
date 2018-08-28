@@ -24,11 +24,11 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Web servers
 
-*	[Apache 2.2 or 2.4](http://httpd.apache.org/download.cgi){:target="&#95;blank"}
+*	[Apache 2.2 or 2.4](http://httpd.apache.org/download.cgi){:target="_blank"}
 
 	In addition, you must enable the Apache `mod_rewrite` and `mod_version` modules. The [`mod_rewrite`](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html) module enables the server to perform URL rewriting. The [`mod_version`](https://httpd.apache.org/docs/2.4/mod/mod_version.html) module provides flexible version checking for different `httpd` versions. For more information, see [our Apache documentation]({{ page.baseurl }}/install-gde/prereq/apache.html).
 
-*	[nginx 1.x](https://nginx.org/en/download.html){:target="&#95;blank"}
+*	[nginx 1.x](https://nginx.org/en/download.html){:target="_blank"}
 
 ### Database
 
@@ -47,31 +47,31 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 {:.bs-callout bs-callout-info}
 The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 
-*	[bc-math](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} ({{site.data.var.ee}} only for 2.2.0 - 2.2.3. {{site.data.var.ee}} and {{site.data.var.ce}} as of 2.2.4.)\
-*   [ctype](http://php.net/manual/en/book.ctype.php){:target="&#95;blank"}
-*   [curl](http://php.net/manual/en/book.curl.php){:target="&#95;blank"}
-*   [dom](http://php.net/manual/en/book.dom.php){:target="&#95;blank"}
-*   [gd](http://php.net/manual/en/book.image.php){:target="&#95;blank"}, [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php){:target="&#95;blank"} (or later) or both
-*   [intl](http://php.net/manual/en/book.intl.php){:target="&#95;blank"}
-*   [mbstring](http://php.net/manual/en/book.mbstring.php){:target="&#95;blank"}
-*   [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
-*   [hash](http://php.net/manual/en/book.hash.php){:target="&#95;blank"}
-*   [openssl](http://php.net/manual/en/book.openssl.php){:target="&#95;blank"}
-*   [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="&#95;blank"}
-*   [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="&#95;blank"}
-*   [soap](http://php.net/manual/en/book.soap.php){:target="&#95;blank"}
-*   [spl](http://php.net/manual/en/book.spl.php){:target="&#95;blank"}
-*   [libxml](http://php.net/manual/en/book.libxml.php){:target="&#95;blank"}
-*   [xsl](http://php.net/manual/en/book.xsl.php){:target="&#95;blank"}
-*   [zip](http://php.net/manual/en/book.zip.php){:target="&#95;blank"}
-*	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"}
-*	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
+*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only for 2.2.0 - 2.2.3. {{site.data.var.ee}} and {{site.data.var.ce}} as of 2.2.4.)\
+*   [ctype](http://php.net/manual/en/book.ctype.php){:target="_blank"}
+*   [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
+*   [dom](http://php.net/manual/en/book.dom.php){:target="_blank"}
+*   [gd](http://php.net/manual/en/book.image.php){:target="_blank"}, [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php){:target="_blank"} (or later) or both
+*   [intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
+*   [mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+*   [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
+*   [hash](http://php.net/manual/en/book.hash.php){:target="_blank"}
+*   [openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
+*   [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
+*   [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
+*   [soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
+*   [spl](http://php.net/manual/en/book.spl.php){:target="_blank"}
+*   [libxml](http://php.net/manual/en/book.libxml.php){:target="_blank"}
+*   [xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
+*   [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
+*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 
-We strongly recommend you verify that [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="&#95;blank"} is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="&#95;blank"} or [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="&#95;blank"}.
+We strongly recommend you verify that [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="_blank"} or [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="_blank"}.
 
-If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 #### PHP settings
 
@@ -105,14 +105,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
     {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-    *	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
-    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
+    *	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+    *	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
 
-    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. Before version 2.2.3, Magento used PHP client version 2.0.
+    Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.1. Before version 2.2.3, Magento used PHP client version 2.0.
 
 *	RabbitMQ 3.5.x (compatible with 2.0 and later)
 
-    [RabbitMQ]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html){:target="&#95;blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
+    [RabbitMQ]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html){:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
 *	Three master databases
 
@@ -120,7 +120,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ### Optional but recommended:
 
-*	[php_xdebug2.2.0](http://xdebug.org/download.php){:target="&#95;blank"}> or later (development environments only; can have an adverse effect on performance)
+*	[php_xdebug2.2.0](http://xdebug.org/download.php){:target="_blank"}> or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.
