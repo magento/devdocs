@@ -1693,11 +1693,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="secure-cron-with-apache">Secure cron with Apache</h2>
 
-<p>This section discusses how to secure cron using <a href="http://tools.ietf.org/html/rfc2617&quot;" target="&#95;blank">HTTP Basic authentication</a> with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:</p>
+<p>This section discusses how to secure cron using <a href="http://tools.ietf.org/html/rfc2617&quot;" target="_blank">HTTP Basic authentication</a> with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:</p>
 
 <ul>
-  <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="&#95;blank">Apache 2.2 authentication and authorization tutorial</a></li>
-  <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="&#95;blank">Apache 2.4 authentication and authorization tutorial</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a></li>
 </ul>
 
 <h3 id="create-a-password-file">Create a password file</h3>
@@ -1792,8 +1792,8 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 <p>Consult one of the following resources to create a password file before continuing:</p>
 
 <ul>
-  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="&#95;blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)</a></li>
-  <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="&#95;blank">Basic HTTP Authentication with nginx (howtoforge)</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)</a></li>
+  <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication with nginx (howtoforge)</a></li>
 </ul>
 
 <h3 id="secure-cron-in-nginxconfsample">Secure cron in <code class="highlighter-rouge">nginx.conf.sample</code></h3>
@@ -1802,7 +1802,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 
 <ol>
   <li>
-    <p>Add the following to your Magento <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="&#95;blank"><code class="highlighter-rouge">nginx.sample.conf</code></a> file:</p>
+    <p>Add the following to your Magento <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code class="highlighter-rouge">nginx.sample.conf</code></a> file:</p>
 
     <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span>Securing cron
 <span class="gp">location ~ cron\.php$</span> <span class="o">{</span>

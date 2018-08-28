@@ -644,12 +644,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 git branch
 </code></pre></div></div>
 
-<p>If you’re currently in the <code class="highlighter-rouge">develop</code> branch, you must change to a <a href="/guides/v2.2/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.</p>
+<p>If you’re currently in the <code class="highlighter-rouge">develop</code> branch, you must change to a <a href="/guides/v2.2/install-gde/install/cli/dev_downgrade.html">releasedbranch</a> before you continue.</p>
 
 <div class="bs-callout bs-callout-tip">
-	<p>If you haven't installed the Magento software yet, <a href="/guides/v2.2/install-gde/bk-install-guide.html">install it now</a>.</p>
+  <p>If you haven’t installed the Magento software yet, <a href="/guides/v2.2/install-gde/bk-install-guide.html">install it now</a>.</p>
 
-	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="/guides/v2.2/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
+  <p>If you’re cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="/guides/v2.2/install-gde/prereq/dev_install.html">(Contributor) Clone the Magentorepository</a>.</p>
 </div>
 
 <h3 id="migration-tool-release-version">Find released versions of Data Migration Tool</h3>
@@ -671,15 +671,11 @@ git branch
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Before installing, make sure you have:</p>
-	<ul>
-		<li>
-			Completed all tasks mentioned in the <a href="/guides/v2.2/migration/migration-tool-preconditions.html">Preconditions</a> section
-		</li>
 
-		<li>
-			<a href="/guides/v2.2/migration/migration-tool-install.html#data-migrate-prereq">Verified the version</a> of the Magento 2 software
-		</li>
-	</ul>
+  <ul>
+    <li>Completed all tasks mentioned in the <a href="/guides/v2.2/migration/migration-tool-preconditions.html">Preconditions</a> section</li>
+    <li><a href="/guides/v2.2/migration/migration-tool-install.html#data-migrate-prereq">Verified theversion</a> of the Magento 2 software</li>
+  </ul>
 </div>
 
 <h3 id="install-repo">Install from <code class="highlighter-rouge">repo.magento.com</code></h3>
@@ -687,7 +683,7 @@ git branch
 <p>To install the Data Migration Tool, you must update <code class="highlighter-rouge">composer.json</code> in the Magento root installation directory to provide the location of the Data Migration Tool package.</p>
 
 <ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
+  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">the Magento file systemowner</a>.</li>
   <li>Change to Magento 2 root directory.</li>
   <li>
     <p>Enter the following commands:</p>
@@ -704,7 +700,7 @@ composer require magento/data-migration-tool:&lt;version&gt;
 composer require magento/data-migration-tool:2.2.0
 </code></pre></div>    </div>
   </li>
-  <li>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</li>
+  <li>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authenticationkeys</a>. Your public key is your username; your private key is your password.</li>
 </ol>
 
 <h3 id="install-github">Install from GitHub</h3>
@@ -712,7 +708,7 @@ composer require magento/data-migration-tool:2.2.0
 <p>If you’ve cloned Magento 2 from the GitHub repository, follow the steps below to install the Data Migration Tool.</p>
 
 <ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
+  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.2/install-gde/prereq/apache-user.html">the Magento file systemowner</a>.</li>
   <li>Change to Magento 2 root directory.</li>
   <li>
     <p>Enter the following commands:</p>
@@ -748,7 +744,7 @@ composer require magento/data-migration-tool:2.2.0
 <h2 id="related-topics">Related topics</h2>
 
 <ul>
-  <li><a href="/guides/v2.2/migration/migration-tool-configure.html">Configure migration</a></li>
+  <li><a href="/guides/v2.2/migration/migration-tool-configure.html">Configuremigration</a></li>
   <li><a href="/guides/v2.2/migration/migration-tool-preconditions.html">Preconditions</a></li>
 </ul>
 

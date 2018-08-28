@@ -1405,7 +1405,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento generates a hash based on all context variables (<code class="highlighter-rouge">\Magento\Framework\App\Http\Context::getVaryString</code>). The hash and current URL are used as keys for cache storage.</p>
 
 <div class="bs-callout bs-callout-tip">
-  <p>Use the <code class="highlighter-rouge">X-Magento-Vary</code> cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68" target="&#95;blank">our sample Varnish 4 configuration</a> uses the following:</p>
+  <p>Use the <code class="highlighter-rouge">X-Magento-Vary</code> cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68" target="_blank">our sample Varnish 4 configuration</a> uses the following:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sub vcl_hash {
 if (req.http.cookie ~ "X-Magento-Vary=") {
@@ -1444,7 +1444,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 
 <p>The <code class="highlighter-rouge">subject-&gt;setValue</code> argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the <code class="highlighter-rouge">X-Magento-Vary</code> cookie.</p>
 
-<p>For another example of a context class, see <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http/Context.php" target="&#95;blank">Magento/Framework/App/Http/Context</a>.</p>
+<p>For another example of a context class, see <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http/Context.php" target="_blank">Magento/Framework/App/Http/Context</a>.</p>
 
 <h2 id="invalidate-public-content">Invalidate public content</h2>
 
@@ -1454,7 +1454,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 <p>This section shows you how to tell Magento what cache to clear when you change an entity.</p>
 
 <p>First, your entity   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="&#95;blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
+ must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">Product</span> <span class="k">implements</span> <span class="nx">IdentityInterface</span>

@@ -848,9 +848,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Assume that we want to return a database, dumped to <code class="highlighter-rouge">/var/www/magento/magento.dump.sql</code>, to its initial state. You can implement it using the following code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="nb">exec</span><span class="p">(</span><span class="s1">'mysql -umagento -pmagento -e"DROP DATABASE magento; CREATE DATABASE magento CHARACTER SET utf8;"'</span><span class="p">);</span>
-<span class="nb">exec</span><span class="p">(</span><span class="s1">'mysql -umagento -pmagento magento &lt; /var/www/magento/magento.dump.sql'</span><span class="p">);</span></code></pre></figure>
+<span class="nb">exec</span><span class="p">(</span><span class="s1">'mysql -umagento -pmagento magento &lt; /var/www/magento/magento.dump.sql'</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>By default, <a href="/guides/v2.2/mtf/configuration.html#isolation">isolation configuration</a> points to <code class="highlighter-rouge">dev/tests/functional/isolation.php</code>.</p>
 
@@ -877,12 +878,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In <code class="highlighter-rouge">&lt;isolation&gt;</code>, set <code class="highlighter-rouge">&lt;testCase&gt;after&lt;/testCase&gt;</code>, for example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;isolation&gt;</span>
     <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
     <span class="nt">&lt;testSuite&gt;</span>none<span class="nt">&lt;/testSuite&gt;</span>
     <span class="nt">&lt;testCase&gt;</span>after<span class="nt">&lt;/testCase&gt;</span>
     <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
-<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+<span class="nt">&lt;/isolation&gt;</span>
+</code></pre></div></div>
 
 <h3 id="step-2b">Step 2(b): Globally set isolation script to be run before each test</h3>
 
@@ -891,12 +893,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In <code class="highlighter-rouge">&lt;isolation&gt;</code>, set <code class="highlighter-rouge">&lt;test&gt;before&lt;/test&gt;</code>, for example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;isolation&gt;</span>
     <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
     <span class="nt">&lt;testSuite&gt;</span>none<span class="nt">&lt;/testSuite&gt;</span>
     <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
     <span class="nt">&lt;test&gt;</span>before<span class="nt">&lt;/test&gt;</span>
-<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+<span class="nt">&lt;/isolation&gt;</span>
+</code></pre></div></div>
 
 <h3 id="step-2c">Step 2(c): Globally set isolation script to be run before and after a test suite</h3>
 
@@ -905,12 +908,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In <code class="highlighter-rouge">&lt;isolation&gt;</code>, set <code class="highlighter-rouge">&lt;testSuite&gt;both&lt;/testSuite&gt;</code>, for example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;isolation&gt;</span>
     <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
     <span class="nt">&lt;testSuite&gt;</span>both<span class="nt">&lt;/testSuite&gt;</span>
     <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
     <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
-<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+<span class="nt">&lt;/isolation&gt;</span>
+</code></pre></div></div>
 
 <h3 id="step-2d">Step 2(d): Locally set isolation script to be run after a test case</h3>
 

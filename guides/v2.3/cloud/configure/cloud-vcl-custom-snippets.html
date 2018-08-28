@@ -2165,7 +2165,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ul>
   <li>The default VCL snippets you uploaded include a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of <code class="highlighter-rouge">50</code>. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also, consider the priority of your custom snippets and whether they should override the default snippets.</li>
   <li>Do not forget to <em>always</em> locate and clone the active version, and edit the bash script with the new version! <em>Version</em> is not part of your VCL snippet files.</li>
-  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of <code class="highlighter-rouge">100</code>. You should not try to override default VCLs. We provide an example for <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>.</li>
+  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of <code class="highlighter-rouge">100</code>. You should not try to override default VCLs. We provide an example for <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>.</li>
 </ul>
 
 <h2 id="export-fastly-service-id-and-api-token">Export Fastly Service ID and API Token</h2>
@@ -2190,7 +2190,7 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 
 <p>Look for the <code class="highlighter-rouge">active</code> key from the returned list. You need the version to perform a clone in the next section.</p>
 
-<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987" target="\_blank">get version command</a>.</p>
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987" target="_blank">get version command</a>.</p>
 
 <h2 id="clone">Clone the active VCL version and all snippets</h2>
 
@@ -2204,7 +2204,7 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export FASTLY_VERSION=&lt;Version&gt;
 </code></pre></div></div>
 
-<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709" target="\_blank">clone command</a>.</p>
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709" target="_blank">clone command</a>.</p>
 
 <h3 id="create-snippet">Create custom VCL snippets</h3>
 
@@ -2223,8 +2223,8 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 
 <ul>
   <li><code class="highlighter-rouge">name</code>—Name for the VCL snippet.</li>
-  <li><code class="highlighter-rouge">dynamic</code>—Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.</li>
-  <li><code class="highlighter-rouge">type</code>—Specifies a location for the generated snippet, such as <code class="highlighter-rouge">init</code> (above subroutines) and <code class="highlighter-rouge">recv</code> (within subroutines). See <a href="https://docs.fastly.com/api/config#snippet" target="\_blank">Fastly VCL snippet object values</a> for information on these values.</li>
+  <li><code class="highlighter-rouge">dynamic</code>—Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamicsnippet</a>or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regularsnippet</a>.</li>
+  <li><code class="highlighter-rouge">type</code>—Specifies a location for the generated snippet, such as <code class="highlighter-rouge">init</code> (above subroutines) and <code class="highlighter-rouge">recv</code> (within subroutines). See <a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a> for information on these values.</li>
   <li><code class="highlighter-rouge">priority</code>—Determines the order VCL snippets call. Lower values run first, from <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">100</code>. All uploaded snippets from a Magento module have a value of <code class="highlighter-rouge">50</code>. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as <code class="highlighter-rouge">100</code>. To have code occur immediately, use a lower value, such as <code class="highlighter-rouge">5</code>.</li>
   <li><code class="highlighter-rouge">content</code>—The snippet of VCL code to run in one line, without line breaks.</li>
 </ul>
@@ -2285,7 +2285,7 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/&lt;snippet_name&gt; -H 'Content-Type: application/json' -X PUT --data @&lt;filename.json&gt;
 </code></pre></div></div>
 
-<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code that use a priority of <code class="highlighter-rouge">100</code>.</p>
+<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code that use a priority of <code class="highlighter-rouge">100</code>.</p>
 
 <p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the specific snippet name to delete:</p>
 
@@ -2297,17 +2297,17 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 <p>You can learn more about creating VCL snippets with the following Fastly resources:</p>
 
 <ul>
-  <li><a href="https://docs.fastly.com/guides/vcl/" target="\_blank">All Fastly VCL content</a></li>
-  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="\_blank">Fastly VCL guide</a></li>
-  <li><a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="\_blank">Mixing and matching Fastly VCL with custom VCL</a></li>
-  <li><a href="https://docs.fastly.com/api/config#snippet" target="\_blank">Fastly VCL snippet object values</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/" target="_blank">All Fastly VCL content</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="_blank">Fastly VCL guide</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a></li>
+  <li><a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a></li>
 </ul>
 
 <p>Fastly supports two types of snippets:</p>
 
 <ul>
-  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets" target="\_blank">Regular snippets</a> are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.</li>
-  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="\_blank">Dynamic snippets</a> are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.</li>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets" target="_blank">Regular snippets</a> are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.</li>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">Dynamic snippets</a> are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.</li>
 </ul>
 
 

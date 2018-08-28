@@ -877,27 +877,19 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
  page in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
  panel:</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug1.png" alt="The catalog page" /> 
-</div>
+<p><img src="/common/images/ui_debug1.png" alt="The catalog page" /></p>
 
 <p>According to the described procedure, open the page source and search for “<code class="highlighter-rouge">data-bind="scope:</code>”</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug2.png" alt="searching for data-bind=scope:" />
-</div>
+<p><img src="/common/images/ui_debug2.png" alt="searching for data-bind=scope:" /></p>
 
 <p>So we find out that the main UI component used on this page is product listing, with <code class="highlighter-rouge">product_listing.product_listing</code> as a full name. To see its configuration, child components and data source, in the in the <strong>Console</strong> tab we run <code class="highlighter-rouge">require('uiRegistry').get('product_listing.product_listing')</code>:</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug3.png" alt="run the command in Console" />
-</div>
+<p><img src="/common/images/ui_debug3.png" alt="run the command in Console" /></p>
 
 <p>And we get the component’s configuration:</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug4.png" alt="view the configuration" />
-</div>
+<p><img src="/common/images/ui_debug4.png" alt="view the configuration" /></p>
 
 <h3 id="debug-using-a-google-chrome-plug-in">Debug using a Google Chrome plug-in</h3>
 

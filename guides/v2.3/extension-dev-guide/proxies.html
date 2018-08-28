@@ -1570,7 +1570,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Magento’s <a href="/guides/v2.3/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
+			<p>Magento’s <a href="/guides/v2.3/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injectionpattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
 
 <p>If a class’s constructor is particularly resource-intensive, this can lead to unnecessary performance impact when another class depends on it, if the expensive object does not end up being needed during a particular request. (You can display a <em>dependency graph</em> of such objects by enabling <a href="/guides/v2.3/config-guide/bootstrap/mage-profiler.html">profiling</a>.)</p>
 
@@ -1616,7 +1616,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento has a solution for this situation: proxies. <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">Proxies</a> extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends is created only after one of the class’s methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.</p>
 
-<p>Proxies are generated code and therefore do not need to be manually written.  (See <a href="/guides/v2.3/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form <code class="highlighter-rouge">\Original\Class\Name\Proxy</code>, and the class is generated if it does not exist.</p>
+<p>Proxies are generated code and therefore do not need to be manually written.  (See <a href="/guides/v2.3/extension-dev-guide/code-generation.html">Codegeneration</a> for more information.) Simply reference a class in the form <code class="highlighter-rouge">\Original\Class\Name\Proxy</code>, and the class is generated if it does not exist.</p>
 
 <p>Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:</p>
 

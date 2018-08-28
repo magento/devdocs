@@ -843,11 +843,12 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>Let’s create a repository for the Widget fixture <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
-<p><a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.</p>
+<p><a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">More details aboutfixtures</a>.</p>
 
 <p>Assume that we have the following fixture:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -884,7 +885,9 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout"</span> <span class="na">source=</span><span class="s">"Magento\Widget\Test\Fixture\Widget\LayoutUpdates"</span> <span class="na">repository=</span><span class="s">"Magento\Widget\Test\Repository\Widget\LayoutUpdates"</span> <span class="na">group=</span><span class="s">"layout_updates"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"widgetOptions"</span> <span class="na">source=</span><span class="s">"Magento\Widget\Test\Fixture\Widget\WidgetOptions"</span> <span class="na">repository=</span><span class="s">"Magento\Widget\Test\Repository\Widget\WidgetOptions"</span> <span class="na">group=</span><span class="s">"widget_options"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">repository_class="Magento\Widget\Test\Repository\Widget"</code> attribute tells us that this fixture uses data from the <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml</code> repository.</p>
 
@@ -892,13 +895,13 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>Also <code class="highlighter-rouge">layout</code> and <code class="highlighter-rouge">widgetOptions</code> fields use <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code> and <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code> repositories respectively.</p>
 
-<p><a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.</p>
+<p><a href="#mtf_repository_create-field">Learn how to create repository for the fixturefield</a>.</p>
 
 <p>We want to specify data sets for two cases of submitting   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">Widget</span>
  forms: <code class="highlighter-rouge">default</code> with minimum data, and <code class="highlighter-rouge">cms_page_link</code> with data needed to create new   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
  page link.</p>
 
-<p>To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set"><strong>Settings</strong></a>, <a href="#mtf_repo_ex_store"><strong>Storefront Properties</strong></a>, <a href="#mtf_repo_ex_front"><strong>Frontend Apps Options</strong></a>. The following text along with screenshots gives an example of how to create a data set of the repository.</p>
+<p>To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**StorefrontProperties**</a>, <a href="#mtf_repo_ex_front">**Frontend AppsOptions**</a>. The following text along with screenshots gives an example of how to create a data set of the repository.</p>
 
 <p><a href="#mtf_repo_widgetxml">See entire repository code</a>.</p>
 
@@ -920,9 +923,12 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
   <li>Set the <strong>Assign to Store Views</strong> field to “All Store Views”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"store_ids"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"store_ids"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>all_store_views<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></figure>
+<span class="nt">&lt;/field&gt;</span>
+
+</code></pre></div></div>
 
 <ul>
   <li>Provide data for the <strong>Layout Updates</strong> complex field. In the repository code, complex fields are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as <code class="highlighter-rouge">&lt;field name="widget_instance" xsi:type="array"&gt;&lt;/field&gt;</code>. As it is possible to create more than one instance of a layout update, we define our instance as the first element of an array with index “0” as <code class="highlighter-rouge">&lt;item name="0" xsi:type="array"&gt;&lt;/item&gt;</code>.
@@ -947,25 +953,31 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
   <li>Choose in the <strong>CMS Page</strong> grid newly created CMS page.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"widgetOptions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"widgetOptions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type_id"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cmsPageLink<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></figure>
+<span class="nt">&lt;/field&gt;</span>
 
-<p>This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: <code class="highlighter-rouge">&lt;field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" /&gt;</code>.</p>
+</code></pre></div></div>
+
+<p>This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixturefield</a>. Just to remind you, how this field is represented in the fixture: <code class="highlighter-rouge">&lt;field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" /&gt;</code>.</p>
 
 <p>In brief, we reference another repository <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code>, and a <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php</code>.</p>
 
 <p>The <code class="highlighter-rouge">WidgetOptions.xml</code> repository includes <code class="highlighter-rouge">cmsPageLink</code> data set:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">"cmsPageLink"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">"cmsPageLink"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"anchor_text"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>text<span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>anchor title/field&gt;
     <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"entities"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>cmsPage::default<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;/dataset&gt;</span></code></pre></figure>
+<span class="nt">&lt;/dataset&gt;</span>
+
+</code></pre></div></div>
 
 <p>The source understands the <code class="highlighter-rouge">entities</code> field as an instruction to create a CMS Page using <code class="highlighter-rouge">&lt;dataset name="default"&gt;</code> from the <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml</code> repository.</p>
 
@@ -975,7 +987,8 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>See the entire repository sample so far:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -1026,7 +1039,9 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
             <span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/dataset&gt;</span>
     <span class="nt">&lt;/repository&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <h3 id="mtf_repository_structure">Repository structure</h3>
 
@@ -1148,7 +1163,7 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>The repository code for these cases follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -1182,15 +1197,18 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
             <span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/dataset&gt;</span>
     <span class="nt">&lt;/repository&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
-<p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Config">Magento_Config module</a> and is named <code class="highlighter-rouge">ConfigData.xml</code>.</p>
+<p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Config">Magento_Configmodule</a> and is named <code class="highlighter-rouge">ConfigData.xml</code>.</p>
 
-<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet">Authorize.Net module</a> <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
+<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet">Authorize.Netmodule</a> <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -1252,7 +1270,9 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
             <span class="nt">&lt;/field&gt;</span>
         <span class="nt">&lt;/dataset&gt;</span>
     <span class="nt">&lt;/repository&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>Path to the <code class="highlighter-rouge">Authorizenet</code> UI form in   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
  is <strong>STORES &gt; Configuration &gt; SALES &gt; Payment Methods &gt; Authorize.net Direct Post</strong>.</p>
@@ -1326,7 +1346,7 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>Modules that require configuration adjustment store <code class="highlighter-rouge">ConfigData.xml</code> in their <code class="highlighter-rouge">Repository</code> directory. All <code class="highlighter-rouge">ConfigData.xml</code> repositories have reference to the <code class="highlighter-rouge">Config</code> repository class. See the example on the following screenshot:</p>
 
-<p><a href="/common/images/ftf/mtf_repo_merge_ex.png"><img src="/common/images/ftf/mtf_repo_merge_ex.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_repo_merge_ex.png"><img src="/common/images/ftf/mtf_repo_merge_ex.png" alt="" /></a></p>
 
 <p>As you can see, the <code class="highlighter-rouge">ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet"><code class="highlighter-rouge">Magento_Authorizenet</code> module</a> and the <code class="highlighter-rouge">ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend"><code class="highlighter-rouge">Magento_Backend</code> module</a> have the same reference to the repository class; that is <code class="highlighter-rouge">Magento\Config\Test\Repository\ConfigData</code>.</p>
 
@@ -1343,16 +1363,16 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
 
 <p>You can modify your data set without changing the name of the data set. Simply use a <code class="highlighter-rouge">replace</code> attribute. For example,</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
  <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">"customer_new_default"</span> <span class="na">replace=</span><span class="s">"default"</span><span class="nt">&gt;</span>
  
- </code></pre></figure>
+</code></pre></div></div>
 
 <p>This node means that <code class="highlighter-rouge">customer_new_default</code> data set replaces <code class="highlighter-rouge">default</code> data set.</p>
 
 <p>Let’s see a use case example. Assume that the Customer fixture in the Magento_Customer module has a repository with the <code class="highlighter-rouge">default</code> data set:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">  
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
  <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd"</span><span class="nt">&gt;</span>
      <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">"Magento\Customer\Test\Repository\Customer"</span><span class="nt">&gt;</span>
          <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">"default"</span><span class="nt">&gt;</span>
@@ -1368,11 +1388,11 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
      <span class="nt">&lt;/repository&gt;</span>
  <span class="nt">&lt;/config&gt;</span>
   
-  </code></pre></figure>
+</code></pre></div></div>
 
 <p>Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don’t want to change the <code class="highlighter-rouge">default</code> data set name in the test. Instead, you can simply replace the <code class="highlighter-rouge">default</code> data set, without changing the name:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">  
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">"Magento\Customer\Test\Repository\Customer"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">"customer_new_default"</span> <span class="na">replace=</span><span class="s">"default"</span><span class="nt">&gt;</span>
@@ -1386,7 +1406,7 @@ Reference to the repository is placed in the fixture   <span term-uuid="8c0645c5
     <span class="nt">&lt;/repository&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
   
-  </code></pre></figure>
+</code></pre></div></div>
 
 <p>After the repository generation</p>
 
@@ -1427,14 +1447,18 @@ There are two ways to paste credentials:</p>
 
 <p>Assume, that you have the following credentials in <code class="highlighter-rouge">credentials.xml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/password"</span> <span class="na">value=</span><span class="s">"strong_password"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/password"</span> <span class="na">value=</span><span class="s">"strong_password"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/username"</span> <span class="na">value=</span><span class="s">"my_name"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/access_license_number"</span> <span class="na">value=</span><span class="s">"20150825"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/shipper_number"</span> <span class="na">value=</span><span class="s">"321852741789"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<span class="nt">&lt;field</span> <span class="na">path=</span><span class="s">"carriers/ups/shipper_number"</span> <span class="na">value=</span><span class="s">"321852741789"</span> <span class="nt">/&gt;</span>
+
+</code></pre></div></div>
 
 <p>In the repository these fields can be defined as:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"carriers/ups/password"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"carriers/ups/password"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>carriers<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope_id"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
@@ -1457,7 +1481,9 @@ There are two ways to paste credentials:</p>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope_id"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>CARRIERS_UPS_SHIPPER_NUMBER<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></figure>
+<span class="nt">&lt;/field&gt;</span>
+
+</code></pre></div></div>
 
 <p>During the test run these fields are filled with values from <code class="highlighter-rouge">credentials.xml</code>.</p>
 
@@ -1465,13 +1491,17 @@ There are two ways to paste credentials:</p>
 
 <p>For example, you have the following credentials in <code class="highlighter-rouge">credentials.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">replace=</span><span class="s">"carriers_dhl_id_eu"</span> <span class="na">value=</span><span class="s">"123654987"</span> <span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;field</span> <span class="na">replace=</span><span class="s">"carriers_dhl_id_eu"</span> <span class="na">value=</span><span class="s">"123654987"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">replace=</span><span class="s">"carriers_dhl_password_eu"</span> <span class="na">value=</span><span class="s">"my_dh1_pas$worD"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">replace=</span><span class="s">"carriers_dhl_account_eu"</span> <span class="na">value=</span><span class="s">"8521236987452"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<span class="nt">&lt;field</span> <span class="na">replace=</span><span class="s">"carriers_dhl_account_eu"</span> <span class="na">value=</span><span class="s">"8521236987452"</span> <span class="nt">/&gt;</span>
+
+</code></pre></div></div>
 
 <p>Then you should define repository fields as the following:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"carriers/dhl/id"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"carriers/dhl/id"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>carriers<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope_id"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
@@ -1488,7 +1518,9 @@ There are two ways to paste credentials:</p>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"scope_id"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%carriers_dhl_account_eu%<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></figure>
+<span class="nt">&lt;/field&gt;</span>
+
+</code></pre></div></div>
 
 <p>When the test is run, credentials from <code class="highlighter-rouge">credentials.xml</code> are transferred to the defined fields.</p>
 
@@ -1498,9 +1530,11 @@ There are two ways to paste credentials:</p>
 
 <p>Some examples:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Cms Page Link %isolation%<span class="nt">&lt;/field&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Cms Page Link %isolation%<span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"sku"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>sku_simple_product_%isolation%<span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"url_key"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/field&gt;</span></code></pre></figure>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"url_key"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/field&gt;</span>
+
+</code></pre></div></div>
 
 <p>All placeholders <code class="highlighter-rouge">%isolation%</code> will be replaced with <a href="http://php.net/manual/en/function.mt-rand.php"><code class="highlighter-rouge">mt_rand()</code></a> function during the test run.</p>
 

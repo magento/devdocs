@@ -1883,7 +1883,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="response-headers">Check response headers</h3>
 
-<p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="\_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
+<p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
 
 <p>Check the returned response headers and values:</p>
 
@@ -1893,8 +1893,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Fastly-Module-Enabled should be either Yes or the Fastly extension version number</li>
   <li>X-Cache should be either <code class="highlighter-rouge">HIT</code> or <code class="highlighter-rouge">HIT, HIT</code></li>
   <li>x-cache-hits should be 1,1</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="\_blank">Cache-Control: max-age</a> should be greater than 0</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="\_blank">Pragma</a> should be <code class="highlighter-rouge">cache</code></li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="_blank">Cache-Control: max-age</a> should be greater than 0</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="_blank">Pragma</a> should be <code class="highlighter-rouge">cache</code></li>
 </ul>
 
 <p>The following example shows the correct values for <code class="highlighter-rouge">Pragma</code>, <code class="highlighter-rouge">X-Magento-Tags</code>, and <code class="highlighter-rouge">Fastly-Module-Enabled</code>.</p>
@@ -2037,7 +2037,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;FASTLY_SERVICE_ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key: &lt;FASTLY_API_TOKEN&gt;"
 </code></pre></div></div>
 
-<p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+<p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h2 id="activate">Activating a deactivated version</h2>
 

@@ -850,13 +850,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="mtf_install_pre_inst-magento">Install the Magento application</h3>
 
-<p>To install the Magento application, see <a href="/guides/v2.3/install-gde/bk-install-guide.html">Magento Installation Guide</a>.</p>
+<p>To install the Magento application, see <a href="/guides/v2.3/install-gde/bk-install-guide.html">Magento InstallationGuide</a>.</p>
 
 <h3 id="mtf_install_pre_tools">Check if all required software installed and configured</h3>
 
 <h4 id="mtf_install_pre_tools_php">PHP</h4>
 
-<p>For more details about PHP verification, installation and configuration (<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>, <a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).</p>
+<p>For more details about PHP verification, installation and configuration (<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>,<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).</p>
 
 <div class="bs-callout bs-callout-warning">
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
@@ -873,26 +873,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure that Composer is installed, see <a href="/guides/v2.3/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">If you’re not sure that Composer is installed, see <a href="/guides/v2.3/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">InstallComposer</a>.</p>
 
 <ol>
-  <li><a href="/guides/v2.3/install-gde/basics/basics_login.html">Open a command prompt</a>.</li>
-  <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.3/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</li>
+  <li><a href="/guides/v2.3/install-gde/basics/basics_login.html">Open a commandprompt</a>.</li>
+  <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.3/install-gde/prereq/apache-user.html">the Magento file systemowner</a>.)</li>
 </ol>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
 composer install
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br />
-  Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br />
-  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br />
-And run from this directory <code>php   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
-.phar install</code>.</p>
-</div>
+<p class="bs-callout bs-callout-info">If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn’t been installed globally.
+Copy <code class="highlighter-rouge">composer.phar</code> to <code class="highlighter-rouge">/usr/local/bin/composer</code>. To run it locally put <code class="highlighter-rouge">composer.phar</code> into the directory, where the <code class="highlighter-rouge">composer.json</code> file is located (that is, <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/</code>). And run from this directory <code class="highlighter-rouge">php composer.phar install</code>.</p>
 
 <h2 id="mtf_install_check">Check the installation</h2>
 
@@ -914,7 +907,9 @@ ls
 
 <p>Open <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code class="highlighter-rouge">CHANGELOG.md</code> is version of the FTF you installed.</p>
 
-<h2 id="next-steps-mtf_install_next-adjust-ftf-configuration-">Next Steps {#mtf_install_next} <a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a></h2>
+<h2 id="mtf_install_next">Next Steps</h2>
+
+<p><a href="/guides/v2.3/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTFconfiguration</a></p>
 
 			
 		</div>

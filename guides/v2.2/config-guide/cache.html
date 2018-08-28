@@ -1902,9 +1902,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento uses the following caching terminology:</p>
 
 <ul>
-  <li><em>Frontend</em>: Similar to an interface or gateway to cache storage, implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.</li>
-  <li><em>Cache types</em>: Can be one of the types provided with Magento or you can <a href="/guides/v2.2/config-guide/cache/caching-cache-type.html">create your own</a>.</li>
-  <li><em>Backend</em>: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a></li>
+  <li><em>Frontend</em>: Similar to an interface or gateway to cache storage, implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Frontend">Magento\Framework\Cache\Frontend</a>.</li>
+  <li><em>Cache types</em>: Can be one of the types provided with Magento or you can <a href="/guides/v2.2/config-guide/cache/caching-cache-type.html">create yourown</a>.</li>
+  <li><em>Backend</em>: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html">cachestorage</a>,implemented by<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Backend">Magento\Framework\Cache\Backend</a></li>
   <li>
     <p><em>Two-level backend</em>: Stores cache records in two backends—a faster one and a slower one.</p>
 
@@ -1920,9 +1920,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Configuring your own custom cache frontend, which means you modify only <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> because it overrides the equivalent configuration in <code class="highlighter-rouge">di.xml</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Varnish requires no changes to the Magento configuration. For more information, see <a href="/guides/v2.2/config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">Varnish requires no changes to the Magento configuration. For more information, see <a href="/guides/v2.2/config-guide/varnish/config-varnish.html">Configure and useVarnish</a>.</p>
 
 			
 		</div>

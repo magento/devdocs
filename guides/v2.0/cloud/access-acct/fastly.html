@@ -1928,12 +1928,12 @@ composer require fastly/magento2
 
     <p><img src="/common/images/cloud-fastly_enable-admin.png" alt="Choose Fastly" width="550px" /></p>
   </li>
-  <li>Expand <strong>Fastly Configuration</strong>. You can then <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module" target="\_blank">choose caching options</a>.</li>
+  <li>Expand <strong>Fastly Configuration</strong>. You can then <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module" target="_blank">choose caching options</a>.</li>
   <li>When you’re done, click <strong>Save Config</strong> at the top of the page.</li>
   <li>Clear the cache according to the notification. After you have cleared the cache, navigate back to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong> and continue your configurations.</li>
 </ol>
 
-<p>Configure the following features and enable additional <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">configuration options</a>:</p>
+<p>Configure the following features and enable additional <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options" target="_blank">configuration options</a>:</p>
 
 <ul>
   <li><a href="#upload-vcl-snippets">Upload Fastly VCL snippets</a></li>
@@ -1952,7 +1952,7 @@ composer require fastly/magento2
 
 <p>You don’t have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click <strong>Upload VCL to Fastly</strong> to finish this step.</p>
 
-<p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\blank">VCL snippets</a> that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specific Service ID and extension.</p>
+<p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">VCL snippets</a> that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specific Service ID and extension.</p>
 
 <p>For VCL snippet developers, these default snippets are prepended with <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add <a href="#custom-vcl">custom VCL snippets</a>.</p>
 
@@ -1975,7 +1975,7 @@ composer require fastly/magento2
 
 <p>With this uploaded, you can create and upload custom VCL snippets with advanced settings and options. You use APIs to add these VCL snippets, further adding them in your site code depending on the actions.</p>
 
-<p>For more information, see <a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="\_blank">Fastly VCL documentation</a> and <a href="https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets" target="\_blank">Fastly VCL snippets</a>.</p>
+<p>For more information, see <a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="_blank">Fastly VCL documentation</a> and <a href="https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets" target="_blank">Fastly VCL snippets</a>.</p>
 
 <h2 id="backend">Configure backends and Origin shielding</h2>
 
@@ -2007,7 +2007,7 @@ composer require fastly/magento2
   <li>In the Magento Admin, click <strong>Save Config</strong>.</li>
 </ol>
 
-<p>For more information from Fastly, see the Magento 2 <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md" target="\_blank">Backend settings guide</a>.</p>
+<p>For more information from Fastly, see the Magento 2 <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md" target="_blank">Backend settings guide</a>.</p>
 
 <h2 id="purge">Configure purge options</h2>
 
@@ -2033,7 +2033,7 @@ composer require fastly/magento2
   <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</li>
 </ol>
 
-<p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">Fastly’s configuration options</a>.</p>
+<p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="_blank">Fastly’s configuration options</a>.</p>
 
 <h2 id="fastly-errpg">Create a custom error/maintenance page</h2>
 
@@ -2052,7 +2052,7 @@ composer require fastly/magento2
     <p>In the provided field, enter your HTML code.	The HTML you enter can be a maximum of 65,535 bytes in length.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>Avoid using images on your site in the event Fastly is not available. To use images, refer to <a href="https://css-tricks.com/data-uris/" target="\_blank">Data URIs on the css-tricks site</a>.</p>
+      <p>Avoid using images on your site in the event Fastly is not available. To use images, refer to <a href="https://css-tricks.com/data-uris/" target="_blank">Data URIs on the css-tricks site</a>.</p>
     </div>
   </li>
   <li>When you’re done, click <strong>Upload</strong> to send your updates to Fastly.</li>
@@ -2085,7 +2085,7 @@ composer require fastly/magento2
   <li>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration options display.</li>
   <li>For GeoIP Action, select if the visitor is automatically redirected with <strong>Redirect</strong> or provided a list of stores to select from with <strong>Dialog</strong>.</li>
   <li>
-    <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="\_blank">this site</a>.</p>
+    <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">this site</a>.</p>
 
     <p><img src="/common/images/cloud_fastly-geo-code.png" alt="Add GeoIP country maps" /></p>
   </li>
@@ -2093,7 +2093,7 @@ composer require fastly/magento2
   <li>After page reload, click <em>Upload VCL to Fastly</em> in the <em>Fastly Configuration</em> section.</li>
 </ol>
 
-<p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="\_blank">geolocation-related VCL features</a> for customized geolocation coding.</p>
+<p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="_blank">geolocation-related VCL features</a> for customized geolocation coding.</p>
 
 <h2 id="fastly-dns">Configure DNS for Fastly</h2>
 
@@ -2131,11 +2131,11 @@ composer require fastly/magento2
 
 <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> for <a href="#fastly-dns">DNS information</a> and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
-<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
+<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
 
 <h2 id="upgrade">Upgrade Fastly</h2>
 
-<p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check the <a href="https://marketplace.magento.com/fastly-magento2.html" target="\_blank">Magento Marketplace</a> and <a href="https://github.com/fastly/fastly-magento2/releases" target="\_blank">GitHub</a> for updates on the latest releases.</p>
+<p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check the <a href="https://marketplace.magento.com/fastly-magento2.html" target="_blank">Magento Marketplace</a> and <a href="https://github.com/fastly/fastly-magento2/releases" target="_blank">GitHub</a> for updates on the latest releases.</p>
 
 <p>When you upgrade Fastly, you get the upgraded subset of default VCL snippets. When you finish upgrading, you must <a href="#upload-vcl-snippets">upload upgraded default VCL snippets to Fastly</a>:</p>
 

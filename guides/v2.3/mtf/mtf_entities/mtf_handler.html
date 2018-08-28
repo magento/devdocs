@@ -831,7 +831,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<p>You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- that must be implicitly created before the test is started. You need <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.</p>
+ that must be implicitly created before the test is started. You need <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture.html">afixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.</p>
 
 <p>This topic focuses on handlers, and we’ll discuss types of handlers as well as how to create and use one.</p>
 
@@ -865,7 +865,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tr>
     <tr>
       <td>WebAPI</td>
-      <td>Sends a POST request using the REST API. <a href="/guides/v2.3/rest/bk-rest.html">See REST API reference documentation.</a></td>
+      <td>Sends a POST request using the REST API. <a href="/guides/v2.3/rest/bk-rest.html">See REST API referencedocumentation.</a></td>
       <td>Similar to cURL but uses the REST API  entry point.</td>
       <td>Has the advantage of testing the API, faster than cURL.</td>
     </tr>
@@ -877,11 +877,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="mtf_handler_config">Configuration</h2>
 
 <p>One fixture can have various handlers. When we create an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
- in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
+ in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code class="highlighter-rouge">config.xml</code></a>.</p>
 
 <h3 id="mtf_handler_configxml"><code class="highlighter-rouge">config.xml</code></h3>
 
-<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
+<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp config.xml.dist config.xml
 </code></pre></div></div>
@@ -917,7 +917,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example of <code class="highlighter-rouge">WidgetInterface.php</code> (should be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -933,15 +934,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+
+</code></pre></div></div>
 
 <h3 id="mtf_handler_conf_hand">Handler class</h3>
 
-<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the <code class="highlighter-rouge">persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
+<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the<a href="#mtf_handler_config"><code class="highlighter-rouge">config.xml</code></a>, and declare interface/classrelationships in the <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a>. When this class is created, you can call the <code class="highlighter-rouge">persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
 
-<p>The <code class="highlighter-rouge">persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
+<p>The <code class="highlighter-rouge">persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code class="highlighter-rouge">InjectableFixture</code></a> class by path <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Persists Fixture Data into application.
  *
@@ -959,17 +963,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'persist_after'</span><span class="p">],</span> <span class="p">[</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$this</span><span class="p">)]);</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <p>Create the handler in the same directory where the interface is stored: <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
 
 <h3 id="mtf_handler_di"><code class="highlighter-rouge">di.xml</code></h3>
 
-<p>The <code class="highlighter-rouge">di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the<a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
 
 <p>See an example for the Widget cURL handler (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
@@ -978,13 +984,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>In this example, the <code class="highlighter-rouge">di.xml</code> file causes the <code class="highlighter-rouge">Curl</code> class to replace the <code class="highlighter-rouge">WidgetInterface</code>.</p>
 
 <p>See the directory structure mentioned for the case with the Widget cURL handler:</p>
 
-<p><img src="/common/images/ftf/mtf_widget_handler_tree.png" /></p>
+<p><img src="/common/images/ftf/mtf_widget_handler_tree.png" alt="" /></p>
 
 <h2 id="mtf_handler_howto-create-curl">How to create a cURL handler</h2>
 
@@ -995,7 +1003,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file <code class="highlighter-rouge">WidgetInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1011,7 +1019,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li>Create <code class="highlighter-rouge">Curl.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
@@ -1019,7 +1028,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p id="mtf_curl_script">The following code includes detailed comments for better understanding.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1102,13 +1111,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
+  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
@@ -1117,7 +1127,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
@@ -1134,7 +1146,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Add to the <code class="highlighter-rouge">Curl.php</code> the following code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">Config</span><span class="p">());</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">Config</span><span class="p">());</span>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>
 
@@ -1146,7 +1159,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Use the following code in the <code class="highlighter-rouge">Curl.php</code> file:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FrontendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span><span class="p">);</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FrontendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span><span class="p">);</span>
+</code></pre></div></div>
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 
@@ -1157,7 +1171,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file <code class="highlighter-rouge">WidgetInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1173,7 +1187,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li>Create <code class="highlighter-rouge">Ui.php</code> in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.</li>
@@ -1181,7 +1196,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The code has detailed comments for better understanding.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1264,14 +1279,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/ui</code> directory of the Magento_Widget   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/ui</code> directory of the Magento_Widget   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -1282,7 +1298,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span>
                 <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Ui"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
 
@@ -1294,7 +1311,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file <code class="highlighter-rouge">TaxRuleInterface.php</code>. Our new interface extends <code class="highlighter-rouge">HandlerInterface</code> class.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1310,13 +1327,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">interface</span> <span class="nx">WidgetInterface</span> <span class="k">extends</span> <span class="nx">HandlerInterface</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
-
+</span><span class="p">}</span>
+</code></pre></div></div>
 <ul>
   <li>Create <code class="highlighter-rouge">Webapi.php</code> in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1399,13 +1416,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="c1">// Additional methods.
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/webapi</code> directory of the Magento_Tax module.</li>
+  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/webapi</code> directory of the Magento_Tax module.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -1416,8 +1435,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"</span>
                 <span class="na">type=</span><span class="s">"\Magento\Tax\Test\Handler\TaxRule\Webapi"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
 
+</code></pre></div></div>
 
 			
 		</div>

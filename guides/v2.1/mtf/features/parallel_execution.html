@@ -842,13 +842,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To set up a parallel execution flow, add Magento instances to <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> in the following format:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;php&gt;</span>
     ...
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_instances"</span> <span class="na">value=</span><span class="s">"&lt;quantity of the Magento instances&gt;"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url_&lt;index number of the Magento instance&gt;"</span> <span class="na">value=</span><span class="s">"&lt;frontend URL of the Magento instance&gt;"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_&lt;index number of Magento instance&gt;"</span> <span class="na">value=</span><span class="s">"&lt;backend URL of the Magento instance&gt;"</span> <span class="nt">/&gt;</span>
     ...
-<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+<span class="nt">&lt;/php&gt;</span>
+
+</code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
     <p>The default elements <code>"app_frontend_url"</code> and <code>"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code>"app_instances"</code> element is present.</p>
@@ -864,7 +867,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following example shows a setup configuration of the flow with one Magento instance.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;php&gt;</span>
     ...
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
@@ -877,13 +881,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_1"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_2"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     ...
-<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+<span class="nt">&lt;/php&gt;</span>
+
+</code></pre></div></div>
 
 <h3 id="parallel-execution-flow-with-multiple-magento-instances">Parallel execution flow with multiple Magento instances</h3>
 
 <p>The following example shows a setup configuration of the flow with three Magento instances.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;php&gt;</span>
     ...
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_frontend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/"</span> <span class="nt">/&gt;</span>            // The default frontend instance. Ignored by the FTF.
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url"</span> <span class="na">value=</span><span class="s">"http://example.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>     // The default backend instance. Ignored by the FTF.
@@ -896,7 +903,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_1"</span> <span class="na">value=</span><span class="s">"http://example_2.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"app_backend_url_2"</span> <span class="na">value=</span><span class="s">"http://example_3.com/magento2/index.php/backend/"</span> <span class="nt">/&gt;</span>
     ...
-<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+<span class="nt">&lt;/php&gt;</span>
+
+</code></pre></div></div>
 
 <h2 id="run-parallel-execution-flow">Run parallel execution flow</h2>
 
@@ -904,8 +913,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Run a test suite:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>phpunit &lt;magento2_root_dir&gt;/dev/tests/functional
-vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>phpunit &lt;magento2_root_dir&gt;/dev/tests/functional
+vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
+</code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->
 

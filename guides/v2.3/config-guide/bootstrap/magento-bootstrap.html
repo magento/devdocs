@@ -1887,22 +1887,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="config-boot-overview">Overview of bootstrapping</h2>
 
-<p>To run the Magento application, the following actions are implemented in <a href="https://github.com/magento/magento2/blob/2.0/index.php" target="&#95;blank">index.php</a>:</p>
+<p>To run the Magento application, the following actions are implemented in <a href="https://github.com/magento/magento2/blob/2.0/index.php" target="_blank">index.php</a>:</p>
 
 <ul>
-  <li>Include <a href="https://github.com/magento/magento2/blob/2.0/app/bootstrap.php" target="&#95;blank">app/bootstrap.php</a> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.</li>
-  <li>Create an instance of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Bootstrap.php" target="&#95;blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. --></li>
-  <li>Create a Magento application instance (<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/AppInterface.php" target="&#95;blank">\Magento\Framework\AppInterface</a>).</li>
+  <li>Include <a href="https://github.com/magento/magento2/blob/2.0/app/bootstrap.php" target="_blank">app/bootstrap.php</a> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.</li>
+  <li>Create an instance of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. --></li>
+  <li>Create a Magento application instance (<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).</li>
   <li>Run Magento</li>
 </ul>
 
 <h2 id="config-boot-logic">Bootstrap run logic</h2>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/bootstrap.php" target="&#95;blank">The bootstrap object</a> uses the following algorithm to run the Magento application:</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/bootstrap.php" target="_blank">The bootstrap object</a> uses the following algorithm to run the Magento application:</p>
 
 <ol>
   <li>Initializes the error handler.</li>
-  <li>Creates the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager" target="&#95;blank">object manager</a> and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.</li>
+  <li>Creates the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager" target="_blank">object manager</a> and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.</li>
   <li>Asserts that maintenance mode is <em>not</em> enabled; otherwise, terminates.</li>
   <li>Asserts that the Magento application is installed; otherwise, terminates.</li>
   <li>
@@ -1955,7 +1955,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-boot-entry-http">HTTP entry point</h3>
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http" target="&#95;blank">\Magento\Framework\App\Http</a> operates as follows:</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:</p>
 
 <ol>
   <li>Determines the <a href="/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>.</li>
@@ -1979,7 +1979,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="config-boot-entry-static">Static resource entry point</h3>
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/StaticResource.php" target="&#95;blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/StaticResource.php" target="_blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.</p>
 
 <p class="bs-callout bs-callout-info">The entry point for static view files is not used in <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a> to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</p>
 
@@ -1997,7 +1997,7 @@ When the request is redirected to the entry point, the Magento application parse
 </ul>
 
 <h3 id="config-boot-entry-media">Media resource entry point</h3>
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/MediaStorage/App/Media.php" target="&#95;blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a   <span term-uuid="d95142d7-023f-451c-a2e9-dd88763dcd70" class="glossary-term" data-toggle="popover">media storage</span>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a   <span term-uuid="d95142d7-023f-451c-a2e9-dd88763dcd70" class="glossary-term" data-toggle="popover">media storage</span>
 .</p>
 
 <p><code class="highlighter-rouge">\Magento\Core\App\Media</code> attempts to find the media file in the configured database storage and write it into the <code class="highlighter-rouge">pub/static</code> directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.</p>

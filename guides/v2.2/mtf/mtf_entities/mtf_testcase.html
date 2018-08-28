@@ -885,7 +885,8 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
   <li>saving of the edited product</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Run update product simple entity test.
  *
@@ -916,7 +917,9 @@ Usage of docblock is a good practice for your new tests. See <a href="https://gi
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getProductForm</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">editProductPage</span><span class="o">-&gt;</span><span class="na">getFormPageActions</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
     <span class="k">return</span> <span class="p">[</span><span class="s1">'category'</span> <span class="o">=&gt;</span> <span class="nv">$category</span><span class="p">];</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <p>A returned array is available in constraints within current variation.</p>
 

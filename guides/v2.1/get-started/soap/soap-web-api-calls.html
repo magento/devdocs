@@ -525,32 +525,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To consume several services, you must specify them in the WSDL endpoint   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
 .</p>
 
-<table style="width:100%">
-   <colgroup>
-      <col width="20%" />
-      <col width="40%" />
-      <col width="40%" />
-   </colgroup>
-   <thead>
-      <tr>
-         <th>Service</th>
-         <th>WSDL endpoint URL</th>
-         <th>Available services</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>customer</td>
-         <td>http://magentohost/soap?wsdl&amp;services=customerV1</td>
-         <td>\Magento\Customer\Service\V1\CustomerService</td>
-      </tr>
-       <tr>
-         <td>customer, catalogProduct</td>
-         <td>http://magentohost/soap/custom_store?wsdl&amp;services=customerCustomerAccountServiceV1,catalogProductV2</td>
-         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>
-      </tr>
-   </tbody>
-</table>
+<table style="width:100%">   <colgroup>      <col width="20%" />      <col width="40%" />      <col width="40%" />   </colgroup>   <thead>      <tr>         <th>Service</th>         <th>WSDL endpoint URL</th>         <th>Available services</th>      </tr>   </thead>   <tbody>      <tr>         <td>customer</td>         <td>http://magentohost/soap?wsdl&amp;services=customerV1</td>         <td>\Magento\Customer\Service\V1\CustomerService</td>      </tr>       <tr>         <td>customer, catalogProduct</td>         <td>http://magentohost/soap/custom_store?wsdl&amp;services=customerCustomerAccountServiceV1,catalogProductV2</td>         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>      </tr>   </tbody></table>
 
 <p>The WSDL URL follows the following pattern:</p>
 
@@ -573,33 +548,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <table>
-<thead>
-<tr>
-<th>Original Service Interface Name</th>
-<th>Service Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerInterface</td>
-<td>customerV1</td>
-</tr>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface </td>
-<td>customerCustomerAccountServiceV1</td>
-</tr>
-<tr>
-<td>\Enterprise\Customer\Service\V3\Customer\AddressInterface</td>
-<td>enterpriseCustomerAddressV3</td>
-</tr>
-
-</tbody>
+  <thead>
+    <tr>
+      <th>Original Service Interface Name</th>
+      <th>Service Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">\Magento\Customer\Service\V1\CustomerInterface</code></td>
+      <td><code class="highlighter-rouge">customerV1</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code></td>
+      <td>c<code class="highlighter-rouge">ustomerCustomerAccountServiceV1</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">\Enterprise\Customer\Service\V3\Customer\AddressInterface</code></td>
+      <td><code class="highlighter-rouge">enterpriseCustomerAddressV3</code></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2 id="auth">Authentication</h2>
 
 <p>Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
- issued to the client. For more information, see <a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></p>
+ issued to the client. For more information, see <a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-basedauthentication</a></p>
 
 <p>The following   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  script illustrates how to get an access token:</p>
@@ -621,8 +595,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="related">Related topics</h2>
 
 <ul>
-  <li><a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
-  <li><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+  <li><a href="/guides/v2.1/get-started/authentication/gs-authentication-oauth.html">OAuth-basedauthentication</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">Servicecontracts</a></li>
   <li><a href="/guides/v2.1/soap/bk-soap.html">SOAP Reference</a></li>
 </ul>
 
