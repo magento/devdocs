@@ -9,15 +9,6 @@ functional_areas:
   - Setup
 ---
 
-#### Contents
-
-*	[Overview of Elasticsearch](#overview)
-*	[Install prerequisites and Elasticsearch](#es-prereq)
-*	[Additional resources](#es-resources)
-*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
-
 ## Overview of Elasticsearch {#overview}
 
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co) for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.

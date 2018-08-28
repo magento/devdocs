@@ -9,12 +9,6 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
-#### Contents
-
-*   [Overview of packaging](#package-over)
-*   [Create a Magento Composer file](#composer)
-*   [Package and publish your extension](#packaging)
-
 ## Overview of packaging {#package-over}
 
 The Magento application uses {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages to distribute, install, and upgrade components in an application instance.
