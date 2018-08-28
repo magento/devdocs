@@ -34,11 +34,11 @@ If you cannot access the New Relic account, submit a [Magento support ticket]({{
 
 {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
-We recommend adding at least one user to your New Relic account to manage all access, integrations, and usage of the tool. We also recommend assigning the Admin role to another user on the account so they can manage all New Relic access and integrations.
+We recommend adding at least one user to your New Relic account to manage all access, integrations, and usage of the tool.
 
 1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login){:target="_blank"}.
 
-1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown){:target="_blank"} menu, select **Account settings > Account > Users and roles**.
+1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings > Account > Users and roles**.
 
 1.  Click **New user**.
 
@@ -46,16 +46,16 @@ We recommend adding at least one user to your New Relic account to manage all ac
 
 1.  Assign the user role: *Admin*, *User*, or *Restricted*.
 
-1. Click **Add user**.
+1.  Click **Add user**.
 
-1. Ask the new user to check their email for a New Relic notification with account information.
+1.  Ask the new user to check their email for a New Relic notification with account information.
 
 
 See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Relic documentation for information about user roles, managing user accounts, and changing account ownership.
 
 
 
-## Add New Relic to your Magento application configuration
+## Configure the New Relic extension
 
 You must list the New Relic extension in the `.magento.app.yaml` file for your project. 
 
