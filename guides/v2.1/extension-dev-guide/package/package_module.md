@@ -4,7 +4,6 @@ subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
 menu_order: 2
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/package_module.html
   - /guides/v2.0/extension-dev-guide/package_module.html
@@ -12,9 +11,9 @@ redirect_from:
 
 #### Contents
 
-*   <a href="#package-over">Overview of packaging</a>
-*   <a href="#composer">Create a Magento Composer file</a>
-*   <a href="#packaging">Package and publish your extension</a>
+*   [Overview of packaging](#package-over)
+*   [Create a Magento Composer file](#composer)
+*   [Package and publish your extension](#packaging)
 
 ## Overview of packaging {#package-over}
 
@@ -39,7 +38,7 @@ Element | Description
 --- | ---
 `name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words.
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
-`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.
+`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
 
 
 {% include php-dev/composer-types.md %}

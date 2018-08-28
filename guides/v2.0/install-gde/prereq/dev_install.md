@@ -5,7 +5,6 @@ title: (Contributor) Clone the Magento repository
 menu_title: (Contributor) Clone the Magento repository
 menu_order: 1
 menu_node: parent
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
@@ -58,7 +57,7 @@ The Magento 2 GitHub repository requires you to authenticate. The `composer inst
 
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
-*	Use SSH for better security (no username and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.
+*	Use SSH for better security (no username and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.
 *	Use HTTPS if you don't share an SSH key with GitHub (your username and password are encrypted before being sent to GitHub).
 
 See one of the following section:
@@ -72,7 +71,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 1.	Copy to the clipboard the Magento GitHub repository SSH clone {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.
+	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.
 
 	b.	On the right side of the page, under the *clone URL* field, click **SSH**.
 
@@ -96,12 +95,12 @@ To clone the Magento GitHub repository using the SSH protocol:
 3.	Wait for the repository to clone on your server.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">shared your SSH key</a> with GitHub: </p>
+		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
 			<pre>Cloning into 'magento2'...
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
-4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:
+4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
 
 		git checkout tags/<tag name> [-b <version>]
 
@@ -117,7 +116,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 1.	Copy to the clipboard the Magento GitHub repository HTTPS clone URL.
 
-	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.
+	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.
 
 	b.	On the right side of the page, under the *clone URL* field, click **HTTPS**.
 
@@ -138,7 +137,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 		git clone https://github.com/magento/magento2.git
 3.	Wait for the repository to clone on your server.
 
-4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:
+4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
 
 		git checkout tags/<tag name> [-b <version>]
 

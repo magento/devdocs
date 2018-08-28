@@ -4,7 +4,6 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
-version: 2.2
 ---
 
 ### Overview
@@ -33,7 +32,7 @@ For more information, see the article on [templates XSS security]({{ page.baseur
 
 ### Using the Escaper classes
 
-Magento provides the [Escaper](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output. This class contains the following useful functions:
+Magento provides the [Escaper]({{ site.mage2200url }}lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output. This class contains the following useful functions:
 
 * `escapeHtml()` - Used for escaping string inside HTML content.
 * `escapeHtmlAttr()` - Used for escaping strings in HTML tag attributes.

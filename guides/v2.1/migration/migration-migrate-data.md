@@ -5,7 +5,6 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-version: 2.1
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 functional_areas:
   - Tools
@@ -23,9 +22,10 @@ See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migrat
 
 To start migrating data, run:
 
-    bin/magento migrate:data [-r|--reset] {<path to config.xml>}
+    bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
 
 where:
+* `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
@@ -85,4 +85,4 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
 ## Next migration step
 
-<a href="{{ page.baseurl }}/migration/migration-migrate-delta.html">Migrate changes</a>
+[Migratechanges]({{ page.baseurl }}/migration/migration-migrate-delta.html)

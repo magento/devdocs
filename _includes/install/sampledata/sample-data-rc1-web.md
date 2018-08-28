@@ -1,4 +1,4 @@
-<div markdown="1">
+
 
 These instructions apply to you *only* if all of the following are true:
 

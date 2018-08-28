@@ -6,39 +6,30 @@ menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---
 
-## Overview {#overview-web-service}
+You can configure a Magento or third-party service as a web {%glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{%endglossarytooltip %}.
 
-<p>You can configure a Magento or third-party service as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p>
-<p>To <a href="#configure-webapi">configure a web API</a>, you define {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} elements and attributes in the <code>webapi.xml</code> XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service.
-   The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
-   By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>.
-</p>
-<p>Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
-<p>Users can make REST or SOAP calls to access the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.</p>
-<p>To configure a web API, read these topics:</p>
-<ul>
-   <li>
-      <p><a href="#configure-webapi">Configure a web API</a></p>
-   </li>
-   <li>
-      <p><a href="#configuration-options">webapi.xml configuration options</a></p>
-   </li>
-   <li>
-      <p><a href="#sample-webapi">Sample webapi.xml file</a></p>
-   </li>
-   <li>
-      <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
-   </li>
-   <li>
-      <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
-   </li>
-</ul>
+To [configure a web API](#configure-webapi), you define {%glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{%endglossarytooltip %} elements and attributes in the `webapi.xml` XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service. The `webapi.xml` file for your module specifies an XML schema file for validation. By default, this file is `app/code/<VENDOR>/Webapi/etc/webapi.xsd`.
+
+Your module can use the default `webapi.xsd` file or you can create a customized XML schema file for validation.
+
+Users can make REST or SOAP calls to access the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.
+
+To configure a web API, read these topics:
+
+-   [Configure a web API](#configure-webapi)
+
+-   [webapi.xml configuration options](#configuration-options)
+
+-   [Sample webapi.xml file](#sample-webapi)
+
+-   [webapi.xsd XML schema file](#validate-webapi)
+
+-   [Forcing Request Parameters](#forced-parameters)
 
 ## Configure a web API {#configure-webapi}
 

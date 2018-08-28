@@ -1,13 +1,6 @@
 ---
 group: config-guide
-subgroup: 045_pipeline
 title: Using environment variables
-menu_title: Using environment variables
-menu_node:
-menu_order: 6300
-level3_menu_node: level3child
-level3_subgroup: deployment-examples
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy
@@ -100,16 +93,16 @@ The last step in the process is to update your production system. You must do it
 
 To set the sensitive and system-specific settings using environment variables, you must know the following:
 
-*	Each setting's scope 
+*	Each setting's scope
 
-	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website. 
+	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website.
 
 	You must know the website's code to set the Default Email Domain configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html) for more information on finding it.
 *	Each setting's configuration path
 
 	The configuration paths used in this example follow:
 
-	| Setting name  | Configuration path | 
+	| Setting name  | Configuration path |
 	|--------------|--------------|
 	| Send Emails To | `contact/email/recipient_email` |
 	| Default Email Domain | `customer/create_account/email_domain` |
@@ -120,7 +113,9 @@ To set the sensitive and system-specific settings using environment variables, y
 
 As discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html), the format of variables is:
 
-<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
+```
+<SCOPE>__<SYSTEM__VARIABLE__NAME>
+```
 
 The value of `<SCOPE>` is `CONFIG__DEFAULT__` for global scope or `CONFIG__WEBSITES__<WEBSITE CODE>` for website scope.
 
@@ -133,9 +128,8 @@ The variable names follow:
 | Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
 | Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
-</div>
 
 #### Set the variables using environment variables
 
@@ -174,16 +168,14 @@ To verify the configuration settings:
 
 	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-	The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system.
+	{:.bs-callout .bs-callout-info}
+	The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of **VAT Number** is not editable in website scope.
 
-	The value of **VAT Number** is not editable in website scope.
-	</div>
 4.	If you haven't already done so, switch to Default Config scope.
 5.	In the left navigation, under General, click **Contacts**.
 
 	The **Send Emails To** field is not editable, as the following figure shows. This is a sensitive setting.
-	
+
 	![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_contacts.png){:width="400px"}
 
 

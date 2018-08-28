@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Apply custom patches
-version: 2.2
 functional_areas:
   - Cloud
   - Upgrade

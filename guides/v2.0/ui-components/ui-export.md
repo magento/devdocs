@@ -5,7 +5,6 @@ title: ExportButton Component
 menu_title: Export Button Component
 menu_node:
 menu_order: 12
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-export.html
 
 ---

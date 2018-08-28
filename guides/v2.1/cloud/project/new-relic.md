@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: New Relic APM
-version: 2.1
 functional_areas:
   - Cloud
   - Integration
@@ -9,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
 
 New Relic APM provides the following features to Magento:
 

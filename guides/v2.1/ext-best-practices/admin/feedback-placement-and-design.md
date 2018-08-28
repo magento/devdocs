@@ -1,7 +1,6 @@
 ---
 menu_title: Feedback for Admin Panel Placement and Design
 menu_order: 1
-version: 2.1
 functional_areas:
   - Standards
 ---

@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
@@ -27,7 +26,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="&#95;blank"}.
+This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
@@ -114,7 +113,7 @@ To upgrade to Apache 2.4:
 		apt-get install -y apache2
 
 {:.bs-callout .bs-callout-info}
-If the `apt-get install` command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="&#95;blank"}.
+If the `apt-get install` command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 3.	Verify the installation.
 
@@ -184,7 +183,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 #### Solving 403 Forbidden errors for Apache 2.4 {#install-apache-403_2.4}
 
-To enable web site visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="&#95;blank"}.
+To enable web site visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
 
 For example:
 
@@ -196,11 +195,11 @@ For example:
 	</Directory>
 
 {:.bs-callout .bs-callout-info}
-The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="&#95;blank"}.
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
 
 #### Solving 403 Forbidden errors for Apache 2.2 {#install-apache-403_2.2}
 
-To enable web site visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="&#95;blank"}.
+To enable web site visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="_blank"}.
 
 For example:
 
@@ -213,7 +212,7 @@ For example:
 
 <div class="bs-callout bs-callout-info" id="info">
 {:.bs-callout .bs-callout-info}
-The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="&#95;blank"}.
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 
 #### Related topics:

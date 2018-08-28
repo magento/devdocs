@@ -7,7 +7,6 @@ menu_order: 154
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

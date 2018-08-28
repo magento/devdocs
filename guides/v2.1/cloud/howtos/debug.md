@@ -5,7 +5,6 @@ title: Configure Xdebug
 menu_title: Configure Xdebug
 menu_order: 100
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

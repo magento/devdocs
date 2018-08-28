@@ -4,7 +4,6 @@ subgroup: Tutorials
 title: Copying fieldsets
 menu_title: Copying fieldsets
 menu_order: 1000
-version: 2.1
 functional_areas:
   - Standards
 ---

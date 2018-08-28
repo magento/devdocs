@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
-version: 2.1
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
 
@@ -49,8 +48,10 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-<p>For file names and coding standards, follow the defined <a href="{{ page.baseurl }}/coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
-<p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
+
+For file names and coding standards, follow the defined [PHP codingstandards]({{ page.baseurl }}/coding-standards/code-standard-php.html).
+
+Place service interfaces in the top-level <b>Api</b> directory for a module.
 
 ### Repository interfaces {#repository-interfaces}
 
@@ -141,8 +142,5 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 
 ### Related topics {#related-topics}
 
-<ul>
-   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
-   </li>
-</ul>
+- [Servicecontracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
+- [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

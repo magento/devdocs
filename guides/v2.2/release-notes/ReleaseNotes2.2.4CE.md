@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Open Source 2.2.4 Release Notes
-version: 2.2
 ---
 *Patch code and release notes published on May 2, 2018.* *Release notes revised on July 1, 2018.*
 

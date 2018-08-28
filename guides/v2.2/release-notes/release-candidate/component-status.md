@@ -4,7 +4,6 @@ subgroup: 2.2.x_Release_Information
 title: Component Status
 menu_title: Component Status
 menu_order: 6000
-version: 2.2
 ---
 
 **Last Updated:** November 7, 2017

@@ -5,7 +5,6 @@ title: Uninstall themes Composer packages
 menu_title: Uninstall themes Composer packages
 menu_node:
 menu_order: 200
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
@@ -36,7 +35,7 @@ This command uninstalls *only* themes that are specified in `composer.json`; in 
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Uninstall themes   {#instgde-install-uninst-theme-uninst}

@@ -5,7 +5,6 @@ title: Incorrect credentials
 menu_title: Incorrect credentials
 menu_order: 7
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

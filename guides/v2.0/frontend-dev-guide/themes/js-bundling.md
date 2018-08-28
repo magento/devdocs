@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: JavaScript Bundling
 menu_title: JavaScript Bundling
 menu_order: 9000
-version: 2.0
 functional_areas:
   - Frontend
   - Theme

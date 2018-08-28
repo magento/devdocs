@@ -7,7 +7,6 @@ menu_order: 80
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.0
 redirect_from:
   - /guides/v2.1/project/project-conf-files_services-solr.html
   - /guides/v2.2/project/project-conf-files_services-solr.html

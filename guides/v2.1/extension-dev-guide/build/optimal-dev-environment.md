@@ -4,7 +4,6 @@ title: Optimal Development Environment
 subgroup: 03_Build
 menu_title: Optimal development environment
 menu_order: 1
-version: 2.1
 redirect_from:
   - /guides/v2.0/extension-dev-guide/build/optimal-dev-environment.html
 ---

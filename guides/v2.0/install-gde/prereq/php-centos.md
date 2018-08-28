@@ -6,7 +6,6 @@ menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
-version: 2.0
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 functional_areas:
   - Install
@@ -45,14 +44,14 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
+  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
 If PHP is installed, continue with the next prerequisite, <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>.
 
 ## CentOS repositories {#centos-php-repos}
 
-Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="\_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
+Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
 We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
@@ -61,9 +60,9 @@ We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommen
 	You should also consider upgrading to a later version of CentOS that has the desired PHP version in a recommended repository.
 *	If you're setting up a development system, you can use any repository you wish.
 
-In this topic, we show how to install PHP using the [Inline with Upstream Stable (IUS)](https://ius.io/GettingStarted){:target="\_blank"} repository, which is *not* on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so [no existing system packages are replaced](https://ius.io/Philosophy){:target="\_blank"}.
+In this topic, we show how to install PHP using the [Inline with Upstream Stable (IUS)](https://ius.io/GettingStarted){:target="_blank"} repository, which is *not* on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so [no existing system packages are replaced](https://ius.io/Philosophy){:target="_blank"}.
 
-Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="\_blank"}.
+Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="_blank"}.
 
 <div class="bs-callout bs-callout-warning">
     <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
@@ -116,7 +115,7 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
+ 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -173,7 +172,7 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
+ 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 

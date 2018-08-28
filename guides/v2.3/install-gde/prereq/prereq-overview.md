@@ -5,7 +5,6 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-version: 2.2
 functional_areas:
   - Install
   - System

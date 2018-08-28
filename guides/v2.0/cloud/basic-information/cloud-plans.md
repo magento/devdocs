@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Subscriptions and plans
-version: 2.0
 ---
 
 {{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products.

@@ -4,7 +4,6 @@ subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
 menu_order: 1
-version: 2.0
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_diagrams.html
 ---
 
@@ -20,4 +19,4 @@ The following diagram illustrates the components of Magento, and shows the "laye
 
 ## Related topics
 
-* <a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>
+* [Architecture layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)

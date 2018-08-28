@@ -1,10 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Configure product video
-menu_title: Configure product video
-menu_order: 100
-version: 2.1
 functional_areas:
   - Frontend
   - Theme
@@ -75,7 +71,7 @@ The options are set in the `config.xml` of your custom {% glossarytooltip c1e424
 
 Example:
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <catalog>
@@ -87,6 +83,6 @@ Example:
         </catalog>
     </default>
 </config>
-{%endhighlight%}
+```
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.

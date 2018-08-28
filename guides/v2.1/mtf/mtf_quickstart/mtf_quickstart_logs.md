@@ -1,7 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. See logs for failed tests
-version: 2.1
 ---
 
 All failed tests are logged in `<magento2_root_dir>/dev/tests/functional/var/log`.

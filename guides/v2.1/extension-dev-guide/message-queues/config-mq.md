@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Configure message queues
 menu_title: Configure message queues
 menu_order: 18
-version: 2.1
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
@@ -104,6 +103,6 @@ maxMessages | Specifies the maximum number of messages to consume.
 
 #### Related Topics
 
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Migrate message queueconfiguration]({{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html)
+*	[InstallRabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

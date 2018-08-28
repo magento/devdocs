@@ -5,7 +5,6 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-version: 2.1
 redirect_from: 
   - /guides/v2.0/architecture/versioning.html
   - /guides/v2.1/architecture/versioning.html

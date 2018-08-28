@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: 045_pipeline
 title: File systems access permissions
-menu_title: File systems access permissions
-menu_node:
-menu_order: 3000
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -102,9 +97,8 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:.bs-callout .bs-callout-info}
 	The command-line user is also referred to as the _Magento file system owner_.
-	</div>
 
 Because these users require access to the same files, we recommend you create a [shared group]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
@@ -123,11 +117,10 @@ Files in the following directories must be writable by both users in developer a
 * `pub/media`
 * `app/etc`
 
-Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory.
+Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/) bit on directories so permissions always inherit from the parent directory.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 `setgid` applies to directories only, _not_ to files.
-</div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
 

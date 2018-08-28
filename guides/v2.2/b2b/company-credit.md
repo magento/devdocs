@@ -4,7 +4,6 @@ subgroup: 10_REST
 title: Integrate with the CompanyCredit module
 menu_title: Integrate with the CompanyCredit module
 menu_order: 17
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: credit

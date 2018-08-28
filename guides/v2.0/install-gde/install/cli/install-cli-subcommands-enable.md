@@ -5,7 +5,6 @@ title: Enable or disable modules
 menu_title: Enable or disable modules
 menu_node:
 menu_order: 7
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
@@ -17,7 +16,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites   {#instgde-cli-subcommands-enable-disable-prereq}
@@ -60,7 +59,7 @@ If you enabled one or more modules, run the following command to update the data
 
 ## About enabling and disabling modules   {#instgde-cli-subcommands-enable-modules}
 
-{% include install/enable-disable-modules.html %}
+{% include install/enable-disable-modules.md %}
 
 #### Related topics
 

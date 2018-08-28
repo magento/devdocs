@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: 08_Configure caching
 title: Associate cache frontends with cache types
-menu_title: Associate cache frontends with cache types
-menu_order: 1
-menu_node:
-version: 2.1
 redirect_from:
   - /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
   - /guides/v2.1/config-guide/config/caching_frontend-cache-types.html
@@ -27,7 +22,7 @@ You must specify a custom cache frontend either `app/etc/env.php` or Magento's g
 
 The following example shows how to define it in `env.php` (which overrides `di.xml`):
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 'cache' => [
     'frontend' => [
         '<unique frontend id>' => [
@@ -45,7 +40,7 @@ The following example shows how to define it in `env.php` (which overrides `di.x
         ],
     ],
 ],
-{% endhighlight %}
+```
 
 where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
 
@@ -55,7 +50,7 @@ You can specify frontend and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d
 
 `env.php` example:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 'frontend' => <frontend_type>,
 'frontend_options' => [
     <frontend_option> => <frontend_option_value>,
@@ -66,15 +61,15 @@ You can specify frontend and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d
     <backend_option> => <backend_option_value>,
     ...
 ],
-{% endhighlight %}
+```
 
 where
 
-*   `<frontend_type>` is the low-level frontend {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %}. Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="&#95;blank"}.
+*   `<frontend_type>` is the low-level frontend {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %}. Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="_blank"}.
 
-    If you omit `<frontend_type>`, [Magento\Framework\Cache\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){:target="&#95;blank"} is used.
+    If you omit `<frontend_type>`, [Magento\Framework\Cache\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){:target="_blank"} is used.
 *   `<frontend_option>`, `<frontend_option_value>` are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.
-*   `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with [Zend_Cache_Backend](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html){:target="&#95;blank"} and that implements [Zend_Cache_Backend_Interface](http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html){:target="&#95;blank"}.
+*   `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with [Zend_Cache_Backend](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html){:target="_blank"} and that implements [Zend_Cache_Backend_Interface](http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html){:target="_blank"}.
 *   `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
 
 #### Next step

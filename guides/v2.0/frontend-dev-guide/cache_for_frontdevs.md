@@ -3,7 +3,6 @@ group: fedg
 title: Magento cache overview
 menu_title: Magento cache overview
 menu_order: 10
-version: 2.0
 functional_areas:
   - Frontend
 ---

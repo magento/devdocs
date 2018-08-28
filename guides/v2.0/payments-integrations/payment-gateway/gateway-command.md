@@ -5,7 +5,6 @@ title: Gateway Command
 menu_title: Gateway Command 
 menu_node: 
 menu_order: 2 
-version: 2.0
 ---
 
 Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that takes the [payload]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 

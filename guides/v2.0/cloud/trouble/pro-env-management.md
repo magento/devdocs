@@ -5,7 +5,6 @@ title: Add Staging and Production to Pro projects UI
 menu_title: Add Staging and Production to Pro projects UI
 menu_order: 45
 menu_node:
-version: 2.0
 ---
 
 For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.

@@ -5,7 +5,6 @@ title: Generate data for performance testing
 menu_title: Generate data for performance testing
 menu_node:
 menu_order: 800
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 functional_areas:
   - Configuration
@@ -17,7 +16,7 @@ functional_areas:
 
 ## Overview of performance testing data {#config-cli-perf-overview}
 
-To use the [Magento Performance Toolkit]({{ site.mage2000url }}setup/performance-toolkit){:target="\_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
+To use the [Magento Performance Toolkit]({{ site.mage2000url }}setup/performance-toolkit){:target="_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 

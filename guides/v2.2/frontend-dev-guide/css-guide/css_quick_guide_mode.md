@@ -1,7 +1,6 @@
 ---
 group: fedg
 title: Simple style changes with client-side LESS compilation vs. server-side
-version: 2.2
 functional_areas:
   - Frontend
 ---
@@ -29,7 +28,7 @@ The following is an illustration of how the process of making simple changes loo
 1. Navigate to your theme directory and add the `web/css/source/_extend.less` file.
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -45,7 +44,7 @@ The following is an illustration of how the process of making simple changes loo
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -79,7 +78,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -94,7 +93,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -117,7 +116,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 1. [Clean static view files]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache).
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -132,7 +131,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;

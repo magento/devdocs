@@ -2,7 +2,6 @@
 group: extension-dev-guide
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
-version: 2.3
 redirect_from: /guides/v2.3/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration
@@ -128,5 +127,5 @@ The first column in the following table lists the all the parameters in the `que
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
+*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure messagequeues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

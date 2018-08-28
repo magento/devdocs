@@ -5,7 +5,6 @@ title: Magento Marketplace example
 menu_title: Magento Marketplace example
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Upgrade
 ---

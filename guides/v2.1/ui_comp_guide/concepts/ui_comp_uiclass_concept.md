@@ -4,7 +4,6 @@ subgroup: concepts
 title: About the uiClass library
 menu_title: About the uiClass library
 menu_order: 60
-version: 2.1
 ---
 
 ## What is `uiClass`?

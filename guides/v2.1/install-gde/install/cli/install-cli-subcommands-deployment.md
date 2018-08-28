@@ -1,7 +1,6 @@
 ---
 group: install_cli
 title: Create or update the deployment configuration
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
@@ -14,7 +13,7 @@ functional_areas:
 
 ## First steps {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
@@ -48,7 +47,7 @@ The following table discusses the meanings of installation parameters and values
 | `--db-prefix` | Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already. <br><br>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database. <br><br>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters. <br><br>This option enables those customers to share the database server with more than one Magento installation. | No |
 | `--session-save` | Use any of the following: <br><br> - `d`b to store session data in the [database]({{ page.baseurl }}/config-guide/cache/caching-database.html). Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage. <br><br> - `files` to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow oe you have a clustered database.| No |
 | `--key` | If you have one, specify a key to encrypt [sensitive data](#sens-data) in the Magento database. If you don't have one, Magento generates one for you. | No |
-| `--db-init-statements` | Advanced MySQL configuration parameter. <br><br>Uses database initialization statements to run when connecting to the MySQL database. <br><br>Default is `SET NAMES utf8;`. Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank) before you set any values. | No |
+| `--db-init-statements` | Advanced MySQL configuration parameter. <br><br>Uses database initialization statements to run when connecting to the MySQL database. <br><br>Default is `SET NAMES utf8;`. Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html){:target="_blank"} before you set any values. | No |
 | `--http-cache-hosts` | Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn't matter if you have only one host or many hosts.) <br><br>Format must be `<hostname or ip:<listen port>`, where you can omit `<listen port>` if it's port 80. For example, ``--http-cache-hosts=192.0.2.100,192.0.2.155:6081`. Do not separate hosts with a space character.  | No |
 {:style="table-layout:auto;"}
 
@@ -60,4 +59,4 @@ If applicable, continue your Magento software installation:
 *	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 <!-- ## About enabling and disabling modules {#instgde-cli-subcommands-dep-config-enable-modules}
-{% include install/enable-disable-modules.html %} -->
+{% include install/enable-disable-modules.md %} -->

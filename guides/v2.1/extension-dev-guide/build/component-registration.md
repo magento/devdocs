@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: Register your component
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/build/component-registration.html
   - /guides/v2.0/extension-dev-guide/component-registration.html

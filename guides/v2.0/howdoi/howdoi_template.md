@@ -5,7 +5,6 @@ title:
 menu_title: 
 menu_node: 
 menu_order: 1
-version: 2.0
 ---
 
 <!-- Author in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} also welcome -->
@@ -38,7 +37,7 @@ Please submit all images to our <a href="https://github.com/magento/devdocs/tree
 
 Format the link as follows:
 
-<img src="{{ site.baseurl }}/common/images/FILENAME.png" alt="Alt text for the image">
+![Alt text for the image]({{ site.baseurl }}/common/images/FILENAME.png)
 
 <!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
 <!-- {{ page.baseurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->

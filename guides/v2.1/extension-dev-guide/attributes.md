@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: EAV and extension attributes
-version: 2.1
 ---
 
 There are two types of attributes you can use to extend Magento functionality:

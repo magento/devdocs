@@ -5,7 +5,6 @@ title: Step 4. Uninstall
 menu_title: Step 4. Uninstall
 menu_node:
 menu_order: 100
-version: 2.2
 functional_areas:
   - Upgrade
 redirect_from: 

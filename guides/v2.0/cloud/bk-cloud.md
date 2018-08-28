@@ -6,7 +6,6 @@ landing-page: Cloud
 menu_title: Welcome to Magento Commerce (Cloud)
 menu_order: 10
 menu_node: parent
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/access-acct/resources.html
   - /guides/v2.1/cloud/access-acct/resources.html

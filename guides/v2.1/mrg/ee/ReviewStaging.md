@@ -1,7 +1,6 @@
 ---
 group: mrg
 title: Magento_ReviewStaging module
-version: 2.1
 ee_only: true
 ---
 

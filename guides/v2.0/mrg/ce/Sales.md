@@ -1,7 +1,6 @@
 ---
 group: mrg
 title: Magento_Sales module
-version: 2.0
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.
@@ -141,7 +140,7 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2000url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
@@ -448,7 +447,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2000url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
@@ -727,7 +726,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2000url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/refund" method="POST">
@@ -947,7 +946,7 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2000url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/ship" method="POST">

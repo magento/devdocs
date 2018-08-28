@@ -5,7 +5,6 @@ title: Configure and use Varnish
 menu_title: Configure and use Varnish
 menu_order: 1
 menu_node: parent
-version: 2.0
 functional_areas:
   - Configuration
   - System
@@ -33,7 +32,7 @@ For more information about Varnish, see:
 
 The following figure shows a basic view of Varnish in your Magento topology.
 
-<img src="{{ site.baseurl }}/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
+![Basic Varnish diagram]({{ site.baseurl }}/common/images/varnish_basic.png){: width="400px"}
 
 In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server.
 

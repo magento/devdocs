@@ -5,7 +5,6 @@ title: Troubleshoot deployment
 menu_title: Troubleshoot deployment
 menu_order: 3
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

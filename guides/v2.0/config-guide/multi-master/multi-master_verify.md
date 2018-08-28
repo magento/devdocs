@@ -5,7 +5,6 @@ title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
 menu_node:
-version: 2.0
 ee_only: True
 functional_areas:
   - Configuration

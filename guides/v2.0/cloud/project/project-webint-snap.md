@@ -5,7 +5,6 @@ title: Snapshots and backup management
 menu_title: Snapshots and backup management
 menu_order: 30
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html

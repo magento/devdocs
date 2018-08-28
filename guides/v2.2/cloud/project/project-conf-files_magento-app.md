@@ -1,7 +1,6 @@
 ---
 group: cloud
 title: Application
-version: 2.2
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
@@ -13,7 +12,7 @@ functional_areas:
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
 
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
+The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 {% include cloud/note-pro-using-yaml.md %}
 
@@ -319,56 +318,56 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 
 Magento requires the following PHP extensions that are enabled by default:
 
--  [curl](http://php.net/manual/en/book.curl.php){:target="\_blank"}
--  [gd](http://php.net/manual/en/book.image.php){:target="\_blank"}
--  [intl](http://php.net/manual/en/book.intl.php){:target="\_blank"}
+-  [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
+-  [gd](http://php.net/manual/en/book.image.php){:target="_blank"}
+-  [intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
 -  PHP 7 only:
 
-	-  [json](http://php.net/manual/en/book.json.php){:target="\_blank"}
-	-  [iconv](http://php.net/manual/en/book.iconv.php){:target="\_blank"}
--  [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="\_blank"}
--  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="\_blank"}
--  [bc-math](http://php.net/manual/en/book.bc.php){:target="\_blank"}
--  [mbstring](http://php.net/manual/en/book.mbstring.php){:target="\_blank"}
--  [mhash](http://php.net/manual/en/book.mhash.php){:target="\_blank"}
--  [openssl](http://php.net/manual/en/book.openssl.php){:target="\_blank"}
--  [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="\_blank"}
--  [soap](http://php.net/manual/en/book.soap.php){:target="\_blank"}
--  [xml](http://php.net/manual/en/book.xml.php){:target="\_blank"}
--  [zip](http://php.net/manual/en/book.zip.php){:target="\_blank"}
+	-  [json](http://php.net/manual/en/book.json.php){:target="_blank"}
+	-  [iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
+-  [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
+-  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
+-  [bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"}
+-  [mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+-  [mhash](http://php.net/manual/en/book.mhash.php){:target="_blank"}
+-  [openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
+-  [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
+-  [soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
+-  [xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
+-  [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 You must install the following extensions:
 
--  [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="\_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
--  [xsl](http://php.net/manual/en/book.xsl.php){:target="\_blank"}
--  [redis](https://pecl.php.net/package/redis){:target="\_blank"}
+-  [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
+-  [xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
+-  [redis](https://pecl.php.net/package/redis){:target="_blank"}
 
 In addition, we strongly recommend you enable `opcache`.
 
 Optional PHP extensions available to install:
 
--  [apcu](http://php.net/manual/en/book.apcu.php){:target="\_blank"}
--  [blackfire](https://blackfire.io/docs/up-and-running/installation){:target="\_blank"}
--  [enchant](http://php.net/manual/en/book.enchant.php){:target="\_blank"}
--  [gearman](http://php.net/manual/en/book.gearman.php){:target="\_blank"}
--  [geoip](http://php.net/manual/en/book.geoip.php){:target="\_blank"}
--  [imap](http://php.net/manual/en/book.imap.php){:target="\_blank"}
--  [ioncube](https://www.ioncube.com/loaders.php){:target="\_blank"}
--  [pecl-http](https://pecl.php.net/package/pecl_http){:target="\_blank"}
--  [pinba](http://pinba.org){:target="\_blank"}
--  [propro](https://pecl.php.net/package/propro){:target="\_blank"}
--  [pspell](http://php.net/manual/en/book.pspell.php){:target="\_blank"}
--  [raphf](https://pecl.php.net/package/raphf){:target="\_blank"}
--  [readline](http://php.net/manual/en/book.readline.php){:target="\_blank"}
--  [recode](http://php.net/manual/en/book.recode.php){:target="\_blank"}
--  [snmp](http://php.net/manual/en/book.snmp.php){:target="\_blank"}
--  [sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="\_blank"}
--  [ssh2](http://php.net/manual/en/book.ssh2.php){:target="\_blank"}
--  [tidy](http://php.net/manual/en/book.tidy.php){:target="\_blank"}
--  [xcache](https://xcache.lighttpd.net){:target="\_blank"}
--  [xdebug](https://xdebug.org){:target="\_blank"}
--  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="\_blank"}
--  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="\_blank"}
+-  [apcu](http://php.net/manual/en/book.apcu.php){:target="_blank"}
+-  [blackfire](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}
+-  [enchant](http://php.net/manual/en/book.enchant.php){:target="_blank"}
+-  [gearman](http://php.net/manual/en/book.gearman.php){:target="_blank"}
+-  [geoip](http://php.net/manual/en/book.geoip.php){:target="_blank"}
+-  [imap](http://php.net/manual/en/book.imap.php){:target="_blank"}
+-  [ioncube](https://www.ioncube.com/loaders.php){:target="_blank"}
+-  [pecl-http](https://pecl.php.net/package/pecl_http){:target="_blank"}
+-  [pinba](http://pinba.org){:target="_blank"}
+-  [propro](https://pecl.php.net/package/propro){:target="_blank"}
+-  [pspell](http://php.net/manual/en/book.pspell.php){:target="_blank"}
+-  [raphf](https://pecl.php.net/package/raphf){:target="_blank"}
+-  [readline](http://php.net/manual/en/book.readline.php){:target="_blank"}
+-  [recode](http://php.net/manual/en/book.recode.php){:target="_blank"}
+-  [snmp](http://php.net/manual/en/book.snmp.php){:target="_blank"}
+-  [sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="_blank"}
+-  [ssh2](http://php.net/manual/en/book.ssh2.php){:target="_blank"}
+-  [tidy](http://php.net/manual/en/book.tidy.php){:target="_blank"}
+-  [xcache](https://xcache.lighttpd.net){:target="_blank"}
+-  [xdebug](https://xdebug.org){:target="_blank"}
+-  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
+-  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
 
 {:.bs-callout .bs-callout-warning}

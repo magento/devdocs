@@ -1,10 +1,6 @@
 ---
 group: fedg
-subgroup: C_Templates
 title: Templates basic concepts
-menu_title: Templates basic concepts
-menu_order: 3
-version: 2.1
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 functional_areas:
   - Frontend
@@ -19,11 +15,11 @@ This topic discusses the main concepts of how default templates work in the Mage
 Templates are usually initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 Each layout block has an associated template. 
 The template is specified in the `template` attribute of the `<block>` layout instruction. 
-For example, from [`<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml`]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml){:target="_blank"}
+For example, from [`<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml`]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml)
 
-<pre>
-&lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
-</pre>
+```xml
+<block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>
+```
 
 This means that the `category.image` block is rendered by the `image.phtml` template, which is located in the `category` subdirectory of the `Magento_Catalog` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} templates directory.
 

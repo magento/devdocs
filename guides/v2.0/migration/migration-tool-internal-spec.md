@@ -5,7 +5,6 @@ title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
-version: 2.0
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 functional_areas:
   - Tools
@@ -17,11 +16,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
+Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a>
 
 ## Internal structure {#migrate-is}
 

@@ -1,9 +1,6 @@
 ---
 group: fedg
 title: Theme development best practices
-menu_title: Theme development best practices
-menu_order: 20
-version: 2.1
 functional_areas:
   - Frontend
   - Theme

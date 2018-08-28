@@ -2,7 +2,6 @@
 group: arch-guide
 title: Module conventions
 menu_title: Module conventions
-version: 2.1
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_conventions.html
   - /guides/v2.0/architecture/modules/mod_conventions.html

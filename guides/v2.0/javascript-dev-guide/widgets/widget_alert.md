@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Alert widget
 menu_order: 2
 menu_title: Alert widget
-version: 2.0
 ---
 ## Overview   {#alert_overview}
 

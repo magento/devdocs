@@ -5,7 +5,6 @@ title: HTML style guide
 landing-page: Coding standards
 menu_title: HTML style guide
 menu_order: 9
-version: 2.1
 functional_areas:
   - Standards
 ---
@@ -44,7 +43,6 @@ Always close self-closing tags.
 <img src="image.png" alt="image">
 <input type="text" name="username">
 {%endhighlight%}
-
 
 **Recommended**
 {%highlight html%}
@@ -108,7 +106,7 @@ Use no space before the colon and one space after the colon for the sake of read
 
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
+![]({{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png)
 
 ## Class names
 

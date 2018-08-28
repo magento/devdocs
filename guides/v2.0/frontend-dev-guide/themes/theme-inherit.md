@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 70
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
@@ -89,13 +88,13 @@ Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a 
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
-<img src="{{ site.baseurl }}/common/images/inh-background1.jpg"/>
+![]({{ site.baseurl }}/common/images/inh-background1.jpg)
 
 OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
 Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
 
-<img src="{{ site.baseurl }}/common/images/inh-background2.jpg"/>
+![]({{ site.baseurl }}/common/images/inh-background2.jpg)
 
 ## Override templates {#theme-inherit-templates}
 

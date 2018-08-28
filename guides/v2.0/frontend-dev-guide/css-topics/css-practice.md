@@ -4,7 +4,6 @@ subgroup: D_CSS
 title: Customizing styles illustration
 menu_order: 5
 menu_title: Customizing styles illustration
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-practice.html
 functional_areas:
   - Frontend
@@ -19,10 +18,7 @@ This topic features a step-by-step illustration of how to change a theme's color
 OrangeCo created a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/practice_blank.png" alt="product page when Blank applied">
-</div>
-
+![product page when Blank applied]({{ site.baseurl }}/common/images/practice_blank.png)
 
 In their Grey theme, OrangeCo wants to change the color scheme from white to grey.
 
@@ -77,4 +73,4 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 
 After the Grey theme is applied (and [static files cache cleared]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)), store pages will look like following:
 
-<img src="{{ site.baseurl }}/common/images/css_practice.png" alt="product page when Grey applied">
+![product page when Grey applied]({{ site.baseurl }}/common/images/css_practice.png)

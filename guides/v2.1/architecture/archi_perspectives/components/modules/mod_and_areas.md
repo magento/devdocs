@@ -2,7 +2,6 @@
 group: arch-guide
 title: Modules and areas
 menu_title: Modules and areas
-version: 2.1
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_and_areas.html
   - /guides/v2.0/architecture/modules/mod_and_areas.html
@@ -24,7 +23,7 @@ Magento is organized into these main areas:
 
 * **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-* **Cron** (`crontab`): In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* **Cron** (`crontab`): In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 

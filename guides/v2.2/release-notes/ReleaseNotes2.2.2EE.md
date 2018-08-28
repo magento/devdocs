@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Commerce 2.2.2 Release Notes
-version: 2.2
 ---
 *Patch code and release notes published on December 12, 2017.*
 

@@ -2,7 +2,6 @@
 group: UI_Components_guide
 subgroup: concepts
 title: Linking properties of UI components
-version: 2.2
 ---
 
 ## Overview

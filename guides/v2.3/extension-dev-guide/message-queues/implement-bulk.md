@@ -1,7 +1,6 @@
 ---
 group: extension-dev-guide
 title: Example bulk operations implementation
-version: 2.3
 redirect_from: /guides/v2.3/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services
@@ -224,7 +223,7 @@ class Consumer
         try {
             //add here your own logic for async operations
         } catch (\Zend_Db_Adapter_Exception  $e) {
-            //here sample how to process exceptions if they occured
+            //here sample how to process exceptions if they occurred
             $this->logger->critical($e->getMessage());
             //you can add here your own type of exception when operation can be retried
             if (

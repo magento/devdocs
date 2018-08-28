@@ -1,13 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Other configuration paths reference
-menu_title: Other configuration paths reference
-menu_order: 5300
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.1
 functional_areas:
   - Configuration
   - System

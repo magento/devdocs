@@ -77,8 +77,6 @@ The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadat
 ---
 group: install2
 title: Continue with your installation
-version: 2.1
-GitHub_link: install-gde/continue.md
 ---
 ```
 

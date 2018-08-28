@@ -2,7 +2,6 @@
 group: arch-guide
 title: Architectural layers overview
 menu_title: Architectural layers
-version: 2.1
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ALayers_intro.html
 ---
 

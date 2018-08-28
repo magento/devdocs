@@ -6,7 +6,6 @@ title: Add custom input mask for ZIP code
 subtitle: Customize Checkout
 menu_order: 6
 level3_subgroup: checkout-tutorial
-version: 2.0
 functional_areas:
   - Checkout
 ---

@@ -5,7 +5,6 @@ title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
 menu_node:
-version: 2.0
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:
   - Configuration
@@ -66,7 +65,7 @@ In default mode:
 
 -   Errors are logged to the file reports at server, and never shown to a user
 -   A symlink to a static view file is published to the `pub/static` directory for each requested file
--   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="\_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+-   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 

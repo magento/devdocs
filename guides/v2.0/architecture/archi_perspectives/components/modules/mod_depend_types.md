@@ -6,7 +6,6 @@ menu_title: Module dependency types
 menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: modules
-version: 2.0
 redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
@@ -79,4 +78,4 @@ You can build dependencies between classes in the application layer, but these c
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+[Module dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)

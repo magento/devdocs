@@ -5,7 +5,6 @@ title: Uninstall modules
 menu_title: Uninstall modules
 menu_node:
 menu_order: 8
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
@@ -33,7 +32,7 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Uninstall modules   {#instgde-cli-uninst-mod-uninst}

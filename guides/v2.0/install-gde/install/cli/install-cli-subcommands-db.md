@@ -5,7 +5,6 @@ title: Create the Magento database schema
 menu_title: Create the Magento database schema
 menu_node:
 menu_order: 15
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-db.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-db.html
@@ -17,7 +16,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites   {#instgde-cli-subcommands-db-prereq}

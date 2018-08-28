@@ -7,7 +7,6 @@ menu_node:
 menu_order: 105
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.0
 redirect_from: /guides/v1.0/install-gde/basics/basics_login.html
 functional_areas:
   - Install
@@ -46,7 +45,7 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
-<img src="{{ site.baseurl }}/common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
+![Logging in with Cygwin on Windows]({{ site.baseurl }}/common/images/install_cygwin.png)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

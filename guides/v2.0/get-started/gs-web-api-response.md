@@ -5,7 +5,6 @@ title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
 
-version: 2.0
 redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 ---
 

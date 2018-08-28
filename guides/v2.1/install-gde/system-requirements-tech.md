@@ -5,7 +5,6 @@ title: Magento 2.1.x technology stack requirements
 menu_title: Magento 2.1.x technology stack requirements
 menu_node:
 menu_order: 2
-version: 2.1
 redirect_from: /guides/v2.1/install-gde/system-requirements-2.1-tech.html
 functional_areas:
   - Install
@@ -26,10 +25,10 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Web servers
 
-*   [Apache 2.2 or 2.4](http://httpd.apache.org/download.cgi){:target="&#95;blank"}
+*   [Apache 2.2 or 2.4](http://httpd.apache.org/download.cgi){:target="_blank"}
 
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see [our Apache documentation]({{ page.baseurl }}/install-gde/prereq/apache.html).
-*	{% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8 (or [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="&#95;blank"})
+*	{% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8 (or [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank"})
 
 ### Database
 
@@ -43,24 +42,24 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 
 {% include install/php_2.1.md %}
 
-PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="&#95;blank"}, [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="&#95;blank"}
+PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="_blank"}, [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="_blank"}
 
 #### Required PHP extensions:
 
-*   [bc-math](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} ({{site.data.var.ee}} only)
-*   [curl](http://php.net/manual/en/book.curl.php){:target="&#95;blank"}
-*   [gd](http://php.net/manual/en/book.image.php){:target="&#95;blank"}, [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php){:target="&#95;blank"} (or later) or both
-*   [intl](http://php.net/manual/en/book.intl.php){:target="&#95;blank"}
-*   [mbstring](http://php.net/manual/en/book.mbstring.php){:target="&#95;blank"}
-*   [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
-*   [hash](http://php.net/manual/en/book.hash.php){:target="&#95;blank"}
-*   [openssl](http://php.net/manual/en/book.openssl.php){:target="&#95;blank"}
-*   [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="&#95;blank"}
-*   [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="&#95;blank"}
-*   [soap](http://php.net/manual/en/book.soap.php){:target="&#95;blank"}
-*   [xml](http://php.net/manual/en/book.xml.php){:target="&#95;blank"}
-*   [xsl](http://php.net/manual/en/book.xsl.php){:target="&#95;blank"}
-*   [zip](http://php.net/manual/en/book.zip.php){:target="&#95;blank"}
+*   [bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only)
+*   [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
+*   [gd](http://php.net/manual/en/book.image.php){:target="_blank"}, [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php){:target="_blank"} (or later) or both
+*   [intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
+*   [mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+*   [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
+*   [hash](http://php.net/manual/en/book.hash.php){:target="_blank"}
+*   [openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
+*   [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
+*   [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
+*   [soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
+*   [xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
+*   [xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
+*   [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 *	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only:
 
 	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
@@ -68,9 +67,9 @@ PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.htm
 
 #### PHP OPcache
 
-We strongly recommend you verify the [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="&#95;blank"} is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="&#95;blank"} or [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="&#95;blank"}.
+We strongly recommend you verify the [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="_blank"} or [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="_blank"}.
 
-If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+If you must install it separately, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 #### PHP settings
 
@@ -120,7 +119,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ### Optional but recommended:
 
-*	[php_xdebug2.2.0](http://xdebug.org/download.php){:target="&#95;blank"} or later (development environments only; can have an adverse effect on performance)
+*	[php_xdebug2.2.0](http://xdebug.org/download.php){:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.

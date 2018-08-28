@@ -1,5 +1,3 @@
-<div markdown="1">
-
 The following table discusses where to get the Magento software. We provide the following downloads:
 
 *	{{site.data.var.ce}} or {{site.data.var.ee}} software only
@@ -13,22 +11,22 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 	<col width="30%">
 	<col width="70%">
 <tbody>
-<tr> 
+<tr>
 	<th>Magento edition</th>
 	<th>Install package location</th>
 </tr>
-<tr> 
+<tr>
 	<td>{{site.data.var.ce}}</td>
-	<td><p><a href="http://magento.com/download" target="_blank">www.magento.com/download</a></p>
+	<td><p><a href="http://magento.com/download">www.magento.com/download</a></p>
 		<p>Choose either the software or the software and sample data:</p>
 		<ul><li><code>Magento-CE-&lt;version>.*</code> (without sample data)</li>
 			<li><code>Magento-CE-&lt;version>+Samples.*</code> (with sample data)</li>
 			<p><code>&lt;version/></code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on.)</p></ul></td>
 </tr>
-<tr> 
+<tr>
 	<td>{{site.data.var.ee}}</td>
 	<td>Use the following steps:
-	<ol><li>Go to <a href="http://magento.com" target="_blank">www.magento.com</a></li>
+	<ol><li>Go to <a href="http://magento.com">www.magento.com</a></li>
 	<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
 	<li>Log in with your Magento username and password.</li>
 	<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
@@ -42,5 +40,3 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 </tr>
 </tbody>
 </table>
-
-</div>

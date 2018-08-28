@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
-version: 2.0
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 functional_areas:
   - Frontend
@@ -18,23 +17,18 @@ This article features a step-by-step illustration of how a real-life {% glossary
 
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_transform.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_transform.png)
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list. 
 
 The Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} in Orange looks like following:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_code_before1.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_code_before1.png)
+
 <br>
 The markup, that is needed for a drop-down:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_code_after.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_code_after.png)
 
 #### Step 1: Define the blocks
 
@@ -155,13 +149,9 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 
 Now the customer links look like following:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_screen2.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_screen2.png)
 
 <br>
 The last touch is adding styles:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_screen3.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_screen3.png)

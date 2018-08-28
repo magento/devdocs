@@ -4,7 +4,6 @@ subgroup: B_integration
 title: Payment method facade
 menu_title: Payment method facade
 menu_order: 3
-version: 2.1
 functional_areas:
   - Integration
 ---

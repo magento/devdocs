@@ -1,7 +1,6 @@
 ---
 group: compman
 title: Command-line upgrade
-version: 2.3
 functional_areas:
   - Upgrade
 ---

@@ -5,7 +5,6 @@ title: Installation dependencies not met
 menu_title: Installation dependencies not met
 menu_node:
 menu_order: 10
-version: 2.1
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install_depend.html
 functional_areas:
   - Install
@@ -49,4 +48,4 @@ You must run `composer install` from *both* the `<your Magento install dir>` and
 
 ### Suggestion
 
-<a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
+[Run composerinstall]({{ page.baseurl }}/install-gde/install/prepare-install.html) from both of the preceding directories and try the installation again.
