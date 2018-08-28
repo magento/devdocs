@@ -34,7 +34,7 @@ If you cannot access the New Relic account, submit a [Magento support ticket]({{
 
 {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
-We recommend adding at least one user to your New Relic account to manage all access, integrations, and usage of the tool.
+We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and usage of the tool.
 
 1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login){:target="_blank"}.
 
