@@ -62,33 +62,26 @@ The corresponding value of the credential will be assigned to `userInput` as a r
 
 A test can specify an entity which should be persisted (created in the database) so that the test actions can operate on existing known data.
 
-If `<data>` has been persisted in `<test>`:
+Referencing `<data>` in a test:
 
 ```xml
-userInput="$customer.email$"
+userInput="$createCustomer.email$"
 ```
 
-If `<data>` has been persisted in `<before>` or `<after>`:
-
-```xml
-userInput="$$customer.email$$"
-```
 {%endraw%}
 In this example:
 
-* `customer` is a `stepKey` of the corresponding test step, where an entity is created.
+* `createCustomer` is a `stepKey` of the corresponding test step, where an entity is created.
 * `email` is a `dataKey` of the entity. The corresponding value will be assigned to `userInput` as a result.
 
 {%
 include note.html
 type="info"
-content="This is a side effect of PHP outputting. Even though both are nested, in PHP they end up being different methods inside a class.
+content="As of MFTF 2.3.6, you no longer need to differentiate between test, hook, and suite persisted data when referencing them in tests.
 
-Since `_before()` is a function outside a `myTest()` test method, it creates a variable in the class scope instead of the method scope (`$this->persistedData` vs `$persistedData`).
+MFTF now stores persisted test, hook, and suite data and attempts to retrieve it using the combination of `stepKey` and the scope of where it is being called (preferring current scope, then widening scope order of `test/hook/suite` or `hook/test/suite`).
 
-As they are relevant to test:
-* `$persistedData.field$` turns into `$persistedData.getData('field')`.
-* `$$persistedData.field$$` turns into `$this->persistedData.getData('field')`."
+This emphasizes the practice for the `stepKey` of `createData` to be descriptive and unique, as a duplicated `stepKey` in both a `<test>` and `<before>` will prefer the `<test>` data every time.
 %}
 
 ### Use data returned by test actions
