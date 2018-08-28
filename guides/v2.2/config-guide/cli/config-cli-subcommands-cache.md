@@ -104,26 +104,18 @@ To view the status of the cache, enter
 
 <!-- where `--bootstrap=` is a URL-encoded associative array of Magento [application bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview) and values. -->
 
-A sample follows.
-
-There are lists of cache types available for Magento by default. You can check it by run command,
-
-`php bin/magento cache:status`
-
-Enabled cache types have a value of 1. Otherwise, the value is 0.
+A sample follows:
 
                 config: 1
                 layout: 1
             block_html: 1
            collections: 1
-            reflection: 1
                 db_ddl: 1
                    eav: 1
- customer_notification: 1
-    config_integration: 1
-config_integration_api: 1
              full_page: 1
              translate: 1
+    config_integration: 1
+config_integration_api: 1
      config_webservice: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
@@ -154,7 +146,7 @@ Sample result:
 
 	Changed cache status:
                         db_ddl: 1 -> 0
-                     full_page: 1 -> 0                
+                     full_page: 1 -> 0
 
 {:.bs-callout .bs-callout-info}
 Enabling a {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} automatically clears that cache type.
