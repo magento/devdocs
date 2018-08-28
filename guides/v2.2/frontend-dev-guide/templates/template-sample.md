@@ -16,7 +16,7 @@ In the Magento basic Blank theme, in the mini shopping cart, products are listed
 
 OrangeCo decided they want to change this and display the product list before the **Go to Checkout** button.
 
-The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2200url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="\_blank"}.
+The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2200url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="_blank"}.
 Here is the part of the code OrangeCo worked with:
 
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)

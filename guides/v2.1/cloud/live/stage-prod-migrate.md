@@ -146,7 +146,7 @@ To migrate static files from remote-to-remote environments directly (fast approa
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="\_blank"}.
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 

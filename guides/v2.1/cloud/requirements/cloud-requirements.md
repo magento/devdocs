@@ -53,9 +53,9 @@ Git is the heart of all your code in repositories. It acts as a version control 
 
 We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="\_blank"} and [videos](https://git-scm.com/videos){:target="\_blank"} from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="\_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="\_blank"} from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="\_blank"} with DevForge to understand how people use the repo and commands with a fun story
+*	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
 
 To get started with Git, install Git on your local workstation.
 

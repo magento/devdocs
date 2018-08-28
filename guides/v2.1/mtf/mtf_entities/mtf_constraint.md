@@ -43,15 +43,18 @@ An object that is not defined in the data set or isn't returned from the test ca
 
 Let's see the following images for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png){: width="800"}
+
 
 <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png){: width="800"}
+
 
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png" width="800"/>
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png){: width="800"}
+
 
 <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 
@@ -61,11 +64,11 @@ A [test case][]'s constraints are nodes in variations of a data set. The data se
 
 Constraints are performed in order they listed in the data set. However, you can use `prev` (previous) and `next` attributes to set your custom order.
 
-{%highlight xml%}
+```xml
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryForm"/>
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategoryForm" prev="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryPage"/>
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" prev="Magento\Catalog\Test\Constraint\AssertCategoryForm" />
-{%endhighlight%}
+```
 
 <div class="bs-callout bs-callout-warning">
     <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
@@ -80,7 +83,7 @@ A test can contain constraints from different modules.
 
 The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints. 
 
-{%highlight xml%}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -99,7 +102,7 @@ The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/
     </testCase>
 </config>
 
-{%endhighlight%}
+```
 
 Immediately after the test steps complete, both constraints are performed in the order listed.
 
@@ -120,19 +123,19 @@ To assign severity tags do the following:
 * Create `di.xml` file in `Test/etc` of the module.
 * Assign `severity` to constraints in the following format:
 
-{%highlight xml%}
+```xml
 <type name="Magento\[Module_name]\Test\Constraint\Assert...">
     <arguments>
         <argument name="severity" xsi:type="string">high|middle|low</argument>
     </arguments>
 </type>
-{%endhighlight%}
+```
 
 For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`:
 
-{%highlight xml%}
+```xml
 {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
-{%endhighlight%}
+```
 
 ## How to create constraint {#mtf_constraint_create}
 
@@ -149,7 +152,7 @@ Step 2. What name should constraint have?
 
 Step 3. Create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php` with [required structure](#mtf_constraint_assert)
 
-{% highlight php %}
+```php
 
 <?php
 
@@ -183,13 +186,13 @@ class AssertWidgetInGrid extends AbstractConstraint
     }
 }
 
-{% endhighlight %}
+```
 
 Step 4. Implement assertion in `processAssert()`
 
 **Assertion logic**: Take title of the widget from the widget [fixture][], open the page with a grid, check if the grid has our title.
 
-{% highlight php %}
+```php
 
 <?php
 
@@ -230,19 +233,19 @@ class AssertWidgetInGrid extends AbstractConstraint
     }
 }
 
-{% endhighlight %}
+```
 
 ## How to use constraint {#mtf_constraint_use}
 
 To use constraint we've created in previous section, add a corresponding node to the [data set][] of your test
 
-{%highlight xml%}
+```xml
 <constraint name="Magento\Widget\Test\Constraint\AssertWidgetInGrid" />
-{%endhighlight%}
+```
 
 in the order that it must be performed.
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\Widget\Test\TestCase\CreateWidgetEntityTest" summary="Create Widget" ticketId="MAGETWO-27916">
         <variation name="CreateWidgetEntityTestVariation1">
@@ -258,7 +261,7 @@ in the order that it must be performed.
         </variation>
     </testCase>
 </config>
-{%endhighlight%}
+```
 
 <!-- LINK DEFINITIONS -->
 

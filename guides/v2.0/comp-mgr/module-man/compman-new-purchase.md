@@ -14,7 +14,7 @@ functional_areas:
 
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
-<img src="{{ site.baseurl }}/common/images/compman_new-purchases-step3install.png" width="500px">
+![]({{ site.baseurl }}/common/images/compman_new-purchases-step3install.png){: width="500px"}
 
 If the list of purchases is correct, click **Install**.
 
@@ -73,6 +73,6 @@ Please re-run Magento compile command
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}/common/images/cman_new-purchases_finish.png" width="300px">
+![]({{ site.baseurl }}/common/images/cman_new-purchases_finish.png){: width="300px"}
 
 Click **Back to Setup Tool**.

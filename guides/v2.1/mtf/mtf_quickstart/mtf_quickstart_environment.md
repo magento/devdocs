@@ -12,7 +12,7 @@ You can download the Selenium Server from [Selenium project website].
 Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Server.
 </div>
 
-Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a>
+Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium serverversion.](http://docs.seleniumhq.org/about/platforms.jsp)
 
 <div class="bs-callout bs-callout-info" markdown="1">
 Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
@@ -49,7 +49,7 @@ Enter in terminal:
 
 ## Next Steps {#mtf_install_pre}
 
-[&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+[\<\< Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [Test run\>\>]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
 
 
 <!-- LINK DEFINITIONS -->
