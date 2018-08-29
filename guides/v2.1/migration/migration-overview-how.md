@@ -55,13 +55,13 @@ Mapping files are discussed in more detail in [Data Migration Tool Technical Spe
 
 [Data Migration Tool Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
 
-[Migration Modes]: {{page.baseurl}}/migration/images/MigrationModes2.png
+[Migration Modes]: ./images/MigrationModes2.png
 {: height="220px" width="930px"}
 
-[Migration Overview]: {{page.baseurl}}/migration/images/MigrationOverview2.png
+[Migration Overview]: ./images/MigrationOverview2.png
 {: height="627px" width="930px"}
 
-[Migration Steps]: {{page.baseurl}}/migration/images/MigrationSteps2.png
+[Migration Steps]: ./images/MigrationSteps2.png
 {: height="247px" width="930px"}
 
 [Migration Flow]: {{site.baseurl}}/common/images/migration_flow.png
