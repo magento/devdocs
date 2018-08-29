@@ -12,7 +12,7 @@ functional_areas:
 ---
 
 ## Before you begin
-{% include install/before-you-begin-web.html %}
+{% include install/before-you-begin-web.md %}
 
 {% include install/web/install-web_2-db.md %}
 

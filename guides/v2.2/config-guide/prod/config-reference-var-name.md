@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Use environment variables to override configuration settings
-menu_title: Use environment variables to override configuration settings
-menu_order: 5700
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: config-ref
 functional_areas:
   - Configuration
   - System
@@ -58,8 +52,8 @@ The general format of system settings variable names follows:
 	For more information about scopes, see:
 
 	*	[Step 1: Find the website or store view scope value](#deploy-system-vars-scopes)
-	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
-	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
+	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
+	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)
 
 `<SYSTEM__VARIABLE__NAME>` is the configuration path with double underscore characters substituted for `/`. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
 
@@ -212,7 +206,7 @@ To find the variable name for the shipping country origin:
 
 ## How to use environment variables
 
-Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php){:target="\_blank"} associate array. You can set the values in any PHP script that runs when Magento runs, such as `index.php`.
+Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php) associate array. You can set the values in any PHP script that runs when Magento runs, such as `index.php`.
 
 An example of setting two values follows:
 
@@ -223,13 +217,12 @@ $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '123
 
 A step-by-step example is shown in [Set configuration values using environment variables]({{ page.baseurl }}/config-guide/deployment/pipeline/example/environment-variables.html).
 
-<div class="bs-callout bs-callout-warning" markdown="1">
--   To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order){:target="\_blank"}.
+{:.bs-callout .bs-callout-warning}
+-   To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order).
 -   For {{site.data.var.ece}}, if you're attempting to override Magento configuration settings using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
-</div>
 
 #### Related information
 
-*	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
-*	[Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
+*	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
+*	[Magento User Guide scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html)

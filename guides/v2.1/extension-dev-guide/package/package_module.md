@@ -9,12 +9,6 @@ redirect_from:
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
-#### Contents
-
-*   <a href="#package-over">Overview of packaging</a>
-*   <a href="#composer">Create a Magento Composer file</a>
-*   <a href="#packaging">Package and publish your extension</a>
-
 ## Overview of packaging {#package-over}
 
 The Magento application uses {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages to distribute, install, and upgrade components in an application instance.
@@ -38,7 +32,7 @@ Element | Description
 --- | ---
 `name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words.
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
-`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.
+`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see [Autoloading](https://getcomposer.org/doc/01-basic-usage.md#autoloading) from Composer.
 
 
 {% include php-dev/composer-types.md %}

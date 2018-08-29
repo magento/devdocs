@@ -283,7 +283,8 @@ To customize your logo using a theme:
 1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **Design** > **Emails**
 2. In the **Scope** drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). 
 3. Upload your logo and specify the alternative text for it.
-<img src="{{ site.baseurl }}/common/images/email_configuration.png" alt="System configuration">
+
+    ![System configuration]({{ site.baseurl }}/common/images/email_configuration.png)
 
 4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
 5. Click the **Save Config** button.

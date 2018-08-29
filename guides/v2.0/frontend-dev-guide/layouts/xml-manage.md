@@ -308,7 +308,7 @@ put the stock availability and SKU blocks next to the product price on a product
 
 In the Magento Blank theme these elements are located as follows:
 
-<img src="{{ site.baseurl }}/common/images/layout_image1.png" />
+![]({{ site.baseurl }}/common/images/layout_image1.png)
 
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
@@ -325,7 +325,7 @@ To do this, add the extending `catalog_product_view.xml` in the `app/design/fron
 
 This would make the product page look like following:
 
-<img src="{{ site.baseurl }}/common/images/layout_image2.png" />
+![]({{ site.baseurl }}/common/images/layout_image2.png)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

@@ -5,13 +5,9 @@ title: Date component
 menu_title: Date component
 ---
 
-## Overview
-
 The Date component implements a custom date input field. It uses a date picker implementation provided by the [calendar widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html).
 
-## Date configuration
-
-Extends all `abstract` configuration.
+## Configuration options
 
 <table>
   <tr>

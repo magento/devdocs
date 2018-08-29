@@ -1,5 +1,3 @@
-<div markdown="1">
-
 For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.
 
 #### Install htpasswd if necessary
@@ -23,11 +21,11 @@ Enter the following commands as a user with `root` privileges:
 	mkdir -p /usr/local/apache/password
 	htpasswd -c /usr/local/apache/password/.<password file name> <username>
 
-where 
+where
 
 *	`<username>` can be:
 
-	*	Setting up cron: the web server user or another user. 
+	*	Setting up cron: the web server user or another user.
 
 		In this example, we use the web server user but the choice of user is up to you.
 	*	Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example

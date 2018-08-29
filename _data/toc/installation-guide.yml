@@ -123,7 +123,7 @@ pages:
             - label: Optional software
               url: /install-gde/prereq/optional.html
 
-            - label: Set up the updater (obsolete)
+            - label: Set up the updater
               url: /install-gde/prereq/prereq_updater.html
 
         - label: Get the Magento software

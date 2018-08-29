@@ -4,18 +4,15 @@ title: Update the Magento Functional Testing Framework
 functional_areas:
  - Testing
 mftf-release: 2.3.0
+redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/update.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% include note.html
-type='info'
-content='Availability in the Magento codebase:
-- The latest release available in the Magento 2.2 codebase (the `2.2-develop` branch) is MFTF 2.2.0.
-- The latest release available in the Magento 2.3 codebase (the `2.3-develop` branch) is MFTF 2.3.0.
-'
-%}
+{% if page.guide_version == "2.2" %}
+{% include_relative include/note-2.2-docs.md %}
+{% endif %}
 
 Magento tests and the framework are stored in different repositories.
 
@@ -26,7 +23,7 @@ The MFTF is installed separately as a dependency using Composer.
 When pulling the latest Magento code, update the corresponding Composer dependencies in the `magento2` root directory.
 This ensures that the MFTF is up to date.
 
-## Update the MFTF to 2.3.0
+## Update the MFTF from 2.2
 
 To update the MFTF (via a command line interface):
 

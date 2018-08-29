@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: Install a third-party storefront theme
-menu_title: Install a third-party storefront theme
-menu_order: 2
 functional_areas:
   - Frontend
   - Theme

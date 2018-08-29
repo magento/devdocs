@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## Step 2: Add a Database   {#instgde-install-magento-web-step2}
 
 1.	Enter the following information:
@@ -35,6 +33,5 @@
 	</tr>
 	</tbody>
 	</table>
-	
-3.	Click **Next**.
 
+3.	Click **Next**.

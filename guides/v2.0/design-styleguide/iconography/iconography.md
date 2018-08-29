@@ -28,7 +28,7 @@ However, an icon or a design element in an icon can sometimes serve different fu
 
 In the Magento Admin, icons have a simple, flat, single-color, and two-dimensional style. This style prevents loss of detail at smaller sizes and makes the shapes easier to recognize.
 
-<img src="img/Magento-icon-contact-sheet.png">
+![](img/Magento-icon-contact-sheet.png)
 
 ## Creating Icons
 
@@ -56,11 +56,11 @@ For any icon to be used in Magento Admin, ask the Magento Product Team to review
 
 Here's one method to get started:  
 
-<img src="img/icon-construction-guide.png">
+![](img/icon-construction-guide.png)
 
 Learn how to use the icon grid:
 
-<img src="img/using-icon-grid.png">
+![](img/using-icon-grid.png)
 
 ## Icon Fonts
 

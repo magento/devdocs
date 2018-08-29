@@ -69,4 +69,4 @@ For more information, see the [Functional Testing Framework]({{ page.baseurl }}/
 
 ## Related topics
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+[Architecturalbasics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)

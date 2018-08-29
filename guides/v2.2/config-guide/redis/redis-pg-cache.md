@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Redis
 title: Use Redis for the Magento page and default cache
-menu_title: Use Redis for the Magento page and default cache
-menu_order: 5
-menu_node:
 functional_areas:
   - Configuration
   - System
@@ -109,7 +105,7 @@ where
 <tr>
 <td>page-cache-redis-compress-data</td>
 <td>compress_data</td>
-<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy" target="_blank">snappy</a>, <a href="https://github.com/Cyan4973/lz4" target="_blank">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html" target="_blank">lzf</a>. If none of them available, Redis uses gzip.</td>
+<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy">snappy</a>, <a href="https://github.com/Cyan4973/lz4">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html">lzf</a>. If none of them available, Redis uses gzip.</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -162,5 +158,5 @@ As a result of the two example commands, Magento adds lines similar to the follo
 #### Related topics
 
 *	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
-*  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

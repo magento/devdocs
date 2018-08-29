@@ -17,7 +17,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites   {#instgde-cli-subcommands-configphp-prereq}
@@ -144,7 +144,7 @@ If applicable, continue your Magento software installation:
 <!-- <h2 id=\"instgde-cli-subcommands-dep-config-enable-modules\">About enabling and disabling
 modules</h2>
 
-{% include install/enable-disable-modules.html %} -->
+{% include install/enable-disable-modules.md %} -->
 
 #### Related topics
 

@@ -30,7 +30,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 
 Magento provides two themes out of the box: Blank and Luma. If Magento is installed with sample data, the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} applied after installation is Luma. If no sample data is installed, the Blank theme is installed by default.
 
-<img src="{{ site.baseurl }}/common/images/css_guide_luma_.png" alt="Storefront with Luma applied">
+![Storefront with Luma applied]({{ site.baseurl }}/common/images/css_guide_luma_.png)
 
 Luma inherits from Blank, which contains all the basic functionality and styling required for a theme.
 

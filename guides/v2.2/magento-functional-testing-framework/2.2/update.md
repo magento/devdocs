@@ -1,15 +1,16 @@
 ---
 group: mftf
 title: Update the Magento Functional Testing Framework
-version: 2.2
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: guides/v2.2/magento-functional-testing-framework/release-2/update.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/update.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
+
+{% include_relative include/note-2.3-docs.md %}
 
 Magento tests and the framework are stored in different repositories.
 

@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 09_Varnish
 title: Advanced Varnish configuration
-menu_title: Advanced Varnish configuration
-menu_order: 16
-menu_node:
 functional_areas:
   - Configuration
   - System
@@ -35,7 +31,7 @@ Every 5 seconds, this health check calls the `pub/health_check.php` script. This
 
 The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
 
-For more information, see the <a href="https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks" target="_blank">Varnish health checks</a> documentation.
+For more information, see the [Varnish health checks](https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks) documentation.
 
 ## Grace mode {#grace}
 
@@ -173,4 +169,4 @@ sub vcl_backend_response {
 
 #### Final step
 
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>
+[Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

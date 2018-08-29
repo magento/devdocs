@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites with Apache
-menu_title: Tutorial&mdash;Set up multiple websites with Apache
-menu_order: 9
-menu_node:
 functional_areas:
   - Configuration
   - System
@@ -22,7 +18,7 @@ If necessary, copy the existing `index.php` entry point script for your {% gloss
     Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
 *   You use one virtual host per website; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
-    Different versions of Apache on different operating systems set up virtual hosts differently. Consult the [Apache documentation](https://httpd.apache.org/docs/2.4/vhosts){:target="_blank"} or a network administrator if you're not sure how to set up a virtual host.
+    Different versions of Apache on different operating systems set up virtual hosts differently. Consult the [Apache documentation](https://httpd.apache.org/docs/2.4/vhosts) or a network administrator if you're not sure how to set up a virtual host.
 *   The Magento software is installed in `/var/www/html/magento2`
 *   You have two websites other than the default:
 
@@ -46,8 +42,8 @@ This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`
 
 For more information about `SetEnvIf`, see:
 
-*   [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html){:target="_blank"}
-*   [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html){:target="_blank"}
+*   [Apache 2.2](http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html)
+*   [Apache 2.4](http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html)
 
 {% collapsible To create Apache virtual hosts: %}
 
@@ -57,24 +53,26 @@ For more information about `SetEnvIf`, see:
 2. Locate the section starting with `<VirtualHost *:80>`.
 3. Create the following virtual hosts after any existing virtual hosts:
 
-        <VirtualHost *:80>
-           ServerName          mysite.mg
-           DocumentRoot        /var/www/html/magento2/pub/
-        </VirtualHost>
+    ```terminal
+    <VirtualHost *:80>
+       ServerName          mysite.mg
+       DocumentRoot        /var/www/html/magento2/pub/
+    </VirtualHost>
 
-        <VirtualHost *:80>
-           ServerName          french.mysite.mg
-           DocumentRoot        /var/www/html/magento2/pub/
-           SetEnv MAGE_RUN_CODE "french"
-           SetEnv MAGE_RUN_TYPE "website"
-        </VirtualHost>
+    <VirtualHost *:80>
+       ServerName          french.mysite.mg
+       DocumentRoot        /var/www/html/magento2/pub/
+       SetEnv MAGE_RUN_CODE "french"
+       SetEnv MAGE_RUN_TYPE "website"
+    </VirtualHost>
 
-        <VirtualHost *:80>
-           ServerName          german.mysite.mg
-           DocumentRoot        /var/www/html/magento2/pub/
-           SetEnv MAGE_RUN_CODE "german"
-           SetEnv MAGE_RUN_TYPE "website"
-        </VirtualHost>
+    <VirtualHost *:80>
+       ServerName          german.mysite.mg
+       DocumentRoot        /var/www/html/magento2/pub/
+       SetEnv MAGE_RUN_CODE "german"
+       SetEnv MAGE_RUN_TYPE "website"
+    </VirtualHost>
+    ```
 
 5.  Save your changes to `httpd.conf` and exit the text editor.
 6.  Restart Apache:

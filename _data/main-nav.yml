@@ -6,11 +6,14 @@
 
     - label: Extension Update and System Upgrade Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
-      include_versions: ['2.2', '2.3']
+      exclude_versions: ['2.0', '2.1']
 
     - label: Component Manager and System Upgrade Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
       include_versions: ['2.0', '2.1']
+
+    - label: Configuration Guide
+      url: /config-guide/bk-config-guide.html
 
     - label: Performance Best Practices
       url: /performance-best-practices/

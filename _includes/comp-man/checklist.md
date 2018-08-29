@@ -1,14 +1,11 @@
-<div markdown="1">
-
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
 *	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
 *	Your [cron jobs](#magento-cron) are set up and running
 *	[File system permissions](#perms) are set properly
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Magento file system owner and group {#magento-owner-group}
 

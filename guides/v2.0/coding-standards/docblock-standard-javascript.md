@@ -13,9 +13,9 @@ functional_areas:
 ## Introduction   {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
 To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){: target="_blank"} regulations.
 
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt){: target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Use JSDoc   {#frontend-dev-guide-javascript-js-coding-docblock-use}
 
@@ -85,7 +85,7 @@ A description must be provided along with parameters. Method descriptions should
 &nbsp;*
 &nbsp;*&nbsp;@param&nbsp;{project.MyClass}&nbsp;obj&nbsp;Instance&nbsp;of&nbsp;MyClass&nbsp;which&nbsp;leads&nbsp;to&nbsp;a&nbsp;long
 &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment&nbsp;that&nbsp;needs&nbsp;to&nbsp;be&nbsp;wrapped&nbsp;to&nbsp;two&nbsp;lines.
-&nbsp;*&nbsp;@return&nbsp;{boolean}&nbsp;Whether&nbsp;something&nbsp;occured.
+&nbsp;*&nbsp;@return&nbsp;{boolean}&nbsp;Whether&nbsp;something&nbsp;occurred.
 &nbsp;*/
 function&nbsp;someMethod(obj)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...

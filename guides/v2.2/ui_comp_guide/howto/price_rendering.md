@@ -325,8 +325,8 @@ The following is sample template code that is rendered for the tax adjustment co
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html
-[special-price-html]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
-[widget-recently-viewed-xml]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[special-price-html]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
 [ui-component-declaration]: {{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html
-[price-box]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
-[final-price]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
+[price-box]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
