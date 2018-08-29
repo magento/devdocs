@@ -2,18 +2,16 @@
 
 group: release-notes
 title: Magento Open Source 2.2.6 Release Notes
-<<<<<<< HEAD
 
-=======
->>>>>>> 1c1f993f1746ebd93cc835aab23fe5d67872f275
 ---
+
 *Patch code and release notes published on  2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.6) have been ported to 2.1.15, 1.14.3.10, and 1.9.3.10.
 
 
 ## Highlights
