@@ -1,21 +1,18 @@
 ---
 group: migration
 title: How migration works
-redirect_from: /guides/v1.0/migration/migration-overview-how.html
 ---
-
-## Conceptual Overview
 
 This topic provides a high-level overview of how data is migrated from Magento 1 to Magento 2 using the Data Migration Tool.
 
-### Terminology
+## Terminology
 
 * **Modes** - an ordered set of operations for migrating data from Magento 1.x to Magento 2.x.
 * **Steps** - the tasks in a mode that define the kinds of data to migrate.
 * **Stages** - the subtasks in step that actually migrates the data (validating, transferring, and verifying).
 * **Map file** - set of rules that describe connections between Magento 1.x and Magento 2.x data structures for completing the stages.
 
-### Modes
+## Modes
 
 The Data Migration Tool splits the migration process into three phases or *modes* in order to transfer and adapt data from Magento 1.x to Magento 2.x. The three modes are listed here and must be run in this order:
 
@@ -25,20 +22,24 @@ The Data Migration Tool splits the migration process into three phases or *modes
 
 ![Migration Modes]
 
-### Steps
+## Steps 
+
 The Data Migration Tool uses a list of *steps* within each mode to migrate a particular type of data. For example, in the Settings mode, there are two steps used to migrate the all the settings data: the Stores step and the Settings step. Details about the the specific data that is migrated in each of these steps (as well as for steps in the other modes), can be found in the [Data Migration Tool Technical Specification].
 
 ![Migration Overview]
 
-### Stages
-Within each step are three *stages* that are always executed in this order to ensure the data gets properly migrated: 
+## Stages
+
+Within each step are three *stages* that are always executed in this order to ensure the data gets properly migrated:
+ 
 1. **Integrity Check**: Compares the table field names, types,  and other info to verify compatibility between Magento 1 and 2 data structures.
 2. **Data Transfer**: Transfers the data table by table from Magento 1 and 2.
 3. **Volume Check**: Compares the number of records  between tables to verify that the transfer was successful.
 
 ![Migration Steps]
 
-### Map files
+## Map files
+
 At the lowest level of the migration processes are the *map files*. The Data Migration Tool uses map files within the stages of a step to transform different data structures between the Magento 1.x and 2.x tables. 
 
 For example, when you transform data from a {{site.data.var.ce}} 1.8.0.0 database to {{site.data.var.ce}} 2.x.x, the map file accounts for the fact that a table was renamed, and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is, including data from tables created by extensions, to the Magento 2 database.
@@ -47,12 +48,13 @@ When differences are not declared in map files, then the Data Migration Tool dis
 
 Mapping files are discussed in more detail in [Data Migration Tool Technical Specification].
 
-### Migration flow diagram
+## Migration flow diagram
 
 ![Migration Flow]
 
 
 
+<!-- Link definitions -->
 [Data Migration Tool Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
 
 [Migration Modes]: {{site.baseurl}}/common/images/MigrationModes2.png
