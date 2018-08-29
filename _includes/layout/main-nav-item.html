@@ -7,7 +7,7 @@
 {% endif %}
 
 {% unless item.exclude_versions contains compare_version %}
-{% if item.include_versions.size == nil or item.include_versions contains compare_version %}
+{% if item.include_versions.size == nil or item.include_versions contains compare_version or item.include_versions contains 'all' %}
   {% assign base = '' %}
   {% if item.versionless %}
     {% assign base = site.baseurl %}

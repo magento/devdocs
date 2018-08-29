@@ -58,11 +58,11 @@
 
         - label: UI Components
           url: /ui-components/ui-component.html
-          exclude_versions: ['2.0']
+          include_versions: ['2.0']
 
         - label: UI Components Guide
           url: /ui_comp_guide/bk-ui_comps.html
-          include_versions: ['2.0']
+          exclude_versions: ['2.0']
 
         - label: JavaScript Developer Guide
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
