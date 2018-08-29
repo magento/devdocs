@@ -40,9 +40,7 @@ The Magento UI library provides the ability to customize and reuse the following
 
 The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} product page containing some of the preceding elements:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_lib1.png" alt="A product page with user interface elements specified">
-</div>
+![A product page with user interface elements specified]({{ site.baseurl }}/common/images/ui_lib1.png)
 
 ## Mixin location {#fedg_using-ui-lib_mixins}
 
@@ -101,7 +99,7 @@ To change the default library variables values, specify the new values for the r
 
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.
 
-<img src="{{ site.baseurl }}/common/images/ui_lib2.png" alt="Changing design by redefining variables">
+![Changing design by redefining variables]({{ site.baseurl }}/common/images/ui_lib2.png)
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 

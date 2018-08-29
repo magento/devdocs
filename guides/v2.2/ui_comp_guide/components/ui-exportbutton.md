@@ -104,7 +104,7 @@ By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition [\`Magento/Ui/view/base/ui\_component/etc/definition.xml\`]({{ page.baseurl }}/ui-library/ui-definition.html)
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 
@@ -112,5 +112,5 @@ To add new export format:
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/export.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
 

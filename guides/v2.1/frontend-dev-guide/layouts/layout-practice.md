@@ -88,9 +88,9 @@ OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/t
 </container>
 ```
 
-(See [app/code/Magento/Theme/view/frontend/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
+(See [app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
 
-Other modules use this block to add their specific links to the header using the [referenceBlock]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23)
+Other modules use this block to add their specific links to the header using the [referenceBlock]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23)
 
 The Luma theme [moves]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.  
 
@@ -163,7 +163,7 @@ defines the template which is used as the drop-down container : `<Magento_Custom
     <?php endif; ?>
 ```
 
-See [app/code/Magento/Customer/view/frontend/templates/account/customer.phtml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml).
+See [app/code/Magento/Customer/view/frontend/templates/account/customer.phtml]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/templates/account/customer.phtml).
 
 ### Step 3: Extend the base layout to add a block
 

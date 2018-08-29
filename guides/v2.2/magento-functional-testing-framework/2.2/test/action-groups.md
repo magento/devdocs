@@ -4,6 +4,7 @@ title: Action groups
 functional_areas:
  - Testing
 mftf-release: 2.1.0
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/action-groups.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._

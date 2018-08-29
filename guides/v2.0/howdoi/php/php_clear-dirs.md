@@ -7,12 +7,6 @@ menu_node:
 menu_order: 200
 ---
 
-#### Contents
-
-*	<a href="#howdoi-clear-over">Overview of directory clearing</a>
-*	<a href="#howdoi-clear-what">What directories to clear</a>
-*	<a href="#howdoi-clear-how">How to clear the directories</a>
-
 ## Overview of directory clearing   {#howdoi-clear-over}
 
 While you're developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won't function properly.

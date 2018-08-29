@@ -103,7 +103,7 @@ For these environments, you are pushing code from repository to repository: Inte
 
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="\_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 
@@ -116,7 +116,7 @@ Options:
 	v verbose
 	P partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
+For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
 
 To migrate static files:
 
@@ -132,7 +132,7 @@ To migrate static files:
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="\_blank"}.
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 

@@ -8,14 +8,6 @@ functional_areas:
   - Setup
 ---
 
-#### Contents
-
-*	[Overview of secure web server communication](#es-ws-secure-over)
-*	[Set up a proxy](#es-nginx-proxy)
-*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
-*	[Secure communication with nginx](#es-ws-secure-nginx)
-*	[Verify communication is secure](#es-ws-secure-verify)
-
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-nginx-proxy}

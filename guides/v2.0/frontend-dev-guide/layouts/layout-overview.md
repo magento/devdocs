@@ -17,7 +17,7 @@ This article describes the basic concepts you need to know to create layouts for
 
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
-<img src="{{ site.baseurl }}/common/images/layouts_block_containers_defn21.png"/>
+![]({{ site.baseurl }}/common/images/layouts_block_containers_defn21.png)
 
 (1) *Layouts* provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.
 

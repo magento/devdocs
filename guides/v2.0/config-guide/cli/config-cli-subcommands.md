@@ -32,7 +32,7 @@ You can run the commands in any of the following ways:
 
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="\_blank"} `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="_blank"} `<your Magento install dir>/bin` to your system `PATH`)
 </div>
 
 ## Command summary {#config-cli-summary}

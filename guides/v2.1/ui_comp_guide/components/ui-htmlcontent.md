@@ -85,5 +85,5 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 Extends `uiComponent`:
 
-- [app/code/Magento/Ui/view/base/web/js/form/components/html.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
-- [app/code/Magento/Ui/view/base/web/templates/content/content.html](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/content/content.html)
+- [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
+- [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/content/content.html)

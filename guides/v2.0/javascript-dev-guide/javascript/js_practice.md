@@ -46,7 +46,7 @@ We see that the script which OrangeCo needs to alter is `gallery.js`.
 
 To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html#locate_widget">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
-<img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
+![RequireJS config file]({{ site.baseurl }}/common/images/fdg_pr_2.png)
 
 ### Step 2: Add the custom widget extending the gallery widget   {#add_code1}
 

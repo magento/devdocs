@@ -44,7 +44,6 @@ Always close self-closing tags.
 <input type="text" name="username">
 {%endhighlight%}
 
-
 **Recommended**
 {%highlight html%}
 <br />
@@ -107,7 +106,7 @@ Use no space before the colon and one space after the colon for the sake of read
 
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
+![]({{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png)
 
 ## Class names
 
