@@ -5,6 +5,7 @@ redirect_from: /guides/v1.0/migration/migration-overview-how.html
 ---
 
 ## Conceptual Overview
+
 This topic provides a high-level overview of how data is migrated from Magento 1 to Magento 2 using the Data Migration Tool.
 
 ### Terminology
@@ -20,7 +21,7 @@ The Data Migration Tool splits the migration process into three phases or *modes
 
 1. **Settings Mode**: migrates the system configuration and website-related settings.
 2. **Data Mode**: migrates database assets in bulk.
-3. **Delta Mode**: migrates incremental changes (changes since the last run), such as orders and inventory.
+3. **Delta Mode**: migrates incremental changes (changes since the last run), such as new customers and orders.
 
 ![Migration Modes]
 
@@ -31,7 +32,7 @@ The Data Migration Tool uses a list of *steps* within each mode to migrate a par
 
 ### Stages
 Within each step are three *stages* that are always executed in this order to ensure the data gets properly migrated: 
-1. **Integration Check**: Compares the table field names, types,  and other info to verify compatibility between Magento 1 and 2 data structures.
+1. **Integrity Check**: Compares the table field names, types,  and other info to verify compatibility between Magento 1 and 2 data structures.
 2. **Data Transfer**: Transfers the data table by table from Magento 1 and 2.
 3. **Volume Check**: Compares the number of records  between tables to verify that the transfer was successful.
 
@@ -53,11 +54,11 @@ Mapping files are discussed in more detail in [Data Migration Tool Technical Spe
 
 [Data Migration Tool Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
 
-[Migration Modes]: ./images/MigrationModes2.png
+[Migration Modes]: images/MigrationModes2.png
 {: height="220px" width="930px"}
 
-[Migration Overview]: ./images/MigrationOverview2.png
+[Migration Overview]: images/MigrationOverview2.png
 {: height="627px" width="930px"}
 
-[Migration Steps]: ./images/MigrationSteps2.png
+[Migration Steps]: images/MigrationSteps2.png
 {: height="247px" width="930px"}
