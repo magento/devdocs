@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
+[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. 
 
 New Relic APM provides the following features to Magento:
 
@@ -17,13 +17,47 @@ New Relic APM provides the following features to Magento:
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
-Your {{site.data.var.ece}} account includes the agent software for New Relic; you do not need to purchase or install the New Relic extension (different than the APM service). You receive your credentials and license information from Magento during launch and can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
+By default, the {site.data.var.ece}} Pro plan includes New Relic on the Staging and Production environments. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation. For {{site.data.var.ece}} Pro plan customers also need to submit a support ticket to use New Relic on an Integration branch. 
 
-By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
-## Add New Relic extension to your project
+{:.bs-callout .bs-callout-info}
+Your Magento Commerce Cloud account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
-You must list the New relic extension in the `.magento.app.yaml` file:
+## New Relic account credentials
+
+When Magento provisions your {{site.data.var.ece}} project, the Project Owner should receive an email from New Relic with the credentials and instructions for accessing the account. If you did not receive the email, you can use the Project Owner email address to [reset the password](https://rpm.newrelic.com/forgot_password).
+
+If you cannot access the New Relic account, submit a [Magento support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+
+
+## Add account users
+
+{{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
+
+We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and usage of the tool.
+
+1.  Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
+
+1.  From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings > Account > Users and roles**.
+
+1.  Click **New user**.
+
+1.  Add the name and email address for the account.
+
+1.  Assign the user role: *Admin*, *User*, or *Restricted*.
+
+1.  Click **Add user**.
+
+1.  Ask the new user to check their email for a New Relic notification with account information.
+
+
+See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Relic documentation for information about user roles, managing user accounts, and changing account ownership.
+
+
+
+## Add the New Relic extension to your project
+
+You must list the New Relic extension in the `.magento.app.yaml` file for your project. 
 
 ```
 runtime:
@@ -33,26 +67,41 @@ runtime:
 
 ## Add New Relic APM to an environment
 
-The {{site.data.var.ece}} plans to support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
+The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Pro Staging and Production environments, and you can add the license to one other environment of your choice. 
 
-{% include note.html type="info" content="If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. 
+{:.bs-callout .bs-callout-info}
+If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
+Contact your Magento technical account manager or New Relic sales (sales@newrelic.com) if you want to use New Relic on more than three environments.
 
-If you are interested in using New Relic on more than three active environments, contact your dedicated Launch Manager for details, or you can contact New Relic directly at sales@newrelic.com." %}
+
+#### To get your New Relic license key:
+
+1.  Open your [account page](https://accounts.magento.cloud/user/).
+
+1.  On the Projects tab, find your project.
+
+1.  Click **View Details** to see the project provisioning information.
+
+1.  Expand the **NewRelic Service** section to view the license key.
+
+1.  Copy the license key.
+
+You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
+
 
 #### To add a New Relic license key to an environment:
+
 
 ```bash
 magento-cloud variable:set php:newrelic.license <your-new-relic-license-key>
 ```
 
-If you have more than three active environments using the same New Relic license key, you must remove a license variable from an existing environment.
-
 #### To remove a New Relic license key:
 
 1.  List all variables.
 
-    For project variables: `magento-cloud pvget`  
-    For environment variables: `magento-cloud vget`
+    -  For project variables: `magento-cloud pvget`  
+    -  For environment variables: `magento-cloud vget`
 
 1.  Delete a variable.
 
@@ -68,7 +117,8 @@ If you have more than three active environments using the same New Relic license
     magento-cloud variable:delete php:newrelic.license
     ```
 
-{% include note.html type="warning" content="If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit." %}
+{:.bs-callout .bs-callout-warning}
+If you added the license as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit.
 
 ## Investigate performance
 
@@ -90,7 +140,7 @@ All collected data details the time spent on an action transmitting data, querie
 
 ## New Relic and Blackfire
 
-You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
+You can use the high-level data captured by New Relic APM along with the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to get a comprehensive view of your Magento store performance.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.
