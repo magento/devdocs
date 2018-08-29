@@ -1570,12 +1570,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
-<p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
-<p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
-   Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
-</p>
-<p>To address these issues, the Magento system introduces <i>service contracts</i>.</p>
+			<p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price. Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
+
+<p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento. Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.</p>
+
+<p>To address these issues, the Magento system introduces <em>service contracts</em>.</p>
 
 <h2 id="what-is-msc">What is a service contract?</h2>
 
@@ -1588,31 +1587,26 @@ A service contract includes <a href="/guides/v2.3/extension-dev-guide/service-co
 <p>If developers define data and service interfaces according to a set of <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">designpatterns</a>, the result is a well-defined, durable   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  that other modules and third-party extensions can implement through Magento models and resource models.</p>
 
-<p><img src="/common/images/msc.jpg" /></p>
+<p><img src="/common/images/msc.jpg" alt="Service contracts" /></p>
 
 <h2 id="msc-benefits">Service contract benefits</h2>
 
-<p>Service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <b>composer.json</b> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
+<p>Service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <strong>composer.json</strong> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
 
 <p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">configure services as webAPIs</a>.</p>
 
-<p>Data entities are a side benefit of service contracts.
-   The database tables that normally support these entities can be complicated.
-   For example, some attributes might be stored in an EAV table, so a set of MySQL database tables might define a single data   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
-.
-   Data entities in a service contract reveal a simpler data model than the data model in an underlying relational   <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>
-.
-   Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
-</p>
+<p>Data entities are a side benefit of service contracts. The database tables that normally support these entities can be complicated. For example, some attributes might be stored in an EAV table, so a set of MySQL database tables might define a single data   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+. Data entities in a service contract reveal a simpler data model than the data model in an underlying relational   <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>
+. Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.</p>
 
 <h2 id="using-the-api-tag">Using the @api tag</h2>
 
-<p>Backward compatibility can be indicated by the use of <code class="highlighter-rouge">@api</code>. For more information, see <a href="/guides/v2.3/extension-dev-guide/backward-compatibility.html">Backwardcompatibility</a>.</p>
+<p>Backward compatibility can be indicated by the use of <code class="highlighter-rouge">@api</code>. For more information, see <a href="/guides/v2.3/extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.</p>
 
 <h3 id="related-topics">Related topics</h3>
 
 <ul>
-  <li><a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">Service contract designpatterns</a>&lt;/li&gt;</li>
+  <li><a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
   <li><a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as webAPIs</a></li>
 </ul>
 
