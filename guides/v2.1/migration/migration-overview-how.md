@@ -9,8 +9,8 @@ This topic provides a high-level overview of how data is migrated from Magento 1
 
 * **Modes** - an ordered set of operations for migrating data from Magento 1.x to Magento 2.x.
 * **Steps** - the tasks in a mode that define the kinds of data to migrate.
-* **Stages** - the subtasks in step that actually migrates the data (validating, transferring, and verifying).
-* **Map file** - set of rules that describe connections between Magento 1.x and Magento 2.x data structures for completing the stages.
+* **Stages** - the tasks in step that validate, transfer, and verify the data.
+* **Map files** - XML files that define the rules and connections between Magento 1.x and Magento 2.x data structures for completing the stages.
 
 ## Modes
 
@@ -40,7 +40,7 @@ Within each step are three *stages* that are always executed in this order to en
 
 ## Map files
 
-At the lowest level of the migration processes are the *map files*. The Data Migration Tool uses map files within the stages of a step to transform different data structures between the Magento 1.x and 2.x tables. 
+At the lowest level of the migration processes are the XML *map files*. The Data Migration Tool uses map files within the stages of a step to transform different data structures between the Magento 1.x and 2.x tables. 
 
 For example, when you transform data from a {{site.data.var.ce}} 1.8.0.0 database to {{site.data.var.ce}} 2.x.x, the map file accounts for the fact that a table was renamed, and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is, including data from tables created by extensions, to the Magento 2 database.
 
