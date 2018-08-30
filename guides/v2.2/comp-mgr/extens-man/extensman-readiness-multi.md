@@ -59,12 +59,12 @@ Messages similar to the following display if a readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*	[Updater checkfailure]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
-*	[Cron script checkfailure]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
-*	[Component dependency checkfailure]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
-*	[PHP version readiness checkissues]({{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html)
-*	[PHP settingserrors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
-*	[PHP extensions checkfailure]({{ page.baseurl }}/install-gde/system-requirements.html)
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/updater.html">Updater check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
+*	<a href="{{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
+*	<a href="{{ page.baseurl }}/install-gde/system-requirements.html">PHP extensions check failure</a>
 
 {% endcollapsible %}
 
