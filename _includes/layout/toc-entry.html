@@ -23,22 +23,21 @@
   {% endif %}
 
   {% assign item_url = item.url | prepend: base %}
-
-<li class="{% if page.url == item_url %}active{% endif %} {{ item.class }}">
-    {% if item.url %}
+  {% assign compare_url = page.url | prepend: site.baseurl %}
+<li class="{% if compare_url == item_url %}active{% endif %} {{ item.class }}">
+  {% if item.url %}
     <a href="{{ item_url }}">{{ item.label }}</a>
-    {% else %}
+  {% else %}
     <span>{{ item.label }}</span>
-    {% endif %}
+  {% endif %}
 
-    {% if children %}
+  {% if children %}
     <ul>
       {% for child in children %}
          {% include layout/toc-entry.html section=child %}
       {% endfor %}
     </ul>
-    {% endif %}
+  {% endif %}
 </li>
-
 {% endif %}
 {% endunless %}
