@@ -9,7 +9,7 @@ redirect_to:
 The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
 {:.bs-callout .bs-callout-info}
-The Onboarding Portal is available for new trial accounts and projects for Starter and Pro. Existing projects or non-trial new accounts cannot access the portal at this time. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html)
+The Onboarding Portal is available for new trial accounts and projects for Starter and Pro. Existing projects or non-trial new accounts cannot access the portal at this time.
 
 Through the portal, you can:
 
