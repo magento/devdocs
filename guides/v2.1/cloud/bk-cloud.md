@@ -1,24 +1,103 @@
 ---
 group: cloud
-title: Welcome to Magento Commerce (Cloud)
+title: Magento Commerce Cloud guide
 functional_areas:
   - Cloud
 ---
 
-{{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features, including Git integration and key environments for development, staging, and live production. You can code, test, and deploy across Integration, Staging, and Production environments for _continuous integration_ of your store.
+{{site.data.var.ece}} is a managed, automated hosting platform for {{site.data.var.ee}}. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
-Each {{site.data.var.ece}} plan includes an Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.
+-  Rapid development
+-  Continuous deployment
+-  Customizable
+-  Scalable
+-  Enhanced security
 
-Cloud plans include:
+{{site.data.var.ece}} uses the following technologies:
 
--   Active Git branches of code.
--   Unlimited number of *inactive* Git branches.
--   Robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
--   And the option to add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
+-  **Composer**—to manage dependencies and upgrades and provide a robust build process
+-  **Git**—for local branching and flexible development workflows. The git-based code management makes it easy to integrate with Bitbucket or GitHub.
+-  **Fastly**—for CDN, cloud Varnish caching, and DDoS services.
+-  **New Relic**—provides a complete view of your applications and operating environment to combine key metrics.
+-  **Blackfire profiler**—helps to locate and investigate performance issues.
 
-The {{site.data.var.ece}} architectures use the following technologies:
+{{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.
 
--   Git
--   Composer
--   Secure Shell (SSH)
--   MySQL (including command-line interaction)
+<table>
+  <tbody>
+    <tr>
+      <td class="blank"></td>
+      <th>Starter</th>
+      <th>Pro</th>
+    </tr>
+    <tr>
+      <td>Core features</td>
+      <td>
+        <ul>
+          <li>All Magento 2 core features</li>
+          <li>PayPal Onboarding Tool</li>
+          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>All Magento 2 core features</li>
+          <li>PayPal Onboarding Tool</li>
+          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
+          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Infrastructure and deployment</td>
+      <td>
+        <ul>
+          <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for Magento</li>
+          <li>Continuous cloud integration tools with unlimited users</li>
+          <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
+          <li>
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+          </li>
+          <li>
+            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for Magento</li>
+          <li>Infrastructure-as-a-Service (IaaS) dedicated for Production and Staging</li>
+          <li>Continuous cloud integration tools with unlimited users</li>
+          <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
+          <li>
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
+          </li>
+          <li>
+            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>24x7 email support</td>
+      <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
+      <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
+    </tr>
+    <tr>
+      <td>High availability infrastructure</td>
+      <td class="blank"></td>
+      <td>High availability architecture with a three-server setup in the underlying Infrastructure-as-a-Service (IaaS) to provide enterprise grade reliability and availability</td>
+    </tr>
+    <tr>
+      <td>Dedicated hardware</td>
+      <td class="blank"></td>
+      <td>Isolated and dedicated hardware setup in the underlying Infrastructure-as-a-Service (IaaS) to provide even higher levels of reliability and availability</td>
+    </tr>
+    <tr>
+      <td>Dedicated Launch Manager</td>
+      <td class="blank"></td>
+      <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
+    </tr>
+  </tbody>
+</table>
+
