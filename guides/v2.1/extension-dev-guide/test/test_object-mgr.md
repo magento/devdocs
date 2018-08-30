@@ -17,12 +17,11 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 
 ## ObjectManager methods {#help}
 
-<p>The ObjectManager public interface methods are:</p>
-<ul>
-   <li><a href="#getobject">getObject method</a>. Creates class instances with automatically mocked dependencies.</li>
-   <li><a href="#getCollectionMock">getCollectionMock method</a>. Lists mocked constructor arguments.</li>
-   <li><a href="#getConstructArguments">getConstructArguments method</a>. Creates collection instances that contain specified elements.</li>
-</ul>
+The ObjectManager public interface methods are:
+
+-   [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
+-   [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
+-   [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
 
 ### getObject method {#getobject}
 

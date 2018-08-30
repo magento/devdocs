@@ -18,7 +18,7 @@ This topic shows how to create a new block and explore its structure. It discuss
 
 ## Example {#mtf_block_class}
 
-A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
+A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target="_blank"} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
 {% highlight php inline=true %}
@@ -190,16 +190,16 @@ class Messages extends Block
 
 Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-* [`Magento\Mtf\Block\Block`]{:target=_blank}
-* [`Magento\Mtf\Block\Form`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Tab`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}
-* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target=_blank}
+* [`Magento\Mtf\Block\Block`]{:target="_blank"}
+* [`Magento\Mtf\Block\Form`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Tab`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Grid`]{:target="_blank"}
+* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target="_blank"}
 
 ## Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target=_blank} class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target="_blank"} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target="_blank"} class.
 
 You can use the `_rootElement` to find an element in the current block.
 
@@ -227,7 +227,7 @@ Let's see the [Customer Login]({{ site.mage2000url }}app/code/Magento/Customer/B
 
 The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png)
 
 The mapping file defines the fields from the form.
 
@@ -268,7 +268,7 @@ All nodes are optional. Default value is assigned automatically if a node (`sele
 
 The general structure of the form mapping file:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png)
 
 ## Form tab mapping {#mtf_block_map_form_tab}
 
@@ -277,11 +277,11 @@ To get the block class with form tab mapping, extend your class from <a href="{{
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png)
 
 Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png)
 
 The file contains the following mapping:
 
@@ -369,7 +369,7 @@ On the UI:
 
 The general structure of the form tab mapping file:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png)
 
 ## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
@@ -379,7 +379,7 @@ The form tab mapping files that have the same name and path inside different mod
 
 Form tab mapping files in the following example will be merged automatically:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png)
 
 ## Renders {#mtf_block_render}
 
@@ -491,7 +491,7 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
 
 #### Run the page generator {#mtf_run_page_gen}
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ### Use blocks inside blocks {#mtf_block_in_block}
 
@@ -584,7 +584,7 @@ Details:
 
 **Step 4**. Run the page generator
 
-{%include mtf/page-generator.html%}
+{%include mtf/page-generator.md%}
 
 #### Use a render {#mtf_block_render_use}
 

@@ -12,7 +12,7 @@ The gallery {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% e
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
-<img src="{{ site.baseurl }}/common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
+![A product page with preview and thumbnails]({{ site.baseurl }}/common/images/gallery_scr.png){: width="650px"}
 
 In addition, the [magnifier widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery_mg.html) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 

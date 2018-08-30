@@ -1,4 +1,4 @@
-<div markdown="1">
+
 
 ## Install the Magento software
 

@@ -16,7 +16,7 @@ functional_areas:
 
 ## Before you start your installation   {#instgde-install-cli-prereq}
 
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -29,7 +29,7 @@ The installer is designed to be run multiple times if necessary so you can:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Command summary   {#instgde-cli-summary}
@@ -125,11 +125,11 @@ The following table summarizes the available commands. Commands are shown in sum
 
 ## Help commands   {#instgde-cli-help}
 
-{% include install/cli_help-commands.html %}
+{% include install/cli_help-commands.md %}
 
 ## Common arguments   {#instgde-cli-subcommands-common}
 
-{% include install/cli_common-commands.html %}
+{% include install/cli_common-commands.md %}
 
 ## Commands   {#instgde-cli-subcommands}
 

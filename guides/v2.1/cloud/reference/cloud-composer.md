@@ -8,7 +8,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 

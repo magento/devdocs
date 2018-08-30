@@ -18,6 +18,6 @@ You can use these icons when extending or customizing the Bluefoot CMS module or
 
 ## Icon fonts
 
-We recommend using icon fonts to get the best quality for your icons. The BlueFoot Admin icon fonts can be found <a href="https://github.com/magento-obsessive-owls/bluefoot/tree/master/app/code/Gene/BlueFoot/view/frontend/web/fonts/bluefoot" target="\_blank" data-proofer-ignore>here</a>.
+We recommend using icon fonts to get the best quality for your icons. The BlueFoot Admin icon fonts can be found [here](https://github.com/magento-obsessive-owls/bluefoot/tree/master/app/code/Gene/BlueFoot/view/frontend/web/fonts/bluefoot).
 
 {% include design/icon-fonts.md %}

@@ -13,7 +13,7 @@ functional_areas:
 ---
 
 ## Before you configure the Magento application {#config-install-cli-prereq}
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 ## First steps {#config-cli-before}
 
@@ -32,7 +32,7 @@ You can run the commands in any of the following ways:
 
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="\_blank"} `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="_blank"} `<your Magento install dir>/bin` to your system `PATH`)
 </div>
 
 ## Command summary {#config-cli-summary}
@@ -114,10 +114,10 @@ Before you run any of these commands, you must either [install the Magento appli
 </table>
 
 ## Help commands {#config-cli-help}
-{% include install/cli_help-commands.html %}
+{% include install/cli_help-commands.md %}
 
 ## Common arguments {#config-cli-subcommands-common}
-{% include install/cli_common-commands.html %}
+{% include install/cli_common-commands.md %}
 
 ## Commands {#config-cli-subcommands}
 

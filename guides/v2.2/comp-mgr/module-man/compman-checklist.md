@@ -15,7 +15,7 @@ This section discusses how to start the {% glossarytooltip c1e4242b-1f1a-44c3-9d
 
 ## Prerequisites {#compman-prereq}
 
-Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
 ## Module Manager checklist
 {% include comp-man/checklist_2.2.md %}

@@ -5,8 +5,6 @@ functional_areas:
   - Frontend
 ---
 
-#### Contents
-
 ## Customize email templates {#customize-email-templates}
 
 Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 

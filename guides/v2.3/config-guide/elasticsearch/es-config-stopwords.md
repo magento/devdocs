@@ -8,12 +8,6 @@ functional_areas:
   - Setup
 ---
 
-#### Contents
-
-*	[What are stopwords?](#stopword-overview)
-*	[Configure stopwords](#config-stopwords)
-*	[Change the stopword directory](#config-stopword-dir)
-
 ## What are stopwords? {#stopword-overview}
 
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
@@ -24,10 +18,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html" target="_blank)
-*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html" target="_blank)
-*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html" target="_blank)
-*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank)
+*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html){:target="_blank"}
+*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html){:target="_blank"}
+*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html){:target="_blank"}
+*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html){:target="_blank"}
 
 ## Configure stopwords {#config-stopwords}
 

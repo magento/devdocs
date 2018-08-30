@@ -75,4 +75,4 @@ The Sizes component defines the maximum number of displayed records in a table (
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)

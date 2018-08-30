@@ -414,7 +414,7 @@ Attribute|Type|Use|Description
 
 ### clickWithRightButton
 
-See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target='"_blank"}.
+See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target="_blank"}.
 
 Attribute|Type|Use|Description
 ---|---|---|---

@@ -53,7 +53,7 @@ This section discusses how you find the configuration files necessary to update 
 {% collapsible To find the PHP configuration file, php.ini: %}
 To find the web server configuration, run a <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
-<img src="{{ site.baseurl }}/common/images/config_phpini-webserver.png" width="700px">
+![]({{ site.baseurl }}/common/images/config_phpini-webserver.png){: width="700px"}
 
 To locate the PHP command-line configuration, enter
 

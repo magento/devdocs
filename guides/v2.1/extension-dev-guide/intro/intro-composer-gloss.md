@@ -37,18 +37,18 @@ Magento Marketplace requires more than one component to be packaged as a *metapa
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
 
-For example, you might want to list two metapackages in the Magento Marketplace&mdash;a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the <a href="#gloss-compman">Magento Component Manager</a>.
+For example, you might want to list two metapackages in the Magento Marketplace&mdash;a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the [Magento Component Manager](#gloss-compman).
 
 Merchants do not need to understand that, under the covers, some packages are shared.
 
 <div class="bs-callout bs-callout-warning">
-    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a>.</p>
+    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Magento Marketplace UserGuide](http://docs.magento.com/marketplace/user_guide/getting-started.html).</p>
 </div>
 
 #### For more information
 
-*	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
+*	[metapackages]({{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage)
+*	[component types in`composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
 ### Component Manager {#gloss-compman}
 
