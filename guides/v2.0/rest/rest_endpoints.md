@@ -18,7 +18,7 @@ To specify all services:
 
 `http://<magento_host>/rest/<store_code>/schema`
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>The value of `store_code` can be one of the following:</p>
   <ul>
   <li><code>default</code></li>

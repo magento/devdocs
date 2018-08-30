@@ -26,7 +26,7 @@ Use <a href="{{ page.baseurl }}/howdoi/howdoi_template.html">this template</a> i
 
 Submissions should be authored in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} is welcome also.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>All content submitted to us is subject to internal review. Content should be consistent with Magento practices, including <a href="{{ page.baseurl }}/coding-standards/bk-coding-standards.html">coding standards</a>.</p>
 </div>
 

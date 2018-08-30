@@ -147,7 +147,7 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
 	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see <a href="{{ page.baseurl }}/cloud/env/set-variables.html">Set Magento environment variables</a>.</p>
 </div>
 

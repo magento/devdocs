@@ -29,7 +29,7 @@ Important headers:
 	Age: 0
 	X-Magento-Cache-Debug: MISS
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
 </div>
 
@@ -72,7 +72,7 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
 </div>
 

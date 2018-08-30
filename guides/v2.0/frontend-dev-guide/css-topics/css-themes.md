@@ -15,7 +15,7 @@ functional_areas:
 
 Technically there is an option to include them in template files, but we strongly recommend avoiding this.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <p><span class="glyphicon-class">
 The CSS class names can be assigned in both templates and layouts.</span></p>
 </div>
@@ -95,7 +95,7 @@ For example, the following illustrates how stylesheets are included in the defau
 {%endhighlight xml%}
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
  <p> If the system does not find the included CSS files, it searches for the same file names with a <code>.less</code> {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. This is part of the built-in preprocessing mechanism. You can find more information about it in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a> topic.
 </p></span> 

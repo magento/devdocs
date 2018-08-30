@@ -175,7 +175,7 @@ The following data types are available:
 </ul></td></tr>
 </table>
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
   <p>A variation should contain only data that is required for its flow and constraints.</p>
 </div>
 

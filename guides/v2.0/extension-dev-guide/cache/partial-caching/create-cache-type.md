@@ -44,7 +44,7 @@ We suggest you locate classes that extend [Magento\Framework\Cache\Frontend\Deco
 
 For example, look at [Magento\Eav\Model\Cache\Type][type] to understand more about the EAV cache type.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
 </div>
 

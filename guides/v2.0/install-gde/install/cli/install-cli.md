@@ -14,11 +14,11 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
   
@@ -32,7 +32,7 @@ This topic discusses installing the Magento software using the CLI. For informat
 
 {% include install/before-you-begin-cli.md %}
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
 

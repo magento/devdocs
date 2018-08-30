@@ -17,7 +17,7 @@ functional_areas:
 
 This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the [memcached wiki](https://github.com/memcached/old-wiki){: target="_blank"}.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
    <span class="glyphicon-class">
    <p>We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p></span>
 </div>
@@ -32,7 +32,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
         yum install -y memcached
         yum install -y php-pecl-memcache
 
-    <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" markdown="1">
         <span class="glyphicon-class">
         <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code>yum search memcache|grep php</code> to find the appropriate package name.</p></span>
     </div>

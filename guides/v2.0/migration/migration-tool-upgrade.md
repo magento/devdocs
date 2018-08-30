@@ -35,7 +35,7 @@ You can also back up the entire Magento codebase and database using the followin
 
 	php <your Magento install dir>/bin/magento setup:backup --code --db
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>The <code>vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
 </div>
 

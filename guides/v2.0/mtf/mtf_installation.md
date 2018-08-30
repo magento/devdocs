@@ -25,7 +25,7 @@ To install the Magento application, see <a href="{{ page.baseurl }}/install-gde/
 
 For more details about PHP verification, installation and configuration (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">CentOS</a>).
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
@@ -38,7 +38,7 @@ For more details about PHP verification, installation and configuration (<a href
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>If you're not sure that Composer is installed, see <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
 </div>
 
@@ -48,7 +48,7 @@ The Functional Testing Framework requires Composer, which downloads libraries de
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br/>
   Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br/>
   To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>

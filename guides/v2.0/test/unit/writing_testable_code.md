@@ -29,7 +29,7 @@ We strongly recommend you do *not*:
 
 There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>This rule applies only to production code. When writing <a href="{{ page.baseurl }}/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
 </div>
 

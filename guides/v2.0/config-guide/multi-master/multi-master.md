@@ -50,7 +50,7 @@ Because of the way the split database performance solution is designed, your cus
 *	Use JOINs that affect the sales or {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} databases
 *	Use foreign keys to tables in the checkout, sales, or main databases
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
     <ul><li>Ask the component developers to update their components.</li>
     	<li>Use the components as-is <em>without</em> the split database solution.</li>
@@ -66,7 +66,7 @@ This also means you can either:
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 

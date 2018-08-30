@@ -38,7 +38,7 @@ You can run Magento in any of the following *modes*:
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-&#42;</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
-        <div class="bs-callout bs-callout-info">
+        <div class="bs-callout bs-callout-info" markdown="1">
         <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
         </div>
     </td>
@@ -73,7 +73,7 @@ For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cl
 
 You should run the Magento software in developer mode when you're extending or customizing it.
 
-<div class="bs-callout bs-callout-info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
 </div>
 

@@ -117,7 +117,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	[php\_xdebug2.2.0](http://xdebug.org/download.php){: target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
 	<p>For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).</p>
 </div>

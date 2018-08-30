@@ -5,7 +5,7 @@ title: Quick start. See logs for failed tests
 
 All failed tests are logged in `<magento2_root_dir>/dev/tests/functional/var/log`.
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>This path is set in <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code>, element <code>&lt;env name="basedir" value="&lt;path_to_directory&gt;" /&gt;</code>.</p>
 </div>
 

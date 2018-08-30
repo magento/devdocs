@@ -22,7 +22,7 @@ During the migration process, **do not:**
 
 3. Make changes in the Magento 2 Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>All operations in Magento 1 storefront are allowed at this time.</p>
 </div>
 
@@ -52,7 +52,7 @@ where:
 
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>Logs are written to the <code>&lt;your Magento install dir>/var/</code> directory.</p></span>
 </div>

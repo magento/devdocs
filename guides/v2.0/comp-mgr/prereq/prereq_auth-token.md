@@ -9,7 +9,7 @@ functional_areas:
   - Upgrade
 ---
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>To upgrade your {{site.data.var.ee}} version or to upgrade from {{site.data.var.ce}} to {{site.data.var.ee}}, you must be authorized to access the  {{site.data.var.ee}} repository. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
 </div>
 

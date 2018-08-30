@@ -25,7 +25,7 @@ Manually splitting databases involves:
     *   Back up sales and quote database tables
     *   Move tables from your main Magento database to the sales and quote databases
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
 </div>
 
@@ -39,7 +39,7 @@ This topic uses the following naming conventions:
 
     The sales database is also referred to as the order management system (*OMS*) database.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
@@ -109,7 +109,7 @@ Sales database table names start with:
 *   `magento_sales_`
 *   The `magento_customercustomattributes_sales_flat_order` table is also affected
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 </div>
 
@@ -270,7 +270,7 @@ where
 
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 </div>
 

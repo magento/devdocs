@@ -45,7 +45,7 @@ Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}fron
 </config>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
   <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
 </div>

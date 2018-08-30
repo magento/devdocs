@@ -93,7 +93,7 @@ The complete list of these variables and their default values are stored in [`li
 
 To change the default library variables values, specify the new values for the required variables in the <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <p>Please mind, that your <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
 </div>
 

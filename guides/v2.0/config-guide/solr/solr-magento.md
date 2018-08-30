@@ -29,7 +29,7 @@ The following topics discuss how to configure Solr to work with {{site.data.var.
 
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
 </div>
 
@@ -47,7 +47,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cd magento2
 		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
 	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .</code></p>
 	</div>
 
@@ -81,7 +81,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cd <your Solr install dir>/example
 		java -jar start.jar
 
-	<div class="bs-callout bs-callout-warning">
+	<div class="bs-callout bs-callout-warning" markdown="1">
 			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
 	</div>
 
@@ -203,7 +203,7 @@ To reindex using the command line:
 
 3.	Wait while the indexers are reindexed.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
 </div>
 

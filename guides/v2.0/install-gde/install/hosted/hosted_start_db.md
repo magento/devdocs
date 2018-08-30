@@ -22,7 +22,7 @@ To configure a MySQL database and database user:
 
 3.	In the MySQL Users section, enter information in the provided fields and click **Create User**.
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
   		<p>Give the database user a strong password and <em>write down</em> the username and password you choose.</p>
   		<p>You can optionally click <strong>Password Generator</strong> to create a strong password for you.</p>
 	</div>

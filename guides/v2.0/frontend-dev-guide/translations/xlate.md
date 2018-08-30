@@ -29,7 +29,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see [Generate a translation dictionary]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict).</p>
 </div>
 
@@ -83,7 +83,7 @@ Translating the names, titles and phrases used in Magento involves the following
 2.	Translate the terms.
 2.	If desired, package your translations in a [language package]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack).
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
 </div>
 

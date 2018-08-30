@@ -29,7 +29,7 @@ To locate scripts used for a certain element:
 To find the source file of the used script:
 <ol>
 <li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code>requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
 <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
 </div>

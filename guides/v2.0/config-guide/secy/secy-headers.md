@@ -20,7 +20,7 @@ This solution applies to the following Magento versions:
 *	2.0.10 and later
 *	2.1.2 and later
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>This topic is intended for experienced IIS administrators. </p>
 </div>
 
@@ -43,7 +43,7 @@ We provide the option to remove the values of all of the preceding headers based
 *	If `Enable_IIS_Rewrites` is set to `0`,  the values of the headers are removed.
 *	If `Enable_IIS_Rewrites` is set to `1`, the values of the headers are left intact.
 
-	<div class="bs-callout bs-callout-warning">
+	<div class="bs-callout bs-callout-warning" markdown="1">
     	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>
        
 	</div>

@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
   <p>The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed. </p>
 </div>
 

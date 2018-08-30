@@ -89,7 +89,7 @@ Following are some examples of various types and what they would look like in th
         * @return \Magento\Customer\Api\Data\CustomerInterface[]
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
 </div>
 

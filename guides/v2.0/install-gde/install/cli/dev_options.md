@@ -16,7 +16,7 @@ functional_areas:
 
 The following topics apply to you *only* if you used `git clone` to install the {{site.data.var.ce}} GitHub repository. This usually means you contribute code to the {{site.data.var.ce}} codebase.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
 </div>
 
@@ -25,7 +25,7 @@ The following topics apply to you *only* if you used `git clone` to install the 
 *	To <a href="{{ page.baseurl }}/install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify `composer.json` and run `composer update` and update the Magento database
 *	To <a href="{{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in `composer.json`, run `composer update`, then reinstall the Magento software
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 		<p>If you are not a contributing developer, you perform upgrades and upgrades as discussed in <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p> </span>
 </div>

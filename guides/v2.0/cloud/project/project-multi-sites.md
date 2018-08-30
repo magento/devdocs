@@ -37,7 +37,7 @@ After successfully creating and testing multiple stores locally, you must:
 
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}/cloud/trouble/trouble.html">Support ticket</a>.</p>
 </div>
 

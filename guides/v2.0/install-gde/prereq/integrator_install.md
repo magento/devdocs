@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 

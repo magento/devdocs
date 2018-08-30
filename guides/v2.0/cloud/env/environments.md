@@ -28,7 +28,7 @@ Every {{site.data.var.ece}} project starts with a `master` environment that corr
 
 We recommend using GitHub for maintaining your code branches.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
 </div>
 

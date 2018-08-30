@@ -38,7 +38,7 @@ where;
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
 </div>

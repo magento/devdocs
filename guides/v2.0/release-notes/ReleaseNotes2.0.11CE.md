@@ -9,7 +9,7 @@ level3_subgroup: ce20-relnotes
 ---
 We are pleased to present Magento Open Source Edition 2.0.11. 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
 

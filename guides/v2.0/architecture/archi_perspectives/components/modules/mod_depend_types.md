@@ -35,7 +35,7 @@ Modules with a *soft dependency* on another module can function properly without
 
 * The module extends another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-warning" id="warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
   <p>
     Note: If a module uses code from another module, it should declare the dependency explicitly.
   </p>
@@ -65,7 +65,7 @@ You can build dependencies between the modules belonging to different layers.
 
 Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Note: In this case, using interfaces is preferable to using classes. </p>
   <p>You can build dependencies between classes in the Magento Framework even if they belong to different modules.</p>
 </div>

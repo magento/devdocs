@@ -14,7 +14,7 @@ functional_areas:
 
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system and you must be able to log in to MySQL as <code>root</code>.</p>
 </div>
 
@@ -75,7 +75,7 @@ To create a remote connection:
 
 	Ubuntu: `service mysql restart`
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   	<p>If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address" target="_blank">MySQL documentation</a> or another authoritative source.</p>
 </div>
 
@@ -97,7 +97,7 @@ To grant access to a database user:
 
 		GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.</p>
 </div>
 

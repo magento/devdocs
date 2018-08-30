@@ -13,7 +13,7 @@ While you're developing Magento components (modules, themes, and language packag
 
 This topic provides guidelines on what directories to clear and when to clear them.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <ul><li>All directories discussed in this topic are default locations. It's possible to customize these locations but doing so is beyond the scope of this topic.</li>
   	<li>This topic is not comprehensive. Please help us improve it by clicking <strong>Edit this page on GitHub</strong> at the top of this page. Watch this page for updates.</li></ul>
 </div> 

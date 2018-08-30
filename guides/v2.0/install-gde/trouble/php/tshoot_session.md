@@ -19,7 +19,7 @@ open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 {% endhighlight %} 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
 	<p>This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.</p>
 	<p>For more information about configuration options for Redis, see <a href="{{ page.baseurl }}/config-guide/redis/config-redis.html">Configure Redis</a>.</p>

@@ -11,7 +11,7 @@ level3_subgroup: ee20-relnotes
 We are pleased to present Magento Commerce 2.0.11. This release includes many functional fixes and enhancements. 
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
 </div>
 

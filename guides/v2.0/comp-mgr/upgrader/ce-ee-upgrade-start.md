@@ -13,7 +13,7 @@ functional_areas:
 
 This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee}}.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.</p>
 </div>
 
@@ -26,7 +26,7 @@ In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){: target="_blank"} if you have questions.</p>
 </div>
 

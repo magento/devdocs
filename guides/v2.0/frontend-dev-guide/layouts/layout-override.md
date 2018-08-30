@@ -24,7 +24,7 @@ Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
 		<p>Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.</p>
 	</div>
 
@@ -32,7 +32,7 @@ Examples of customizations that involve overriding layouts:
 *	Canceling block/container removal using the `remove` attribute.
 *	Setting {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} attributes of blocks and containers.
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
 		<p>Certain attributes, like <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
 	</div>
 *	Removing block arguments.
@@ -96,7 +96,7 @@ These files override the following layouts:
 <li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout2&gt;.xml</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p></span>
 </div>

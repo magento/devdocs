@@ -25,7 +25,7 @@ To get the {{site.data.var.ce}} metapackage:
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
   		<p>If the following error displays, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
   		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
 	</div>

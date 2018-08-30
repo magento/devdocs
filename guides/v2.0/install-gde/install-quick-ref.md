@@ -58,7 +58,7 @@ When all prerequisites have been met, get the Magento software using {% glossary
 
 You're required to authenticate; see [Get your authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it doesn't install the software for you.
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
 	<p>Alternatively, you can also download a [Magento software archive]({{ page.baseurl }}/install-gde/install/get-software.html).</p>
 </div>
 

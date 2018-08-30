@@ -120,7 +120,7 @@ If description or short description happens to be the first one after DocBlock o
 
 ### License Notice and Copyright
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
 </div>
 

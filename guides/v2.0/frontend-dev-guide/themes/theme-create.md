@@ -16,7 +16,7 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
 </div>
 
@@ -182,7 +182,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
 <p>
 

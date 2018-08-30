@@ -167,7 +167,7 @@ All configurations are collected and executed in the following order:
 
 <li>Configurations at the module level.</li>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
+  <div class="bs-callout bs-callout-warning" markdown="1">
     <p>Dependencies between the modules or themes are considered as well.</p>
   </div>
 

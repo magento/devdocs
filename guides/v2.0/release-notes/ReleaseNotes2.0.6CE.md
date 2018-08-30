@@ -10,7 +10,7 @@ level3_subgroup: ce20-relnotes
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>
 </div>
 

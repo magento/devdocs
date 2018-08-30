@@ -55,7 +55,7 @@ Platform variables that are expressed as base64-encoded JSON object can be up to
 
 Environment variables have an `env` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code>inherited</code>.</p>
 <p>This enables you to define your development variables only once, and use them on all the child environments.</p>
 </div>

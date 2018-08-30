@@ -124,7 +124,7 @@ To apply this patch:
 	</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
   		<p>Use patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
 	</div>
 
@@ -156,7 +156,7 @@ To apply this patch:
 
 	`cp -R magento2-updater-10.0.2/*  update/`
 
-	<div class="bs-callout bs-callout-tip">
+	<div class="bs-callout bs-callout-tip" markdown="1">
 		<p>If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: <code>yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
 	</div>
 
