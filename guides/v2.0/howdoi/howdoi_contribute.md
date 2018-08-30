@@ -20,6 +20,6 @@ Submissions should be {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}
 
 | Contributor name  |  Description or subject |
 |---|---|
-| <a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a>  | How do I develop and maintain my custom Magento 2 extension  in a separate repository  |
-| <a href="http://www.alanstorm.com/" title="Alan Storm">Alan Storm</a>  | Which PHP  class should I use to read from each `app/etc/` configuration file "type"? (acl.xml, events.xml, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml, etc. -- excluding {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files)  |
+| [Max Pronko](http://www.maxpronko.com/ "Max Pronko")  | How do I develop and maintain my custom Magento 2 extension  in a separate repository  |
+| [Alan Storm](http://www.alanstorm.com/ "Alan Storm")  | Which PHP  class should I use to read from each `app/etc/` configuration file "type"? (acl.xml, events.xml, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml, etc. -- excluding {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files)  |
 |   |   |

@@ -19,15 +19,15 @@ This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee
 
 ## Prerequisites   {#compman-prereq}
 
-Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by {{site.data.var.ee}}. Examples follow:
+In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){: target="_blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
+	<p>Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){: target="_blank"} if you have questions.</p>
 </div>
 
 ## Start System Upgrade from the Magento Admin   {#compman-access}
@@ -55,11 +55,11 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 #### Errors
 
-*	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
+*	The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the Magento Admin:
 
 	<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
 
-	For suggested solutions to other causes indicated by this message, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
+	For suggested solutions to other causes indicated by this message, see [troubleshooting]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html).
 
 *	The following error might display:
 
@@ -68,8 +68,8 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 		setup:upgrade {"command":"setup:upgrade"} successfully: Source 
 		class "\Cybersource" for "CybersourceLogger" generation does not exist.
 
-	For more information, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.
+	For more information, see [Error upgrading from CE to EE]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html).
 
 ## Continue your upgrade   {#ce-ee-continue}
 
-From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+From here, your upgrade is the same as any other upgrade. Continue with [Step 1. Select versions to upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html).
