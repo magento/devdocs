@@ -142,3 +142,9 @@ FW_BP is an acronym for FrameWork BasePath.
 
 Use the `MODULE_WHITELIST` environment variable if you are working on a new module.
 When adding a new directory under `Magento/FunctionalTest`, add the directory name under `MODULE_WHITELIST` to enable the MFTF to process it.
+
+### MAGENTO_CLI_COMMAND_PATH
+
+* Use: optional.
+* Description: Path to Magento CLI command entry point. Modify the default value if not using standard Magento installation.
+* Example: `dev/tests/acceptance/utils/command.php`
