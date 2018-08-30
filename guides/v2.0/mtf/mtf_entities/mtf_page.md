@@ -67,7 +67,7 @@ The following table explains `<page>` attributes.
 
 Also, block can contain a `render` node. [Read about renders in the Block topic]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ## Page types {#mtf_page_types}
 

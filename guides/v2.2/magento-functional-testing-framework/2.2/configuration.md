@@ -4,6 +4,7 @@ title: Configuration
 functional_areas:
  - Testing
 mftf-release: 2.1.2
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/configuration.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._

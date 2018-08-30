@@ -5,15 +5,9 @@ title: DynamicRows component
 menu_title: DynamicRows component
 ---
 
-## Overview
-
 The DynamicRows component is a dynamic collection of records. The user can edit the records, change their position, and navigate through the collection.
 
-## DynamicRows configuration
-
-Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-DynamicRows-specific  configuration:
+## Configuration options
 
 <table>
   <tr>

@@ -22,7 +22,7 @@ In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 {:.bs-callout .bs-callout-info}
-Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="&#95;blank"} if you have questions.
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
 

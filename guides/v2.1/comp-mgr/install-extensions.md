@@ -3,7 +3,7 @@ group: compman
 title: Install extensions from the command line
 ---
 
-Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"} or another Magento extension distribution system. Extensions include:
+Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another Magento extension distribution system. Extensions include:
 
 -   Modules (extend Magento capabilities)
 -   Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
@@ -27,7 +27,7 @@ If you already know the extension's Composer name and version, skip this step an
 
 To get the extension's Composer name and version from the Magento Marketplace:
 
-1.  Log in to [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"} with the username and password you used to purchase the extension.
+1.  Log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} with the username and password you used to purchase the extension.
 
 2.  In the upper-right corner, click **Your name** > **My Profile**.
 

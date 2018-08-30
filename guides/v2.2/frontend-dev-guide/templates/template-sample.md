@@ -16,12 +16,12 @@ In the Magento basic Blank theme, in the mini shopping cart, products are listed
 
 OrangeCo decided they want to change this and display the product list before the **Go to Checkout** button.
 
-The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2200url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="\_blank"}.
+The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2200url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="_blank"}.
 Here is the part of the code OrangeCo worked with:
 
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)
 
-They created a new Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and copied the `content.html` to the theme directory:
+They created a new Orange theme and copied the `content.html` to the theme directory:
 `app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html`.
 
 In their copy of the templates, they changed the order of the blocks as follows:

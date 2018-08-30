@@ -5,15 +5,9 @@ title: Textarea component
 menu_title: Textarea component
 ---
 
-## Overview
-
 The Textarea component implements the `<textarea>` form field.
 
-## Textarea configuration
-
-Extends all `abstract` configuration.
-
-Textarea-specific options:
+## Configuration options
 
 <table>
   <tr>

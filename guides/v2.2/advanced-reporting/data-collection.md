@@ -200,12 +200,12 @@ It cannot contain any parameters.
 
 ## Related topics
 
-[Modules providing advanced reporting][modules]
-
+ [Modules providing advanced reporting][modules]
+ 
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: data-collection.html
+[modules]: modules.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

@@ -136,7 +136,7 @@ To configure Magento to work with Solr:
 </table>
 
 The following figure shows an example.
-<img src="{{ site.baseurl }}/common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
+![Configure Magento to use Solr]({{ site.baseurl }}/common/images/solr_config-admin.png)
 
 Click <strong>Test Connection</strong>.
 
@@ -213,7 +213,7 @@ To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80c
 
 The following figure shows an example of a storefront search.
 
-<img src="{{ site.baseurl }}/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
+![Verify Solr works by searching the storefront]({{ site.baseurl }}/common/images/solr_verify.png){: width="750px"}
 
 The following excerpt from the Solr command window shows the same search:
 

@@ -54,7 +54,7 @@ Activating the integration submits the credentials to the endpoint specified whe
 * `store_base_url` For example, `http://my-magento-store.com/`.
 * `oauth_verifier`
 * `oauth_consumer_key`
-* `oauth_consumer_key_secret`
+* `oauth_consumer_secret`
 
 Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 
@@ -207,7 +207,7 @@ To generate the signature, you must use the HMAC-SHA1 signature method. The sign
 
 The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
 
-The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/2.0/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
+The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client]({{ site.mage2000url }}dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
 
 To simulate the OAuth 1.0a token exchange flow:
 

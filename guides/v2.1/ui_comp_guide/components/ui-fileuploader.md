@@ -5,22 +5,9 @@ title: FileUploader component
 menu_title: FileUploader component
 ---
 
-## Overview
+The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.
 
-The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. This component integrates file upload functionality with UI components.
-
-## Structure {#structure}
-
-* Constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`
-* JQuery file upload plugin: `jquery/fileUploader/jquery.fileupload-fp`
-* Default template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`
-* Preview template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`
-
-## Configuration settings
-
-Extends all `abstract` configuration.
-
-Fileuploader-specific configuration:
+## Configuration options
 
 <table>
   <tbody>
@@ -190,7 +177,7 @@ Fileuploader-specific configuration:
   </tbody>
 </table>
 
-## Integration {#example}
+## Example {#example}
 
 Here is an example of how File Uploader component integrates with [Form]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html) component:
 
@@ -219,3 +206,14 @@ Here is an example of how File Uploader component integrates with [Form]({{ site
     </fieldset>
 </form>
 {% endhighlight %}
+
+## Source files
+
+Extends `abstract`:
+
+- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
+- [`jquery/fileUploader/jquery.fileupload-fp`]({{ site.mage2100url }}lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)
+
+

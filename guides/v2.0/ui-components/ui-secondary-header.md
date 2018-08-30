@@ -16,7 +16,7 @@ Sticky header is displayed when the persistent header gets hidden during vertica
 
 The following image is an illustration of a grid with a sticky header:
 
-<img src="{{ page.baseurl }}/pattern-library/displaying-data/datatable/img/datatable13.jpg" alt="a grid with a sticky header">
+![a grid with a sticky header]({{ page.baseurl }}/pattern-library/displaying-data/datatable/img/datatable13.jpg)
 
 ## Enable sticky header for a grid   {#enable_header}
 

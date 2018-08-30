@@ -5,6 +5,10 @@ pages:
 
     - label: Components
       children:
+        
+        - label: ActionDelete component
+          versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-actiondelete.html
 
         - label: ActionsColumn component
           url: /ui_comp_guide/components/ui-actionscolumn.html
@@ -45,6 +49,10 @@ pages:
         - label: Email component
           url: /ui_comp_guide/components/ui-email.html
 
+        - label: Expandable column component
+          versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-expandable-column.html
+
         - label: ExportButton component
           url: /ui_comp_guide/components/ui-exportbutton.html
 
@@ -84,6 +92,10 @@ pages:
 
         - label: InsertListing component
           url: /ui_comp_guide/components/ui-insertlisting.html
+
+        - label: LinkColumn component
+          versions: ["2.2","2.3"]
+          url: /ui_comp_guide/components/ui-linkcolumn.html
 
         - label: Listing (grid) component
           url: /ui_comp_guide/components/ui-listing-grid.html

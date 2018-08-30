@@ -1,8 +1,6 @@
-<div markdown="1">
-
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 
-1. Go to <a href="https://icomoon.io/app/" target="\_blank"> https://icomoon.io/app/ </a> or download this app in Chrome web store.  
+1. Go to [https://icomoon.io/app/](https://icomoon.io/app/) or download this app in Chrome web store.  
 
 2. Upload your icons in SVG format into the app.
 
