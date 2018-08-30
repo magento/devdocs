@@ -28,14 +28,14 @@ Click the **Edit this page on GitHub** link at the top of a documentation page t
 open the file in our GitHub repository, where you are invited to suggest changes
 by creating pull requests, or open a discussion by creating an issue.
 
-For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-dev-guide/Contribute_edg.html).
+For more information, see our <a href="{{ page.baseurl }}/extension-dev-guide/Contribute_edg.html">Contributors Guide</a>.
 
 ## Contact us   {#contact-us}
 
 Feel free to contact the documentation team directly at
-[DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
+<a href="mailto:DL-Magento-Doc-Feedback@magento.com">DL-Magento-Doc-Feedback@magento.com</a>
 
 #### Related topics
 
-*   [Release Notes]({{ page.baseurl }}/release-notes/bk-release-notes.html)
-*   [Architecture Guide]({{ page.baseurl }}/architecture/bk-architecture.html)
+*   <a href="{{ page.baseurl }}/release-notes/bk-release-notes.html">Release Notes</a>
+*   <a href="{{ page.baseurl }}/architecture/bk-architecture.html">Architecture Guide</a>

@@ -37,7 +37,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 ### Known issue
 
-_Known issue [(GITHUB-5025)](https://github.com/magento/magento2/issues/5025)  removed._
+<i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
 ### Fixed issues
 
@@ -1016,27 +1016,27 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-*  _Fixed GitHub issue [(GITHUB-4917)](https://github.com/magento/magento2/issues/4917) removed._
+*  <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a> removed.</i>
 
 
-*  _Fixed GitHub issue [(GITHUB-4434)](https://github.com/magento/magento2/issues/4434) removed._
+*  <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a> removed.</i>
 
-* _Fixed GitHub issue  [(GITHUB-2910)](https://github.com/magento/magento2/issues/2910) removed._
+* <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a> removed.</i>
 
 
-*  _Fixed GitHub issue  [(GITHUB-3053)](https://github.com/magento/magento2/issues/3053) removed. _
+*  <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a> removed. </i>
 
-* _Fixed GitHub issue  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946) removed. _
+* <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a> removed. </i>
 
-*  _Fixed GitHub issue   [(GITHUB-2711)](https://github.com/magento/magento2/issues/2711) removed._
+*  <i>Fixed GitHub issue   <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a> removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-2121)](https://github.com/magento/magento2/issues/2121) removed. _
+* <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. </i>
 
-* _Fixed GitHub issue [(GITHUB-3605)](https://github.com/magento/magento2/issues/3605)  removed._
+* <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-59)](https://github.com/magento/magento2/issues/59)  removed._
+* <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
 
-* _Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, [(GITHUB-3529)](https://github.com/magento/magento2/issues/3529) removed. _
+* <i>Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i>
 
 ### System requirements
 

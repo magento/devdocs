@@ -16,7 +16,7 @@ Information is being published gradually, until we complete work on automation o
 
 ## Related topics
 
-* [Building a new Magentomodule]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
-* [How to enable/disable a Magentomodule]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
-* [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)
-* [REST Reference]({{ page.baseurl }}/rest/bk-rest.html)
+* <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">Building a new Magento module</a>
+* <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">How to enable/disable a Magento module</a>
+* <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>
+* <a href="{{ page.baseurl }}/rest/bk-rest.html">REST Reference</a>

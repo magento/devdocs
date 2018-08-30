@@ -203,7 +203,7 @@ Each block has an identifier that includes selector and searching strategy. This
 
 You can use the `_rootElement` to find an element in the current block.
 
-Example from the [`WidgetInstance.php`](https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
+Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:
 
 ```php
 <?php
@@ -217,13 +217,13 @@ This code uses `_rootElement` to search the button element by the `$this->addLay
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
 Let's see the [Customer Login]({{ site.mage2000url }}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
-[![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png" /></a>
 
 The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
@@ -275,7 +275,7 @@ The general structure of the form mapping file:
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php).If you want to use custom tab logic you can extend your class from[`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
+To get the block class with form tab mapping, extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
@@ -426,7 +426,7 @@ To enable this feature follow:
 
 Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
 
-[![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
 
 <div class="bs-callout bs-callout-tip">
   <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
@@ -434,7 +434,7 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
-If you want to change the representation of block details, you can change a [`Template.php`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php):
+If you want to change the representation of block details, you can change a <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
 
 * Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
@@ -473,13 +473,13 @@ protected function _toHtml()
 
 Now you can inspect any element in a browser, and find which block contains it.
 
-[![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png)
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png" /></a>
 
 #### Add a block to the page {#mtf_block_to-page}
 
 Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php)is a part of the page that is defined in[`WidgetInstanceIndex.xml`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
+For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
 
 `block` is the node that adds the block to the page:
 
@@ -501,7 +501,7 @@ For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tes
 
 ### Use blocks inside blocks {#mtf_block_in_block}
 
-You can get other blocks in the block using the [`BlockFactory`](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php) class and a selector.
+You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.
 
 See the following example:
 

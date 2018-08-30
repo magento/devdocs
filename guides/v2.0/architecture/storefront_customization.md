@@ -38,6 +38,6 @@ Delivering a sharply different shopping experience than the default Magento inst
 
 ### Related topics
 
-[Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html){: target="_blank"}
+<a href="{{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html" target="_blank">Frontend Developer Guide</a>
 
-[JavaScript Developer Guide]({{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html){: target="_blank"}
+<a href="{{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html" target="_blank">JavaScript Developer Guide</a>

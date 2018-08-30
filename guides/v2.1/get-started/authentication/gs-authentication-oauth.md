@@ -134,7 +134,7 @@ You must include these request parameters in the `Authorization` request header 
 * `oauth_signature_method`. The name of the signature method used to sign the request. Valid values are: `HMAC-SHA1`, `RSA-SHA1`, and `PLAINTEXT`.
 * `oauth_signature`. A generated value (signature).
 * `oauth_timestamp`. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
-* `oauth_token`. The `oauth_token`, or access token, value obtained in [Get an access token](#get-access-token).
+* `oauth_token`. The `oauth_token`, or access token, value obtained in <a href="#get-access-token">Get an access token</a>.
 
 ## The OAuth signature {#oauth-signature}
 

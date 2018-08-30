@@ -19,4 +19,4 @@ The following diagram illustrates the components of Magento, and shows the "laye
 
 ## Related topics
 
-* [Architecture layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)
+* <a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>

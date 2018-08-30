@@ -23,7 +23,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.7. 
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 </div>
 
-Looking for the [Magento Commerce (Cloud) ReleaseNotes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html)?
+Looking for the <a href= "{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 ## Highlights
 
