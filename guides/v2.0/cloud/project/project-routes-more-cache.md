@@ -64,7 +64,7 @@ And the following routes are **not** cached:
 -   `http://{default}/path/`
 -   `http://{default}/path/etc/`
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Regular expressions in routes are <em>not</em> supported.</p>
 </div>
 
@@ -128,7 +128,7 @@ The cache key depends on the value of the `value` cookie in the request.
 
 A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>You cannot  use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (<code>*</code>). <code>SESS*</code> or <code>~SESS</code> are currently  <em>not</em> valid values.
 </p>
 </div>

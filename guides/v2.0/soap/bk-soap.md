@@ -19,7 +19,7 @@ functional_areas:
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>The value of <code>store_code</code> can be one of the following:</p>
   <ul>
   <li><code>default</code></li>

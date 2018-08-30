@@ -18,7 +18,7 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
     <p>Varnish is designed to accelerate the HTTP protocol.</p>
 </div>
@@ -98,7 +98,7 @@ To modify `di.xml`:
 
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
 </div>
@@ -155,7 +155,7 @@ Use the following steps:
 		ls <your Magento install dir>/var/cache/*
 		ls <your Magento install dir>/var/page_cache/*
 
-    <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" markdown="1">
       <span class="glyphicon-class">
       <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
       <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>

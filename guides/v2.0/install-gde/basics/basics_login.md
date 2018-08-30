@@ -47,7 +47,7 @@ Here's what it looks like when you're logged in to a server as the `root` user w
 
 ![Logging in with Cygwin on Windows]({{ site.baseurl }}/common/images/install_cygwin.png)
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p><a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (ssh)</a> is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.</p></span>
 </div>

@@ -29,7 +29,7 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
 *	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
-	<div class="bs-callout bs-callout-warning">
+	<div class="bs-callout bs-callout-warning" markdown="1">
 		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
 	</div>
 *	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
@@ -47,7 +47,7 @@ If one or more of the `maxBooleanClauses` parameters is set too low, the search 
 
 In a production environment, you should start and stop Solr using a script.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
 </div>
 

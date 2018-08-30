@@ -55,7 +55,7 @@ The following prerequisites are required:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>Do not use the same database as the real Magento instance.
     Any data (products, customers, orders and everything else) will be lost!</p>
 </div>
@@ -99,7 +99,7 @@ return [
 ];
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Be sure to leave all the settings that do not start with <code>db-</code> at their default values.</p>
 </div>
 

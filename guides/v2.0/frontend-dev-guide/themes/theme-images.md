@@ -22,7 +22,7 @@ The conventional location of `view.xml` for a theme is:
 	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the `view.xml` of the Magento Blank theme: <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml){: target="_blank"}.
 
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
@@ -245,7 +245,7 @@ Generally, product images are cached while saving the product. However, the `mag
 * After you import products, which might have images of various sizes
 * If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} 
 
-Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
+Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's [`view.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images) configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 
 Command usage:
 

@@ -21,7 +21,7 @@ Magento enables you to configure alternatives to the default file system caching
 
 *   Set up the [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) without modifying the Magento configuration.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>We'll periodically add more cache alternatives so watch this space.</p>
 </div>
 

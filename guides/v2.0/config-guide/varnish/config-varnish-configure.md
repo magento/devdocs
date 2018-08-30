@@ -89,7 +89,7 @@ To minimally configure Varnish:
 	      .port = "8080";
 		}
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
 		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code>localhost</code>.</p>
 	</div>
 
@@ -105,7 +105,7 @@ If Varnish fails to start, try running it from the command line as follows:
 
 This should display error messages.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<p>If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
 		<ul><li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/" target="_blank">flatlinesecurity</a></li>
 			<li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a></li>

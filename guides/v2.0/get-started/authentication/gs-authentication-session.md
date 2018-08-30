@@ -29,7 +29,7 @@ Similarly, if an admin is logged in to the Magento Admin
 and the JavaScript widget `Magento_Customer::group` API, details for the logged-in admin are fetched.
 The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 The session based authentication functionality is restricted to only allow for AJAX calls and not direct browser requests due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.
 </div>
 

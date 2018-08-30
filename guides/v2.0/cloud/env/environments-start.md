@@ -95,7 +95,7 @@ After completing development, you can merge this branch to the parent. The follo
 
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
@@ -144,7 +144,7 @@ To delete a environment:
 
 Wait for the environment to delete.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
 </div>
 

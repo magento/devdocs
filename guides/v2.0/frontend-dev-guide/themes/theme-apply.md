@@ -21,7 +21,7 @@ Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcomma
 
 ## Apply a theme {#theme-apply-apply}
 
-After you <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+After you [add your theme to the file system]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
 
@@ -29,7 +29,7 @@ To apply a theme:
 3. In the **Store View** drop-down field, select the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} where you want to apply the theme.
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
-6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
+6. If caching is enabled, [clear the cache](#theme-apply-clear).
 6. To see your changes applied, reload the storefront pages.
 
 ## Add a design exception {#theme-apply-except}
@@ -42,7 +42,7 @@ To add a design exception:
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
 5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
-7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
+7. If caching is enabled, [clear the cache](#theme-apply-clear).
 6. To see your changes applied, reload the storefront pages.
 
 ## Add a theme-independent logo {#theme-apply-logo}
@@ -56,12 +56,12 @@ To add a permanent theme-independent logo:
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
 7. Click **Save Config**.
-7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
+7. If caching is enabled, [clear the cache](#theme-apply-clear).
 8. To see your changes applied, reload the storefront pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
-<div class="bs-callout bs-callout-warning" id="warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
   <p>To delete the permanent logo, go to the same location, select the checkbox next to the logo image, and click <b>Delete</b>.</p>
 </div>
 

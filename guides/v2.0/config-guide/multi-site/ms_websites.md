@@ -128,7 +128,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
   		<p>If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
   		<p>If you're setting up a base URL for local testing, use a period.</p>
 	</div>
@@ -178,7 +178,7 @@ You must perform this step last because after it's done, you'll lose access to t
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url-default2.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
   		<p>If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
 	</div>
 5.	Click **Save Config**.

@@ -14,7 +14,7 @@ functional_areas:
 
 Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has its own set of configuration files, gathered into the module's `etc` directory.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
   	<p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p>
   </span>
@@ -33,7 +33,7 @@ Magento 2 looks for configuration information for each module in that module's `
 * `webapi.xml`
 
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
   		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
   </span>

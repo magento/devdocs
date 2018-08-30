@@ -35,7 +35,7 @@ Errors similar to the following display when you run the Web Setup Wizard:
 <pre> Exception
  PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
  
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the <code>&lt;your Magento install dir>/setup</code> directory.</p>
   <p>The entire message is <code>Installation is incomplete. Check the console log for errors before trying again.</code></p></span>
@@ -47,4 +47,4 @@ You must run `composer install` from *both* the `<your Magento install dir>` and
 
 ### Suggestion
 
-<a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
+[Run composer install]({{ page.baseurl }}/install-gde/install/prepare-install.html) from both of the preceding directories and try the installation again.

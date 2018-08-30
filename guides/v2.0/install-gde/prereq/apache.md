@@ -38,7 +38,7 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 {% include install/allowoverrides22.md %}
 {% endcollapsible %}
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
 </div>
@@ -116,7 +116,7 @@ To upgrade to Apache 2.4:
 
 		apt-get install -y apache2
 
-	<div class="bs-callout bs-callout-info" id="info">
+	<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
 	</div>
@@ -166,7 +166,7 @@ Installing and configuring Apache is basically a three-step process: install the
 
 3.	Continue with the next section.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
 </div>
@@ -202,7 +202,7 @@ For example:
 		Require all granted
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
@@ -220,7 +220,7 @@ For example:
 		Allow from all
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 	<span class="glyphicon-class">
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>

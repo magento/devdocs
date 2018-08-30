@@ -51,7 +51,7 @@ Example of a field template:
 <img src="%path_to_image%" alt="image_de"/>
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 The original templates of all form field types are located in the `app/code/Magento/Ui/view/base/web/templates/form/element` directory.
 </div>
 

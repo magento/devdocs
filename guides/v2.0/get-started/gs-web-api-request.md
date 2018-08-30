@@ -97,7 +97,7 @@ For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+<div class="bs-callout bs-callout-info" markdown="1"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
 Specify one or more of the following HTTP headers in your web API calls:
 <table style="width:100%">
    <tr bgcolor="lightgray">

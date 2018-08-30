@@ -114,6 +114,6 @@ return $jsLayout;
 
 If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
 
-<div class="bs-callout bs-callout-info">
+<div class="bs-callout bs-callout-info" markdown="1">
 Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.
 </div>

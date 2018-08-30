@@ -15,4 +15,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_6-install.html">Step 6. Install</a>
+[Step 6. Install]({{ page.baseurl }}/install-gde/install/web/install-web_6-install.html)

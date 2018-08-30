@@ -29,7 +29,7 @@ To set up the Facebook web driver, use the following steps:
         cd <magento2_root_dir>/dev/tests/functional
         composer update
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>You still need to <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
 </div>
 
@@ -48,7 +48,7 @@ To setup the custom web driver, follow:
         cd <magento2_root_dir>/dev/tests/functional
         composer update
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>You still need to <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
 </div>
 

@@ -40,7 +40,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 </theme>
 {% endhighlight xml %}
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
 </div>
 
@@ -120,7 +120,7 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button"/></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
+You can find out what exactly code changes are required to perform this and other tasks in the [Illustration of customizing templates topic]({{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html).
 
 ## Extend layouts {#theme-inherit-layout}
 
@@ -152,7 +152,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"} article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

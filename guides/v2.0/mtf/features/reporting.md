@@ -7,7 +7,7 @@ The Functional Testing Framework (FTF) provides a reporting tool, which logs fai
 
 The following image demonstrates example of a general flow.  
 
-<a href="{{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png" /></a>
+[![]({{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png)]({{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png){: target="_blank"}
 
 The {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} manager is a core component which:
 
@@ -233,7 +233,7 @@ The following example shows how to edit the `base` preset.
   - `click_after`
   - `set_value`
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>The <code>base</code> preset is stored in the FTF <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/events.xml</code>. To add or change any setting, edit <code>&lt;magento2&gt;/dev/tests/functional/etc/events.xml</code>, which is merged with the one in the FTF.
 </p>
 </div>

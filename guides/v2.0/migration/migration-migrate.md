@@ -22,7 +22,7 @@ During the migration process, **do not:**
 
 3. Make changes in the Magento 2 Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
   <p>All operations in Magento 1 storefront are allowed at this time.</p>
 </div>
 
@@ -46,13 +46,13 @@ bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
 
 where:
 
-1. `<mode>` may be: <a href="{{ page.baseurl }}/migration/migration-migrate-settings.html">`settings`</a>, <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">`data`</a>, or <a href="{{ page.baseurl }}/migration/migration-migrate-delta.html">`delta`</a>
+1. `<mode>` may be: [`settings`]({{ page.baseurl }}/migration/migration-migrate-settings.html), [`data`]({{ page.baseurl }}/migration/migration-migrate-data.html), or [`delta`]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 2. `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>Logs are written to the <code>&lt;your Magento install dir>/var/</code> directory.</p></span>
 </div>
@@ -61,8 +61,8 @@ where:
 
 When we created the Data Migration Tool, we assumed the following data transfer sequence:
 
-1.	<a href="{{ page.baseurl }}/migration/migration-migrate-settings.html">Settings</a>
-2.	<a href="{{ page.baseurl }}/migration/migration-migrate-data.html">Data</a>
-3.	<a href="{{ page.baseurl }}/migration/migration-migrate-delta.html">Changes</a>
+1.	[Settings]({{ page.baseurl }}/migration/migration-migrate-settings.html)
+2.	[Data]({{ page.baseurl }}/migration/migration-migrate-data.html)
+3.	[Changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 That's why we strongly recommend to keep this order to migrate quickly and with no issues.

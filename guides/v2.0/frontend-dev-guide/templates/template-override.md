@@ -18,7 +18,7 @@ This topic discusses the main concepts of how default templates work in the Mage
 Templates are usually initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 Each layout block has an associated template. 
 The template is specified in the `template` attribute of the <block> layout instruction. 
-For example, from <code><a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:
+For example, from <code>[&lt;Magento\_Catalog\_module\_dir&gt;/view/frontend/layout/catalog\_category\_view.xml]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml){: target="_blank"}</code>:
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
@@ -46,11 +46,11 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 ## Templates overriding   {#override}
 
 For template files with the same name, the following is true: 
-theme templates override module templates, and those of a <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
+theme templates override module templates, and those of a [child theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html){: target="_blank"} override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to override one in your custom theme.
 
-Overriding templates is described with more details in the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
+Overriding templates is described with more details in the [Theme Inheritance article]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates){: target="_blank"}.
 
 ## Root template   {#root}
 

@@ -47,7 +47,7 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
 </ignore>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
    <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
 </div>
 

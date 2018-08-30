@@ -19,13 +19,13 @@ Although this release includes these enhancements, no confirmed attacks related 
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our <a href="https://magento.com/legal/terms/enterprise-agreement" target="_blank">Magento Commerce Support Service Terms</a>.
+The Magento Commerce 2.0.18 software release marks the final supported software release for Magento Commerce version 2.0.X. Magento Commerce 2.0.X will no longer receive security updates or product quality fixes now that its support window has expired, as defined by our [Magento Commerce Support Service Terms](https://magento.com/legal/terms/enterprise-agreement){: target="_blank"}.
 
 To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
 </div>
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See <a href="https://github.com/magento/magento2/issues/13929" target="_blank">GitHub-13929</a> for more information.
+For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929){: target="_blank"} for more information.
 </div>
 
 ## Highlights
@@ -41,18 +41,18 @@ Look for the following highlights in this release:
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. See
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){: target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 

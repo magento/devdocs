@@ -40,7 +40,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 
 	Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
 </div>
 
@@ -51,7 +51,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}
-To find the web server configuration, run a <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a [`phpinfo.php` file]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) in your web browser and look for the Loaded Configuration File as follows:
 
 ![]({{ site.baseurl }}/common/images/config_phpini-webserver.png){: width="700px"}
 
@@ -61,7 +61,7 @@ To locate the PHP command-line configuration, enter
 
 Use the value of Loaded Configuration file.
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
     <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 </div> 
 
@@ -138,10 +138,10 @@ If you have more than one `opcache.ini`, modify all of them.
 
 #### Related topics
 
-*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 

@@ -16,7 +16,7 @@ Magento supported URNs begin with `urn:magento`. Magento supports two XSD refere
 * Module XSD
 * Framework XSD
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>You cannot change the XSD for any XML files provided with the Magento application.</p></span>
 </div>
@@ -63,7 +63,7 @@ The URN resolution is invoked automatically by the libxml engine. Register the U
 libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>The relative path to other XSDs cannot be used from inside the XSD file, because the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} loader fails to resolve the relative path.</p></span>
 </div>

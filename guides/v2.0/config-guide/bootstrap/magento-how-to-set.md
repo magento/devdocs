@@ -39,7 +39,7 @@ The following table discusses the bootstrap parameters you can set:
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
   	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
@@ -63,7 +63,7 @@ bash shell example for CentOS:
 
 	export MAGE_PROFILER=firebug
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <span class="glyphicon-class">
   <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
 </div>

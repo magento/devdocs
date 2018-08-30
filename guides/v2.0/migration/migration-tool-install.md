@@ -31,7 +31,7 @@ If you cloned the Magento 2 GitHub repository, enter the following commands:
 
 If you're currently in the `develop` branch, you must change to a <a href="{{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-tip" markdown="1">
 	<p>If you haven't installed the Magento software yet, <a href="{{ page.baseurl }}/install-gde/continue.html">install it now</a>.</p>
 
 	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
@@ -49,7 +49,7 @@ You may install the Data Migration Tool from:
 
 * [GitHub](#install-github)
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <p>Before installing, make sure you have:</p>
 	<ul>
 		<li>

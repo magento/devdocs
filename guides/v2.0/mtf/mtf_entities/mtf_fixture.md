@@ -34,11 +34,11 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
     cd <magento2_root_dir>/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
 <p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
 </div>
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
 <p>To work with generateFixtureXml tool, <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
 </div>
 
@@ -316,7 +316,7 @@ To apply the changes, enter the following commands:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
     
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning" markdown="1">
 <p>You should mention repository in data source class to use it for fixture field.<br/>
 <br/>
 Example from <code>LayoutUpdates.php</code><br/>

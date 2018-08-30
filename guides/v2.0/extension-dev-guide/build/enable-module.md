@@ -23,7 +23,7 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 <li>Check under <code>Stores->Configuration->Advanced->Advanced</code> that the component is present.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" markdown="1">
   <span class="glyphicon-class"></span>
   <p>The general order of operations for <code>setup:upgrade</code> is:</p>
 
