@@ -139,15 +139,15 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code></p>
       </td>
       <td>
-          <p>Imports necessary files and then outputs styles to be included in <code><style></code> tag</p>
+          <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
       </td>
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email-fonts.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
       <td>
           <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
@@ -155,7 +155,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email-inline.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
       <td>
           <p>Imports necessary files and then outputs styles to be inlined</p>
@@ -163,7 +163,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-base.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
       <td>
           <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
@@ -171,7 +171,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-extend.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
       </td>
       <td>
           <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-extend.less</code> file for example usage.</p>
@@ -179,7 +179,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-variables.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
       <td>
           <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-variables.less</code> file for example usage.</p>
@@ -187,7 +187,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/<Namespace>_<Module>/web/css/source/_email.less</code></p>
+          <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
       <td>
           <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
