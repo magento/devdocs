@@ -72,11 +72,11 @@ For other tests please see the following topics:
 
 - [How to run unit tests during development on the command line orPHPStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
 
-- [How to run unit and integration tests using \`bin/magento\` incontinuousintegration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+- [How to run unit and integration tests using \`bin/magento\` in continuous integration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
 
 - [More information about JavaScript unittests.]({{ page.baseurl }}/test/js/test_js-unit.html)
 
-- [More information about performancetesting.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
+- [More information about performance testing.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
 
 ## FTF on GitHub {#mtf_intro_github-link}
 
