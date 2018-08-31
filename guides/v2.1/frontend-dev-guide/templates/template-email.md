@@ -27,7 +27,7 @@ Any templates configured in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8
 2. Click **Add New Template**.
 3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
-    <br>![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template.png){:width="70%"}{:height="70%"}
+    <br>![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template21.png){:width="70%"}{:height="70%"}
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
@@ -40,7 +40,7 @@ Make note of this path because you will need it later when you configure this ne
     2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
     <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
-    <br>![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template.png){:width="70%"}{:height="70%"}
+    <br>![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
     4. Select your newly created template from the list.
     5. Click **Save Config**.
 
@@ -67,7 +67,7 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Create a new template or edit an existing template.
 3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br>![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable.png){:width="70%"}{:height="70%"}
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br>![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable21.png){:width="70%"}{:height="70%"}
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
@@ -174,7 +174,7 @@ The styles for emails are split into several different files.
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
       </td>
       <td>
-          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-extend.less</code> file for example usage.</p>
+          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-extend.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
@@ -182,7 +182,7 @@ The styles for emails are split into several different files.
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
       <td>
-          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-variables.less</code> file for example usage.</p>
+          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-variables.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
@@ -198,7 +198,7 @@ The styles for emails are split into several different files.
           <p><code>lib/web/css/source/_email-variables.less</code></p>
       </td>
       <td>
-          <p>Same as <code><Magento_Blank_theme_dir>/web/css/source/_email-variables.less</code></p>
+          <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
     </tr>
     <tr>
