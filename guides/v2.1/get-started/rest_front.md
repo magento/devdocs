@@ -26,7 +26,7 @@ Read the following sections to get up and running with the Magento web APIs:
 - [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
 - [Construct arequest]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 - [Use cURL to run therequest]({{ page.baseurl }}/get-started/gs-curl.html)
-- [Review theresponse]({{ page.baseurl }}/get-started/gs-web-api-response.html)
+- [Review the response]({{ page.baseurl }}/get-started/gs-web-api-response.html)
 
    <!--
       <li>
