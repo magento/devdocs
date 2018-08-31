@@ -505,123 +505,258 @@ new&nbsp;project.MyClass()</pre></td>
 
 <table>
 	<tbody>
-	<tr>
-		<th>Operator name</th>
-		<th>Syntax</th>
-		<th>Description</th>
-		<th>Deprecated syntaxes</th>
-	</tr>
-	<tr>
-		<td>Type Name</td>
-		<td><code>{boolean}, {Window}, {namespace.ui.Menu}</code></td>
-		<td>Simply the name of a type.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Type Application</td>
-		<td><code>{Array.&nbsp;&lt;string&gt;}</code><br>
-		An array of strings.<br>
-		<code>{Object. <string, number>}</code><br>
-		An object. In the object, the keys are strings and the values are numbers.</td>
-		<td>Parametrizes a type, by applying a set of type arguments to that type. The idea is analogous to generics in Java.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Type Union</td>
-		<td><code>{(number|boolean)}</code><br>
-		A number or a boolean.</td>
-		<td>Indicates that a value might have type A OR type B.</td>
-		<td><code>{(number,boolean)}, {number|boolean}, {(number||boolean)}</code></td>
-	</tr>
-	<tr>
-		<td>Record Type</td>
-		<td><code>codemyNum: number, myObject}}</code><br>
-		An anonymous type with the given type members.</td>
-		<td>Indicates that the value has the specified members with the specified types. In this case, <code>myNum</code> with a type <code>number</code> and <code>myObject</code> with any type.
-		Note that the braces are part of the type syntax. For example, to denote an <code>Array</code> of objects that have a <code>length</code> property, you might write <code>Array.<{length}></code>.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Nullable type</td>
-		<td><code>{?number}</code><br>
-		A number or NULL.</td>
-		<td>Indicates that a value is type A or <code>null</code>. By default, all object types are nullable. NOTE: Function types are not nullable.</td>
-		<td><code>{number?}</code></td>
-	</tr>
-	<tr>
-		<td>Non-nullable type</td>
-		<td><code>{!Object}</code><br>
-		An Object, but never the null value.</td>
-		<td>Indicates that a value is type A and not null. By default, all value types (boolean, number, string, and undefined) are not nullable.</td>
-		<td><code>{Object!}</code></td>
-	</tr>
-	<tr>
-		<td>Function Type</td>
-		<td><code>{function(string, boolean)}</code><br>
-		A function that takes two arguments (a string and a boolean), and has an unknown return value.</td>
-		<td>Specifies a function.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Function Return Type</td>
-		<td><code>{function(): number}</code><br>
-		A function that takes no arguments and returns a number.</td>
-		<td>Specifies a function return type.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Function <code>this</code> Type</td>
-		<td><code>{function(this:namespace.ui.Menu, string)}</code><br>
-		A function that takes one argument (a string), and executes in the context of a namespace.ui.Menu.</td>
-		<td>Specifies the context type of a function type.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Function <code>new</code> Type</td>
-		<td><code>{function(new:namespace.ui.Menu, string)}</code><br>
-		A constructor that takes one argument (a string), and creates a new instance of namespace.ui.Menu when called with the 'new' keyword.</td>
-		<td>Specifies the constructed type of a constructor.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Variable arguments</td>
-		<td><code>{function(string, ...[number]): number}</code><br>
-		A function that takes one argument (a string), and then a variable number of arguments that must be numbers.</td>
-		<td>Specifies variable arguments to a function.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Variable arguments (in <code>@param/<code> annotations)</td>
-		<td><code>@param {...number} var_args</code><br>
-		A variable number of arguments to an annotated function.</td>
-		<td>Specifies that the annotated function accepts a variable number of arguments.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Function optional arguments</td>
-		<td><code>{function(?string=, number=)}</code><br>
-		A function that takes one optional, nullable string and one optional number as arguments. The = syntax is only for <code>function</code> type declarations.</td>
-		<td>Specifies optional arguments to a function.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Function optional arguments (in <code>@param</code> annotations)</td>
-		<td><code>@param {number=} opt_argument</code><br>
-		An optional parameter of type number.</td>
-		<td>Specifies that the annotated function accepts an optional argument.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>The ALL type</td>
-		<td><code>{*}</code></td>
-		<td>Indicates that the variable can take on any type.</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>The UNKNOWN type</td>
-		<td><code>{?}</code></td>
-		<td>Indicates that the variable can take on any type, and the compiler should not type-check any uses of it.</td>
-		<td></td>
-	</tr>
-  </tbody>
+		<tr>
+			<th>
+				Operator name
+			</th>
+			<th>
+				Syntax
+			</th>
+			<th>
+				Description
+			</th>
+			<th>
+				Deprecated syntaxes
+			</th>
+		</tr>
+		<tr>
+			<td>
+				Type Name
+			</td>
+			<td>
+				<code>{boolean}, {Window}, {namespace.ui.Menu}</code>
+			</td>
+			<td>
+				Simply the name of a type.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Type Application
+			</td>
+			<td>
+				<code>{Array.&nbsp;&lt;string&gt;}</code><br />
+				An array of strings.<br />
+				<code>{Object. }</code><br />
+				An object. In the object, the keys are strings and the
+				values are numbers.
+			</td>
+			<td>
+				Parametrizes a type, by applying a set of type arguments to
+				that type. The idea is analogous to generics in Java.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Type Union
+			</td>
+			<td>
+				<code>{(number|boolean)}</code><br />
+				A number or a boolean.
+			</td>
+			<td>
+				Indicates that a value might have type A OR type B.
+			</td>
+			<td>
+				<code>{(number,boolean)}, {number|boolean},
+					{(number||boolean)}</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Record Type
+			</td>
+			<td>
+				<code>codemyNum: number, myObject}}</code><br />
+				An anonymous type with the given type members.
+			</td>
+			<td>
+				Indicates that the value has the specified members with the
+				specified types. In this case, <code>myNum</code> with a
+				type <code>number</code> and <code>myObject</code> with any
+				type. Note that the braces are part of the type syntax. For
+				example, to denote an <code>Array</code> of objects that
+				have a <code>length</code> property, you might write
+				<code>Array.&lt;{length}&gt;</code>.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Nullable type
+			</td>
+			<td>
+				<code>{?number}</code><br />
+				A number or NULL.
+			</td>
+			<td>
+				Indicates that a value is type A or <code>null</code>. By
+				default, all object types are nullable. NOTE: Function
+				types are not nullable.
+			</td>
+			<td>
+				<code>{number?}</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Non-nullable type
+			</td>
+			<td>
+				<code>{!Object}</code><br />
+				An Object, but never the null value.
+			</td>
+			<td>
+				Indicates that a value is type A and not null. By default,
+				all value types (boolean, number, string, and undefined)
+				are not nullable.
+			</td>
+			<td>
+				<code>{Object!}</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Function Type
+			</td>
+			<td>
+				<code>{function(string, boolean)}</code><br />
+				A function that takes two arguments (a string and a
+				boolean), and has an unknown return value.
+			</td>
+			<td>
+				Specifies a function.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Function Return Type
+			</td>
+			<td>
+				<code>{function(): number}</code><br />
+				A function that takes no arguments and returns a number.
+			</td>
+			<td>
+				Specifies a function return type.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Function <code>this</code> Type
+			</td>
+			<td>
+				<code>{function(this:namespace.ui.Menu,
+					string)}</code><br />
+				A function that takes one argument (a string), and executes
+				in the context of a namespace.ui.Menu.
+			</td>
+			<td>
+				Specifies the context type of a function type.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Function <code>new</code> Type
+			</td>
+			<td>
+				<code>{function(new:namespace.ui.Menu,
+					string)}</code><br />
+				A constructor that takes one argument (a string), and
+				creates a new instance of namespace.ui.Menu when called
+				with the 'new' keyword.
+			</td>
+			<td>
+				Specifies the constructed type of a constructor.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Variable arguments
+			</td>
+			<td>
+				<code>{function(string, ...[number]): number}</code><br />
+				A function that takes one argument (a string), and then a
+				variable number of arguments that must be numbers.
+			</td>
+			<td>
+				Specifies variable arguments to a function.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Variable arguments (in <code>@param/</code> annotations)
+			</td>
+			<td>
+				<code>@param {...number} var_args</code><br />
+				A variable number of arguments to an annotated function.
+			</td>
+			<td>
+				Specifies that the annotated function accepts a variable
+				number of arguments.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Function optional arguments
+			</td>
+			<td>
+				<code>{function(?string=, number=)}</code><br />
+				A function that takes one optional, nullable string and one
+				optional number as arguments. The = syntax is only for
+				<code>function</code> type declarations.
+			</td>
+			<td>
+				Specifies optional arguments to a function.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				Function optional arguments (in <code>@param</code>
+				annotations)
+			</td>
+			<td>
+				<code>@param {number=} opt_argument</code><br />
+				An optional parameter of type number.
+			</td>
+			<td>
+				Specifies that the annotated function accepts an optional
+				argument.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				The ALL type
+			</td>
+			<td>
+				<code>{*}</code>
+			</td>
+			<td>
+				Indicates that the variable can take on any type.
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				The UNKNOWN type
+			</td>
+			<td>
+				<code>{?}</code>
+			</td>
+			<td>
+				Indicates that the variable can take on any type, and the
+				compiler should not type-check any uses of it.
+			</td>
+			<td></td>
+		</tr>
+	</tbody>
 </table>
