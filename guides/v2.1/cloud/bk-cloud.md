@@ -9,17 +9,9 @@ functional_areas:
 
 ![Cloud Benefits]
 
-Features such as git-based **Rapid development** with a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch; **Continuous deployment** in a PaaS environment ; and AWS hosting that offers merchants a **Scalable** and **Secure** environment for online sales and retailing.
-
-
-{{site.data.var.ece}} uses the following technologies:
+...features such as git-based **Rapid development** with a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; **Continuous deployment** every time you push code changes in a PaaS environment; highly **Customizable**  configuration files and tools; and AWS hosting that offers merchants a **Scalable** and **Secure** environment for online sales and retailing.
 
 ![Cloud Stack]
-
-
-
-![Cloud Fastly]
-
 
 <!-- Link definitions -->
 
@@ -28,7 +20,3 @@ Features such as git-based **Rapid development** with a pre-provisioned infrastr
 
 [Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.svg
 {: width="804px" height="721px"}
-
-[Cloud Fastly]: {{site.baseurl}}/common/images/cloud/CloudFastly.png
-{: width="930px" height="305px"}
-
