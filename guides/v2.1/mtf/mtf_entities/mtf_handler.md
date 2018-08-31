@@ -3,7 +3,7 @@ group: mtf-guide
 title: Handler
 ---
 
-You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need [afixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html), a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
+You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need a [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html), a [data set]({{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html), and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
 
