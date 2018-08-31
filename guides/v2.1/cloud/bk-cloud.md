@@ -7,19 +7,21 @@ functional_areas:
 
 {{site.data.var.ece}} is a managed, automated hosting platform for {{site.data.var.ee}}. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
--  Rapid development
--  Continuous deployment
--  Customizable
--  Scalable
--  Enhanced security
+![Cloud Benefits]
 
 {{site.data.var.ece}} uses the following technologies:
 
--  **Composer**—to manage dependencies and upgrades and provide a robust build process
--  **Git**—for local branching and flexible development workflows. The git-based code management makes it easy to integrate with Bitbucket or GitHub.
+![Cloud Stack]
+
 -  **Fastly**—for CDN, cloud Varnish caching, and DDoS services.
 -  **New Relic**—provides a complete view of your applications and operating environment to combine key metrics.
 -  **Blackfire profiler**—helps to locate and investigate performance issues.
+-  **Composer**—to manage dependencies and upgrades and provide a robust build process
+-  **Git**—for local branching and flexible development workflows. The git-based code management makes it easy to integrate with Bitbucket or GitHub.
+-  **Amazon Web Services**—for hosting globally with elastic scalability and redundancy.
+
+
+![Cloud Fastly]
 
 {{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.
 
@@ -100,4 +102,17 @@ functional_areas:
     </tr>
   </tbody>
 </table>
+
+
+<!-- Link definitions -->
+
+[Cloud Benefits]: {{site.baseurl}}/common/images/cloud/CloudBenefits.png
+{: width="930px" height="305px"}
+
+[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
+{: width="930px" height="305px"}
+
+[Cloud Fastly]: {{site.baseurl}}/common/images/cloud/CloudFastly.png
+{: width="930px" height="305px"}
+
 
