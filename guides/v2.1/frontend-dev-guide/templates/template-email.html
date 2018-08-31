@@ -1168,7 +1168,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>If you want to use a default template as a starting point, in the <strong>Load default template</strong> section, choose the template and click <strong>Load Template</strong>. The path to the configuration settings for each default template displays in the <strong>Currently Used For</strong> field in the Template Information section.<br />
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
- <br /><img src="/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
+ <br /><img src="/common/images/email_create_template21.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
   </li>
   <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
   <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.</li>
@@ -1183,7 +1183,7 @@ Make note of this path because you will need it later when you configure this ne
       <li>Click <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</li>
       <li>In the left pane, locate the section that contains the template you want to override. This is the section referenced by <strong>Currently Used For</strong> in your new template. (See step 3 earlier in this section.)
  <br />For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.
- <br /><img src="/common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
+ <br /><img src="/common/images/email_choose-template21.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
       <li>Select your newly created template from the list.</li>
       <li>Click <strong>Save Config</strong>.</li>
     </ol>
@@ -1216,7 +1216,7 @@ Make note of this path because you will need it later when you configure this ne
   <li>Create a new template or edit an existing template.</li>
   <li>Click to place the cursor in the text in which to insert the variable.</li>
   <li>
-    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%" /></p>
+    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/common/images/email_insert_variable21.png" alt="The list of available variables" width="70%" height="70%" /></p>
   </li>
   <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
 </ol>
@@ -1288,15 +1288,15 @@ Make note of this path because you will need it later when you configure this ne
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email.less&lt;/code&gt;&lt;/p&gt;
-      &lt;/td&gt;
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code></p>
+      </td>
       <td>
-          <p>Imports necessary files and then outputs styles to be included in <code><style></code> tag</p>
+          <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
       </td>
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email-fonts.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
       <td>
           <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
@@ -1304,7 +1304,7 @@ Make note of this path because you will need it later when you configure this ne
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/email-inline.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
       <td>
           <p>Imports necessary files and then outputs styles to be inlined</p>
@@ -1312,7 +1312,7 @@ Make note of this path because you will need it later when you configure this ne
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-base.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
       <td>
           <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
@@ -1320,23 +1320,23 @@ Make note of this path because you will need it later when you configure this ne
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-extend.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
       </td>
       <td>
-          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-extend.less</code> file for example usage.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-          <p><code><Magento_Blank_theme_dir>/web/css/source/_email-variables.less</code></p>
-      </td>
-      <td>
-          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code><Magento_Luma_theme_dir>/web/css/source/_email-variables.less</code> file for example usage.</p>
+          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-extend.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
       <td>
-          <p><code><Magento_Blank_theme_dir>/<Namespace>_<Module>/web/css/source/_email.less</code></p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
+      </td>
+      <td>
+          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-variables.less</code> file for example usage.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
       <td>
           <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
@@ -1347,7 +1347,7 @@ Make note of this path because you will need it later when you configure this ne
           <p><code>lib/web/css/source/_email-variables.less</code></p>
       </td>
       <td>
-          <p>Same as <code><Magento_Blank_theme_dir>/web/css/source/_email-variables.less</code></p>
+          <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
     </tr>
     <tr>
@@ -1361,164 +1361,201 @@ Make note of this path because you will need it later when you configure this ne
   </tbody>
 </table>
 
-When implementing a custom theme, you should be able to fully customize email templates by copying the `<Magento_Blank_theme_dir>/web/css/source/_email-extend.less` and `<Magento_Blank_theme_dir>/web/css/source/_email-variables.less` files to your custom theme and editing those files.
+<p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
-### Custom fonts {#custom-fonts}
+<h3 id="custom-fonts">Custom fonts</h3>
 
-Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
+<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code class="highlighter-rouge">@font-face</code> rules are used to include web fonts.</p>
 
-Here is an overview of how the font structure for emails works:
+<p>Here is an overview of how the font structure for emails works:</p>
 
-* [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`](https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code class="highlighter-rouge">@import</code> directive that requests the <code class="highlighter-rouge">email-fonts.css</code> file.</p>
 
-  The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
-* The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * [app/design/frontend/Magento/blank/web/css/source/_variables.less](https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
-    * [app/design/frontend/Magento/blank/web/css/source/_typography.less](https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
+    <p>The reason the contents of <code class="highlighter-rouge">email-fonts.css</code> are loaded using <code class="highlighter-rouge">@import</code> rather than being output directly into a <code class="highlighter-rouge">&lt;style&gt;</code> tag in the <code class="highlighter-rouge">&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code> file imports <code class="highlighter-rouge">source/_variables.less</code> and <code class="highlighter-rouge">source/_typography.less</code> files:</p>
+    <ul>
+      <li><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_variables.less">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code class="highlighter-rouge">@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_typography.less">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code class="highlighter-rouge">@font-face</code> rules which import the custom fonts.</li>
+    </ul>
+  </li>
+</ul>
 
-If you want to change the font used for emails, do the following:
+<p>If you want to change the font used for emails, do the following:</p>
 
-1. Refer to the documentation on [using fonts](/guides/v2.1/frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
-2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
+<ol>
+  <li>Refer to the documentation on <a href="/guides/v2.1/frontend-dev-guide/css-topics/using-fonts.html">using fonts</a> for details on how to add a new font.</li>
+  <li>After you’ve added a new font and have updated the <code class="highlighter-rouge">source/_variables.less</code> and <code class="highlighter-rouge">source/_typography.less</code> files for your custom theme to refer to the new font, the emails should automatically use the specified font.</li>
+</ol>
 
-## Email logo {#email-logo}
+<h2 id="email-logo">Email logo</h2>
 
-You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
+<p>You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin.</p>
 
-Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
+<p>Because email clients don’t support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3× the size that you actually want it to display. For example, let’s say your email has a 200px × 100px area for the logo. The logo image should be 600px × 300px.</p>
 
-If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
+<p>If you don’t have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px × 100px, specify <code class="highlighter-rouge">200</code> for the width and <code class="highlighter-rouge">100</code> for the height.</p>
 
-### Customize the email logo using a theme {#customize-logo-theme} 
+<h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
 
-To customize your logo using a theme:
+<p>To customize your logo using a theme:</p>
 
-1. Add a file named `logo_email.png` to a `Magento_Email/web` directory in your custom theme.
-  
-   For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
+<ol>
+  <li>
+    <p>Add a file named <code class="highlighter-rouge">logo_email.png</code> to a <code class="highlighter-rouge">Magento_Email/web</code> directory in your custom theme.</p>
 
-2. Copy the `<Magento_Email_module_dir>/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme. 
+    <p>For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Email/web</code> directory.</p>
+  </li>
+  <li>
+    <p>Copy the <code class="highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file into a <code class="highlighter-rouge">Magento_Email/email</code> directory in your theme.</p>
+
+    <p>For example, the OrangeCo vendor would copy the file to this location: <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html</code></p>
+
+    <p>Edit the <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code> attributes of the <code class="highlighter-rouge">&lt;img&gt;</code> tag to reflect the area in which you want your logo to display (for example, 200 × 100).</p>
+
+    <p>Example:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{if logo_width}}
+    width="{{var logo_width}}"
+{{else}}
+    width="200"
+{{/if}}
    
-   For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
-   
-   Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
-  
-   Example:
-   
-       
-       {{if logo_width}}
-           width="{{var logo_width}}"
-       {{else}}
-           width="200"
-       {{/if}}
-       
-       {{if logo_height}}
-           height="{{var logo_height}}"
-       {{else}}
-           height="100"
-       {{/if}}
-       
-   
-   You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
+{{if logo_height}}
+    height="{{var logo_height}}"
+{{else}}
+    height="100"
+{{/if}}
+</code></pre></div>    </div>
 
-### Customize the email logo using the Admin {#customize-logo-admin}
+    <p>You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.</p>
+  </li>
+</ol>
 
-1. In the Magento Admin, navigate to **CONTENT** > Design > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes.
-2. In the configuration record corresponding to your store view, click **Edit**.
-3. Under **Transactional Emails** in the **Logo Image** field upload your logo and specify the alternative text for it.
-![System configuration](/common/images/email_templ_logo21.png)
+<h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
 
-4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
+<ol>
+  <li>In the Magento Admin, navigate to <strong>CONTENT</strong> &gt; Design &gt; <strong>Configuration</strong>. A Design Configuration page opens. It contains a grid with the available configuration scopes.</li>
+  <li>In the configuration record corresponding to your store view, click <strong>Edit</strong>.</li>
+  <li>
+    <p>Under <strong>Transactional Emails</strong> in the <strong>Logo Image</strong> field upload your logo and specify the alternative text for it.
+<img src="/common/images/email_templ_logo21.png" alt="System configuration" /></p>
+  </li>
+  <li>
+    <p>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code class="highlighter-rouge">200</code> and <code class="highlighter-rouge">100</code>, respectively.</p>
+  </li>
+  <li>Click the <strong>Save Configuration</strong> button.</li>
+</ol>
 
-5. Click the **Save Configuration** button.
+<h2 id="contact-information-emails">Use contact information in emails</h2>
 
-## Use contact information in emails {#contact-information-emails}
+<p>Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin.</p>
 
-Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin. 
+<p>To set those values:</p>
 
-To set those values:
+<ol>
+  <li>To set the store name, phone number, and hours of operation:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Information</strong></li>
+      <li>Input values into the <strong>Store Name</strong>, <strong>Store Phone Number</strong>, and <strong>Store Hours of Operation</strong> fields.</li>
+      <li>Note: The <strong>Store Phone Number</strong> and <strong>Store Hours of Operation</strong> fields are optional.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+  <li>To set the store email:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Email Addresses</strong> &gt; <strong>General Contact</strong></li>
+      <li>Input values into the <strong>Sender Name</strong> and <strong>Sender Email</strong> fields.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+</ol>
 
-1. To set the store name, phone number, and hours of operation:
-    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information**
-    2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
-    3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
-    4. Click the **Save Config** button.
-2. To set the store email:
-    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
-    2. Input values into the **Sender Name** and **Sender Email** fields.
-    3. Click the **Save Config** button.
+<p>The sales emails are configured to display all of the above values, if they’re configured in the admin. If you want to add those values to other email templates, you can use the following variables:</p>
 
-The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{var store.getFrontendName()}}
+{{var store_email}}
+{{var store_phone}}
+{{var store_hours}}
+</code></pre></div></div>
 
-    {{var store.getFrontendName()}}
-    {{var store_email}}
-    {{var store_phone}}
-    {{var store_hours}}
+<h2 id="localization">Localization</h2>
 
-## Localization {#localization}
+<p>In order to support the translation of content, all strings in emails are output using the <code class="highlighter-rouge">trans</code> directive. Example:</p>
 
-In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{{trans "Once your package ships we will send you a tracking number."}}
+</code></pre></div></div>
 
-    {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-    {{trans "Once your package ships we will send you a tracking number."}}
+<p>The <code class="highlighter-rouge">trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code class="highlighter-rouge">fr_FR</code> locale, the emails are translated to French.</p>
 
-The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
+<p>Please note, that variable assignment must not contain spaces.</p>
 
-Please note, that variable assignment must not contain spaces. 
+<p>Correct:</p>
 
-Correct:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+</code></pre></div></div>
 
-    
-    {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-    
+<p>Incorrect:</p>
 
-Incorrect:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+</code></pre></div></div>
 
-    
-    {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-    
+<p class="bs-callout bs-callout-info">Exception: argument value can contain spaces if it is enclosed in brackets.</p>
 
-{:.bs-callout .bs-callout-info}
-Exception: argument value can contain spaces if it is enclosed in brackets.
+<h2 id="supported-clients">Supported email clients and devices</h2>
 
-## Supported email clients and devices {#supported-clients}
+<p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.</p>
 
-We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
+<ul>
+  <li>Supported Desktop Clients
+    <ul>
+      <li>Apple Mail 7 (OS X 10.9)</li>
+      <li>Apple Mail 8 (OS X 10.10)</li>
+      <li>Outlook 2003 (Windows 7)</li>
+      <li>Outlook 2007 (Windows 7)</li>
+      <li>Outlook 2010 (Windows 7)</li>
+      <li>Outlook 2013 (Windows 7)</li>
+      <li>Outlook 2016 (OS X 10.10)</li>
+    </ul>
+  </li>
+  <li>Supported Mobile Clients
+    <ul>
+      <li>Native email app (Android 2.3)</li>
+      <li>Native email app (Android 4.2)</li>
+      <li>Gmail app (Android 4.2)</li>
+      <li>Native email app (Blackberry 5 OS)</li>
+      <li>iOS 7 (iPhone 5s)</li>
+      <li>iOS 8 (iPad Retina)</li>
+      <li>iOS 8 (iPad Mini)</li>
+      <li>iOS 8 (iPhone 6)</li>
+      <li>iOS 8 (iPhone 6 Plus)</li>
+      <li>Windows Phone 8</li>
+    </ul>
+  </li>
+  <li>Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
+    <ul>
+      <li>AOL Mail</li>
+      <li>Gmail</li>
+      <li>Office 365</li>
+      <li>Outlook.com</li>
+      <li>Yahoo! Mail</li>
+    </ul>
+  </li>
+</ul>
 
-* Supported Desktop Clients
-    * Apple Mail 7 (OS X 10.9)
-    * Apple Mail 8 (OS X 10.10)
-    * Outlook 2003 (Windows 7)
-    * Outlook 2007 (Windows 7)
-    * Outlook 2010 (Windows 7)
-    * Outlook 2013 (Windows 7)
-    * Outlook 2016 (OS X 10.10)
-* Supported Mobile Clients
-    * Native email app (Android 2.3)
-    * Native email app (Android 4.2)
-    * Gmail app (Android 4.2)
-    * Native email app (Blackberry 5 OS)
-    * iOS 7 (iPhone 5s)
-    * iOS 8 (iPad Retina)
-    * iOS 8 (iPad Mini)
-    * iOS 8 (iPhone 6)
-    * iOS 8 (iPhone 6 Plus)
-    * Windows Phone 8
-* Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
-    * AOL Mail
-    * Gmail
-    * Office 365
-    * Outlook.com
-    * Yahoo! Mail
+<h2 id="newsletter-templates">Newsletter templates</h2>
 
-## Newsletter templates {#newsletter-templates}
+<p>The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:</p>
 
-The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:
-
-* Import the header and footer using `{{template config_path="design/email/header_template"}}` and `{{template config_path="design/email/footer_template"}}`
-* Apply inline styles using `{{inlinecss file="css/email-inline.css"}}`
-* Include non-inline styles using `{{css file="css/email.css"}}`
-</style></code></p></td></Magento_Blank_theme_dir></code></p></td></tr></tbody></table>
+<ul>
+  <li>Import the header and footer using <code class="highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="highlighter-rouge">{{template config_path="design/email/footer_template"}}</code></li>
+  <li>Apply inline styles using <code class="highlighter-rouge">{{inlinecss file="css/email-inline.css"}}</code></li>
+  <li>Include non-inline styles using <code class="highlighter-rouge">{{css file="css/email.css"}}</code></li>
+</ul>
 
 			
 		</div>
