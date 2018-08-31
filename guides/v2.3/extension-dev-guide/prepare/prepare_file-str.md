@@ -12,4 +12,4 @@ In addition, you can choose the component root directory to start development. T
 
 #### Related topic
 
-<a href="{{ page.baseurl }}/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
+[Roadmap for developing and packaging components]({{ page.baseurl }}/extension-dev-guide/prepare/dev-summary.html)
