@@ -183,28 +183,28 @@ Navigation keys:
 </tr>
 <tr>
     <td>openLevelsAction</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>true</td>
 </tr>
 <tr>
     <td>showOpenLevelsActionIcon</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>true</td>
 </tr>
 <tr>
     <td>showTree</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>false</td>
 </tr>
 <tr>
     <td>separator</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>String</td>
     <td>optgroup</td>

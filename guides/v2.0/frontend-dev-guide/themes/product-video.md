@@ -35,7 +35,7 @@ You can set the following product video options:
         Boolean
       </td>
       <td colspan="1">
-        0 <br>
+        0 <br />
 (video is not played on page load)
       </td>
     </tr>
@@ -49,7 +49,7 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (related videos are not displayed)
 </td>
     </tr>
@@ -63,7 +63,7 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (video is not automatically replayed)
 </td>
     </tr>

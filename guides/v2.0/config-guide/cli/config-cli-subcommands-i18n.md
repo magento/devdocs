@@ -51,9 +51,9 @@ Command options:
 The following table explains this command's parameters and values:
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Parameter</th>
@@ -133,9 +133,9 @@ Command usage:
 The following table explains this command's parameters and values:
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Parameter</th>

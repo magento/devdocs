@@ -70,7 +70,7 @@ UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0
     <td>Configuration which will be passed to jquery-file-upload plugin</td>
     <td>Yes</td>
     <td>Object</td>
-    <td></td>
+    <td />
 </tr>
 <tr>
     <td>uploaderConfig.url</td>

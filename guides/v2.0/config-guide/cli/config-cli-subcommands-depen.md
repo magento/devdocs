@@ -33,9 +33,9 @@ Command options:
 The following table explains this command's options, parameters, and values.
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Parameter</th>
@@ -76,8 +76,8 @@ The following table explains this command's options, parameters, and values.
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
 <table>
-	<col width="50%">
-	<col width="50%">
+	<col width="50%" />
+	<col width="50%" />
 	<tbody>
 		<tr>
 			<th>Command</th>

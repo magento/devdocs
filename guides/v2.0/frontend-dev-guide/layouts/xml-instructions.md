@@ -469,7 +469,7 @@ Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&
       </tr>
       <tr class="even">
          <td>translate</td>
-         <td></td>
+         <td />
          <td>true|false</td>
          <td>no</td>
       </tr>

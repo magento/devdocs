@@ -44,9 +44,9 @@ Before you run any of these commands, you must either [install the Magento appli
 </div>
 
 <table>
-	<col width="40%">
-  	<col width="30%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Command</th>

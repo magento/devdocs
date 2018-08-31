@@ -143,8 +143,8 @@ Refer to the following table for a description of each label. These labels are a
 
 <table style="width:100%">
    <colgroup>
-      <col width="30%">
-      <col width="70%">
+      <col width="30%" />
+      <col width="70%" />
    </colgroup>
    <thead>
       <tr style="background-color:lightgray">
@@ -157,82 +157,82 @@ Refer to the following table for a description of each label. These labels are a
         <th colspan="2">Pull Request Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_accept.png" alt="the Accept button"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_accept.png" alt="the Accept button" /></td>
          <td>The pull request has been accepted and will be merged into mainline code.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_rejected.png" alt="the Reject button"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_rejected.png" alt="the Reject button" /></td>
          <td>The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button" /></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request.</td>
       </tr>
       <tr>
         <th colspan="2">Issue Resolution Status</th>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G1_Passed.png" alt="G1 Passed"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_G1_Passed.png" alt="G1 Passed" /></td>
          <td>Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G1_Failed.png" alt="G1 Failed"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_G1_Failed.png" alt="G1 Failed" /></td>
          <td>Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G2_Passed.png" alt="G2 Passed"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_G2_Passed.png" alt="G2 Passed" /></td>
          <td>The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_G3_Passed.png" alt="G3 Passed"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_G3_Passed.png" alt="G3 Passed" /></td>
          <td>The Community Engineering Team has validated and confirmed the issue.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_20x.png" alt="Reproduced on 2.0.x" /></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.0.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_21x.png" alt="Reproduced on 2.1.x" /></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.1.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_22x.png" alt="Reproduced on 2.2.x" /></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.2.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Reproduced_on_23x.png" alt="Reproduced on 2.3.x" /></td>
          <td>The Community Engineering Team reproduced the issue on latest 2.3.x release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_20x.png" alt="Fixed in 2.0.x" /></td>
          <td>The issue has been fixed in one of the 2.0.x releases or in 2.0-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_21x.png" alt="Fixed in 2.1.x" /></td>
          <td>The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_22x.png" alt="Fixed in 2.2.x" /></td>
          <td>The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Fixed_in_23x.png" alt="Fixed in 2.3.x" /></td>
          <td>The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with upcoming patch release.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/gitHub_acknowledged.png" alt="the acknowledged button"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/gitHub_acknowledged.png" alt="the acknowledged button" /></td>
          <td>The Community Engineering Team has created internal ticket.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_needs_update.png" alt="the needs update button" /></td>
          <td>The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce" /></td>
          <td>The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}/common/images/github_non-issue.png" alt="Non Issue"/></td>
+         <td><img src="{{ site.baseurl }}/common/images/github_non-issue.png" alt="Non Issue" /></td>
          <td>A described behavior in the issue description is valid and shouldn't be changed in Magento code base.</td>
       </tr>
    </tbody>
