@@ -29,16 +29,19 @@ POST /V1/inventory/bulk-product-source-unassign
 
 Multi Source merchants may need to transfer product inventory from one source location to another. For example, the merchant might decide to stop shipping specific products from a location or completely close the facility. In these cases, all operations for those products move to a new location.
 
-Bulk transfer allows you to specify multiple products, the origin source from which to transfer inventory, and the destination source to receive quantities. The process moves the all product inventory from the origin source. You cannot transfer a partial quantity. However, Magento retains quantity information when you transfer stock.
+Bulk transfer allows you to specify multiple products, the origin source from which to transfer inventory, and the destination source to receive quantities. The process moves all product inventory from the origin source. You cannot transfer a partial quantity.
+
+ Unlike an unassign source action, Magento also retains product data by moving the status (in stock/out of stock), and the Notify Quantity from one source to another. If the origin and destination sources are in different stocks, performing a bulk transfer affects the aggregated Salable Quantity and reservations for in-progress orders.
+
 
 **Parameters**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
 `skus` | A  comma-separated list of existing SKUs to transfer | Array | Required
-`originSource` | The original source of the SKUs | String | Required
+`originSource` | The current source of the SKUs | String | Required
 `destinationSource` | The target source for the SKUs. This source must be already defined. | String | Required
-`unassignFromOrigin` | If `true`, the original source is removed as a source for the products. If `false`, the original source is retained, but the products are marked as being out of stock. | Boolean | Required
+`unassignFromOrigin` | If `true`, the current source is removed as a source for the products. If `false`, the original source is retained, but the products are marked as being out of stock with a quantity of 0. | Boolean | Required
 {:style="table-layout:auto;"}
 
 **Sample usage**
@@ -63,7 +66,7 @@ Name | Description | Type | Requirements
 
 `true` if the request was successful
 
-## Bulk assign
+## Bulk assign sources
 
 Use the `POST /V1/inventory/bulk-product-source-assign` endpoint to add one or more sources to your products. This endpoint helps when creating and assigning custom sources to your default or custom stocks and preparing new locations and inventory.
 
@@ -103,9 +106,9 @@ Name | Description | Type | Requirements
 An ID that identifies the request, such as `1`.
 
 
-## Bulk unassign
+## Bulk unassign sources
 
-When unassigning a source from a product, you are indicating the product will no longer be stocked at that location. This process completely clears all inventory data for the source currently assigned to the product. If you need to move the existing inventory to a new location, consider using the bulk transfer endpoint (`POST /V1/inventory/bulk-product-source-transfer`).
+When unassigning a source from a product, you are indicating the product will no longer be stocked at that location. This process completely clears all inventory data (quantity, stock status, Notify Quantity threshold) for the source currently assigned to the product. If you need to move the existing inventory to a new location, consider using the bulk transfer endpoint (`POST /V1/inventory/bulk-product-source-transfer`).
 
 {:.bs-callout .bs-callout-warning}
 When you unassign a source from a product, Magento deletes all source data, including inventory amounts, from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders.

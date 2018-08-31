@@ -154,4 +154,4 @@ This source will be used to fulfill virtual and downloadable products.
 
 ## Verify this step
 
-In Admin, click **Stores** > **Manage Sources**.  The new sources are displayed in the Sources grid.
+In Admin, click **Stores** > **Inventory** > **Sources**.  The new sources are displayed in the Sources grid.
