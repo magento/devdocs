@@ -26,8 +26,8 @@ Features such as git-based **Rapid development** with a pre-provisioned infrastr
 [Cloud Benefits]: {{site.baseurl}}/common/images/cloud/CloudBenefits.png
 {: width="930px" height="305px"}
 
-[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
-{: width="930px" height="305px"}
+[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.svg
+{: width="804px" height="721px"}
 
 [Cloud Fastly]: {{site.baseurl}}/common/images/cloud/CloudFastly.png
 {: width="930px" height="305px"}
