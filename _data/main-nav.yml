@@ -144,7 +144,7 @@
 
     - label: B2B
       url: /b2b/bk-b2b.html
-      include_versions: ['2.2','2.3']
+      exclude_versions: ['2.0','2.1']
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
@@ -164,7 +164,7 @@
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
-      exclude_versions: ['2.1']
+      exclude_versions: ['2.0']
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
