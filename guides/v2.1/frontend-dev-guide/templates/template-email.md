@@ -145,22 +145,15 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/email.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code></p>
       </td>
       <td>
-        <p>
-          Imports necessary files and then outputs styles to be
-          included in tag
-        </p>
+          <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/email-fonts.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
       <td>
         <p>
@@ -173,9 +166,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/email-inline.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
       <td>
         <p>
@@ -186,9 +177,7 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/source/_email-base.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
       <td>
         <p>
@@ -202,45 +191,23 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/source/_email-extend.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
       </td>
       <td>
-        <p>
-          This file is intended to be copied into your custom
-          themes and edited directly. You can add new email styles
-          or override existing ones. This should prevent having to
-          copy the <code>_email-base.less</code> file into your
-          custom theme. See the
-          <code>/web/css/source/_email-extend.less</code> file for
-          example usage.
-        </p>
+          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-extend.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/web/css/source/_email-variables.less</code>
-        </p>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
       <td>
-        <p>
-          The <code>_email-base.less</code> file uses a number
-          mixins from the Magento UI library. If you want to change
-          any of the styles output by those mixins, you can set the
-          value of any of the variables those mixins uses in this
-          file. See the
-          <code>/web/css/source/_email-variables.less</code> file
-          for example usage.
-        </p>
+          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-variables.less</code> file for example usage.</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>
-          <code>/_/web/css/source/_email.less</code>
-        </p>
+          <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
       <td>
         <p>
@@ -258,10 +225,7 @@ The styles for emails are split into several different files.
         </p>
       </td>
       <td>
-        <p>
-          Same as
-          <code>/web/css/source/_email-variables.less</code>
-        </p>
+          <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
       </td>
     </tr>
     <tr>
