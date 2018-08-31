@@ -45,8 +45,8 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Contribution requirements   {#requirements}
 
-1. Contributions must adhere to <a href="{{ page.baseurl }}/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
-2. Refer to the Magento development team's <a href="{{ page.baseurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
+1. Contributions must adhere to [Magento coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html){: target="_blank"}.
+2. Refer to the Magento development team's [Definition of Done]({{ page.baseurl }}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
@@ -92,7 +92,7 @@ Check out this video to see the process in action:
 
 ## Create a pull request   {#pull_request}
 
-First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work.
+First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){: target="_blank"} and make sure you are not duplicating others’ work.
 
 To create a pull request:
 
@@ -135,7 +135,7 @@ To add an issue:
 
 [1]: https://www.codetriage.com/magento/magento2
 
-In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/magento/magento2" target="_blank">subscribe to Magento on CodeTriage</a>.
+In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){: target="_blank"}.
 
 ## Labels applied by the Magento team   {#labels}
 
