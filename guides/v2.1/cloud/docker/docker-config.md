@@ -1,37 +1,19 @@
 ---
 group: cloud
-title: Configure Docker
+title: Launch Docker configuration
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and {{site.data.var.ece}} `ece-tools` package.
+You can use the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
-The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker){:target="_blank"} contains build information for the following [Docker hub](https://hub.docker.com/r/magento/){:target="_blank"} images:
+-  [`{{site.data.var.ct}}` v2002.0.13 or later](#use-13)—deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
-- PHP: magento/magento-cloud-docker-php
-    -  PHP-CLI - version 7 and later
-    -  PHP-FPM - version 7 and later
-- NGINX: magento/magento-cloud-docker-nginx
-- Varnish: magento/magento-cloud-docker-varnish
+-  [`{{site.data.var.ct}}` v2002.0.12](#use-12)—deploys to a writeable file system in the Docker container. This version does not support the `docker:config:convert` command.
 
-The `ece-tools` package provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
-
-- PHP: `--php`
-- NGINX: `--nginx`
-- MariaDB: `--db`
-
-## Launch Docker configuration
-
-You can use the `ece-tools` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container.
-
--  If you use `ece tools` v2002.0.13 or later, {{site.data.var.ece}} deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
-
--  If you use `ece-tools` v2002.0.12, {{site.data.var.ece}} deploys to a writeable file system in the Docker container. This version does not support the `docker:config:convert` command.
-
-#### To launch Docker with `ece-tools` v2002.0.13 and later:
+#### To launch Docker with `{{site.data.var.ct}}` v2002.0.13 and later: {#use-13}
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="_blank"}.
 
@@ -98,7 +80,7 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
     -  [`https://localhost`](https://localhost){:target="_blank"}
 
-#### To launch Docker with `ece-tools` v2002.0.12:
+#### To launch Docker with `{{site.data.var.ct}}` v2002.0.12: {#use-12}
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="_blank"}.
 
@@ -146,19 +128,10 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     [`http://localhost:8080`](http://localhost:8080){:target="_blank"}
 
 
-## Stop and remove the Docker configuration
+#### To stop and remove the Docker configuration:
 
-Remove all components of your local Magento Cloud Docker instance including containers, networks, volumes, and images.
+Remove all components of your local Docker instance including containers, networks, volumes, and images.
 
 ```bash
 docker-compose down
 ```
-
-## Automate integration testing
-
-Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
-
--  2-layer configuration for Docker build and Travis CI
--  Customizable Docker Compose file to support a wide range of environment sets
--  Flexible permissions
--  Easy local setup and implementation
