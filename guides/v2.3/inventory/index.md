@@ -1,5 +1,5 @@
 ---
-group: msi
+group: inventory
 title: Multisource Inventory Developer Guide
 
 ---

@@ -61,6 +61,7 @@ The `source_code` values will be used in subsequent steps.
 ```
 
 **Response**
+
 Magento returns an empty array.
 
 `[]`

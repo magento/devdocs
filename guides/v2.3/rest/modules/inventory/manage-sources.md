@@ -1,11 +1,11 @@
 ---
-group: msi
+group: rest
 title: Manage sources
 ---
 
 Sources represent locations storing and shipping available product stock. Any location with available stock and capable of order fulfillment can be added as a source. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers.
 
-All stores begin with a default source that must remain enabled. Single source merchants (merchants who ship all products from one location) use the default source for their single point of inventory location and shipments. Multi source merchants create as many sources as they need to represent each location.
+All stores begin with a default source that must remain enabled. Single Source merchants (merchants who ship all products from one location) use the default source for their single point of inventory location and shipments. Multi Source merchants create as many sources as they need to represent each location.
 
 You cannot rename, delete, or disable the default source. You can create, modify, enable, and disable custom sources, but you cannot rename or delete a custom source.
 
@@ -20,7 +20,7 @@ Bundle and grouped products currently do not support multi-sourcing and must be 
 
 **Service name**
 
-`InventoryApiSourceRepositoryV1`
+`inventoryApiSourceRepositoryV1`
 
 **REST endpoints**
 
@@ -69,7 +69,7 @@ The value of the `source_code` parameter can contain upper and lower case letter
 ``` json
 {
    "source" : {
-      "name" : "Central Warehouse",
+      "name" : "Central Shipping Center",
       "source_code" : "central",
       "enabled" : true,
       "description": "Primary source for the central region",
@@ -97,7 +97,7 @@ Magento returns an empty array.
 
 All PUT requests must contain the `name`, `country_id`, and `postcode` parameters.
 
-This example updates the contact information ()`contact_name`, `email`, and `phone` parameters) of the source.
+This example updates the contact information (`contact_name`, `email`, and `phone` parameters) of the source.
 
 **Sample Usage**
 
@@ -108,7 +108,7 @@ This example updates the contact information ()`contact_name`, `email`, and `pho
 ``` json
 {
    "source" : {
-      "name": "Central Warehouse",
+      "name": "Central Shipping Center",
       "contact_name": "Donna Milton",
       "email": "dmilton@example.com",
       "phone": "(314) 555-1237",
@@ -142,7 +142,7 @@ None
 ``` json
 {
     "source_code": "central",
-    "name": "Central Warehouse",
+    "name": "Central Shipping Center",
     "email": "dmilton@example.com",
     "contact_name": "Donna Milton",
     "enabled": true,
@@ -181,21 +181,10 @@ None
 {
     "items": [
         {
-            "source_code": "austin_wh",
-            "name": "Austin Warehouse",
-            "contact_name": "Karen Chen",
-            "enabled": true,
-            "country_id": "US",
-            "city": "Austin",
-            "postcode": "78758",
-            "use_default_carrier_config": true,
-            "carrier_links": []
-        },
-        {
             "source_code": "central",
-            "name": "Central Warehouse",
-            "email": "dmilton@example.com",
-            "contact_name": "Donna Milton",
+            "name": "Central Shipping Center",
+            "email": "hsmith@example.com",
+            "contact_name": "Harold Smith",
             "enabled": true,
             "description": "Primary source for the central region",
             "latitude": 38.74132,
@@ -205,7 +194,7 @@ None
             "city": "St. Louis",
             "street": "123 Warehouse Blvd",
             "postcode": "63145",
-            "phone": "(314) 555-1237",
+            "phone": "(314) 555-1234",
             "use_default_carrier_config": true,
             "carrier_links": []
         },
@@ -218,6 +207,22 @@ None
             "longitude": 0,
             "country_id": "US",
             "postcode": "00000",
+            "use_default_carrier_config": true,
+            "carrier_links": []
+        },
+        {
+            "source_code": "east",
+            "name": "Eastern Shipping Center",
+            "email": "dsimons@example.com",
+            "contact_name": "Daryl Simons",
+            "enabled": true,
+            "description": "Primary source for the eastern region",
+            "country_id": "US",
+            "region_id": 45,
+            "city": "Raleigh",
+            "street": "456 Shipping Center Blvd",
+            "postcode": "27614",
+            "phone": "(919) 555-8888",
             "use_default_carrier_config": true,
             "carrier_links": []
         }
