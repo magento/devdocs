@@ -19,9 +19,9 @@ This topic introduces the high-level workflow for a developer who wants to creat
 	*	[Register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the component using `registration.php`.
 	*	Component-specific XML definition files:
 
-		*	Modules: <a href="{{ page.baseurl }}/extension-dev-guide/build/create_component.html">`module.xml`</a>
-		*	Themes: <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
-		*	Language packages: <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
+		*	Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
+		*	Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
+		*	Language packages: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
 *	Distribute your component:
 
 	*	[Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in `.zip` format.
