@@ -1204,8 +1204,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Click <strong>Add New Template</strong>.</li>
   <li>
     <p>If you want to use a default template as a starting point, in the <strong>Load default template</strong> section, choose the template and click <strong>Load Template</strong>. The path to the configuration settings for each default template displays in the <strong>Currently Used For</strong> field in the Template Information section.<br />
-Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
- <br /><img src="/common/images/email_create_template21.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
+Make note of this path because you will need it later when you configure this new template to be used instead of the default template.</p>
+
+    <p><img src="/common/images/email_create_template21.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
   </li>
   <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
   <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.</li>
@@ -1219,8 +1220,8 @@ Make note of this path because you will need it later when you configure this ne
       <li>If you haven’t done so already, log in to the Magento Admin as an administrator.</li>
       <li>Click <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</li>
       <li>In the left pane, locate the section that contains the template you want to override. This is the section referenced by <strong>Currently Used For</strong> in your new template. (See step 3 earlier in this section.)
- <br />For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.
- <br /><img src="/common/images/email_choose-template21.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
+For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.
+<img src="/common/images/email_choose-template21.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
       <li>Select your newly created template from the list.</li>
       <li>Click <strong>Save Config</strong>.</li>
     </ol>
@@ -1253,7 +1254,8 @@ Make note of this path because you will need it later when you configure this ne
   <li>Create a new template or edit an existing template.</li>
   <li>Click to place the cursor in the text in which to insert the variable.</li>
   <li>
-    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/common/images/email_insert_variable21.png" alt="The list of available variables" width="70%" height="70%" /></p>
+    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: 
+<img src="/common/images/email_insert_variable21.png" alt="The list of available variables" width="70%" height="70%" /></p>
   </li>
   <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
 </ol>
@@ -1320,8 +1322,12 @@ Make note of this path because you will need it later when you configure this ne
 <table>
   <tbody>
     <tr>
-      <th>File</th>
-      <th>Description</th>
+      <th>
+        File
+      </th>
+      <th>
+        Description
+      </th>
     </tr>
     <tr>
       <td>
@@ -1336,7 +1342,12 @@ Make note of this path because you will need it later when you configure this ne
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
       <td>
-          <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
+        <p>
+          Contains <code>@font-face</code> declarations for custom
+          fonts. This file is imported by the
+          <code>_email-extend.less</code> file using an
+          <code>@import</code> rule.
+        </p>
       </td>
     </tr>
     <tr>
@@ -1344,7 +1355,10 @@ Make note of this path because you will need it later when you configure this ne
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
       <td>
-          <p>Imports necessary files and then outputs styles to be inlined</p>
+        <p>
+          Imports necessary files and then outputs styles to be
+          inlined
+        </p>
       </td>
     </tr>
     <tr>
@@ -1352,7 +1366,13 @@ Make note of this path because you will need it later when you configure this ne
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
       <td>
-          <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
+        <p>
+          Contains majority of styles for emails, including resets,
+          layout, typography, and so on. Review the comments at the
+          top of this file to understand how the styles in this
+          file are split between the <code>email.less</code> and
+          <code>email-inline.less</code> files.
+        </p>
       </td>
     </tr>
     <tr>
@@ -1376,12 +1396,19 @@ Make note of this path because you will need it later when you configure this ne
           <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
       <td>
-          <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
+        <p>
+          Styles that are specific to modules are stored in these
+          files. This mechanism also allows third-party extensions
+          to include styles that will get included in the
+          inline/non-inline output.
+        </p>
       </td>
     </tr>
     <tr>
       <td>
-          <p><code>lib/web/css/source/_email-variables.less</code></p>
+        <p>
+          <code>lib/web/css/source/_email-variables.less</code>
+        </p>
       </td>
       <td>
           <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
@@ -1389,15 +1416,20 @@ Make note of this path because you will need it later when you configure this ne
     </tr>
     <tr>
       <td>
-          <p><code>lib/web/css/source/lib/variables/_email.less</code></p>
+        <p>
+          <code>lib/web/css/source/lib/variables/_email.less</code>
+        </p>
       </td>
       <td>
-          <p>Contains new email-specific variables that can be overridden in a theme-specific <code>_email-variables.less</code> file. </p>
+        <p>
+          Contains new email-specific variables that can be
+          overridden in a theme-specific
+          <code>_email-variables.less</code> file.
+        </p>
       </td>
     </tr>
   </tbody>
 </table>
-
 <p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
 <h3 id="custom-fonts">Custom fonts</h3>

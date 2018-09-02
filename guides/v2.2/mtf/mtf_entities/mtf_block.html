@@ -1028,7 +1028,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can use the <code class="highlighter-rouge">_rootElement</code> to find an element in the current block.</p>
 
-<p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code class="highlighter-rouge">WidgetInstance.php</code></a> block:</p>
+<p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">addLayoutUpdates</span><span class="p">()</span>
@@ -1048,7 +1048,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code class="highlighter-rouge">email</code> and <code class="highlighter-rouge">password</code>.</p>
 
-<p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" alt="" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" /></a></p>
 
 <p>The mapping file for the block is stored in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
 
@@ -1096,7 +1096,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="mtf_block_map_form_tab">Form tab mapping</h2>
 
 <p>You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\FormTabs</code></a>.If you want to use custom tab logic you can extend your class from<a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
+To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
 
 <p>For example, let’s see tabs for the Magento Widget: <strong>Settings</strong>, <strong>Storefront properties</strong>, <strong>Frontend App Options</strong>, <strong>Layout Updates</strong> .</p>
 
@@ -1250,7 +1250,7 @@ For example, you develop a functional test for the   <span term-uuid="fbcfce51-6
 
 <p>Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.</p>
 
-<p><a href="/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="/common/images/ftf/mtf_block_name_path_in_ui.png" alt="" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="/common/images/ftf/mtf_block_name_path_in_ui.png" /></a></p>
 
 <div class="bs-callout bs-callout-tip">
   <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
@@ -1258,7 +1258,7 @@ For example, you develop a functional test for the   <span term-uuid="fbcfce51-6
 
 <h5 id="mtf_block_path_code">Get the name and the path of blocks in the code</h5>
 
-<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php"><code class="highlighter-rouge">Template.php</code></a>:</p>
+<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:</p>
 
 <ul>
   <li>
@@ -1304,13 +1304,13 @@ For example, you develop a functional test for the   <span term-uuid="fbcfce51-6
 
 <p>Now you can inspect any element in a browser, and find which block contains it.</p>
 
-<p><a href="/common/images/ftf/mtf_block_name_path_in_code.png"><img src="/common/images/ftf/mtf_block_name_path_in_code.png" alt="" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_code.png"><img src="/common/images/ftf/mtf_block_name_path_in_code.png" /></a></p>
 
 <h4 id="mtf_block_to-page">Add a block to the page</h4>
 
 <p>Blocks are tested as part of the <a href="/guides/v2.2/mtf/mtf_entities/mtf_page.html">page</a> object. To add the block to the page you must add a corresponding node to the XML file of the page object.</p>
 
-<p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a>is a part of the page that is defined in<a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code class="highlighter-rouge">WidgetInstanceIndex.xml</code></a>.</p>
+<p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
 
 <p><code class="highlighter-rouge">block</code> is the node that adds the block to the page:</p>
 
@@ -1378,7 +1378,7 @@ For example, you develop a functional test for the   <span term-uuid="fbcfce51-6
 
 <h3 id="mtf_block_in_block">Use blocks inside blocks</h3>
 
-<p>You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code class="highlighter-rouge">BlockFactory</code></a> class and a selector.</p>
+<p>You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.</p>
 
 <p>See the following example:</p>
 

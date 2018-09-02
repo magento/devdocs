@@ -1179,7 +1179,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
 
-<p>You can find the Magento UI library under <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source <code class="highlighter-rouge">.less</code> files are stored under the <code class="highlighter-rouge">source</code> directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:</p>
+<p>You can find the Magento UI library under <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css" target="_blank"><code class="highlighter-rouge">lib/web/css</code></a>. Library source <code class="highlighter-rouge">.less</code> files are stored under the <code class="highlighter-rouge">source</code> directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:</p>
 
 <pre>lib/web
     ├── css/
@@ -1225,7 +1225,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If your theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.</p>
 
-<p>The complete list of these variables and their default values are stored in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the <code class="highlighter-rouge">breadcrumbs()</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
+<p>The complete list of these variables and their default values are stored in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code class="highlighter-rouge">lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code class="highlighter-rouge">lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the <code class="highlighter-rouge">breadcrumbs()</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
 .</p>
 
 <p>To change the default library variables values, specify the new values for the required variables in the <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file.</p>
@@ -1262,15 +1262,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     );
 }</pre>
 
-<p>Variables starting with <code class="highlighter-rouge">@_</code> are private mixin variables used only in this mixin. Variables starting with <code class="highlighter-rouge">@</code> (without the underscore) are global, and are listed in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.</p>
+<p>Variables starting with <code class="highlighter-rouge">@_</code> are private mixin variables used only in this mixin. Variables starting with <code class="highlighter-rouge">@</code> (without the underscore) are global, and are listed in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code class="highlighter-rouge">lib/web/css/source/lib/variables/</code></a>.</p>
 
 <h2 id="docs">UI library documentation</h2>
 
 <p>You can find detailed information about the Magento UI library in the documentation provided together with the code:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs/source/README.md" target="_blank"><code>lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs" target="_blank"><code>lib/web/css/docs</code></a>: contains a set of <code class="highlighter-rouge">.html</code> files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs/source/README.md" target="_blank"><code class="highlighter-rouge">lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs" target="_blank"><code class="highlighter-rouge">lib/web/css/docs</code></a>: contains a set of <code class="highlighter-rouge">.html</code> files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  view in the following location in your Magento installation: <code>pub/static/frontend/Magento/blank/en_US/css/docs/index.html</code></li>
 </ul>
 

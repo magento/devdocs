@@ -1252,6 +1252,7 @@ Orange inherits from the Magento Blank theme.</p>
 By default, according to the module template, in the mini   <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span>
  products are listed under the Go to   <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">Checkout</span>
  button:</p>
+
 <p><img src="/common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button" /></p>
 
 <p>The order is defined in the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> module template. The Blank theme does not override this template.
@@ -1260,7 +1261,9 @@ To do this, they need to add an overriding template for the corresponding module
 <code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml</code>
 Note, that the path to the template inside the <code class="highlighter-rouge">templates</code> directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:</p>
+
 <p><img src="/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button" /></p>
+
 <p>You can find out what exactly code changes are required to perform this and other tasks in the <a href="/guides/v2.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.</p>
 
 <h2 id="theme-inherit-layout">Extend layouts</h2>

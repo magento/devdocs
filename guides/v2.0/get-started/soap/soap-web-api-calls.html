@@ -520,7 +520,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To consume several services, you must specify them in the WSDL endpoint   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
 .</p>
 
-<table style="width:100%">   <colgroup>      <col width="20%" />      <col width="40%" />      <col width="40%" />   </colgroup>   <thead>      <tr>         <th>Service</th>         <th>WSDL endpoint URL</th>         <th>Available services</th>      </tr>   </thead>   <tbody>      <tr>         <td>customer</td>         <td>http://magentohost/soap?wsdl&amp;services=customerV1</td>         <td>\Magento\Customer\Service\V1\CustomerService</td>      </tr>       <tr>         <td>customer, catalogProduct</td>         <td>http://magentohost/soap/custom_store?wsdl&amp;services=customerCustomerAccountServiceV1,catalogProductV2</td>         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>      </tr>   </tbody></table>
+<table style="width:100%">
+   <colgroup>
+      <col width="20%" />
+      <col width="40%" />
+      <col width="40%" />
+   </colgroup>
+   <thead>
+      <tr>
+         <th>Service</th>
+         <th>WSDL endpoint URL</th>
+         <th>Available services</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>customer</td>
+         <td>http://magentohost/soap?wsdl&amp;services=customerV1</td>
+         <td>\Magento\Customer\Service\V1\CustomerService</td>
+      </tr>
+       <tr>
+         <td>customer, catalogProduct</td>
+         <td>http://magentohost/soap/custom_store?wsdl&amp;services=customerCustomerAccountServiceV1,catalogProductV2</td>
+         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>
+      </tr>
+   </tbody>
+</table>
 
 <p>The WSDL URL follows the following pattern:</p>
 

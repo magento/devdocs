@@ -2367,42 +2367,38 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Puts the store in maintenance mode.</li>
-  <li>
-    <p>Executes one of the following command options.</p>
+  <li>Executes one of the following command options.</li>
+</ol>
 
-    <table>
+<table>
 <col width="25%" />
 <col width="40%" />
 <col width="35%" />
 <tbody>
-    <tr>
-        <th>Option</th>
-        <th>Meaning</th>
-        <th>Backup file name and location</th>
-    </tr>
-		
 <tr>
-    <td><p>--code</p></td>
-    <td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_filesystem.tgz</p></td>
+<th>Option</th>
+<th>Meaning</th>
+<th>Backup file name and location</th>
 </tr>
 <tr>
-    <td><p>--media</p></td>
-    <td><p>Back up the <code>pub/media</code> directory.</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_filesystem_media.tgz</p></td>
+<td><p>--code</p></td>
+<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_filesystem.tgz</p></td>
 </tr>
 <tr>
-<tr>
-    <td><p>--db</p></td>
-    <td><p>Back up the Magento 2 database.</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_db.sql</p></td>
+<td><p>--media</p></td>
+<td><p>Back up the <code>pub/media</code> directory.</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_filesystem_media.tgz</p></td>
 </tr>
 <tr>
-&lt;/tbody&gt;
-&lt;/table&gt;
+<td><p>--db</p></td>
+<td><p>Back up the Magento 2 database.</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_db.sql</p></td>
+</tr>
+</tbody>
+</table>
 
-</tr></tr></tbody></table>
-  </li>
+<ol>
   <li>Takes the store out of maintenance mode.</li>
 </ol>
 

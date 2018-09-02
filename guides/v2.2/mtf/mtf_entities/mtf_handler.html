@@ -857,7 +857,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </tr>
     <tr>
       <td>WebAPI</td>
-      <td>Sends a POST request using the REST API. <a href="/guides/v2.2/rest/bk-rest.html">See REST API referencedocumentation.</a></td>
+      <td>Sends a POST request using the REST API. <a href="/guides/v2.2/rest/bk-rest.html">See REST API reference documentation.</a></td>
       <td>Similar to cURL but uses the REST API  entry point.</td>
       <td>Has the advantage of testing the API, faster than cURL.</td>
     </tr>
@@ -869,11 +869,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="mtf_handler_config">Configuration</h2>
 
 <p>One fixture can have various handlers. When we create an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
- in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code class="highlighter-rouge">config.xml</code></a>.</p>
+ in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
 
 <h3 id="mtf_handler_configxml"><code class="highlighter-rouge">config.xml</code></h3>
 
-<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
+<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code class="highlighter-rouge">config.xml</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp config.xml.dist config.xml
 </code></pre></div></div>
@@ -889,11 +889,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="/guides/v2.2/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
-  &lt;webapi priority=&quot;0&quot;&gt;
+  &lt;webapi priority="0"&gt;
     &lt;token&gt;integration_token&lt;/token&gt;
   &lt;/webapi&gt;
-  &lt;curl priority=&quot;1&quot; /&gt;
-  &lt;ui priority=&quot;2&quot; /&gt;
+  &lt;curl priority="1" /&gt;
+  &lt;ui priority="2" /&gt;
 &lt;/handler&gt;
 </pre>
 </td></tr>
@@ -932,9 +932,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="mtf_handler_conf_hand">Handler class</h3>
 
-<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the<a href="#mtf_handler_config"><code class="highlighter-rouge">config.xml</code></a>, and declare interface/classrelationships in the <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a>. When this class is created, you can call the <code class="highlighter-rouge">persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
+<p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the <code class="highlighter-rouge">persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
 
-<p>The <code class="highlighter-rouge">persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code class="highlighter-rouge">InjectableFixture</code></a> class by path <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
+<p>The <code class="highlighter-rouge">persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cp">&lt;?php</span>
@@ -963,7 +963,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="mtf_handler_di"><code class="highlighter-rouge">di.xml</code></h3>
 
-<p>The <code class="highlighter-rouge">di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the<a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
 
 <p>See an example for the Widget cURL handler (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
 
@@ -1107,7 +1107,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
 </ul>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
@@ -1275,7 +1275,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/ui</code> directory of the Magento_Widget   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/ui</code> directory of the Magento_Widget   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</li>
 </ul>
 
@@ -1412,7 +1412,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/webapi</code> directory of the Magento_Tax module.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code class="highlighter-rouge">etc/webapi</code> directory of the Magento_Tax module.</li>
 </ul>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
