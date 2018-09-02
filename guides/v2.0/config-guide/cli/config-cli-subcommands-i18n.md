@@ -150,7 +150,7 @@ The following table explains this command's parameters and values:
 		</tr>
 		<tr>
 			<td><p>&lt;locale></p></td>
-			<td><p>[ISO 639-1](http://www.iso.org/iso/home/standards/language_codes.htm){: target="_blank"} (language) and [ISO 3166](http://www.iso.org/iso/country_codes.htm){: target="_blank"} (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
+			<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
 			</td>
 			<td>
 				<p>Yes</p>
