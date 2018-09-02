@@ -34,7 +34,7 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>

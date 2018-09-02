@@ -52,7 +52,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 54512-->* You cannot currently remove a product or {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
 
-* _Known issue [(GITHUB-5025)](https://github.com/magento/magento2/issues/5025)  removed._
+* <i>Known issue [ (GITHUB-5025)](https://github.com/magento/magento2/issues/5025){: target="_blank"}  removed.</i>
 
 ### Fixed issues
 
@@ -1189,27 +1189,27 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-*  _Fixed GitHub issue [(GITHUB-4917)](https://github.com/magento/magento2/issues/4917) removed._
+*  <i>Fixed GitHub issue [ (GITHUB-4917)](https://github.com/magento/magento2/issues/4917){: target="_blank"} removed.</i>
 
 
-*  _Fixed GitHub issue [(GITHUB-4434)](https://github.com/magento/magento2/issues/4434) removed._
+*  <i>Fixed GitHub issue [ (GITHUB-4434)](https://github.com/magento/magento2/issues/4434){: target="_blank"} removed.</i>
 
-* _Fixed GitHub issue  [(GITHUB-2910)](https://github.com/magento/magento2/issues/2910) removed._
+* <i>Fixed GitHub issue  [ (GITHUB-2910)](https://github.com/magento/magento2/issues/2910){: target="_blank"} removed.</i>
 
 
-*  _Fixed GitHub issue  [(GITHUB-3053)](https://github.com/magento/magento2/issues/3053) removed. _
+*  <i>Fixed GitHub issue  [ (GITHUB-3053)](https://github.com/magento/magento2/issues/3053){: target="_blank"} removed. </i>
 
-* _Fixed GitHub issue  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946) removed. _
+* <i>Fixed GitHub issue  [ (GITHUB-2946)](https://github.com/magento/magento2/issues/2946){: target="_blank"} removed. </i>
 
-*  _Fixed GitHub issue   [(GITHUB-2711)](https://github.com/magento/magento2/issues/2711) removed._
+*  <i>Fixed GitHub issue   [ (GITHUB-2711)](https://github.com/magento/magento2/issues/2711){: target="_blank"} removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-2121)](https://github.com/magento/magento2/issues/2121) removed. _
+* <i>Fixed GitHub issue [ (GITHUB-2121)](https://github.com/magento/magento2/issues/2121){: target="_blank"} removed. </i>
 
-* _Fixed GitHub issue [(GITHUB-3605)](https://github.com/magento/magento2/issues/3605)  removed._
+* <i>Fixed GitHub issue [ (GITHUB-3605)](https://github.com/magento/magento2/issues/3605){: target="_blank"}  removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-59)](https://github.com/magento/magento2/issues/59)  removed._
+* <i>Fixed GitHub issue [ (GITHUB-59)](https://github.com/magento/magento2/issues/59){: target="_blank"}  removed.</i>
 
-* _Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, [(GITHUB-3529)](https://github.com/magento/magento2/issues/3529) removed. _
+* <i>Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, [ (GITHUB-3529)](https://github.com/magento/magento2/issues/3529){: target="_blank"} removed. </i>
 
 ### System requirements
 

@@ -54,10 +54,10 @@ To use this guide, you must be familiar with:
 
 #### Related topics:
 
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
-*	<a href="{{ page.baseurl }}/coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
+*	[Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
+*	[Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)
+*	[Cascading style sheets (CSS) ]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+*	[JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
+*	[Responsive web design]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 *	[Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
 

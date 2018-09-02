@@ -37,9 +37,9 @@ In addition to the command arguments discussed here, see <a href="{{ page.baseur
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <table>
-	<col width="40%">
-  	<col width="30%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Command</th>

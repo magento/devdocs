@@ -66,7 +66,7 @@ The ActionsColumns component implements a table's column responsible for display
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
+    <td><br />{<br />title: string;<br />message: string<br />}<br /></td>
     <td>Optional</td>
   </tr>
   <tr>

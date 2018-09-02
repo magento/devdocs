@@ -1050,9 +1050,9 @@ You can install Magento Commerce 2.3 Alpha  using Composer.
 
 ## Migration toolkits
 
-The [Data MigrationTool]({{ page.baseurl }}/migration/migration-migrate.html)helps transfer existing Magento 1.x store data to Magento 2.x. Thiscommand-line interface includes verification, progress tracking,logging, and testing functions. For installation instructions, see[Install the Data MigrationTool]({{ page.baseurl }}/migration/migration-tool-install.html).Consider exploring or contributing to the [Magento Data Migrationrepository](https://github.com/magento/data-migration-tool).
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 
 

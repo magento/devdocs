@@ -11,7 +11,7 @@ Two types of updates are available.
 <p>Use this type of update if the version of the Functional Testing Framework in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code> and last version in <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
 </div>
 
--    [Update components from dependencies in`<magento2>/dev/tests/functional/composer.json`](#mtf_update_depend)
+-    [Update components from dependencies in `<magento2>/dev/tests/functional/composer.json`](#mtf_update_depend)
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>

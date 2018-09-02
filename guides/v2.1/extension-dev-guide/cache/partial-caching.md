@@ -45,9 +45,9 @@ The preceding lists all cache types and shows they are all enabled.
 
 The following topics discuss how to set up caching:
 
-*	[Create a cachetype]({{ page.baseurl }}/config-guide/cache/caching-cache-type.html)
-*	[Create or extend configurationtypes]({{ page.baseurl }}/config-guide/config/config-create.html)
-*	[Associate cache frontends with cachetypes]({{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html)
-*	[Low-level cacheoptions]({{ page.baseurl }}/config-guide/cache/caching_low-level.html)
-*	[Configure and useVarnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
-*	[ConfigureRedis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
+*	[Create a cache type]({{ page.baseurl }}/config-guide/cache/caching-cache-type.html)
+*	[Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+*	[Associate cache frontends with cache types]({{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html)
+*	[Low-level cache options]({{ page.baseurl }}/config-guide/cache/caching_low-level.html)
+*	[Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
+*	[Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)

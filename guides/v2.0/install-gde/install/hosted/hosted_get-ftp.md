@@ -77,4 +77,4 @@ To extract the archive:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+[Install the Magento software]({{ page.baseurl }}/install-gde/install/hosted/hosted_install.html)

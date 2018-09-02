@@ -117,13 +117,13 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 46636-->* Nginx now redirects to the setup page when using port 81.
 
-<!--- 69544-->* We've added the `dev:template-hints:enable` and `dev:template-hints:disable` commands to manage template hints. *Fix submitted by community member [Miguel Balparda](https://github.com/miguelbalparda) in pull request[9778](https://github.com/magento/magento2/pull/9778).*
+<!--- 69544-->* We've added the `dev:template-hints:enable` and `dev:template-hints:disable` commands to manage template hints. *Fix submitted by community member [Miguel Balparda](https://github.com/miguelbalparda){: target="_blank"} in pull request [9778](https://github.com/magento/magento2/pull/9778){: target="_blank"}.*
 
 
-<!--- 67501-->* We've added the `dev:query-log:enable` and  `dev:query-log:disable ` to manage database query logging.  *Fix submitted by community member [Federico Rivollier](https://github.com/federivo) in pull request[9264](https://github.com/magento/magento2/pull/9264).*
+<!--- 67501-->* We've added the `dev:query-log:enable` and  `dev:query-log:disable ` to manage database query logging.  *Fix submitted by community member [Federico Rivollier](https://github.com/federivo){: target="_blank"} in pull request [9264](https://github.com/magento/magento2/pull/9264){: target="_blank"}.*
 
 
-<!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member [Piotr Kwiecinski](https://github.com/piotrkwiecinski) in pull request[9286](https://github.com/magento/magento2/pull/9286).*
+<!---67537 -->* We've added the `varnish:vcl:generate` command to create the Varnish VCL file. *Fix submitted by community member [Piotr Kwiecinski](https://github.com/piotrkwiecinski){: target="_blank"} in pull request [9286](https://github.com/magento/magento2/pull/9286){: target="_blank"}.*
 
 
 <!--- 69524 -->* Magento now adds a new record to the quote table and adds the  current date and time to the `created_at` field. Previously, this field was not updated.
@@ -200,21 +200,22 @@ This release contains hundreds of fixes and enhancements.
 <!--- 64544-->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout.
 
 
-<!--- 64399-->* Magento no longer throws an exception when a customer updates their shopping cart after you've enabled the Minimum Order setting. *Fix submitted by community member [Eric Risler](https://github.com/ericrisler) in pull request [8474](https://github.com/magento/magento2/pull/8474).*
+<!--- 64399-->* Magento no longer throws an exception when a customer updates their shopping cart after you've enabled the Minimum Order setting. *Fix submitted by community member <a href="https://github.com/ericrisler" target="_blank">Eric Risler
+</a> in pull request [8474](https://github.com/magento/magento2/pull/8474){: target="_blank"}.*
 
-<!--- 67323-->* You can now translate the  FPT label on the checkout page. *Fix submitted by community member [Oleksii Korshenko](https://github.com/okorshenko) in pull request[9204](https://github.com/magento/magento2/pull/9204).*
+<!--- 67323-->* You can now translate the  FPT label on the checkout page. *Fix submitted by community member [Oleksii Korshenko](https://github.com/okorshenko){: target="_blank"} in pull request [9204](https://github.com/magento/magento2/pull/9204){: target="_blank"}.*
 
-<!--- 69230-->* Magento no longer truncates bill-to names and ship-to names to 20 characters in the Admin.  *Fix submitted by community member [Isolde](https://github.com/SolsWebdesign) in pull request[9654](https://github.com/magento/magento2/pull/9654).*
+<!--- 69230-->* Magento no longer truncates bill-to names and ship-to names to 20 characters in the Admin.  *Fix submitted by community member [Isolde](https://github.com/SolsWebdesign){: target="_blank"} in pull request [9654](https://github.com/magento/magento2/pull/9654){: target="_blank"}.*
 
-<!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member [storbahn](https://github.com/storbahn) in pull request[9714](https://github.com/magento/magento2/pull/9714).*
+<!--- 69375-->* You can now delete the last item in your cart when the Minimum Order setting is enabled. *Fix submitted by community member [storbahn](https://github.com/storbahn){: target="_blank"} in pull request [9714](https://github.com/magento/magento2/pull/9714){: target="_blank"}.*
 
-<!--- 69379-->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by community member [Bernhard](https://github.com/bka) in pull request[9717](https://github.com/magento/magento2/pull/9717).*
+<!--- 69379-->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by community member [Bernhard](https://github.com/bka){: target="_blank"} in pull request [9717](https://github.com/magento/magento2/pull/9717){: target="_blank"}.*
 
-<!--- 69533-->* Magento now correctly displays the coupon label in the shopping cart during checkout. *Fix submitted by community member [Sylvain Rayé](https://github.com/diglin) in pull request[9721](https://github.com/magento/magento2/pull/9721).*
+<!--- 69533-->* Magento now correctly displays the coupon label in the shopping cart during checkout. *Fix submitted by community member [Sylvain Rayé](https://github.com/diglin){: target="_blank"} in pull request [9721](https://github.com/magento/magento2/pull/9721){: target="_blank"}.*
 
-<!--- 69848-->* Magento now pre-fills prefixes and suffixes in the quote shipping address *Fix submitted by community member [Anton Evers](https://github.com/ajpevers) in pull request[9925](https://github.com/magento/magento2/pull/9925).*
+<!--- 69848-->* Magento now pre-fills prefixes and suffixes in the quote shipping address *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9925](https://github.com/magento/magento2/pull/9925){: target="_blank"}.*
 
-<!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member [Marcel](https://github.com/mimarcel) in pull request[9429](https://github.com/magento/magento2/pull/9429).*
+<!--- 70052-->* The country drop-down box now correctly shows the countries for which the current store and customer account are configured. *Fix submitted by community member [Marcel](https://github.com/mimarcel){: target="_blank"} in pull request [9429](https://github.com/magento/magento2/pull/9429){: target="_blank"}.*
 
 <!--- 56411-->* The shopping cart now handles products with custom options. [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
@@ -319,26 +320,26 @@ This release contains hundreds of fixes and enhancements.
 <!--- 61095-->* Magento no longer permits a shopper to place a re-order once you've disabled one of items in the order.
 
 
-<!--- 64250-->* Fixed an issue that occurred in the Catalog Gallery on mobile displays when the `allowfullscreen` setting is enabled. *Fix submitted by community member [Dennis van Schaik](https://github.com/Crossmotion) in pull request[8434](https://github.com/magento/magento2/pull/8434).*
+<!--- 64250-->* Fixed an issue that occurred in the Catalog Gallery on mobile displays when the `allowfullscreen` setting is enabled. *Fix submitted by community member [Dennis van Schaik](https://github.com/Crossmotion){: target="_blank"} in pull request [8434](https://github.com/magento/magento2/pull/8434){: target="_blank"}.*
 
 
-<!--- 64403-->* Magento now successfully loads re-ordered related products when Edge-Mode is activated. *Fix submitted by community member [\@kirashet666](https://github.com/kirashet666) in pull request[8467](https://github.com/magento/magento2/pull/8467).*
+<!--- 64403-->* Magento now successfully loads re-ordered related products when Edge-Mode is activated. *Fix submitted by community member [@kirashet666](https://github.com/kirashet666){: target="_blank"} in pull request [8467](https://github.com/magento/magento2/pull/8467){: target="_blank"}.*
 
-<!--- 64999 -->* Magento now displays cross-sells as expected when you use the `product/list/items.phtml` template. *Fix submitted by community member [Koen V](https://github.com/koenner01) in pull request[8602](https://github.com/magento/magento2/pull/9662).*
-
-
-<!--- 65364-->* Magento now displays the **Yes** or **No** attribute value on Product pages. *Fix submitted by community member [Timo Klement](https://github.com/TKlement) in pull request[8623](https://github.com/magento/magento2/pull/8623).*
-
-<!--- 65334-->*  Setting the **show_out_of_stock** attribute to **No** now works as expected. *Fix submitted by community member [Theis Corfixen](https://github.com/Corefix) in pull request[8736](https://github.com/magento/magento2/pull/8736).*
+<!--- 64999 -->* Magento now displays cross-sells as expected when you use the `product/list/items.phtml` template. *Fix submitted by community member [Koen V](https://github.com/koenner01){: target="_blank"} in pull request [8602](https://github.com/magento/magento2/pull/9662){: target="_blank"}.*
 
 
-<!--- 69297-->* Magento now uses parent names (instead of SKU-based names) when creating configurable products. *Fix submitted by community member [Pascal Brouwers](https://github.com/PascalBrouwers) in pull request[9681](https://github.com/magento/magento2/pull/9681).*
+<!--- 65364-->* Magento now displays the **Yes** or **No** attribute value on Product pages. *Fix submitted by community member [Timo Klement](https://github.com/TKlement){: target="_blank"} in pull request [8623](https://github.com/magento/magento2/pull/8623){: target="_blank"}.*
+
+<!--- 65334-->*  Setting the **show_out_of_stock** attribute to **No** now works as expected. *Fix submitted by community member [Theis Corfixen](https://github.com/Corefix){: target="_blank"} in pull request [8736](https://github.com/magento/magento2/pull/8736){: target="_blank"}.*
 
 
-<!---70256 -->* You can now create an `etc/view.xml` file containing an `images` tag with an attribute `module`. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu) in pull request[10052](https://github.com/magento/magento2/pull/10052).*
+<!--- 69297-->* Magento now uses parent names (instead of SKU-based names) when creating configurable products. *Fix submitted by community member [Pascal Brouwers](https://github.com/PascalBrouwers){: target="_blank"} in pull request [9681](https://github.com/magento/magento2/pull/9681){: target="_blank"}.*
 
 
-<!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member [duckchip](https://github.com/duckchip) in pull request[10094](https://github.com/magento/magento2/pull/10094).*
+<!---70256 -->* You can now create an `etc/view.xml` file containing an `images` tag with an attribute `module`. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu){: target="_blank"} in pull request [10052](https://github.com/magento/magento2/pull/10052){: target="_blank"}.*
+
+
+<!--- 70345-->* Magento now displays the Category selection UI under Conditions when you select a rule for editing. *Fix submitted by community member [duckchip](https://github.com/duckchip){: target="_blank"} in pull request [10094](https://github.com/magento/magento2/pull/10094){: target="_blank"}.*
 
 <!--- 63062-->* Magento now displays the correct image when you switch between a configurable product's options. Previously, Magento loaded product images from a different product.
 
@@ -459,7 +460,7 @@ This release contains hundreds of fixes and enhancements.
 <!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{ page.baseurl }}/config-guide/config/disable-module-output.html) for details.
 
 
-<!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member [Barbazul](https://github.com/barbazul) in pull request[9902](https://github.com/magento/magento2/pull/9902).*
+<!---69868 -->* Static tests run in a Windows environment no longer fail due to file path mismatches. *Fix submitted by community member [Barbazul](https://github.com/barbazul){: target="_blank"} in pull request [9902](https://github.com/magento/magento2/pull/9902){: target="_blank"}.*
 
 <!---56947 -->* You can now link a simple product to a configurable one. Previously, when you tried to use REST to link a simple product  to a configurable one, the products were not linked even though Magento responded, `Status Code: 200 OK`.  
 
@@ -469,7 +470,7 @@ This release contains hundreds of fixes and enhancements.
 
 
 
-<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member [Luke Hanley](https://github.com/LukeHandle) in pull request[9368](https://github.com/magento/magento2/pull/9368).* 
+<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member [Luke Hanley](https://github.com/LukeHandle){: target="_blank"} in pull request [9368](https://github.com/magento/magento2/pull/9368){: target="_blank"}.* 
 
 #### Admin framework
 
@@ -481,20 +482,20 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547)
 
-<!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers) in pull request[9992](https://github.com/magento/magento2/pull/9992).*
+<!--- 70010 -->* Page titles in layout files are not translatable. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9992](https://github.com/magento/magento2/pull/9992){: target="_blank"}.*
 
-<!--- 67500 -->* The `setup:static-content:deploy`, `setup:di:compile` and `deploy:mode:set` commands now return non-zero exit code if an error occurs. *Fix submitted by community member [Pablo Ivulic](https://github.com/pivulic) in pull request[7780](https://github.com/magento/magento2/pull/7780).*
+<!--- 67500 -->* The `setup:static-content:deploy`, `setup:di:compile` and `deploy:mode:set` commands now return non-zero exit code if an error occurs. *Fix submitted by community member [Pablo Ivulic](https://github.com/pivulic){: target="_blank"} in pull request [7780](https://github.com/magento/magento2/pull/7780){: target="_blank"}.*
 
-<!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member [Alex Gusev](https://github.com/flancer64) in pull request[5043](https://github.com/magento/magento2/pull/5043).*
+<!--- 67408-->* We've changed the `select `protected property to `query` in the AbstractSearchResult class. *Fix submitted by community member [Alex Gusev](https://github.com/flancer64){: target="_blank"} in pull request [5043](https://github.com/magento/magento2/pull/5043){: target="_blank"}.*
 
 
 <!---67260-->* `\Magento\Framework\Interception\Code\Generator\Interceptor` now supports interceptors for generating for methods that return references. [GitHub-9167](https://github.com/magento/magento2/issues/9167)
 
-<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442) 
+<!---58394-->* The Magento Framework now makes its dependency upon the `zendframework/zend-stdlib` library explicit in `composer.json`. [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442){: target="_blank"} 
 
 #### Configuration framework
 
-<!--- 65003 -->* The currency setup in Admin no longer throws an `in_array` error when a single value is selected. *Fix submitted by community member [Derik Nel](https://github.com/deriknel) in pull request[8077](https://github.com/magento/magento2/pull/8077).*
+<!--- 65003 -->* The currency setup in Admin no longer throws an `in_array` error when a single value is selected. *Fix submitted by community member [Derik Nel](https://github.com/deriknel){: target="_blank"} in pull request [8077](https://github.com/magento/magento2/pull/8077){: target="_blank"}.*
 
 <!--- 65422 -->* Magento now writes all default configuration values to the `config.php` file.
 
@@ -504,7 +505,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58285 -->* Magento now displays server-side Ajax error messages.
 
-<!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member [James Reed](https://github.com/thelettuce) in pull request[9665](https://github.com/magento/magento2/pull/9665).*
+<!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member [James Reed](https://github.com/thelettuce){: target="_blank"} in pull request [9665](https://github.com/magento/magento2/pull/9665){: target="_blank"}.*
 
 #### Session framework
 
@@ -514,25 +515,25 @@ This release contains hundreds of fixes and enhancements.
 
 Thanks to our hardworking Magento Open Source community members for the following contributions!
 
-<!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member [David Manners](https://github.com/dmanners) in pull request[9262](https://github.com/magento/magento2/pull/9262).*
+<!--- 67511-->* We’ve removed  `Zend_Json` from Magento Theme and replaced it with a new serializer class. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} in pull request [9262](https://github.com/magento/magento2/pull/9262){: target="_blank"}.*
 
-<!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member [David Manners](https://github.com/dmanners) We've removed pull request[9261](https://github.com/magento/magento2/pull/9261).*
+<!--- 67510-->* We’ve removed `Zend_Json` from the Weee module. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} We’ve removed pull request [9261](https://github.com/magento/magento2/pull/9261){: target="_blank"}.*
 
-<!--- 69369-->* We’ve replaced the direct usage of `Zend_Json` with a call to the `Json_Help` class. *Fix submitted by community member [David Manners](https://github.com/dmanners) in pull request[9344](https://github.com/magento/magento2/pull/9344).*
+<!--- 69369-->* We’ve replaced the direct usage of `Zend_Json` with a call to the `Json_Help` class. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} in pull request [9344](https://github.com/magento/magento2/pull/9344){: target="_blank"}.*
 
-<!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member [David Manners](https://github.com/dmanners) in pull request[9753](https://github.com/magento/magento2/pull/9753).*
+<!--- 69451-->* We’ve replaced  `Zend_Json` in the configurable product block test. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} in pull request [9753](https://github.com/magento/magento2/pull/9753){: target="_blank"}.*
 
-<!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member [David Manners](https://github.com/dmanners) in pull request[9754](https://github.com/magento/magento2/pull/9754).*
+<!--- 69452-->* We’ve removed `Zend_Json` from form elements. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} in pull request [9754](https://github.com/magento/magento2/pull/9754){: target="_blank"}.*
 
-<!--- 69371-->* We’ve replaced the Magento Framework's `Zend_Session` interface usage with SessionHandlerInterface. *Fix submitted by community member [Timon de Groot](https://github.com/tdgroot) in pull request[9285](https://github.com/magento/magento2/pull/9285).*
+<!--- 69371-->* We’ve replaced the Magento Framework's `Zend_Session` interface usage with SessionHandlerInterface. *Fix submitted by community member [Timon de Groot](https://github.com/tdgroot){: target="_blank"} in pull request [9285](https://github.com/magento/magento2/pull/9285){: target="_blank"}.*
 
-<!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member [Isolde](https://github.com/SolsWebdesign) in pull request[9622](https://github.com/magento/magento2/pull/9622).*
+<!--- 69157-->* We’ve removed `Zend_Wildfire` and `Zend_Controller` from the codebase. *Fix submitted by community member [Isolde](https://github.com/SolsWebdesign){: target="_blank"} in pull request [9622](https://github.com/magento/magento2/pull/9622){: target="_blank"}.*
 
-<!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member [Pieter Hoste](https://github.com/hostep) in pull request[9540](https://github.com/magento/magento2/pull/9540) and communitymember [Bernhard](https://github.com/bka) in pull request[9711](https://github.com/magento/magento2/pull/9711).*
+<!--- 69152-->* We've resolved issues with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fixes submitted by community member [Pieter Hoste](https://github.com/hostep){: target="_blank"} in pull request [9540](https://github.com/magento/magento2/pull/9540){: target="_blank"} and community member [Bernhard](https://github.com/bka){: target="_blank"} in pull request [9711](https://github.com/magento/magento2/pull/9711){: target="_blank"}.*
 
-<!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member [Timon de Groot](https://github.com/tdgroot) in pull request[9285](https://github.com/magento/magento2/pull/9285).*
+<!--- 69591-->* We’ve replaced `Zend_Log` with `Psr\Log\LoggerInterface`. *Fix submitted by community member [Timon de Groot](https://github.com/tdgroot){: target="_blank"} in pull request [9285](https://github.com/magento/magento2/pull/9285){: target="_blank"}.*
 
-<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4)in pull request [9400](https://github.com/magento/magento2/pull/9400).*
+<!--- 68770-->* Magento no longer throws a `Zend_Db_Statement_Exception` when a user opens an empty Category page. *Fix submitted by community member [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4){: target="_blank"} in pull request [9400](https://github.com/magento/magento2/pull/9400){: target="_blank"}.*
 
 ### General fixes
 
@@ -583,7 +584,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 56077 -->* We've resolved an issue that prevented you from adding more than one product to a {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from a wishlist. [GitHub-5282](https://github.com/magento/magento2/issues/5282)
 
-<!--- 52850-->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member [Pieter Hoste](https://github.com/hostep) in pull request[9333](https://github.com/magento/magento2/pull/9333).*
+<!--- 52850-->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){: target="_blank"} in pull request [9333](https://github.com/magento/magento2/pull/9333){: target="_blank"}.*
 
 
 <!--- 71415-->* Mass actions now work as expected on the Customer grid. Previously, Magento could not process more than 20 items at a time.
@@ -615,30 +616,30 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 63736-->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
-<!--- 65000-->* Fixed the location of the `wishlist.js` file. *Fix submitted by community member [Koen V.](https://github.com/koenner01) in pull request[8633](https://github.com/magento/magento2/pull/8633).*
+<!--- 65000-->* Fixed the location of the `wishlist.js` file. *Fix submitted by community member [Koen V.](https://github.com/koenner01){: target="_blank"} in pull request [8633](https://github.com/magento/magento2/pull/8633){: target="_blank"}.*
 
-<!--- 66506-->* You can no longer download products  after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member [nazarpadalka](https://github.com/nazarpadalka) in pull request[8917](https://github.com/magento/magento2/pull/8917).*
+<!--- 66506-->* You can no longer download products  after you’ve set order state to `STATE_CANCELED`.  *Fix submitted by community member [nazarpadalka](https://github.com/nazarpadalka){: target="_blank"} in pull request [8917](https://github.com/magento/magento2/pull/8917){: target="_blank"}.*
 
-<!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member [tomislavsantek](https://github.com/tomislavsantek) in pull request[8908](https://github.com/magento/magento2/pull/8908).*
+<!--- 66232-->* Fixed a typo in the Pull Request Template. *Fix submitted by community member [tomislavsantek](https://github.com/tomislavsantek){: target="_blank"} in pull request [8908](https://github.com/magento/magento2/pull/8908){: target="_blank"}.*
 
-<!--- 66694-->* You now receive an error message as expected if you try to submit a product review while not logged in. *Fix submitted by community member [quienti](https://github.com/quienti) in pull request[9001](https://github.com/magento/magento2/pull/9001).*
+<!--- 66694-->* You now receive an error message as expected if you try to submit a product review while not logged in. *Fix submitted by community member [quienti](https://github.com/quienti){: target="_blank"} in pull request [9001](https://github.com/magento/magento2/pull/9001){: target="_blank"}.*
 
-<!--- 67042-->* Fixed grammar error in the customer dashboard. *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek) in pull request[9080](https://github.com/magento/magento2/pull/9080).*
+<!--- 67042-->* Fixed grammar error in the customer dashboard. *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek){: target="_blank"} in pull request [9080](https://github.com/magento/magento2/pull/9080){: target="_blank"}.*
 
-<!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member [Hans Schouten](https://github.com/HansSchouten) in pull request[8824](https://github.com/magento/magento2/pull/8824).*
+<!--- 67320-->* The popup window in the Safari browser now closes properly. *Fix submitted by community member [Hans Schouten](https://github.com/HansSchouten){: target="_blank"} in pull request [8824](https://github.com/magento/magento2/pull/8824){: target="_blank"}.*
 
-<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member [Joseph Maxwell](https://github.com/JosephMaxwell) in pull request[9094](https://github.com/magento/magento2/pull/9094).*
+<!--- 67054-->* We’ve fixed minor performance issues when you use `/pub `as `docroot`. *Fix submitted by community member [Joseph Maxwell](https://github.com/JosephMaxwell){: target="_blank"} in pull request [9094](https://github.com/magento/magento2/pull/9094){: target="_blank"}.*
 
 
-<!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu) in pull request[10082](https://github.com/magento/magento2/pull/10082).*
+<!--- 70310-->* The Actions dropdown menu is now properly aligned in the Admin when the action column is not the last column. *Fix submitted by community member [Marius Strajeru](https://github.com/tzyganu){: target="_blank"} in pull request [10082](https://github.com/magento/magento2/pull/10082){: target="_blank"}.*
 
-<!--- 70029-->* Magento now deletes pending entries in `cron_schedule` when you reconfigure a cron job. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers) in pull request[9957](https://github.com/magento/magento2/pull/9957).*
+<!--- 70029-->* Magento now deletes pending entries in `cron_schedule` when you reconfigure a cron job. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9957](https://github.com/magento/magento2/pull/9957){: target="_blank"}.*
 
-<!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers) in pull request[9943](https://github.com/magento/magento2/pull/9943).*
+<!--- 69886-->* We’ve fixed the cron timestamp method. *Fix submitted by community member [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9943](https://github.com/magento/magento2/pull/9943){: target="_blank"}.*
 
-<!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member [storbahn](https://github.com/storbahn) in pull request[9712](https://github.com/magento/magento2/pull/9712).*
+<!--- 69373-->* You can now save customers with unique attributes. *Fix submitted by community member [storbahn](https://github.com/storbahn){: target="_blank"} in pull request [9712](https://github.com/magento/magento2/pull/9712){: target="_blank"}.*
 
-<!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member [jissereitsma](https://github.com/jissereitsma) in pull request[9772](https://github.com/magento/magento2/pull/9772).*
+<!--- 69555-->* The `Magento_Framework/View/Layout/etc/elements.xsd` file `blockReferenceType` definition now allows for the optional argument template. *Fix submitted by community member [jissereitsma](https://github.com/jissereitsma){: target="_blank"} in pull request [9772](https://github.com/magento/magento2/pull/9772){: target="_blank"}.*
 
 <!--- 59135-->*  Customer sessions for different customers are no longer shared on installations on multiple websites. [GitHub-4842](https://github.com/magento/magento2/issues/4842), [GitHub-6468](https://github.com/magento/magento2/issues/6468)
 
@@ -660,13 +661,13 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Google Analytics
 
-<!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. *Fix submitted by community member  [Petar Sambolek](https://github.com/sambolek) in pull request[9084](https://github.com/magento/magento2/pull/9084).*
+<!--- 67427-->* We’ve added the missing single quote (‘) to the Google API Tracking code. *Fix submitted by community member  [Petar Sambolek](https://github.com/sambolek){: target="_blank"} in pull request [9084](https://github.com/magento/magento2/pull/9084){: target="_blank"}.*
 
-<!--- 69374-->* Google Analytics tracking now works when Cookie Restriction is enabled. *Fix submitted by community member [Bernhard](https://github.com/bka) in pull request[9713](https://github.com/magento/magento2/pull/9713).*
+<!--- 69374-->* Google Analytics tracking now works when Cookie Restriction is enabled. *Fix submitted by community member [Bernhard](https://github.com/bka){: target="_blank"} in pull request [9713](https://github.com/magento/magento2/pull/9713){: target="_blank"}.*
 
 ### HTML
 
-<!--- 67487-->*  The CSS minify option no longer removes the whitespace around the minus (-) sign. Also, this option is now compatible with the `calc()` CSS function.  *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek) in pull request[9027](https://github.com/magento/magento2/pull/9027).*
+<!--- 67487-->*  The CSS minify option no longer removes the whitespace around the minus (-) sign. Also, this option is now compatible with the `calc()` CSS function.  *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek){: target="_blank"} in pull request [9027](https://github.com/magento/magento2/pull/9027){: target="_blank"}.*
 
 ### Images
 
@@ -731,7 +732,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 60067-->* We've improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: `Please Wait`.
 
-<!--- 64902 -->* The CatalogImportExport uploader now handles HTTPS images as expected. *Fix submitted by community member [Clement Beudot](https://github.com/clementbeudot) in pull request[8278](https://github.com/magento/magento2/pull/8278).*
+<!--- 64902 -->* The CatalogImportExport uploader now handles HTTPS images as expected. *Fix submitted by community member [Clement Beudot](https://github.com/clementbeudot){: target="_blank"} in pull request [8278](https://github.com/magento/magento2/pull/8278){: target="_blank"}.*
 
 <!---58976 -->* You can now successfully import multiselect attributes that contain special symbols or delimiters. Previously, when you tried to import attributes containing delimiters, data validation (and the import) failed.
 
@@ -756,7 +757,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings]({{ site.baseurl }}/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
 
-<!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request[9820](https://github.com/magento/magento2/pull/9820).*
+<!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member [Elias Kotlyar](https://github.com/EliasKotlyar){: target="_blank"} in pull request [9820](https://github.com/magento/magento2/pull/9820){: target="_blank"}.*
 
 ### Indexing
 
@@ -823,14 +824,14 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 58074-->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly.
 
-<!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. *Fix submitted by community member  [Pascal Brouwers](https://github.com/PascalBrouwers) in pull request[6856](https://github.com/magento/magento2/pull/6856).*
+<!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. *Fix submitted by community member  [Pascal Brouwers](https://github.com/PascalBrouwers){: target="_blank"} in pull request [6856](https://github.com/magento/magento2/pull/6856){: target="_blank"}.*
 
-<!---69378 -->* You can now use a second credit memo to successfully issue a full refund for a credit memo with adjustment fees. *Fix submitted by community member  [Max Pronko](https://github.com/mcspronko) in pull request[9715](https://github.com/magento/magento2/pull/9715).*
+<!---69378 -->* You can now use a second credit memo to successfully issue a full refund for a credit memo with adjustment fees. *Fix submitted by community member  [Max Pronko](https://github.com/mcspronko){: target="_blank"} in pull request [9715](https://github.com/magento/magento2/pull/9715){: target="_blank"}.*
 
-<!---69551 -->* Coupon codes are now included in  invoice print outs. *Fix submitted by community member  [Belgacem Naoui](https://github.com/naouibelgacem) in pull request[9780](https://github.com/magento/magento2/pull/9780).*
+<!---69551 -->* Coupon codes are now included in  invoice print outs. *Fix submitted by community member  [Belgacem Naoui](https://github.com/naouibelgacem){: target="_blank"} in pull request [9780](https://github.com/magento/magento2/pull/9780){: target="_blank"}.*
 
 
-<!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  [Anton Evers](https://github.com/ajpevers) in pull request[9941](https://github.com/magento/magento2/pull/9941).*
+<!---69909 -->* The Orders grid now displays correct order dates. *Fix submitted by community member  [Anton Evers](https://github.com/ajpevers){: target="_blank"} in pull request [9941](https://github.com/magento/magento2/pull/9941){: target="_blank"}.*
 
 <!---68795 -->*  Magento now displays the correct order time in the Sales Order grid in the Admin panel. [GitHub-9426](https://github.com/magento/magento2/issues/9426)
 
@@ -870,7 +871,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
 
-<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by [will-b](https://github.com/will-b) in pull request[9057](https://github.com/magento/magento2/pull/9057).*
+<!--- 66959-->* Removed a duplicate method call to the `getLinkField` method in the `Magento\Catalog\Model\ResourceModel\Category` class. *Fixed by [will-b](https://github.com/will-b){: target="_blank"} in pull request [9057](https://github.com/magento/magento2/pull/9057){: target="_blank"}.*
 
 <!--- 54412-->* During order creation, you can now continue with a payment after clicking the **Back** button to the payment selection window. [GitHub-4580](https://github.com/magento/magento2/issues/4580)
 
@@ -994,7 +995,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---60041-->* We've improved the process of resizing images on the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %}.
 
-<!--- 59806 -->* The process of loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) is more efficient. [(GITHUB-6979)](https://github.com/magento/magento2/issues/6979)
+<!--- 59806 -->* The process of loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) is more efficient. [(GITHUB-6979)](https://github.com/magento/magento2/issues/6979){: target="_blank"}
 
 #### Caching
 
@@ -1083,7 +1084,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 70646-->* You can now save the settings you enter when creating a shipping label on an existing shipment. Previously, clicking the **Save** button resulted in an error, and the shipping label was not saved.
 
-<!--- 67053 -->* Added missing translation to label `argument xml`.  *Fix submitted by community member [Mr Khoa](https://github.com/mrkhoa99) in pull request[9095](https://github.com/magento/magento2/pull/9095).*
+<!--- 67053 -->* Added missing translation to label `argument xml`.  *Fix submitted by community member [Mr Khoa](https://github.com/mrkhoa99){: target="_blank"} in pull request [9095](https://github.com/magento/magento2/pull/9095){: target="_blank"}.*
 
 <!--- 64909-->* Magento no longer throws a fatal error when you create a new shipment for a placed order.
 
@@ -1100,9 +1101,9 @@ This release includes substantial improvements to Magento caching, image process
 
 ### Sitemap
 
-<!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek) in pull request[9082](https://github.com/magento/magento2/pull/9082).*
+<!--- 70056-->* Sitemap image URLs now match the URLs on product pages. *Fix submitted by community member [Petar Sambolek](https://github.com/sambolek){: target="_blank"} in pull request [9082](https://github.com/magento/magento2/pull/9082){: target="_blank"}.*
 
-<!--- 70056-->* The sitemap is no longer generated in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member [Joseph Maxwell](https://github.com/JosephMaxwell) in pull request[9094](https://github.com/magento/magento2/pull/9094).*
+<!--- 70056-->* The sitemap is no longer generated in the wrong folder when `vhost` is connected to `/pub`. *Fix submitted by community member [Joseph Maxwell](https://github.com/JosephMaxwell){: target="_blank"} in pull request [9094](https://github.com/magento/magento2/pull/9094){: target="_blank"}.*
 
 <!--- 58730-->* Magento now displays UPS rates on the initial load of the checkout page. Previously, although shipping rates showed up properly at the cart level, the payment page did not load the correct shipping options. [GitHub-6564](https://github.com/magento/magento2/issues/6564)
 
@@ -1112,7 +1113,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default.
 
-<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static viewfiles]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html) for more information about available options.
+<!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){: target="_blank"} for more information about available options.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
@@ -1129,7 +1130,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 60045 -->* Magento now correctly matches images to products. Previously, after you selected a configurable product, Magento displayed the images for another product.
 
-<!--- 66417 -->* Magento no longer displays a notice error when you create a text swatch attribute while the **update product preview image** setting  is set to **Yes**. *Fix submitted by community member [Pascal Brouwers](https://github.com/PascalBrouwers) in pull request[6707](https://github.com/magento/magento2/pull/6707).*
+<!--- 66417 -->* Magento no longer displays a notice error when you create a text swatch attribute while the **update product preview image** setting  is set to **Yes**. *Fix submitted by community member [Pascal Brouwers](https://github.com/PascalBrouwers){: target="_blank"} in pull request [6707](https://github.com/magento/magento2/pull/6707){: target="_blank"}.*
 
 ### TargetRule
 
@@ -1157,7 +1158,7 @@ This release includes substantial improvements to Magento caching, image process
 	```PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php```
 
 
-<!--- 64462-->* `StdoTest` is now marked as skipped. *Fix submitted by community member [David Manners](https://github.com/dmanners) in pull request[8487](https://github.com/magento/magento2/pull/8487).*
+<!--- 64462-->* `StdoTest` is now marked as skipped. *Fix submitted by community member [David Manners](https://github.com/dmanners){: target="_blank"} in pull request [8487](https://github.com/magento/magento2/pull/8487){: target="_blank"}.*
 
 ### Tier pricing
 
@@ -1174,7 +1175,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---67296-->* String localizations now work as expected when phrases include text wrapped with single quotation marks.
 
-<!---69728-->* Translations now work for layered navigation attribute options. *Fix submitted by community member [Pieter Hoste](https://github.com/hostep) in pull request[9873](https://github.com/magento/magento2/pull/9873).*
+<!---69728-->* Translations now work for layered navigation attribute options. *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){: target="_blank"} in pull request [9873](https://github.com/magento/magento2/pull/9873){: target="_blank"}.*
 
 ### URL rewrites
 
@@ -1185,7 +1186,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---61549-->* The **Use default URL Key** setting now works on the store-view level.
 
-<!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request[10043](https://github.com/magento/magento2/pull/10043).*
+<!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member [Ihor Sviziev](https://github.com/ihor-sviziev){: target="_blank"} in pull request [10043](https://github.com/magento/magento2/pull/10043){: target="_blank"}.*
 
 <!---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
 
@@ -1228,7 +1229,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---63667 -->* Searching for products via REST API using a store code in the URL returns products from all stores. [GitHub-8121](https://github.com/magento/magento2/issues/8121)
 
-<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243) 
+<!---58348 -->* You can now use the REST API to create a configurable product with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){: target="_blank"} 
 
 <!---58338 -->* The REST API now successfully handles attribute options that start with a number. [GitHub-5715](https://github.com/magento/magento2/issues/5715)
 
@@ -1257,6 +1258,6 @@ See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde
 
 ## Migration toolkits
 
-The [Data MigrationTool]({{ page.baseurl }}/migration/migration-migrate.html)helps transfer existing Magento 1.x store data to Magento 2.x. Thiscommand-line interface includes verification, progress tracking,logging, and testing functions. For installation instructions, see[Install the Data MigrationTool]({{ page.baseurl }}/migration/migration-tool-install.html).Consider exploring or contributing to the [Magento Data Migrationrepository](https://github.com/magento/data-migration-tool).
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

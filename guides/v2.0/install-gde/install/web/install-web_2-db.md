@@ -18,4 +18,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>
+[Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html)

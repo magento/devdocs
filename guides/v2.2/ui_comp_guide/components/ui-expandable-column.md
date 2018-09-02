@@ -39,7 +39,7 @@ The Expandable Column component can be used in {% glossarytooltip 29ddb393-ca22-
         <td><code>tooltipTitle</code></td>
         <td>A title for the tooltip.</td>
         <td>String</td>
-        <td></td>
+        <td />
     </tr>
 </table>
 

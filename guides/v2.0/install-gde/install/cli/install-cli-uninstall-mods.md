@@ -58,9 +58,9 @@ The module uninstall command performs the following tasks:
 4.	Processes the following command options.
 
 	<table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Option</th>
