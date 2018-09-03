@@ -11,7 +11,7 @@ level3_subgroup: ee20-relnotes
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. This release includes several functional fixes.
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Fixed issues
 
@@ -19,7 +19,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <!--- 56019/49716 -->* Magento no longer displays an incorrect price in the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} when using multiple shipping addresses.
 
-<!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
+<!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [(GITHUB-4750)](https://github.com/magento/magento2/issues/4750){: target="_blank"} 
 
 #### Performance
 
@@ -30,19 +30,19 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 <!--- 55362/45339 -->* Cart Price Rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price Rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. 
 
 
-* You can now select Gift Wrapping when purchasing a {% glossarytooltip 47841e42-b8b3-4030-9eb1-286137065be2 %}Grouped product{% endglossarytooltip %}. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product.  <a href="https://github.com/magento/magento2/issues/4852" target="_blank">(GITHUB-4852)</a>
+* You can now select Gift Wrapping when purchasing a {% glossarytooltip 47841e42-b8b3-4030-9eb1-286137065be2 %}Grouped product{% endglossarytooltip %}. Previously, Magento did not permit you to select Gift Wrapping for a Grouped product.  [(GITHUB-4852)](https://github.com/magento/magento2/issues/4852){: target="_blank"}
 
 
 <!--- 55513/51015 -->* You can now save a product for which you've entered no Swatch attribute value when this attribute is not required.  Previously, during product creation, Magento would not save the product unless you added a value to the swatch attribute even with "Values Required" set to No. 
  
 
-<!--- 55465/50026 -->* Attributes of the `salesInvoiceRepository` methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` methods. <a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a> 
+<!--- 55465/50026 -->* Attributes of the `salesInvoiceRepository` methods are now correctly type cast. (The datatype is now a float -- not nullable float.)  Previously, due to the use of an incorrect data type cast, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` methods. [(GITHUB-3605)](https://github.com/magento/magento2/issues/3605){: target="_blank"} 
 
 
 <!--- 55461/54224 -->* We've renamed the Tier Price option on the Advanced Pricing tab to Customer Group Price option. 
 
 
-<!--- 55441/55055 -->* Tier pricing now works correctly with full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a>
+<!--- 55441/55055 -->* Tier pricing now works correctly with full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. [(GITHUB-5364)](https://github.com/magento/magento2/issues/5364){: target="_blank"}
 
 
  
@@ -71,6 +71,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

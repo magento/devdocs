@@ -127,5 +127,5 @@ The first column in the following table lists the all the parameters in the `que
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
+*	[Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)

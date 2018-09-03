@@ -105,6 +105,8 @@ kramdown:
 
 incremental: false
 
+livereload: true
+
 algolia:
   application_id: 'E642SEDTHL'
   index_name: 'devdocs'

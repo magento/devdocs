@@ -84,8 +84,8 @@ To apply the patch:
 1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 
 	<table>
-		<col width="30%">
-		<col width="70%">
+		<col width="30%" />
+		<col width="70%" />
 	<tbody>
 	<tr> 
 		<th>Magento edition</th>

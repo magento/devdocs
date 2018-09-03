@@ -36,9 +36,9 @@ Command usage:
 Where the following table defines parameters and values:
 
 <table>
-  <col width="20%">
-  <col width="55%">
-  <col width="15%">
+  <col width="20%" />
+  <col width="55%" />
+  <col width="15%" />
   <tbody>
     <tr>
       <th>Name</th>

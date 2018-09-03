@@ -35,5 +35,5 @@ The structure of the `queue.xml` file is substantially different in Magento. 2.1
 
 #### Related topics
 
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

@@ -10,13 +10,13 @@ level3_subgroup: ee20-relnotes
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.12. This release includes many functional fixes and enhancements. 
 
-Looking for the <a href="{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the [Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html){: target="_blank"}?
 
 ## Highlights
 
 Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see [New Zend Framework 1 Security Vulnerability](https://magento.com/security/news/new-zend-framework-1-security-vulnerability){: target="_blank"}.  
 
 
 * **Updates to the catalog, payment, and sales modules**
@@ -31,7 +31,7 @@ We address the following functional issues in this release.
 
 ### Catalog
 
-<!--- 58504 -->* You can now directly add a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} (with all possible options defined) to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page. Previously,  you had to review a product on the product page before completing the process of adding it to your shopping cart. <a href="https://github.com/magento/magento2/issues/2574" target="_blank">(GITHUB-2574)</a>, <a href="https://github.com/magento/magento2/issues/5850" target="_blank">(GITHUB-5850)</a>, <a href="https://github.com/magento/magento2/issues/5882" target="_blank">(GITHUB-5882)</a>, <a href="https://github.com/magento/magento2/issues/6572" target="_blank">(GITHUB-6572)</a>,  <a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
+<!--- 58504 -->* You can now directly add a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} (with all possible options defined) to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} from the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page. Previously,  you had to review a product on the product page before completing the process of adding it to your shopping cart. [(GITHUB-2574)](https://github.com/magento/magento2/issues/2574){: target="_blank"}, [(GITHUB-5850)](https://github.com/magento/magento2/issues/5850){: target="_blank"}, [(GITHUB-5882)](https://github.com/magento/magento2/issues/5882){: target="_blank"}, [(GITHUB-6572)](https://github.com/magento/magento2/issues/6572){: target="_blank"}, [(GITHUB-5558)](https://github.com/magento/magento2/issues/5558){: target="_blank"}
 
 <!--- 60055 -->* {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} users can no longer create an empty {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
 
@@ -48,9 +48,9 @@ We address the following functional issues in this release.
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
 
-<!--- 61113 -->* Magento now displays the **Thank you for your purchase!** message after a customer successfully checks out. Previously,  Magento did not display this message, even though the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
+<!--- 61113 -->* Magento now displays the **Thank you for your purchase!** message after a customer successfully checks out. Previously,  Magento did not display this message, even though the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code was present. [(GITHUB-6968)](https://github.com/magento/magento2/issues/6968){: target="_blank"}
 
-<!--- 61022 -->* You can now create a new order from the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
+<!--- 61022 -->* You can now create a new order from the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. [(GITHUB-5533)](https://github.com/magento/magento2/issues/5533){: target="_blank"}, [(GITHUB-6855)](https://github.com/magento/magento2/issues/6855){: target="_blank"}
 
 ### Customer
 
@@ -92,9 +92,9 @@ We address the following functional issues in this release.
 
 <!--- 61151 -->* Magento now displays an error message as expected when a user tries to add less than the specified minimum quantity of a product to his shopping cart. 
 
-<!--- 61091 -->* The Free Shipping method now shows up as an available option when you create an order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/2939" target="_blank">(GITHUB-2939)</a>
+<!--- 61091 -->* The Free Shipping method now shows up as an available option when you create an order from the Magento Admin. [(GITHUB-2939)](https://github.com/magento/magento2/issues/2939){: target="_blank"}
 
-<!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a>
+<!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. [(GITHUB-4263)](https://github.com/magento/magento2/issues/4263){: target="_blank"}
 
 <!--- 61146 -->* An Admin user with restricted permissions no longer has access to all orders. 
 
@@ -140,7 +140,7 @@ We address the following functional issues in this release.
 
 <!--- 62661 -->* **Issue**: You cannot cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Currently, when you cancel a checkout operation while using this payment method, Magento empties your shopping cart.
 
-<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the images that are associated with a configurable option. <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a>
+<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the images that are associated with a configurable option. [(GITHUB-6195)](https://github.com/magento/magento2/issues/6195){: target="_blank"}, [(GITHUB-4101)](https://github.com/magento/magento2/issues/4101){: target="_blank"}
 
 <!--- 61708 -->* **Issue**: You cannot use the Web Setup wizard to uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
 
@@ -178,16 +178,16 @@ We address the following functional issues in this release.
 ## System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){: target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 

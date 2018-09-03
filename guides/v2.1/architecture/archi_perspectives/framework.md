@@ -72,11 +72,11 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
       </tr><tr>
          <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
-         <td></td>
+         <td />
       </tr>
       <tr>
          <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
-         <td></td>
+         <td />
       </tr>
       <tr>
          <td><code>Magento\Framework\Controller</code></td>
@@ -136,13 +136,13 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 		<td>
 			<code>Magento\Framework\HTTP\PhpEnvironment</code>
 		</td>
-		<td/>
+		<td />
 	</tr>
 	<tr>
 		<td>
 			<code>Magento\Framework\Session</code>
 		</td>
-		<td/>
+		<td />
 	</tr>
 	<tr>
 		<td>

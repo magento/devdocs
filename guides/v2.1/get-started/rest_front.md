@@ -22,6 +22,7 @@ This guide introduces web API, REST, and cURL command concepts. It shows you how
 
 
 Read the following sections to get up and running with the Magento web APIs:
+
 <ul>
    <li>
       <p>
