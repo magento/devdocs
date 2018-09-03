@@ -112,7 +112,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td>
-        <code>&lt;span&gt;&lt;page&gt;&lt;/page&gt;&lt;/span&gt;</code>
+        <code>&lt;page&gt;&lt;/page&gt;</code>
       </td>
       <td colspan="1">
         <ul>
@@ -144,9 +144,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1">
-        <span>Mandatory element.</span>
-      </td>
+      <td colspan="1" />
     </tr>
     <tr>
       <td colspan="1"><code>&lt;head&gt;&lt;/head&gt;</code></td>
