@@ -13,8 +13,8 @@ Out-of-the-box Magento implements integration with PayPal, Braintree, and Author
 
 You can create integration with other payment providers, using [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html). 
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information.
 </div>
 
 The topics in this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. For illustration, we use code 

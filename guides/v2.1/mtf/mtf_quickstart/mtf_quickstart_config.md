@@ -7,8 +7,8 @@ title: Quick start. Adjust configuration
 
 Find `phpunit.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you cannot find `phpunit.xml`, create it from `phpunit.xml.dist`.
 </div>
 
 #### Set URL for Magento storefront under test {#mtf_quickstart_config_phpunitxml_frontend}
@@ -28,8 +28,8 @@ Example:
 
 ### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration is set in <a href="{{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The default configuration is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist). It should be copied as `config.xml` for further changes.
 </div>
 
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
@@ -73,8 +73,8 @@ Example for Google Chrome:
 
 Find `credentials.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you cannot find `credentials.xml`, create it from `credentials.xml.dist`.
 </div>
 
 #### Set credentials for Magento modules under test {#mtf_quickstart_config_credentialsxml-set}

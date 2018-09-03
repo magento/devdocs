@@ -13,8 +13,8 @@ redirect_from:
 
 Magento uses [Zend_Cache](http://framework.zend.com/manual/1.12/en/zend.cache.html){:target="_blank"} to interact with the cache storage. However, Magento also has the [Magento\Cache]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for implementing Magento-specific caching. These topics discuss how to configure caching and {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under `<your Magento install dir>/var`.
 </div>
 
 To change the cache configuration, edit `<your Magento install dir>/app/etc/env.php`.

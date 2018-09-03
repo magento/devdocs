@@ -39,7 +39,7 @@ Magento models extend the [`Magento\Framework\Model\AbstractModel`]({{ site.mage
 We recommend putting model classes in the `Model` directory inside your module's root directory.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-  Do not use the inherited `load`,`save`, `delete` methods from `AbstractModel` because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.
+Do not use the inherited `load`,`save`, `delete` methods from `AbstractModel` because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.
 </div>
 
 An example of a model is the [`\Magento\Customer\Model\Customer`]({{ site.mage2100url }}app/code/Magento/Customer/Model/Customer.php){:target="_blank"} class.

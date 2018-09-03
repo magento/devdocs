@@ -99,8 +99,8 @@ return [
 ];
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Leave all the settings that do not start with <code>db-</code> at their default values.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Leave all the settings that do not start with `db-` at their default values.
 </div>
 
 ### Adjust the PHPUnit configuration file

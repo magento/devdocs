@@ -49,6 +49,6 @@ To optionally set the value in the user's Bash shell:
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 	
-<div class="bs-callout bs-callout-warning">
-    <p>We recommend you avoid setting a value for [<code>pcre.recursion_limit</code>](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in `php.ini` because it can result in incomplete rollbacks with no failure notice.
 </div>

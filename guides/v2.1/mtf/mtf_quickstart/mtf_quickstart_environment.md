@@ -35,7 +35,8 @@ Example for Google Chrome with Selenium 2:
     java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
     
 <div class="bs-callout bs-callout-info" markdown="1">
-For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument: `java -jar <path_to_selenium_directory>/selenium-server.jar`
+For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument: `java -jar
+<path_to_selenium_directory>/selenium-server.jar` </div> </path_to_selenium_directory>
 </div>
 
 ## Run generator {#mtf_quickstart_env_generator}

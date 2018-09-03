@@ -47,8 +47,8 @@ Basic components are declared in the [page layout files]({{ page.baseurl }}/fron
 
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You need to configure styles manually for components on storefront.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You need to configure styles manually for components on storefront.
 </div>
 
 ## When to use UI components?

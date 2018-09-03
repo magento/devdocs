@@ -34,8 +34,8 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
     cd <magento2_root_dir>/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have `Widget.xml` fixture, you cannot create new one with the same name.
 </div>
 
 {: .bs-callout .bs-callout-warning}
