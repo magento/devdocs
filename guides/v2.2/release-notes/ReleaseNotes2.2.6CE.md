@@ -2420,7 +2420,7 @@ Actual result
 
 ### Staging
 
-<!-- MAGETWO-90682 -->* Banners remain assigned to a Cart Rule after a Staging Update is applied. Previously, a banner was unassigned from the Cart Rule after a Staging Update was applied. 
+<!-- MAGETWO-90682 -->* Banners remain assigned to a cart rule after a Staging Update is applied. Previously, a banner was unassigned from the cart rule after a Staging Update was applied. 
 
 <!-- MAGETWO-91889 -->* Magento now rolls  back updated changes to their pre-update state  when a merchant deletes an active Scheduled Update. Previously, some products were removed from their assigned categories (and categories were removed from the Amdin)  when an active product update was deleted.  
 
