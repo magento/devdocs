@@ -18,8 +18,8 @@ You can then optionally delete the environment.
 
 This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-comm) to create one.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You <em>cannot</em> merge environment variables because they are not code. You must set the value of environment variables in an environment.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You *cannot* merge environment variables because they are not code. You must set the value of environment variables in an environment.
 </div>
 
 ### Get started
@@ -56,8 +56,8 @@ To merge an environment:
 
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete the <code>master</code> environment of any project.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You cannot delete the `master` environment of any project.
 </div>
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [account owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
@@ -105,8 +105,8 @@ To delete a environment:
 
 Wait for the environment to delete.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+To activate the environment later, use the `magento-cloud environment:activate` command.
 </div>
 
 #### Related topic

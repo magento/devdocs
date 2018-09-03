@@ -32,8 +32,8 @@ In addition to replacing CSS files, you might need to replace small amounts of H
 
 Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files; keep all JavaScript in JavaScript files.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files; keep all JavaScript in JavaScript files.
 </div>
 
 ### Related topics

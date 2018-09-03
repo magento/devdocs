@@ -29,8 +29,8 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see [Generate a translation dictionary]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict).
 </div>
 
 ### Benefits
@@ -83,8 +83,8 @@ Translating the names, titles and phrases used in Magento involves the following
 2.	Translate the terms.
 2.	If desired, package your translations in a <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.
 </div>
 
 Anyone can submit translations on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the Text Editor. Changes made in the Text Editor are not recorded in an instance's dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.

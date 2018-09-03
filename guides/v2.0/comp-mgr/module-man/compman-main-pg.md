@@ -145,8 +145,8 @@ The following sections provide details:
 
 Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be packaged as a metapackage.
 
-<div class="bs-callout bs-callout-info" id="info">
-      <p>We currently do not support uninstalling a metapackage.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We currently do not support uninstalling a metapackage.
 </div>
 
 The following table shows which actions are available for components that are part of a metapackage.
@@ -196,8 +196,8 @@ The following table shows which actions are available for components that are pa
 		</tbody>
 	</table>
 
-<div class="bs-callout bs-callout-info" id="info">
-      <p><strong>Update</strong> displays as an action only if an update is available for that component.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+**Update** displays as an action only if an update is available for that component.
 </div>
 
 ### Actions available for non-metapackage components   {#compman-access-types-non-meta}

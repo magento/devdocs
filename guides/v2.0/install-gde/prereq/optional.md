@@ -97,8 +97,8 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 [`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){: target="_blank"} displays a large amount of information about {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and its extensions. 
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Use `phpinfo.php` in a development system *only*. It can be a security issue in production.
 </div>
 
 Add the following code anywhere in your web server's docroot:
@@ -130,8 +130,8 @@ For more information about `phpmyadmin`, see the [phpmyadmin home page](http://w
 
 For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install){: target="_blank"}.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Use phpmyadmin in a development system *only*. It can be a security issue in production.
 </div>
 
 ## Install phpmyadmin on Ubuntu   {#install-optional-phpmyadmin-ubuntu}

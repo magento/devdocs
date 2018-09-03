@@ -13,7 +13,7 @@ The changes are aggregated into two tables:
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. 
+When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
 </div>
 
 ## 2.0.17 - 2.0.18 {#releases-2_0_17-2_0_18}

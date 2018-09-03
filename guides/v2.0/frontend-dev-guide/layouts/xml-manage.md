@@ -218,8 +218,8 @@ In both example, the template is specified according to the following:
  * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
 </div>
 
 ## Modify block arguments   {#layout_markup_modify-block}

@@ -72,8 +72,8 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
 </ignore>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.
 </div>
 
 ### Verify fixes

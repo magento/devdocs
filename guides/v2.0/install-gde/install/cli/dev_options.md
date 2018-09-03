@@ -16,8 +16,8 @@ functional_areas:
 
 The following topics apply to you *only* if you used `git clone` to install the {{site.data.var.ce}} GitHub repository. This usually means you contribute code to the {{site.data.var.ce}} codebase.
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you clone the Magento 2 GitHub repository, you *cannot* use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.
 </div>
 
 *	To <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use `git pull origin` and `composer update`, then update the Magento database

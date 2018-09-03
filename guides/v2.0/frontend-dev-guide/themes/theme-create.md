@@ -16,8 +16,8 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the [Apply and configure a theme in Admin]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html) topic.
 </div>
 
 ## Prerequisites

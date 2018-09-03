@@ -21,8 +21,8 @@ The `X-Frame-Options` header enables you to specify whether or not a browser sho
 *	`SAMEORIGIN`: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
 *	`ALLOW-FROM <uri>`: Page can be displayed only in a frame on the specified origin.
 
-<div class="bs-callout bs-callout-warning">
-    <p>For security reasons, Magento strongly recommends against running the Magento storefront in a frame.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+For security reasons, Magento strongly recommends against running the Magento storefront in a frame.
 </div>
 
 ## Implement `X-Frame-Options`

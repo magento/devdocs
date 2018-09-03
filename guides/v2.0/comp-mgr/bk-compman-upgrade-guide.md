@@ -33,8 +33,8 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 	*	Upgrade the Magento software using the [command line]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html).
 *	To upgrade from {{site.data.var.ce}} to {{site.data.var.ee}}, see <a href="{{ page.baseurl }}/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ page.baseurl }}/migration/bk-migration-guide.html">Migration Guide</a>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+*System upgrade* refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).
 </div>
 
 <div class="bs-callout bs-callout-warning">

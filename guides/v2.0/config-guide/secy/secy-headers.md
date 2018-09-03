@@ -20,8 +20,8 @@ This solution applies to the following Magento versions:
 *	2.0.10 and later
 *	2.1.2 and later
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This topic is intended for experienced IIS administrators. </p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This topic is intended for experienced IIS administrators.
 </div>
 
 ### Description

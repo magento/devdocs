@@ -32,6 +32,6 @@ In general, the Magento application works with any backend cache that [Zend\_Cac
 
 [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more low-level cache types so watch this space.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We'll periodically add more low-level cache types so watch this space.
 </div>

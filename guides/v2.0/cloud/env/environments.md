@@ -28,8 +28,8 @@ Every {{site.data.var.ece}} project starts with a `master` environment that corr
 
 We recommend using GitHub for maintaining your code branches.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Your project must have a `master` branch; it won't function properly without one.
 </div>
 
 You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) commands.

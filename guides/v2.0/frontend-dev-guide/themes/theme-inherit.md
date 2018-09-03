@@ -40,8 +40,8 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 </theme>
 {% endhighlight xml %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.
 </div>
 
 ## Override view.xml file

@@ -129,8 +129,8 @@ Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-
 *	Mounts the read-write file system (mounted on a highly available distributed storage grid)
 *	Configures the network so Magento's services can "see" each other (and only each other)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are *read-only*. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
@@ -151,12 +151,12 @@ There are two default deploy hooks. `pre-deploy.php` completes necessary cleanup
 
 *	The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment isn't affected.
 </div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.
 </div>
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}

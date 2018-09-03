@@ -64,8 +64,8 @@ In this topic, we show how to install PHP using the [Inline with Upstream Stable
 
 Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="_blank"}.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Magento does *not* officially recommend using the IUS repository. We discuss it here for example purposes only.
 </div>
 
 Continue with one of the following sections:

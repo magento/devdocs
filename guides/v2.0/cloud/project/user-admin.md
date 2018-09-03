@@ -38,8 +38,8 @@ A project reader can have one of the following roles per environment:
 * Environment contributor can push code to this environment and branch the environment.
 * Environment reader can view this environment only.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you limit the environment administrator role to as few users as possible.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We recommend you limit the environment administrator role to as few users as possible.
 </div>
 
 ## Role management best practices
@@ -49,8 +49,8 @@ When a development team works on a project, the team leader can be the project a
 For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to "Contributor".
 
 
-<div class="bs-callout bs-callout-warning">
-    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in `.magento.app.yaml` by specifying `ssh: contributor`.
 </div>
 
 ## Create and manage users

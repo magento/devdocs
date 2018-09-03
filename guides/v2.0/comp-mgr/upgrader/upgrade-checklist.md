@@ -22,8 +22,8 @@ You can upgrade in any of the following ways:
 
 	This upgrade method is more advanced and it requires access to the Magento server's file system.	
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ page.baseurl }}/migration/bk-migration-guide.html">Migration Guide</a>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+*System upgrade* refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).
 </div>
 
 <div class="bs-callout bs-callout-warning">

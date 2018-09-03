@@ -102,7 +102,7 @@ The Staging environment contains a default `master` branch. You cannot branch fr
 When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `staging` that contains all user access settings and environment variables for your Staging environment.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test  deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
 </div>
 
 ## Production environment {#cloud-arch-prod}

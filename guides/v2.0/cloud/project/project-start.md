@@ -35,8 +35,8 @@ Not including the Magento application itself, your local project has the followi
 └── README.md
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment isn't affected.
 </div>
 
 ### .gitignore file {gitignore}
@@ -69,8 +69,8 @@ In Integration, Staging, and Production, *only* the following directories are wr
 *	`app/etc`
 *	`/tmp`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In Production, each node in the three-node cluster has a <code>/tmp</code> directory that is not shared with the other nodes.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
 </div>
 
 ## Logs {#logs}

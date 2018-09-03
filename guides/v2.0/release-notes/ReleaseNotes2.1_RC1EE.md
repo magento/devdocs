@@ -131,8 +131,8 @@ This section discusses how to upgrade to a Release Candidate *without* sample da
 
 If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
 
-<div class="bs-callout bs-callout-warning">
-    <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+*Do not* upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.
 </div>
 
 ### Upgrade using the Setup Wizard

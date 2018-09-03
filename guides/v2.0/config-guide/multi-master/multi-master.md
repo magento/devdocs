@@ -66,8 +66,8 @@ This also means you can either:
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
-<div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You must back up the two additional database instances manually. Magento backs up only the main database instance. The [`'magento setup:backup --db`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
 </div>
 
 ## Prerequisites   {#config-ee-multidb-prereq}

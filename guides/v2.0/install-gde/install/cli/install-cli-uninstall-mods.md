@@ -159,8 +159,8 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
-<div class="bs-callout bs-callout-warning">
-    <p>This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under <code>pub/media</code> before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+This command deletes the specified files or the database before restoring them. (For example, the `--media-file` option deletes media assets under `pub/media` before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.
 </div>
 
 

@@ -17,8 +17,8 @@ functional_areas:
 
 Magento 2 supports versions 3.0.5 or later or any Varnish 4.x version.
 
-<div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish (or <a href="{{ page.baseurl }}/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+We *strongly recommend* you use Varnish (or [Redis]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)) in production. The built-in full-page caching (to either the file system or [database]({{ page.baseurl }}/config-guide/cache/caching-database.html)) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.
 </div>
 
 For more information about Varnish, see:

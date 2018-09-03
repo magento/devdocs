@@ -16,7 +16,7 @@ The core Magento team and contributing developers work in two release types
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-  Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
+Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 </div>
 
 ## Prohibited code changes
@@ -24,7 +24,7 @@ The core Magento team and contributing developers work in two release types
 The following code modifications are forbidden for all code (both `@api` and non `@api`) without approval of a Magento architect.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-  The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
+The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 </div>
 
 ### PHP

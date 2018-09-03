@@ -53,15 +53,15 @@ Format the link as follows:
 
 <!-- Note, Important, Tip: These must be HTML -->
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This is a note.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This is a note.
 </div>
 
 
-<div class="bs-callout bs-callout-warning">
-    <p>This is important.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+This is important.
 </div>
 
-<div class="bs-callout bs-callout-tip">
-  <p>This is a tip.</p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+This is a tip.
 </div>

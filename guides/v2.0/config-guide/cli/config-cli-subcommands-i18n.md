@@ -89,7 +89,7 @@ The following table explains this command's parameters and values:
 </table>
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To create a language pack from a translation dictionary, you <em>must</em> use the `-m|--magento` option.
+To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 </div>
 
 ### Translation guidelines {#config-cli-subcommands-xlate-dict-trans}

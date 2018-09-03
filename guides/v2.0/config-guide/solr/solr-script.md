@@ -47,8 +47,8 @@ If one or more of the `maxBooleanClauses` parameters is set too low, the search 
 
 In a production environment, you should start and stop Solr using a script.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You must perform all tasks discussed in this section as a user with `root` privileges.
 </div>
 
 Create a script named <code>/etc/init.d/solr</code> with options similar to the following:

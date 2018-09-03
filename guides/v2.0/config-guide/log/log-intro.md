@@ -23,8 +23,8 @@ We recommend using centralized application logging for the following reasons:
 
 *	It makes processing of logs data more effective by using special tools without impact to a production server (for example, [logstash](https://www.elastic.co/products/logstash){:target="_blank"}, [logplex](https://devcenter.heroku.com/articles/logplex){:target="_blank"}, or [fluentd](http://www.fluentd.org){:target="_blank"}).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not recommend or endorse any particular logging solution.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Magento does not recommend or endorse any particular logging solution.
 </div>
 
 ### Magento PSR-3 compliance

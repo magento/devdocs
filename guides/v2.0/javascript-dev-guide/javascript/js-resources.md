@@ -31,7 +31,7 @@ In Magento, you can find the JS components on the following levels:
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Library level can only contain core Magento resources. Do not put custom JS files in  the `lib/web` directory.
+Library level can only contain core Magento resources. Do not put custom JS files in the `lib/web` directory.
 </div>
 
 ### Specifying JS
