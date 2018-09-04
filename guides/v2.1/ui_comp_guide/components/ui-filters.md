@@ -27,8 +27,8 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
   <tr>
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br>[name: string]: Boolean<br>}</td>
-    <td></td>
+    <td>{<br />[name: string]: Boolean<br />}</td>
+    <td />
   </tr>
   <tr>
     <td><code>stickyTmpl</code></td>
@@ -54,4 +54,4 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)

@@ -15,11 +15,11 @@ The Magento application uses a low-level {% glossarytooltip 0bc9c8bc-de1a-4a06-9
 
 ## Low-level frontend cache {#cache-lowlevel-front}
 
-Magento extends [Zend_Cache_Core](http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html){:target="&#95;blank"} by implementing [Magento\Framework\Cache\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){:target="&#95;blank"} frontend cache.
+Magento extends [Zend_Cache_Core](http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html){:target="_blank"} by implementing [Magento\Framework\Cache\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){:target="_blank"} frontend cache.
 
 ## Low-level backend cache {#cache-lowlevel-front}
 
-In general, the Magento application works with any backend cache that [Zend_Cache Backends](http://framework.zend.com/manual/1.12/en/zend.cache.backends.html){:target="&#95;blank"} supports. However, this guide covers only the following low-level backend caches:
+In general, the Magento application works with any backend cache that [Zend_Cache Backends](http://framework.zend.com/manual/1.12/en/zend.cache.backends.html){:target="_blank"} supports. However, this guide covers only the following low-level backend caches:
 
 *   [Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 *   [Database]({{ page.baseurl }}/config-guide/cache/caching-database.html)

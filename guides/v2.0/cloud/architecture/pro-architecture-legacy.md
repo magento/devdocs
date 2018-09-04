@@ -22,7 +22,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>
@@ -163,7 +163,7 @@ The following figure shows the technology used in the Production environment:
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
-In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="\_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
+In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
 ## Services {#cloud-arch-services}
 {{site.data.var.ece}} currently supports the following services:

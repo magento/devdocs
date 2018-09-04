@@ -33,9 +33,9 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0
 
 <pre>
     &lt;head&gt;
-        &lt;css src=&quot;css/styles-m.css&quot; /&gt;
-        &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
-        &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt;
+        &lt;css src="css/styles-m.css" /&gt;
+        &lt;css src="css/styles-l.css" media="screen and (min-width: 768px)"/&gt;
+        &lt;css src="css/print.css" media="print" /&gt;
     &lt;/head&gt;
 </pre>
 

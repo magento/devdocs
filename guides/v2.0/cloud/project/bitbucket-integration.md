@@ -22,7 +22,7 @@ We _strongly_ recommend using a private Bitbucket repository for your {{site.dat
 
 ## Prepare your repository
 
-This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="\_blank"} before proceeding.
+This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="_blank"} before proceeding.
 
 1.  Open a terminal and log in to your {{site.data.var.ece}} project:
 
@@ -61,9 +61,9 @@ This section shows you how to clone your {{site.data.var.ece}} project from and 
 
 ## Create an OAuth consumer
 
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. This section shows you how to create one in Bitbucket. You'll need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="_blank"}. This section shows you how to create one in Bitbucket. You'll need the OAuth `key` and `secret` from this consumer to complete the next section.
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="\_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
 1.  Click **Settings** > **Access Management** > **OAuth**.
 1.  Click **Add consumer** and configure it as follows:
 

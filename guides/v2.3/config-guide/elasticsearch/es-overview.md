@@ -33,10 +33,10 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 ### Supported versions {#es-spt-versions}
 {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-*	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="&#95;blank"}
-*	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="&#95;blank"}
+*	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+*	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
 
-Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
+Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
 
 ### Recommended configuration {#es-arch}
 
@@ -196,7 +196,7 @@ Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 

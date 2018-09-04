@@ -23,7 +23,7 @@ You can also do any of the following:
 
 ### Install optional sample data
 
-If you haven't already installed optional sample data, you can <a href="{{ page.baseurl }}/install-gde/install/sample-data.html">install it now</a>.
+If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl }}/install-gde/install/sample-data.html).
 
 ### Manage and upgrade components
 

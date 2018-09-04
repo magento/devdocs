@@ -4,6 +4,7 @@ title: Introduction to the Magento Functional Testing Framework version 2.2
 functional_areas:
     - Testing
 mftf-release: 2.2.0
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/introduction.html
 ---
 
 _The latest MFTF 2.2 release is [{{page.mftf-release}}]._

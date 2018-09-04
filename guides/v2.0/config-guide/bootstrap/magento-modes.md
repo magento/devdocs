@@ -26,7 +26,7 @@ You can run Magento in any of the following *modes*:
 			<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
 			<ul><li>Symlinks to static view files are published to the <code>pub/static</code> directory</li>
 				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
-				<li>Hides custom <code>X-Magento-&#42;</code> HTTP request and response headers</li></ul>
+				<li>Hides custom <code>X-Magento-*</code> HTTP request and response headers</li></ul>
 			</td>
 	</tr>
 	<tr>
@@ -36,7 +36,7 @@ You can run Magento in any of the following *modes*:
 				<li>Provides verbose logging</li>
 				<li>Enables <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
-				<li>Shows custom <code>X-Magento-&#42;</code> HTTP request and response headers</li>
+				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
         <div class="bs-callout bs-callout-info">
         <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
@@ -65,7 +65,7 @@ In default mode:
 
 -   Errors are logged to the file reports at server, and never shown to a user
 -   A symlink to a static view file is published to the `pub/static` directory for each requested file
--   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="\_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+-   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 

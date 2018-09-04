@@ -96,8 +96,8 @@ To configure Magento to work with Solr:
 3.  In the right pane, expand <strong>Catalog Search</strong>.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
-<col width="30%">
-<col width="70%">
+<col width="30%" />
+<col width="70%" />
 <tbody>
 	<tr><th>Option</th>
 	<th>Description</th>
@@ -136,26 +136,26 @@ To configure Magento to work with Solr:
 </table>
 
 The following figure shows an example.
-<img src="{{ site.baseurl }}/common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
+![Configure Magento to use Solr]({{ site.baseurl }}/common/images/solr_config-admin.png)
 
 Click <strong>Test Connection</strong>.
 
 The button changes as follows.
 
 <table>
-<col width="20%">
-<col width="80%">
+<col width="20%" />
+<col width="80%" />
 <tbody>
 <tr>
 	<th>Button state</th>
 	<th>Meaning</th>
 </tr>
 <tr>
-	<td><img src="{{ site.baseurl }}/common/images/solr_test-success.png" width="140px" height="17px"></td>
+	<td><img src="{{ site.baseurl }}/common/images/solr_test-success.png" width="140px" height="17px" /></td>
 	<td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl }}/common/images/solr_test-fail.png" width="160px" height="16px"></td>
+ <td><img src="{{ site.baseurl }}/common/images/solr_test-fail.png" width="160px" height="16px" /></td>
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
@@ -213,7 +213,7 @@ To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80c
 
 The following figure shows an example of a storefront search.
 
-<img src="{{ site.baseurl }}/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
+![Verify Solr works by searching the storefront]({{ site.baseurl }}/common/images/solr_verify.png){: width="750px"}
 
 The following excerpt from the Solr command window shows the same search:
 

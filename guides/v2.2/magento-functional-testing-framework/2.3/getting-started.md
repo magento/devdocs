@@ -10,7 +10,7 @@ redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/getti
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% if page.guide_version == 2.2 %}
+{% if page.guide_version == "2.2" %}
 {% include_relative include/note-2.2-docs.md %}
 {% endif %}
 

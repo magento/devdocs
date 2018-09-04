@@ -25,8 +25,8 @@ The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl
   <tr>
     <td><code>fieldClass</code></td>
     <td>Additional CSS classes added to the column's field elements.</td>
-    <td>{<br><code>[name: string]: boolean</code><br>}</td>
-    <td>{<br>'<code>admin__scope-old': true,</code><br><code>'data-grid-onoff-cell': true,</code><br><code>'data-grid-checkbox-cell': false</code><br>}</td>
+    <td>{<br /><code>[name: string]: boolean</code><br />}</td>
+    <td>{<br />'<code>admin__scope-old': true,</code><br /><code>'data-grid-onoff-cell': true,</code><br /><code>'data-grid-checkbox-cell': false</code><br />}</td>
   </tr>
   <tr>
     <td><code>headerTmpl</code></td>
@@ -40,4 +40,4 @@ The OnOffColumn component is a decorator for [MultiselectColumn]({{ page.baseurl
 
 Extends [`MultiselectColumn`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselectcolumn.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)

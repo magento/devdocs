@@ -25,7 +25,7 @@ Prepare your environment with the following tasks:
 {{site.data.var.ece}} 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
 * [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
-* [Migrating PHP](http://php.net/manual/en/migration71.php){:target="\_blank"}
+* [Migrating PHP](http://php.net/manual/en/migration71.php){:target="_blank"}
 * [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 {: .bs-callout .bs-callout-info}

@@ -22,8 +22,8 @@ To verify your split databases are working properly, perform the following tasks
 
 <table>
 <tbody>
-	<col width="25%">
-	<col width="75%">
+	<col width="25%" />
+	<col width="75%" />
 	<tr>
 		<th>What to verify</th>
 		<th>How to verify</th>

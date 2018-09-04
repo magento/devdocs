@@ -37,7 +37,7 @@ To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need
 
 You need to add these files to your {{site.data.var.ee}} code:
 
-1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="\_blank"}.
+1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
 2.  Select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
     The following figure shows an example of selecting the `2.1.4` branch.
@@ -59,7 +59,7 @@ You need to add these files to your {{site.data.var.ee}} code:
 
     For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.1.4 branch:
 
-    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="\_blank"}.
+    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
@@ -83,7 +83,7 @@ When you push your code, all services are configured into the associated environ
 
 To enable install and update commands for {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
 
-In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="\_blank"}.
+In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="_blank"}.
 
 To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you don't have one:
 
@@ -104,7 +104,7 @@ To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-80
 
 ## Edit `composer.json` {#composer-json}
 
-Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="\_blank"}.
+Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="_blank"}.
 
 To edit `composer.json`:
 

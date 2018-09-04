@@ -24,9 +24,9 @@ To consume several services, you must specify them in the WSDL endpoint {% gloss
 
 <table style="width:100%">
    <colgroup>
-      <col width="20%">
-      <col width="40%">
-      <col width="40%">
+      <col width="20%" />
+      <col width="40%" />
+      <col width="40%" />
    </colgroup>
    <thead>
       <tr>
@@ -66,33 +66,15 @@ Service names use the following conventions:
 * The `Interface` suffix is omitted.
 * If the service name is the same as the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
 
-<table>
-<thead>
-<tr>
-<th>Original Service Interface Name</th>
-<th>Service Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerInterface</td>
-<td>customerV1</td>
-</tr>
-<tr>
-<td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface </td>
-<td>customerCustomerAccountServiceV1</td>
-</tr>
-<tr>
-<td>\Enterprise\Customer\Service\V3\Customer\AddressInterface</td>
-<td>enterpriseCustomerAddressV3</td>
-</tr>
-
-</tbody>
-</table>
+| Original Service Interface Name | Service Name |
+|----------
+| \Magento\Customer\Service\V1\CustomerInterface | customerV1 |
+| \Magento\Customer\Service\V1\CustomerAccountServiceInterface | customerCustomerAccountServiceV1 |
+| \Enterprise\Customer\Service\V3\Customer\AddressInterface | enterpriseCustomerAddressV3 |
 
 ## Authentication   {#auth}
 
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 
 The following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script illustrates how to get an access token:
 
@@ -114,6 +96,6 @@ $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 
 ## Related topics   {#related}
 
-* <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
-* <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-* <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>
+* [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
+* [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
+* [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)

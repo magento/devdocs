@@ -39,7 +39,7 @@ The Expandable Column component can be used in {% glossarytooltip 29ddb393-ca22-
         <td><code>tooltipTitle</code></td>
         <td>A title for the tooltip.</td>
         <td>String</td>
-        <td></td>
+        <td />
     </tr>
 </table>
 
@@ -64,9 +64,9 @@ This component has a dependency on the Column component, `<Magento_Ui_module_dir
 
 ## Source files
 
-- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
+- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
 
 
 ### Methods and events

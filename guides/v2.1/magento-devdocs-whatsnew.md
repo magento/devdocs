@@ -11,6 +11,14 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Update the magento-cloud [CLI instructions for deleting an environment](https://devdocs.magento.com/guides/v2.1/cloud/env/environments-start.html#env-delete).|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 27
+Updated [Generate a local REST reference](https://devdocs.magento.com/guides/v2.2/rest/generate-local.html) to include additional display options.|2.2.x, 2.3.x|Technical changes|Aug 22
+Corrected the list of attributes in an HTTP header in [OAuth-based authentication](https://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-oauth.html).|2.x|Technical changes|Aug 22
+Documented a more secure method of [adding authentication credentials]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html#auth-json) to a Cloud project.|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 22
+Add information about installing the Google reCAPTCHA and Two-Factor Authentication extensions to the [Magento Commerce Cloud Store configuration documentation](https://devdocs.magento.com/guides/v2.2/cloud/configure/configuration-overview.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 21
+Updated [Generate a local REST reference](https://devdocs.magento.com/guides/v2.1/rest/generate-local.html) to include non-default options.|2.x|Technical changes|Aug 21
+[Update topic to reflect backward-incompatible changes made in 2.3 regarding controllers and CSRF protection](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html)|2.3.x|Major update|Aug 21
+Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/reference/categories.html) topic.|2.3.x|Major update|Aug 20
 MFTF 2.3: Added example test steps for each [action](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/test/actions.html).|2.2.x|Major update|Aug 17
 Updated all GitHub labels used for community contributions and added information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.x|Major update|Aug 16
 Improve instructions for [configuring multi-site URLs](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html) with Magento Commerce Cloud.|2.1.x, 2.2.x|Technical changes|Aug 14
@@ -39,7 +47,6 @@ Added database maintenance scheduling information to the [Performance Best Pract
 Reorganized and refreshed the [Cloud Upgrades and Patches section](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html).|2.1.x, 2.2.x, 2.3.x|Major update|Jul 26
 Added local file inclusion (LFI) and remote code execution (RCE) protection guidelines to the [Code Magento Standards](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).|2.2.x, 2.3.x|Major update|Jul 25
 Updated [Definition of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html) with examples and guidelines.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 25
-Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html) for Magento.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 23
 Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html) for Magento.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 23
 Improved the Docker configuration process to set up a Magento Commerce Cloud development environment in your local workstation using ece-tools v2002.0.13 or later. Also added support for Redis, Varnish, and SSL services. See the [Magento Commerce (Cloud) v2002.0.13 Release Notes](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Jul 23
 Added the [CLI instructions](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html) for upgrading Magento to 2.3.|2.3.x|Major update|Jul 20
