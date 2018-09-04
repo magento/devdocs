@@ -2,7 +2,7 @@
 
 ## Install sample data by cloning repositories   {#sample-clone}
 
-This topic discusses how to get the Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
+This topic discusses how to clone and install Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
 
 If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
 
@@ -12,7 +12,7 @@ Contributing developers can use this method of installing sample data *only* if 
 *   You [cloned the Magento 2 repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
 {:.bs-callout .bs-callout-warning}
-You can use sample data with either the `develop` branch (more current) or a released branch (such as `2.0` or `2.0.1` (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the `develop` branch. Regardless of the branch you choose, you must [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the `develop` branch can be used *only* with the Magento 2 `develop` branch.
+You can use sample data with either the `develop` branch (more current) or a released branch (such as `2.2` or `2.2.5` (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the `develop` branch. Regardless of the branch you choose, you must [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the `develop` branch can be used *only* with the Magento 2 `develop` branch.
 
 See the following sections:
 
