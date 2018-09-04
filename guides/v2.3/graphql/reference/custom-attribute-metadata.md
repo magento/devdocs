@@ -5,6 +5,24 @@ title: CustomAttributeMetadata endpoint
 
 The `customAttributeMetadata` endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The ability to know the type of attribute a given field is obscured from the GraphQL query consumer.
 
+## Supported attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
+`entity_type` | String | The type of entity that defines the attribute
+`attribute_type` | String | The data type of the attribute (Response only)
+`attribute_options` | `AttributeOption` | A list of attribute options
+{:style="table-layout:auto;"}
+
+### AttributeOption object
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`label` | String | The name of an attribute option
+`value` | String | The value assigned to an attribute option
+{:style="table-layout:auto;"}
+
 ## Example usage
 
 The following query returns the attribute type for various custom and EAV attributes.
@@ -43,12 +61,12 @@ The following query returns the attribute type for various custom and EAV attrib
       attribute_code
       entity_type
       attribute_type
+      attribute_options
     }
   }
  }
  {% endhighlight %}
 
-The key you're storing EAV attributes under
 **Response**
 
 {% highlight json %}
@@ -86,11 +104,3 @@ The key you're storing EAV attributes under
   }
 }
 {% endhighlight %}
-
-## Supported attributes
-
-Attribute |  Data Type | Description
---- | --- | ---
-`attribute_code` | String | The unique identifier for an attribute code. This value should be in lowercase letters without spaces.
-`attribute_type` | String | The data type of the attribute (Response only)
-`entity_type` | String | The type of entity that defines the attribute
