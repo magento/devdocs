@@ -1651,17 +1651,17 @@ For removing blocks or containers, use the <code class="highlighter-rouge">&lt;r
 
 <p>To pass multiple arguments use the following construction:</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;arguments&gt;</span>
-   <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
-   <span class="nt">&lt;argument&gt;&lt;/argument&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"item1"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Custom string<span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"item2"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
    ...
 <span class="nt">&lt;/arguments&gt;</span>
 </code></pre></div></div>
 
 <p>To pass an argument that is an array use the following construction:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;argument&gt;</span>
-   <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
-   <span class="nt">&lt;item&gt;&lt;/item&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"custom_array"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"array_key_one"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>First Item<span class="nt">&lt;/item&gt;</span>
+   <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"array_key_two"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Second Item<span class="nt">&lt;/item&gt;</span>
    ...
 <span class="nt">&lt;/argument&gt;</span>
 </code></pre></div></div>
