@@ -138,7 +138,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
          * @param ConfigBasedIntegrationManager $integrationManager
          */
 
-        public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
+        public function __construct(ConfigBasedIntegrationManager $integrationManager)
         {
             $this->integrationManager = $integrationManager;
         }

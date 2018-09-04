@@ -108,40 +108,14 @@ The following table provides an extensive list of Magento CLI commands for ECE a
 
 The following table lists general commands.
 
-<table>
-	<thead>
-				   <tr>
-	             <th style="width: 250px;">Command</th>
-	             <th>Description</th>
-	         </tr>
-	</thead>
-			<tbody>
-	 				<tr>
-	 				<td>clear-cache</td>
-	 				<td>Clears the cache for only the CLI.</td>
-	 				</tr>
-					<tr>
-	 				<td>docs</td>
-	 				<td>Provides a link for documentation. </td>
-	 				</tr>
-					<tr>
-	 				<td>help</td>
-	 				<td>Displays help information for the command.</td>
-	 				</tr>
-					<tr>
-	 				<td>list</td>
-	 				<td>Displays a list of all available commands in the Magento Cloud CLI.</td>
-	 				</tr>
-					<tr>
-	 				<td>multi</td>
-	 				<td>Executes a command on multiple projects entered as a command separated list for the <code>-p</code> parameter.</td>
-	 				</tr>
-					<tr>
-	 				<td>web</td>
-	 				<td>Opens a web UI based on the parameters you enter.</td>
-	 				</tr>
-			</tbody>
-</table>
+| Command | Description |
+|----------
+| clear-cache | Clears the cache for only the CLI. |
+| docs | Provides a link for documentation. |
+| help | Displays help information for the command. |
+| list | Displays a list of all available commands in the Magento Cloud CLI. |
+| multi | Executes a command on multiple projects entered as a command separated list for the `-p` parameter. |
+| web | Opens a web UI based on the parameters you enter. |
 
 
 The following table lists all commands for interacting with your environments and projects.

@@ -33,11 +33,11 @@ INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT
 
 <!-- Image link -->
 
-Please submit all images to our <a href="https://github.com/magento/devdocs/tree/develop/common/images">`common/images`</a> directory.
+Please submit all images to our [`common/images`](https://github.com/magento/devdocs/tree/develop/common/images) directory.
 
 Format the link as follows:
 
-<img src="{{ site.baseurl }}/common/images/FILENAME.png" alt="Alt text for the image">
+![Alt text for the image]({{ site.baseurl }}/common/images/FILENAME.png)
 
 <!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
 <!-- {{ page.baseurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->

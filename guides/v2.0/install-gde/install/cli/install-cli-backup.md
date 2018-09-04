@@ -45,36 +45,33 @@ The command performs the following tasks:
 1.	Puts the store in maintenance mode.
 2.	Executes one of the following command options.
 
-	<table>
-	<col width="25%">
-	<col width="40%">
-	<col width="35%">
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Meaning</th>
-			<th>Backup file name and location</th>
-		</tr>
-		
-	<tr>
-		<td><p>--code</p></td>
-		<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
-		<td><p>var/backups/&lt;timestamp>_filesystem.tgz</p></td>
-	</tr>
-	<tr>
-		<td><p>--media</p></td>
-		<td><p>Back up the <code>pub/media</code> directory.</p></td>
-		<td><p>var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
-	</tr>
-	<tr>
-	<tr>
-		<td><p>--db</p></td>
-		<td><p>Back up the Magento 2 database.</p></td>
-		<td><p>var/backups/&lt;timestamp>_db.sql</p></td>
-	</tr>
-	<tr>
-	</tbody>
-	</table>
+<table>
+<col width="25%">
+<col width="40%">
+<col width="35%">
+<tbody>
+<tr>
+<th>Option</th>
+<th>Meaning</th>
+<th>Backup file name and location</th>
+</tr>
+<tr>
+<td><p>--code</p></td>
+<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_filesystem.tgz</p></td>
+</tr>
+<tr>
+<td><p>--media</p></td>
+<td><p>Back up the <code>pub/media</code> directory.</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_filesystem_media.tgz</p></td>
+</tr>
+<tr>
+<td><p>--db</p></td>
+<td><p>Back up the Magento 2 database.</p></td>
+<td><p>var/backups/&lt;timestamp&gt;_db.sql</p></td>
+</tr>
+</tbody>
+</table>
 
 3.	Takes the store out of maintenance mode.
 

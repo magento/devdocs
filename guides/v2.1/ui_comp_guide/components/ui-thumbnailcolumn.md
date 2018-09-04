@@ -34,4 +34,4 @@ The ThumbnailColumn component implements a column containing images associated w
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)

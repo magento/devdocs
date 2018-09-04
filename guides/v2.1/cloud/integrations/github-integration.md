@@ -20,7 +20,7 @@ You must obtain a GitHub token and a webhook to continue the process.
 
 ## Generate a GitHub token
 
-You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="\_blank"}.
+You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="_blank"}.
 
 ## Enable the GitHub integration
 

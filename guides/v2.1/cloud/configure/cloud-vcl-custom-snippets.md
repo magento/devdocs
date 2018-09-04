@@ -127,7 +127,7 @@ To view a list of all VCL snippets by version:
 
 Look for the `active` key from the returned list. You need the version to perform a clone in the next section.
 
-For more information on this Fastly API, see this [get version command](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987){:target="\_blank"}.
+For more information on this Fastly API, see this [get version command](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987){:target="_blank"}.
 
 ## Clone the active VCL version and all snippets {#clone}
 
@@ -139,7 +139,7 @@ You can save the new version into a bash environment variable for use in cURL co
 
     export FASTLY_VERSION=<Version>
 
-For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="\_blank"}.
+For more information on this Fastly API, see this [clone command](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709){:target="_blank"}.
 
 ### Create custom VCL snippets {#create-snippet}
 
@@ -210,7 +210,7 @@ To update a snippet, modify the JSON file you prepared on the [Create VCL snippe
 
     curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/<snippet_name> -H 'Content-Type: application/json' -X PUT --data @<filename.json>
 
-If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code that use a priority of `100`.
+If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code that use a priority of `100`.
 
 To delete an individual VCL snippet using the API, get a list of snippets and enter a `curl` command with the specific snippet name to delete:
 
@@ -220,13 +220,13 @@ To delete an individual VCL snippet using the API, get a list of snippets and en
 
 You can learn more about creating VCL snippets with the following Fastly resources:
 
--   [All Fastly VCL content](https://docs.fastly.com/guides/vcl/){:target="\_blank"}
--   [Fastly VCL guide](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="\_blank"}
--   [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="\_blank"}
--   [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="\_blank"}
+-   [All Fastly VCL content](https://docs.fastly.com/guides/vcl/){:target="_blank"}
+-   [Fastly VCL guide](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}
+-   [Mixing and matching Fastly VCL with custom VCL](https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl){:target="_blank"}
+-   [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet){:target="_blank"}
 
 Fastly supports two types of snippets:
 
--   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="\_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
--   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="\_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
+-   [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets){:target="_blank"} are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.
+-   [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets){:target="_blank"} are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.
 

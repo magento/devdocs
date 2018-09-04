@@ -70,7 +70,7 @@ log:
       min_level: "info"
 ```
 
--   `token`—Your Slack [user token](https://api.slack.com/docs/token-types#user){:target="\_blank"}. Your user token authorizes {{site.data.var.ece}} to send messages.
+-   `token`—Your Slack [user token](https://api.slack.com/docs/token-types#user){:target="_blank"}. Your user token authorizes {{site.data.var.ece}} to send messages.
 -   `channel`—Name of the Slack channel {{site.data.var.ece}} sends notifications.
 -   `username`—Username {{site.data.var.ece}} uses to send notification messages in Slack.
 -   `min_level`—Minimum log level for notification messages. We recommend using `info`.

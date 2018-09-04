@@ -43,9 +43,9 @@ For details, see [Configuring Two-Factor Authentication via a mobile app guide](
 
 ## Questions or enhancement requests? {#question}
 
-We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/){:target="\_blank"} and the [Magento Forums](https://community.magento.com/){:target="\_blank"}, where Magento community members can quickly provide recommendations and advice.
+We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as [Stack Exchange](https://magento.stackexchange.com/){:target="_blank"} and the [Magento Forums](https://community.magento.com/){:target="_blank"}, where Magento community members can quickly provide recommendations and advice.
 
-Submit feature requests or enhancement suggestions to the new [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests){:target="\_blank"} (see details [here](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96){:target="\_blank"}).
+Submit feature requests or enhancement suggestions to the new [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests){:target="_blank"} (see details [here](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96){:target="_blank"}).
 
 ## Accepted pull requests and ported code {#rules}
 
@@ -59,24 +59,24 @@ Please review the following supported and accepted pull request rules. We define
 
 ## Contribution requirements {#requirements}
 
-1. Contributions must adhere to [Magento coding standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html){:target="\_blank"}.
+1. Contributions must adhere to [Magento coding standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html){:target="_blank"}.
 1. Refer to the Magento development team's [Definition of Done]({{page.baseurl}}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
 1. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 1. Commits must be accompanied by meaningful commit messages.
 1. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 1. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed [documentation](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md){:target="\_blank"} updates. [Documentation]({{site.baseurl}}/){:target="\_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="\_blank"}.
-1. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-1. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="\_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines){:target="\_blank"}.
-1. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="\_blank"} must be green).
+  * Proposed [documentation](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md){:target="_blank"} updates. [Documentation]({{site.baseurl}}/){:target="_blank"} contributions can be submitted [here](https://github.com/magento/devdocs){:target="_blank"}.
+1. For large features or changes, please [open an issue](https://github.com/magento/magento2/issues){:target="_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
+1. To report a bug, please [open an issue](https://github.com/magento/magento2/issues){:target="_blank"}, and follow these [guidelines about bugfix issues](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines){:target="_blank"}.
+1. All automated tests must pass successfully (all builds on [Travis CI](https://travis-ci.org/magento/magento2){:target="_blank"} must be green).
 
 ## Fork a repository {#fork}
 
 To fork a repository on Github:
 
 1. Create or log in to your account on GitHub.
-2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="\_blank"}.
+2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.
 3. Click **Fork** at the top right:
 
     ![Fork a Repository]({{site.baseurl}}/common/images/fork.png)
@@ -311,7 +311,7 @@ To add an issue:
 1. Fill in the Title and Issue description.
 1. Click **Submit new issue**.
 
-## Help triage issues  <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a> {#triage}
+## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
 

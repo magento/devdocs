@@ -20,7 +20,7 @@ The ExportButton component implements the ability to export grid data to the spe
     <td><code>options</code></td>
     <td>List of available formats in which the table's data can be exported.</td>
     <td>Array<a href="#exportoption">&lt;<code>ExportOption</code>&gt;</a> </td>
-    <td><code>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</code></td>
+    <td><code>[{<br />value: "csv",<br />label: "CSV",<br />url: "mui/export/gridToCsv"<br />}, {<br />value: "xml",<br />label: "Excel XML",<br />url: "mui/export/gridToXml"<br />}]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -107,4 +107,4 @@ To add new export format:
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/export.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)

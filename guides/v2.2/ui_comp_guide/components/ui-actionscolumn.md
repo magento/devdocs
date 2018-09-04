@@ -66,7 +66,7 @@ The ActionsColumns component implements a table's column responsible for display
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
+    <td><br />{<br />title: string;<br />message: string<br />}<br /></td>
     <td>Optional</td>
   </tr>
   <tr>
@@ -93,4 +93,4 @@ The ActionsColumns component implements a table's column responsible for display
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)

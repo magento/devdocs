@@ -63,14 +63,14 @@ Dependency on the following components:
   </tr>
   <tr>
     <td><code>callback</code></td>
-    <td></td>
+    <td />
     <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message displayed before applying the action.</td>
-    <td>{<br>title: string;<br>message: string;<br>}</td>
+    <td>{<br />title: string;<br />message: string;<br />}</td>
     <td>Optional</td>
   </tr>
   <tr>
@@ -171,8 +171,8 @@ Redefine link to constructor.
 ## Source files
 
 Extends `Collapsible`:
-- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 
 ### Methods and Events
 

@@ -40,7 +40,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 {:.bs-callout .bs-callout-info}
-The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
@@ -75,7 +75,7 @@ If PHP is *not* installed, see one of the following sections:
     	  with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 
 	{:.bs-callout .bs-callout-info}
-  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -104,7 +104,7 @@ If PHP is *not* installed, see one of the following sections:
     	with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 	{:.bs-callout .bs-callout-info}
-  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 

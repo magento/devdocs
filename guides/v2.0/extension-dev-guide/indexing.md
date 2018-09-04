@@ -11,13 +11,6 @@ redirect_from:
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 
-#### Contents
-
-*	<a href="#m2devgde-indexing-intro">Introduction to indexing</a>
-*	<a href="#m2devgde-indexing-implementation">How Magento implements indexing</a>
-*	<a href="#m2devgde-indexing-outofbox">Magento indexers</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
-
 ## Introduction to indexing   {#m2devgde-indexing-intro}
 
 _Indexing_ is how Magento transforms data such as products, categories, and so on, to improve the performance of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. As data changes, the transformed data must be updated&mdash;or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} data, prices, users, stores, and so on) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.
@@ -172,25 +165,25 @@ The Magento application implements the following indexers:
 		<td>Stock</td>
 		<td>cataloginventory_stock</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td>catalogrule_rule</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td>catalogsearch_fulltext</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
-		<td></td>
+		<td />
 	</tr>
 
 </tbody></table>

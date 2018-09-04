@@ -28,11 +28,11 @@ As part of the Magento 2 installation process, you specify a subdirectory (usual
 
 ## Contact your hosting provider
 
-If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="\_blank">cPanel</a> typically uses `public_html` as its docroot, but you should contact your provider to confirm.
+If you use one, contact your hosting provider to locate the web server docroot. For example, [cPanel](http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder){: target="_blank"} typically uses `public_html` as its docroot, but you should contact your provider to confirm.
 
 ## Find the docroot yourself
 
-This section assumes you've already set up a simple web server using [Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="\_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="\_blank"}.
+This section assumes you've already set up a simple web server using [Apache virtual hosts](https://httpd.apache.org/docs/2.4/vhosts/){:target="_blank"} or [nginx server blocks](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You can use _virtual hosts_ and _server blocks_ to run more than one web site on a single machine (e.g., `company1.example.com` and `company2.example.com`) or override the web server's default docroot without changing it.
