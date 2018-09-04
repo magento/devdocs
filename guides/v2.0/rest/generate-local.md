@@ -24,9 +24,8 @@ By default, Magento returns documentation for resources available to anonymous u
 
 The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. The **Try it out!** button will not work unless a bearer {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token has been specified.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The **Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.
-</div>
 
 ## Return the JSON schema for one or more services
 

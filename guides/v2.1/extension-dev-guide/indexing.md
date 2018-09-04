@@ -58,9 +58,8 @@ The following components are involved in the indexing process:
 	</tr>
 </tbody></table>
 
-  <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+  {: .bs-callout .bs-callout-warning }
 `Magento_Indexer` replaces the Magento 1.x `Magento_Index` module. Use `Magento_Indexer` for all new development.
-</div>
 
 ### Indexing types
 

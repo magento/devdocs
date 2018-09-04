@@ -2354,9 +2354,8 @@ Attribute|Type|Use|Description
 
 Wait for all Magento loading overlays to disappear.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.
-</div>
 
 ```config
 # Wait for these classes to not be visible

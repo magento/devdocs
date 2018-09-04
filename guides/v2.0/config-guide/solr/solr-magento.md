@@ -29,9 +29,8 @@ The following topics discuss how to configure Solr to work with {{site.data.var.
 
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The example Solr configuration is *not* intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.
-</div>
 
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with {{site.data.var.ee}}:
 
@@ -203,9 +202,8 @@ To reindex using the command line:
 
 3.	Wait while the indexers are reindexed.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Solr.
-</div>
 
 ## Verify Solr is working   {#solr-verify}
 

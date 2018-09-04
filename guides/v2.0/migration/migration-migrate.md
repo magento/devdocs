@@ -22,9 +22,8 @@ During the migration process, **do not:**
 
 3. Make changes in the Magento 2 Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 All operations in Magento 1 storefront are allowed at this time.
-</div>
 
 ## Run Data Migration Tool {#migration-command-run}
 

@@ -114,9 +114,8 @@ SELENIUM_PROTOCOL=http
 SELENIUM_PATH=/wd/hub
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
-</div>
 
 Your environment settings form the path to your running Selenium Server.
 Example:
@@ -132,9 +131,8 @@ In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ di
 cp .htaccess.sample .htaccess
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
-</div>
 
 ### Step 6. Generate existing tests
 

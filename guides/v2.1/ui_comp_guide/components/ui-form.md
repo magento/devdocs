@@ -370,9 +370,8 @@ Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %
 
 ### Replace instances of component
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Replacing principles are the same for all UI Components.
-</div>
 
 #### Global replacement
 

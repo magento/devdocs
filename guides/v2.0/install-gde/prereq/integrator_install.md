@@ -11,9 +11,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
-</div>
 
 ## (Integrator) Overview of integrator installation
 This topic provides an overview of how to get either the {{site.data.var.ce}} or {{site.data.var.ee}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.

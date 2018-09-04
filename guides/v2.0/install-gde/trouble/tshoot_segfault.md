@@ -37,9 +37,8 @@ Command:
 
 You can change this to a larger value if needed.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The syntax for `ulimit` depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is `ulimit -S 65532`. Consult a man page or operating system reference for more information.
-</div>
 
 To optionally set the value in the user's Bash shell:
 
@@ -51,6 +50,5 @@ To optionally set the value in the user's Bash shell:
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 	
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php){: target="_blank"} in `php.ini` because it can result in incomplete rollbacks with no failure notice.
-</div>

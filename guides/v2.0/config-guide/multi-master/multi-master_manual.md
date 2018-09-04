@@ -25,9 +25,8 @@ Manually splitting databases involves:
     *   Back up sales and quote database tables
     *   Move tables from your main Magento database to the sales and quote databases
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If any custom code uses JOINs with tables in the sales and quote databases, you *cannot* use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.
-</div>
 
 This topic uses the following naming conventions:
 
@@ -108,9 +107,8 @@ Sales database table names start with:
 *   `magento_sales_`
 *   The `magento_customercustomattributes_sales_flat_order` table is also affected
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
-</div>
 
 For more information, see:
 
@@ -269,9 +267,8 @@ where
 
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
-</div>
 
 Quote database table names start with `quote`. The `magento_customercustomattributes_sales_flat_quote` and `magento_customercustomattributes_sales_flat_quote_address` tables are also affected
 

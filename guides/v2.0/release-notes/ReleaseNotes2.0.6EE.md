@@ -10,9 +10,8 @@ level3_subgroup: ee20-relnotes
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.
-</div>
 
 
 Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.

@@ -95,9 +95,8 @@ where:
 * `license`&mdash;lists applicable licenses that apply to your component.
 * `autoload`&mdash;instructs composer to load the specified files.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path){: target="_blank"} repository.
-</div>
 
 <!-- <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>

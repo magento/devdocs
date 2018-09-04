@@ -181,9 +181,8 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
-</div>
 <ul>
    <li>Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.</li>
    <li>Improves style extensibility.</li>

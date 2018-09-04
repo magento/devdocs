@@ -24,9 +24,8 @@ This topic discusses how to use the Project Web Interface to:
 *	Sync (`git pull`) from the environment's parent
 *	Merge (`git push`) to the environment's parent
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
-</div>
 
 {% include cloud/wings-management.md %}
 

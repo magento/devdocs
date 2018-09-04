@@ -96,9 +96,8 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
-</div>
 
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
@@ -114,9 +113,8 @@ The client-side compilation flow is similar to server-side. The difference is in
 <li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the `@import` directive without file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
-</div>
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 

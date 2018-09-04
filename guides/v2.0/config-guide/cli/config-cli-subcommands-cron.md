@@ -27,9 +27,8 @@ Where `--group` specifies the cron group to run. Omit this option to run cron fo
 
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves. The second cron run must occur on or after the `scheduled_at` time for every task.
-</div>
 
 ## Run cron in the background {#config-cli-cron-bkg}
 

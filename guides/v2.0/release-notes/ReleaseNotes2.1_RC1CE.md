@@ -123,9 +123,8 @@ This Release Candidate is available from `repo.magento.com`. Before installing t
 
 This section discusses how to upgrade to a Release Candidate.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 *Do not* upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.
-</div>
 
 ### Upgrade an existing installation from the GitHub repository
 

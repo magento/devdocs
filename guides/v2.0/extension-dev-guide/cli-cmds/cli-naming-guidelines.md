@@ -53,9 +53,8 @@ If you have a Magento installation handy, enter the following to display the cur
 	magento setup:db-schema:upgrade
 	magento setup:db-data:upgrade
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `db-schema` and `db-data` are examples of compound words.
-</div>
 
 ## Command options and arguments   {#cli-args}
 

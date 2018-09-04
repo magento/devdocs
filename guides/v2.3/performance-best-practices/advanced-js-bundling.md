@@ -449,9 +449,8 @@ require.config({
             }});
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, because the calls are executed in the sequential order they appear.
-</div>
 
 #### 6. Test the results
 

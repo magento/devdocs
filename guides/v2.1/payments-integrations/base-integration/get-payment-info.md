@@ -53,9 +53,8 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You should remove any sensitive data (like credit card details) from payment additional information when you do not use it in your code. You can remove it in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.
-</div>
 
 ## Getting payment information from frontend to backend 
 

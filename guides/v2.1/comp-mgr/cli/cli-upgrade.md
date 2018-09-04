@@ -37,9 +37,8 @@ If you use `pub/` as your Magento root directory:
 
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can optionally create a [custom maintenance mode page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
-</div>
 
 To enable maintenance mode:
 

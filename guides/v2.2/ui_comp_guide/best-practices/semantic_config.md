@@ -12,9 +12,8 @@ The arbitrary structure, used in UI components {% glossarytooltip 8c0645c5-aa6b-
 
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 
-<div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
+{: .bs-callout .bs-callout-info }
 Declaring the custom UI component is an exception, use the arbitrary structure when [declaring a custom UI component]({{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html).
-</div>
 
 The main advantages of the new structure are described in the following sections.
 
@@ -111,6 +110,5 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 
 {% endcollapsible %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html) topic.
-</div>

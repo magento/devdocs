@@ -10,9 +10,8 @@ We provide a `services.yaml` file to configure all of your services supported an
 
 This file is located at `.magento/services.yaml` in your project.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 When you push your Git branch, our deploy script uses the values defined by configuration files in the `.magento` directory. After deployment, the script deletes the directory and its contents. Your local development environment isn't affected.
-</div>
 
 To see an example, see this [sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}.
 

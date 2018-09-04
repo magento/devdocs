@@ -46,9 +46,8 @@ This is a known issue with Magento core software; we're actively working to addr
 2.  Click **Support** > **Submit ticket** from the top menu.
 3.  Follow the prompts to open an issue with Support.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see [Architecture]({{ page.baseurl }}/cloud/reference/discover-arch.html).
-</div>
 
 ### {{site.data.var.ee}} Release Notes
 *	[{{site.data.var.ee}} 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)

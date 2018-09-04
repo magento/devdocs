@@ -397,6 +397,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future..
-</div>

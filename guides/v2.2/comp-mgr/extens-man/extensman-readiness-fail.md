@@ -17,9 +17,8 @@ Messages similar to the following display if any readiness check fails.
 
 ![You must resolve all readiness check failures before you continue]({{ site.baseurl }}/common/images/cman_readiness-fail-ex.png)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you're updating multiple extensions, see [Readiness check with multiple extension updates]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-fail) instead.
-</div>
 
 In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of failure, see one of the following sections:
 

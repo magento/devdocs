@@ -22,9 +22,8 @@ You can upgrade in any of the following ways:
 
 	This upgrade method is more advanced and it requires access to the Magento server's file system.	
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 *System upgrade* refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).
-</div>
 
 <div class="bs-callout bs-callout-warning">
     <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>

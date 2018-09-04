@@ -55,9 +55,8 @@ These prerequisites are required:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Do not use the same database as the real Magento instance. Any data (products, customers, orders, and everything else) will be lost!
-</div>
 
 For safety reasons it is recommended to use a dedicated database user for running the tests. That database user should not have access to any other databases.
 Here are examples of SQL commands that create a test database and a dedicated test user account:
@@ -98,9 +97,8 @@ return [
 ];
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Leave all the settings that do not start with `db-` at their default values.
-</div>
 
 ### Adjust the PHPUnit configuration file
 

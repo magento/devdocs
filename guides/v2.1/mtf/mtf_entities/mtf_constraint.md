@@ -70,9 +70,8 @@ Constraints are performed in order they listed in the data set. However, you can
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" prev="Magento\Catalog\Test\Constraint\AssertCategoryForm" />
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
      Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.
-</div>
 
 A test can contain constraints from different modules.
 

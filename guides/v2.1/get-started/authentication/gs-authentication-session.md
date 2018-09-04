@@ -17,9 +17,8 @@ Customers can access resources that are configured with `anonymous` or `self`  p
 
 Admins can access resources that are assigned to their Magento Admin profile.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} framework enables guest users to access resources that are configured with `anonymous` permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.
-</div>
 
 For example, if a customer is logged in to the Magento storefront and the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} invokes the `self` API, details for the logged-in customer are fetched:
 

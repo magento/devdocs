@@ -20,9 +20,8 @@ functional_areas:
 
 Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 {{site.data.var.ece}} does _not_ support this feature at this time.
-</div>
 
 The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
 
@@ -66,9 +65,8 @@ This also means you can either:
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 You must back up the two additional database instances manually. Magento backs up only the main database instance. The [`'magento setup:backup --db`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
-</div>
 
 ## Prerequisites   {#config-ee-multidb-prereq}
 

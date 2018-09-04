@@ -64,9 +64,8 @@ And the following routes are **not** cached:
 -   `http://{default}/path/`
 -   `http://{default}/path/etc/`
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Regular expressions in routes are *not* supported.
-</div>
 
 ## Cache duration {#cloud-cache-ttl}
 

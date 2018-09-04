@@ -14,9 +14,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed.
-</div>
 
 Each module that is to be a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 

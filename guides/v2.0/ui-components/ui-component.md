@@ -18,9 +18,8 @@ Magento UI components are implemented as a standard {% glossarytooltip c1e4242b-
 
 Components are responsible for rendering result page fragments and providing/supporting further interactions of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and server.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This guide is actual for Magento 2.0 UI components. You might be also interested in the [UI Components Guide for Magento 2.1]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html), as it has more conceptual topics.
-</div>
 
 ### General structure
 
@@ -35,9 +34,8 @@ Secondary components are extensions of basic components.
 
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You need to configure styles manually for components on storefront.
-</div>
 
 ### Using UI component in layout file
 

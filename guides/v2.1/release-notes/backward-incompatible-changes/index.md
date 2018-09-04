@@ -68,9 +68,8 @@ The following entities have new forms and design:
 * Sales Rule
 * {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}Catalog Rules{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 **Important information:** Customizations that were performed with the old forms of the listed entities will be lost.
-</div>
 
 ## Database Schema changes
 

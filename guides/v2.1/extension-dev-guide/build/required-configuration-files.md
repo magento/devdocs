@@ -14,9 +14,8 @@ functional_areas:
 
 Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has its own set of configuration files, gathered into the module's `etc` directory.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Unlike Magento 1, there is no monolithic configuration file in Magento 2.
-</div>
 
 {% include php-dev/component-root.md %}
 
@@ -31,9 +30,8 @@ Magento 2 looks for configuration information for each module in that module's `
 * `webapi.xml`
 
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Additions you make to those configuration files are applied *globally* to your module.
-</div>
 
 In addition to those files, a Magento 2 module also has nested configuration directories in the `etc` directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` for {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} functionality *only*.
 
