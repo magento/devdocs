@@ -30,6 +30,5 @@ The full list of software is listed in [System Requirements]({{ page.baseurl }}/
 	For more information, see the [PHP manual](http://php.net/manual/en/intro-whatis.php){: target="_blank"} or the [Wikipedia page](http://en.wikipedia.org/wiki/PHP){: target="_blank"}.
 	
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you use a hosting provider, they might already have installed this software. Contact them if you're not sure.</p></span>
+<p>If you use a hosting provider, they might already have installed this software. Contact them if you're not sure.</p>
 </div>

@@ -13,8 +13,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 <p>Public interfaces for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} are marked with <code>@api</code> annotation.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{ page.baseurl }}/contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p></span>
+<p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{ page.baseurl }}/contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p>
 </div>
 
 ## What is an API? {#api-definition}

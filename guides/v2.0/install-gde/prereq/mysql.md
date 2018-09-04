@@ -34,8 +34,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ page.baseurl }}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+<p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ page.baseurl }}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p>
 </div>
 
 ## Installing MySQL on Ubuntu   {#instgde-prereq-mysql-ubuntu}
@@ -51,8 +50,7 @@ See one of the following sections for more information:
 This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
+<p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p>
 </div>
 
 To install MySQL 5.7 on Ubuntu 16:

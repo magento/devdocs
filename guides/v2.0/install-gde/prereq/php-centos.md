@@ -14,8 +14,7 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+<p>If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.</p>
 </div>
 
 ## PHP versions supported   {#php-support}
@@ -43,8 +42,7 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 </div>
 
 If PHP is installed, continue with the next prerequisite, <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>.
@@ -114,9 +112,8 @@ There is more than one way to install PHP 7.0.2 or later; the following is a sug
     	with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-	</div>
+	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
@@ -171,9 +168,8 @@ There is more than one way to install PHP 5.6 on CentOS; the following is a sugg
     	with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-	</div>
+	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}

@@ -21,8 +21,7 @@ This topic discusses how to get started with the split database solution by:
 2.	Configuring {{site.data.var.ee}} to use the checkout and sales databases
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
+<p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p>
 </div>
 
 ## Install the {{site.data.var.ee}} software   {#config-ee-multidb-master-install}

@@ -51,8 +51,7 @@ There are no limitations&mdash;you can specify any valid component in `<sequence
 If you do specify a component in `<sequence>`, make sure that you have also added it to the `require` section in that component's `composer.json` file.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Take care when using <code>&lt;sequence></code> in multiple components because it's possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.</p></span>
+<p>Take care when using <code>&lt;sequence></code> in multiple components because it's possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.</p>
 </div>
 
 ## Next

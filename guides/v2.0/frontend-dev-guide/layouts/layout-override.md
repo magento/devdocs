@@ -97,8 +97,7 @@ These files override the following layouts:
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p></span>
+<p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p>
 </div>
 
 ## Customization mistakes   {#override-mistake}

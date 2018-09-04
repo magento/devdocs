@@ -45,9 +45,8 @@ where
 `--ip=<ip address>` is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <ul><li>Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
-  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
+<ul><li>Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
+  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul>
 </div>
 
 `magento maintenance:status` displays the current status of maintenance mode.

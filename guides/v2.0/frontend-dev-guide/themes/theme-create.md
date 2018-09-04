@@ -183,12 +183,11 @@ In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme rel
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
 <p>
 
 During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
 
-</p></span>
+</p>
 </div>
 
 ## Your theme directory structure now {#fedg_theme_how-to_structure}

@@ -21,9 +21,8 @@ The following cache types mostly have impact on frontend development process:
 | Translations               | `translate`          | Merged translations from all modules.                                                                                                                                                                                                                                                                                                             |
 
 <div class="bs-callout bs-callout-info" id="info" markdown ="1">
-<span class="glyphicon-class">
 The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
-</span>
+
 </div>
 
 ## Clean cache {#clean_cache}

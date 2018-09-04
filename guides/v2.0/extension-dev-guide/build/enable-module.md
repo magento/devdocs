@@ -24,7 +24,6 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class"></span>
   <p>The general order of operations for <code>setup:upgrade</code> is:</p>
 
   <ol>

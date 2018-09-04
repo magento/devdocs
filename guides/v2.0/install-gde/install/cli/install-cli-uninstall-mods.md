@@ -25,9 +25,8 @@ This section discusses how to uninstall one or more modules. During uninstallati
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module></code>.</p>
-  <p>As an alternative, you can <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
+<p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module></code>.</p>
+  <p>As an alternative, you can <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p>
 </div>
 
 ## First steps   {#instgde-cli-before}
@@ -95,9 +94,8 @@ The module uninstall command performs the following tasks:
 5.	Removes code from the codebase using `composer remove`.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>Uninstalling a module <em>always</em> runs <code>composer remove</code>. The <code>--remove-data</code> option removes database data and schema defined by the module's <code>Uninstall</code> class.</p></span>
-	</div>
+		<p>Uninstalling a module <em>always</em> runs <code>composer remove</code>. The <code>--remove-data</code> option removes database data and schema defined by the module's <code>Uninstall</code> class.</p>
+</div>
 5.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 6.	Updates generated classes.
 6.	If `--clear-static-content` is specified, cleans <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
@@ -147,8 +145,7 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 <div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p></span>
+	<p>Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p>
 </div>
 
 ## Roll back the file system, database, or media files   {#instgde-cli-uninst-mod-roll}
@@ -165,8 +162,7 @@ This command deletes the specified files or the database before restoring them. 
 
 
 <div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>To display a list of available backup files, enter <code>magento info:backups:list</code></p></span>
+	<p>To display a list of available backup files, enter <code>magento info:backups:list</code></p>
 </div>
 
 This command performs the following tasks:
@@ -215,8 +211,7 @@ For example, to restore a code (that is, file system) backup, enter the followin
 		Disabling maintenance mode
 
 <div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>To run the <code>magento</code> command again without changing directories, you might need to enter <code>cd `pwd`</code></p></span>
+	<p>To run the <code>magento</code> command again without changing directories, you might need to enter <code>cd `pwd`</code></p>
 </div>
 
 #### Related topics

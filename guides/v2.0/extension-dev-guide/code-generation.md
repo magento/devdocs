@@ -70,6 +70,5 @@ Depending on whether or not one of the compilers has been run before, the Magent
 	This class is slower than `Magento\Framework\Interception\ObjectManager\Config\Compiled`.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p></span>
+<p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p>
 </div>

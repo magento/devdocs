@@ -99,8 +99,7 @@ To modify `di.xml`:
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
+<p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
 </div>
 
 To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
@@ -156,9 +155,8 @@ Use the following steps:
 		ls <your Magento install dir>/var/page_cache/*
 
     <div class="bs-callout bs-callout-info" id="info">
-      <span class="glyphicon-class">
       <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
-      <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
+      <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p>
     </div>
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
 4.	Use a database tool such as <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the `cache` and `cache_tag` tables.

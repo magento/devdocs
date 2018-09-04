@@ -39,8 +39,7 @@ where;
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
+<p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p>
 </div>
 
 ## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}

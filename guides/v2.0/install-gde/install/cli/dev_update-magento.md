@@ -27,9 +27,8 @@ To update the Magento software if you're a contributing developer:
 		git pull origin develop
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
-	</div>
+		<p>If <code>git pull origin develop</code> fails, see <a href="{{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> 
+</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
 4.	Enter the following command:

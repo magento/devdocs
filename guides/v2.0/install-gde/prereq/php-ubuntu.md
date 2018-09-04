@@ -14,8 +14,7 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+<p>If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.</p>
 </div>
 
 ## PHP versions supported {#php-support}
@@ -25,8 +24,7 @@ Magento requires:
 {% include install/php_2.0.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento no longer supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.4.</p></span>
+<p>Magento no longer supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.4.</p>
 </div>
 
 ## Help if you\'re just starting out   {#php-ubuntu-help-beginner}
@@ -48,8 +46,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 </div>
 
 If PHP is installed, continue with the next prerequisite, <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>.
@@ -87,9 +84,8 @@ If PHP is *not* installed, see one of the following sections:
     	  with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-  	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-	</div>
+	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
@@ -118,9 +114,8 @@ If PHP is *not* installed, see one of the following sections:
     	with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-	</div>
+	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+</div>
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
@@ -142,9 +137,8 @@ If PHP is *not* installed, see one of the following sections:
 	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-	</div>
+		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+</div>
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 

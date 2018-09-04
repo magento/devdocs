@@ -28,8 +28,7 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 *	<a href="#layout_markup_replace_elements">Replace elements</a>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
+<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p>
 </div>
 
 ## Set the page layout   {#layout_markup_columns}
@@ -278,8 +277,7 @@ Extending layout:
 Example 2: Set a page title using `<action>`. 
 
 <div class="bs-callout bs-callout-warning" id="info">
-<span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+<p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p>
 </div>
 
 
@@ -328,8 +326,7 @@ This would make the product page look like following:
 ![]({{ site.baseurl }}/common/images/layout_image2.png)
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
+<p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p>
 </div>
 
 ## Remove elements   {#layout_markup_remove_elements}

@@ -64,8 +64,7 @@ To add the store and sales related information to a template, use system variabl
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails** section.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> > <b>Custom Variables</b>.</p></span>
+<p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> > <b>Custom Variables</b>.</p>
 </div>
 
 To add a variable to your template content:
@@ -79,8 +78,7 @@ To add a variable to your template content:
 
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+<p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p>
 </div>
 
 ## Styles for email templates   {#email-styles}

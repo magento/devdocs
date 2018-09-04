@@ -125,9 +125,8 @@ Use the following steps:
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 
 	<!-- <div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-	</div> -->
+		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p>
+</div> -->
 
 ## Tips for developers customizing the static content deployment tool
 
