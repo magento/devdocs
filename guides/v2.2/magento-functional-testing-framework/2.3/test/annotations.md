@@ -172,6 +172,8 @@ Attribute|Type|Use
 
 The `<testCaseId>` element is an implementation of a [`@TestCaseId`] Allure tag. It specifies a ZephyrId for a test.
 
+This tag is prepended to a test's `<title>` annotation to automatically make the test title unique in Allure.
+
 If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.
 
 Learn more about [setup instructions in Allure].
