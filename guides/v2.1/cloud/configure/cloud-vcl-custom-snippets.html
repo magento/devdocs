@@ -1004,20 +1004,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="custom-extend-admin-timeout-vcl">
-
-            
-
-            
-            <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="custom-redirect-to-wordpress-vcl">
 
             
@@ -2076,7 +2062,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <td>priority</td>
     <td>
       <p>Determines the order VCL snippets call. Lower values run first, from `1` to `100`. All uploaded snippets from a Magento module have a value of `50`. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as `100`. To have code occur immediately, use a lower value, such as `5`.</p>
-      <p>Any VCL snippet with a priority value of `5` runs immediately, which is best for blacklists, whitelists, and redirects. Priority `100` is best for overriding default VCL snippet code and for extending timeouts. If you do not set a priority with your cURL command, the default value set is `100`.</p>
+      <p>Any VCL snippet with a priority value of `5` runs immediately, which is best for blacklists, whitelists, and redirects. Priority `100` is best for overriding default VCL snippet code. If you do not set a priority with your cURL command, the default value set is `100`.</p>
     </td>
   </tr>
   <tr>
@@ -2125,7 +2111,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ul>
   <li>The default VCL snippets you uploaded include a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of <code class="highlighter-rouge">50</code>. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also, consider the priority of your custom snippets and whether they should override the default snippets.</li>
   <li>Do not forget to <em>always</em> locate and clone the active version, and edit the bash script with the new version! <em>Version</em> is not part of your VCL snippet files.</li>
-  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of <code class="highlighter-rouge">100</code>. You should not try to override default VCLs. We provide an example for <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>.</li>
+  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of <code class="highlighter-rouge">100</code>. You should not try to override default VCLs.</li>
 </ul>
 
 <h2 id="export-fastly-service-id-and-api-token">Export Fastly Service ID and API Token</h2>
@@ -2194,7 +2180,6 @@ export FASTLY_API_TOKEN=&lt;API Token&gt;
 <ul>
   <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a></li>
   <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a></li>
-  <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a></li>
   <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a></li>
   <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a></li>
 </ul>

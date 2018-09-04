@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Go live checklist | Magento 2 Developer Documentation</title>
+	<title>Fastly | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -67,7 +67,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.0/cloud/live/go-live-checklist.html">
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.0/cloud/cdn/cloud-fastly.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -107,13 +107,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/live/go-live-checklist.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/cdn/cloud-fastly.html">Magento 2.0</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/live/go-live-checklist.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/cdn/cloud-fastly.html">Magento 2.1</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/live/go-live-checklist.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/cdn/cloud-fastly.html">Magento 2.2</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/live/go-live-checklist.html">Magento 2.3 Alpha</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/cdn/cloud-fastly.html">Magento 2.3 Alpha</a></li>
 		
   </ul>
 
@@ -850,7 +850,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		    
 		    	
 
-<li class="nav-level1  " id="configure-fastly">
+<li class="nav-level1 active " id="configure-fastly">
     
 
     
@@ -1419,7 +1419,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2 active " id="go-live-checklist">
+        <li class="nav-level2  " id="go-live-checklist">
 
             
 
@@ -1728,123 +1728,115 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Go live checklist</h1>
+	<h1 class="page-heading">Fastly</h1>
 
   
 
 
 </section>
 
-			<p>Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your <code class="highlighter-rouge">master</code> branch to the Production environment.</p>
+			<p>Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). <a href="https://docs.fastly.com/" target="_blank">Fastly</a> with <a href="https://varnish-cache.org/docs/" target="_blank">Varnish</a> caches your site pages, assets, CSS, and more in backend datacenters you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster.</p>
 
-<h2 id="test">Completely test in Production</h2>
+<p>For Magento Commerce Cloud, you receive Fastly CDN and DDoS services. When you update products, catalogs, content, and more, Fastly purges that specific cached content to refresh and provide the latest changes.</p>
 
-<p>See <a href="/guides/v2.0/cloud/live/stage-prod-test.html">Test deployment</a> for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.</p>
+<p>We provide Fastly service credentials including a Fastly Service ID and API key pair for your Staging and Production environments. To <a href="#install-configure">set up Fastly</a>, you enter credentials, upload VCL snippets, and configure backends (with Origin shields) in Staging and Production environments, not in Integration.</p>
 
-<h2 id="call">Go Live Prep call with support</h2>
-
-<p>Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.</p>
-
-<h2 id="domainticket">Enter a ticket with domain names</h2>
-
-<p>You may <a href="/guides/v2.0/cloud/live/live.html#goliveinfo">need information</a> for this ticket.</p>
-
-<ol>
-  <li>Log in to your <a href="https://accounts.magento.cloud" target="_blank">Magento Cloud account</a>.</li>
-  <li>Click <strong>Support</strong> &gt; <strong>Submit ticket</strong> from the top menu.</li>
-  <li>Follow the prompts to open an issue with Support.	Support assists you with your live deployment and gives you an IP address for your live site so you can set up DNS.</li>
-  <li>Provide a list of all storefront domain names for the shared SSL certificate.</li>
-  <li>(Optional) If you purchased a Domain-Validated SSL (HTTP) certificate as part of your subscription, provide the certificate files in an attachment to the ticket. We will provide the certificate to Fastly for deployment.</li>
-</ol>
-
-<h2 id="dns">DNS configurations</h2>
-
-<p>You need to complete configurations for your DNS including:</p>
+<p>Fastly provides the following powerful tools for Magento:</p>
 
 <ul>
-  <li>Set all necessary redirects, especially if you are migrating from an existing site</li>
-  <li>Set the zone’s root resource record to address the hostname</li>
-  <li>Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store</li>
-</ul>
-
-<p>We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.</p>
-
-<p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site, you must add a CNAME record for each one.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
-</div>
-
-<p>The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.</p>
-
-<ul>
-  <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a></li>
-  <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="_blank">DNS Made Easy</a></li>
-  <li>ANAME at <a href="https://www.easydns.com" target="_blank">easyDNS</a></li>
-  <li>ACNAME at <a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
-  <li>ALIAS at <a href="https://pointhq.com" target="_blank">PointDNS</a></li>
-</ul>
-
-<p>Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider for more information.</p>
-
-<p>Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:</p>
-<ul>
-  <li><code class="highlighter-rouge">151.101.1.124</code></li>
-  <li><code class="highlighter-rouge">151.101.65.124</code></li>
-  <li><code class="highlighter-rouge">151.101.129.124</code></li>
-  <li><code class="highlighter-rouge">151.101.193.124</code></li>
-</ul>
-
-<h3 id="fastly-tls">TLS and Fastly</h3>
-
-<p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
-
-<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
-
-<h2 id="verify-production-configurations">Verify Production configurations</h2>
-
-<p>Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.</p>
-
-<p>The following are recommended changes and checks:</p>
-
-<ul>
-  <li>Outgoing email has been tested</li>
-  <li>Base URL and Base Admin URL are set correctly</li>
+  <li>Create edge and ACL dictionaries with VCL snippets (Varnish 2.1 compliant) to modify how caching responds to requests</li>
   <li>
-    <p>Change the default Magento Admin password</p>
+    <p>Three types of purges for:</p>
 
-    <p>See <a href="http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html" target="_blank">Configuring Admin Security</a> for further information on Admin configurations.</p>
+    <ul>
+      <li>Quick Purge (by URL)</li>
+      <li>Surrogate/key purge using tags to purge specific HTML, images, categories, and so on</li>
+      <li>Purge all, which clears everything in the cache</li>
+    </ul>
   </li>
-  <li>Optimize all images for the web</li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html" target="_blank">Enable minification</a> for JS, CSS, and HTTP</li>
+  <li>GeoIP extension support</li>
+  <li>Force unencrypted requests over to TLS</li>
 </ul>
 
-<h2 id="verifyfastly">Verify Fastly caching</h2>
+<p>We highly recommend enabling and using Fastly for your caching and CDN. The only situation you may not want to enable is for a headless deployment.</p>
 
-<p>Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see <a href="/guides/v2.0/cloud/live/stage-prod-test.html#fastly">Fastly testing</a>.</p>
+<p>We strongly recommend installing Fastly module 1.2.33 or later.</p>
+
+<h2 id="timeouts">Fastly and 503 timeouts</h2>
+
+<p>When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.</p>
+
+<p>If you receive a 503 error, make the request directly to the origin or review logs. For details, see <a href="/guides/v2.0/cloud/trouble/trouble_fastly.html#timeouts">Fastly troubleshooting</a>.</p>
+
+<p>Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to <a href="/guides/v2.0cloud/access-acct/fastly.html#bulkaction">extend the Fastly timeout for the Magento Admin</a>.</p>
+
+<h2 id="backend">Backends and Origin shields</h2>
+
+<p>Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A <em>backend</em> is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.</p>
+
+<p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.</p>
+
+<p>We provide detailed instructions for configuring backends when you <a href="/guides/v2.0/cloud/access-acct/fastly.html">configure Fastly</a>.</p>
+
+<h2 id="basic-auth">Basic authentication</h2>
+
+<p>Basic authentication is a feature to protect every page and asset on your site with a username and password. We <strong>do not recommend</strong> activating basic authentication on your Production environment. You can configure it on Staging to protect your site when completing development.</p>
+
+<p>If you add user access and enable basic authentication on Staging, you can still access the Magento Admin without requiring additional credentials to enter.</p>
+
+<h2 id="custom-vcl">Custom VCLs and actions</h2>
+
+<p>Fastly provides an extremely custom code friendly method for creating lists of items like IPs and domains to complete actions via Fastly and Varnish code blocks. For example, with edge and ACL dictionaries and VCL code, you could allow, block, or redirect access for specific users or IPs.</p>
+
+<p>After you have <a href="/guides/v2.0/cloud/access-acct/fastly.html">set up Fastly</a>, you can create <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">custom VCL snippets</a> using these edge dictionaries and ACLs.</p>
+
+<h3 id="dictionary">Edge dictionaries</h3>
+
+<p>Save key-value pairs on Fastly Edge nodes of dictionary containers and items to invoke with VCL snippets in your site. You have up to 1,000 entries per dictionary.</p>
+
+<p>You create an edge dictionary then add items to it of a key and its value. For example, you could create an edge dictionary of banned bad refer sites from accessing your site. The key-value pairs would be the refer site URLs (www.example.com) and a value of 1. Then create a custom VCL snippet to return a 403 Forbidden to those sites when they access your site.</p>
+
+<p>Another example routes to a different WordPress backend for an edge dictionary of WordPress URLs.</p>
+
+<h3 id="acl">Edge ACLs</h3>
+
+<p>ACLs are access control lists that allow you to manage IP addresses to allow or block access to resources. You could use edge ACLs with VCL snippets to block IP addresses or provide access. For example, use edge ACLs and a custom VCL snippet to white list IPs to access your site.</p>
+
+<h3 id="vcl">VCL snippets</h3>
+
+<p>With edge dictionaries and edge ACLs, you can create custom Varnish Configuration Language (VCL) snippets to Fastly and your site. VCL snippets are small chunks of logic and code that can be included directly into your service configuration. They are generated, compiled, and transmitted to all Fastly caches, loaded, and activated without waiting for maintenance windows without server downtime.</p>
+
+<p>For a few examples, you can create VCL snippets to:</p>
 
 <ul>
-  <li>Make sure that pages are being correctly cached in the page cache and Fastly</li>
-  <li>Make sure the Fastly Extension is up-to-date</li>
-  <li>Make sure the Fastly VCL is up-to-date</li>
+  <li>Block access to the site using an edge dictionary of domains</li>
+  <li>Whitelist and allow access using an edge ACL</li>
+  <li>Redirect blog links from your store to a blog site</li>
+  <li>Extend timeouts for Fastly and Magento</li>
 </ul>
 
-<h2 id="performance">Performance testing</h2>
+<p>After you have <a href="#install-configure">set up Fastly</a>, we provide detailed instructions on creating <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">custom Fastly VCL snippets</a>.</p>
 
-<p>We recommend that you review the <a href="https://github.com/magento/magento2/blob/2.0/setup/performance-toolkit" target="_blank">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
+<h2 id="tls">Force TLS</h2>
 
-<p>You can also test using the following 3rd party options:</p>
+<p>Fastly supports forcing unencrypted requests to TLS through the Force TLS feature. Set up a secure base URL in Magento and turn on the Force TLS option in the Fastly extension. For details and instructions, see Fastly’s <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md" target="_blank">Force TLS guide</a>.</p>
+
+<h2 id="geoip">GeoIP service support</h2>
+
+<p>Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP handling manages visitor redirection (automatically) and store matching (select from list) based on their obtained country code. For more information, see Fastly’s <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling" target="_blank">GeoIP documentation</a>.</p>
+
+<h2 id="install-configure">Installation and configuration</h2>
+
+<p>The installation and configuration process is:</p>
 
 <ul>
-  <li><a href="https://www.joedog.org/siege-home/" target="_blank">Siege</a>: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.</li>
-  <li><a href="http://jmeter.apache.org/" target="_blank">Jmeter</a>: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.</li>
-  <li><a href="https://support.newrelic.com/" target="_blank">New Relic</a> (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.</li>
-  <li><a href="/guides/v2.0/cloud/project/project-integrate-blackfire.html">Blackfire</a> (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.</li>
-  <li><a href="https://www.webpagetest.org/" target="_blank">WebPageTest</a> and <a href="https://www.pingdom.com/" target="_blank">Pingdom</a>: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.</li>
+  <li>Install the Fastly module in an Integration branch, without configuring settings or entering credentials.</li>
+  <li>Deploy the code to <code class="highlighter-rouge">integration</code> then to Staging and Production</li>
+  <li>Configure Fastly in Staging and Production, not in Integration or your local</li>
+  <li>Test Fastly for caching</li>
 </ul>
 
-<h4 id="next-step">Next step:</h4>
-<p><a href="/guides/v2.0/cloud/live/launch-steps.html">Launch steps</a></p>
+<p>For instructions, see <a href="/guides/v2.0/cloud/access-acct/fastly.html">Set up Fastly</a>. After you have configured it, you can continue with advanced options including custom VCL snippets.</p>
 
 			
 		</div>

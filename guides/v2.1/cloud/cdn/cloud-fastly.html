@@ -1004,20 +1004,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="custom-extend-admin-timeout-vcl">
-
-            
-
-            
-            <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
         <li class="nav-level2  " id="custom-redirect-to-wordpress-vcl">
 
             
@@ -2082,11 +2068,7 @@ lengthy processing, or when trying to perform bulk operations.</p>
 shield URL and review logs to identify the source of the issue. For details,
 see <a href="/guides/v2.1/cloud/trouble/trouble_fastly.html#timeouts">Fastly troubleshooting</a>.</p>
 
-<p>Fastly can be bypassed for the Magento Admin to perform long running or bulk
-actions and API access to avoid 503s.</p>
-
-<p>We provide <a href="/guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html">VCL snippet instructions</a>
-for extending the timeout for the Magento Admin.</p>
+<p>Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to <a href="/guides/v2.1cloud/access-acct/fastly.html#bulkaction">extend the Fastly timeout for the Magento Admin</a>.</p>
 
 <h2 id="backend">Backends and Origin shields</h2>
 
