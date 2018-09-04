@@ -566,13 +566,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p><strong>Open Source</strong></p>
 
     <p>Available to everyone with Magento authentication keys. If you do not have authentication keys, complete the instructions in <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a> before continuing.</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository-url</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
 </code></pre></div>    </div>
 
     <p><strong>Commerce</strong></p>
 
     <p>Only available to Magento partners, merchant developers, and independent extension developers who have signed <a href="https://partners.magento.com/portal/pre-release-agreement">Magento’s Pre-Release Software Agreement</a> and been approved to access the Commerce 2.3.0 Alpha repositories. If you have not signed the pre-release software agreement and been granted access, you must do so before continuing.</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository-url</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
 </code></pre></div>    </div>
 
     <p>When prompted, enter your authentication keys. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
