@@ -2,7 +2,7 @@
 
 ## Install sample data by cloning repositories   {#sample-clone}
 
-This topic discusses how to clone and install Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
+This topic discusses how to clone and add Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
 
 If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
 
