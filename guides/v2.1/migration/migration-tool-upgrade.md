@@ -25,7 +25,7 @@ Before upgrading the Data Migration Tool, you must:
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
-If you haven't already done so, run the [System Upgradeutility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) to upgrade the Magento software.
+If you haven't already done so, run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) to upgrade the Magento software.
 
 ### Back up the `vendor/magento/data-migration-tool` directory
 
@@ -53,7 +53,7 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 
 ## Upgrade Data Migration Tool {#data-migrate-upgr}
 
-1.	Log in to your Magento server as, or switch to, [the Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 2.	Change to Magento 2 root directory.
 3. 	Enter the following command:
 
@@ -68,5 +68,5 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 
 ## Related topics
 
-* [Configuremigration]({{ page.baseurl }}/migration/migration-tool-configure.html)
+* [Configure migration]({{ page.baseurl }}/migration/migration-tool-configure.html)
 * [Preconditions]({{ page.baseurl }}/migration/migration-tool-preconditions.html)

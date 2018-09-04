@@ -7,10 +7,19 @@ title: What's new on DevDocs
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## August 2018
+
+## September 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Removed Fastly VCL snippet for extending the Admin timeout. Magento Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Sep 04
+
+{% collapsibleh2 August 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+The [How migration works](https://devdocs.magento.com/guides/v2.2/migration/migration-overview-how.html) topic was updated to clarify the migration process.|2.x|Technical changes|Aug 30
+Added instructions for accessing the [New Relic account and managing account users](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)  for the New Relic APM service available with Magento Commerce Cloud.|2.1.x, 2.2.x|Major update|Aug 29
 Update the magento-cloud [CLI instructions for deleting an environment](https://devdocs.magento.com/guides/v2.1/cloud/env/environments-start.html#env-delete).|2.1.x, 2.2.x, 2.3.x|Technical changes|Aug 27
 Updated [Generate a local REST reference](https://devdocs.magento.com/guides/v2.2/rest/generate-local.html) to include additional display options.|2.2.x, 2.3.x|Technical changes|Aug 22
 Corrected the list of attributes in an HTTP header in [OAuth-based authentication](https://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-oauth.html).|2.x|Technical changes|Aug 22
@@ -34,6 +43,8 @@ Updated the Inbound and Outbound [Integration environment IP address tables](htt
 Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/webapi/custom-routes.html).|2.3.x|New topic|Aug 03
 Added the topic [Operation Status Search](https://devdocs.magento.com/guides/v2.3/rest/operation-status-search.html).|2.3.x|New topic|Aug 03
 Updated the [Magento Functional Testing Framework documentation](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) due to the MFTF 2.3.0 release.|2.2.x, 2.3.x|Major update|Aug 02
+{% endcollapsibleh2 %}
+
 
 {% collapsibleh2 July 2018 %}
 

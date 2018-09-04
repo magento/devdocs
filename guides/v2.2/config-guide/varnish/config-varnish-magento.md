@@ -17,8 +17,8 @@ To configure Magento to use Varnish:
 5.	Expand **Varnish Configuration** and enter the following information:
 
 	<table>
-	<col width="30%">
-  	<col width="70%">
+	<col width="30%" />
+  	<col width="70%" />
 	<tbody>
 		<tr>
 			<th>Field</th>

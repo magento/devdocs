@@ -7,23 +7,23 @@ Well, you are on the way to install the Functional Testing Framework!
 
 Follow the next three steps:
 
-- [Check pre-installation conditions](#mtf_install_pre)
+- <a href="#mtf_install_pre">Check pre-installation conditions</a>
 
-- [Perform the installation](#mtf_install_perform)
+- <a href="#mtf_install_perform">Perform the installation</a>
 
-- [Check the installation](#mtf_install_check)
+- <a href="#mtf_install_check">Check the installation</a>
 
 ## Check pre-installation conditions {#mtf_install_pre}
 
 ### Install the Magento application {#mtf_install_pre_inst-magento}
 
-To install the Magento application, see [Magento InstallationGuide]({{ page.baseurl }}/install-gde/bk-install-guide.html).
+To install the Magento application, see <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 ### Check if all required software installed and configured {#mtf_install_pre_tools}
 
 #### PHP {#mtf_install_pre_tools_php}
 
-For more details about PHP verification, installation and configuration ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html),[CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)).
+For more details about PHP verification, installation and configuration (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">CentOS</a>).
 
 <div class="bs-callout bs-callout-warning">
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
@@ -38,20 +38,22 @@ For more details about PHP verification, installation and configuration ([Ubuntu
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-{: .bs-callout .bs-callout-info}
-If you're not sure that Composer is installed, see [InstallComposer]({{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you're not sure that Composer is installed, see <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
+</div>
 
-1.    [Open a commandprompt]({{ page.baseurl }}/install-gde/basics/basics_login.html).
-1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically [the Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).)
+1.    <a href="{{ page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
+1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
 
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
 
-{:#info .bs-callout .bs-callout-info}
-If command failed, maybe [Composer\](https://getcomposer.org) hasn't been installed globally.
-Copy `composer.phar` to `/usr/local/bin/composer`.
-To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).
-And run from this directory `php composer.phar install`.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br/>
+  Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br/>
+  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>
+And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
+</div>
 
 ## Check the installation {#mtf_install_check}
 
@@ -71,6 +73,4 @@ Find the `mtf` directory.
 
 Open `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-## Next Steps {#mtf_install_next}
-
-[Adjust FTF configuration]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
+## Next Steps {#mtf_install_next} <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a>

@@ -151,7 +151,7 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>
@@ -165,6 +165,6 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
 </table>

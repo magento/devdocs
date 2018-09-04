@@ -103,6 +103,6 @@ maxMessages | Specifies the maximum number of messages to consume.
 
 #### Related Topics
 
-*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*	[Migrate message queueconfiguration]({{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html)
-*	[InstallRabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html)
+*	[Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)
