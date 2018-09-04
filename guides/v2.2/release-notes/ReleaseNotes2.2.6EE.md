@@ -9,7 +9,7 @@ title: Magento Commerce 2.2.6 Release Notes
 
 
 
-We are pleased to present Magento Commerce 2.2.6. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. Check out the many community-contributed fixes! 
+We are pleased to present Magento Commerce 2.2.6. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -50,18 +50,18 @@ Performance-tuning enhancements include:   
 
 #### **Improvements to the reliability and ease of the checkout process**
 
-<!-- MAGETWO-86490 -->* A shopping cart’s contents remains constant even when the Checkout page is repeatedly reloaded. Previously, if a customer reloaded the checkout page several times, Magento emptied the shopping cart and the customer could not place the order. (This problem primarily affected stores running on HTTPS.)
+<!-- MAGETWO-86490 -->* A shopping cart’s contents remain constant even when the checkout page is repeatedly reloaded. Previously, if a customer reloaded the checkout page several times, Magento emptied the shopping cart, and the customer could not place the order. (This problem primarily affected stores running on HTTPS.)
 
-<!-- MAGETWO-90053-->* Refreshing the checkout page no longer deletes the shipping address when a guest checks out. Previously, when the persistent shopping cart was enabled, refreshing the checkout out page affected information entered into form fields for a guest checkout. 
+<!-- MAGETWO-90053-->* Refreshing the checkout page no longer deletes the shipping address when a guest checks out. Previously, when the persistent shopping cart was enabled, refreshing the checkout page affected information entered into form fields for a guest checkout. 
 
 <!-- MAGETWO-89222-->* The speed at which Magento places an order is no longer affected by how many shipping methods are available. Previously, when a customer placed an order for which multiple shipping methods were available, Magento took more than 20 seconds to place the order.
 
-<!-- MAGETWO-89264-->* The Checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
+<!-- MAGETWO-89264-->* The checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 
 #### **Additional enhancements**
 
-<!-- MAGETWO-86125-->* Configurable products are now sorted by only visible prices as expected. Previously, sorting a catalog by price resulted in sort results that included the prices of out-of-stock products and disabled child products.
+<!-- MAGETWO-86125-->* Configurable products are now sorted by visible prices only as expected. Previously, sorting a catalog by price resulted in sort results that included the prices of out-of-stock products and disabled child products.
 
 <!-- MAGETWO-91411 -->*  Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products sometimes occurred as a result of an unstable Internet connection. 
 
@@ -109,11 +109,11 @@ Highlights of community contributions include fixes that improve checkout flow a
 
 Enhancements to Amazon Pay include these features:
 
-* Implemented of the  [Magento payment provider gateway](https://devdocs.magento.com/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers. 
+* Implementation of the  [Magento payment provider gateway](https://devdocs.magento.com/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html), which provides developers a mechanism for integrating stores with payment providers. 
 
 * Improved handling of virtual products.
 
-* Added entry to Admin panel to allow or disallow Amazon Pay to be displayed in the list of payment options.
+* New entry in the Admin that allows  Amazon Pay to be displayed in the list of payment options.
 
 * Combined 'Synchronous, if possible' and 'Asynchronous' settings for authorization mode into one setting. Current settings are now `Immediate` (previously `Synchronous`) and `Automatic` (a combination of the previous 'Synchronous, if possible' and 'Asynchronous').
 
@@ -122,34 +122,34 @@ Enhancements to Amazon Pay include these features:
 
 #### dotmailer
 
-Enhancements to dotmailer include the following new features:
+Enhancements to dotmailer include these new features:
 
 * Record your customers and guests' consent and store it using dotmailer's new Consent Insight
 
-* Improved retry process after a failed attempt to access EDC
+* Improvements to the retry process after a failed attempt to access EDC
 
 * Users can now import only those Magento contacts who've opted-in (customer subscribers, guest subscribers, and other subscribers)
 
-* Users now get warned when they're about to sync non-subscribers into their dotmailer account
+* Users are now warned when they're about to sync non-subscribers into their dotmailer account.
 
 
 
 #### Klarna
 
-Enhancements to Klarna include support for these new features :
+Enhancements to Klarna include supportfor these new features:
 
- 
-* Pass shipping details in capture request
+* The Klarna Payments section now includes a link to Klarna automated onboarding and account sign in.
 
-* FRAUD_STOPPED
+* If an approved order is later identified as fraudulent, Klarna notifies the merchant and requests that they try to stop the order from being delivered. In addition, Klarna attempts to cancel the order automatically by sending notification to Magento. See [Managing Your Account](https://docs.magento.com/m2/ce/user_guide/payment/klarna-manage.html) for more information. 
 
-* Add Shipping and discount order lines to OM calls
+* Shipping and discount order lines have been added to order management calls.
 
-* Migrate from hard-coded mapping to dynamic name and assets
+* Klarna now passes shipping details in capture requests.
 
-* Add link to Klarna Automated onboarding in Admin
+* The Klarna API now returns the name and logo URL to use for each payment method instead of hard-coding the payment method names into the module.s
 
 
+For more information on these new features, see [Klarna](https://docs.magento.com/m2/ce/user_guide/payment/klarna.html). 
 
 
 #### Magento Social
@@ -519,18 +519,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Spelling corrections
 
-<!-- ENGCOM-2290 -->*
-Add spelling correction: formatedPrice to formattedPrice 
-title: [Backport 2.3] Add spelling correction: formatedPrice to formattedPrice
-url: magento/magento2#16726
-contributor name: @arnoudhgz
-contributor link: https://github.com/arnoudhgz
-
-ask lori for name
-
-
-*Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
-
+<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the codebase. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
 
 <!-- ENGCOM-2280 -->* Corrected return message from `ProductRuleTest.php`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16721](https://github.com/magento/magento2/pull/16721)*. 
 
@@ -689,7 +678,7 @@ ask lori for name
 
 <!-- MAGETWO-89849 -->* Non-US and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
-<!-- MAGETWO-89034 -->* The Checkout page now displays custom address attributes when **Show on front-end** is set to **no**. 
+<!-- MAGETWO-89034 -->* The checkout page now displays custom address attributes when **Show on front-end** is set to **no**. 
 
 <!-- MAGETWO-88411 -->* Magento now displays the default value for a new Customer attribute that is created from the Admin. Previously, Magento set this value to **no** by default. 
 
@@ -725,6 +714,11 @@ ask lori for name
 
 ### dotmailer
 
+
+caused ROI tracking feature to not track order events properly
+
+
+
 Fixed a regression issue that caused ROI tracking feature to not track order events properly
 	•	Fixed an error that was being caused by the importer
 	•	Fixed the catalog sync so it now syncs all products across all created collections when it's configured to sync on store level 
@@ -732,18 +726,9 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 	•	Fixed occurrences of unexpected errors during subscriber and/or customer creation
 
 
-<!-- BUNDLE-526 -->* Unexpected error during Subscriber and/or Customer creating
-Steps to reproduce:
 
-Go to storefront
-Subscribe a new subscriber
+<!-- BUNDLE-526 -->* A merchant can now successfully create a new user and displays the appropriate welcome message. Previously, Magento threw an error during the creation of a customer or subscriber, although the new user/subscriber was created. 
 
-Expected Result:
-New Subscriber is created and successful message appears
-Actual Result:
-An error message appears but new subscriber is created
-
-he same behavior is for creating new customers.
 
 
 
@@ -810,33 +795,7 @@ he same behavior is for creating new customers.
 
 <!-- MAGETWO-92722 -->* You can now manually add a parameter to `app/etc/env.php: user_admin_email`. When an administrator is created, Magento sends an email  to default store's email and, if present, to the email address defined in `user_admin_email`. 
 
-
-
-<!--  ENGCOM-2240 -->* Remove PDF files after generation
-
-Upon invoice/packingslip/credit memo printing the system generates a PDF file directly in the var directory. I see no reason for keeping these files since they are not accessible publicly via web (sharing purpose). There's no "reuse" purpose as well since on every print action a new file with a new filename is being generated.
-This PR provides a logic for removing a PDF file once it's generated.
-Currently, it's implemented only within a scope of the invoice printing. Once we agree on the solution, I will adjust other places with PDF generation.
-
-
-*Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [16401](https://github.com/magento/magento2/pull/16401)*. [GitHub-3535](https://github.com/magento/magento2/issues/3535), [GitHub-14517](https://github.com/magento/magento2/issues/14517)
-
-
-
-
-
-\Print pdf don't delete file in var folder
-
-Steps to reproduce
-Create invoice
-Print invoice
-Expected result
-PDF Generation (maybe in cache) happens properly for client and user
-PDF maybe should not be created at all?
-Actual result
-Creates PDF copy in the /var folder
-
-
+<!--  ENGCOM-2240 -->* Magento now removes unneeded PDF files after generation. Previously, Magento saved a copy of every generated invoice PDF in `/var`.  *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [16401](https://github.com/magento/magento2/pull/16401)*. [GitHub-3535](https://github.com/magento/magento2/issues/3535), [GitHub-14517](https://github.com/magento/magento2/issues/14517)
 
 <!--  ENGCOM-2371 -->* Logs now indicate when Magento is in maintenance mode, which will help the debugging process. *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request [16840](https://github.com/magento/magento2/pull/16840)*. 
 
@@ -852,7 +811,7 @@ Creates PDF copy in the /var folder
 <!--  ENGCOM-1677 -->* `lib/web/mage/dropdowns.js` no longer fails when autoclose is set to **true**. *Fix submitted by [Brian LaBelle](https://github.com/brian-labelle) in pull request [15499](https://github.com/magento/magento2/pull/15499)*. [GitHub-15469](https://github.com/magento/magento2/issues/15469)
 
 
-<!-- MAGETWO-89264 -->* The Checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
+<!-- MAGETWO-89264 -->* The checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 <!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user can not view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
 
@@ -1043,31 +1002,10 @@ Creates PDF copy in the /var folder
 
 <!-- ENGCOM-1476 -->* Corrected `viewModel` to `view_model` where needed in `\Magento\Backend\Block\Template`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [15067](https://github.com/magento/magento2/pull/15067)*. 
 
-<!-- ENGCOM-1439 -->* Corrected formatting of the JavaScript code in the `app/code/Magento/Ui/view/base/templates/control/button/split.phtml` and `app/code/Magento/Ui/view/base/web/js/grid/controls/button/split.jstemplate` files. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14967](https://github.com/magento/magento2/pull/14967)*. 
+<!-- ENGCOM-1439 -->* Corrected formatting of the JavaScript code in the `app/code/Magento/Ui/view/base/templates/control/button/split.phtml` and `app/code/Magento/Ui/view/base/web/js/grid/controls/button/split.jstemplate` files. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14967](https://github.com/magento/magento2/pull/14967)*.
 
 
-
-
-<!-- ENGCOM-1375 -->* Non-well-formed numeric values that were encountered after xxx have been resolved. *Fix submitted by [Mateusz Lerczak](https://github.com/bmxmale) in pull request [14833](https://github.com/magento/magento2/pull/14833)*. 
-
-title: Fix a non well formed numeric value encountered on Magento/Directory/?
-url: magento/magento2#14833
-contributor name: @bmxmale
-contributor link: https://github.com/bmxmale
-
-Fix notice message after convert price on emails.
-
-
-
-
-
-
-Description
-main.CRITICAL: Notice: A non well formed numeric value encountered in /srv/magento2/vendor/magento/module-directory/Model/Currency.php on line 219
-
-{"exception":"[object] (Exception(code: 0): Notice: A non well formed numeric value encountered in /srv/magento2/vendor/magento/module-directory/Model/Currency.php on line 219 at /srv/magento2/vendor/magento/framework/App/ErrorHandler.php:61)"}
-
-
+<!-- ENGCOM-1375 -->* Non-well-formed numeric values that were encountered in `app/code/Magento/Directory/Model/Currency.php` have been resolved. *Fix submitted by [Mateusz Lerczak](https://github.com/bmxmale) in pull request [14833](https://github.com/magento/magento2/pull/14833)*. 
 
 <!-- ENGCOM-1352 -->* The README file for the `magento2` repository now has Maintainers and Contributors sections. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14790](https://github.com/magento/magento2/pull/14790)*. 
 
@@ -1183,22 +1121,7 @@ main.CRITICAL: Notice: A non well formed numeric value encountered in /srv/magen
 
 <!-- ENGCOM-2553 -->* Replaced deprecated methods in 44 files. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17035](https://github.com/magento/magento2/pull/17035)*. 
 
-
-
-<!-- ENGCOM-2533 -->* 
-
-
-Uniform jquery variable to "$" as this javascript is partially using "jquery" and partially "$".
-
-The line 62 will cause an error in Internet Explorer if $ is not declared.
-
-title: Update template.js
-
-
-
-*Fix submitted by [Angelo Maragna](https://github.com/angelomaragna) in pull request [17129](https://github.com/magento/magento2/pull/17129)*. 
-
-
+<!-- ENGCOM-2533 -->* The `template.js` has been updated to make the `jquery` variable consistently use `$`. Previously, JavaScript in the `template.js` sometimes used `jquery` and sometimes `$`, and Magento threw an error when running in Internet Explorer. *Fix submitted by [Angelo Maragna](https://github.com/angelomaragna) in pull request [17129](https://github.com/magento/magento2/pull/17129)*. 
 
 <!-- ENGCOM-2522 -->* Corrected undefined class property in the `app/code/Magento/Backend/Block/Media/Uploader.php getConfigJson()` method.  *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17099](https://github.com/magento/magento2/pull/17099)*. 
 
@@ -1305,7 +1228,10 @@ title: Update template.js
 
 
 
-<!-- ENGCOM-2455 -->*
+<!-- ENGCOM-2455 -->* The advanced search form 
+
+error message display on advanced search form
+
 Change controller to use result redirect factory which fixes error message display on advanced search form.
 
 The way the redirect was initiated from the result controller needed to be changed to use a result redirect so that the error message would be written to the cookie. Without this, the Index controller wouldn't be called when Page Cache was enabled, and the error message would never reach the page.
@@ -1318,15 +1244,15 @@ There is a bug in advanced search form regarding validation messages
 
 Go on the site "advanced search" and click the submit button below the form without any entries.
 Then click for example on the "sign in" link in the top right corner.
+
 Expected result
 Validation message (Please specify at least one search term) appears on the same site (advanced search) above the form after you click the submit button.
+
 Actual result
 No message appears, rather on random site after you submit the advanced search form without entries.
 
 
-<!-- MAGETWO-84477 -->* 
-
-`\Magento\Framework\Reflection\TypeProcessor` methods have been simplified to retrieve method param addition description and array param type. 
+<!-- MAGETWO-84477 -->* `\Magento\Framework\Reflection\TypeProcessor` methods have been simplified to retrieve method param addition description and array param type. 
 
 
 

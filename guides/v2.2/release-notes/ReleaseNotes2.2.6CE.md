@@ -7,11 +7,12 @@ title: Magento Open Source 2.2.6 Release Notes
 
 *Patch code and release notes published on  2018.* 
 
-This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Open Source 2.2.6. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
 
-Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.6) have been ported to 2.1.15, 1.14.3.10, and 1.9.3.10.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.6) have been ported to 2.1.15, 1.14.3.10, and 1.9.3.10.
+
 
 
 ## Highlights
@@ -20,6 +21,7 @@ In addition to 25 critical security fixes, look for the following highlights in 
 
 
 ### Core code highlights
+
 This release includes significant performance improvements to the core Magento code:
 
 #### Substantial improvements to performance** focus on catalog indexing, among other features
