@@ -177,8 +177,7 @@ The following data types are available:
 </table>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-  
-A variation should contain only data that is required for its flow and constraints.
+   A variation should contain only data that is required for its flow and constraints.
 </div>
 
 A data set should be placed in the same directory with a corresponding test case.

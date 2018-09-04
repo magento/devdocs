@@ -30,8 +30,7 @@ To set up the Facebook web driver, use the following steps:
         composer update
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-  
-You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
+   You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 </div>
 
 ## Add and setup a custom web driver
@@ -50,8 +49,7 @@ To setup the custom web driver, follow:
         composer update
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-  
-You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
+   You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 </div>
 
 <!-- LINKS DEFINITION -->

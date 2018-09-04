@@ -121,6 +121,7 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 You may need to clear the cache if you encounter errors when loading the storefront in a browser.
-
-	bin/magento cache:flush
+```bash
+bin/magento cache:flush
+```
 </div>

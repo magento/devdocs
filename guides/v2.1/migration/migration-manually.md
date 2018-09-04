@@ -62,10 +62,8 @@ You must manually re-create all:
 
 *	administrative user accounts and associate them with access privileges
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>
-        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="{{ page.baseurl }}/migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.
-    </p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
 </div>
 
 ## Related topics

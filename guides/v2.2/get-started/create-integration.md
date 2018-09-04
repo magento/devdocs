@@ -213,8 +213,8 @@ Also, you can define your own `etc/acl.xml` file with a custom resource.
 Your module can optionally provide a configuration file `integration.xml` so that the integration can be automatically pre-configured with default values.
 To enable this feature, create the `integration.xml` file in the `etc` directory.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.
 </div>
 
 The  file defines which API resources the integration has access to.

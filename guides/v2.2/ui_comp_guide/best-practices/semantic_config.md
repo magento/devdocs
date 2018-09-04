@@ -13,7 +13,7 @@ The arbitrary structure, used in UI components {% glossarytooltip 8c0645c5-aa6b-
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 
 <div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
-Declaring the custom UI component is an exception, use the arbitrary structure when <a  href="{{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html">declaring a custom UI component</a>.
+Declaring the custom UI component is an exception, use the arbitrary structure when [declaring a custom UI component]({{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html).
 </div>
 
 The main advantages of the new structure are described in the following sections.

@@ -54,9 +54,9 @@ Plugin should listen next methods: save, get, getList.
 
 We can add scalar and non-scalar extension attributes.
 
-<div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>Scalar is simple attribute. </p>
-  <p>Non-scalar attribute can be represented by Data Object. </p>
+<div class="bs-callout bs-callout-info" id="other-component-types" markdown="1">
+Scalar is simple attribute.
+Non-scalar attribute can be represented by Data Object.
 </div>
 
 {% highlight php inline=true %}

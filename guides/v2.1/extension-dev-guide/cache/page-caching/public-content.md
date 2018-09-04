@@ -94,9 +94,8 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 ```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
--   You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
-
--   Only GET and HEAD methods are cacheable.
+- You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
+- Only GET and HEAD methods are cacheable.
 </div>
 
 ## Configure page variations
@@ -120,7 +119,6 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
-
 ```
 sub vcl_hash {
 if (req.http.cookie ~ "X-Magento-Vary=") {

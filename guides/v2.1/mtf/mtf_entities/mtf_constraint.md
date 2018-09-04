@@ -71,15 +71,14 @@ Constraints are performed in order they listed in the data set. However, you can
 ```
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-    
-Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.
+     Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.
 </div>
 
 A test can contain constraints from different modules.
 
-<div class="bs-callout bs-callout-warning">
-  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
-  </p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+  
+Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.   
 </div>
 
 The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints. 
