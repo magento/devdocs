@@ -42,6 +42,24 @@ The value format should met the following principles:
 
 ***
 
+### `skipReadiness`
+
+`skipReadiness` is an optional attribute that can be used to skip the Readiness Check.
+
+Example test step of the `myAction` action with the Readiness Check skipped:
+
+```xml
+<myAction skipReadiness="true"/>
+```
+
+The flag format should meet the following principles:
+
+* May not be used for actionGroup actions.
+  * Can be used on individual actions inside the action group.
+* Should be set to true when used.
+
+***
+
 ### `before` and `after`
 
 `before` and `after` are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is the `stepKey` of reference action.
@@ -190,6 +208,7 @@ See [acceptPopup docs on codeception.com](http://codeception.com/docs/modules/We
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -210,6 +229,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required|A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -230,6 +250,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -254,6 +275,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -273,6 +295,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -292,6 +315,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|The selector identifying the corresponding HTML element (`<input type="file">`).
 `userInput`|string|optional|The name of attaching file. The file must be placed in the `tests/_data` directory.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -309,6 +333,7 @@ See [cancelPopup docs on codeception.com](http://codeception.com/docs/modules/We
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -327,6 +352,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -346,6 +372,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -366,6 +393,7 @@ Attribute|Type|Use|Description
 `selectorArray`|string|optional| Selects an element as a key value array. See [strict locator](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -392,6 +420,7 @@ Attribute|Type|Use|Description
 `x`|string|optional|
 `y`|string|optional|
 `stepKey`|string|required|A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -423,6 +452,7 @@ Attribute|Type|Use|Description
 `x`|string|optional|
 `y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -450,6 +480,7 @@ Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -467,6 +498,7 @@ See [closeTab docs on codeception.com](http://codeception.com/docs/modules/WebDr
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -487,6 +519,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|required| PHP comment that will be written in generated test file.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -506,6 +539,7 @@ Attribute|Type|Use|Description
 `dependentSelector`|string|optional|
 `visible`|boolean|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -526,6 +560,7 @@ Attribute|Type|Use|Description
 `entity`|string|required|
 `storeCode`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -558,6 +593,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `createDataKey`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -590,6 +626,7 @@ Attribute|Type|Use|Description
 `url`|string|optional| REST API route to send a DELETE request.
 `storeCode`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -628,6 +665,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `selectorArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -646,6 +684,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -665,6 +704,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -688,6 +728,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -706,6 +747,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -725,6 +767,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -745,6 +788,7 @@ Attribute|Type|Use|Description
 `parameterArray`|string|optional|
 `attributeArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -763,6 +807,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -783,6 +828,7 @@ Attribute|Type|Use|Description
 `selectorArray`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -802,6 +848,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -820,6 +867,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -838,6 +886,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `html`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -856,6 +905,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -873,6 +923,7 @@ Ensure that there are no JavaScript errors.
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -892,6 +943,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -916,6 +968,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -934,6 +987,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -955,6 +1009,7 @@ Attribute|Type|Use|Description
 `x`|int|optional| X offset applied to drag-and-drop destination.
 `y`|int|optional| Y offset applied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -978,6 +1033,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -996,6 +1052,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1019,6 +1076,7 @@ Attribute|Type|Use|Description
 `selectorArray`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1036,6 +1094,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `locale`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1049,6 +1108,7 @@ Attribute|Type|Use|Description
 `format`|string|required| Format in which to save the given date. Uses the same formatting as the PHP `date()` function.
 `timezone`|string|optional| Timezone to use when generating date, defaults to `America/Los_Angeles`.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1070,6 +1130,7 @@ Attribute|Type|Use|Description
 `index`|integer|optional|
 `entity`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1095,6 +1156,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1115,6 +1177,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1140,6 +1203,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1160,6 +1224,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1184,6 +1249,7 @@ See [grabPageSource docs on codeception.com](http://codeception.com/docs/modules
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1203,6 +1269,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1223,6 +1290,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `selectorArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1242,6 +1310,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1262,6 +1331,7 @@ Attribute|Type|Use|Description
 `command`|string |optional| CLI command to be executed in Magento environment.
 `arguments`|string |optional| Unescaped arguments to be passed in with the CLI command.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1280,6 +1350,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1297,6 +1368,7 @@ See [maximizeWindow docs on codeception.com](http://codeception.com/docs/modules
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1314,6 +1386,7 @@ See [moveBack docs on codeception.com](http://codeception.com/docs/modules/WebDr
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1331,6 +1404,7 @@ See [moveForward docs on codeception.com](http://codeception.com/docs/modules/We
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1350,6 +1424,7 @@ Attribute|Type|Use|Description
 `x`|string|optional|
 `y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1372,6 +1447,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `locale`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1380,6 +1456,7 @@ Attribute|Type|Use|Description
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1390,6 +1467,7 @@ See [openNewTab docs on codeception.com](http://codeception.com/docs/modules/Web
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1408,6 +1486,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1418,6 +1497,7 @@ See [pauseExecution docs on codeception.com](http://codeception.com/docs/modules
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1437,6 +1517,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `function`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1450,6 +1531,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1472,6 +1554,7 @@ See [reloadPage docs on codeception.com](http://codeception.com/docs/modules/Web
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1506,6 +1589,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1530,6 +1614,7 @@ Attribute|Type|Use|Description
 `width`|string|optional|
 `height`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1548,6 +1633,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1569,6 +1655,7 @@ Attribute|Type|Use|Description
 `x`|string|optional|
 `y`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1591,6 +1678,7 @@ A convenience function that executes `window.scrollTo(0,0)` as JavaScript, thus 
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1612,6 +1700,7 @@ Attribute|Type|Use|Description
 `parameterArray`|array|required| Items to search and select in the selected drop-down menu.
 `requiredAction`|boolean|optional|Clicks **Done** after selections if `true`.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1640,6 +1729,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `selectorArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1658,6 +1748,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1677,6 +1768,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1700,6 +1792,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1718,6 +1811,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `regex`|string|optional| Regular expression against the current URI.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1738,6 +1832,7 @@ Attribute|Type|Use|Description
 `selectorArray`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1757,6 +1852,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1775,6 +1871,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1795,6 +1892,7 @@ Attribute|Type|Use|Description
 `selectorArray`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1814,6 +1912,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1832,6 +1931,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `html`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1850,6 +1950,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1868,6 +1969,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `html`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1886,6 +1988,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1905,6 +2008,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `url`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1930,6 +2034,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1954,6 +2059,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1974,6 +2080,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -1993,6 +2100,7 @@ Attribute|Type|Use|Description
 `filterSelector`|string|required| The selector for the text filter field.
 `optionSelector`|string|required| The selector used to select the corresponding options based on the filter field.
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2017,6 +2125,7 @@ Attribute|Type|Use|Description
 `parameterArray`|string|optional|
 `value`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2037,6 +2146,7 @@ Attribute|Type|Use|Description
 `parameterArray`|string|optional|
 `button`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2056,6 +2166,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2074,6 +2185,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2097,6 +2209,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2120,6 +2233,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2138,6 +2252,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2156,6 +2271,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2176,6 +2292,7 @@ Attribute|Type|Use|Description
 `userInput`|string|optional|
 `parameterArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2213,6 +2330,7 @@ Attribute|Type|Use|Description
 `entity`|string|required|
 `createDataKey`|string|required|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2226,6 +2344,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2244,6 +2363,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2264,6 +2384,7 @@ Attribute|Type|Use|Description
 `function`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2283,6 +2404,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2302,6 +2424,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2321,6 +2444,7 @@ Attribute|Type|Use|Description
 `selector`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2340,6 +2464,7 @@ Attribute|Type|Use|Description
 `function`|string|optional|
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2371,6 +2496,7 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2389,6 +2515,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `time`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
@@ -2409,6 +2536,7 @@ Attribute|Type|Use|Description
 `time`|string|optional|
 `selector`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| Flag for skipping the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
