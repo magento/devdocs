@@ -44,9 +44,9 @@ The value format should met the following principles:
 
 ### `skipReadiness`
 
-`skipReadiness` is an optional attribute that can be used to skip the Readiness Check.
+`skipReadiness` is an optional attribute that can be used to skip the readiness check.
 
-Example test step of the `myAction` action with the Readiness Check skipped:
+Example test step of the `myAction` action with the readiness check skipped:
 
 ```xml
 <myAction skipReadiness="true"/>
