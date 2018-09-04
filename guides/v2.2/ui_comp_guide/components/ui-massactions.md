@@ -1,8 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: components
 title: MassActions component
-menu_title: MassActions component
 ---
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
@@ -179,7 +177,7 @@ Extends `Collapsible`:
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 
-* <code>getAction</code> - returns the action instance found by the provided identifier
-* <code>addAction</code> - adds a new action to the actions
-* <code>applyAction</code> - applies the specified action as identifier action
-* <code>getSelections</code> - returns the object with current selections
+* `getAction` - returns the action instance found by the provided identifier
+* `addAction` - adds a new action to the actions
+* `applyAction` - applies the specified action as identifier action
+* `getSelections` - returns the object with current selections

@@ -1,8 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: components
 title: Column component
-menu_title: Column component
 ---
 
 The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).

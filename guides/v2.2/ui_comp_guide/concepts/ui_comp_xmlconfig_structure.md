@@ -1,9 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: concepts
 title: UI components XML configuration structure
-menu_title: UI components XML configuration structure  
-menu_order: 15
 ---
 
 ## Overview
@@ -160,28 +157,26 @@ This topic describes the basic elements used in XML configuration files for decl
 
 ## Example of the basic UI components configuration structure
 
-{%highlight xml%}
-
+```xml
 <form>
-    <arguments name=“data”>
+    <arguments name="data">
         // The old arbitrary structure that declares the configuration of the Form component
     </arguments>
     <settings>
         // The new strict structure that declares the configuration of the Form component
     </settings>
-    <fieldset name=“fieldsetName”>
-        <arguments name=“data”>
+    <fieldset name="fieldsetName">
+        <arguments name="data">
             // The old arbitrary structure that declares the configuration of the Fieldset component.
         </arguments>
         <settings>
             // The new strict structure that declares the configuration of the Fieldset component
         </settings>
-        <field name=“fieldName”>
+        <field name="fieldName">
             <settings>
                 // The new strict structure that declares the configuration of the Field component
             </settings>
         </field>
     </fieldset>
 </form>
-
-{%endhighlight%}
+```
