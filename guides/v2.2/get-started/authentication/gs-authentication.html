@@ -536,23 +536,25 @@ Each administrator or integration user can have a unique set of permissions whic
 .
 Permissions required to access particular resource are configured in the <code class="highlighter-rouge">webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 
-<table>
-  <tbody>
+<table style="table-layout:auto;">
+  <thead>
     <tr>
-      <td>User type</td>
-      <td>Accessible resources (defined in webapi.xml)</td>
+      <th>User type</th>
+      <th>Accessible resources (defined in webapi.xml)</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Administrator or Integration</td>
       <td>Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the <code class="highlighter-rouge">Magento_Customer::group</code> resource, they can make a <code class="highlighter-rouge">GET /V1/customerGroups/:id</code> call.</td>
     </tr>
     <tr>
       <td>Customer</td>
-      <td>Resources with <code class="highlighter-rouge">anonymous</code> or <code class="highlighter-rouge">self</code> permission.</td>
+      <td>Resources with <code class="highlighter-rouge">anonymous</code> or <code class="highlighter-rouge">self</code> permission</td>
     </tr>
     <tr>
       <td>Guest user</td>
-      <td>Resources with <code class="highlighter-rouge">anonymous</code> permission.</td>
+      <td>Resources with <code class="highlighter-rouge">anonymous</code> permission</td>
     </tr>
   </tbody>
 </table>
@@ -714,6 +716,9 @@ Permissions required to access particular resource are configured in the <code c
   </li>
   <li>
     <p><a href="/guides/v2.2/extension-dev-guide/attributes.html">Extension attribute authentication</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
   </li>
 </ul>
 
