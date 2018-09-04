@@ -108,6 +108,7 @@ Option | Description|
 `--lines`    | Sets the number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
 `--tests`    | Defines the test configuration as a JSON string.
 `--debug`    | Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.
+`-r,--remove`| Remove previously generated suites and tests.
 
 #### Examples of the JSON configuration
 
@@ -174,6 +175,12 @@ Generates one or more suites based on XML declarations.
 
 `<suites>` represents a suite name.
 To generate multiple suites, separate each name with a space.
+
+#### Options
+
+Option | Description|
+---|---
+`-r, --remove`   | Remove previously generated suites and tests.
 
 #### Example
 
@@ -242,6 +249,7 @@ Generates and executes the listed groups of tests using Codeception.
 Option | Description
 ---|---
 `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
+`-r, --remove`   | Remove previously generated suites and tests.
 
 #### Examples
 
@@ -270,6 +278,7 @@ Generates and executes tests by name using Codeception.
 Option | Description
 ---|---
 `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
+`-r, --remove`   | Remove previously generated suites and tests.
 
 #### Examples
 
