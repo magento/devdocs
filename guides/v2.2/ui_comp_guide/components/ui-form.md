@@ -1,8 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: components
 title: Form component
-menu_title: Form component
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
