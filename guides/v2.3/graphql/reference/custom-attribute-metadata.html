@@ -694,90 +694,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>The <code class="highlighter-rouge">customAttributeMetadata</code> endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The ability to know the type of attribute a given field is obscured from the GraphQL query consumer.</p>
-
-<h2 id="example-usage">Example usage</h2>
-
-<p>The following query returns the attribute type for various custom and EAV attributes.</p>
-
-<p><strong>Request</strong></p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="err">customAttributeMetadata(attributes</span><span class="p">:</span><span class="w">
-  </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"available_sort_by"</span><span class="p">,</span><span class="w">
-      </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_category"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"quantity_and_stock_status"</span><span class="p">,</span><span class="w">
-      </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_product"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"default_billing"</span><span class="p">,</span><span class="w">
-      </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-     </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"region"</span><span class="w">
-     </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_address"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"media_gallery"</span><span class="p">,</span><span class="w">
-      </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_product"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-  </span><span class="err">)</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="err">items</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="err">attribute_code</span><span class="w">
-      </span><span class="err">entity_type</span><span class="w">
-      </span><span class="err">attribute_type</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
- </span><span class="p">}</span><span class="w">
- </span></code></pre></figure>
-
-<p>The key you’re storing EAV attributes under
-<strong>Response</strong></p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"customAttributeMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available_sort_by"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_category"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EavDataAttributeOptionInterface"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quantity_and_stock_status"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_product"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CatalogInventoryDataStockItemInterface[]"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default_billing"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerDataAddressInterface"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"region"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_address"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CustomerDataRegionInterface"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"media_gallery"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_product"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProductMediaGallery"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+			<p>The <code class="highlighter-rouge">customAttributeMetadata</code> endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field’s attribute type.</p>
 
 <h2 id="supported-attributes">Supported attributes</h2>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -792,17 +713,151 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>The unique identifier for an attribute code. This value should be in lowercase letters without spaces.</td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">entity_type</code></td>
+      <td>String</td>
+      <td>The type of entity that defines the attribute</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">attribute_type</code></td>
       <td>String</td>
       <td>The data type of the attribute (Response only)</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">entity_type</code></td>
-      <td>String</td>
-      <td>The type of entity that defines the attribute</td>
+      <td><code class="highlighter-rouge">attribute_options</code></td>
+      <td><code class="highlighter-rouge">AttributeOption</code></td>
+      <td>A list of attribute options</td>
     </tr>
   </tbody>
 </table>
+
+<h3 id="attributeoption-object">AttributeOption object</h3>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">label</code></td>
+      <td>String</td>
+      <td>The name of an attribute option</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>String</td>
+      <td>The value assigned to an attribute option</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="example-usage">Example usage</h2>
+
+<p>The following query returns the attribute type for various custom and EAV attributes.</p>
+
+<p><strong>Request</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+ </span><span class="err">customAttributeMetadata(</span><span class="w">
+   </span><span class="err">attributes</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="w">
+     </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">attribute_code</span><span class="w">
+     </span><span class="err">entity_type</span><span class="w">
+     </span><span class="err">attribute_type</span><span class="w">
+     </span><span class="err">attribute_options</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="err">value</span><span class="w">
+       </span><span class="err">label</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+ </span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"customAttributeMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Int"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"attribute_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"213"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brown"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gray"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lavender"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purple"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
 
 			
 		</div>
