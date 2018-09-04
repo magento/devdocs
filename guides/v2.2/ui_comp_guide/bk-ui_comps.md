@@ -1,7 +1,6 @@
 ---
 group: UI_Components_guide
 title: Overview of UI components
-landing-page: UI Components
 redirect_from:
   - /guides/v2.1/ui-components/ui-component.html
   - /guides/v2.2/ui-components/ui-component.html
