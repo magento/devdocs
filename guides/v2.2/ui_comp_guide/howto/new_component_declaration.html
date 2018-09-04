@@ -1366,8 +1366,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  file.</li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
+<!-- Available note types: "info", "warning", "tip" -->
 
+<div class="bs-callout bs-callout-warning" id="warning">
   <p>If the following elements are used inside <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code>, they should be specified strictly in the following order:</p>
 
   <ol>
@@ -1398,7 +1399,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The Customer form configuration is defined in <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code>. The default configuration of the select field we will extend is following:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
 ...
@@ -1426,13 +1427,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             ...
         <span class="nt">&lt;/fieldset&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
 
 <p>The custom component we create extends Select, and is also a simple component (does not have child components), so we use the <code class="highlighter-rouge">&lt;component&gt;</code> element for its declaration. To add the declaration, we need to create the <code class="highlighter-rouge">customer_form.xml</code> file in the custom module, and put it in the same location relative to the module directory as the original <code class="highlighter-rouge">customer_form.xml</code> resides. So the custom form configuration file will be: <code class="highlighter-rouge">&lt;YourVendor_YourModule_dir&gt;/view/base/ui_component/customer_form.xml</code>.</p>
 
 <p>We copy the <code class="highlighter-rouge">&lt;field&gt;</code> configuration, remove the <code class="highlighter-rouge">&lt;select&gt;</code> node and its configuration, and replace it with <code class="highlighter-rouge">&lt;component&gt;</code> and its configuration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
             ...
@@ -1466,7 +1468,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             ...
         <span class="nt">&lt;/fieldset&gt;</span>
     <span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<!-- Link Definitions -->
 
 
 			

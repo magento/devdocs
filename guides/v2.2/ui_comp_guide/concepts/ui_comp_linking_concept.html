@@ -1363,12 +1363,12 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 <p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s1">'exports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"exports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"visible"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${ $.provider }:visibility"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Here <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">${ $.provider }:visibility</code> is the <code class="highlighter-rouge">value</code>. The value of the local <code class="highlighter-rouge">visible</code> property is assigned to the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="highlighter-rouge">visible</code> changes if the local <code class="highlighter-rouge">visible</code> property is observable (which it isn’t given only the code example above).</p>
 
@@ -1395,12 +1395,12 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 <p>Example of using <code class="highlighter-rouge">imports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s1">'imports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"imports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"visible"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${ $.provider }:visibility"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Here the value of the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component is assigned to the local <code class="highlighter-rouge">visible</code> property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if <code class="highlighter-rouge">visibility</code> changes.</p>
 
@@ -1428,12 +1428,12 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 <p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s1">'links'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"visible"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${ $.provider }:visibility"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Here the local <code class="highlighter-rouge">visible</code> property is linked with the <code class="highlighter-rouge">visibility</code>  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.</p>
 
@@ -1460,12 +1460,12 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 <p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'${ $.provider }:visibility'</span><span class="p">:</span> <span class="s1">'visibilityChanged'</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"listens"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"${ $.provider }:visibility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"visibilityChanged"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Here the local <code class="highlighter-rouge">visibilityChanged</code> property is a method that will be called when the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for <code class="highlighter-rouge">listens</code> to have any effect.</p>

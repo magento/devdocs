@@ -1345,7 +1345,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following is a full example of an install script that creates a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  attribute. If you already have a category attribute, it is not necessary.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// File: Namespace/Module/Setup/InstallData.php
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// File: Namespace/Module/Setup/InstallData.php
 </span>
 <span class="k">use</span> <span class="nx">Magento\Framework\Setup</span><span class="err">\</span><span class="p">{</span>
     <span class="nx">ModuleContextInterface</span><span class="p">,</span>
@@ -1379,7 +1379,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="s1">'group'</span>    <span class="o">=&gt;</span> <span class="s1">'Display Settings'</span><span class="p">,</span>
         <span class="p">]);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="step-2-display-the-attribute">Step #2: Display the Attribute</h2>
 
@@ -1388,7 +1389,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Here is a full example of adding a field under the “Display Settings” group. It is important to note that <code class="highlighter-rouge">attribute_id</code> should match the ID of the attribute that you created in the install script.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml --&gt;</span>
 <span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"display_settings"</span><span class="nt">&gt;</span>
@@ -1408,7 +1409,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
 
 <h2 id="step-3-upgrade-and-run">Step #3: Upgrade and Run</h2>
 

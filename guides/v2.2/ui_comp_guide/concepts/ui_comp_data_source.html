@@ -1349,12 +1349,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The component’s data provider class is declared inside <code class="highlighter-rouge">&lt;dataSource /&gt;</code>. The following provides an example and demonstrates what nodes are required.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[YourComponentName]_data_source<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"primaryFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/argument&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+<span class="nt">&lt;/argument&gt;</span>
+</code></pre></div></div>
 
 <p>In the block of code above, [YourNameSpace][YourModule] would be the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
 
@@ -1367,17 +1368,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Declare a <code class="highlighter-rouge">getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">javascript</span>
  class that is associated with the UI component and handles its behavior. Magento’s Form Provider javascript class is often a good place to start.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
-</div>
+<p class="bs-callout bs-callout-info">A Javascript “component” is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
 
 <p>Include the Form Provider Javascript component by adding this inside the <code class="highlighter-rouge">&lt;dataSource /&gt;</code> node:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/provider<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+<span class="nt">&lt;/argument&gt;</span>
+</code></pre></div></div>
 
 <p>This will include <code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/provider.js</code> on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn’t do what is necessary in your case.</p>
 
@@ -1385,9 +1385,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>A good way to keep configuration data out of the javascript is to declare a “provider” in the base component’s XML so it will be able to find that data provider component. Under the <code class="highlighter-rouge">&lt;argument name="data" /&gt;</code> node, add a node like this (where <code class="highlighter-rouge">[ComponentName]</code> is the name of the component):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[ComponentName].[ComponentName]_data_source<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/item&gt;</span></code></pre></figure>
+<span class="nt">&lt;/item&gt;</span>
+</code></pre></div></div>
 
 <p>This example declares the name of the data provider class and will be output in the JSON that contains the UI component’s configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.</p>
 

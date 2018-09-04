@@ -1465,11 +1465,12 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">afterRender</span><span class="o">=</span><span class="s2">"function (target, viewModel) {
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">afterRender=</span><span class="s">"function (target, viewModel) {
     console.log('Rendered element:', target);
     console.log('Associated view model:', viewModel);
     console.log(this === viewModel);
-}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="autoselect"><code class="highlighter-rouge">autoselect</code></h3>
 <p>The <code class="highlighter-rouge">autoselect</code> binding automatically highlights the text in an input element, when it gets focus.</p>
@@ -1482,12 +1483,12 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[autoselect]</code></p>
 
 <p><strong>Usage example</strong>:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- as an attribute --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">autoselect</span><span class="nt">/&gt;</span>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">autoselect</span><span class="o">/&gt;</span>
-
-<span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"autoselect: true"</span><span class="o">/&gt;</span></code></pre></figure>
+<span class="c">&lt;!-- in a standard KO form --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-bind=</span><span class="s">"autoselect: true"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="bindhtml"><code class="highlighter-rouge">bindHtml</code></h3>
 <p>The <code class="highlighter-rouge">bindHtml</code> binding renders the provided string, as a collection of HTML elements, inside of the associated node.</p>
@@ -1501,10 +1502,10 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[bindHtml]</code></p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">bindHtml</span><span class="o">=</span><span class="s2">"
-    &lt;div data-bind='text: </span><span class="err">\</span><span class="s2">'String from the text binding</span><span class="err">\</span><span class="s2">''&gt;&lt;/div&gt;
-"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">bindHtml=</span><span class="s">"
+    &lt;div data-bind='text: \'String from the text binding\''&gt;&lt;/div&gt;
+"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="collapsible"><code class="highlighter-rouge">collapsible</code></h3>
 <p>The <code class="highlighter-rouge">collapsible</code> binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: <code class="highlighter-rouge">toggleCollapsible</code>, <code class="highlighter-rouge">openCollapsible</code> and <code class="highlighter-rouge">closeCollapsible</code>.</p>
@@ -1605,8 +1606,8 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"datepicker: value"</span><span class="o">/&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-bind=</span><span class="s">"datepicker: value"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="fadevisible"><code class="highlighter-rouge">fadeVisible</code></h3>
 <p>The <code class="highlighter-rouge">fadeVisible</code> binding performs the gradual change of the element’s visibility  (with an animation effect).</p>
@@ -1620,9 +1621,9 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"fadeVisible: isVisible"</span><span class="o">&gt;</span><span class="nx">Foo</span> <span class="nx">Bar</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">click</span><span class="o">=</span><span class="s2">"function () { isVisible(!isVisible()); }"</span><span class="o">&gt;</span><span class="nx">Toggle</span><span class="o">&lt;</span><span class="sr">/button&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"fadeVisible: isVisible"</span><span class="nt">&gt;</span>Foo Bar<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">click=</span><span class="s">"function () { isVisible(!isVisible()); }"</span><span class="nt">&gt;</span>Toggle<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
 
 <h3 id="i18n"><code class="highlighter-rouge">i18n</code></h3>
 
@@ -1635,12 +1636,12 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[translate]</code>, <code class="highlighter-rouge">&lt;translate&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"i18n: 'Translate as a standard knockout binding'"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"i18n: 'Translate as a standard knockout binding'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">translate</span><span class="o">=</span><span class="s2">"'Translate using the attribute'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">translate</span> <span class="nx">args</span><span class="o">=</span><span class="s2">"'Translate using the tag'"</span><span class="o">&gt;&lt;</span><span class="sr">/translate&gt;</span></code></pre></figure>
+<span class="nt">&lt;div</span> <span class="na">translate=</span><span class="s">"'Translate using the attribute'"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;translate</span> <span class="na">args=</span><span class="s">"'Translate using the tag'"</span><span class="nt">&gt;&lt;/translate&gt;</span>
+</code></pre></div></div>
 
 <h3 id="keyboard">keyboard</h3>
 
@@ -1655,12 +1656,12 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[keyboard]</code></p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">keyboard</span><span class="o">=</span><span class="s2">"{
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">keyboard=</span><span class="s">"{
     13: function (e) {
         console.log('Enter key has been pressed!');
     }
-}"</span><span class="o">/&gt;</span></code></pre></figure>
+}"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="mageinit">mageInit</h3>
 
@@ -1673,15 +1674,15 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>: creating modal window</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">mageInit</span><span class="o">=</span><span class="s2">"{
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">mageInit=</span><span class="s">"{
     'Magento_Ui/js/modal/modal': {
         autoOpen: true,
         buttons: false,
         modalClass: 'modal-system-messages',
         title: 'Hello world!'
     }
-}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="optgroup">optgroup</h3>
 
@@ -1694,8 +1695,7 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: -</p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">select</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;select</span> <span class="na">data-bind=</span><span class="s">"
     optionsValue: 'value',
     optionsText: 'label',
     optgroup: [{
@@ -1713,7 +1713,8 @@ Function that is invoked after the element is rendered.</p>
             label: 'Mercedes',
             value: 'mercedes'
         }]
-    }]"</span><span class="o">&gt;&lt;</span><span class="sr">/select&gt;</span></code></pre></figure>
+    }]"</span><span class="nt">&gt;&lt;/select&gt;</span>
+</code></pre></div></div>
 
 <h3 id="outerclick">outerClick</h3>
 
@@ -1728,11 +1729,11 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[outerClick]</code></p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"target"</span> <span class="nx">outerClick</span><span class="o">=</span><span class="s2">"function () {
-    console.log('Clicked outside of the "</span><span class="nx">target</span><span class="s2">" node.');
-}"</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"target"</span> <span class="na">outerClick=</span><span class="s">"function () {
+    console.log('Clicked outside of the "</span><span class="na">target</span><span class="err">"</span> <span class="na">node</span><span class="err">.');</span>
+<span class="err">}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="range">range</h3>
 
@@ -1747,15 +1748,15 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[range]</code></p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span>
-    <span class="kd">class</span><span class="o">=</span><span class="s2">"data-slider"</span>
-    <span class="nx">range</span><span class="o">=</span><span class="s2">"{
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span>
+    <span class="na">class=</span><span class="s">"data-slider"</span>
+    <span class="na">range=</span><span class="s">"{
         value: scale,
         min: 1,
         max: 200,
         step: 1
-}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="resizable">resizable</h3>
 
@@ -1771,7 +1772,8 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Usage example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"resizable: {maxHeight: 200}"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"resizable: {maxHeight: 200}"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="scope"><code class="highlighter-rouge">scope</code></h3>
 <p>A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.</p>
@@ -1785,15 +1787,15 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases</strong>: <code class="highlighter-rouge">[ko-scope]</code>, <code class="highlighter-rouge">&lt;scope&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- as an attribute --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">ko-scope=</span><span class="s">"'name.of.component'"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">an</span> <span class="nx">attribute</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">ko</span><span class="o">-</span><span class="nx">scope</span><span class="o">=</span><span class="s2">"'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>
-<span class="c">&lt;!--</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">standard</span> <span class="nx">KO</span> <span class="nx">form</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"scope: 'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>
-<span class="c">&lt;!--</span> <span class="nx">without</span> <span class="nx">an</span> <span class="nx">extra</span> <span class="nx">container</span> <span class="nx">node</span> <span class="o">--&gt;</span>
-<span class="o">&lt;</span><span class="nx">scope</span> <span class="nx">args</span><span class="o">=</span><span class="s2">"'name.of.component'"</span><span class="o">&gt;&lt;</span><span class="sr">/scope&gt;</span></code></pre></figure>
+<span class="c">&lt;!-- in a standard KO form --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"scope: 'name.of.component'"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- without an extra container node --&gt;</span>
+<span class="nt">&lt;scope</span> <span class="na">args=</span><span class="s">"'name.of.component'"</span><span class="nt">&gt;&lt;/scope&gt;</span>
+</code></pre></div></div>
 
 <h3 id="staticchecked">staticChecked</h3>
 
@@ -1805,7 +1807,8 @@ Function that is invoked after the element is rendered.</p>
 
 <p><strong>Aliases:</strong> <code class="highlighter-rouge">[staticChecked]</code></p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"checkbox"</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"staticChecked: observable"</span><span class="o">/&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">data-bind=</span><span class="s">"staticChecked: observable"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h3 id="template">template</h3>
 
@@ -1820,8 +1823,8 @@ Function that is invoked after the element is rendered.</p>
 <p><strong>Aliases:</strong> <code class="highlighter-rouge">[render]</code>, <code class="highlighter-rouge">&lt;render&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"template: 'path/to/the/template'"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span></code></pre></figure>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"template: 'path/to/the/template'"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
 <h3 id="tooltip">tooltip</h3>
 
@@ -1896,19 +1899,20 @@ Function that is invoked after the element is rendered.</p>
 
 <p>Adding the tooltip binding as an attribute:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">tooltip</span><span class="o">=</span><span class="s2">"
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">tooltip=</span><span class="s">"
      trigger: '[data-tooltip-trigger=trigger]', 
      action: 'click', 
      delay: 300, 
      track: true,
      position: 'top' 
- "</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span> 
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">"trigger"</span><span class="o">/&gt;</span></code></pre></figure>
+ "</span><span class="nt">&gt;</span> Tooltip data <span class="nt">&lt;/div&gt;</span>
+ 
+<span class="nt">&lt;div</span> <span class="na">data-tooltip-trigger=</span><span class="s">"trigger"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>Adding the tooltip binding as a node:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">bind</span><span class="o">=</span><span class="s2">"
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"
     tooltip: {
         trigger: '[data-tooltip-trigger=trigger]',
         action: 'click', 
@@ -1916,10 +1920,10 @@ Function that is invoked after the element is rendered.</p>
         track: true,
         position: 'top' 
     }  
-"</span><span class="o">&gt;</span> <span class="nx">Tooltip</span> <span class="nx">data</span> <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span> 
-<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">data</span><span class="o">-</span><span class="nx">tooltip</span><span class="o">-</span><span class="nx">trigger</span><span class="o">=</span><span class="s2">"trigger"</span><span class="o">/&gt;</span></code></pre></figure>
-
+"</span><span class="nt">&gt;</span> Tooltip data <span class="nt">&lt;/div&gt;</span>
+ 
+<span class="nt">&lt;div</span> <span class="na">data-tooltip-trigger=</span><span class="s">"trigger"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 			
 		</div>

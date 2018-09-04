@@ -1358,59 +1358,59 @@ As an example:
 . This resulting configuration is then set as first level properties in the current UI component instance.</p>
 
     <p>As an example:</p>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nl">myFirstProperty</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nx">mySecondProperty</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+
+  <span class="c1">//Before executing initConfig method:</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
+
+  <span class="c1">//After executing initConfig method:</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// 0</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// 1</span>
+</code></pre></div>    </div>
   </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
-		<span class="nl">myFirstProperty</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-		<span class="nx">mySecondProperty</span><span class="p">:</span> <span class="mi">1</span>
-	<span class="p">}</span>
-
-	<span class="nx">Before</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="p">:</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// Undefined</span>
-
-	<span class="nx">After</span> <span class="nx">executing</span> <span class="nx">initConfig</span> <span class="nx">method</span><span class="p">:</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">myFirstProperty</span><span class="p">)</span> <span class="c1">// 0</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">mySecondProperty</span><span class="p">)</span> <span class="c1">// 1</span></code></pre></figure>
-
-<ul>
-  <li>The <code class="highlighter-rouge">initialize()</code> method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.</li>
+  <li>
+    <p>The <code class="highlighter-rouge">initialize()</code> method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.</p>
+  </li>
 </ul>
 
 <p>As an example:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 		<span class="o">%</span><span class="nx">yourMethodName</span><span class="o">%</span><span class="p">();</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-	<span class="p">}</span></code></pre></figure>
+	<span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li>The <code class="highlighter-rouge">_super()</code> method calls the parent UI component method with the same name as the <code class="highlighter-rouge">_super()</code> method’s caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nx">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 		<span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span> <span class="c1">//_super will call parent's `initialize` method here</span>
 
 		<span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-	<span class="p">}</span></code></pre></figure>
+	<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="uiclass_properties">Commonly used uiClass properties</h3>
 
 <p>The <code class="highlighter-rouge">defaults</code> property declares the list of properties of a UI component’s instance. Also it declares communications between components if needed.</p>
 
 <p>As an example:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="nx">defaults</span><span class="p">:</span> <span class="p">{</span>
 		<span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
 		<span class="nx">imports</span><span class="p">:</span> <span class="p">{</span>
             <span class="o">%</span><span class="nx">yourCustomProperty</span><span class="o">%</span><span class="p">:</span> <span class="s1">'%anotherComponentLink%'</span><span class="p">,</span>
             <span class="nx">disabled</span><span class="p">:</span> <span class="s1">'checked'</span>
         <span class="p">},</span>
-	<span class="p">}</span></code></pre></figure>
-
+	<span class="p">}</span>
+</code></pre></div></div>
 
 			
 		</div>

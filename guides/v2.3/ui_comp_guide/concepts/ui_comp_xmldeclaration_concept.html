@@ -1454,9 +1454,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Example of a basic   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
  declaration:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"page-container"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"page-container"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">"%instance_name%"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
+<span class="nt">&lt;/referenceContainer&gt;</span>
+</code></pre></div></div>
 
 <p>A UI component is declared using the <code class="highlighter-rouge">&lt;uiComponent/&gt;</code> node. The <code class="highlighter-rouge">name</code> attribute in the <code class="highlighter-rouge">&lt;uiComponent/&gt;</code> node references the XML configuration of the basic UI component’s instance. This configuration is a separate <code class="highlighter-rouge">.xml</code> file. It is stored in the <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
 
@@ -1478,7 +1479,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="example-of-a-basic-components-configuration-file">Example of a basic component’s configuration file</h2>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -1534,7 +1535,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/field&gt;</span>
     <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
 
 <p>In the above example, within the top-level <code class="highlighter-rouge">&lt;form&gt;</code> node the <code class="highlighter-rouge">&lt;fieldset&gt;</code> node is nested. It declares the Fieldset UI component.</p>
 
