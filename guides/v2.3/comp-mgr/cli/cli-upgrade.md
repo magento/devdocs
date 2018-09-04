@@ -162,7 +162,7 @@ Backup and remove the `<Magento install dir>/update` directory.
   Example for version 2.3.0:
 
   ```bash
-  composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
+  composer create-project --repository-url=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
   ```
   
   {:.bs-callout .bs-callout-info}
@@ -174,7 +174,7 @@ Backup and remove the `<Magento install dir>/update` directory.
   Example for version 2.3.0:
 
   ```bash
-  composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
+  composer create-project --repository-url=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
   ```
   
   {:.bs-callout .bs-callout-info}
