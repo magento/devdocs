@@ -31,40 +31,23 @@ The following query returns the attribute type for various custom and EAV attrib
 
 {% highlight json %}
 {
-  customAttributeMetadata(attributes:
-  [
-    {
-      attribute_code: "available_sort_by",
-      entity_type: "catalog_category"
-    },
-    {
-      attribute_code: "quantity_and_stock_status",
-      entity_type: "catalog_product"
-    },
-    {
-      attribute_code: "default_billing",
-      entity_type: "customer"
-    },
-    {
-     attribute_code: "region"
-     entity_type: "customer_address"
-    },
-    {
-      attribute_code: "media_gallery",
-      entity_type: "catalog_product"
-    }
-  ]
-  )
-  {
-    items
-    {
-      attribute_code
-      entity_type
-      attribute_type
-      attribute_options
-    }
-  }
+ customAttributeMetadata(
+   attributes: {
+     attribute_code: "color"
+     entity_type: "4"
+   }
+ ) {
+   items {
+     attribute_code
+     entity_type
+     attribute_type
+     attribute_options {
+       value
+       label
+     }
+   }
  }
+}
  {% endhighlight %}
 
 **Response**
@@ -75,29 +58,71 @@ The following query returns the attribute type for various custom and EAV attrib
     "customAttributeMetadata": {
       "items": [
         {
-          "attribute_code": "available_sort_by",
-          "entity_type": "catalog_category",
-          "attribute_type": "EavDataAttributeOptionInterface"
-        },
-        {
-          "attribute_code": "quantity_and_stock_status",
-          "entity_type": "catalog_product",
-          "attribute_type": "CatalogInventoryDataStockItemInterface[]"
-        },
-        {
-          "attribute_code": "default_billing",
-          "entity_type": "customer",
-          "attribute_type": "CustomerDataAddressInterface"
-        },
-        {
-          "attribute_code": "region",
-          "entity_type": "customer_address",
-          "attribute_type": "CustomerDataRegionInterface"
-        },
-        {
-          "attribute_code": "media_gallery",
-          "entity_type": "catalog_product",
-          "attribute_type": "ProductMediaGallery"
+          "attribute_code": "color",
+          "entity_type": "4",
+          "attribute_type": "Int",
+          "attribute_options": [
+            {
+              "value": "49",
+              "label": "Black"
+            },
+            {
+              "value": "214",
+              "label": "blue"
+            },
+            {
+              "value": "215",
+              "label": "green"
+            },
+            {
+              "value": "213",
+              "label": "red"
+            },
+            {
+              "value": "50",
+              "label": "Blue"
+            },
+            {
+              "value": "51",
+              "label": "Brown"
+            },
+            {
+              "value": "52",
+              "label": "Gray"
+            },
+            {
+              "value": "53",
+              "label": "Green"
+            },
+            {
+              "value": "54",
+              "label": "Lavender"
+            },
+            {
+              "value": "55",
+              "label": "Multi"
+            },
+            {
+              "value": "56",
+              "label": "Orange"
+            },
+            {
+              "value": "57",
+              "label": "Purple"
+            },
+            {
+              "value": "58",
+              "label": "Red"
+            },
+            {
+              "value": "59",
+              "label": "White"
+            },
+            {
+              "value": "60",
+              "label": "Yellow"
+            }
+          ]
         }
       ]
     }
