@@ -5,15 +5,16 @@ functional_areas:
   - Cloud
 ---
 
-{{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the on-prem {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
+{{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the on-premise {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
 ![Cloud Benefits]
 
-{{site.data.var.ece}} includes features such as git-based **Rapid development** with a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; **Continuous deployment** every time you push code changes in a PaaS environment; highly **Customizable**  configuration files and tools; and AWS hosting that offers merchants a **Scalable** and **Secure** environment for online sales and retailing.
+{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a a git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a PaaS environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
 
 ## Technology stack
 
-Amazon Web Services (AWS) powers the underlying Infrastructure as a Service for {{site.data.var.ece}}. Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{page.baseurl}}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. [Fastly]({{page.baseurl}}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site.
+Amazon Web Services (AWS) powers the underlying Infrastructure as a Service for {{site.data.var.ece}}. Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{page.baseurl}}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. [Fastly]({{page.baseurl}}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. The [Fastly Image Optimization]({{page.baseurl}}/cloud/cdn/fastly-image-optimization.html) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
+<!-- Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site. -->
 
 ![Cloud Stack]
 

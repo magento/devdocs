@@ -9,7 +9,7 @@ redirect_to:
 The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
 {:.bs-callout .bs-callout-info}
-The Onboarding Portal is available for new trial accounts and projects for Starter and Pro. Existing projects or non-trial new accounts cannot access the portal at this time.
+The Onboarding Portal is available for new accounts and projects for Starter and Pro. Existing projects cannot access the portal at this time.
 
 Through the portal, you can:
 
@@ -62,10 +62,10 @@ This user can help you create developer accounts with access to the Magento envi
 
 ## Magento project ready for development {#provision}
 
-When you create a trial account, we immediately provision your initial environment and code using the latest released version of {{site.data.var.ece}}. As part of this provisioning, you receive a project, base Git repository of the latest version code,
+When you create an account, we immediately provision your initial environment and code using the latest released version of {{site.data.var.ece}}. As part of this provisioning, you receive a project, base Git repository of the latest version code,
 
 * **For Starter**: We provisioned your Master environment with cloned code in a `master` branch. This is your Production environment that you should branch from for developing site and store code.
-* **For Pro**: We provisioned your Integration environment with cloned code in a `master` branch. This is the origin branch of your store code. Staging and Production environments will be provisioned after your 1 month trial ends. For purchased accounts, your Staging and Production environments may be provisioned earlier.
+* **For Pro**: We provisioned your Integration environment with cloned code in a `master` branch. This is the origin branch of your store code. For purchased accounts, your Staging and Production environments may be provisioned earlier.
 
 Your Technical Admin can immediately start development planning and tasks without waiting.
 
