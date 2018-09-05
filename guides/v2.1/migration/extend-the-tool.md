@@ -21,7 +21,7 @@ In most cases, the [Map Step]({{ page.baseurl }}/migration/migration-tool-intern
 - Change table or field names with mapping rules
 - Transform data formats with existing handlers or create a custom handler
 
-The following shows an example of using both mapping rules and a handler. This example uses a hyopthetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
+The following shows an example of using both mapping rules and a handler. This example uses a hypothetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
 
 ```xml
 <source>

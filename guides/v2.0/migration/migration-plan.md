@@ -12,7 +12,7 @@ functional_areas:
   - Tools
 ---
 
-To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.
+To migrate successfully and avoid issues, you need to thoroughly plan and test your migration. We hope the guidelines below will prove helpful.
 
 ## Before you start: Consider upgrade
 
