@@ -522,9 +522,8 @@ target="_blank"> (GITHUB-4099)</a>
 
 To view this setting in the Magento Admin, click **Stores** > Settings > **Configuration** > GENERAL > **Web**. In the right pane, expand **Base URLs (Secure)**, value of the **Offloader header** field.
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>If you change the value of this field, you must regenerate your <code>.vcl</code> files.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}Event{% endglossarytooltip %} change in the Product page and Advance Inventory changes.  
 

@@ -314,11 +314,11 @@ To apply the changes, enter the following commands:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
     
-<div class="bs-callout bs-callout-warning">
-<p>You should mention repository in data source class to use it for fixture field.<br/>
-<br/>
-Example from <code>LayoutUpdates.php</code><br/>
-<code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You should mention repository in data source class to use it for fixture field.  
+   
+ Example from `LayoutUpdates.php`  
+ `$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);`
 </div>
 
 ## Merge fixtures {#mtf_fixture_merge}

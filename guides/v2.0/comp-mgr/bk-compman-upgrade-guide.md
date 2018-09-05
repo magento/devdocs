@@ -36,10 +36,11 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 {: .bs-callout .bs-callout-info }
 *System upgrade* refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).
 
-<div class="bs-callout bs-callout-warning">
-    <p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also <em>cannot</em> use:</p>
-    <ul><li>Another user's authentication keys</li>
-    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
+<div class="bs-callout bs-callout-warning" markdown="1">
+For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also *cannot* use:
+
+* Another user's authentication keys
+* [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){: target="_blank"} authentication keys
 </div>
 
 ## Update components

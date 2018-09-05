@@ -28,7 +28,6 @@ The sample configuration overrides your server's docroot settings to serve files
               set $MAGE_ROOT /var/www/html/magento2ce;
               include /var/www/html/magento2ce/nginx.conf.sample;
     }
-
 </div>
 
 ## Before you begin

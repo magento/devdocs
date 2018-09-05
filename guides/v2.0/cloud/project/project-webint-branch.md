@@ -46,19 +46,20 @@ If you need additional environments for development, enter a [Support ticket]({{
 
 To add a branch:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	In the left navigation bar, click the name of the parent environment.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+2. In the left navigation bar, click the name of the parent environment.
 
-	Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
-3.	Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
-4.	In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
+   Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
+3. Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
+4. In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
 
-	<div class="bs-callout bs-callout-info" id="info">
-   		<p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
-   		<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; ></code>), ampersand (<code>&</code>), percent (<code>%</code>), and other characters.</p>
- 	</div>
-5.	Click **Branch**.
-6.	Wait while the environment deploys.
+   <div class="bs-callout bs-callout-info" id="info" markdown="1">
+	 The environment *name* is different from the environment *ID* only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
+
+	 An environment name *cannot* include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
+	 </div>
+5. Click **Branch**.
+6. Wait while the environment deploys.
 
 	During deployment, its status is **In process**, as the following figure shows.
 
@@ -174,21 +175,21 @@ On GitHub, deploy keys are read-only by default. Your Magento project won't push
 
 To enter your project's public key as a GitHub deploy key:
 
-1.	Log in to your GitHub repository as its administrator.
-2.	Click **Settings** as the following figure shows.
+1. Log in to your GitHub repository as its administrator.
+2. Click **Settings** as the following figure shows.
 
-	![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
+   ![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
-	</div>
+	 <div class="bs-callout bs-callout-info" id="info" markdown="1">
+	 If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.
+	 </div>
 
-3.	On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
+3. On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
 
-	![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
+	 ![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
 
-4.	Click **Add deploy key**.
-5.	Follow the prompts on your screen to complete the task.
+4. Click **Add deploy key**.
+5. Follow the prompts on your screen to complete the task.
 
 In `composer.json`, use the `<user>@<host>:<.git</code>` format, or `ssh://<user>@<host>:<port>/<path>.git` if using a non-standard port.
 

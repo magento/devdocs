@@ -25,9 +25,9 @@ You can upgrade in any of the following ways:
 {: .bs-callout .bs-callout-info }
 *System upgrade* refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html).
 
-<div class="bs-callout bs-callout-warning">
-    <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>
-    	<li>If you installed the Magento application by <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
+<div class="bs-callout bs-callout-warning" markdown="1">
+* Authorization keys from a [shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){: target="_blank"} *cannot* be used for upgrade. You must get your authorization keys from `magento.com` account owner.
+* If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you *cannot* use the System Upgrade utility to upgrade the software. Instead, you must [update it manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 </div>
 
 ## System Upgrade checklist

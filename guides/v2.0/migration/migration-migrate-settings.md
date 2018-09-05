@@ -35,9 +35,8 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.
 
 The `Migration completed` message is displayed after the settings are transferred successfully.
 

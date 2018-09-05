@@ -98,11 +98,6 @@ where:
 {: .bs-callout .bs-callout-info }
 Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path){: target="_blank"} repository.
 
-<!-- <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div> -->
-
 #### Next
 
 [Component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html)

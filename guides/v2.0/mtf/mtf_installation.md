@@ -46,11 +46,11 @@ If you're not sure that Composer is installed, see [Install Composer]({{ page.ba
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br/>
-  Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br/>
-  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>
-And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.  
+ Copy `composer.phar` to `/usr/local/bin/composer`.  
+ To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).  
+ And run from this directory `php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install`.
 </div>
 
 ## Check the installation {#mtf_install_check}

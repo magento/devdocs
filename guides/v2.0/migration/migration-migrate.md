@@ -51,9 +51,8 @@ where:
 
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Logs are written to the <code>&lt;your Magento install dir>/var/</code> directory.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Logs are written to the `<your Magento install dir>/var/` directory.
 
 ## Migration order {#migration_order}
 

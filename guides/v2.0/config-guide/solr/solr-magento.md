@@ -46,8 +46,8 @@ The example Solr configuration is *not* intended to be used in a production site
 		cd magento2
 		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 
-	<div class="bs-callout bs-callout-info" id="info">
-	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .</code></p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If you're prompted to overwrite files, try the command `\cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .`
 	</div>
 
 2.  After copying files, open the `<your Solr install dir>/example/solr/magento2/core.properties` file in a text editor and change:
@@ -80,8 +80,8 @@ The example Solr configuration is *not* intended to be used in a production site
 		cd <your Solr install dir>/example
 		java -jar start.jar
 
-	<div class="bs-callout bs-callout-warning">
-			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in [Script Solr startup and shutdown]({{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script).
 	</div>
 
 ### Configure Magento to work with Solr   {#config-solr-magento}

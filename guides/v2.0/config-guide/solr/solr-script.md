@@ -29,8 +29,8 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
 *	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
-	<div class="bs-callout bs-callout-warning">
-		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the [Apache Solr Wiki](http://wiki.apache.org/solr/){: target="_blank"}.
 	</div>
 *	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
 

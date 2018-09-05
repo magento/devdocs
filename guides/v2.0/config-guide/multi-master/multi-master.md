@@ -49,11 +49,12 @@ Because of the way the split database performance solution is designed, your cus
 *	Use JOINs that affect the sales or {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} databases
 *	Use foreign keys to tables in the checkout, sales, or main databases
 
-<div class="bs-callout bs-callout-warning">
-    <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
-    <ul><li>Ask the component developers to update their components.</li>
-    	<li>Use the components as-is <em>without</em> the split database solution.</li>
-    	<li>Remove the components so you can use the split database solution.</li></ul>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:
+
+* Ask the component developers to update their components.
+* Use the components as-is *without* the split database solution.
+* Remove the components so you can use the split database solution.
 </div>
 
 This also means you can either:

@@ -22,7 +22,6 @@ The following cache types mostly have impact on frontend development process:
 
 <div class="bs-callout bs-callout-info" id="info" markdown ="1">
 The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
-
 </div>
 
 ## Clean cache {#clean_cache}

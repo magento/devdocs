@@ -38,9 +38,8 @@ This topic uses the following naming conventions:
 
     The sales database is also referred to as the order management system (*OMS*) database.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.
 
 ## Back up the Magento system {#config-ee-multidb-backup}
 

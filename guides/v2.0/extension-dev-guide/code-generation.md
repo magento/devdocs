@@ -68,6 +68,5 @@ Depending on whether or not one of the compilers has been run before, the Magent
 
 	This class is slower than `Magento\Framework\Interception\ObjectManager\Config\Compiled`.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The `Developer` class has nothing to do with Magento's *developer mode*.

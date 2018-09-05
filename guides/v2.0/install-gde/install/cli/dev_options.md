@@ -24,9 +24,8 @@ If you clone the Magento 2 GitHub repository, you *cannot* use the Magento softw
 *	To <a href="{{ page.baseurl }}/install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify `composer.json` and run `composer update` and update the Magento database
 *	To <a href="{{ page.baseurl }}/install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in `composer.json`, run `composer update`, then reinstall the Magento software
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>If you are not a contributing developer, you perform upgrades and upgrades as discussed in <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p> 
-</div>
+{: .bs-callout .bs-callout-info }
+If you are not a contributing developer, you perform upgrades and upgrades as discussed in [Updating the Magento application and components]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 
 <!-- ABBREVIATIONS -->
 

@@ -55,10 +55,8 @@ The following prerequisites are required:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not use the same database as the real Magento instance.
-    Any data (products, customers, orders and everything else) will be lost!</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Do not use the same database as the real Magento instance. Any data (products, customers, orders and everything else) will be lost!
 
 For safety reasons it is recommended to use a dedicated database user for running the tests. That db user should not have access to any other databases.
 Here are example SQL commands to create a test database and a dedicated test user account.

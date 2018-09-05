@@ -92,11 +92,13 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 3.	Wait for the repository to clone on your server.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-			<pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the following error displays, make sure you [shared your SSH key](https://help.github.com/articles/generating-ssh-keys/){: target="_blank"} with GitHub:
+	```terminal
+	Cloning into 'magento2'...
+	Permission denied (publickey).
+	fatal: The remote end hung up unexpectedly
+	```
 	</div>
 4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
 

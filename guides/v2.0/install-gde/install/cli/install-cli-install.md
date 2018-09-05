@@ -26,9 +26,8 @@ Before you begin, make sure that:
 4.	After you log in to the Magento server, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 5.	Review the information discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must install Magento from its <code>bin</code> subdirectory.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must install Magento from its `bin` subdirectory.
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -38,9 +37,8 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Correct mistakes in previous installations
 *	Install Magento in a different database instance
 
-<div class="bs-callout bs-callout-info" id="info">
-<ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
-</div>
+{: .bs-callout .bs-callout-info }
+* By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional `cleanup-database` parameter to change this behavior.
 
 See also <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
@@ -71,9 +69,8 @@ You can run the following commands to find values for some required arguments:
 </tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If an error displays when you run these commands, make sure you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
 
 ## Install the Magento software from the command line   {#instgde-install-cli-magento}
 
@@ -83,9 +80,8 @@ The format of the install command follows:
 
 The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 <table>
 	<col width="35%">
 	<col width="55%">
@@ -294,10 +290,8 @@ The following table discusses the meanings of installation option names and valu
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>To enable or disable modules after installing Magento, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-  	
-</div>
+{: .bs-callout .bs-callout-info }
+To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 {% include install/sens-data.md %}
 
@@ -385,9 +379,8 @@ Messages similar to the following display to indicate a successful installation:
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The command must be entered either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 #### Next step
 

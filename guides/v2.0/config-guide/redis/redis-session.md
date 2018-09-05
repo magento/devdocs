@@ -15,9 +15,8 @@ functional_areas:
 
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
 ## Configure Magento to use Redis for session storage   {#config-redis-config}
 

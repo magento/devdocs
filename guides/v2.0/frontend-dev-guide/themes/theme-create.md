@@ -181,13 +181,8 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>
-
-During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
-
-</p>
-</div>
+{: .bs-callout .bs-callout-info }
+During theme development, when you change any files stored here, you need to clear `pub/static` (preserving the `.htaccess` file in place) and `var/view_preprocessed` directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
 
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 

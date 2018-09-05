@@ -45,9 +45,10 @@ Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}fron
 </config>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
-  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`%routeId%` must be at least three characters in length and can consist of the following characters: `A-Z, a-z, 0-9, _`.
+
+`%frontName%` must be at least three characters in length and can consist of the following characters: `A-Z, a-z, 0-9, _, -`.
 </div>
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Framework\Route\Config`.

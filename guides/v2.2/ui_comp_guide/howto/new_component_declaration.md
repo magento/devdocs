@@ -30,7 +30,6 @@ The `<container>` and `<component>` elements have no mandatory attributes. The f
 - `displayArea`: the placeholder which defines the area for rendering the component in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-
 If the following elements are used inside `<container>` or `<component>`, they should be specified strictly in the following order:
 
 1.  `<argument>`
