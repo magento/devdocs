@@ -651,7 +651,7 @@ Delete the entity that was previously created using [`createData`](#createdata) 
 Delete an entity using [REST API]({{ page.baseurl }}/rest/bk-rest.html) request to the corresponding route:
 
 ```xml
-<grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
+<grabFromCurrentUrl regex="/^.+id\/([\d]+)/" stepKey="grabId"/>
 <deleteData url="V1/categories/{$grabId}" stepKey="deleteCategory"/>
 ```
 
