@@ -89,8 +89,8 @@ Create a script named <code>/etc/init.d/solr</code> with options similar to the 
 All parameters shown in the following table are required.
 
 <table>
-<col width="200">
-<col width="300">
+<col width="200" />
+<col width="300" />
 <tbody>
 <tr>
   <th>Value</th>

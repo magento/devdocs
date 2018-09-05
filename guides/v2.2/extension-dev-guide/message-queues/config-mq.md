@@ -243,6 +243,6 @@ See [Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide
 
 ### Related Topics
 
-*   [Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*   [Manage message queues withMySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
-*   [InstallRabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)
+*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*   [Manage message queues with MySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*   [Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

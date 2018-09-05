@@ -41,4 +41,4 @@ To configure a MySQL database and database user:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
+[Configure PHP]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html)

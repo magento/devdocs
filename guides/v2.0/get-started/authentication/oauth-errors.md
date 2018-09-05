@@ -99,4 +99,4 @@ When the third-party application makes an invalid request to Magento, the follow
 
 ## Related topic
 
-<a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+[OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)

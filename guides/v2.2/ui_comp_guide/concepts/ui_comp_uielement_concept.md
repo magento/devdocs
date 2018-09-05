@@ -1,10 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: concepts
 title: About the uiElement class
-menu_title: About the uiElement class
-menu_node:
-menu_order: 70
 ---
 
 ## What is the `uiElement` class

@@ -11,7 +11,7 @@ level3_subgroup: ce20-relnotes
 We are pleased to present Magento Open Source 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 
 
 
-Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Fixed issues
 
@@ -49,7 +49,7 @@ Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guid
 
 This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the [Magento Security Center](https://magento.com/security){: target="_blank"}. 
 
 <!-- 45887 -->* Issue with persistent cross-site scripting through a user account has been resolved. 
 
@@ -64,7 +64,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} data. 
 
-We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
+We recommend that you review Magento's [Security Best Practices](http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html){: target="_blank"}, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the [Security Alert Registry](https://magento.com/security/sign-up){: target="_blank"}.
 
 ### System requirements
 
@@ -75,19 +75,19 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support 
 
 #### New installations
 
-New users can now complete a full installation of Magento Open Source 2.0.4 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Open Source 2.0.4 from an archive file on the [Download](https://www.magentocommerce.com/download){: target="_blank"} page.
 
 ##### <b>Download a new installation</b>#####
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
+1. Go to the [Magento Community Edition Download](https://www.magentocommerce.com/download){: target="_blank"} page.
 
 2. Under Full Release, select a format for the download archive file. Then, click **Download**.
 
-3.	Follow the Magento <a href="{{ site.baseurl }}/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
+3.	Follow the Magento [installation instructions]({{ site.baseurl }}/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce){: target="_blank"}.
 
 ##### <b>Install a new installation with Composer</b>#####
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Open Source Download</a> page.
+1. Go to the [Magento Open Source Download](https://www.magentocommerce.com/download){: target="_blank"} page.
 
 2.	Under **Download with Composer**, click **Download**.
 
@@ -96,7 +96,7 @@ New users can now complete a full installation of Magento Open Source 2.0.4 from
 
 #### **Upgrade existing installations**
 
-If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.baseurl }}/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the [Web Setup Wizard](http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html){: target="_blank"} or command line. For detailed instructions, see the [technical bulletin]({{ site.baseurl }}/guides/v2.0/release-notes/tech_bull_201-upgrade.html){: target="_blank"}.
 
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -107,13 +107,13 @@ If you installed Magento Open Source 2.0.0 from an archive, you must perform som
 
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
-For more information, see <a href="{{ site.baseurl }}/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+For more information, see [Upgrade the Magento installation and components]({{ site.baseurl }}/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html){: target="_blank"}.
 
 
 ##### <b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the Open Source codebase can <a href="{{ site.baseurl }}/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
+Developers who contribute to the Open Source codebase can [upgrade manually]({{ site.baseurl }}/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html){: target="_blank"} from the Magento Open Source GitHub repository.
 
-1.	Go to the <a href="{{ site.baseurl }}/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the [Contributing Developers]({{ site.baseurl }}/guides/v2.0/install-gde/install/cli/dev_options.html){: target="_blank"} page.
 
 2.	Follow the instructions to pull the updates from the repository and update {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 

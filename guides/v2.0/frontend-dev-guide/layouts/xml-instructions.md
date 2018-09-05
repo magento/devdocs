@@ -458,7 +458,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
       </tr>
       <tr class="even">
          <td>translate</td>
-         <td></td>
+         <td />
          <td>true|false</td>
          <td>no</td>
       </tr>

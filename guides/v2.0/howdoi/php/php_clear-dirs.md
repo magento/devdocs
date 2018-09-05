@@ -21,8 +21,8 @@ This topic provides guidelines on what directories to clear and when to clear th
 When you're developing Magento components (modules, themes, and language packages), the following directories contain temporary or generated files you can clear periodically:
 
 <table>
-	<col width="25%">
-	<col width="75%">
+	<col width="25%" />
+	<col width="75%" />
 	<tbody>
 		<tr>
 			<th>Directory</th>

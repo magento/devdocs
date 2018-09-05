@@ -101,4 +101,4 @@ php bin/magento indexer:reindex && php bin/magento cache:flush
 
 ### Verify this step
 
-In Admin, click **Stores** > **Manage Stocks**.  Then click **Edit** to the right of North America Stock. The **Assign Sources** section contains the linked source. Repeat this step for Europe Stock.
+In Admin, click **Stores** > **Inventory** > **Stocks**.  Then click **Edit** to the right of North America Stock. The **Assign Sources** section contains the linked source. Repeat this step for Europe Stock.

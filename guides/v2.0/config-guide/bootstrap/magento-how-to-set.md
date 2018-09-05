@@ -19,8 +19,8 @@ This topic discusses how to set the values of Magento application bootstrap para
 The following table discusses the bootstrap parameters you can set:
 
 <table>
-	<col width="40%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Bootstrap parameter</th>

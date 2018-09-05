@@ -52,9 +52,9 @@ Command options:
 The following table explains this command's parameters and values.
 
 <table>
-	<col width="15%">
-  	<col width="65%">
-  	<col width="25%">
+	<col width="15%" />
+  	<col width="65%" />
+  	<col width="25%" />
 	<tbody>
 		<tr>
 			<th>Option</th>

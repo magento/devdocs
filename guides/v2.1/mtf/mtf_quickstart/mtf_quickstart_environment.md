@@ -49,7 +49,7 @@ Enter in terminal:
 
 ## Next Steps {#mtf_install_pre}
 
-[\<\< Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [Test run\>\>]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
+[&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [ Test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
 
 
 <!-- LINK DEFINITIONS -->
