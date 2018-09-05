@@ -18,7 +18,7 @@ We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release ca
 
 We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
 
-* Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{ page.baseurl }}/contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see [Code contributions]({{ page.baseurl }}/contributor-guide/contributing.html){: target="_blank"}. 
 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
@@ -26,7 +26,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 This Release Candidate is available from `repo.magento.com` if you have a Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Highlights
 
@@ -53,7 +53,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 53530-->* {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page performance has significantly improved when categories contain more than 30000 items. 
 
-<!--- 53223-->* Setting the Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
+<!--- 53223-->* Setting the Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files option to Yes no longer reduces product performance. [(GITHUB-4710)](https://github.com/magento/magento2/issues/4710){: target="_blank"}
 
 #### Staging
 
@@ -73,19 +73,19 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 #### Cache
 
-<!--- 52923-->* Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+<!--- 52923-->* Category menus now display as expected for installations using Varnish. [(GITHUB-4540)](https://github.com/magento/magento2/issues/4540){: target="_blank"}
 
 <!--- 54228-->* Varnish {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is no longer disabled due to {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} requests. 
 
-<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
+<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  [(GITHUB-4707)](https://github.com/magento/magento2/issues/4707){: target="_blank"}
 
 <!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
 
 #### Messages and documentation
 
-<!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
+<!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. [(GITHUB-2958)](https://github.com/magento/magento2/issues/2958){: target="_blank"}
 
-<!--- 53008-->* The Swagger-generated docs for the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
+<!--- 53008-->* The Swagger-generated docs for the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now display the property identifiers formatted as camelCaseFormat. [(GITHUB-4925)](https://github.com/magento/magento2/issues/4925){: target="_blank"}
 
 <!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
 
@@ -101,7 +101,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 51753-->* You can now re-install Magento and use a different Admin email address than you had previously used.
 
-<!--- 52615-->* Using the Web Setup wizard to disable a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a>
+<!--- 52615-->* Using the Web Setup wizard to disable a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} no longer results in a backup error. [(GITHUB-3562)](https://github.com/magento/magento2/issues/3562){: target="_blank"}
 
 <!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
 
@@ -115,18 +115,18 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 54262-->* You can now remove products from the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} as expected. Previously, if the number of products being removed exceeded half the quantity of products in stock, Magento would throw an error. 
 
-<!--- 54191-->* You can now successfully save new {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a>
+<!--- 54191-->* You can now successfully save new {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. [(GITHUB-4146)](https://github.com/magento/magento2/issues/4146){: target="_blank"}
 
 
 <!--- 54186-->* {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. 
  
-<!--- 54242-->*  Grid view pagination (as configured from Stores > Configuration > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} > Catalog >Storefront)  now works as expected. <a href="https://github.com/magento/magento2/issues/3861" target="_blank">(GITHUB-3861)</a>
+<!--- 54242-->*  Grid view pagination (as configured from Stores > Configuration > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} > Catalog >Storefront)  now works as expected. [(GITHUB-3861)](https://github.com/magento/magento2/issues/3861){: target="_blank"}
 
 <!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
 
 <!--- 54182-->*  You can successfully complete an order  for a quantity of product that exceeds half of the product stock. 
 
-<!--- 54222-->*  You can now generate a new {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a>
+<!--- 54222-->*  You can now generate a new {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} without changing the names of already existing products.  [(GITHUB-4951)](https://github.com/magento/magento2/issues/4951){: target="_blank"}
 
 
 <!--- 54257-->*  The Stock Status attribute now works as expected during creation of configurable products. 
@@ -134,11 +134,11 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54231-->* You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. 
 
 
-<!--- 54051-->* Problems related to login when inline translation is enabled have been resolved.  <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
+<!--- 54051-->* Problems related to login when inline translation is enabled have been resolved.  [(GITHUB-4925)](https://github.com/magento/magento2/issues/4925){: target="_blank"}
 
 <!--- 54172-->* Magento now generates URL rewrites for a new {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} as expected during a mass update to a new {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}. 
 
-<!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected an attribute. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a>
+<!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected an attribute. [(GITHUB-4899)](https://github.com/magento/magento2/issues/4899){: target="_blank"}
 
 
 <!--- 53034-->*  You can now drag values as expected when working in the Customizable Options window.
@@ -211,4 +211,4 @@ To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magen
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.

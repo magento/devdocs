@@ -4,14 +4,14 @@ pages:
       url: /migration/bk-migration-guide.html
       children:
 
+        - label: How migration works
+          url: /migration/migration-overview-how.html
+
         - label: Best practices and benchmarking
           url: /migration/migration-overview-practices.html
 
         - label: Versions supported
           url: /migration/migration-overview-supported.html
-
-        - label: How migration works
-          url: /migration/migration-overview-how.html
 
     - label: Creating a migration plan
       url: /migration/migration-plan.html

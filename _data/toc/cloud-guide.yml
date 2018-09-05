@@ -166,9 +166,6 @@ pages:
         - label: Custom blacklist VCL
           url: /cloud/configure/fastly-vcl-blacklist.html
 
-        - label: Custom extend Admin timeout VCL
-          url: /cloud/configure/fastly-vcl-extend-timeout.html
-
         - label: Custom redirect to WordPress VCL
           url: /cloud/configure/fastly-vcl-wordpress.html
 

@@ -92,7 +92,7 @@ Following are some examples of various types and what they would look like in th
 </p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
-      <th>XML&nbsp;element</th>
+      <th>XML element</th>
       <th>Description</th>
       <th>Attributes</th>
    </tr>

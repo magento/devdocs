@@ -84,4 +84,4 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
 ## Next migration step
 
-[Migratechanges]({{ page.baseurl }}/migration/migration-migrate-delta.html)
+[Migrate changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)

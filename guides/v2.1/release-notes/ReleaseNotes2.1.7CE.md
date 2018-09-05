@@ -25,7 +25,7 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 </div>
 
 
-Looking for the [Magento Commerce (Cloud) ReleaseNotes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html)?
+Looking for the [Magento Commerce (Cloud) Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){: target="_blank"}?
 
 ## Highlights
 

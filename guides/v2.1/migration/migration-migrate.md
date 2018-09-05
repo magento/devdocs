@@ -46,7 +46,7 @@ bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
 
 where:
 
-1. `<mode>` may be: [\`settings\`]({{ page.baseurl }}/migration/migration-migrate-settings.html),[\`data\`]({{ page.baseurl }}/migration/migration-migrate-data.html),or[\`delta\`]({{ page.baseurl }}/migration/migration-migrate-delta.html)
+1. `<mode>` may be: [`settings`]({{ page.baseurl }}/migration/migration-migrate-settings.html), [`data`]({{ page.baseurl }}/migration/migration-migrate-data.html), or [`delta`]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 2. `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 

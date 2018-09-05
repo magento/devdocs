@@ -48,4 +48,4 @@ You must run `composer install` from *both* the `<your Magento install dir>` and
 
 ### Suggestion
 
-[Run composerinstall]({{ page.baseurl }}/install-gde/install/prepare-install.html) from both of the preceding directories and try the installation again.
+[Run composer install]({{ page.baseurl }}/install-gde/install/prepare-install.html) from both of the preceding directories and try the installation again.

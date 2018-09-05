@@ -1,9 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: concepts
 title: About the uiCollection class
-menu_title: About the uiCollection class
-menu_order: 80
 ---
 
 ## What is `uiCollection`
