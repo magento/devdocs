@@ -92,16 +92,19 @@ The following attributes are not used in responses:
 * `news_from_date` - This attribute is transformed to `news_from_date` in a response.
 * `news_to_date` - This attribute is transformed to `news_to_date` in a response.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-GraphQL automatically filters out a product attribute if ALL of the following fields are set to **No** on the attribute's Storefront Properties page in Admin:
+{%
+include note.html
+type="info"
+content="GraphQL automatically filters out a product attribute if ALL of the following fields are set to **No** on the attribute's Storefront Properties page in Admin:
 
 * Comparable on Storefront
 * Use in Layered Navigation
 * Use in Search Results Layered Navigation
 * Visible on Catalog Pages on Storefront
 * Used in Product Listing
-* Used for Sorting in Product Listing
-</div>
+* Used for Sorting in Product Listing"
+
+%}
 
 ## Response {#Response}
 
