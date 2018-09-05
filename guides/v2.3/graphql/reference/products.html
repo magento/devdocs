@@ -1740,7 +1740,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span></code></pre></div></div>
 <p>Each query attribute is defined below:</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -1830,13 +1830,26 @@ updated_at
 weight
 </code></pre></div></div>
 
+<p>The following attributes are not used in responses:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">or</code> - The keyword required to perform a logical OR comparison.</li>
+  <li><code class="highlighter-rouge">news_from_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_from_date</code> in a response.</li>
+  <li><code class="highlighter-rouge">news_to_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_to_date</code> in a response.</li>
+</ul>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The following attributes are not used in responses:</p>
+  <p>GraphQL automatically filters out a product attribute if ALL of the following fields are set to <strong>No</strong> on the attribute’s Storefront Properties page in Admin:</p>
+
   <ul>
-    <li><code class="highlighter-rouge">or</code> - The keyword required to perform a logical OR comparison.</li>
-    <li><code class="highlighter-rouge">news_from_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_from_date</code> in a response.</li>
-    <li><code class="highlighter-rouge">news_to_date</code> - This attribute is transformed to <code class="highlighter-rouge">news_to_date</code> in a response.
-*</li>
+    <li>Comparable on Storefront</li>
+    <li>Use in Layered Navigation</li>
+    <li>Use in Search Results Layered Navigation</li>
+    <li>Visible on Catalog Pages on Storefront</li>
+    <li>Used in Product Listing</li>
+    <li>Used for Sorting in Product Listing</li>
   </ul>
 </div>
 
@@ -1852,7 +1865,7 @@ weight
 
 <p>Each attribute is described below:</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -1916,7 +1929,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The following table defines the <code class="highlighter-rouge">ProductInterface</code> attributes and objects.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2152,7 +2165,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">ProductPrices</code> object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2183,7 +2196,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">Price</code> object defines the price of a product as well as any tax-related adjustments.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2209,7 +2222,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>A <code class="highlighter-rouge">Money</code> object defines a monetary value, including a numeric value and a currency code.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2235,7 +2248,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">PricedAdjustment</code> object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2266,7 +2279,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">ProductLinks</code> contains information about linked products, including the link type and product type of each item.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Attribute</th>
@@ -2307,7 +2320,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">MediaGalleryEntry</code> defines characteristics about images and videos associated with a specific product.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2368,7 +2381,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">ProductMediaGalleryEntriesContent</code> contains an image in base64 format and basic information about the image.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2399,7 +2412,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">ProductMediaGalleryEntriesVideoContent</code> contains a link to a video file and basic information about the video.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2445,7 +2458,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">ProductTierPrices</code> object defines a tier price, which is a quantity discount offered to a specific customer group.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2486,7 +2499,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">PhysicalProductInterface</code>defines the weight of all tangible products.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2507,7 +2520,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">LayerFilter</code> object can be returned in a response to help create layered navigation on your app.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2543,7 +2556,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p><code class="highlighter-rouge">LayerFilterItemInterface </code> contains an array of items that match the terms defined in the filter.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2574,7 +2587,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <p>The <code class="highlighter-rouge">SortFields</code> object contains the default value for sort fields as well as all possible sort fields.</p>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
@@ -2598,7 +2611,7 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
 
 <h3 id="sortfield-object">SortField object</h3>
 
-<table>
+<table style="table-layout:auto;">
   <thead>
     <tr>
       <th>Field</th>
