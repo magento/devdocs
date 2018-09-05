@@ -761,17 +761,21 @@ class SampleEventObserverThatModifiesInputs
 
 15.9. Local File Inclusion (LFI) protection.
 
-15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
+15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.
 
-15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
+15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.
 
 15.10. Remote Code Execution (RCE) protection.
 
-15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()
+15.10.1. `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()` SHOULD NOT be used.
 
-15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
+15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
 
-15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
+15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
+
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by entire application in a centralize manner.
+
+15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`) except files that are intended to be publicly accessible.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
