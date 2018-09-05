@@ -1877,6 +1877,20 @@ The following table highlights contributions made by Partners. This table lists 
     <th>Related GitHub issue</th>
   </tr>
 
+
+<tr>
+    <td>Aligent Consulting</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Ampersand</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
 <tr>
     <td>Atwix</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16468">16468</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16680">16680</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17063">17063</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17137">17137</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16401">16401</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/16372">16372</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16271">16271</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16086">16086</a></td>
@@ -1886,6 +1900,12 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Basecom</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16890">16890</a></td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Classy Llama</td>
+    <td></td>
     <td>N/A</td>
   </tr>
 
@@ -1901,11 +1921,54 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a href="https://github.com/magento/magento2/issues/14351" target="_blank">14351</a></td>
   </tr>
 
+<tr>
+    <td>Corra</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
+<tr>
+    <td>DEG</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Experius</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+<tr>
+    <td>Guapa</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
 
 <tr>
     <td>H&O</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16553">16553</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13569">13569</a></td>
     <td><a href="https://github.com/magento/magento2/issues/5607" target="_blank">5607</a></td>
+  </tr>
+
+<tr>
+    <td>Imagination Media</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+  <tr>
+    <td>Interactiv4</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/17098">17098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17099">17099</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16946">16946</a> </td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Inviga</td>
+    <td></td>
+    <td>N/A</td>
   </tr>
 
   <tr>
@@ -1914,11 +1977,12 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a href="https://github.com/magento/magento2/issues/5316" target="_blank">5316</a></td>
   </tr>
 
-  <tr>
-    <td>Interactiv4</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/17098">17098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17099">17099</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16946">16946</a> </td>
+<tr>
+    <td>Krish Technologies</td>
+    <td></td>
     <td>N/A</td>
   </tr>
+
 
 <tr>
     <td>MageSpecialist</td>
@@ -1932,11 +1996,61 @@ The following table highlights contributions made by Partners. This table lists 
     <td>N/A</td>
   </tr>
 
+<tr>
+    <td>Netz98</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+<tr>
+    <td>Perficient</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Phoenix Media GmbH</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+
+<tr>
+    <td>Rocket Web</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+
+<tr>
+    <td>Something Digital</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Space48</td>
+    <td></td>
+    <td></td>
+  </tr>
+
+<tr>
+    <td>Two Jay</td>
+    <td></td>
+    <td>N/A</td>
+  </tr>
 
   <tr>
     <td>Wagento</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16903">16903</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17019">17019</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16732">16732</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16959">16959</a></td>
     <td><a href="https://github.com/magento/magento2/issues/15848" target="_blank">15848</a>, <a href="https://github.com/magento/magento2/issues/14476" target="_blank">14476</a></td>
+  </tr>
+
+
+<tr>
+    <td>WebJump</td>
+    <td></td>
+    <td>N/A</td>
   </tr>
 
 
