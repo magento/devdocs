@@ -1897,13 +1897,9 @@ php generate.php
 php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
-</div>
+<p class="bs-callout bs-callout-info">Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code class="highlighter-rouge">Widget.xml</code> fixture, you cannot create new one with the same name.</p>
 
-<div class="bs-callout bs-callout-warning">
-<p>To work with generateFixtureXml tool, <a href="/guides/v2.0/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
-</div>
+<p class="bs-callout bs-callout-warning">To work with generateFixtureXml tool, <a href="/guides/v2.0/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
 
 <p>In the following table see <code class="highlighter-rouge">generateFixtureXml</code> arguments.</p>
 
@@ -2317,10 +2313,10 @@ php generate.php
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
-<p>You should mention repository in data source class to use it for fixture field.<br />
-<br />
-Example from <code>LayoutUpdates.php</code><br />
-<code>$this-&gt;data = $repositoryFactory-&gt;get($this-&gt;params['repository'])-&gt;get($data['dataset']);</code></p>
+  <p>You should mention repository in data source class to use it for fixture field.</p>
+
+  <p>Example from <code class="highlighter-rouge">LayoutUpdates.php</code><br />
+ <code class="highlighter-rouge">$this-&gt;data = $repositoryFactory-&gt;get($this-&gt;params['repository'])-&gt;get($data['dataset']);</code></p>
 </div>
 
 <h2 id="mtf_fixture_merge">Merge fixtures</h2>

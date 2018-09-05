@@ -3043,8 +3043,8 @@ In a future release, Solr compatibility will be removed.</p>
     <p><a href="http://wiki.apache.org/solr" target="_blank">Customize Solr</a></p>
 
     <div class="bs-callout bs-callout-warning">
-    <p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
-</div>
+      <p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+    </div>
   </li>
   <li>
     <p>If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other</p>
@@ -3064,9 +3064,7 @@ In a future release, Solr compatibility will be removed.</p>
 
 <p>In a production environment, you should start and stop Solr using a script.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
-</div>
+<p class="bs-callout bs-callout-info">You must perform all tasks discussed in this section as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <p>Create a script named <code>/etc/init.d/solr</code> with options similar to the following:</p>
 

@@ -2649,8 +2649,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
-    <p>Varnish is designed to accelerate the HTTP protocol.</p>
+  <p>Database caching—like file-based caching— works well in a development environment but we <em>strongly recommend</em> you use <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
+
+  <p>Varnish is designed to accelerate the HTTP protocol.</p>
 </div>
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
@@ -2739,10 +2740,7 @@ cp di.xml di.xml.bak
 <p>This section discusses how to set up database caching with a custom   <span term-uuid="ca5ad9ac-9d39-45b5-80b1-e90d192f20d0" class="glossary-term" data-toggle="popover">cache frontend</span>
 .</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
 
 <p>To enable database caching using a custom cache frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
 
@@ -2811,10 +2809,10 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
-  <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
-</div>
+      <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
+
+      <p>If you use the <code class="highlighter-rouge">default</code> cache frontend, you don’t have this issue.</p>
+    </div>
   </li>
   <li>Verify both directories are empty; if not, edit <code class="highlighter-rouge">di.xml</code> again and correct any issues.</li>
   <li>

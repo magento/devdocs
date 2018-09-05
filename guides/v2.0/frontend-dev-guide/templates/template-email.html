@@ -2453,10 +2453,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code class="highlighter-rouge">{{var store_hours}}</code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong> section.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <b>Custom Variables</b>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <strong>Custom Variables</strong>.</p>
 
 <p>To add a variable to your template content:</p>
 
@@ -2470,10 +2467,7 @@ Make note of this path because you will need it later when you configure this ne
   <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code class="highlighter-rouge">&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p>
 
 <h2 id="email-styles">Styles for email templates</h2>
 
@@ -2762,11 +2756,7 @@ Make note of this path because you will need it later when you configure this ne
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>
-Exception: argument value can contain spaces if it is enclosed in brackets.
-</p>
-</div>
+<p class="bs-callout bs-callout-info">Exception: argument value can contain spaces if it is enclosed in brackets.</p>
 
 <h2 id="supported-clients">Supported email clients and devices</h2>
 

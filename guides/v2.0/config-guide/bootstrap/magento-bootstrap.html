@@ -3055,10 +3055,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Sends the response provided by the application object.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the <code>\Magento\Framework\App\Bootstrap</code> class. You can modify it using an entry point script when creating the bootstrap object.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the <code class="highlighter-rouge">\Magento\Framework\App\Bootstrap</code> class. You can modify it using an entry point script when creating the bootstrap object.</p>
 
 <p>Sample entry point script that modifies the bootstrap object:</p>
 
@@ -3122,10 +3119,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/StaticResource.php" target="_blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The entry point for static view files is not used in [production mode](/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The entry point for static view files is not used in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a> to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</p>
 
 <p>In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate <code class="highlighter-rouge">.htaccess</code>.
 When the request is redirected to the entry point, the Magento application parses the requested   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>

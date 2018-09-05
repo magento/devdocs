@@ -3050,9 +3050,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
+  <ul>
+    <li>Not all bootstrap parameters are documented at this time.</li>
+    <li>You now set the Magento mode (developer, default, production) using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code class="highlighter-rouge">magento deploy:mode:set {mode}</code></a> command.</li>
+  </ul>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -3075,11 +3076,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export MAGE_PROFILER=firebug
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">If a <code class="highlighter-rouge">PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ bytecode caching, which caches bytecodes and PHP classpaths.</p>
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
 

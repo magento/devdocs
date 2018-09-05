@@ -2937,11 +2937,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Each Magento 2   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  has its own set of configuration files, gathered into the module’s <code class="highlighter-rouge">etc</code> directory.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-  	<p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p>
-  </span>
-</div>
+<p class="bs-callout bs-callout-info">Unlike Magento 1, there is no monolithic configuration file in Magento 2.</p>
 
 <h3 id="root-directory-location">Root directory location</h3>
 
@@ -2987,11 +2983,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">webapi.xml</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-  		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
-  </span>
- </div>
+<p class="bs-callout bs-callout-info">Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
 
 <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code class="highlighter-rouge">etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code class="highlighter-rouge">config.xml</code> file to <code class="highlighter-rouge">etc/frontend</code>, the settings you make in that file overrides the settings in <code class="highlighter-rouge">etc/config.xml</code> for   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  functionality <em>only</em>.</p>

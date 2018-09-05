@@ -2390,9 +2390,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
-</div>
+<p class="bs-callout bs-callout-info">A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -2577,14 +2575,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 <p>In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>
-
-During theme development, when you change any files stored here, you need to clear <code>pub/static</code> (preserving the `.htaccess` file in place) and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
-
-</p></span>
-</div>
+<p class="bs-callout bs-callout-info">During theme development, when you change any files stored here, you need to clear <code class="highlighter-rouge">pub/static</code> (preserving the <code class="highlighter-rouge">.htaccess</code> file in place) and <code class="highlighter-rouge">var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.</p>
 
 <h2 id="fedg_theme_how-to_structure">Your theme directory structure now</h2>
 

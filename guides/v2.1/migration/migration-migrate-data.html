@@ -1606,9 +1606,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
   <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
-  <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+
+  <p>To force the Data Migration Tool to run from the beginning, use the <code class="highlighter-rouge">--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p>
 </div>
 
 <h2 id="migrate-command-data">Possible consistency errors</h2>
@@ -1646,9 +1646,8 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
 <span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
 
 
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.
 
 ### Verify fixes
 

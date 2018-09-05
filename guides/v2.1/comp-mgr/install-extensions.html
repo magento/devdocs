@@ -2201,10 +2201,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Language packages (localize the storefront and Admin)</li>
 </ul>
 
-<div class="bs-callout bs-callout-tip">
-  <p>This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install <em>any</em> extension; all you need is the extension’s   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+<p class="bs-callout bs-callout-tip">This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install <em>any</em> extension; all you need is the extension’s   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  name and version. To find it, open the extension’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
-</div>
 
 <p>To install an extension, you must:</p>
 
@@ -2222,7 +2220,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To get the extension’s Composer name and version from the Magento Marketplace:</p>
 
-<ol>
+<ol class="bs-callout bs-callout-tip">
   <li>
     <p>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the username and password you used to purchase the extension.</p>
   </li>
@@ -2242,9 +2240,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p><img src="/common/images/marketplace-extension-technical-details.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
   </li>
 </ol>
-<div class="bs-callout bs-callout-tip">
-  <p>Alternatively, you can find the Composer name and version of <em>any</em> extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension’s <code class="highlighter-rouge">composer.json</code> file.</p>
-</div>
+<p>Alternatively, you can find the Composer name and version of <em>any</em> extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension’s <code class="highlighter-rouge">composer.json</code> file.</p>
 
 <h2 id="update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</h2>
 
@@ -2290,9 +2286,7 @@ Generating autoload files
 J2t_Payplug
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
-</div>
+<p class="bs-callout bs-callout-info">The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
 
 <h2 id="enable-the-extension">Enable the extension</h2>
 
@@ -2350,8 +2344,7 @@ None
 
 <div class="bs-callout bs-callout-tip">
   <p>You may need to clear the cache if you encounter errors when loading the storefront in a browser.</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:flush
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:flush
 </code></pre></div>  </div>
 </div>
 

@@ -2649,9 +2649,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can check your module’s load order from the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/config.php</code> file after you’ve successfully set up Magento. This file is created dynamically at run time during set up.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>If you change the component load order using <code>&lt;sequence&gt;</code>, you must regenerate the component list in <code>config.php</code>; otherwise, the load order does not take effect.</p>
-<p>Currently, the only way to do this is to enable the component using <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code>magento module:enable &lt;module-list&gt;</code></a>, where <code>&lt;module-list&gt;</code> is the component or components to which you added <code>&lt;sequence&gt;</code>.</p></span>
+  <p>If you change the component load order using <code class="highlighter-rouge">&lt;sequence&gt;</code>, you must regenerate the component list in <code class="highlighter-rouge">config.php</code>; otherwise, the load order does not take effect.</p>
+
+  <p>Currently, the only way to do this is to enable the component using <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="highlighter-rouge">magento module:enable &lt;module-list&gt;</code></a>, where <code class="highlighter-rouge">&lt;module-list&gt;</code> is the component or components to which you added <code class="highlighter-rouge">&lt;sequence&gt;</code>.</p>
 </div>
 
 <h3 id="examples">Examples</h3>
@@ -2687,10 +2687,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>If you do specify a component in <code class="highlighter-rouge">&lt;sequence&gt;</code>, make sure that you have also added it to the <code class="highlighter-rouge">require</code> section in that component’s <code class="highlighter-rouge">composer.json</code> file.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Take care when using <code>&lt;sequence&gt;</code> in multiple components because it's possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">Take care when using <code class="highlighter-rouge">&lt;sequence&gt;</code> in multiple components because it’s possible to define circular dependencies. If you do, Magento aborts the installation when it detects the circular dependency.</p>
 
 <h2 id="next">Next</h2>
 

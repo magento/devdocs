@@ -3142,17 +3142,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>Magento provides several commands to help convert your installation and upgrade scripts to declarative schema. These commands also help you test your changes, roll back your changes if anything goes wrong, and help your module maintain backward compatibility.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Once you start with data patches, you cannot continue to use upgrade scripts.</p>
-</div>
+<p class="bs-callout bs-callout-info">Once you start with data patches, you cannot continue to use upgrade scripts.</p>
 
 <h2 id="convert-installupgrade-schema-scripts-to--db_schemaxml-files">Convert install/upgrade schema scripts to  db_schema.xml files</h2>
 
 <p>The <strong>Schema Listener Tool</strong> converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the <code class="highlighter-rouge">setup:install</code> or <code class="highlighter-rouge">setup:upgrade</code> CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of <code class="highlighter-rouge">db_schema.xml</code> files (one per affected module).</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.</p>
-</div>
+<p class="bs-callout bs-callout-info">The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.</p>
 
 <p>To convert your install or upgrade script, run one of the following commands:</p>
 
@@ -3261,9 +3257,7 @@ setup:upgrade <span class="nt">--dry-run</span><span class="o">=</span>1
 
 <p>As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the <code class="highlighter-rouge">db_schema.xml</code> file.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This file is a temporary solution. It will be removed in the future, when upgrade scripts are no longer supported.</p>
-</div>
+<p class="bs-callout bs-callout-info">This file is a temporary solution. It will be removed in the future, when upgrade scripts are no longer supported.</p>
 
 			
 		</div>

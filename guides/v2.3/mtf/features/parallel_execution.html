@@ -1991,17 +1991,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-    <p>The default elements <code>"app_frontend_url"</code> and <code>"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code>"app_instances"</code> element is present.</p>
-</div>
+<p class="bs-callout bs-callout-warning">The default elements <code class="highlighter-rouge">"app_frontend_url"</code> and <code class="highlighter-rouge">"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code class="highlighter-rouge">"app_instances"</code> element is present.</p>
 
 <h3 id="parallel-execution-flow-with-one-magento-instance">Parallel execution flow with one Magento instance</h3>
 
 <p>Parallel execution flow with one Magento instance should be used with a caution. In this mode, test cases are executed simultaneously and can conflict with each other (for example, when different tests set the same parameter in different states).</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.</p>
 
 <p>The following example shows a setup configuration of the flow with one Magento instance.</p>
 

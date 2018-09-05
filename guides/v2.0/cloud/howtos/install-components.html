@@ -3619,9 +3619,7 @@ git push origin &lt;environment ID&gt;
 
 <p>If there are errors, see <a href="/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">module deployment failure</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in Magento Commerce Cloud. This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
-</div>
+<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> to your Git branch for deployment. If the module is not in the file, the module won’t load in Magento Commerce Cloud. This ensures when the <code class="highlighter-rouge">composer install</code> command is used, the module properly loads. This command uses the <code class="highlighter-rouge">composer.lock</code> file.</p>
 
 <h3 id="verify">Step 3: Verify the module</h3>
 

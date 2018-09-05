@@ -1935,17 +1935,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>It means that during test run the FTF would call <code class="highlighter-rouge">http://magento2ce.com/dev/tests/functional/isolation.php</code> (<code class="highlighter-rouge">&lt;baseUrl&gt;</code> is set to <code class="highlighter-rouge">http://magento2ce.com/</code>) according to selected isolation strategy.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Isolation script is run in a web browser and must be accessible by a web server.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Isolation script is run in a web browser and must be accessible by a web server.</p>
 
 <h2 id="step-2">Step 2: Set isolation script</h2>
 
 <p>You can set isolation script globally, in configuration file, or locally, directly in a test case. The following examples show different options.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Isolation management for a certain test or test case has higher priority than global.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Isolation management for a certain test or test case has higher priority than global.</p>
 
 <h3 id="step-2a">Step 2(a): Globally set isolation script to be run after each test case</h3>
 

@@ -2733,9 +2733,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Paypal\Block\Payflow\Link\Iframe"</span> <span class="na">template=</span><span class="s">"payflowlink/redirect.phtml"</span> <span class="na">cacheable=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento disables page caching if at least one non-cacheable block is present in the layout.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento disables page caching if at least one non-cacheable block is present in the layout.</p>
 
 <p>You can also disable caching with HTTP headers. Use the controller to return an object that contains methods for manipulating the cache:</p>
 
@@ -2797,12 +2795,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
-    <li>
-      <p>You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.</p>
-    </li>
-    <li>
-      <p>Only GET and HEAD methods are cacheable.</p>
-    </li>
+    <li>You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.</li>
+    <li>Only GET and HEAD methods are cacheable.</li>
   </ul>
 </div>
 
@@ -2832,7 +2826,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="bs-callout bs-callout-tip">
   <p>Use the <code class="highlighter-rouge">X-Magento-Vary</code> cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68" target="_blank">our sample Varnish 4 configuration</a> uses the following:</p>
-
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sub vcl_hash {
 if (req.http.cookie ~ "X-Magento-Vary=") {
 hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
@@ -2919,9 +2912,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 
 <p>Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don’t use invalidation for actions related to store setup.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>
-</div>
+<p class="bs-callout bs-callout-warning">Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>
 
 <h2 id="cacheable-page-checklist">Cacheable page checklist</h2>
 

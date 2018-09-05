@@ -3028,9 +3028,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento 2 supports versions 3.0.5 or later or any Varnish 4.x version.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish (or <a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="/guides/v2.0/config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
-</div>
+<p class="bs-callout bs-callout-warning">We <em>strongly recommend</em> you use Varnish (or <a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="/guides/v2.0/config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
 
 <p>For more information about Varnish, see:</p>
 
@@ -3069,13 +3067,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Test everything again.</p>
 
     <p>If there is nothing in your <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <ul>
+        <li>Except where noted, you must enter all commands discussed in this topic as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+        <li>This topic is written for Varnish on CentOS and Apache 2.2. If you’re setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li>
+      </ul>
+    </div>
   </li>
 </ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
-		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
-</div>
 
 <h2 id="config-varnish-issues">Known issues</h2>
 

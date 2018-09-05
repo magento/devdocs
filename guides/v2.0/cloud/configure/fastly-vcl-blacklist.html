@@ -3467,9 +3467,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Account access and URL to the Magento Admin for the Staging or Production environment</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h2 id="edge-acl">Create Edge ACL for allowing client IPs</h2>
 
@@ -3511,9 +3509,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">content</code>: The snippet of VCL code to run, which verifies the client IP. If the IP is in the Edge ACL, it is blocked from access with a 403 Forbidden error for the entire website. All other client IPs are allowed access.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
-</div>
+<p class="bs-callout bs-callout-info">The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
 
 <h2 id="complete">Finish adding the VCL</h2>
 

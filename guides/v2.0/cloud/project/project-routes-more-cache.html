@@ -3510,9 +3510,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">http://{default}/path/etc/</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Regular expressions in routes are <em>not</em> supported.</p>
-</div>
+<p class="bs-callout bs-callout-info">Regular expressions in routes are <em>not</em> supported.</p>
 
 <h2 id="cloud-cache-ttl">Cache duration</h2>
 
@@ -3571,10 +3569,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>A special case exists if the <code class="highlighter-rouge">cookies</code> key has the <code class="highlighter-rouge">["*"]</code> value. This value means that any request with a cookie will bypass the cache. This is the default value.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot  use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (<code>*</code>). <code>SESS*</code> or <code>~SESS</code> are currently  <em>not</em> valid values.
-</p>
-</div>
+<p class="bs-callout bs-callout-info">You cannot use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (<code class="highlighter-rouge">*</code>). <code class="highlighter-rouge">SESS*</code> or <code class="highlighter-rouge">~SESS</code> are currently <em>not</em> valid values.</p>
 
 <h3 id="cloud-cache-attrib-ttl"><code class="highlighter-rouge">default_ttl</code></h3>
 <p>If the response does not have a <code class="highlighter-rouge">Cache-Control</code> header, the <code class="highlighter-rouge">default_ttl</code> key is used to define the cache duration, in seconds. The default value is <code class="highlighter-rouge">0</code>, which means nothing is cached.</p>

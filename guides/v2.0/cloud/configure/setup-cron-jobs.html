@@ -3493,9 +3493,7 @@ crons:
         cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We use only this one cron for cloud due to the read-only nature of the environments. This is different from Magento Commerce which has three default cron jobs.</p>
-</div>
+<p class="bs-callout bs-callout-info">We use only this one cron for cloud due to the read-only nature of the environments. This is different from Magento Commerce which has three default cron jobs.</p>
 
 <p>Magento uses a five value specification for a cron job. The numbers per each <code class="highlighter-rouge">* * * * *</code> is as follows:</p>
 

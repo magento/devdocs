@@ -2670,9 +2670,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
 .</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do <em>not</em> use the <code class="highlighter-rouge">$_isScopePrivate</code> property in your blocks. This property is obsolete and won’t work properly.</p>
-</div>
+<p class="bs-callout bs-callout-info">Do <em>not</em> use the <code class="highlighter-rouge">$_isScopePrivate</code> property in your blocks. This property is obsolete and won’t work properly.</p>
 
 <p>Replace private data in blocks with placeholders (using <a href="http://knockoutjs.com/documentation/introduction.html" target="_blank">Knockout</a> syntax). The init scope on the root element is <code class="highlighter-rouge">data-bind="scope: 'compareProducts'"</code>, where you define the scope name (<code class="highlighter-rouge">compareProducts</code> in this example) in your   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
 .</p>
@@ -2728,9 +2726,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>
-</div>
+<p class="bs-callout bs-callout-warning">Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don’t expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html">RFC-2616 section 13</a> {:target=”_blank”}</p>
 
 <p>Other examples:</p>
 

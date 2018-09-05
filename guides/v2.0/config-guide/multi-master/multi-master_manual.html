@@ -3044,9 +3044,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
 
 <p>This topic uses the following naming conventions:</p>
 
@@ -3064,10 +3062,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they’re named is up to you. We hope our examples make the instructions easier to follow.</p>
 
 <h2 id="config-ee-multidb-backup">Back up the Magento system</h2>
 
@@ -3157,9 +3152,7 @@ exit
   <li>The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 
 <p>For more information, see:</p>
 
@@ -3337,9 +3330,7 @@ exit
 
 <p>This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 
 <p>Quote database table names start with <code class="highlighter-rouge">quote</code>. The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
 

@@ -1133,9 +1133,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We recommend putting model classes in the <code class="highlighter-rouge">Model</code> directory inside your module’s root directory.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Do not use the inherited <code class="highlighter-rouge">load</code>,<code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">delete</code> methods from <code class="highlighter-rouge">AbstractModel</code> because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Do not use the inherited <code class="highlighter-rouge">load</code>,<code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">delete</code> methods from <code class="highlighter-rouge">AbstractModel</code> because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.</p>
 
 <p>An example of a model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Customer.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Model\Customer</code></a> class.</p>
 

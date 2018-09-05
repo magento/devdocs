@@ -3057,9 +3057,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>where <code class="highlighter-rouge">&lt;consumer_name&gt;</code> is the consumer to start and <code class="highlighter-rouge">--max-messages=&lt;value&gt;</code> specifies the maximum number of messages to consume per invocation.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don’t specify <code class="highlighter-rouge">--max-messages</code>, the process runs continuously.</p>
-</div>
+<p class="bs-callout bs-callout-info">If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don’t specify <code class="highlighter-rouge">--max-messages</code>, the process runs continuously.</p>
 
 <p>After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the <code class="highlighter-rouge">magento queue:consumers:start</code> command to process large message queues. For example, you can append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start &lt;consumer_name&gt; &amp;</code>).</p>
 

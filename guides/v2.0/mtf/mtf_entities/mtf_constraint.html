@@ -1930,14 +1930,15 @@ Each constraint name must be globally unique in Magento application and must be 
 <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryPage"</span> <span class="na">prev=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
+  <p>    
+Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
 </div>
 
 <p>A test can contain constraints from different modules.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
-  </p>
+  <p>  
+Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.   </p>
 </div>
 
 <p>The following example shows the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>

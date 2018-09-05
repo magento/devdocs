@@ -3075,25 +3075,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In the example, the <code class="highlighter-rouge">afterUpdateWebsites</code> function uses the variable <code class="highlighter-rouge">$websiteIds</code>, so it declares that variable as an argument. It also declares <code class="highlighter-rouge">$productIds</code> because it comes before <code class="highlighter-rouge">$websiteIds</code> in the parameter signature of the observed method. The after method did not list <code class="highlighter-rouge">$type</code> because it did not use it inside the method nor does it come before <code class="highlighter-rouge">$websiteIds</code>.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If an argument is optional in the observed method, then the after method should also declare it as optional.</p>
 
 <h4 id="around-methods">Around methods</h4>
 
 <p>Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.</p>
-    <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>
-    <p>Use after method plugins if you require arguments for replacing or altering function results.</p>
+  <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.
+The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
+Use after method plugins if you require arguments for replacing or altering function results.</p>
 </div>
 
 <p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When your code executes the <code class="highlighter-rouge">callable</code>, Magento calls the next plugin or the observed function.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If the around method does not call the <code class="highlighter-rouge">callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
 
 <p>Below is an example of an around method adding behavior before and after an observed method:</p>
 

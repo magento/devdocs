@@ -4235,10 +4235,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You should uninstall a module only if you’re certain you won’t use it. Instead of uninstalling a module, you can disable it as discussed in <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module&gt;</code>.</p>
-  <p>As an alternative, you can <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
+  <p>This command checks <em>only</em> dependencies declared in <code class="highlighter-rouge">composer.json</code>. If you uninstall a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ that is <em>not</em> defined in <code class="highlighter-rouge">composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module’s code from the Magento file system. You must use file system tools to remove the module’s code (for example, <code class="highlighter-rouge">rm -rf &lt;path to module&gt;</code>.</p>
+
+  <p>As an alternative, you can <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p>
 </div>
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -4347,9 +4347,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Removes code from the codebase using <code class="highlighter-rouge">composer remove</code>.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>Uninstalling a module <em>always</em> runs <code>composer remove</code>. The <code>--remove-data</code> option removes database data and schema defined by the module's <code>Uninstall</code> class.</p></span>
-</div>
+      <p>Uninstalling a module <em>always</em> runs <code class="highlighter-rouge">composer remove</code>. The <code class="highlighter-rouge">--remove-data</code> option removes database data and schema defined by the module’s <code class="highlighter-rouge">Uninstall</code> class.</p>
+    </div>
   </li>
   <li>Cleans the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
 .</li>
@@ -4405,10 +4404,7 @@ Alert: Generated static view files were not cleared. You can clear them using th
 Disabling maintenance mode
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p>
 
 <h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
 
@@ -4419,14 +4415,9 @@ Disabling maintenance mode
 
 <p>where <code class="highlighter-rouge">&lt;filename&gt;</code> is the name of the backup file located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/backups</code>. To display a list of backup files, enter <code class="highlighter-rouge">magento info:backups:list</code></p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under <code>pub/media</code> before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
-</div>
+<p class="bs-callout bs-callout-warning">This command deletes the specified files or the database before restoring them. (For example, the <code class="highlighter-rouge">--media-file</code> option deletes media assets under <code class="highlighter-rouge">pub/media</code> before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>To display a list of available backup files, enter <code>magento info:backups:list</code></p></span>
-</div>
+<p class="bs-callout bs-callout-info">To display a list of available backup files, enter <code class="highlighter-rouge">magento info:backups:list</code></p>
 
 <p>This command performs the following tasks:</p>
 
@@ -4488,10 +4479,7 @@ Disabling maintenance mode
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>To run the <code>magento</code> command again without changing directories, you might need to enter <code>cd `pwd`</code></p></span>
-</div>
+<p class="bs-callout bs-callout-info">To run the <code class="highlighter-rouge">magento</code> command again without changing directories, you might need to enter <code class="highlighter-rouge">cd `pwd`</code></p>
 
 <h4 id="related-topics">Related topics</h4>
 

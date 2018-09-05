@@ -4392,9 +4392,7 @@ magento maintenance:status
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the <code class="highlighter-rouge">ps -ef | grep queue:consumer:start</code> command. Then run the <code class="highlighter-rouge">kill &lt;process_id&gt;</code> command for each consumer. In a multiple node environment, be sure to repeat this task on each node.</p>
-</div>
+<p>After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the <code class="highlighter-rouge">ps -ef | grep queue:consumer:start</code> command. Then run the <code class="highlighter-rouge">kill &lt;process_id&gt;</code> command for each consumer. In a multiple node environment, be sure to repeat this task on each node.</p>
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 

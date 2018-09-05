@@ -3031,9 +3031,7 @@ Backend fetch failed
 
 <p>To resolve this issue, increase the default value of the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code class="highlighter-rouge">http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	If the <code>http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code>http_resp_size</code> parameter.
-</div>
+<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code class="highlighter-rouge">http_resp_size</code> parameter.</p>
 
 <ol>
   <li>

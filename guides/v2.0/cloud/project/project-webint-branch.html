@@ -3470,9 +3470,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Merge (<code class="highlighter-rouge">git push</code>) to the environment’s parent</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
-</div>
+<p class="bs-callout bs-callout-info">You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
 
 <p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
@@ -3507,9 +3505,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-   		<p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
-   		<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; &gt;</code>), ampersand (<code>&amp;</code>), percent (<code>%</code>), and other characters.</p>
- 	</div>
+      <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
+
+      <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+    </div>
   </li>
   <li>Click <strong>Branch</strong>.</li>
   <li>
@@ -3626,9 +3625,7 @@ be used by a human, it’s referred to as a <a href="https://developer.github.co
 machine account as collaborator or add the machine user to a team with
 access to the repositories it needs to manipulate.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
-</div>
+<p class="bs-callout bs-callout-info">We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.</p>
 
 <h3 id="ssh">Find your deploy key</h3>
 
@@ -3662,8 +3659,8 @@ We highly recommend adding and merging this code to your project Git repositorie
     <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
-</div>
+      <p>If you don’t see this option, you’re not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
+    </div>
   </li>
   <li>
     <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>

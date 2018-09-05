@@ -3480,9 +3480,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can manage all of your environments including Production and Staging directly through the <a href="/guides/v2.0/cloud/project/project-webint-basic.html">Project Web Interface</a>, through the store and Admin panel using provided URLs, and using SSH and the <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud command-line</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The following workflow and examples use a Production, Staging, and Integration architecture.</p>
-</div>
+<p class="bs-callout bs-callout-info">The following workflow and examples use a Production, Staging, and Integration architecture.</p>
 
 <h2 id="env-branches">Starter environments and branches</h2>
 
@@ -3570,9 +3568,7 @@ git pull origin &lt;environment ID&gt;
 
 <p>And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do not complete any configurations on your local yet.</p>
-</div>
+<p class="bs-callout bs-callout-info">Do not complete any configurations on your local yet.</p>
 
 <p><img src="/common/images/cloud_workflow-push-code.png" alt="Develop code and push to deploy" /></p>
 
@@ -3672,13 +3668,9 @@ git pull origin &lt;environment ID&gt;
 
 <p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">using support utilities</a> or developing a script to scrub out customer data.</p>
-</div>
+<p class="bs-callout bs-callout-info">Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">using support utilities</a> or developing a script to scrub out customer data.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.</p>
 
 <h2 id="deploy">Deployment workflow</h2>
 

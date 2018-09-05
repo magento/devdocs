@@ -2826,9 +2826,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When the <code class="highlighter-rouge">callable</code> is called, the next plugin or the observed function is called.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If the around method does not call the <code class="highlighter-rouge">callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
 
 <p>Below is an example of an around method adding behavior before and after an observed method:</p>
 

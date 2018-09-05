@@ -1958,17 +1958,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#mtf_update_install">Install a new version of the Functional Testing Framework</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Use this type of update if the version of the Functional Testing Framework in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code> and last version in <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
-</div>
+<p class="bs-callout bs-callout-info">Use this type of update if the version of the Functional Testing Framework in <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/composer.json</code> and last version in <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
 
 <ul>
   <li><a href="#mtf_update_depend">Update components from dependencies in <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/composer.json</code></a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>
-</div>
+<p class="bs-callout bs-callout-info">Use this type of update if you want to update dependent software from <code class="highlighter-rouge">composer.json</code>, or changed <code class="highlighter-rouge">composer.json</code> dependencies.</p>
 
 <h3 id="mtf_update_install">Install a new version of the Functional Testing Framework</h3>
 
@@ -1976,10 +1972,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Step 2.    Remove file <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.lock</code>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><b>Why:</b>   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
- reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
-</div>
+<p class="bs-callout bs-callout-info"><strong>Why:</strong>   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+ reads dependencies from <code class="highlighter-rouge">composer.lock</code> instead of reading <code class="highlighter-rouge">composer.json</code>. File <code class="highlighter-rouge">composer.lock</code> currently is not maintained.</p>
 
 <p>Step 3.    <a href="/guides/v2.3/mtf/mtf_installation.html#mtf_install_perform">Perform and check installation.</a></p>
 

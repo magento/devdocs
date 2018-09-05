@@ -3057,9 +3057,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To set up custom cron jobs and groups, see <a href="/guides/v2.0/config-guide/cron/custom-cron.html">Configure custom cron jobs and cron groups</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
-</div>
+<p class="bs-callout bs-callout-info">You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves. The second cron run must occur on or after the <code class="highlighter-rouge">scheduled_at</code> time for every task.</p>
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 

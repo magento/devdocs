@@ -1410,7 +1410,6 @@ Content-Type: application/pdf
 </span></code></pre></div></div>
 
 <div class="bs-callout bs-callout-info">
-
   <ul>
     <li>Each part has a header and body with <code class="highlighter-rouge">Content-Disposition</code> header always set to <code class="highlighter-rouge">form-data</code>.</li>
     <li>The <code class="highlighter-rouge">name</code> value must be set to <code class="highlighter-rouge">file[]</code> for all parts.</li>
@@ -1464,9 +1463,7 @@ Content-Type: application/pdf
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
-<div class="bs-callout bs-callout-info">
-  <p>The response is the list of files in the same order sent during the upload request.</p>
-</div>
+<p class="bs-callout bs-callout-info">The response is the list of files in the same order sent during the upload request.</p>
 
 <p>Each record in the list has the following fields:</p>
 
@@ -1563,7 +1560,6 @@ Content-Type: application/pdf
 </span></code></pre></div></div>
 
 <div class="bs-callout bs-callout-info">
-
   <ul>
     <li>The API returns a batch response for each item, which includes a <code class="highlighter-rouge">code</code> and <code class="highlighter-rouge">message</code>.</li>
     <li>A 200 OK HTTP response code indicates a successful upload.</li>

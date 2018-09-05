@@ -2407,12 +2407,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#layout_markup_replace_elements">Replace elements</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p class="bs-callout bs-callout-info">To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
-</div>
+ layouts. To customize layout, create extending and overriding layout files in your custom theme.</p>
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
 
@@ -2582,9 +2579,7 @@ A sample follows:</p>
   <li><code class="highlighter-rouge">new_template.phtml</code>: the path to the template relatively to the <code class="highlighter-rouge">templates</code> directory. It might be <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/templates</code> or <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace_Module&gt;/templates</code>.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
-</div>
+<p class="bs-callout bs-callout-info">Template values specified as attributes have higher priority during layout generation, than the ones specified using <code class="highlighter-rouge">&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code class="highlighter-rouge">&lt;argument&gt;</code> for the same block.</p>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -2638,8 +2633,7 @@ A sample follows:</p>
 <p>Example 2: Set a page title using <code class="highlighter-rouge">&lt;action&gt;</code>.</p>
 
 <div class="bs-callout bs-callout-warning" id="info">
-<span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+<p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p>
 </div>
 
 <p>Extending layout:</p>
@@ -2683,10 +2677,7 @@ To do this, add the extending <code class="highlighter-rouge">catalog_product_vi
 
 <p><img src="/common/images/layout_image2.png" alt="" /></p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">To learn how to locate the layout file you need to customize, see <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 

@@ -2121,14 +2121,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
- 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
- 		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li>
- 		<li>If you're upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="/guides/v2.0/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li></ul>
+  <ul>
+    <li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
+    <li>If you configured Magento use use <code class="highlighter-rouge">pub</code> as its root directory, see the next section.</li>
+    <li>If you’re upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="/guides/v2.0/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li>
+  </ul>
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>If you're upgrading to version 2.1, see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
-    	<li>If you're upgrading from Magento Open Source or Magento Commerce 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
+  <ul>
+    <li>If you’re upgrading to version 2.1, see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
+    <li>If you’re upgrading from Magento Open Source or Magento Commerce 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li>
+  </ul>
 </div>
 
 <h2 id="upgrade-cli-pub">Prerequisite: <code class="highlighter-rouge">pub</code> directory root</h2>
@@ -2154,9 +2158,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To prevent access to your store while it’s being upgraded, put your store in maintenance mode.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  	<p>You can optionally create a <a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">You can optionally create a <a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To enable maintenance mode: </b>
@@ -2205,8 +2207,8 @@ composer update
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
-</div>
+      <p>If an error displays about a missing <code class="highlighter-rouge">.gitignore</code> files, see the <a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+    </div>
   </li>
   <li>If prompted, enter your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</li>
   <li>

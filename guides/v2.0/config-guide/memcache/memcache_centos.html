@@ -3049,10 +3049,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p></span>
-</div>
+<p class="bs-callout bs-callout-info">We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p>
 
 <p>To install memcached on CentOS, perform the following tasks as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
@@ -3067,9 +3064,8 @@ yum install -y php-pecl-memcache
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-    <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code>yum search memcache|grep php</code> to find the appropriate package name.</p></span>
-</div>
+      <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code class="highlighter-rouge">yum install -y php56w-pecl-memcache</code>. Use <code class="highlighter-rouge">yum search memcache|grep php</code> to find the appropriate package name.</p>
+    </div>
   </li>
   <li>
     <p>Change the memcached configuration setting for <code class="highlighter-rouge">CACHESIZE</code> and <code class="highlighter-rouge">OPTIONS</code>:</p>

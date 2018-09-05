@@ -1719,9 +1719,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Theme level  (<code class="highlighter-rouge">&lt;theme_dir&gt;/web</code>). Resources added here are available for <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Library level can only contain core Magento resources. Do not put custom JS files in  the <code class="highlighter-rouge">lib/web</code> directory.</p>
-</div>
+<p class="bs-callout bs-callout-info">Library level can only contain core Magento resources. Do not put custom JS files in the <code class="highlighter-rouge">lib/web</code> directory.</p>
 
 <h3 id="specifying-js">Specifying JS</h3>
 
@@ -1858,9 +1856,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <li>Configurations at the module level.</li>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p>Dependencies between the modules or themes are considered as well.</p>
-  </div>
+{: .bs-callout .bs-callout-warning }
+Dependencies between the modules or themes are considered as well.
 
 <li>Configurations at the theme module level for the ancestor themes.</li>
 

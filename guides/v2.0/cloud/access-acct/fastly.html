@@ -3495,9 +3495,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can also locate these credentials in your Staging and Production systems in <code class="highlighter-rouge">/mnt/shared/fastly_tokens.txt</code>. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for <a href="/guides/v2.0/cloud/trouble/trouble.html">Support</a> asking to have the file added. We can help provide this credentials file.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you’ll encounter issues with Fastly.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you’ll encounter issues with Fastly.</p>
 
 <h2 id="cloud-fastly-start">Get started</h2>
 
@@ -3810,9 +3808,7 @@ composer require fastly/magento2
 
 <p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site, you must add a CNAME record for each one.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){: target="_blank"} (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
-</div>
+<p class="bs-callout bs-callout-info">This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
 
 <p>The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.</p>
 

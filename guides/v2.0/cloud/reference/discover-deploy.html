@@ -3467,9 +3467,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><strong>Pro plans</strong>—For the Integration environment, every <em>active</em> branch builds and deploys to a full environment for access and testing. You must merge your code to the <code class="highlighter-rouge">integration</code> branch before you can merge to the Staging environment and then the Production environment. You can only merge to Staging and Production using CLI commands with SSH or using the Project Web Interface. If you do not see the Staging or Production environments in your Project Web Interface, then you need to <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Make sure all code for your site and stores is in the active Magento Commerce Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won’t build with the Magento code.</p>
-</div>
+<p class="bs-callout bs-callout-info">Make sure all code for your site and stores is in the active Magento Commerce Git branch. If you point to or include hooks to code in other branches, especially a private branch, the build and deploy process will have issues. For example, add any new themes into the Git branch of code. If you include it from a private repo, the theme won’t build with the Magento code.</p>
 
 <p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
@@ -3598,9 +3596,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Configures the network so Magento’s services can “see” each other (and only each other)</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site's security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.</p>
-</div>
+<p class="bs-callout bs-callout-info">Do you need to make more code changes, add another extension, and so on? Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site’s security because no process can write to the file system. It also works to ensure your code is identical in Integration, Staging, and Production.</p>
 
 <h3 id="cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</h3>
 
@@ -3626,13 +3622,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
+<p class="bs-callout bs-callout-info">Our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn’t affected.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
-</div>
+<p class="bs-callout bs-callout-info">The deployment phase may seem to get stuck or take a long time. If cron jobs are running, the hooks wait until the cron jobs complete before completion of the deployment.</p>
 
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
 
