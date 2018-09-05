@@ -13,13 +13,13 @@ See one of the following sections:
 
 This software is available from `repo.magento.com`. Before installing the Magento Commerce software using Composer, familiarize yourself with the Composer [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html), then run:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
 
 where `<version>` matches the version you want (for example, `2.0.10`)
 
 For example, to install 2.0.10 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
 
 ### Get Magento Commerce using a compressed archive {#get-zip}
 {:.no_toc}
