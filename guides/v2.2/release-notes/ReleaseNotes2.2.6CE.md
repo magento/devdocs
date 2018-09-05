@@ -1705,20 +1705,7 @@ First PDF download / export after login
 <!-- ENGCOM-1880 -->* We've removed the unused code from `docs.less`. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15871](https://github.com/magento/magento2/pull/15871)*. 
 
 
-
-
-<!-- ENGCOM-1860 -->* Add Ability To Separate Frontend / Adminhtml in New Relic
-
-Adds a new setting which, when enabled, reports frontend and adminhtml as separate apps to New Relic.
-
-
-
-frontend and adminhtml are in addition to the "main" app which includes both (for backwards compatibility). The user needs to set "New Relic Application Name" to use this feature as the area is appended to the appname setting, separated by and underscore.
-
-
-Useful as slow transactions in admin activity can cause false positives New Relic alerts / skew average response time metrics. Using this feature allows monitoring and alerting on only frontend traffic by configuring alerts for just the frontend New Relic app.
-
- *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
+<!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service) *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
 
 
 

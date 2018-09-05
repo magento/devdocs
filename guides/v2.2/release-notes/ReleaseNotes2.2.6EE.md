@@ -26,9 +26,9 @@ In addition to 25 critical security fixes, look for the following highlights in 
 
 This release includes significant performance improvements to the core Magento code:
 
-#### **Substantial improvements to performance** focus on catalog indexing 
+#### **Substantial improvements to performance**  
 
-Performance-tuning enhancements include:   
+Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
 
@@ -70,17 +70,17 @@ Performance-tuning enhancements include:   
 ### **Magento Cloud highlights**
 
 
-* Docker Compose for Cloud — Added a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
+* We've added a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
 
-* [Change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
+* Merchants can now [change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
 
-* Site map and Robots— Created a [workflow](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html) to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure. 
+* A new [workflow](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure. 
 
-* Define multiple locales for each theme using the new [`SCD_MATRIX`](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
+* Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
 
-* Zero-downtime deployment: Added “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes
+* Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes
 
-* Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the `post_deploy` phase begins immediately after the deploy phase ends.
+* We've fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the `post_deploy` phase begins immediately after the deploy phase ends.
 
 
 
@@ -103,7 +103,7 @@ Highlights of community contributions include fixes that improve checkout flow a
 
 ### **Core bundled extension highlights**
 
-
+This release includes many enhancments to our core bundled extensions: 
 
 #### Amazon Pay
 
@@ -158,12 +158,12 @@ Magento has removed the  Magento Social  Facebook integration, and no longer sup
 
 
 
-
-
-
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
+
+
 ## Fixes
+
 
 In addition to security enhancements, this release contains the following functional fixes. 
 
@@ -902,15 +902,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1880 -->* We've removed the unused code from `docs.less`. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15871](https://github.com/magento/magento2/pull/15871)*. 
 
-
-
-
-<!-- ENGCOM-1860 -->* ASK CLOUDVOLK
-
- *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
-
-
-
+<!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service) *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
 
 <!-- ENGCOM-1864 -->*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously mssing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by [Maksim Gopey](https://github.com/Radio) in pull request [15826](https://github.com/magento/magento2/pull/15826)*. 
 
@@ -1343,23 +1335,7 @@ title: Remove direct use of object manager
 
 ### Klarna
 
-<!-- BUNDLE-1489 -->* Steps to reproduce:
-
-Go to storefront
-Place some product to cart
-Click "Proceed to Checkout" button
-Enter valid address on shipment tab & click "Next"
-select Klarna option
-Open Browser console
-
-Actual result:
-
-Lot of js errors in the console (see attachments)
-
-Expected result:
-
-No errors in the console
-
+<!-- BUNDLE-1489 -->* Magento no longer throws multiple JavaScript errors when a customer selects Klarna from the Review & Payments page. 
 
 
 ### Payment methods
@@ -1414,7 +1390,7 @@ Argument 1 passed to Magento\Sales\Model\Order\Payment must be an instance of Ma
 
 *Fix submitted by [Oleh Kravets](https://github.com/xpoback) in pull request [16194](https://github.com/magento/magento2/pull/16194)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
 
-
+s
 Steps to reproduce
 Setup authorizenet
 Setup a plugin that uses declineOrder method of the Directpost model
@@ -1439,7 +1415,7 @@ Order is declined
 
 ### Performance
 
-<!-- MAGETWO-47320 -->* The Catalog Rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full Catalog Rule re-index operation on a medium B2C store took more than 20 minutes. 
+<!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full Catalog Rule re-index operation on a medium B2C store took more than 20 minutes. 
 
 
 <!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality if business function does not require this capability. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function do not require this capability.
@@ -1478,18 +1454,7 @@ Ask cloudvolk for description and link to docs -- add heather's link
 
 ### Quote
 
-<!-- ENGCOM-1414 -->* Magento now displays the correct product price 
-
-Wrong price at backend after update
-
-At a shop with 2 websites (and 2 storeviews) and use different prices (price scope: website), if you create an order at the backend for the second website and update this order, e.g. change the quantity then the default price is calculated and not the price of the special website.
-
-
-
-
-
-*Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [14904](https://github.com/magento/magento2/pull/14904)*. [GitHub-14869](https://github.com/magento/magento2/issues/14869)
-
+<!-- ENGCOM-1414 -->* Magento now displays the correct product price for an order created from the Admin in multisite deployments. Previously, when an order was created from the Admin in a multisite deployment where products were assigned different prices per store view, Magento defaulted to the product price of the primary storeview if the order was edited or updated. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [14904](https://github.com/magento/magento2/pull/14904)*. [GitHub-14869](https://github.com/magento/magento2/issues/14869)
 
 <!-- ENGCOM-1441 -->* Magento now successfully saves the value of `REMOTE_IP` when a customer uses an IPV6 (Internet Protocol version 6) address. Previously, this value was only partially saved in the `sales_order` and `quote` tables.  *Fix submitted by [George Schiopu](https://github.com/georgeschiopu) in pull request [14976](https://github.com/magento/magento2/pull/14976)*. [GitHub-10395](https://github.com/magento/magento2/issues/10395)
 
@@ -1548,34 +1513,9 @@ At a shop with 2 websites (and 2 storeviews) and use different prices (price sco
 
 <!-- ENGCOM-2024 -->* Module name space is now declared before the template pathname in `Magento_Sales::order/info.phtml`. *Fix submitted by [Ronak Patel](https://github.com/markoshust) in pull request [16206](https://github.com/magento/magento2/pull/16206)*. 
 
-<!-- ENGCOM-1760 -->* Removed unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
+<!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
-
-
-
-<!-- ENGCOM-1529 -->* 
-
-Currently upgrade process looping truth all order addresses and is the checking if the quote_address_id is empty. 
-
-
-
-The 
-Changed this so that the collection contains only addresses where the quote_address_id is NULL.
-
-title: Add field to filter to collection
-url: magento/magento2#15097
-contributor name: @dverkade
-contributor link: https://github.com/dverkade
-
-*Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
-
-
-Currently the setup upgrade is looping truth all order addresses and is the checking if the quote_address_id is empty. Changed this so that the collection contains only addresses where the quote_address_id is NULL.
-
-Add field to filter to collection
-
-
-
+<!-- ENGCOM-1529 -->* The `addFieldToFilter` has been added to `addressCollection` in  `app/code/Magento/Sales/Setup/UpgradeData.php`, which optimizes the process of collecting addresses during upgrade. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
 <!-- ENGCOM-1623 -->* Invoice prefixes now contain the correct store ID when Magento is deployed in a multistore environment. Previously, Magento always created the invoice number using the default store view ID. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. [GitHub-14063](https://github.com/magento/magento2/issues/14063)
 
@@ -1690,14 +1630,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- ENGCOM-1866 -->* Images in XML sitemap are no longer always linked to the primary store in a multistore deployment. *Fix submitted by [Steven de Jong](https://github.com/StevenGuapaBV) in pull request [15689](https://github.com/magento/magento2/pull/15689)*. [GitHub-15588](https://github.com/magento/magento2/issues/15588)
 
 
-<!-- ENGCOM-1377 -->* Split sitemaps  now use the index sitemap name as a prefix. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request [14836](https://github.com/magento/magento2/pull/14836)*. 
-
-
-hen generating large sitemaps which result in a single index sitemap and several smaller split sitemap files, the split sitemap files do not use the same name prefix as the parent.
-
-For example, if you have a sitemap called products.xml then the split sitemap files are named sitemap-1-1.xml, sitemap-1-2.xml etc. which does not make any sense.
-2345
-
+<!-- ENGCOM-1377 -->* Split sitemaps now use the index sitemap name as a prefix. Previously, when generating large sitemaps that result in a single index sitemap and several smaller split sitemap files, the split sitemap files did not use the same name prefix as the parent. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request [14836](https://github.com/magento/magento2/pull/14836)*. 
 
 
 ### Staging
