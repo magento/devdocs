@@ -1857,7 +1857,7 @@ The `catalog:image:resize` command execution time has been reduced by up to 90% 
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
-{% include release-notes/engcomm-2-2-6.md %}
+
 
 ### Individual contributor contributions
 

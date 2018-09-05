@@ -2834,8 +2834,6 @@ This release includes a fix that optimizes image resizing.
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. 
 
-{% include release-notes/engcomm-2-2-6.md %}
-
 
 ### Individual contributor contributions
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
