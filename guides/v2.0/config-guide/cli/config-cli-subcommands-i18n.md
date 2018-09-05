@@ -88,9 +88,8 @@ The following table explains this command's parameters and values:
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-To create a language pack from a translation dictionary, you <em>must</em> use the `-m|--magento` option.
-</div>
+{: .bs-callout .bs-callout-info }
+To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 
 ### Translation guidelines {#config-cli-subcommands-xlate-dict-trans}
 
@@ -185,9 +184,8 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 -   `registration.php` that [registers]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the language package
 -   [`language.xml`](#config-cli-subcommands-xlate-pack-meta-xml) meta-information file
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The entire path must be all lowercase.
-</div>
 
 For an example, see the [`de_de` language package]({{ site.mage2000url }}app/i18n/magento/de_de/registration.php){: target="_blank"}.
 

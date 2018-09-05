@@ -81,9 +81,8 @@ For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN
 </section>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 There is no need to use sequential variables like `{{var1}}`, `{{var2}}`. Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like `#element .{{categoryId}} .{{productId}}`."
-</div>
 
 ## Use a parameterized selector in a test
 

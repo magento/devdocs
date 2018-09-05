@@ -33,9 +33,11 @@ To get the {{site.data.var.ee}} metapackage:
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If the following error displays, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
-  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the following error displays, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html):
+	```terminal
+  file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+	```
 	</div>
 
 {% include install/file-system-perms-before.md %}

@@ -49,9 +49,8 @@ vendor/bin/codecept run functional --group example --skip-group skip
 vendor/bin/codecept run
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The following documentation corresponds to Codeception 2.3.8.
-</div>
 
 ```
 Full reference:

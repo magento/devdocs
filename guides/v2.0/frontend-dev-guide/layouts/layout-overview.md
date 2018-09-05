@@ -96,9 +96,8 @@ The Magento application processes layout files in the following order:
 
 1.	Merges all layout files from the list.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Layout files that belong to inactive modules or modules with disabled output are ignored.
 
 ## Related topics
 

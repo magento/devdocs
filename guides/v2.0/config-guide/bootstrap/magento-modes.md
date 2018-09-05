@@ -73,9 +73,8 @@ For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cl
 
 You should run the Magento software in developer mode when you're extending or customizing it.
 
-<div class="bs-callout bs-callout-info">
-<a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
-</div>
+{: .bs-callout .bs-callout-info" }
+[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
 
 In developer mode:
 
