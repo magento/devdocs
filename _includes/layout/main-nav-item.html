@@ -1,5 +1,5 @@
-{% assign item = include.section %}
-{% assign children = item.children %}
+{% assign item = include.item %}
+
 {% if page.guide_version %}
   {% assign compare_version = page.guide_version %}
 {% else %}
@@ -21,23 +21,8 @@
   {% if item.url contains 'http' %}
     {% assign base = '' %}
   {% endif %}
-
-  {% assign item_url = item.url | prepend: base %}
-  {% assign compare_url = page.url | prepend: site.baseurl %}
-<li class="{% if compare_url == item_url %}active{% endif %} {{ item.class }}">
-  {% if item.url %}
-    <a href="{{ item_url }}">{{ item.label }}</a>
-  {% else %}
-    <span>{{ item.label }}</span>
-  {% endif %}
-
-  {% if children %}
-    <ul>
-      {% for child in children %}
-         {% include layout/toc-entry.html section=child %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-</li>
+  <li>
+    <a href="{{ base }}{{ item.url }}">{{ item.label }}</a>
+  </li>
 {% endif %}
 {% endunless %}
