@@ -150,9 +150,8 @@ be used by a human, it's referred to as a [*machine user*](https://developer.git
 machine account as collaborator or add the machine user to a team with
 access to the repositories it needs to manipulate.
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
-</div>
 
 ### Find your deploy key {#ssh}
 
