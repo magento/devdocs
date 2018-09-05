@@ -1887,7 +1887,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>In Magento 2.2 and later <a href="/guides/v2.3/config-guide/deployment/pipeline/">pipeline deployment model</a>, you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:dump
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:dump <span class="o">{</span>config-types<span class="o">}</span>
+</code></pre></div></div>
+
+<p><em>config_types</em> is a space-separated list of config types to dump. Available types include <code class="highlighter-rouge">themes</code> and <code class="highlighter-rouge">scopes</code>. If no config types are specified, the command dumps all system configuration information.</p>
+
+<p>The following example dumps scopes and themes only:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:dump scopes themes
 </code></pre></div></div>
 
 <p>As a result of the command execution, the following configuration files are updated:</p>
@@ -1918,6 +1925,8 @@ It contains sensitive and system-specific settings for individual environments.<
 <p>To set the sensitive settings written to <code class="highlighter-rouge">env.php</code>, use the <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">bin/magento config:sensitive:set</code></a> command.</p>
 
 <p>Configuration values are specified as either sensitive or system-specific by referencing <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Config/Model/Config/TypePool.php"><code class="highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> in the module’s <a href="/guides/v2.3/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific"><code class="highlighter-rouge">di.xml</code></a> file.</p>
+
+<p>To export additional system settings when using <code class="highlighter-rouge">config_types</code>, consider using the <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set"><code class="highlighter-rouge">bin/magento config:set</code></a> command.</p>
 
 			
 		</div>
