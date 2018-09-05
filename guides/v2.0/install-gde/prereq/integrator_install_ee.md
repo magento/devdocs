@@ -21,7 +21,7 @@ To get the {{site.data.var.ee}} metapackage:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
+		composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
 
 	When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 

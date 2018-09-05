@@ -21,7 +21,7 @@ We recommend that you use index parallelization and that you set threads count f
 - Threads count >= max dimension count (across all indexers)
 - Threads count <= cores count
 
-See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel) of [Manage the indexers](({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.
+See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel) of [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.
 
 ## Caches
 

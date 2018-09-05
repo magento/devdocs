@@ -85,4 +85,4 @@ Use the same endpoint to add another stock. The `stock_id` for `Europe Stock` is
 
 ## Verify this step
 
-In Admin, click **Stores** > **Manage Stocks**.  The new stocks are displayed in the Stock grid.
+In Admin, click **Stores** > **Inventory** > **Stocks**.  The new stocks are displayed in the Stock grid.

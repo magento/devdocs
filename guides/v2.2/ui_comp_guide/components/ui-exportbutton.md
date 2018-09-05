@@ -1,8 +1,6 @@
 ---
 group: UI_Components_guide
-subgroup: components
 title: ExportButton component
-menu_title: ExportButton component
 ---
 
 The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).
