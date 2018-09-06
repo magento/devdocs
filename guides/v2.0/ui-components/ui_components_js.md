@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Using_UI
 title: Using UI components client-side
 menu_title: Using UI components client-side

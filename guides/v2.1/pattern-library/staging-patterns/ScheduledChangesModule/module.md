@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Scheduled Changes Module
 ee_only: true
 ---

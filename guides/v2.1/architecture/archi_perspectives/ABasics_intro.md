@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Architectural basics overview
 menu_title: Architectural basics
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ABasics_intro.html

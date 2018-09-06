@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 165_live
 title: Go live checklist
 menu_title: Go live checklist

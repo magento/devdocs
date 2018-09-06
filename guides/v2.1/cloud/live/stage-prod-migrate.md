@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Deploy code and migrate static files and data
 menu_title: Deploy code and migrate static files and data

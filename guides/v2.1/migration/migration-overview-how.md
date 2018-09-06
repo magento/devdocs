@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 title: How migration works
 ---
 

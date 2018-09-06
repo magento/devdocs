@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Migration overview
 menu_title: Overview

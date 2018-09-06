@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Best practices
 mftf-release: 2.2.0
 functional_areas:

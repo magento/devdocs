@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates XSS security
 menu_title: Templates XSS security

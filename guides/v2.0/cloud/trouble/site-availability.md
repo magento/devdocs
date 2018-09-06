@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Site availability
 functional_areas:
   - Cloud

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Name your component
 menu_title: Name your component

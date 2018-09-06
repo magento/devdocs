@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Tutorials
 title: Serialized to JSON data upgrade
 menu_title: Serialized to JSON data upgrade

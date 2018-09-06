@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing

@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: D_UI Library Form Component
 title: Form Component
 menu_title: Form Component

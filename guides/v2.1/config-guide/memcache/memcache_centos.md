@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Install, configure, verify memcached on CentOS
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: QuickSearch widget
 menu_order: 13

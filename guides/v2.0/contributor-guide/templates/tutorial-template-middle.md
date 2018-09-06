@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: contributor
+group: contributor-guide
 subgroup:
 title: Step 1. Start the procedure
 subtitle: Sample template tutorial

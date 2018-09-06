@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module dependency types
 menu_title: Module dependency types

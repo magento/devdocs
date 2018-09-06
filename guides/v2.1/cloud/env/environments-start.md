@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
   - /guides/v2.0/cloud/before/integration-ip-addr.html

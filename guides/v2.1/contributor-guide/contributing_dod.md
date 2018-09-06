@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Magento Definition of Done
 redirect_from: /guides/v2.0/contributor-guide/contributing_dod.html
 ---

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up multiple websites or stores
 menu_title: Set up multiple websites or stores

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
 functional_areas:
   - Cloud

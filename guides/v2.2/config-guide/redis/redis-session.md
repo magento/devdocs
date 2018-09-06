@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Use Redis for session storage
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Manage your components
 menu_title: Manage your components

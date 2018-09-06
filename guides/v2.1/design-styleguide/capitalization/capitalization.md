@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Capitalization
 menu_title: Capitalization

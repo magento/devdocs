@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Create a new storefront theme
 menu_title: Create a new storefront theme

@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Development environment recommendations
 functional_areas:
   - Configuration

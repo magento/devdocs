@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 2. Create sources
 subtitle: Order processing with MSI
 menu_title: Step 2. Create sources

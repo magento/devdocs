@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers
 menu_title: Introduction

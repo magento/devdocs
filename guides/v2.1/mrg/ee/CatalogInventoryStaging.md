@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_CatalogInventoryStaging module
 ee_only: true
 ---

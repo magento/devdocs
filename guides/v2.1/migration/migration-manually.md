@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: E_manually
 title: Data that needs to be migrated manually
 menu_title: Data that needs to be migrated manually

@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Check the Magento database status
 menu_title: Check the Magento database status

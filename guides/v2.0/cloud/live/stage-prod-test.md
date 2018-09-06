@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Test deployment
 menu_title: Test deployment

@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 ---

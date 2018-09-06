@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 05_Package
 title: Package a component
 menu_title: Package a component

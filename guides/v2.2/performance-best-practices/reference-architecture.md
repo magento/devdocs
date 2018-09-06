@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Reference architecture
 contributor_name: Chuck Choukalos
 functional_areas:

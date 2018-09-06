@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Technologies and requirements
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html

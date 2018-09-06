@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize the view of a checkout step
 subtitle: Customize Checkout

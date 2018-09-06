@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 02_sample
 title: Install by cloning repositories
 menu_title: Install by cloning repositories

@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Display or change the Admin URI
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-adminurl.html

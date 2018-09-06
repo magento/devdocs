@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: URN highlighter
 functional_areas:
   - Configuration

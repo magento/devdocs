@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Starter develop and deploy workflow
 functional_areas:
   - Cloud

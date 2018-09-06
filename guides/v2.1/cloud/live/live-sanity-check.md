@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Build and deploy on local
 functional_areas:
   - Cloud

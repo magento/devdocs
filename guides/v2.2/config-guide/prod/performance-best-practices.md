@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Performance Configuration Best Practices
 functional_areas:
   - Configuration

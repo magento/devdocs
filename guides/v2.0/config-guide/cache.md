@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 08_Configure caching
 title: Configure caching
 menu_title: Configure caching

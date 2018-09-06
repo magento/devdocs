@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: G_Translate
 title: Translations overview
 menu_title: Translations

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 09_Full page caching
 title: Private content
 menu_title: Private content

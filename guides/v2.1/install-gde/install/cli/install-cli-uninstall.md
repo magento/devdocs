@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Uninstall or reinstall Magento
 menu_title: Uninstall or reinstall Magento

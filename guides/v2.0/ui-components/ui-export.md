@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: ExportButton Component
 menu_title: Export Button Component

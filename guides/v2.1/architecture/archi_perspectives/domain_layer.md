@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Domain layer
 menu_title: Domain layer
 redirect_from: /guides/v1.0/architecture/archi_perspectives/domain_layer.html

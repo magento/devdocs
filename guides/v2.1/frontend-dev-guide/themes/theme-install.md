@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Install a third-party storefront theme
 functional_areas:
   - Frontend

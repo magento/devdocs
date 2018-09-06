@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: Magento 2.1.x technology stack requirements
 menu_title: Magento 2.1.x technology stack requirements

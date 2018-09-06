@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 4. Link stocks and sources
 subtitle: Order processing with MSI
 menu_title: Step 4. Link stocks and sources

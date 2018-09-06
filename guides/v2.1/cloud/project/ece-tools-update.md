@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Update ece-tools version
 functional_areas:
   - Cloud

@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Security, Performance, and Data Handling
 menu_title: Security, performance, and data handling

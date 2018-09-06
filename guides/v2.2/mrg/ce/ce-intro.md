@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 10_Community Edition
 title: Magento Open Source modules
 menu_title: Open Source

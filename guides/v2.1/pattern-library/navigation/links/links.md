@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Links
 redirect_from: /guides/v1.0/pattern-library/navigation/links/links.html
 ---

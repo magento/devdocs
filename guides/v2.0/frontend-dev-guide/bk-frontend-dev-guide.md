@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
 menu_title: Introduction

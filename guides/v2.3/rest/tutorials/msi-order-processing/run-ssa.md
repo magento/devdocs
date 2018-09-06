@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 12. Run the Source Selection Algorithm
 subtitle: Order processing with MSI
 menu_title: Step 12. Run the Source Selection Algorithm

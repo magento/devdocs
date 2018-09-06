@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 10_Install extensions from the command line
 title: Install the B2B extension
 menu_title: Install the B2B extension

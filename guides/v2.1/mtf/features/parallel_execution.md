@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Parallel execution flow with the Functional Testing Framework
 ---
 

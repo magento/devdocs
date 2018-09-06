@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Functional Testing Framework Entities
 ---
 Functional Testing Framework entities enable you to create and modify functional tests. 

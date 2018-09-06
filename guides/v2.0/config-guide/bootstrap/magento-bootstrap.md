@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap

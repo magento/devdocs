@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: Set up the updater
 functional_areas:
   - Install

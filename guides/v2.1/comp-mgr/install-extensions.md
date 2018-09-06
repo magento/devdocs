@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Install extensions from the command line
 ---
 

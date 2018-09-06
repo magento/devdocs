@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Add Staging and Production to Pro projects UI
 menu_title: Add Staging and Production to Pro projects UI

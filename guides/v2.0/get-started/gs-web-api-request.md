@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request

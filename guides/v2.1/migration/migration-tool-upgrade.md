@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Upgrade Data Migration Tool
 menu_title: Upgrade Data Migration Tool
