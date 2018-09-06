@@ -148,29 +148,29 @@ pages:
       url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
-          url: /cloud/access-acct/fastly.html
+          url: /cloud/cdn/configure-fastly.html
 
         - label: Fastly Image Optimization
           url: /cloud/cdn/fastly-image-optimization.html
           include_versions: ["2.1","2.2","2.3"]
 
         - label: Custom Fastly VCL snippets
-          url: /cloud/configure/cloud-vcl-custom-snippets.html
+          url: /cloud/cdn/cloud-vcl-custom-snippets.html
 
         - label: Custom whitelist VCL
-          url: /cloud/configure/fastly-vcl-whitelist.html
+          url: /cloud/cdn/fastly-vcl-whitelist.html
 
         - label: Custom blacklist VCL
-          url: /cloud/configure/fastly-vcl-blacklist.html
+          url: /cloud/cdn/fastly-vcl-blacklist.html
 
         - label: Custom redirect to WordPress VCL
-          url: /cloud/configure/fastly-vcl-wordpress.html
+          url: /cloud/cdn/fastly-vcl-wordpress.html
 
         - label: Custom block bad referer VCL
-          url: /cloud/configure/fastly-vcl-badreferer.html
+          url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
-          url: /cloud/trouble/trouble_fastly.html
+          url: /cloud/cdn/trouble-fastly.html
 
     - label: Configure environments
       url: /cloud/env/environments.html
@@ -387,5 +387,5 @@ pages:
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)
-          url: /cloud/upgrade/upgrade-from-2-0-4.html
           include_versions: ["2.0"]
+
