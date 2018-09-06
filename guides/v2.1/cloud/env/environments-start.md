@@ -12,15 +12,16 @@ functional_areas:
   - Cloud
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) architecture information.
+After you install the Magento CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ page.baseurl }}/cloud/basic-information/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
 
 ## Common Magento CLI commands {#env-start-comm}
 
-You can use the Magento CLI commands, which are very similar to Git commands, to directly connect to your {{site.data.var.ece}} project and manage the Integration environments. The following Magento CLI commands can run from any directory, but it is a best practice to run the commands from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
+Magento CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
 
-All commands are shown with required options only. Use the `--help` option with any command to see more information.
+The following list of commonly used Magento CLI commands includes required options only. Use the ``--help``
+option with any command to get more detailed information. 
 
 Command | Description
 --- | ---
@@ -35,7 +36,7 @@ Command | Description
 `magento-cloud variable:list` | List variables in this environment.
 `magento-cloud variable:set <name> <value>` | Set a value for an environment variable.
 
-For a full list of Magento cloud CLI commands, see the Magento cloud [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)
+For a full list of commands, see the [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 {:.bs-callout .bs-callout-info}
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
@@ -66,7 +67,7 @@ After completing development, you can merge this branch to the parent:
 
 ## Delete an environment {#env-delete}
 
-Before you delete an environment, make sure you do not need it anymore. You cannot recover a deleted environment later.
+Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.
 
 {:.bs-callout .bs-callout-warning}
 You cannot delete the `master` environment of any project.
@@ -132,60 +133,13 @@ To activate an inactive environment, use the `magento-cloud environment:activate
 
 ## Integration environment IP addresses {#ipaddress}
 
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We will notify all affected customers before making any changes.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
 <table>
 <tr>
 <th colspan="6"><b>Incoming IP addresses</b></th>
-</tr>
-<tr>
-<td>US Region</td>
-<td>US-2 Region</td>
-<td>US-3 Region</td>
-<td>EU Region</td>
-<td>EU-3 Region</td>
-<td>AP-3 Region</td>
-</tr>
-<tr>
-<td>
-<p>52.200.155.111</p>
-<p>52.200.149.44</p>
-<p>50.17.163.75</p>
-</td>
-<td>
-<p>34.197.219.58</p>
-<p>34.197.201.45</p>
-<p>34.197.217.71</p>
-</td>
-<td>
-<p>34.210.166.180</p>
-<p>34.215.83.92</p>
-<p>34.213.20.158</p>
-</td>
-<td>
-<p>52.51.163.159</p>
-<p>52.209.44.60</p>
-<p>52.208.156.247</p>
-</td>
-<td>
-<p>34.240.57.142</p>
-<p>52.16.140.48</p>
-<p>52.209.134.55</p>
-</td>
-<td>
-<p>52.65.143.178</p>
-<p>13.54.80.197</p>
-<p>52.62.224.4</p>
-</td>
-</tr>
-</table>
-
-
-<table>
-<tr>
-<th colspan="6"><b>Outgoing IP addresses</b></th>
 </tr>
 <tr>
 <td>US Region</td>
@@ -229,9 +183,56 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </tr>
 </table>
 
+<table>
+<tr>
+<th colspan="6"><b>Outgoing IP addresses</b></th>
+</tr>
+<tr>
+<td>US Region</td>
+<td>US-2 Region</td>
+<td>US-3 Region</td>
+<td>EU Region</td>
+<td>EU-3 Region</td>
+<td>AP-3 Region</td>
+</tr>
+<tr>
+<td>
+<p>52.200.155.111</p>
+<p>52.200.149.44</p>
+<p>50.17.163.75</p>
+</td>
+<td>
+<p>34.197.219.58</p>
+<p>34.197.201.45</p>
+<p>34.197.217.71</p>
+</td>
+<td>
+<p>34.210.166.180</p>
+<p>34.215.83.92</p>
+<p>34.213.20.158</p>
+</td>
+<td>
+<p>52.51.163.159</p>
+<p>52.209.44.60</p>
+<p>52.208.156.247</p>
+</td>
+<td>
+<p>34.240.57.142</p>
+<p>52.16.140.48</p>
+<p>52.209.134.55</p>
+</td>
+<td>
+<p>52.65.143.178</p>
+<p>13.54.80.197</p>
+<p>52.62.224.4</p>
+</td>
+</tr>
+</table>
+{:style="table-layout:auto;"}
+
 ## Interact with environments via CLI {#commands}
 
-After setting up your [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can interact with services and modify settings through your local to a remote environment.
+After you [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can use SSH to connect from your local workspace to a remote environment and use the Magento CLI commands to interact with {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 
