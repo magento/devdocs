@@ -33,7 +33,7 @@ Attribute |  Data Type | Description
 
 ## Example usage
 
-The following call returns all details of a store's configuration
+The following call returns all details of a store's configuration.
 
 **Request**
 
