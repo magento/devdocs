@@ -5,6 +5,10 @@ title: Custom block bad referer VCL
 menu_title: Custom block bad referer VCL
 menu_order:
 menu_node:
+redirect from:
+   - /guides/v2.1/cloud/configure/fastly-vcl-badreferer.html
+   - /guides/v2.2/cloud/configure/fastly-vcl-badreferer.html
+   - /guides/v2.3/cloud/configure/fastly-vcl-badreferer.html
 functional_areas:
   - Cloud
   - Setup

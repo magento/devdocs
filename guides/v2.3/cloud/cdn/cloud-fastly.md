@@ -1,1 +1,1 @@
-../../../v2.2/cloud/cdn/cloud-fastly.md
+../../../v2.1/cloud/cdn/cloud-fastly.md
