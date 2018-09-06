@@ -4,7 +4,7 @@ title: Robo commands
 functional_areas:
  - Testing
 mftf-release: 2.2.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/robo.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/robo.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._

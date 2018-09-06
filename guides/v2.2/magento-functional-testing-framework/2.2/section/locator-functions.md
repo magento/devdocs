@@ -4,7 +4,7 @@ title: Use Codeception's Locator functions
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/locator-functions.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/locator-functions.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
