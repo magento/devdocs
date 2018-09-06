@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Translation dictionaries and language packages
 menu_title: Translation dictionaries and language packages

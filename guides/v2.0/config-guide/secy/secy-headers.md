@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 02_Security
 title: Prevent cache poisoning
 menu_title: Prevent cache poisoning

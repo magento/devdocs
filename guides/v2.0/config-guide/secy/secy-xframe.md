@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 02_Security
 title: X-Frame-Options header
 menu_title: X-Frame-Options header

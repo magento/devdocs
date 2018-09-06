@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a custom payment method to checkout
 subtitle: Customize Checkout

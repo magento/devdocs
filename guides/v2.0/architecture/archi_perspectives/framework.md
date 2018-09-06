@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework

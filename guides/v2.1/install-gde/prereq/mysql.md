@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL

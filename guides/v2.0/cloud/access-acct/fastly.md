@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up Fastly
 menu_title: Set up Fastly

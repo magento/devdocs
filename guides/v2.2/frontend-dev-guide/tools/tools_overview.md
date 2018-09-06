@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Additional tools for frontend developers
 functional_areas:
   - Frontend

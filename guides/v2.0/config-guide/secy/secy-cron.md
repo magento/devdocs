@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 02_Security
 title: Secure cron.php to run in a browser
 menu_title: Secure cron.php to run in a browser

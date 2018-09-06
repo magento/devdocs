@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Adding custom favicons
 functional_areas:
   - Frontend

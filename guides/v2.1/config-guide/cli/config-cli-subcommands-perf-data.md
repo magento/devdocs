@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Generate data for performance testing
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 functional_areas:

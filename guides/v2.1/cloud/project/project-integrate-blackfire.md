@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Blackfire.io for Magento Cloud
 functional_areas:
   - Cloud

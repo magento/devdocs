@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration

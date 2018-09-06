@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
 redirect_from:

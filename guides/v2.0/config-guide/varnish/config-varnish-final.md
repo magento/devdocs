@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Final verification
 menu_title: Final verification

@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 02_prereq
 title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin

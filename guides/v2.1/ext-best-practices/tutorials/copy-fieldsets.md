@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Tutorials
 title: Copying fieldsets
 menu_title: Copying fieldsets

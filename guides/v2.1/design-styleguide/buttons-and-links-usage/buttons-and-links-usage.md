@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Buttons and Links Usage
 menu_title: Buttons and Links Usage

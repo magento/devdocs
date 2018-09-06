@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Release notes for ece-tools
 redirect_from:
   - guides/v2.1/cloud/composer-packages/ece-tools.html

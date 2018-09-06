@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Assign categories and products to a shared catalog
 menu_title: Assign categories and products

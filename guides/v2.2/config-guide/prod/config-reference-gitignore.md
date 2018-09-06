@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: .gitignore reference
 functional_areas:
   - Configuration

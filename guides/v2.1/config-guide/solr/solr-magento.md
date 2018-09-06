@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Solr and Magento
 ee_only: True
 functional_areas:

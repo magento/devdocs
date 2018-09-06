@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Access issues
 menu_title: Access issues

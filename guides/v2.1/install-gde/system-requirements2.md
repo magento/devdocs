@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: System 2.1.x requirements
 menu_title: Magento 2.1.x system requirements

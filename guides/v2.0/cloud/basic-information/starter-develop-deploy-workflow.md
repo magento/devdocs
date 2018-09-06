@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Starter develop and deploy workflow
 menu_title: Starter develop and deploy workflow

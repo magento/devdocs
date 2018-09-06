@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Onboarding Portal management
 redirect_to:
 # Temporarily removing this page from the doc site per MAGECLOUD-1531

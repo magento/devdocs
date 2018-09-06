@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Component load order
 menu_title: Component load order

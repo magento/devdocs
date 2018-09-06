@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: DevDocs Contributors
 redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
 ---

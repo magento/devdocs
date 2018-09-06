@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Layout file types
 menu_title: Layout file types

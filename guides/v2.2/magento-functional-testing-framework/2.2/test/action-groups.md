@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Action groups
 functional_areas:
  - Testing

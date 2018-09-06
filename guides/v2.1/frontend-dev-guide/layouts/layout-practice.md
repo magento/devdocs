@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Customizing layout illustration
 functional_areas:
   - Frontend

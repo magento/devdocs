@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Deploy Magento to production
 functional_areas:
   - Configuration

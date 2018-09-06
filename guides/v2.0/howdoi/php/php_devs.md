@@ -1,5 +1,5 @@
 ---
-group: howdoi
+group: how-do-i
 subgroup: PHP Development
 title: PHP Development
 menu_title: PHP Development

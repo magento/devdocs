@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Configuration
 title: Configuration importers
 menu_title: Configuration importers

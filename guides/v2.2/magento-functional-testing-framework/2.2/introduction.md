@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Introduction to the Magento Functional Testing Framework version 2.2
 functional_areas:
     - Testing

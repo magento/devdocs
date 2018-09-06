@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Add custom CSS preprocessor
 functional_areas:
   - Frontend

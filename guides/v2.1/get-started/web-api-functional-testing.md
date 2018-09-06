@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 50_Testing
 title: Web API functional testing
 menu_title: Web API functional testing

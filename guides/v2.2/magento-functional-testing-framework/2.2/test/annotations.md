@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Annotations
 functional_areas:
  - Testing

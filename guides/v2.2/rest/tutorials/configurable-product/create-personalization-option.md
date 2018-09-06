@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Create the personalization option
 subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option

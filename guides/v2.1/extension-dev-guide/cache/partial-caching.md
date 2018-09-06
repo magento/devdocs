@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Partial caching
 menu_title: Partial caching

@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
 menu_title: How do I log in to my Magento server using a terminal, command prompt, or SSH?

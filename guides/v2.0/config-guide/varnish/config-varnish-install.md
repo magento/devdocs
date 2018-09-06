@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish

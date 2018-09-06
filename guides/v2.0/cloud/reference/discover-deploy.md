@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Deployment process
 menu_title: Deployment process

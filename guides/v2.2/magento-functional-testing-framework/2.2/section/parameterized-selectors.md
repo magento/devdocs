@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Create and use parameterized selectors
 functional_areas:
  - Testing

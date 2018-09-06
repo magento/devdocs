@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Reinstall the Magento software
 menu_title: Reinstall the Magento software

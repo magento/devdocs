@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What is a docroot?
 menu_title: What is a docroot?

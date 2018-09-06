@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: REST tutorials
 functional_areas:
   - Integration

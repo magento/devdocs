@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback

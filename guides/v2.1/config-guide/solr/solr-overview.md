@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Install and configure Solr
 ee_only: True
 functional_areas:

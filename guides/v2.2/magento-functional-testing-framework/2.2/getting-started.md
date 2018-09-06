@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Getting started
 functional_areas:
  - Testing

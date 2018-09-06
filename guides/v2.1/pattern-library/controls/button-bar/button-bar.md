@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Button Bar
 redirect_from: /guides/v1.0/pattern-library/controls/button-bar/button-bar.html
 ---

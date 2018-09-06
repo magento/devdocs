@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 2. Get the admin token
 subtitle: Order processing tutorial
 return_to:

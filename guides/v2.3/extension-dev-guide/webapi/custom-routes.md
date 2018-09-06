@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Set custom routes
 contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com

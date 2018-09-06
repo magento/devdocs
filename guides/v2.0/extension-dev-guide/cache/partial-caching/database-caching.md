@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create custom cache engines
 menu_title: Create custom cache engines

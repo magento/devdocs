@@ -1,5 +1,5 @@
 ---
-group: integration-testing
+group: testing
 title: Running Integration Tests
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/

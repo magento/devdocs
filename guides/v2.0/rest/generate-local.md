@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: Generate a local REST API reference
 menu_title: Generate a local API reference

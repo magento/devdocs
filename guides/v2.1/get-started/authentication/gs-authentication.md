@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Authentication
 menu_title: Authentication

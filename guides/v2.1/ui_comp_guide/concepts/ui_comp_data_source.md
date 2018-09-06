@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: The DataSource Component
 menu_title: Providing Data to UI Components

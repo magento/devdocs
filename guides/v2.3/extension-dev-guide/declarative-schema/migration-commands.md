@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Migrate install/upgrade scripts to declarative schema
 ---
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento cache overview
 menu_title: Magento cache overview
 menu_order: 10

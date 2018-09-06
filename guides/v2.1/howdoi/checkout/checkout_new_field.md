@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a new field in address form
 subtitle: Customize Checkout

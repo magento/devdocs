@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Composer
 redirect_from:
   - /guides/v2.2/cloud/cloud-composer.html

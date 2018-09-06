@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Import URL Rewrites
 functional_areas:
   - Cloud

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors

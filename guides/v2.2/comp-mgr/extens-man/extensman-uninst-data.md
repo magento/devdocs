@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Step 3. Data Option
 menu_title: Remove or Keep Data

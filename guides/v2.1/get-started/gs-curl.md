@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 title: Use cURL to run the request
 functional_areas:
   - Integration

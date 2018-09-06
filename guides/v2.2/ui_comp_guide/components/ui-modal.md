@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: Modal сomponent
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---

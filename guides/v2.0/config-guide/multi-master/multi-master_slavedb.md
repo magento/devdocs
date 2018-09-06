@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 20_cqrs
 title: Set up optional database replication
 menu_title: Set up optional database replication

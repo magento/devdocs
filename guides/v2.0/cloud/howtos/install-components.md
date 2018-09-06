@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Install, manage, and upgrade modules
 redirect_from:
   - /guides/v2.0/cloud/howtos/update-components.html

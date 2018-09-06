@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 30_SOAP
 title: Use SOAP Services
 menu_title: Use SOAP Services

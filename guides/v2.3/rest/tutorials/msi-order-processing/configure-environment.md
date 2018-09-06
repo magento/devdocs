@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 1. Configure your environment
 subtitle: Order processing with MSI
 menu_title: Step 1. Configure your environment

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Logging
 functional_areas:
   - Configuration

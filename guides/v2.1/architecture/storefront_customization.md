@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
 ---

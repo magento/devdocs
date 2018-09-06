@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy code and migrate static files and data
 functional_areas:
   - Cloud
