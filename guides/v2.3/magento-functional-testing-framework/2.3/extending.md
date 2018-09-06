@@ -4,7 +4,7 @@ title: Extending
 functional_areas:
  - Testing
 mftf-release: 2.3.0
-redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/extending.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/extending.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
