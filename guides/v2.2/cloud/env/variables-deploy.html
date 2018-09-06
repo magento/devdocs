@@ -4241,7 +4241,7 @@ deploy updates to existing files without removing the previous versions. Because
 <ul>
   <li><code class="highlighter-rouge">standard</code>—deploys all static view files for all packages.</li>
   <li><code class="highlighter-rouge">quick</code>—minimizes deployment time. This is the default command option, if not specified.</li>
-  <li><code class="highlighter-rouge">compact</code>—conserves disk space on the server and overrides the value for <code class="highlighter-rouge">scd_threads</code> with a value of <code class="highlighter-rouge">1</code>. This strategy does not work with multi-threads.</li>
+  <li><code class="highlighter-rouge">compact</code>—conserves disk space on the server. In Magento version 2.2.4 and earlier, this setting overrides the value for <code class="highlighter-rouge">scd_threads</code> with a value of <code class="highlighter-rouge">1</code>.</li>
 </ul>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
