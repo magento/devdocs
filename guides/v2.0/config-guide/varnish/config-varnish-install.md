@@ -17,9 +17,8 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 *	[Varnish installation guides](https://www.varnish-cache.org/docs){: target="_blank"}
 *	[How to install Varnish (Tecmint)](http://www.tecmint.com/install-varnish-cache-web-accelerator){: target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.
 
 ## Confirm your Varnish version   {#config-varnish-version}
 

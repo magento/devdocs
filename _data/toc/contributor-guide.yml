@@ -7,9 +7,9 @@ pages:
       children:
         - label: Magento Definition of Done
           url: /contributor-guide/contributing_dod.html
-          
+
         - label: Backward compatible development
-          url: /contributor-guide/backward-compatible-development
+          url: /contributor-guide/backward-compatible-development/
 
     - label: DevDocs Contributions
       children:
@@ -33,4 +33,4 @@ pages:
 
     - label: Maintainers
       url: /contributor-guide/maintainers.html
-      versions: ["2.1","2.2","2.3"]
+      include_versions: ["2.1","2.2","2.3"]

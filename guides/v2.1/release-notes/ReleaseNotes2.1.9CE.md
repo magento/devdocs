@@ -20,9 +20,8 @@ level3_subgroup: ce21-relnotes
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.9. This release includes important enhancements to your Magento software.
 
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
 
 ## Highlights
 

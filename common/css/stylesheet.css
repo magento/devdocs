@@ -29,14 +29,14 @@ body {
     color: #F47027;
     text-decoration: none;
 }
-#left-nav ul.related-documents li { 
-	font-size:13px; border:0; padding: 5px; margin: 5px 0 5px 5px; 
+#left-nav ul.related-documents li {
+	font-size:13px; border:0; padding: 5px; margin: 5px 0 5px 5px;
 	background-image: url(".bullet-round-orange.png");
 	background-repeat: no-repeat;
 	background-position: 0 9px;
 	padding-left: 16px;
 	}
-	
+
 /* end left nav styles */
 
 /* HEADINGS */
@@ -45,13 +45,13 @@ h1, h2 { font-weight:100; margin:30px 0 10px 0; }
 h3, h4, h5, h6 { font-weight:100; color:#444444; margin:25px 0 2px 0; }
 
 h1 { font: 36px/46px 'TitilliumText22LBold', Helvetica, sans-serif; letter-spacing: 0; }
-	
+
 h2 { font: 31px/41px 'TitilliumText22LRegular', Helvetica, sans-serif; color:#f47027; }
-	
+
 h3 { font: 27px/37px 'TitilliumText22LRegular', Helvetica, sans-serif; letter-spacing: 0;}
-		
+
 h4 { font: 23px/37px 'TitilliumText22LRegular', Helvetica, sans-serif; letter-spacing: 0; }
-	
+
 h5 { font: 17px/27px 'TitilliumText22LThin', Helvetica, sans-serif; letter-spacing: 0; font-weight:bold; margin-top:25px; }
 
 h6 { font: 14px/24px 'TitilliumText22LThin', Helvetica, sans-serif; letter-spacing: 0; font-weight:bold; margin-top:25px; }
@@ -64,60 +64,60 @@ p.toc { color: #cccccc; margin-bottom:10px; }
 p.toc a { padding: 0 5px 0 5px; }
 p.toc a.first { padding-left: 0; }
 
-/*PARAGRAPHS */		
+/*PARAGRAPHS */
 p { letter-spacing: 0.05px; color:#555555; line-height:20px; margin: 8px 0 17px;}
 
 /* LINKS */
 a:link, a:visited { color:#0090c0; text-decoration:none; }
 a:hover{ color:#ff613d; }
 a:active{ color:#0090c0; }
-	
+
 /* NOTES TIPS ETC. */
 
-.msg-box, .sm-note-box { 
+.msg-box, .sm-note-box {
     margin:2px 0 15px 0;
-	width:85%; 
+	width:85%;
 	border-radius: 8px 0 8px 0;
 	font-size:14px;
 	color:#777777;
     padding: 8px 12px 8px 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	min-height:35px; } 
-	
-.sm-note-box { 
+	min-height:35px; }
+
+.sm-note-box {
 	min-height:15px;
-    background-color: rgba(0, 0, 0, 0.025); 
+    background-color: rgba(0, 0, 0, 0.025);
 	border:1px solid #888888;
 	border-left: 3px solid #888888; }
-	
-.sm-note-box span { padding: 0 10px 0 10px; }		
 
-.msg-text { color:#777777; font-size:14px; }	
+.sm-note-box span { padding: 0 10px 0 10px; }
 
-.caution { 
-    background-color: rgba(240, 171, 0, .05);	
+.msg-text { color:#777777; font-size:14px; }
+
+.caution {
+    background-color: rgba(240, 171, 0, .05);
     border: 1px solid #f7941d;
 	border-left: 5px solid #f7941d; }
-	
-.important { 
-    background-color: rgba(229, 122, 63, 0.04); 
-	border:1px solid #EE6933;
-	border-left: 5px solid #EE6933; }	
 
-.note { 
-    background-color: rgba(0, 0, 0, 0.025); 
+.important {
+    background-color: rgba(229, 122, 63, 0.04);
+	border:1px solid #EE6933;
+	border-left: 5px solid #EE6933; }
+
+.note {
+    background-color: rgba(0, 0, 0, 0.025);
 	border:1px solid #888888;
 	border-left: 5px solid #888888; }
 
-.tip { 
+.tip {
     background-color: rgba(246, 220, 27, .05);
 	border:1px solid #fbe841;
-	border-left: 5px solid #fbe841; }	
-	
+	border-left: 5px solid #fbe841; }
+
 .msg-box span { position:relative; left:10px; padding-right:5px; }
 .msg-box img { position:relative; top:-3px; left:5px; }
 
-	
+
 pre { font-size:14px; line-height:20px; overflow: auto; }
 pre strong{ color:#333333; }
 pre, .link-callout { padding:10px; margin:0 0 20px;
@@ -134,10 +134,10 @@ ul, ol ul li, ul ol li, ol li ol li ul.level1 li
 	margin: 0;
 }
 
-ul li li, ul li li li, ol li li { 
+ul li li, ul li li li, ol li li {
 	margin-left: 5px;
 }
- ul li li li { 
+ ul li li li {
 	margin-left: 10px;
 }
 
@@ -219,7 +219,7 @@ ol li ul li {
     margin-left: 10px;
 }
 
-/*ul:nth-child(1) li {  
+/*ul:nth-child(1) li {
   background-image: url("bullet-round-orange.png");
   background-repeat: no-repeat;
   background-position: 0px 7px;
@@ -227,7 +227,7 @@ ol li ul li {
   margin-bottom:6px;
 }
 
-ul:nth-child(2) li {  
+ul:nth-child(2) li {
   background-image: url("bullet-round-gold.png");
   background-repeat: no-repeat;
   background-position: 0px 6px;
@@ -235,7 +235,7 @@ ul:nth-child(2) li {
   margin-bottom:6px;
 }
 
-ul:nth-child(3) li {  
+ul:nth-child(3) li {
   background-image: url("bullet-round-gray.png");
   bckground-repeat: no-repeat;
   background-position: 0px 6px;
@@ -246,7 +246,7 @@ ul:nth-child(3) li {
 
 /* NUMBERED CODE */
 
-pre.lineCount { background: #F3F6F9 url("gutter.png") 2.1em 0 repeat-y; 
+pre.lineCount { background: #F3F6F9 url("gutter.png") 2.1em 0 repeat-y;
 	border:1px solid #ebeff2; line-height:0; margin:0; padding:0; }
 
 ol.listLineCount {
@@ -263,9 +263,9 @@ ol.listLineCount {
 pre.lineCount li code { color:#333333; line-height:15px;}
 
 caption, p.caption { font-family:Georgia, "Times New Roman", Times, serif; color:#787878; font-size: 14px; font-style:italic; padding:0; margin:10px 0 15px 3px;}
-               
+
 caption {margin:0px 0 2px 0; padding:20px 0 5px 0; }
-	
+
 /* TABLE */
 
 table {
@@ -278,7 +278,7 @@ table td, table th, table tr, table tr th {
 	padding:8px;}
 
 table tr:nth-child(odd) { /*(odd) or (2n 1)*/
-    background-color: #F3F6F9; 
+    background-color: #F3F6F9;
     border-bottom: medium none;
     border-color: transparent #ffffff;
     border-left: 1px solid #dce5ed;
@@ -298,7 +298,7 @@ table tr:nth-child(even) { /*(even) or (2n 0)*/
     color: #222222;
     vertical-align: top;
 }
-table th {	
+table th {
     border: #dce5ed 1px solid;
     color: #444444;
     font-weight: 600;
@@ -363,12 +363,12 @@ p.paging {
     text-decoration: none;
 }
 p.paging span { padding:5px; }
-p.paging a { 
+p.paging a {
 	font-weight:100; padding:5px; }
 p.paging.bottom {
 	position:relative;
 	top:42px; }
-	
+
 /* Rules */
 .dotted-rule { border-top: 2px dotted #dddddd; margin: 15px 0 15px 0; }
 hr { border: 0; color: #e2e2e2; background-color: #e2e2e2; height: 2px;  margin: 15px 0 15px 0; }
@@ -435,9 +435,9 @@ a.image:hover {
 
 .expandimg img:hover
 {
-   -webkit-transform:scale(1.6); 
-   -moz-transform:scale(1.6); 
-   -o-transform:scale(1.6); 
+   -webkit-transform:scale(1.6);
+   -moz-transform:scale(1.6);
+   -o-transform:scale(1.6);
    box-shadow:0 0 30px gray;
    -webkit-box-shadow:0 0 30px gray;
    -moz-box-shadow:0 0 30px gray;
@@ -447,32 +447,32 @@ a.image:hover {
 
 .expandimg-border img:hover
 {
-   -webkit-transform:scale(1.6); 
-   -moz-transform:scale(1.6); 
-   -o-transform:scale(1.6); 
+   -webkit-transform:scale(1.6);
+   -moz-transform:scale(1.6);
+   -o-transform:scale(1.6);
    border: 1px solid #ddd;
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
    border-radius: 4px;
    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); 
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
    opacity: 1;
    margin-left: 195px;
 }
 
 .expandimg-thumb img:hover
 {
-   -webkit-transform:scale(2.5); 
-   -moz-transform:scale(2.5); 
-   -o-transform:scale(2.5); 
+   -webkit-transform:scale(2.5);
+   -moz-transform:scale(2.5);
+   -o-transform:scale(2.5);
    border: 1px solid #ddd;
    -webkit-border-radius: 4px;
    -moz-border-radius: 4px;
    border-radius: 4px;
    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); 
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
    opacity: 1;
 }
 
@@ -504,7 +504,7 @@ a.image:hover {
 
 .nav > li > a:hover {
   text-decoration: none;
-  background-color: rgba(0, 144, 192, 0.03); 
+  background-color: rgba(0, 144, 192, 0.03);
 }
 
 
@@ -562,7 +562,7 @@ a.image:hover {
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
-}	
+}
 
 .tab-content { border-bottom: 1px solid #DDDDDD; padding: 0 0 5px; }
 .tab-content p { color:#777777; }
@@ -679,3 +679,17 @@ a.image:hover {
     color: #ef672f;
 }
 
+.message-banner {
+	background: #FBEDD9;
+	border: 1px solid #C27500;
+	padding: 20px;
+	border-radius: 2px;
+	margin: 10px 0;
+}
+
+.message-banner h4 {
+	margin-top: 0;
+}
+.message-banner p:last-child {
+	margin-bottom: 0;
+}

@@ -8,18 +8,16 @@ This topic provides details about backward incompatible changes made in {{site.d
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
-</div>
 
 ## 2.1.13 - 2.1.14    {#releases-2_1_13-2_1_14}
 

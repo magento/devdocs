@@ -182,7 +182,6 @@ For example:
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
 {% endhighlight %}
-
 </div>
 
 ## Step internals {#step-internals}

@@ -40,9 +40,8 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 
 	Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-<div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
 
 {% endcollapsible %}
 
@@ -61,9 +60,8 @@ To locate the PHP command-line configuration, enter
 
 Use the value of Loaded Configuration file.
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
-</div> 
+{: .bs-callout .bs-callout-warning }
+If you have only one `php.ini` file, make the changes in that file. If you have two `php.ini` files, make the changes in *all* files. Failure to do so might cause unpredictable performance. 
 
 {% endcollapsible %}
 

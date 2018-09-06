@@ -13,13 +13,11 @@ functional_areas:
 
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The value of <code>store_code</code> can be one of the following:</p>
-  <ul>
-  <li><code>default</code></li>
-  <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores.</li>
-  </ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The value of `store_code` can be one of the following:
+* `default`
+* The assigned store code
+* `all`. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores.
 </div>
 
 ## List of Service Names per Module

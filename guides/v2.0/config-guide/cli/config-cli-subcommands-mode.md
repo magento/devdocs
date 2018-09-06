@@ -40,9 +40,8 @@ Exceptions:
 -   `.htaccess` files are not removed
 -   `pub/static` contains a file that specifies the version of static content; this file is not removed
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 By default, Magento uses the `var` directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be `var`.
-</div>
 
 ## Display the current mode {#config-mode-show}
 

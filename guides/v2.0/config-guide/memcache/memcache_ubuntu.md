@@ -18,10 +18,8 @@ functional_areas:
 
 This section provides instructions to install memcached on Ubuntu. For additional information, consult the [memcached wiki](https://code.google.com/p/memcached/wiki/NewStart){: target="_blank"}.
 
-<div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>We recommend using memcached version 3.0.5 or later.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+We recommend using memcached version 3.0.5 or later.
 
 To install and configure memcached on Ubuntu:
 

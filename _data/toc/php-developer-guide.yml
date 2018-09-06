@@ -24,7 +24,7 @@ pages:
           url: /extension-dev-guide/prepare/prepare_file-str.html
 
         - label: Extension repository structure
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /extension-dev-guide/prepare/ext-repo-structure.html
 
         - label: Roadmap for developing and packaging components
@@ -41,7 +41,7 @@ pages:
           url: /extension-dev-guide/build/di-xml-file.html
 
         - label: Optimal development environment
-          versions: ["2.1","2.2", "2.3"]
+          include_versions: ["2.1","2.2", "2.3"]
           url: /extension-dev-guide/build/optimal-dev-environment.html
 
         - label: The composer.json file
@@ -116,7 +116,7 @@ pages:
           url: /extension-dev-guide/cli-cmds/cli-howto.html
 
     - label: Staging (Magento Commerce only)
-      versions: ["2.1","2.2", "2.3"]
+      include_versions: ["2.1","2.2", "2.3"]
       url: /extension-dev-guide/staging.html
 
     - label: Component development
@@ -166,14 +166,14 @@ pages:
               url: /extension-dev-guide/indexing.html
 
             - label: Indexer optimization
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/indexer-batch.html
 
             - label: Adding a custom indexer
               url: /extension-dev-guide/indexing-custom.html
 
         - label: Declarative schema
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           children:
 
             - label: Declarative schema overview
@@ -189,7 +189,7 @@ pages:
               url: /extension-dev-guide/declarative-schema/data-patches.html
 
         - label: Web APIs
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           children:
 
             - label: Configure services as web APIs
@@ -208,15 +208,15 @@ pages:
               url: /extension-dev-guide/message-queues/config-mq.html
 
             - label: Migrate message queue configuration
-              versions: ["2.1", "2.2", "2.3"]
+              include_versions: ["2.1", "2.2", "2.3"]
               url: /extension-dev-guide/message-queues/queue-migration.html
 
             - label: Bulk operations
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/bulk-operations.html
 
             - label: Example bulk operations implementation
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/implement-bulk.html
 
 
@@ -224,11 +224,11 @@ pages:
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
 
         - label: Searching with repositories
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/searching-with-repositories.html
 
         - label: Configure services as web APIs
-          versions: ["2.0", "2.1", "2.2"]
+          include_versions: ["2.0", "2.1", "2.2"]
           url: /extension-dev-guide/service-contracts/service-to-web-service.html
 
         - label: Clear directories during development
@@ -238,11 +238,11 @@ pages:
           url: /extension-dev-guide/adapters.html
 
         - label: Variable Pool
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /extension-dev-guide/variable-pool/
 
     - label: Configuration
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       children:
         - label: Sensitive Environment Settings
           url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
@@ -251,7 +251,7 @@ pages:
           url: /extension-dev-guide/configuration/importers.html
 
     - label: Framework
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       children:
         - label: Serialize Library
           url: /extension-dev-guide/framework/serializer.html
@@ -260,7 +260,7 @@ pages:
       children:
 
         - label: XSS Prevention
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/xss-protection.html
 
         - label: Non-secure functions

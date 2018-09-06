@@ -13,9 +13,8 @@ level3_subgroup: ce21-relnotes
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.5. 
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
-</div>
 
 
 Looking for the [Magento Commerce (Cloud) Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?

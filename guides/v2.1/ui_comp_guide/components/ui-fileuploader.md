@@ -32,7 +32,7 @@ The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf
       <td>
         List of allowed file extensions. For example, <code>'jpg
         jpeg gif png svg'</code>. If set to "false" - then no
-        extion is allowed, "true" - any extension is allowed.
+        extension is allowed, "true" - any extension is allowed.
       </td>
       <td>
         Boolean/String

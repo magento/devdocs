@@ -56,9 +56,8 @@ When code changes as discussed in the preceding section, one of two Object Manag
 The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can be one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 <!--synced-->
-<div class="bs-callout bs-callout-warning">
-<p>If you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+If you’re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.
 
 
 Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:
@@ -69,7 +68,5 @@ Depending on whether or not one of the compilers has been run before, the Magent
 
 	This class is slower than `Magento\Framework\Interception\ObjectManager\Config\Compiled`.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+The `Developer` class has nothing to do with Magento's *developer mode*.

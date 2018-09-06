@@ -26,9 +26,8 @@ The existing `queue.xml` file is deprecated.
 
 For complete details about these files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
 
-<div class="bs-callout bs-callout-warning">
-    <p>The Magento 2.1 <code>communication.xml</code> file has not changed for Magento 2.2.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The Magento 2.1 `communication.xml` file has not changed for Magento 2.2.
 
 #### Create the `queue_consumer.xml` file ####
 
