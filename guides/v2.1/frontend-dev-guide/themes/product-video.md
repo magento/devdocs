@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Configure product video
 functional_areas:
   - Frontend

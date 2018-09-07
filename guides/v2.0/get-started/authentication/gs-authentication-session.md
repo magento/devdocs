@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
@@ -17,9 +17,8 @@ Customers can access resources that are configured with `anonymous` or `self`  p
 
 Admins can access resources that are assigned to their Magento Admin profile.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} framework enables guest users to access resources that are configured with `anonymous` permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.
-</div>
 
 For example, if a customer is logged in to the Magento storefront and the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} invokes the `self` API, details for the logged-in customer are fetched:
 
@@ -29,9 +28,8 @@ Similarly, if an admin is logged in to the Magento Admin
 and the JavaScript widget `Magento_Customer::group` API, details for the logged-in admin are fetched.
 The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource.
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 The session based authentication functionality is restricted to only allow for AJAX calls and not direct browser requests due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.
-</div>
 
 ## Related topic
 

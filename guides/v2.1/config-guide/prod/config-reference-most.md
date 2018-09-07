@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Other configuration paths reference
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Timeline Dashboard
 ee_only: true
 ---

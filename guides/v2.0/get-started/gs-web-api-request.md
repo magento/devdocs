@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request
@@ -97,7 +97,8 @@ For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+{: .bs-callout .bs-callout-info }
+To specify an HTTP header in a cURL command, use the `-H` option.
 Specify one or more of the following HTTP headers in your web API calls:
 <table style="width:100%">
    <tr bgcolor="lightgray">

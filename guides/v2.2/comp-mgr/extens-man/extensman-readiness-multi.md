@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Readiness check with multiple extension updates
 menu_title: Readiness check with multiple extension updates

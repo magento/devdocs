@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: About PHP modifiers in UI components
 menu_title: About PHP modifiers in UI components

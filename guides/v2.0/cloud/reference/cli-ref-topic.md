@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
@@ -43,9 +43,8 @@ All listed commands include only the required information and options. These com
 `magento-cloud environment:list -p <project ID>`
 :	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
-</div>
 
 `magento-cloud environment:branch <name> <parent branch>`
 :	Create a new branch; the environment has both a name and an ID.

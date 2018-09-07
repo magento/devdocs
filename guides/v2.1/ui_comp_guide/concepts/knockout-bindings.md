@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: Magento custom Knockout.js bindings
 menu_title: Magento custom Knockout.js bindings

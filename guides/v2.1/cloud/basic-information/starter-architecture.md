@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Starter architecture
 functional_areas:
   - Cloud

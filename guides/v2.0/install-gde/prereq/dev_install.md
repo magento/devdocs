@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: T_Developer
 title: (Contributor) Clone the Magento repository
 menu_title: (Contributor) Clone the Magento repository
@@ -15,17 +15,15 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 ## Intended audience {#integrator-aud}
 
 The audience for this topic is anyone who contributes to the {{site.data.var.ce}} codebase. You should be highly technical, understand {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">choose another starting point</a>.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.
-</div>
 
 ## Prerequisites
 {% include install/prereq.md %}
@@ -94,11 +92,13 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 3.	Wait for the repository to clone on your server.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-			<pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the following error displays, make sure you [shared your SSH key](https://help.github.com/articles/generating-ssh-keys/){: target="_blank"} with GitHub:
+	```terminal
+	Cloning into 'magento2'...
+	Permission denied (publickey).
+	fatal: The remote end hung up unexpectedly
+	```
 	</div>
 4.	Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
 

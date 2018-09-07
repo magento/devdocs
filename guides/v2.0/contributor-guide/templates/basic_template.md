@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Basic template
 redirect_from: /guides/v2.0/howdoi/howdoi_template.html
 ---

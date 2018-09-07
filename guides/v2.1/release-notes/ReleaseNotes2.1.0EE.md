@@ -13,9 +13,8 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 G
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these changes in italics below. The code base has not changed.
 
 ### Highlights
 
@@ -630,10 +629,8 @@ target="_blank"> (GITHUB-4099)</a>
 
 To view this setting in the Magento Admin, click **Stores** > Settings > **Configuration** > GENERAL > **Web**. In the right pane, expand **Base URLs (Secure)**, value of the **Offloader header** field.
 
-<div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-    <p>If you change the value of this field, you must regenerate your <code>.vcl</code> files.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 51008 -->* Magento now successfully migrates data when Google Analytics's Content Experiments is enabled.
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Custom whitelist VCL
 menu_title: Custom whitelist VCL
@@ -18,9 +18,8 @@ You must have the following information to complete this VCL code snippet:
 * Account access and URL to the Magento Admin for the Staging or Production environment
 * URL for the Magento Admin. If you changed this URL from `/admin`, you will need to modify the code in this example.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
-</div>
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
 
@@ -64,9 +63,8 @@ Review the following values for the code to determine if you need to make change
   * If your URL for your Magento Admin was changed, make sure to edit `/admin` with the new URL. For example, `/company-admin`.
   * In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding. Do not remove or edit this code.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
-</div>
 
 ## Finish adding the VCL {#complete}
 

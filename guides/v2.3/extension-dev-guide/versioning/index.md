@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Versioning
 menu_title: Versioning
@@ -65,9 +65,8 @@ Or it can be used to declare a dependency on a particular version of a component
 }
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
-</div>
 
 ## Related Topics
 

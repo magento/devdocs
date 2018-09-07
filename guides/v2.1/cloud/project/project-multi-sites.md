@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Set up multiple websites or stores
 functional_areas:
   - Cloud

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Launch Docker configuration
 functional_areas:
   - Cloud

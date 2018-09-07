@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Design
 title: Admin Iconography
 menu_title: Iconography

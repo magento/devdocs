@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: B_UI Library Listing/Grid Component
 title: Listing/Grid Component
 menu_title: Listing/Grid Component

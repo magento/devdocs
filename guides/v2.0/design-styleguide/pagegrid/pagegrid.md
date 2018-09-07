@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Design
 title: Admin Page Grids
 menu_title: Page Grids

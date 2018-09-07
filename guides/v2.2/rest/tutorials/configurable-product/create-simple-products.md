@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 3. Create the simple products
 subtitle: Create a configurable product tutorial
 menu_title: Step 3. Create the simple products
@@ -25,9 +25,8 @@ Although it's not required, the simple product payload also includes `stock_item
 
 ## Create the first simple product
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
-</div>
 
 **Endpoint**
 

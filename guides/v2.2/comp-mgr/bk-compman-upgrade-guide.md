@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Upgrade the Magento application and modules
 functional_areas:
   - Upgrade

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 01_Introduction
 title: Configuration Guide
 landing-page: Configuration Guide

@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?

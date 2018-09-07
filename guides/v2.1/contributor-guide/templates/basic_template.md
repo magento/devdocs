@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Basic template
 redirect_from:
    - /guides/v2.1/contributor-guide/basic_template.html

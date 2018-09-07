@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Example of managing system-specific settings
 functional_areas:
   - Cloud

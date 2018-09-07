@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Assign companies to a shared catalog
 menu_title: Assign companies
@@ -30,9 +30,8 @@ GET  /V1/sharedCatalog/:sharedCatalogId/companies
 
 **Company parameters**
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
-</div>
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

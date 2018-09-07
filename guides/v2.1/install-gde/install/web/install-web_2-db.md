@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 2. Add a Database
 menu_title: Step 2. Add a Database

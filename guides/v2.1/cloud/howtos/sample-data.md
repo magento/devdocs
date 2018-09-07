@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Optional - Install sample data
 menu_title: Optional - Install sample data

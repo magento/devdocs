@@ -13,9 +13,8 @@ level3_subgroup: ce21-relnotes
 
 *Release notes updated on April 28, 2017.*
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Upgrading to this release can cause problems with image resizing. Please see [Image Resize Issue with Magento 2.1.6]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_216-imageresize.html){:target="_blank"} for an overview of these post-upgrade issues and our suggested workaround.
-</div>
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page as well as image resizing. 
 

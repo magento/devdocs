@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_SearchStaging module
 ee_only: true
 ---

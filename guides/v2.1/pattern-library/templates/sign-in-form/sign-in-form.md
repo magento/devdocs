@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Sign-in form
 redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---

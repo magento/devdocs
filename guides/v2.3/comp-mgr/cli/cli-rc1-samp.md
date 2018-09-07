@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Command-line upgrade with sample data
 functional_areas:
   - Upgrade

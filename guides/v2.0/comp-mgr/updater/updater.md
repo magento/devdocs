@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 40_update-updater
 title: Updater application
 menu_title: Updater application

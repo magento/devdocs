@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Export the configuration
 functional_areas:
   - Configuration

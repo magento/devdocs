@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Resolve issues with encryption key
 menu_title: Resolve issues with encryption key

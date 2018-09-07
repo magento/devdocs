@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: W_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation

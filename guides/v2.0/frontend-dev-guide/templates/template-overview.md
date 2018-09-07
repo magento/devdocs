@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates overview
 menu_title: Templates
@@ -17,10 +17,8 @@ In most cases, templates do not contain any logic about whether they will or wil
 
 Default Magento templates are {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files. Also {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates are used for [Knockout JS](http://knockoutjs.com/index.html) scripts.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p><a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank">The Magento template rendering subsystem</a> supports multiple template engines, including the default PHP-based engine for processing PHTML templates.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+[The Magento template rendering subsystem]({{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html){: target="_blank"} supports multiple template engines, including the default PHP-based engine for processing PHTML templates.
 
 This chapter describes how to customize templates in your design theme, and provides both the practice reference and the theoretical background of how templates are applied in a Magento store.
 

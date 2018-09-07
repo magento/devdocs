@@ -25,15 +25,13 @@ A *package* is a component that is wrapped up in a distributable form. Usually y
 
 An *extension* is a component that are packaged for sale on Magento Marketplace.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).
 
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must follow a [PSR compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 ## Magento module example
 

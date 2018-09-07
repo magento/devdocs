@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento logging in more detail
 functional_areas:
   - Configuration

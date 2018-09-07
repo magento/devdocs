@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Add Staging and Production to Pro projects UI
 ---
 

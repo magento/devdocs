@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Missing .gitignore files
 menu_title: Missing .gitignore files

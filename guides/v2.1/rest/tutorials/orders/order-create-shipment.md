@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 9. Create a shipment
 subtitle: Order processing tutorial
 return_to:

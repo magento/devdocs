@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Import Magento EE into Magento Commerce (Cloud)
 menu_title: Import Magento EE into Magento Commerce (Cloud)

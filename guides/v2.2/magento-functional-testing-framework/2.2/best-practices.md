@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Best practices
 mftf-release: 2.2.0
 functional_areas:
  - Testing
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/best-practices.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/best-practices.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
