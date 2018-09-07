@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Quick start. Test run
 ---
 
@@ -10,8 +10,8 @@ FTF uses PHPUnit, which is located in `<magento2_root_dir>/dev/tests/functional/
 Be sure that your system is ready for test run.
 
 - [Magento is ready for tests]({{ page.baseurl }}/mtf/mtf_installation.html#mtf_install_pre)
-- [The Functional Testing Framework isinstalled]({{ page.baseurl }}/mtf/mtf_installation.html#mtf_install_check)
-- [The Functional Testing Framework isconfigured]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
+- [The Functional Testing Framework is installed]({{ page.baseurl }}/mtf/mtf_installation.html#mtf_install_check)
+- [The Functional Testing Framework is configured]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
 - [Environment is ready to test run]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
 
 ### Run all tests {#mtf_quickstart_testrun_all}

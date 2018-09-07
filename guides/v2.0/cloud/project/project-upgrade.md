@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 130_upgrades
 title: Upgrade Magento Commerce (Cloud)
 menu_title: Upgrade Magento Commerce (Cloud)
@@ -18,9 +18,8 @@ When you upgrade {{site.data.var.ece}}, you also upgrade with patches and availa
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
-</div>
 
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 

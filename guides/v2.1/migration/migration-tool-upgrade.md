@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Upgrade Data Migration Tool
 menu_title: Upgrade Data Migration Tool
@@ -25,7 +25,7 @@ Before upgrading the Data Migration Tool, you must:
 
 ### Upgrade your Magento software {#data-migrate-upgr-magento}
 
-If you haven't already done so, run the [System Upgradeutility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) to upgrade the Magento software.
+If you haven't already done so, run the [System Upgrade utility]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html) to upgrade the Magento software.
 
 ### Back up the `vendor/magento/data-migration-tool` directory
 
@@ -35,9 +35,8 @@ You can also back up the entire Magento codebase and database using the followin
 
 	php <your Magento install dir>/bin/magento setup:backup --code --db
 
-<div class="bs-callout bs-callout-warning">
-    <p>The <code>vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The `vendor/magento/data-migration-tool` directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.
 
 ### Make sure versions match
 
@@ -53,7 +52,7 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 
 ## Upgrade Data Migration Tool {#data-migrate-upgr}
 
-1.	Log in to your Magento server as, or switch to, [the Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 2.	Change to Magento 2 root directory.
 3. 	Enter the following command:
 
@@ -68,5 +67,5 @@ See the [Install Data Migration Tool]({{ page.baseurl }}/migration/migration-too
 
 ## Related topics
 
-* [Configuremigration]({{ page.baseurl }}/migration/migration-tool-configure.html)
+* [Configure migration]({{ page.baseurl }}/migration/migration-tool-configure.html)
 * [Preconditions]({{ page.baseurl }}/migration/migration-tool-preconditions.html)

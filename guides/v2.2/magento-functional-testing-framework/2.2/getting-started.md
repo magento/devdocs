@@ -1,16 +1,14 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Getting started
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-started.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/getting-started.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
-
-{% include_relative include/note-2.3-docs.md %}
 
 ## Prepare environment
 
@@ -114,9 +112,8 @@ SELENIUM_PROTOCOL=http
 SELENIUM_PATH=/wd/hub
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
-</div>
 
 Your environment settings form the path to your running Selenium Server.
 Example:
@@ -132,9 +129,8 @@ In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ di
 cp .htaccess.sample .htaccess
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
-</div>
 
 ### Step 6. Generate existing tests
 

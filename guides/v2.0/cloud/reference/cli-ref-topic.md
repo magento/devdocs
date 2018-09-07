@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
@@ -43,9 +43,8 @@ All listed commands include only the required information and options. These com
 `magento-cloud environment:list -p <project ID>`
 :	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
-</div>
 
 `magento-cloud environment:branch <name> <parent branch>`
 :	Create a new branch; the environment has both a name and an ID.
@@ -120,7 +119,293 @@ The following table lists general commands.
 
 The following table lists all commands for interacting with your environments and projects.
 
-<table>			<thead>	         <tr>	             <th>Command</th>	             <th>Description</th>	         </tr>			</thead>	     <tbody>	 				<tr>	 				<td>activity:list (activities)</td>	 				<td>Gets a list of activities for an environment</td>	 				</tr>	 				<tr>	 				<td>activities:log</td>	 				<td>Displays the log for an environment activity</td>	 				</tr>	 				<tr>	 				<td>app:config-get</td>	 				<td>Views the configuration of an app</td>	 				</tr>	 				<tr>	 				<td>app:list (apps)</td>	 				<td>Gets a list of all apps in the local repository</td>	 				</tr>					<tr>					<td>auth-info</td>					<td>Display your account information</td>					</tr>					<tr>					<td>auth:login (login)</td>					<td>Log in to the Magento Cloud CLI</td>					</tr>					<tr>					<td>auth:logout (logout)</td>					<td>Log out of Magento Cloud CLI</td>					</tr>					<tr>					<td>certificate:add</td>					<td>Adds an SSL certificate to the project</td>					</tr>					<tr>					<td>certificate:delete</td>					<td>Deletes a certificate from the project</td>					</tr>					<tr>					<td>certificate:get</td>					<td>View a certificate added to the project</td>					</tr>					<tr>					<td>certificate:list (certificates)</td>					<td>Lists project certificates</td>					</tr>					<tr>					<tr>	 				<td>clean</td>	 				<td>Removes old project builds. When using local:build in a separate location from your code, use this command to clear those builds. By default, your latest five builds are not deleted.</td>	 				</tr>					<td>db:dump</td>					<td>Creates a local dump of the remote database data. You can push the dump to another remote database. For example, you could pull data from the Production environment (products, catalogs, etc) and push it into Staging for testing.</td>					</tr>					<tr>					<td>db:size</td>					<td>Estimates the disk usage of the database.</td>					</tr>					<tr>					<td>db:sql (sql)</td>					<td>Opens an SQL console on the remote database. You can view tables and dump data from a local to the remote database. For example, you could push a data dump from Production into Staging for testing.</td>					</tr>	 				<tr>	 				<td>domain:add</td>	 				<td>Adds a new domain to the project</td>	 				</tr>					<tr>					<td>domain:delete</td>					<td>Deletes a domain from the project</td>					</tr>					<tr>					<td>domain:get</td>					<td>Shows detailed information for a domain including the project ID, hostname, and so on</td>					</tr>					<tr>					<td>domain:list (domains)</td>					<td>Gets a list of all domains</td>					</tr>					<tr>					<td>domain:update</td>					<td>Updates data for a domain</td>					</tr>	 				<tr>	 				<td>environment:activate</td>	 				<td>Activates an environment</td>	 				</tr>	 				<tr>	 				<td>environment:branch (branch)</td>	 				<td>Branches an environment, or creates a Git branch</td>	 				</tr>	 				<tr>	 				<td>environment:checkout (checkout)</td>	 				<td>Checks out an environment, or Git branch</td>	 				</tr>	 				<tr>	 				<td>environment:delete</td>	 				<td>Deletes an environment</td>	 				</tr>	 				<tr>	 				<td>environment:http-access (httpaccess)</td>	 				<td>Updates HTTP access settings for an environment</td>	 				</tr>	 				<tr>	 				<td>environment:info</td>	 				<td>Reads or sets properties for an environment</td>	 				</tr>	 				<tr>	 				<td>environment:list (environments)</td>	 				<td>Gets a list of environments</td>	 				</tr>	 				<tr>	 				<td>environment:logs (log)</td>	 				<td>Reads an environment's logs</td>	 				</tr>	 				<tr>	 				<td>environment:merge (merge)</td>	 				<td>Merges an environment</td>	 				</tr>					<tr>	 				<td>environment:push (push)</td>	 				<td>Pushes code to an environment</td>	 				</tr>	 				<tr>	 				<td>environment:relationships (relationships)</td>	 				<td>Displays an environment's relationships</td>	 				</tr>	 				<tr>	 				<td>environment:ssh (ssh)</td>	 				<td>Opens an SSH session to the current environment</td>	 				</tr>	 				<tr>	 				<td>environment:synchronize (sync)</td>	 				<td>Synchronizes an environment's code and or data from its parent</td>	 				</tr>	 				<tr>	 				<td>environment:url (url)</td>	 				<td>Gets the public URLs of an environment</td>	 				</tr>	 				<tr>	 				<td>integration:add</td>	 				<td>Add an integration to the project</td>	 				</tr>	 				<tr>	 				<td>integration:delete</td>	 				<td>Deletes an integration from a project</td>	 				</tr>					<tr>					<td>integration:get</td>					<td>Shows details for an integration</td>					</tr>	 				<tr>	 				<td>integration:list (integrations)</td>	 				<td>Views project integration(s)</td>	 				</tr>	 				<tr>	 				<td>integration:update</td>	 				<td>Updates an integration</td>	 				</tr>	 				<tr>	 				<td>local:build (build)</td>	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>          <p>You should only use this command to <a href="{{ page.baseurl }}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>	 				</tr>	 				<tr>	 				<td>local:dir (dir)</td>	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>	 				</tr>					<tr>	 				<td>project:get (get)</td>	 				<td>Clones a project locally</td>	 				</tr>	 				<tr>	 				<td>project:info</td>	 				<td>Reads or sets properties for a project</td>	 				</tr>	 				<tr>	 				<td>project:list (projects)</td>	 				<td>Gets a list of all active projects</td>	 				</tr>					<tr>					<td>project:set-remote</td>					<td>Set the remote project for the current Git repository</td>					</tr>					<tr>					<td>project:variable:delete</td>					<td>Delete a variable from a project</td>					</tr>					<tr>					<td>project:variable:get (project-variables, pvget)</td>					<td>View variable(s) for a project</td>					</tr>					<tr>					<td>project:variable:set (pvset)</td>					<td>Set a variable for a project</td>					</tr>					<tr>					<td>route:get</td>					<td>View a resolved route</td>					</tr>					<tr>					<td>route:list (routes)</td>					<td>List all routes for an environment</td>					</tr>	 				<tr>	 				<td>self:install</td>	 				<td>Installs or updates CLI configuration files</td>	 				</tr>	 				<tr>	 				<td>self:update (self-update)</td>	 				<td>Updates the CLI tot he latest version</td>	 				</tr>	 				<tr>	 				<td>snapshot:create (backup)</td>	 				<td>Makes a snapshot of an environment</td>	 				</tr>	 				<tr>	 				<td>snapshot:list (snapshots)</td>	 				<td>List available snapshots of an environment</td>	 				</tr>	 				<tr>	 				<td>snapshot:restore</td>	 				<td>Restores an environment snapshot</td>	 				</tr>	 				<tr>	 				<td>ssh-key:add</td>	 				<td>Adds a new SSH key</td>	 				</tr>	 				<tr>	 				<td>ssh-key:delete</td>	 				<td>Deletes an SSH key</td>	 				</tr>	 				<tr>	 				<td>ssh-key:list (ssh-keys)</td>	 				<td>Gets a list of SSH keys in your account</td>	 				</tr>	 				<tr>	 				<td>tunnel:close</td>	 				<td>Closes SSH tunnels</td>	 				</tr>	 				<tr>	 				<td>tunnel:info</td>	 				<td>Views relationships info for SSH tunnels</td>	 				</tr>	 				<tr>	 				<td>tunnel:list (tunnels)</td>	 				<td>Lists SSH tunnels</td>	 				</tr>	 				<tr>	 				<td>tunnel:open</td>	 				<td>Open SSH tunnels to an app's relationship</td>	 				</tr>	 				<tr>	 				<td>user:add</td>	 				<td>Adds a user to the project</td>	 				</tr>	 				<tr>	 				<td>user:delete</td>	 				<td>Deletes a user from the project</td>	 				</tr>	 				<tr>	 				<td>user:list (users)</td>	 				<td>Lists users for the project</td>	 				</tr>					<tr>					<td>user:role</td>					<td>View to change a user's role </td>					</tr>	 				<tr>	 				<td>variable:delete</td>	 				<td>Deletes an environment variable for a specific environment/Git branch</td>	 				</tr>	 				<tr>	 				<td>variable:get (variables, vget)</td>	 				<td>Views variable(s) for a specific environment/Git branch</td>	 				</tr>	 				<tr>	 				<td>variable:set (vset)</td>	 				<td>Sets an environment variable for a specific environment/Git branch</td>	 				</tr>	 		</tbody></table>
+<table>
+			<thead>
+	         <tr>
+	             <th>Command</th>
+	             <th>Description</th>
+	         </tr>
+			</thead>
+	     <tbody>
+	 				<tr>
+	 				<td>activity:list (activities)</td>
+	 				<td>Gets a list of activities for an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>activities:log</td>
+	 				<td>Displays the log for an environment activity</td>
+	 				</tr>
+	 				<tr>
+	 				<td>app:config-get</td>
+	 				<td>Views the configuration of an app</td>
+	 				</tr>
+	 				<tr>
+	 				<td>app:list (apps)</td>
+	 				<td>Gets a list of all apps in the local repository</td>
+	 				</tr>
+					<tr>
+					<td>auth-info</td>
+					<td>Display your account information</td>
+					</tr>
+					<tr>
+					<td>auth:login (login)</td>
+					<td>Log in to the Magento Cloud CLI</td>
+					</tr>
+					<tr>
+					<td>auth:logout (logout)</td>
+					<td>Log out of Magento Cloud CLI</td>
+					</tr>
+					<tr>
+					<td>certificate:add</td>
+					<td>Adds an SSL certificate to the project</td>
+					</tr>
+					<tr>
+					<td>certificate:delete</td>
+					<td>Deletes a certificate from the project</td>
+					</tr>
+					<tr>
+					<td>certificate:get</td>
+					<td>View a certificate added to the project</td>
+					</tr>
+					<tr>
+					<td>certificate:list (certificates)</td>
+					<td>Lists project certificates</td>
+					</tr>
+					<tr>
+					<tr>
+	 				<td>clean</td>
+	 				<td>Removes old project builds. When using local:build in a separate location from your code, use this command to clear those builds. By default, your latest five builds are not deleted.</td>
+	 				</tr>
+					<td>db:dump</td>
+					<td>Creates a local dump of the remote database data. You can push the dump to another remote database. For example, you could pull data from the Production environment (products, catalogs, etc) and push it into Staging for testing.</td>
+					</tr>
+					<tr>
+					<td>db:size</td>
+					<td>Estimates the disk usage of the database.</td>
+					</tr>
+					<tr>
+					<td>db:sql (sql)</td>
+					<td>Opens an SQL console on the remote database. You can view tables and dump data from a local to the remote database. For example, you could push a data dump from Production into Staging for testing.</td>
+					</tr>
+	 				<tr>
+	 				<td>domain:add</td>
+	 				<td>Adds a new domain to the project</td>
+	 				</tr>
+					<tr>
+					<td>domain:delete</td>
+					<td>Deletes a domain from the project</td>
+					</tr>
+					<tr>
+					<td>domain:get</td>
+					<td>Shows detailed information for a domain including the project ID, hostname, and so on</td>
+					</tr>
+					<tr>
+					<td>domain:list (domains)</td>
+					<td>Gets a list of all domains</td>
+					</tr>
+					<tr>
+					<td>domain:update</td>
+					<td>Updates data for a domain</td>
+					</tr>
+	 				<tr>
+	 				<td>environment:activate</td>
+	 				<td>Activates an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:branch (branch)</td>
+	 				<td>Branches an environment, or creates a Git branch</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:checkout (checkout)</td>
+	 				<td>Checks out an environment, or Git branch</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:delete</td>
+	 				<td>Deletes an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:http-access (httpaccess)</td>
+	 				<td>Updates HTTP access settings for an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:info</td>
+	 				<td>Reads or sets properties for an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:list (environments)</td>
+	 				<td>Gets a list of environments</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:logs (log)</td>
+	 				<td>Reads an environment's logs</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:merge (merge)</td>
+	 				<td>Merges an environment</td>
+	 				</tr>
+					<tr>
+	 				<td>environment:push (push)</td>
+	 				<td>Pushes code to an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:relationships (relationships)</td>
+	 				<td>Displays an environment's relationships</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:ssh (ssh)</td>
+	 				<td>Opens an SSH session to the current environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:synchronize (sync)</td>
+	 				<td>Synchronizes an environment's code and or data from its parent</td>
+	 				</tr>
+	 				<tr>
+	 				<td>environment:url (url)</td>
+	 				<td>Gets the public URLs of an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>integration:add</td>
+	 				<td>Add an integration to the project</td>
+	 				</tr>
+	 				<tr>
+	 				<td>integration:delete</td>
+	 				<td>Deletes an integration from a project</td>
+	 				</tr>
+					<tr>
+					<td>integration:get</td>
+					<td>Shows details for an integration</td>
+					</tr>
+	 				<tr>
+	 				<td>integration:list (integrations)</td>
+	 				<td>Views project integration(s)</td>
+	 				</tr>
+	 				<tr>
+	 				<td>integration:update</td>
+	 				<td>Updates an integration</td>
+	 				</tr>
+	 				<tr>
+	 				<td>local:build (build)</td>
+	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>
+          <p>You should only use this command to <a href="{{ page.baseurl }}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
+	 				</tr>
+	 				<tr>
+	 				<td>local:dir (dir)</td>
+	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
+	 				</tr>
+					<tr>
+	 				<td>project:get (get)</td>
+	 				<td>Clones a project locally</td>
+	 				</tr>
+	 				<tr>
+	 				<td>project:info</td>
+	 				<td>Reads or sets properties for a project</td>
+	 				</tr>
+	 				<tr>
+	 				<td>project:list (projects)</td>
+	 				<td>Gets a list of all active projects</td>
+	 				</tr>
+					<tr>
+					<td>project:set-remote</td>
+					<td>Set the remote project for the current Git repository</td>
+					</tr>
+					<tr>
+					<td>project:variable:delete</td>
+					<td>Delete a variable from a project</td>
+					</tr>
+					<tr>
+					<td>project:variable:get (project-variables, pvget)</td>
+					<td>View variable(s) for a project</td>
+					</tr>
+					<tr>
+					<td>project:variable:set (pvset)</td>
+					<td>Set a variable for a project</td>
+					</tr>
+					<tr>
+					<td>route:get</td>
+					<td>View a resolved route</td>
+					</tr>
+					<tr>
+					<td>route:list (routes)</td>
+					<td>List all routes for an environment</td>
+					</tr>
+	 				<tr>
+	 				<td>self:install</td>
+	 				<td>Installs or updates CLI configuration files</td>
+	 				</tr>
+	 				<tr>
+	 				<td>self:update (self-update)</td>
+	 				<td>Updates the CLI tot he latest version</td>
+	 				</tr>
+	 				<tr>
+	 				<td>snapshot:create (backup)</td>
+	 				<td>Makes a snapshot of an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>snapshot:list (snapshots)</td>
+	 				<td>List available snapshots of an environment</td>
+	 				</tr>
+	 				<tr>
+	 				<td>snapshot:restore</td>
+	 				<td>Restores an environment snapshot</td>
+	 				</tr>
+	 				<tr>
+	 				<td>ssh-key:add</td>
+	 				<td>Adds a new SSH key</td>
+	 				</tr>
+	 				<tr>
+	 				<td>ssh-key:delete</td>
+	 				<td>Deletes an SSH key</td>
+	 				</tr>
+	 				<tr>
+	 				<td>ssh-key:list (ssh-keys)</td>
+	 				<td>Gets a list of SSH keys in your account</td>
+	 				</tr>
+	 				<tr>
+	 				<td>tunnel:close</td>
+	 				<td>Closes SSH tunnels</td>
+	 				</tr>
+	 				<tr>
+	 				<td>tunnel:info</td>
+	 				<td>Views relationships info for SSH tunnels</td>
+	 				</tr>
+	 				<tr>
+	 				<td>tunnel:list (tunnels)</td>
+	 				<td>Lists SSH tunnels</td>
+	 				</tr>
+	 				<tr>
+	 				<td>tunnel:open</td>
+	 				<td>Open SSH tunnels to an app's relationship</td>
+	 				</tr>
+	 				<tr>
+	 				<td>user:add</td>
+	 				<td>Adds a user to the project</td>
+	 				</tr>
+	 				<tr>
+	 				<td>user:delete</td>
+	 				<td>Deletes a user from the project</td>
+	 				</tr>
+	 				<tr>
+	 				<td>user:list (users)</td>
+	 				<td>Lists users for the project</td>
+	 				</tr>
+					<tr>
+					<td>user:role</td>
+					<td>View to change a user's role </td>
+					</tr>
+	 				<tr>
+	 				<td>variable:delete</td>
+	 				<td>Deletes an environment variable for a specific environment/Git branch</td>
+	 				</tr>
+	 				<tr>
+	 				<td>variable:get (variables, vget)</td>
+	 				<td>Views variable(s) for a specific environment/Git branch</td>
+	 				</tr>
+	 				<tr>
+	 				<td>variable:set (vset)</td>
+	 				<td>Sets an environment variable for a specific environment/Git branch</td>
+	 				</tr>
+	 		</tbody>
+</table>
 
 ## Upgrade Magento Cloud CLI {#upgrade}
 

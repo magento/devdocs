@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
@@ -9,9 +9,8 @@ menu_order: 20
 Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
 using configuration is to add {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
 
-<div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>We will demonstrate this on Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+We will demonstrate this on Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example.
 
 
 In order to get product or list of products by Magento API you need to do API request to appropriate service (Product Repository in our case).
@@ -202,4 +201,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-<a href="https://github.com/magento/magento2-samples/tree/master/sample-external-links">Sample module on github</a>
+[Sample module on github](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

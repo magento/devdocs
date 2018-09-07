@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
@@ -90,7 +90,7 @@ where:
 <tr>
 <td><p>type</p></td>
 <td><p>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</p></td>
-<td><code>float <br>Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
+<td><code>float <br />Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
 </tr>
 <tr>
 <td><p>ref</p></td>
@@ -118,7 +118,7 @@ where:
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field><br><br>
+<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
 &lt;field column="customer_group_code">code&lt;/field></code></td>
 </tr>
 </tbody>

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Prepare Solr for production
 menu_title: Prepare Solr for production
@@ -29,8 +29,8 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
 *	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
-	<div class="bs-callout bs-callout-warning">
-		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the [Apache Solr Wiki](http://wiki.apache.org/solr/){: target="_blank"}.
 	</div>
 *	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
 
@@ -47,9 +47,8 @@ If one or more of the `maxBooleanClauses` parameters is set too low, the search 
 
 In a production environment, you should start and stop Solr using a script.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must perform all tasks discussed in this section as a user with `root` privileges.
 
 Create a script named <code>/etc/init.d/solr</code> with options similar to the following:
 
@@ -89,8 +88,8 @@ Create a script named <code>/etc/init.d/solr</code> with options similar to the 
 All parameters shown in the following table are required.
 
 <table>
-<col width="200">
-<col width="300">
+<col width="200" />
+<col width="300" />
 <tbody>
 <tr>
   <th>Value</th>

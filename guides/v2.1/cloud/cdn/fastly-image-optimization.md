@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Fastly image optimization
 functional_areas:
   - Cloud

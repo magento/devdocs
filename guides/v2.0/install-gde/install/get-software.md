@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: QA_Get
 title: Get the Magento software
 menu_title: Get the Magento software
@@ -15,5 +15,5 @@ functional_areas:
 
 #### Related topics
 
-*	<a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">Clone the Magento repository</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>
+*	[Clone the Magento repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Get the Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)

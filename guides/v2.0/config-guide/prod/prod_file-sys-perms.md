@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
@@ -125,9 +125,8 @@ Files in the following directories must be writable by both users in developer a
 
 Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory. 
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `setgid` applies to directories only, _not_ to files.
-</div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
 

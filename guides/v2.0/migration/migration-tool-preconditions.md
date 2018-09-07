@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions

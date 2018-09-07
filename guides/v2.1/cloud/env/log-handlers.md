@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Logging handlers
 functional_areas:
   - Cloud

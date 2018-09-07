@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Exceptions during installation
 menu_title: Exceptions during installation

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Fastly troubleshooting
 menu_title: Fastly troubleshooting

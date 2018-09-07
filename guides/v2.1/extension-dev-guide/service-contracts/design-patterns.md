@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
@@ -10,9 +10,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-         <p>Service contract data interfaces are now mutable.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}
 
@@ -48,10 +47,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-
-For file names and coding standards, follow the defined [PHP codingstandards]({{ page.baseurl }}/coding-standards/code-standard-php.html).
-
-Place service interfaces in the top-level <b>Api</b> directory for a module.
+<p>For file names and coding standards, follow the defined <a href="{{ page.baseurl }}/coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
+<p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
 
 ### Repository interfaces {#repository-interfaces}
 
@@ -142,5 +139,8 @@ Place service interfaces in the top-level <b>Api</b> directory for a module.
 
 ### Related topics {#related-topics}
 
-- [Servicecontracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
-- [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+<ul>
+   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+   </li>
+</ul>

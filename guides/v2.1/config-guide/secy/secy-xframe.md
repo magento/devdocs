@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: X-Frame-Options header
 functional_areas:
   - Configuration

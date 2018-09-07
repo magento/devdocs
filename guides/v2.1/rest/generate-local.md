@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Generate a local REST reference
 functional_areas:
   - Integration

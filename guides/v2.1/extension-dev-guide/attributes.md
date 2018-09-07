@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: EAV and extension attributes
 ---
 
@@ -40,9 +40,8 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
-</div>
 
 {% highlight PHP inline=true %}
 namespace My\Module\Setup;
@@ -133,7 +132,7 @@ where:
 <tr>
 <td><p>type</p></td>
 <td><p>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</p></td>
-<td><code>float <br>Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
+<td><code>float <br />Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
 </tr>
 <tr>
 <td><p>ref</p></td>
@@ -161,7 +160,7 @@ where:
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field><br><br>
+<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
 &lt;field column="customer_group_code">code&lt;/field></code></td>
 </tr>
 </tbody>

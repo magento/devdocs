@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Buttons and Links Usage
 menu_title: Buttons and Links Usage
@@ -120,27 +120,27 @@ The following labels are the standards for Admin labels. Refer to these footnote
       <th style="width:70%">Usage Guideline</th>
     </tr>
     <tr>
-      <td>Add<strong>*</strong><br>Add [ + Label ]<strong>*</strong></td>
-      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br><br>   
+      <td>Add<strong>*</strong><br />Add [ + Label ]<strong>*</strong></td>
+      <td>Use to create a new object or to add an existing object. As a primary call to action, the label usually matches the page title.<br /><br />   
       “Create [ + Label ]” is also used, but only as an action for creating a new object, not adding an existing one.</td>
     </tr>
     <tr>
-      <td>Cancel<br>Cancel [ + Label ]</td>
+      <td>Cancel<br />Cancel [ + Label ]</td>
       <td>In Admin, "Cancel" is used as a link in the Button Bar. Use "Cancel" to end a task flow, with changes unsaved. If the cancellation is not easily recoverable, then include a verify step.</td>
     </tr>
     <tr>
       <td>Clear Form</td>
       <td>Use to erase all entries on a form, not to be confused with “Reset [ + Label ]”.
-      <br><br>For actions that are not easily recoverable, include a verify step.</td>
+      <br /><br />For actions that are not easily recoverable, include a verify step.</td>
     </tr>
     <tr>
-      <td>Delete<br>Delete [ + Label ]</td>
-      <td>Use to permanently remove an object.<br><br>
+      <td>Delete<br />Delete [ + Label ]</td>
+      <td>Use to permanently remove an object.<br /><br />
       If the removal is not easily recoverable, then include a verify step.</td>
     </tr>
     <tr>
-      <td>Edit<br>Edit [ + Label ]</td>
-      <td>When to use "Edit" vs. "Change":<br><br>
+      <td>Edit<br />Edit [ + Label ]</td>
+      <td>When to use "Edit" vs. "Change":<br /><br />
         <ul>
           <li>Use "Edit" when an object's information is edited.</li>
           <li>Use “Change” when switching from one object to another.</li>
@@ -153,7 +153,7 @@ The following labels are the standards for Admin labels. Refer to these footnote
       <td>Use to navigate linear task flows.</td>
     </tr>
     <tr>
-      <td>Filter<br>Apply Filter</td>
+      <td>Filter<br />Apply Filter</td>
       <td>For “Filter”, use to select categories to narrow a data set. For “Apply Filter”, use to activate the selected filters in the data set. Do not confuse with “Sort”.</td>
     </tr>
     <tr>
@@ -163,11 +163,11 @@ The following labels are the standards for Admin labels. Refer to these footnote
     <tr>
       <td>Reset [ + Label ]</td>
       <td>Indicate to users what data is being reset and how the data will reset.
-      <br><br>For actions that are not easily recoverable, include a verify step.<br><br>
+      <br /><br />For actions that are not easily recoverable, include a verify step.<br /><br />
       <em>Example:</em> “Reset to Defaults”. Do not confuse with “Clear Form”. </td>
     </tr>
     <tr>
-      <td>Save<strong>**</strong><br>Save [ + Label ]<strong>**</strong></td>
+      <td>Save<strong>**</strong><br />Save [ + Label ]<strong>**</strong></td>
       <td>Use to capture changes or to submit an entry. "Save" is usually use a secondary task, when a user wants to save changes and not continue, but “Save” can be used as a primary call to action, in Admin.</td>
     </tr>
     <tr>
@@ -179,7 +179,7 @@ The following labels are the standards for Admin labels. Refer to these footnote
       <td>Use to select a category from which to sort data, not to be confused with “Filter”.</td>
     </tr>
     <tr>
-      <td>Submit<strong>*</strong><br>Submit [ + Label ]<strong>*</strong></td>
+      <td>Submit<strong>*</strong><br />Submit [ + Label ]<strong>*</strong></td>
       <td>Use to complete a task or to submit it for completion. Insert the specific name of task as the label to clarify for users what they are submitting.</td>
     </tr>
   </tbody>

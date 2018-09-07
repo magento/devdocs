@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Using jQuery UI styles
 functional_areas:
   - Frontend

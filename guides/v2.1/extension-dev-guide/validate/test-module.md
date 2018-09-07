@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 06_Validate
 title: Test your component
 menu_title: Test your component
@@ -14,7 +14,7 @@ redirect_from:
 ## Unit and Integration Tests {#test-unit}
 
 Run the PHPUnit based Magento unit and integration tests.
-For more information see the [Magento TestingOverview]({{ page.baseurl }}/test/testing.html)
+For more information see the [Magento Testing Overview]({{ page.baseurl }}/test/testing.html)
 
 ## Functional testing {#test-functional}
 
@@ -41,7 +41,7 @@ Before you publish your component, you should test installing it using the [Mage
 
 One way to do this follows:
 
-1.	[Package yourcomponent]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.	[Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
 	To create a static route, add a line similar to the following to your `hosts` file:

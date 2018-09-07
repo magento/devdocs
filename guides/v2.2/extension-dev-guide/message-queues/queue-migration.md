@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
@@ -26,9 +26,8 @@ The existing `queue.xml` file is deprecated.
 
 For complete details about these files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
 
-<div class="bs-callout bs-callout-warning">
-    <p>The Magento 2.1 <code>communication.xml</code> file has not changed for Magento 2.2.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The Magento 2.1 `communication.xml` file has not changed for Magento 2.2.
 
 #### Create the `queue_consumer.xml` file ####
 
@@ -132,5 +131,5 @@ The first column in the following table lists the all the parameters in the `que
 
 #### Related topics
 
-*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*	[Configure messagequeues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

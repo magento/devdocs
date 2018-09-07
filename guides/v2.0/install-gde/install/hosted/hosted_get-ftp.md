@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Transfer the Magento software to your hosted system
 menu_title: Transfer the Magento software to your hosted system
@@ -77,4 +77,4 @@ To extract the archive:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+[Install the Magento software]({{ page.baseurl }}/install-gde/install/hosted/hosted_install.html)

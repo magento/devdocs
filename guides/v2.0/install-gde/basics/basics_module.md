@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What's the difference between a module and a component?
 menu_title: What's the difference between a module and a component?

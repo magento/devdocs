@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application

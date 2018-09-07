@@ -388,7 +388,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11631">11631</a></td>
-    <td>[9830](https://github.com/magento/magento2/issues/9830){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/9830" target="_blank">9830</a>, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
     <td><a target="_blank" href="https://github.com/rogyar">Yaroslav Rogoza</a></td>
   </tr>
   <tr>
@@ -398,7 +398,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12115">12115</a></td>
-    <td>[6597](https://github.com/magento/magento2/issues/6597){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/6597" target="_blank">6597</a>, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
@@ -408,7 +408,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11919">11919</a></td>
-    <td>[8172](https://github.com/magento/magento2/issues/8172){:target="_blank"}, [8089](https://github.com/magento/magento2/issues/8089){:target="_blank"}, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/8172" target="_blank">8172</a>, <a href="https://github.com/magento/magento2/issues/8089" target="_blank">8089</a>, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>

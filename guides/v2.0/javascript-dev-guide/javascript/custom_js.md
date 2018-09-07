@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 15
@@ -138,7 +138,7 @@ Where the following notation is used:
   </li>
 </ul>
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){: target="_blank"} topic.
 
 ### Extend a default Ui component   {#extend_js_component}
 
@@ -186,7 +186,7 @@ define([
 {% endhighlight %}
 
 
-For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom JS component in a `.phtml` template, see the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){: target="_blank"} topic.
 
 ## Disable default Magento JS   {#disable_default_js}
 

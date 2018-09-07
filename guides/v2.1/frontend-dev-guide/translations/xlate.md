@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Translations overview
 functional_areas:
   - Frontend

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture
 redirect_from:
   - /guides/v2.0/cloud/discover-arch.html
@@ -27,7 +27,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>

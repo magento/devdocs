@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: MassActions component
 menu_title: MassActions component
@@ -63,14 +63,14 @@ Dependency on the following components:
   </tr>
   <tr>
     <td><code>callback</code></td>
-    <td></td>
+    <td />
     <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message displayed before applying the action.</td>
-    <td>{<br>title: string;<br>message: string;<br>}</td>
+    <td>{<br />title: string;<br />message: string;<br />}</td>
     <td>Optional</td>
   </tr>
   <tr>

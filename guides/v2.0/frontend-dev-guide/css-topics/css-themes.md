@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Include CSS
 menu_order: 2
@@ -15,10 +15,8 @@ functional_areas:
 
 Technically there is an option to include them in template files, but we strongly recommend avoiding this.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p><span class="glyphicon-class">
-The CSS class names can be assigned in both templates and layouts.</span></p>
-</div>
+{: .bs-callout .bs-callout-info }
+The CSS class names can be assigned in both templates and layouts.
 
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
 
@@ -95,10 +93,7 @@ For example, the following illustrates how stylesheets are included in the defau
 {%endhighlight xml%}
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p> If the system does not find the included CSS files, it searches for the same file names with a <code>.less</code> {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. This is part of the built-in preprocessing mechanism. You can find more information about it in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a> topic.
-</p></span> 
-</div>
+{: .bs-callout .bs-callout-info }
+If the system does not find the included CSS files, it searches for the same file names with a `.less` {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html){: target="_blank"} topic.
 
 

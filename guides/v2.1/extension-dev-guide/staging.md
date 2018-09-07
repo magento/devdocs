@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Staging (Magento Commerce only)
 ee_only: true
 ---

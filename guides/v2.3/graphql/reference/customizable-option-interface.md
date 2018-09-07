@@ -14,9 +14,8 @@ Customizable options for a product provide a way to offer customers a selection 
 * File picker
 * Radio buttons
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Magento has not implemented all possible customizable product options for GraphQL.
-</div>
 
 `CustomizableOptionInterface` can contain the following attributes:
 

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Install and configure Solr
 menu_title: Install and configure Solr (Magento Commerce only)

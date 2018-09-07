@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 title: JavaScript mixins
 ---
 

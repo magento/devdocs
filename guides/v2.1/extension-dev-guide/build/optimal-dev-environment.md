@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Optimal Development Environment
 subgroup: 03_Build
 menu_title: Optimal development environment

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
@@ -30,7 +30,7 @@ These exceptions result from file system permissions settings.
 
 #### Solution
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+[Set file system ownership and permissions again]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms) as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
 
@@ -59,8 +59,8 @@ During installation of optional sample data, a  message similar to the following
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	<a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
-*	<a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
+*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2){: target="_blank"}
+*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html){: target="_blank"}
 
 ### Symptom (develop branch) {#trouble-samp-dev}
 

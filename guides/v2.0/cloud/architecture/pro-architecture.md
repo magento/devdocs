@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture
 redirect_from:
   - /guides/v2.0/cloud/discover-arch.html
@@ -27,7 +27,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>
@@ -92,9 +92,8 @@ Developers use the Integration environment to develop, deploy, and test:
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.
-</div>
 
 ### Global Master
 
@@ -108,9 +107,8 @@ The Staging environment provides a near-production environment to test your site
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
-</div>
 
 ## Production environment {#cloud-arch-prod}
 

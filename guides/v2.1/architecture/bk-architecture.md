@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Architecture Guide
 landing-page: Architecture
 menu_title: Get Started

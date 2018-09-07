@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Prepare Solr for production
 ee_only: True
 functional_areas:
@@ -82,8 +82,8 @@ esac
 All parameters shown in the following table are required.
 
 <table>
-<col width="200">
-<col width="300">
+<col width="200" />
+<col width="300" />
 <tbody>
 <tr>
   <th>Value</th>

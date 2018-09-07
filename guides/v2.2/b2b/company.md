@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with the Company module
 menu_title: Integrate with the Company module

@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Sticky Header Component
 menu_title: Sticky Header Component
@@ -10,7 +10,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 
 ## Overview   {#filter}
 
-The sticky header component is responsible for rendering additional <a href="{{ page.baseurl }}/ui-library/ui-listing-grid.html">grid</a> header and grid toolbar.
+The sticky header component is responsible for rendering additional [grid]({{ page.baseurl }}/ui-library/ui-listing-grid.html) header and grid toolbar.
 
 Sticky header is displayed when the persistent header gets hidden during vertical scrolling. The persistent header reactivates when you scroll back up:
 
@@ -85,12 +85,12 @@ The toolbar component should use the `ui/grid/sticky/toolbar` template for the s
 
 The sticky header component consists of the following elements:
 
-- Constructor: <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`</a>
-- Main template: <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
+- Constructor: [`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js)
+- Main template: [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
 - Elements' templates:
-	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`</a>
-	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`</a>
-	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html)
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html)
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
 	
 
 ## Dependencies   {#sticky_dependencies}
@@ -105,12 +105,12 @@ It also works both with and without the following components, preserving their f
 
 - Listing child components:
 	- Dnd
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-resize.html">Resize</a>
+	- [Resize]({{ page.baseurl }}/ui-library/ui-secondary-resize.html)
 	- Bulk Edit
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-resize.html">Inline Edit</a>
+	- [Inline Edit]({{ page.baseurl }}/ui-library/ui-secondary-resize.html)
 - Toolbar child components:
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-pagination.html">Pagination</a>
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-filter.html">Filter</a>
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-column.html">Column</a>
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-massaction.html">Mass Action</a>
-	- <a href="{{ page.baseurl }}/ui-library/ui-secondary-bookmark.html">Bookmark</a>
+	- [Pagination]({{ page.baseurl }}/ui-library/ui-secondary-pagination.html)
+	- [Filter]({{ page.baseurl }}/ui-library/ui-secondary-filter.html)
+	- [Column]({{ page.baseurl }}/ui-library/ui-secondary-column.html)
+	- [Mass Action]({{ page.baseurl }}/ui-library/ui-secondary-massaction.html)
+	- [Bookmark]({{ page.baseurl }}/ui-library/ui-secondary-bookmark.html)

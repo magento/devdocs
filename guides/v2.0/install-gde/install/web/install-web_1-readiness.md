@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
@@ -18,5 +18,5 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
+[Step 2. Add a database]({{ page.baseurl }}/install-gde/install/web/install-web_2-db.html)
 

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
@@ -15,16 +15,16 @@ Key points:
 
 *	Minimum required elements:
 
-	*	<a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">Declare component dependencies</a> in `composer.json`.
-	*	<a href="{{ page.baseurl }}/extension-dev-guide/build/component-registration.html">Register</a> the component using `registration.php`.
+	*	[Declare component dependencies]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in `composer.json`.
+	*	[Register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the component using `registration.php`.
 	*	Component-specific XML definition files:
 
-		*	Modules: <a href="{{ page.baseurl }}/extension-dev-guide/build/create_component.html">`module.xml`</a>
-		*	Themes: <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
-		*	Language packages: <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
+		*	Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
+		*	Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
+		*	Language packages: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
 *	Distribute your component:
 
-	*	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
+	*	[Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in `.zip` format.
 
 		Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.

@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Textarea component
-menu_title: Textarea component
 ---
 
 The Textarea component implements the `<textarea>` form field.

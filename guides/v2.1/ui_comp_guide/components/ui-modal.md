@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Modal сomponent
 menu_title: Modal component
@@ -54,13 +54,13 @@ Component's options are set in the configuration `.xml` file as follows:
     <td><code>options</code></td>
     <td>Configuration passed to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
     <td>Object</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>subTitle</code></td>
     <td>Subtitle of the modal window.</td>
     <td>String</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -72,7 +72,7 @@ Component's options are set in the configuration `.xml` file as follows:
     <td><code>title</code></td>
     <td>Label displayed in the header of the modal window.</td>
     <td>String</td>
-    <td></td>
+    <td />
   </tr>
 </table>
 

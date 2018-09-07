@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: MultiselectColumn component
 menu_title: MultiselectColumn component
@@ -39,8 +39,8 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
   <tr>
     <td><code>fieldClass</code></td>
     <td>Additional CSS classes added to the column's field elements.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
-    <td>{<br><code>'data-grid-checkbox-cell': true</code><br>}</td>
+    <td>{<br />[name: string]: boolean<br />}</td>
+    <td>{<br /><code>'data-grid-checkbox-cell': true</code><br />}</td>
   </tr>
   <tr>
     <td><code>headerTmpl</code></td>

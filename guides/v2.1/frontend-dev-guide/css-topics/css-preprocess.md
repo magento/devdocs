@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: CSS preprocessing
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
@@ -10,42 +10,60 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
 
 ## Terms used {#css_preprocess_terms}
 
+
 <table>
-<tr>
-<th>
-Term
-</th>
-<th>
-Description
-</th>
-</tr>
-<tr>
-<td>
-<p>Root source files</p>
-</td>
-<td>
-<p>The <code>.less</code> files from which the <code>.css</code> files [included in layout]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html) are compiled.
+    <tr>
+    <th>
+        Term
+    </th>
+    <th>
+        Description
+    </th>
+    </tr>
+    <tr>
+    <td>
+        <p>
+        Root source files
+        </p>
+    </td>
+    <td>
+        <p>
+        The <code>.less</code> files from which the
+        <code>.css</code> files <a href=
+        "{{page.baseurl}}/frontend-dev-guide/css-topics/css-themes.html">
+        included in layout</a> are compiled.
+        </p>
+        <p>
+        For example, in one of the <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+        </p>
+        <pre>
 
-For example, in one of the [layout files of the Magento Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml), the following <code>.css</code> files are included:
-
-<pre>
-    <head>
-        <css src="css/styles-m.css" />
-        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
-        <css src="css/print.css" media="print" />
-    </head>
 </pre>
+        <pre>
 
-The root source files for the Blank theme are:
-
-<ul>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank"><Magento_Blank_theme_dir>/web/css/styles-m.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank"><Magento_Blank_theme_dir>/web/css/styles-l.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank"><Magento_Blank_theme_dir>/web/css/print.less</a></code></li>
-</ul>
-</p>
-</td>
-</tr>
+</pre>
+        <p>
+        The root source files for the Blank theme are:
+        </p>
+        <ul>
+        <li>
+            <code><a href=
+            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less"
+            target="_blank">/web/css/styles-m.less</a></code>
+        </li>
+        <li>
+            <code><a href=
+            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less"
+            target="_blank">/web/css/styles-l.less</a></code>
+        </li>
+        <li>
+            <code><a href=
+            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less"
+            target="_blank">/web/css/print.less</a></code>
+        </li>
+        </ul>
+    </td>
+    </tr>
 </table>
 
 ## LESS compilation modes {#less_modes}
@@ -151,7 +169,6 @@ In this instance, Magento will skip the `@import` directive while resolving path
 
 To include a `.less` file using the `@magento_import` directive:
 
-<ol>
 1. To avoid any conflicts with the original LESS syntax, `@magento_import` must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.
 
     **Example:**
@@ -189,27 +206,35 @@ In the scope of static resources preprocessing, the built-in LESS preprocessor:
 `@magento_import` is used and processed in `<Magento_Blank_theme_dir>/web/css/styles-l.less`:
 
 <table>
-   <tbody>
-      <tr>
-         <th>Before</th>
-         <th>After</th>
-      </tr>
-      <tr class="even">
-         <td> In <code><Magento_Blank_theme_dir>/web/css/styles-l.less</code> there's a following directive:
-            <pre> ..
+    <tbody>
+        <tr>
+            <th>
+                Before
+            </th>
+            <th>
+                After
+            </th>
+        </tr>
+        <tr>
+            <td>
+                In <code>/web/css/styles-l.less</code> there's a following
+                directive:
+                <pre>
+ ..
 //@magento_import 'source/_widgets.less'; // Theme widgets
 ..
 </pre>
-         </td>
-         <td> In the processed file, this results in the following:
-            <pre>
+            </td>
+            <td>
+                <p>In the processed file, this results in the following:</p>
+                <pre>
 @import '../Magento_Catalog/css/source/_widgets.less';
 @import '../Magento_Cms/css/source/_widgets.less';
 @import '../Magento_Reports/css/source/_widgets.less';
 @import '../Magento_Sales/css/source/_widgets.less';
  // Theme widgets
 </pre>
-         </td>
-      </tr>
-   </tbody>
+            </td>
+        </tr>
+    </tbody>
 </table>

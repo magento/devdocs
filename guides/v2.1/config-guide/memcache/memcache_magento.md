@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Magento to use memcached
 functional_areas:
   - Configuration

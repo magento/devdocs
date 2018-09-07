@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Data Table
 ---
 The data-table organizes {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data.

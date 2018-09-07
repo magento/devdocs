@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
@@ -111,7 +111,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see [`--config <value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
+Default configuration file can be replaced by custom one using CLI (see [--config `<value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
 {% highlight xml %}

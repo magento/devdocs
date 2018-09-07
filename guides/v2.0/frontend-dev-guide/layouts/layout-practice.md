@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
@@ -32,7 +32,7 @@ The markup, that is needed for a drop-down:
 
 #### Step 1: Define the blocks
 
-OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
+OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html){: target="_blank"}. Using the approach described in [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html){: target="_blank"} they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
 
 {%highlight xml%}
 ...
@@ -103,7 +103,7 @@ defines the template which is used for rearranging the links:
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
+So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"} layout is added in the Orange theme:
 
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 

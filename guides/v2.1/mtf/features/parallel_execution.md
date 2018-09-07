@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Parallel execution flow with the Functional Testing Framework
 ---
 
@@ -41,17 +41,15 @@ To set up a parallel execution flow, add Magento instances to `<magento2_root_di
 
 ```
 
-<div class="bs-callout bs-callout-warning">
-    <p>The default elements <code>"app_frontend_url"</code> and <code>"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code>"app_instances"</code> element is present.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The default elements `"app_frontend_url"` and `"app_backend_url"` must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if `"app_instances"` element is present.
 
 ### Parallel execution flow with one Magento instance
 
 Parallel execution flow with one Magento instance should be used with a caution. In this mode, test cases are executed simultaneously and can conflict with each other (for example, when different tests set the same parameter in different states).
 
-<div class="bs-callout bs-callout-warning">
-    <p>Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.
 
 The following example shows a setup configuration of the flow with one Magento instance.
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture (legacy)
 functional_areas:
   - Cloud
@@ -21,7 +21,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>

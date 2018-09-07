@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Magento to use Varnish
 functional_areas:
   - Configuration

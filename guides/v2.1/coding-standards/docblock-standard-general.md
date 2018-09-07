@@ -120,9 +120,8 @@ If description or short description happens to be the first one after DocBlock o
 
 ### License Notice and Copyright
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
-</div>
 
 Any file in Magento source should have a header with license and copyright notice.
 Exceptions are files with format that doesn't support comments, and so no meta information can be added.

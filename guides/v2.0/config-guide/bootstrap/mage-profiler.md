@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
@@ -22,7 +22,7 @@ Magento profiling enables you to:
 
 	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.
 
-Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.
+Magento provides the base functionality in [Magento\\Framework\\Profiler]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php){: target="_blank"}.
 
 ## Set MAGE_PROFILER
 `MAGE_PROFILER` supports the following values:
@@ -31,8 +31,8 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 
 	You can also use one of the following values to enable a specific profiler:
 
-    - `csvfile` which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a>
-    - Any other value (except `2`), including an empty value, which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a>
+    - `csvfile` which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Csvfile]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php){: target="_blank"}
+    - Any other value (except `2`), including an empty value, which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Html]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php){: target="_blank"}
 
 -   `2` to enable dependency graphs.
 
@@ -40,4 +40,4 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 
 	<img src="{{ site.baseurl }}/common/images/config_depend-graphs.png" width="650px">
 
-You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
+You can set the value of `MAGE_PROFILER` in any of the ways discussed in [Set the value of bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html).

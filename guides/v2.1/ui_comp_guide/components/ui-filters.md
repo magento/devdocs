@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Filters component
 menu_title: Filters component
@@ -27,8 +27,8 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
   <tr>
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br>[name: string]: Boolean<br>}</td>
-    <td></td>
+    <td>{<br />[name: string]: Boolean<br />}</td>
+    <td />
   </tr>
   <tr>
     <td><code>stickyTmpl</code></td>

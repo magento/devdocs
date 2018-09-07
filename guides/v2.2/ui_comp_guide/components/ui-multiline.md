@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Multiline component
-menu_title: Multiline component
 ---
 
 The Multiline component is a collection of form elements that displays multiple fields of the same type. For example, the **Street Address** fields.
@@ -151,7 +149,7 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>
@@ -165,6 +163,6 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
 </table>

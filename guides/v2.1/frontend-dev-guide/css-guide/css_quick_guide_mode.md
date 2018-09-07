@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Simple style changes with client-side LESS compilation vs. server-side
 functional_areas:
   - Frontend

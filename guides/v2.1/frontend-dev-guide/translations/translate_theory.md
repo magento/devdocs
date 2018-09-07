@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Translate theme strings
 functional_areas:
   - Frontend

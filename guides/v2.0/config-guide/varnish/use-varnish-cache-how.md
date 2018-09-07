@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: How Varnish caching works
 menu_title: How Varnish caching works
@@ -15,17 +15,16 @@ functional_areas:
 
 This topic discusses how Varnish caching works with Magento using:
 
-*	<a href="{{ site.mage2000url }}nginx.conf.sample" target="_blank">`nginx.conf.sample`</a> from the Magento 2 GitHub repository
+*	[`nginx.conf.sample`]({{ site.mage2000url }}nginx.conf.sample){: target="_blank"} from the Magento 2 GitHub repository
 *	`.htaccess` distributed configuration file for Apache provided with Magento
-*	`default.vcl` configuration for Varnish generated using the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html">Magento Admin</a>
+*	`default.vcl` configuration for Varnish generated using the [Magento Admin]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.
 
 On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.  
 
-In addition, Varnish uses an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}Entity{% endglossarytooltip %} Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} change on the server. As a result, static assets are sent to the client when they change on the server&mdash;either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
+In addition, Varnish uses an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}Entity{% endglossarytooltip %} Tag ([ETag](https://en.wikipedia.org/wiki/HTTP_ETag){: target="_blank"}) for static assets. The ETag provides a way to determine when {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} change on the server. As a result, static assets are sent to the client when they change on the server&mdash;either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
 
 More detail is provided in the sections that follow.
 
@@ -43,9 +42,8 @@ The following figure shows an example using a browser inspector.
 
 The preceding example shows a request for the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} main page (`m2_ce_my`). {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} assets are cached on the client browser.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.
 
 ### Second browser request   {#config-varnish-cache-browser-second}
 

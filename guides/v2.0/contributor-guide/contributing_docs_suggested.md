@@ -1,6 +1,10 @@
 ---
-group: contributor
+group: contributor-guide
 title: Suggested topics for contribution
+redirect_from:
+   - /guides/v2.0/contributor-guide/contributing_docs_suggested.html
+   - /guides/v2.0/howdoi/bk-how-do-i.html
+
 ---
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
@@ -18,10 +22,10 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
 
 <table>
    <colgroup>
-      <col width="15%">
-      <col width="15%">
-      <col width="55%">
-      <col width="15%">
+      <col width="15%" />
+      <col width="15%" />
+      <col width="55%" />
+      <col width="15%" />
    </colgroup>
    <thead>
       <tr>
@@ -43,7 +47,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
               <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
             </ul>
         </td>
-        <td></td>
+        <td />
       </tr>
       <tr>
         <td><a href="https://github.com/magento/devdocs/issues/1465" target="_blank">Admin grids</a></td>
@@ -57,7 +61,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
               <li>New content must contain working code samples with explanations.</li>
             </ul>
         </td>
-        <td></td>
+        <td />
       </tr>
       <tr>
         <td><a href="https://github.com/magento/devdocs/issues/1437" target="_blank">Price adjustments</a></td>
@@ -70,7 +74,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
               <li>Describe what areas price adjustments affect.</li>
             </ul>
         </td>
-        <td></td>
+        <td />
       </tr>
       <tr>
         <td><a href="https://github.com/magento/devdocs/issues/1637" target="_blank">Category attributes</a></td>
@@ -89,7 +93,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
                 </ul></li>
             </ul>
         </td>
-        <td></td>
+        <td />
       </tr>
       <tr>
         <td><a href="https://github.com/magento/devdocs/issues/434" target="_blank">Logging</a></td>
@@ -111,7 +115,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
               <li>Differentiate between versions of Magento, if applicable.</li>
             </ul>
         </td>
-        <td></td>
+        <td />
       </tr>
    </tbody>
 </table>

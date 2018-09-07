@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 10_Install extensions from the command line
 title: Install the B2B extension
 menu_title: Install the B2B extension
@@ -7,9 +7,8 @@ menu_order: 1
 ee_only: true
 ---
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You must install it after installing {{site.data.var.ee}}.
-</div>
 
 ## Installation
 
@@ -32,7 +31,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     }
     ```
 
-2.  When prompted, enter your [authenticationkeys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your *public key* is your username; your *private key* is your password. If you have stored your public and private keys in `auth.json`, you won't be asked to enter them here.
+2.  When prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your *public key* is your username; your *private key* is your password. If you have stored your public and private keys in `auth.json`, you won't be asked to enter them here.
 
 3.  Run the following commands after Composer finishes updating modules:
 
@@ -44,9 +43,8 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     bin/magento setup:static-content:deploy -f
     ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).
-</div>
 
 ## Post-installation {#configure-b2b}
 
@@ -81,9 +79,8 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     bin/magento queue:consumers:start sharedCatalogUpdatePrice
     ```
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
-</div>
 
 Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information.
 
@@ -108,9 +105,8 @@ Depending on your system configuration, to prevent possible issues, you may also
 
 After installing the {{site.data.var.b2b}} extension and starting message consumers (if you want to enable the **Shared Catalog** module), you must also enable B2B modules in Magento Admin.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** and **Requisition Lists** modules can be enabled/disabled independently.
-</div>
 
 1.  Access the Magento Admin and click **Stores** > **Configuration** > **General** > **B2B Features**.
 

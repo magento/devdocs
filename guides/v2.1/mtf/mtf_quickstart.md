@@ -1,12 +1,12 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Quick start with the Functional Testing Framework
 ---
 
 In this chapter you will learn how to:
 
 - [Adjust configuration to set PHPUnit, the FTF, and credentials for Magento modules if required]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html)
-- [Prepare environment for thetest]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
+- [Prepare environment for the test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
   - Run the Selenium Server
   - Run tests on non default browser
   - Run generator

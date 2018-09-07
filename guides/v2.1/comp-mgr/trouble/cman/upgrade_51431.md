@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshoot upgrade issues
 menu_title: Troubleshoot upgrade issues

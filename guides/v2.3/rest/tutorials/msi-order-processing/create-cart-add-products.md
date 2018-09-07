@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 8. Create a cart and add products to it
 subtitle: Order processing with MSI
 menu_title: Step 8. Create a cart and add products to it

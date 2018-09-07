@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Use cURL to run the request
 menu_title: Use cURL to run the request

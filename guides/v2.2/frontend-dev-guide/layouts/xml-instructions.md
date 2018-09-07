@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout instructions
 functional_areas:
   - Frontend
@@ -455,7 +455,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
       </tr>
       <tr class="even">
          <td><code>translate</code></td>
-         <td></td>
+         <td />
          <td>true|false</td>
          <td>no</td>
       </tr>
@@ -466,8 +466,8 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 To pass multiple arguments use the following construction:
 ```xml
 <arguments>
-   <argument></argument>
-   <argument></argument>
+   <argument name="item1" xsi:type="string">Custom string</argument>
+   <argument name="item2" xsi:type="boolean">true</argument>
    ...
 </arguments>
 ```
@@ -475,9 +475,9 @@ To pass multiple arguments use the following construction:
 To pass an argument that is an array use the following construction:
 
 ```xml
-<argument>
-   <item></item>
-   <item></item>
+<argument name="custom_array" xsi:type="array">
+   <item name="array_key_one" xsi:type="string">First Item</item>
+   <item name="array_key_two" xsi:type="string">Second Item</item>
    ...
 </argument>
 ```

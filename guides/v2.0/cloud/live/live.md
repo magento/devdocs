@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 165_live
 title: Go live and launch
 menu_title: Go live and launch

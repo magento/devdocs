@@ -1,5 +1,5 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Contribution Guidelines for the Magento Functional Testing Framework
 functional_areas:
  - Testing

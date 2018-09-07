@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Authentication
 menu_title: Authentication
@@ -25,9 +25,11 @@ Permissions required to access particular resource are configured in the `webapi
 
 
 User type | Accessible resources (defined in webapi.xml)
+--- | ---
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
-Customer | Resources with `anonymous` or `self` permission.
-Guest user | Resources with `anonymous` permission.
+Customer | Resources with `anonymous` or `self` permission
+Guest user | Resources with `anonymous` permission
+{:style="table-layout:auto;"}
 
 ### Relation between acl.xml and webapi.xml
 
@@ -178,3 +180,5 @@ Proceed to the authentication method for your preferred client:
 * JavaScript {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} on the Magento Admin or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 * [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+
+* [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

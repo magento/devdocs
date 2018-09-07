@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: WYSIWYG component
 menu_title: Wysiwyg component
@@ -47,7 +47,7 @@ The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7
 </li>
 </td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
-    <td>Object<br>String</td>
+    <td>Object<br />String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>
   <tr>

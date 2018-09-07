@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 title: Configure the Magento application
 functional_areas:
   - Install
