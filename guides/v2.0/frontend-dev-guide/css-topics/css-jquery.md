@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Using jQuery UI styles
 menu_order: 5

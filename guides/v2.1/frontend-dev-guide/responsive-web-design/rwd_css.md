@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: CSS in responsive design
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html
 functional_areas:

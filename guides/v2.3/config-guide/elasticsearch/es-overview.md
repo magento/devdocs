@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Install and configure Elasticsearch
 functional_areas:
   - Configuration

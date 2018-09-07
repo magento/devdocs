@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 09_Full page caching
 title: Public content
 menu_title: Public content
@@ -29,9 +29,8 @@ To disable caching, add a `cacheable="false"` attribute to any block in your lay
 <block class="Magento\Paypal\Block\Payflow\Link\Iframe" template="payflowlink/redirect.phtml" cacheable="false"/>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Magento disables page caching if at least one non-cacheable block is present in the layout.
-</div>
 
 You can also disable caching with HTTP headers. Use the controller to return an object that contains methods for manipulating the cache:
 
@@ -212,8 +211,7 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 
 Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don't use invalidation for actions related to store setup.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) {:target="_blank"}
-</div>
 
 {% include cache/page-cache-checklists.md%}

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Cascading style sheets (CSS)
 menu_title: Cascading style sheets (CSS)

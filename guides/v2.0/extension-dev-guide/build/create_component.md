@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
@@ -95,14 +95,8 @@ where:
 * `license`&mdash;lists applicable licenses that apply to your component.
 * `autoload`&mdash;instructs composer to load the specified files.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
-</div>
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div> -->
+{: .bs-callout .bs-callout-info }
+Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path){: target="_blank"} repository.
 
 #### Next
 

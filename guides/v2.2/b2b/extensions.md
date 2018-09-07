@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 20_PHP
 title: Develop B2B extensions
 menu_title: Develop B2B extensions

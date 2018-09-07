@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Prevent cache poisoning
 functional_areas:
   - Configuration

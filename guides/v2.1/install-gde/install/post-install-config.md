@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 subgroup: 02_config
 title: Configure the Magento application
 menu_title: Configure the Magento application

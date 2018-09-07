@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Application
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
@@ -29,9 +29,8 @@ The following sections discuss properties in `.magento.app.yaml`.
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you change the name you should think about updating your other configuration files (`routes.yaml` or the different `.magento.app.yaml`, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases)
-</div>
 
 
 ## `type` and `build` {#cloud-yaml-platform-type}
@@ -144,9 +143,8 @@ locations:
 `disk` defines the size of the persistent disk size of the
 application in MB.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
@@ -172,9 +170,8 @@ The format for adding your mount to this list is as follows:
 * `shared` means that the volume is shared between your applications inside an environment.
 * `disk` key defines the size available for that `shared` volume
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-</div>
 
 If you also want the mount web accessible, you must add it to the [`web`](#cloud-yaml-platform-web) block of locations.
 
@@ -346,9 +343,8 @@ Other PHP extensions you can optionally install:
 *	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
 *	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
-</div>
 
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
 

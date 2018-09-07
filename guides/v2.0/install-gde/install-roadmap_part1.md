@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: 01_resource
 title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)

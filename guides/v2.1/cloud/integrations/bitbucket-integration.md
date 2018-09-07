@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
 functional_areas:
   - Cloud

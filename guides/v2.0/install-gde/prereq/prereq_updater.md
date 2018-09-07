@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Set up the updater (obsolete)
 menu_title: Set up the updater (obsolete)

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Advanced Varnish configuration
 functional_areas:
   - Configuration

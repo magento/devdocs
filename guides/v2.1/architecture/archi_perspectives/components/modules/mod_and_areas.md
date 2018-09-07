@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Modules and areas
 menu_title: Modules and areas
 redirect_from:

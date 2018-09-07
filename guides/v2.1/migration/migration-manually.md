@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: E_manually
 title: Data that needs to be migrated manually
 menu_title: Data that needs to be migrated manually
@@ -62,11 +62,8 @@ You must manually re-create all:
 
 *	administrative user accounts and associate them with access privileges
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>
-        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="{{ page.baseurl }}/migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.
-    </p>
-</div>
+{: .bs-callout .bs-callout-info }
+You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
 
 ## Related topics
 

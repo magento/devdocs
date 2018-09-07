@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: checkout
 title: Customize the list of shipping methods
 subtitle: Customize Checkout

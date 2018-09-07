@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Tutorials
 menu_title: Tutorials

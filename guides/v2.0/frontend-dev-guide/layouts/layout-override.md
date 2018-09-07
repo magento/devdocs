@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Override a layout
 menu_title: Override a layout
@@ -24,16 +24,16 @@ Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.
 	</div>
 
 *	Modifying method arguments.
 *	Canceling block/container removal using the `remove` attribute.
 *	Setting {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} attributes of blocks and containers.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>Certain attributes, like <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be changed in [extending layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"}.
 	</div>
 *	Removing block arguments.
 *	Modifying and suppressing <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handles</a> inclusion.
@@ -96,10 +96,8 @@ These files override the following layouts:
 <li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout2&gt;.xml</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To override page layout files, use 'page_layout' directory name instead of 'layout'</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+To override page layout files, use 'page_layout' directory name instead of 'layout'
 
 ## Customization mistakes   {#override-mistake}
 

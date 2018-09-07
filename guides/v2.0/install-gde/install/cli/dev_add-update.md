@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Add or update components
 menu_title: Add or update components

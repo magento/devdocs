@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback
@@ -49,6 +49,5 @@ To optionally set the value in the user's Bash shell:
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 	
-<div class="bs-callout bs-callout-warning">
-    <p>We recommend you avoid setting a value for [<code>pcre.recursion_limit</code>](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php){:target="_blank"} in `php.ini` because it can result in incomplete rollbacks with no failure notice.

@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Security overview
 menu_title: Security

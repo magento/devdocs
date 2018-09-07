@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Third-party libraries
 menu_title: Third-party libraries
 redirect_from: /guides/v1.0/architecture/archi_perspectives/third-party-libs.html

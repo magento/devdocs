@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Build and deploy on local
 menu_title: Build and deploy on local
@@ -20,9 +20,8 @@ These tasks walk through:
 
 For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
-</div>
 
 ## Update composer if you add extensions {#composer}
 

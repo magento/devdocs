@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: PHP version readiness check issues
 menu_title: PHP version readiness check issues

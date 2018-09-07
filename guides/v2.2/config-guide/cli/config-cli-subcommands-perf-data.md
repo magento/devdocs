@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Generate data for performance testing
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Fastly
 menu_title: Fastly

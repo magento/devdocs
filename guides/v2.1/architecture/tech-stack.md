@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Technology stack
 menu_title: Technology stack
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html

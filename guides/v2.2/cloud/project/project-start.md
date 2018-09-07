@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Project structure
 functional_areas:
   - Cloud

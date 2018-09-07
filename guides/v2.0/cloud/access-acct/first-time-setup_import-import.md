@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Import Magento EE into Magento Commerce (Cloud)
 menu_title: Import Magento EE into Magento Commerce (Cloud)
@@ -129,9 +129,8 @@ To import the Magento database in {{site.data.var.ece}}, you must know:
 -   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
 -   The database name, username, and password of the [Cloud database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
-</div>
 
 When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the database.
 
@@ -221,9 +220,8 @@ To update the unsecure base URL:
 1.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 1.  Continue with the next section.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
-</div>
 
 ## Add the Magento encryption key {#encryption-key}
 

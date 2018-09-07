@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 11_sites
 title: Set up multiple websites, stores, and store views in the Admin
 menu_title: Set up multiple websites, stores, and store views in the Admin
@@ -27,7 +27,6 @@ For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e
 
 *	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
 *	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
-
 </div>
 
 ## Step 1: Create root categories
@@ -128,9 +127,10 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
-  		<p>If you're setting up a base URL for local testing, use a period.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**.
+
+	If you're setting up a base URL for local testing, use a period.
 	</div>
 5.	Click **Save Config**.
 6.	Repeat these tasks for other websites.
@@ -178,8 +178,8 @@ You must perform this step last because after it's done, you'll lose access to t
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url-default2.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**.
 	</div>
 5.	Click **Save Config**.
 

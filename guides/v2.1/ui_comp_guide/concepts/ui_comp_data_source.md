@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: The DataSource Component
 menu_title: Providing Data to UI Components
@@ -38,9 +38,8 @@ While the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglo
 Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}javascript{% endglossarytooltip %} class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.
 
 Include the Form Provider Javascript component by adding this inside the `<dataSource />` node:
 

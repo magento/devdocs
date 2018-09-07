@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: Glossary of common terms
 menu_title: Glossary of common terms
@@ -28,9 +28,8 @@ You can *package* your components as follows:
 
 	More information about metapackages can be found in the next section.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Marketplace uses the blanket term <em>product</em> to refer to a component or a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento Marketplace uses the blanket term *product* to refer to a component or a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 ### Metapackage {#gloss-meta}
 
@@ -42,9 +41,8 @@ For example, you might want to list two metapackages in the Magento Marketplace&
 
 Merchants do not need to understand that, under the covers, some packages are shared.
 
-<div class="bs-callout bs-callout-warning">
-    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the [Magento Marketplace User Guide](http://docs.magento.com/marketplace/user_guide/getting-started.html){: target="_blank"}.
 
 #### For more information
 

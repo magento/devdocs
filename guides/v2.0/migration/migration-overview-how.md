@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: How migration works
 menu_title: How migration works

@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Architectural layers overview
 menu_title: Architectural layers

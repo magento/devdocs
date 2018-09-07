@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: Overview
 landing-page: REST API

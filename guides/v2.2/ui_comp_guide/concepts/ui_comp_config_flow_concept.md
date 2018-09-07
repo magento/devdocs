@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: Configuration flow of UI components
 menu_title: Configuration flow of UI components

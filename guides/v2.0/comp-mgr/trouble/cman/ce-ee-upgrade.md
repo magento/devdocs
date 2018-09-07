@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE

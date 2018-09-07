@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Example setting variables
 menu_title: Example setting variables

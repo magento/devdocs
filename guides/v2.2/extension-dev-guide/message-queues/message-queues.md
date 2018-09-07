@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Message Queues
 ee_only: True
 redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html

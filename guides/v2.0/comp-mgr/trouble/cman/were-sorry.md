@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Sorry, we can't take that action right now
 menu_title: Sorry, we can't take that action right now

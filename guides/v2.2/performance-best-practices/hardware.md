@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Hardware recommendations
 functional_areas:
   - Configuration

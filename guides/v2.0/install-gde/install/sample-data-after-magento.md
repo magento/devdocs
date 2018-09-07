@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 subgroup: T_SampleData
 title: Install sample data after Magento
 menu_title: Install sample data after Magento

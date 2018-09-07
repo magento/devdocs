@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: The DataSource Component
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/

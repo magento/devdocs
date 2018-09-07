@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: System 2.3.x requirements
 redirect_from:
   - /guides/v2.3/install-gde/system-requirements.html

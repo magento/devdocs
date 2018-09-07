@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Coding FAQ
 menu_title: Coding FAQ

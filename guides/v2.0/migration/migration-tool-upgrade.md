@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Upgrade Data Migration Tool
 menu_title: Upgrade Data Migration Tool
@@ -35,9 +35,8 @@ You can also back up the entire Magento codebase and database using the followin
 
 	php <your Magento install dir>/bin/magento setup:backup --code --db
 
-<div class="bs-callout bs-callout-warning">
-    <p>The <code>vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The `vendor/magento/data-migration-tool` directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.
 
 ### Make sure versions match
 

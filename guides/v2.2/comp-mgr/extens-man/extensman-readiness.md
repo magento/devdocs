@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check

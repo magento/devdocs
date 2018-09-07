@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Run the Extension Manager
 menu_title: Run the Extension Manager
@@ -17,9 +17,8 @@ The {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglo
 *	Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
 *	Language packages (localize the storefront and Admin)
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you installed the Magento application by <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the Extension Manager to update components. Instead, you must <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">update them manually</a>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you *cannot* use the Extension Manager to update components. Instead, you must [update them manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 ## Prerequisites
 

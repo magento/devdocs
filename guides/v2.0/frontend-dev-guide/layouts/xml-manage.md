@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
@@ -27,10 +27,8 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 *	<a href="#layout_markup_remove_elements">Remove elements</a>
 *	<a href="#layout_markup_replace_elements">Replace elements</a>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.
 
 ## Set the page layout   {#layout_markup_columns}
 
@@ -218,9 +216,8 @@ In both example, the template is specified according to the following:
  * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
 
 ## Modify block arguments   {#layout_markup_modify-block}
 
@@ -278,8 +275,7 @@ Extending layout:
 Example 2: Set a page title using `<action>`. 
 
 <div class="bs-callout bs-callout-warning" id="info">
-<span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+<p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p>
 </div>
 
 
@@ -327,10 +323,8 @@ This would make the product page look like following:
 
 ![]({{ site.baseurl }}/common/images/layout_image2.png)
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+To learn how to locate the layout file you need to customize, see [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html){: target="_blank"}.
 
 ## Remove elements   {#layout_markup_remove_elements}
 

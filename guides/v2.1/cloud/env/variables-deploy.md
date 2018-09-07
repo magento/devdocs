@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy variables
 functional_areas:
   - Cloud

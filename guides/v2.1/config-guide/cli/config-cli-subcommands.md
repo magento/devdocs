@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Get started with command-line configuration
 functional_areas:
   - Configuration

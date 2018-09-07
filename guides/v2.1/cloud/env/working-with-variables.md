@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Working with variables
 functional_areas:
   - Cloud

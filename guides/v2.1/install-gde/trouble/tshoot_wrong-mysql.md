@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: JavaScript in Magento responsive design
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 functional_areas:

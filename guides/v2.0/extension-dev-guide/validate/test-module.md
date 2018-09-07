@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 06_Validate
 title: Test your component
 menu_title: Test your component

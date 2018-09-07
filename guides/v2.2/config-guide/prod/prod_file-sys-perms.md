@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: File systems access permissions
 functional_areas:
   - Configuration

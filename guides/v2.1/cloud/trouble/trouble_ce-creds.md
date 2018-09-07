@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Incorrect credentials
 menu_title: Incorrect credentials

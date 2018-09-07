@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets

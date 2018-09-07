@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: TLS 1.2 requirement for PayPal
 menu_title: TLS 1.2 requirement for PayPal

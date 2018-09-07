@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Asynchronous web endpoints
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/

@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Start the Module Manager
 menu_title: Start the Module Manager

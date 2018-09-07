@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Code Contributions
 redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
@@ -93,8 +93,10 @@ You can also use the GitHub interface to update forks, referred to as a *reverse
 
 1. On your fork GitHub page, click **New pull request**. You should see the following message:
 
-   ```There isn’t anything to compare.
-   magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.```
+   ```terminal
+   There isn’t anything to compare.
+   magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.
+   ```
 
 1. Click the base link and then click **Create pull request**.
 1. Provide a descriptive name for your pull request in the provided field.
@@ -214,9 +216,8 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
-</div>
 
 ### What are up-ports and back-ports?
 

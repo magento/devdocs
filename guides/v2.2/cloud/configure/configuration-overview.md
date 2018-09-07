@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Configure your store
 menu_title: Configure your store

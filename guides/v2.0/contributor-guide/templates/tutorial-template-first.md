@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: contributor
+group: contributor-guide
 subgroup: templates
 title: Sample template tutorial
 subtitle: Sample template tutorial

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Enable profiling (MAGE_PROFILER)
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 functional_areas:

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
@@ -89,8 +89,8 @@ To minimally configure Varnish:
 	      .port = "8080";
 		}
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code>localhost</code>.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not `localhost`.
 	</div>
 
 7.	Save your changes to `default.vcl` and exit the text editor.
@@ -105,11 +105,12 @@ If Varnish fails to start, try running it from the command line as follows:
 
 This should display error messages.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
-		<ul><li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/" target="_blank">flatlinesecurity</a></li>
-			<li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a></li>
-			<li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html" target="_blank">CentOS documentation</a></li></ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
+
+* [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/){: target="_blank"}
+* [CentOS wiki](https://wiki.centos.org/HowTos/SELinux){: target="_blank"}
+* [CentOS documentation](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html){: target="_blank"}
 </div>
 
 ## Verify Varnish is working   {#config-varnish-verify}

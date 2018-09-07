@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 4. Create a quote
 subtitle: Order processing tutorial
 return_to:

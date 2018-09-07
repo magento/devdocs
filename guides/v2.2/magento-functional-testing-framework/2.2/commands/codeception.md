@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Codeception commands
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/codeception.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/codeception.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -48,9 +48,8 @@ vendor/bin/codecept run functional --group example --skip-group skip
 vendor/bin/codecept run
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The following documentation corresponds to Codeception 2.3.8.
-</div>
 
 ```
 Full reference:

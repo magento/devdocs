@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 10. Issue a partial refund
 subtitle: Order processing tutorial
 return_to:

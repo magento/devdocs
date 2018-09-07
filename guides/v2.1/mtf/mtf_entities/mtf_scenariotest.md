@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Scenario test
 ---
 
@@ -139,9 +139,8 @@ Both examples define the following test steps and their sequence:
 
 Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the `alias` attribute to define another name for a step that has been already listed as `<step>`.
  
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Note that you can use `<step>` with the same name in a scenario only once.
-</div>
 
 Example:
 
