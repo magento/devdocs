@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Prepare Solr for production
 ee_only: True
 functional_areas:

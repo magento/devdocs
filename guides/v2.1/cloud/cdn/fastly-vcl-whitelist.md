@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Custom whitelist VCL
 menu_title: Custom whitelist VCL

@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line
@@ -14,13 +14,11 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
   
 ## Introducing the Magento command-line interface (CLI)   {#new-cli-intro}
 
@@ -32,9 +30,8 @@ This topic discusses installing the Magento software using the CLI. For informat
 
 {% include install/before-you-begin-cli.md %}
 
-<div class="bs-callout bs-callout-tip">
-  <p>If you chose to enable SELinux, see <a href="{{ page.baseurl }}/install-gde/prereq/security.html">SELinux and iptables</a>.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
 
 ## First steps   {#instgde-install-cli-first}
 

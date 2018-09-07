@@ -15,9 +15,8 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.15.
 For increased security, merchants using PayPal’s Instant Payment Notification (IPN) service will be able to use only HTTPS when posting messages back to PayPal for verification. In the past, PayPal has allowed the use of HTTP for these postbacks. PayPal provides more information at [IPN Verification Postback to HTTPS Microsite](https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US){:target="_blank"}.
 
  
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 You must upgrade or apply this patch by June 30, 2017 to avoid any disruption to this service.
-</div>
 
 
  Looking for the [Magento Commerce (Cloud) Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?

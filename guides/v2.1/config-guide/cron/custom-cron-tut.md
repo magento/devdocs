@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure a custom cron job and cron group (tutorial)
 functional_areas:
   - Configuration

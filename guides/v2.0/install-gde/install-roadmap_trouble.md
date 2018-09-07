@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: AA
 title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)

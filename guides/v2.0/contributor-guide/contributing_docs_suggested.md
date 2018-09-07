@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Suggested topics for contribution
 redirect_from:
    - /guides/v2.0/contributor-guide/contributing_docs_suggested.html

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 13. Create a shipment
 menu_title: Step 13. Create a shipment
 subtitle: Order processing with MSI

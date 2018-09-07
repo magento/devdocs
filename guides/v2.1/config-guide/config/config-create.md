@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Create or extend configuration types
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:

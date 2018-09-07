@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: PHP Developer Guide
 landing-page: PHP Developer Guide
@@ -27,9 +27,8 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 compliant</a> structure when building a module.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 #### Related topics
 

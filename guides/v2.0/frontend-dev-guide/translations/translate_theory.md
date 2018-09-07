@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: G_Translate
 title: Translate theme strings
 menu_title: Translate theme strings

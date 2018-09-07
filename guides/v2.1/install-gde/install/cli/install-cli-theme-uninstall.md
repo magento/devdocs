@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Uninstall themes Composer packages
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
@@ -96,6 +96,5 @@ Messages similar to the following display:
 	Failure to clear static view files might cause display issues in the Admin and storefront.
 	Disabling maintenance mode
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To uninstall a Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} theme, you must also remove it from your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration, <code>&lt;component root directory>/etc/di.xml</code>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+To uninstall a Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} theme, you must also remove it from your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration, `<component root directory>/etc/di.xml`.

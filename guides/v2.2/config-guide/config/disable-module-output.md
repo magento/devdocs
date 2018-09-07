@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Disable module output
 functional_areas:
   - Configuration

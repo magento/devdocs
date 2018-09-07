@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 130_upgrades
 title: Upgrade from 2.0.4
 menu_title: Upgrade from 2.0.4

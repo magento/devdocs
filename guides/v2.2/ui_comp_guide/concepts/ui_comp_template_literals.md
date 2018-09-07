@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: Template Literals in UI Components
-menu_title: Template Literals
-menu_order: 50
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 ---

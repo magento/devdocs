@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Date and Time Selector
 ---
 This topic discusses design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to [Form Elements](../form_elements/form_elements.html) for general rules on form usage and placement.

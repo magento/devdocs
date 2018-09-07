@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configure routes
 functional_areas:
   - Cloud

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrades and patches
 functional_areas:
   - Cloud

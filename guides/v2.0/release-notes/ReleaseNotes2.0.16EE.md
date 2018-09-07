@@ -12,9 +12,8 @@ level3_subgroup: ee20-relnotes
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.16. This release includes almost 40 security fixes and enhancements to your Magento software.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
 
 ## Highlights
 

@@ -117,15 +117,14 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}  [prerequisites]({{ page.baseurl }}/install-gde/prereq/integrator_install.html){: target="_blank"}, then run
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 <installation directory name>
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
 
 This section discusses how to upgrade to a Release Candidate.
 
-<div class="bs-callout bs-callout-warning">
-    <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+*Do not* upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.
 
 ### Upgrade an existing installation from the GitHub repository
 

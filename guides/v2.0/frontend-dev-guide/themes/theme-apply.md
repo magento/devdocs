@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Apply and configure a storefront theme
 menu_title: Apply and configure a storefront theme
@@ -61,9 +61,8 @@ To add a permanent theme-independent logo:
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>To delete the permanent logo, go to the same location, select the checkbox next to the logo image, and click <b>Delete</b>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+To delete the permanent logo, go to the same location, select the checkbox next to the logo image, and click **Delete**.
 
 ## Clear the cache {#theme-apply-clear}
 

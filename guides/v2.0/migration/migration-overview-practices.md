@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Best practices and benchmarking
 menu_title: Best practices and benchmarking

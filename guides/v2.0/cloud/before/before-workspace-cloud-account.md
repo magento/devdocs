@@ -22,9 +22,8 @@ If the project name is **[UntitledProject]**, a Super User admin or the account 
 
 Use this procedure whether you are starting a new project from scratch or you are importing an existing Magento installation to Enterprise Cloud Edition. When you initially set up a project from a template, we retrieve the code from a specific branch in the 'magento-cloud-configuration' repository.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in {{site.data.var.ece}}. If you have an existing Magento deployment, import code, extensions, themes, and data after fully deploying this base Magento code.
-</div>
 
 {% include cloud/new-project-from-template.md %}
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy code and migrate static files and data
 functional_areas:
   - Cloud
@@ -203,9 +203,8 @@ mysqldump -h <database host> --user=<database username> --password=<password> --
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
-</div>
 
 #### Next step
 [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)

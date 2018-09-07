@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
@@ -56,9 +56,8 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
 	magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
   After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumer:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
-</div>
 
 ## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}
 

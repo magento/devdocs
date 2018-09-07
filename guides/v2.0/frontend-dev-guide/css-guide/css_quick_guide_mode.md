@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS_G
 title: Simple style changes with client-side LESS compilation vs. server-side
 menu_title: Simple style changes with client-side LESS compilation vs. server-side

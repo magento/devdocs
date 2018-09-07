@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 ee_only: true
 title: Magento Commerce modules
 ---

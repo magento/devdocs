@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Message queues
 functional_areas:
   - Cloud

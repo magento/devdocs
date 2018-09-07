@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro develop and deploy workflow
 redirect_from:
   - /guides/v2.0/cloud/discover-workflow.html

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Integrations
 functional_areas:
   - Cloud

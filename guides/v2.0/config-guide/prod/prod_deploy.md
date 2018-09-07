@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Deploy to production
 menu_title: Deploy to production

@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Form Elements
 redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---

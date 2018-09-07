@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: About Magento modes
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:

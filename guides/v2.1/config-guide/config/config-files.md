@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Module configuration files
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:

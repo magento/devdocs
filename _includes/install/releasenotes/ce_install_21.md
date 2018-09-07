@@ -1,8 +1,8 @@
 
- 
+
 ## Install the Magento software
 
-You can get Magento Open Source (formerly Community Edition) 2.1 from Github, Composer, or using a compressed archive. 
+You can get Magento Open Source (formerly Community Edition) 2.1 from Github, Composer, or using a compressed archive.
 
 See one of the following sections for more information:
 
@@ -13,15 +13,15 @@ See one of the following sections for more information:
 ### Get the Magento Open Source software using Composer {#install-rc-composer}
 {:.no_toc}
 
-The Open Source software is available from `repo.magento.com`. Before getting the Open Source software, familiarize yourself with the Composer metapackage  [prerequisites]({{ page.baseurl }}/install-gde/composer.html), then run 
+The Open Source software is available from `repo.magento.com`. Before getting the Open Source software, familiarize yourself with the Composer metapackage  [prerequisites]({{ page.baseurl }}/install-gde/composer.html), then run
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
 where `<version>` is `2.1.0`, `2.1.1`, and so on
 
 For example, to install Magento Open Source 2.1.1 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 
 ### Get a compressed archive {#install-archive}
 {:.no_toc}

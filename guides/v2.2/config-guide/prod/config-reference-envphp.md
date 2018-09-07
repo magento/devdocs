@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: env.php reference
 functional_areas:
   - Configuration

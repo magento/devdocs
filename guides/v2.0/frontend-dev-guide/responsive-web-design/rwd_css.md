@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: CSS in responsive design
 menu_title: CSS in responsive design

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 02_Security
 title: Security settings
 menu_title: Security settings

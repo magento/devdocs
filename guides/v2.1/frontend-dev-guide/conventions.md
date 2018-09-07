@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Conventional notations used in this Guide
 functional_areas:
   - Frontend

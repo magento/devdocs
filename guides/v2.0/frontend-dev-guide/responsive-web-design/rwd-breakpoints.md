@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Add a custom breakpoint
 menu_order: 7

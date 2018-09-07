@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Prepare for local environment setup
 menu_title: Prepare for local environment setup

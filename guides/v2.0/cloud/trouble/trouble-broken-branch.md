@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Resolve a broken branch
 menu_title: Resolve a broken branch

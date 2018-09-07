@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_Sales module
 redirect_from:
  - /guides/v2.1/mrg/ce/Sales/description.html

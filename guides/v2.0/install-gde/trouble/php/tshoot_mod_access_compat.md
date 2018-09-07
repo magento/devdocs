@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_title: 503 (Service Unavailable) errors accessing Magento software in a web browser

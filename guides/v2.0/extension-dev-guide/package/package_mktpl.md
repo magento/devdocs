@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 05_Package
 title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace

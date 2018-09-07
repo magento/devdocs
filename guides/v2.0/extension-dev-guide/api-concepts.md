@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
@@ -12,10 +12,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %}. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
 <p>Public interfaces for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} are marked with <code>@api</code> annotation.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{ page.baseurl }}/contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 ## What is an API?   {#api-definition}
 

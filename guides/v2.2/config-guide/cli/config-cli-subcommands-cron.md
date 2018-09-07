@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure and run cron
 functional_areas:
   - Configuration

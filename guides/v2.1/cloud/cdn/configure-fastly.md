@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Set up Fastly
 redirect from:
    - /guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html

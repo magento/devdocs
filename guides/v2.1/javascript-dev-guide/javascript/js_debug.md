@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Locate JavaScript components
 redirect_from:
@@ -23,8 +23,7 @@ To locate scripts used for a certain element:
 4.  To find the source file of the used script:
     1.  In the `<head></head>` section of the page source, click link to `requirejs-config.js` file. The file contains the Magento RequireJS configuration, collected from all modules of the current {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019%}theme{% endglossarytooltip %}.
         {:.bs-callout .bs-callout-tip}
-        [ ]{.glyphicon-class}
-        Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/<Vendor>/<theme>/<locale>/requirejs-config.js`
+                Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/<Vendor>/<theme>/<locale>/requirejs-config.js`
 
     2.  In the `var config = {...}` section of `requirejs-config.js`, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{%endglossarytooltip %} reference:
         -   If the module context is not specified, the path is relative to `<theme_dir>/web` (current theme). If the file is not found there, according to the [assets fallback], it is searched for in parent theme `web` directory, and then `lib/web`(library) directory.

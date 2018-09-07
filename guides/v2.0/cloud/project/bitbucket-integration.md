@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
 functional_areas:
   - Cloud
@@ -10,9 +10,8 @@ Use the Bitbucket integration to automatically build and deploy an environment w
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
-</div>
 
 ## Before you begin
 

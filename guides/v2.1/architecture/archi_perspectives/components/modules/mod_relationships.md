@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module relationships
 menu_title: Module relationships
 redirect_from:

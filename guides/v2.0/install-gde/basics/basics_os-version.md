@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What operating system is my server running?
 menu_title: What operating system is my server running?

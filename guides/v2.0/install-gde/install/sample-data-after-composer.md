@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 subgroup: T_SampleData
 title: Install using Composer
 menu_title: Install using Composer

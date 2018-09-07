@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: ActionsColumn component
-menu_title: ActionsColumn component
 ---
 
 The ActionsColumns component implements a table's column responsible for displaying and performing a list of record-related actions.

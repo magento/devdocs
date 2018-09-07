@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Add Staging and Production to Pro projects UI
 menu_title: Add Staging and Production to Pro projects UI
@@ -11,15 +11,13 @@ For existing Pro plans, you previously had to access Staging and Production envi
 
 To add these environments to the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html), review this entire document to complete a few preparation steps and enter a ticket.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
-</div>
 
 All new projects already include these features.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 **New projects provisioned October 23, 2017 and later** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted. This information will help you understand the changes and enter a ticket.
-</div>
 
 ## New features {#features}
 
@@ -119,9 +117,8 @@ We strongly recommend working in your local development environment then deployi
 
 Before entering a ticket, make sure your Git code matches and is synced.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.
-</div>
 
 ### Verify user account access {#prep-user}
 

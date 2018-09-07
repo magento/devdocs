@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: How CSS and LESS files are preprocessed and how to debug them
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:

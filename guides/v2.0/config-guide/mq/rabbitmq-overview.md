@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_RabbitMQ
 title: Message Queues Overview
 menu_title: Message Queues (Magento Commerce only)

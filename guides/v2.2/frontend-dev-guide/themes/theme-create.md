@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a new storefront theme
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:

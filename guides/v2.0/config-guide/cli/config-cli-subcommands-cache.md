@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Manage the cache
 menu_title: Manage the cache
@@ -150,9 +150,8 @@ Sample result:
                         db_ddl: 1 -> 0
                      full_page: 1 -> 0
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Enabling a {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} automatically clears that cache type.
-</div>
 
 ## Clean and flush cache types {#config-cli-subcommands-cache-clean}
 
@@ -190,9 +189,8 @@ Sample result:
 	config_integration_api
 	config_webservice
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
-</div>
 
 #### Related topics
 

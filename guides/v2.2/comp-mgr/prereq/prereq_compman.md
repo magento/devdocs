@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 02_prereq
 title: Prerequisites
 menu_title: Prerequisites

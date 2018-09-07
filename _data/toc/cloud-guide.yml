@@ -392,3 +392,4 @@ pages:
         - label: Upgrade from 2.0.4 (Cloud)
           url: /cloud/upgrade/upgrade-from-2-0-4.html
           include_versions: ["2.0"]
+

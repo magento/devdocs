@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up RabbitMQ service
 menu_title: Set up RabbitMQ service
@@ -18,9 +18,8 @@ The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="_blank"} as the messag
 
 We support RabbitMQ version 3.5.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
-</div>
 
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
 

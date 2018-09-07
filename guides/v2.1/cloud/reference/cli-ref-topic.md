@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Magento Cloud CLI reference
 functional_areas:
   - Cloud

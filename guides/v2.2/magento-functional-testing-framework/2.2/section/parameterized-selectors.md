@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Create and use parameterized selectors
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/parameterized-selectors.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/parameterized-selectors.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -81,9 +81,8 @@ For the parameterized part of the selector, add `{{var1}}, {{var2}}, ..., {{varN
 </section>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 There is no need to use sequential variables like `{{var1}}`, `{{var2}}`. Parameterized replacement reads variables and maps them to the test call of the element sequentially from left to right, meaning you can use a selector like `#element .{{categoryId}} .{{productId}}`."
-</div>
 
 ## Use a parameterized selector in a test
 
