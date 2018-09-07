@@ -74,7 +74,7 @@ pages:
         - label: GitHub integration
           url: /cloud/integrations/github-integration.html
 
-    - label: Development environment
+    - label: Local development
       url: /cloud/access-acct/first-time-setup.html
       children:
         - label: Docker development
