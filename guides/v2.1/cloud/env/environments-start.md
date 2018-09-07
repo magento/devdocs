@@ -12,15 +12,15 @@ functional_areas:
   - Cloud
 ---
 
-After you install the Magento CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ page.baseurl }}/cloud/basic-information/pro-architecture.html).
+After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ page.baseurl }}/cloud/basic-information/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
 
-## Common Magento CLI commands {#env-start-comm}
+## Common Magento Cloud CLI commands {#env-start-comm}
 
-Magento CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
+Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
 
-The following list of commonly used Magento CLI commands includes required options only. Use the ``--help``
+The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
 option with any command to get more detailed information. 
 
 Command | Description
@@ -133,7 +133,7 @@ To activate an inactive environment, use the `magento-cloud environment:activate
 
 ## Integration environment IP addresses {#ipaddress}
 
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We will notify all affected customers before making any changes.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
@@ -230,9 +230,9 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </table>
 {:style="table-layout:auto;"}
 
-## Interact with environments via CLI {#commands}
+## Interact with environments via the Magento Cloud CLI {#commands}
 
-After you [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can use SSH to connect from your local workspace to a remote environment and use the Magento CLI commands to interact with {{site.data.var.ece}} project services and modify settings.
+After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can use them to establish an SSH connection from your local workspace to a remote environment and use the Magento Cloud CLI commands to interact with {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 
