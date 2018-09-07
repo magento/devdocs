@@ -3,10 +3,6 @@ pages:
     - label: Welcome to Magento Commerce Cloud
       url: /cloud/bk-cloud.html
       children:
-        - label: Subscriptions and plans
-          url: /cloud/basic-information/cloud-plans.html
-          versions: ["2.0"]
-
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
           include_versions: ["2.1", "2.2", "2.3"]
