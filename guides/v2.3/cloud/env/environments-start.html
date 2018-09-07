@@ -3942,15 +3942,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter</a> or <a href="/guides/v2.3/cloud/architecture/pro-architecture.html">Pro</a> architecture information.</p>
+			<p>After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your Magento Commerce Cloud projects. For information about the environment architecture, see <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter architecture</a> or <a href="/guides/v2.3/cloud/basic-information/pro-architecture.html">Pro architecture</a>.</p>
 
 <p>To manage the branches and environments with the Project Web Interface, see <a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a>.</p>
 
-<h2 id="env-start-comm">Common Magento CLI commands</h2>
+<h2 id="env-start-comm">Common Magento Cloud CLI commands</h2>
 
-<p>You can use the Magento CLI commands, which are very similar to Git commands, to directly connect to your Magento Commerce Cloud project and manage the Integration environments. The following Magento CLI commands can run from any directory, but it is a best practice to run the commands from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project-ID&gt;</code> parameter.</p>
+<p>Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your Magento Commerce Cloud project and manage your  Magento Commerce Cloud environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project-ID&gt;</code> parameter.</p>
 
-<p>All commands are shown with required options only. Use the <code class="highlighter-rouge">--help</code> option with any command to see more information.</p>
+<p>The following list of commonly used Magento Cloud CLI commands includes required options only. Use the <code class="highlighter-rouge">--help</code>
+option with any command to get more detailed information.</p>
 
 <table>
   <thead>
@@ -4003,7 +4004,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<p>For a full list of Magento cloud CLI commands, see the Magento cloud <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></p>
+<p>For a full list of commands, see the <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
 
 <p class="bs-callout bs-callout-info">The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
 
@@ -4093,7 +4094,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="env-delete">Delete an environment</h2>
 
-<p>Before you delete an environment, make sure you do not need it anymore. You cannot recover a deleted environment later.</p>
+<p>Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.</p>
 
 <p class="bs-callout bs-callout-warning">You cannot delete the <code class="highlighter-rouge">master</code> environment of any project.</p>
 
@@ -4159,59 +4160,13 @@ Activity ID succeeded
 
 <h2 id="ipaddress">Integration environment IP addresses</h2>
 
-<p>The following table lists incoming and outgoing IP addresses used by Magento Commerce Cloud <a href="/guides/v2.3/cloud/architecture/pro-architecture.html#cloud-arch-int">Integration environments</a>.These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.</p>
+<p>The following table lists incoming and outgoing IP addresses used by Magento Commerce Cloud <a href="/guides/v2.3/cloud/architecture/pro-architecture.html#cloud-arch-int">Integration environments</a>. These IP addresses are stable, but might change. We always notify customers before making any IP address changes.</p>
 
 <p>If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.</p>
 
 <table>
 <tr>
 <th colspan="6"><b>Incoming IP addresses</b></th>
-</tr>
-<tr>
-<td>US Region</td>
-<td>US-2 Region</td>
-<td>US-3 Region</td>
-<td>EU Region</td>
-<td>EU-3 Region</td>
-<td>AP-3 Region</td>
-</tr>
-<tr>
-<td>
-<p>52.200.155.111</p>
-<p>52.200.149.44</p>
-<p>50.17.163.75</p>
-</td>
-<td>
-<p>34.197.219.58</p>
-<p>34.197.201.45</p>
-<p>34.197.217.71</p>
-</td>
-<td>
-<p>34.210.166.180</p>
-<p>34.215.83.92</p>
-<p>34.213.20.158</p>
-</td>
-<td>
-<p>52.51.163.159</p>
-<p>52.209.44.60</p>
-<p>52.208.156.247</p>
-</td>
-<td>
-<p>34.240.57.142</p>
-<p>52.16.140.48</p>
-<p>52.209.134.55</p>
-</td>
-<td>
-<p>52.65.143.178</p>
-<p>13.54.80.197</p>
-<p>52.62.224.4</p>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<th colspan="6"><b>Outgoing IP addresses</b></th>
 </tr>
 <tr>
 <td>US Region</td>
@@ -4255,9 +4210,55 @@ Activity ID succeeded
 </tr>
 </table>
 
-<h2 id="commands">Interact with environments via CLI</h2>
+<table style="table-layout:auto;">
+<tr>
+<th colspan="6"><b>Outgoing IP addresses</b></th>
+</tr>
+<tr>
+<td>US Region</td>
+<td>US-2 Region</td>
+<td>US-3 Region</td>
+<td>EU Region</td>
+<td>EU-3 Region</td>
+<td>AP-3 Region</td>
+</tr>
+<tr>
+<td>
+<p>52.200.155.111</p>
+<p>52.200.149.44</p>
+<p>50.17.163.75</p>
+</td>
+<td>
+<p>34.197.219.58</p>
+<p>34.197.201.45</p>
+<p>34.197.217.71</p>
+</td>
+<td>
+<p>34.210.166.180</p>
+<p>34.215.83.92</p>
+<p>34.213.20.158</p>
+</td>
+<td>
+<p>52.51.163.159</p>
+<p>52.209.44.60</p>
+<p>52.208.156.247</p>
+</td>
+<td>
+<p>34.240.57.142</p>
+<p>52.16.140.48</p>
+<p>52.209.134.55</p>
+</td>
+<td>
+<p>52.65.143.178</p>
+<p>13.54.80.197</p>
+<p>52.62.224.4</p>
+</td>
+</tr>
+</table>
 
-<p>After setting up your <a href="/guides/v2.3/cloud/env/environments-ssh.html">set up SSH</a>, you can interact with services and modify settings through your local to a remote environment.</p>
+<h2 id="commands">Interact with environments via the Magento Cloud CLI</h2>
+
+<p>After you <a href="/guides/v2.3/cloud/env/environments-ssh.html">setup SSH keys</a>, you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your Magento Commerce Cloud project services and modify settings.</p>
 
 <p>The following steps provide an example of accessing a database:</p>
 
