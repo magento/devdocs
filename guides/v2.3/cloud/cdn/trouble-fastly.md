@@ -1,1 +1,1 @@
-../../../v2.1/cloud/cdn/trouble-fastly.md
+../../../v2.2/cloud/cdn/trouble-fastly.md
