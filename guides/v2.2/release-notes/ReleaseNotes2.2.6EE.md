@@ -1984,7 +1984,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>MageSpecialist</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14905">14905</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14904">14904</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15539">15539</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15532">15532</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16333">16333</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16393">16393</a></td>
-    <td<a href="https://github.com/magento/magento2/issues/17099" target="_blank">17099</a>, <a href="https://github.com/magento/magento2/issues/14904" target="_blank">14904</a>, <a href="https://github.com/magento/magento2/issues/15539" target="_blank">15539</a>, <a href="https://github.com/magento/magento2/issues/15532" target="_blank">15532</a>, <a href="https://github.com/magento/magento2/issues/16333" target="_blank">16333</a>, <a href="https://github.com/magento/magento2/issues/16393" target="_blank">16393</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/17099" target="_blank">17099</a>, <a href="https://github.com/magento/magento2/issues/14904" target="_blank">14904</a>, <a href="https://github.com/magento/magento2/issues/15539" target="_blank">15539</a>, <a href="https://github.com/magento/magento2/issues/15532" target="_blank">15532</a>, <a href="https://github.com/magento/magento2/issues/16333" target="_blank">16333</a>, <a href="https://github.com/magento/magento2/issues/16393" target="_blank">16393</a></td>
   </tr>
 
 <tr>
