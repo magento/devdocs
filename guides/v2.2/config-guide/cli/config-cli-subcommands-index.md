@@ -127,6 +127,22 @@ The following indexes can be run in parallel mode:
 - Category Product can be paralleled by store views.
 - Catalog Price can be paralleled by website and customer groups.
 
+By default Catalog Price does not use a partitioning into dimension.
+If you want to use parallelization yo need to set one of available modes of dimensions for product price indexer, it can be:
+- none (default)
+- website
+- customer_group
+- website_and_customer_group
+
+For example to set mode by website you need to run next command:
+```bash
+php bin/magento indexer:set-dimensions-mode catalog_product_price website
+```
+To check current mode you can use next command: 
+```bash
+php bin/magento indexer:show-dimensions-mode
+```
+
 To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT` or add an environment variable to env.php. This variable sets the number of threads for the reindex processing.
 
 For example, the following command runs the Catalog Search Fulltext indexer across three threads:
