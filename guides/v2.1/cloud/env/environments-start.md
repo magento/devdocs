@@ -232,7 +232,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 
-After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can use them to establish an SSH connection from your local workspace to a remote environment and use the Magento Cloud CLI commands to interact with {{site.data.var.ece}} project services and modify settings.
+After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 
