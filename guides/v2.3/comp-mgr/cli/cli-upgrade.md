@@ -10,15 +10,16 @@ functional_areas:
 {% capture ee %}{{site.data.var.ee}}{% endcapture %}
 -->
 
-Upgrade Magento from the command line if you installed the software using any of the following:
+You can upgrade Magento from the command line if you installed the software by:
 
-* Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
-* Installed the compressed archive
+* Downloading the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`.
+* Installing the compressed archive.
 
-There are two ways to upgrade your Magento application to 2.3:
-1. Manual: [Upgrade using the command line].
-2. Semi-automated: [Upgrade using the script].
-The upgrading scenario is the same from the system's point of view except that several steps are automated using the PHP script.
+There are two ways to upgrade your Magento application to the 2.3 version:
+1. [Upgrade using the command line] (manual process)
+2. [Upgrade using the script] (semi-automated process)
+
+The upgrade scenario is the same for each of these options from the system's point of view, however if you upgrade using the script several of the steps are automated. except that several steps are automated using the PHP script.
 
 {:.bs-callout .bs-callout-warning}
 Both ways require that you comply with the pre-upgrade checklist.
