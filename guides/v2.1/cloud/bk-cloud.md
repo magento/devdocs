@@ -29,5 +29,5 @@ The `{{site.data.var.ct}}` package is a scalable deployment tool that simplifies
 [Cloud Benefits]: {{site.baseurl}}/common/images/cloud/CloudBenefits.svg
 {: width="930px" height="305px"}
 
-[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.svg
+[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
 {: width="804px" height="721px"}
