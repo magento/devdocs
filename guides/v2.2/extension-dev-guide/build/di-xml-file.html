@@ -2935,7 +2935,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="overview">Overview</h2>
 
-<p>The <code class="highlighter-rouge">di.xml</code> file configures which <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependencies</a> to inject by the <a href="/guides/v2.2/extension-dev-guide/object-manager.html">object manager</a>. You can also specify <a href="#ext-di-sens">sensitive configuration settings</a> using <code class="highlighter-rouge">di.xml</code>.</p>
+<p>The <code class="highlighter-rouge">di.xml</code> file configures which <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">dependencies</a> are injected by the <a href="/guides/v2.2/extension-dev-guide/object-manager.html">object manager</a>. You can also specify <a href="#ext-di-sens">sensitive configuration settings</a> using <code class="highlighter-rouge">di.xml</code>.</p>
 
 <h2 id="areas-and-application-entry-points">Areas and application entry points</h2>
 
@@ -2945,7 +2945,7 @@ Magento reads all the <code class="highlighter-rouge">di.xml</code> configuratio
 
 <p>As a general rule, the area specific <code class="highlighter-rouge">di.xml</code> files should configure dependencies for the presentation layer, and your module’s global <code class="highlighter-rouge">di.xml</code> file should configure the remaining dependencies.</p>
 
-<p>Magento loads The configuration in the following stages:</p>
+<p>Magento loads the configuration in the following stages:</p>
 
 <ol>
   <li>Initial (<code class="highlighter-rouge">app/etc/di.xml</code>)</li>
@@ -2959,14 +2959,14 @@ Magento reads all the <code class="highlighter-rouge">di.xml</code> configuratio
 
 <ul>
   <li>
-    <p>In <code class="highlighter-rouge">index.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">url</span>
+    <p>In <code class="highlighter-rouge">index.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
 .</p>
   </li>
   <li>
-    <p>In <code class="highlighter-rouge">static.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
+    <p>In <code class="highlighter-rouge">static.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the URL in the request.</p>
   </li>
   <li>
-    <p>In <code class="highlighter-rouge">cron.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Cron</code></a> class always loads the ‘crontab’ area.</p>
+    <p>In <code class="highlighter-rouge">cron.php</code>, the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70" target="_blank"><code class="highlighter-rouge">\Magento\Framework\App\Cron</code></a> class always loads the <code class="highlighter-rouge">crontab</code> area.</p>
   </li>
 </ul>
 
@@ -3293,10 +3293,10 @@ Any descendant can override the parameters configured for its supertype; that is
 <p>You can configure dependencies in Magento to have the following lifestyles:</p>
 
 <ul>
-  <li><strong>singleton</strong>(default) - One instance of this class exists. The object manager creates it at the first request.
+  <li><strong>Singleton</strong>(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.</li>
-  <li><strong>transient</strong> - The object manager creates a new instance of the class for every request.</li>
+  <li><strong>Transient</strong> - The object manager creates a new instance of the class for every request.</li>
 </ul>
 
 <p>The <code class="highlighter-rouge">shared</code> property determines the lifestyle of both <code class="highlighter-rouge">argument</code> and <code class="highlighter-rouge">type</code> configurations.</p>
