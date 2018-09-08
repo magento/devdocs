@@ -10,10 +10,6 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/update.html
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% if page.guide_version == "2.2" %}
-{% include_relative include/note-2.2-docs.md %}
-{% endif %}
-
 Magento tests and the framework are stored in different repositories.
 
 Magento tests are stored in the same repository as the Magento code base.

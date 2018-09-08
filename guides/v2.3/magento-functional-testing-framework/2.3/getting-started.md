@@ -10,22 +10,18 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-sta
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% if page.guide_version == "2.2" %}
-{% include_relative include/note-2.2-docs.md %}
-{% endif %}
-
 ## Prepare environment  {#prepare-environment}
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]
-* [Composer v1.3.x+]
-* [Java v1.8.x+]
-* [Selenium Server Standalone v3.6.0+]
-* [ChromeDriver v2.33+]
+* [PHP version supported by Magento instance under test][]
+* [Composer v1.3.x+][]
+* [Java v1.8.x+][]
+* [Selenium Server Standalone v3.6.0+][]
+* [ChromeDriver v2.33+][]
 
 {:.bs-callout .bs-callout-tip}
-[PhpStorm] recently added support for [Codeception Test execution], which is helpful when debugging.
+[PhpStorm] supports [Codeception Test execution][], which is helpful when debugging.
 
 ## Prepare Magento  {#prepare-magento}
 
@@ -41,6 +37,9 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 2. Navigate to **Stores \> Configuration \> General \> Content Management**.
 3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
 4. Click **Save Config**.
+
+{: .bs-callout .bs-callout-tip }
+Enable WYSIWYG in your test [suite][] when you need to test it.
 
 ### Security settings   {#security-settings}
 
@@ -114,7 +113,7 @@ If the file does not exist, add the `--force` option to create it:
 vendor/bin/mftf generate:urn-catalog --force .idea/
 ```
 
-See [`generate:urn-catalog`] for more details.'
+See [`generate:urn-catalog`][] for more details.'
 %}
 
 {:.bs-callout .bs-callout-tip}
@@ -165,7 +164,7 @@ And copy it into your Magento installation under:
 
 `magento2/dev/tests/acceptance/utils/command.php`
 
-If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project].
+If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project][].
 
 {:.bs-callout .bs-callout-warning}
 If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.
@@ -188,7 +187,7 @@ vendor/bin/mftf generate:tests
 
 ### Step 8. Run tests   {#run-tests}
 
-To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`][] or [`mftf`][] with required parameters.
 
 #### Run the Selenium server    {#selenium-server}
 
@@ -200,9 +199,9 @@ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 
 If you do not have the Selenium server yet:
 
-1. [Download the latest Selenium Server].
+1. [Download the latest Selenium Server][].
 
-2. [Download a Selenium web driver for your web browser] into the same directory that contains the Selenium server.
+2. [Download a Selenium web driver for your web browser][] into the same directory that contains the Selenium server.
 
 3. Add the directory with the web driver to `PATH`.
 
@@ -212,13 +211,13 @@ If you do not have the Selenium server yet:
 vendor/bin/codecept run
 ```
 
-See more commands in [`mftf`] and [`codecept`].
+See more commands in [`mftf`][] and [`codecept`][].
 
 ### Step 9. Generate reports    {#reports}
 
 The testing reports are generated in a CLI during testing.
 
-To generate the reports in HTML, use [Allure].
+To generate the reports in HTML, use [Allure][].
 For example, to generate the reports when you are in the `magento2` project root, run:
 
 ```bash
@@ -241,3 +240,4 @@ allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/
 [PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
 [PHPStorm]: https://www.jetbrains.com/phpstorm/
 [Selenium Server Standalone v3.6.0+]: #selenium-server
+[test suite]: suite.html
