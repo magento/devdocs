@@ -452,7 +452,7 @@ Description  | Versions applied to  | New or Updated | Date
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
 | [Advanced Reporting modules]({{ site.baseurl }}/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [B2B modules]({{ site.baseurl }}/guides/v2.2/mrg/b2b/b2b-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [B2B modules]({{ site.baseurl }}/guides/v2.2/mrg/b2b/B2b.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_Signifyd module]({{ site.baseurl }}/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 
 ### Component Manager and System Upgrade Guide
