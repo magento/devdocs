@@ -84,26 +84,26 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
-        - label: Prepare for local environment setup
+        - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
+          children:
+            - label: Install Magento prerequisites
+              url: /cloud/before/before-workspace-magento-prereqs.html
 
-        - label: Install Magento prerequisites
-          url: /cloud/before/before-workspace-magento-prereqs.html
+            - label: Enable SSH keys
+              url: /cloud/before/before-workspace-ssh.html
 
-        - label: Enable SSH keys
-          url: /cloud/before/before-workspace-ssh.html
+            - label: Set up the Magento file system owner
+              url: /cloud/before/before-workspace-file-sys-owner.html
 
-        - label: Set up the Magento file system owner
-          url: /cloud/before/before-workspace-file-sys-owner.html
+            - label: Clone and branch the project
+              url: /cloud/before/before-setup-env-2_clone.html
 
-        - label: Clone and branch the project
-          url: /cloud/before/before-setup-env-2_clone.html
+            - label: Install Magento
+              url: /cloud/before/before-setup-env-install.html
 
-        - label: Install Magento
-          url: /cloud/before/before-setup-env-install.html
-
-        - label: First time deployment
-          url: /cloud/access-acct/first-time-deploy.html
+            - label: First time deployment
+              url: /cloud/access-acct/first-time-deploy.html
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
