@@ -13,9 +13,10 @@ functional_areas:
   - Setup
 ---
 
-{{site.data.var.ece}} environments are **Read Only**. You must develop in a local workspace using a cloned Integration environment and push changes to the remote, read-only {{site.data.var.ece}} Git repository.
+{{site.data.var.ece}} environments are **Read Only**, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production. You must develop in a local workspace using a cloned Integration environment and push changes to the remote, read-only {{site.data.var.ece}} Git repository. You can choose one of two methods:
 
-After you receive access to a {{site.data.var.ece}} account, you can complete tasks to create your local, pull code, and deploy your store.
+-  [Launch a Docker development environment](#docker)
+-  [Create a local development environment](#local)
 
 ## Gather credentials {#credentials}
 
@@ -28,20 +29,23 @@ Prior to setting up a workspace, gather the following credentials and accounts:
 -  **Magento Encryption Key**  
     When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]({{ page.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html)
 
+## Launch a Docker environment {#docker}
+
+You can use the Docker environment to emulates the {{site.data.var.ece}} Integration environment for local development. You need three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and {{site.data.var.ece}} `{{site.data.var.ct}}` package.
+
+-  [Docker architecture and common commands]({{page.baseurl}}/cloud/docker/docker-development.html)
+-  [Launch Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html)
+
 ## Create a local environment {#local}
 
-For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production.
+You can manually add a virtual machine (VM) and install {{site.data.var.ee}}. The environment closely matches the cloud environments. The following steps walk-through manually preparing your local environment, installing Magento, and starting development:
 
-We recommend adding a virtual machine (VM) or Docker container and installing {{site.data.var.ee}}. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.
+1.  [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
+1.  [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+1.  [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
+1.  [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
+1.  [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
+1.  [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
+1.  [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html)
 
-The following steps walk-through preparing your local environment, installing Magento, and starting development:
-
-* [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
-* [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
-* [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
-* [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
-* [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
-* [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html)
-
-If you have existing Magento custom code, we provide instructions to import. For more information, see [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html).
+You can import existing Magento custom code. See [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html).

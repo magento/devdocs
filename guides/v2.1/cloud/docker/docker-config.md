@@ -7,7 +7,13 @@ functional_areas:
   - Configuration
 ---
 
-You can use the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. To specify a particular version, use the following options:
+
+- PHP: `--php`
+- NGINX: `--nginx`
+- MariaDB: `--db`
+
+There are two methods for launching Docker with the `{{site.data.var.ct}}` package:
 
 -  [`{{site.data.var.ct}}` v2002.0.13 or later](#use-13)—deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
