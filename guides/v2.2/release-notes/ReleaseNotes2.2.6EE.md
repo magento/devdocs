@@ -192,15 +192,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2029 -->* Setting deploy mode to production mode by  using the `--skip-compilation` flag no longer clears generated code in `generated/code/` and `generated/metadata/`. *Fix submitted by [platformvaimo](https://github.com/platformvaimo) in pull request [16211](https://github.com/magento/magento2/pull/16211)*. 
 
-<!-- ENGCOM-1673 -->* We've made two changes to `Magento/Config` module:
+<!-- ENGCOM-1673 -->* We've made two changes to `Magento/Config` module: `Magento/Config/Test/Unit/Block/System/Config/Form/Field/ImageTest.php::testGetElementHtmlWithValue()` method no longer references a invalid backend model, and  the anonymous function no longer has an unused `$data` in `Magento/Config/Model/Config/Importer.php`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15511](https://github.com/magento/magento2/pull/15511)*. 
 
- 	*`Magento/Config/Test/Unit/Block/System/Config/Form/Field/ImageTest.php::testGetElementHtmlWithValue()` method no longer references a invalid backend model. 
-
- 	* The anonymous function has an unused use $data in `Magento/Config/Model/Config/Importer.php`
-
-*Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15511](https://github.com/magento/magento2/pull/15511)*. 
-
-<!-- ENGCOM-1448 -->* The upgrade check implemented during setup now indicates success if the latest version of Magento is already installed. Previously, the message indicated that hte latest product version was already installed was presented as error. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15012](https://github.com/magento/magento2/pull/15012)*. 
+<!-- ENGCOM-1448 -->* The upgrade check implemented during setup now indicates success if the latest version of Magento is already installed. Previously, the message indicated that the latest product version was already installed was presented as error. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15012](https://github.com/magento/magento2/pull/15012)*. 
 
 <!-- ENGCOM-1431 -->* The **Add Block Names to Hints** configuration setting has been renamed to **Add Block Class Type to Hints**. *Fix submitted by [Chris Pook](https://github.com/chris-pook) in pull request [14939](https://github.com/magento/magento2/pull/14939)*. 
 
@@ -398,13 +392,7 @@ Capture not refundable
 
 <!-- ENGCOM-2408-->* Deprecated methods in Message Manager have been replaced with valid methods. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16924](https://github.com/magento/magento2/pull/16924)*. 
 
-<!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: 
-
- `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`
- `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`
- `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`
-
-*Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
+<!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`, `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`, and `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
 
 
 <!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occured during product import has been improved. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16389](https://github.com/magento/magento2/pull/16389)*. 
@@ -447,7 +435,7 @@ Capture not refundable
 
 <!-- ENGCOM-2268 -->* The `\Magento\Captcha\Observer\CheckGuestCheckoutObserver` class is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [16680](https://github.com/magento/magento2/pull/16680)*. 
 
- <!-- ENGCOM-2531 -->* Autocomplete for CAPTCHA inputs has been disabled. *Fix submitted by [Denis Belevtsov](https://github.com/denistrator) in pull request [17114](https://github.com/magento/magento2/pull/17114)*. 
+<!-- ENGCOM-2531 -->* Autocomplete for CAPTCHA inputs has been disabled. *Fix submitted by [Denis Belevtsov](https://github.com/denistrator) in pull request [17114](https://github.com/magento/magento2/pull/17114)*. 
 
 <!-- ENGCOM-2090 -->* Integration tests now check that customer login attempts are removed after a successful login or account details edit. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [16306](https://github.com/magento/magento2/pull/16306)*. 
 
@@ -595,11 +583,11 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1647 -->* Corrected misspelling in comments for `addTaxPercents()` in `app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [15431](https://github.com/magento/magento2/pull/15431)*. 
 
- <!-- ENGCOM-1637 -->* Corrected misspelling in `abstract.js`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15411](https://github.com/magento/magento2/pull/15411)*. 
+<!-- ENGCOM-1637 -->* Corrected misspelling in `abstract.js`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15411](https://github.com/magento/magento2/pull/15411)*. 
 
- <!-- ENGCOM-1592 -->* Removed a duplicate line and added comment in `app/code/Magento/Sales/Block/Adminhtml/Order/Create/Totals/Discount.php`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15362](https://github.com/magento/magento2/pull/15362)*. 
+<!-- ENGCOM-1592 -->* Removed a duplicate line and added comment in `app/code/Magento/Sales/Block/Adminhtml/Order/Create/Totals/Discount.php`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15362](https://github.com/magento/magento2/pull/15362)*. 
 
- <!-- ENGCOM-1593 -->* Removed unused variable in `lib/web/css/source/lib/variables/_typography.less`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15386](https://github.com/magento/magento2/pull/15386)*. 
+<!-- ENGCOM-1593 -->* Removed unused variable in `lib/web/css/source/lib/variables/_typography.less`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15386](https://github.com/magento/magento2/pull/15386)*. 
 
 <!-- ENGCOM-1602-->* Corrected variable names in `LockAdminUserWhenEditingIntegrationTest` and `AssertCityBasedShippingRateChanged`, among others. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15294](https://github.com/magento/magento2/pull/15294)*. 
 
@@ -880,7 +868,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- MAGETWO-73512 -->* The Enterprise Reward refund logic  no longer permits administrators to grant double refunds.
 
-<!-- MAGETWO-85112 -->* We moved the`isAllowed` method from `AccessChangeQuoteControl` to a separate service to optimize the logic that supports using recurrent payments in combination with pre-ordered products. *Fix submitted by [Jeroen Van Leusden](https://github.com/JeroenVanLeusden) in pull request [12566](https://github.com/magento/magento2/pull/12566)*.
+<!-- MAGETWO-85112 -->* We moved the `isAllowed` method from `AccessChangeQuoteControl` to a separate service to optimize the logic that supports using recurrent payments in combination with pre-ordered products. *Fix submitted by [Jeroen Van Leusden](https://github.com/JeroenVanLeusden) in pull request [12566](https://github.com/magento/magento2/pull/12566)*.
 
 <!-- MAGETWO-83551 -->* The attribute checking logic has been optimized by reducing redundant checks. *Fix submitted by [Freek Vandeursen](https://github.com/FreekVandeursen) in pull request [11554](https://github.com/magento/magento2/pull/11554)*.
 
@@ -902,7 +890,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1861 -->* We've removed unnecessary CSS code from  `_actions-toolbar.less`. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15789](https://github.com/magento/magento2/pull/15789)*. 
 
-<!-- ENGCOM-1850 -->* We've removed the uneccessary double semicolon from the style sheets. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15795](https://github.com/magento/magento2/pull/15795)*. 
+<!-- ENGCOM-1850 -->* We've removed the unnecessary double semicolon from the style sheets. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15795](https://github.com/magento/magento2/pull/15795)*. 
 
 <!-- ENGCOM-1880 -->* We've removed the unused code from `docs.less`. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15871](https://github.com/magento/magento2/pull/15871)*. 
 
@@ -912,7 +900,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1897 -->* Corrected misspelling in `file-uploader.js` and `storage-manager.js`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15888](https://github.com/magento/magento2/pull/15888)*. 
 
-<!-- ENGCOM-1883 -->* `.limiter` now has the same parent selectors as `.pages`, which to prevents clashes between styles and layouts. Previously, `.limiter` float was too generic. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15878](https://github.com/magento/magento2/pull/15878)*. 
+<!-- ENGCOM-1883 -->* `.limiter` now has the same parent selectors as `.pages`, which prevents clashes between styles and layouts. Previously, `.limiter` float was too generic. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15878](https://github.com/magento/magento2/pull/15878)*. 
 
 <!-- ENGCOM-1925 -->* Corrected misspelling in `scripts.js`. *Fix submitted by [Ledian Hymetllari](https://github.com/ledian-hymetllari) in pull request [15878](https://github.com/magento/magento2/pull/15907)*. 
 
@@ -920,7 +908,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1942 -->* The default `FormElementDependenceController` configuration is now extended by custom configuration rather than overridden.  *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16001](https://github.com/magento/magento2/pull/16001)*.
 
-<!-- ENGCOM-1958 -->* `inline-block` issues with space and font-size in the Name form due have been resolved. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16048](https://github.com/magento/magento2/pull/16048)*. 
+<!-- ENGCOM-1958 -->* `inline-block` issues with space and font-size in the Name form have been resolved. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16048](https://github.com/magento/magento2/pull/16048)*. 
 
 <!-- ENGCOM-1959 -->* Indentation issues with LESS files have been resolved. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15811](https://github.com/magento/magento2/pull/15811)*. 
 
@@ -940,7 +928,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1607 -->* We've removed redundant function calls in `app/code/Magento/CurrencySymbol/view/adminhtml/templates/grid.phtml`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15346](https://github.com/magento/magento2/pull/15346)*. [GitHub-15355](https://github.com/magento/magento2/issues/15355)
 
-<!-- ENGCOM-1659 -->* magnifier.js now works no matter which mode is set. (magnifier.js offers the option of setting mode to 'inside' for an in-frame zoom.) *Fix submitted by [Kacper Chara](https://github.com/kacperchara) in pull request [15382](https://github.com/magento/magento2/pull/15382)*. [GitHub-4977](https://github.com/magento/magento2/issues/4977)
+<!-- ENGCOM-1659 -->* `magnifier.js` now works no matter which mode is set. (`magnifier.js` offers the option of setting mode to 'inside' for an in-frame zoom.) *Fix submitted by [Kacper Chara](https://github.com/kacperchara) in pull request [15382](https://github.com/magento/magento2/pull/15382)*. [GitHub-4977](https://github.com/magento/magento2/issues/4977)
 
 <!-- ENGCOM-1680 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15365](https://github.com/magento/magento2/pull/15365)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
@@ -962,11 +950,11 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2443 -->* The Create Account and Password Forget forms now include the required notice for relevant fields. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16965](https://github.com/magento/magento2/pull/16965)*. 
 
-<!-- ENGCOM-2437 -->* Reworked  `addError`, `addSuccess` methods in several files. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16921](https://github.com/magento/magento2/pull/16921)*. 
+<!-- ENGCOM-2437 -->* Reworked the  `addError`, `addSuccess` methods in several files. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16921](https://github.com/magento/magento2/pull/16921)*. 
 
-<!-- ENGCOM-2398 -->* Minor improvements to  `app/code/Magento/CatalogRule/Model/Rule/Job.php` and `app/code/Magento/GroupedProduct/Model/Product/Initialization/Helper/ProductLinks/Plugin/Grouped.php` *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [16900](https://github.com/magento/magento2/pull/16900)*. 
+<!-- ENGCOM-2398 -->* Minor improvements to  `app/code/Magento/CatalogRule/Model/Rule/Job.php` and `app/code/Magento/GroupedProduct/Model/Product/Initialization/Helper/ProductLinks/Plugin/Grouped.php`. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [16900](https://github.com/magento/magento2/pull/16900)*. 
 
-<!-- ENGCOM-2282 -->* Refactored `app/code/Magento/User/Controller/Adminhtml/`  by removing the direct use of ObjectManager and includes the dependencies using constructor dependency injection. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16560](https://github.com/magento/magento2/pull/16560)*. 
+<!-- ENGCOM-2282 -->* Refactored `app/code/Magento/User/Controller/Adminhtml/`  by removing the direct use of ObjectManager and included the dependencies using constructor dependency injection. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16560](https://github.com/magento/magento2/pull/16560)*. 
 
 <!-- ENGCOM-2461 -->* Remove unused comments from `_initDiscount()` function. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17002](https://github.com/magento/magento2/pull/17002)*. 
 
@@ -978,7 +966,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2293 -->* Removed the redundant `font-size` attribute from the toolbar pager in  `lib/web/css/source/lib/_utilities.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16716](https://github.com/magento/magento2/pull/16716)*. 
 
-<!-- ENGCOM-2284 -->* Updated the "Reporting security issues" section of README.md to recommend that users create a bugcrowd account.  *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16685](https://github.com/magento/magento2/pull/16685)*. 
+<!-- ENGCOM-2284 -->* Updated the "Reporting security issues" section of `README.md` to recommend that users create a bugcrowd account.  *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16685](https://github.com/magento/magento2/pull/16685)*. 
 
 <!-- ENGCOM-2194 -->* Fixed the DocBlock for `hasInvoices()`, `hasShipments()`, and `hasCreditmemos()` in `app/code/Magento/Sales/Model/Order.php`. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [16554](https://github.com/magento/magento2/pull/16554)*. 
 
@@ -1003,7 +991,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1375 -->* Non-well-formed numeric values that were encountered in `app/code/Magento/Directory/Model/Currency.php` have been resolved. *Fix submitted by [Mateusz Lerczak](https://github.com/bmxmale) in pull request [14833](https://github.com/magento/magento2/pull/14833)*. 
 
-<!-- ENGCOM-1352 -->* The README file for the `magento2` repository now has Maintainers and Contributors sections. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14790](https://github.com/magento/magento2/pull/14790)*. 
+<!-- ENGCOM-1352 -->* The `README` file for the `magento2` repository now has Maintainers and Contributors sections. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14790](https://github.com/magento/magento2/pull/14790)*. 
 
 <!-- ENGCOM-1338 -->* The documentation for `AdapterInterface::update` has been improved. *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request [14769](https://github.com/magento/magento2/pull/14769)*. 
 
@@ -1018,15 +1006,15 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- MAGETWO-92362 -->*  You can now save gift cards without the price being changed on the Admin to an unacceptable format. Previously, Magento tried to save amounts in unacceptable formats (such as the inclusion of a comma in a four-digit price), which triggered an error.  
 
-<!-- MAGETWO-91925 -->* Magento no longer permits users to save a new gift card  without first completing the required values. Previously, when creating a gift card, users could save the card without having designated an amount, but it could not be purchased. Magento also created a `report.CRITICAL: Warning` in the `system.log`.
+<!-- MAGETWO-91925 -->* Magento no longer permits users to save a new gift card  without first completing the required values. Previously, when creating a gift card, users could save the card without having designated an amount, but the card could not be purchased. Magento also created a `report.CRITICAL: Warning` error message in the `system.log`.
 
-<!-- MAGETWO- 91867-->* Orders now retain gift message information on both item and order level. Previously, gift messages disappeared from an order when a customer logs into his account during checkout. 
+<!-- MAGETWO- 91867-->* Orders now retain gift message information on both item and order level. Previously, gift messages disappeared from an order when a customer logged into his account during checkout. 
 
-<!-- MAGETWO-91576 -->* Magento now maintains relationships between new gift card accounts when a customer purchases severalgit cards in the same order. 
+<!-- MAGETWO-91576 -->* Magento now maintains relationships between new gift card accounts when a customer purchases several gift cards in the same order. 
 
-<!-- MAGETWO-91400 -->* Magento now refunds only the exact amount used on a gift card if only the partial gift card was  used. Previously, when a customer used a gift card account code to partially pay for an order,  and Magento subsequently created a credit memo for a portion of the order, the full amount of the gift card was refunded.
+<!-- MAGETWO-91400 -->* Magento now refunds only the exact amount used on a gift card if only the part of the gift card was  used. Previously, when a customer used a gift card account code to partially pay for an order,  and Magento subsequently created a credit memo for a portion of the order, the full amount of the gift card was refunded.
 
-<!-- MAGETWO-86757 -->* Magento now generates the correct number of gift card codes when the full order is invoiced as the customer selects when creating an order. Previously, for orders that included both physical products and multiple gift cards, the number of gift card codes  generated on an order corresponded to the quantity of the previous physical line items that the user had added to the cart before adding gift cards.
+<!-- MAGETWO-86757 -->* Magento now generates the same number of gift card codes when the full order is invoiced as the customer selected when creating an order. Previously, for orders that included both physical products and multiple gift cards, the number of gift card codes  generated on an order corresponded to the quantity of the previous physical line items that the user had added to the cart before adding gift cards.
 
 
 
@@ -1071,7 +1059,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 ### Infrastructure
 
-<!-- MAGETWO-92303 -->* Magento now sends email when the status of an RMA changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.
+<!-- MAGETWO-92303 -->* Magento now sends email when the status of a Return Merchandise Authorization (RMA) changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.
 
 <!-- MAGETWO-89442 -->* Return Merchandise Authorization (RMA) calls now return order items and comments as expected. 
 
@@ -1091,7 +1079,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1960 -->* We've improved the readability of `app/code/Magento/Backend/Block/Widget/Form/Element/Dependence.php`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16010](https://github.com/magento/magento2/pull/16010)*. 
 
-<!-- ENGCOM-1611 -->* Template syntax errors in `app/code/Magento/Theme/Block/Html/Breadcrumbs.php` has been corrected. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15339](https://github.com/magento/magento2/pull/15339)*. [GitHub-15345](https://github.com/magento/magento2/issues/15345)
+<!-- ENGCOM-1611 -->* Template syntax errors in `app/code/Magento/Theme/Block/Html/Breadcrumbs.php` have been corrected. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15339](https://github.com/magento/magento2/pull/15339)*. [GitHub-15345](https://github.com/magento/magento2/issues/15345)
 
 <!-- ENGCOM-2107 -->* The calendar widget (`jQuery UI DatePicker`) now correctly displays more than one month. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16279](https://github.com/magento/magento2/pull/16279)*. [GitHub-7379](https://github.com/magento/magento2/issues/7379)
 
@@ -1104,7 +1092,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2288 -->* We've added `@navigation-level0-item__hover__color` missing variable for mobile and tablet view. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16732](https://github.com/magento/magento2/pull/16732)*. [GitHub-15848](https://github.com/magento/magento2/issues/15848)
 
-<!-- ENGCOM-2336 -->* Store view home pages in multistore deployments no longer display breadcrumbs. Previously, the first store view in a multistore deployment looked fine, but the other dtore views included unneccessary breadcrumbs on the home page.  *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16732](https://github.com/magento/magento2/pull/16732)*. [GitHub-6504](https://github.com/magento/magento2/issues/6504)
+<!-- ENGCOM-2336 -->* Store view home pages in multistore deployments no longer display breadcrumbs. Previously, the first store view in a multistore deployment looked fine, but the other store views included unnecessary breadcrumbs on the home page.  *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16732](https://github.com/magento/magento2/pull/16732)*. [GitHub-6504](https://github.com/magento/magento2/issues/6504)
 
 <!-- ENGCOM-2412 -->* HTML minification now works as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16916](https://github.com/magento/magento2/pull/16916)*. [GitHub-5316](https://github.com/magento/magento2/issues/5316)
 
@@ -1119,13 +1107,13 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2533 -->* The `template.js` has been updated to make the `jquery` variable consistently use `$`. Previously, JavaScript in the `template.js` sometimes used `jquery` and sometimes `$`, and Magento threw an error when running in Internet Explorer. *Fix submitted by [Angelo Maragna](https://github.com/angelomaragna) in pull request [17129](https://github.com/magento/magento2/pull/17129)*. 
 
-<!-- ENGCOM-2522 -->* Corrected undefined class property in the `app/code/Magento/Backend/Block/Media/Uploader.php getConfigJson()` method.  *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17099](https://github.com/magento/magento2/pull/17099)*. 
+<!-- ENGCOM-2522 -->* Corrected an undefined class property in the `app/code/Magento/Backend/Block/Media/Uploader.php getConfigJson()` method.  *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17099](https://github.com/magento/magento2/pull/17099)*. 
 
-<!-- ENGCOM-2476 -->* Corrected sticky footer in page-main container height on mobile devices. *Fix submitted by [Denis Belevtsov](https://github.com/denistrator) in pull request [17006](https://github.com/magento/magento2/pull/17006)*. [GitHub-15118](https://github.com/magento/magento2/issues/15118)
+<!-- ENGCOM-2476 -->* Corrected sticky footer in `page-main` container height on mobile devices. *Fix submitted by [Denis Belevtsov](https://github.com/denistrator) in pull request [17006](https://github.com/magento/magento2/pull/17006)*. [GitHub-15118](https://github.com/magento/magento2/issues/15118)
 
-<!-- ENGCOM-2458 -->* Corrected the return type of methods in `app/code/Magento/Catalog/Controller/Category/View.php`, `app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Action/DataProvider.php`, and `app/code/Magento/CatalogSearch/Model/ResourceModel/EngineInterface.php`.*Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16988](https://github.com/magento/magento2/pull/16988)*. 
+<!-- ENGCOM-2458 -->* Corrected the return type of methods in `app/code/Magento/Catalog/Controller/Category/View.php`, `app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Action/DataProvider.php`, and `app/code/Magento/CatalogSearch/Model/ResourceModel/EngineInterface.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16988](https://github.com/magento/magento2/pull/16988)*. 
 
-<!-- ENGCOM-2456 -->* Renamed `_requesetd` to `_requested'` in  `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16971](https://github.com/magento/magento2/pull/16971)*. 
+<!-- ENGCOM-2456 -->* Renamed `_requesetd` to `_requested` in  `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16971](https://github.com/magento/magento2/pull/16971)*. 
 
 <!-- ENGCOM-2480 -->* Style groups for mobile devices (`max-width`) are now specified in the correct order. *Fix submitted by [Tejash Kumbhare](https://github.com/tejash-wagento) in pull request [16959](https://github.com/magento/magento2/pull/16959)*. [GitHub-14476](https://github.com/magento/magento2/issues/14476)
 
@@ -1133,7 +1121,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2446 -->* Corrected the namespace that is defined in `compare.phtml`. *Fix submitted by [Ronak Patel](https://github.com/mage2pratik) in pull request [16978](https://github.com/magento/magento2/pull/16978)*. 
 
-<!-- ENGCOM-2424 -->* Edited verbose code in  `app/code/Magento/Customer/Controller/Account/LoginPost.php`.*Fix submitted by [Glenn Cheng](https://github.com/GlennCheng) in pull request [16928](https://github.com/magento/magento2/pull/16928)*. 
+<!-- ENGCOM-2424 -->* Edited verbose code in  `app/code/Magento/Customer/Controller/Account/LoginPost.php`. *Fix submitted by [Glenn Cheng](https://github.com/GlennCheng) in pull request [16928](https://github.com/magento/magento2/pull/16928)*. 
 
 <!-- ENGCOM-2396 -->* Fixed annotations in the following methods: `lib/internal/Magento/Framework/Acl/AclResource/Config/Converter/Dom.php`, 
   `lib/internal/Magento/Framework/Acl/AclResource/Config/SchemaLocator.php`, and `lib/internal/Magento/Framework/Acl/Loader/ResourceLoader.php`. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16899](https://github.com/magento/magento2/pull/16899)*. 
@@ -1143,7 +1131,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 	* `app/code/Magento/Backend/Block/Dashboard/Bar.php`
 
-`	* app/code/Magento/Catalog/Setup/InstallData.php`
+	* app/code/Magento/Catalog/Setup/InstallData.php`
 
 	* `app/code/Magento/Newsletter/Block/Adminhtml/Template/Edit.php`
 
@@ -1166,9 +1154,9 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2274 -->* Regex in `ControllerAclTest::getControllerPath()` has been changed to avoid classes that are under a namespace with a controller component (such as controller plugins) being interpreted as controllers. *Fix submitted by [Freek Vandeursen](https://github.com/aleron75) in pull request [16707](https://github.com/magento/magento2/pull/16707)*. 
 
-<!-- ENGCOM-2259 -->* Knockout template files now include a `title` attribute to the `img` tag. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16691](https://github.com/magento/magento2/pull/16691)*. 
+<!-- ENGCOM-2259 -->* Knockout template files now include a `title` attribute in the `img` tag. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16691](https://github.com/magento/magento2/pull/16691)*. 
 
-<!-- ENGCOM-2256 -->* Added `title` attribute to a links as needed for compatibility with w3c standards to these files: `app/code/Magento/Backend/view/adminhtml/templates/page/header.phtml`,  `app/code/Magento/Backend/view/adminhtml/templates/widget/form/element/gallery.phtml`,  `app/code/Magento/Theme/view/frontend/templates/html/bugreport.phtml`, `app/code/Magento/Theme/view/frontend/templates/html/header/logo.phtml`,  and `app/code/Magento/Ui/view/base/web/templates/block-loader.html`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16689](https://github.com/magento/magento2/pull/16689)*. 
+<!-- ENGCOM-2256 -->* Added `title` attribute to links as needed for compatibility with w3c standards to these files: `app/code/Magento/Backend/view/adminhtml/templates/page/header.phtml`,  `app/code/Magento/Backend/view/adminhtml/templates/widget/form/element/gallery.phtml`,  `app/code/Magento/Theme/view/frontend/templates/html/bugreport.phtml`, `app/code/Magento/Theme/view/frontend/templates/html/header/logo.phtml`,  and `app/code/Magento/Ui/view/base/web/templates/block-loader.html`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16689](https://github.com/magento/magento2/pull/16689)*. 
 
 <!-- ENGCOM-2196 -->* Search icons are now defined by header icon variables. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16559](https://github.com/magento/magento2/pull/16559)*. 
 
@@ -1188,7 +1176,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
 
-<!-- ENGCOM-2039 -->*  Refactored JavaScript code in in `popup.phtml` and `popup.js`. *Fix submitted by [IvanPletnyov](https://github.com/IvanPletnyov) in pull request [16216](https://github.com/magento/magento2/pull/16216)*. 
+<!-- ENGCOM-2039 -->*  Refactored JavaScript code in `popup.phtml` and `popup.js`. *Fix submitted by [IvanPletnyov](https://github.com/IvanPletnyov) in pull request [16216](https://github.com/magento/magento2/pull/16216)*. 
 
 <!-- ENGCOM-1630 -->* Removed extraneous cursor property. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15305](https://github.com/magento/magento2/pull/15305)*. 
 
@@ -1212,11 +1200,11 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1453 -->* We've upgraded to Node.s 8 from Node.s 6. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15018](https://github.com/magento/magento2/pull/15018)*. 
 
-<!-- ENGCOM-1434 -->* Replaced `template/path` with Module_Name::template/path in the block class to ensure extensibility of the class. Previously, if the source block classes referenced a template without specifying the module name, then block render failed with this error: `Invalid template file`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
+<!-- ENGCOM-1434 -->* Replaced `template/path` with `Module_Name::template/path` in the block class to ensure extensibility of the class. Previously, if the source block classes referenced a template without specifying the module name, then block render failed with this error: `Invalid template file`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
 <!-- ENGCOM-1405 -->* Replaced the `\Magento\Backend\Helper\Data` parameter with `\Magento\Backend\Model\UrlInterface` to make them identical with the  contructor. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
-<!-- ENGCOM-1403 -->* The return type of addToCartPostParams in `app/code/Magento/Catalog/Block/Product/ListProduct.php` has been changed to array. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
+<!-- ENGCOM-1403 -->* The return type of `addToCartPostParams` in `app/code/Magento/Catalog/Block/Product/ListProduct.php` has been changed to array. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
 <!-- ENGCOM-1270 -->*  Datepicker now correctly converts date formats in locales other than `en-US`. *Fix submitted by [Tao Sasaki](https://github.com/tao-s) in pull request [14627](https://github.com/magento/magento2/pull/14627)*. 
 
@@ -1248,11 +1236,10 @@ Actual result
 No message appears, rather on random site after you submit the advanced search form without entries.
 
 
-<!-- MAGETWO-84477 -->* `\Magento\Framework\Reflection\TypeProcessor` methods have been simplified to retrieve method param addition description and array param type. 
+<!-- MAGETWO-84477 -->* `\Magento\Framework\Reflection\TypeProcessor` methods have been simplified. 
 
 
-
-<!-- MAGETWO-87024 -->* This PR fixes the issue by completing an earlier return on tax total collector that failed to unset taxed shipping total information. Previously, Magento did not unset taxed shipping total information before returning total tax. 
+<!-- MAGETWO-87024 -->* Magento no longer unsets the taxed shipping total information before returning the total tax. 
 
 
 
@@ -1309,7 +1296,7 @@ No error in the browser console
 
 <!-- MAGETWO-87969 -->* Magento now correctly updates newsletter subscriptions  when the customer is registered on two stores. Previously, when the customer tried to subscribe to the newsletter from a second store, Magento displayed this message, `You are (not) subscribed to "General Subscription"`. 
 
-<!--  ENGCOM-1573 -->* The newsletter subscription confirmation message does not display after a customer clicks the link in email. *Fix submitted by [Kaushik Chavda](https://github.com/KaushikChavda) in pull request [15247](https://github.com/magento/magento2/pull/15247)*. [GitHub-14747](https://github.com/magento/magento2/issues/14747)
+<!--  ENGCOM-1573 -->* The newsletter subscription confirmation message does not display after a customer clicks the link that is included in the confirmation email. *Fix submitted by [Kaushik Chavda](https://github.com/KaushikChavda) in pull request [15247](https://github.com/magento/magento2/pull/15247)*. [GitHub-14747](https://github.com/magento/magento2/issues/14747)
 
 
 <!-- ENGCOM-2144 -->* Magento now sends a confirmation request email to the customer when she unsubscribes to a newsletter. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [15464](https://github.com/magento/magento2/pull/15464)*. [GitHub-15218](https://github.com/magento/magento2/issues/15218)
@@ -1375,14 +1362,14 @@ title: Remove direct use of object manager
 
 <!-- MAGETWO-92784 -->* Magento now correctly applies free shipping to an order after the customer applied the free shipping code  during checkout. 
 
-<!-- MAGETWO-90571 -->* Magento no longer sends Admin orders to Signifyd for review when Signifyed is disabled on the website on which the administrator is logged in. 
+<!-- MAGETWO-90571 -->* Magento no longer sends Admin orders to Signifyd for review when Signifyd is disabled on the website on which the administrator is logged in. 
 
 <!-- MAGETWO-90533 -->* Magento now successfully creates shipping labels for a return merchandise authorization (RMA) when using FedEx Smart Post as the shipping option. Previously, Magento threw an error under these circumstances. 
 
 
 <!-- MAGETWO-84495 -->* Magento now sends email about payment failures to customers. Previously, Magento did not send a customer email, but instead logged an error in  `support.log`, and displayed this message on the storefront, **Transaction has been declined. Please try again later**.
 
-<!--  ENGCOM-1648 -->* Magento no longer throws an error when multiple payment methods  are enabled. Previously, when a merchant tried to enable more then one payment method from the Admin, Magento displayed this error in the console, `Found elements with non-unique id billing-address-form`. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15349](https://github.com/magento/magento2/pull/15349)*. [GitHub-15348](https://github.com/magento/magento2/issues/15348)
+<!--  ENGCOM-1648 -->* Magento no longer throws an error when multiple payment methods  are enabled. Previously, when a merchant tried to enable more than one payment method from the Admin, Magento displayed this error in the console, `Found elements with non-unique id billing-address-form`. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15349](https://github.com/magento/magento2/pull/15349)*. [GitHub-15348](https://github.com/magento/magento2/issues/15348)
 
 
 <!-- ENGCOM-2021 -->* Issues with Authorizenet 
@@ -1416,7 +1403,7 @@ Order is declined
 
 ### Performance
 
-<!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full Catalog Rule re-index operation on a medium B2C store took more than 20 minutes. 
+<!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 
 
 <!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality if business function does not require this capability. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function do not require this capability.
@@ -1424,22 +1411,20 @@ Order is declined
 
 <!-- MAGETWO-92154 -->* You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales).
 
- <!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
 
- <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
+<!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
 
-<!-- ENGCOM-1294 -->* The speed of catalog price rule save operations has been improved by these changes: has been improved by these changes:
+<!-- ENGCOM-1294 -->* The speed of catalog price rule save operations has been improved by these changes:
 
 	* elimination of unnecessary reindexing  
 
-	* improvement to the way that the `getMatchingProductIds` function fetches products, which has eliminated unnecessary checks of the data set. 
-
-*Fix submitted by [Andrey Zabara](https://github.com/chrom) in pull request [14707](https://github.com/magento/magento2/pull/14707)*. 
+	* improvement to the way that the `getMatchingProductIds` function fetches products, which has eliminated unnecessary checks of the data set. *Fix submitted by [Andrey Zabara](https://github.com/chrom) in pull request [14707](https://github.com/magento/magento2/pull/14707)*. 
 
 
 
-<!-- ENGCOM-1302-->* The ID to SKU lookup process for tier prices has been optimized. Previously, with a large number of tier or group prices, each tier would separately make a database query to lookup the associated SKU. *Fix submitted by [Todd Christensen](https://github.com/toddbc) in pull request [14699](https://github.com/magento/magento2/pull/14699)*. 
+<!-- ENGCOM-1302-->* The ID to SKU lookup process for tier prices has been optimized. Previously, with a large number of tier or group prices, each tier would separately make a database query to look up the associated SKU. *Fix submitted by [Todd Christensen](https://github.com/toddbc) in pull request [14699](https://github.com/magento/magento2/pull/14699)*. 
 
 
 
@@ -1477,7 +1462,7 @@ Order is declined
 
 <!-- ENGCOM-1961 -->* The retrieval of first array elements in the following files has been improved: `app/code/Magento/Rule/Model/Action/AbstractAction.php` and `app/code/Magento/Rule/Model/Condition/Combine.php`. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16053](https://github.com/magento/magento2/pull/16053)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
 
-<!-- ENGCOM-1583 -->* The condition category chooser now handles multiple nested categories as expected. Previously,  if a cart rule contained several nested categories, no categories appeared on the page, the page  became unresponsive,  and  eventuslly crashed. *Fix submitted by [Keith Bentrup](https://github.com/keithbentrup) in pull request [15265](https://github.com/magento/magento2/pull/15265)*. [GitHub-15121](https://github.com/magento/magento2/issues/15121)
+<!-- ENGCOM-1583 -->* The condition category chooser now handles multiple nested categories as expected. Previously,  if a cart rule contained several nested categories, no categories appeared on the page, the page  became unresponsive,  and  eventually crashed. *Fix submitted by [Keith Bentrup](https://github.com/keithbentrup) in pull request [15265](https://github.com/magento/magento2/pull/15265)*. [GitHub-15121](https://github.com/magento/magento2/issues/15121)
 
 
 
@@ -1536,11 +1521,11 @@ Order is declined
 
 <!--  MAGETWO-85786 -->* The Admin panel search now filters catalogs as expected. Previously, if a merchant tried to narrow a search when using the Search tool in the Admin panel, Magento displayed the full catalog view without narrowing down the list. *Fix submitted by [Pavel](https://github.com/hannassy) in pull request [12735](https://github.com/magento/magento2/pull/12735)*. [GitHub-7861](https://github.com/magento/magento2/issues/7861)
 
-<!--  ENGCOM-1415 -->* You can now use an asterix (* ) when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.`. *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
+<!--  ENGCOM-1415 -->* You can now use an asterix (*) when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.`. *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
 
-<!-- ENGCOM-2455 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message appeared even after a customer submitted the advanced search form with no entries. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request [16952](https://github.com/magento/magento2/pull/16952)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
+<!-- ENGCOM-2455 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request [16952](https://github.com/magento/magento2/pull/16952)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
-<!-- ENGCOM-2245 -->* Server load has been reduced for advanced searching.  Previously, when a customer entered text in the search suggestion box, Magento immediately sent every character to the server. The auto-complete box now delays before sending the request. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [16669](https://github.com/magento/magento2/pull/16669)*. 
+<!-- ENGCOM-2245 -->* Server load has been reduced for advanced searching.  Previously, when a customer entered text in the search suggestion box, Magento immediately sent every character to the server. The auto-complete box now delays  sending the request. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [16669](https://github.com/magento/magento2/pull/16669)*. 
 
 <!-- ENGCOM-1672 -->* You can now successfully clone the minisearch widget. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15485](https://github.com/magento/magento2/pull/15485)*. 
 
@@ -1549,9 +1534,9 @@ Order is declined
 
 ### Shipping 
 
-<!--  ENGCOM-2033 -->* The shipping and estimated tax form now display country, city, postcode fields as expected. *Fix submitted by [Alexander Kras'ko](https://github.com/0m3r) in pull request [16213](https://github.com/magento/magento2/pull/16213)*. [GitHub-8222](https://github.com/magento/magento2/issues/8222)
+<!--  ENGCOM-2033 -->* The shipping and estimated tax form now display country, city, and postcode fields as expected. *Fix submitted by [Alexander Kras'ko](https://github.com/0m3r) in pull request [16213](https://github.com/magento/magento2/pull/16213)*. [GitHub-8222](https://github.com/magento/magento2/issues/8222)
 
-<!--  ENGCOM-1675 -->* Method with a misspelled name was deprecated and the new method with correct spelling added to `app/code/Magento/Multishipping/Block/Checkout/AbstractMultishipping.php`. *Fix submitted by [Anna Völkl](https://github.com/avoelkl) in pull request [15514](https://github.com/magento/magento2/pull/15514)*. 
+<!--  ENGCOM-1675 -->* A method with a misspelled name was deprecated and the new method with correct spelling added to `app/code/Magento/Multishipping/Block/Checkout/AbstractMultishipping.php`. *Fix submitted by [Anna Völkl](https://github.com/avoelkl) in pull request [15514](https://github.com/magento/magento2/pull/15514)*. 
 
 
 ### Store
@@ -1708,7 +1693,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!-- MAGETWO-92355 -->* We've added  client-side caching of `js-translation.js`.
 
-<!-- ENGCOM-1965 -->* Removed the unused translation for `comment` tag from these files: `app/code/Magento/Analytics/etc/adminhtml/system.xml`, `app/code/Magento/Catalog/etc/adminhtml/system.xml`, `app/code/Magento/Swatches/etc/adminhtml/system.xml`, and `app/code/Magento/Ups/etc/adminhtml/system.xml`. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15604](https://github.com/magento/magento2/pull/15604)*. \
+<!-- ENGCOM-1965 -->* Removed the unused translation for `comment` tag from these files: `app/code/Magento/Analytics/etc/adminhtml/system.xml`, `app/code/Magento/Catalog/etc/adminhtml/system.xml`, `app/code/Magento/Swatches/etc/adminhtml/system.xml`, and `app/code/Magento/Ups/etc/adminhtml/system.xml`. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15604](https://github.com/magento/magento2/pull/15604)*. 
 
 <!-- ENGCOM-1604 -->* Added language translation capability  for `comment` tags in the  `system.xml` file of the Signifyd  module. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [15364](https://github.com/magento/magento2/pull/15364)*. [GitHub-15361](https://github.com/magento/magento2/issues/15361)
 
@@ -1758,7 +1743,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1473 -->* Layout arguments now  support for the `const` type. *Fix submitted by [Igor Vitol](https://github.com/IgorVitol) in pull request [15058](https://github.com/magento/magento2/pull/15058)*. 
 
-<!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js`. *Fix submitted by [Jisse Reitsma Vitol](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
+<!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js` file. *Fix submitted by [Jisse Reitsma Vitol](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
 
 <!--  ENGCOM-1438 -->* Overlay issues with the mini cart have been resolved. Previously, if you logged in as a customer, then clicked on the mini cart icon and then the Account menu, the mini cart overlayed the Account menu. *Fix submitted by [Arthur James](https://github.com/ArtiDjeims) in pull request [14963](https://github.com/magento/magento2/pull/14963)*. 
 
@@ -1832,9 +1817,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
 
-	* Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space and can speed up file retrieval.) 
+* Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space and can speed up file retrieval.) 
 
-	* Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+* Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 
 
@@ -1851,10 +1836,6 @@ This release includes substantial community contributions: over 100 GitHub issue
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-
-<a target="_blank" href="https://github.com/magento/magento2/pull/17098">17098</a>
-
-<a href="https://github.com/magento/magento2/issues/14351" target="_blank">14351</a>
 
 
 ### Partner contributions
