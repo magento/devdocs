@@ -18,6 +18,23 @@ Here are the enhancements available as of September 18, 2018:
 ### Enhancements
 
 
+* The **Click & Collect** feature offers merchants the ability to:
+
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
+
+	* Configure source locations available for Click & Collect pick-ups
+
+Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
+* **Batch Processing** provides merchants with the ability to 
+
+	* Process multiple orders in one batch
+
+	* Specify and modify packages, experiences, and add-ons for orders assigned to a batch
+
+	* Book shipments for a batch
+
+	* Generate documentation for individual shipments as well as all shipments within a batch
 
 
 
