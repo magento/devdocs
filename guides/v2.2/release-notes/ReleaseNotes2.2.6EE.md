@@ -782,7 +782,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-2366 -->* Minor corrections to code throughout the code base. *Fix submitted by [Grayson](https://github.com/GraysonChiang) in pull request [16841](https://github.com/magento/magento2/pull/16841)*. 
 
-<!--  ENGCOM-1684 -->* The constructor in `Magento\Webapi\Model\Soap\Fault.php` now assigns  `$exception->getOriginator()` to `_soapFaultCode` instead of to a dynamical property `_soapCode`.*Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15515](https://github.com/magento/magento2/pull/15515)*. 
+<!--  ENGCOM-1684 -->* The constructor in `Magento\Webapi\Model\Soap\Fault.php` now assigns `$exception->getOriginator()` to `_soapFaultCode` instead of to the dynamical property `_soapCode`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15515](https://github.com/magento/magento2/pull/15515)*. 
 
 <!--  ENGCOM-1628 -->* Corrected annotation in `_toOptionArray` in `lib/internal/Magento/Framework/Data/Collection/AbstractDb.php`. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15336](https://github.com/magento/magento2/pull/15336)*. 
 
@@ -1058,7 +1058,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### HTML
 
-<!-- ENGCOM-2178 -->* Responsive table headers now work as expected. Previously, when no heading was present in the `data-th` attribute on a column for a responsive table in Magento, a blank colon was present. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [16517](https://github.com/magento/magento2/pull/16517)*. 
+<!-- ENGCOM-2178 -->* Responsive table headers now work as expected. Previously, when no heading was present in the `data-th` attribute on a column for a responsive table in Magento, only a colon was present. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [16517](https://github.com/magento/magento2/pull/16517)*. 
 
 
 <!-- ENGCOM-1654 -->* Corrected HTML syntax in the `report.phtml` error template. *Fix submitted by [abcpremium](https://github.com/abcpremium) in pull request [15454](https://github.com/magento/magento2/pull/15454)*. 
@@ -1156,10 +1156,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 	* `app/code/Magento/Sales/Model/Order/Creditmemo.php`
 
-	* `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`
-
-
-*Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16891](https://github.com/magento/magento2/pull/16891)*. 
+	* `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16891](https://github.com/magento/magento2/pull/16891)*. 
 
 
 <!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code//Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
@@ -1426,7 +1423,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-89238 -->* Performance issues that resulted from disabling invoice emails have been resolved. 
 
-<!-- ENGCOM-2085 -->* The Invoices grid is now reflects changes in invoice state as expected. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [16286](https://github.com/magento/magento2/pull/16286)*. 
+<!-- ENGCOM-2085 -->* The Invoices grid now reflects changes in invoice state as expected. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [16286](https://github.com/magento/magento2/pull/16286)*. 
 
 <!-- ENGCOM-1892 -->* You can now set the `is_visible_on_front` parameter from the `addStatusHistoryComment` of the order mode. Previously, you could set the `is_visible_on_front` parameter  from the Admin only. *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [15637](https://github.com/magento/magento2/pull/15637)*. 
 
@@ -1746,13 +1743,12 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- not needed- 72024 ENGCOM-1665 1454 72051 93668 93674 93239 93320 90029 86243 87525 88658 91372 88667 92175 93204 83975 91412 86480 87966 88005 92178 86104 73638 93066 92165 82785 93042 93093 84387 93067 92162 81926 92983 92693 92200 92751 83992 92312 90837 92197 73967 90570 88655 92468 88592 74766 91989 81470 91894 89726 9057589342 84209 72982 86471 88604 88598 89746 89744 91791 93960 92191 93182 84093 82025 89301 92012 89988 92400 92747 87418 93799 --> 
 
 
-“The path for cached images was changed in 2.2.6,  making it is necessary to clean the `pub/media/catalog/product/cache` directory after upgrade to frees up space”
 
 ## Known issue
 
 The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
 
-* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space”.) 
+* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.) 
 
 * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
