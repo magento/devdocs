@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Welcome to Magento Commerce (Cloud) | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce Cloud guide | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -123,6 +123,125 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 <ul class="nav-main" role="menubar">
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Cloud</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.3/cloud/bk-cloud.html">Cloud guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.3/cloud/architecture/cloud-architecture.html">Cloud architecture</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.3/cloud/env/environments.html">Configure environments</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and patches</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
 
 
 
@@ -1080,7 +1199,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 </ul><!-- /.nav-main -->
-
     </div>
 
     <div class="search-btn">
@@ -1142,34 +1260,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class="active ">
   
-    <a href="/guides/v2.3/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a>
+    <a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce Cloud guide</a>
   
 
   
     <ul>
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.3/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
-  
-
-  
-</li>
-
-
-
       
          
 
@@ -1959,7 +2054,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+    <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce Cloud</a>
   
 
   
@@ -3935,35 +4030,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Welcome to Magento Commerce (Cloud)</h1>
+	<h1 class="page-heading">Magento Commerce Cloud guide</h1>
 
   
 
 
 </section>
 
-			<p>Magento Commerce Cloud, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines Magento Commerce, Cloud infrastructure hosting, with a few differences and added features, including Git integration and key environments for development, staging, and live production. You can code, test, and deploy across Integration, Staging, and Production environments for <em>continuous integration</em> of your store.</p>
+			<p>Magento Commerce Cloud is a managed, automated hosting platform for the Magento Commerce software. Magento Commerce Cloud comes with a variety of additional features that sets it apart from the on-premise Magento Commerce and Magento Open Source platforms:</p>
 
-<p>Each Magento Commerce Cloud plan includes an Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.</p>
+<p><img width="930px" height="305px" src="/common/images/cloud/CloudBenefits.svg" alt="Cloud Benefits" /></p>
 
-<p>Cloud plans include:</p>
+<p>Magento Commerce Cloud provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a git-based workflow with automatic build and deploy for efficient <strong>Rapid development</strong> and <strong>Continuous deployment</strong> every time you push code changes in a Platform as a Service (PaaS) environment; highly <strong>Customizable</strong> environment configuration files and <a href="#ece-tools-package">tools</a>; and AWS hosting that offers a <strong>Scalable</strong> and <strong>Secure</strong> environment for online sales and retailing.</p>
 
-<ul>
-  <li>Active Git branches of code.</li>
-  <li>Unlimited number of <em>inactive</em> Git branches.</li>
-  <li>Robust   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
- build process.</li>
-  <li>And the option to add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.</li>
-</ul>
+<h2 id="technology-stack">Technology stack</h2>
 
-<p>The Magento Commerce Cloud architectures use the following technologies:</p>
+<p>Think of the Magento Commerce Cloud as five functional layers, as shown here:</p>
 
-<ul>
-  <li>Git</li>
-  <li>Composer</li>
-  <li>Secure Shell (SSH)</li>
-  <li>MySQL (including command-line interaction)</li>
-</ul>
+<p><img width="804px" height="721px" src="/common/images/cloud/CloudStack.png" alt="Cloud Stack" /></p>
+
+<p>Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for Magento Commerce Cloud. Each Magento Commerce Cloud plan provides a PaaS Integration environment for developing, testing, and integrating services, see <a href="/guides/v2.3/cloud/architecture/cloud-architecture.html">Magento Commerce Cloud architecture</a> for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. <a href="/guides/v2.3/cloud/cdn/cloud-fastly.html">Fastly</a> caches site assets and, as customers access the site and stores, loads the cached assets fast. The <a href="/guides/v2.3/cloud/cdn/fastly-image-optimization.html">Fastly Image Optimization</a> (IO) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
+<!-- Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site. --></p>
+
+<h2 id="ece-tools-package">ece-tools package</h2>
+
+<p>The <code class="highlighter-rouge">ece-tools</code> package is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the <code class="highlighter-rouge">magento-cloud-configuration</code> and <code class="highlighter-rouge">ece-patches</code> packages in favor of providing a single package. We encourage all customers to <a href="/guides/v2.3/cloud/project/ece-tools-upgrade-project.html">upgrade to use <code class="highlighter-rouge">ece-tools</code></a> as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration.</p>
+
+<!-- Link definitions -->
+
 
 			
 		</div>
