@@ -1,11 +1,8 @@
-project-webint-basiclabel: Magento Commerce (Cloud) Guide
+project-webint-basiclabel: Magento Commerce Cloud Guide
 pages:
-    - label: Welcome to Magento Commerce (Cloud)
+    - label: Magento Commerce Cloud guide
       url: /cloud/bk-cloud.html
       children:
-        - label: Subscriptions and plans
-          url: /cloud/basic-information/cloud-plans.html
-
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
           include_versions: ["2.1", "2.2", "2.3"]
@@ -114,7 +111,7 @@ pages:
         - label: Prepare your existing Magento Commerce system
           url: /cloud/access-acct/first-time-setup_import-prepare.html
 
-        - label: Import Magento Commerce into Magento Commerce (Cloud)
+        - label: Import Magento Commerce into Magento Commerce Cloud
           url: /cloud/access-acct/first-time-setup_import-import.html
 
     - label: Configure your store

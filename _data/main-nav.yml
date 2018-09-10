@@ -1,3 +1,22 @@
+- label: Cloud
+  children:
+
+    - label: Cloud guide
+      url: /cloud/bk-cloud.html
+
+    - label: Cloud architecture
+      url: /cloud/architecture/cloud-architecture.html
+
+    - label: Configure environments
+      url: /cloud/env/environments.html
+
+    - label: Upgrades and patches
+      url: /cloud/project/project-upgrade-parent.html
+
+    - label: ece-tools release notes
+      url: /cloud/release-notes/cloud-tools.html
+      exclude_versions: ['2.0']
+
 - label: Setup
   children:
 
