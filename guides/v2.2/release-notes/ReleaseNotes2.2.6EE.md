@@ -42,7 +42,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-92447 -->* The catalog price indexer is now scoped and multithreaded, which improves the performance of layered navigation, search, and indexing actions for Magento instances with multiple websites and stores. This makes it possible to parallelize catalog price indexing by websites and customer groups. To re-index in parallel mode, add the `MAGE_INDEXER_THREADS_COUNT` environment variable to `env.php`.
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for If there is only one attribute configured with 500 attributes, performance will not noticeably improve. In contrast, many attribute sets that contain only a few attributes will show significant performance improvement.) For example, for Medium Profile with 100 Attribute set and 50 attributes per each Attribute Set the load time is reduced for different scenarios from 40-90%
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets , each of which contains 50 attributes, might see a 40-90% reduction in load time.)
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -157,6 +157,33 @@ Enhancements to Klarna include support for these new features:
 For more information on these new features, see [Klarna](https://docs.magento.com/m2/ce/user_guide/payment/klarna.html). 
 
 
+
+
+#### Magento Shipping
+
+* The **Click & Collect** feature offers merchants the ability to:
+
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
+
+	* Configure source locations available for Click & Collect pick-ups
+
+Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
+* **Batch Processing** provides merchants with the ability to 
+
+	* Process multiple orders in one batch
+
+	* Specify and modify packages, experiences, and add-ons for orders assigned to a batch
+
+	* Book shipments for a batch
+
+	* Generate documentation for individual shipments as well as all shipments within a batch
+
+
+
+
+
+
 #### Magento Social
 
 Magento has removed the  Magento Social  Facebook integration, and no longer supports the extension.  
@@ -220,54 +247,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- BUNDLE-1453 -->* Amazon Pay no longer appears as an option during checkout when a customer selects  **Check Out with Multiple Addresses**. Previously, Magento displayed Amazon Pay as an option, even though Amazon Pay does not support multishipping. 
 
 <!-- BUNDLE-1324 -->*  You can now change and save Amazon Pay configuration settings from **Configuration**  > **Sales** > **Payment Methods**  > **Amazon Pay** when deploying Magento in a Cloud environment. Previously, Magento did not save changed settings. 
-
-<!-- BUNDLE-1591 -->* 
-
-
-Add some product to cart on front-end
-Select checkout
-Select Amazon pay use your amazon account
-Log in with correct credentials
-Select an address and click Next
-In Simulate Payment Scenarios list select Capture declined
-Click Place Order
-Expected Result:
-
-Order should be placed
-Actual Result:
-
-Transaction has been declined. Plese try again later.
-Notice:
-
-
-
-<!-- BUNDLE-1592 -->* Add some product to cart on front-end
-Select checkout
-Select Amazon pay use your amazon account
-Log in with correct credentials
-Select an address and click Next
-In Simulate Payment Scenarios list select Capture pending
-
-Click Place Order
-
-Actual Result:
-
-Transaction has been declined. Plese try again later.
-
-
-<!-- BUNDLE-1606 -->* Issue with 
-
-Select Amazon pay use your amazon account
-Log in with correct credentials
-Select an address and click Next
-In Simulate Payment Scenarios list select Refund declined
-Click Place Order
-Actual Result:
-
-Capture not refundable
-
-
-
 
 
 ### B2B
@@ -1517,6 +1496,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 
 ### Shipping
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
