@@ -36,7 +36,7 @@ Your Git branch must have the following files for building and deploying for you
 
 ## Test build your code locally before pushing {#test-build}
 
-Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
+Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a test to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
 
 1. SSH into your local Magento workspace.
 2. Move to another location to run your build. You should keep this build separate from your usual Git branch.
