@@ -30,7 +30,7 @@ This release includes significant performance improvements to the core Magento c
 
 Performance-tuning enhancements focus on catalog indexing and include:   
 
-<!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
+<!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has decreased up to 98%, from 40 minutes to one minute for 100,000 categories.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
 
 <!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
@@ -40,7 +40,9 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and the average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
+<!-- MAGETWO-92447 -->* The catalog price indexer is now scoped and multithreaded, which improves the performance of layered navigation, search, and indexing actions for Magento instances with multiple websites and stores. This makes it possible to parallelize catalog price indexing by websites and customer groups. To re-index in parallel mode, add the `MAGE_INDEXER_THREADS_COUNT` environment variable to `env.php`.
+
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for If there is only one attribute configured with 500 attributes, performance will not noticeably improve. In contrast, many attribute sets that contain only a few attributes will show significant performance improvement.) For example, for Medium Profile with 100 Attribute set and 50 attributes per each Attribute Set the load time is reduced for different scenarios from 40-90%
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -203,6 +205,15 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-93758 -->* The `cron:run` command now reads `cron/enabled` configuration setting and if this value is set to **1** (the default value), then the `cron:run` command will execute. A value of **0** determines that `cron:run` will not be executed, and prompts Magento to send the customer email indicating that `cron` is disabled.
 
+<!-- MAGETWO-93981 -->* New command-line interface (CLI) commands support setting and showing indexer dimension modes:
+
+	* `bin/magento indexer:set-dimensions-mode`  sets  indexer dimensions mode 
+
+	* `bin/magento indexer:show-dimensions-mode` shows dimensions modes of indexer
+
+
+
+
 
 ### Amazon Pay
 
@@ -284,12 +295,14 @@ Capture not refundable
 
 <!-- MAGETWO-90999 -->* Magento now successfully imports bundle products. Previously, bundle products were not visible in the product catalog, and were listed as out-of-stock on the storefront.
 
-<!-- MAGETWO- 86218-->* Bundled products that have the **User Defined** field unchecked can now be back ordered. [GitHub-10061](https://github.com/magento/magento2/issues/10061)
+<!-- MAGETWO-86218-->* Bundled products that have the **User Defined** field unchecked can now be back ordered. [GitHub-10061](https://github.com/magento/magento2/issues/10061)
 
 <!--  ENGCOM-1863-->* The `Magento_Bundle` module name has been added to the relevant template files to meet Magento standard coding format. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15825](https://github.com/magento/magento2/pull/15825)*. 
 
 <!--  ENGCOM-2176-->* The `option` variable has been renamed to `quoteItemOption` to improve code readability in `app/code/Magento/Bundle/Model/Product/Type.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16143](https://github.com/magento/magento2/pull/16143)*. 
 
+<!-- MAGETWO-86218-->* Magento now accurately displays the status of bundle product stock when **Add to Cart** is enabled for bundle products. Previously, bundle products with the **User Defined** field unchecked could not be back ordered as expected.
+[GitHub-10061](https://github.com/magento/magento2/issues/10061)
 
 
 ### Catalog
@@ -732,9 +745,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- MAGETWO- 90576-->* Magento now correctly renders multiselect product attributes with a custom source model in  `adminhtml`. Previously, the selected value was saved the first time in the `catalog_product_entity_varchar` table, and the attribute was added to the `eav_attribute` table, but the selected options were not highlighted against the attribute.
 
 
-<!-- MAGETWO- 73062-->* Magento now displays the fixed product tax attribute label as expected according to the specified store view. 
+<!-- MAGETWO-73062-->* Magento now displays the fixed product tax attribute label as expected according to the specified store view. 
 
-
+<!-- MAGETWO-90576-->* You can now successfully save a product after setting its special requirements  multiselect attribute. (This means that attribute values are saved as expected to the database, checked in `_catalog_product_entity_varchar_ table`,  and displayed as non-selected on product page in the Admin.)
 
 
 
@@ -1018,6 +1031,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-86757 -->* Magento now generates the same number of gift card codes when the full order is invoiced as the customer selected when creating an order. Previously, for orders that included both physical products and multiple gift cards, the number of gift card codes  generated on an order corresponded to the quantity of the previous physical line items that the user had added to the cart before adding gift cards.
 
+### Gift message
+
+<!-- MAGETWO-91867 -->* Gift messages now appear as expected during checkout for customers. Previously, Magento did not display gift messages for customers who logged in during checkout. 
 
 
 ### Google Analytics
@@ -1310,24 +1326,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-1648 -->* Magento no longer throws an error when multiple payment methods  are enabled. Previously, when a merchant tried to enable more than one payment method from the Admin, Magento displayed this error in the console, `Found elements with non-unique id billing-address-form`. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15349](https://github.com/magento/magento2/pull/15349)*. [GitHub-15348](https://github.com/magento/magento2/issues/15348)
 
+<!-- MAGETWO-92625 -->* Magento now sends order confirmation emails as expected for orders purchased with WorldPay.
 
-<!-- ENGCOM-2021 -->* Issues with Authorizenet 
-
-Argument 1 passed to Magento\Sales\Model\Order\Payment must be an instance of Magento\Framework\DataObject, none given
-
-*Fix submitted by [Oleh Kravets](https://github.com/xpoback) in pull request [16194](https://github.com/magento/magento2/pull/16194)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
-
-
-Steps to reproduce
-Setup authorizenet
-Setup a plugin that uses declineOrder method of the Directpost model
-Checkout with authorizenet
-Expected result
-Order is declined
-
-
-
-
+<!-- ENGCOM-2021 -->* A type error in the payment void method of the Authorizenet module has been fixed. *Fix submitted by [Oleh Kravets](https://github.com/xpoback) in pull request [16194](https://github.com/magento/magento2/pull/16194)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
 
 
 
@@ -1365,6 +1366,9 @@ Order is declined
 
 <!-- ENGCOM-1302-->* The ID to SKU lookup process for tier prices has been optimized. Previously, with a large number of tier or group prices, each tier would separately make a database query to look up the associated SKU. *Fix submitted by [Todd Christensen](https://github.com/toddbc) in pull request [14699](https://github.com/magento/magento2/pull/14699)*. 
 
+### Product video
+
+<!-- MAGETWO-93792 -->* Magento now populates the YouTube video URL and Title fields with the same values as are populated on the default store view on multisite deployments. (These fields are global scope attributes and should be the same on all storefronts.) Previously, Magento left these fields blank in multisite deployments. 
 
 
 ### Quote
@@ -1577,10 +1581,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 	* inability to remove swatches from existing products when changing an attribute type from swatch
 
-	* no updates to product attributes on the storefront
-
-
-*Fix submitted by [Eugene Shab](https://github.com/eugene-shab) in pull request [12771](https://github.com/magento/magento2/pull/12771)*. [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-12695](https://github.com/magento/magento2/issues/12695)
+	* no updates to product attributes on the storefront. *Fix submitted by [Eugene Shab](https://github.com/eugene-shab) in pull request [12771](https://github.com/magento/magento2/pull/12771)*. [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-12695](https://github.com/magento/magento2/issues/12695)
 
 
 ### Tax
@@ -1745,13 +1746,13 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- not needed- 72024 ENGCOM-1665 1454 72051 93668 93674 93239 93320 90029 86243 87525 88658 91372 88667 92175 93204 83975 91412 86480 87966 88005 92178 86104 73638 93066 92165 82785 93042 93093 84387 93067 92162 81926 92983 92693 92200 92751 83992 92312 90837 92197 73967 90570 88655 92468 88592 74766 91989 81470 91894 89726 9057589342 84209 72982 86471 88604 88598 89746 89744 91791 93960 92191 93182 84093 82025 89301 92012 89988 92400 92747 87418 93799 --> 
 
 
-
+“The path for cached images was changed in 2.2.6,  making it is necessary to clean the `pub/media/catalog/product/cache` directory after upgrade to frees up space”
 
 ## Known issue
 
 The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
 
-* Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space and can speed up file retrieval.) 
+* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space”.) 
 
 * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
