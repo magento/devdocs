@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.6 Release Notes
 
 ---
 
-*Patch code and release notes published on September 18, 2018.*
+*Patch code and release notes were published on September 18, 2018.*
 
 
 
