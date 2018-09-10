@@ -126,9 +126,12 @@ Enhancements to dotmailer include these new features:
 
 * You can now request and capture the consent of customers and guests using dotmailer’s new Consent Insight.
 
+
 * You can import only those Magento contacts who have opted in (customer subscribers, guest subscribers, and other subscribers).
 
+
 * A warning alerts you when you are about to sync non-subscribers into a dotmailer account.
+
 
 * Improvements have been made to the retry process that results after a failed attempt to access EDC.
 
@@ -707,16 +710,15 @@ Our community contributors have made many helpful, minor corrections to spelling
 ### dotmailer
 
 
-caused ROI tracking feature to not track order events properly
+* The ROI tracking feature now tracks order events properly. 
 
+* The importer now works as expected.
 
+* Catalog sync now syncs all products across all created collections when it is configured to sync on the store level. 
 
-Fixed a regression issue that caused ROI tracking feature to not track order events properly
-	•	Fixed an error that was being caused by the importer
-	•	Fixed the catalog sync so it now syncs all products across all created collections when it's configured to sync on store level 
-	•	Improved validation for new subscribers so that it's no longer possible for them to get enrolled multiple times into the new subscriber program
-	•	Fixed occurrences of unexpected errors during subscriber and/or customer creation
+* The validation process for new subscribers no longer permits subscribers to be enrolled multiple times into the new subscriber program.
 
+* Unexpected errors during subscriber or customer creation no longer occur.
 
 
 <!-- BUNDLE-526 -->* A merchant can now successfully create a new user and displays the appropriate welcome message. Previously, Magento threw an error during the creation of a customer or subscriber, although the new user/subscriber was created. 
@@ -819,7 +821,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- MAGETWO-86099 -->* The `GET /V1/returns/:id` endpoint retrieves `tracks` arrays as expected.
 
-<!-- MAGETWO-73527 -->* `catalogProductAttributeRepository` now returns the  `frontend_labels` value as expected. 
+<!-- MAGETWO-73527 -->* `catalogProductAttributeRepository` now returns the `frontend_labels` value as expected. 
 
 <!--  ENGCOM-2218 -->* Corrected type hints in `Webapi/Controller/Soap/Request/Handler.php` and `Webapi/Model/Plugin/GuestAuthorization.php. Also corrected case in property annotation  in `Soap\Server.php` and added undefined property `_appState in `Controller\Soap.php`. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16626](https://github.com/magento/magento2/pull/16626)*. 
 
@@ -1123,8 +1125,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-2424 -->* Edited verbose code in  `app/code/Magento/Customer/Controller/Account/LoginPost.php`. *Fix submitted by [Glenn Cheng](https://github.com/GlennCheng) in pull request [16928](https://github.com/magento/magento2/pull/16928)*. 
 
-<!-- ENGCOM-2396 -->* Fixed annotations in the following methods: `lib/internal/Magento/Framework/Acl/AclResource/Config/Converter/Dom.php`, 
-  `lib/internal/Magento/Framework/Acl/AclResource/Config/SchemaLocator.php`, and `lib/internal/Magento/Framework/Acl/Loader/ResourceLoader.php`. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16899](https://github.com/magento/magento2/pull/16899)*. 
+<!-- ENGCOM-2396 -->* Fixed annotations in the following methods: `lib/internal/Magento/Framework/Acl/AclResource/Config/Converter/Dom.php`, `lib/internal/Magento/Framework/Acl/AclResource/Config/SchemaLocator.php`, and `lib/internal/Magento/Framework/Acl/Loader/ResourceLoader.php`. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16899](https://github.com/magento/magento2/pull/16899)*. 
 
 
 <!-- ENGCOM-2389 -->* Removed or edited code comments in the following files: 
@@ -1145,8 +1146,7 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16891](https://github.com/magento/magento2/pull/16891)*. 
 
 
-<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code//Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`
-). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
+<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code//Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
 
 <!-- ENGCOM-2388 -->* Removed duplicated string from `app/code/Magento/ProductVideo/i18n/en_US.csv`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16882](https://github.com/magento/magento2/pull/16882)*. 
 
@@ -1210,34 +1210,9 @@ Fixed a regression issue that caused ROI tracking feature to not track order ev
 
 <!-- ENGCOM-1270 -->* `default_head_blocks.xml` now contains the `order` attribute for setting the load order of stylesheets. *Fix submitted by [Tao Sasaki](https://github.com/tao-s) in pull request [14290](https://github.com/magento/magento2/pull/14290)*. 
 
-
-
-<!-- ENGCOM-2455 -->* The advanced search form 
-
-error message display on advanced search form
-
-Change controller to use result redirect factory which fixes error message display on advanced search form.
-
-The way the redirect was initiated from the result controller needed to be changed to use a result redirect so that the error message would be written to the cookie. Without this, the Index controller wouldn't be called when Page Cache was enabled, and the error message would never reach the page.
-
-There is a bug in advanced search form regarding validation messages
-
-
-[GitHub-8131](https://github.com/magento/magento2/issues/8131)
-
-
-Go on the site "advanced search" and click the submit button below the form without any entries.
-Then click for example on the "sign in" link in the top right corner.
-
-Expected result
-Validation message (Please specify at least one search term) appears on the same site (advanced search) above the form after you click the submit button.
-
-Actual result
-No message appears, rather on random site after you submit the advanced search form without entries.
-
+<!-- ENGCOM-2455 -->* Magento now displays validation messages on the advanced search form as expected if you submit the advanced search form without entries. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
 <!-- MAGETWO-84477 -->* `\Magento\Framework\Reflection\TypeProcessor` methods have been simplified. 
-
 
 <!-- MAGETWO-87024 -->* Magento no longer unsets the taxed shipping total information before returning the total tax. 
 
@@ -1263,30 +1238,7 @@ No message appears, rather on random site after you submit the advanced search f
 
 ### MSI
 
-<!-- ENGCOM-1869 -->*
-
-
-Dynamic data rows were failing due to a read after delete condition
-Rows were removed just before the information update. An undefined javascript error was triggered.
-
-This issue has ben found in MSI, but it comes from core implementation.
-
-Cannot read property source_code of undefined
-
-https://github.com/magento-engcom/msi/issues/911
-
-Magento in Multistock Mode
-
-Start creating Simple Product as usual
-Click Add Sources and select all sources (two or more) and click Done
-Press F12
-Instead of specifying Qty for each source, click on remove icon in the Default Source row.
-Expected result
-No error in the browser console
-
-
-
-*Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*.
+<!-- ENGCOM-1869 -->* Dynamic data rows no longer fail due to a read operation after a delete condition. Previously, Magento threw an undefined JavaScript error. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*. GitHub-911](https://github.com/magento-engcom/msi/issues/911)
 
 
 
@@ -1302,20 +1254,7 @@ No error in the browser console
 <!-- ENGCOM-2144 -->* Magento now sends a confirmation request email to the customer when she unsubscribes to a newsletter. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [15464](https://github.com/magento/magento2/pull/15464)*. [GitHub-15218](https://github.com/magento/magento2/issues/15218)
 
 
-<!-- ENGCOM-2379 -->* Removed the direct use of the object manager and loaded the dependency via constructor dependency injection in `app/code/Magento/Newsletter/Controller/Adminhtml/Subscriber/MassDelete.php` and `app/code/Magento/Newsletter/Controller/Adminhtml/Subscriber/MassUnsubscribe.php`. 
-
-Unsubscribe the newsletter subscribers using the unsubscription mass action in admin.
-Deleted the newsletter subscribers using the delete mass action in admin.
-
-
-
-title: Remove direct use of object manager
-
-
-
-*Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16851](https://github.com/magento/magento2/pull/16851)*. 
-
-
+<!-- ENGCOM-2379 -->* Removed the direct use of the object manager and loaded the dependency via constructor dependency injection in `app/code/Magento/Newsletter/Controller/Adminhtml/Subscriber/MassDelete.php` and `app/code/Magento/Newsletter/Controller/Adminhtml/Subscriber/MassUnsubscribe.php`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16851](https://github.com/magento/magento2/pull/16851)*. 
 
 
 <!-- ENGCOM-2272 -->* Newsletter registration now works the same when registered customers subscribe from My Account and or from the newsletter block. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [15479](https://github.com/magento/magento2/pull/15479)*. 
@@ -1378,7 +1317,7 @@ Argument 1 passed to Magento\Sales\Model\Order\Payment must be an instance of Ma
 
 *Fix submitted by [Oleh Kravets](https://github.com/xpoback) in pull request [16194](https://github.com/magento/magento2/pull/16194)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
 
-s
+
 Steps to reproduce
 Setup authorizenet
 Setup a plugin that uses declineOrder method of the Directpost model
@@ -1558,13 +1497,6 @@ Order is declined
 
 
 
-<!-- MAGETWO-93983,93960 -->* 
-
-Run Product Price reindex in multithread mode with Redis
-
-FIND DEVELOPER
-
-
 
 
 #### Admin global search
@@ -1642,7 +1574,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--  ENGCOM-1443 -->* The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including: 
 
 	* inability to change attribute types from swatch to dropdown
+
 	* inability to remove swatches from existing products when changing an attribute type from swatch
+
 	* no updates to product attributes on the storefront
 
 
