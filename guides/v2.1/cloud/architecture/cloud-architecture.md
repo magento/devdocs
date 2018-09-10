@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-{{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both, the Starter plan architecture and the Pro plan architecture, deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.
+{{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both the Starter plan and the Pro plan architecture deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.
 
 For comparison, each plan includes the following infrastructure features and supported products.
 
@@ -38,7 +38,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Infrastructure and deployment</td>
       <td>
         <ul>
-          <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for Magento</li>
+          <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
@@ -51,10 +51,10 @@ For comparison, each plan includes the following infrastructure features and sup
       </td>
       <td>
         <ul>
-          <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for Magento</li>
+          <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS) dedicated for Production and Staging</li>
           <li>Continuous cloud integration tools with unlimited users</li>
-          <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
+          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances</li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
           </li>
@@ -80,7 +80,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Isolated and dedicated hardware setup in the underlying Infrastructure-as-a-Service (IaaS) to provide even higher levels of reliability and availability</td>
     </tr>
     <tr>
-      <td>Dedicated Launch Manager</td>
+      <td>Dedicated Technical Account Manager</td>
       <td class="blank"></td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
