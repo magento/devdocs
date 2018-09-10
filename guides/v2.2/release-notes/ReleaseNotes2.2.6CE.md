@@ -1914,7 +1914,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html).
 
 
 ### Installation and upgrade instructions
