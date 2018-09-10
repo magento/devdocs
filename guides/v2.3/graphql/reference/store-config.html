@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>GraphQL request headers | Magento 2 Developer Documentation</title>
+	<title>storeConfig endpoint | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -67,7 +67,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.3/graphql/send-request.html">
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.3/graphql/reference/store-config.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -107,13 +107,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/send-request.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/graphql/reference/store-config.html">Magento 2.0</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/send-request.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/graphql/reference/store-config.html">Magento 2.1</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/send-request.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/graphql/reference/store-config.html">Magento 2.2</a></li>
 		
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/send-request.html">Magento 2.3 Alpha</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/graphql/reference/store-config.html">Magento 2.3 Alpha</a></li>
 		
   </ul>
 </div>
@@ -1301,7 +1301,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   
   
-<li class="active ">
+<li class=" ">
   
     <a href="/guides/v2.3/graphql/send-request.html">GraphQL request headers</a>
   
@@ -1793,7 +1793,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   
   
-<li class=" ">
+<li class="active ">
   
     <a href="/guides/v2.3/graphql/reference/store-config.html">storeConfig endpoint</a>
   
@@ -1859,39 +1859,166 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">GraphQL request headers</h1>
+	<h1 class="page-heading">storeConfig endpoint</h1>
 
   
 
 
 </section>
 
-			<p>Magento accepts the following headers in a GraphQL request:</p>
+			<p>The <code class="highlighter-rouge">storeConfig</code> endpoint returns information about a store’s configuration, including its locale, currency codes, and the secure and unsecure URLs.</p>
 
-<table>
-<tr>
-<th>Header name</th>
-<th>Description/Value</th>
-</tr>
-<tr>
-<td><code>Authorization</code></td>
-<td><p><code>Bearer <i>authorization-token</i></code></p>
-<p>An integration, admin, or customer token. See <a href="/guides/v2.3/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
-</td>
-</tr>
-<tr>
-<td><code>Store</code></td>
-<td><p>The store code on which to perform the request. The value can be one of the following:</p>
-<ul>
-<li><code>default</code></li>
-<li>A store code, which is defined when a store view is created.</li>
-<!--
-<li><p><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.</p></li>
--->
-</ul>
-</td>
-</tr>
+<h2 id="query-structure">Query structure</h2>
+
+<p><code class="highlighter-rouge">storeConfig: StoreConfig</code></p>
+
+<h2 id="supported-attributes">Supported attributes</h2>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">id</code></td>
+      <td>Integer</td>
+      <td>The ID number assigned to the store</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">code</code></td>
+      <td>String</td>
+      <td>A unique identifier for the store</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">website_id</code></td>
+      <td>Integer</td>
+      <td>The ID number assigned to the parent website</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">locale</code></td>
+      <td>String</td>
+      <td>The store’s locale, such as <code class="highlighter-rouge">en_US</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">base_currency_code</code></td>
+      <td>String</td>
+      <td>The code representing the currency in which Magento processes all payment transactions, such as <code class="highlighter-rouge">USD</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">default_display_currency_code</code></td>
+      <td>String</td>
+      <td>The code representing the currency displayed on the store, such as <code class="highlighter-rouge">USD</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">timezone</code></td>
+      <td>String</td>
+      <td>The store’s time zone, such as <code class="highlighter-rouge">America/Chicago</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">weight_unit</code></td>
+      <td>String</td>
+      <td>The weight unit for products, such as <code class="highlighter-rouge">lbs</code> or <code class="highlighter-rouge">kgs</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">base_url</code></td>
+      <td>String</td>
+      <td>The store’s fully-qualified base URL, such as <code class="highlighter-rouge">http://magentohost.example.com/</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">base_link_url</code></td>
+      <td>String</td>
+      <td>A fully-qualified URL that is used to create relative links to the <code class="highlighter-rouge">base_url</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">base_static_url</code></td>
+      <td>String</td>
+      <td>The fully-qualified URL that specifies the location of static view files, such as <code class="highlighter-rouge">http://magentohost.example.com/pub/static/</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">base_media_url</code></td>
+      <td>String</td>
+      <td>The fully-qualified URL that specifies the location of user media files, such as <code class="highlighter-rouge">http://magentohost.example.com/pub/media/</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">secure_base_url</code></td>
+      <td>String</td>
+      <td>The store’s fully-qualified secure base URL, such as <code class="highlighter-rouge">https://magentohost.example.com/</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">secure_base_link_url</code></td>
+      <td>String</td>
+      <td>A fully-qualified URL that is used to create relative links to the <code class="highlighter-rouge">base_url</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">secure_base_static_url</code></td>
+      <td>String</td>
+      <td>The secure fully-qualified URL that specifies the location of static view files, such as <code class="highlighter-rouge">https://magentohost.example.com/pub/static/</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">secure_base_media_url</code></td>
+      <td>String</td>
+      <td>The secure fully-qualified URL that specifies the location of user media files, such as <code class="highlighter-rouge">https://magentohost.example.com/pub/media/</code></td>
+    </tr>
+  </tbody>
 </table>
+
+<h2 id="example-usage">Example usage</h2>
+
+<p>The following call returns all details of a store’s configuration.</p>
+
+<p><strong>Request</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  storeConfig{
+      id,
+    	code,
+    	website_id,
+    	locale,
+    	base_currency_code,
+    	default_display_currency_code,
+    	timezone,
+    	weight_unit,
+    	base_url,
+    	base_link_url,
+    	base_static_url,
+    	base_media_url,
+    	secure_base_url,
+    	secure_base_link_url,
+    	secure_base_static_url,
+    	secure_base_media_url
+  }
+}
+</code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"storeConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default_display_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lbs"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"secure_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"secure_base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"secure_base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"secure_base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 			
 		</div>
@@ -1905,13 +2032,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 
     <div class="github-link">
-      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.3/graphql/send-request.md" target="_blank">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.3/graphql/reference/store-config.md" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
 
     <div class="new-issue">
-      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/graphql/send-request.html" target="_blank">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/graphql/reference/store-config.html" target="_blank">
         Give us feedback
       </a>
     </div>
