@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a responsive mobile theme based on a default theme
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
 functional_areas:

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Set up cron jobs
 functional_areas:
   - Cloud

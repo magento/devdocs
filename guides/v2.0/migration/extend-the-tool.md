@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 title: Extend the tool
 functional_areas:
   - Tools
@@ -9,9 +9,8 @@ If the data format and structure created by [Magento extensions](https://marketp
 
 During migration, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Read the [Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html) for general information about using the tool.
-</div>
 
 ## Minor data format and structure changes
 
@@ -20,7 +19,7 @@ In most cases, the [Map Step]({{ page.baseurl }}/migration/migration-tool-intern
 - Change table or field names with mapping rules
 - Transform data formats with existing handlers or create a custom handler
 
-The following shows an example of using both mapping rules and a handler. This example uses a hyopthetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
+The following shows an example of using both mapping rules and a handler. This example uses a hypothetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
 
 ```xml
 <source>
@@ -119,9 +118,8 @@ Steps can include four types of classes:
 - Volume checking
 - Delta delivering
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#configuration), [Step internals]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-internals), [Stages]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#stages) and [Running modes]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#running-modes) for more information.
-</div>
 
 Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 

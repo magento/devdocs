@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 02_prereq
 title: Set up cron for update and upgrade
 menu_title: Set up cron for update and upgrade

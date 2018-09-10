@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 130_upgrades
 title: Upgrades and Patches
 menu_title: Upgrades and Patches

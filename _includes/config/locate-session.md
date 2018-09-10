@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## Locate your session storage {#session-where}
 
 This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:
@@ -25,4 +23,3 @@ The preceding example stores session files in `/var/www/session`
 
 ### `php.ini` example {#session-where-phpini}
 As a user with `root` privileges, open your `php.ini` file and search for the value of `session.save_path`. This identifies where sessions are stored.
-

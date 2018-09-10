@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Configure a database and a database user
 menu_title: Configure a database and a database user
@@ -22,9 +22,10 @@ To configure a MySQL database and database user:
 
 3.	In the MySQL Users section, enter information in the provided fields and click **Create User**.
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Give the database user a strong password and <em>write down</em> the username and password you choose.</p>
-  		<p>You can optionally click <strong>Password Generator</strong> to create a strong password for you.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Give the database user a strong password and *write down* the username and password you choose.
+
+	You can optionally click **Password Generator** to create a strong password for you.
 	</div>
 
 	<img src="{{ site.baseurl }}/common/images/install-merch_create-db-user.png" width="550px" alt="Create a database user">
@@ -41,4 +42,4 @@ To configure a MySQL database and database user:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
+[Configure PHP]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html)

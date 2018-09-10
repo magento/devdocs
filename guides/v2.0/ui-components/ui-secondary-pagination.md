@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Pagination Component
 menu_title: Pagination Component
@@ -13,7 +13,7 @@ The UI pagination component is a plugin for the listing component. Responsible f
 
 You can configure pagination in several ways:
 
-* Globally: using any module's <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
+* Globally: using any module's [`view/*/ui_component/etc/definition.xml`]({{ page.baseurl }}/ui-library/ui-definition.html) file. All settings declared in this file are applied to all component's instances.
 * Locally: using concrete component instance configuration, such as `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.

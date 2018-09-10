@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: RabbitMQ
 functional_areas:
   - Install
@@ -37,10 +37,10 @@ This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 
-1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="&#95;blank"}.
+1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="_blank"}.
 2. Install the package with `dpkg`.
 
-Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="&#95;blank"} for more information.
+Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="_blank"} for more information.
 
 ## Install RabbitMQ on CentOS {#centos-install}
 
@@ -48,7 +48,7 @@ Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.h
 
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
+See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
 Run the following commands to install this feature.
 ```bash
@@ -62,7 +62,7 @@ rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
+1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
 2. Run the following commands as a user with root permissions:
 
 ```bash
@@ -72,7 +72,7 @@ rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
 
-Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
+Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
 ## Configure RabbitMQ {#config}
 

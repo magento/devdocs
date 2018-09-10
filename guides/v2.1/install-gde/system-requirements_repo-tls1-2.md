@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: TLS requirement for repo.magento.com
 menu_title: TLS requirement for repo.magento.com

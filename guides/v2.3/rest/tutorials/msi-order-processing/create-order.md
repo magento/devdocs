@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 10. Create an order
 subtitle: Order processing with MSI
 menu_title: Step 10. Create an order

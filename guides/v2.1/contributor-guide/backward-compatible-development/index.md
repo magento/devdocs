@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Backward compatible development
 ---
 This page describes rules and best practices for backward compatible development.
@@ -15,17 +15,15 @@ The core Magento team and contributing developers work in two release types
 2.  New patch release (product's PATCH release)
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
-</div>
+{: .bs-callout .bs-callout-info }
+Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
 The following code modifications are forbidden for all code (both `@api` and non `@api`) without approval of a Magento architect.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
-</div>
+{: .bs-callout .bs-callout-info }
+The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
 ### PHP
 

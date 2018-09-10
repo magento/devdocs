@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a new storefront theme
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
@@ -30,7 +30,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{site.mage2200url}}app/code/Magento){:target="\_blank"}
+* [Checklist of modules]({{site.mage2200url}}app/code/Magento){:target="_blank"}
 * [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
@@ -84,9 +84,9 @@ If you change the theme title or parent theme information in `theme.xml` after a
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
-Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="\_blank"} packages.
+Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="_blank"} packages.
 
-To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="\_blank"}.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="_blank"}.
 
 The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
@@ -136,7 +136,7 @@ To register your theme in the system, add a `registration.php` file in your them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{site.mage2200url}}app/design/frontend/Magento/luma/registration.php){:target="\_blank"} file in the Magento Luma theme.
+For illustration, see the [registration.php]({{site.mage2200url}}app/design/frontend/Magento/luma/registration.php){:target="_blank"} file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 

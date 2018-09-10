@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Starter develop and deploy workflow
 menu_title: Starter develop and deploy workflow
@@ -29,9 +29,8 @@ The following diagram details the branch and environment relationships:
 
 You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The following workflow and examples use a Production, Staging, and Integration architecture.
-</div>
 
 ## Starter environments and branches {#env-branches}
 
@@ -109,9 +108,8 @@ We recommend using a branching strategy with your development work. Using one br
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Do not complete any configurations on your local yet.
-</div>
 
 ![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
 
@@ -122,9 +120,9 @@ When you are ready to configure your store, have all code pushed to your Integra
 For the best information on configurations, we recommend reviewing {{site.data.var.ee}} and your extension documentation. Here are some links and ideas to help you get kickstarted:
 
 * [Best practices for store configuration]({{ page.baseurl }}/cloud/configure/configure-best-practices.html) for specific best practices in the cloud
-* [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="\_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
-* [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="\_blank"} for your look and feel of the site and stores including CSS and layouts
-* [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="\_blank"} for roles, tools, notifications, and your encryption key for your database
+* [Basic configuration](http://docs.magento.com/m2/ee/user_guide/configuration/configuration-basic.html){:target="_blank"} for store admin access, name, languages, currencies, branding, sites, store views and more
+* [Theme](http://docs.magento.com/m2/ee/user_guide/design/design-theme.html){:target="_blank"} for your look and feel of the site and stores including CSS and layouts
+* [System configuration](http://docs.magento.com/m2/ee/user_guide/system/system.html){:target="_blank"} for roles, tools, notifications, and your encryption key for your database
 * Extension settings using their documentation
 
 Beyond just store settings, you can further configure multiple sites and stores, configured services, and more. For details, see [Configure Magento Commerce]({{ page.baseurl }}/cloud/configure/configuration-overview.html).
@@ -192,13 +190,11 @@ As you develop features, add extensions, and design themes, having real data to 
 
 ![Pull and sanitize production data]({{ site.baseurl }}/common/images/cloud_workflow-data-code-process.png)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
-</div>
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Important: We don't recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
-</div>
 
 ## Deployment workflow {#deploy}
 

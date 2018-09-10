@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Optional software
 menu_title: Optional software
@@ -19,15 +19,15 @@ The other optional utilities discussed in this topic might assist you with your 
 
 ## Installing and Configuring Network Time Protocol (NTP)   {#install-optional-ntp}
 
-<a href="http://www.ntp.org" target="_blank">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="_blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
+[NTP](http://www.ntp.org){: target="_blank"} enables servers to synchronize their system clocks using [globally available pool servers](http://www.pool.ntp.org/en){: target="_blank"}. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.
 
 If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.
 
 See one of the following sections:
 
-*	<a href="#install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</a>
-*	<a href="#install-optional-ntp-centos">Install and configure NTP on CentOS</a>
-*	<a href="#install-optional-ntp-servers">Use NTP pool servers</a>
+*	[Install and configure NTP on Ubuntu](#install-optional-ntp-ubuntu)
+*	[Install and configure NTP on CentOS](#install-optional-ntp-centos)
+*	[Use NTP pool servers](#install-optional-ntp-servers)
 
 ### Install and configure NTP on Ubuntu   {#install-optional-ntp-ubuntu}
 
@@ -35,7 +35,7 @@ Enter the following command to install NTP:
 
 	apt-get install ntp
 
-Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.
+Continue with [Use NTP pool servers](#install-optional-ntp-servers).
 
 ### Install and configure NTP on CentOS   {#install-optional-ntp-centos}
 
@@ -59,7 +59,7 @@ To install and configure NTP:
 
 ### Use NTP pool servers   {#install-optional-ntp-servers}
 
-Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers' time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.
+Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use [pool servers](http://www.pool.ntp.org/en){: target="_blank"} that are close to your servers' time zone as discussed on the [NTP pool project help page](http://www.pool.ntp.org/en/use.html){: target="_blank"}. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.
 
 1.	Open <code>/etc/ntp.conf</code> in a text editor.
 
@@ -95,11 +95,10 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 ## Create phpinfo.php   {#install-optional-phpinfo}
 
-<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and its extensions. 
+[`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){: target="_blank"} displays a large amount of information about {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and its extensions. 
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Use `phpinfo.php` in a development system *only*. It can be a security issue in production.
 
 Add the following code anywhere in your web server's docroot:
 <pre>&lt;?php
@@ -107,7 +106,7 @@ Add the following code anywhere in your web server's docroot:
 // Show all information, defaults to INFO_ALL
 phpinfo();</pre>
 
-For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.
+For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php){: target="_blank"}.
 
 To view the results, enter the following {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} in your browser's location or address field:
 
@@ -118,21 +117,20 @@ If a 404 (Not Found) error displays, check the following:
 *	Start the web server if necessary.
 *	Make sure your firewall allows traffic on port 80.
 
-	<a href="https://help.ubuntu.com/community/UFW" target="_blank">Help for Ubuntu</a>
+	[Help for Ubuntu](https://help.ubuntu.com/community/UFW){: target="_blank"}
 
-	<a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a>
+	[Help for CentOS](http://wiki.centos.org/HowTos/Network/IPTables){: target="_blank"}
 
 ## Install phpmyadmin   {#install-optional-phpmyadmin}
 
 `phpmyadmin` is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.
 
-For more information about `phpmyadmin`, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.
+For more information about `phpmyadmin`, see the [phpmyadmin home page](http://www.phpmyadmin.net/home_page/index.php){: target="_blank"}.
 
-For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.
+For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install){: target="_blank"}.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Use phpmyadmin in a development system *only*. It can be a security issue in production.
 
 ## Install phpmyadmin on Ubuntu   {#install-optional-phpmyadmin-ubuntu}
 
@@ -200,9 +198,9 @@ To install phpmyadmin on CentOS:
 
 #### Related topics:
 
-*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
+*	[PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*	[Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

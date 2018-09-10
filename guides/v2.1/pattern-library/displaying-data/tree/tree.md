@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Tree Pattern
 ---
 This topic contains various types of Tree structures used in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.

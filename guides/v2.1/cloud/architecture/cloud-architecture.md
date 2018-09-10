@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Magento Commerce (Cloud) architecture
 functional_areas:
   - Cloud

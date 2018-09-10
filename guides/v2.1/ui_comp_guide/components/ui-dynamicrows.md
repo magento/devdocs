@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: DynamicRows component
 menu_title: DynamicRows component
@@ -34,7 +34,7 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>

@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Multiline component
 menu_title: Multiline component
@@ -151,7 +151,7 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>
@@ -165,6 +165,6 @@ The Multiline component is a collection of form elements that displays multiple 
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
 </table>

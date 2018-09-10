@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: About the uiClass library
-menu_title: About the uiClass library
-menu_order: 60
 ---
 
 ## What is `uiClass`?
@@ -23,50 +20,50 @@ The uiClass class introduces the architecture of UI components through the follo
 * The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
-{%highlight js%}
+```js
 	defaults: {
 		myFirstProperty: 0,
 		mySecondProperty: 1
 	}
 
-	Before executing initConfig method:
+	//Before executing initConfig method:
 	console.log(this.myFirstProperty) // Undefined
 	console.log(this.mySecondProperty) // Undefined
 
-	After executing initConfig method:
+	//After executing initConfig method:
 	console.log(this.myFirstProperty) // 0
 	console.log(this.mySecondProperty) // 1
-{%endhighlight%}
+```
 
 * The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
 
 As an example:
 
-{%highlight js%}
+```js
 	initialize: function () {
 		%yourMethodName%();
 
 		return this;
 	}
-{%endhighlight%}
+```
 
 * The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:
 
-{%highlight js%}
+```js
 	initialize: function () {
 		this._super(); //_super will call parent's `initialize` method here
 
 		return this;
 	}
-{%endhighlight%}
+```
 
 ### Commonly used uiClass properties {#uiclass_properties}
 
 The `defaults` property declares the list of properties of a UI component's instance. Also it declares communications between components if needed.
 
 As an example:
-{%highlight js%}
+```js
 	defaults: {
 		%yourCustomProperty%: '',
 		imports: {
@@ -74,4 +71,4 @@ As an example:
             disabled: 'checked'
         },
 	}
-{%endhighlight%}
+```

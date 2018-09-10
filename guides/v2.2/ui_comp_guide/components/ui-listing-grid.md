@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Listing (grid) component
-menu_title: Listing (grid) component
 ---
 
 Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.
@@ -74,4 +72,4 @@ The listing component requires the data source to be properly configured and ass
 
 ## Source files
 
-- [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
+- [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)

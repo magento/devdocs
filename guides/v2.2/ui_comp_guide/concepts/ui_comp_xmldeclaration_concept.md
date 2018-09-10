@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: About XML сonfiguration of UI сomponents
-menu_title: About XML сonfiguration of UI сomponents
-menu_order: 13
 ---
 
 ## Overview
@@ -18,11 +15,11 @@ In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node
 
 Example of a basic {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} declaration:
 
-{%highlight xml%}
+```xml
 <referenceContainer name="page-container">
 	<uiComponent name="%instance_name%"/>
 </referenceContainer>
-{%endhighlight%}
+```
 
 A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the basic UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
@@ -41,7 +38,7 @@ The top node can have nested nodes. Every nested node is regarded as a separate 
 
 ## Example of a basic component's configuration file
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
@@ -99,8 +96,7 @@ The top node can have nested nodes. Every nested node is regarded as a separate 
         </field>
     </fieldset>
 </form>
-
-{%endhighlight%}
+```
 
 In the above example, within the top-level `<form>` node the `<fieldset>` node is nested. It declares the Fieldset UI component.
 

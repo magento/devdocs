@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Apache and Elasticsearch
 ee_only: True
 functional_areas:
@@ -8,14 +8,6 @@ functional_areas:
   - System
   - Setup
 ---
-
-#### Contents
-
-*	[Overview of secure web server communication](#es-ws-secure-over)
-*	[Set up a proxy](#es-apache-proxy)
-*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
-*	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
 

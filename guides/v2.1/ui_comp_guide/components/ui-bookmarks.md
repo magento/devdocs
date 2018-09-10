@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Bookmarks component
 menu_title: Bookmarks component
@@ -40,4 +40,4 @@ The Bookmarks component stores active and changed state of a grid implemented us
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)

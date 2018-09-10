@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Paging component
 menu_title: Paging component
@@ -40,4 +40,4 @@ The Paging component implements pagination in grids implemented using [Listing](
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)

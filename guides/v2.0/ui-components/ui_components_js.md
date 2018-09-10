@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Using_UI
 title: Using UI components client-side
 menu_title: Using UI components client-side
@@ -212,7 +212,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
+- by default uses the [app/code/Magento/Ui/view/base/web/templates/collection.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html) template
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
@@ -255,30 +255,19 @@ To define the UI components used on a page, you can use browser built-in develop
 
 For illustration, let's find out what UI components are used on the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug1.png" alt="The catalog page"> 
-</div>
-
+![The catalog page]({{ site.baseurl }}/common/images/ui_debug1.png) 
 
 According to the described procedure, open the page source and search for "`data-bind="scope:`"
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug2.png" alt="searching for data-bind=scope:">
-</div>
-
+![searching for data-bind=scope:]({{ site.baseurl }}/common/images/ui_debug2.png)
 
 So we find out that the main UI component used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug3.png" alt="run the command in Console">
-</div>
-
+![run the command in Console]({{ site.baseurl }}/common/images/ui_debug3.png)
 
 And we get the component's configuration:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug4.png" alt="view the configuration">
-</div>
+![view the configuration]({{ site.baseurl }}/common/images/ui_debug4.png)
 
 ### Debug using a Google Chrome plug-in
 

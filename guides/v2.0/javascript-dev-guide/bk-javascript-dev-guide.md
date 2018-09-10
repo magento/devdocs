@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide
 menu_title: Introduction

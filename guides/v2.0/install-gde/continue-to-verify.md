@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: ZZ_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation
@@ -15,7 +15,7 @@ functional_areas:
 
 We suggest the following:
 
-*	<a href="{{ page.baseurl }}/install-gde/install/verify.html">Verify the installation</a>
+*	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html)
 
 ## Other options
 
@@ -27,13 +27,13 @@ If you haven't already installed optional sample data, you can [install it now](
 
 ### Manage and upgrade components
 
-*	<a href="{{ page.baseurl }}/comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
-*	*Contributing developers only*: <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
+*	[Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/compman-start.html)
+*	[System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+*	*Contributing developers only*: [Contributing developers—update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
 
 ### Configure
 
-<a href="{{ page.baseurl }}/install-gde/install/post-install-config.html">Configure the Magento application</a>.
+[Configure the Magento application]({{ page.baseurl }}/install-gde/install/post-install-config.html).
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

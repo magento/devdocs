@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 5. Create Admin account
 menu_title: Step 5. Create Admin account
@@ -15,4 +15,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_6_install.html">Step 6. Install</a>
+[Step 6. Install]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_6_install.html)

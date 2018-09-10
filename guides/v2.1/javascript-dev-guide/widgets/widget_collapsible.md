@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Collapsible widget
 redirect_from:
@@ -107,15 +107,10 @@ Specifies if the collapse/expand actions are performed with animation.
 
 **Type**: 
 Multiple types are supported:
-<ul>
-<li>Boolean: the `false` value disables the animation </li> 
-<li>Number: duration in milliseconds</li> 
-<li>String: is parsed to an object as a json string</li> 
-<li>Object: 
-    
-For details about the object passed, see <a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate()</a>.
-</li>
-</ul>
+-   Boolean: the `false` value disables the animation
+-   Number: duration in milliseconds
+-   String: is parsed to an object as a json string
+-   Object: For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/).
 
 -   Boolean: the \`false\` value disables the animation
 -   Number: duration in milliseconds

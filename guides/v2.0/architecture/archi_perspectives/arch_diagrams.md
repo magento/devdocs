@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
@@ -19,4 +19,4 @@ The following diagram illustrates the components of Magento, and shows the "laye
 
 ## Related topics
 
-* <a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>
+* [Architecture layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)

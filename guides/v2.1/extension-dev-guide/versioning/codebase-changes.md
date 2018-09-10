@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Codebase changes
 menu_title: Codebase changes

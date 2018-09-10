@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Shared configuration
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How to get the Magento software
 landing-page: Installation Guide

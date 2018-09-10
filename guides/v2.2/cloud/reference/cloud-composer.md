@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Composer
 redirect_from:
   - /guides/v2.2/cloud/cloud-composer.html
@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 
@@ -38,7 +38,7 @@ During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html
 
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 
-The `vendor/magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="\_blank"} and does not contain any code.
+The `vendor/magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
 
 The metapackage depends on the appropriate versions of `vendor/magento/ece-patches`, [`vendor/magento/ece-tools`](#ece-tools), and [`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 

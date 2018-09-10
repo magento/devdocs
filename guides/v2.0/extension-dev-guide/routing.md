@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Routing
 menu_title: Routing
@@ -21,9 +21,9 @@ Then, according to a route rule, controller is assigned to URL. Use the `routes.
 
 ### Routers
 
-The routers information for the modules is described in the `routerList` parameter of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your `di.xml`.
+The routers information for the modules is described in the `routerList` parameter of [Magento\\Framework\\App\\RouterList]({{ site.mage2000url }}lib/internal/Magento/Framework/App/RouterList.php){: target="_blank"} type in your `di.xml`.
 
-Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.
+Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into [FrontController]({{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php){: target="_blank"}.
 
 You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
 (such as, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} router, default router, and so on).
@@ -45,9 +45,10 @@ Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}fron
 </config>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
-  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`%routeId%` must be at least three characters in length and can consist of the following characters: `A-Z, a-z, 0-9, _`.
+
+`%frontName%` must be at least three characters in length and can consist of the following characters: `A-Z, a-z, 0-9, _, -`.
 </div>
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Framework\Route\Config`.
@@ -90,15 +91,15 @@ The `dispatch()` method of the `Magento\Framework\App\Action\Action` class reque
 
 For this class, the `Magento\Framework\App\ActionInterface` processes the requests through its actions. Also, the following classes participate in processing the requests:
 
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the `di.xml` file
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area's front names
+* The [Magento\\Framework\\App\\State]({{ site.mage2000url }}lib/internal/Magento/Framework/App/State.php){: target="_blank"}  class provides information on the state of the application, that is, current mode, installation date, and so on.
+* The [Magento\\Framework\\App\\Arealist]({{ site.mage2000url }}lib/internal/Magento/Framework/App/AreaList.php){: target="_blank"} class serves to configure the application areas through the `di.xml` file
+* The [Magento\\App\\Area\\FrontNameResolverInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php){: target="_blank"} class resolves the dynamic area's front names
 
 ## Default router
 
-If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\Framework\App\Router\DefaultRouter</a> default router lists handlers for processing such request.
+If a request cannot be processed by any router, the [Magento\\Framework\\App\\Router\\DefaultRouter]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php){: target="_blank"} default router lists handlers for processing such request.
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
+[Magento\\App\\Router\\NoRouteHandlerList]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php){: target="_blank"} contains the list of handlers.
 
 #### Related information
 

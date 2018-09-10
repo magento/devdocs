@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
 functional_areas:
   - Cloud
@@ -80,11 +80,11 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
 ## Create an OAuth consumer
 
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
 
 #### To create an OAuth consumer in Bitbucket:
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="\_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
 
 1.  Click **Settings** > **Access Management** > **OAuth**.
 

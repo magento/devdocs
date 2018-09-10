@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Search component
 menu_title: Search component
@@ -91,4 +91,4 @@ The Search component allows searching through the grid records. It is a generic 
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/search/search.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/search/search.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/search/search.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/search/search.js)

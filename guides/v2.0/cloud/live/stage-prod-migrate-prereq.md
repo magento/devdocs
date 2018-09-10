@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Prepare to deploy to Staging and Production
 menu_title: Prepare to deploy to Staging and Production
@@ -33,7 +33,7 @@ To prepare your environments for full deployment, you need:
 
 You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Select an environment.
 3. Click **Access site** to display the URL and SSH information.
 

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Build System Setup
 functional_areas:
   - Configuration

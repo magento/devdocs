@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Number Formats
 menu_title: Number Formats
@@ -64,19 +64,19 @@ This is how we write about money:
       <th colspan="4">Examples:</th>
     </tr>
     <tr>
-      <td><strong>No</strong> – “$2.00"<br>
-      <strong>No</strong> – “$ 2"<br>
-      Yes – “$2”<br>
+      <td><strong>No</strong> – “$2.00"<br />
+      <strong>No</strong> – “$ 2"<br />
+      Yes – “$2”<br />
       Yes – “$2.01”</td>
-      <td><strong>No</strong> – “$1232"<br>
-      <strong>No</strong> – “$1232.00"<br>
+      <td><strong>No</strong> – “$1232"<br />
+      <strong>No</strong> – “$1232.00"<br />
       Yes – “$1,232”</td>
-      <td><strong>No</strong> – “$53,000,000"<br>
-      <strong>No</strong> – “$53m"<br>
-      <strong>No</strong> – “$53mil"<br>
+      <td><strong>No</strong> – “$53,000,000"<br />
+      <strong>No</strong> – “$53m"<br />
+      <strong>No</strong> – “$53mil"<br />
       Yes – “$53 million”</td>
-      <td><strong>No</strong> – “$1,200,000"<br>
-      <strong>No</strong> – “$1.2m"<br>
+      <td><strong>No</strong> – “$1,200,000"<br />
+      <strong>No</strong> – “$1.2m"<br />
       Yes – “$1.2 million”</td>
     </tr>
   </tbody>

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Subscriptions and plans
 ---
 
@@ -8,7 +8,7 @@ title: Subscriptions and plans
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Starter</th>
       <th>Pro</th>
     </tr>
@@ -67,17 +67,17 @@ title: Subscriptions and plans
     </tr>
     <tr>
       <td>High availability infrastructure</td>
-      <td class="blank"></td>
+      <td class="blank" />
       <td>High availability architecture with a three-server setup in the underlying Infrastructure-as-a-Service (IaaS) to provide enterprise grade reliability and availability</td>
     </tr>
     <tr>
       <td>Dedicated hardware</td>
-      <td class="blank"></td>
+      <td class="blank" />
       <td>Isolated and dedicated hardware setup in the underlying Infrastructure-as-a-Service (IaaS) to provide even higher levels of reliability and availability</td>
     </tr>
     <tr>
       <td>Dedicated Launch Manager</td>
-      <td class="blank"></td>
+      <td class="blank" />
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
   </tbody>

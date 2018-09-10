@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Generate data for performance testing
 functional_areas:
   - Configuration
@@ -18,7 +18,7 @@ The following figure shows how a product is displayed on the {% glossarytooltip 
 ![Sample storefront with generated data]({{ site.baseurl }}/common/images/config_generate-data.png){:width="550px"}
 
 ## First steps {#config-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common).
 
 ## About profiles {#config-cli-perf-prof}
@@ -519,7 +519,7 @@ Generates store views. Store views are distributed normally among store groups. 
 
 Generates tax rates. XML profile node:
 
-<pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/&#95;files) -->
+<pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
 ## Additional information    

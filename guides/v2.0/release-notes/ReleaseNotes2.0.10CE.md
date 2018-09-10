@@ -12,25 +12,25 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.0.1
 
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.
 
 ## Highlights
 
 * Patch 2.0.10 is now <i>compatible with MySQL 5.7</i>.
 
-* Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the <a href="{{ page.baseurl }}/mrg/ce/Sales.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="{{ page.baseurl }}/mrg/intro.html" target="_blank">Module Reference Guide</a>.
+* Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. For more information on these API enhancements, see the [Sales API]({{ page.baseurl }}/mrg/ce/Sales.html#invoiceorder){: target="_blank"} discussion in the [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html){: target="_blank"}.
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc}
 
 
-<i>These new interfaces will not break any existing customizations or extensions</i>.   See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.
+<i>These new interfaces will not break any existing customizations or extensions</i>.   See [Alan Kent’s blog about Magento](https://alankent.me/category/magento/){: target="_blank"} for more information about these features and Magento’s use of semantic versioning.
 
 ## Security enhancements
 
 This release includes  enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-2010-and-212-security-update" target="_blank">Magento Security Center</a>.
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the [Magento Security Center](https://magento.com/security/patches/magento-2010-and-212-security-update){: target="_blank"}.
 
 ### General security
 {:.no_toc}
@@ -57,7 +57,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 56851 -->* Fixed remote code execution issue in {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
-<!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+<!--- 57579 -->* Upgrade now places stores in maintenance mode as expected. [(GITHUB-3191)](https://github.com/magento/magento2/issues/3191){: target="_blank"}
 
 
 
@@ -118,7 +118,7 @@ We address the following functional issues in this release.
 
 	* change order status and state
 
-For more information on these API enhancements, see <a href="{{ page.baseurl }}/mrg/ce/Sales.html" target="_blank">Magento Sales API</a>.
+For more information on these API enhancements, see [Magento Sales API]({{ page.baseurl }}/mrg/ce/Sales.html){: target="_blank"}.
 
 ### Performance
 {:.no_toc}
@@ -141,23 +141,23 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 {:.no_toc}
 
 
-<!--- 56953 -->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a>
+<!--- 56953 -->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. [(GITHUB-6121)](https://github.com/magento/magento2/issues/6121){: target="_blank"}
 
 
-<!--- 56911 -->* You can now use an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}Merchant Account{% endglossarytooltip %} ID when using Braintree as a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a>
+<!--- 56911 -->* You can now use an alternative {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}Merchant Account{% endglossarytooltip %} ID when using Braintree as a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. [(GITHUB-5910)](https://github.com/magento/magento2/issues/5910){: target="_blank"}
 
 ### General fixes
 {:.no_toc}
 
 
-<!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a>
+<!--- 57065 -->* Magento now returns you to the Admin dashboard after you've successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. [(GITHUB-4331)](https://github.com/magento/magento2/issues/4331){: target="_blank"}
 
 
-<!--- 55054 -->* You can now update multiselect attribute values for multiple products from the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.  <a href="https://github.com/magento/magento2/issues/5459" target="_blank">(GITHUB-5459)</a>
+<!--- 55054 -->* You can now update multiselect attribute values for multiple products from the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.  [(GITHUB-5459)](https://github.com/magento/magento2/issues/5459){: target="_blank"}
 
 
 
-<!--- 56963, 57069 -->* State/Province field is now displayed as required on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a>
+<!--- 56963, 57069 -->* State/Province field is now displayed as required on the Add New Address page. [(GITHUB-5279)](https://github.com/magento/magento2/issues/5279){: target="_blank"}
 
 
 <!--- 57072 -->* Maestro credit card now passes validation.
@@ -172,7 +172,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 <!--- 58933 -->* Delete paging functionality for configurable product variations.
 
-<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a>
+<!--- 56700 -->* The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. [(GITHUB-5719)](https://github.com/magento/magento2/issues/5719){: target="_blank"}, [(GITHUB-5890)](https://github.com/magento/magento2/issues/5890){: target="_blank"}
 
 
 
@@ -183,7 +183,7 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}/
 
 ## Known issues
 
-* **Issue**:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>. **Workaround**: Create a header template and reference the image location absolutely.
+* **Issue**:  Logo Email for transactional emails can not be uploaded successfully [(GITHUB-6275)](https://github.com/magento/magento2/issues/6275){: target="_blank"}. **Workaround**: Create a header template and reference the image location absolutely.
 
 
 <!-- 59428 -->
@@ -206,6 +206,6 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

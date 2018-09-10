@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Service contracts
 menu_title: Service contracts
@@ -9,12 +9,11 @@ functional_areas:
   - Services
 ---
 
-<p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
-<p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
-<p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
-   Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
-</p>
-<p>To address these issues, the Magento system introduces <i>service contracts</i>.</p>
+Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price. Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.
+
+Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento. Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
+
+To address these issues, the Magento system introduces _service contracts_.
 
 ## What is a service contract? {#what-is-msc}
 

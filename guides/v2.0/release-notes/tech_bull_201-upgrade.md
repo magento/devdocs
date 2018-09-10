@@ -84,8 +84,8 @@ To apply the patch:
 1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 
 	<table>
-		<col width="30%">
-		<col width="70%">
+		<col width="30%" />
+		<col width="70%" />
 	<tbody>
 	<tr> 
 		<th>Magento edition</th>
@@ -121,8 +121,8 @@ To apply the patch:
 	</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use the same patch whether or not you installed optional sample data.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Use the same patch whether or not you installed optional sample data.
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
@@ -175,8 +175,8 @@ To resolve the issue:
 		composer require magento/product-community-edition 2.0.2 --no-update
 		composer update
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	You can upgrade to either `magento/product-community-edition 2.0.2` or `magento/product-community-edition 2.0.1`; we recommend 2.0.2.
 	</div>
 6.	After the commands complete, enter the following command to update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 

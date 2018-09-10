@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Filters component
-menu_title: Filters component
 ---
 
 The Filters component renders UI controls for filtering and applies filtering. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
@@ -27,8 +25,8 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
   <tr>
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
-    <td></td>
+    <td>{<br />[name: string]: boolean<br />}</td>
+    <td />
   </tr>
   <tr>
     <td><code>stickyTmpl</code></td>
@@ -65,5 +63,5 @@ To add a new customer attribute to the customer grid and make it filterable, you
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
 

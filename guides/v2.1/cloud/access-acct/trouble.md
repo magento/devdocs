@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Troubleshoot deployment
 menu_title: Troubleshoot deployment

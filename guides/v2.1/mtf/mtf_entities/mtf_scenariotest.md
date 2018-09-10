@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Scenario test
 ---
 
@@ -25,7 +25,7 @@ Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Ma
  
 Implementation of a scenario test is always the same. You have to change the name of your test case only.
 
-{% highlight php %}
+```php
 <?php
 
 namespace Magento\YourModule\Test\TestCase;
@@ -55,7 +55,7 @@ class FunctionalityYouWantToTest extends Scenario
     }
 }
 
-{% endhighlight %}
+```
 
 Scenario test case is a PHP class that extends the `\Magento\Mtf\TestCase\Scenario\` class and implements the `test()` method that calls `executeScenario()`. However, the `Scenario` class is not an interface, so the method can have any other name than `test()`.
 
@@ -63,7 +63,7 @@ Scenario test case is a PHP class that extends the `\Magento\Mtf\TestCase\Scenar
  
 Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in `<magento2 root dir>dev/tests/functional/tests/app/Magento/<module>/Test/etc/testcase.xml`.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/TestCase/etc/testcase.xsd">
@@ -78,7 +78,7 @@ Test scenario is a sequence of test steps. Each scenario test case has its own s
         <step name="{name of test step}" module="{name of the module where the test step is located}">
     </scenario>
 </config>
-{% endhighlight %}
+```
 
 ### `<scenario>` element    {#scenario-element}
 
@@ -86,11 +86,11 @@ Each `<scenario>` node defines a name of related test case in `name` and optiona
 
 Example:
 
-{% highlight xml %}
+```xml
 <scenario name="OnePageCheckoutTest" firstStep="setupConfiguration">
 ...
 </scenario>
-{% endhighlight %}
+```
 
 The example declares a scenario for `TestCase/OnePageCheckoutTest.php` where `<step>` with `name="setupConfiguration"` is to be run first. 
 
@@ -100,10 +100,10 @@ Each scenario contains test steps as `<step>` child elements. Each `<step>` requ
 
 Example:
 
-{% highlight xml %}
+```xml
 <step name="setupConfiguration" module="Magento_Config"/>
 <step name="createProducts" module="Magento_Catalog"/>
-{% endhighlight %}
+```
 
 The example defines the following test steps:
   
@@ -116,19 +116,19 @@ Using `next` and `prev` attributes you can specify previous or next test step as
 
 The following examples show tangled structure to demonstrate logic of the attributes.
 
-{% highlight xml %}
+```xml
 <scenario name="OnePageCheckoutTest" firstStep="setupConfiguration">
     <step name="createProducts" module="Magento_Catalog"/>
     <step name="setupConfiguration" module="Magento_Config" next="createProducts"/>
 </scenario>
-{% endhighlight %}
+```
 
-{% highlight xml %}
+```xml
 <scenario name="OnePageCheckoutTest" firstStep="setupConfiguration">
     <step name="createProducts" module="Magento_Catalog" prev="setupConfiguration"/>
     <step name="setupConfiguration" module="Magento_Config"/>
 </scenario>
-{% endhighlight %}
+```
 
 Both examples define the following test steps and their sequence:
   
@@ -139,19 +139,18 @@ Both examples define the following test steps and their sequence:
 
 Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the `alias` attribute to define another name for a step that has been already listed as `<step>`.
  
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Note that you can use `<step>` with the same name in a scenario only once.
-</div>
 
 Example:
 
-{% highlight xml %}
+```xml
 <scenario name="OnePageCheckoutTest" firstStep="setupConfiguration">
     <step name="setupConfiguration" module="Magento_Config" next="createProducts"/>
     <step name="createProducts" module="Magento_Catalog" next="setupConfigurationAfter"/>
     <step name="setupConfigurationAfter" alias="setupConfiguration" module="Magento_Config"/>
 </scenario>
-{% endhighlight %}
+```
 
 The example defines the following test steps and their sequence:
 
@@ -163,7 +162,7 @@ The example defines the following test steps and their sequence:
 
 All test steps are located in `<module>/Test/TestStep` as PHP classes in the following format:
 
-{% highlight php %}
+```php
 
 <?php
 
@@ -192,7 +191,7 @@ class YourTestStep implements TestStepInterface
     
 }
 
-{% endhighlight %}
+```
 
 A tests step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
 
@@ -204,7 +203,7 @@ Let's see a test step on the example with `Magento\Customer\Test\TestStep\LoginC
  
  {% collapsible Show/hide example %}
  
- {% highlight php %}
+ ```php
  <?php
  /**
   * Copyright © 2016 Magento. All rights reserved.
@@ -294,7 +293,7 @@ Let's see a test step on the example with `Magento\Customer\Test\TestStep\LoginC
          $this->logoutCustomerOnFrontend->run();
      }
  }
- {% endhighlight %}
+ ```
  {% endcollapsible %}
  
 ### `constructor()` method  {#constructor-method}

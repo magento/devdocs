@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Themes
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-general.html
 functional_areas:

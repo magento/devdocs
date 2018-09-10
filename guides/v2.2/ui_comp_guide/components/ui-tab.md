@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Tab component
-menu_title: Tab component
 ---
 
 The Tab component implements a tab content area.

@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Typified element
 ---
 
@@ -19,9 +19,8 @@ This topic discusses how to create classes for a typified element and to use the
 
 A typified element class in the FTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
-<div class="bs-callout bs-callout-tip">
-  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+The most important methods are `setValue()` and `getValue()`. These methods are required when you work with a form.
 
 ### Classes and relations with UI {#classes}
 

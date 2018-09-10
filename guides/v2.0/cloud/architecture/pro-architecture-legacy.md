@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture (legacy)
 functional_areas:
   - Cloud
@@ -11,9 +11,8 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 -   **Staging**—Provides a single environment and `master` branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 -   **Production**—Provides a single environment and `master` branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
-</div>
 
 ![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)  
 
@@ -22,7 +21,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank"></td>
+      <td class="blank" />
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>
@@ -71,9 +70,8 @@ Developers use the Integration environment to develop, deploy, and test:
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). It provides up to six environments, each as an active Git branch with the same name as the environment. Each environment includes a web server, database, and configured services to fully test your site.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Integration environment does not support all services. For example, Fastly is not accessible in Integration.
-</div>
 
 #### Branches
 
@@ -87,9 +85,8 @@ Developing in the Integration environment requires the following Git process:
 1.  Create a new branch and develop on your local workspace
 1.  Push code changes, which automatically build and deploy to the Integration environment for testing
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html) and [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
-</div>
 
 ## Staging environment {#cloud-arch-stage}
 
@@ -101,9 +98,8 @@ The Staging environment contains a default `master` branch. You cannot branch fr
 
 When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `staging` that contains all user access settings and environment variables for your Staging environment.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test  deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
-</div>
+{: .bs-callout .bs-callout-info }
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Production environment {#cloud-arch-prod}
 
@@ -115,9 +111,8 @@ The Production environment contains a default `master` branch. You cannot branch
 
 When you update your project to manage the [Production and Staging environments through the Project Web Interface]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), we create a branch from the Integration environment `master` branch called `production` that contains all user access settings and environment variables for your Production environment.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Go Live and launch]({{ page.baseurl }}/cloud/live/live.html).
-</div>
 
 ### Advantage of redundant hardware
 
@@ -163,7 +158,7 @@ The following figure shows the technology used in the Production environment:
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
-In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="\_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
+In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
 ## Services {#cloud-arch-services}
 {{site.data.var.ece}} currently supports the following services:

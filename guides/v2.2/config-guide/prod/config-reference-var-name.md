@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Use environment variables to override configuration settings
 functional_areas:
   - Configuration

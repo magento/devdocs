@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Example of managing system-specific settings
 functional_areas:
   - Cloud
@@ -66,7 +66,7 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}

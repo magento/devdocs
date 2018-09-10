@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: product-create-page
 title: Customize product creation form
 menu_title: Initial Tasks
@@ -36,4 +36,5 @@ This tutorial includes the following customizations:
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
-<img src="{{ site.baseurl }}/common/images/product_pmg.png" alt="The product creation page in Admin">
+![The product creation page in Admin]({{ site.baseurl }}/common/images/product_pmg.png)
+

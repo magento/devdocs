@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Indexing overview
 menu_title: Indexing overview
@@ -10,13 +10,6 @@ redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
-
-#### Contents
-
-*	<a href="#m2devgde-indexing-intro">Introduction to indexing</a>
-*	<a href="#m2devgde-indexing-implementation">How Magento implements indexing</a>
-*	<a href="#m2devgde-indexing-outofbox">Magento indexers</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
 
 ## Introduction to indexing   {#m2devgde-indexing-intro}
 
@@ -72,9 +65,8 @@ The following components are involved in the indexing process:
 	</tr>
 </tbody></table>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p><code>Magento_Indexer</code> replaces the Magento 1.x <code>Magento_Index</code> module. Use <code>Magento_Indexer</code> for all new development.</p>
-  </div>
+{: .bs-callout .bs-callout-warning }
+`Magento_Indexer` replaces the Magento 1.x `Magento_Index` module. Use `Magento_Indexer` for all new development.
 
 ### Indexing types   {#m2devgde-indexing-types}
 
@@ -172,25 +164,25 @@ The Magento application implements the following indexers:
 		<td>Stock</td>
 		<td>cataloginventory_stock</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td>catalogrule_rule</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td>catalogsearch_fulltext</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
-		<td></td>
+		<td />
 	</tr>
 
 </tbody></table>

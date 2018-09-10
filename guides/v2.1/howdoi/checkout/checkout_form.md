@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a new input form to checkout
 subtitle: Customize Checkout
@@ -282,4 +282,5 @@ $textField = [
 
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
-<img src="{{ site.baseurl }}/common/images/how_checkout_form.png" alt="The input form with four fields">
+![The input form with four fields]({{ site.baseurl }}/common/images/how_checkout_form.png)
+

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 7. Create a customer and generate a customer token
 subtitle: Order processing with MSI
 menu_title: Step 7. Create a customer and generate a customer token

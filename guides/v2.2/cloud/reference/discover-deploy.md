@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deployment process
 redirect_from:
   - /guides/v2.2/cloud/discover-deploy.html
@@ -78,7 +78,7 @@ For detailed instructions, see [Build and deploy full steps](#steps).
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 
-When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="\_blank"}. This code repo is cloned to your project as the `master` branch.
+When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="_blank"}. This code repo is cloned to your project as the `master` branch.
 
 -  **For Starter**—`master` branch is your Production environment.
 -  **For Pro**—`master` begins as origin branch for the Integration environment.

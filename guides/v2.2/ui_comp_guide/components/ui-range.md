@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Range component
-menu_title: Range component
 ---
 
 The Range component implements the range for filtering rows in a grid. Visually, this component represents two input fields of `date` or `text` type, for entering the "from" and "to" range limits.
@@ -34,4 +32,4 @@ The Range component implements the range for filtering rows in a grid. Visually,
 
 Extends [`Multiline`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)

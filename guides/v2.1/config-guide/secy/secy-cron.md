@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Secure cron.php to run in a browser
 functional_areas:
   - Configuration
@@ -29,10 +29,10 @@ You don't need to do anything if you use the [`magento cron:run`]({{ page.baseur
 
 ## Secure cron with Apache
 
-This section discusses how to secure cron using [HTTP Basic authentication](http://tools.ietf.org/html/rfc2617"){:target="&#95;blank"} with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
+This section discusses how to secure cron using [HTTP Basic authentication](http://tools.ietf.org/html/rfc2617"){:target="_blank"} with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:
 
--   [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="&#95;blank"}
--   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="&#95;blank"}
+-   [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}
+-   [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="_blank"}
 
 ### Create a password file
 
@@ -107,14 +107,14 @@ This section discusses how to secure cron using the {% glossarytooltip b14ef3d8-
 
 Consult one of the following resources to create a password file before continuing:
 
--   [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04){:target="&#95;blank"}
--   [Basic HTTP Authentication with nginx (howtoforge)](https://www.howtoforge.com/basic-http-authentication-with-nginx){:target="&#95;blank"}
+-   [How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04){:target="_blank"}
+-   [Basic HTTP Authentication with nginx (howtoforge)](https://www.howtoforge.com/basic-http-authentication-with-nginx){:target="_blank"}
 
 ### Secure cron in `nginx.conf.sample`
 
 Magento provides an optimized sample nginx configuration file out of the box. We recommend modifying it to secure cron.
 
-1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2000url }}nginx.conf.sample){:target="&#95;blank"} file:
+1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2000url }}nginx.conf.sample){:target="_blank"} file:
 
     ```terminal
     #Securing cron

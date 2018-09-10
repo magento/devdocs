@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configuration management for store settings
 functional_areas:
   - Cloud

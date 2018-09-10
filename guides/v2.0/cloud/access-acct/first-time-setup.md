@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Local environment setup
 menu_title: Local environment setup
@@ -30,10 +30,10 @@ After you receive an invitation, you can complete tasks to create your local, pu
 We highly recommend having experience with the following technologies and methodologies:
 
 * Magento [technology stack]({{ page.baseurl }}/architecture/tech-stack.html)
-* [Git](https://git-scm.com/){:target="\_blank"} for repository and code management, [branching methodologies](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows){:target="\_blank"}, and working with Magento Git code
-* [GitHub](https://github.com/){:target="\_blank"} for managing your code and accessing Magento repos
-* [Fastly](https://www.fastly.com/){:target="\_blank"} for CDN and caching, used in Staging and Production
-* [Galera Cluster](http://galeracluster.com/){:target="\_blank"} for databases, used in Staging and Production (with triple redundancy failover in Production)
+* [Git](https://git-scm.com/){:target="_blank"} for repository and code management, [branching methodologies](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows){:target="_blank"}, and working with Magento Git code
+* [GitHub](https://github.com/){:target="_blank"} for managing your code and accessing Magento repos
+* [Fastly](https://www.fastly.com/){:target="_blank"} for CDN and caching, used in Staging and Production
+* [Galera Cluster](http://galeracluster.com/){:target="_blank"} for databases, used in Staging and Production (with triple redundancy failover in Production)
 
 ## Gather credentials {#credentials}
 

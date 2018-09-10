@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 3. Create stocks
 subtitle: Order processing with MSI
 menu_title: Step 3. Create stocks
@@ -19,13 +18,11 @@ A sales channel can only be assigned to one stock.
 
 The `stock_id` of the default stock is `1`.  You cannot delete or add sources to the default stock, but you can perform these actions with custom stocks.
 
-For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock){:target="_blank"}.
+For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock).
 
 ## Create the stock for North America
 
-The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code`attributes are required. The `code` value cannot be changed.
-stocks can be created, modified, and deleted, but not enabled/disabled
-save the returned id, used in the next step
+The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code` attributes are required. The `code` value cannot be changed.
 
 **Endpoint**
 
@@ -64,7 +61,7 @@ The `name` attribute is required.
 
 **Response**
 
-Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps. 
+Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps.
 
 ## Create the Europe stock
 
@@ -88,4 +85,4 @@ Use the same endpoint to add another stock. The `stock_id` for `Europe Stock` is
 
 ## Verify this step
 
-In Admin, click **Stores** > **Manage Stocks**.  The new stocks are displayed in the Stock grid.
+In Admin, click **Stores** > **Inventory** > **Stocks**.  The new stocks are displayed in the Stock grid.

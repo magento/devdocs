@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Display or change the Admin URI
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-adminurl.html
@@ -11,7 +11,7 @@ functional_areas:
 ---
 
 ## First steps {#instgde-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-db-prereq}

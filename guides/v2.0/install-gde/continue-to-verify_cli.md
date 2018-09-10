@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: W_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation
@@ -15,7 +15,7 @@ functional_areas:
 
 We suggest the following:
 
-*	<a href="{{ page.baseurl }}/install-gde/install/verify.html">Verify the installation</a>
+*	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html)
 
 ## Other options
 
@@ -23,13 +23,13 @@ You can also do any of the following:
 
 ### Install optional sample data
 
-If you haven't already installed optional sample data, you can <a href="{{ page.baseurl }}/install-gde/install/sample-data.html">install it now</a>.
+If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl }}/install-gde/install/sample-data.html).
 
 ### Manage and upgrade components
 
-*	<a href="{{ page.baseurl }}/comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
+*	[Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/compman-start.html)
+*	[System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
 
 ### Configure
 
-<a href="{{ page.baseurl }}/install-gde/install/post-install-config.html">Configure the Magento application</a>.
+[Configure the Magento application]({{ page.baseurl }}/install-gde/install/post-install-config.html).

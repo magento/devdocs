@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Community maintainers
 ---
 
@@ -9,7 +9,7 @@ Luckily, the Magento community is full of knowledgeable people that enjoy sharin
 
 ## New team
 
-We have decided to form a [devdocs-maintainers](https://github.com/orgs/magento/teams/devdocs-maintainers/members){:target="\_blank"} team on GitHub. This team is similar to the [Community Maintainers](https://magento.com/magento-contributors#maintainers){:target="_blank"} team that supports the Magento application codebase.
+We have decided to form a [devdocs-maintainers](https://github.com/orgs/magento/teams/devdocs-maintainers/members){:target="_blank"} team on GitHub. This team is similar to the [Community Maintainers](https://magento.com/magento-contributors#maintainers){:target="_blank"} team that supports the Magento application codebase.
 
 {:.text-center}
 ![Future Maintainers page](img/maintainers-sneak-peek.jpg){:width="600"}

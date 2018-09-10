@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: how tos
+group: ui-components-guide
 title: Render prices on the frontend
-menu_title: Render prices on the frontend
-menu_order: 1
 ---
 
 This article shows how templates and UI components work together to render the price for any product listing(e.g. category, widget, etc).
@@ -36,7 +33,7 @@ Applying and rendering taxes is complicated.
 A product can have more than one price shown and taxes may or may not apply to all of them.
 
 Example of pricing strategy for bundled products:
-<br/>
+
 ![]({{ site.baseurl }}/common/images/bundle_prices.png)
 
 ## How to render prices with UI Components
@@ -135,7 +132,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
 </listing>
 {%endhighlight%}
 
-A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml]{:target="_blank"} file.
+A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml] file.
 
 ### Price box component
 
@@ -205,7 +202,7 @@ _comparePrices: function (firstPrice, secondPrice) {
 }
 {%endhighlight%}
 
-The preceding code sample is based on the Catalog module's [`price-box` component][price-box]{:target="_blank"}.
+The preceding code sample is based on the Catalog module's [`price-box` component][price-box].
 
 ### Price component
 
@@ -268,7 +265,7 @@ getAdjustments: function () {
 }
 {%endhighlight%}
 
-This code sample is based on the Catalog module's [`final-price` component][final-price]{:target="_blank"}.
+This code sample is based on the Catalog module's [`final-price` component][final-price].
 
 ### Price template
 
@@ -300,7 +297,7 @@ If a product has a special price, it calls `getPrice` to get the value and rende
 </if>
 {%endhighlight%}
 
-This example is based on the [`special_price.html` template file][special-price-html]{:target="_blank"} for Magento Catalog.
+This example is based on the [`special_price.html` template file][special-price-html] for Magento Catalog.
 
 ### Tax template
 
@@ -325,8 +322,8 @@ The following is sample template code that is rendered for the tax adjustment co
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html
-[special-price-html]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
-[widget-recently-viewed-xml]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[special-price-html]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
 [ui-component-declaration]: {{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html
-[price-box]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
-[final-price]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
+[price-box]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js

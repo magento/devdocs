@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a new storefront theme
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
@@ -9,9 +9,8 @@ functional_areas:
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the [Apply and configure a theme in Admin]({{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html) topic.
-</div>
 
 ## Prerequisites
 
@@ -31,7 +30,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{site.mage2300url}}app/code/Magento){:target="\_blank"}
+* [Checklist of modules]({{site.mage2300url}}app/code/Magento){:target="_blank"}
 * [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
@@ -85,9 +84,9 @@ If you change the theme title or parent theme information in `theme.xml` after a
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
-Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="\_blank"} packages.
+Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="_blank"} packages.
 
-To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="\_blank"}.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="_blank"}.
 
 The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
@@ -137,7 +136,7 @@ To register your theme in the system, add a `registration.php` file in your them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{site.mage2300url}}app/design/frontend/Magento/luma/registration.php){:target="\_blank"} file in the Magento Luma theme.
+For illustration, see the [registration.php]({{site.mage2300url}}app/design/frontend/Magento/luma/registration.php){:target="_blank"} file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 
@@ -189,9 +188,8 @@ In the `.../<theme>/web/images` directory, you store the general theme-related s
 
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../<theme>/<Namespace_Module>/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this guide.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 When you change files stored here during theme development, you need to clear the `pub/static` and `var/view_preprocessed` directories, and then reload the pages. Otherwise, the old versions of files are displayed on the storefront.
-</div>
 
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 

@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: F_troubleshooting
 title: Troubleshooting
 menu_title: Troubleshooting
@@ -33,7 +33,7 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"&#95;blank"}
+* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
@@ -47,9 +47,8 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
 </ignore>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning">
-   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.
 
 ### Class does not exist but mentioned
 

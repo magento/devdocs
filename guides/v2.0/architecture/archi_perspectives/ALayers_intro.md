@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Architectural layers overview
 menu_title: Architectural layers
@@ -28,12 +28,12 @@ Layered application design offers many advantages, but users of Magento will app
 
 ## Related topics
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/present_layer.html">Presentation layer</a>
+[Presentation layer]({{ page.baseurl }}/architecture/archi_perspectives/present_layer.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/service_layer.html">Service layer</a>
+[Service layer]({{ page.baseurl }}/architecture/archi_perspectives/service_layer.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/domain_layer.html">Domain layer</a>
+[Domain layer]({{ page.baseurl }}/architecture/archi_perspectives/domain_layer.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html">Persistence layer</a>
+[Persistence layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html)

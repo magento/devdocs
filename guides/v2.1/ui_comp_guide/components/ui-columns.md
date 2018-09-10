@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Columns component
 menu_title: Columns component
@@ -69,7 +69,9 @@ The Columns component is a collection of columns. It renders the `<table>` eleme
       Object
     </td>
     <td>
-      Specified in the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-draganddrop.html">DragAndDrop component configuration</a>.
+      Specified in the <a href=
+      "{{ page.baseurl }}/ui_comp_guide/components/ui-draganddrop.html">
+      DragAndDrop component configuration</a>.
     </td>
   </tr>
   <tr>
@@ -111,8 +113,7 @@ The Columns component is a collection of columns. It renders the `<table>` eleme
       Object
     </td>
     <td>
-      Specified in the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-insertlisting.html">
-      InlineEditing component configuration</a>.
+      Specified in the <a href= "{{ page.baseurl }}/ui_comp_guide/components/ui-insertlisting.html"> InlineEditing component configuration</a>.
     </td>
   </tr>
   <tr>

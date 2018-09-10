@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: DropdownDialog widget
 redirect_from:
@@ -36,7 +36,8 @@ Magento customized Dialog widget has default [jQuery UI Dialog widget](http://ap
 
 Description of each option as follows below location.
 
-<h3 id="d_autoPosition"><code>autoPosition</code></h3>
+### `autoPosition`   {#d_autoPosition}
+
 Specifies if the [`position`] option is used for calculating the drop-down offset. 
 
 If set to `false` (default value), then `position` rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the `position` rules.  
@@ -146,8 +147,8 @@ Beside default functionality, this method calls the `_mouseLeave()` and `_mouseE
 ### `close()` {#d_close}
 Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.
 
-[lib/web/mage/dropdown.js]: %7B%7B%20site.mage2000url%20%7D%7Dlib/web/mage/dropdown.js
-[Initialize JavaScript]: %7B%7B%20page.baseurl%20%7D%7D/javascript-dev-guide/javascript/js_init.html
+[lib/web/mage/dropdown.js]: {{ site.mage2000url }}lib/web/mage/dropdown.js
+[Initialize JavaScript]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
 [`position`]: http://api.jqueryui.com/dialog/#option-position
 [height]: http://api.jqueryui.com/dialog/#option-height
 [width]: http://api.jqueryui.com/dialog/#option-width

@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 3. Web Configuration
 menu_title: Step 3. Web Configuration
@@ -12,7 +12,7 @@ functional_areas:
 ---
 
 ## Before you begin
-{% include install/before-you-begin-web.html %}
+{% include install/before-you-begin-web.md %}
 
 {% include install/web/install-web_3-web-conf.md %}
 

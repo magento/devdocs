@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: S_Integrator
 title: Get the Magento Commerce metapackage
 menu_title: Get the Magento Commerce metapackage
@@ -21,7 +21,7 @@ To get the {{site.data.var.ee}} metapackage:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
+		composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
 
 	When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
@@ -33,9 +33,11 @@ To get the {{site.data.var.ee}} metapackage:
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If the following error displays, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
-  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the following error displays, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html):
+	```terminal
+  file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+	```
 	</div>
 
 {% include install/file-system-perms-before.md %}

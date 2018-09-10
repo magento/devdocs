@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Create symlinks to LESS files
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html
 functional_areas:
@@ -21,9 +21,9 @@ Command options:
 The following table explains this command's parameters and values.
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 	<tr>
 		<th>Parameter</th>

@@ -11,18 +11,16 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 <p>To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects. If the number of dependencies is ten or greater, this task is time-consuming.</p>
 <p>Use the <code>\Magento\TestFramework\Helper\ObjectManager</code> helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.</p>
 <p>You can still create your custom mocks, if needed.</p>
-<div class="bs-callout bs-callout-info" id="info">
-   <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Do not use the ObjectManager helper class for classes with a small number of dependencies.
 
 ## ObjectManager methods {#help}
 
-<p>The ObjectManager public interface methods are:</p>
-<ul>
-   <li><a href="#getobject">getObject method</a>. Creates class instances with automatically mocked dependencies.</li>
-   <li><a href="#getCollectionMock">getCollectionMock method</a>. Lists mocked constructor arguments.</li>
-   <li><a href="#getConstructArguments">getConstructArguments method</a>. Creates collection instances that contain specified elements.</li>
-</ul>
+The ObjectManager public interface methods are:
+
+-   [getObject method](#getobject). Creates class instances with automatically mocked dependencies.
+-   [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
+-   [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
 
 ### getObject method {#getobject}
 

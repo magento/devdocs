@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS_G
 title: Simple style changes with client-side LESS compilation vs. server-side
 menu_title: Simple style changes with client-side LESS compilation vs. server-side
@@ -37,7 +37,7 @@ The following is an illustration of how the process of making simple changes loo
 
 <img src="{{ site.baseurl }}/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 </li>
-<li markdown="1">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)</li>
+<li markdown="span">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)</li>
 <li>Refresh the page, and view the changes applied. For example:
 
 <img src="{{ site.baseurl }}/common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons">
@@ -94,7 +94,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
-<li markdown="1">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)
+<li markdown="span">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 

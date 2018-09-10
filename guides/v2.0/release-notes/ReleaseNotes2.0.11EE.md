@@ -11,9 +11,8 @@ level3_subgroup: ee20-relnotes
 We are pleased to present Magento Commerce 2.0.11. This release includes many functional fixes and enhancements. 
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+We republished these Release Notes with clarifications on December 16th, 2016.
 
 ## Highlights
 
@@ -51,11 +50,11 @@ We address the following functional issues in this release.
 
 <!--- 61127-->* Magento now indicates that a product is out-of-stock if you disable it. Previously, Magento did not display the name of an out-of-stock product at all. 
 
-<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. <a href="https://github.com/magento/magento2/issues/6487" target="_blank">(GITHUB-6487)</a> 
+<!--- 59211-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. [(GITHUB-6487)](https://github.com/magento/magento2/issues/6487){: target="_blank"} 
 
 <!--- 59374-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
-<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a> 
+<!--- 58058-->* We've resolved an issue that prevented you from adding more than one product from the wishlist to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. [(GITHUB-5282)](https://github.com/magento/magento2/issues/5282){: target="_blank"} 
 
 
 <!--- 56955-->* Magento now displays the product add validation message ("Product was added to the cart") only after you've successfully added a product to your cart.
@@ -64,30 +63,30 @@ We address the following functional issues in this release.
 
 <!--- 58614-->* You can now successfully reorder a product. Previously, if you tried to reorder a product, the checkout page would not load, and Magento would display this error: "Uncaught TypeError: Cannot read property 'length' of undefined". 
 
-<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. <a href="https://github.com/magento/magento2/issues/6294" target="_blank">(GITHUB-6294)</a> 
+<!--- 57844-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple {% glossarytooltip b3292cb5-4262-4914-a258-efac79ac8b99 %}cart rules{% endglossarytooltip %} are applied. Previously, when you created two cart rules and applied them to a cart, the rule with a coupon was applied, but the second rule was not. [(GITHUB-6294)](https://github.com/magento/magento2/issues/6294){: target="_blank"} 
 
 ### Configurable products
 {:.no_toc} 
 
 <!--- 55791-->* We've improved the performance of the review step to create a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
 
-<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. <a href="https://github.com/magento/magento2/issues/3654" target="_blank">(GITHUB-3654)</a>, <a href="https://github.com/magento/magento2/issues/3820" target="_blank">(GITHUB-3820)</a>
+<!--- 59050-->* You can now successfully reorder a configurable product. Previously, if you created an order that includes multiple products, one of which is a reorder, options for these products were confused. [(GITHUB-3654)](https://github.com/magento/magento2/issues/3654){: target="_blank"}, [(GITHUB-3820)](https://github.com/magento/magento2/issues/3820){: target="_blank"}
 
 <!--- 58793-->* You can now successfully edit configuration options when creating a configurable product. Previously, the **Edit Configuration** button did not work as expected.
 
 <!--- 58917 -->* You can now successfully add a simple child product to a configurable product with advanced configurations. 
 
-<!--- 57000-->* We no longer apply one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set both a regular and a special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a> 
+<!--- 57000-->* We no longer apply one simple product's special price to another {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} of the same configurable product. Previously, when you set both a regular and a special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [(GITHUB-4442)](https://github.com/magento/magento2/issues/4442){: target="_blank"}, [(GITHUB-5097)](https://github.com/magento/magento2/issues/5097){: target="_blank"}, [(GITHUB-6645)](https://github.com/magento/magento2/issues/6645){: target="_blank"} 
 
 <!--- 59415-->* Magento no longer displays the *as low as* price for a configurable product's simple options if the options are disabled.
 
 <!--- 58035-->* You can now edit a single product attribute and apply it to multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, then incorrectly tell you that the products had been edited.
 
-<!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. <a href="https://github.com/magento/magento2/issues/4588" target="_blank">(GITHUB-4588)</a>
+<!--- 58192-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. [(GITHUB-4588)](https://github.com/magento/magento2/issues/4588){: target="_blank"}
 
 <!--- 59950-->* Configurable product option price is displayed correctly per {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 
-<!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. <a href="https://github.com/magento/magento2/issues/4419" target="_blank">(GITHUB-4419)</a>
+<!--- 57056-->* You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. [(GITHUB-4419)](https://github.com/magento/magento2/issues/4419){: target="_blank"}
 
 ### Email
 {:.no_toc} 
@@ -96,7 +95,7 @@ We address the following functional issues in this release.
 
 <!--- 56859-->* The **Send Welcome Email From** field now accurately identifies the store that the customer is associated with. 
 
-<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. <a href="https://github.com/magento/magento2/issues/5988" target="_blank">(GITHUB-5988)</a>
+<!--- 59172-->*  The **Disable Email Communication** option of **Store > Configuration > Advanced > System > Email Sending Settings** now works as expected. Previously, Magento sent email even if you disabled this feature. [(GITHUB-5988)](https://github.com/magento/magento2/issues/5988){: target="_blank"}
 
 ### General fixes
 {:.no_toc} 
@@ -109,7 +108,7 @@ We address the following functional issues in this release.
 
 <!--- 57336-->* Magento no longer displays a "Wrong request parameters" error when you try to assign products to a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} at the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level. Previously, Magento displayed a `levelWrong` request parameters error when you assigned products to a category.
 
-<!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. <a href="https://github.com/magento/magento2/issues/6442" target="_blank">(GITHUB-6442)</a>
+<!--- 59461-->* The Magento Framework now makes its dependencies explicit in the `composer.json` file. [(GITHUB-6442)](https://github.com/magento/magento2/issues/6442){: target="_blank"}
 
 <!--- 59449-->* Magento now decrements stock as expected in a multi-website environment. 
 
@@ -135,7 +134,7 @@ We address the following functional issues in this release.
 <!--- 57331-->* The Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} now reflects changes in the swatch attribute properties as expected. 
 
 
-<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  <a href="https://github.com/magento/magento2/issues/3967" target="_blank">(GITHUB-3967)</a>
+<!--- 57326-->* The Sales Order object can now contain more than one `extension_attribute`.  [(GITHUB-3967)](https://github.com/magento/magento2/issues/3967){: target="_blank"}
 
 <!--- 57352-->* We've removed the sampassword from the Setup wizard.
 
@@ -145,7 +144,7 @@ We address the following functional issues in this release.
 
 <!--- 57498-->* Lengthy {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}Order Status{% endglossarytooltip %} tables are now paginated as expected.
 
-<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. <a href="https://github.com/magento/magento2/issues/4131" target="_blank">(GITHUB-4131)</a>
+<!---57030 -->* We've fixed a problem with [custom zip code masks]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html) in previous versions of Magento. [(GITHUB-4131)](https://github.com/magento/magento2/issues/4131){: target="_blank"}
 
 <!--- 57103-->* We've fixed an issue with how the Customer Segments report calculates the same customer on two websites. 
 
@@ -169,12 +168,12 @@ We address the following functional issues in this release.
 
 <!--- 57513-->* You can now complete the purchase of a gift card in environments where you have set the Braintree {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} Payment Action to **Authorize and Capture**. Previously, any order made under these conditions would remain indefinitely in the processing stage.
 
-<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and displayed an error. <a href="https://github.com/magento/magento2/issues/3804" target="_blank">(GITHUB-3804)</a> 
+<!--- 57133-->* You can now save a gift message when ordering a gift while logged in as a guest. Previously, Magento would not save this information, and displayed an error. [(GITHUB-3804)](https://github.com/magento/magento2/issues/3804){: target="_blank"} 
 
 ### Images
 {:.no_toc} 
 
-<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. <a href="https://github.com/magento/magento2/issues/5359" target="_blank">(GITHUB-5359)</a> 
+<!--- 59829-->* We've added a new way to import images: You can now successfully import images when you set  your document root to  `<your Magento install dir>/pub`. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work. [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){: target="_blank"} 
 
 <!--- 56171-->* You can now preview uploaded images. 
 
@@ -204,14 +203,14 @@ We address the following functional issues in this release.
 
 <!--- 57130-->* During upgrade, we now check directory permissions recursively except for the `var/session` directory. We skip that directory because the web server usually owns those files.
 
-<!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". <a href="https://github.com/magento/magento2/issues/5688" target="_blank">(GITHUB-5688)</a>
+<!--- 57944-->* Magento 2.0.x now supports the use of table prefixing during installation. Previously, when you used table prefixing, your Magento installation failed with this error: "Duplicate key on write or update". [(GITHUB-5688)](https://github.com/magento/magento2/issues/5688){: target="_blank"}
 
-<!--- 57162-->* Magento now requires you to log in with your Magento Marketplace account credentials before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a> 
+<!--- 57162-->* Magento now requires you to log in with your Magento Marketplace account credentials before attempting to upgrade. Previously, it was not clear that you needed to log in first before initiating an upgrade.  [(GITHUB-3059)](https://github.com/magento/magento2/issues/3059){: target="_blank"} 
 
 ### Orders
 {:.no_toc} 
 
-<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. <a href="https://github.com/magento/magento2/issues/6278" target="_blank">(GITHUB-6278)</a>
+<!--- 57681-->* You can now reorder an item that is currently invoiced or being shipped. Previously, if you tried to reorder, Magento did not add the item to your shopping cart, and displayed an error. [(GITHUB-6278)](https://github.com/magento/magento2/issues/6278){: target="_blank"}
 
 <!--- 57715-->* A user can view orders only on stores to which they've been assigned permission. Previously, an Admin user with permissions for only one store could view orders from all stores on the same website. 
 
@@ -230,7 +229,7 @@ We address the following functional issues in this release.
 
 <!--- 57099-->* You can now successfully place an order using the Payflow Pro payment method. 
 
-<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". <a href="https://github.com/magento/magento2/issues/4741" target="_blank">(GITHUB-4741)</a>
+<!--- 57172 -->* We've fixed an issue with how Magento captures and validates payment information. Previously, after you entered valid credit card information, Magento prompted you to re-enter the information, and displayed this error: "Please  enter a valid credit card expiration date". [(GITHUB-4741)](https://github.com/magento/magento2/issues/4741){: target="_blank"}
 
 <!--- 61561-->* Magento now saves credit card information as expected after a customer checks out using a Braintree credit card with Vault. 
 
@@ -250,7 +249,7 @@ We address the following functional issues in this release.
 
 	* Compiling. (We’ve optimized compiler performance to run faster.)
  
-<!--- 57509-->* We've also streamlined the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} bundling process, which reduces the size of bundled files. <a href="https://github.com/magento/magento2/issues/4506" target="_blank">(GITHUB-4506)</a> 
+<!--- 57509-->* We've also streamlined the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} bundling process, which reduces the size of bundled files. [(GITHUB-4506)](https://github.com/magento/magento2/issues/4506){: target="_blank"} 
 
 ### Scope
 {:.no_toc}
@@ -269,7 +268,7 @@ We address the following functional issues in this release.
 
 <!--- 56076-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JavaScript, fonts, and images) is now enabled by default.
 
-<!---59547-->* Static asset signing now works under {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}. For more information, see <a href="http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html" target="_blank">Using Static File Signatures</a>.
+<!---59547-->* Static asset signing now works under {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}. For more information, see [Using Static File Signatures](http://docs.magento.com/m2/ce/user_guide/system/static-file-signature.html){: target="_blank"}.
 
 ### Web APIs
 {:.no_toc} 
@@ -328,16 +327,16 @@ We address the following functional issues in this release.
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. See
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){: target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 

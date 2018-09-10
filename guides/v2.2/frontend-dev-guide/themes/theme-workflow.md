@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Theme development workflow
 functional_areas:
   - Frontend

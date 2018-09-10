@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: ThumbnailColumn component
-menu_title: ThumbnailColumn component
 ---
 
 The ThumbnailColumn component implements a column containing images associated with records of the table. Each field of this column contains an image preview. When a user click on the preview, a pop up window with the detailed view opens.
@@ -34,4 +32,4 @@ The ThumbnailColumn component implements a column containing images associated w
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)

@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module relationships
 menu_title: Module relationships
@@ -55,4 +55,4 @@ If module A replaces module B, it needs to be able to do so in such a way that o
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+[Module overview]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html)

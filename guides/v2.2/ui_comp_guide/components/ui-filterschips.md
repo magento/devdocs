@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: FiltersChips component
-menu_title: FiltersChips component
 ---
 
 The FiltersChips component provides UI controls that allows users to remove the previously-applied values of the [Filters]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html) and [Search]({{ page.baseurl }}/ui_comp_guide/components/ui-search.html) components.
@@ -30,4 +28,4 @@ The FiltersChips component provides UI controls that allows users to remove the 
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)

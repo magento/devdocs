@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Using Grunt for Magento tasks
 functional_areas:
   - Frontend

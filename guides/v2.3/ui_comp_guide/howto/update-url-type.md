@@ -1,6 +1,6 @@
 ---
 subgroup: howtos
-group: UI_Components_guide
+group: ui-components-guide
 title: Update the page URL type
 ---
 ## What's in this topic

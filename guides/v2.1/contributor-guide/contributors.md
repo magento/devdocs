@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Contributors
 version: 2.1
 github_link: contributor-guide/contributors.md

@@ -11,7 +11,7 @@ level3_subgroup: ee20-relnotes
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. This release includes  several functional fixes.
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Fixed issues
 
@@ -27,12 +27,12 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 
 
-* The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} now works as expected in a Magento installation running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page would become unresponsive, and the transaction would not appear in the payment gateway.  <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.
+* The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} now works as expected in a Magento installation running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page would become unresponsive, and the transaction would not appear in the payment gateway.  [(GITHUB-2984](https://github.com/magento/magento2/issues/2984){: target="_blank"}, [GITHUB-2878](https://github.com/magento/magento2/issues/2878){: target="_blank"}, [GITHUB-3305](https://github.com/magento/magento2/issues/3305){: target="_blank"}, [GITHUB-4076)](https://github.com/magento/magento2/issues/4076){: target="_blank"}.
 
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-<a href="{{ site.baseurl }}/magento-system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){: target="_blank"}.
 
 ### Installation instructions
 
@@ -41,7 +41,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 New users can now complete a full installation of Magento Commerce 2.0.7 from an archive file.
 
 ##### <b>Download a new installation</b>#####
-1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
+1. Go to the [Magento](https://www.magento.com/){: target="_blank"} website, and click **My Account**. Then, log in to your account. 
 2. In the panel on the left, choose **Downloads**. Choose **Magento Commerce 2.x**, and do the following:
 
 	a.	Click **Magento Commerce 2.x Release**.
@@ -63,9 +63,9 @@ This section discusses how to upgrade to Magento Commerce 2.0.7.
 Use the instructions in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.7.
 
 ##### <b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Commerce GitHub repository.
+Developers who contribute to the codebase can [upgrade manually]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html){: target="_blank"} from the Magento Commerce GitHub repository.
 
-1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the [Contributing Developers]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html){: target="_blank"} page.
 
 2.	Follow the instructions to pull the updates from the repository and update using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
@@ -101,9 +101,9 @@ To upgrade to Magento Commerce 2.0.7 using the command line:
 
 ### Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 
 

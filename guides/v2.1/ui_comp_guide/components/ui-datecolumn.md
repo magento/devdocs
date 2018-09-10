@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: DateColumn component
 menu_title: DateColumn component
@@ -28,4 +28,4 @@ The DateColumn component implements a table column that displays dates.
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)

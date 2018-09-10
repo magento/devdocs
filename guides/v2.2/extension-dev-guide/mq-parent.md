@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Message queues (Magento Commerce only)
 menu_title: Message queues (Magento Commerce only)

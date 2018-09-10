@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Overview of responsive web design in Magento
 menu_title: How to Make Your Theme Responsive and Mobile
@@ -17,7 +17,7 @@ The out of the box Magento Blank and Luma themes (Luma <a href="{{ page.baseurl 
 
 The following image illustrates how the same page built on the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} looks on mobile, tablet and desktop devices.
 
-<img src="{{ site.baseurl }}/common/images/css_responsive1.jpg">
+![]({{ site.baseurl }}/common/images/css_responsive1.jpg)
 
 
 We recommend using the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.

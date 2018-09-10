@@ -83,7 +83,6 @@ defaults:
       path: ""
     values:
       layout: default
-      guide_version: "2.2"
   -
     scope:
       path: "guides/m1x"
@@ -104,6 +103,8 @@ kramdown:
   toc_levels: 2..3
 
 incremental: false
+
+livereload: true
 
 algolia:
   application_id: 'E642SEDTHL'

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: JavaScript Bundling
 functional_areas:
   - Frontend

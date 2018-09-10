@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Modal сomponent
 menu_title: Modal component
@@ -54,13 +54,13 @@ Component's options are set in the configuration `.xml` file as follows:
     <td><code>options</code></td>
     <td>Configuration passed to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
     <td>Object</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>subTitle</code></td>
     <td>Subtitle of the modal window.</td>
     <td>String</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -72,7 +72,7 @@ Component's options are set in the configuration `.xml` file as follows:
     <td><code>title</code></td>
     <td>Label displayed in the header of the modal window.</td>
     <td>String</td>
-    <td></td>
+    <td />
   </tr>
 </table>
 
@@ -147,8 +147,8 @@ The following sample is an example of the configuration for a simple modal windo
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 

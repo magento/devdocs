@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Use translation dictionary to customize strings
 functional_areas:
   - Frontend

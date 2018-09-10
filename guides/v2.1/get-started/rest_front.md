@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Use REST APIs
 menu_order: 1
@@ -22,6 +22,7 @@ This guide introduces web API, REST, and cURL command concepts. It shows you how
 
 
 Read the following sections to get up and running with the Magento web APIs:
+
 <ul>
    <li>
       <p>

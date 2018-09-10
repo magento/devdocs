@@ -73,28 +73,28 @@ pages:
 
             - label: PHP
               url: /install-gde/prereq/php-centos-ubuntu.html
-              versions: ["2.3"]
+              include_versions: ["2.3"]
               children:
 
                 - label: Required PHP settings
                   url: /install-gde/prereq/php-settings.html
-                  versions: ["2.3"]
+                  include_versions: ["2.3"]
 
             - label: PHP
-              versions: ["2.1", "2.2"]
+              include_versions: ["2.1", "2.2"]
               children:
 
                 - label: PHP for Centos
                   url: /install-gde/prereq/php-centos.html
-                  versions: ["2.1", "2.2"]
+                  include_versions: ["2.1", "2.2"]
 
                 - label: PHP for Ubuntu
                   url: /install-gde/prereq/php-ubuntu.html
-                  versions: ["2.1", "2.2"]
+                  include_versions: ["2.1", "2.2"]
 
                 - label: Required PHP settings
                   url: /install-gde/prereq/php-settings.html
-                  versions: ["2.1", "2.2"]
+                  include_versions: ["2.1", "2.2"]
 
             - label: MySQL
               url: /install-gde/prereq/mysql.html
@@ -131,14 +131,14 @@ pages:
 
         - label: Install Magento using Composer
           url: /install-gde/composer.html
-          versions: ["2.1","2.2","2.3"]
+          include_versions: ["2.1","2.2","2.3"]
 
         - label: (Easy) Install the Magento archive on your server
           url: /install-gde/prereq/zip_install.html
 
         - label: (Integrator) Integrator installation
           url: /install-gde/prereq/integrator_install.html
-          versions: ["2.0"]
+          include_versions: ["2.0"]
           children:
 
             - label: Get the Magento Open Source metapackage

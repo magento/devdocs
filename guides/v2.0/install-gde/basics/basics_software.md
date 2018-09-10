@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?
@@ -19,17 +19,15 @@ functional_areas:
 
 
 
-The full list of software is listed in <a href="{{ page.baseurl }}/install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
+The full list of software is listed in [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html) but here are the essentials:
 
-*	Web server to display web pages. Currently, we've documented <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank">Apache</a> and plan to document other web servers in the near future.
+*	Web server to display web pages. Currently, we've documented [Apache](http://en.wikipedia.org/wiki/Apache_HTTP_Server){: target="_blank"} and plan to document other web servers in the near future.
 
-*	Database management system for long-term data storage and retrieval. We support <a href="http://dev.mysql.com/doc/refman/4.1/en/what-is-mysql.html" target="_blank">MySQL</a>.
+*	Database management system for long-term data storage and retrieval. We support [MySQL](http://dev.mysql.com/doc/refman/4.1/en/what-is-mysql.html){: target="_blank"}.
 
-*	PHP, an acronym for PHP: Hypertext Preprocessor, an open source scripting language suited for web development because it can be embedded in <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML</a> (the language of the web).
+*	PHP, an acronym for PHP: Hypertext Preprocessor, an open source scripting language suited for web development because it can be embedded in [HTML](http://www.w3schools.com/html/html_intro.asp){: target="_blank"} (the language of the web).
 
-	For more information, see the <a href="http://php.net/manual/en/intro-whatis.php" target="_blank">PHP manual</a> or the <a href="http://en.wikipedia.org/wiki/PHP" target="_blank">Wikipedia page</a>.
+	For more information, see the [PHP manual](http://php.net/manual/en/intro-whatis.php){: target="_blank"} or the [Wikipedia page](http://en.wikipedia.org/wiki/PHP){: target="_blank"}.
 	
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you use a hosting provider, they might already have installed this software. Contact them if you're not sure.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If you use a hosting provider, they might already have installed this software. Contact them if you're not sure.

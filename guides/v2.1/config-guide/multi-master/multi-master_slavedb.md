@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Set up optional database replication
 ee_only: True
 functional_areas:

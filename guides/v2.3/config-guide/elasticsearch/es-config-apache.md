@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Apache and Elasticsearch
 functional_areas:
   - Configuration
@@ -7,14 +7,6 @@ functional_areas:
   - System
   - Setup
 ---
-
-#### Contents
-
-*	[Overview of secure web server communication](#es-ws-secure-over)
-*	[Set up a proxy](#es-apache-proxy)
-*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
-*	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
 
@@ -114,10 +106,10 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 ## Secure communication with Apache {#es-ws-secure-apache}
 
-This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617" target="_blank) authentication with Apache. For more options, consult one of the following resources:
+This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617){:target="_blank") authentication with Apache. For more options, consult one of the following resources:
 
-*	[Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank)
-*	[Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank)
+*	[Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}
+*	[Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="_blank"}
 
 See one of the following sections:
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Compile LESS using Grunt
 functional_areas:
   - Frontend
@@ -16,25 +16,45 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
 
-```javascript
-module.exports = {
-    %theme%: {
-        area: 'frontend',
-        name: '%Vendor%/%theme%',
-        locale: '%language%',
-        files: [
-            '%path_to_file1%', //path to root source file
-            '%path_to_file2%'
-        ],
-        dsl: 'less'
-    ...
-    }
-```
+1. Install [node.js] to any location on your machine.
 
-Where:
-* `%theme%`: corresponds to your theme directory name.
-* `%language%`: the locale or language for the theme, such as `en_US`. Only one locale can be specified here. To debug the theme with another locale, create another theme declaration with another value for `%language%`.
-* `%path_to_file%`: path to the root source file, relative to the `app/design/frontend/%Vendor%/%theme%/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from another theme, and does not contain its own root source files, specify the root source files of the parent theme.
+2. Install the Grunt CLI globally:
+    ```bash
+    npm install -g grunt-cli
+    ```
+3. Rename the following files in your Magento root directory:
+    -   `package.json.sample` to `package.json`
+    -   `Gruntfile.js.sample` to `Gruntfile.js`
+
+4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
+    ```
+    cd <your_Magento_instance_directory>
+    npm install
+    npm update
+    ```
+5. Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
+    ```javascript
+    module.exports = {
+
+        <theme>: {
+            area: 'frontend',
+            name: '<Vendor>/<theme>',
+            locale: '<language>',
+            files: [
+                '<path_to_file1>', //path to root source file
+                '<path_to_file2>'
+            ],
+            dsl: 'less'
+        },
+    ```
+
+    Where the following notation is used:
+    - `<theme>`: your theme code, conventionally should correspond to the theme directory name.
+    - `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`
+    - `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+
+6. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension] in your browser.
+
 
 ## Grunt commands {#grunt_commands}
 

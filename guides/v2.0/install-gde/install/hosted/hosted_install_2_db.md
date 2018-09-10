@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 2. Add a database
 menu_title: Step 2. Add a database
@@ -15,4 +15,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_3_web-conf.html">Step 3. Web configuration</a>
+[Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_3_web-conf.html)

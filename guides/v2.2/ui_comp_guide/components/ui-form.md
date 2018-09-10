@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Form component
-menu_title: Form component
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
@@ -372,9 +370,8 @@ Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %
 
 ### Replace instances of component
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Replacing principles are the same for all UI Components.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Replacing principles are the same for all UI Components.
 
 #### Global replacement
 
@@ -412,4 +409,4 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/form/form.js](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/form.js)
+- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Configure message queues
 redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:
@@ -237,6 +237,6 @@ See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/m
 
 ### Related Topics
 
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	[Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
+*	[Manage message queues with MySQL]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+*	[Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)

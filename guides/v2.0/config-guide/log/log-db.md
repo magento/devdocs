@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 500_log
 title: Example&mdash;logging database activity
 menu_title: Example&mdash;logging database activity

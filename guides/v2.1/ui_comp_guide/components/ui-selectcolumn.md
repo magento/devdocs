@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: SelectColumn component
 menu_title: SelectColumn component
@@ -94,4 +94,4 @@ The SelectColumn component receives an array of values and displays the column w
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)

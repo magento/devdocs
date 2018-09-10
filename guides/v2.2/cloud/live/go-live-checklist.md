@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Go live checklist
 functional_areas:
   - Cloud
