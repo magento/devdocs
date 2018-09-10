@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 ---
 
-In the previous step, the SSA recommended shipping 20 `sp1` items and 25 `sp2`items from Baltimore. It also recommended shipping 35 `sp2` items from Reno.
+In the previous step, the SSA recommended shipping 20 `sp1` items and 25 `sp2` items from Baltimore. It also recommended shipping 35 `sp2` items from Reno.
 
 You can always override the SSA recommendations. It would be valid, for example, to ship all the `sp1` items and 50 `sp2` items from Reno, leaving 15 `sp2` items to be shipped from Baltimore.
 
@@ -20,17 +20,19 @@ Fulfilling the order requires two partial shipments (unless you want to create a
 
 When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.
 
-## Ship from the Baltimore warehouse
+## Recommended: Ship using  `POST /V1/order/:orderId/ship`
 
 Although you can use the `POST V1/shipment` endpoint to create a shipment, the `POST /V1/order/:orderId/ship` endpoint is a better option in that it is more efficient and the payload can be simpler.
 
-We'll ship 20 `sp1` items and 25 `sp2` items from the Baltimore warehouse. The `order_item_id` value for `sp1` is 12, and the value for `sp2` is 13.
+### Ship from the Baltimore warehouse
+
+We'll ship 20 `sp1` items and 25 `sp2` items from the Baltimore warehouse. The `order_item_id` value for `sp1` is 1, and the value for `sp2` is 2.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/order/5/ship`
+`POST http://<host>/rest/us/V1/order/1/ship`
 
-where `5` is the `orderid`
+where `1` is the `orderid`
 
 **Scope**
 
@@ -49,11 +51,11 @@ where `5` is the `orderid`
 {
   "items": [
     {
-      "order_item_id": 12,
+      "order_item_id": 1,
       "qty": 20
     },
     {
-      "order_item_id": 13,
+      "order_item_id": 2,
       "qty": 25
     }
   ],
@@ -71,9 +73,9 @@ where `5` is the `orderid`
 
 **Response**
 
-The shipment ID, such as `18`.
+The shipment ID, such as `1`.
 
-## Ship from Reno
+### Ship from the Reno warehouse
 
 Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehouse.
 
@@ -83,7 +85,7 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 {
   "items": [
     {
-      "order_item_id": 13,
+      "order_item_id": 2,
       "qty": 35
     }
   ],
@@ -101,7 +103,170 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 **Response**
 
-The shipment ID, such as `19`.
+The shipment ID, such as `2`.
+
+## Alternative: Ship using `POST /V1/shipment`
+
+Magento also supports the `POST /V1/shipment` endpoint for sending full or partial shipments.
+
+###
+
+**Endpoint**
+
+`POST http://<host>/rest/us/V1/shipment`
+
+**Scope**
+
+`us` store view
+
+**Headers**
+
+
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <admin token>`
+
+**Payload**
+
+``` json
+{
+  "entity": {
+  	"billing_address_id": 2,
+    "customer_id": 2,
+    "order_id": 1,
+    "store_id": 2,
+    "total_qty": 45,
+  "items": [
+    {
+      "name": "Simple Product 1",
+      "price": 5,
+      "product_id": 7,
+      "sku": "sp1",
+      "order_item_id": 1,
+      "qty": 20
+    },
+    {
+      "name": "Simple Product 2",
+      "price": 10,
+      "product_id": 8,
+      "sku": "sp2",
+      "order_item_id": 2,
+      "qty": 25
+    }
+    ],
+    "extension_attributes": {
+      "source_code": "baltimore_wh"
+    }
+  }
+}
+```
+
+**Response**
+
+``` json
+{
+    "created_at": "2018-08-02 21:14:43",
+    "customer_id": 2,
+    "entity_id": 13,
+    "increment_id": "2000000013",
+    "order_id": 1,
+    "packages": [],
+    "total_qty": 45,
+    "updated_at": "2018-08-02 21:14:43",
+    "items": [
+        {
+            "entity_id": 5,
+            "name": "Simple Product 1",
+            "parent_id": 13,
+            "price": 5,
+            "product_id": 7,
+            "sku": "sp1",
+            "order_item_id": 1,
+            "qty": 20
+        },
+        {
+            "entity_id": 6,
+            "name": "Simple Product 2",
+            "parent_id": 13,
+            "price": 10,
+            "product_id": 8,
+            "sku": "sp2",
+            "order_item_id": 2,
+            "qty": 25
+        }
+    ],
+    "tracks": [],
+    "comments": [],
+    "extension_attributes": {
+        "source_code": "baltimore_wh"
+    }
+}
+```
+
+## Ship from Reno
+
+Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehouse.
+
+**Payload**
+
+``` json
+{
+  "entity": {
+    "customer_id": 2,
+    "order_id": 1,
+    "total_qty": 35,
+  "items": [
+    {
+      "name": "Simple Product 2",
+      "price": 10,
+      "product_id": 8,
+      "sku": "sp2",
+      "order_item_id": 2,
+      "qty": 35
+    }
+    ],
+    "extension_attributes": {
+      "source_code": "reno_wh"
+    }
+  }
+}
+```
+
+**Response**
+
+``` json
+{
+    "created_at": "2018-08-02 22:22:23",
+    "customer_id": 2,
+    "entity_id": 16,
+    "increment_id": "2000000016",
+    "order_id": 1,
+    "packages": [],
+    "shipment_status": 1,
+    "total_qty": 35,
+    "updated_at": "2018-08-02 22:22:23",
+    "items": [
+        {
+            "entity_id": 10,
+            "name": "Simple Product 2",
+            "parent_id": 16,
+            "price": 10,
+            "product_id": 8,
+            "sku": "sp2",
+            "order_item_id": 2,
+            "qty": 35
+        }
+    ],
+    "tracks": [],
+    "comments": [],
+    "extension_attributes": {
+        "source_code": "reno_wh"
+    }
+}
+```
+
+###
+
 
 
 ## Verify this step {#verify-step}
