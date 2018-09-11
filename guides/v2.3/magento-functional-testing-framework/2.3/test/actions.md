@@ -42,19 +42,18 @@ The value format should met the following principles:
 
 ### `skipReadiness`
 
-`skipReadiness` is an optional attribute to skip the readiness check.
+`skipReadiness` is an optional flag to skip the readiness check.
 
-Example test step:
+Example test step with skipping the readiness check:
 
 ```xml
-<acceptPopup skipReadiness="true"/>
+<myAction skipReadiness="true" stepKey=""/>
 ```
 
 The flag:
 
 * cannot be used within action groups.
   * Can be used on individual actions inside the action group.
-* Should be set to true when used.
 
 ### `before` and `after`
 

@@ -4,7 +4,7 @@ title: |
     CLI commands: vendor/bin/codecept
 functional_areas:
  - Testing
-mftf-release: 2.3.0
+mftf-release: 2.3.6
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/commands/codeception.html
 ---
 
@@ -13,17 +13,13 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 {:.bs-callout .bs-callout-warning}
 We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
-All the Codeception commands you need are wrapped using the `mftf` tool.
+All the Codeception commands you need are wrapped using the [`mftf` tool][].
 
-See the [list of `mftf` commands](mftf.html). If you'd like to run the Codeception tests directly, run:
+To run Codecept, change your directory to `dev/tests/acceptance`.
 
-```bash
-vendor/bin/codecept run functional
-```
+## Usage examples
 
-## Examples
-
-Run all tests in `app/code`:
+Run all the generated tests:
 
 ```bash
 vendor/bin/codecept run functional
@@ -91,3 +87,8 @@ Full reference:
    --no-ansi             Disable ANSI output.
    --no-interaction (-n) Do not ask any interactive question.
 ```
+
+
+<!-- Link definitions -->
+
+[`mftf` tool]: mftf.html

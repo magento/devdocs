@@ -24,14 +24,14 @@ content='`mftf` commands replace the `robo` commands that were used in previous 
 In the project root directory (where you have installed the framework as a composer dependency), run commands using the following format:
 
 ```bash
-vendor/bin/mftf command [--option] [<argument>]
+vendor/bin/mftf command [options] [<arguments>] [--remove|-r]
 ```
   
 ## Useful commands
 
 Use the following commands to run commonly-performed tasks.
 
-### Build the project
+### Apply the configuration parameters
 
 ```bash
 vendor/bin/mftf build:project
@@ -43,28 +43,34 @@ vendor/bin/mftf build:project
 vendor/bin/mftf build:project --upgrade
 ```
 
-### Generate all tests in PHP
+Upgrades the existing MFTF tests after the MFTF major upgrade.
+
+### Generate all tests
 
 ```bash
 vendor/bin/mftf generate:tests
 ```
-### Generate one or more tests in PHP
+### Generate the particular tests
 
 ```bash
-vendor/bin/mftf generate:tests testName01 testName02 testName03
+vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 ```
 
-### Run and generate all tests that contain the `group="example"` annotation 
+### Generate and run the tests of a particular group
 
 ```bash
-vendor/bin/mftf run:group example
+vendor/bin/mftf run:group product -r
 ```
 
-### Run and generate all tests
+It cleans up the previously generated tests; generates and runs the tests where `group="product"`.
+
+### Generate and run particular tests
 
 ```bash
-vendor/bin/mftf run:test
+vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 ```
+
+It cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` `LoginAsCustomerTest` tests.
 
 ## Reference
  
@@ -103,7 +109,7 @@ vendor/bin/mftf generate:tests [option] [<test name>] [<test name>] [--remove]
 
 Option | Description|
 ---|---
-`--config=[<default>|<singleRun>|]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split it into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
+`--config=[<default>|<singleRun>|<parallel>]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split it into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
 `--force`    | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.
 `--lines`    | Sets the number of lines that determines the group size when `--config=parallel` is used. The __default value__ is `500`. Example: `generate:tests --config=parallel --lines=400`
 `--tests`    | Defines the test configuration as a JSON string.
@@ -259,13 +265,13 @@ Option | Description
 
 #### Examples
 
-Clean up after last run, generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
+Clean up after the last run, generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
 
 ```bash
 vendor/bin/mftf -r -- run:group group1 group2
 ```
 
-Execute the generated PHP tests with the tags `@group group1` and `@group group2`:
+Execute the tests with the annotations `group="group1"` and `group="group2"` that has already been generated, skipping the regeneration of the test:
 
 ```bash
 vendor/bin/mftf run:group -k -- group1 group2
@@ -290,17 +296,12 @@ Option | Description
 
 #### Examples
 
-Generate from XML and execute the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests:
+Generate from XML the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests and execute all the generated tests:
 
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
 
-Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests:
-
-```bash
-vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
-```
 
 ### `upgrade:tests`
 

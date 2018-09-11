@@ -22,7 +22,7 @@ Make sure that you've installed and set up the following software:
 
 ## Prepare Magento
 
-Configure the following settings in Magento as is described below.
+Configure the following settings in Magento as described below.
 
 ### WYSIWYG settings
 
@@ -139,7 +139,7 @@ vendor/bin/robo generate:tests
 
 ### Step 7. Run tests
 
-To run tests you need a running Selenium server and a [`codecept`][codecept] or [`robo`][robo](commands/robo.html) with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`][codecept] or a [`robo`][robo] command with required parameters.
 
 #### Run the Selenium server {#selenium-server}
 

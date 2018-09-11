@@ -11,8 +11,8 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 The `*.env` file provides additional configuration of the Magento Functional Testing Framework (MFTF).
-All MFTF users will need to set the basic configuration values.
-Advanced users may need to set additional values to work with their environment.
+To run the MFTF on your Magento testing instance, specify the basic configuration values.
+For advanced usage, customize the configuration according to your requirements and environment.
 
 ## Basic Configuration
 
@@ -74,15 +74,25 @@ But in case you do need to do some configuration, they are shown here for your r
 
 ### SELENIUM
 
-The `SELENIUM_*` values are concatenated together to form the URL of a custom Selenium server to test against.
+The `SELENIUM_*` values form the URL of a custom Selenium server to be run for testing.
 An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.
 
-```conf
-SELENIUM_HOST
-SELENIUM_PORT
-SELENIUM_PROTOCOL
-SELENIUM_PATH
+Your default Selenium URL:
 ```
+http://127.0.0.1:4444/wd/hub
+```
+
+And the default configuration:
+
+```conf
+SELENIUM_HOST=127.0.0.1
+SELENIUM_PORT=4444
+SELENIUM_PROTOCOL=http
+SELENIUM_PATH=/wd/hub
+```
+
+{:.bs-callout .bs-callout-warning}
+Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
 
 #### SELENIUM_HOST
 
@@ -228,7 +238,15 @@ MODULE_WHITELIST=Magento_Framework,Magento_ConfigurableProductWishlist,Magento_C
 
 ### MAGENTO_CLI_COMMAND_PATH
 
-Path to the Magento CLI command entry point. Modify the default value if not using standard Magento installation.
+Path to the Magento CLI command entry point.
+
+Default: `dev/tests/acceptance/utils/command.php`.
+It points to `MAGENTO_BASE_URL` + `dev/tests/acceptance/utils/command.php`
+
+Modify the default value:
+
+- for non-default Magento installation
+- when use a subdirectory in the `MAGENTO_BASE_URL`
 
 Use: optional.
 Example: `dev/tests/acceptance/utils/command.php`
