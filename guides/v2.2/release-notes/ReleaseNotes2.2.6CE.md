@@ -35,7 +35,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space and can speed up file retrieval.)
+    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
     * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
@@ -59,7 +59,6 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-89222-->* The speed at which Magento places an order is no longer affected by how many shipping methods are available. Previously, when a customer placed an order for which multiple shipping methods were available, Magento took more than 20 seconds to place the order.
 
-<!-- MAGETWO-89264-->* The checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 
 #### **Additional enhancements**
@@ -723,7 +722,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space and can speed up file retrieval.)
+    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
     * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
@@ -768,9 +767,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 
 <!--  ENGCOM-1677 -->* `lib/web/mage/dropdowns.js` no longer fails when autoclose is set to **true**. *Fix submitted by [Brian LaBelle](https://github.com/brian-labelle) in pull request [15499](https://github.com/magento/magento2/pull/15499)*. [GitHub-15469](https://github.com/magento/magento2/issues/15469)
-
-
-<!-- MAGETWO-89264 -->* The checkout page now works as expected when the AdBlock extension and Google Analytics are enabled. Previously, when these extensions were enabled, the checkout page would not load, and the loading spinner was displayed indefinitely.
 
 <!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user can not view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
 
