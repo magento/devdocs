@@ -51,6 +51,12 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
+{%
+include note.html
+type='info'
+content='To keep 2.2 and 2.3 releases aligned, we are only accepting pull requests to 2.2-develop that contain changes already existing in 2.3-develop. We recommend submitting pull requests to 2.3-develop, then use the [Magento Porting tool](#porting-tool) to back port the changes to 2.2-develop.'
+%}
+
 |     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
 |:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
 | 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |

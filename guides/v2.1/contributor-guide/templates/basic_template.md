@@ -12,6 +12,19 @@ The purpose of this page is to provide you with a pre-formatted template and use
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
+## Metadata parameters
+
+Add the following {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters at the top of your page. This frontmatter is used when we generate DevDocs content.
+
+If you need help with metadata, we can help in your submitted pull requests.
+
+Parameter | Description
+--- | ---
+`group:` | The table of contents this file belongs to. Only add the name of the file without the extension. For example, the group of this file is `group: contributor-guide`. 
+`title:` | The title of the page.
+`ee_only:` | Optional. If set to `true`, graphics/cues display on the page indicating it applies to {{site.data.var.ee}}.
+{:style="table-layout:auto;"}
+
 ## Basic Markdown Syntax {#basic}
 
 Below are some basic examples of what you can do with markdown.
