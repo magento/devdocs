@@ -564,6 +564,20 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2097 -->* Fixed typo in `app/code/Magento/Checkout/etc/webapi.xml`. *Fix submitted by [Markus Haack](https://github.com/mhaack) in pull request [15845](https://github.com/magento/magento2/pull/15845)*. 
 
+<!-- ENGCOM-1897 -->* Corrected misspelling in `file-uploader.js` and `storage-manager.js`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15888](https://github.com/magento/magento2/pull/15888)*. 
+
+
+<!-- ENGCOM-1925 -->* Corrected misspelling in `scripts.js`. *Fix submitted by [Ledian Hymetllari](https://github.com/ledian-hymetllari) in pull request [15878](https://github.com/magento/magento2/pull/15907)*. 
+
+<!-- ENGCOM-2545 -->* Corrected grammar error in the "What is this" tooltip for the Braintree vault tool tip. *Fix submitted by [kreativedev](https://github.com/kreativedev) in pull request [17151](https://github.com/magento/magento2/pull/17151)*. 
+
+
+<!-- ENGCOM-2456 -->* Renamed `_requesetd` to `_requested` in  `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16971](https://github.com/magento/magento2/pull/16971)*. 
+
+
+<!-- ENGCOM-2447 -->* Removed double occurrences of words from `Magento_Catalog`, `Magento_Customer`, `Magento_Downloadable`, `Magento_Sales`,  and `lib` and `dev` test function comments. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16977](https://github.com/magento/magento2/pull/16977)*. 
+
+<!--  ENGCOM-1589 -->* Correct misspelling in method name and result in these files: `dev/tests/functional/tests/app/Magento/Checkout/Test/Block/Onepage/Shipping/Method.php` and `dev/tests/functional/tests/app/Magento/Shipping/Test/Constraint/AssertCityBasedShippingRateChanged.php`. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15297](https://github.com/magento/magento2/pull/15297)*. 
 
 
 #### Minor corrections to code and code formatting
@@ -586,7 +600,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- ENGCOM-2195 -->* Removed extra space from the value of the `is_required` XML node in `SynonymGroup.xml`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16557](https://github.com/magento/magento2/pull/16557)*. 
 
 
-
+<!--  ENGCOM-2366 -->* Minor corrections to code throughout the code base. *Fix submitted by [Grayson](https://github.com/GraysonChiang) in pull request [16841](https://github.com/magento/magento2/pull/16841)*. 
 
 
 <!-- ENGCOM-2186 -->* Removed unused data from `app/code/Magento/Ui/Model/Export/ConvertToCsv.php` and `app/code/Magento/Ui/Model/Export/ConvertToXml.php`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16524](https://github.com/magento/magento2/pull/16524)*. 
@@ -636,6 +650,58 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-1384 -->* Corrected grammar in `README.md`. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14844](https://github.com/magento/magento2/pull/14844)*. 
 
+<!--  ENGCOM-2218 -->* Corrected type hints in `Webapi/Controller/Soap/Request/Handler.php` and `Webapi/Model/Plugin/GuestAuthorization.php. Also corrected case in property annotation  in `Soap\Server.php` and added undefined property `_appState in `Controller\Soap.php`. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16626](https://github.com/magento/magento2/pull/16626)*. 
+
+
+<!--  ENGCOM-2218 -->* Corrected `Magento\Webapi\Model\Soap\Fault::toXml()` method invocation in `Soap\FaultTest.php`. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16626](https://github.com/magento/magento2/pull/16626)*. 
+
+<!-- ENGCOM-1853 -->* We've removed an unused class from the `lib/_forms.less` file. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15791](https://github.com/magento/magento2/pull/15791)*. 
+
+<!-- ENGCOM-1861 -->* We've removed unnecessary CSS code from  `_actions-toolbar.less`. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15789](https://github.com/magento/magento2/pull/15789)*. 
+
+<!-- ENGCOM-1850 -->* We've removed the unnecessary double semicolon from the style sheets. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15795](https://github.com/magento/magento2/pull/15795)*. 
+
+<!-- ENGCOM-1880 -->* We've removed the unused code from `docs.less`. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15871](https://github.com/magento/magento2/pull/15871)*. 
+
+<!-- ENGCOM-1923 -->* Removed extraneous negative margin on product list and product list items. *Fix submitted by [Steven de Jong](https://github.com/StevenGuapaBV) in pull request [15936](https://github.com/magento/magento2/pull/15936)*. [GitHub-15308](https://github.com/magento/magento2/issues/15308)
+
+<!-- ENGCOM-1959 -->* Indentation issues with LESS files have been resolved. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15811](https://github.com/magento/magento2/pull/15811)*. 
+
+<!-- ENGCOM-2016 -->* The syntax for before-after operators in LESS files has been corrected. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16181](https://github.com/magento/magento2/pull/16181)*. 
+
+
+<!-- ENGCOM-2018 -->* Redundant keywords have been removed from miscellaneous files. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16182](https://github.com/magento/magento2/pull/16182)*. 
+
+<!-- ENGCOM-2019 -->* We've corrected misspellings in the  comment section of `OrderFixture.php`.  *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16183](https://github.com/magento/magento2/pull/16183)*. 
+
+
+
+<!-- ENGCOM-1680 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15365](https://github.com/magento/magento2/pull/15365)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+
+<!-- ENGCOM-2023 -->* Unnecessary leading and trailing spaces have been removed from fields in the customer account create and login forms. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [16192](https://github.com/magento/magento2/pull/16192)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+
+<!-- ENGCOM-2198 -->* Unnecessary leading and trailing spaces have been removed from fields in newsletter, forgot password, checkout login and email to a friend forms. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [16564](https://github.com/magento/magento2/pull/16564)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+
+<!-- ENGCOM-2381 -->* Unnecessary leading and trailing spaces have been removed from fields in the customer confirmation form. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16595](https://github.com/magento/magento2/pull/16595)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+
+
+<!-- ENGCOM-2507 -->* Removed unnecessary commented code from these files: `app/code/Magento/Review/Model/ResourceModel/Rating/Collection.php`, `app/code/Magento/Sales/Model/Order/Creditmemo.php`, `lib/internal/Magento/Framework/Data/Form/Element/Checkboxes.php`, and `lib/internal/Magento/Framework/Model/ResourceModel/Db/Relation/ActionPool.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17077](https://github.com/magento/magento2/pull/17077)*. 
+
+<!-- ENGCOM-2485 -->* Removed unnecessary spaces from the price value in `app/code/Magento/Catalog/view/base/templates/product/price/amount/default.phtml`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [17027](https://github.com/magento/magento2/pull/17027)*. 
+
+<!-- ENGCOM-2461 -->* Remove unused comments from `_initDiscount()` function. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17002](https://github.com/magento/magento2/pull/17002)*. 
+
+<!-- ENGCOM-2451 -->* Corrected misspellings in multiple files, including `app/code/Magento/Catalog/Block/Adminhtml/Product/Attribute/Set/Main/Tree/Attribute.php`, `app/code/Magento/Catalog/view/adminhtml/web/js/product/weight-handler.js`, `app/code/Magento/Signifyd/Test/Unit/Controller/Webhooks/HandlerTest.php`, `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`, and `dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetCmsPageLink.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16980](https://github.com/magento/magento2/pull/16980)*. 
+
+<!-- ENGCOM-1439 -->* Corrected formatting of the JavaScript code in the `app/code/Magento/Ui/view/base/templates/control/button/split.phtml` and `app/code/Magento/Ui/view/base/web/js/grid/controls/button/split.jstemplate` files. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14967](https://github.com/magento/magento2/pull/14967)*.
+
+<!-- ENGCOM-2071 -->* Removed redundant `@throws` hinting and unused import for `AdvancedPricingImportExport` module classes. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15872](https://github.com/magento/magento2/pull/15872)*. 
+
+<!-- ENGCOM-2034 -->* Added missing PHPDoc to methods throughout the code base. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16215](https://github.com/magento/magento2/pull/16215)*. 
+
+<!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
+
+<!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
 
 
@@ -658,6 +724,11 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1512 -->* The missing check for a `false` value has been added  to  `ConfiguredRegularPrice`. Previously, when the parent method returned false, Magento threw this fatal error: `NOTICE: PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Magento\Catalog\Pricing\Price\ConfiguredOptions::getItemOptionsValue() must be of the type float, boolean given, called in /app/vendor/magento/module-catalog/Pricing/Price/ConfiguredRegularPrice.php on line 74 and defined in /app/vendor/magento/module-catalog/Pricing/Price/ConfiguredOptions.php:24`. *Fix submitted by [Tibor Kotosz](https://github.com/tkotosz) in pull request [15129](https://github.com/magento/magento2/pull/15129)*. 
 
+<!-- ENGCOM-2194 -->* Fixed the DocBlock for `hasInvoices()`, `hasShipments()`, and `hasCreditmemos()` in `app/code/Magento/Sales/Model/Order.php`. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [16554](https://github.com/magento/magento2/pull/16554)*. 
+
+<!-- ENGCOM-2145 -->* Fixed type hints and docs for the Downloadable Samples block. *Fix submitted by [Björn Kraus](https://github.com/nuzil) in pull request [16408](https://github.com/magento/magento2/pull/16408)*. 
+
+
 
 ### Cookies
 
@@ -679,7 +750,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-89624 -->* Customers no longer lose their session when they switch stores on different domains
 
-<!-- MAGETWO-89849 -->* Non-US and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
+<!-- MAGETWO-89849 -->* Non-U.S. and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
 <!-- MAGETWO-89034 -->* The checkout page now displays custom address attributes when **Show on front-end** is set to **no**. 
 
@@ -687,7 +758,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-73827 -->* Administrators can see all customers when the **Share Customer Accounts** value is set to Global. 
 
-<!--  ENGCOM-1680 -->* User login email validation no longer fails if the field contains aleading or trailing space on Internet Explorer 11.x. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15365](https://github.com/magento/magento2/pull/15365)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+<!--  ENGCOM-1680 -->* User login email validation no longer fails if the field contains a leading or trailing space on Internet Explorer 11.x. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15365](https://github.com/magento/magento2/pull/15365)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 <!--  ENGCOM-1987 -->* Customer accounts are now unlocked as expected after a password reset. *Fix submitted by [Andrea Gaspardo](https://github.com/andreagaspardo) in pull request [15255](https://github.com/magento/magento2/pull/15255)*. [GitHub-15534](https://github.com/magento/magento2/issues/15534)
 
@@ -709,7 +780,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Directory
 
-<!--  ENGCOM-2281 -->* You can now configure different 'Allowed Countries' for default and store scopes. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16693](https://github.com/magento/magento2/pull/16693)*. 
+<!--  ENGCOM-2281 -->* You can now configure different Allowed Countries for default and store scopes. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16693](https://github.com/magento/magento2/pull/16693)*. 
 
 
 
@@ -752,7 +823,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-2532 -->* `app/code/Magento/Theme/etc/di.xml` now uses `Translate` instead of `TranslateInterface`. *Fix submitted by [Wouter Samaey](https://github.com/woutersamaey) in pull request [17124](https://github.com/magento/magento2/pull/17124)*. 
 
-<!--  ENGCOM-1981 -->* Class with methods that contain variadic arguments can be also used in proxy classes. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16080](https://github.com/magento/magento2/pull/16080)*. 
+<!--  ENGCOM-1981 -->* Classes with methods that contain variadic arguments can be also used in proxy classes. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16080](https://github.com/magento/magento2/pull/16080)*. 
 
 <!--  ENGCOM-1915 -->* The annotation in  `_toOptionArray - lib\internal\Magento\Framework\Data\SearchResultProcessor.php` has been corrected. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15892](https://github.com/magento/magento2/pull/15892)*. 
 
@@ -775,7 +846,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-2416 -->* Changes that were made to file permissions for  `lib/internal/Magento/Framework/View/Asset/Merged.php` and its associated test that were made in an earlier release have been reverted. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [16937](https://github.com/magento/magento2/pull/16937)*. 
 
-<!--  ENGCOM-2366 -->* Minor corrections to code throughout the code base. *Fix submitted by [Grayson](https://github.com/GraysonChiang) in pull request [16841](https://github.com/magento/magento2/pull/16841)*. 
 
 <!--  ENGCOM-1684 -->* The constructor in `Magento\Webapi\Model\Soap\Fault.php` now assigns `$exception->getOriginator()` to `_soapFaultCode` instead of to the dynamical property `_soapCode`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15515](https://github.com/magento/magento2/pull/15515)*. 
 
@@ -828,10 +898,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-73527 -->* `catalogProductAttributeRepository` now returns the `frontend_labels` value as expected. 
 
-<!--  ENGCOM-2218 -->* Corrected type hints in `Webapi/Controller/Soap/Request/Handler.php` and `Webapi/Model/Plugin/GuestAuthorization.php. Also corrected case in property annotation  in `Soap\Server.php` and added undefined property `_appState in `Controller\Soap.php`. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16626](https://github.com/magento/magento2/pull/16626)*. 
 
-
-<!--  ENGCOM-2218 -->* Corrected `Magento\Webapi\Model\Soap\Fault::toXml()` method invocation in `Soap\FaultTest.php`. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16626](https://github.com/magento/magento2/pull/16626)*. 
 
 
 
@@ -893,31 +960,20 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1805 -->* Merchants can now apply styling by changing LESS variables in the Luma theme as expected. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15734](https://github.com/magento/magento2/pull/15734)*. [GitHub-15608](https://github.com/magento/magento2/issues/15608)
 
-<!-- ENGCOM-1853 -->* We've removed an unused class from the `lib/_forms.less` file. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15791](https://github.com/magento/magento2/pull/15791)*. 
-
-<!-- ENGCOM-1861 -->* We've removed unnecessary CSS code from  `_actions-toolbar.less`. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15789](https://github.com/magento/magento2/pull/15789)*. 
-
-<!-- ENGCOM-1850 -->* We've removed the unnecessary double semicolon from the style sheets. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15795](https://github.com/magento/magento2/pull/15795)*. 
-
-<!-- ENGCOM-1880 -->* We've removed the unused code from `docs.less`. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15871](https://github.com/magento/magento2/pull/15871)*. 
 
 <!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service) *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
 
 <!-- ENGCOM-1864 -->*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously mssing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by [Maksim Gopey](https://github.com/Radio) in pull request [15826](https://github.com/magento/magento2/pull/15826)*. 
 
-<!-- ENGCOM-1897 -->* Corrected misspelling in `file-uploader.js` and `storage-manager.js`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15888](https://github.com/magento/magento2/pull/15888)*. 
 
 <!-- ENGCOM-1883 -->* `.limiter` now has the same parent selectors as `.pages`, which prevents clashes between styles and layouts. Previously, `.limiter` float was too generic. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15878](https://github.com/magento/magento2/pull/15878)*. 
 
-<!-- ENGCOM-1925 -->* Corrected misspelling in `scripts.js`. *Fix submitted by [Ledian Hymetllari](https://github.com/ledian-hymetllari) in pull request [15878](https://github.com/magento/magento2/pull/15907)*. 
 
-<!-- ENGCOM-1923 -->* Removed extraneous negative margin on product list and product list items. *Fix submitted by [Steven de Jong](https://github.com/StevenGuapaBV) in pull request [15936](https://github.com/magento/magento2/pull/15936)*. [GitHub-15308](https://github.com/magento/magento2/issues/15308)
 
 <!-- ENGCOM-1942 -->* The default `FormElementDependenceController` configuration is now extended by custom configuration rather than overridden.  *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16001](https://github.com/magento/magento2/pull/16001)*.
 
 <!-- ENGCOM-1958 -->* `inline-block` issues with space and font-size in the Name form have been resolved. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16048](https://github.com/magento/magento2/pull/16048)*. 
 
-<!-- ENGCOM-1959 -->* Indentation issues with LESS files have been resolved. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15811](https://github.com/magento/magento2/pull/15811)*. 
 
 <!-- ENGCOM-1896 -->* Alignment and layout issues on  home  and category pages of the Hot Seller section have been resolved. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15893](https://github.com/magento/magento2/pull/15893)*. [GitHub-15213](https://github.com/magento/magento2/issues/15213)
 
@@ -927,33 +983,18 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1991 -->* `@escapeNotVerified` annotations were replaced in `name.phtml` and `qty.phtml`. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15532](https://github.com/magento/magento2/pull/15532)*. [GitHub-15501](https://github.com/magento/magento2/issues/15501)
 
-<!-- ENGCOM-2016 -->* The syntax for before-after operators in LESS files has been corrected. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16181](https://github.com/magento/magento2/pull/16181)*. 
 
-<!-- ENGCOM-2018 -->* Redundant keywords have been removed from miscellaneous files. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16182](https://github.com/magento/magento2/pull/16182)*. 
 
-<!-- ENGCOM-2019 -->* We've corrected misspellings in the  comment section of `OrderFixture.php`.  *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16183](https://github.com/magento/magento2/pull/16183)*. 
 
 <!-- ENGCOM-1607 -->* We've removed redundant function calls in `app/code/Magento/CurrencySymbol/view/adminhtml/templates/grid.phtml`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15346](https://github.com/magento/magento2/pull/15346)*. [GitHub-15355](https://github.com/magento/magento2/issues/15355)
 
 <!-- ENGCOM-1659 -->* `magnifier.js` now works no matter which mode is set. (`magnifier.js` offers the option of setting mode to 'inside' for an in-frame zoom.) *Fix submitted by [Kacper Chara](https://github.com/kacperchara) in pull request [15382](https://github.com/magento/magento2/pull/15382)*. [GitHub-4977](https://github.com/magento/magento2/issues/4977)
 
-<!-- ENGCOM-1680 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15365](https://github.com/magento/magento2/pull/15365)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
-
-<!-- ENGCOM-2023 -->* Unnecessary leading and trailing spaces have been removed from fields in the customer account create and login forms. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [16192](https://github.com/magento/magento2/pull/16192)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
-
-<!-- ENGCOM-2198 -->* Unnecessary leading and trailing spaces have been removed from fields in newsletter, forgot password, checkout login and email to a friend forms. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [16564](https://github.com/magento/magento2/pull/16564)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
-
-<!-- ENGCOM-2381 -->* Unnecessary leading and trailing spaces have been removed from fields in the customer confirmation form. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16595](https://github.com/magento/magento2/pull/16595)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 <!-- ENGCOM-2007 -->* The Change Password warning message no longer appears twice. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15774](https://github.com/magento/magento2/pull/15774)*. [GitHub-14895](https://github.com/magento/magento2/issues/14895)
 
 <!-- ENGCOM-2559 -->* You can now add the `NOINDEX,NOFOLLOW` meta tag to the admin scope to instruct Google and other friendly bots to refrain from adding the Admin URL to search results. *Fix submitted by [Itay Raz](https://github.com/itaymesh) in pull request [17163](https://github.com/magento/magento2/pull/17163)*. 
 
-<!-- ENGCOM-2545 -->* Corrected grammar error in the "What is this" tooltip for the Braintree vault tool tip. *Fix submitted by [kreativedev](https://github.com/kreativedev) in pull request [17151](https://github.com/magento/magento2/pull/17151)*. 
-
-<!-- ENGCOM-2507 -->* Removed unnecessary commented code from these files: `app/code/Magento/Review/Model/ResourceModel/Rating/Collection.php`, `app/code/Magento/Sales/Model/Order/Creditmemo.php`, `lib/internal/Magento/Framework/Data/Form/Element/Checkboxes.php`, and `lib/internal/Magento/Framework/Model/ResourceModel/Db/Relation/ActionPool.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17077](https://github.com/magento/magento2/pull/17077)*. 
-
-<!-- ENGCOM-2485 -->* Removed unnecessary spaces from the price value in `app/code/Magento/Catalog/view/base/templates/product/price/amount/default.phtml`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [17027](https://github.com/magento/magento2/pull/17027)*. 
 
 <!-- ENGCOM-2443 -->* The Create Account and Password Forget forms now include the required notice for relevant fields. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16965](https://github.com/magento/magento2/pull/16965)*. 
 
@@ -963,9 +1004,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2282 -->* Refactored `app/code/Magento/User/Controller/Adminhtml/`  by removing the direct use of ObjectManager and included the dependencies using constructor dependency injection. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16560](https://github.com/magento/magento2/pull/16560)*. 
 
-<!-- ENGCOM-2461 -->* Remove unused comments from `_initDiscount()` function. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17002](https://github.com/magento/magento2/pull/17002)*. 
-
-<!-- ENGCOM-2451 -->* Corrected misspellings in multiple files, including `app/code/Magento/Catalog/Block/Adminhtml/Product/Attribute/Set/Main/Tree/Attribute.php`, `app/code/Magento/Catalog/view/adminhtml/web/js/product/weight-handler.js`, `app/code/Magento/Signifyd/Test/Unit/Controller/Webhooks/HandlerTest.php`, `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`, and `dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetCmsPageLink.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16980](https://github.com/magento/magento2/pull/16980)*. 
 
 <!-- ENGCOM-2209 -->* `gallery.less` no longer imports `_responsive.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16579](https://github.com/magento/magento2/pull/16579)*. 
 
@@ -975,9 +1013,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2284 -->* Updated the "Reporting security issues" section of `README.md` to recommend that users create a bugcrowd account.  *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16685](https://github.com/magento/magento2/pull/16685)*. 
 
-<!-- ENGCOM-2194 -->* Fixed the DocBlock for `hasInvoices()`, `hasShipments()`, and `hasCreditmemos()` in `app/code/Magento/Sales/Model/Order.php`. *Fix submitted by [Lyzun Oleksandr](https://github.com/nuzil) in pull request [16554](https://github.com/magento/magento2/pull/16554)*. 
 
-<!-- ENGCOM-2145 -->* Fixed type hints and docs for the Downloadable Samples block. *Fix submitted by [Björn Kraus](https://github.com/nuzil) in pull request [16408](https://github.com/magento/magento2/pull/16408)*. 
 
 <!-- ENGCOM-2193 -->* The currency format that was previously broken for some locales now works as expected. Previously, broken currency formats resulted in an incorrect price amount on the product page. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15909](https://github.com/magento/magento2/pull/15909)*. [GitHub-11717](https://github.com/magento/magento2/issues/11717)
 
@@ -992,8 +1028,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- ENGCOM-1618 -->* Template files now follow Magento standard coding format. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15398](https://github.com/magento/magento2/pull/15398)*. 
 
 <!-- ENGCOM-1476 -->* Corrected `viewModel` to `view_model` where needed in `\Magento\Backend\Block\Template`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [15067](https://github.com/magento/magento2/pull/15067)*. 
-
-<!-- ENGCOM-1439 -->* Corrected formatting of the JavaScript code in the `app/code/Magento/Ui/view/base/templates/control/button/split.phtml` and `app/code/Magento/Ui/view/base/web/js/grid/controls/button/split.jstemplate` files. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14967](https://github.com/magento/magento2/pull/14967)*.
 
 
 <!-- ENGCOM-1375 -->* Non-well-formed numeric values that were encountered in `app/code/Magento/Directory/Model/Currency.php` have been resolved. *Fix submitted by [Mateusz Lerczak](https://github.com/bmxmale) in pull request [14833](https://github.com/magento/magento2/pull/14833)*. 
@@ -1123,11 +1157,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2458 -->* Corrected the return type of methods in `app/code/Magento/Catalog/Controller/Category/View.php`, `app/code/Magento/CatalogSearch/Model/Indexer/Fulltext/Action/DataProvider.php`, and `app/code/Magento/CatalogSearch/Model/ResourceModel/EngineInterface.php`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16988](https://github.com/magento/magento2/pull/16988)*. 
 
-<!-- ENGCOM-2456 -->* Renamed `_requesetd` to `_requested` in  `app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16971](https://github.com/magento/magento2/pull/16971)*. 
 
 <!-- ENGCOM-2480 -->* Style groups for mobile devices (`max-width`) are now specified in the correct order. *Fix submitted by [Tejash Kumbhare](https://github.com/tejash-wagento) in pull request [16959](https://github.com/magento/magento2/pull/16959)*. [GitHub-14476](https://github.com/magento/magento2/issues/14476)
 
-<!-- ENGCOM-2447 -->* Removed double occurrences of words from `Magento_Catalog`, `Magento_Customer`, `Magento_Downloadable`, `Magento_Sales`,  and `lib` and `dev` test function comments. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16977](https://github.com/magento/magento2/pull/16977)*. 
 
 <!-- ENGCOM-2446 -->* Corrected the namespace that is defined in `compare.phtml`. *Fix submitted by [Ronak Patel](https://github.com/mage2pratik) in pull request [16978](https://github.com/magento/magento2/pull/16978)*. 
 
@@ -1175,11 +1207,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2143 -->* CSRF tokens are now considered sensitive strings. *Fix submitted by [Robert](https://github.com/p0pr0ck5) in pull request [13509](https://github.com/magento/magento2/pull/13509)*. 
 
-<!-- ENGCOM-2071 -->* Removed redundant `@throws` hinting and unused import for `AdvancedPricingImportExport` module classes. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15872](https://github.com/magento/magento2/pull/15872)*. 
 
-<!-- ENGCOM-2034 -->* Added missing PHPDoc to methods throughout the code base. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16215](https://github.com/magento/magento2/pull/16215)*. 
-
-<!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
 
 <!-- ENGCOM-2039 -->*  Refactored JavaScript code in `popup.phtml` and `popup.js`. *Fix submitted by [IvanPletnyov](https://github.com/IvanPletnyov) in pull request [16216](https://github.com/magento/magento2/pull/16216)*. 
 
@@ -1416,7 +1444,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2024 -->* Module name space is now declared before the template pathname in `Magento_Sales::order/info.phtml`. *Fix submitted by [Ronak Patel](https://github.com/markoshust) in pull request [16206](https://github.com/magento/magento2/pull/16206)*. 
 
-<!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
 <!-- ENGCOM-1529 -->* The `addFieldToFilter` has been added to `addressCollection` in  `app/code/Magento/Sales/Setup/UpgradeData.php`, which optimizes the process of collecting addresses during upgrade. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
@@ -1513,7 +1540,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!-- MAGETWO-91035 -->* The shipping progress dates displayed in tracking popup for FedEx shipping are now accurate. 
 
-<!--  ENGCOM-1589 -->* Correct misspelling in method name and result in these files: `dev/tests/functional/tests/app/Magento/Checkout/Test/Block/Onepage/Shipping/Method.php` and `dev/tests/functional/tests/app/Magento/Shipping/Test/Constraint/AssertCityBasedShippingRateChanged.php`. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15297](https://github.com/magento/magento2/pull/15297)*. 
 
 
 ### Sitemap
