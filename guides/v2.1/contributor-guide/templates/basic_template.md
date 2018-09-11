@@ -14,16 +14,20 @@ You can start off by editing the local version of this file using markdown langu
 
 ## Metadata parameters
 
-Add the following {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters at the top of your page. This frontmatter is used when we generate DevDocs content.
-
-If you need help with metadata, we can help in your submitted pull requests.
+Add the following {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters at the top of your page. We use this data when generating the DevDocs for the following:
 
 Parameter | Description
 --- | ---
-`group:` | The table of contents this file belongs to. Only add the name of the file without the extension. For example, the group of this file is `group: contributor-guide`. 
+`group:` | The table of contents this file belongs to. Only add the name of the file without the extension. For example, the group of this file is `group: contributor-guide`.
 `title:` | The title of the page.
 `ee_only:` | Optional. If set to `true`, graphics/cues display on the page indicating it applies to {{site.data.var.ee}}.
 {:style="table-layout:auto;"}
+
+{%
+include note.html
+type='info'
+content='If you need help with metadata, we can help in your submitted pull requests.'
+%}
 
 ## Basic Markdown Syntax {#basic}
 
