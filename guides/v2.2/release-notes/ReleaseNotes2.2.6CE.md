@@ -396,7 +396,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### CAPTCHA
 
-<!-- MAGETWO-91840 -->* Customers can now successfully log in when guest checkout is disabled and CAPTCHA is enabled. Previously, Magento threw the "Provided form does not exist" error when a customer tried to log in under these conditions. 
+<!-- MAGETWO-91840 -->* Customers can now successfully log in when guest checkout is disabled and CAPTCHA is enabled. Previously, Magento threw the `Provided form does not exist` error when a customer tried to log in under these conditions. 
 
 <!-- MAGETWO-89615 -->* CAPTCHA validation now works when the **Website Restrictions** setting is enabled. 
 
@@ -495,8 +495,48 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1581 -->* Corrected misspelling in  `_exportAddressses` method name. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15275](https://github.com/magento/magento2/pull/15275)*. 
 
+<!-- ENGCOM-1647 -->* Corrected misspelling in comments for `addTaxPercents()` in `app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [15431](https://github.com/magento/magento2/pull/15431)*. 
 
-#### Corrected code formatting
+<!-- ENGCOM-1637 -->* Corrected misspelling in `abstract.js`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15411](https://github.com/magento/magento2/pull/15411)*. 
+
+
+<!-- ENGCOM-1797 -->* Corrected misspellings in `app/code/Magento/Sales/Block/Adminhtml/Order/Create/Sidebar/AbstractSidebar.php`, `app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js`, `app/code/Magento/Ui/view/base/web/js/form/components/group.js`,  `setup/pub/angular-sanitize/angular-sanitize.js`, and `setup/pub/angular-sanitize/angular-sanitize.min.js.map`.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [15715](https://github.com/magento/magento2/pull/15715)*. 
+
+<!-- ENGCOM-1692 -->* Corrected misspelling in `app/code/Magento/Catalog/Model/Product/Type/AbstractType.php`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15519](https://github.com/magento/magento2/pull/15519)*. 
+
+<!-- ENGCOM-1676 -->* Corrected misspellings in Multishipping and User modules. *Fix submitted by [Anna Völkl](https://github.com/avoelkl) in pull request [15513](https://github.com/magento/magento2/pull/15513)*. 
+
+
+<!-- ENGCOM-1599-->* Corrected a misspelling in function comment in `app/code/Magento/Paypal/Model/Api/Nvp.php` *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15302](https://github.com/magento/magento2/pull/15302)*. 
+
+
+<!-- ENGCOM-1588-->*  Corrected misspellings in PHPDocs and comments. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15293](https://github.com/magento/magento2/pull/15293)*. 
+
+<!-- ENGCOM-1580-->* Corrected typo in method name `_getCharg[e]ableOptionPrice`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15276](https://github.com/magento/magento2/pull/15276)*. 
+
+
+<!-- ENGCOM-1586-->* Corrected typo in database column comment in `app/code/Magento/Catalog/Setup/InstallSchema.php`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15291](https://github.com/magento/magento2/pull/15291)*. 
+
+<!-- ENGCOM-1584-->* Corrected misspelling in the name of private method `\Magento\Catalog\Console\Command\ImagesResizeCommand::getUniq[ue]ImageIndex`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15282](https://github.com/magento/magento2/pull/15282)*. 
+
+<!-- ENGCOM-1582-->* Corrected typo in the `\Magento\Framework\Image::open` exception message. *Fix submitted by [Tom Richards](https://github.com/t-richards) in pull request [15269](https://github.com/magento/magento2/pull/15269)*. 
+
+
+<!-- ENGCOM-1406-->* Corrected misspelling in `ResourceModel\Coupon.php:updateSpecificCoupons`. *Fix submitted by [Stephen Biston](https://github.com/sjb9774) in pull request [14891](https://github.com/magento/magento2/pull/14891)*. 
+
+<!-- ENGCOM-1575-->* Corrected typo in the name of the `\Magento\Framework\App\Request\Http::removeRepitedSlashes` method. *Fix submitted by [Igor Tripolskiy](https://github.com/olmer) in pull request [15256](https://github.com/magento/magento2/pull/15256)*. 
+
+<!-- ENGCOM-1470-->* Corrected misspelling in `app/code/Magento/CatalogSearch/Block/Advanced/Form.php`. *Fix submitted by [Jeevan M R](https://github.com/jee1mr) in pull request [15053](https://github.com/magento/magento2/pull/15053)*. 
+
+<!-- ENGCOM-1458-->* Corrected misspelling in `.less` files. *Fix submitted by [Kalpesh Mehta](https://github.com/kalpmehta) in pull request [15023](https://github.com/magento/magento2/pull/15023)*. 
+
+
+<!-- ENGCOM-2057 -->* Removed double occurrence of 'it' from sentences and corrected minor grammar error. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16240](https://github.com/magento/magento2/pull/16240)*. 
+
+
+<!-- ENGCOM-2097 -->* Fixed typo in `app/code/Magento/Checkout/etc/webapi.xml`. *Fix submitted by [Markus Haack](https://github.com/mhaack) in pull request [15845](https://github.com/magento/magento2/pull/15845)*. 
+
+#### Minor corrections to code and code formatting
 
 
 <!-- ENGCOM-2385 -->* Removed extra spaces from `Magento/Ui`. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16872](https://github.com/magento/magento2/pull/16872)*. 
@@ -505,7 +545,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2305 -->* Removed comments and unnecessary spaces. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16748](https://github.com/magento/magento2/pull/16748)*. 
 
-<!-- ENGCOM-2283 -->* Removed space before ending sentence throughout codebase. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16717](https://github.com/magento/magento2/pull/16717)*. 
+<!-- ENGCOM-2283 -->* Removed space before ending sentence throughout code base. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16717](https://github.com/magento/magento2/pull/16717)*. 
 
 <!-- ENGCOM-2249 -->* Removed unnecessary spaces in `app/code/Magento/Catalog/Pricing/Price/ConfiguredRegularPrice.php`. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [15129](https://github.com/magento/magento2/pull/15129)*. 
 
@@ -515,11 +555,9 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2195 -->* Removed extra space from the value of the `is_required` XML node in `SynonymGroup.xml`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16557](https://github.com/magento/magento2/pull/16557)*. 
 
-<!-- ENGCOM-2097 -->* Fixed typo in `app/code/Magento/Checkout/etc/webapi.xml`. *Fix submitted by [Markus Haack](https://github.com/mhaack) in pull request [15845](https://github.com/magento/magento2/pull/15845)*. 
 
 
 
-#### Minor code tweaks
 
 <!-- ENGCOM-2186 -->* Removed unused data from `app/code/Magento/Ui/Model/Export/ConvertToCsv.php` and `app/code/Magento/Ui/Model/Export/ConvertToXml.php`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16524](https://github.com/magento/magento2/pull/16524)*. 
 
@@ -527,9 +565,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2177 -->* Removed redundant plug-in information (`dev:di:info`). *Fix submitted by [Alexander Shkurko](https://github.com/Coderimus) in pull request [16474](https://github.com/magento/magento2/pull/16474)*. 
 
-<!-- ENGCOM-2057 -->* Removed double occurrence of 'it' from sentences and corrected minor grammar error. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16240](https://github.com/magento/magento2/pull/16240)*. 
 
-<!-- ENGCOM-1797 -->* Corrected misspellings in `app/code/Magento/Sales/Block/Adminhtml/Order/Create/Sidebar/AbstractSidebar.php`, `app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js`, `app/code/Magento/Ui/view/base/web/js/form/components/group.js`,  `setup/pub/angular-sanitize/angular-sanitize.js`, and `setup/pub/angular-sanitize/angular-sanitize.min.js.map`.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [15715](https://github.com/magento/magento2/pull/15715)*. s
 
 <!-- ENGCOM-1711 -->* Removed redundant semicolon from these files: `app/code/Magento/Tax/Model/Sales/Total/Quote/CommonTaxCollector.phpMagento/Multishipping/Test/Unit/Block/Checkout/SuccessTest.php` and  `app/code/Magento/Tax/Model/Sales/Total/Quote/CommonTaxCollector.php`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15594](https://github.com/magento/magento2/pull/15594)*. 
 
@@ -537,9 +573,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1697 -->* Removed extra space and formatted the code in `app/code/Magento/Captcha/i18n/en_US.csv`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15552](https://github.com/magento/magento2/pull/15552)*. 
 
-<!-- ENGCOM-1692 -->* Corrected misspelling in `app/code/Magento/Catalog/Model/Product/Type/AbstractType.php`. *Fix submitted by [Saurabh Parekh](https://github.com/saurabh-parekh) in pull request [15519](https://github.com/magento/magento2/pull/15519)*. 
-
-<!-- ENGCOM-1676 -->* Corrected misspellings in Multishipping and User modules. *Fix submitted by [Anna Völkl](https://github.com/avoelkl) in pull request [15513](https://github.com/magento/magento2/pull/15513)*. 
 
 
 <!-- ENGCOM-1651 -->* Removed the redundant `else` statement in `app/code/Magento/ConfigurableImportExport/Model/Import/Product/Type/Configurable.php`. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15435](https://github.com/magento/magento2/pull/15435)*. 
@@ -548,9 +581,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- ENGCOM-2270-->* Fixed misplaced bracket in `Option/Type/Text.php`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16566](https://github.com/magento/magento2/pull/16566)*. 
 
 
-<!-- ENGCOM-1647 -->* Corrected misspelling in comments for `addTaxPercents()` in `app/code/Magento/Catalog/Model/ResourceModel/Product/Collection.php`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [15431](https://github.com/magento/magento2/pull/15431)*. 
 
-<!-- ENGCOM-1637 -->* Corrected misspelling in `abstract.js`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15411](https://github.com/magento/magento2/pull/15411)*. 
 
 <!-- ENGCOM-1592 -->* Removed a duplicate line and added comment in `app/code/Magento/Sales/Block/Adminhtml/Order/Create/Totals/Discount.php`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15362](https://github.com/magento/magento2/pull/15362)*. 
 
@@ -558,40 +589,22 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1602-->* Corrected variable names in `LockAdminUserWhenEditingIntegrationTest` and `AssertCityBasedShippingRateChanged`, among others. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15294](https://github.com/magento/magento2/pull/15294)*. 
 
-<!-- ENGCOM-1599-->* Corrected a misspelling in function comment in `app/code/Magento/Paypal/Model/Api/Nvp.php` *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15302](https://github.com/magento/magento2/pull/15302)*. 
-
-
-<!-- ENGCOM-1588-->*  Corrected misspellings in PHPDocs and comments. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15293](https://github.com/magento/magento2/pull/15293)*. 
-
-<!-- ENGCOM-1580-->* Corrected typo in method name `_getCharg[e]ableOptionPrice`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15276](https://github.com/magento/magento2/pull/15276)*. 
 
 <!-- ENGCOM-1587-->* Corrected property name in  `dev/tests/static/testsuite/Magento/Test/Integrity/Magento/Backend/ControllerAclTest.php`. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15292](https://github.com/magento/magento2/pull/15292)*. 
 
-<!-- ENGCOM-1586-->* Corrected typo in database column comment in `app/code/Magento/Catalog/Setup/InstallSchema.php`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [15291](https://github.com/magento/magento2/pull/15291)*. 
-
-<!-- ENGCOM-1584-->* Corrected misspelling in the name of private method `\Magento\Catalog\Console\Command\ImagesResizeCommand::getUniq[ue]ImageIndex`. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15282](https://github.com/magento/magento2/pull/15282)*. 
-
-<!-- ENGCOM-1582-->* Corrected typo in the `\Magento\Framework\Image::open` exception message. *Fix submitted by [Tom Richards](https://github.com/t-richards) in pull request [15269](https://github.com/magento/magento2/pull/15269)*. 
 
 <!-- ENGCOM-1572-->* Removed non-existing argument from the constructor's comment block in  `app/code/Magento/Translation/Block/Html/Head/Config.php` and added space where needed in  `app/code/Magento/Translation/Model/Json/PreProcessor.php`. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [15249](https://github.com/magento/magento2/pull/15249)*. 
 
 
-<!-- ENGCOM-1575-->* Corrected typo in the name of the `\Magento\Framework\App\Request\Http::removeRepitedSlashes` method. *Fix submitted by [Igor Tripolskiy](https://github.com/olmer) in pull request [15256](https://github.com/magento/magento2/pull/15256)*. 
-
-<!-- ENGCOM-1470-->* Corrected misspelling in `app/code/Magento/CatalogSearch/Block/Advanced/Form.php`. *Fix submitted by [Jeevan M R](https://github.com/jee1mr) in pull request [15053](https://github.com/magento/magento2/pull/15053)*. 
-
-<!-- ENGCOM-1458-->* Corrected misspelling in `.less` files. *Fix submitted by [Kalpesh Mehta](https://github.com/kalpmehta) in pull request [15023](https://github.com/magento/magento2/pull/15023)*. 
 
 <!-- ENGCOM-1427-->* Removed redundant close tag from `app/code/Magento/Review/view/frontend/templates/view.phtml`. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14928](https://github.com/magento/magento2/pull/14928)*. 
 
 <!-- ENGCOM-1409-->* Removed extra spaces from a key-value pair in the `en_US.csv`language file. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [14896](https://github.com/magento/magento2/pull/14896)*. 
 
-<!-- ENGCOM-1406-->* Corrected misspelling in `ResourceModel\Coupon.php:updateSpecificCoupons`. *Fix submitted by [Stephen Biston](https://github.com/sjb9774) in pull request [14891](https://github.com/magento/magento2/pull/14891)*. 
 
 <!-- ENGCOM-1306-->* Cleaned up `foreach` and `break` statements in `app/code/Magento/Rule/Model/Condition/AbstractCondition.php`. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [14609](https://github.com/magento/magento2/pull/14609)*. 
 
 <!--  ENGCOM-1384 -->* Corrected grammar in `README.md`. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [14844](https://github.com/magento/magento2/pull/14844)*. 
-
 
 
 
@@ -1729,7 +1742,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Ampersand</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13185">13185</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16540">16540</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13185" target="_blank">13185</a>, <a href="https://github.com/magento/magento2/issues/16540" target="_blank">16540</a></td>
+    <td>N/A</td>
   </tr>
 
 
@@ -1821,7 +1834,7 @@ The following table highlights contributions made by Partners. This table lists 
   <tr>
     <td>ISM eCompany</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/16386">16386</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16693">16693</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/16386" target="_blank">16386</a>, <a href="https://github.com/magento/magento2/issues/16693" target="_blank">16693</a></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
@@ -1872,7 +1885,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Something Digital</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14699">14699</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12935">12935</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/14855" target="_blank">14855</a>, <a href="https://github.com/magento/magento2/issues/14869" target="_blank">14869</a>, <a href="https://github.com/magento/magento2/issues/15510" target="_blank">15510</a>, <a href="https://github.com/magento/magento2/issues/15501" target="_blank">15501</a></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
