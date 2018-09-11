@@ -8,7 +8,6 @@ pages:
       include_versions: ["2.0"]
 
     - label: Open Source
-      url: /mrg/ce/ce-intro.html
       include_versions: ["2.1","2.2"]
       children:
 
@@ -38,7 +37,7 @@ pages:
 
         - label: Sales
           url: /mrg/ce/Sales.html
-          include_versions: ["2.2"]
+          include_versions: ["2.1", "2.2"]
 
         - label: SalesAnalytics
           url: /mrg/ce/SalesAnalytics.html
@@ -53,7 +52,6 @@ pages:
           include_versions: ["2.2"]
 
     - label: Commerce
-      url: /mrg/ee/ee-intro.html
       include_versions: ["2.1","2.2"]
       children:
 
@@ -133,7 +131,6 @@ pages:
           url: /mrg/ee/WeeeStaging.html
 
     - label: B2B
-      url: /mrg/b2b/b2b-intro.html
       include_versions: ["2.2"]
       children:
 
