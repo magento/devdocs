@@ -61,7 +61,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 #### **Additional enhancements**
 
-<!-- MAGETWO-86125-->* Configurable products are now sorted by visible prices only as expected. Previously, sorting a catalog by price resulted in sort results that included the prices of out-of-stock products and disabled child products.
+<!-- MAGETWO-86125-->* Configurable products are now sorted by visible prices as expected. Previously, sorting a catalog by price produced  sort results that included the prices of out-of-stock products and disabled child products.
 
 <!-- MAGETWO-91411 -->*  Magento no longer sends duplicate delete requests as a result of an unstable Internet connection. Previously, unintentional mass deletion of products sometimes occurred as a result of an unstable Internet connection. 
 
@@ -149,7 +149,7 @@ Enhancements to Klarna include support for these new features:
 
 * Klarna now passes shipping details in capture requests.
 
-* The Klarna API now returns the name and logo URL to use for each payment method instead of hard-coding the payment method names into the module.s
+* The Klarna API now returns the name and logo URL to use for each payment method instead of hard-coding the payment method names into the module.
 
 
 For more information on these new features, see [Klarna](https://docs.magento.com/m2/ce/user_guide/payment/klarna.html). 
@@ -188,7 +188,7 @@ Magento has removed the  Magento Social  Facebook integration, and no longer sup
 
 
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 
 
@@ -267,6 +267,10 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-92748 -->* Guests can now view products as expected when shared catalogs are enabled. Previously, if a merchant added a product when shared catalogs were enabled, guest users could not view the product, even when shared catalogs were later disabled. 
 
+<!-- MAGETWO-92823 -->* Company administrators can now use Quick Order to buy products. Previously, when a company administator tried to use Quick Order to buy products, Magento displayed this error: `The SKU was not found in the catalog`. 
+
+<!-- MAGETWO-92653 -->* You can now successfully search for products  when the **Shared Catalog** setting is enabled.
+
 
 ### Bundle products
 
@@ -306,15 +310,13 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-93196 -->* Administrators with permission to change product names on one website only cannot change product names on any other sites. Previously, an administrator with permission to change a product name on one site only could change product names on all websites in a multisite deployment. 
 
-<!-- MAGETWO-93103 -->* Users with limited privileges can now save products as expected.  
+<!-- MAGETWO-93103 -->* Administrators with limited privileges can now save products as expected.  
 
 <!-- MAGETWO-93071 -->* Magento now uses the current date as expected when setting the start date for a special price. Previously, Magento set the start date for a special price a few years in the future, which prevented the special price for being active.
 
 <!-- MAGETWO-92907 -->* Magento now reliably displays category images on the custom store view level.  Previously, the category image on custom store view level alternately disappeared and appeared after every save operation.
 
-<!-- MAGETWO-92823 -->* Company administrators can now use Quick Order to buy products. Previously, when a company administator tried to use Quick Order to buy products, Magento displayed this error: `The SKU was not found in the catalog`. 
 
-<!-- MAGETWO-92653 -->* You can now successfully search for products  when the **Shared Catalog** setting is enabled.
 
 <!-- MAGETWO-92574 -->* Magento no longer removes downloadable product links after an attribute is updated. 
 
@@ -344,7 +346,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-87721 -->* Customizable options are now configured the same for all websites to which a product is added. Previously, when a merchant added a product with customizable options to an additional site, the options were corrupted. 
 
-<!-- MAGETWO-87589 -->* Fixed issue with polluted database for additional stores if attribute data wasn't set for additional stores (use default check box now is set even if tab with the attribute was not opened)
+<!-- MAGETWO-87589 -->* The **Use default value** option is no longer unchecked unless the user overrides the value of the attribute in the store view scope. Previously, after creating an item, if the user changed to store view scope and did not make any modifications to the item's attributes and only clicked **Save**, most of the attributes that were set as "use default value" became unchecked.
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs.  
 
@@ -354,22 +356,22 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-85682 -->* Magento now maintains the default setting for a product's `status` attribute when you create a new product. Previously, when creating a new product after changing the default option from Enabled to Disabled for this attribute, the status is incorrectly set to enabled by default.
 
-<!-- MAGETWO-84891 -->* The print preview of product comparison results (that is, the page of results that Magento produces when you click **Compare** after selecting two or more products) now displays as expected. Previously, only a subset of page elements was displayed.  
+<!-- MAGETWO-84891 -->* The print preview of product comparison results (that is, the page of results that Magento produces when you click **Compare** after selecting two or more products) now  displays as expected. Previously, only a subset of page elements was displayed.  
 
 
 <!-- MAGETWO-82116 -->* Magento now maintains the correct dates in the results of filtering the Admin Product Grid Filter: Set Product as New from Date.  [GitHub-11517](https://github.com/magento/magento2/issues/11517)
 
 <!-- MAGETWO-75427 -->* As you type additional characters into the text field for a product's custom option, the hint showing the number of characters left before reaching the maximum now decreases as expected.
 
-<!-- MAGETWO-60573 -->* Merchants can now set a custom option fixed prices with  negative values in the Admin. [GitHub-7333](https://github.com/magento/magento2/issues/7333)
+<!-- MAGETWO-60573 -->* Merchants can now set custom option fixed prices with  negative values in the Admin. [GitHub-7333](https://github.com/magento/magento2/issues/7333)
 
 <!-- MAGETWO-73739 -->* You can now unset a category image on the store-view level when the image is defined on all store views.
 
 <!-- MAGETWO-74021 -->* The Catalog Products List widget can now display products on the storefront that have specific attributes.
 
-<!--  ENGCOM-2383 -->* The shopping cart now displays as expected images of configurable products that have only size options (that is, no color options). Previously, when a customer added a configurable product that had only size options to her shopping cart, the shopping cart did not display the expected product image. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16863](https://github.com/magento/magento2/pull/16863)*. [GitHub-16843](https://github.com/magento/magento2/issues/16843)
+<!--  ENGCOM-2383 -->* The shopping cart now correctly displays images of configurable products that have only size options (that is, no color options). Previously, when a customer added a configurable product that had only size options to her shopping cart, the shopping cart did not display the expected product image. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16863](https://github.com/magento/magento2/pull/16863)*. [GitHub-16843](https://github.com/magento/magento2/issues/16843)
 
-<!--  ENGCOM-2313 -->* Magento now throws an exception as expected  when a user tries to submit a product review without selecting a star rating. Previously, if a user submitted a product review without selecting a star rating, Magento assigned a First Star rating. 
+<!--  ENGCOM-2313 -->* Magento now throws an exception as expected  when a user tries to submit a product review without selecting a star rating. Previously, if a user submitted a product review without selecting a star rating, Magento assigned a one-star rating. 
 
 <!--  ENGCOM-2213 -->* Magento now successfully displays product prices in currencies without minor units if the price amount is less then the number group size.  [GitHub-11711](https://github.com/magento/magento2/issues/11711)
 
@@ -945,7 +947,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2007 -->* The Change Password warning message no longer appears twice. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15774](https://github.com/magento/magento2/pull/15774)*. [GitHub-14895](https://github.com/magento/magento2/issues/14895)
 
-<!-- ENGCOM-2559 -->* You can now add the `NOINDEX,NOFOLLOW` meta tag to the admin scope to instruct Google and other friendly bots to refrain from adding the Admin URL to search results. *Fix submitted by [Itay Raz](https://github.com/itaymesh) in pull request [16250](https://github.com/magento/magento2/pull/16250)*. 
+<!-- ENGCOM-2559 -->* You can now add the `NOINDEX,NOFOLLOW` meta tag to the admin scope to instruct Google and other friendly bots to refrain from adding the Admin URL to search results. *Fix submitted by [Itay Raz](https://github.com/itaymesh) in pull request [17163](https://github.com/magento/magento2/pull/17163)*. 
 
 <!-- ENGCOM-2545 -->* Corrected grammar error in the "What is this" tooltip for the Braintree vault tool tip. *Fix submitted by [kreativedev](https://github.com/kreativedev) in pull request [17151](https://github.com/magento/magento2/pull/17151)*. 
 
@@ -1237,11 +1239,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1633 -->* Module Manager module grid now works as expected. *Fix submitted by [Alex Gusev](https://github.com/flancer64) in pull request [15211](https://github.com/magento/magento2/pull/15211)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
-
-
-### MSI
-
-<!-- ENGCOM-1869 -->* Dynamic data rows no longer fail due to a read operation after a delete condition. Previously, Magento threw an undefined JavaScript error. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*. GitHub-911](https://github.com/magento-engcom/msi/issues/911)
 
 
 
@@ -1674,6 +1671,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1313 -->* The order of style groups for mobile devices has been corrected. [GitHub-14476](https://github.com/magento/magento2/issues/14476)
 
+<!-- ENGCOM-1869 -->* Dynamic data rows no longer fail due to a read operation after a delete condition. Previously, Magento threw an undefined JavaScript error. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*. GitHub-911](https://github.com/magento-engcom/msi/issues/911)
 
 
 
