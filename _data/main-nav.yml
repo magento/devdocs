@@ -1,22 +1,22 @@
 - label: Cloud
   children:
 
-    - label: Cloud guide
+    - label: Cloud Guide
       url: /cloud/bk-cloud.html
 
-    - label: Cloud architecture
+    - label: Cloud Architecture
       url: /cloud/architecture/cloud-architecture.html
 
-    - label: Local development
+    - label: Local Development
       url: /cloud/access-acct/first-time-setup.html
 
-    - label: Configure environments
+    - label: Configure Environments
       url: /cloud/env/environments.html
 
-    - label: Upgrades and patches
+    - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
 
-    - label: ece-tools release notes
+    - label: ece-tools Release Notes
       url: /cloud/release-notes/cloud-tools.html
       exclude_versions: ['2.0']
 
