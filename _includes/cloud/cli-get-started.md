@@ -1,4 +1,3 @@
-<div markdown="1">
 
 1.	Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to a directory to which the Magento file system owner has write access.
@@ -17,9 +16,8 @@
 
 		magento-cloud environment:list
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
-	</div>
+    {: .bs-callout .bs-callout-info}
+  	`magento-cloud environment:list`—displays environment hierarchies whereas the `git branch` command does not.
 
 5.	Fetch origin branches to get the latest code:
 
@@ -35,4 +33,3 @@
 7.  Create a [snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the environment as a backup:
 
         magento-cloud snapshot:create -e <environment ID>
-</div>

@@ -1,5 +1,3 @@
-<div markdown="1">
-
 *	_Shared configuration_, which is all settings that are neither system-specific nor sensitive.
 
 	Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or {{site.data.var.ece}} _integration_) system.
@@ -12,9 +10,8 @@
 
 	The system-specific configuration file, `app/etc/env.php`, should _not_ be included in source control or otherwise shared between systems. Instead, use the [`magento config:set` and `magento:sensitive:set` commands]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to provide values for those settings in your production system.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
-</div>
 
 Most of the time, the configuration options you set in the shared, system-specific, or sensitive configuration cannot be edited in the Magento Admin. This helps keep your settings consistent across all systems. (You can optionally use the [`magento config:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) without the `--lock` option to configure settings that are editable in the Admin.)
 

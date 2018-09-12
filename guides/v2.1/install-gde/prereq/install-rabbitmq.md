@@ -1,12 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)
 menu_order: 50
-version: 2.1
 ee_only: True
-github_link: install-gde/prereq/install-rabbitmq.md
 functional_areas:
   - Install
   - System
@@ -24,9 +22,8 @@ The message queue system must be established before you install Magento. The bas
 1. Install RabbitMQ and any prerequisites.
 2. Connect RabbitMQ and Magento.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 A basic message queue system can be implemented on {{site.data.var.ee}} using cron instead of RabbitMQ. See [Configure message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information.
-</div>
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
@@ -39,10 +36,10 @@ This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 
-1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="&#95;blank"}.
+1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="_blank"}.
 2. Install the package with `dpkg`.
 
-Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="&#95;blank"} for more information.
+Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="_blank"} for more information.
 
 ## Install RabbitMQ on CentOS {#centos-install}
 
@@ -50,7 +47,7 @@ Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.h
 
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
+See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
 Run the following commands to install this feature.
 ```bash
@@ -64,7 +61,7 @@ rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
+1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
 2. Run the following commands as a user with root permissions:
 
 ```bash
@@ -74,7 +71,7 @@ rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
 
-Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
+Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
 ## Configure RabbitMQ {#config}
 
@@ -94,40 +91,21 @@ Add the following command line parameters when you install {{site.data.var.ee}}:
 
 where:
 
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>amqp-host</td>
-<td>The hostname where RabbitMQ is installed.</td>
-</tr>
-<tr>
-<td>amqp-port</td>
-<td>The port to use to connect to RabbitMQ. The default is 5672.</td>
-</tr>
-<tr>
-<td>amqp-user</td>
-<td>The username for connecting to RabbitMQ. Do not use the default user `guest`. </td>
-</tr>
-<tr>
-<td>amqp-password</td>
-<td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
-</tr>
-<tr>
-<td>amqp-virtualhost</td>
-<td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
-<p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
-</tr>
-</table>
+|Parameter|Description|
+|--- |--- |
+|`amqp-host`|The hostname where RabbitMQ is installed.|
+|`amqp-por`t|The port to use to connect to RabbitMQ. The default is `5672`.|
+|`amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
+|`amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
+|`amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
+{:style="table-layout:auto;"}
 
 ## Start the message queue consumers
 
 After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for details.
 
 #### Related topics
+
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)

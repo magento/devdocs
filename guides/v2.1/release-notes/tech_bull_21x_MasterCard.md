@@ -1,13 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: MasterCard BIN Range Update 
 menu_title: MasterCard BIN Range Update (May 19, 2017)
 menu_node: 
 menu_order: 6
-version: 2.1
-github_link: release-notes/tech_bull_21x_MasterCard.md
 ---
 
 *Technical Bulletin published on May 19, 2017 and edited on June 29, 2017.*
@@ -16,20 +13,18 @@ MasterCard recently added a new series of Bank Identification Numbers (BIN). As 
 
 In response, we’ve issued a set of patches for the Magento 1.x versions that do not already support processing cards with this new range of BIN numbers. 
 
-
-
 ### Who is affected by this issue?
 
 Magento Commerce (formerly Enterprise Edition) versions 1.14.3.0 and later and Magento Open Source (formerly Community Edition) versions 1.9.3.0 and later fully support the new MasterCard numbers. Similarly, Magento Open Source and Commerce 2.1.3 and later versions fully support this MasterCard BIN range update.
 
 However, if you are using an older version of Magento, you must upgrade by June 30 to avoid fines and ensure the correct processing of payments made with these new BINs. 
 
-
 ### Action
 
 Consult the following tables to learn how to apply a fix to your specific Magento version.
 
 #### Magento 1.x patches
+
 Consult the following tables for guidelines for Magento 1.x EE and CE fixes.
 
 
@@ -110,10 +105,7 @@ To get patches for Magento 1.x Commerce or Open Source
 
 5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches]({{ site.baseurl }}/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 
-
-
 #### Magento 2.x fix
-
 
 <table>
   <tr>
@@ -146,11 +138,8 @@ To get patches for Magento 1.x Commerce or Open Source
 
 </table>
 
-
-
-
-
 ### More information
+
 MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
 
 

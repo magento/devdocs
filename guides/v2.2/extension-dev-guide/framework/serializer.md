@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Serialize Library
 subgroup: Framework
 menu_title: Serialize Library
 menu_order: 1000
-version: 2.2
-github_link: extension-dev-guide/framework/serializer.md
 ---
 
 ## Overview
@@ -14,38 +12,29 @@ This {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglos
 
 Magento's Serialize library provides the `Magento\Framework\Serialize\SerializerInterface` and the Json and Serialize implementations for serializing data.
 
-
 ## Serialization
 
 The main purpose of data serialization is to convert data into a string using `serialize()` to store in a database, a cache, or pass onto another layer in the application.
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-
+{: .bs-callout .bs-callout-warning }
 For security reasons, `SerializerInterface` implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.
-
-</div>
 
 ## Implementations
 
 ### Json (default)
 
-The [`Magento\Framework\Serialize\Serializer\Json`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
+The [`Magento\Framework\Serialize\Serializer\Json`]({{ site.mage2200url }}lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
 This class does not unserialize objects.
 
 ### Serialize
 
-The [`Magento\Framework\Serialize\Serializer\Serialize`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
+The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2200url }}lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-
-Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities.
-Always use the `SerializerInterface` for serializing and unserializing.
-
-</div>
-
+{: .bs-callout .bs-callout-warning }
+Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the `SerializerInterface` for serializing and unserializing.
 
 ## Usage
 

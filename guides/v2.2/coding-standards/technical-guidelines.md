@@ -1,8 +1,6 @@
 ---
 group: coding-standards
 title: Technical guidelines
-github_link: coding-standards/technical-guidelines.md
-version: 2.2
 redirect_from:
     - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:
@@ -723,7 +721,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
 
-15.3. XSS protection.
+15.3. Cross-Site Scripting (XSS) protection.
 
 15.3.1. Sanitize input; escape output.
 
@@ -753,13 +751,27 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
-15.7. CSRF protection.
+15.7. Cross-Site Request Forgery (CSRF) protection.
 
 15.7.1. CSRF tokens mechanism should be utilized.
 
 15.7.2. All data manipulation requests should be made with POST requests.
 
 15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+
+15.9. Local File Inclusion (LFI) protection.
+
+15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
+
+15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
+
+15.10. Remote Code Execution (RCE) protection.
+
+15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()
+
+15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
+
+15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
@@ -771,5 +783,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: https://github.com/magento/magento2/blob/2.1/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

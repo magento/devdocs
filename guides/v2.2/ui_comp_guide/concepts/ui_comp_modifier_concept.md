@@ -1,11 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: About PHP modifiers in UI components
-menu_title: About PHP modifiers in UI components
-menu_order: 40
-version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ---
 
 ## What's in this topic
@@ -31,8 +26,7 @@ In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Mo
 
 Sample modifier:
 
-{% highlight php%}
-
+```php
 <?php
 
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
@@ -84,13 +78,13 @@ class Example extends AbstractModifier
         return $data;
     }
 }
-{%endhighlight%}
+```
 
 **Step 2**
 
 Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following:
 
-{% highlight xml %}
+```xml
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
      <arguments>
          <argument name="modifiers" xsi:type="array">
@@ -101,7 +95,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
          </argument>
      </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 , where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
 
@@ -110,7 +104,6 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 **Step 3**
 
 To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2100url }}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2100url }}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
-
 
 ## Related reading
 

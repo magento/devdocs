@@ -1,12 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage your project
 menu_title: Manage your project
 menu_order: 1
 menu_node: parent
-version: 2.1
-github_link: cloud/project/projects.md
 functional_areas:
   - Cloud
 redirect_from:
@@ -29,6 +27,7 @@ To manage your project, environment, and branches, see:
 *	[Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 
 ### Project and environment variables {#variables}
+
 The following sections detail more about project and environment variables:
 
 *	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
@@ -38,17 +37,20 @@ The following sections detail more about project and environment variables:
 *	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
+
 To upgrade and patch Magento, see:
 
 *	[Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
 *	[Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="\_blank"}.
+
+With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 
 ## Blackfire and New Relic credentials {#integrations}
+
 Your project includes [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
@@ -68,6 +70,7 @@ To review your integration tokens, IDs, and more:
 	![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
 
 ## Access the project and environments {#project}
+
 When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
@@ -82,37 +85,12 @@ For **Pro**, you will see a hierarchy of branches starting from Production to St
 
 The following table details the branches for Pro:
 
-<table>
-<thead>
-<tr>
-<th style="width: 125px;">Branch</th>
-<th style="width: 100px;">Environment</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>(no branch)</td>
-<td>Global Master</td>
-<td>This "branch" captures global project changes including adding user accounts and variables. <b>Important:</b> Do not create branches from or merge to Global Master.
-</td>
-</tr>
-<tr>
-<td><code>production</code></td>
-<td>Production</td>
-<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to go live with updated configurations and code.</td>
-</tr>
-<tr>
-<td><code>staging</code></td>
-<td>Staging</td>
-<td>This is a child branch from <code>master</code> with a deployment target. You cannot branch from this branch. You merge code from <code>master</code> to this branch to test in a pre-production environment.</td>
-</tr>
-<tr>
-<td><code>master</code></td>
-<td>Integration master</td>
-<td>The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from <code>master</code> for your development on your local, generating an environment when you push code. When this code is complete, you merge to <code>staging</code> and <code>production</code>.</td>
-</tr>
-</tbody>
-</table>
+| Branch | Environment | Description |
+|----------
+| (no branch) | Global Master | This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
+| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
+| `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
+| `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 
 If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
 
@@ -134,6 +112,7 @@ If you have inactive Git branches of code, you can toggle displaying the branche
 ![Show or hide inactive branches]({{ site.baseurl }}/common/images/cloud_show-inactive.png)
 
 ## Configure environments {#configure}
+
 You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{ page.baseurl }}/cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud_project-env.png)
@@ -143,6 +122,7 @@ This displays the following page, which enables you to configure settings, [vari
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
 ## Configure the project
+
 Click ![edit project]({{ site.baseurl }}/common/images/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
 
 ![configure project]({{ site.baseurl }}/common/images/cloud_project-config.png)

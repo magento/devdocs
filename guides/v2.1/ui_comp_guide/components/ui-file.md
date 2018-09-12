@@ -1,19 +1,13 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: File component
 menu_title: File component
-version: 2.1
-github_link: ui_comp_guide/components/ui-file.md
 ---
-
-## Overview
 
 The File component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="file">` form field.
 
-## File configuration
-
-Extends all `abstract` configuration.
+## Configuration options
 
 <table>
   <tr>
@@ -68,11 +62,7 @@ Extends all `abstract` configuration.
       </ul>
     </td>
     <td>
-      <a href=
-      "{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">
-      Links</a> the component's <code>value</code> property with
-      provider using the declared in the <code>dataScope</code>
-      property of the parent component.
+      <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html"> Links</a> the component's <code>value</code> property with provider using the declared in the <code>dataScope</code> property of the parent component.
     </td>
     <td>
       Object
@@ -105,9 +95,7 @@ Extends all `abstract` configuration.
       <code>visible</code>
     </td>
     <td>
-      Initial component's visibility. When set to <code>false</code>, the
-      <code>display: none</code> CSS style is added to the
-      component's DOM block.
+      Initial component's visibility. When set to <code>false</code>, the <code>display: none</code> CSS style is added to the component's DOM block.
     </td>
     <td>
       Boolean

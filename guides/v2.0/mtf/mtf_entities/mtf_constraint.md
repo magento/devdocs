@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Constraint
-version: 2.0
-github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
 The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
@@ -45,15 +43,15 @@ An object that is not defined in the data set or isn't returned from the test ca
 
 Let's see the following images for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png){: width="800"}
 
 <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png){: width="800"}
 
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png" width="800"/>
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png){: width="800"}
 
 <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 
@@ -69,15 +67,16 @@ Constraints are performed in order they listed in the data set. However, you can
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" prev="Magento\Catalog\Test\Constraint\AssertCategoryForm" />
 {%endhighlight%}
 
-<div class="bs-callout bs-callout-warning">
-    <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+    
+Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.
 </div>
 
 A test can contain constraints from different modules.
 
-<div class="bs-callout bs-callout-warning">
-  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
-  </p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+  
+Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.   
 </div>
 
 The following example shows the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints. 

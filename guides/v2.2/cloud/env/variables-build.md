@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Build variables
-version: 2.2
-github_link: cloud/env/variables-build.md
 functional_areas:
   - Cloud
   - Configuration
@@ -33,7 +31,7 @@ The following variables were removed in v2.2:
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip){:target="_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ```yaml
 stage:
@@ -94,7 +92,7 @@ Use these options _only_ if you have more than one locale:
 
 -  `standard`—deploys all static view files for all packages.
 -  `quick`—minimizes deployment time. This is the default command option, if not specified.
--  `compact`—conserves disk space on the server and overrides the value for `scd_threads` with a value of `1`. This strategy does not work with multi-threads.
+-  `compact`—conserves disk space on the server. In Magento version 2.2.4 and earlier, this setting overrides the value for `scd_threads` with a value of `1`.
 
 ```yaml
 stage:
@@ -141,7 +139,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
  
 ```yaml
 stage:

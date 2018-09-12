@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: config-guide/cli/config-cli-subcommands.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 functional_areas:
   - Configuration
@@ -15,9 +13,10 @@ functional_areas:
 ---
 
 ## Before you configure the Magento application {#config-install-cli-prereq}
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 ## First steps {#config-cli-before}
+
 1.  Log in to the Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.  Change to the following directory:
 
@@ -33,20 +32,20 @@ You can run the commands in any of the following ways:
 
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="\_blank"} `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables){:target="_blank"} `<your Magento install dir>/bin` to your system `PATH`)
 </div>
 
 ## Command summary {#config-cli-summary}
+
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Before you run any of these commands, you must either [install the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) or [enable some modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
-</div>
 
 <table>
-	<col width="40%">
-  	<col width="30%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Command</th>
@@ -114,12 +113,13 @@ Before you run any of these commands, you must either [install the Magento appli
 </table>
 
 ## Help commands {#config-cli-help}
-{% include install/cli_help-commands.html %}
+{% include install/cli_help-commands.md %}
 
 ## Common arguments {#config-cli-subcommands-common}
-{% include install/cli_common-commands.html %}
+{% include install/cli_common-commands.md %}
 
 ## Commands {#config-cli-subcommands}
+
 The following sections discuss the available commands.
 
 -   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>

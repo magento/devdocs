@@ -1,27 +1,25 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: config-guide/redis/redis-session.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-<h2 id="reds-cache-prereq">Prerequisite</h2>
+## Prerequisite   {#reds-cache-prereq}
+
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
-<h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
+## Configure Magento to use Redis for session storage   {#config-redis-config}
+
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
     'session' =>

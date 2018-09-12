@@ -1,0 +1,1 @@
+../../../../v2.2/rest/tutorials/prerequisite-tasks/create-admin-token.md

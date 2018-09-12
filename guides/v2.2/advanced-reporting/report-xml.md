@@ -1,8 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Report XML
-version: 2.2
-github_link: advanced-reporting/report-xml.md
 functional_areas:
     - Reports
 ---

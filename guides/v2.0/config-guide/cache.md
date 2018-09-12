@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 08_Configure caching
 title: Configure caching
 menu_title: Configure caching
 menu_order: 3
 menu_node: parent
-version: 2.0
-github_link: config-guide/cache.md
 functional_areas:
   - Configuration
   - System
@@ -23,9 +21,8 @@ Magento enables you to configure alternatives to the default file system caching
 
 *   Set up the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Varnish</a> without modifying the Magento configuration.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more cache alternatives so watch this space.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+We'll periodically add more cache alternatives so watch this space.
 
 Magento uses the following caching terminology:
 
@@ -41,6 +38,5 @@ This topic discusses the following options for configuring caching:
 *   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Varnish requires no changes to the Magento configuration. For more information, see <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Varnish requires no changes to the Magento configuration. For more information, see [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html).

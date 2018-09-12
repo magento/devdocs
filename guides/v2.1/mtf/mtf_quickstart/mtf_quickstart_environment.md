@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Quick start. Prepare environment for test run
-version: 2.1
-github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
 
 ## Run the Selenium Server on default browser {#mtf_quickstart_env_selenium}
@@ -10,15 +8,13 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 The Selenium Server drives a browser to execute your tests.
 You can download the Selenium Server from [Selenium project website].
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Server.
-</div>
 
-Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a>
+Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium server version.](http://docs.seleniumhq.org/about/platforms.jsp)
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
-</div>
 
 Enter in terminal:
 
@@ -37,7 +33,10 @@ Example for Google Chrome with Selenium 2:
     java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
     
 <div class="bs-callout bs-callout-info" markdown="1">
-For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument: `java -jar <path_to_selenium_directory>/selenium-server.jar`
+For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument:
+```bash
+java -jar <path_to_selenium_directory>/selenium-server.jar
+```
 </div>
 
 ## Run generator {#mtf_quickstart_env_generator}
@@ -49,9 +48,9 @@ Enter in terminal:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Next Steps {#mtf_install_pre}
 
-[&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+[&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| [ Test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html)
 
 
 <!-- LINK DEFINITIONS -->

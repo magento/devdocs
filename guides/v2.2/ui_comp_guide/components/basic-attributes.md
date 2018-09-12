@@ -1,11 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Basic attributes
-menu_title: Basic attributes
-menu_order: 1
-version: 2.2
-github_link: ui_comp_guide/components/basic-attributes.md
 ---
 
 ## Overview
@@ -48,7 +43,6 @@ The following attributes are available for all UI components, including the basi
     <td>String</td>
   </tr>
 </table>
-
 
 ## Basic component options
 

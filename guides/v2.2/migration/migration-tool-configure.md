@@ -1,12 +1,10 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: C_DMTool
 title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-version: 2.0
-github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
 
@@ -31,7 +29,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 To create a configuration file:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 2.	Change to the following directory:
 
@@ -99,7 +97,6 @@ For example:
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
 {% endhighlight %}
-
 </div>
 
 ## Work with configuration and mapping files {#migration-config}
@@ -212,7 +209,8 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tbody>
 </table>
 
-You can refer to <a href="{{ page.baseurl }}/migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification</a> for more details.
+You can refer to [ Data Migration Tool Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) for more details.
 
 ## Next step
-<a href="{{ page.baseurl }}/migration/migration-migrate-settings.html">Migrate using data migration tool</a>
+
+[Migrate using data migration tool]({{ page.baseurl }}/migration/migration-migrate-settings.html)

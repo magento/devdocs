@@ -1,11 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
-version: 2.3
-github_link: get-started/create-integration.md
 redirect_from: /guides/v2.3/howdoi/webapi/integration.html
 
 ---
@@ -30,7 +28,7 @@ To create an integration, follow these general steps:
 4. [Check the integration.](#check)
 5. [Integrate with your application.](#integrate)
 
-<h2 id="skeletal">Create a skeletal module</h2>
+## Create a skeletal module {#skeletal}
 
 To develop a module, you must:
 
@@ -153,7 +151,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
          &#42; @param ConfigBasedIntegrationManager $integrationManager
          &#42;&#47;
 
-        public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
+        public function __construct(ConfigBasedIntegrationManager $integrationManager)
         {
             $this->integrationManager = $integrationManager;
         }
@@ -178,6 +176,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
 ## Create integration files {#files}
+
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
 * Managing the third-party account that connects to Magento.
@@ -191,8 +190,8 @@ The process for customizing your module includes
 * [Define the required resources](#resources)
 * [Pre-configure the integration](#preconfig)
 
+### Define the required resources {#resources}
 
-<h3 id="resources">Define the required resources</h3>
 The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
@@ -217,13 +216,12 @@ In the following example, the test integration requires access to the following 
 </integrations>
 {% endhighlight %}
 
-<h3 id="preconfig">Pre-configure the integration</h3>
+### Pre-configure the integration {#preconfig}
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.
 
 The  file defines which API resources the integration has access to.
 
@@ -264,7 +262,9 @@ The  file defines which API resources the integration has access to.
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
 </tr>
 </table>
-<h2 id="install">Install your module</h2>
+
+## Install your module {#install}
+
 Use the following steps to install your module:
 
 1. Run the following command to update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data.
@@ -275,7 +275,8 @@ Use the following steps to install your module:
 
     <code>bin/magento setup:di:compile</code>
 
-<h2 id="check">Check your integration</h2>
+## Check your integration {#check}
+
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}
@@ -291,6 +292,7 @@ Before you can activate your integration in Magento, you must create two pages o
 When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for`oauth_consumer_key` tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
 
 ### Callback page {#callback}
+
 The callback page must be able to perform the following tasks:
 
 * Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
@@ -314,6 +316,7 @@ The callback page must be able to perform the following tasks:
 * Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
 
 ## Related Topics
+
 - [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
 - [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )
 - [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)

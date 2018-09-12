@@ -14,14 +14,14 @@ pages:
           url: /javascript-dev-guide/javascript/js-resources.html
 
         - label: About AMD modules and RequireJS
-          versions: ["2.0", "2.1"]
+          include_versions: ["2.0", "2.1"]
           url: /javascript-dev-guide/javascript/requirejs_concept.html
 
         - label: Calling and initializing JavaScript
           url: /javascript-dev-guide/javascript/js_init.html
 
         - label: Frontend product repository
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /javascript-dev-guide/javascript/product-frontend-storage.html
 
         - label: Use custom JavaScript

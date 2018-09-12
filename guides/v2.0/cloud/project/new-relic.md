@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
-version: 2.0
-github_link: cloud/project/new-relic.md
 functional_areas:
   - Cloud
   - Integration
@@ -10,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
 
 ## Key features {#features}
 
@@ -22,9 +20,11 @@ New Relic APM provides the following features to Magento:
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
 ## New Relic APM credentials {#credentials}
+
 The agent software for New Relic is packaged with your {{site.data.var.ece}} account. You receive your credentials and license information from Magento during launch. You can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
 ## Add New Relic APM to an environment {#configure}
+
 The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your _staging_ and _production_ environments, and you can add the license to one other environment of your choice.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -44,6 +44,7 @@ To add a New Relic license key to an environment:
     ```
 
 ## Remove New Relic APM from an environment {#remove}
+
 The {{site.data.var.ece}} plans support up to 3 instances of your New Relic license across all environments. If you have more than 3 active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
 To remove a New Relic license key from an environment:
@@ -67,8 +68,8 @@ To remove a New Relic license key from an environment:
     magento-cloud project:variable:delete php:newrelic.license
     ```
 
-
 ## Add New Relic extension to your project {#extension}
+
 New relic extension must be listed in the `.magento.app.yaml` project file:
 
 ```yaml
@@ -78,6 +79,7 @@ runtime:
 ```
 
 ## Investigate performance {#performance}
+
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
 Using the New Relic dashboard, you can immediately track and find the following:
@@ -104,9 +106,9 @@ You can mix the high-level data captured by New Relic APM and the code-level dat
 
 ## New Relic APM resources {#resources}
 
--  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="\_blank"}
--  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="\_blank"}
--  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="\_blank"}
--  [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="\_blank"}
--  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="\_blank"}
--  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="\_blank"}
+-  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="_blank"}
+-  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="_blank"}
+-  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="_blank"}
+-  [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="_blank"}
+-  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="_blank"}
+-  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="_blank"}

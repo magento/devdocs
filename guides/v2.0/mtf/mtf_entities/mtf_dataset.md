@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Data set
-version: 2.0
-github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 
 A data set contains data used by a [test case] and [constraints][constraint].
@@ -57,8 +55,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 {:#ex_variation_table}
 
 <table>
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="2*" />
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
@@ -118,9 +116,9 @@ The following table shows structure of the data set:
 {:#dataset_struct_table}
 
 <table>
-<col width="1*">
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="1*" />
+<col width="2*" />
 <tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
@@ -177,8 +175,9 @@ The following data types are available:
 </ul></td></tr>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-  <p>A variation should contain only data that is required for its flow and constraints.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+  
+A variation should contain only data that is required for its flow and constraints.
 </div>
 
 A data set should be placed in the same directory with a corresponding test case.

@@ -1,10 +1,8 @@
 ---
-group: integration-testing
+group: testing
 title: Running Integration Tests
-version: 2.0
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-github_link: test/integration/integration_test_execution.md
 redirect_from:
  - /guides/v2.0/test/integration/integration_test_setup.html
  - /guides/v2.1/test/integration/integration_test_setup.html
@@ -57,10 +55,8 @@ The following prerequisites are required:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not use the same database as the real Magento instance.
-    Any data (products, customers, orders and everything else) will be lost!</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Do not use the same database as the real Magento instance. Any data (products, customers, orders and everything else) will be lost!
 
 For safety reasons it is recommended to use a dedicated database user for running the tests. That db user should not have access to any other databases.
 Here are example SQL commands to create a test database and a dedicated test user account.
@@ -101,9 +97,8 @@ return [
 ];
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be sure to leave all the settings that do not start with <code>db-</code> at their default values.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Be sure to leave all the settings that do not start with `db-` at their default values.
 
 ### Adjusting the PHPUnit configuration file
 
@@ -307,7 +302,7 @@ Then configure the integration test configuration file to be used.
 
 The only difference in the run configuration is the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
-<img src="{{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
+![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){:width="600px"}
 
 <!-- LINK DEFINITIONS -->
 

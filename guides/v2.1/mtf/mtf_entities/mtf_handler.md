@@ -1,11 +1,9 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Handler
-version: 2.1
-github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
+You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need a [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html), a [data set]({{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html), and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
 
@@ -43,11 +41,11 @@ The following nodes influence handlers:
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
-  &lt;webapi priority=&quot;0&quot;&gt;
+  &lt;webapi priority="0"&gt;
     &lt;token&gt;integration_token&lt;/token&gt;
   &lt;/webapi&gt;
-  &lt;curl priority=&quot;1&quot; /&gt;
-  &lt;ui priority=&quot;2&quot; /&gt;
+  &lt;curl priority="1" /&gt;
+  &lt;ui priority="2" /&gt;
 &lt;/handler&gt;
 </pre>
 </td></tr>
@@ -63,7 +61,7 @@ You should mention in a fixture the `handler_interface` attribute with a referen
 
 Example of `WidgetInterface.php` (should be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
-{% highlight php %}
+```php
 
 <?php
 /**
@@ -83,7 +81,7 @@ interface WidgetInterface extends HandlerInterface
     //
 }
 
-{% endhighlight %}
+```
 
 ### Handler class {#mtf_handler_conf_hand}
 
@@ -91,7 +89,7 @@ To use the handler class, create <a href="#mtf_handler_interface">an interface</
 
 The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
-{% highlight php %}
+```php
 
 <?php
 /**
@@ -113,7 +111,7 @@ public function persist()
     $this->eventManager->dispatchEvent(['persist_after'], [get_class($this)]);
 }
 
-{% endhighlight %}
+```
 
 Create the handler in the same directory where the interface is stored: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
@@ -123,17 +121,16 @@ The `di.xml` file declares relationship between the <a href="#mtf_handler_interf
 
 See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
-{%highlight xml%}
-
+```xml
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
-{%endhighlight%}
+```
 
  In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
 
 See the directory structure mentioned for the case with the Widget cURL handler:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png">
+![]({{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png)
+
 
 ## How to create a cURL handler {#mtf_handler_howto-create-curl}
 
@@ -142,8 +139,7 @@ Let's create a cURL handler that creates a new widget.
 * Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -161,16 +157,14 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
-{% endhighlight %}
+```
 
 * Create `Curl.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.
 
 The following code includes detailed comments for better understanding.
 {: #mtf_curl_script}
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -255,16 +249,13 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
-{% endhighlight %}
+```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/curl` directory of the Magento_Widget module.
 
-{%highlight xml%}
-
+```xml
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
-{%endhighlight%}
+```
 
 ### cURL authentication classes {#mtf_handler_decor}
 
@@ -280,9 +271,9 @@ Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`.
 
 Add to the `Curl.php` the following code:
 
-{% highlight php %}
+```php
 $curl = new BackendDecorator(new CurlTransport(), new Config());
-{% endhighlight %}
+```
 
 `Config()` takes Admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
 
@@ -294,9 +285,9 @@ Full class name is `Mtf\Util\Protocol\CurlTransport\FrontendDecorator`.
 
 Use the following code in the `Curl.php` file:
 
-{% highlight php %}
+```php
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
-{% endhighlight %}
+```
 
 ## How to create a UI handler {#mtf_handler_howto-create-ui}
 
@@ -305,8 +296,7 @@ Let's create a UI handler that creates a new widget.
 * Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -324,15 +314,13 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
-{% endhighlight %}
+```
 
 * Create `Ui.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which defines preparation of a data to create a new widget.
 
 The code has detailed comments for better understanding.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -417,13 +405,11 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
-{% endhighlight %}
+```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/ui` directory of the Magento_Widget {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-{%highlight xml%}
-
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -436,8 +422,7 @@ class Curl extends AbstractCurl
     <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
                 type="\Magento\Widget\Test\Handler\Widget\Ui" />
 </config>
-
-{%endhighlight%}
+```
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
@@ -446,8 +431,7 @@ Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5
 * Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -465,12 +449,10 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
-{% endhighlight %}
+```
 * Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -555,12 +537,11 @@ class Curl extends AbstractCurl
     }
     // Additional methods.
 }
-
-{% endhighlight %}
+```
 
 * Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/webapi` directory of the Magento_Tax module.
 
-{%highlight xml%}
+```xml
 
 <?xml version="1.0" ?>
 <!--
@@ -575,4 +556,4 @@ class Curl extends AbstractCurl
                 type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
 </config>
 
-{%endhighlight%}
+```

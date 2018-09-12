@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Fixture
-version: 2.0
-github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 
 An FTF fixture is a list of properties of the Magento {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} under test.
@@ -36,13 +34,11 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
     cd <magento2_root_dir>/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have `Widget.xml` fixture, you cannot create new one with the same name.
 
-<div class="bs-callout bs-callout-warning">
-<p>To work with generateFixtureXml tool, <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
-</div>
+{: .bs-callout .bs-callout-warning }
+To work with generateFixtureXml tool, [Magento must be installed.]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 In the following table see `generateFixtureXml` arguments.
 
@@ -318,11 +314,11 @@ To apply the changes, enter the following commands:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
     
-<div class="bs-callout bs-callout-warning">
-<p>You should mention repository in data source class to use it for fixture field.<br/>
-<br/>
-Example from <code>LayoutUpdates.php</code><br/>
-<code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You should mention repository in data source class to use it for fixture field.  
+   
+ Example from `LayoutUpdates.php`  
+ `$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);`
 </div>
 
 ## Merge fixtures {#mtf_fixture_merge}

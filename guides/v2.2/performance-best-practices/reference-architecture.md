@@ -1,9 +1,7 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Reference architecture
 contributor_name: Chuck Choukalos
-version: 2.2
-github_link: performance-best-practices/reference-architecture.md
 functional_areas:
   - Configuration
   - System

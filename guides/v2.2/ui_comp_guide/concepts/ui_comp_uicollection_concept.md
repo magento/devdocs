@@ -1,11 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: About the uiCollection class
-menu_title: About the uiCollection class
-menu_order: 80
-version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 ---
 
 ## What is `uiCollection`
@@ -49,7 +44,6 @@ The `uiCollection` class implements the following methods:
 {%endhighlight%}
 
   where `childIndex` is the value of the child element's `index` property.
-
 
 ## Commonly used `uiCollection` properties
 

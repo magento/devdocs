@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
-version: 2.0
-github_link: extension-dev-guide/versioning/codebase-changes.md
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
   - /guides/v2.1/architecture/back-compatibility.html

@@ -1,23 +1,11 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: ActionsColumn component
-menu_title: ActionsColumn component
-version: 2.2
-github_link: ui_comp_guide/components/ui-actionscolumn.md
 ---
-
-## Overview
 
 The ActionsColumns component implements a table's column responsible for displaying and performing a list of record-related actions.
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
-
 ## Configuration options
-
-Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
-
-ActionsColumn-specific configuration:
 
 <table>
   <tr>
@@ -40,7 +28,7 @@ ActionsColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: string]: Boolean}</td>
     <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>
@@ -76,7 +64,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
+    <td><br />{<br />title: string;<br />message: string<br />}<br /></td>
     <td>Optional</td>
   </tr>
   <tr>
@@ -98,3 +86,9 @@ ActionsColumn-specific configuration:
     <td>Required</td>
   </tr>
 </table>
+
+## Source files
+
+Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
+
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)

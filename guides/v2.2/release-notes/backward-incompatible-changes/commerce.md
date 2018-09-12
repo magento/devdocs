@@ -1,8 +1,6 @@
 ---
 group: release-notes
-version: 2.2
 title: Backward incompatible changes in Magento Commerce
-github_link: release-notes/backward-incompatible-changes/commerce.md
 redirect_from: /guides/v2.2/release-notes/changes/ee_changes.html
 ---
 
@@ -10,9 +8,8 @@ This topic provides details about backward incompatible changes related to {{sit
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 

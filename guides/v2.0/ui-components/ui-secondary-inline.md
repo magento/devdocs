@@ -1,12 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Inline Edit Component
 menu_title: Inline Edit Component
 menu_node:
 menu_order: 8
-version: 2.0
-github_link: ui-components/ui-secondary-inline.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
 
 ---
@@ -20,7 +18,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.
 
 #### Implementation of Inline Edit
 
-Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{ page.baseurl }}/ui-library/ui-definition.html">definitions.xml</a> if necessary.
+Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in [definitions.xml]({{ page.baseurl }}/ui-library/ui-definition.html) if necessary.
 
 To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:
 

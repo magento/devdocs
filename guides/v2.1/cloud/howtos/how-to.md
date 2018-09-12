@@ -1,12 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Tutorials
 menu_title: Tutorials
 menu_order: 1
 menu_node: parent
-version: 2.1
-github_link: cloud/howtos/how-to.md
 functional_areas:
   - Cloud
 ---
@@ -15,7 +13,7 @@ functional_areas:
 
 These topics are intended to get you up to speed quickly using {{site.data.var.ece}}. These are step-by-step instructions that provide instructions about specific tasks or that explain how to achieve a goal.
 
-Have suggestions? Open [an issue](https://github.com/magento/devdocs/issues){:target="\_blank"} or click the **Edit this page on GitHub** link and give us feedback directly.
+Have suggestions? Open [an issue](https://github.com/magento/devdocs/issues){:target="_blank"} or click the **Edit this page on GitHub** link and give us feedback directly.
 
 Current topics:
 

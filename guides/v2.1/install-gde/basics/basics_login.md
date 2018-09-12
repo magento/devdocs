@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
 menu_title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
@@ -7,8 +7,6 @@ menu_node:
 menu_order: 105
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.1
-github_link: install-gde/basics/basics_login.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_login.html
 functional_areas:
   - Install
@@ -28,15 +26,15 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
 
 	Windows and Mac OS typically use different terminal applications. 
 	
-	*	Windows: A partial list: <a href="http://www.putty.org/" target="_blank">putty</a>, <a href="https://www.cygwin.com/" target="_blank">Cygwin</a>
+	*	Windows: A partial list: [putty](http://www.putty.org/){:target="_blank"}, [Cygwin](https://www.cygwin.com/){:target="_blank"}
 	
-	*	Mac OS: You can use the built-in <a href="http://en.wikipedia.org/wiki/Terminal_(OS_X)" target="_blank">Terminal</a> application or any of the following: <a href="http://iterm2.com/" target="_blank">iTerm</a>, or <a href="http://computers.tutsplus.com/tutorials/beyond-terminal-4-os-x-terminal-alternatives--mac-56217" target="_blank">these</a>
+	*	Mac OS: You can use the built-in [Terminal](http://en.wikipedia.org/wiki/Terminal_(OS_X)){:target="_blank"} application or any of the following: [iTerm](http://iterm2.com/){:target="_blank"}, or [these](http://computers.tutsplus.com/tutorials/beyond-terminal-4-os-x-terminal-alternatives--mac-56217){:target="_blank"}
 	
 *	A username and password for the Magento server
 	
 	On a hosted system, this is likely a user who doesn't have administrative rights to the server; that's OK as long as the user can install system software, stop and start services like the web server, and so on. 
 	
-	If you have your own server, you or your system administrator can usually log in as the <a href="http://www.linfo.org/root.html" target="_blank">root</a> user, which on Linux, is the user with full administrative rights over the entire server.
+	If you have your own server, you or your system administrator can usually log in as the [root](http://www.linfo.org/root.html){:target="_blank"} user, which on Linux, is the user with full administrative rights over the entire server.
 
 To use a terminal application to remotely access the Magento server:
 
@@ -47,10 +45,8 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
-<img src="{{ site.baseurl }}/common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
+![Logging in with Cygwin on Windows]({{ site.baseurl }}/common/images/install_cygwin.png)
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p><a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (ssh)</a> is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+[Secure Shell (ssh)](http://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"} is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.
 	

@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Searches and pagination in GraphQL
-version: 2.3
-github_link: graphql/search-pagination.md
 ---
 
 A GraphQL search query can contain the following components:
@@ -18,7 +16,6 @@ The `search` element causes Magento to perform a full text search on the specifi
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
-
 ## Specifying filters
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
@@ -29,9 +26,8 @@ Search filters are logically ANDed unless an `or` statement is specified. The se
 
 Each object type defines which fields can be searched. See the object-specific documentation for details.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You cannot specify the same search field twice in a GraphQL query.
-</div>
 
 ### Condition types and search values
 
@@ -114,10 +110,9 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         }
       }
 }
-{% endhighlight  %}
+{% endhighlight %}
 
 The search returns 45 items.
-
 
 ### Full text search with filters
 
@@ -208,7 +203,6 @@ The query returns the following:
   }
 }
 {% endhighlight %}
-
 
 ### Simple search using a timestamp
 

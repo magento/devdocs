@@ -1,11 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Domain layer
 menu_title: Domain layer
 menu_order: 3
-version: 2.0
-github_link: architecture/archi_perspectives/domain_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/domain_layer.html
 ---
 
@@ -17,9 +15,8 @@ The {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossa
 
 * (Optionally) Including the implementation of service contracts, although not their definition.
 
-<div class="bs-callout bs-callout-tip">
-  <p><b>Best practice:</b> Use service contracts to communicate with the domain layer by passing data types through strongly typed objects. This helps you avoid the need to replace presentation layer code when replacing business layer logic.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+**Best practice:** Use service contracts to communicate with the domain layer by passing data types through strongly typed objects. This helps you avoid the need to replace presentation layer code when replacing business layer logic.
 
 ## Models
 
@@ -45,6 +42,6 @@ Your strategy for calling another module's domain-layer code is highly dependent
 
 ## Related topics {#related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+[Architectural layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)

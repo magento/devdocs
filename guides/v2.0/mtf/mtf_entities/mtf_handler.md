@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Handler
-version: 2.0
-github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
 You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started. You need <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
@@ -43,11 +41,11 @@ The following nodes influence handlers:
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
-  &lt;webapi priority=&quot;0&quot;&gt;
+  &lt;webapi priority="0"&gt;
     &lt;token&gt;integration_token&lt;/token&gt;
   &lt;/webapi&gt;
-  &lt;curl priority=&quot;1&quot; /&gt;
-  &lt;ui priority=&quot;2&quot; /&gt;
+  &lt;curl priority="1" /&gt;
+  &lt;ui priority="2" /&gt;
 &lt;/handler&gt;
 </pre>
 </td></tr>
@@ -133,7 +131,7 @@ See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/funct
 
 See the directory structure mentioned for the case with the Widget cURL handler:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png">
+![]({{ site.baseurl }}/common/images/ftf/mtf_widget_handler_tree.png)
 
 ## How to create a cURL handler {#mtf_handler_howto-create-curl}
 

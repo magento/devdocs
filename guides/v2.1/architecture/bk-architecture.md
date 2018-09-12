@@ -1,11 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Architecture Guide
 landing-page: Architecture
 menu_title: Get Started
 menu_node: parent
-version: 2.1
-github_link: architecture/bk-architecture.md
 redirect_from: /guides/v1.0/architecture/bk-architecture.html
 ---
 

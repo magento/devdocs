@@ -1,7 +1,5 @@
 ---
-group: mftf
-version: 2.2
-github_link: magento-functional-testing-framework/changelog.md
+group: magento-functional-testing-framework-guide
 functional_areas:
  - Testing
 ---

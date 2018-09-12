@@ -1,6 +1,4 @@
-<div markdown="1">
-
-This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html){:target="_blank"}.
+This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html).
 
 To configure Magento to use Elasticsearch:
 
@@ -8,7 +6,8 @@ To configure Magento to use Elasticsearch:
 2.	Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
 3.	From the **Search Engine** list, click **Elasticsearch** or **Elasticsearch 5.0+** as the following figure shows. (The **Elasticsearch 5.0+** option is not available for Magento 2.1.)
 
-	<img src="{{ site.baseurl }}/common/images/elastic_choose-in-admin.png" width="650px">
+	![]({{ site.baseurl }}/common/images/elastic_choose-in-admin.png){:width="650px"}
+
 4.	The following table discusses only the configuration options required to test the connection with Magento.
 
 	Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.
@@ -71,6 +70,7 @@ One of the following displays:
 </table>
 
 ### Reindexing catalog search and refreshing the full page cache {#es-reindex}
+
 After you change Magento's Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.
 
 To refresh the cache using the Admin:
@@ -79,13 +79,13 @@ To refresh the cache using the Admin:
 2.  Select the checkbox next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
-		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
+		![]({{ site.baseurl }}/common/images/solr_refresh-cache.png){:width="600px"}
 
-To clean the cache using the command line, use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+To clean the cache using the command line, use the [`magento cache:clean`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean) command.
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 2.	Enter any of the following commands:
 
 	Enter the following command to reindex the catalog search index only:
@@ -98,6 +98,5 @@ To reindex using the command line:
 
 3.	Wait while the reindexing completes.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.

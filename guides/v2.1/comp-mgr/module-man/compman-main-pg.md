@@ -1,18 +1,17 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Manage your components
 menu_title: Manage your components
 menu_node:
 menu_order: 3
-version: 2.1
-github_link: comp-mgr/module-man/compman-main-pg.md
 redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
 functional_areas:
   - Upgrade
 ---
 
 ## Component Management options {#compman-access}
+
 To choose whether to upgrade or uninstall components:
 
 1.	After you [run the Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html), a page similar to the following displays:<br><br>
@@ -39,9 +38,9 @@ To choose whether to upgrade or uninstall components:
 	<tr>
 		<td><p>List of components</p></td>
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
-			<ul><li><img src="{{ site.baseurl }}/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
-				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
-				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
+			<ul><li><img src="{{ site.baseurl }}/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync" />Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
+				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available" />An update is available.</li>
+				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled" />The component is disabled.</li> </ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
 				<p>The right column displays available actions for each component. </p></td>
 	</tr>
@@ -49,18 +48,20 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Actions</p></td>
 		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
 			<p>The following figure shows an example.</p>
-			<img src="{{ site.baseurl }}/common/images/cman_actions.png" alt="You can enable, disable, or update components">
+			<img src="{{ site.baseurl }}/common/images/cman_actions.png" alt="You can enable, disable, or update components" />
 			
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page" />Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number" />From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	</tbody>
 	</table>
+</td></tr></tbody></table>
 
 ## Install new purchases {#compman-access-new}
+
 A *new purchase* can be any of the following:
 
 *	{{site.data.var.ce}} or {{site.data.var.ee}} sample data if it hasn't been installed yet.
@@ -88,9 +89,8 @@ To install a new purchase:
 3.	Click **Install**.
 4.	Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
 
-
-
 ## Update a component {#compman-access-sync}
+
 To see if any of your components can be updated, click **Sync**.
 
 ![An info icon means there is an update available]({{ site.baseurl }}/common/images/cman_comp-status-info.png) displays in the left column of each component that you can update. 
@@ -106,6 +106,7 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
 
 ## Enable or disable a component {#compman-endis}
+
 To enable or disable a component, click the appropriate choice from the **Actions** list.
 
 The following figure shows an example of disabling a component.
@@ -115,15 +116,15 @@ The following figure shows an example of disabling a component.
 Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
 
 ## Uninstall a component {#compman-uninst}
+
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
 ![Uninstall a component]({{ site.baseurl }}/common/images/cman_uninstall1.png)
 
 Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).
 
-
-
 ## Supported actions for each component type {#compman-access-types}
+
 We define the following *components*:
 
 *	`module` for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} (that is, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code that modifies Magento behavior)
@@ -142,6 +143,7 @@ The following sections provide details:
 *	[Actions available for non-metapackage components](#compman-access-types-non-meta)
 
 ### Actions available for metapackage components {#compman-access-types-meta}
+
 Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be packaged as a metapackage.
 
 {:.bs-callout .bs-callout-info}
@@ -150,11 +152,11 @@ We currently do not support uninstalling a metapackage.
 The following table shows which actions are available for components that are part of a metapackage.
 
 <table>
-	<col width="40%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
+	<col width="40%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
 		<tbody>
 		<tr>
 			<th>Type</th>
@@ -198,16 +200,17 @@ The following table shows which actions are available for components that are pa
 **Update** displays as an action only if an update is available for that component.
 
 ### Actions available for non-metapackage components {#compman-access-types-non-meta}
+
 Typically, a component that you download from Magento Marketplace is not part of a metapackage; in other words, a single module is probably not part of a metapackage.
 
 The following table shows which actions are supported for each non-metapackage component.
 
 <table>
-	<col width="40%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
+	<col width="40%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
 		<tbody>
 		<tr>
 			<th>Type</th>

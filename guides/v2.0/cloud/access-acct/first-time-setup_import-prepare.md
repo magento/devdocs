@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Prepare your existing Magento Commerce install
 menu_title: Prepare your existing Magento Commerce install
@@ -7,8 +7,6 @@ menu_order: 153
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
-version: 2.0
-github_link: cloud/access-acct/first-time-setup_import-prepare.md
 functional_areas:
   - Cloud
   - Setup
@@ -29,6 +27,7 @@ These import preparation steps include the following:
 * [Migrate your {{site.data.var.ee}} data.](#migrate-db)
 
 ## Prepare and add required files {#required-files}
+
 To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need to add a directory and the following files to your existing code.
 
 *  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
@@ -38,7 +37,7 @@ To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need
 
 You need to add these files to your {{site.data.var.ee}} code:
 
-1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="\_blank"}.
+1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
 2.  Select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
     The following figure shows an example of selecting the `2.1.4` branch.
@@ -60,7 +59,7 @@ You need to add these files to your {{site.data.var.ee}} code:
 
     For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.1.4 branch:
 
-    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="\_blank"}.
+    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
@@ -81,9 +80,10 @@ Modify these files as necessary as discussed in the following topics:
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
 ## Add or update `auth.json` with Magento Authentication keys {#auth-json}
+
 To enable install and update commands for {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
 
-In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="\_blank"}.
+In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="_blank"}.
 
 To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you don't have one:
 
@@ -103,7 +103,8 @@ To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-80
 3.  Save your changes to `auth.json` and exit the text editor.
 
 ## Edit `composer.json` {#composer-json}
-Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="\_blank"}.
+
+Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="_blank"}.
 
 To edit `composer.json`:
 
@@ -143,6 +144,7 @@ To edit `composer.json`:
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
 ## Back up and transfer media files {#media}
+
 Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
 1.  Get the  integration system's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
@@ -160,6 +162,7 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
         rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
 
 ## Copy the encryption key {#encryption-key}
+
 To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment inIntegration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
@@ -169,6 +172,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key).
 
 ## Migrate Magento Commerce data {#migrate-db}
+
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
 The following command example compresses the dump so it doesn't significantly interfere with traffic from in live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.

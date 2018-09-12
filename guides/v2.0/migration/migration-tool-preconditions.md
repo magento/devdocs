@@ -1,12 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
 menu_node:
 menu_order: 1
-version: 2.0
-github_link: migration/migration-tool-preconditions.md
 redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 functional_areas:
   - Tools

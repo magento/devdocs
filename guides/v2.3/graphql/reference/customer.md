@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Customer endpoint
-version: 2.3
-github_link: graphql/reference/customer.md
 ---
 
 The `Customer` endpoint returns information about a customer account.
@@ -60,7 +58,6 @@ Attribute |  Data Type | Description
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
 `reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
-
 
 ## Example usage
 

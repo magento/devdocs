@@ -22,6 +22,14 @@
         <td>[public] Method parameter typing removed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Encryption\Crypt::__destruct</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Encryption\Crypt::$_handle</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Theme\Block\Html\Topmenu::_getHtml</td>
         <td>[protected] Method parameter typing added.</td>
     </tr>
@@ -38,12 +46,28 @@
         <td>[public] Method parameter typing added.</td>
     </tr>
     <tr>
+        <td>Magento\Review\Block\Customer\ListCustomer::getProductUrl</td>
+        <td>[public] Method parameter name changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Email\Model\Template\Filter::__construct</td>
         <td>[public] Method parameter typing added.</td>
     </tr>
     <tr>
         <td>Magento\Email\Model\Template\Filter::__construct</td>
         <td>[public] Method parameter typing removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config::__construct</td>
+        <td>[public] Method parameter typing added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Config\Model\Config::__construct</td>
+        <td>[public] Method parameter typing removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\Wysiwyg\Images\Storage::resizeFile</td>
+        <td>[public] Method parameter name changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogSearch\Model\ResourceModel\EngineProvider::__construct</td>
@@ -90,6 +114,10 @@
         <td>[protected] Method parameter typing added.</td>
     </tr>
     <tr>
+        <td>Magento\GroupedProduct\Model\ResourceModel\Product\Indexer\Price\Grouped::TRANSIT_PREFIX</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Filesystem::getDirectoryReadByPath</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -106,8 +134,20 @@
         <td>[protected] Property has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Mail\Template\TransportBuilder::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Filter\Template::LOOP_PATTERN</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Filesystem\Directory\Read::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Filesystem\Directory\Read::validatePath</td>
+        <td>[protected] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\File\Uploader::__construct</td>
@@ -186,6 +226,14 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Image::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Image::getProductForThumbnail</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Widget\Model\Widget\Instance::$_productType</td>
         <td>[protected] Property has been added.</td>
     </tr>
@@ -222,6 +270,18 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Swatches\Block\Product\Renderer\Configurable::getJsonSwatchSizeConfig</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Block\Product\Renderer\Configurable::SWATCH_IMAGE_NAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Block\Product\Renderer\Configurable::SWATCH_THUMBNAIL_NAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Swatches\Block\Product\Renderer\Listing\Configurable::__construct</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -252,6 +312,10 @@
     <tr>
         <td>Magento\Store\Model\Store::setIsActive</td>
         <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Block\Switcher::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\Sitemap\Model\Sitemap::__construct</td>
@@ -286,7 +350,15 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Sales\Model\Order::addCommentToStatusHistory</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Model\Order\Creditmemo::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\ShipmentDocumentFactory::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -311,6 +383,14 @@
     </tr>
     <tr>
         <td>Magento\Quote\Model\Quote::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\QuoteValidator::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\ResourceModel\Quote\Item\Collection::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -494,6 +574,18 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Checkout\Model\Cart\ImageProvider::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Cart\ImageProvider::$customerDataItem</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Block\Cart\Item\Renderer::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext::resetSearchResultsByStore</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -502,7 +594,7 @@
         <td>[protected] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogSearch\Model\Indexer\Fulltext::executeByDimension</td>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext::executeByDimensions</td>
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
@@ -511,6 +603,10 @@
     </tr>
     <tr>
         <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Model\Rule\Job::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -554,10 +650,6 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\Category::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Category::getChildren</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -596,6 +688,14 @@
     <tr>
         <td>Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\DefaultPrice::__construct</td>
         <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Layer\Filter\Price::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Layer\Filter\Price::getMainTable</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Model\ResourceModel\Eav\Attribute::__construct</td>
@@ -654,6 +754,10 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Block\Product\View\Attributes::isVisibleOnFrontend</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Block\Product\View\Gallery::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -670,12 +774,20 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Bundle\Model\ResourceModel\Selection\Collection::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backup\Model\ResourceModel\Db::getTableTriggersSql</td>
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Backup\Model\ResourceModel\Helper::getTableTriggersSql</td>
         <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Helper\Dashboard\Order::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\Backend\Block\Widget\Grid\Massaction::__construct</td>
@@ -1154,6 +1266,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogImportExport\Model\Import\Product\RowValidatorInterface::ERROR_DUPLICATE_MULTISELECT_VALUES</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\CategoryInterface::KEY_PARENT_ID</td>
         <td>Constant has been added.</td>
     </tr>
@@ -1290,11 +1406,15 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Framework\Indexer\Dimension\DimensionProviderInterface</td>
+        <td>Magento\Framework\Indexer\DimensionProviderInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Framework\Indexer\Dimension\DimensionalIndexerInterface</td>
+        <td>Magento\Framework\Indexer\DimensionalIndexerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Filesystem\Io\IoInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1391,6 +1511,14 @@
     </tr>
     <tr>
         <td>Magento\Shipping\Model\ShipmentProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\QuoteIdToMaskedQuoteIdInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1507,6 +1635,10 @@
     </tr>
     <tr>
         <td>Magento\CatalogImportExport\Model\StockItemImporterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Configuration\Item\ItemResolverInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>

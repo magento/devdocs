@@ -4,8 +4,6 @@ subgroup: Third-party licenses
 menu_title: Magento Commerce third-party licenses
 title: Magento Commerce third-party licenses
 menu_order: 2
-version: 2.2
-github_link: release-notes/thirdparty_ee.md
 ---
 
 This page contains links to license agreements of the third party components used within {{site.data.var.ee}}.  Click the **Name** links to view the repository and the license agreement.

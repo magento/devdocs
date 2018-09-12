@@ -1,34 +1,35 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 26_CE-EEUpgrade
 title: Upgrade from Open Source to Commerce
 menu_title: Upgrade from Open Source to Commerce
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 functional_areas:
   - Upgrade
 ---
 
 ## Overview of {{site.data.var.ce}} to {{site.data.var.ee}} upgrade {#compman-overview}
+
 This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee}}.
 
 {:.bs-callout .bs-callout-info}
 You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.
 
 ## Prerequisites {#compman-prereq}
+
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){:target="&#95;blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
+In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){:target="_blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 {:.bs-callout .bs-callout-info}
-Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="&#95;blank"} if you have questions.
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
+
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
@@ -51,6 +52,7 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 	service varnish restart
 
 #### Errors
+
 *	The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the Magento Admin:
 
 	![]({{ site.baseurl }}/common/images/upgr-sorry.png)
@@ -66,7 +68,6 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 	For more information, see [Error upgrading from CE to EE]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html).
 
-
-
 ## Continue your upgrade {#ce-ee-continue}
-From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+
+From here, your upgrade is the same as any other upgrade. Continue with [Step 1. Select versions to upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html).

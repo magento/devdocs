@@ -1,20 +1,19 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
 menu_node:
 menu_order: 5
-version: 2.1
-github_link: comp-mgr/upgrader/upgrade-main-pg.md
 functional_areas:
   - Upgrade
 ---
 
 ## System upgrade options {#upgrade-access}
+
 To choose which components to upgrade:
 
-1.	After you <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
+1.	After you [run System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html), a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}/common/images/upgr_step1-mock.png" width="750px" alt="System Upgrade automatically checks for core module updates and third-party modules if you wish">
 2.	You have the following options:
 	<table>
@@ -43,8 +42,8 @@ To choose which components to upgrade:
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page" />Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number" />From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	<tr>
 		<td><p>List of components</p></td>
@@ -59,6 +58,7 @@ To choose which components to upgrade:
 	</table>
 
 ## Upgrade components {#upgr-comps}
+
 To upgrade components:
 
 1.	From the **Magento Core Components** list, click the core component version to which to upgrade.
