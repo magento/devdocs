@@ -6,7 +6,7 @@ title: Magento Commerce 2.1.15 Release Notes
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on September , 2018.*
+*Patch code and release notes were published on September 18, 2018.*
 
 
 We are pleased to present Magento Open Source  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
@@ -57,10 +57,18 @@ In addition to security enhancements, this release contains the following functi
 <!--- MAGETWO-67162 -->* CSS minification is now compatible with CSS3 `calc()` function. [GitHub-8552](https://github.com/magento/magento2/issues/8552)
 
 
+### Customer 
+
+<!--- ENGCOM-1337 -->* Magento now preserves the user group ID when using `/V1/customers/:customerId` (PUT). Previously, Magento set the customer group ID to 1 when you called  `/V1/customers/:customerId` (PUT) and the customer had an assigned group ID. *Fix submitted by [André Ferraz](https://github.com/ferrazzuk) in pull request [14757](https://github.com/magento/magento2/pull/14757)*. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
+
+
 ### Directory
 
 <!--- ENGCOM-1948 -->* Magento now supports Canadian Postal codes without spaces as expected.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16031](https://github.com/magento/magento2/pull/16031)*. [GitHub-13899](https://github.com/magento/magento2/issues/13899)
 
+### Email
+
+<!--- MAGETWO-92721 -->*  Administrators can now add a parameter to `app/etc/env.php: user_admin_email`. This parameter ensures that when a new administrator account is created, Magento sends an email to default store's email and, if present, to an email address defined in `user_admin_email`. 
 
 ### Framework
 
@@ -73,12 +81,12 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1908 -->* Magento now supports Malaysian locales. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15927](https://github.com/magento/magento2/pull/15927)*. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
-### Customer 
 
-<!--- ENGCOM-1337 -->* Magento now preserves the user group ID when using `/V1/customers/:customerId` (PUT). Previously, Magento set the customer group ID to 1 when you called  `/V1/customers/:customerId` (PUT) and the customer had an assigned group ID. *Fix submitted by [André Ferraz](https://github.com/ferrazzuk) in pull request [14757](https://github.com/magento/magento2/pull/14757)*. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
 
 
 ### General
+
+<!--- MAGETWO-93271 -->* The product video feature is now GDPR-compliant.
 
 <!--- ENGCOM-1272 -->* Magento now checks that a product is assigned to a specific website in a multistore environment before a customer can write a product review. Previously, a customer could write a review for a product that was not assigned to the store they were logged in to.  *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [14673](https://github.com/magento/magento2/pull/14673)*.
 
