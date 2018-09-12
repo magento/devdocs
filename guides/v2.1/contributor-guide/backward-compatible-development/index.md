@@ -329,8 +329,9 @@ Use the  `@see` tag to recommend the new API to use instead of the old one.
 
 Preserve `@api` tag when deprecating `@api`-marked code.
 
-#### Deprecated tag in PHP
+#### Deprecating in PHP & JS
 
+Comment:
 ~~~
 /**
  * @deprecated because new api was introduced
@@ -338,7 +339,19 @@ Preserve `@api` tag when deprecating `@api`-marked code.
  */
 ~~~
 
-#### Deprecated tag in XML/HTML
+Trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.
+
+PHP:
+~~~
+trigger_error('Class is deprecated', E_USER_DEPRECATED);
+~~~
+
+JS:
+~~~
+console.warn('Function is deprecated');
+~~~
+
+#### Deprecating in XML/HTML
 
 ~~~
 <!--
