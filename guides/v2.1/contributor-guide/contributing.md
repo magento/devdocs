@@ -54,7 +54,7 @@ Please review the following supported and accepted pull request rules. We define
 {%
 include note.html
 type='info'
-content='To keep 2.2 and 2.3 releases aligned, we are only accepting pull requests to 2.2-develop that contain changes already existing in 2.3-develop. We recommend submitting pull requests to 2.3-develop, then use the [Magento Porting tool](#porting-tool) to back port the changes to 2.2-develop.'
+content='To keep 2.2 and 2.3 releases aligned, we are only accepting pull requests to 2.2-develop that contain changes already existing in 2.3-develop. We recommend submitting pull requests to 2.3-develop then [back porting](#porting) the changes to 2.2-develop.'
 %}
 
 |     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
