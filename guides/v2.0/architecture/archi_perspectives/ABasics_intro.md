@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Architectural basics overview
 menu_title: Architectural basics

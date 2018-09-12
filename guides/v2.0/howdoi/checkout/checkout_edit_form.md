@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a custom template for a form field on Checkout page
 subtitle: Customize Checkout

@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
 redirect_from:

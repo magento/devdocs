@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Magento file system ownership and permissions
 menu_title: Magento file system ownership and permissions

@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Troubleshooting
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/troubleshooting.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/troubleshooting.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._

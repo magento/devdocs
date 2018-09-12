@@ -1,5 +1,5 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
 functional_areas:
   - Testing

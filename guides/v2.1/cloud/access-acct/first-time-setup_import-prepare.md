@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Prepare your existing Magento Commerce install
 functional_areas:
   - Cloud

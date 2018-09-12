@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Register your component
 redirect_from:
   - /guides/v1.0/extension-dev-guide/build/component-registration.html

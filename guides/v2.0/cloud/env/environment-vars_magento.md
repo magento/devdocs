@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Application variables
 functional_areas:
   - Cloud

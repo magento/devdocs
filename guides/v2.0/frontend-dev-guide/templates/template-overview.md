@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates overview
 menu_title: Templates

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Cloud variables
 redirect_from:
   - /guides/v2.1/cloud/env/environment-vars_cloud.html

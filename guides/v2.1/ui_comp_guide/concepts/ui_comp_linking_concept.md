@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: Linking properties of UI components
 menu_title: Linking properties of UI components

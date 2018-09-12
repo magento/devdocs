@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays

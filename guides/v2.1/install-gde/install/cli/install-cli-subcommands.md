@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Get started with the command-line installation
 menu_title: Get started with the command-line installation

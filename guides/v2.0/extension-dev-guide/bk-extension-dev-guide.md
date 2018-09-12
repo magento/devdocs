@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: PHP Developer Guide
 landing-page: PHP Developer Guide

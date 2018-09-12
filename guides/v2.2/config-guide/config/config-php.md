@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento's deployment configuration
 functional_areas:
   - Configuration

@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use the Frontend Product Repository
 menu_title: Use the Frontend Product Repository

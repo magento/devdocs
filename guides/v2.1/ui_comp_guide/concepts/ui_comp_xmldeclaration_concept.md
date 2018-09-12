@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: About XML сonfiguration of UI сomponents
 menu_title: About XML сonfiguration of UI сomponents

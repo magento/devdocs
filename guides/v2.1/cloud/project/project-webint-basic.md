@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Configure your project
 menu_title: Configure your project

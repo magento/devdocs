@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Tutorial&mdash;Set up multiple websites or stores with nginx
 functional_areas:
   - Configuration

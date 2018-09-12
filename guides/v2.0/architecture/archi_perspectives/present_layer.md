@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Presentation Layer
 menu_title: Presentation layer

@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Static Content Container
 redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
 functional_areas:

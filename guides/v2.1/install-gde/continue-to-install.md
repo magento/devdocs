@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Z_continue
 title:
 menu_title: Next&mdash;Installation part 2, installing

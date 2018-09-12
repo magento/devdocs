@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Configure message queues
 redirect_from: /guides/v2.3/config-guide/mq/config-mq.html
 functional_areas:

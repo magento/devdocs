@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
 menu_title: Configure a custom cron job and cron group (tutorial)

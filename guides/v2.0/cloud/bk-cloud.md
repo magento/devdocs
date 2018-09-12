@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Welcome to Magento Commerce (Cloud)
 landing-page: Cloud

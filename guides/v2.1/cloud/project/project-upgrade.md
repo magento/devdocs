@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrade Magento version
 redirect_from:
   - /guides/v2.1/cloud/howtos/upgrade-magento.html

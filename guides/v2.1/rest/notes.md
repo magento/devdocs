@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Parameters in URLs
 functional_areas:
   - Integration

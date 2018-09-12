@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 title: Modify Media Library folder permissions
 ---
 

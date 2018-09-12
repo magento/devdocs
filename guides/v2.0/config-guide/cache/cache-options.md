@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 08_Configure caching
 title: Low-level cache options
 menu_title: Low-level cache options

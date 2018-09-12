@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters

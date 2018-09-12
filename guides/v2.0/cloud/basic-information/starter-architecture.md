@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Starter architecture
 menu_title: Starter architecture

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Cannot run 'composer install'
 menu_title: Cannot run 'composer install'

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 65_CLI
 title: How to add CLI commands
 menu_title: How to add CLI commands

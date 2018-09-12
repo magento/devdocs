@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Patch Magento Commerce (Cloud)
 redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magento.html

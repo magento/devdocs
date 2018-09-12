@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Configure Solr and Magento
 menu_title: Configure Solr and Magento

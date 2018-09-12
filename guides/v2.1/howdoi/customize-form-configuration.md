@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize the form configuration
 subtitle: Customize Product Creation Form

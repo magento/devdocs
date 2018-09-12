@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Set up Elasticsearch service
 functional_areas:
   - Cloud

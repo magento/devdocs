@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: Introduction to Composer
 menu_title: Introduction to Composer

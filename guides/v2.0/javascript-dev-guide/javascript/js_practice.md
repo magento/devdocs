@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 menu_title: Customizing JavaScript illustration

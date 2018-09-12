@@ -1,5 +1,5 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Advanced Reporting
 functional_areas:
     - Reports

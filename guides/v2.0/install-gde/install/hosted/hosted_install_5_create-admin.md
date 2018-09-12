@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 5. Create Admin account
 menu_title: Step 5. Create Admin account

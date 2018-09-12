@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Add site map and search engine robots
 functional_areas:
   - Cloud

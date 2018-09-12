@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Single machine deployment
 menu_title: Single machine deployment

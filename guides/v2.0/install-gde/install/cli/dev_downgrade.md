@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Change to a released version
 menu_title: Change to a released version

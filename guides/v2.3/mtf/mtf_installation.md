@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Installation of the Functional Testing Framework Entities
 ---
 

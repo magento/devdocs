@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Prepare Solr for production
 menu_title: Prepare Solr for production

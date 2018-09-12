@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: product-create-page
 title: Customize product creation form
 menu_title: Initial Tasks

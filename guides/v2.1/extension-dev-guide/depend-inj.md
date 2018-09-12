@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Dependency injection
 menu_title: Dependency injection
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html

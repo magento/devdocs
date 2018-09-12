@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Server side includes
 functional_areas:
   - Cloud

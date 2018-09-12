@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Global features that support extensibility
 menu_title: Global features that support extensibility

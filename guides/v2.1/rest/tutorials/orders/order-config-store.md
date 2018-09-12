@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 1. Configure the store
 subtitle: Order processing tutorial
 return_to:

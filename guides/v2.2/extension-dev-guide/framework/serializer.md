@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Serialize Library
 subgroup: Framework
 menu_title: Serialize Library

@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Ease of frontend customization
 menu_title: Ease of frontend customization

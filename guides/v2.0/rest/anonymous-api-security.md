@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs

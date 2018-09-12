@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 09_Full page caching
 title: Page caching
 menu_title: Full page caching

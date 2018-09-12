@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Configure images properties for a theme
 functional_areas:
   - Frontend

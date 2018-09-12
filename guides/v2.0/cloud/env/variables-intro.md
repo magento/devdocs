@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Manage variables
 redirect_from:
   - /guides/v2.1/cloud/live/config-reference-most.html

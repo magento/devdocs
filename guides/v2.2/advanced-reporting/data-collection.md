@@ -1,5 +1,5 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Data collection for advanced reporting
 functional_areas:
     - Reports

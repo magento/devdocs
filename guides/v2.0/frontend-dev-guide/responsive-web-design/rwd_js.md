@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design

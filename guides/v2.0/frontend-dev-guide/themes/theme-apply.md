@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Apply and configure a storefront theme
 menu_title: Apply and configure a storefront theme

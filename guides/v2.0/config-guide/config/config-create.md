@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types

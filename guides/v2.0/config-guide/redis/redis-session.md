@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Use Redis for session storage
 menu_title: Use Redis for session storage

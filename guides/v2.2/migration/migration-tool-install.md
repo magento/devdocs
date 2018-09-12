@@ -1,5 +1,5 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: C_DMTool
 title: Install Data Migration Tool
 menu_title: Install Data Migration Tool

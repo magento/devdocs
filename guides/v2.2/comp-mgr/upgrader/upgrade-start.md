@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Start System Upgrade
 menu_title: Start System Upgrade

@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Follow-up (info and steps)
 menu_title: Follow-up (info and steps)

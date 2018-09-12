@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 28_cli-upgr
 title: Command-line upgrade
 menu_title: Command-line upgrade

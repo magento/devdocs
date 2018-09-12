@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: TreeMassActions component
 menu_title: TreeMassActions component

@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Configure PHP
 menu_title: Configure PHP

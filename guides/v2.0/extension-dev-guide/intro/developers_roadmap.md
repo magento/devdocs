@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap

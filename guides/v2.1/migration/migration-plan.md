@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
