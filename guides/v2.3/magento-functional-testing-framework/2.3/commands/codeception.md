@@ -15,7 +15,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
 All the Codeception commands you need are wrapped using the [`mftf` tool][].
 
-To run Codecept, change your directory to `dev/tests/acceptance`.
+To run Codecept directly, change your directory to `dev/tests/acceptance`.
 
 ## Usage examples
 
