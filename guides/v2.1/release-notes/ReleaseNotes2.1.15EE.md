@@ -13,11 +13,11 @@ We are pleased to present Magento Open Source  2.1.15. This release includes  mu
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6, 1.14.3.10, and 1.9.3.10. 
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6, 1.14.3.10, and 1.9.3.10, as appropriate. 
 
 ## Highlights
 
-Magento 2.1.15 contains 38 security fixes and enhancements.  The enhancements help close remote cross-site scripting, cross-site request forgery, and SQL injection vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
+Magento 2.1.15 contains 25 security fixes and enhancements. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
 
 ## Fixed issues
 
