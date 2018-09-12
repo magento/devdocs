@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity

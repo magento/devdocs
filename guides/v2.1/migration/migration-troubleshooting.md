@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: F_troubleshooting
 title: Troubleshooting
 menu_title: Troubleshooting

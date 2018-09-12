@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Changelog of the Functional Testing Framework
 redirect_from: /guides/v1.0/mtf/mtf_changelog.html
 ---

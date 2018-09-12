@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Verify split databases
 ee_only: True
 functional_areas:

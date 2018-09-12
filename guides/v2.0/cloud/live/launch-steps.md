@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 165_live
 title: Launch steps
 menu_title: Launch steps

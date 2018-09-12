@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Theme development best practices
 functional_areas:
   - Frontend

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Configure Redis
 menu_title: Configure Redis

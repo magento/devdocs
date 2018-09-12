@@ -1,16 +1,14 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Getting started
 functional_areas:
  - Testing
 mftf-release: 2.0.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-started.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/getting-started.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
-
-{% include_relative include/note-2.3-docs.md %}
 
 ## Prepare environment
 

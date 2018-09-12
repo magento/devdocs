@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication

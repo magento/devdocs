@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 02_Prepare
 title: Roadmap for developing and packaging components
 menu_title: Roadmap for developing and packaging components

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Order processing tutorial
 menu_title: Initial tasks
 return_to:

@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Retrieve filtered responses for REST endpoints
 redirect_from: /guides/v2.2/howdoi/webapi/filter-response.html
 ---

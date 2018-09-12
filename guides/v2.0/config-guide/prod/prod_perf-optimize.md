@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: Optimization
 title: Magento Optimization Guide
 menu_title: Magento Optimization Guide

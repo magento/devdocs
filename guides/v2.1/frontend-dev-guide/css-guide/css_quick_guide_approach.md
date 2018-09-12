@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Simple ways to customize a theme's styles
 functional_areas:
   - Frontend

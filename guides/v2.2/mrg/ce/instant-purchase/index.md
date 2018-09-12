@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Instant Purchase module
 functional_areas:
   - Checkout

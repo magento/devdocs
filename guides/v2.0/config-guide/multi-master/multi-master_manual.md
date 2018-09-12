@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 20_cqrs
 title: Manually configure master databases
 menu_title: Manually configure master databases

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Cannot install using nginx
 menu_title: Cannot install using nginx

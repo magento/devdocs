@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module conventions
 menu_title: Module conventions
 redirect_from:

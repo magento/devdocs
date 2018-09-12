@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: Using the new structure in UI components XML configuration
 ---
 

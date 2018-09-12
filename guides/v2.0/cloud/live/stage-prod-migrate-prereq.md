@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Prepare to deploy to Staging and Production
 menu_title: Prepare to deploy to Staging and Production

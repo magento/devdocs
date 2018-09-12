@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup:
 title: Overview of UI components
 landing-page: UI Components

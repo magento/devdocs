@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a translation dictionary for a theme
 functional_areas:
   - Frontend

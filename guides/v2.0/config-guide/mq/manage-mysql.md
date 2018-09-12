@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_RabbitMQ
 title: Manage message queues
 menu_title: Manage message queues

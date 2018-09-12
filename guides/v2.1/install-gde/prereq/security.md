@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables

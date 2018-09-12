@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Static files deployment strategies
 functional_areas:
   - Configuration

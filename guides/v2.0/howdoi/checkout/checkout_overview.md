@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: checkout
 title: Customize Checkout
 menu_title: Initial Tasks

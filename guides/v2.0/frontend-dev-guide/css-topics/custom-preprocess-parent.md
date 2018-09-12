@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Using custom CSS preprocessor
 menu_title: Using custom CSS preprocessor

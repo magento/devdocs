@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 02_sample
 title: Install using Composer
 menu_title: Install using Composer

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 11. Create an invoice
 subtitle: Order processing with MSI
 menu_title: Step 11. Create an invoice

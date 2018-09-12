@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Start the Extension Manager
 menu_title: Start the Extension Manager

@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Set pre-installation ownership and permissions
 menu_title: Set pre-installation ownership and permissions

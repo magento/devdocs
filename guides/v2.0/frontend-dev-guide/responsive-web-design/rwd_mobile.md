@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Create a responsive mobile theme based on a default theme
 menu_title: Create a responsive mobile theme based on a default theme

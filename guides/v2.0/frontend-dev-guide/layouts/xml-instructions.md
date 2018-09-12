@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Layout instructions
 menu_title: Layout instructions
@@ -301,7 +301,7 @@ To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
 
-Updates in `<referenceBlockr>` and `<referenceContainerr>` are applied to the corresponding `<blockr>` or `<container>`.
+Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
 For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks

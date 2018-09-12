@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: S_Integrator
 title: (Integrator) Integrator installation
 menu_title: (Integrator) Integrator installation

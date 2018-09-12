@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Contributing developers&mdash;update, reinstall Magento
 menu_title: Contributing developers&mdash;update, reinstall Magento

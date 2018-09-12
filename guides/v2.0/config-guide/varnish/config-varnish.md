@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Configure and use Varnish
 menu_title: Configure and use Varnish

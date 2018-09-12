@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code

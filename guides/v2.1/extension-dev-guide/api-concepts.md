@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs

@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Magento Definition of Done
 ---
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Uninstall a storefront theme
 menu_title: Uninstall a storefront theme

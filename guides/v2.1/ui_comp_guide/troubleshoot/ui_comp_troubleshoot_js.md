@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: troubleshoot
 title: Debug UI components JavaScript
 menu_title: Debug UI components JavaScript

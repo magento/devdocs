@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup:
 title: Git
 menu_title: Git

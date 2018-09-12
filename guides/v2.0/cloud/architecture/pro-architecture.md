@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture
 redirect_from:
   - /guides/v2.0/cloud/discover-arch.html

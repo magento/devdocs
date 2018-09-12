@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 01_Introduction
 title: Upgrade the Magento application and components
 landing-page: System Upgrade Guide

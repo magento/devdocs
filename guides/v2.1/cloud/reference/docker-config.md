@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configure Docker
 functional_areas:
   - Cloud

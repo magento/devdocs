@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Install Magento
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html

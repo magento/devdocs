@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration

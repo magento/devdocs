@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Command-line upgrade
 functional_areas:
   - Upgrade

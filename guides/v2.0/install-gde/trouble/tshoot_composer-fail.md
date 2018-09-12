@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer

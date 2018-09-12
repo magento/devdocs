@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento ownership and permissions in development and production
 functional_areas:
   - Configuration

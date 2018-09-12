@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Varnish and your web server
 functional_areas:
   - Configuration

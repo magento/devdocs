@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 130_upgrades
 title: Upgrade Magento Commerce (Cloud)
 menu_title: Upgrade Magento Commerce (Cloud)

@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 title: Modify docroot to improve security
 ---
 

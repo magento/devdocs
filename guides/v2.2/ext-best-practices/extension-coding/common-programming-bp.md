@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 title: Programming Best Practices
 functional_areas:
   - Standards

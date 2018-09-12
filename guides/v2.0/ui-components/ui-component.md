@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Overview
 title: Overview
 landing-page: UI Components

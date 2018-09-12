@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Customize email templates
 menu_title: Customize email templates

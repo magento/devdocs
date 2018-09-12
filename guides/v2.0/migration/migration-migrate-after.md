@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: _after
 title: After Migration
 menu_title: After Migration
