@@ -2,13 +2,7 @@
 group: release-notes
 title: 2.1.x Release Information
 menu_title: 2.1.x Release Information
-<<<<<<< HEAD
-version: 2.1
-github_link: release-notes/bk-release-notes.md
-=======
-menu_order: 1
-menu_node: parent
->>>>>>> 7da6cf4834499833ddede42d1e457402f6f09f04
+
 ---
 
 
@@ -16,12 +10,10 @@ Looking for [2.0.x Release Notes]({{site.gdeurl}}release-notes/bk-release-notes.
 
 ## Magento 2.1.0 Release Notes
 
-<<<<<<< HEAD
 * [{{site.data.var.ce}} 2.1.15 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.15CE.html)
 * [{{site.data.var.ee}} 2.1.15 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.15EE.html)
 
-=======
->>>>>>> 7da6cf4834499833ddede42d1e457402f6f09f04
+
 * [{{site.data.var.ce}} 2.1.14 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.14CE.html)
 * [{{site.data.var.ee}} 2.1.14 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.14EE.html)
 
