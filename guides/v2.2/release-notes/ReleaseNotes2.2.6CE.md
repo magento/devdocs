@@ -43,7 +43,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-92447 -->* The catalog price indexer is now scoped and multithreaded, which improves the performance of layered navigation, search, and indexing actions for Magento instances with multiple websites and stores. This makes it possible to parallelize catalog price indexing by websites and customer groups. To re-index in parallel mode, add the `MAGE_INDEXER_THREADS_COUNT` environment variable to `env.php`.
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets , each of which contains 50 attributes, might see a 40-90% reduction in load time.)
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets, each of which contains 50 attributes, might see a 40-90% reduction in load time.)
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -105,7 +105,7 @@ Highlights of community contributions include fixes that improve checkout flow a
 
 ### **Core bundled extension highlights**
 
-This release includes many enhancments to our core bundled extensions: 
+This release includes many enhancements to our core bundled extensions: 
 
 #### Amazon Pay
 
@@ -331,7 +331,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-84891 -->* The print preview of product comparison results (that is, the page of results that Magento produces when you click **Compare** after selecting two or more products) now displays as expected. Previously, only a subset of page elements was displayed.  
 
 
-<!-- MAGETWO-82116 -->* Magento now maintains the correct dates in the results of filtering the Admin Product Grid Filter: Set Product as New from Date.  [GitHub-11517](https://github.com/magento/magento2/issues/11517)
+<!-- MAGETWO-82116 -->* Magento now maintains the correct dates in the results of filtering the Admin Product Grid Filter: Set Product as New from Date. [GitHub-11517](https://github.com/magento/magento2/issues/11517) 
 
 <!-- MAGETWO-75427 -->* As you type additional characters into the text field for a product's custom option, the hint showing the number of characters left before reaching the maximum now decreases as expected.
 
@@ -386,7 +386,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-82116-->* Inputted data in filter fields now persists unchanged after you leave the product edit page. Previously, the values in the **Set Product as New from Date** field were not saved as expected. 
 
-<!-- MAGETWO-92823-->* Company Admin can now use Quick Order to buy products. 
+<!-- MAGETWO-92823-->* Company Admin can now use Quick Order to buy products. Previously, when a company administator tried to use Quick Order to buy products, Magento displayed this error: `The SKU was not found in the catalog`.
 
  
 
@@ -777,7 +777,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 ### EAV
 
 <!-- MAGETWO- 90576-->* Magento now correctly renders multiselect product attributes with a custom source model in  `adminhtml`. Previously, the selected value was saved the first time in the `catalog_product_entity_varchar` table, and the attribute was added to the `eav_attribute` table, but the selected options were not highlighted against the attribute.
-
 
 <!-- MAGETWO-73062-->* Magento now displays the fixed product tax attribute label as expected according to the specified store view. 
 

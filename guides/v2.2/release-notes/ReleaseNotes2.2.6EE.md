@@ -42,7 +42,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-92447 -->* The catalog price indexer is now scoped and multithreaded, which improves the performance of layered navigation, search, and indexing actions for Magento instances with multiple websites and stores. This makes it possible to parallelize catalog price indexing by websites and customer groups. To re-index in parallel mode, add the `MAGE_INDEXER_THREADS_COUNT` environment variable to `env.php`.
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets , each of which contains 50 attributes, might see a 40-90% reduction in load time.)
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets, each of which contains 50 attributes, might see a 40-90% reduction in load time.)
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -103,7 +103,7 @@ Highlights of community contributions include fixes that improve checkout flow a
 
 ### **Core bundled extension highlights**
 
-This release includes many enhancments to our core bundled extensions: 
+This release includes many enhancements to our core bundled extensions: 
 
 #### Amazon Pay
 
@@ -257,7 +257,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-90824 -->* Access to the Companies resource can now be explicitly set on the Roles Resources page in Admin. Previously, this resource was available only to top-level administrators with all resources selected.  
 
-<!-- MAGETWO-89971 -->* Magento now displays the correct product total price value on all websites in a B2B deployment. Previously, Magento did not apply cart price rules for product prices on non-primary websites, but instead displayed the product price assigned to products on the primary website to asll websites. 
+<!-- MAGETWO-89971 -->* Magento now displays the correct product total price value on all websites in a B2B deployment. Previously, Magento did not apply cart price rules for product prices on non-primary websites, but instead displayed the product price assigned to products on the primary website to all websites. 
 
 <!-- MAGETWO-89888 -->* When **Website Restrictions** are set to **Private Sales: Login Only**, access to the storefront is now restricted to customers who log in, and merchants can still create new companies in the Admin. Previously, when a merchant tried to create a company when this setting was enabled, Magento threw this error, `Can not register new customer due to restrictions are enabled`. 
 
@@ -412,9 +412,10 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-90367-->* Attributes that have empty values across all products being compared are not displayed on the Compare Products page as rows in the comparison table. Previously, these attributes were displayed with a value of **N/A**. 
 
-<!-- MAGETWO-82116-->* Inputted data in filter fields now persists unchanged after you leave the product edit page. Previously, the values in the **Set Product as New from Date** field were not saved as expected. 
+<!-- MAGETWO-82116-->* Magento now maintains the correct dates in the results of filtering the Admin Product Grid Filter: Set Product as New from Date. [GitHub-11517](https://github.com/magento/magento2/issues/11517) 
 
-<!-- MAGETWO-92823-->* Company Admin can now use Quick Order to buy products. 
+
+<!-- MAGETWO-92823-->* Company Admin can now use Quick Order to buy products. Previously, when a company administator tried to use Quick Order to buy products, Magento displayed this error: `The SKU was not found in the catalog`.
 
  
 
@@ -748,7 +749,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-91327 -->* Customer attributes are now correctly validated on the Admin Order form. Previously, Magento validated attributes\ length  after an order has been submitted, but not on the Admin Order form.
 
-<!-- MAGETWO-89624 -->* Customers no longer lose their session when they switch stores on different domains
+<!-- MAGETWO-89624 -->* Customers no longer lose their session when they switch stores on different domains.
 
 <!-- MAGETWO-89849 -->* Non-U.S. and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
@@ -808,12 +809,10 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### EAV
 
-<!-- MAGETWO- 90576-->* Magento now correctly renders multiselect product attributes with a custom source model in  `adminhtml`. Previously, the selected value was saved the first time in the `catalog_product_entity_varchar` table, and the attribute was added to the `eav_attribute` table, but the selected options were not highlighted against the attribute.
-
-
 <!-- MAGETWO-73062-->* Magento now displays the fixed product tax attribute label as expected according to the specified store view. 
 
-<!-- MAGETWO-90576-->* You can now successfully save a product after setting its special requirements  multiselect attribute. (This means that attribute values are saved as expected to the database, checked in `_catalog_product_entity_varchar_ table`,  and displayed as non-selected on product page in the Admin.)
+<!-- MAGETWO-90576-->* Magento now correctly renders multiselect product attributes with a custom source model in  `adminhtml`. Previously, the selected value was saved the first time in the `catalog_product_entity_varchar` table, and the attribute was added to the `eav_attribute` table, but the selected options were not highlighted against the attribute.
+
 
 
 
