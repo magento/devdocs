@@ -5,7 +5,7 @@ pages:
       children:
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
-          include_versions: ["2.1", "2.2", "2.3"]
+          exclude_versions: ["2.0"]
 
     - label: Architecture
       url: /cloud/architecture/cloud-architecture.html
@@ -59,11 +59,11 @@ pages:
 
         - label: SendGrid
           url: /cloud/project/sendgrid.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
-      include_versions: ["2.1","2.2","2.3"]
+      exclude_versions: ["2.0"]
       children:
         - label: Bitbucket integration
           url: /cloud/integrations/bitbucket-integration.html
@@ -76,7 +76,7 @@ pages:
       children:
         - label: Docker development
           url: /cloud/docker/docker-development.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
           children:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
@@ -183,19 +183,16 @@ pages:
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
           children:
             - label: Set up notifications
               url: /cloud/env/setup-notifications.html
-              include_versions: ["2.1","2.2","2.3"]
 
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
-              include_versions: ["2.1","2.2","2.3"]
 
             - label: Smart wizards
               url: /cloud/env/smart-wizards.html
-              include_versions: ["2.1","2.2","2.3"]
 
         - label: Environment variables
           url: /cloud/env/variables-intro.html
@@ -205,7 +202,7 @@ pages:
 
             - label: Build variables
               url: /cloud/env/variables-build.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Cloud variables
               url: /cloud/env/variables-cloud.html
@@ -213,15 +210,15 @@ pages:
 
             - label: Deploy variables
               url: /cloud/env/variables-deploy.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Post-deploy variables
               url: /cloud/env/variables-post-deploy.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Working with variables
               url: /cloud/env/working-with-variables.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
         - label: Routes
           url: /cloud/project/project-conf-files_routes.html
@@ -371,17 +368,17 @@ pages:
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: ece-tools release notes
+        - label: Release notes for ece-tools
           url: /cloud/release-notes/cloud-tools.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Upgrade to use ece-tools
           url: /cloud/project/ece-tools-upgrade-project.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Update ece-tools version
           url: /cloud/project/ece-tools-update.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Apply custom patches
           url: /cloud/project/project-patch.html
