@@ -30,7 +30,7 @@ If you cloned the Magento 2 GitHub repository, you **cannot** use this method to
 ## Prerequisites
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
-* **Complete Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
+* **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
 * **Set the `pub` directory root**—If you set the Magento root directory to `<your Magento install dir>/pub`, create another subdomain or docroot that uses the Magento installation directory as its root, and run the [System Upgrade utility] using that subdomain.
 * **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
 * **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
@@ -46,7 +46,7 @@ Complete the following prerequisites to prepare your environment before starting
 
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
-Using the more manual process of upgrading via the command line allows you to track and control exactly what's being changed in the upgrade. If you previously made updates to the same values that the upgrade script affects, the script will override those values, so using the manual process is the best approach.
+Using the more manual process of upgrading via the command line allows you to track and control exactly what's being changed in the upgrade. If you previously made updates to the same values that the upgrade script affects, the script will override those values, so using the manual process is the best approach. Upgrading using the script process is a bit easier and less intensive, if you have not made updates to values that the script affects.
    
 ### Backup `composer.json`
 
@@ -167,7 +167,7 @@ Updating the metadata in `composer.json` file is entirely superficial, not funct
 composer update
 ```
 
-### Clear subdirectories
+### Clear caches and generated content
 
 Clear the `var` and `generated` subdirectories:
 
@@ -215,7 +215,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    * `<your Magento install dir>/var/cache`
    * `<your Magento install dir>/var/page_cache`
    * `<your Magento install dir>/generated/code`
-1. Check our storefront in your web browser again.
+1. Check your storefront in your web browser again.
    
 ## Upgrade using the script {#upgrade-cli-script}
 
@@ -257,7 +257,7 @@ php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' <op
 composer update
 ```
 
-### Clear subdirectories
+### Clear caches and generated content
 
 Clear the `var` and `generated` subdirectories:
 
@@ -305,7 +305,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    * `<your Magento install dir>/var/cache`
    * `<your Magento install dir>/var/page_cache`
    * `<your Magento install dir>/generated/code`
-1. Check our storefront in your web browser again.
+1. Check your storefront in your web browser again.
 
 <!-- Link definitions -->
 
