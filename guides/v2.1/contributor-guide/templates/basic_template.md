@@ -14,13 +14,13 @@ You can start off by editing the local version of this file using markdown langu
 
 ## Metadata parameters
 
-Add the following metadata parameters at the top of your page. We use this data when generating the DevDocs for the following:
+Add the following metadata parameters at the top of your page. We use YAML for the metadata in front matter. We use this data when generating the DevDocs for the following:
 
 Parameter | Description
 --- | ---
 `group:` | The table of contents this file belongs to, which points to files located in `_data/toc/`. Only add the name of the file without the extension. For example, the group of this file is `group: contributor-guide`, which points to the table of contents defined in `_data/toc/contributor-guide.yml`.
 `title:` | The title of the page.
-`functional_areas:`  |  Optional. Adds facets for search results. Available facets include: sales, products, carts, customers, marketing, account, content, reports, stores, system, catalog, orders, frontend, theme, staging, search, configurations, integration, services, tools, setup, testing or test, standards, install, upgrade, B2B, cloud, and bundled extensions.
+`functional_areas:`  |  Optional. Adds facets for search results. Available facets include: Sales, Products, Carts, Customers, Marketing, Account, Content, Reports, Stores, System, Catalog, Orders, Frontend, Theme, Staging, Search, Configurations, Integration, Services, Tools, Setup, Testing, test, Standards, Install, Upgrade, B2B, Cloud, and Bundled extensions. These facets are case sensitive and support multiple facets separated by commas. For example: `functional_areas: Install`.
 `redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.
 `ee_only:` | Optional. If set to `true`, graphics/cues display on the page indicating it applies to {{site.data.var.ee}}.
 {:style="table-layout:auto;"}

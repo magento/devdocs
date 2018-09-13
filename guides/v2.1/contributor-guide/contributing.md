@@ -1,8 +1,9 @@
 ---
 group: contributor-guide
 title: Code Contributions
-redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
+
+{% include contributor/2-1-end.md %}
 
 The following topics are included in this guide:
 
@@ -49,17 +50,13 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Accepted pull requests and ported code {#rules}
 
-Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
+{% include contributor/2-1-end.md %}
 
-{%
-include note.html
-type='info'
-content='To keep 2.2 and 2.3 releases aligned, we are only accepting pull requests to 2.2-develop that contain changes already existing in 2.3-develop. We recommend submitting pull requests to 2.3-develop then [back porting](#porting) the changes to 2.2-develop.'
-%}
+Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
 |     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
 |:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
-| 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
+| 2.1 | ![No]({{site.baseurl}}/common/images/red-x.png)  | ![No]({{site.baseurl}}/common/images/red-x.png)  |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
 | 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
 | 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
 
