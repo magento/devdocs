@@ -107,6 +107,8 @@ Check out this video to see the process in action:
 
 ## Create a pull request {#pull_request}
 
+{% include contributor/2-1-end.md %}
+
 First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} and make sure you are not duplicating others’ work.
 
 To create a pull request:
