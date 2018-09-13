@@ -21,11 +21,8 @@ PROVIDE OVERVIEW OF TOPIC HERE
 
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
-<div class="bs-callout bs-callout-info" id="info">
-
-  <p>INSERT NOTE TEXT HERE.</p>
-
-</div>
+{: .bs-callout .bs-callout-info }
+INSERT NOTE TEXT HERE.
 
 ### HEADING 3 
 

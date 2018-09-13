@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: ExportButton component
 menu_title: ExportButton component

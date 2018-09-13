@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Redis troubleshooting
 menu_title: Redis troubleshooting
@@ -26,9 +26,8 @@ Your Cloud systems and services have been updated to the latest Redis and PHP-Re
 * Push your code to deploy and test in an Integration environment.
 * After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We strongly recommend patching to update your PHP-Redis version. Your build and deploy will continue to encounter issues until updated to PHP-Redis 3.1.3.
-</div>
 
 See the following instructions based on your {{site.data.var.ece}} version:
 

@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
@@ -38,10 +38,8 @@ where;
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Incremental migration runs continuously until you stop it by pressing CTRL+C.
 
 ## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}
 

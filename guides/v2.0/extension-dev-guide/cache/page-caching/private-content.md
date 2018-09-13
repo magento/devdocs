@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 09_Full page caching
 title: Private content
 menu_title: Private content
@@ -49,9 +49,8 @@ Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c
 
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.
-</div>
 
 Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
@@ -107,9 +106,8 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
 </config>
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) {:target="_blank"}
-</div>
 
 Other examples:
 

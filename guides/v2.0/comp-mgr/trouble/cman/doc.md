@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure

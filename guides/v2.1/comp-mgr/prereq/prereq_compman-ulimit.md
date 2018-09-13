@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 02_prereq
 title: Set ulimit for the web server user
 menu_title: Set ulimit for the web server user

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Customizing RWD illustration
 menu_title: Customizing RWD illustration

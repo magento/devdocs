@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Basic attributes
-menu_title: Basic attributes
-menu_order: 1
 ---
 
 ## Overview

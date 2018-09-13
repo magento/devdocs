@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Fastly
 redirect_from:
   - /guides/v2.1/cloud/basic-information/cloud-fastly.html

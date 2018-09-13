@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 11_sites
 title: Multiple websites or stores
 menu_title: Multiple websites or stores

@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: Supported browsers
 menu_title: Supported browsers

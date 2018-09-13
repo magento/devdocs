@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create a cache type
 menu_title: Create a cache type
@@ -43,9 +43,8 @@ We suggest you locate classes that extend [Magento\Framework\Cache\Frontend\Deco
 
 For example, look at [Magento\Eav\Model\Cache\Type][type] to understand more about the EAV cache type.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+Please help us improve this topic by suggesting details using the **Edit this page in GitHub** link at the top of the page.
 
 [tagscope]: {{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2000url }}app/code/Magento/Eav/Model/Cache/Type.php

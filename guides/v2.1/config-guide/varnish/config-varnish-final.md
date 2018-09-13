@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Final verification
 functional_areas:
   - Configuration

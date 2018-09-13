@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Deploy static view files
 functional_areas:
   - Configuration

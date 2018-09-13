@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Locate templates, layouts, and styles
 menu_title: Locate templates, layouts, and styles

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 title: Error after logging in to the Magento Admin
 functional_areas:
   - Install

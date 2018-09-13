@@ -1,12 +1,8 @@
 ---
-
-group: rest
+group: rest-api
 subgroup: Web APIs
 title: Search using REST APIs
-menu_title: Search using REST
-menu_order: 2
 redirect_from: /guides/v2.0/howdoi/webapi/search-criteria.html
-
 ---
 
 POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} structure) in the body of the message.
@@ -43,9 +39,8 @@ Condition | Notes
 `null` | Null
 `to` | The end of a range. Must be used with `from`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>condition_type</code> is optional if the operator is <code>eq</code>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+`condition_type` is optional if the operator is `eq`.
 
 The `filter_groups` array defines one or more `filters`. Each filter defines a search term, and the `field`, `value`, and `condition_type` of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.
 

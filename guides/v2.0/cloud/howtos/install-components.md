@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Install, manage, and upgrade modules
 redirect_from:
   - /guides/v2.0/cloud/howtos/update-components.html
@@ -73,9 +73,8 @@ To update `composer.json`:
 
 If there are errors, see [module deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
-<div class="bs-callout bs-callout-warning">
+{: .bs-callout .bs-callout-warning }
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
-</div>
 
 ### Step 3: Verify the module {#verify}
 

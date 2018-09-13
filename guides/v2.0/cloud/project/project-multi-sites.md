@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up multiple websites or stores
 menu_title: Set up multiple websites or stores
@@ -37,9 +37,8 @@ After successfully creating and testing multiple stores locally, you must:
 
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
-<div class="bs-callout bs-callout-info" id="info">
-To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}/cloud/trouble/trouble.html">Support ticket</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+To set up routes in a staging or production environment, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
 To configure routes in an integration environment:
 

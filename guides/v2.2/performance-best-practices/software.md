@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Software recommendations
 functional_areas:
   - Configuration
@@ -63,9 +63,8 @@ We recommend limiting the list of active PHP extensions to those that are requir
 
 Adding more extensions increases library load times.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.
-</div>
 
 ### PHP Settings
 
@@ -106,7 +105,7 @@ You should also configure the number of threads for input request processing, as
 
 Web server | Attribute name | Location | Related information
 --- | --- | --- | ---
-Nginx | `worker_collections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX for Performance](https://www.nginx.com/blog/tuning-nginx/)
+Nginx | `worker_connections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX for Performance](https://www.nginx.com/blog/tuning-nginx/)
 Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](http://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
 Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache MPM Common Directives](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers )
 
@@ -188,6 +187,5 @@ If you plan to serve all your traffic with just one web node, it does not make s
 
 For a multiple web nodes setup, Redis is the best option. Because Magento actively caches lots of data for better performance, pay attention to your network channel between the web nodes and the Redis server. You do not want the channel to become a bottleneck for request processing.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider)  to your Redis server.
-</div>
+{: .bs-callout .bs-callout-info }
+If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider) to your Redis server.

@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
@@ -220,9 +220,8 @@ In the following example, the test integration requires access to the following 
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.
 
 The  file defines which API resources the integration has access to.
 

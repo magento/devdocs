@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Multiselect Component
 menu_title: Multiselect Component

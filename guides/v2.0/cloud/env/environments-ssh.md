@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: SSH and sFTP
 menu_title: SSH and sFTP

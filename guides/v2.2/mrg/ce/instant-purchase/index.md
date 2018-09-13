@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Instant Purchase module
 functional_areas:
   - Checkout
@@ -175,9 +175,8 @@ The minimal configuration for Instant Purchase integration development is as fol
 </config>  
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 This minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
-</div>
 
 The following is an example of a full configuration meant for production:
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Add custom CSS preprocessor
 menu_order: 8

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Manage branches with the CLI
 menu_title: Manage branches with the CLI
@@ -95,9 +95,8 @@ After completing development, you can merge this branch to the parent. The follo
 
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete the <code>master</code> environment of any project.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
@@ -144,9 +143,8 @@ To delete a environment:
 
 Wait for the environment to delete.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+To activate the environment later, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}
 

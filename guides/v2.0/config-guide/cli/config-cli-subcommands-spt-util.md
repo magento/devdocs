@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Run the support utilities
 menu_title: Run the support utilities (Magento Commerce only)

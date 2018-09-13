@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Set up multiple websites, stores, and store views in the Admin
 functional_areas:
   - Configuration

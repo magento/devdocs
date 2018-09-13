@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files

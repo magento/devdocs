@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Apply an Admin theme
 functional_areas:
   - Frontend

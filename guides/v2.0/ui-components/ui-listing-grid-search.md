@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: B_UI Library Listing/Grid Component
 title: Grid search indexing
 menu_title: Grid search indexing

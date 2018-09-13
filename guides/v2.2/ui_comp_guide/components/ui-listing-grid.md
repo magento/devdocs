@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Listing (grid) component
-menu_title: Listing (grid) component
 ---
 
 Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.

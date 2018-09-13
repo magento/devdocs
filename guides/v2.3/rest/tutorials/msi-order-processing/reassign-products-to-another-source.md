@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 6. Reassign products to custom sources
 subtitle: Order processing with MSI
 menu_title: Step 6. Reassign products to custom sources

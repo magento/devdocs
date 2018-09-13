@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Compile LESS with Grunt
 functional_areas:
   - Frontend

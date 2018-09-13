@@ -1,5 +1,5 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: C_DMTool
 title: Configure migration
 menu_title: Configure migration
@@ -97,7 +97,6 @@ For example:
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
 {% endhighlight %}
-
 </div>
 
 ## Work with configuration and mapping files {#migration-config}

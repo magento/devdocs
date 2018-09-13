@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Elasticsearch stopwords
 functional_areas:
   - Configuration

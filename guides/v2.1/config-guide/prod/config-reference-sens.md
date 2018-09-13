@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Sensitive and system-specific
 functional_areas:
   - Configuration

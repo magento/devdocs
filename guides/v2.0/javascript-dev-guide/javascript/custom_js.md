@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 15

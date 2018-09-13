@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configure environments
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html

@@ -37,9 +37,8 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
     Exception]
     	Notice: Undefined index: stores in /app/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/Console/Command/SCDConfigDump.php on line 91
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We've reverted the changes to image resizing that we introduced in 2.1.6. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update.
-</div>
 
 ## How to get magento-cloud-configuration release 101.7.x
 

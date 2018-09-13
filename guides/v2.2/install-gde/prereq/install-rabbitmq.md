@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: RabbitMQ
 ee_only: true
 functional_areas:

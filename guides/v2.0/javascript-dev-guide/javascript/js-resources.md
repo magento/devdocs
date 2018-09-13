@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
 menu_title: JavaScript resources in Magento
@@ -30,9 +30,8 @@ In Magento, you can find the JS components on the following levels:
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Library level can only contain core Magento resources. Do not put custom JS files in  the `lib/web` directory.
-</div>
+{: .bs-callout .bs-callout-info }
+Library level can only contain core Magento resources. Do not put custom JS files in the `lib/web` directory.
 
 ### Specifying JS
 
@@ -167,9 +166,8 @@ All configurations are collected and executed in the following order:
 
 <li>Configurations at the module level.</li>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p>Dependencies between the modules or themes are considered as well.</p>
-  </div>
+{: .bs-callout .bs-callout-warning }
+Dependencies between the modules or themes are considered as well.
 
 <li>Configurations at the theme module level for the ancestor themes.</li>
 

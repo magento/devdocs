@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Customize email templates
 functional_areas:
   - Frontend

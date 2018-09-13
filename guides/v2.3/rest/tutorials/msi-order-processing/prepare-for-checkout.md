@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 9. Prepare for checkout
 subtitle: Order processing with MSI
 menu_title: Step 9. Prepare for checkout

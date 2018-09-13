@@ -1,21 +1,19 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Migrate install/upgrade scripts to declarative schema
 ---
 
 Magento provides several commands to help convert your installation and upgrade scripts to declarative schema. These commands also help you test your changes, roll back your changes if anything goes wrong, and help your module maintain backward compatibility.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Once you start with data patches, you cannot continue to use upgrade scripts.
-</div>
 
 ## Convert install/upgrade schema scripts to  db_schema.xml files
 
 The **Schema Listener Tool** converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the `setup:install` or `setup:upgrade` CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of `db_schema.xml` files (one per affected module).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.
-</div>
 
 To convert your install or upgrade script, run one of the following commands:
 
@@ -112,6 +110,5 @@ where:
 
 As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the `db_schema.xml` file.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 This file is a temporary solution. It will be removed in the future, when upgrade scripts are no longer supported.
-</div>

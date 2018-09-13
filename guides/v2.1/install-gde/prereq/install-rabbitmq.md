@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Magento Commerce only)

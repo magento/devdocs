@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
@@ -41,9 +41,8 @@ Element | Description
 
 Metapackages allow you to group an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.
 
 #### Metapackage example
 
@@ -139,10 +138,8 @@ Magento can retrieve your extension package from any valid GitHub {% glossarytoo
 
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Third party repositories are supported.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Third party repositories are supported.
 
 ### Hosting on GitHub and Packagist {#hosting}
 
@@ -157,11 +154,8 @@ Prerequisite: git must be set up on your machine.
 
 ### Hosting on a private repository {#private_repos}
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you use the Setup Wizard, you must use the Magento Marketplace repository.
-A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 2. Create the package in a way similar to the described above.

@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Bookmark Component
 menu_title: Bookmark Component

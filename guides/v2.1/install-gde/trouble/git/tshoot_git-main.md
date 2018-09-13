@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_github
 title: GitHub errors
 menu_title: GitHub errors

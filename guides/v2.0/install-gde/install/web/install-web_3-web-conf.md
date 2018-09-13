@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 3. Web Configuration
 menu_title: Step 3. Web Configuration

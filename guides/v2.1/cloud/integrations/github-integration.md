@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: GitHub integration
 functional_areas:
   - Cloud

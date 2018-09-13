@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 2. Create sources
 subtitle: Order processing with MSI
 menu_title: Step 2. Create sources
@@ -61,6 +61,7 @@ The `source_code` values will be used in subsequent steps.
 ```
 
 **Response**
+
 Magento returns an empty array.
 
 `[]`
@@ -153,4 +154,4 @@ This source will be used to fulfill virtual and downloadable products.
 
 ## Verify this step
 
-In Admin, click **Stores** > **Manage Sources**.  The new sources are displayed in the Sources grid.
+In Admin, click **Stores** > **Inventory** > **Sources**.  The new sources are displayed in the Sources grid.

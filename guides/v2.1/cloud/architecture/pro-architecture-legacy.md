@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Pro architecture (legacy)
 functional_areas:
   - Cloud

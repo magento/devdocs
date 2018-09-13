@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: LinkColumn component
-menu_title: LinkColumn component
 ---
 
 ## Overview

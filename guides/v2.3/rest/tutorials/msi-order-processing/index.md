@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Order Processing with Multi Source Inventory
 menu_title: Initial tasks
 menu_order: 0

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Export the configuration
 functional_areas:
   - Configuration
@@ -9,7 +9,17 @@ functional_areas:
 
 In Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}/config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
 
-    bin/magento app:config:dump
+``` bash
+bin/magento app:config:dump {config-types}
+```
+
+_config_types_ is a space-separated list of config types to dump. Available types include `themes` and `scopes`. If no config types are specified, the command dumps all system configuration information.
+
+The following example dumps scopes and themes only:
+
+ ``` bash
+bin/magento app:config:dump scopes themes
+```
 
 As a result of the command execution, the following configuration files are updated:
 
@@ -37,3 +47,5 @@ See: [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-e
 To set the sensitive settings written to `env.php`, use the [`bin/magento config:sensitive:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
 
 Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php) in the module's [`di.xml`]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.
+
+To export additional system settings when using `config_types`, consider using the [`bin/magento config:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html#config-cli-config-set) command. 
