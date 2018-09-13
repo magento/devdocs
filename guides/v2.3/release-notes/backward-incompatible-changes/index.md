@@ -13,17 +13,13 @@ View a detailed list of PHP code changes that were made in the "2.3-develop" bra
 
 ## API changes
 
-### StoreManager instead of StoreResolve
+### StoreManager instead of StoreResolver
 
-`\Magento\Store\Api\StoreResolverInterface` was deprecated.
+`\Magento\Store\Api\StoreResolverInterface` has been deprecated in favor of the `\Magento\Store\Model\StoreManagerInterface`.
 
-Instead, use `\Magento\Store\Model\StoreManagerInterface`.
+When resolving for a store frontend, use `\Magento\Store\Model\StoreManagerInterface::getStore`.
 
-When resolving a store for frontend, use `\Magento\Store\Model\StoreManagerInterface::getStore`.
-
-Do not use `\Magento\Store\Api\StoreResolverInterface::getCurrentStoreId`.
-
-Example of the diff in `StatusBaseSelectProcessor.php` (`Magento\Catalog\Model\ResourceModel\Product`) after update:
+The following example shows the diff in `Magento\Catalog\Model\ResourceModel\Product\StatusBaseSelectProcessor` class after replacing the deprecated method.
 
 ```diff
 ...
