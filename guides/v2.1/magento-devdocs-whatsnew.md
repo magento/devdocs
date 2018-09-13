@@ -16,7 +16,7 @@ The [SCD_STRATEGY](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-b
 Updated file names in [Web API functional testing](https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html)|2.3.x|Technical changes|Sep 05
 Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)|2.3.x|Technical changes|Sep 05
 You can specify [configuration types](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) when running the `app:config:dump` command.|2.2.x, 2.3.x|Major update|Sep 05
-Replaced all references to the `composer create-project --repository-url` flag with `composer create-project --repository`.|2.x|Technical changes|Sep 05
+Replaced all references to the `composer create-project --repository` flag with `composer create-project --repository`.|2.x|Technical changes|Sep 05
 Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html) to include the new `attribute_options` object.|2.3.x|Technical changes|Sep 04
 Added [REST reference documentation for MSI](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-sources.html)|2.3.x|New topic|Sep 04
 Removed Fastly VCL snippet for extending the Admin timeout. Magento Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Sep 04
