@@ -53,11 +53,7 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
-|     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
-|:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
-| 2.1 | ![No]({{site.baseurl}}/common/images/red-x.png) | ![No]({{site.baseurl}}/common/images/red-x.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
+{% include contributor/pull-request-table.md %}
 
 ## Contribution requirements {#requirements}
 

@@ -3,8 +3,6 @@ group: contributor-guide
 title: Code Contributions
 ---
 
-{% include contributor/2-1-end.md %}
-
 The following topics are included in this guide:
 
 - [Contribute to Magento 2 code](#contribute)
@@ -50,7 +48,7 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Accepted pull requests and ported code {#rules}
 
-{% include contributor/2-1-end.md %}
+{% include contributor/2-3-submission.md %}
 
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
@@ -106,6 +104,8 @@ Check out this video to see the process in action:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mJDCL0uzIpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Create a pull request {#pull_request}
+
+{% include contributor/2-3-submission.md %}
 
 First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} and make sure you are not duplicating others’ work.
 
