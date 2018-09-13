@@ -74,7 +74,7 @@ collections:
 
 plugins:
   - jekyll-redirect-from
-
+  - jekyll-titles-from-headings
 
 defaults:
 
@@ -94,7 +94,28 @@ defaults:
     values:
       layout: video
 
-# toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
+  - 
+    scope:
+      path: "mftf/2.2"
+    values:
+      layout: default
+      group: magento-functional-testing-framework-guide
+      functional_areas:
+        - Test
+
+  -
+    scope:
+      path: "mftf/2.3"
+    values:
+      layout: default
+      group: magento-functional-testing-framework-guide-2_3
+      functional_areas:
+        - Test
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
 
 # Build settings
 markdown: kramdown
