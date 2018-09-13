@@ -37,7 +37,7 @@ Let’s create the folder app/code/Learning and inside this folder place another
 
 1. `cd` to the root folder
 2. `mkdir app/code/Learning`
-3. `mkdirapp/code/Learning/FirstUnit`
+3. `mkdir app/code/Learning/FirstUnit`
 
 ## Make sure you have permission to create files and folders in your installation
 
