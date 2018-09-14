@@ -38,11 +38,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
-<<<<<<< HEAD
     -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
-=======
-    -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to staging or production.
->>>>>>> Updated MAGECLOUD-2603 note
 
     -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
@@ -77,7 +73,11 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Docker Compose for Cloud**—Made the following improvements to the [Docker setup and configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) process:
 
+<<<<<<< HEAD
    -  <!--MAGECLOUD-2359-->Added a command—`docker:config:convert` to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
+=======
+   -  <!--MAGECLOUD-2359-->Added a command—`docker:config:convert` to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html#launch-docker-configuration}}).
+>>>>>>> MAGECLOUD-2681 Explain Docker (#2908)
 
    -  <!--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems to more closely emulate the Cloud file system. See [Configure Docker]({{ page.baseurl }}/cloud/docker/docker-config.html).
 
