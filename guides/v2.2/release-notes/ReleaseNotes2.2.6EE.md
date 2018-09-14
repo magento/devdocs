@@ -42,7 +42,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-92447 -->* The catalog price indexer is now scoped and multithreaded, which improves the performance of layered navigation, search, and indexing actions for Magento instances with multiple websites and stores. This makes it possible to parallelize catalog price indexing by websites and customer groups. To re-index in parallel mode, add the `MAGE_INDEXER_THREADS_COUNT` environment variable to `env.php`.
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets, each of which contains 50 attributes, might see a 40-90% reduction in load time.)
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of load time of almost 90% for scenarios with a large number of product attribute sets. (Performance will not noticeably improve for deployments with only one attribute set configured with 500 attributes. However, deployments with many attribute sets that contain only a few attributes will show significant performance improvement. For example, a deployment with 100 attribute sets, each of which contains 50 attributes, might see a 40-90% reduction in load time.)
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -78,7 +78,7 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 * Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
 
-* Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes
+* Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes.
 
 * We've fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the `post_deploy` phase begins immediately after the deploy phase ends.
 
@@ -143,7 +143,7 @@ Enhancements to Klarna include support for these new features:
 
 * The Klarna Payments section now includes a link to Klarna automated onboarding and account sign in.
 
-* If an approved order is later identified as fraudulent, Klarna notifies the merchant and requests that they try to stop the order from being delivered. In addition, Klarna attempts to cancel the order automatically by sending notification to Magento. See [Managing Your Account](https://docs.magento.com/m2/ce/user_guide/payment/klarna-manage.html) for more information. 
+* If an approved order is later identified as fraudulent, Klarna notifies the merchant and requests that they try to stop the order from being delivered. In addition, Klarna attempts to cancel the order automatically by sending notification to the merchant. See [Managing Your Account](https://docs.magento.com/m2/ce/user_guide/payment/klarna-manage.html) for more information. 
 
 * Shipping and discount order lines have been added to order management calls.
 
@@ -214,7 +214,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
 
-<!-- ENGCOM-2078 -->* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the default configuration for all store views. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request [15929](https://github.com/magento/magento2/pull/15929)*. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245) ASK ABOUT CONTRIBUTOR
+<!-- ENGCOM-2078 -->* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the default configuration for all store views. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request [15929](https://github.com/magento/magento2/pull/15929)*. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245) 
 
 <!-- ENGCOM-2407 -->* The `nginx.config.sample` file no longer includes an option for PHP 5.x. (Magento 2.2.x is not compatible with PHP 5.x.) *Fix submitted by [Sean Breeden](https://github.com/sean-wcb) in pull request [16883](https://github.com/magento/magento2/pull/16883)*. 
 
@@ -234,7 +234,7 @@ In addition to security enhancements, this release contains the following functi
 
 	* `bin/magento indexer:set-dimensions-mode`  sets  indexer dimensions mode 
 
-	* `bin/magento indexer:show-dimensions-mode` shows dimensions modes of indexer
+	* `bin/magento indexer:show-dimensions-mode` shows dimensions mode of indexer
 
 
 
@@ -275,8 +275,6 @@ In addition to security enhancements, this release contains the following functi
 ### Bundle products
 
 <!-- MAGETWO-90999 -->* Magento now successfully imports bundle products. Previously, bundle products were not visible in the product catalog, and were listed as out-of-stock on the storefront.
-
-<!-- MAGETWO-86218-->* Bundled products that have the **User Defined** field unchecked can now be back ordered. [GitHub-10061](https://github.com/magento/magento2/issues/10061)
 
 <!--  ENGCOM-1863-->* The `Magento_Bundle` module name has been added to the relevant template files to meet Magento standard coding format. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [15825](https://github.com/magento/magento2/pull/15825)*. 
 
@@ -348,7 +346,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-87589 -->* The **Use default value** option is no longer unchecked unless the user overrides the value of the attribute in the store view scope. Previously, after creating an item, if the user changed to store view scope and did not make any modifications to the item's attributes and only clicked **Save**, most of the attributes that were set as "use default value" became unchecked.
 
-<!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs.  
+<!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,000), Magento could take up to 40 minutes to re-index product catalogs.  
 
 <!-- MAGETWO-86710 -->* Widget selection by Enabled Products no longer causes a fatal error on a storefront when the **Flat Product** is configured. 
 
@@ -379,9 +377,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1106 -->* Magento now correctly saves the value of a product's custom options. Previously, Magento saved all objects by using the same value object for all values. *Fix submitted by [Jeroen Van Leusden](https://github.com/JeroenVanLeusden) in pull request [13569](https://github.com/magento/magento2/pull/13569)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
 
-<!-- ENGCOM-1911 -->* Magento now displays the product name as brower title as expected. Previously, the meta title tag was missing, which prevented Magento from displaying the product name. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15532](https://github.com/magento/magento2/pull/15532)*. [GitHub-15501](https://github.com/magento/magento2/issues/15501)
+<!-- ENGCOM-1911 -->* Magento now displays the product name as browser title as expected. Previously, the meta title tag was missing, which prevented Magento from displaying the product name. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15532](https://github.com/magento/magento2/pull/15532)*. [GitHub-15501](https://github.com/magento/magento2/issues/15501)
 
-<!-- ENGCOM-2042 -->* Magento now maintains the default products sort order of “newest first” when you upgrade your Magento deployment to 2.2.4. Previously, after upgrade, the default products order in categories changed from “newest first” to “oldest first”. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15629](https://github.com/magento/magento2/pull/15629)*. [GitHub-15627](https://github.com/magento/magento2/issues/15627)
+<!-- ENGCOM-2042 -->* Magento now maintains the default products sort order of “newest first” when you upgrade your Magento deployment to 2.2.4. Previously, after upgrade, the default products order in categories changed from “newest first” to “oldest first”. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [15629](https://github.com/magento/magento2/pull/15629)*. [GitHub-15627](https://github.com/magento/magento2/issues/15627)
 
 <!-- ENGCOM-1909-->* Links on product pages are now linkable as expected. Previously, when Magento displayed a product page, none of the provided links were clickable. *Fix submitted by [simonjanguapa](https://github.com/simonjanguapa) in pull request [15687](https://github.com/magento/magento2/pull/15687)*. [GitHub-15393](https://github.com/magento/magento2/issues/15393)
 
@@ -445,9 +443,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2126 -->* Placeholders for the password field  no longer suggest that a password is optional. Previously, the placeholder for the password field in the checkout page suggested that the password was optional, but after validation, Magento indicated that the password field  was mandatory. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16379](https://github.com/magento/magento2/pull/16379)*. [GitHub-16378](https://github.com/magento/magento2/issues/16378)
 
-<!-- ENGCOM-1941 -->* The dropdown toggle icon on the shopping cart now works as expected. Previously, the arrow did not change direction as expected when you toggled the Doscount or Tax options. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [15991](https://github.com/magento/magento2/pull/15991)*. 
+<!-- ENGCOM-1941 -->* The dropdown toggle icon on the shopping cart now works as expected. Previously, the arrow did not change direction as expected when you toggled the Discount or Tax options. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [15991](https://github.com/magento/magento2/pull/15991)*. 
 
-<!-- ENGCOM-1951 -->* The shopping cart icon on the checkout page on mobile screens now displays hover color and regular coloras expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16002](https://github.com/magento/magento2/pull/16002)*. 
+<!-- ENGCOM-1951 -->* The shopping cart icon on the checkout page on mobile screens now displays hover color and regular color as expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16002](https://github.com/magento/magento2/pull/16002)*. 
 
 <!-- ENGCOM-1154 -->* Customers are not unexpectedly logged out if the customers hits the F5 key twice during checkout. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [14428](https://github.com/magento/magento2/pull/14428)*. [GitHub-4301](https://github.com/magento/magento2/issues/4301), [GitHub-12362](https://github.com/magent /magento2/issues/12362), [GitHub-13427](https://github.com/magento/magento2/issues/13427)
 
@@ -467,7 +465,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-82132 -->* Cart price rule condition values now handle commas as expected. 
 
-<!-- MAGETWO-69940 -->* Free shipping coupons now works as expected with Table Rates shipping. Previously, Magento displayed this message when a customer tried to use a free shipping coupon: `Sorry, no quotes are available for this order`.  [GitHub-8172](https://github.com/magento/magento2/issues/8172)
+<!-- MAGETWO-69940 -->* Free shipping coupons now work as expected with Table Rates shipping. Previously, Magento displayed this message when a customer tried to use a free shipping coupon: `Sorry, no quotes are available for this order`.  [GitHub-8172](https://github.com/magento/magento2/issues/8172)
 
 <!-- MAGETWO-91112 -->* Magento now displays correct store view prices for cases when a merchant uses a CSV file to add products by SKU  from the Admin.
 
@@ -747,13 +745,13 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-92507 -->* Magento no longer displays the State/Province instead of the State field on U.S. customer address forms.
 
-<!-- MAGETWO-91327 -->* Customer attributes are now correctly validated on the Admin Order form. Previously, Magento validated attributes\ length  after an order has been submitted, but not on the Admin Order form.
+<!-- MAGETWO-91327 -->* Customer attributes are now correctly validated on the Admin Order form. Previously, Magento validated attributes\length  after an order has been submitted, but not on the Admin Order form.
 
 <!-- MAGETWO-89624 -->* Customers no longer lose their session when they switch stores on different domains.
 
 <!-- MAGETWO-89849 -->* Non-U.S. and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
-<!-- MAGETWO-89034 -->* The checkout page now displays custom address attributes when **Show on front-end** is set to **no**. 
+<!-- MAGETWO-89034 -->* The checkout page no longer displays custom address attributes when **Show on front-end** is set to **no**. 
 
 <!-- MAGETWO-88411 -->* Magento now displays the default value for a new Customer attribute that is created from the Admin. Previously, Magento set this value to **no** by default. 
 
@@ -949,7 +947,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1679 -->* The dropdown menu is now positioned as expected under the link on the UI Component listing. *Fix submitted by [Ankur Raiyani](https://github.com/ankurvr) in pull request [15661](https://github.com/magento/magento2/pull/15661)*. [GitHub-15660](https://github.com/magento/magento2/issues/15660)
 
-<!-- MAGETWO-87120 -->* The timestamp field now includes indexes, which reduces the chances of deadlocks that occur while  erasing old records.  *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
+<!-- MAGETWO-87120 -->* The timestamp field now includes indexes, which reduces the chances of deadlocks that can occur while  erasing old records.  *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
 <!-- ENGCOM-1767 -->*  `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15621](https://github.com/magento/magento2/pull/15621)*. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
 
@@ -1022,7 +1020,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1658 -->* The `clickableOverlay` option now works as expected. *Fix submitted by [virtua-pmakowski](https://github.com/virtua-pmakowski) in pull request [15172](https://github.com/magento/magento2/pull/15172)*. [GitHub-7399](https://github.com/magento/magento2/issues/7399)
 
-<!-- ENGCOM-1579 -->* The Instant Purchase module now works as expected. Previously, the `get($type)` method in `/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserPool.php` threw an exception without showing the shipping method $type as it was hardcoded as'chooser'. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15258](https://github.com/magento/magento2/pull/15258)*. 
+<!-- ENGCOM-1579 -->* The Instant Purchase module now works as expected. Previously, the `get($type)` method in `/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserPool.php` threw an exception without showing the shipping method $type as it was hardcoded as 'chooser'. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [15258](https://github.com/magento/magento2/pull/15258)*. 
 
 <!-- ENGCOM-1618 -->* Template files now follow Magento standard coding format. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15398](https://github.com/magento/magento2/pull/15398)*. 
 
@@ -1362,7 +1360,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-92154 -->* You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales).
 
-<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of operating time of almost 90% for certain scenarios. 
+<!-- MAGETWO-90572 -->* The time required to load category or product pages for products that are configured with many attributes (more than 500) has been significantly reduced. Refactoring the logic for product attribute retrieval has resulted in a reduction of load time of almost 90% for certain scenarios. 
 
 <!-- MAGETWO-88670 -->* The time required to load a store’s home page has been reduced noticeably when the top menu contains many categories.  (Load time is still affected by the number of categories and the structure of the top menu.)
 
@@ -1429,7 +1427,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-92899 -->* Magento now displays any errors that occur during order creation in the browser console. Previously, Magento displayed this message: `Uncaught ReferenceError: order is not defined during order creation` instead of a specific error message. 
 
-<!-- MAGETWO-91466 -->* The `POST /V1/shipment`endpoint processes `tracks` arrays as expected. 
+<!-- MAGETWO-91466 -->* The `POST /V1/shipment` endpoint processes `tracks` arrays as expected. 
 
 <!-- MAGETWO-90496 -->* Magento no longer reverts to the country associated with the default website when a customer edits the billing address for an order. Previously, if a customer edited the shipping address for an order, Magento would reset the billing address to the default address specified for the default website. 
 
@@ -1474,7 +1472,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  MAGETWO-85786 -->* The Admin panel search now filters catalogs as expected. Previously, if a merchant tried to narrow a search when using the Search tool in the Admin panel, Magento displayed the full catalog view without narrowing down the list. *Fix submitted by [Pavel](https://github.com/hannassy) in pull request [12735](https://github.com/magento/magento2/pull/12735)*. [GitHub-7861](https://github.com/magento/magento2/issues/7861)
 
-<!--  ENGCOM-1415 -->* You can now use an asterix (*) when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.`. *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
+<!--  ENGCOM-1415 -->* You can now use an asterix when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.`. *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
 
 <!-- ENGCOM-2455 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request [16952](https://github.com/magento/magento2/pull/16952)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
@@ -1517,7 +1515,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-86658 -->* Admin global search preview now works as expected. Previously, this feature worked inconsistently, and search results  differed depending on which area was being searched  (for example, Products, Categories, or Customers). 
 
-<!-- MAGETWO-86289 -->* The Admin global search now returns results that match the keyword for all available pages, or if a user searches in  specific sections, the search feature now returns only the results that matched the key words in those specific sections. Previously, the Admin global search did not return results that matched the specified keywords or did not restrict results to specified sections.
+<!-- MAGETWO-86289 -->* The Admin global search now returns results that match the keyword for all available pages, or if a user searches in  specific sections, the search feature now returns only the results that matched the key words in those specific sections. Previously, the Admin global search did not return results that matched the specified keywords and did not restrict results to specified sections.
 
 <!-- MAGETWO-85786 -->* Catalogs are now correctly filtered by the Admin search bar. Previously, if you attempted to use the Search tool in the Admin, and selected "XX in Products", Magento displayed the full catalog view without narrowing down the list. *Fix submitted by [Pavel](https://github.com/hannassy) in pull request 12735*. [GitHub-12193](https://github.com/magento/magento2/issues/12193), [GitHub-7861](https://github.com/magento/magento2/issues/7861)
 
@@ -1660,7 +1658,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1542 -->* The `clickableOverlay` option now works as expected, which improves the performance of modal popups. *Fix submitted by [virtua-pmakowski](https://github.com/virtua-pmakowski) in pull request [15172](https://github.com/magento/magento2/pull/15172)*. [GitHub-7399](https://github.com/magento/magento2/issues/7399)
 
-<!--  ENGCOM-1315 -->* Customers can now place orders from grouped products where the quantity of subproducts is less then one. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [14752](https://github.com/magento/magento2/pull/14752)*. [GitHub-14692](https://github.com/magento/magento2/issues/14692)
+<!--  ENGCOM-1315 -->* Customers can now place orders from grouped products where the quantity of subproducts is less than one. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [14752](https://github.com/magento/magento2/pull/14752)*. [GitHub-14692](https://github.com/magento/magento2/issues/14692)
 
 <!--  ENGCOM-1606 -->* Footers now behave as expected when displaying Magento on a mobile device. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15353](https://github.com/magento/magento2/pull/15353)*. [GitHub-15118](https://github.com/magento/magento2/issues/15118)
 
