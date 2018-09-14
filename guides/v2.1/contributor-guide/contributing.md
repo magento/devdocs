@@ -1,8 +1,9 @@
 ---
 group: contributor-guide
 title: Code Contributions
-redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
+
+{% include contributor/2-1-end.md %}
 
 The following topics are included in this guide:
 
@@ -49,13 +50,11 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Accepted pull requests and ported code {#rules}
 
+{% include contributor/2-1-end.md %}
+
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
-|     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
-|:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
-| 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
+{% include contributor/pull-request-table.md %}
 
 ## Contribution requirements {#requirements}
 
@@ -107,6 +106,8 @@ Check out this video to see the process in action:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mJDCL0uzIpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Create a pull request {#pull_request}
+
+{% include contributor/2-1-end.md %}
 
 First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} and make sure you are not duplicating others’ work.
 
