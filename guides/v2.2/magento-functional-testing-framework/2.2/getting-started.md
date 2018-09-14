@@ -3,7 +3,7 @@ group: magento-functional-testing-framework-guide
 title: Getting started
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.2.0
 redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/getting-started.html
 ---
 
@@ -14,16 +14,11 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
-* [Composer v1.3.x+](https://getcomposer.org/download/)
-* [Java v1.8.x+](https://www.java.com/en/download/)
-* [Selenium Server Standalone v3.6.0+](#selenium-server)
-* [ChromeDriver v2.33+](https://sites.google.com/a/chromium.org/chromedriver/downloads)
-
-### Recommendations
-
-We recommend using [PHPStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
-They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/), which is helpful when debugging.
+* [PHP version supported by Magento instance under test][php]
+* [Composer v1.3.x+][composer]
+* [Java v1.8.x+][java]
+* [Selenium Server Standalone v3.6.0+][selenium]
+* [ChromeDriver v2.33+][chrome]
 
 ## Prepare Magento
 
@@ -39,6 +34,9 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 2. Navigate to **Stores \> Configuration \> General \> Content Management**.
 3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
 4. Click **Save Config**.
+
+{: .bs-callout .bs-callout-tip }
+Enable WYSIWYG in your [test suite] when you need to test it.
 
 ### Security settings
 
@@ -82,10 +80,9 @@ In _magento2/dev/tests/acceptance_, run the following command:
 vendor/bin/robo build:project
 ```
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
 When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
-</div>
 
 ### Step 4. Edit environment settings
 
@@ -142,7 +139,7 @@ vendor/bin/robo generate:tests
 
 ### Step 7. Run tests
 
-To run tests you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`robo`](commands/robo.html) with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`][codecept] or a [`robo`][robo] command with required parameters.
 
 #### Run the Selenium server {#selenium-server}
 
@@ -178,3 +175,14 @@ vendor/bin/robo allure2:report
 ```
 
 See also [Allure `robo` commands](commands/robo.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).
+
+<!-- Link definitions -->
+
+[php]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
+[composer]: https://getcomposer.org/download/
+[java]: https://www.java.com/en/download/
+[selenium]: #selenium-server
+[chrome]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[codecept]: commands/codeception.html
+[robo]: commands/robo.html
+[test suite]: suite.html
