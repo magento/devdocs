@@ -38,7 +38,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, it was possible for the site to switch back to production mode even if the deployment failed.
+    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
 
     -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
@@ -131,7 +131,9 @@ Made the following changes to improve log messages and reduce log size:
 
 - <!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html) (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
 
-- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified.
+Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate
+older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 - <!--MAGECLOUD-2556-->Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain to a `www`domain.
 
@@ -147,7 +149,8 @@ Made the following changes to improve log messages and reduce log size:
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
--  <!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html) to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
+-  <!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html)
+to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
 - <!-- MAGECLOUD-1910 -->**Wizards**—Added two [wizards]({{ page.baseurl }}/cloud/env/smart-wizards.html) to help you with Cloud configuration:
     -  `ideal-state`—configure the ideal state for minimal deployment downtime

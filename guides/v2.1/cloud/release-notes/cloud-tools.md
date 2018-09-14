@@ -41,7 +41,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 	
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, it was possible for the site to switch back to production mode even if the deployment failed.
+    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved.
 
     -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
