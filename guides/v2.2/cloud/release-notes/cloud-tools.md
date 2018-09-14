@@ -51,7 +51,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
         -  <!--MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
 		
-		- <!--MAGECLOUD-2173-->Fixed an issue that caused `recursion detected` errors during the {site.data.var.ece}} deployment process.
+		- <!--MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
 		
 -  **Cron-related fixes**
 
