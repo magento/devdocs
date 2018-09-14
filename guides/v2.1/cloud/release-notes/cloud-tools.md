@@ -39,8 +39,8 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  JIRA-MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
 
-#### Resolved Issues
 
+#### Resolved Issues
 
 -  **Deployment fixes**
 
