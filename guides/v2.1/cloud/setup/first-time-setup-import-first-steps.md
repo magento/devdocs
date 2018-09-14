@@ -12,6 +12,10 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-prereq.html
+  - /guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html
+  - /guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html
 functional_areas:
   - Cloud
   - Setup

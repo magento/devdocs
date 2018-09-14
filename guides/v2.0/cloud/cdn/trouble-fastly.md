@@ -5,6 +5,8 @@ title: Fastly troubleshooting
 menu_title: Fastly troubleshooting
 menu_order: 20
 menu_node:
+redirect from:
+   - /guides/v2.0/cloud/trouble/trouble_fastly.html
 functional_areas:
   - Cloud
   - Configuration
@@ -249,7 +251,7 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 
 	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
-Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 ## Activating a deactivated version {#activate}
 
@@ -281,4 +283,4 @@ Then activate the version you want active:
 
 * [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html)
 * [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html)
+* [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)

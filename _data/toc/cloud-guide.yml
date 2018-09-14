@@ -72,7 +72,7 @@ pages:
           url: /cloud/integrations/github-integration.html
 
     - label: Local environment setup
-      url: /cloud/access-acct/first-time-setup.html
+      url: /cloud/setup/first-time-setup.html
       children:
         - label: Prepare for local environment setup
           url: /cloud/before/before-workspace.html
@@ -93,7 +93,7 @@ pages:
           url: /cloud/before/before-setup-env-install.html
 
         - label: First time deployment
-          url: /cloud/access-acct/first-time-deploy.html
+          url: /cloud/setup/first-time-deploy.html
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
@@ -106,13 +106,13 @@ pages:
           include_versions: ["2.1","2.2","2.3"]
 
     - label: Import existing code into a project
-      url: /cloud/access-acct/first-time-setup_import-first-steps.html
+      url: /cloud/setup/first-time-setup-import-first-steps.html
       children:
         - label: Prepare your existing Magento Commerce system
-          url: /cloud/access-acct/first-time-setup_import-prepare.html
+          url: /cloud/setup/first-time-setup-import-prepare.html
 
-        - label: Import Magento Commerce into Magento Commerce Cloud
-          url: /cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: /cloud/setup/first-time-setup-import-import.html
 
     - label: Configure your store
       url: /cloud/configure/configuration-overview.html
@@ -318,7 +318,7 @@ pages:
       url: /cloud/trouble/trouble.html
       children:
         - label: Troubleshoot deployment
-          url: /cloud/access-acct/trouble.html
+          url: /cloud/trouble/troubleshoot-deployment.html
 
         - label: View logs for troubleshooting
           url: /cloud/trouble/environments-logs.html

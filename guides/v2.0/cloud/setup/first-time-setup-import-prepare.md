@@ -4,6 +4,8 @@ title: Prepare your existing Magento Commerce install
 functional_areas:
   - Cloud
   - Setup
+redirect_from:
+  - /guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html
 ---
 
 You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.

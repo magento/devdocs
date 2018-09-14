@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Import existing code into a project
 menu_title: Import existing code into a project
@@ -9,9 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: import
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.3/cloud/access-acct/first-time-setup_import-prereq.html
+  - /guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html
 functional_areas:
   - Cloud
   - Setup

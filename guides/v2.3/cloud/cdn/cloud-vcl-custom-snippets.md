@@ -1,1 +1,1 @@
-../../../v2.1/cloud/cdn/cloud-vcl-custom-snippets.md
+../../../v2.2/cloud/cdn/cloud-vcl-custom-snippets.md

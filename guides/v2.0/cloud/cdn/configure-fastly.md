@@ -6,7 +6,8 @@ menu_title: Set up Fastly
 menu_order: 5
 menu_node:
 redirect_from:
-  - /guides/v2.0/cloud/basic-information/cloud-fastly.html
+   - /guides/v2.0/cloud/access-acct/fastly.html
+
 functional_areas:
   - Cloud
   - Setup
@@ -216,7 +217,7 @@ To create a custom error/maintenance page:
 
 ## Create custom VCL snippets {#custom-vcl}
 
-For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html)
+For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 
 ## Extend Fastly timeout for the Magento Admin {#bulkaction}
 
@@ -290,4 +291,4 @@ When you upgrade, the default VCL snippets you uploaded should not be affected o
 
 For information on upgrading modules, refer to [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html).
 
-If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).

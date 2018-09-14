@@ -227,7 +227,7 @@ to the origin.
 
 You can add multiple backends. Repeat these instructions to create multiple
 backends. For example, you may need a backend specifically for
-[Wordpress]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html) to
+[Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) to
 handle your blog.
 
 1. Access and expand **Fastly Configuration**.
@@ -335,7 +335,7 @@ To create a custom error/maintenance page:
 ## Create custom VCL snippets {#custom-vcl}
 
 For extensive instructions to create custom VCL snippets and needed edge
-dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html)
+dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 
 ## Extend Fastly timeout for the Magento Admin {#bulkaction}
 
@@ -445,4 +445,4 @@ For information on upgrading modules, refer to [Install, manage, and upgrade mod
 If you created a custom VCL snippet using the same name as a default snippet,
 you may need to verify and update those snippets. We do not recommend replacing
 existing default snippets with custom snippets of the same name. For details on
-custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).

@@ -1,1 +1,0 @@
-../../../v2.1/cloud/cdn/fastly-vcl-badreferer.md

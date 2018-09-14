@@ -7,6 +7,8 @@ menu_order: 154
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
+redirect_from:
+  - /guides/v2.0/cloud/access-acct/first-time-setup_import-import.html
 functional_areas:
   - Cloud
   - Setup
@@ -16,11 +18,9 @@ QUESTION: Do we really want to support a full overwrite?
 
 The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
 
-<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 Warning: When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
-
 Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
-</div>
 
 ## Required information
 
@@ -129,7 +129,7 @@ To import the Magento database in {{site.data.var.ece}}, you must know:
 -   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
 -   The database name, username, and password of the [Cloud database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
 
-{: .bs-callout .bs-callout-info }
+{:.bs-callout .bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
 
 When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the database.
@@ -207,9 +207,8 @@ To update the unsecure base URL:
     UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
     ```
 
-    <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+    {:.bs-callout .bs-callout-warning}
     The base URL _must_ end with a `/` character.
-    </div>
 
 1.  Confirm the change by entering the following command:
 
@@ -220,7 +219,7 @@ To update the unsecure base URL:
 1.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 1.  Continue with the next section.
 
-{: .bs-callout .bs-callout-info }
+{:.bs-callout .bs-callout-info}
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 
 ## Add the Magento encryption key {#encryption-key}
@@ -251,9 +250,8 @@ To add your {{site.data.var.ee}} encryption key:
 
 1.  Save your changes to `env.php` and exit the text editor.
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    {:.bs-callout .bs-callout-info}
     Make sure to add this key to the `env.php` file for all environments: Integration, Staging, and Production.
-    </div>
 
 ## Import media {#media}
 

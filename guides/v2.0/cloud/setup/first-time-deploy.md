@@ -4,6 +4,8 @@ subgroup: 080_setup
 title: First time deployment
 menu_title: First time deployment
 menu_order: 60
+redirect_from:
+  - /guides/v2.0/cloud/access-acct/first-time-deploy.html
 functional_areas:
   - Cloud
   - Setup
@@ -13,7 +15,7 @@ functional_areas:
 #### Previous step:
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout .bs-callout-info }
 You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
 
 After fully setting up your local workspace, for **Pro** you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.
