@@ -52,8 +52,8 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
       -  JIRA-MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
 
-    - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
-
+    - JIRA-MAGECLOUD-2173-->Fixed an issue that caused `recursion detected` errors during the {site.data.var.ece}} deployment process.
+		
 -  **Cron-related fixes**
 
    -  JIRA-MAGECLOUD-2602-->Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).

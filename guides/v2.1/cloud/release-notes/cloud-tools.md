@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-<!-- Assigning liquid variables for placeholder valuesst
+<!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
 {% assign unsecure_base_url = "{{unsecure_base_url}}" %}
 
@@ -25,6 +25,10 @@ php ./vendor/bin/ece-tools list
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Updated release notes
 	
 ## v2002.0.14
 
@@ -33,15 +37,13 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  <!--MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
 
+-  JIRA-MAGECLOUD-2574-->**Branch-specific configuration option**—You can now create branch-specific configuration files to override environment variables and key-value pairs in the `.magento.env.yaml` configuration file.
+
 -  <!--MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
 -  <!--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
 
 #### Resolved Issues
-
--  <!--MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
-
--  <!--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
 
 -  **Deployment fixes**
 
