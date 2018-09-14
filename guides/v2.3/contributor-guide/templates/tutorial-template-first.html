@@ -1294,8 +1294,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="metadata-parameters">Metadata parameters</h2>
 
-<p>You must use the following   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
- parameters on the tutorial index page.</p>
+<p>You must use the following metadata parameters on the tutorial index page.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -1328,6 +1327,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <tr>
       <td><code class="highlighter-rouge">return_to:</code></td>
       <td>Defines the tutorial’s parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the <code class="highlighter-rouge">return_to:</code> parameter. Instead, specify values for these second-level parameters:<br /><br /><code class="highlighter-rouge">title:</code> The title of the parent topic<br /><br /><code class="highlighter-rouge">url:</code> The URL of the parent topic</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">functional_areas:</code></td>
+      <td>Optional. Adds facets for search results. Available facets include: sales, products, carts, customers, marketing, account, content, reports, stores, system, catalog, orders, frontend, theme, staging, search, configurations, integration, services, tools, setup, testing or test, standards, install, upgrade, B2B, cloud, and bundled extensions.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">redirect_from</code></td>
+      <td>Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the <code class="highlighter-rouge">/guides</code> directory. For an example, see the source code for this template page.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">ee_only:</code></td>

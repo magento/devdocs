@@ -1490,6 +1490,47 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can start off by editing the local version of this file using markdown language (and   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.</p>
 
+<h2 id="metadata-parameters">Metadata parameters</h2>
+
+<p>Add the following metadata parameters at the top of your page. We use YAML for the metadata in front matter. We use this data when generating the DevDocs for the following:</p>
+
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">group:</code></td>
+      <td>The table of contents this file belongs to, which points to files located in <code class="highlighter-rouge">_data/toc/</code>. Only add the name of the file without the extension. For example, the group of this file is <code class="highlighter-rouge">group: contributor-guide</code>, which points to the table of contents defined in <code class="highlighter-rouge">_data/toc/contributor-guide.yml</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">title:</code></td>
+      <td>The title of the page.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">functional_areas:</code></td>
+      <td>Optional. Adds facets for search results. Available facets include: Sales, Products, Carts, Customers, Marketing, Account, Content, Reports, Stores, System, Catalog, Orders, Frontend, Theme, Staging, Search, Configurations, Integration, Services, Tools, Setup, Testing, test, Standards, Install, Upgrade, B2B, Cloud, and Bundled extensions. These facets are case sensitive and support multiple facets separated by commas. For example: <code class="highlighter-rouge">functional_areas: Install</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">redirect_from</code></td>
+      <td>Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the <code class="highlighter-rouge">/guides</code> directory. For an example, see the source code for this template page.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ee_only:</code></td>
+      <td>Optional. If set to <code class="highlighter-rouge">true</code>, graphics/cues display on the page indicating it applies to Magento Commerce.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you need help with metadata, we can help in your submitted pull requests.</p>
+</div>
+
 <h2 id="basic">Basic Markdown Syntax</h2>
 
 <p>Below are some basic examples of what you can do with markdown.</p>
