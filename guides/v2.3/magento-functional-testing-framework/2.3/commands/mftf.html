@@ -1860,7 +1860,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>The Magento Functional Testing Framework (<abbr title="Magento Functional Testing Framework">MFTF</abbr>) introduces the command line interface (CLI) tool <code class="highlighter-rouge">vendor/bin/mftf</code> to facilitate your interaction with the framework.</p>
 
@@ -1874,14 +1874,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In the project root directory (where you have installed the framework as a composer dependency), run commands using the following format:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>&lt;arguments&gt;] <span class="o">[</span><span class="nt">--remove</span>|-r]
 </code></pre></div></div>
 
 <h2 id="useful-commands">Useful commands</h2>
 
 <p>Use the following commands to run commonly-performed tasks.</p>
 
-<h3 id="build-the-project">Build the project</h3>
+<h3 id="apply-the-configuration-parameters">Apply the configuration parameters</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf build:project
 </code></pre></div></div>
@@ -1891,24 +1891,30 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf build:project <span class="nt">--upgrade</span>
 </code></pre></div></div>
 
-<h3 id="generate-all-tests-in-php">Generate all tests in PHP</h3>
+<p>Upgrades the existing <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests after the <abbr title="Magento Functional Testing Framework">MFTF</abbr> major upgrade.</p>
+
+<h3 id="generate-all-tests">Generate all tests</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
 </code></pre></div></div>
-<h3 id="generate-one-or-more-tests-in-php">Generate one or more tests in PHP</h3>
+<h3 id="generate-the-particular-tests">Generate the particular tests</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests testName01 testName02 testName03
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 </code></pre></div></div>
 
-<h3 id="run-and-generate-all-tests-that-contain-the-groupexample-annotation">Run and generate all tests that contain the <code class="highlighter-rouge">group="example"</code> annotation</h3>
+<h3 id="generate-and-run-the-tests-of-a-particular-group">Generate and run the tests of a particular group</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group example
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group product <span class="nt">-r</span>
 </code></pre></div></div>
 
-<h3 id="run-and-generate-all-tests">Run and generate all tests</h3>
+<p>It cleans up the previously generated tests; generates and runs the tests where <code class="highlighter-rouge">group="product"</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test
+<h3 id="generate-and-run-particular-tests">Generate and run particular tests</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest <span class="nt">-r</span>
 </code></pre></div></div>
+
+<p>It cleans up the previously generated tests; generates and runs the <code class="highlighter-rouge">LoginAsAdminTest</code> <code class="highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
 
 <h2 id="reference">Reference</h2>
 
@@ -1920,7 +1926,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h4 id="usage">Usage</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf build:project <span class="o">[</span>option]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf build:project <span class="o">[</span><span class="nt">--upgrade</span><span class="o">]</span>
 </code></pre></div></div>
 
 <h4 id="options">Options</h4>
@@ -1949,7 +1955,7 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
 
 <h4 id="usage-1">Usage</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests <span class="o">[</span>option] <span class="o">[</span><span class="nb">test </span>name] <span class="o">[</span><span class="nb">test </span>name]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests <span class="o">[</span>option] <span class="o">[</span>&lt;<span class="nb">test </span>name&gt;] <span class="o">[</span>&lt;<span class="nb">test </span>name&gt;] <span class="o">[</span><span class="nt">--remove</span><span class="o">]</span>
 </code></pre></div></div>
 
 <h4 id="options-1">Options</h4>
@@ -1963,8 +1969,8 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">--config</code></td>
-      <td>Creates a single manifest file with a list of all tests. The default location is <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split it into multiple groups using <code class="highlighter-rouge">--config parallel</code>; the groups will be generated in <code class="highlighter-rouge">_generated/groups/</code> like <code class="highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="highlighter-rouge">default</code> (default), <code class="highlighter-rouge">singleRun</code>(same as <code class="highlighter-rouge">default</code>), and <code class="highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="highlighter-rouge">generate:tests --config parallel</code>.</td>
+      <td><code class="highlighter-rouge">--config=[&lt;default&gt;|&lt;singleRun&gt;|&lt;parallel&gt;]</code></td>
+      <td>Creates a single manifest file with a list of all tests. The default location is <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split it into multiple groups using <code class="highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="highlighter-rouge">_generated/groups/</code> like <code class="highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="highlighter-rouge">default</code> (default), <code class="highlighter-rouge">singleRun</code>(same as <code class="highlighter-rouge">default</code>), and <code class="highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="highlighter-rouge">generate:tests --config=parallel</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">--force</code></td>
@@ -1972,7 +1978,7 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
     </tr>
     <tr>
       <td><code class="highlighter-rouge">--lines</code></td>
-      <td>Sets the number of lines that determines the group size when <code class="highlighter-rouge">--config parallel</code> is used. The <strong>default value</strong> is <code class="highlighter-rouge">500</code>. Example: <code class="highlighter-rouge">generate:tests --config parallel --lines 400</code></td>
+      <td>Sets the number of lines that determines the group size when <code class="highlighter-rouge">--config=parallel</code> is used. The <strong>default value</strong> is <code class="highlighter-rouge">500</code>. Example: <code class="highlighter-rouge">generate:tests --config=parallel --lines=400</code></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">--tests</code></td>
@@ -1981,6 +1987,10 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
     <tr>
       <td><code class="highlighter-rouge">--debug</code></td>
       <td>Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="highlighter-rouge">generate:tests SampleTest --remove</code> cleans up the entire <code class="highlighter-rouge">_generated</code> directory and generates <code class="highlighter-rouge">SampleTest</code> only.</td>
     </tr>
   </tbody>
 </table>
@@ -2043,10 +2053,25 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
 
 <h4 id="usage-2">Usage</h4>
 
-<p><code class="highlighter-rouge">generate:suite &lt;suites&gt; &lt;suites&gt; ...</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:suite &lt;suite name&gt; <span class="o">[</span>&lt;suite name&gt;] <span class="o">[</span><span class="nt">--remove</span><span class="o">]</span>
+</code></pre></div></div>
 
-<p><code class="highlighter-rouge">&lt;suites&gt;</code> represents a suite name.
-To generate multiple suites, separate each name with a space.</p>
+<h4 id="options-2">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="highlighter-rouge">vendor/bin/mftf generate:suite WYSIWYG --remove</code> cleans up the entire <code class="highlighter-rouge">_generated</code> directory and generates <code class="highlighter-rouge">WYSIWYG</code> only.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h4 id="example">Example</h4>
 
@@ -2062,11 +2087,12 @@ It also enables auto-completion in PhpStorm.</p>
 
 <h4 id="usage-3">Usage</h4>
 
-<p><code class="highlighter-rouge">generate:urn-catalog [options] &lt;path to the directory with misc.xml&gt;/</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:urn-catalog <span class="o">[</span><span class="nt">--force</span><span class="o">]</span> <span class="o">[</span>&lt;path to the directory with misc.xml&gt;]
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">misc.xml</code> is typically located in <code class="highlighter-rouge">&lt;project root&gt;/.idea/</code>.</p>
 
-<h4 id="options-2">Options</h4>
+<h4 id="options-3">Options</h4>
 
 <table>
   <thead>
@@ -2097,9 +2123,10 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="usage-4">Usage</h4>
 
-<p><code class="highlighter-rouge">reset [options]</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf reset <span class="o">[</span><span class="nt">--hard</span><span class="o">]</span>
+</code></pre></div></div>
 
-<h4 id="options-3">Options</h4>
+<h4 id="options-4">Options</h4>
 
 <table>
   <thead>
@@ -2127,44 +2154,8 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="usage-5">Usage</h4>
 
-<p><code class="highlighter-rouge">run:group [options --] &lt;group1&gt; &lt;group2&gt; ...</code></p>
-
-<h4 id="options-4">Options</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Option</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">-k, --skip-generate</code></td>
-      <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="examples">Examples</h4>
-
-<p>Generate from XML and execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group group1 group2
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group <span class="o">[</span><span class="nt">--skip-generate</span>|--remove] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;group1&gt; <span class="o">[</span>&lt;group2&gt;] 
 </code></pre></div></div>
-
-<p>Execute the generated PHP tests with the tags <code class="highlighter-rouge">@group group1</code> and <code class="highlighter-rouge">@group group2</code>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> group1 group2
-</code></pre></div></div>
-
-<h3 id="runtest"><code class="highlighter-rouge">run:test</code></h3>
-
-<p>Generates and executes tests by name using Codeception.</p>
-
-<h4 id="usage-6">Usage</h4>
-
-<p><code class="highlighter-rouge">run:test [options --] &lt;name1&gt; &lt;name2&gt; ...</code></p>
 
 <h4 id="options-5">Options</h4>
 
@@ -2180,19 +2171,60 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
       <td><code class="highlighter-rouge">-k, --skip-generate</code></td>
       <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
     </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-r, --remove</code></td>
+      <td>Removes previously generated suites and tests before the actual generation and run.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples">Examples</h4>
+
+<p>Clean up after the last run, generate from XML and execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf <span class="nt">-r</span> <span class="nt">--</span> run:group group1 group2
+</code></pre></div></div>
+
+<p>Execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code> that has already been generated, skipping the regeneration of the test:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> group1 group2
+</code></pre></div></div>
+
+<h3 id="runtest"><code class="highlighter-rouge">run:test</code></h3>
+
+<p>Generates and executes tests by name using Codeception.</p>
+
+<h4 id="usage-6">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test <span class="o">[</span><span class="nt">--skip-generate</span>|--remove] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;name1&gt; <span class="o">[</span>&lt;name2&gt;]
+</code></pre></div></div>
+
+<h4 id="options-6">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">-k, --skip-generate</code></td>
+      <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">-r, --remove</code></td>
+      <td>Remove previously generated suites and tests.</td>
+    </tr>
   </tbody>
 </table>
 
 <h4 id="examples-1">Examples</h4>
 
-<p>Generate from XML and execute the <code class="highlighter-rouge">LoginCustomerTest</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest</code> tests:</p>
+<p>Generate from XML the <code class="highlighter-rouge">LoginCustomerTest</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest</code> tests and execute all the generated tests:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
-</code></pre></div></div>
-
-<p>Execute the <code class="highlighter-rouge">LoginCustomerTest.php</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest.php</code> tests:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> LoginCustomerTest StorefrontCreateCustomerTest
 </code></pre></div></div>
 
 <h3 id="upgradetests"><code class="highlighter-rouge">upgrade:tests</code></h3>
@@ -2201,7 +2233,8 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="usage-7">Usage</h4>
 
-<p><code class="highlighter-rouge">upgrade:tests &lt;path&gt;</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf upgrade:tests &lt;path&gt;
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">&lt;path&gt;</code> is the path that contains <abbr title="Magento Functional Testing Framework">MFTF</abbr> test components that need to be upgraded.
 The command searches recursively for any <code class="highlighter-rouge">*.xml</code> files to upgrade.</p>

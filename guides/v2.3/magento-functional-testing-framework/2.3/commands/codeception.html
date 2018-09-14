@@ -1860,19 +1860,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-warning">We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
-All the Codeception commands you need are wrapped using the <code class="highlighter-rouge">mftf</code> tool.</p>
+All the Codeception commands you need are wrapped using the <a href="mftf.html"><code class="highlighter-rouge">mftf</code> tool</a>.</p>
 
-<p>See the <a href="mftf.html">list of <code class="highlighter-rouge">mftf</code> commands</a>. If you’d like to run the Codeception tests directly, run:</p>
+<p>To run Codecept directly, change your directory to <code class="highlighter-rouge">dev/tests/acceptance</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional
-</code></pre></div></div>
+<h2 id="usage-examples">Usage examples</h2>
 
-<h2 id="examples">Examples</h2>
-
-<p>Run all tests in <code class="highlighter-rouge">app/code</code>:</p>
+<p>Run all the generated tests:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
@@ -1934,6 +1931,9 @@ All the Codeception commands you need are wrapped using the <code class="highlig
    --no-ansi             Disable ANSI output.
    --no-interaction (-n) Do not ask any interactive question.
 </code></pre></div></div>
+
+<!-- Link definitions -->
+
 
 			
 		</div>

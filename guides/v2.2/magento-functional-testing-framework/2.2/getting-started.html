@@ -1817,24 +1817,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.2.0 MFTF release.</em></p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
 <p>Make sure that you’ve installed and set up the following software:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">PHP version supported by Magento instance under test</a></li>
+  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php)">PHP version supported by Magento instance under test</a></li>
   <li><a href="https://getcomposer.org/download/">Composer v1.3.x+</a></li>
   <li><a href="https://www.java.com/en/download/">Java v1.8.x+</a></li>
   <li><a href="#selenium-server">Selenium Server Standalone v3.6.0+</a></li>
   <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
 </ul>
-
-<h3 id="recommendations">Recommendations</h3>
-
-<p>We recommend using <a href="https://www.jetbrains.com/phpstorm/">PHPStorm 2017</a> for your integrated development environment (IDE).
-They recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
 
 <h2 id="prepare-magento">Prepare Magento</h2>
 
@@ -1854,6 +1849,8 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
   <li>In the WYSIWYG Options section set the <strong>Enable WYSIWYG Editor</strong> option to <strong>Disabled Completely</strong>.</li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
+
+<p class="bs-callout bs-callout-tip">Enable WYSIWYG in your <a href="suite.html">test suite</a> when you need to test it.</p>
 
 <h3 id="security-settings">Security settings</h3>
 
@@ -1895,10 +1892,8 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-tip">
-  <p>To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
+<p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
 When added, you should be able to run the <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
-</div>
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
@@ -1956,7 +1951,7 @@ Example:</p>
 
 <h3 id="step-7-run-tests">Step 7. Run tests</h3>
 
-<p>To run tests you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> with required parameters.</p>
+<p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or a <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> command with required parameters.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
@@ -1996,6 +1991,9 @@ Testing reports are generated in a CLI during testing.</p>
 </code></pre></div></div>
 
 <p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
+
+<!-- Link definitions -->
+
 
 			
 		</div>

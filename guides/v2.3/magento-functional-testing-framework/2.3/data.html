@@ -1858,7 +1858,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
 <p>Tests require data to function properly.</p>
 
@@ -2026,37 +2026,30 @@ The corresponding value of the credential will be assigned to <code class="highl
 
 <h3 id="persist-a-data-entity-as-a-prerequisite-of-a-test">Persist a data entity as a prerequisite of a test</h3>
 
-<p>A test can specify an entity which should be persisted (created in the database) so that the test actions can operate on existing known data.</p>
+<p>A test can specify an entity to be persisted (created in the database) so that the test actions could operate on the existing known data.</p>
 
-<p>If <code class="highlighter-rouge">&lt;data&gt;</code> has been persisted in <code class="highlighter-rouge">&lt;test&gt;</code>:</p>
+<p>Example of referencing <code class="highlighter-rouge">data</code> in a test:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="$customer.email$"
-</code></pre></div></div>
-
-<p>If <code class="highlighter-rouge">&lt;data&gt;</code> has been persisted in <code class="highlighter-rouge">&lt;before&gt;</code> or <code class="highlighter-rouge">&lt;after&gt;</code>:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="$$customer.email$$"
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="$createCustomer.email$"
 </code></pre></div></div>
 
 <p>In this example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">customer</code> is a <code class="highlighter-rouge">stepKey</code> of the corresponding test step, where an entity is created.</li>
-  <li><code class="highlighter-rouge">email</code> is a <code class="highlighter-rouge">dataKey</code> of the entity. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li><code class="highlighter-rouge">createCustomer</code> is a <code class="highlighter-rouge">stepKey</code> of the corresponding test step that creates an entity.</li>
+  <li><code class="highlighter-rouge">email</code> is a <code class="highlighter-rouge">dataKey</code> of the entity.
+The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
 </ul>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This is a side effect of PHP outputting. Even though both are nested, in PHP they end up being different methods inside a class.</p>
+  <p>As of MFTF 2.3.6, you no longer need to differentiate between scopes (a test, a hook, or a suite) for persisted data when referencing it in tests.</p>
 
-  <p>Since <code class="highlighter-rouge">_before()</code> is a function outside a <code class="highlighter-rouge">myTest()</code> test method, it creates a variable in the class scope instead of the method scope (<code class="highlighter-rouge">$this-&gt;persistedData</code> vs <code class="highlighter-rouge">$persistedData</code>).</p>
+  <p>The MFTF now stores the persisted data and attempts to retrieve it using the combination of <code class="highlighter-rouge">stepKey</code> and the scope of where it has been called.
+The current scope is prefered, then widening to <em>test &gt; hook &gt; suite</em> or <em>hook &gt; test &gt; suite</em>.</p>
 
-  <p>As they are relevant to test:</p>
-  <ul>
-    <li><code class="highlighter-rouge">$persistedData.field$</code> turns into <code class="highlighter-rouge">$persistedData.getData('field')</code>.</li>
-    <li><code class="highlighter-rouge">$$persistedData.field$$</code> turns into <code class="highlighter-rouge">$this-&gt;persistedData.getData('field')</code>.</li>
-  </ul>
+  <p>This emphasizes the practice for the <code class="highlighter-rouge">stepKey</code> of <code class="highlighter-rouge">createData</code> to be descriptive and unique, as a duplicated <code class="highlighter-rouge">stepKey</code> in both a <code class="highlighter-rouge">&lt;test&gt;</code> and <code class="highlighter-rouge">&lt;before&gt;</code> prefers the <code class="highlighter-rouge">&lt;test&gt;</code> data.</p>
 </div>
 
 <h3 id="use-data-returned-by-test-actions">Use data returned by test actions</h3>

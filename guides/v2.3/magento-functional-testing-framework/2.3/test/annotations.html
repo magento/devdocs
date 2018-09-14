@@ -1858,7 +1858,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
 <p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.</p>
 
@@ -2109,7 +2109,10 @@ It has the same functionality as <a href="#features">features</a>, within the St
 
 <h3 id="testcaseid">testCaseId</h3>
 
-<p>The <code class="highlighter-rouge">&lt;testCaseId&gt;</code> element is an implementation of a <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="highlighter-rouge">@TestCaseId</code></a> Allure tag. It specifies a ZephyrId for a test.</p>
+<p>The <code class="highlighter-rouge">&lt;testCaseId&gt;</code> element is an implementation of a <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="highlighter-rouge">@TestCaseId</code></a> Allure tag.
+It specifies a ZephyrId for a test.</p>
+
+<p>This tag is prefixed to a title of the test annotation to make the test title unique in Allure.</p>
 
 <p>If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.</p>
 

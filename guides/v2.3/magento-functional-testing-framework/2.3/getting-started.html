@@ -1858,7 +1858,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated after 2.3.1 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.3.6 MFTF release.</em></p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
@@ -1872,7 +1872,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
 </ul>
 
-<p class="bs-callout bs-callout-tip"><a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
+<p class="bs-callout bs-callout-tip"><a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> supports <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
 
 <h2 id="prepare-magento">Prepare Magento</h2>
 
@@ -1892,6 +1892,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>In the WYSIWYG Options section set the <strong>Enable WYSIWYG Editor</strong> option to <strong>Disabled Completely</strong>.</li>
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
+
+<p class="bs-callout bs-callout-tip">Enable WYSIWYG in your test [suite][] when you need to test it.</p>
 
 <h3 id="security-settings">Security settings</h3>
 
@@ -1923,9 +1925,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>
-    <p>Change directory to the Magento project root.</p>
+    <p>Checkout to the Magento version that you are going to test.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>magento2/
+</code></pre></div>    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout 2.3-develop
 </code></pre></div>    </div>
   </li>
   <li>
@@ -1935,15 +1939,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Change directory to the acceptance tests area.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/acceptance/
-</code></pre></div>    </div>
-  </li>
-  <li>
     <p>Install the MFTF.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer install
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install <span class="nt">-d</span> dev/tests/acceptance/
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -1973,9 +1971,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
 When added, you should be able to run the <code class="highlighter-rouge">mftf</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
 
-<h3 id="environment-settings">Step 4. Edit environment settings</h3>
+<h3 id="environment-settings">Step 4. Edit environmental settings</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim dev/tests/acceptance/.env
+</code></pre></div></div>
+
+<p>Specify the following parameters, which are required to launch tests:</p>
 
 <ul>
   <li>
@@ -1996,58 +1999,41 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
   </li>
 </ul>
 
-<p>The following self-descriptive variables have included default values.</p>
+<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> contains a subdirectory like <code class="highlighter-rouge">http://magento.test/magento2ce</code>, specify <code class="highlighter-rouge">MAGENTO_CLI_COMMAND_PATH</code>.</p>
 
-<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>=<span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>
-<span class="n">SELENIUM_PORT</span>=<span class="m">4444</span>
-<span class="n">SELENIUM_PROTOCOL</span>=<span class="n">http</span>
-<span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
+<h3 id="step-5-enable-the-magento-cli-commands">Step 5. Enable the Magento CLI commands</h3>
+
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp dev/tests/acceptance/.htaccess.sample dev/tests/acceptance/.htaccess
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-warning">Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
+<h4 id="add-cli-commands">(Optional) Copy <code class="highlighter-rouge">command.php</code> into Magento installation</h4>
 
-<p>Your environment settings form the path to your running Selenium Server.
-Example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
-</code></pre></div></div>
-
-<h3 id="add-cli-commands">Step 5. (Optional) Copy <code class="highlighter-rouge">command.php</code> into Magento installation</h3>
-
-<p>If you are installing the MFTF not from your Magento installation, locate the <code class="highlighter-rouge">command.php</code> file in the MFTF:</p>
+<p>If you are installing the MFTF from the other location than your Magento installation, point to the <code class="highlighter-rouge">command.php</code> file in the MFTF source code:</p>
 
 <p><code class="highlighter-rouge">magento2-functional-testing-framework/etc/config/command.php</code></p>
 
-<p>And copy it into your Magento installation under:</p>
+<p>And copy it into your Magento installation:</p>
 
-<p><code class="highlighter-rouge">magento2/dev/tests/acceptance/utils/command.php</code></p>
+<p><code class="highlighter-rouge">magento2/dev/tests/acceptance/utils/</code></p>
 
 <p>If you are installing the MFTF from inside your Magento installation, this is automatically done when you <a href="#build-project">build the project</a>.</p>
 
 <p class="bs-callout bs-callout-warning">If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.</p>
 
-<h3 id="step-6-enable-the-magento-cli-commands">Step 6. Enable the Magento CLI commands</h3>
+<h3 id="run-tests">Step 7. Generate and run tests</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .htaccess.sample .htaccess
-</code></pre></div></div>
-
-<h3 id="generate-tests">Step 7. Generate existing tests</h3>
-
-<p>In the <code class="highlighter-rouge">magento2/</code> root directory, run the following command to generate tests as PHP classes from XML files:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
-</code></pre></div></div>
-
-<h3 id="run-tests">Step 8. Run tests</h3>
-
-<p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> with required parameters.</p>
+<p>To run tests, you need a running Selenium server and <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> with required parameters.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
-<p>Run the Selenium server in terminal:</p>
+<p>Run the Selenium server in terminal.
+Example of the run for Chrome:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server-standalone-&lt;version&gt;.jar
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;path_to_directory_with_selenium_server_and_webdiver&gt;/
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-Dwebdriver</span>.chrome.driver<span class="o">=</span>chromedriver <span class="nt">-jar</span> selenium-server-standalone-3.14.0.jar
 </code></pre></div></div>
 
 <p>If you do not have the Selenium server yet:</p>
@@ -2059,27 +2045,44 @@ Example:</p>
   <li>
     <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory that contains the Selenium server.</p>
   </li>
-  <li>
-    <p>Add the directory with the web driver to <code class="highlighter-rouge">PATH</code>.</p>
-  </li>
 </ol>
 
-<h4 id="run-all-tests">Run all tests</h4>
+<h4 id="run-all-tests">Generate and run all tests</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/acceptance
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
 
-<p>See more commands in <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
+<p>See more commands in <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
+
+<h4 id="run-test">Run a simple test</h4>
+
+<p>To clean up the previously generated tests, and then generate and run a single test <code class="highlighter-rouge">AdminLoginTest</code>, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test AdminLoginTest <span class="nt">--remove</span>
+</code></pre></div></div>
+
+<p>See more commands in <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a>.</p>
 
 <h3 id="reports">Step 9. Generate reports</h3>
 
-<p>The testing reports are generated in a CLI during testing.</p>
+<p>The testing reports are generated in CLI during the testing.</p>
 
-<p>To generate the reports in HTML, use <a href="https://docs.qameta.io/allure/latest/">Allure</a>.
-For example, to generate the reports when you are in the <code class="highlighter-rouge">magento2</code> project root, run:</p>
+<p>The MFTF also provides visual reports using <a href="http://allure.qatools.ru/">Allure</a>.
+To view the reports in GUI:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allure generate dev/tests/acceptance/tests/_output/allure-results/ <span class="nt">--output</span> dev/tests/acceptance/tests/_output/allure-report/ <span class="nt">--clean</span>
+<ul>
+  <li><a href="https://github.com/allure-framework/allure2">install Allure</a></li>
+  <li>run the tool to serve the artifacts in <code class="highlighter-rouge">dev/tests/acceptance/tests/_output/allure-results/</code>:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allure serve dev/tests/acceptance/tests/_output/allure-results/
 </code></pre></div></div>
+
+<p>Learn more about Allure in the <a href="https://docs.qameta.io/allure/">official documentation</a>.</p>
 
 <!-- Link definitions -->
 

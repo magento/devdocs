@@ -1858,11 +1858,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
-<p>The <em>*.env</em> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
-All MFTF users will need to set the basic configuration values.
-Advanced users may need to set additional values to work with their environment.</p>
+<p>The <code class="highlighter-rouge">*.env</code> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
+To run the MFTF on your Magento testing instance, specify the basic configuration values.
+For advanced usage, customize the configuration according to your requirements and environment.</p>
 
 <h2 id="basic-configuration">Basic Configuration</h2>
 
@@ -1870,35 +1870,47 @@ Advanced users may need to set additional values to work with their environment.
 
 <h3 id="magento_base_url">MAGENTO_BASE_URL</h3>
 
-<ul>
-  <li>Use: Required.</li>
-  <li>Description: The root URL of the Magento application under test.</li>
-  <li>Example: <code class="highlighter-rouge">http://magento2.vagrant251</code></li>
-</ul>
+<p>The root URL of the Magento application under test.</p>
+
+<p>Use: required.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_BASE_URL</span>=<span class="n">http</span>://<span class="n">magento2</span>.<span class="n">vagrant251</span>
+</code></pre></div></div>
 
 <h3 id="magento_backend_name">MAGENTO_BACKEND_NAME</h3>
 
-<ul>
-  <li>Use: Required.</li>
-  <li>Description: The path to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">admin_12346</code>.</li>
-</ul>
+<p>The path to the Magento Admin page.</p>
+
+<p>Use: required.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_BACKEND_NAME</span>=<span class="n">admin_12346</span>
+</code></pre></div></div>
 
 <h3 id="magento_admin_username">MAGENTO_ADMIN_USERNAME</h3>
 
-<ul>
-  <li>Use: Required.</li>
-  <li>Description: The username that tests will use to log in to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">admin</code>.</li>
-</ul>
+<p>The username that tests will use to log in to the Magento Admin page.</p>
+
+<p>Use: required.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_ADMIN_USERNAME</span>=<span class="n">admin</span>
+</code></pre></div></div>
 
 <h3 id="magento_admin_password">MAGENTO_ADMIN_PASSWORD</h3>
 
-<ul>
-  <li>Use: Required.</li>
-  <li>Description: The password that tests will use to log in to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">1234reTyt%$7</code></li>
-</ul>
+<p>The password that tests will use to log in to the Magento Admin page.</p>
+
+<p>Use: required.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_ADMIN_PASSWORD</span>=<span class="m">1234</span><span class="n">reTyt</span>%$<span class="m">7</span>
+</code></pre></div></div>
 
 <h2 id="advanced-configuration">Advanced Configuration</h2>
 
@@ -1908,113 +1920,180 @@ But in case you do need to do some configuration, they are shown here for your r
 
 <h3 id="selenium">SELENIUM</h3>
 
-<p>The <code class="highlighter-rouge">SELENIUM_*</code> values are concatenated together to form the URL of a custom Selenium server to test against.
+<p>The <code class="highlighter-rouge">SELENIUM_*</code> values form the URL of a custom Selenium server to be run for testing.
 An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.</p>
 
-<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>
-<span class="n">SELENIUM_PORT</span>
-<span class="n">SELENIUM_PROTOCOL</span>
-<span class="n">SELENIUM_PATH</span>
+<p>Your default Selenium URL:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
+
+<p>And the default configuration:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>=<span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>
+<span class="n">SELENIUM_PORT</span>=<span class="m">4444</span>
+<span class="n">SELENIUM_PROTOCOL</span>=<span class="n">http</span>
+<span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-warning">Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
 
 <h4 id="selenium_host">SELENIUM_HOST</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">user:pass@ondemand.saucelabs.com</code></li>
-</ul>
+<p>Override the default Selenium server host.</p>
+
+<p>Use: Optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_HOST</span>=<span class="n">user</span>:<span class="n">pass</span>@<span class="n">ondemand</span>.<span class="n">saucelabs</span>.<span class="n">com</span>
+</code></pre></div></div>
 
 <h4 id="selenium_port">SELENIUM_PORT</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">443</code></li>
-</ul>
+<p>Override the default Selenium server port.</p>
+
+<p>Optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_PORT</span>=<span class="m">443</span>
+</code></pre></div></div>
 
 <h4 id="selenium_protocol">SELENIUM_PROTOCOL</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">https</code></li>
-</ul>
+<p>Override the default Selenium server protocol.</p>
+
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_PROTOCOL</span>=<span class="n">https</span>
+</code></pre></div></div>
 
 <h4 id="selenium_path">SELENIUM_PATH</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">/wd/hub</code></li>
-</ul>
+<p>Override the default Selenium server path.</p>
+
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
+</code></pre></div></div>
 
 <h3 id="magento_restapi">MAGENTO_RESTAPI</h3>
 
-<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases where your Magento instance has a different API path than the standard <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
+<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases when your Magento instance has a different API path than the one in <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
 
-<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
 <span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>
 </code></pre></div></div>
 
 <h4 id="magento_restapi_server_host">MAGENTO_RESTAPI_SERVER_HOST</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: The protocol and host part of the API path.</li>
-  <li>Example: <code class="highlighter-rouge">http://localhost</code></li>
-</ul>
+<p>The protocol and the host of the REST API server path.</p>
+
+<p>Use: optional.
+Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>=<span class="n">http</span>://<span class="n">localhost</span>
+</code></pre></div></div>
 
 <h4 id="magento_restapi_server_port">MAGENTO_RESTAPI_SERVER_PORT</h4>
 
-<ul>
-  <li>Use: Optional</li>
-  <li>Description: The port part of the API path.</li>
-  <li>Example: <code class="highlighter-rouge">5000</code></li>
-</ul>
+<p>The port part of the API path.</p>
+
+<p>Use: optional</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>=<span class="m">5000</span>
+</code></pre></div></div>
 
 <h3 id="tests">TESTS</h3>
 
 <p>These values can be used in cases where you are working locally on both MFTF’s implementation code and Magento’s test case code.
-Use them if you have a more advanced local development setup involving symlinking MFTF into the <code class="highlighter-rouge">vendor</code> directory of <code class="highlighter-rouge">magento2</code>.</p>
+Use them if you have a more advanced local development setup that involves symlinking the MFTF into the <code class="highlighter-rouge">vendor</code> directory of the Magento root directory.</p>
 
-<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>
 <span class="n">FW_BP</span>
 <span class="n">TESTS_MODULES_PATH</span>
 </code></pre></div></div>
 
 <h4 id="tests_bp">TESTS_BP</h4>
 
-<p>BP is an acronym for BasePath.</p>
+<p>The path to where MFTF supplementary files are located in the Magento2 codebase.
+BP is an acronym for <em>BasePath</em>.</p>
 
-<ul>
-  <li>Use: Optional.</li>
-  <li>Description: The path to where MFTF supplementary files are located in the Magento2 codebase.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance</code></li>
-</ul>
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>=~/<span class="n">magento2ce</span>/<span class="n">dev</span>/<span class="n">tests</span>/<span class="n">acceptance</span>
+</code></pre></div></div>
 
 <h4 id="fw_bp">FW_BP</h4>
 
-<p>FW_BP is an acronym for FrameWork BasePath.</p>
+<p>The path to where MFTF exists and from which it is symlinked.
+FW_BP is an acronym for <em>FrameWork BasePath</em>.</p>
 
-<ul>
-  <li>Use: Optional.</li>
-  <li>Description: The path to where MFTF exists and from which it is symlinked.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento/magento2-functional-testing-framework</code></li>
-</ul>
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FW_BP</span>=~/<span class="n">magento</span>/<span class="n">magento2</span>-<span class="n">functional</span>-<span class="n">testing</span>-<span class="n">framework</span>
+</code></pre></div></div>
 
 <h4 id="tests_module_path">TESTS_MODULE_PATH</h4>
 
-<ul>
-  <li>Use: Optional.</li>
-  <li>Description: The path to where MFTF modules mirror Magento’s modules.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code></li>
-</ul>
+<p>The path to where MFTF modules mirror Magento’s modules.</p>
+
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/<span class="n">magento2</span>/<span class="n">dev</span>/<span class="n">tests</span>/<span class="n">acceptance</span>/<span class="n">tests</span>/<span class="n">functional</span>/<span class="n">Magento</span>/<span class="n">FunctionalTest</span>
+</code></pre></div></div>
 
 <h3 id="module_whitelist">MODULE_WHITELIST</h3>
 
-<p>Use the <code class="highlighter-rouge">MODULE_WHITELIST</code> environment variable if you are working on a new module.
-When adding a new directory under <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name under <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
+<p>Use for a new module.
+When adding a new directory at <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name to <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
+
+<p>Use: optional.</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MODULE_WHITELIST</span>=<span class="n">Magento_Framework</span>,<span class="n">Magento_ConfigurableProductWishlist</span>,<span class="n">Magento_ConfigurableProductCatalogSearch</span>
+</code></pre></div></div>
+
+<h3 id="magento_cli_command_path">MAGENTO_CLI_COMMAND_PATH</h3>
+
+<p>Path to the Magento CLI command entry point.</p>
+
+<p>Default: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code>.
+It points to <code class="highlighter-rouge">MAGENTO_BASE_URL</code> + <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
+
+<p>Modify the default value:</p>
+
+<ul>
+  <li>for non-default Magento installation</li>
+  <li>when use a subdirectory in the <code class="highlighter-rouge">MAGENTO_BASE_URL</code></li>
+</ul>
+
+<p>Use: optional.
+Example: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
+
+<h3 id="browser">BROWSER</h3>
+
+<p>Override the default browser performing the tests.</p>
+
+<p>Default: Chrome</p>
+
+<p>Example:</p>
+
+<div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">BROWSER</span>=<span class="n">firefox</span>
+</code></pre></div></div>
 
 			
 		</div>

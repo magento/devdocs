@@ -1869,34 +1869,47 @@ When you pull changes in the Magento code, you’re potentially pulling correspo
 When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2</code> root directory.
 This ensures that the MFTF is up to date.</p>
 
+<h2 id="update-the-mftf-from-23x">Update the MFTF from 2.3.x</h2>
+
+<p>To update the MFTF to the latest patch:</p>
+
+<ol>
+  <li>Verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
+  <li>Check details about backward incompatible changes in the <a href="../changelog.html">Changelog</a> and update your new or customized tests.</li>
+  <li>
+    <p>Get the latest framework version using Composer:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Generate the updated tests:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/robo generate:tests
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 <h2 id="update-the-mftf-from-22">Update the MFTF from 2.2</h2>
 
-<p>To update the MFTF (via a command line interface):</p>
+<p>To update the MFTF from the previous minor version:</p>
 
 <ol>
   <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
-  <li>Starting at the <code class="highlighter-rouge">magento2</code> root directory remove the vendor folder:
+  <li>Starting at the <code class="highlighter-rouge">magento2/</code> root directory remove the <code class="highlighter-rouge">vendor/</code> directory:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> vendor/
 </code></pre></div>    </div>
   </li>
-  <li>Get the latest framework version:
+  <li>Get the latest framework version from the Composer dependencies:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div>    </div>
   </li>
-  <li>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/acceptance
-</code></pre></div>    </div>
-  </li>
-  <li>Remove the vendor folder:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> vendor/
+  <li>Remove the <code class="highlighter-rouge">vendor/</code> directory at <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> dev/tests/acceptance/vendor/
 </code></pre></div>    </div>
   </li>
   <li>Install dependencies at that level:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
-</code></pre></div>    </div>
-  </li>
-  <li>Go back to the root magento folder
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ../../..
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install <span class="nt">-d</span> dev/tests/acceptance/
 </code></pre></div>    </div>
   </li>
   <li>Run the <code class="highlighter-rouge">upgrade:tests</code> using the new command line tool:
@@ -1904,7 +1917,7 @@ This ensures that the MFTF is up to date.</p>
 </code></pre></div>    </div>
   </li>
   <li>If you are using Phpstorm, update the urn catalog:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:urn-catalog
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:urn-catalog .idea/
 </code></pre></div>    </div>
   </li>
   <li>Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version.
