@@ -29,13 +29,13 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA-MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
+-  <!--MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
 
 -  JIRA-MAGECLOUD-2574-->**Branch-specific configuration option**—You can now create branch-specific configuration files to override environment variables and key-value pairs in the `.magento.env.yaml` configuration file.
 
--  JIRA-MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
+-  <!--MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
--  JIRA-MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
+-  <!--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
 
 
 #### Resolved Issues
@@ -50,10 +50,9 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
        -  JIRA-MAGECLOUD-2603-->If the environment configuration contains incorrect values for cloud variables, ignore the incorrect values and issue a warning with a list of values that require update.
 
-       -  JIRA-MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
+      -  JIRA-MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
 
     - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
-
 
 -  **Cron-related fixes**
 
