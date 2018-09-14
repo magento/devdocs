@@ -337,7 +337,7 @@ pages:
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
-          include_versions: ["2.2","2.3"]
+          include_versions: ["2.1","2.2","2.3"]
 
         - label: Resolve issues with encryption key
           url: /cloud/trouble/trouble-crypt-key-variable.html
