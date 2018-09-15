@@ -1458,7 +1458,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-91797 -->* Cart price rules with associated coupons are no longer affected by edits to scheduled updates. 
 
-<!-- ENGCOM-2122 -->* The  `discount` label in `app/code/Magento/SalesRule/view/frontend/web/js/view/summary/discount.js` is now compatible with custom module discount.  *Fix submitted by [Rodrigo Santellan](https://github.com/rsantellan) in pull request [16093](https://github.com/magento/magento2/pull/16093)*. 
+<!-- ENGCOM-2122 -->* The  `discount` label in the `app/code/Magento/SalesRule/view/frontend/web/js/view/summary/discount.js` file is now compatible with custom module discount.  *Fix submitted by [Rodrigo Santellan](https://github.com/rsantellan) in pull request [16093](https://github.com/magento/magento2/pull/16093)*. 
 
 
 
@@ -1587,9 +1587,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1443 -->* The process of switching attribute input type has been fixed, which resolves multiple issues that customers were experiencing when working with swatches, including: 
 
-	* inability to change attribute types from swatch to dropdown
+	* inability to change attribute types from `swatch` to `dropdown`
 
-	* inability to remove swatches from existing products when changing an attribute type from swatch
+	* inability to remove swatches from existing products when changing an attribute type from `swatch`
 
 	* no updates to product attributes on the storefront. *Fix submitted by [Eugene Shab](https://github.com/eugene-shab) in pull request [12771](https://github.com/magento/magento2/pull/12771)*. [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-12695](https://github.com/magento/magento2/issues/12695)
 
