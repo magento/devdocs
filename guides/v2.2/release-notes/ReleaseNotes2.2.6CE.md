@@ -91,9 +91,9 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 Highlights of community contributions include fixes that improve checkout flow and the sorting of simple products:
 
 
-* Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted. [GitHub-15467](https://github.com/magento/magento2/issues/15467) Thanks to community member [jonshipman](https://github.com/jonshipman)!  
+* Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted.  Thanks to community member [jonshipman](https://github.com/jonshipman)!  [GitHub-15467](https://github.com/magento/magento2/issues/15467)
 
-* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the  configuration settings of the primary store for all store views.  [GitHub-15205](https://github.com/magento/magento2/issues/15205) Thanks to community member [jonshipman](https://github.com/jonshipman)!  
+* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the  configuration settings of the primary store for all store views. Thanks to community member [jonshipman](https://github.com/jonshipman)! [GitHub-15205](https://github.com/magento/magento2/issues/15205) 
 
 * Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member [Danny Verkade](https://github.com/dverkade)! [GitHub-15627](https://github.com/magento/magento2/issues/15627) 
 
@@ -117,7 +117,7 @@ Enhancements to Amazon Pay include these features:
 
 * New entry in the Admin that allows  Amazon Pay to be displayed in the list of payment options.
 
-* Combined 'Synchronous, if possible' and 'Asynchronous' settings for authorization mode into one setting. Current settings are now `Immediate` (previously `Synchronous`) and `Automatic` (a combination of the previous 'Synchronous, if possible' and 'Asynchronous').
+* Combined `Synchronous, if possible` and `Asynchronous` settings for authorization mode into one setting. Current settings are now `Immediate` (previously `Synchronous`) and `Automatic` (a combination of the previous `Synchronous, if possible` and `Asynchronous`).
 
 
 
@@ -164,11 +164,11 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 
 * The **Click & Collect** feature offers merchants the ability to:
 
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations and stores 
 
 	* Configure source locations available for Click & Collect pick-ups
 
-	* Updates to Shipment Form for UPS-US only
+	* Updates to Shipment Form for UPS (US only)
 
 Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
@@ -207,13 +207,13 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1537 -->* You can now use the `app:config:status` command to check whether configuration propagation is up-to-date. (This fix restores this command, which was inadvertently deleted in a previous release.)  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [15174](https://github.com/magento/magento2/pull/15174)*. [GitHub-14104](https://github.com/magento/magento2/issues/14104)
 
-<!-- MAGETWO-84651 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 12410*. [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
+<!-- MAGETWO-84651 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request [12410](https://github.com/magento/magento2/pull/12410)*. [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
 
 <!-- MAGETWO-93192 -->* Configuration backend models are now populated as expected with all fieldset data, which makes it possible to access all configured values from a current group. [GitHub-16712](https://github.com/magento/magento2/issues/16712)
 
 <!-- MAGETWO-90860 -->* The `magento-deploy-ignore` setting in `composer.json` now works as expected. Previously, files specified in this setting were overwritten during deployment. 
 
-<!-- MAGETWO-87120 -->* The `timestamp` fields in `oauth_nonce` now include indexes to avoid deadlocks while erasing old records. *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request 13328*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
+<!-- MAGETWO-87120 -->* The `timestamp` fields in `oauth_nonce` now include indexes to avoid deadlocks while erasing old records. *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request [13328](https://github.com/magento/magento2/pull/13328)*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
 <!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
 
@@ -317,7 +317,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-87721 -->* Customizable options are now configured the same for all websites to which a product is added. Previously, when a merchant added a product with customizable options to an additional site, the options were corrupted. 
 
-<!-- MAGETWO-87589 -->* The **Use default value** option is no longer unchecked unless the user overrides the value of the attribute in the store view scope. Previously, after creating an item, if the user changed to store view scope and did not make any modifications to the item's attributes and only clicked **Save**, most of the attributes that were set as "use default value" became unchecked.
+<!-- MAGETWO-87589 -->* The **Use default value** option is no longer unchecked unless the user overrides the value of the attribute in the store view scope. Previously, after creating an item, if the user changed to store view scope and did not make any modifications to the item's attributes and only clicked **Save**, most of the attributes that were set as **Use default value** became unchecked.
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has been noticeably reduced.  Previously, when you had many categories (100,000), Magento could take up to 40 minutes to re-index product catalogs.  
 
@@ -473,7 +473,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Spelling corrections
 
-<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the codebase. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
+<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
 
 <!-- ENGCOM-2280 -->* Corrected return message from `ProductRuleTest.php`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16721](https://github.com/magento/magento2/pull/16721)*. 
 
@@ -803,7 +803,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
-    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
+    * Remove   `pub/media/catalog/product/cache`. (Removing this folder frees up space.)
 
     * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
@@ -848,7 +848,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  ENGCOM-1677 -->* `lib/web/mage/dropdowns.js` no longer fails when autoclose is set to **true**. *Fix submitted by [Brian LaBelle](https://github.com/brian-labelle) in pull request [15499](https://github.com/magento/magento2/pull/15499)*. [GitHub-15469](https://github.com/magento/magento2/issues/15469)
 
-<!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user can not view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
+<!-- MAGETWO-90193 -->* You can now view an entire zoomed product image in Fotorama fullscreen from the FireFox browser. Previously, the image jumps and the user cannot view all portions of the image. [GitHub-7978](https://github.com/magento/magento2/issues/7978)
 
 
 #### Web API framework
@@ -927,7 +927,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 
 
-<!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service) *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
+<!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service). *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
 
 <!-- ENGCOM-1864 -->*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously mssing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by [Maksim Gopey](https://github.com/Radio) in pull request [15826](https://github.com/magento/magento2/pull/15826)*. 
 
@@ -1033,7 +1033,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- ENGCOM-1825 -->* Google analytics pageview is no longer triggered twice. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [15765](https://github.com/magento/magento2/pull/15765)*. [GitHub-12221](https://github.com/magento/magento2/issues/12221)
 
 
-<!-- ENGCOM-2537 -->* The `Magento\GoogleAnalytics\Observer\SetGoogleAnalyticsOnOrderSuccessPageViewObserver` class is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17137](https://github.com/magento/magento2/pull/17137)*. 
+<!-- ENGCOM-2537 -->* `Magento\GoogleAnalytics\Observer\SetGoogleAnalyticsOnOrderSuccessPageViewObserver` is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17137](https://github.com/magento/magento2/pull/17137)*. 
 
 
 ### Google Tag Manager
@@ -1196,7 +1196,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1452 -->* Replaced `rand` with `rand_int` in several modules. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15017](https://github.com/magento/magento2/pull/15017)*. 
 
-<!-- ENGCOM-1446 -->* Optimized the `if-condition` in `/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [15002](https://github.com/magento/magento2/pull/15002)*. 
+<!-- ENGCOM-1446 -->* Optimized `if-condition` in `/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [15002](https://github.com/magento/magento2/pull/15002)*. 
 
 <!-- ENGCOM-1453 -->* We've upgraded to Node.s 8 from Node.s 6. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15018](https://github.com/magento/magento2/pull/15018)*. 
 
@@ -1324,7 +1324,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 <!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 
 
-<!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality if business function does not require this capability. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function do not require this capability.
+<!-- MAGETWO-86143 -->* Merchants can now improve store performance by disabling Magento Report functionality if business function does not require this capability. A new configuration setting  (**System Configuration**: **General** > **Reports** > **General Options**) allows merchants to disable Magento Reports, which is recommended practice  if a merchant's business function does not require this capability.
 
 
 <!-- MAGETWO-92154 -->* You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales).
@@ -1441,7 +1441,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!--  MAGETWO-85786 -->* The Admin panel search now filters catalogs as expected. Previously, if a merchant tried to narrow a search when using the Search tool in the Admin panel, Magento displayed the full catalog view without narrowing down the list. *Fix submitted by [Pavel](https://github.com/hannassy) in pull request [12735](https://github.com/magento/magento2/pull/12735)*. [GitHub-7861](https://github.com/magento/magento2/issues/7861)
 
-<!--  ENGCOM-1415 -->* You can now use an asterix when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.`. *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
+<!--  ENGCOM-1415 -->* You can now use an asterix when searching on customer names. Previously, if you used an asterix in a search query, Magento displayed this message, `Something went wrong with processing the default view and we have restored the filter to its original state.` *Fix submitted by [Riccardo Tempesta ](https://github.com/phoenix128) in pull request [14905](https://github.com/magento/magento2/pull/14905)*. [GitHub-14855](https://github.com/magento/magento2/issues/14855)
 
 <!-- ENGCOM-2455 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Ben Robie](https://github.com/brobie) in pull request [16952](https://github.com/magento/magento2/pull/16952)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
@@ -1628,7 +1628,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1657 -->* The `font-size` variable has been updated and standardized. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15421](https://github.com/magento/magento2/pull/15421)*. 
 
-<!--  ENGCOM-1473 -->* Layout arguments now  support for the `const` type. *Fix submitted by [Igor Vitol](https://github.com/IgorVitol) in pull request [15058](https://github.com/magento/magento2/pull/15058)*. 
+<!--  ENGCOM-1473 -->* Layout arguments now support for the `const` type. *Fix submitted by [Igor Vitol](https://github.com/IgorVitol) in pull request [15058](https://github.com/magento/magento2/pull/15058)*. 
 
 <!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js` file. *Fix submitted by [Jisse Reitsma](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
 
