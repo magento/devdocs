@@ -161,26 +161,27 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 
 #### Magento Shipping
 
+
 * The **Click & Collect** feature offers merchants the ability to:
 
 	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
 
 	* Configure source locations available for Click & Collect pick-ups
 
-Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+	* Updates to Shipment Form for UPS-US only
+
+Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
 * **Batch Processing** provides merchants with the ability to 
 
-	* Process multiple orders in one batch
-
-	* Specify and modify packages, experiences, and add-ons for orders assigned to a batch
+	* Specify and modify packages and experiences for orders assigned to a batch
 
 	* Book shipments for a batch
 
-	* Generate documentation for individual shipments as well as all shipments within a batch
+	*  Print all packing slips and printing labels for the batch
 
 
-
+* New **Shipment Reference**  field associates bookings between a carrier and a customer
 
 
 
@@ -212,7 +213,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-90860 -->* The `magento-deploy-ignore` setting in `composer.json` now works as expected. Previously, files specified in this setting were overwritten during deployment. 
 
-<!-- MAGETWO-87120 -->* The `timestamp` fields in `oauth_nonce` now include indexes to avoid deadlocks while erasing old records. *Fix submitted by [Karl Deux](https://github.com/KarlDeux) in pull request 13328*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
+<!-- MAGETWO-87120 -->* The `timestamp` fields in `oauth_nonce` now include indexes to avoid deadlocks while erasing old records. *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request 13328*. [GitHub-10346](https://github.com/magento/magento2/issues/10346)
 
 <!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
 
@@ -374,7 +375,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1530-->* Product names can now contain a double quotation mark character (`"`). Previously, when a product name contained this character, Magento threw a JavaScript error. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request [15162](https://github.com/magento/magento2/pull/15162)*. 
 
-<!-- ENGCOM-1404-->* Administrators who lack access to the CatalogRule module can now perform operations as expected in the Admin cart price rule edit page. *Fix submitted by [Neos2007](https://github.com/Neos2007) in pull request [14886](h://github.com/magento/magento2/pull/14886)*. 
+<!-- ENGCOM-1404-->* Administrators who lack access to the CatalogRule module can now perform operations as expected in the Admin cart price rule edit page. *Fix submitted by [Neos2007](https://github.com/Neos2007) in pull request [14886](https://github.com/magento/magento2/pull/14886)*. 
 
 <!-- ENGCOM-1336-->* Magento now updates product options and quantity by checking the item ID when updating a cart that contains configurable products with different options. *Fix submitted by [Nitin Khalasi](https://github.com/nit-it) in pull request [14765](https://github.com/magento/magento2/pull/14765)*. 
 
@@ -418,7 +419,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1951 -->* The shopping cart icon on the checkout page on mobile screens now displays hover color and regular color as expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16002](https://github.com/magento/magento2/pull/16002)*. 
 
-<!-- ENGCOM-1154 -->* Customers are not unexpectedly logged out if the customers hits the F5 key twice during checkout. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [14428](https://github.com/magento/magento2/pull/14428)*. [GitHub-4301](https://github.com/magento/magento2/issues/4301), [GitHub-12362](https://github.com/magent /magento2/issues/12362), [GitHub-13427](https://github.com/magento/magento2/issues/13427)
+<!-- ENGCOM-1154 -->* Customers are not unexpectedly logged out if the customers hits the F5 key twice during checkout. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [14428](https://github.com/magento/magento2/pull/14428)*. [GitHub-4301](https://github.com/magento/magento2/issues/4301), [GitHub-12362](https://github.com/magento/magento2/issues/12362), [GitHub-13427](https://github.com/magento/magento2/issues/13427)
 
 <!-- ENGCOM-1646 -->* The **Purchased Order Form** button is now correctly aligned. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15331](https://github.com/magento/magento2/pull/15331)*. [GitHub-15334](https://github.com/magento/magento2/issues/15334)
 
@@ -482,7 +483,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2170 -->* Corrected misspelling in  library file. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16495](https://github.com/magento/magento2/pull/16495)*. 
 
-<!-- ENGCOM-2165 -->* Corrected punctuation in the message displayed on **CONTENT** > **Design** > **Configuration**. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16489](https://github.com/magento/magento2/pull/16489)*. *Fix submitted by [Erik Hansen](https://github.com/gelanivishal) in pull request [16247](https://github.com/magento/magento2/pull/16247)*. 
+<!-- ENGCOM-2165 -->* Corrected punctuation in the message displayed on **CONTENT** > **Design** > **Configuration**. *Fix submitted by [Erik Hansen](https://github.com/erikhansen) in pull request [16489](https://github.com/magento/magento2/pull/16489)*. 
 
 <!-- ENGCOM-2040 -->* Correct misspellings in Model and library files. *Fix submitted by [Namarata](https://github.com/sanganinamrata) in pull request [16230](https://github.com/magento/magento2/pull/16230)*. 
 
@@ -670,7 +671,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-2045 -->* Fixed mismatches in case between class and method name spellings. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16141](https://github.com/magento/magento2/pull/16141)*. 
 
-<!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/markoshust) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
+<!-- ENGCOM-1760 -->* Removed an unnecessary comma from the `translate` attribute in `app/code/Magento/Sales/etc/adminhtml/system.xml`. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15615](https://github.com/magento/magento2/pull/15615)*. 
 
 
 ### CMS content
@@ -1024,7 +1025,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Gift message
 
-<!-- MAGETWO-91867 -->* Gift messages now appear as expected during checkout for customers. Previously, Magento did not display gift messages for customers who logged in during checkout. 
+<!-- MAGETWO-91867 -->* Orders now retain gift message information on both item and order level. Previously, gift messages disappeared from an order when a customer logged into his account during checkout. 
 
 
 ### Google Analytics
@@ -1519,7 +1520,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Store
 
-<!--  ENGCOM-2530 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16468](https://github.com/magento/magento2/pull/16468)*. [GitHub-16273](https://github.com/magento/magento2/issues/813162731)
+<!--  ENGCOM-2530 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16468](https://github.com/magento/magento2/pull/16468)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
 
 
@@ -1629,7 +1630,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1473 -->* Layout arguments now  support for the `const` type. *Fix submitted by [Igor Vitol](https://github.com/IgorVitol) in pull request [15058](https://github.com/magento/magento2/pull/15058)*. 
 
-<!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js` file. *Fix submitted by [Jisse Reitsma Vitol](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
+<!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js` file. *Fix submitted by [Jisse Reitsma](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
 
 <!--  ENGCOM-1438 -->* Overlay issues with the mini cart have been resolved. Previously, if you logged in as a customer, then clicked on the mini cart icon and then the Account menu, the mini cart overlayed the Account menu. *Fix submitted by [Arthur James](https://github.com/ArtiDjeims) in pull request [14963](https://github.com/magento/magento2/pull/14963)*. 
 
@@ -1638,7 +1639,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--  ENGCOM-1313 -->* The order of style groups for mobile devices has been corrected. [GitHub-14476](https://github.com/magento/magento2/issues/14476)
 
 
-<!-- ENGCOM-1869 -->* Dynamic data rows no longer fail due to a read operation after a delete condition. Previously, Magento threw an undefined JavaScript error. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*. GitHub-911](https://github.com/magento-engcom/msi/issues/911)
+<!-- ENGCOM-1869 -->* Dynamic data rows no longer fail due to a read operation after a delete condition. Previously, Magento threw an undefined JavaScript error. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15840](https://github.com/magento/magento2/pull/15840)*. [GitHub-911](https://github.com/magento-engcom/msi/issues/911)
 
 
 
