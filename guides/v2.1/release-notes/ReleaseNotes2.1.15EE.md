@@ -9,7 +9,7 @@ title: Magento Commerce 2.1.15 Release Notes
 *Patch code and release notes were published on September 18, 2018.*
 
 
-We are pleased to present Magento Open Source  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Commerce  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
