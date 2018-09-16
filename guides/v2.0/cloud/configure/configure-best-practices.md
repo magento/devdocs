@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Best practices for store configuration
 menu_title: Best practices for store configuration

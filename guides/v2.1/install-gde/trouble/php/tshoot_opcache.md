@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_php
 title: Resolve an illegal offset error
 menu_title: Resolve an illegal offset error

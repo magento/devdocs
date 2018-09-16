@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage negotiable quotes
 menu_title: Manage negotiable quotes
@@ -14,9 +14,8 @@ functional_areas:
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
-</div>
 
 **REST Endpoints**
 

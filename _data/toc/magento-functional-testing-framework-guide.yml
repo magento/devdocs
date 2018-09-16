@@ -1,5 +1,5 @@
 label: Magento Functional Testing Framework Guide version 2.2
-versions: ["2.2"]
+include_versions: ["2.2"]
 pages:
 
   - label: Introduction

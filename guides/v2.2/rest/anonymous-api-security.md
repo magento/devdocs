@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Restricting access to anonymous web APIs
 ---
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deployment process
 functional_areas:
   - Cloud

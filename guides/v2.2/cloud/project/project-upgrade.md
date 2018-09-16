@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrade Magento version
 functional_areas:
   - Cloud

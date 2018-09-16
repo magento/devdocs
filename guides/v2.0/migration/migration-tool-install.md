@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
@@ -31,10 +31,10 @@ If you cloned the Magento 2 GitHub repository, enter the following commands:
 
 If you're currently in the `develop` branch, you must change to a <a href="{{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 
-<div class="bs-callout bs-callout-tip">
-	<p>If you haven't installed the Magento software yet, <a href="{{ page.baseurl }}/install-gde/continue.html">install it now</a>.</p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+If you haven't installed the Magento software yet, [install it now]({{ page.baseurl }}/install-gde/continue.html).
 
-	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
+If you're cloning the GitHub repository, make sure you check out a release tag as discussed in [(Contributor) Clone the Magento repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 </div>
 
 ### Find released versions of Data Migration Tool {#migration-tool-release-version}
@@ -49,17 +49,11 @@ You may install the Data Migration Tool from:
 
 * [GitHub](#install-github)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Before installing, make sure you have:</p>
-	<ul>
-		<li>
-			Completed all tasks mentioned in the <a href="{{ page.baseurl }}/migration/migration-tool-preconditions.html">Preconditions</a> section
-		</li>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Before installing, make sure you have:
 
-		<li>
-			<a href="{{ page.baseurl }}/migration/migration-tool-install.html#data-migrate-prereq">Verified the version</a> of the Magento 2 software
-		</li>
-	</ul>
+* Completed all tasks mentioned in the [Preconditions]({{ page.baseurl }}/migration/migration-tool-preconditions.html) section
+* [Verified the version]({{ page.baseurl }}/migration/migration-tool-install.html#data-migrate-prereq) of the Magento 2 software
 </div>
 
 ### Install from `repo.magento.com` {#install-repo}

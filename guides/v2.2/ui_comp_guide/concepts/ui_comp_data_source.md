@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: The DataSource Component
-menu_title: Providing Data to UI Components
-menu_order: 20
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 ---
@@ -20,14 +17,14 @@ The DataSource UI component can be included with the `<dataSource />` node in th
 
 The component's data provider class is declared inside `<dataSource />`. The following provides an example and demonstrates what nodes are required.
 
-{% highlight xml%}
+```xml
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider</argument>
     <argument name="name" xsi:type="string">[YourComponentName]_data_source</argument>
     <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
     <argument name="requestFieldName" xsi:type="string">id</argument>
 </argument>
-{% endhighlight %}
+```
 
 In the block of code above, [YourNameSpace]\[YourModule] would be the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
 
@@ -38,19 +35,18 @@ While the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglo
 Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}javascript{% endglossarytooltip %} class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.
 
 Include the Form Provider Javascript component by adding this inside the `<dataSource />` node:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
     <item name="js_config" xsi:type="array">
         <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
     </item>
 </argument>
-{% endhighlight %}
+```
 
 This will include `Magento/Ui/view/base/web/js/form/provider.js` on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn't do what is necessary in your case.
 
@@ -58,11 +54,11 @@ Remember that this data provider is still, technically speaking, a completely se
 
 A good way to keep configuration data out of the javascript is to declare a "provider" in the base component's XML so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
 
-{% highlight xml%}
+```xml
 <item name="config" xsi:type="array">
     <item name="provider" xsi:type="string">[ComponentName].[ComponentName]_data_source</item>
 </item>
-{% endhighlight %}
+```
 
 This example declares the name of the data provider class and will be output in the JSON that contains the UI component's configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.
 

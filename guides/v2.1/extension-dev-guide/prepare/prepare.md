@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 02_Prepare
 title: Prepare (development quick start)
 menu_title: Prepare (development quick start)

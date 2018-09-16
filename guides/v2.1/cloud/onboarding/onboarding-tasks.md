@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Onboarding tasks
 functional_areas:
   - Cloud

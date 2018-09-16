@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 2. Add a database
 menu_title: Step 2. Add a database

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Troubleshooting
 functional_areas:
   - Cloud

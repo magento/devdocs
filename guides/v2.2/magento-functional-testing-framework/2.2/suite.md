@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Suites
 functional_areas:
  - Testing
 mftf-release: 2.2.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/suite.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/suite.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -98,7 +98,7 @@ There are several ways to generate and execute your new test in the context of a
 ## Examples
 
 ### Browser actions in suite conditions
-
+{{raw}}
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
     <suite name="WYSIWYG">
@@ -124,6 +124,7 @@ There are several ways to generate and execute your new test in the context of a
     </suite>
 </suites>
 ```
+{{endraw}}
 
 This example declares a suite with the name `WYSIWYG`.
 The suite requires enabling WYSIWYG before running tests:

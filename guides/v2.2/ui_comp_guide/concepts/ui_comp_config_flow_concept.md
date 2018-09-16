@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: Configuration flow of UI components
 menu_title: Configuration flow of UI components
@@ -42,9 +42,9 @@ When the request for my_page comes, the server does the following:
 1. Merges the resulting configuration (from Step 2 above) with the configuration from the UI module `definition.xml`. The UI module `definition.xml` configuration file has the lowest priority, and is overwritten by the merged configuration of all `my_form.xml` files.
 2. Translates the resulting configuration into JSON format and adds it to response body the following way:
 
-{%highlight html%}
-	<script type="text/x-magento-init">{"*": {"Magento_Ui/js/core/app":{<JSON_configuration>}}}</script>
-{%endhighlight%}
+```html
+<script type="text/x-magento-init">{"*": {"Magento_Ui/js/core/app":{<JSON_configuration>}}}</script>
+```
 
 Now it is the client's turn to process this JSON and generate the UI component's instances. The flow is following:
 

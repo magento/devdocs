@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: 
 title: Architecture Guide
 landing-page: Architecture

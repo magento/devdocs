@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Presentation Layer
 menu_title: Presentation layer
 redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html

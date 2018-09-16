@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up cron jobs
 menu_title: Set up cron jobs
@@ -42,9 +42,8 @@ The following example is the default cron included for {{site.data.var.ece}}.
             spec: "*/5 * * * *"
             cmd: "php bin/magento cron:run && php bin/magento cron:run"
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We use only this one cron for cloud due to the read-only nature of the environments. This is different from {{site.data.var.ee}} which has three default cron jobs.
-</div>
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 

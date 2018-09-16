@@ -327,7 +327,6 @@ curl -X POST \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-
 * The API returns a batch response for each label.
 * A 200 OK HTTP response code indicates a successful update.
 * Any non-200 HTTP response code indicates an error. See the `message` field for details.
@@ -397,6 +396,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future..
-</div>

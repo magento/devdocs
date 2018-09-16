@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
@@ -22,9 +22,10 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento application requires MySQL 5.6.x.</p>
-  <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The Magento application requires MySQL 5.6.x.
+
+Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
@@ -33,10 +34,8 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *	Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
 *	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ page.baseurl }}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
 ## Installing MySQL on Ubuntu   {#instgde-prereq-mysql-ubuntu}
 
@@ -50,10 +49,8 @@ See one of the following sections for more information:
 
 This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Magento application 2.1.2 and later are compatible with MySQL 5.7.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 To install MySQL 5.7 on Ubuntu 16:
 
@@ -174,9 +171,8 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 
 This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Magento application 2.1.2 and later are compatible with MySQL 5.7.
-</div>
 
 ### Get MySQL 5.7 for CentOS 7
 

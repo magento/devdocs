@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create custom cache engines
 menu_title: Create custom cache engines
@@ -18,9 +18,10 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
-    <p>Varnish is designed to accelerate the HTTP protocol.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Database caching---like file-based caching--- works well in a development environment but we *strongly recommend* you use [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) in production instead.
+
+Varnish is designed to accelerate the HTTP protocol.
 </div>
 
 ## Prerequisites   {#mage-cache-db-prereq}
@@ -98,10 +99,8 @@ To modify `di.xml`:
 
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
 
 To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
 
@@ -155,10 +154,10 @@ Use the following steps:
 		ls <your Magento install dir>/var/cache/*
 		ls <your Magento install dir>/var/page_cache/*
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <span class="glyphicon-class">
-      <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
-      <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
+
+    If you use the `default` cache frontend, you don't have this issue.
     </div>
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
 4.	Use a database tool such as <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the `cache` and `cache_tag` tables.

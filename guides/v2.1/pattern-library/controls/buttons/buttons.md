@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Buttons
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---

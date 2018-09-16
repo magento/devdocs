@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Install extensions from the command line
 ---
 
@@ -9,9 +9,8 @@ Code that extends or customizes Magento behavior is called an extension. You can
 -   Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
 -   Language packages (localize the storefront and Admin)
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
-</div>
 
 To install an extension, you must:
 
@@ -38,9 +37,8 @@ To get the extension's Composer name and version from the Magento Marketplace:
 4.  Find the extension you want to install and click **Technical Details**.
 
 	![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
-</div>
 
 ## Update your `composer.json` file {#update-composer-json}
 
@@ -75,9 +73,8 @@ By default, the extension is probably disabled:
 	List of disabled modules:
 	J2t_Payplug
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
-</div>
 
 ## Enable the extension
 
@@ -121,6 +118,7 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 You may need to clear the cache if you encounter errors when loading the storefront in a browser.
-
-	bin/magento cache:flush
+```bash
+bin/magento cache:flush
+```
 </div>

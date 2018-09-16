@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Services
 functional_areas:
   - Cloud

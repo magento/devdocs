@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 01_Introduction
 title: Getting Started with Magento Web APIs
 landing-page: Getting Started with Web APIs

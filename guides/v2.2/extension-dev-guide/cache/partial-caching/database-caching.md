@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Create custom cache engines
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html

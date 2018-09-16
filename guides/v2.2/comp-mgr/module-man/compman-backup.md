@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Step 2. Back up the file system and database
 menu_title: Step 2. Back up the file system and database

@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design
@@ -99,9 +99,10 @@ There will be a new, dedicated section designed for such exclusive extensions. W
 
 ![Feature Placement]({{ site.baseurl }}/common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The name and icon for this section is still TBD.</p>
-  <p>This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The name and icon for this section is still TBD.
+
+This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.
 </div>
 
 Since this section is not yet available, you should place your extension in one of the previously mentioned areas where it would be the most appropriate.

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Apply an Admin theme
 menu_title: Apply an Admin theme
@@ -26,9 +26,10 @@ This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-4
     </module>
 {%endhighlight%}
 
-<div class="bs-callout bs-callout-info" id="info">
- <p>If you choose to create a separate dedicated module, you can use the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal">Magento_SampleMinimal module from the Magento 2 sample modules repository</a> as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the <code>&lt;your_module_dir&gt;/etc/module.xml</code>, <code>&lt;your_module_dir>/registration.php</code>, and <code>&lt;your_module_dir>/composer.json</code> files .</p>
-<p>If you decide to use the existing module, keep in mind, that theme declaring might be affected when the module is changed.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you choose to create a separate dedicated module, you can use the [Magento_SampleMinimal module from the Magento 2 sample modules repository](https://github.com/magento/magento2-samples/tree/master/sample-module-minimal) as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the `<your_module_dir>/etc/module.xml`, `<your_module_dir>/registration.php`, and `<your_module_dir>/composer.json` files .
+
+If you decide to use the existing module, keep in mind, that theme declaring might be affected when the module is changed.
 </div>
 
 ## Apply a custom theme in Admin: Overview

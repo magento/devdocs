@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Sales

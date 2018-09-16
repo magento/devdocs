@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?

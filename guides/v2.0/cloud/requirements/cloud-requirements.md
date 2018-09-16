@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Technologies and requirements
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
@@ -59,10 +59,11 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 
 To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.ee}} adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+In addition to Git's requirements for [valid branch names](https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html), {{site.data.var.ee}} adds two additional requirements:
+
+* The `/` character isn't allowed.
+* Branch names must be case-insensitively unique. In other words, if you have a branch named `_CaSe_`, you cannot create another branch named `_case_`.
 </div>
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.

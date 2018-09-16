@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 06_Validate
 title: Validate
 menu_title: Validate

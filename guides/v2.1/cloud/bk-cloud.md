@@ -1,24 +1,33 @@
 ---
-group: cloud
-title: Welcome to Magento Commerce (Cloud)
+group: cloud-guide
+title: Magento Commerce Cloud guide
 functional_areas:
   - Cloud
 ---
 
-{{site.data.var.ece}}, formerly Enterprise Cloud Edition, is a managed and automated hosting platform for Magento specifically created for Cloud infrastructures. This version combines {{site.data.var.ee}}, Cloud infrastructure hosting, with a few differences and added features, including Git integration and key environments for development, staging, and live production. You can code, test, and deploy across Integration, Staging, and Production environments for _continuous integration_ of your store.
+{{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the on-premise {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
-Each {{site.data.var.ece}} plan includes an Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.
+![Cloud Benefits]
 
-Cloud plans include:
+{{site.data.var.ece}} provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a git-based workflow with automatic build and deploy for efficient **Rapid development** and **Continuous deployment** every time you push code changes in a Platform as a Service (PaaS) environment; highly **Customizable** environment configuration files and [tools](#ece-tools-package); and AWS hosting that offers a **Scalable** and **Secure** environment for online sales and retailing.
 
--   Active Git branches of code.
--   Unlimited number of *inactive* Git branches.
--   Robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
--   And the option to add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
+## Technology stack
 
-The {{site.data.var.ece}} architectures use the following technologies:
+Think of the {{site.data.var.ece}} as five functional layers, as shown here:
 
--   Git
--   Composer
--   Secure Shell (SSH)
--   MySQL (including command-line interaction)
+![Cloud Stack]
+
+Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for {{site.data.var.ece}}. Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{page.baseurl}}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. [Fastly]({{page.baseurl}}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. The [Fastly Image Optimization]({{page.baseurl}}/cloud/cdn/fastly-image-optimization.html) (IO) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
+<!-- Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site. -->
+
+## {{site.data.var.ct}} package
+
+The `{{site.data.var.ct}}` package is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration. 
+
+<!-- Link definitions -->
+
+[Cloud Benefits]: {{site.baseurl}}/common/images/cloud/CloudBenefits.svg
+{: width="930px" height="305px"}
+
+[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
+{: width="804px" height="721px"}

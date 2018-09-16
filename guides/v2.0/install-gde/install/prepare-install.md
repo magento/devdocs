@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: T_Developer
 title: Update installation dependencies
 menu_title: Update installation dependencies
@@ -24,9 +24,11 @@ We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies
 
 	The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ page.baseurl }}/install-gde/basics/basics_docroot.html">here</a>.
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If the following error displays, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
-  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the following error displays, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html):
+	```terminal
+	file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+	```
 	</div>
 
 For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.

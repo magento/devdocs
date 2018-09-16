@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: PHP 5.6 or 7.0&mdash;CentOS
 menu_title: PHP 5.6 or 7.0&mdash;CentOS
@@ -16,6 +16,7 @@ functional_areas:
 If you must install both Apache and PHP, [Install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
+
 {% include install/php_2.1.md %}
 
 {:.bs-callout .bs-callout-info}

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 subgroup:
 title: Step 6. Prepare for checkout
 subtitle: Order Processing tutorial

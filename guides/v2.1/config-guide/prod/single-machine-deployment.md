@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Single machine deployment
 functional_areas:
   - Configuration

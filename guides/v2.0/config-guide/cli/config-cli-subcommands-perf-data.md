@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing
@@ -147,9 +147,8 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 ## Run the data generator {#config-cli-perf-run}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
-</div>
 
 Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 

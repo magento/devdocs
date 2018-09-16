@@ -21,7 +21,7 @@ We strongly recommend upgrading to Fastly v1.2.33 module for all Magento Commerc
 
 Look for the following {{site.data.var.ece}} highlights in this release:
 
-* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html).
+* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html).
 
 * **Staging and Production environments in the UI for Pro projects**. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ site.baseurl }}/guides/v2.2/cloud/trouble/pro-env-management.html).
 

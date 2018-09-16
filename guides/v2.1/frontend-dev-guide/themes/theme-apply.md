@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Apply and configure a storefront theme
 functional_areas:
   - Frontend

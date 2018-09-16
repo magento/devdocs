@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets
@@ -59,7 +59,7 @@ You can use the following key/value pairs in JSON snippets in VCL files and in `
     <td>priority</td>
     <td>
       <p>Determines the order VCL snippets call. Lower values run first, from `1` to `100`. All uploaded snippets from a Magento module have a value of `50`. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as `100`. To have code occur immediately, use a lower value, such as `5`.</p>
-      <p>Any VCL snippet with a priority value of `5` runs immediately, which is best for blacklists, whitelists, and redirects. Priority `100` is best for overriding default VCL snippet code and for extending timeouts. If you do not set a priority with your cURL command, the default value set is `100`.</p>
+      <p>Any VCL snippet with a priority value of `5` runs immediately, which is best for blacklists, whitelists, and redirects. Priority `100` is best for overriding default VCL snippet code. If you do not set a priority with your cURL command, the default value set is `100`.</p>
     </td>
   </tr>
   <tr>
@@ -106,7 +106,8 @@ The following are **best practices and recommendations**:
 
 -   The default VCL snippets you uploaded include a prepended name of `magentomodule_` with a priority of `50`. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also, consider the priority of your custom snippets and whether they should override the default snippets.
 -   Do not forget to _always_ locate and clone the active version, and edit the bash script with the new version! _Version_ is not part of your VCL snippet files.
--   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs. We provide an example for [Custom extend Admin timeout VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html).
+-   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\_blank"}, we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs.
+
 
 ## Export Fastly Service ID and API Token
 
@@ -167,7 +168,6 @@ For detailed examples and custom code, see the following:
 
 -   [Custom whitelist VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-whitelist.html)
 -   [Custom blacklist VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-blacklist.html)
--   [Custom extend Admin timeout VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html)
 -   [Custom redirect to Wordpress VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html)
 -   [Custom block bad referer VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-badreferer.html)
 

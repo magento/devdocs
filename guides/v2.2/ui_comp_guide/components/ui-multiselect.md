@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Multiselect component
-menu_title: Multiselect component
 ---
 
 The Multiselect component provides the interface for a list or a data set. Multiselect allows selecting multiple items.

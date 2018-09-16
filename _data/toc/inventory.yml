@@ -1,0 +1,6 @@
+label:  Inventory Developer Guide
+versions:  ["2.3"]
+pages:
+
+    - label: Overview
+      url: /inventory/index.html

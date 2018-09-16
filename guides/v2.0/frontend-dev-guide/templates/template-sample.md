@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Illustration of customizing templates
 menu_title: Illustration of customizing templates

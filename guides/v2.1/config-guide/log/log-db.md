@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Example&mdash;logging database activity
 functional_areas:
   - Configuration

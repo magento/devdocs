@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Release notes for ece-tools
 redirect_from:
   - guides/v2.1/cloud/composer-packages/ece-tools.html
@@ -8,6 +8,13 @@ functional_areas:
   - Setup
   - Configuration
 ---
+
+<!-- Assigning liquid variables for placeholder values
+{% assign base_url = "{{base_url}}" %}
+{% assign unsecure_base_url = "{{unsecure_base_url}}" %}
+
+-->
+
 The `ece-tools` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
 You can list the available ece-tools commands using:

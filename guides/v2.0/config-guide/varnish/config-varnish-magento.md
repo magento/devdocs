@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish

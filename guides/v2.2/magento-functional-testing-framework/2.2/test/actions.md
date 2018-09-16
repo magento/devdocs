@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Test actions
 functional_areas:
  - Testing
 mftf-release: 2.2.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/actions.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/actions.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -1551,9 +1551,8 @@ Attribute|Type|Use|Description
 
 Wait for all Magento loading overlays to disappear.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.
-</div>
 
 ```config
 # Wait for these classes to not be visible
