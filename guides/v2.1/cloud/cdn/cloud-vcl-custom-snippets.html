@@ -1,0 +1,4306 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Custom Fastly VCL snippets | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+<script src="//assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main"></button>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.1/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/cloud/cdn/cloud-vcl-custom-snippets.html">Magento 2.0</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.html">Magento 2.1</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html">Magento 2.2</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/cloud/cdn/cloud-vcl-custom-snippets.html">Magento 2.3 Alpha</a></li>
+		
+  </ul>
+</div>
+
+
+      <!-- Main Navigation -->
+
+
+<ul class="nav-main" role="menubar">
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Cloud</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/bk-cloud.html">Cloud Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">Cloud Architecture</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/env/environments.html">Configure Environments</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/magento-release-information.html">Release Information</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Backend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/architecture/bk-architecture.html">Architecture</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Frontend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">API</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/marketplace/eqp/api.html">Marketplace EQP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="https://developers.rjmetrics.com/">Magento BI Import REST API</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+      
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-separator"></li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="http://omsdocs.magento.com/en/">Order Management</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payment Integrations</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/rest/tutorials/index.html">Rest Tutorials</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/customize_product.html">Customize Product Creation Form</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Customize Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/community/resources/support.html">Magento Support</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/videos/">Video Tutorials</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+</ul><!-- /.nav-main -->
+    </div>
+
+    <div class="search-btn">
+      <button class="search-trigger search-icon"></button>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.1/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <button class="quick-search-close">&times;</button>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+		
+		<h4 class="guide-title"></h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce Cloud guide</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">Architecture</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/reference/cloud-composer.html">Composer</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/reference/git-integration.html">Git</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH and sFTP</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/new-relic.html">New Relic APM</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire.io</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/sendgrid.html">SendGrid</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/integrations/cloud-integrations.html">Integrations</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/integrations/bitbucket-integration.html">Bitbucket integration</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/integrations/github-integration.html">GitHub integration</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local environment setup</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-setup-env-install.html">Install Magento</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/setup/first-time-deploy.html">First time deployment</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/howtos/sample-data.html">Optional - Install sample data</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/setup/first-time-setup-import-first-steps.html">Import existing code into a project</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/setup/first-time-setup-import-prepare.html">Prepare your existing Magento Commerce system</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/setup/first-time-setup-import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/configure/configuration-overview.html">Configure your store</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/paypal-onboarding.html">Set up PayPal</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/cloud-fastly.html">Configure Fastly</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/configure-fastly.html">Set up Fastly</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/fastly-image-optimization.html">Fastly Image Optimization</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class="active ">
+  
+    <a href="/guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/fastly-vcl-wordpress.html">Custom redirect to WordPress VCL</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/cdn/trouble-fastly.html">Fastly troubleshooting</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">Application</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/magento-env-yaml.html">Build and deploy</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/setup-notifications.html">Set up notifications</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/log-handlers.html">Logging handlers</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/smart-wizards.html">Smart wizards</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/variables-intro.html">Environment variables</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/environment-vars_magento.html">ADMIN variables</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/variables-build.html">Build variables</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/variables-cloud.html">Cloud variables</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/variables-deploy.html">Deploy variables</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/variables-post-deploy.html">Post-deploy variables</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/working-with-variables.html">Working with variables</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">Routes</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-routes-more-cache.html">Caching</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-routes-more-redir.html">Redirects</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-routes-more-ssi.html">Server side includes</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_services.html">Services</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up MySQL service</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_services-redis.html">Set up Redis service</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html">Set up Elasticsearch service</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">Set up RabbitMQ service</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management for store settings</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/projects.html">Manage your project</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-webint-basic.html">Configure your project</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/env/environments-start.html">Manage branches with the CLI</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/deploy/continuous-deployment.html">Continuous deployment</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/live-prot.html">Protective block</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/live-sanity-check.html">Build and deploy on local</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/stage-prod-test.html">Test deployment</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/live.html">Go live and launch</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/go-live-checklist.html">Go live checklist</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/live/launch-steps.html">Launch steps</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble.html">Troubleshooting</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/troubleshoot-deployment.html">Troubleshoot deployment</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/environments-logs.html">View logs for troubleshooting</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/site-availability.html">Site availability</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/robots-sitemap.html">Add site map and search engine robots</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/message-queues.html">Message queues</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and patches</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/ece-tools-upgrade-project.html">Upgrade to use ece-tools</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/ece-tools-update.html">Update ece-tools version</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-patch.html">Apply custom patches</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade Magento version</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Custom Fastly VCL snippets</h1>
+
+  
+
+
+</section>
+
+			<p><a href="/guides/v2.1/cloud/basic-information/cloud-fastly.html">Fastly</a> and Magento Commerce Cloud support creating custom Varnish Configuration Language (VCL) snippets. For best results, we recommend creating Edge Dictionaries and Edge ACLs for your VCL snippets. You are free to customize your Fastly VCL snippets to complete custom code. The following examples and instructions walk through creating edge dictionaries, edge ACLs, and VCL snippets.</p>
+
+<p>Use the <em>terminal</em> application to create and upload VCL snippets. You do not need an SSH connection into a specific environment. The following walk-through show you how to create regular VCL snippet files using JSON code.</p>
+
+<p>Gather the following information:</p>
+
+<ul>
+  <li>Fastly Service ID for Staging and Production to assign the snippets to a specific service or environment</li>
+  <li>Fastly API key used for the <code class="highlighter-rouge">FASTLY_API_TOKEN</code> in the commands</li>
+</ul>
+
+<p>Review the following sections:</p>
+
+<ul>
+  <li><a href="#vcl-curl">Understand VCL snippet values</a>—Provides an overview of values for Fastly VCL JSON.</li>
+  <li><a href="#process">The custom VCL snippet process</a>—Walks you through the entire process, including links to custom VCL snippets you can create with ease.</li>
+</ul>
+
+<h2 id="vcl-curl">Understand VCL snippet values</h2>
+
+<p>You can use the following key/value pairs in JSON snippets in VCL files and in <code class="highlighter-rouge">cURL</code> commands.</p>
+
+<table>
+  <tr>
+    <th style="width: 150px;">Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>service_id</td>
+    <td>The ID of a specific Staging or Production environment. We provide this value. Add the <code>SERVICE_ID</code> key to set up your bash script for custom VCL snippets.</td>
+  </tr>
+  <tr>
+    <td>API_KEY</td>
+    <td>The API Key to access your Fastly account. We provide this value. Add this value to your bash script.</td>
+  </tr>
+  <tr>
+    <td>version</td>
+    <td>The version of service for validating and activating. Fastly uses <code>Editable Version #</code> in their example values. Add the <code>SERVICE_ID_VERSION</code> key in the bash script.</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>
+      Specifies a location for the generated snippet, such as <code>init</code> (above subroutines) and <code>recv</code> (within subroutines). See <a href="https://docs.fastly.com/api/config#snippet">Fastly VCL snippet object values</a> for information on these values.
+    </td>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>The snippet of VCL code to run. We recommend keeping this code in a single line. The VCL snippet code, cURL commands, and bash script require the content code in a single line.</td>
+  </tr>
+  <tr>
+    <td>priority</td>
+    <td>
+      <p>Determines the order VCL snippets call. Lower values run first, from `1` to `100`. All uploaded snippets from a Magento module have a value of `50`. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as `100`. To have code occur immediately, use a lower value, such as `5`.</p>
+      <p>Any VCL snippet with a priority value of `5` runs immediately, which is best for blacklists, whitelists, and redirects. Priority `100` is best for overriding default VCL snippet code. If you do not set a priority with your cURL command, the default value set is `100`.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>dynamic</td>
+    <td>
+      Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.
+    </td>
+  </tr>
+  <tr>
+    <td>active</td>
+    <td>Indicates if the snippet or version is activated and in use. Returns <code>true</code> or <code>false</code>. Make note of the version number for an active snippet. Use this to clone the version.</td>
+  </tr>
+</table>
+
+<p>The following is an example of a returned JSON for a customer VCL snippet:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62Yd1WfiCBPENLloXfXmlO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{FASTLY_SERVICE_ID}"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{Editable Version #}"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apply_acl"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((client.ip ~ {ACLNAME}) &amp;&amp; !req.http.Fastly-FF){ error 403; }"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-15T09:37:10+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="process">The custom VCL snippet process</h2>
+
+<p>To create custom VCL snippets, prepare the VCL configurations, save them to files, and continue with the following:</p>
+
+<ol>
+  <li><a href="#list">Locate the active VCL version</a>. Use this version to clone.</li>
+  <li><a href="#clone">Clone the active VCL version</a>. All changes save to this new version. It remains <em>inactive</em> until you <em>activate</em> it.</li>
+  <li><a href="#create-snippet">Create VCL snippets</a> in VCL files. We provide a number of examples to get you started.</li>
+  <li><a href="#add-snippet">Add VCL snippets to Fastly configuration</a>. Repeat this step for all JSON files.</li>
+  <li><a href="#validate">Validate and activate</a> the new configuration and all associated VCL snippets.</li>
+</ol>
+
+<p>The following are <strong>best practices and recommendations</strong>:</p>
+
+<ul>
+  <li>The default VCL snippets you uploaded include a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of <code class="highlighter-rouge">50</code>. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also, consider the priority of your custom snippets and whether they should override the default snippets.</li>
+  <li>Do not forget to <em>always</em> locate and clone the active version, and edit the bash script with the new version! <em>Version</em> is not part of your VCL snippet files.</li>
+  <li>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code with a higher priority value of <code class="highlighter-rouge">100</code>. You should not try to override default VCLs.</li>
+</ul>
+
+<h2 id="export-fastly-service-id-and-api-token">Export Fastly Service ID and API Token</h2>
+
+<p>You can save Fastly service credentials into the bash environment variables and use them in cURL commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export FASTLY_SERVICE_ID=&lt;Service ID&gt;
+export FASTLY_API_TOKEN=&lt;API Token&gt;
+</code></pre></div></div>
+
+<p>The exported environment variables are available only in the current bash session and are lost when you close the terminal. You can redefine variables simply by exporting a new value. To view the list of exported variables related to Fastly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export | grep FASTLY
+</code></pre></div></div>
+
+<h2 id="list">Locate the currently active VCL snippet version</h2>
+
+<p>To view a list of all VCL snippets by version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/active
+</code></pre></div></div>
+
+<p>Look for the <code class="highlighter-rouge">active</code> key from the returned list. You need the version to perform a clone in the next section.</p>
+
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987" target="_blank">get version command</a>.</p>
+
+<h2 id="clone">Clone the active VCL version and all snippets</h2>
+
+<p>Clone the version using the active version number. This creates a copy of all existing VCL snippets for that version using a new version number. After you clone the version, you can <a href="#create-snippet">modify and add</a> VCL snippets. Save the new version number for the bash script.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/{Current Active Version #}/clone -X PUT
+</code></pre></div></div>
+
+<p>You can save the new version into a bash environment variable for use in cURL commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export FASTLY_VERSION=&lt;Version&gt;
+</code></pre></div></div>
+
+<p>For more information on this Fastly API, see this <a href="https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709" target="_blank">clone command</a>.</p>
+
+<h3 id="create-snippet">Create custom VCL snippets</h3>
+
+<p>Create a JSON file with the following content and format:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;name&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;type&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;code all in one line&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The values include:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">name</code>—Name for the VCL snippet.</li>
+  <li><code class="highlighter-rouge">dynamic</code>—Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.</li>
+  <li><code class="highlighter-rouge">type</code>—Specifies a location for the generated snippet, such as <code class="highlighter-rouge">init</code> (above subroutines) and <code class="highlighter-rouge">recv</code> (within subroutines). See <a href="https://docs.fastly.com/api/config#snippet" target="\_blank">Fastly VCL snippet object values</a> for information on these values.</li>
+  <li><code class="highlighter-rouge">priority</code>—Determines the order VCL snippets call. Lower values run first, from <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">100</code>. All uploaded snippets from a Magento module have a value of <code class="highlighter-rouge">50</code>. If you want an action to occur last or to override Magento default VCL snippets, use a higher number, such as <code class="highlighter-rouge">100</code>. To have code occur immediately, use a lower value, such as <code class="highlighter-rouge">5</code>.</li>
+  <li><code class="highlighter-rouge">content</code>—The snippet of VCL code to run in one line, without line breaks.</li>
+</ul>
+
+<p>For detailed examples and custom code, see the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a></li>
+  <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a></li>
+  <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to Wordpress VCL</a></li>
+  <li><a href="/guides/v2.1/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a></li>
+</ul>
+
+<h2 id="add-snippet">Add VCL snippets to Fastly configuration</h2>
+
+<p>To upload a prepared VCL snippet:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet -H 'Content-Type: application/json' -X POST --data @&lt;filename.json&gt;
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">&lt;filename.vcl&gt;</code> is the name of the file you prepared in the previous step. Repeat this command for each VCL snippet.</p>
+
+<p>If you receive a <code class="highlighter-rouge">500 Internal Server Error</code> response from the Fastly service, check if you are trying to upload a valid JSON file.</p>
+
+<h2 id="validate">Validate and activate snippets for a version</h2>
+
+<p>When you add the VCL snippets to the version, Fastly creates and assigns it to your service according to the version number. Next, validate the VCL snippets for the version using with Fastly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/validate
+</code></pre></div></div>
+
+<p>If you received <code class="highlighter-rouge">"status": "ok"</code>, activate the version for that service.</p>
+
+<p>Assuming there were no errors (if there are errors, fix them before proceeding), activate the version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/activate -X PUT
+</code></pre></div></div>
+
+<p>All VCL snippets associated with the version become active. This deactivates snippets using a previous version.</p>
+
+<h2 id="manage-vcl">Manage regular VCL snippets with curl</h2>
+
+<p>To list all regular VCL snippets attached to a service:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet
+</code></pre></div></div>
+
+<p>To review an individual snippet:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/&lt;snippet_name&gt;
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">&lt;snippet_name&gt;</code> is the name of a snippet, such as <code class="highlighter-rouge">my_regular_snippet</code>.</p>
+
+<p>To update a snippet, modify the JSON file you prepared on the <a href="#create-snippet">Create VCL snippets</a> step and send the following request:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/&lt;snippet_name&gt; -H 'Content-Type: application/json' -X PUT --data @&lt;filename.json&gt;
+</code></pre></div></div>
+
+<p>If you want to override values and settings from the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="_blank">default Fastly VCL snippets</a>, we recommend creating a new snippet with updated values and code that use a priority of <code class="highlighter-rouge">100</code>.</p>
+
+<p>To delete an individual VCL snippet using the API, get a list of snippets and enter a <code class="highlighter-rouge">curl</code> command with the specific snippet name to delete:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -H "Fastly-Key: ${FASTLY_API_TOKEN}" https://api.fastly.com/service/${FASTLY_SERVICE_ID}/version/${FASTLY_VERSION}/snippet/&lt;snippet_name&gt; -X DELETE
+</code></pre></div></div>
+
+<h4 id="fastly-resources">Fastly resources</h4>
+
+<p>You can learn more about creating VCL snippets with the following Fastly resources:</p>
+
+<ul>
+  <li><a href="https://docs.fastly.com/guides/vcl/" target="_blank">All Fastly VCL content</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="_blank">Fastly VCL guide</a></li>
+  <li><a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a></li>
+  <li><a href="https://docs.fastly.com/api/config#snippet" target="_blank">Fastly VCL snippet object values</a></li>
+</ul>
+
+<p>Fastly supports two types of snippets:</p>
+
+<ul>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets" target="_blank">Regular snippets</a> are versioned VCL snippets. The code and settings are locked per version to create, modify, and deploy with the Fastly service.</li>
+  <li><a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets" target="_blank">Dynamic snippets</a> are snippets you can only create via API calls. These snippets do not have a version and deploy separately from your Fastly service.</li>
+</ul>
+
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+
+</body>
+</html>
+
