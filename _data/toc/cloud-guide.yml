@@ -99,8 +99,13 @@ pages:
             - label: Install Magento
               url: /cloud/before/before-setup-env-install.html
 
+<<<<<<< HEAD
         - label: First time deployment
           url: /cloud/setup/first-time-deploy.html
+=======
+            - label: First time deployment
+              url: /cloud/access-acct/first-time-deploy.html
+>>>>>>> 29bd75a70ce51688a79f6fd74f46abe80eab61af
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html

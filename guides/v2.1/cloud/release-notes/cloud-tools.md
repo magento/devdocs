@@ -25,8 +25,6 @@ php ./vendor/bin/ece-tools list
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
 
-
-
 ## v2002.0.14
 
 #### New features
@@ -43,6 +41,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 #### Resolved Issues
 
 -  **Deployment fixes**
+
 
     -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to the final server.
 	
