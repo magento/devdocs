@@ -3,7 +3,7 @@ group: magento-functional-testing-framework-guide-2_3
 title: Annotations
 functional_areas:
  - Testing
-mftf-release: 2.3.0
+mftf-release: 2.3.6
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/test/annotations.md
 ---
 
@@ -170,7 +170,10 @@ Attribute|Type|Use
 
 ### testCaseId
 
-The `<testCaseId>` element is an implementation of a [`@TestCaseId`] Allure tag. It specifies a ZephyrId for a test.
+The `<testCaseId>` element is an implementation of a [`@TestCaseId`] Allure tag.
+It specifies a ZephyrId for a test.
+
+This tag is prefixed to a title of the test annotation to make the test title unique in Allure.
 
 If the linkage is set up correctly in the Allure config, the test will have a hyperlink to the Zephyr test case in the report.
 
