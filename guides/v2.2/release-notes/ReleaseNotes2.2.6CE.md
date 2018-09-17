@@ -93,7 +93,6 @@ Highlights of community contributions include fixes that improve checkout flow a
 
 * Customers can now successfully complete an order when it contains a  configurable product with an option that is deleted after the product has been placed in the shopping cart. Previously, the shopping cart could not load the shopping cart after the configurable option was deleted.  Thanks to community member [jonshipman](https://github.com/jonshipman)!  [GitHub-15467](https://github.com/magento/magento2/issues/15467)
 
-* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the  configuration settings of the primary store for all store views. Thanks to community member [jonshipman](https://github.com/jonshipman)! [GitHub-15205](https://github.com/magento/magento2/issues/15205) 
 
 * Magento now maintains the default sort order for products (“newest first”) when you upgrade your Magento deployment. Previously, after upgrade, the default product order in categories changed from “newest first” to “oldest first”.  Thanks to community member [Danny Verkade](https://github.com/dverkade)! [GitHub-15627](https://github.com/magento/magento2/issues/15627) 
 
