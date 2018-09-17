@@ -43,7 +43,7 @@ Prior to setting up your workspace, you may want to gather the following credent
 
 ## Create a local environment {#local}
 
-For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to a Integration environment for further testing and deployment to Staging and Production.
+For development, you need to install and configure a local environment. All environments for {{site.data.var.ece}} are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production.
 
 We recommend adding a virtual machine (VM) or Docker container and installing {{site.data.var.ee}}. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.
 
