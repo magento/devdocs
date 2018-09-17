@@ -1,8 +1,3 @@
----
-group: release-notes
-title: Magento 2.1.15 Community Contributions
-
----
 
 
 | Contributing community member | Pull Requests | Related GitHub Issues |
