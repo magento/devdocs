@@ -1627,6 +1627,53 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
   <li><a href="/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html">Magento Commerce changes</a></li>
 </ul>
 
+<h2 id="api-changes">API changes</h2>
+
+<h3 id="storemanager-instead-of-storeresolver">StoreManager instead of StoreResolver</h3>
+
+<p><code class="highlighter-rouge">\Magento\Store\Api\StoreResolverInterface</code> has been deprecated in favor of the <code class="highlighter-rouge">\Magento\Store\Model\StoreManagerInterface</code>.</p>
+
+<p>When resolving for a store frontend, use <code class="highlighter-rouge">\Magento\Store\Model\StoreManagerInterface::getStore</code>.</p>
+
+<p>The following example shows the diff in <code class="highlighter-rouge">Magento\Catalog\Model\ResourceModel\Product\StatusBaseSelectProcessor</code> class after replacing the deprecated method.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+     /**
+<span class="gd">-     * @var StoreResolverInterface
+</span><span class="gi">+     * @var StoreManagerInterface
+</span>     */
+<span class="gd">-    private $storeResolver;
+</span><span class="gi">+    private $storeManager;
+</span>     /**
+     * @param Config $eavConfig
+     * @param MetadataPool $metadataPool
+<span class="gd">-    * @param StoreResolverInterface $storeResolver
+</span><span class="gi">+    * @param StoreManagerInterface $storeManager
+</span>     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function __construct(
+        Config $eavConfig,
+        MetadataPool $metadataPool,
+<span class="gd">-       StoreResolverInterface $storeResolver
+</span><span class="gi">+       StoreManagerInterface $storeManager = null
+</span>    ) {
+        $this-&gt;eavConfig = $eavConfig;
+        $this-&gt;metadataPool = $metadataPool;
+<span class="gd">-        $this-&gt;storeResolver = $storeResolver;
+</span><span class="gi">+        $this-&gt;storeManager = $storeManager ?: \Magento\Framework\App\ObjectManager::getInstance()
++            -&gt;get(StoreManagerInterface::class);
+</span>
+...
+
+            . ' AND status_attr.attribute_id = ' . (int)$statusAttribute-&gt;getAttributeId()
+<span class="gd">-           . ' AND status_attr.store_id = ' . $this-&gt;storeResolver-&gt;getCurrentStoreId(),
+</span><span class="gi">+           . ' AND status_attr.store_id = ' . $this-&gt;storeManager-&gt;getStore()-&gt;getId(),
+</span>            []
+        );
+...
+</code></pre></div></div>
+
 <h2 id="application-framework-libraries">Application framework libraries</h2>
 
 <h3 id="zend-framework">Zend Framework</h3>
