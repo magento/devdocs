@@ -8,7 +8,6 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html
----
 
 You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 

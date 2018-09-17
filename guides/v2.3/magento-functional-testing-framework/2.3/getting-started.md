@@ -10,6 +10,13 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-sta
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
+<<<<<<< HEAD
+=======
+{% if page.guide_version == "2.2" %}
+{% include_relative include/note-2.3-docs.md %}
+{% endif %}
+
+>>>>>>> Removing access-acct files and adding setup folder
 ## Prepare environment  {#prepare-environment}
 
 Make sure that you have the following software installed and configured on your development environment:
