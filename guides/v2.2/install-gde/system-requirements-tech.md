@@ -48,7 +48,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 {:.bs-callout bs-callout-info}
 The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 
-*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only for 2.2.0 - 2.2.3. {{site.data.var.ee}} and {{site.data.var.ce}} as of 2.2.4.)\
+*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only for 2.2.0 - 2.2.3. {{site.data.var.ee}} and {{site.data.var.ce}} as of 2.2.4.)
 *   [ctype](http://php.net/manual/en/book.ctype.php){:target="_blank"}
 *   [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
 *   [dom](http://php.net/manual/en/book.dom.php){:target="_blank"}
