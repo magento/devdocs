@@ -41,7 +41,7 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
 1.  Verify the file in your browser with the url: `<domain.your.project>/robots.txt`
 
 ## Rewrite using Fastly VCL snippet
- If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 

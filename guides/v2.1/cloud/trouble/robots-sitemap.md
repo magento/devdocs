@@ -45,7 +45,7 @@ Your `robots.txt` file appears in the `<magento_root>/app/pub/media/` folder.
 For versions earlier than  2.1.10, you must use the `pub/media` path. When you generate the `robots.txt` file using the Magento Admin Panel—Stores > Settings:Configuration > General:Design—it stores the contents in the database and creates an actual file. 
 
 ## Rewrite using Fastly VCL snippet
- If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 
