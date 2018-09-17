@@ -42,7 +42,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
-    -  JIRA-MAGECLOUD-2603-->Changed the deploy phase so that the entire process runs in maintenance mode. This change ensures that files are only copied to the final destination when the deploy phase completes. Previously, some files were transferred during deployment, which can cause issues if the deployment fails.
+    -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to staging or production.
 
     -  Updated validation checks to minimize deployment failures caused by non-critical environment configuration issues.
     
