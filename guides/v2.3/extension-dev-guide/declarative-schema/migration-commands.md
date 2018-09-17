@@ -18,8 +18,11 @@ The Schema Listener tool listens for schema changes and attempts to change Magen
 To convert your install or upgrade script, run one of the following commands:
 
 ```bash
-magento setup:install --convert_old_scripts=1
-magento setup:upgrade --convert_old_scripts=1
+magento setup:install --convert-old-scripts=1
+```
+
+```bash
+magento setup:upgrade --convert-old-scripts=1
 ```
 
 ### Troubleshooting
@@ -38,7 +41,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 1. Generate a patch stub.
 
     ```bash
-    dev:generate:patch [options] <module-name> <patch-name>
+    setup:db-declaration:generate-patch [options] <module-name> <patch-name>
     ```
     where `[options]` can be any of the following:
 
@@ -66,7 +69,7 @@ As a result of specifying the `--dry-run=1` flag, Magento writes a log file at `
 
 The advantage and the main problem of declarative schema is that it can blindly modify the database schema. For example, a developer can make a mistake and potentially remove a structural element from the database, causing data loss.
 
-To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional--you do not have to create a manual dump during a system upgrade. _(But please note, that this works only with schema)_
+To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional--you do not have to create a manual dump during a system upgrade. _(Note that this works only with schema.)_
 
 Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
@@ -102,7 +105,7 @@ Backward compatibility must be maintained. Therefore, declarative schema does no
 The `<module_vendor>/<module_name/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
 
 ```bash
-magento declaration:generate:whitelist [options]
+magento setup:db-declaration:generate-whitelist [options]
 ```
 where:
 
