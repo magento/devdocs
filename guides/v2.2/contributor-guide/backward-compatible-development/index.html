@@ -1877,7 +1877,7 @@ Remove the variable type indicated in the DocBlock to remove the dependency.</li
 <p>Magento 2 must not have alternative APIs.
 Whenever you introduce a new implementation of some behavior, mark the old implementation as deprecated and specify the reason.</p>
 
-<h3 id="php-js-and-xml">PHP, JS and XML</h3>
+<h3 id="php-js-and-xml">PHP, JS, and XML</h3>
 
 <p>Use the <code class="highlighter-rouge">@deprecated</code> tag to mark methods as deprecated and follow it up with an explanation.</p>
 
@@ -1885,20 +1885,34 @@ Whenever you introduce a new implementation of some behavior, mark the old imple
 
 <p>Preserve <code class="highlighter-rouge">@api</code> tag when deprecating <code class="highlighter-rouge">@api</code>-marked code.</p>
 
-<h4 id="deprecated-tag-in-php">Deprecated tag in PHP</h4>
+<h4 id="deprecating-in-php-and-js">Deprecating in PHP and JS</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/**
+<p>Comment:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">/**
  * @deprecated because new api was introduced
  * @see \New\Api
  */
+</span></code></pre></div></div>
+
+<p>Trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.</p>
+
+<p>PHP:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">trigger_error</span><span class="p">(</span><span class="s1">'Class is deprecated'</span><span class="p">,</span> <span class="nx">E_USER_DEPRECATED</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h4 id="deprecated-tag-in-xmlhtml">Deprecated tag in XML/HTML</h4>
+<p>JS:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!--
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'Function is deprecated'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="deprecating-in-xmlhtml">Deprecating in XML/HTML</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--
 @deprecated because new api was introduced
 @see NewApi
---&gt;
+--&gt;</span>
 </code></pre></div></div>
 
 <h3 id="webapi">WebAPI</h3>
