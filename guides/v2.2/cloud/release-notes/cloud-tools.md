@@ -30,7 +30,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA-MAGECLOUD**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
+-  JIRA-MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
 
 -  JIRA-MAGECLOUD-2574-->**Branch-specific configuration option**—You can now create branch-specific configuration files to override environment variables and key-value pairs in the `.magento.env.yaml` configuration file.
 
@@ -43,7 +43,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
-    -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to staging or production.
+    -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to the final server.
 
     -  Updated validation checks to minimize deployment failures caused by non-critical environment configuration issues.
     

@@ -99,13 +99,8 @@ pages:
             - label: Install Magento
               url: /cloud/before/before-setup-env-install.html
 
-<<<<<<< Updated upstream
-            - label: First time deployment
-              url: /cloud/access-acct/first-time-deploy.html
-=======
         - label: First time deployment
           url: /cloud/setup/first-time-deploy.html
->>>>>>> Stashed changes
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
@@ -119,13 +114,8 @@ pages:
         - label: Prepare your existing Magento Commerce system
           url: /cloud/setup/first-time-setup_import-prepare.html
 
-<<<<<<< Updated upstream
-        - label: Import Magento Commerce into Magento Commerce Cloud
-          url: /cloud/access-acct/first-time-setup_import-import.html
-=======
         - label: Import Magento Commerce into Magento Commerce (Cloud)
           url: /cloud/setup/first-time-setup_import-import.html
->>>>>>> Stashed changes
 
     - label: Configure your store
       url: /cloud/configure/configuration-overview.html
