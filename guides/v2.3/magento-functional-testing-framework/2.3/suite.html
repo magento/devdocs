@@ -1955,8 +1955,8 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 
 <h2 id="examples">Examples</h2>
 
-<h3 id="browser-actions-in-suite-conditions">Browser actions in suite conditions</h3>
-
+<h3 id="enablingdisabling-wysiwyg-in-suite-conditions">Enabling/disabling WYSIWYG in suite conditions</h3>
+<!--  -->
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;suites</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">"WYSIWYG"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;before&gt;</span>
@@ -1981,16 +1981,19 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
     <span class="nt">&lt;/suite&gt;</span>
 <span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
-
+<!--  -->
 <p>This example declares a suite with the name <code class="highlighter-rouge">WYSIWYG</code>.
-The suite requires enabling WYSIWYG before running tests:</p>
+The suite enables WYSIWYG <em>before</em> running tests.
+It performs the following steps:</p>
+
 <ol>
   <li>Log in to the backend.</li>
   <li>Navigate to the <strong>Configuration</strong> page.</li>
   <li>Enable <strong>WYSIWYG</strong> in the Magento instance.</li>
 </ol>
 
-<p>After the testing, the Magento instance returns to its state prior to the test:</p>
+<p><em>After</em> the testing, the suite returns the Magento instance to the initial state disabling WYSIWYG:</p>
+
 <ol>
   <li>Log back in.</li>
   <li>Disable <strong>WYSIWYG</strong> so that</li>

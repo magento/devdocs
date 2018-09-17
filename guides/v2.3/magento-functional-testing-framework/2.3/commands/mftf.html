@@ -1879,7 +1879,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="useful-commands">Useful commands</h2>
 
-<p>Use the following commands to run commonly-performed tasks.</p>
+<p>Use the following commands to run commonly performed tasks.</p>
 
 <h3 id="apply-the-configuration-parameters">Apply the configuration parameters</h3>
 
@@ -1897,24 +1897,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
 </code></pre></div></div>
-<h3 id="generate-the-particular-tests">Generate the particular tests</h3>
+<h3 id="generate-tests-by-test-name">Generate tests by test name</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 </code></pre></div></div>
 
-<h3 id="generate-and-run-the-tests-of-a-particular-group">Generate and run the tests of a particular group</h3>
+<h3 id="generate-and-run-the-tests-for-a-spcecified-group">Generate and run the tests for a spcecified group</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group product <span class="nt">-r</span>
 </code></pre></div></div>
 
-<p>It cleans up the previously generated tests; generates and runs the tests where <code class="highlighter-rouge">group="product"</code>.</p>
+<p>This command cleans up the previously generated tests; generates and runs tests for the product group (where <code class="highlighter-rouge">group="product"</code>).</p>
 
 <h3 id="generate-and-run-particular-tests">Generate and run particular tests</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest <span class="nt">-r</span>
 </code></pre></div></div>
 
-<p>It cleans up the previously generated tests; generates and runs the <code class="highlighter-rouge">LoginAsAdminTest</code> <code class="highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
+<p>This command cleans up the previously generated tests; generates and runs the <code class="highlighter-rouge">LoginAsAdminTest</code> and <code class="highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
 
 <h2 id="reference">Reference</h2>
 
@@ -1970,7 +1970,7 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
   <tbody>
     <tr>
       <td><code class="highlighter-rouge">--config=[&lt;default&gt;|&lt;singleRun&gt;|&lt;parallel&gt;]</code></td>
-      <td>Creates a single manifest file with a list of all tests. The default location is <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split it into multiple groups using <code class="highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="highlighter-rouge">_generated/groups/</code> like <code class="highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="highlighter-rouge">default</code> (default), <code class="highlighter-rouge">singleRun</code>(same as <code class="highlighter-rouge">default</code>), and <code class="highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="highlighter-rouge">generate:tests --config=parallel</code>.</td>
+      <td>Creates a single manifest file with a list of all tests. The default location is <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split the list into multiple groups using <code class="highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="highlighter-rouge">_generated/groups/</code> like <code class="highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="highlighter-rouge">default</code> (default), <code class="highlighter-rouge">singleRun</code>(same as <code class="highlighter-rouge">default</code>), and <code class="highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="highlighter-rouge">generate:tests --config=parallel</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">--force</code></td>
@@ -2180,12 +2180,12 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="examples">Examples</h4>
 
-<p>Clean up after the last run, generate from XML and execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>:</p>
+<p>Clean up after the last test run; generate from XML and execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf <span class="nt">-r</span> <span class="nt">--</span> run:group group1 group2
 </code></pre></div></div>
 
-<p>Execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code> that has already been generated, skipping the regeneration of the test:</p>
+<p>Execute previously generated tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>, skipping the regeneration of the test:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> group1 group2
 </code></pre></div></div>
@@ -2222,7 +2222,7 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="examples-1">Examples</h4>
 
-<p>Generate from XML the <code class="highlighter-rouge">LoginCustomerTest</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest</code> tests and execute all the generated tests:</p>
+<p>Generate the <code class="highlighter-rouge">LoginCustomerTest</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest</code> tests from XML and execute all the generated tests:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 </code></pre></div></div>

@@ -1862,14 +1862,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
-<p>Make sure that you’ve installed and set up the following software:</p>
+<p>Make sure that you have the following software installed and configured on your development environment:</p>
 
 <ul>
-  <li><a href="/guides/v2.3/install-gde/system-requirements-tech.html#php">PHP version supported by Magento instance under test</a></li>
-  <li><a href="https://getcomposer.org/download/">Composer v1.3.x+</a></li>
-  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java v1.8.x+</a></li>
-  <li><a href="#selenium-server">Selenium Server Standalone v3.6.0+</a></li>
-  <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
+  <li>[PHP version supported by the Magento instance under test][]</li>
+  <li><a href="https://getcomposer.org/download/">Composer 1.3 or later</a></li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java 1.8 or later</a></li>
+  <li>[Selenium Server Standalone 3.6 or later][] and <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver 2.33 or later</a> or other webdriver in the same directory</li>
 </ul>
 
 <p class="bs-callout bs-callout-tip"><a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> supports <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
@@ -1893,7 +1892,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
-<p class="bs-callout bs-callout-tip">Enable WYSIWYG in your test [suite][] when you need to test it.</p>
+<p class="bs-callout bs-callout-tip">When you want to test the WYSIWYG functionality, reenable WYSIWYG in your test [suite][].</p>
 
 <h3 id="security-settings">Security settings</h3>
 
@@ -1968,8 +1967,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>See <a href="commands/mftf.html#generateurn-catalog"><code class="highlighter-rouge">generate:urn-catalog</code></a> for more details.</p>
 </div>
 
-<p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
-When added, you should be able to run the <code class="highlighter-rouge">mftf</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
+<p class="bs-callout bs-callout-tip">You can simplify command entry by adding the  absolute  path to the <code class="highlighter-rouge">vendor/bin</code> directory path to your PATH environment variable.
+After adding the path, you can run <code class="highlighter-rouge">mftf</code> without having to include <code class="highlighter-rouge">vendor/bin</code>.</p>
 
 <h3 id="environment-settings">Step 4. Edit environmental settings</h3>
 
@@ -2029,23 +2028,12 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 <h4 id="selenium-server">Run the Selenium server</h4>
 
 <p>Run the Selenium server in terminal.
-Example of the run for Chrome:</p>
+For example, the following commands run the Selenium server for Google Chrome:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;path_to_directory_with_selenium_server_and_webdiver&gt;/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;path_to_directory_with_selenium_server_and_webdriver&gt;/
 </code></pre></div></div>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-Dwebdriver</span>.chrome.driver<span class="o">=</span>chromedriver <span class="nt">-jar</span> selenium-server-standalone-3.14.0.jar
 </code></pre></div></div>
-
-<p>If you do not have the Selenium server yet:</p>
-
-<ol>
-  <li>
-    <p><a href="http://www.seleniumhq.org/download/">Download the latest Selenium Server</a>.</p>
-  </li>
-  <li>
-    <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory that contains the Selenium server.</p>
-  </li>
-</ol>
 
 <h4 id="run-all-tests">Generate and run all tests</h4>
 
@@ -2069,13 +2057,12 @@ Example of the run for Chrome:</p>
 
 <h3 id="reports">Step 9. Generate reports</h3>
 
-<p>The testing reports are generated in CLI during the testing.</p>
-
-<p>The MFTF also provides visual reports using <a href="http://allure.qatools.ru/">Allure</a>.
+<p>During testing, the MFTF generates test reports in CLI.
+You can generate visual representations of the report data using <a href="http://allure.qatools.ru/">Allure Framework</a>.
 To view the reports in GUI:</p>
 
 <ul>
-  <li><a href="https://github.com/allure-framework/allure2">install Allure</a></li>
+  <li><a href="https://github.com/allure-framework/allure2#download">install Allure</a></li>
   <li>run the tool to serve the artifacts in <code class="highlighter-rouge">dev/tests/acceptance/tests/_output/allure-results/</code>:</li>
 </ul>
 

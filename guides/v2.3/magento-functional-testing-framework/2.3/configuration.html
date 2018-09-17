@@ -1860,19 +1860,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
-<p>The <code class="highlighter-rouge">*.env</code> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
+<p>The <code class="highlighter-rouge">*.env</code> file provides additional configuration for the Magento Functional Testing Framework (MFTF).
 To run the MFTF on your Magento testing instance, specify the basic configuration values.
-For advanced usage, customize the configuration according to your requirements and environment.</p>
+Advanced users can create custom configurations based on requirements and environment.</p>
 
-<h2 id="basic-configuration">Basic Configuration</h2>
+<h2 id="basic-configuration">Basic configuration</h2>
 
-<p>These basic configuration values are required and must be set by the user before MFTF can function correctly.</p>
+<p>These basic configuration values are <strong>required</strong> and must be set by the user before the MFTF can function correctly.</p>
 
 <h3 id="magento_base_url">MAGENTO_BASE_URL</h3>
 
 <p>The root URL of the Magento application under test.</p>
-
-<p>Use: required.</p>
 
 <p>Example:</p>
 
@@ -1883,8 +1881,6 @@ For advanced usage, customize the configuration according to your requirements a
 
 <p>The path to the Magento Admin page.</p>
 
-<p>Use: required.</p>
-
 <p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_BACKEND_NAME</span>=<span class="n">admin_12346</span>
@@ -1892,9 +1888,7 @@ For advanced usage, customize the configuration according to your requirements a
 
 <h3 id="magento_admin_username">MAGENTO_ADMIN_USERNAME</h3>
 
-<p>The username that tests will use to log in to the Magento Admin page.</p>
-
-<p>Use: required.</p>
+<p>The username that tests can use to access the Magento Admin page</p>
 
 <p>Example:</p>
 
@@ -1904,8 +1898,6 @@ For advanced usage, customize the configuration according to your requirements a
 <h3 id="magento_admin_password">MAGENTO_ADMIN_PASSWORD</h3>
 
 <p>The password that tests will use to log in to the Magento Admin page.</p>
-
-<p>Use: required.</p>
 
 <p>Example:</p>
 
@@ -1920,10 +1912,10 @@ But in case you do need to do some configuration, they are shown here for your r
 
 <h3 id="selenium">SELENIUM</h3>
 
-<p>The <code class="highlighter-rouge">SELENIUM_*</code> values form the URL of a custom Selenium server to be run for testing.
-An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.</p>
+<p>The <code class="highlighter-rouge">SELENIUM_*</code> values form the URL of a custom Selenium server for running testing.</p>
 
 <p>Your default Selenium URL:</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
 
@@ -1935,13 +1927,12 @@ An example use case for these would be if you wanted to run your tests against a
 <span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-warning">Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
+<p class="bs-callout bs-callout-warning"><code class="highlighter-rouge">SELENIUM_*</code> values are required if you are running Selenium on an external system. 
+If you change the configuration of the external Selenium server, you must update these values.</p>
 
 <h4 id="selenium_host">SELENIUM_HOST</h4>
 
 <p>Override the default Selenium server host.</p>
-
-<p>Use: Optional.</p>
 
 <p>Example:</p>
 
@@ -1952,8 +1943,6 @@ An example use case for these would be if you wanted to run your tests against a
 
 <p>Override the default Selenium server port.</p>
 
-<p>Optional.</p>
-
 <p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_PORT</span>=<span class="m">443</span>
@@ -1963,8 +1952,6 @@ An example use case for these would be if you wanted to run your tests against a
 
 <p>Override the default Selenium server protocol.</p>
 
-<p>Use: optional.</p>
-
 <p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SELENIUM_PROTOCOL</span>=<span class="n">https</span>
@@ -1973,8 +1960,6 @@ An example use case for these would be if you wanted to run your tests against a
 <h4 id="selenium_path">SELENIUM_PATH</h4>
 
 <p>Override the default Selenium server path.</p>
-
-<p>Use: optional.</p>
 
 <p>Example:</p>
 
@@ -1993,8 +1978,7 @@ An example use case for these would be if you wanted to run your tests against a
 
 <p>The protocol and the host of the REST API server path.</p>
 
-<p>Use: optional.
-Example:</p>
+<p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>=<span class="n">http</span>://<span class="n">localhost</span>
 </code></pre></div></div>
@@ -2002,8 +1986,6 @@ Example:</p>
 <h4 id="magento_restapi_server_port">MAGENTO_RESTAPI_SERVER_PORT</h4>
 
 <p>The port part of the API path.</p>
-
-<p>Use: optional</p>
 
 <p>Example:</p>
 
@@ -2025,8 +2007,6 @@ Use them if you have a more advanced local development setup that involves symli
 <p>The path to where MFTF supplementary files are located in the Magento2 codebase.
 BP is an acronym for <em>BasePath</em>.</p>
 
-<p>Use: optional.</p>
-
 <p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TESTS_BP</span>=~/<span class="n">magento2ce</span>/<span class="n">dev</span>/<span class="n">tests</span>/<span class="n">acceptance</span>
@@ -2037,8 +2017,6 @@ BP is an acronym for <em>BasePath</em>.</p>
 <p>The path to where MFTF exists and from which it is symlinked.
 FW_BP is an acronym for <em>FrameWork BasePath</em>.</p>
 
-<p>Use: optional.</p>
-
 <p>Example:</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FW_BP</span>=~/<span class="n">magento</span>/<span class="n">magento2</span>-<span class="n">functional</span>-<span class="n">testing</span>-<span class="n">framework</span>
@@ -2047,8 +2025,6 @@ FW_BP is an acronym for <em>FrameWork BasePath</em>.</p>
 <h4 id="tests_module_path">TESTS_MODULE_PATH</h4>
 
 <p>The path to where MFTF modules mirror Magento’s modules.</p>
-
-<p>Use: optional.</p>
 
 <p>Example:</p>
 
@@ -2059,8 +2035,6 @@ FW_BP is an acronym for <em>FrameWork BasePath</em>.</p>
 
 <p>Use for a new module.
 When adding a new directory at <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name to <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
-
-<p>Use: optional.</p>
 
 <p>Example:</p>
 
@@ -2081,8 +2055,7 @@ It points to <code class="highlighter-rouge">MAGENTO_BASE_URL</code> + <code cla
   <li>when use a subdirectory in the <code class="highlighter-rouge">MAGENTO_BASE_URL</code></li>
 </ul>
 
-<p>Use: optional.
-Example: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
+<p>Example: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
 
 <h3 id="browser">BROWSER</h3>
 
