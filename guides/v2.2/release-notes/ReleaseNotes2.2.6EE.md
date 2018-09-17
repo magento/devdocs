@@ -1776,10 +1776,11 @@ The `catalog:image:resize` command execution time has been reduced by up to 90% 
 This release includes substantial community contributions: over 100 GitHub issues resolved and over 350 pull requests merged. We are grateful to the wider Magento community for this effort and would like to acknowledge their contributions to this release.
 
 
-
 ### Individual contributor contributions
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
+{% include release-notes/engcomm-2-2-6.md %}
 
 
 ### Partner contributions
