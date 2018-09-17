@@ -8,7 +8,7 @@ This release includes multiple enhancements to product security plus bug fixes a
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15 ) have been ported to 2.2.6 , 1.14.3.10, and 1.9.3.10. 
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6 , 1.14.3.10, and 1.9.3.10. 
 
 ## Highlights
 
@@ -931,12 +931,8 @@ The following table highlights contributions made by Partners. This table lists 
 </table>
 
 ### System requirements
-<<<<<<< HEAD
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
-=======
->>>>>>> 7da6cf4834499833ddede42d1e457402f6f09f04
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 ### Installation and upgrade instructions
 
