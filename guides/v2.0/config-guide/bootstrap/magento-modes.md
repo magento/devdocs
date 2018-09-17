@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: About Magento modes
 menu_title: About Magento modes
@@ -26,7 +26,7 @@ You can run Magento in any of the following *modes*:
 			<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
 			<ul><li>Symlinks to static view files are published to the <code>pub/static</code> directory</li>
 				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
-				<li>Hides custom <code>X-Magento-&#42;</code> HTTP request and response headers</li></ul>
+				<li>Hides custom <code>X-Magento-*</code> HTTP request and response headers</li></ul>
 			</td>
 	</tr>
 	<tr>
@@ -36,7 +36,7 @@ You can run Magento in any of the following *modes*:
 				<li>Provides verbose logging</li>
 				<li>Enables <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
-				<li>Shows custom <code>X-Magento-&#42;</code> HTTP request and response headers</li>
+				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
         <div class="bs-callout bs-callout-info">
         <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
@@ -73,9 +73,8 @@ For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cl
 
 You should run the Magento software in developer mode when you're extending or customizing it.
 
-<div class="bs-callout bs-callout-info">
-<a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
-</div>
+{: .bs-callout .bs-callout-info" }
+[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
 
 In developer mode:
 

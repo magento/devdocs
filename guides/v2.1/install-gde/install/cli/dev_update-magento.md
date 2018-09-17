@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Update the Magento application
 menu_title: Update the Magento application

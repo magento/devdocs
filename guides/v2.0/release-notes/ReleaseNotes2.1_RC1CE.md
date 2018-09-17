@@ -16,9 +16,9 @@ We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release ca
 
 * test your 2.0 extensions against  2.1
 
-We welcome your participation in this process!  Please open any Open Source issues or Pull Requests on the Open Source GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{ page.baseurl }}/contributor-guide/contributing.html" target="_blank">Code contributions</a>.
+We welcome your participation in this process!  Please open any Open Source issues or Pull Requests on the Open Source GitHub repository. For more information on how to provide feedback and contribute on GitHub, see [Code contributions]({{ page.baseurl }}/contributor-guide/contributing.html){: target="_blank"}.
 
-Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Highlights
 
@@ -33,7 +33,7 @@ Magento Open Source 2.1 includes several new features:
 
 ### Known issue
 
-<b>Issue:</b> Enabling Varnish causes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a>
+<b>Issue:</b> Enabling Varnish causes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} menu to switch from http to https[ (GITHUB-4540)](https://github.com/magento/magento2/issues/4540){: target="_blank"}
 
 <b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento's root `.htaccess`:
 
@@ -49,40 +49,40 @@ RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
 This release includes fixes for the following GitHub issues:
 
-<!--- 52414 --> * Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a>
+<!--- 52414 --> * Integration test syntax error has been fixed. [(GITHUB-4343)](https://github.com/magento/magento2/issues/4343){: target="_blank"}
 
-<!--- 50611--> * Web APIs no longer allow anonymous access by default. <a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>
+<!--- 50611--> * Web APIs no longer allow anonymous access by default. [(GITHUB-3786)](https://github.com/magento/magento2/issues/3786){: target="_blank"}
 
-<!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>
+<!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. [(GITHUB-3449)](https://github.com/magento/magento2/issues/3449){: target="_blank"}
 
-<!--- 46720 --> * Shipping Address is now exposed for the Orders {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/2628" target="_blank">(GITHUB-2628)</a>
+<!--- 46720 --> * Shipping Address is now exposed for the Orders {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. [(GITHUB-2628)](https://github.com/magento/magento2/issues/2628){: target="_blank"}
 
 
-<!--- 52613 --> * A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} REST API issue with updating attributes has been fixed. Previously, certain attributes (such as Order Status) were not updated when the user took action through the API. However, Magento updates these attributes when the same action is completed in the Admin interface. <a href="https://github.com/magento/magento2/issues/4329" target="_blank">(GITHUB-4329)</a>  
+<!--- 52613 --> * A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} REST API issue with updating attributes has been fixed. Previously, certain attributes (such as Order Status) were not updated when the user took action through the API. However, Magento updates these attributes when the same action is completed in the Admin interface. [(GITHUB-4329)](https://github.com/magento/magento2/issues/4329){: target="_blank"}  
 
-<!--- 52607 --> *  Varnish caching performance has been enhanced. <a href="https://github.com/magento/magento2/issues/3926" target="_blank">(GITHUB-3926)</a>
+<!--- 52607 --> *  Varnish caching performance has been enhanced. [(GITHUB-3926)](https://github.com/magento/magento2/issues/3926){: target="_blank"}
 
-<!--- 52316 --> *  Product update operations by either customers or store administrators no longer result in locking queries on {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} category product index. <a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a>
+<!--- 52316 --> *  Product update operations by either customers or store administrators no longer result in locking queries on {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} category product index. [(GITHUB-4342)](https://github.com/magento/magento2/issues/4342){: target="_blank"}
 
-<!--- 52079 --> * The Order Repository getList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a>
+<!--- 52079 --> * The Order Repository getList method no longer returns the same shipping address for all orders. [(GITHUB-4019)](https://github.com/magento/magento2/issues/4019){: target="_blank"}
 
-<!--- 51181 --> * A configurable product's last attribute with price of zero (0) no longer results in an error. The user can configure the product, and the correct price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank">(GITHUB-3912)</a>
+<!--- 51181 --> * A configurable product's last attribute with price of zero (0) no longer results in an error. The user can configure the product, and the correct price results. [(GITHUB-3912)](https://github.com/magento/magento2/issues/3912){: target="_blank"}
 
-<!--- 48175 --> * An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to `magento.com` before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a>
+<!--- 48175 --> * An error message that users typically received during upgrade has been improved. The message now clearly states when a user must login first to `magento.com` before continuing the upgrade process. [(GITHUB-3059)](https://github.com/magento/magento2/issues/3059){: target="_blank"}
 
-<!--- 47440 --> *  Magento now displays the correct product prices on the {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}Configurable product{% endglossarytooltip %} page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank">(GITHUB-2471)</a>
+<!--- 47440 --> *  Magento now displays the correct product prices on the {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}Configurable product{% endglossarytooltip %} page when catalog prices include tax. [(GITHUB-2471)](https://github.com/magento/magento2/issues/2471){: target="_blank"}
 
-<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-2630)</a>
+<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. [(GITHUB-2630)](https://github.com/magento/magento2/issues/2630){: target="_blank"}
 
-<!--- 47009 --> *  Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank">(GITHUB-2674)</a>
+<!--- 47009 --> *  Plugins/interceptors now work with early stage single instance objects in Developer mode. [(GITHUB-2674)](https://github.com/magento/magento2/issues/2674){: target="_blank"}
 
-<!--- 46808 --> * Admin order creation no longer fails when the "Include Tax In Order Total" option is set to yes. <a href="https://github.com/magento/magento2/issues/2675" target="_blank">(GITHUB-2675)</a>
+<!--- 46808 --> * Admin order creation no longer fails when the "Include Tax In Order Total" option is set to yes. [(GITHUB-2675)](https://github.com/magento/magento2/issues/2675){: target="_blank"}
 
-<!--- 47639 --> * The `setup:di:compile` script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank">(GITHUB-2888)</a>
+<!--- 47639 --> * The `setup:di:compile` script now compiles all files as expected. [(GITHUB-2888)](https://github.com/magento/magento2/issues/2888){: target="_blank"}
 
-<!--- 46044 --> * Synonyms now work as expected with Magento 2.x.  <a href="https://github.com/magento/magento2/issues/2519" target="_blank">(GITHUB-2519)</a>
+<!--- 46044 --> * Synonyms now work as expected with Magento 2.x.  [(GITHUB-2519)](https://github.com/magento/magento2/issues/2519){: target="_blank"}
 
-<!--- 40320 --> * Attribute 'setup_version' is missing for {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
+<!--- 40320 --> * Attribute 'setup_version' is missing for {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} error when defined as optional. [(GITHUB-1493)](https://github.com/magento/magento2/issues/1493){: target="_blank"}
 
 ### Technology stack
 
@@ -115,23 +115,22 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 
 ### Install using Composer {#install-rc-composer}
 
-This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run
+This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}  [prerequisites]({{ page.baseurl }}/install-gde/prereq/integrator_install.html){: target="_blank"}, then run
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 <installation directory name>
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
 
 This section discusses how to upgrade to a Release Candidate.
 
-<div class="bs-callout bs-callout-warning">
-    <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+*Do not* upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.
 
 ### Upgrade an existing installation from the GitHub repository
 
-Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
+Developers who contribute to the Open Source codebase can [upgrade manually]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html){: target="_blank"} from the Magento Open Source GitHub repository.
 
-1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the [Contributing Developers]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html){: target="_blank"} page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
@@ -141,4 +140,4 @@ Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 2
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.

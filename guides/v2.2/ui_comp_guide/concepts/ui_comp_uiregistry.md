@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: uiRegistry
 menu_title: uiRegistry
@@ -14,26 +14,26 @@ To debug the UI component JS, we first need to get a `uiRegistry` instance from 
 
 In the browser console enter the following:
 
-{%highlight js%}
+```js
 var registry = require('uiRegistry');
-{%endhighlight%}
+```
 
 Now we have `uiRegistry` instance in the `registry` variable. We can use it to get an instance of any component.
 
-{%highlight js%}
+```js
 var component = registry.get('%componentName%');
-{%endhighlight%}
+```
 
 For example:
 
-{%highlight js%}
+```js
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
-{%endhighlight%}
+```
 
 Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
-{%highlight js%}
+```js
 console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
 
 fieldName.trigger('validate'); // will invoke validation
@@ -41,4 +41,4 @@ fieldName.visible(false); // will hide field from page
 fieldName.visible(true);  // will show field again
 fieldName.value(); // will show current field value
 fieldName.value('New string value'); // will change field value to string 'New string value'
-{%endhighlight%}
+```

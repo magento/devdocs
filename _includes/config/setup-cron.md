@@ -36,9 +36,9 @@ For example,
 A text editor displays. (You might need to choose a text editor first.)
 
 ```terminal
-* * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> &lt;magento install dir>/var/log/magento.cron.log
-* * * * * &lt;path to php binary> &lt;magento install dir>/update/cron.php >> &lt;magento install dir>/var/log/update.cron.log
-* * * * * &lt;path to php binary> &lt;magento install dir>/bin/magento setup:cron:run >> &lt;magento install dir>/var/log/setup.cron.log</pre>
+* * * * * <path to php binary> <magento install dir>/bin/magento cron:run | grep -v "Ran jobs by schedule" >> <magento install dir>/var/log/magento.cron.log
+* * * * * <path to php binary> <magento install dir>/update/cron.php >> <magento install dir>/var/log/update.cron.log
+* * * * * <path to php binary> <magento install dir>/bin/magento setup:cron:run >> <magento install dir>/var/log/setup.cron.log</pre>
 ```
 
 where

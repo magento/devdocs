@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrade to ece-tools
 functional_areas:
   - Cloud

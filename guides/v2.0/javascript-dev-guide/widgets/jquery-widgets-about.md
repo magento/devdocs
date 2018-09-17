@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magento jQuery widgets
 menu_order: 1
@@ -32,10 +32,8 @@ This guide discusses the following widgets:
 </ul>
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} options added in later versions might be unavailable.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento 2 supports [jQuery UI 1.9.2](http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/){: target="_blank"}, {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} options added in later versions might be unavailable.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento out of the box does not contain jQuery UI styles. Also, it is not recommended to download them as is, because it can break the default Magento design. To use certain jQuery UI styles, you need to add them manually in your custom stylesheets in the <code>{your_theme_dir}/web/css</code> or <code>{your_module_dir}/view/{area}/web/css</code> directory.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento out of the box does not contain jQuery UI styles. Also, it is not recommended to download them as is, because it can break the default Magento design. To use certain jQuery UI styles, you need to add them manually in your custom stylesheets in the `{your_theme_dir}/web/css` or `{your_module_dir}/view/{area}/web/css` directory.

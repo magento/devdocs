@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Set configuration values
 functional_areas:
   - Configuration

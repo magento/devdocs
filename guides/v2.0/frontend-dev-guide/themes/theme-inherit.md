@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
@@ -40,9 +40,8 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 </theme>
 {% endhighlight xml %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.
 
 ## Override view.xml file
 
@@ -111,6 +110,7 @@ For example, if you must override the `<Magento_Catalog_module_dir>/view/fronten
 
 <u>Example</u>
 By default, according to the module template, in the mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} products are listed under the Go to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} button:
+
 <p><img src="{{ site.baseurl }}/common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button"/></p>
 
 The order is defined in the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` module template. The Blank theme does not override this template.
@@ -119,8 +119,10 @@ To do this, they need to add an overriding template for the corresponding module
 `app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml`
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
+
 <p><img src="{{ site.baseurl }}/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button"/></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
+
+You can find out what exactly code changes are required to perform this and other tasks in the [Illustration of customizing templates topic]({{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html).
 
 ## Extend layouts {#theme-inherit-layout}
 
@@ -152,7 +154,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"} article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

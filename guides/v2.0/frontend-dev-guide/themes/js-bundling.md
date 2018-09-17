@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: JavaScript Bundling
 menu_title: JavaScript Bundling

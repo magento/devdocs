@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create an Admin theme
 functional_areas:
   - Frontend

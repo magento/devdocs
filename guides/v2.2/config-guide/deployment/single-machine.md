@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Single machine deployment
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html

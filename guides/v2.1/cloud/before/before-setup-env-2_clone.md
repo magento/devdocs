@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Clone and branch the project
 menu_title: Clone and branch the project

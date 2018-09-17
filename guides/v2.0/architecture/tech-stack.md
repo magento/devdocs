@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Technology stack
 menu_title: Technology stack

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_php
 title: PHP settings errors
 menu_title: PHP settings errors
@@ -64,7 +64,7 @@ To increase your PHP memory limit:
 
 ### xdebug maximum function nesting level error   {#trouble-php-xdebug}
 
-See <a href="{{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
+See [During installation, xdebug maximum function nesting level error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html).
 
 ### Errors display when you access a PHTML template   {#trouble-php-asptags}
 
@@ -74,7 +74,7 @@ Error text is typically:
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml){: target="_blank"} for displaying a product image:
 
 {% highlight PHP inline=true %}
 <img
@@ -84,6 +84,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
     alt="<%- data.label %>" />
 {% endhighlight %}
 
-More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.
+More information about [asp\_tags](http://php.net/manual/en/ini.core.php#ini.asp-tags){: target="_blank"}.
 
 Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).

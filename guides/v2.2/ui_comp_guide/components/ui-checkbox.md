@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Checkbox component
-menu_title: Checkbox component
 ---
 
 The Checkbox component implements a form field that is an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="checkbox">` element. It can also be displayed as a "toggle" handler or a radio button element.
@@ -36,7 +34,7 @@ The Checkbox component implements a form field that is an {% glossarytooltip a2a
   </tr>
   <tr>
     <td><code>valueMap</code></td>
-    <td>Convert the component's value to the expected type. For example, you can set to convert '0' to 'false', this would look like following:<code><br>{<br>'0': false<br>}</code></td>
+    <td>Convert the component's value to the expected type. For example, you can set to convert '0' to 'false', this would look like following:<code><br />{<br />'0': false<br />}</code></td>
     <td>Object</td>
     <td><code>{}</code></td>
   </tr>
@@ -50,7 +48,7 @@ The Checkbox component implements a form field that is an {% glossarytooltip a2a
 </td>
     <td>Paths to templates for all possible types of input elements. The exact template to be used for rendering is defined by the <code>prefer</code> property.</td>
     <td>Object<ul><li>String</li><li>String</li><li>String</li></ul></td>
-    <td><code>ui/form/components/single/radio<br>ui/form/components/single/checkbox<br>ui/form/components/single/switcher</code></td>
+    <td><code>ui/form/components/single/radio<br />ui/form/components/single/checkbox<br />ui/form/components/single/switcher</code></td>
   </tr>
   <tr>
     <td><code>component</code></td>

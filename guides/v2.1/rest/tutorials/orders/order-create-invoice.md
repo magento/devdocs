@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 8. Create an invoice
 subtitle: Order processing tutorial
 return_to:

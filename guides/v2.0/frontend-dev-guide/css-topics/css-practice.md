@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Customizing styles illustration
 menu_order: 5

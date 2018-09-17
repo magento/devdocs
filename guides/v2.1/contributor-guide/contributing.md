@@ -1,8 +1,9 @@
 ---
-group: contributor
+group: contributor-guide
 title: Code Contributions
-redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
+
+{% include contributor/2-1-end.md %}
 
 The following topics are included in this guide:
 
@@ -49,13 +50,11 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Accepted pull requests and ported code {#rules}
 
+{% include contributor/2-1-end.md %}
+
 Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.
 
-|     |                 Fix for Existing Issue                 |                     Test Coverage                      |                      Refactoring                       |                      New Feature                       |                      Code Cleanup                      |
-|:----|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|:------------------------------------------------------:|
-| 2.1 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.2 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |    ![No]({{site.baseurl}}/common/images/red-x.png)     |    ![No]({{site.baseurl}}/common/images/red-x.png)     |
-| 2.3 | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) | ![Yes]({{site.baseurl}}/common/images/green-check.png) |
+{% include contributor/pull-request-table.md %}
 
 ## Contribution requirements {#requirements}
 
@@ -93,8 +92,10 @@ You can also use the GitHub interface to update forks, referred to as a *reverse
 
 1. On your fork GitHub page, click **New pull request**. You should see the following message:
 
-   ```There isn’t anything to compare.
-   magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.```
+   ```terminal
+   There isn’t anything to compare.
+   magento:2.2-develop is up to date with all commits from <your fork>:2.2-develop. Try switching the base for your comparison.
+   ```
 
 1. Click the base link and then click **Create pull request**.
 1. Provide a descriptive name for your pull request in the provided field.
@@ -105,6 +106,8 @@ Check out this video to see the process in action:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mJDCL0uzIpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Create a pull request {#pull_request}
+
+{% include contributor/2-1-end.md %}
 
 First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} and make sure you are not duplicating others’ work.
 
@@ -214,9 +217,8 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
-</div>
 
 ### What are up-ports and back-ports?
 

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters
@@ -19,8 +19,8 @@ This topic discusses how to set the values of Magento application bootstrap para
 The following table discusses the bootstrap parameters you can set:
 
 <table>
-	<col width="40%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Bootstrap parameter</th>
@@ -39,10 +39,9 @@ The following table discusses the bootstrap parameters you can set:
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+* Not all bootstrap parameters are documented at this time.
+* You now set the Magento mode (developer, default, production) using the [`magento deploy:mode:set {mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 </div>
 
 ## Specifying a parameter value using an environment variable   {#mode-specify-var}
@@ -63,10 +62,8 @@ bash shell example for CentOS:
 
 	export MAGE_PROFILER=firebug
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If a `PHP Fatal error` displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.
 
 ## Specifying a parameter value   {#mode-specify-web}
 

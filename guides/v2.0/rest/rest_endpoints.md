@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: List of service names per module
 menu_title: List of service names per module
@@ -18,13 +18,12 @@ To specify all services:
 
 `http://<magento_host>/rest/<store_code>/schema`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The value of `store_code` can be one of the following:</p>
-  <ul>
-  <li><code>default</code></li>
-  <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
-  </ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The value of `store_code` can be one of the following:
+
+* `default`
+* The assigned store code
+* `all`. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores. `GET`operations cannot be performed when you specify `all`.
 </div>
 
 ## {{site.data.var.ee}} REST API Services per module {#eelist}

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Customize base directory paths (MAGE_DIRS)
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
 functional_areas:

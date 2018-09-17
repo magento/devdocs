@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Step 3. Extension Update
 menu_title: Extension Update

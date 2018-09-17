@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Accessibility Guidelines
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 ---

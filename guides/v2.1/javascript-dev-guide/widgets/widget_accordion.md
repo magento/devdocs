@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Accordion widget
 redirect_from:

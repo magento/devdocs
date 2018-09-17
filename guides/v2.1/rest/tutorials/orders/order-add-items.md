@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Add items to the cart
 subtitle: Order processing tutorial
 return_to:

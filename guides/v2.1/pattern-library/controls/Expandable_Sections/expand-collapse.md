@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Expandable sections
 redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
 ---

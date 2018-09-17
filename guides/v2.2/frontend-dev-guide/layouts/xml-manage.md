@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Common layout customization tasks
 functional_areas:
   - Frontend

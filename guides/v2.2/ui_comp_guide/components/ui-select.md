@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Select component
-menu_title: Select component
 ---
 
 The Select component provides the interface for a list or a data set. With this component, the user can select only one item.

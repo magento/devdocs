@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Start the Extension Manager
 menu_title: Start the Extension Manager
@@ -31,9 +31,8 @@ To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 You must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also *cannot* use:
-
--   Another user's authentication keys
--   [Sharedaccount](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html) authentication keys
+* Another user's authentication keys
+* [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){: target="_blank"} authentication keys
 </div>
 
 See one of the following sections:

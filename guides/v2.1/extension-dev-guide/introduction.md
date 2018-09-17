@@ -25,12 +25,12 @@ A *package* is a component that is wrapped up in a distributable form. Usually y
 
 An *extension* is a component that are packaged for sale on Magento Marketplace.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).
 
 
-{: .bs-callout .bs-callout-info}
+
+{: .bs-callout .bs-callout-info }
 You must follow a [PSR compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 ## Magento module example
@@ -47,6 +47,6 @@ Modules are declared in the `module.xml` file. Here is a minimal example:
 
 ## What's Next?
 
-Get your feet wet quickly and build [a simple Magentomodule]({{ page.baseurl }}/extension-dev-guide/build_a_simple_module.html).
+Get your feet wet quickly and build <a href="{{ page.baseurl }}/extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
 
-Or jump right in and use [aworksheet]({{ page.baseurl }}/extension-dev-guide/worksheet.html) that steps you through a complete best practice method to build, test, and package a Magento module.
+Or jump right in and use <a href="{{ page.baseurl }}/extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.

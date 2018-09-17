@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
@@ -16,11 +16,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
+Data Migration Tool repository [migration-tool](https://github.com/magento/data-migration-tool){: target="_blank"}
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="_blank">Magento 2</a>
+Same as for [Magento 2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html){: target="_blank"}
 
 ## Internal structure {#migrate-is}
 
@@ -111,7 +111,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see [--config `<value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
 {% highlight xml %}

@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Logical View
 title: Third-party libraries
 menu_title: Third-party libraries

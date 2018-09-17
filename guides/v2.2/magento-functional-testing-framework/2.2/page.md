@@ -1,10 +1,10 @@
 ---
-group: mftf
+group: magento-functional-testing-framework-guide
 title: Page structure
 functional_areas:
  - Testing
 mftf-release: 2.2.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/page.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/page.html
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._

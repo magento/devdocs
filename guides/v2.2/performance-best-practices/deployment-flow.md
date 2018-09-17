@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Deployment flow
 functional_areas:
   - Configuration

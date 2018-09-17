@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Apache and Elasticsearch
 ee_only: True
 functional_areas:

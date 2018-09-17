@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Caching
 functional_areas:
   - Cloud

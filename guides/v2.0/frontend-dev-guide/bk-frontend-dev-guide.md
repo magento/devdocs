@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
 menu_title: Introduction
@@ -34,9 +34,8 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 <p>This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.</p></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} mode. We'd like to clarify that to meet higher priority objectives, the VDE will *not* be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.
 
 ## Frontend development prerequisites   {#fedg-prereqs}
 
@@ -54,10 +53,10 @@ To use this guide, you must be familiar with:
 
 #### Related topics:
 
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
-*	<a href="{{ page.baseurl }}/coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
+*	[Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
+*	[Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)
+*	[Cascading style sheets (CSS) ]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+*	[JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
+*	[Responsive web design]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 *	[Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
 

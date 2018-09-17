@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 65_CLI
 title: Command naming guidelines
 menu_title: Command naming guidelines
@@ -53,9 +53,8 @@ If you have a Magento installation handy, enter the following to display the cur
 	magento setup:db-schema:upgrade
 	magento setup:db-data:upgrade
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+`db-schema` and `db-data` are examples of compound words.
 
 ## Command options and arguments {#cli-args}
 
@@ -156,4 +155,4 @@ To avoid naming your command the same as another command, we recommend:
 
 #### Related topic
 
-[How to add CLIcommands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)
+[How to add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html)

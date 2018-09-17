@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses

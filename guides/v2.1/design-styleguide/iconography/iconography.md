@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Design
 title: Admin Iconography
 menu_title: Iconography
@@ -35,7 +35,7 @@ In the Magento Admin, icons have a simple, flat, single-color, and two-dimension
 
 ### Instructions
 
-*	Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or [Illustrator (AI)](src/Magento-icon-library.ai) files.
+*	Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or <a href="src/Magento-icon-library.ai">Illustrator (AI)/a> files.
 
 * Use our standard 300 x 300 pixel icon grid - see the guidance that follows in the "Create With the Icon Grid" section.
 
@@ -67,16 +67,16 @@ Learn how to use the icon grid:
 
 ## Icon Fonts
 
-We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in [inGitHub](https://github.com/magento/magento2/tree/2.0/app/design/adminhtml/Magento/backend/web/fonts/admin-icons).
+We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in [in GitHub](https://github.com/magento/magento2/tree/2.0/app/design/adminhtml/Magento/backend/web/fonts/admin-icons).
 
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 
-1. Select an IcoMoon tool: Go to the [IcoMoon](https://icomoon.io/app/) website to use their browser tool orvisit the [IcoMoon apppage](https://chrome.google.com/webstore/detail/icomoon/kppingdhhalimbaehfmhldppemnmlcjd) in Google's Chrome Web Store to download the app.
+1. Select an IcoMoon tool: Go to the [IcoMoon](https://icomoon.io/app/) website to use their browser tool or visit the [IcoMoon app page](https://chrome.google.com/webstore/detail/icomoon/kppingdhhalimbaehfmhldppemnmlcjd) in Google's Chrome Web Store to download the app.
 
 2. Save your icons in SVG format and upload the files into the app.
 
 3. Specify the desired font names and the Unicode characters to map the icons.
-*Tip:* Setting the icons to [Private UseArea](https://en.wikipedia.org/wiki/Private_Use_Areas#Private_Use_Areas) (PUA) will disable screen-readers and other accessibility tools. Disabling prevents the devices from mistakenly translating your icon's characters as words that users won't understand.
+*Tip:* Setting the icons to [Private Use Area](https://en.wikipedia.org/wiki/Private_Use_Areas#Private_Use_Areas) (PUA) will disable screen-readers and other accessibility tools. Disabling prevents the devices from mistakenly translating your icon's characters as words that users won't understand.
 
 4. From the app, click "Download" to generate the icon font and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style sheet.
 
@@ -103,7 +103,7 @@ Modern versions of assistive technologies will announce CSS generated content, a
 
 {% endhighlight %}
 
-*Source:* [filament group\'s \"Bulletproof Accessible IconFonts\"](http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
+*Source:* [filament group's "Bulletproof Accessible Icon Fonts"](http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html)
 
 ### How to Easily Make An Icon Font Accessible
 
@@ -115,10 +115,10 @@ Icons should be very descriptive, especially if they stand on their own. Add des
 
 3. Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
 
-*Source:* Modern Web Accessibility: [Using icon fonts and demystifyingspeak:none;](http://modernwebaccessibility.com/en/blog/demystify-speak-none)
+*Source:* Modern Web Accessibility: [Using icon fonts and demystifying speak:none;](http://modernwebaccessibility.com/en/blog/demystify-speak-none)
 
 ## Learn More
 
-* yatil.: [The best way to use iconfonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
+* yatil.: [The best way to use icon fonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
 
 * Pictos: [Using Icon Fonts](http://pictos.cc/articles/using-icon-fonts/)

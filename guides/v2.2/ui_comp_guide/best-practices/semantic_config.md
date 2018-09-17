@@ -1,20 +1,16 @@
 ---
-group: UI_Components_guide
-subgroup: best practices
+group: ui-components-guide
 title: Using the new structure in UI components XML configuration
-menu_title: Using the new structure in UI components XML configuration
-menu_order: 1
 ---
 
 Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics.
 
-The arbitrary structure, used in UI components {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
+The arbitrary structure, used in UI components XML configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
 
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 
-<div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
-Declaring the custom UI component is an exception, use the arbitrary structure when <a  href="{{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html">declaring a custom UI component</a>.
-</div>
+{: .bs-callout .bs-callout-info #info_structure_except }
+Declaring the custom UI component is an exception, use the arbitrary structure when [declaring a custom UI component].
 
 The main advantages of the new structure are described in the following sections.
 
@@ -22,7 +18,7 @@ The main advantages of the new structure are described in the following sections
 
 All components options are separate nodes, and a node's purpose is defined by its name. The number of abstract-named nodes like `<item>` or `<argument>` is minimized.
 {% collapsible Illustration %}
-{% highlight xml%}
+```xml
 <field name="default_billing" formElement="checkbox">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -65,7 +61,7 @@ All components options are separate nodes, and a node's purpose is defined by it
         </imports>
     </settings>
 </field>
-{%endhighlight%}
+```
 {% endcollapsible %}
 
 ## Autocomplete
@@ -111,6 +107,11 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 
 {% endcollapsible %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html) topic.
-</div>
+{:.bs-callout .bs-callout-info}
+To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter] topic.
+
+
+<!--Link Declarations -->
+
+[declaring a custom UI component]: {{page.baseurl}}/ui_comp_guide/howto/new_component_declaration.html
+[URN highlighter]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html

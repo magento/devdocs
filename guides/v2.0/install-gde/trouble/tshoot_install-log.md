@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
@@ -22,13 +22,13 @@ Running Magento processes at the same time might result in problems creating the
 
 ### Solution
 
-Review your setting for `open_basedir` in `php.ini`. The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to get the value of the temporary directory. If <a href="http://php.net/manual/en/ini.core.php#ini.open-basedir" target="_blank">open_basedir</a> is set to refuse connections to a directory specified by `sys_get_temp_dir`, the installation fails.
+Review your setting for `open_basedir` in `php.ini`. The Setup Wizard uses the [sys\_get\_temp\_dir ( void )](http://php.net/manual/en/function.sys-get-temp-dir.php){: target="_blank"} PHP call to get the value of the temporary directory. If [open\_basedir](http://php.net/manual/en/ini.core.php#ini.open-basedir){: target="_blank"} is set to refuse connections to a directory specified by `sys_get_temp_dir`, the installation fails.
 
 To resolve the issue, change the value of `open_basedir` and restart the web server.
 
 If you're not sure how to change this value, use the following steps:
 
-1.	If you haven't already done so, create <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
+1.	If you haven't already done so, create [phpinfo.php]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
 2.	Enter the following {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} in your browser's address or location field:
 
 	<code>http://&lt;your web server IP or hostname>/&lt;path to docroot>/phpinfo.php</code>

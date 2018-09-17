@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Indexer optimization
 menu_title: Indexer optimization
@@ -128,9 +128,8 @@ Indexer name | Tables used
 
 Make sure that these indexers are in "Update By Schedule" mode. If "Update On Save" mode is selected, some data can be lost if you make changes during full reindex.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
-</div>
 
 ### Related topics
 {:.no_toc}

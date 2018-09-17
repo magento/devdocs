@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: File permissions readiness check issues
 menu_title: File permissions readiness check issues

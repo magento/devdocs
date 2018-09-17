@@ -1,5 +1,5 @@
 ---
-group: unit-testing
+group: testing
 title: Running Unit Tests in the CLI
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/

@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
@@ -54,7 +54,7 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 When all prerequisites have been met, get the Magento software using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} as follows:
 
 	cd <web server docroot directory>
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
+	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
 
 You're required to authenticate; see [Get your authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) for details. This downloads Magento code only; it doesn't install the software for you.
 

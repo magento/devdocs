@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Manage message queues
 functional_areas:
   - Configuration

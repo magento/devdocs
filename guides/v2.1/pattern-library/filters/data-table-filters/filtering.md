@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Filters
 redirect_from: /guides/v1.0/pattern-library/filters/data-table-filters/filtering.html
 ---

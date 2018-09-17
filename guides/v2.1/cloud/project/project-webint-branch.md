@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage branches with the Project Web Interface
 menu_title: Manage branches with the Interface

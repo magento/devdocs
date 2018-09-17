@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: _after
 title: After Migration
 menu_title: After Migration
@@ -16,8 +16,8 @@ After you have completed your migration and thoroughly tested your new Magento 2
 
 *	Start Magento 2 cron jobs
 
-*	<a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean" target="_blank">Flush all Magento 2 cache types</a>
+*	[Flush all Magento 2 cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean){: target="_blank"}
 
-*	<a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex" target="_blank">Reindex all Magento 2 indexers</a>
+*	[Reindex all Magento 2 indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex){: target="_blank"}
 
 *	Change DNS, load balancers, etc. to point to Magento 2 production hardware

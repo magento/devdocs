@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
@@ -38,7 +38,7 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\\Framework\\Config\\Reader\\Filesystem]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php){: target="_blank"} to provide the following parameters:
 
 *  `$fileResolver`. Implements `\Magento\Framework\Config\FileResolverInterface`. This parameter lists the files containing the configurations of your custom type.
 *  `$converter`. Implements `\Magento\Framework\Config\ConverterInterface`. This parameter converts the XML into the internal array representation of the configurations.
@@ -83,5 +83,5 @@ Your IDE can validate your configuration files at both runtime and during develo
 
 #### Related topics
 
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Module configuration files</a>
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+*  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 01_Admin
 title: Admin
 menu_title: Admin
@@ -16,8 +16,7 @@ This section of the Best Practices Guide discusses the Admin, the UI panel used 
 
 This is an important section to read, because what {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers choose to do (or not do) when coding to integrate their extensions has a big impact on the look and feel of the Admin UI.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Remember that most merchants have multiple extensions installed, and most of these extensions are exposed through the Admin. In order to prevent a cluttered Admin, please follow the guidelines, and communicate with Magento and the community when you have questions.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Remember that most merchants have multiple extensions installed, and most of these extensions are exposed through the Admin. In order to prevent a cluttered Admin, please follow the guidelines, and communicate with Magento and the community when you have questions.
 
 For additional information on design topics for the Admin, read the [Admin Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html) and the [Admin Style Guide]({{ page.baseurl }}/design-styleguide/bk-styleguide.html).

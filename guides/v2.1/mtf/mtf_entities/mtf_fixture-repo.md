@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Fixture repository
 ---
 
@@ -14,7 +14,7 @@ In this topic you will learn how to create, use, and merge a repository.
 
 Let's create a repository for the Widget fixture `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
-[More details aboutfixtures]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
+[More details about fixtures]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
 
 Assume that we have the following fixture:
 
@@ -67,11 +67,11 @@ In this section we will show the logic of how to create this repository.
 
 Also `layout` and `widgetOptions` fields use `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively.
 
-[Learn how to create repository for the fixturefield](#mtf_repository_create-field).
+[ Learn how to create repository for the fixture field](#mtf_repository_create-field).
 
 We want to specify data sets for two cases of submitting {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} forms: `default` with minimum data, and `cms_page_link` with data needed to create new {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page link.
 
-To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: [\*\*Settings\*\*](#mtf_repo_ex_set), [\*\*StorefrontProperties\*\*](#mtf_repo_ex_store), [\*\*Frontend AppsOptions\*\*](#mtf_repo_ex_front). The following text along with screenshots gives an example of how to create a data set of the repository.
+To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: [**Settings**](#mtf_repo_ex_set), [**Storefront Properties**](#mtf_repo_ex_store), [**Frontend Apps Options**](#mtf_repo_ex_front). The following text along with screenshots gives an example of how to create a data set of the repository.
 
 [See entire repository code](#mtf_repo_widgetxml).
 
@@ -120,7 +120,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 ```
 
-This simple code contains a bit more complex logic, where [the repository is applied to the fixturefield](#mtf_repository_create-field). Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
+This simple code contains a bit more complex logic, where [the repository is applied to the fixture field](#mtf_repository_create-field). Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
 In brief, we reference another repository `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a [source]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source) that is `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
@@ -305,9 +305,9 @@ The repository code for these cases follows:
 
 ## Configuration repository {#mtf_repository_config}
 
-The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the [Magento\_Configmodule]({{ site.mage2000url }}app/code/Magento/Config) and is named `ConfigData.xml`.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the [Magento\_Config module]({{ site.mage2000url }}app/code/Magento/Config) and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for [Authorize.Netmodule]({{ site.mage2000url }}app/code/Magento/Authorizenet) `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for [Authorize.Net module]({{ site.mage2000url }}app/code/Magento/Authorizenet) `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 ```xml
 

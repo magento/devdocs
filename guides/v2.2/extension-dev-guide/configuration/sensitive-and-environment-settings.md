@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Configuration
 title: Sensitive and environment settings
 menu_title: Sensitive and environment settings

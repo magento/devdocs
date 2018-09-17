@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Set up the Magento file system owner
 menu_title: Set up the Magento file system owner
@@ -32,18 +32,16 @@ To give the user a password, enter the following command as a user with `root` p
 
 Follow the prompts on your screen to create a password for the user.
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+If you don't have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
 
 	sudo adduser magento_user
 	sudo passwd magento_user
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Because the point of creating this user is to provide added security, make sure you create a [strong password](https://en.wikipedia.org/wiki/Password_strength){: target="_blank"}.
 
 ## Find the web server user's group {#install-update-depend-user-findgroup}
 

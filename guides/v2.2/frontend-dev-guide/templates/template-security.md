@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Templates XSS security
 functional_areas:
   - Frontend

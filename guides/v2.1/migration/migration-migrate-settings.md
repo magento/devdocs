@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate settings
 menu_title: Migrate settings
@@ -35,10 +35,8 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.
 
 The `Migration completed` message is displayed after the settings are transferred successfully.
 
@@ -46,7 +44,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1.	Log in to your Magento server as, or switch to, the [Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 2.	Change to the following directory:
 
@@ -70,4 +68,4 @@ For more details, see the [Settings migration mode]({{ page.baseurl }}/migration
 
 ## Next migration step
 
-* [Migratedata]({{ page.baseurl }}/migration/migration-migrate-data.html)
+* [Migrate data]({{ page.baseurl }}/migration/migration-migrate-data.html)

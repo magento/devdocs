@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Quick start guide to working with styles for a new theme
 functional_areas:
   - Frontend

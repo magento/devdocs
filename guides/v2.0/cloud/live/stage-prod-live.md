@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Deploy your store
 menu_title: Deploy your store

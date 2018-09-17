@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
@@ -10,9 +10,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-         <p>Service contract data interfaces are now mutable.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Service contract data interfaces are now mutable.
 
 ## Interface types and locations   {#top-level-msc}
 

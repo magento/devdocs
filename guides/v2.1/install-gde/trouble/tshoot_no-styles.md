@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_no-styles.html
 functional_areas:

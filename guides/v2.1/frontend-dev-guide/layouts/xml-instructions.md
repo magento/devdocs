@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout instructions
 functional_areas:
   - Frontend
@@ -24,14 +24,15 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-- [block](#fedg_layout_xml-instruc_ex_block) 
-- [container](#fedg_layout_xml-instruc_ex_cont) 
-- [before and after attributes](#fedg_xml-instrux_before-after) 
-- [action](#fedg_layout_xml-instruc_ex_act) 
-- [referenceBlock and referenceContainer](#fedg_layout_xml-instruc_ex_ref) 
-- [move](#fedg_layout_xml-instruc_ex_mv) 
-- [remove](#fedg_layout_xml-instruc_ex_rmv) 
-- [update](#fedg_layout_xml-instruc_ex_upd)
+* [`<block>`](#fedg_layout_xml-instruc_ex_block) 
+* [`<container>`](#fedg_layout_xml-instruc_ex_cont) 
+* [`before` and `after` attributes](#fedg_xml-instrux_before-after)
+* [`<action>`](#fedg_layout_xml-instruc_ex_act)
+* [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
+* [`<move>`](#fedg_layout_xml-instruc_ex_mv)
+* [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
+* [`<update>`](#fedg_layout_xml-instruc_ex_upd)
+* [`<argument>`](#argument)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -445,7 +446,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
       </tr>
       <tr class="even">
          <td><code>translate</code></td>
-         <td></td>
+         <td />
          <td>true|false</td>
          <td>no</td>
       </tr>

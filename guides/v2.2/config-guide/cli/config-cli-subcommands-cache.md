@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Manage the cache
 functional_areas:
   - Configuration

@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: File component
-menu_title: File component
 ---
 
 The File component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="file">` form field.
@@ -62,8 +60,7 @@ The File component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b
       </ul>
     </td>
     <td>
-      <a href=
-      "{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">
+      <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">
       Links</a> the component's <code>value</code> property with
       provider using the declared in the <code>dataScope</code>
       property of the parent component.

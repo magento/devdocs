@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Post-deploy variables
 functional_areas:
   - Cloud

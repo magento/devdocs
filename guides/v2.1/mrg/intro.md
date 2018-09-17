@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 ---
@@ -16,7 +16,7 @@ Information is being published gradually, until we complete work on automation o
 
 ## Related topics
 
-* [Building a new Magentomodule]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
-* [How to enable/disable a Magentomodule]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+* [Building a new Magento module]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html)
+* [How to enable/disable a Magento module]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 * [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)
 * [REST Reference]({{ page.baseurl }}/rest/bk-rest.html)

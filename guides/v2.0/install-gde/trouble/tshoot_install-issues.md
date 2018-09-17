@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Known issues that affect installation
 menu_title: Known issues that affect installation
@@ -23,7 +23,7 @@ Sample exception:
 To resolve this issue, you can:
 
 *   Disable the `xdebug` extension.
-*   Set the value of `xdebug.max_nesting_level` to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.
+*   Set the value of `xdebug.max_nesting_level` to a value of 200 or more. For more information, see [xdebug documentation](http://xdebug.org/docs/basic#max_nesting_level){: target="_blank"}.
 
 After you change the configuration of or disable `xdebug`, restart Apache:
 

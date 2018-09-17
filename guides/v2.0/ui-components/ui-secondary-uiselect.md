@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: UI-select Component
 menu_title: UI-select Component
@@ -183,28 +183,28 @@ Navigation keys:
 </tr>
 <tr>
     <td>openLevelsAction</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>true</td>
 </tr>
 <tr>
     <td>showOpenLevelsActionIcon</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>true</td>
 </tr>
 <tr>
     <td>showTree</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>Boolean</td>
     <td>false</td>
 </tr>
 <tr>
     <td>separator</td>
-    <td></td>
+    <td />
     <td>-</td>
     <td>String</td>
     <td>optgroup</td>

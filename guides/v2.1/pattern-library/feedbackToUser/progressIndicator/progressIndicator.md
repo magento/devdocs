@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Progress Indicator
 redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---

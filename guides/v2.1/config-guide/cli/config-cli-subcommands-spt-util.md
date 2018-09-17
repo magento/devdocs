@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Run the support utilities
 ee_only: True
 functional_areas:

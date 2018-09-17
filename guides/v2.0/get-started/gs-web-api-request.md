@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request
@@ -27,7 +27,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
+         <p><a href="#verbs">HTTP verb</a></p>
       </td>
       <td>
          <p>The action to perform against the endpoint.</p>
@@ -43,7 +43,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
+         <p><a href="#http-headers">HTTP headers</a></p>
       </td>
       <td>
          <p>The authentication token, the call request and response formats,
@@ -53,7 +53,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#payload">Call&nbsp;payload</a></p>
+         <p><a href="#payload">Call payload</a></p>
       </td>
       <td>
          <p>A set of input parameters and attributes that you supply with the request.
@@ -97,7 +97,8 @@ For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+{: .bs-callout .bs-callout-info }
+To specify an HTTP header in a cURL command, use the `-H` option.
 Specify one or more of the following HTTP headers in your web API calls:
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -113,7 +114,7 @@ Specify one or more of the following HTTP headers in your web API calls:
          account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
          </p>
       </td>
-      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
+      <td><pre>Authorization: Bearer &lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
 See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>

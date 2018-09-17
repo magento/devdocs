@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Upgrade from Open Source to Commerce
 functional_areas:
   - Upgrade

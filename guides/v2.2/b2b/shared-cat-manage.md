@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage shared catalogs
 menu_title: Manage shared catalogs

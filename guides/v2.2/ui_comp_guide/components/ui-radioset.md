@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Radioset component
-menu_title: Radioset component
 ---
 
 The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_comp_guide/components/ui-checkboxset.html), with the input type set to the radio button.

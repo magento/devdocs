@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Apply custom patches
 functional_areas:
   - Cloud

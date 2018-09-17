@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Generate the admin token
 functional_areas:
   - Integration

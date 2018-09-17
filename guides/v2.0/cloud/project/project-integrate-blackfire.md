@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Blackfire Profiler
 functional_areas:
   - Cloud
@@ -20,9 +20,8 @@ Blackfire includes the following [environments](https://blackfire.io/docs/refere
 * `Magento Cloud (<your instance reference>)` - Staging
 * `Magento Cloud (<your instance reference>)` - Production
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We'll help you get Blackfire configured in those environments.
-</div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
 
@@ -60,9 +59,8 @@ We recommend using their installation guide to walk you through the process:
 
 We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.
-</div>
 
 These instructions assume you have fully set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html).
 
@@ -274,9 +272,8 @@ With all integrations entered on the Blackfire Magento Cloud integration page, c
 
 To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can only use the CLI in your local development environment.
-</div>
 
 To profile using the browser:
 

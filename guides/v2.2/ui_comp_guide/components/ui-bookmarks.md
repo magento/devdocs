@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Bookmarks component
-menu_title: Bookmarks component
 ---
 
 The Bookmarks component stores active and changed state of a grid implemented using [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html). It includes the state of filters, columns position, applied sorting, pagination, and so on.

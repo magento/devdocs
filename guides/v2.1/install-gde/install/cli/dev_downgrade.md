@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Change to a released version
 menu_title: Change to a released version
@@ -30,11 +30,11 @@ You have the following options:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, [the Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Use the following command to uninstall the Magento software:
 
 		php <your Magento clone dir>/bin/magento setup:uninstall
-3.	Either remove your old Magento clone directory or [update the Magentosoftware]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
+3.	Either remove your old Magento clone directory or [update the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
 4.	If you haven't already done so, clone the Magento 2 GitHub repository as follows:
 
 		git clone git@github.com:magento/magento2.git

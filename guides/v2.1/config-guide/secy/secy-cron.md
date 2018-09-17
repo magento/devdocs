@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Secure cron.php to run in a browser
 functional_areas:
   - Configuration
