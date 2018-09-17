@@ -10,19 +10,17 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/configurati
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The `*.env` file provides additional configuration of the Magento Functional Testing Framework (MFTF).
+The `*.env` file provides additional configuration for the Magento Functional Testing Framework (MFTF).
 To run the MFTF on your Magento testing instance, specify the basic configuration values.
-For advanced usage, customize the configuration according to your requirements and environment.
+Advanced users can create custom configurations based on requirements and environment.
 
-## Basic Configuration
+## Basic configuration
 
-These basic configuration values are required and must be set by the user before MFTF can function correctly.
+These basic configuration values are __required__ and must be set by the user before the MFTF can function correctly.
 
 ### MAGENTO_BASE_URL
 
 The root URL of the Magento application under test.
-
-Use: required.
 
 Example:
 
@@ -34,8 +32,6 @@ MAGENTO_BASE_URL=http://magento2.vagrant251
 
 The path to the Magento Admin page.
 
-Use: required.
-
 Example:
 
 ```conf
@@ -44,9 +40,7 @@ MAGENTO_BACKEND_NAME=admin_12346
 
 ### MAGENTO_ADMIN_USERNAME
 
-The username that tests will use to log in to the Magento Admin page.
-
-Use: required.
+The username that tests can use to access the Magento Admin page
 
 Example:
 
@@ -57,8 +51,6 @@ MAGENTO_ADMIN_USERNAME=admin
 ### MAGENTO_ADMIN_PASSWORD
 
 The password that tests will use to log in to the Magento Admin page.
-
-Use: required.
 
 Example:
 
@@ -74,10 +66,10 @@ But in case you do need to do some configuration, they are shown here for your r
 
 ### SELENIUM
 
-The `SELENIUM_*` values form the URL of a custom Selenium server to be run for testing.
-An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.
+The `SELENIUM_*` values form the URL of a custom Selenium server for running testing.
 
 Your default Selenium URL:
+
 ```
 http://127.0.0.1:4444/wd/hub
 ```
@@ -92,13 +84,12 @@ SELENIUM_PATH=/wd/hub
 ```
 
 {:.bs-callout .bs-callout-warning}
-Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
+`SELENIUM_*` values are required if you are running Selenium on an external system. 
+If you change the configuration of the external Selenium server, you must update these values.
 
 #### SELENIUM_HOST
 
 Override the default Selenium server host.
-
-Use: Optional.
 
 Example:
 
@@ -110,8 +101,6 @@ SELENIUM_HOST=user:pass@ondemand.saucelabs.com
 
 Override the default Selenium server port.
 
-Optional.
-
 Example:
 
 ```conf
@@ -122,8 +111,6 @@ SELENIUM_PORT=443
 
 Override the default Selenium server protocol.
 
-Use: optional.
-
 Example: 
 
 ```conf
@@ -133,8 +120,6 @@ SELENIUM_PROTOCOL=https
 #### SELENIUM_PATH
 
 Override the default Selenium server path.
-
-Use: optional.
 
 Example:
 
@@ -155,7 +140,6 @@ MAGENTO_RESTAPI_SERVER_PORT
 
 The protocol and the host of the REST API server path.
 
-Use: optional.
 Example: 
 
 ```conf
@@ -165,8 +149,6 @@ MAGENTO_RESTAPI_SERVER_HOST=http://localhost
 #### MAGENTO_RESTAPI_SERVER_PORT
 
 The port part of the API path.
-
-Use: optional
 
 Example:
 
@@ -190,8 +172,6 @@ TESTS_MODULES_PATH
 The path to where MFTF supplementary files are located in the Magento2 codebase.
 BP is an acronym for _BasePath_.
 
-Use: optional.
-
 Example:
 
 ```conf
@@ -203,8 +183,6 @@ TESTS_BP=~/magento2ce/dev/tests/acceptance
 The path to where MFTF exists and from which it is symlinked.
 FW_BP is an acronym for _FrameWork BasePath_.
 
-Use: optional.
-
 Example:
 
 ```conf
@@ -214,8 +192,6 @@ FW_BP=~/magento/magento2-functional-testing-framework
 #### TESTS_MODULE_PATH
 
 The path to where MFTF modules mirror Magento's modules.
-
-Use: optional.
 
 Example: 
 
@@ -227,8 +203,6 @@ Example:
 
 Use for a new module.
 When adding a new directory at `Magento/FunctionalTest`, add the directory name to `MODULE_WHITELIST` to enable the MFTF to process it.
-
-Use: optional.
 
 Example:
 
@@ -248,7 +222,6 @@ Modify the default value:
 - for non-default Magento installation
 - when use a subdirectory in the `MAGENTO_BASE_URL`
 
-Use: optional.
 Example: `dev/tests/acceptance/utils/command.php`
 
 ### BROWSER

@@ -4,10 +4,16 @@ subgroup: 080_setup
 title: First time deployment
 menu_title: First time deployment
 menu_order: 60
+redirect_from:
+  - /guides/v2.1/cloud/access-acct/first-time-deploy.html
+  - /guides/v2.2/cloud/access-acct/first-time-deploy.html
+  - /guides/v2.3/cloud/access-acct/first-time-deploy.html
 functional_areas:
   - Cloud
   - Setup
   - Deploy
+---
+
 ---
 
 #### Previous step:

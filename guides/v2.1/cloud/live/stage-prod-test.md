@@ -83,7 +83,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 {:.bs-callout .bs-callout-warning}
 Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
 
-The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html).
+The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html).
 
 ## Complete UAT testing {#uat-testing}
 
