@@ -218,7 +218,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the community member who contributed the pull request, the external pull request, and the GitHub issue number associated with the pull request (if available).
 
-{% include release-notes/engcomm-2-2-15-issues.md %}
+{% include release-notes/engcomm-2-1-15-issues.md %}
 
 
 ### Partner contributions
