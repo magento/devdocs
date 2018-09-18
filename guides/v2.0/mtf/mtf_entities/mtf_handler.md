@@ -29,7 +29,9 @@ One fixture can have various handlers. When we create an {% glossarytooltip a902
 
 The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist).  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
-    cp config.xml.dist config.xml
+```bash
+cp config.xml.dist config.xml
+```
 
 The following nodes influence handlers:
 
@@ -61,8 +63,7 @@ You should mention in a fixture the `handler_interface` attribute with a referen
 
 Example of `WidgetInterface.php` (should be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -80,8 +81,7 @@ interface WidgetInterface extends HandlerInterface
 {
     //
 }
-
-{% endhighlight %}
+```
 
 ### Handler class {#mtf_handler_conf_hand}
 
@@ -89,8 +89,7 @@ To use the handler class, create [an interface](#mtf_handler_interface), declare
 
 The `persist()` method is declared in the [`InjectableFixture`](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php) class by path `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
-{% highlight php %}
-
+```php
 <?php
 /**
  * Persists Fixture Data into application.
@@ -110,8 +109,7 @@ public function persist()
     }
     $this->eventManager->dispatchEvent(['persist_after'], [get_class($this)]);
 }
-
-{% endhighlight %}
+```
 
 Create the handler in the same directory where the interface is stored: `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
@@ -121,11 +119,9 @@ The `di.xml` file declares relationship between the [interface](#mtf_handler_int
 
 See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
-{%highlight xml%}
-
+```xml
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
-{%endhighlight%}
+```
 
  In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
 
@@ -140,129 +136,123 @@ Let's create a cURL handler that creates a new widget.
 * Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create [the interface](#mtf_handler_interface) for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Widget\Test\Handler\Widget;
 
-namespace Magento\Widget\Test\Handler\Widget;
+  use Magento\Mtf\Handler\HandlerInterface;
 
-use Magento\Mtf\Handler\HandlerInterface;
-
-/**
- * Interface WidgetInterface
- */
-interface WidgetInterface extends HandlerInterface
-{
-    //
-}
-
-{% endhighlight %}
+  /**
+  * Interface WidgetInterface
+  */
+  interface WidgetInterface extends HandlerInterface
+  {
+      //
+  }
+  ```
 
 * Create `Curl.php` in the same directory. This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
 
-The following code includes detailed comments for better understanding.
-{: #mtf_curl_script}
+  The following code includes detailed comments for better understanding.
+  {: #mtf_curl_script}
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Widget\Test\Handler\Widget;
 
-namespace Magento\Widget\Test\Handler\Widget;
+  use Magento\Mtf\Fixture\FixtureInterface;
+  use Magento\Mtf\Handler\Curl as AbstractCurl;
+  use Magento\Mtf\Util\Protocol\CurlTransport;
+  use Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator;
 
-use Magento\Mtf\Fixture\FixtureInterface;
-use Magento\Mtf\Handler\Curl as AbstractCurl;
-use Magento\Mtf\Util\Protocol\CurlTransport;
-use Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator;
+  /**
+  * Curl handler for creating widgetInstance/frontendApp.
+  */
+  class Curl extends AbstractCurl
+  {
+      /**
+      * Mapping values for data.
+      *
+      * @var array
+      */
+      protected $mappingData = [
+          'code' => [
+              'CMS Page Link' => 'cms_page_link',
+          ],
+          'block' => [
+              'Main Content Area' => 'content',
+              'Sidebar Additional' => 'sidebar.additional',
+              'Sidebar Main' => 'sidebar.main',
+          ]
+      ];
 
-/**
- * Curl handler for creating widgetInstance/frontendApp.
- */
-class Curl extends AbstractCurl
-{
-    /**
-     * Mapping values for data.
-     *
-     * @var array
-     */
-    protected $mappingData = [
-        'code' => [
-            'CMS Page Link' => 'cms_page_link',
-        ],
-        'block' => [
-            'Main Content Area' => 'content',
-            'Sidebar Additional' => 'sidebar.additional',
-            'Sidebar Main' => 'sidebar.main',
-        ]
-    ];
+      /**
+      * Post request for creating widget instance.
+      *
+      * @param FixtureInterface $fixture [optional]
+      * @throws \Exception
+      * @return null|array instance id
+      */
+      public function persist(FixtureInterface $fixture = null)
+      {
+          // Prepare data to send it using cURL.
+          $data = $this->prepareData($fixture);
+          // Build url to send post request to create widget.
+          $url = $_ENV['app_backend_url'] . 'admin/widget_instance/save/code/'
+              . $data['code'] . '/theme_id/' . $data['theme_id'];
+          // Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
+          $curl = new BackendDecorator(new CurlTransport(), $this->_configuration);
+          // Send request to url with prepared data.
+          $curl->write($url, $data);
+          // Read response.
+          $response = $curl->read();
+          // Close connection to server.
+          $curl->close();
+          // Verify whether request has been successful (check if success message is present).
+          if (!strpos($response, 'data-ui-id="messages-message-success"')) {
+              throw new \Exception("Widget instance creation by curl handler was not successful! Response: $response");
+          }
+          // Get id of created widget in order to use in other tests.
+          $id = null;
+          if (preg_match_all('/\/widget_instance\/edit\/instance_id\/(\d+)/', $response, $matches)) {
+              $id = $matches[1][count($matches[1]) - 1];
+          }
+          return ['id' => $id];
+      }
 
-    /**
-     * Post request for creating widget instance.
-     *
-     * @param FixtureInterface $fixture [optional]
-     * @throws \Exception
-     * @return null|array instance id
-     */
-    public function persist(FixtureInterface $fixture = null)
-    {
-        // Prepare data to send it using cURL.
-        $data = $this->prepareData($fixture);
-        // Build url to send post request to create widget.
-        $url = $_ENV['app_backend_url'] . 'admin/widget_instance/save/code/'
-            . $data['code'] . '/theme_id/' . $data['theme_id'];
-        // Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
-        $curl = new BackendDecorator(new CurlTransport(), $this->_configuration);
-        // Send request to url with prepared data.
-        $curl->write($url, $data);
-        // Read response.
-        $response = $curl->read();
-        // Close connection to server.
-        $curl->close();
-        // Verify whether request has been successful (check if success message is present).
-        if (!strpos($response, 'data-ui-id="messages-message-success"')) {
-            throw new \Exception("Widget instance creation by curl handler was not successful! Response: $response");
-        }
-        // Get id of created widget in order to use in other tests.
-        $id = null;
-        if (preg_match_all('/\/widget_instance\/edit\/instance_id\/(\d+)/', $response, $matches)) {
-            $id = $matches[1][count($matches[1]) - 1];
-        }
-        return ['id' => $id];
-    }
-
-    /**
-     * Prepare data to create widget.
-     *
-     * @param FixtureInterface $widget
-     * @return array
-     */
-    protected function prepareData(FixtureInterface $widget)
-    {
-        // Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
-        $data = $this->replaceMappingData($widget->getData());
-        // Perform data manipulations to prepare the cURL request based on input data.
-        ...
-        return $data;
-    }
-    // Additional methods.
-}
-
-{% endhighlight %}
+      /**
+      * Prepare data to create widget.
+      *
+      * @param FixtureInterface $widget
+      * @return array
+      */
+      protected function prepareData(FixtureInterface $widget)
+      {
+          // Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
+          $data = $this->replaceMappingData($widget->getData());
+          // Perform data manipulations to prepare the cURL request based on input data.
+          ...
+          return $data;
+      }
+      // Additional methods.
+  }
+  ```
 
 * Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
 
-{%highlight xml%}
-
+```xml
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-
-{%endhighlight%}
+```
 
 ### cURL authentication classes {#mtf_handler_decor}
 
@@ -278,9 +268,9 @@ Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`.
 
 Add to the `Curl.php` the following code:
 
-{% highlight php %}
+```php
 $curl = new BackendDecorator(new CurlTransport(), new Config());
-{% endhighlight %}
+```
 
 `Config()` takes Admin's configuration from [config.xml](#mtf_handler_configxml), where the username and the password are stored.
 
@@ -292,9 +282,9 @@ Full class name is `Mtf\Util\Protocol\CurlTransport\FrontendDecorator`.
 
 Use the following code in the `Curl.php` file:
 
-{% highlight php %}
+```php
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
-{% endhighlight %}
+```
 
 ## How to create a UI handler {#mtf_handler_howto-create-ui}
 
@@ -303,139 +293,133 @@ Let's create a UI handler that creates a new widget.
 * Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create [interface](#mtf_handler_interface) for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Widget\Test\Handler\Widget;
 
-namespace Magento\Widget\Test\Handler\Widget;
+  use Magento\Mtf\Handler\HandlerInterface;
 
-use Magento\Mtf\Handler\HandlerInterface;
-
-/**
- * Interface WidgetInterface
- */
-interface WidgetInterface extends HandlerInterface
-{
-    //
-}
-
-{% endhighlight %}
+  /**
+  * Interface WidgetInterface
+  */
+  interface WidgetInterface extends HandlerInterface
+  {
+      //
+  }
+  ```
 
 * Create `Ui.php` in the same directory. This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
 
-The code has detailed comments for better understanding.
+  The code has detailed comments for better understanding.
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Widget\Test\Handler\Widget;
 
-namespace Magento\Widget\Test\Handler\Widget;
+  use Magento\Mtf\Fixture\FixtureInterface;
+  use Magento\Mtf\Handler\Curl as AbstractCurl;
+  use Magento\Mtf\Util\Protocol\CurlTransport;
+  use Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator;
 
-use Magento\Mtf\Fixture\FixtureInterface;
-use Magento\Mtf\Handler\Curl as AbstractCurl;
-use Magento\Mtf\Util\Protocol\CurlTransport;
-use Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator;
+  /**
+  * Curl handler for creating widgetInstance/frontendApp.
+  */
+  class Curl extends AbstractCurl
+  {
+      /**
+      * Mapping values for data.
+      *
+      * @var array
+      */
+      protected $mappingData = [
+          'code' => [
+              'CMS Page Link' => 'cms_page_link',
+          ],
+          'block' => [
+              'Main Content Area' => 'content',
+              'Sidebar Additional' => 'sidebar.additional',
+              'Sidebar Main' => 'sidebar.main',
+          ]
+      ];
 
-/**
- * Curl handler for creating widgetInstance/frontendApp.
- */
-class Curl extends AbstractCurl
-{
-    /**
-     * Mapping values for data.
-     *
-     * @var array
-     */
-    protected $mappingData = [
-        'code' => [
-            'CMS Page Link' => 'cms_page_link',
-        ],
-        'block' => [
-            'Main Content Area' => 'content',
-            'Sidebar Additional' => 'sidebar.additional',
-            'Sidebar Main' => 'sidebar.main',
-        ]
-    ];
+      /**
+      * Post request for creating widget instance.
+      *
+      * @param FixtureInterface $fixture [optional]
+      * @throws \Exception
+      * @return null|array instance id
+      */
+      public function persist(FixtureInterface $fixture = null)
+      {
+          // Prepare data to send it using cURL.
+          $data = $this->prepareData($fixture);
+          // Build url to send post request to create widget.
+          $url = $_ENV['app_backend_url'] . 'admin/widget_instance/save/code/'
+              . $data['code'] . '/theme_id/' . $data['theme_id'];
+          // Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
+          $curl = new BackendDecorator(new CurlTransport(), $this->_configuration);
+          // Send request to url with prepared data.
+          $curl->write($url, $data);
+          // Read response.
+          $response = $curl->read();
+          // Close connection to server.
+          $curl->close();
+          // Verify whether request has been successful (check if success message is present).
+          if (!strpos($response, 'data-ui-id="messages-message-success"')) {
+              throw new \Exception("Widget instance creation by curl handler was not successful! Response: $response");
+          }
+          // Get id of created widget in order to use in other tests.
+          $id = null;
+          if (preg_match_all('/\/widget_instance\/edit\/instance_id\/(\d+)/', $response, $matches)) {
+              $id = $matches[1][count($matches[1]) - 1];
+          }
+          return ['id' => $id];
+      }
 
-    /**
-     * Post request for creating widget instance.
-     *
-     * @param FixtureInterface $fixture [optional]
-     * @throws \Exception
-     * @return null|array instance id
-     */
-    public function persist(FixtureInterface $fixture = null)
-    {
-        // Prepare data to send it using cURL.
-        $data = $this->prepareData($fixture);
-        // Build url to send post request to create widget.
-        $url = $_ENV['app_backend_url'] . 'admin/widget_instance/save/code/'
-            . $data['code'] . '/theme_id/' . $data['theme_id'];
-        // Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
-        $curl = new BackendDecorator(new CurlTransport(), $this->_configuration);
-        // Send request to url with prepared data.
-        $curl->write($url, $data);
-        // Read response.
-        $response = $curl->read();
-        // Close connection to server.
-        $curl->close();
-        // Verify whether request has been successful (check if success message is present).
-        if (!strpos($response, 'data-ui-id="messages-message-success"')) {
-            throw new \Exception("Widget instance creation by curl handler was not successful! Response: $response");
-        }
-        // Get id of created widget in order to use in other tests.
-        $id = null;
-        if (preg_match_all('/\/widget_instance\/edit\/instance_id\/(\d+)/', $response, $matches)) {
-            $id = $matches[1][count($matches[1]) - 1];
-        }
-        return ['id' => $id];
-    }
-
-    /**
-     * Prepare data to create widget.
-     *
-     * @param FixtureInterface $widget
-     * @return array
-     */
-    protected function prepareData(FixtureInterface $widget)
-    {
-        // Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
-        $data = $this->replaceMappingData($widget->getData());
-        // Perform data manipulations to prepare the cURL request based on input data.
-        ...
-        return $data;
-    }
-    // Additional methods.
-}
-
-{% endhighlight %}
+      /**
+      * Prepare data to create widget.
+      *
+      * @param FixtureInterface $widget
+      * @return array
+      */
+      protected function prepareData(FixtureInterface $widget)
+      {
+          // Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
+          $data = $this->replaceMappingData($widget->getData());
+          // Perform data manipulations to prepare the cURL request based on input data.
+          ...
+          return $data;
+      }
+      // Additional methods.
+  }
+  ```
 
 * Create [`di.xml`](#mtf_handler_di) in the `etc/ui` directory of the Magento_Widget {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
-
-{%highlight xml%}
-
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Ui" />
-</config>
-
-{%endhighlight%}
+  
+  ```xml
+  <?xml version="1.0" ?>
+  <!--
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+  -->
+  <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+      <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
+                  type="\Magento\Widget\Test\Handler\Widget\Ui" />
+  </config>
+  ```
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
@@ -444,135 +428,130 @@ Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5
 * Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create [interface](#mtf_handler_interface) for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Tax\Test\Handler\TaxRule;
 
-namespace Magento\Tax\Test\Handler\TaxRule;
+  use Magento\Mtf\Handler\HandlerInterface;
 
-use Magento\Mtf\Handler\HandlerInterface;
+  /**
+  * Interface TaxRuleInterface
+  */
+  interface TaxRuleInterface extends HandlerInterface
+  {
+      //
+  }
+  ```
 
-/**
- * Interface TaxRuleInterface
- */
-interface TaxRuleInterface extends HandlerInterface
-{
-    //
-}
-
-{% endhighlight %}
 * Create `Webapi.php` in the same directory. The file contains a [handler class](#mtf_handler_conf_hand). In the following example WebAPI handler uses some cURL handler methods to prepare data.
 
-{% highlight php %}
+  ```php
+  <?php
+  /**
+  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
 
-<?php
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+  namespace Magento\Tax\Test\Handler\TaxRule;
 
-namespace Magento\Tax\Test\Handler\TaxRule;
+  use Magento\Tax\Test\Fixture\TaxRule;
+  use Magento\Mtf\Config\DataInterface;
+  use Magento\Mtf\Fixture\FixtureInterface;
+  use Magento\Mtf\Util\Protocol\CurlTransport;
+  use Magento\Mtf\Handler\Webapi as AbstractWebapi;
+  use Magento\Mtf\System\Event\EventManagerInterface;
+  use Magento\Mtf\Util\Protocol\CurlTransport\WebapiDecorator;
 
-use Magento\Tax\Test\Fixture\TaxRule;
-use Magento\Mtf\Config\DataInterface;
-use Magento\Mtf\Fixture\FixtureInterface;
-use Magento\Mtf\Util\Protocol\CurlTransport;
-use Magento\Mtf\Handler\Webapi as AbstractWebapi;
-use Magento\Mtf\System\Event\EventManagerInterface;
-use Magento\Mtf\Util\Protocol\CurlTransport\WebapiDecorator;
+  /**
+  * Create Tax Rule via Web API handler.
+  */
+  class Webapi extends AbstractWebapi implements TaxRuleInterface
+  {
+      /**
+      * Tax Rule cUrl handler.
+      *
+      * @var Curl
+      */
+      protected $taxRuleCurl;
 
-/**
- * Create Tax Rule via Web API handler.
- */
-class Webapi extends AbstractWebapi implements TaxRuleInterface
-{
-    /**
-     * Tax Rule cUrl handler.
-     *
-     * @var Curl
-     */
-    protected $taxRuleCurl;
+      /**
+      * @constructor
+      * @param DataInterface $configuration
+      * @param EventManagerInterface $eventManager
+      * @param WebapiDecorator $webapiTransport
+      * @param Curl $taxRuleCurl
+      */
+      public function __construct(
+          DataInterface $configuration,
+          EventManagerInterface $eventManager,
+          WebapiDecorator $webapiTransport,
+          Curl $taxRuleCurl
+      ) {
+          parent::__construct($configuration, $eventManager, $webapiTransport);
+          $this->taxRuleCurl = $taxRuleCurl;
+      }
 
-    /**
-     * @constructor
-     * @param DataInterface $configuration
-     * @param EventManagerInterface $eventManager
-     * @param WebapiDecorator $webapiTransport
-     * @param Curl $taxRuleCurl
-     */
-    public function __construct(
-        DataInterface $configuration,
-        EventManagerInterface $eventManager,
-        WebapiDecorator $webapiTransport,
-        Curl $taxRuleCurl
-    ) {
-        parent::__construct($configuration, $eventManager, $webapiTransport);
-        $this->taxRuleCurl = $taxRuleCurl;
-    }
+      /**
+      * Web API request for creating Tax Rule.
+      *
+      * @param FixtureInterface $fixture
+      * @return array
+      * @throws \Exception
+      */
+      public function persist(FixtureInterface $fixture = null)
+      {
+          /** @var TaxRule $fixture */
+          $data = $this->prepareData($fixture);
 
-    /**
-     * Web API request for creating Tax Rule.
-     *
-     * @param FixtureInterface $fixture
-     * @return array
-     * @throws \Exception
-     */
-    public function persist(FixtureInterface $fixture = null)
-    {
-        /** @var TaxRule $fixture */
-        $data = $this->prepareData($fixture);
+          $url = $_ENV['app_frontend_url'] . 'rest/V1/taxRules';
+          $this->webapiTransport->write($url, $data);
+          $response = json_decode($this->webapiTransport->read(), true);
+          $this->webapiTransport->close();
 
-        $url = $_ENV['app_frontend_url'] . 'rest/V1/taxRules';
-        $this->webapiTransport->write($url, $data);
-        $response = json_decode($this->webapiTransport->read(), true);
-        $this->webapiTransport->close();
+          if (empty($response['id'])) {
+              $this->eventManager->dispatchEvent(['webapi_failed'], [$response]);
+              throw new \Exception('Tax rule creation by Web API handler was not successful!');
+          }
 
-        if (empty($response['id'])) {
-            $this->eventManager->dispatchEvent(['webapi_failed'], [$response]);
-            throw new \Exception('Tax rule creation by Web API handler was not successful!');
-        }
+          return ['id' => $response['id']];
+      }
 
-        return ['id' => $response['id']];
-    }
+      /**
+      * Returns data for Web API params.
+      *
+      * @param TaxRule $fixture
+      * @return array
+      */
+      protected function prepareData(TaxRule $fixture)
+      {
+          $data = $fixture->getData();
+          $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_rate', 'tax_rate_ids');
+          $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_product_class', 'product_tax_class_ids');
+          $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_customer_class', 'customer_tax_class_ids');
 
-    /**
-     * Returns data for Web API params.
-     *
-     * @param TaxRule $fixture
-     * @return array
-     */
-    protected function prepareData(TaxRule $fixture)
-    {
-        $data = $fixture->getData();
-        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_rate', 'tax_rate_ids');
-        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_product_class', 'product_tax_class_ids');
-        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_customer_class', 'customer_tax_class_ids');
-
-        return ['rule' => $data];
-    }
-}
-
-{% endhighlight %}
+          return ['rule' => $data];
+      }
+  }
+  ```
 
 * Create [`di.xml`](#mtf_handler_di) in the `etc/webapi` directory of the Magento_Tax module.
 
-{%highlight xml%}
-
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"
-                type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
-</config>
-
-{%endhighlight%}
+  ```xml
+  <?xml version="1.0" ?>
+  <!--
+  /**
+  * Copyright © 2015 Magento. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+  -->
+  <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+      <preference for="Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"
+                  type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
+  </config>
+  ```
