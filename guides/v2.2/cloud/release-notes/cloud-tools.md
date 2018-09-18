@@ -31,8 +31,6 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  JIRA-MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
 
--  JIRA-MAGECLOUD-2574-->**Branch-specific configuration option**—You can now create branch-specific configuration files to override environment variables and key-value pairs in the `.magento.env.yaml` configuration file.
-
 -  JIRA-MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
 -  JIRA-MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
@@ -42,16 +40,17 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
+    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until deployment issues are resolved.  Previously, the site could sometimes resume operation even if the deployment failed, and customers were not aware of configuration or other issues that can cause site errors or outages.
 
-    -  JIRA-MAGECLOUD-2603-->Now the entire deployment phase runs in maintenance mode to ensure that customers are notified about all deployment issues that require fixes before any new code is copied to the final server.
-
-    -  Updated validation checks to minimize deployment failures caused by non-critical environment configuration issues.
-
-       -  JIRA-MAGECLOUD-2603-->Issue a warning if the ADMIN_EMAIL address is associated with another account.
-
-       -  JIRA-MAGECLOUD-2603-->If the environment configuration contains incorrect values for cloud variables, ignore the incorrect values and issue a warning with a list of values that require update.
+    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING`. Instead of causing the deployment to fail immediately, customers get a warning about these issues with information about how to correct them after the deploy phase ends.
+	
+       -  ADMIN_EMAIL is not set on upgrade.
 	   
-      -  JIRA-MAGECLOUD-2600-->If the Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}, issue a warning with instructions for fixing the issue. If the Magento application does not use Elasticsearch, for example if it is configured for MySQL, issue a warning message that recommends removing the Elasticsearch service from the Cloud infrastructure.
+	   -  ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
+
+       -  Environment configuration contains incorrect values for deploy or cloud variables
+
+       -  JIRA-MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
 
     - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
 
