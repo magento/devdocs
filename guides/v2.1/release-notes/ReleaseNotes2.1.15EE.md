@@ -1,16 +1,15 @@
 ---
 group: release-notes
-title: Magento Open Source 2.1.15 Release Notes
+title: Magento Commerce 2.1.15 Release Notes
 ---
 
 *	TOC
 {:toc}
 
-
 *Patch code and release notes were published on September 18, 2018.*
 
 
-We are pleased to present Magento Open Source 2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Commerce  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -18,10 +17,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6
 
 ## Highlights
 
-Magento 2.1.15 conrtains 25 security fixes and enhancements.  See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
+Magento 2.1.15 contains 25 security fixes and enhancements. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for more information.
 
 ## Fixed issues
-In addition to security enhancements, this release contains the following functional fixes. 
+
+In addition to security enhancements, this release contains the following functional fixes.
 
 ### Installation, configuration, and deployment
 
@@ -62,26 +62,26 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-1337 -->* Magento now preserves the user group ID when using `/V1/customers/:customerId` (PUT). Previously, Magento set the customer group ID to 1 when you called  `/V1/customers/:customerId` (PUT) and the customer had an assigned group ID. *Fix submitted by [André Ferraz](https://github.com/ferrazzuk) in pull request [14757](https://github.com/magento/magento2/pull/14757)*. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
 
 
-
 ### Directory
 
 <!--- ENGCOM-1948 -->* Magento now supports Canadian Postal codes without spaces as expected.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16031](https://github.com/magento/magento2/pull/16031)*. [GitHub-13899](https://github.com/magento/magento2/issues/13899)
-
 
 ### Email
 
 <!--- MAGETWO-92721 -->*  Administrators can now add a parameter to `app/etc/env.php: user_admin_email`. This parameter ensures that when a new administrator account is created, Magento sends an email to default store's email and, if present, to an email address defined in `user_admin_email`. 
 
-
 ### Framework
 
 <!--- ENGCOM-1262 -->* Magento now leaves at least one record after cleaning up the changelog tables after restarting MySQL. Previously, the product `version_id` lost the most recent  `auro_increment` value after restarting MySQL. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [14471](https://github.com/magento/magento2/pull/14471)*. [GitHub-14465](https://github.com/magento/magento2/issues/14465)
 
-<!--- ENGCOM-1410 -->* Magento now displays custom price symbols as expected. Previously, when a merchant created variations of a configurable product, product prices were not readable if they contained a custom price symbol. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [14471](https://github.com/magento/magento2/pull/14471)*. [GitHub-14902](https://github.com/magento/magento2/issues/14902)
+<!--- ENGCOM-1410 -->* Magento now displays custom price symbols as expected. Previously, when a merchant created variations of a configurable product, product prices were not readable if they contained a custom price symbol. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [14471](https://github.com/magento/magento2/pull/14471)*. 
+[GitHub-14902](https://github.com/magento/magento2/issues/14902)
 
 <!--- ENGCOM-1796 -->* Magento now correctly aligns submenus. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15714](https://github.com/magento/magento2/pull/15714)*. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
 
 <!--- ENGCOM-1908 -->* Magento now supports Malaysian locales. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15927](https://github.com/magento/magento2/pull/15927)*. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
+
+
 
 
 ### General
@@ -129,7 +129,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1989 -->* Primary buttons now have new LESS variables that permit you to change  `font-weight`, `font-size`, and `font-family` without changing default button attributes. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [16037](https://github.com/magento/magento2/pull/16037)*. [GitHub-15832](https://github.com/magento/magento2/issues/15832)
 
-<!--- ENGCOM-2048 -->* We've added a space between the category page and the main footer on pages using a single column layout. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15727](https://github.com/magento/magento2/pull/15727)* [GitHub-12601](https://github.com/magento/magento2/issues/12601)
+<!--- ENGCOM-2048 -->* We've added a space between the category page and the main footer on pages using a single column layout. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15727](https://github.com/magento/magento2/pull/15727)*. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
 
 <!--- ENGCOM-2061 -->* Customers can now successfully log in after resetting their password. Previously, Magento displayed this error "You did not sign in correctly or your account is temporarily disabled" even though the new password hash had been updated in the customer entity. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16255](https://github.com/magento/magento2/pull/16255)*. [GitHub-15255](https://github.com/magento/magento2/issues/15255)
 
@@ -189,8 +189,6 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-2079 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16281](https://github.com/magento/magento2/pull/16281)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
 
-
-
 ###  Sitemap
 
 <!--- ENGCOM-1528 -->* XML sitemap generation can now be scheduled. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15159](https://github.com/magento/magento2/pull/15159)*. [GitHub-5768](https://github.com/magento/magento2/issues/5768)
@@ -206,13 +204,14 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-2036 -->* You can now translate the `moreButtonText` text string. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16229](https://github.com/magento/magento2/pull/16229)*. [GitHub-16079](https://github.com/magento/magento2/issues/16079)
 
 
-<!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  --> 
+<!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  -->
 
 <!---  cannot reproduce MAGETWO-83344 -->
 
-## Community contributions
-We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
+## Community contributions
+
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 ### Individual contributor contributions
 
@@ -224,7 +223,6 @@ The following table identifies contributions from our community members. This ta
 ### Partner contributions
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
-
 
 <table>
   <tr>
@@ -288,6 +286,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 
+
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
@@ -308,5 +307,3 @@ The [Code Migration Toolkit](https://github.com/magento/code-migration) helps tr
 
 ## Credits
 Dear community members, thank you for your suggestions,  bug reports, and code contributions. 
-
-
