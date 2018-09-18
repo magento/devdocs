@@ -216,8 +216,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1972 -->* Sorting has been disabled in the  `glob` and `scandir` functions to improve performance. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16052](https://github.com/magento/magento2/pull/16052)*. 
 
-<!-- ENGCOM-2078 -->* Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the default configuration for all store views. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request [15929](https://github.com/magento/magento2/pull/15929)*. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245) 
-
 <!-- ENGCOM-2407 -->* The `nginx.config.sample` file no longer includes an option for PHP 5.x. (Magento 2.2.x is not compatible with PHP 5.x.) *Fix submitted by [Sean Breeden](https://github.com/sean-wcb) in pull request [16883](https://github.com/magento/magento2/pull/16883)*. 
 
 <!-- ENGCOM-2315 -->* Autoloading performance has improved on production environments as a result of the reduction in `file_exists` calls. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [16435](https://github.com/magento/magento2/pull/16435)*. 
@@ -260,7 +258,6 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Catalog
-<!-- ENGCOM-1455 -->* The Gallery template can now handle Boolean configuration variables. Previously, these configuration variables were typed as string instead of Boolean, which caused JavaScript errors when string values were set to false. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [15020](https://github.com/magento/magento2/pull/15020)*. [GitHub-12285](https://github.com/magento/magento2/issues/12285), [GitHub-15009](https://github.com/magento/magento2/issues/15009)
 
 <!-- ENGCOM-1539 -->* The breadcrumbs component no longer relies on the `mageMenu` widget. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request [15178](https://github.com/magento/magento2/pull/15178)*. [GitHub-14987](https://github.com/magento/magento2/issues/14987)
 
@@ -896,7 +893,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-91928 -->* You can now successfully save a product video for one store view in deployments that have several store views. Previously, when you saved a product video for one store view, Magento saved it for all store views, although customers could play the video on the original store only. 
 
-<!-- MAGETWO-91931 -->* Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the `section_data_ids` section of the session cookie was not preperly completed. [GitHub-14912](https://github.com/magento/magento2/issues/14912)
+<!-- MAGETWO-91931 -->* Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the `section_data_ids` section of the session cookie was not properly completed. [GitHub-14912](https://github.com/magento/magento2/issues/14912)
 
 <!-- MAGETWO-91000 -->* We've fixed an issue with unoptimized SQL queries in customer segments. Previously, the  customer segment was not saved, and MySQL crashed. 
 
@@ -928,7 +925,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1860 -->* Added a service configuration setting—Send Adminhtml and Frontend as Separate Apps—to collect and send separate data for frontend and adminhtml applications for New Relic reporting. See [New Relic Reporting]( https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html?Highlight=New%20Relic%20service). *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [12935](https://github.com/magento/magento2/pull/12935)*. 
 
-<!-- ENGCOM-1864 -->*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously mssing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by [Maksim Gopey](https://github.com/Radio) in pull request [15826](https://github.com/magento/magento2/pull/15826)*. 
+<!-- ENGCOM-1864 -->*  Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`. *Fix submitted by [Maksim Gopey](https://github.com/Radio) in pull request [15826](https://github.com/magento/magento2/pull/15826)*. 
 
 
 <!-- ENGCOM-1883 -->* `.limiter` now has the same parent selectors as `.pages`, which prevents clashes between styles and layouts. Previously, `.limiter` float was too generic. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15878](https://github.com/magento/magento2/pull/15878)*. 
@@ -1068,7 +1065,6 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Infrastructure
 
-<!-- MAGETWO-92303 -->* Magento now sends email when the status of a Return Merchandise Authorization (RMA) changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.
 
 <!-- MAGETWO-89442 -->* Return Merchandise Authorization (RMA) calls now return order items and comments as expected. 
 
@@ -1076,7 +1072,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-72090 -->* Magento now deselects only the attributes you choose to deselect when you set the **Use Default Value** setting on a store view to **no** for certain attributes. Previously, when you deselected the **Use Default Value** setting on a store view for certain attributes, Magento unselected other attributes as well. 
 
-<!-- MAGETWO-88615 -->* Magento now deploys the translations in `js-translation.json` file when deploying static content.  *Fix submitted by [Sergey Dmitruk](https://github.com/SergeyDmitruk) in pull request [14290](https://github.com/magento/magento2/pull/14290)*. [GitHub-1821](https://github.com/magento/magento2/issues/1821)
+<!-- MAGETWO-88615 -->* Magento now deploys the translations in `js-translation.json` file when deploying static content.  *Fix submitted by [Sergey Dmitruk](https://github.com/SergeyDmitruk) in pull request [4814](https://github.com/magento/magento2/pull/4814)*. 
 
 <!-- ENGCOM-2304 -->* Magento now updates the `Enable Qty Increments` field as expected during product import. *Fix submitted by [Alexander Lukyanov](https://github.com/sashas777) in pull request [15144](https://github.com/magento/magento2/pull/15144)*. [GitHub-11354](https://github.com/magento/magento2/issues/11354)
 
@@ -1197,7 +1193,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1446 -->* Optimized `if-condition` in `/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [15002](https://github.com/magento/magento2/pull/15002)*. 
 
-<!-- ENGCOM-1453 -->* We've upgraded to Node.s 8 from Node.s 6. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15018](https://github.com/magento/magento2/pull/15018)*. 
+<!-- ENGCOM-1453 -->* We've upgraded to Node.js 8 from Node.js 6. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15018](https://github.com/magento/magento2/pull/15018)*. 
 
 <!-- ENGCOM-1434 -->* Replaced `template/path` with `Module_Name::template/path` in the block class to ensure extensibility of the class. Previously, if the source block classes referenced a template without specifying the module name, then block render failed with this error: `Invalid template file`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
@@ -1313,7 +1309,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Pagecache
 
-<!-- MAGETWO-92757 -->* Full-page cache now works as expected in multistore deployments. Previously, when you opened the URL of a non-default store in a multistore deployment, full-page cache did not return the URL. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request [15133](https://github.com/magento/magento2/pull/15133)*. 
+<!-- MAGETWO-92757 -->* Full-page cache now works as expected in multistore deployments. Previously, when you opened the URL of a non-default store in a multistore deployment, full-page cache did not return the URL.  
 
 
 
@@ -1661,15 +1657,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- ENGCOM-1314 -->* Magento now removes URL rewrites as expected after you delete a CMS page through the API or in the `crontab` area. *Fix submitted by [Roman](https://github.com/unicoder88) in pull request [14751](https://github.com/magento/magento2/pull/14751)*. 
 
 <!-- MAGETWO-89905 -->* Main menu categories  in  different store views are now updated as expected when Varnish is enabled. 
-
-
-
-
-### Visual Merchandiser
-
-<!-- MAGETWO-90599 -->* Magento now maintains manual sort order and adds newly assigned products to the top of the products list. Previously, Magento reset the manual sort order and sorted products by ID. 
-
-<!-- MAGETWO-92504 -->* Saving a product no longer reverts the selected sort order for a category. Previously, after a merchant saved a product, Magento reverted the sort order that defined the display of products in that category from the defined  sort order to an order defined by product ID. 
 
 
 ### Vertex
