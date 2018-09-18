@@ -7,9 +7,9 @@ Failure to enable these settings typically results in no styles displaying on yo
 
 1.  Enable the Apache rewrite module:
 
-		```bash
-		a2enmod rewrite
-		```
+    ```bash
+    a2enmod rewrite
+    ```
 
 1.  To enable Magento to use the distributed `.htaccess` configuration file, see the guidelines in the [Apache 2.4 documentation](http://httpd.apache.org/docs/current/mod/mod_rewrite.html).
 
@@ -19,7 +19,7 @@ Failure to enable these settings typically results in no styles displaying on yo
 
     ```terminal
     <Directory "/var/www/html">
-	        AllowOverride  &lt;value from Apache site>
+	        AllowOverride  <value from Apache site>
     </Directory>
     ```
 
