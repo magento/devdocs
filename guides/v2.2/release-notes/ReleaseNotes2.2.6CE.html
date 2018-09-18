@@ -2177,11 +2177,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Sorting has been disabled in the  <code class="highlighter-rouge">glob</code> and <code class="highlighter-rouge">scandir</code> functions to improve performance. <em>Fix submitted by <a href="https://github.com/lfluvisotto">Leandro F. L.</a> in pull request <a href="https://github.com/magento/magento2/pull/16052">16052</a></em>.</li>
 </ul>
 
-<!-- ENGCOM-2078 -->
-<ul>
-  <li>Magento multi-store installations now use the store view-specific values from the store configuration settings as expected. Previously, Magento used the default configuration for all store views. <em>Fix submitted by <a href="https://github.com/fmarangi">Francesco Marangi</a> in pull request <a href="https://github.com/magento/magento2/pull/15929">15929</a></em>. <a href="https://github.com/magento/magento2/issues/15205">GitHub-15205</a>,  <a href="https://github.com/magento/magento2/issues/15245">GitHub-15245</a></li>
-</ul>
-
 <!-- ENGCOM-2407 -->
 <ul>
   <li>The <code class="highlighter-rouge">nginx.config.sample</code> file no longer includes an option for PHP 5.x. (Magento 2.2.x is not compatible with PHP 5.x.) <em>Fix submitted by <a href="https://github.com/sean-wcb">Sean Breeden</a> in pull request <a href="https://github.com/magento/magento2/pull/16883">16883</a></em>.</li>
@@ -2269,10 +2264,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="catalog">Catalog</h3>
-<!-- ENGCOM-1455 -->
-<ul>
-  <li>The Gallery template can now handle Boolean configuration variables. Previously, these configuration variables were typed as string instead of Boolean, which caused JavaScript errors when string values were set to false. <em>Fix submitted by <a href="https://github.com/gwharton">gwharton</a> in pull request <a href="https://github.com/magento/magento2/pull/15020">15020</a></em>. <a href="https://github.com/magento/magento2/issues/12285">GitHub-12285</a>, <a href="https://github.com/magento/magento2/issues/15009">GitHub-15009</a></li>
-</ul>
 
 <!-- ENGCOM-1539 -->
 <ul>
@@ -3532,7 +3523,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- MAGETWO-91931 -->
 <ul>
-  <li>Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the <code class="highlighter-rouge">section_data_ids</code> section of the session cookie was not preperly completed. <a href="https://github.com/magento/magento2/issues/14912">GitHub-14912</a></li>
+  <li>Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the <code class="highlighter-rouge">section_data_ids</code> section of the session cookie was not properly completed. <a href="https://github.com/magento/magento2/issues/14912">GitHub-14912</a></li>
 </ul>
 
 <!-- MAGETWO-91000 -->
@@ -3607,7 +3598,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- ENGCOM-1864 -->
 <ul>
-  <li>Table alias prefixes in field mappings for customer group filter and sorting processors that were previously mssing have been restored. Previous to this restoration, Magento threw this error when a merchant opened <strong>Admin</strong> &gt; <strong>Customers</strong> &gt; <strong>All Customers</strong>: <code class="highlighter-rouge">SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined</code>. <em>Fix submitted by <a href="https://github.com/Radio">Maksim Gopey</a> in pull request <a href="https://github.com/magento/magento2/pull/15826">15826</a></em>.</li>
+  <li>Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened <strong>Admin</strong> &gt; <strong>Customers</strong> &gt; <strong>All Customers</strong>: <code class="highlighter-rouge">SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined</code>. <em>Fix submitted by <a href="https://github.com/Radio">Maksim Gopey</a> in pull request <a href="https://github.com/magento/magento2/pull/15826">15826</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-1883 -->
@@ -3864,11 +3855,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="infrastructure">Infrastructure</h3>
 
-<!-- MAGETWO-92303 -->
-<ul>
-  <li>Magento now sends email when the status of a Return Merchandise Authorization (RMA) changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.</li>
-</ul>
-
 <!-- MAGETWO-89442 -->
 <ul>
   <li>Return Merchandise Authorization (RMA) calls now return order items and comments as expected.</li>
@@ -3886,7 +3872,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- MAGETWO-88615 -->
 <ul>
-  <li>Magento now deploys the translations in <code class="highlighter-rouge">js-translation.json</code> file when deploying static content.  <em>Fix submitted by <a href="https://github.com/SergeyDmitruk">Sergey Dmitruk</a> in pull request <a href="https://github.com/magento/magento2/pull/14290">14290</a></em>. <a href="https://github.com/magento/magento2/issues/1821">GitHub-1821</a></li>
+  <li>Magento now deploys the translations in <code class="highlighter-rouge">js-translation.json</code> file when deploying static content.  <em>Fix submitted by <a href="https://github.com/SergeyDmitruk">Sergey Dmitruk</a> in pull request <a href="https://github.com/magento/magento2/pull/4814">4814</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2304 -->
@@ -4164,7 +4150,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- ENGCOM-1453 -->
 <ul>
-  <li>We’ve upgraded to Node.s 8 from Node.s 6. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/15018">15018</a></em>.</li>
+  <li>We’ve upgraded to Node.js 8 from Node.js 6. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/15018">15018</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-1434 -->
@@ -4370,7 +4356,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- MAGETWO-92757 -->
 <ul>
-  <li>Full-page cache now works as expected in multistore deployments. Previously, when you opened the URL of a non-default store in a multistore deployment, full-page cache did not return the URL. <em>Fix submitted by <a href="https://github.com/vovayatsyuk">Vova Yatsyuk</a> in pull request <a href="https://github.com/magento/magento2/pull/15133">15133</a></em>.</li>
+  <li>Full-page cache now works as expected in multistore deployments. Previously, when you opened the URL of a non-default store in a multistore deployment, full-page cache did not return the URL.</li>
 </ul>
 
 <h3 id="performance">Performance</h3>
@@ -4976,18 +4962,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!-- MAGETWO-89905 -->
 <ul>
   <li>Main menu categories  in  different store views are now updated as expected when Varnish is enabled.</li>
-</ul>
-
-<h3 id="visual-merchandiser">Visual Merchandiser</h3>
-
-<!-- MAGETWO-90599 -->
-<ul>
-  <li>Magento now maintains manual sort order and adds newly assigned products to the top of the products list. Previously, Magento reset the manual sort order and sorted products by ID.</li>
-</ul>
-
-<!-- MAGETWO-92504 -->
-<ul>
-  <li>Saving a product no longer reverts the selected sort order for a category. Previously, after a merchant saved a product, Magento reverted the sort order that defined the display of products in that category from the defined  sort order to an order defined by product ID.</li>
 </ul>
 
 <h3 id="vertex">Vertex</h3>
