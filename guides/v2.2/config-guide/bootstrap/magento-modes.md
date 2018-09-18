@@ -96,6 +96,7 @@ In production mode:
 	You _cannot_ enable or disable cache types using the Magento Admin
 	
 ## Maintenance mode
+
 Run the Magento software in maintenance mode when you need to take your site offline, for example when you are performing installation and upgrade tasks. When your site is in maintenance mode, normal site visitors get a `Service Temporarily Unavailable` message when they navigate to your store. You can configure maintenance mode to allow visitors from authorized IP addresses to view the store normally.
 
 You can [enable and disable maintenance mode] and configure exempt IP addresses using Magento CLI commands.
