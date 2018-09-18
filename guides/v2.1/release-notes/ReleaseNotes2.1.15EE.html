@@ -1,0 +1,4461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento Commerce 2.1.15 Release Notes | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+<script src="//assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.15EE.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main"></button>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.1/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.1">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/ReleaseNotes2.1.15EE.html">Magento 2.0</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/ReleaseNotes2.1.15EE.html">Magento 2.1</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/ReleaseNotes2.1.15EE.html">Magento 2.2</a></li>
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/ReleaseNotes2.1.15EE.html">Magento 2.3 Alpha</a></li>
+		
+  </ul>
+</div>
+
+
+      <!-- Main Navigation -->
+
+
+<ul class="nav-main" role="menubar">
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Cloud</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/bk-cloud.html">Cloud Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">Cloud Architecture</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/env/environments.html">Configure Environments</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/magento-release-information.html">Release Information</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Backend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/architecture/bk-architecture.html">Architecture</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Frontend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">API</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/marketplace/eqp/api.html">Marketplace EQP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="https://developers.rjmetrics.com/">Magento BI Import REST API</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+      
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-separator"></li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="http://omsdocs.magento.com/en/">Order Management</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payment Integrations</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/rest/tutorials/index.html">Rest Tutorials</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/customize_product.html">Customize Product Creation Form</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Customize Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/community/resources/support.html">Magento Support</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/videos/">Video Tutorials</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+</ul><!-- /.nav-main -->
+    </div>
+
+    <div class="search-btn">
+      <button class="search-trigger search-icon"></button>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.1/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <button class="quick-search-close">&times;</button>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+		
+		<h4 class="guide-title">Release Information</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/bk-release-notes.html">Introduction</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+
+
+		    
+		    	
+
+
+
+
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>Magento 2.1 Release Notes</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>Magento Open Source 2.1.x Release Notes</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.15CE.html">Magento Open Source 2.1.15 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.14CE.html">Magento Open Source 2.1.14 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.13CE.html">Magento Open Source 2.1.13 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html">Magento Open Source 2.1.12 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.11CE.html">Magento Open Source 2.1.11 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.10CE.html">Magento Open Source 2.1.10 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.9CE.html">Magento Open Source 2.1.9 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.8CE.html">Magento Open Source 2.1.8 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.7CE.html">Magento Open Source 2.1.7 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.6CE.html">Magento Open Source 2.1.6 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.5CE.html">Magento Open Source 2.1.5 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4CE.html">Magento Open Source 2.1.4 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3CE.html">Magento Open Source 2.1.3 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2CE.html">Magento Open Source 2.1.2 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento Open Source 2.1.1 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">Magento Open Source 2.1.0  Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>Magento Commerce 2.1.x Release Notes</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class="active ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.15EE.html">Magento Commerce 2.1.15 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html">Magento Commerce 2.1.14 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.13EE.html">Magento Commerce 2.1.13 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html">Magento Commerce 2.1.12 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.11EE.html">Magento Commerce 2.1.11 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.10EE.html">Magento Commerce 2.1.10 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.9EE.html">Magento Commerce 2.1.9 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.8EE.html">Magento Commerce 2.1.8 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html">Magento Commerce 2.1.7 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">Magento Commerce 2.1.6 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.5EE.html">Magento Commerce 2.1.5 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento Commerce 2.1.4 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3EE.html">Magento Commerce 2.1.3 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento Commerce 2.1.2 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1EE.html">Magento Commerce 2.1.1 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0EE.html">Magento Commerce 2.1.0 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>Magento Commerce (Cloud) 2.1.x Release Notes</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.9.html">magento-cloud-configuration release 101.9.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.6.html">magento-cloud-configuration release 101.6.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.5.html">magento-cloud-configuration release 101.5.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.x Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html">Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.5.html">Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Commerce (Cloud) version 2.1.4 and 2.0.12</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html">Magento Commerce (Cloud) version 2.1.3 and 2.0.11</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento Commerce (Cloud) version 2.1.2 and 2.0.10</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/backward-incompatible-changes/index.html">Backward incompatible changes</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html">Magento Open Source changes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html">Magento Commerce changes</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>Third-party licenses</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/thirdparty_ee.html">Magento Commerce third-party licenses</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Magento Commerce 2.1.15 Release Notes</h1>
+
+  
+
+
+</section>
+
+			<ul id="markdown-toc">
+  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
+  <li><a href="#fixed-issues" id="markdown-toc-fixed-issues">Fixed issues</a>    <ul>
+      <li><a href="#installation-configuration-and-deployment" id="markdown-toc-installation-configuration-and-deployment">Installation, configuration, and deployment</a></li>
+      <li><a href="#banner" id="markdown-toc-banner">Banner</a></li>
+      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#cart-and-checkout" id="markdown-toc-cart-and-checkout">Cart and checkout</a></li>
+      <li><a href="#cms-content" id="markdown-toc-cms-content">CMS content</a></li>
+      <li><a href="#customer" id="markdown-toc-customer">Customer</a></li>
+      <li><a href="#directory" id="markdown-toc-directory">Directory</a></li>
+      <li><a href="#email" id="markdown-toc-email">Email</a></li>
+      <li><a href="#framework" id="markdown-toc-framework">Framework</a></li>
+      <li><a href="#general" id="markdown-toc-general">General</a></li>
+      <li><a href="#infrastructure" id="markdown-toc-infrastructure">Infrastructure</a></li>
+      <li><a href="#javascript" id="markdown-toc-javascript">JavaScript</a></li>
+      <li><a href="#newsletter" id="markdown-toc-newsletter">Newsletter</a></li>
+      <li><a href="#quote" id="markdown-toc-quote">Quote</a></li>
+      <li><a href="#sales" id="markdown-toc-sales">Sales</a></li>
+      <li><a href="#search" id="markdown-toc-search">Search</a></li>
+      <li><a href="#sitemap" id="markdown-toc-sitemap">Sitemap</a></li>
+      <li><a href="#swagger" id="markdown-toc-swagger">Swagger</a></li>
+      <li><a href="#translations" id="markdown-toc-translations">Translations</a></li>
+    </ul>
+  </li>
+  <li><a href="#community-contributions" id="markdown-toc-community-contributions">Community contributions</a>    <ul>
+      <li><a href="#individual-contributor-contributions" id="markdown-toc-individual-contributor-contributions">Individual contributor contributions</a></li>
+      <li><a href="#partner-contributions" id="markdown-toc-partner-contributions">Partner contributions</a></li>
+    </ul>
+  </li>
+  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
+  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
+</ul>
+
+<p><em>Patch code and release notes were published on September 18, 2018.</em></p>
+
+<p>We are pleased to present Magento Commerce  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!</p>
+
+<p>Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
+
+<p>See <a href="https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update">Magento Security Center</a> for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6, 1.14.3.10, and 1.9.3.10, as appropriate.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>Magento 2.1.15 contains 25 security fixes and enhancements. See <a href="https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update">Magento Security Center</a> for more information.</p>
+
+<h2 id="fixed-issues">Fixed issues</h2>
+
+<p>In addition to security enhancements, this release contains the following functional fixes.</p>
+
+<h3 id="installation-configuration-and-deployment">Installation, configuration, and deployment</h3>
+
+<!--- ENGCOM-1856 -->
+<ul>
+  <li>The Module Manager now correctly displays the list of modules (<strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Web Setup Wizard</strong> &gt; <strong>Module Manager</strong>). Previously, Magento threw an error when you tried to display the module list. <em>Fix submitted by <a href="https://github.com/vijay-wagento">Vijay Golani</a> in pull request <a href="https://github.com/magento/magento2/pull/15756">15756</a></em>. <a href="https://github.com/magento/magento2/issues/15192">GitHub-15192</a></li>
+</ul>
+
+<h3 id="banner">Banner</h3>
+
+<!--- MAGETWO-71381 -->
+<ul>
+  <li>Banners are now visible only when their associated rules are applied.</li>
+</ul>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- ENGCOM-1685 -->
+<ul>
+  <li>The <code class="highlighter-rouge">Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite</code> method now uses the <code class="highlighter-rouge">storeId</code> value  set on the actual collection of the store rather than the <code class="highlighter-rouge">storeId</code> retrieved from the store manager. <em>Fix submitted by <a href="https://github.com/alepane21">Alessandro Pagnin</a> in pull request <a href="https://github.com/magento/magento2/pull/13756">13756</a></em>. <a href="https://github.com/magento/magento2/issues/13704">GitHub-13704</a></li>
+</ul>
+
+<!--- ENGCOM-1842 -->
+<ul>
+  <li>Magento now uses <code class="highlighter-rouge">data-container="product-list"</code> instead of  <code class="highlighter-rouge">data-container="product-grid"</code> when displaying a product list. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15816">15816</a></em>. <a href="https://github.com/magento/magento2/issues/15319">GitHub-15319</a></li>
+</ul>
+
+<!--- ENGCOM-1907 -->
+<ul>
+  <li>Magento has improved the accuracy of prices requiring more than two digits that are listed on the Product page. Previously, when a product price was represented by more than two digits (for example, $5.43), JavaScript settings always used the rounding logic for two digits only. (For example, the amount 9.4880 was displayed as 9.49.) <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/15926">15926</a></em>. <a href="https://github.com/magento/magento2/issues/14249">GitHub-14249</a></li>
+</ul>
+
+<h3 id="cart-and-checkout">Cart and checkout</h3>
+
+<!--- ENGCOM-1269 -->
+<ul>
+  <li>The minicart now displays product names that contain special characters. <em>Fix submitted by <a href="https://github.com/ampulos">ampulos</a> in pull request <a href="https://github.com/magento/magento2/pull/14665">14665</a></em>. <a href="https://github.com/magento/magento2/issues/13652">GitHub-13652</a></li>
+</ul>
+
+<h3 id="cms-content">CMS content</h3>
+
+<!--- MAGETWO-84366 -->
+<ul>
+  <li>You can now successfully upload logo images in Internet Explorer.  Previously, Magento did not upload the image, but instead displayed this error: <code class="highlighter-rouge">Object doesn't support property or method 'set'</code>.</li>
+</ul>
+
+<!--- MAGETWO-67162 -->
+<ul>
+  <li>CSS minification is now compatible with CSS3 <code class="highlighter-rouge">calc()</code> function. <a href="https://github.com/magento/magento2/issues/8552">GitHub-8552</a></li>
+</ul>
+
+<h3 id="customer">Customer</h3>
+
+<!--- ENGCOM-1337 -->
+<ul>
+  <li>Magento now preserves the user group ID when using <code class="highlighter-rouge">/V1/customers/:customerId</code> (PUT). Previously, Magento set the customer group ID to 1 when you called  <code class="highlighter-rouge">/V1/customers/:customerId</code> (PUT) and the customer had an assigned group ID. <em>Fix submitted by <a href="https://github.com/ferrazzuk">André Ferraz</a> in pull request <a href="https://github.com/magento/magento2/pull/14757">14757</a></em>. <a href="https://github.com/magento/magento2/issues/14663">GitHub-14663</a></li>
+</ul>
+
+<h3 id="directory">Directory</h3>
+
+<!--- ENGCOM-1948 -->
+<ul>
+  <li>Magento now supports Canadian Postal codes without spaces as expected.  <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/16031">16031</a></em>. <a href="https://github.com/magento/magento2/issues/13899">GitHub-13899</a></li>
+</ul>
+
+<h3 id="email">Email</h3>
+
+<!--- MAGETWO-92721 -->
+<ul>
+  <li>Administrators can now add a parameter to <code class="highlighter-rouge">app/etc/env.php: user_admin_email</code>. This parameter ensures that when a new administrator account is created, Magento sends an email to default store’s email and, if present, to an email address defined in <code class="highlighter-rouge">user_admin_email</code>.</li>
+</ul>
+
+<h3 id="framework">Framework</h3>
+
+<!--- ENGCOM-1262 -->
+<ul>
+  <li>Magento now leaves at least one record after cleaning up the changelog tables after restarting MySQL. Previously, the product <code class="highlighter-rouge">version_id</code> lost the most recent  <code class="highlighter-rouge">auro_increment</code> value after restarting MySQL. <em>Fix submitted by <a href="https://github.com/swnsma">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/14471">14471</a></em>. <a href="https://github.com/magento/magento2/issues/14465">GitHub-14465</a></li>
+</ul>
+
+<!--- ENGCOM-1410 -->
+<ul>
+  <li>Magento now displays custom price symbols as expected. Previously, when a merchant created variations of a configurable product, product prices were not readable if they contained a custom price symbol. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/14471">14471</a></em>. 
+<a href="https://github.com/magento/magento2/issues/14902">GitHub-14902</a></li>
+</ul>
+
+<!--- ENGCOM-1796 -->
+<ul>
+  <li>Magento now correctly aligns submenus. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/15714">15714</a></em>. <a href="https://github.com/magento/magento2/issues/7897">GitHub-7897</a></li>
+</ul>
+
+<!--- ENGCOM-1908 -->
+<ul>
+  <li>Magento now supports Malaysian locales. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/15927">15927</a></em>. <a href="https://github.com/magento/magento2/issues/14089">GitHub-14089</a></li>
+</ul>
+
+<h3 id="general">General</h3>
+
+<!--- MAGETWO-93271 -->
+<ul>
+  <li>The product video feature is now GDPR-compliant.</li>
+</ul>
+
+<!--- ENGCOM-1272 -->
+<ul>
+  <li>Magento now checks that a product is assigned to a specific website in a multistore environment before a customer can write a product review. Previously, a customer could write a review for a product that was not assigned to the store they were logged in to.  <em>Fix submitted by <a href="https://github.com/afirlejczyk">afirlejczyk</a> in pull request <a href="https://github.com/magento/magento2/pull/14673">14673</a></em>.</li>
+</ul>
+
+<!--- ENGCOM-2233 -->
+<ul>
+  <li>The <code class="highlighter-rouge">transport</code> event parameter has been changed from type <code class="highlighter-rouge">Array()</code> to type <code class="highlighter-rouge">DataObject</code>. This is a reversion of a change that was made in an earlier release. <em>Fix submitted by <a href="https://github.com/gwharton">gwharton</a> in pull request <a href="https://github.com/magento/magento2/pull/16601">16601</a></em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
+</ul>
+
+<!--- ENGCOM-1639 -->
+<ul>
+  <li>Merchants can now place an order for a grouped product where the quantity of subproducts is less than one unit.  <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/15407">15407</a></em>. <a href="https://github.com/magento/magento2/issues/14692">GitHub-14692</a></li>
+</ul>
+
+<!--- ENGCOM-1699 -->
+<ul>
+  <li>Magento now sets the <code class="highlighter-rouge">trigger_recollect</code> attribute  back to 0 after collecting total amounts for the quote. Previously, Magento timed out if a customer tried to reload a quote. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/15522">15522</a></em>. <a href="https://github.com/magento/magento2/issues/9580">GitHub-9580</a></li>
+</ul>
+
+<!--- ENGCOM-1693 -->
+<ul>
+  <li>Magento no longer recalculates prices unnecessarily when refreshing the Catalog page, which has improved product performance. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen Van Leusden</a> in pull request <a href="https://github.com/magento/magento2/pull/15445">15445</a></em>. <a href="https://github.com/magento/magento2/issues/14941">GitHub-14941</a></li>
+</ul>
+
+<!--- ENGCOM-1777 -->
+<ul>
+  <li>The annotation for the <code class="highlighter-rouge">formatDateTime</code> function in the <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="highlighter-rouge">locale</code> and <code class="highlighter-rouge">timezone</code> have been changed to <code class="highlighter-rouge">param string|null $locale</code> and <code class="highlighter-rouge">@param string|null $timezone</code>.  <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15668">15668</a></em>. <a href="https://github.com/magento/magento2/issues/15668">GitHub-15668</a></li>
+</ul>
+
+<!--- ENGCOM-1778 -->
+<ul>
+  <li>The annotation for the <code class="highlighter-rouge">formatDateTime</code> function in the <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="highlighter-rouge">locale</code> and <code class="highlighter-rouge">timezone</code> have been changed to <code class="highlighter-rouge">param string|null $locale</code> and <code class="highlighter-rouge">@param string|null $timezone</code>. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15669">15669</a></em>. <a href="https://github.com/magento/magento2/issues/15601">GitHub-15601</a></li>
+</ul>
+
+<!--- ENGCOM-1804 -->
+<ul>
+  <li>We’ve refactored the JavaScript code in the <code class="highlighter-rouge">split.phtml</code> template file for the button widget. <em>Fix submitted by <a href="https://github.com/vijay-wagento">Vijay Golani</a> in pull request <a href="https://github.com/magento/magento2/pull/15736">15736</a></em>. <a href="https://github.com/magento/magento2/issues/15354">GitHub-15354</a></li>
+</ul>
+
+<!--- ENGCOM-1841 -->
+<ul>
+  <li>The misspelling of <code class="highlighter-rouge">setCategoryIds</code> has been corrected throughout the code base. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15814">15814</a></em>.</li>
+</ul>
+
+<!--- ENGCOM-1859 -->
+<ul>
+  <li>Customers can now successfully download and export PDFs after logging in. Previously, customers were redirected to the Admin when trying to download or export data to a PDF right after logging in. <em>Fix submitted by <a href="https://github.com/sanjay-wagento">Sanjay Patel</a> in pull request <a href="https://github.com/magento/magento2/pull/15767">15767</a></em>. <a href="https://github.com/magento/magento2/issues/15510">GitHub-15510</a></li>
+</ul>
+
+<!--- ENGCOM-1849 -->
+<ul>
+  <li><code class="highlighter-rouge">select</code> elements now display with the styles you set in <code class="highlighter-rouge">_theme.less</code> as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15796">15796</a></em>. <a href="https://github.com/magento/magento2/issues/15608">GitHub-15608</a></li>
+</ul>
+
+<!--- ENGCOM-1930, ENGCOM-2096 -->
+<ul>
+  <li>
+    <p>Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. <em>Fix submitted by <a href="https://github.com/dankhrapiyush">Piyush Dankhara</a> in pull requests <a href="https://github.com/magento/magento2/pull/15874">15874</a> and <a href="https://github.com/magento/magento2/pull/16297">16297</a></em>. <a href="https://github.com/magento/magento2/issues/6058">GitHub-6058</a></p>
+
+    <ul>
+      <li>
+        <p>Customer Account Login page email field</p>
+      </li>
+      <li>
+        <p>Customer Account create page</p>
+      </li>
+      <li>
+        <p>Customer Authentication popup when the <strong>Allow Guest Checkout</strong> is  set to <strong>No</strong></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!--- ENGCOM-1881 -->
+<ul>
+  <li><code class="highlighter-rouge">.limiter</code> now has the same parent selectors (similar to <code class="highlighter-rouge">.pages</code>) to prevent clashes between styles and layouts. Previously, <code class="highlighter-rouge">.limiter</code> was too generic and was used as single selector for floating the element. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15880">15880</a></em>. <a href="https://github.com/magento/magento2/issues/15323">GitHub-15323</a></li>
+</ul>
+
+<!--- ENGCOM-1903 -->
+<ul>
+  <li>Changing the <code class="highlighter-rouge">@tab-content__border</code> variable now affects on the tabs content border as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15917">15917</a></em>. <a href="https://github.com/magento/magento2/issues/14999">GitHub-14999</a></li>
+</ul>
+
+<!--- ENGCOM-1870 -->
+<ul>
+  <li>The <strong>Multiple Payment Methods Enabled</strong> setting now works as expected. Previously, Magento threw this error when this setting was enabled: <code class="highlighter-rouge">Found 3 Elements with non-unique Id</code>. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15834">15834</a></em>. <a href="https://github.com/magento/magento2/issues/15348">GitHub-15348</a></li>
+</ul>
+
+<!--- ENGCOM-1989 -->
+<ul>
+  <li>Primary buttons now have new LESS variables that permit you to change  <code class="highlighter-rouge">font-weight</code>, <code class="highlighter-rouge">font-size</code>, and <code class="highlighter-rouge">font-family</code> without changing default button attributes. <em>Fix submitted by <a href="https://github.com/chirag-wagento">Chirag Matholiya</a> in pull request <a href="https://github.com/magento/magento2/pull/16037">16037</a></em>. <a href="https://github.com/magento/magento2/issues/15832">GitHub-15832</a></li>
+</ul>
+
+<!--- ENGCOM-2048 -->
+<ul>
+  <li>We’ve added a space between the category page and the main footer on pages using a single column layout. <em>Fix submitted by <a href="https://github.com/sanjay-wagento">Sanjay Patel</a> in pull request <a href="https://github.com/magento/magento2/pull/15727">15727</a></em>. <a href="https://github.com/magento/magento2/issues/12601">GitHub-12601</a></li>
+</ul>
+
+<!--- ENGCOM-2061 -->
+<ul>
+  <li>Customers can now successfully log in after resetting their password. Previously, Magento displayed this error “You did not sign in correctly or your account is temporarily disabled” even though the new password hash had been updated in the customer entity. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16255">16255</a></em>. <a href="https://github.com/magento/magento2/issues/15255">GitHub-15255</a></li>
+</ul>
+
+<!--- ENGCOM-2080 -->
+<ul>
+  <li>Magento no longer displays duplicate element IDs for gift messages in the checkout page. <em>Fix submitted by <a href="https://github.com/chirag-wagento">Chirag Matholiya</a> in pull request <a href="https://github.com/magento/magento2/pull/16264">16264</a></em>. <a href="https://github.com/magento/magento2/issues/13415">GitHub-13415</a></li>
+</ul>
+
+<!--- ENGCOM-2068 -->
+<ul>
+  <li>The JavaScript code in the <code class="highlighter-rouge">app/code/Magento/Tax/view/adminhtml/templates/class/page/edit.phtml</code> file has been refactored to meet Magento coding standards. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16270">16270</a></em>. <a href="https://github.com/magento/magento2/issues/15352">GitHub-15352</a></li>
+</ul>
+
+<!--- ENGCOM-2084 -->
+<ul>
+  <li>Magento now correctly aligns page elements on  the home page and category page of the Hot Seller section. <em>Fix submitted by <a href="https://github.com/chirag-wagento">Chirag Matholiya</a> in pull request <a href="https://github.com/magento/magento2/pull/16287">16287</a></em>. <a href="https://github.com/magento/magento2/issues/15213">GitHub-15213</a></li>
+</ul>
+
+<!--- ENGCOM-2108 -->
+<ul>
+  <li>Fixed issues with the <code class="highlighter-rouge">jQuery UI DatePicker</code>’s display of sequential months. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16280">16280</a></em>. <a href="https://github.com/magento/magento2/issues/7379">GitHub-7379</a></li>
+</ul>
+
+<!--- ENGCOM-2244 -->
+<ul>
+  <li>The <code class="highlighter-rouge">clickableOverlay</code> option in modals now works as expected. <em>Fix submitted by <a href="https://github.com/mageprince">Prince Patel</a> in pull request <a href="https://github.com/magento/magento2/pull/16665">16665</a></em>. <a href="https://github.com/magento/magento2/issues/7399">GitHub-7399</a></li>
+</ul>
+
+<!--- MAGETWO-86935 -->
+<ul>
+  <li>Users assigned a Restricted User role no longer receive the message <code class="highlighter-rouge">Something went wrong</code> when viewing orders.</li>
+</ul>
+
+<!--- MAGETWO-70329 -->
+<ul>
+  <li>Magento no longer unnecessarily displays this warning when a customer opens a product page: <code class="highlighter-rouge">The property price is not valid</code>. <a href="https://github.com/magento/magento2/issues/7173">GitHub-7173</a></li>
+</ul>
+
+<h3 id="infrastructure">Infrastructure</h3>
+
+<!--- MAGETWO-64616 -->
+<ul>
+  <li>The <code class="highlighter-rouge">Layout.eventManager</code> now correctly dispatches the <code class="highlighter-rouge">layout_render_before</code> events <em>before</em> Magento renders the current layout.</li>
+</ul>
+
+<h3 id="javascript">JavaScript</h3>
+
+<!--- ENGCOM-2167 -->
+<ul>
+  <li>The Shipping and Estimate Tax page now correctly displays country, city, and postal code fields. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16491">16491</a></em>. <a href="https://github.com/magento/magento2/issues/8222">GitHub-8222</a></li>
+</ul>
+
+<h3 id="newsletter">Newsletter</h3>
+
+<!--- ENGCOM-2046 -->
+<ul>
+  <li>Magento now displays the newsletter subscription confirmation message  as expected after a customer clicks the confirmation link in the subscription confirmation email. <em>Fix submitted by <a href="https://github.com/rahul-kachhadiya">Rahul Kachhadiya</a> in pull request <a href="https://github.com/magento/magento2/pull/15860">15860</a></em>. <a href="https://github.com/magento/magento2/issues/14747">GitHub-14747</a></li>
+</ul>
+
+<h3 id="quote">Quote</h3>
+
+<!--- ENGCOM-1962 -->
+<ul>
+  <li>Magento no longer throws an error when trying to load the quote item collection using the <code class="highlighter-rouge">Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()</code> method. <em>Fix submitted by <a href="https://github.com/neeta-wagento">Neeta Kangiya</a> in pull request <a href="https://github.com/magento/magento2/pull/15829">15829</a></em>.</li>
+</ul>
+
+<h3 id="sales">Sales</h3>
+
+<!--- ENGCOM-1292 -->
+<ul>
+  <li>Magento now supports  GNU free fonts in invoice and shipment PDFs. Previously,  PDFs containing  Arabic, Russian, Greek, Indian, or Thai alphabets did not correctly render those characters. <em>Fix submitted by <a href="https://github.com/rossmc">Ross</a> in pull request <a href="https://github.com/magento/magento2/pull/15829">15829</a></em>. <a href="https://github.com/magento/magento2/issues/9666">GitHub-9666</a>, <a href="https://github.com/magento/magento2/issues/12323">GitHub-12323</a></li>
+</ul>
+
+<!--- ENGCOM-1413 -->
+<ul>
+  <li>An exported invoice’s CSV file now contains information specific to the selected invoice only. Previously, when you selected <strong>Invoices</strong> &gt; <strong>Export</strong> &gt; <strong>CSV</strong>, and opened the CSV file, the exported file contained information from more than the selected invoice. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/14903">14903</a></em>.</li>
+</ul>
+
+<!--- ENGCOM-1727 -->
+<ul>
+  <li>The incorrect type hinting in PHPDocs has been corrected. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/15619">15619</a></em>. <a href="https://github.com/magento/magento2/issues/13992">GitHub-13992</a></li>
+</ul>
+
+<h3 id="search">Search</h3>
+
+<!--- ENGCOM-2079 -->
+<ul>
+  <li>You can now use the <strong>Enter</strong> key to submit a search form. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16281">16281</a></em>. <a href="https://github.com/magento/magento2/issues/13793">GitHub-13793</a></li>
+</ul>
+
+<h3 id="sitemap">Sitemap</h3>
+
+<!--- ENGCOM-1528 -->
+<ul>
+  <li>XML sitemap generation can now be scheduled. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/15159">15159</a></em>. <a href="https://github.com/magento/magento2/issues/5768">GitHub-5768</a></li>
+</ul>
+
+<h3 id="swagger">Swagger</h3>
+
+<!--- ENGCOM-1935 -->
+<ul>
+  <li>The REST API schema is now  compatible with search criteria. The <code class="highlighter-rouge">searchCriteria</code> parameters builder now contains a zero index to the array signifier, which supports generation of the correct response when a user tests a  method with  search criteria parameters in Swagger. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15945">15945</a></em>. <a href="https://github.com/magento/magento2/issues/11477">GitHub-11477</a></li>
+</ul>
+
+<h3 id="translations">Translations</h3>
+
+<!--- ENGCOM-2036 -->
+<ul>
+  <li>You can now translate the <code class="highlighter-rouge">moreButtonText</code> text string. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request <a href="https://github.com/magento/magento2/pull/16229">16229</a></em>. <a href="https://github.com/magento/magento2/issues/16079">GitHub-16079</a></li>
+</ul>
+
+<!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  -->
+
+<!---  cannot reproduce MAGETWO-83344 -->
+
+<h2 id="community-contributions">Community contributions</h2>
+
+<p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.</p>
+
+<h3 id="individual-contributor-contributions">Individual contributor contributions</h3>
+
+<p>The following table identifies contributions from our community members. This table lists the community member who contributed the pull request, the external pull request, and the GitHub issue number associated with the pull request (if available).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contributing community member</th>
+      <th>Pull Requests</th>
+      <th>Related GitHub Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/ampulos">ampulos</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14665">#14665</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13652">13652</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/afirlejczyk">afirlejczyk</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14673">#14673</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13010">13010</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ihor-sviziev">ihor-sviziev</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14680">#14680</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/swnsma">swnsma</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14471">#14471</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14465">14465</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rossmc">rossmc</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14711">#14711</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/9666">9666</a>, <a href="https://github.com/magento/magento2/issues/12323">12323</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14736">#14736</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14738">#14738</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/navarr">navarr</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14770">#14770</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sidolov">sidolov</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14791">#14791</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sidolov">sidolov</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14845">#14845</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14894">#14894</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14901">#14901</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14899">#14899</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14911">#14911</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14902">#14902</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12430">12430</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14903">#14903</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12714">12714</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14922">#14922</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14940">#14940</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ferrazzuk">ferrazzuk</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14757">#14757</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14663">14663</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15025">#15025</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15093">#15093</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15099">#15099</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15105">#15105</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15108">#15108</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15109">#15109</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15066">#15066</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15102">#15102</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15106">#15106</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15138">#15138</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15146">#15146</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15091">#15091</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15101">#15101</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15104">#15104</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15094">#15094</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sergiy-v">sergiy-v</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15103">#15103</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">kaushik-chavda</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15169">#15169</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15183">#15183</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15184">#15184</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15157">#15157</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hostep">hostep</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15176">#15176</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dverkade">dverkade</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15203">#15203</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/yuriyDne">yuriyDne</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15240">#15240</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15221">#15221</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15222">#15222</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15159">#15159</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/5768">5768</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15235">#15235</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15237">#15237</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15233">#15233</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15234">#15234</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15238">#15238</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gwharton">gwharton</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15038">#15038</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/10210">10210</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15298">#15298</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15324">#15324</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15299">#15299</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15375">#15375</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15363">#15363</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15385">#15385</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15380">#15380</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15377">#15377</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15394">#15394</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15396">#15396</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15309">#15309</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15412">#15412</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/IgorVitol">IgorVitol</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15392">#15392</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15318">#15318</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15407">#15407</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14692">14692</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15436">#15436</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Yogeshks">Yogeshks</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15444">#15444</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mzeis">mzeis</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15465">#15465</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/alepane21">alepane21</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/13756">#13756</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13704">13704</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15548">#15548</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JeroenVanLeusden">JeroenVanLeusden</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15445">#15445</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14941">14941</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15522">#15522</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/9580">9580</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15563">#15563</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15619">#15619</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13992">13992</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15616">#15616</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15648">#15648</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15668">#15668</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15601">15601</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15657">#15657</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15669">#15669</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15601">15601</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15700">#15700</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15702">#15702</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15708">#15708</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15710">#15710</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15711">#15711</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15714">#15714</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/7897">7897</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dverkade">dverkade</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15716">#15716</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15719">#15719</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15724">#15724</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/vijay-wagento">vijay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15736">#15736</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15354">15354</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15725">#15725</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/vijay-wagento">vijay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15739">#15739</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15805">#15805</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/DanielRuf">DanielRuf</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15810">#15810</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15573">#15573</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15693">#15693</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/vijay-wagento">vijay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15756">#15756</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15192">15192</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/viral-wagento">viral-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15814">#15814</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15590">15590</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/viral-wagento">viral-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15816">#15816</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15319">15319</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rahul-kachhadiya">rahul-kachhadiya</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15817">#15817</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanjay-wagento">sanjay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15767">#15767</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15510">15510</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15796">#15796</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15608">15608</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15776">#15776</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/viral-wagento">viral-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15801">#15801</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15797">#15797</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15841">#15841</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15855">#15855</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15290">#15290</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15866">#15866</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rahul-kachhadiya">rahul-kachhadiya</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15887">#15887</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/DanielRuf">DanielRuf</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15920">#15920</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15924">#15924</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15925">#15925</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15926">#15926</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14249">14249</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15927">#15927</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14089">14089</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15933">#15933</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15945">#15945</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/11477">11477</a></td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15943">#15943</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/saurabh-parekh">saurabh-parekh</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15949">#15949</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15643">#15643</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dankhrapiyush">dankhrapiyush</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15874">#15874</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/6058">6058</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15880">#15880</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15323">15323</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15915">#15915</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15917">#15917</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14999">14999</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16026">#16026</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16024">#16024</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16031">#16031</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13899">13899</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16043">#16043</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/neeta-wagento">neeta-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15829">#15829</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/8954">8954</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/viral-wagento">viral-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15834">#15834</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15348">15348</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rahul-kachhadiya">rahul-kachhadiya</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15862">#15862</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16067">#16067</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16081">#16081</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16037">#16037</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15832">15832</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16102">#16102</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lfluvisotto">lfluvisotto</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16130">#16130</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16111">#16111</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16039">#16039</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16162">#16162</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rahul-kachhadiya">rahul-kachhadiya</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15863">#15863</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15236">#15236</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15287">#15287</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VitaliyBoyko">VitaliyBoyko</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15289">#15289</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tdgroot">tdgroot</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15722">#15722</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dmytro-ch">dmytro-ch</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15699">#15699</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanjay-wagento">sanjay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15821">#15821</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rahul-kachhadiya">rahul-kachhadiya</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15860">#15860</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14747">14747</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanjay-wagento">sanjay-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15727">#15727</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12601">12601</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tejash-wagento">tejash-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16226">#16226</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16255">#16255</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15255">15255</a></td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16294">#16294</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16270">#16270</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15352">15352</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16264">#16264</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13415">13415</a></td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16281">#16281</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13793">13793</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dankhrapiyush">dankhrapiyush</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16297">#16297</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/6058">6058</a></td>
+    </tr>
+    <tr>
+      <td><a href="">NamrataChangani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16319">#16319</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="">vgelani</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16325">#16325</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16287">#16287</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15213">15213</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16347">#16347</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lfluvisotto">lfluvisotto</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16359">#16359</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lfluvisotto">lfluvisotto</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16366">#16366</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/vasilii-b">vasilii-b</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16280">#16280</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/7379">7379</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16352">#16352</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16403">#16403</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16467">#16467</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16475">#16475</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16229">#16229</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16079">16079</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/eduard13">eduard13</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16392">#16392</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16491">#16491</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/8222">8222</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16547">#16547</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16577">#16577</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16586">#16586</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16493">#16493</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gwharton">gwharton</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16601">#16601</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/10210">10210</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanganinamrata">sanganinamrata</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16634">#16634</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lfluvisotto">lfluvisotto</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16643">#16643</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16665">#16665</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/7399">7399</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16667">#16667</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16671">#16671</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16585">#16585</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15940">15940</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16632">#16632</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanganinamrata">sanganinamrata</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16720">#16720</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12081">12081</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16735">#16735</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16731">#16731</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/aschrammel">aschrammel</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16550">#16550</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16759">#16759</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16760">#16760</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/simpleadm">simpleadm</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/14380">#14380</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14351">14351</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16526">#16526</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16378">16378</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16761">#16761</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15355">15355</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16755">#16755</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16825">#16825</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16836">#16836</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16832">#16832</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16842">#16842</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16839">#16839</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16764">16764</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16846">#16846</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/sanganinamrata">sanganinamrata</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16770">#16770</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/quisse">quisse</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16802">#16802</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16828">#16828</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16835">#16835</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/hitesh-wagento">hitesh-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16797">#16797</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15848">15848</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/lfluvisotto">lfluvisotto</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16364">#16364</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16811">#16811</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13692">13692</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16830">#16830</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/rogyar">rogyar</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16877">#16877</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16801">#16801</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16184">16184</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16812">#16812</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15467">15467</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16917">#16917</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/5316">5316</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/eduard13">eduard13</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16923">#16923</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16920">#16920</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16174">16174</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ihor-sviziev">ihor-sviziev</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16945">#16945</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12860">12860</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16948">#16948</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/2956">2956</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16986">#16986</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/6058">6058</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17003">#17003</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17018">#17018</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17015">#17015</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/novikor">novikor</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16702">#16702</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15935">15935</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/dasharath-wagento">dasharath-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17022">#17022</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/12320">12320</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Karlasa">Karlasa</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17057">#17057</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17084">#17084</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17086">#17086</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13988">13988</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17085">#17085</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16809">#16809</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17029">#17029</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17088">#17088</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13006">13006</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17089">#17089</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17092">#17092</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13595">13595</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17111">#17111</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16529">16529</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17087">#17087</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13769">13769</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17105">#17105</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17139">#17139</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/chirag-wagento">chirag-wagento</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16992">#16992</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15356">15356</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17090">#17090</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17159">#17159</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17160">#17160</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17136">#17136</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17157">#17157</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tiagosampaio">tiagosampaio</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17237">#17237</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tiagosampaio">tiagosampaio</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17239">#17239</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16898">#16898</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17182">#17182</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17260">#17260</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17241">#17241</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/11512">11512</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17242">#17242</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/TomashKhamlai">TomashKhamlai</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17155">#17155</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17200">#17200</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17224">#17224</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17243">#17243</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/11140">11140</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17247">#17247</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17202">#17202</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17216">#17216</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17218">#17218</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17211">#17211</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17212">#17212</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/11540">11540</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17213">#17213</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/9919">9919</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17223">#17223</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14593">14593</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tiagosampaio">tiagosampaio</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17240">#17240</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/14476">14476</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17172">#17172</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17192">#17192</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/16243">16243</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17253">#17253</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ronak2ram">ronak2ram</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16619">#16619</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/16911">#16911</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mage2pratik">mage2pratik</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17179">#17179</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/DanielRuf">DanielRuf</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17335">#17335</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17108">#17108</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/gelanivishal">gelanivishal</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17379">#17379</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15308">15308</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ankurvr">ankurvr</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/15677">#15677</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/15660">15660</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/mageprince">mageprince</a></td>
+      <td><a href="https://github.com/magento/magento2/pull/17091">#17091</a></td>
+      <td><a href="https://github.com/magento/magento2/issues/13768">13768</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="partner-contributions">Partner contributions</h3>
+
+<p>The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).</p>
+
+<table>
+  <tr>
+    <th>Contributing Partner</th>
+    <th>Pull Request</th>
+    <th>Related GitHub issue</th>
+  </tr>
+
+<tr>
+    <td>Convert</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14380">14380</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/14351">14351</a></td>
+</tr>
+
+<tr>
+    <td>Divante</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14665">14665</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14673">14673</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13652">13652</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13010">13010</a></td>
+</tr>
+
+<tr>
+    <td>H&amp;O</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15445">15445</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/14941">14941</a></td>
+  </tr>
+
+<tr>
+    <td>ISM eCompany</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14471">14471</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16702">16702</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/14465">14465</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15935">15935</a></td>
+
+</tr>
+
+
+
+
+<tr>
+    <td>Atwix</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14894">14894</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14901">14901</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14899">14899</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14911">14911</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14902">14902</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14903">14903</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14922">14922</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14940">14940</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15025">15025</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15093">15093</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15099">15099</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15105">15105</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15108">15108</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15109">15109</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15066">15066</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15102">15102</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15106">15106</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15138">15138</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15146">15146</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15091">15091</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15101">15101</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15104">15104</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15094">15094</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15103">15103</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15183">15183</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15184">15184</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15157">15157</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15240">15240</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15221">15221</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15222">15222</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15159">15159</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15235">15235</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15237">15237</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15233">15233</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15234">15234</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15238">15238</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15298">15298</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15299">15299</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15324">15324</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15363">15363</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15375">15375</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15377">15377</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15380">15380</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15385">15385</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15394">15394</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15396">15396</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15309">15309</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15412">15412</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15318">15318</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15407">15407</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15436">15436</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15548">15548</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15522">15522</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15563">15563</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15619">15619</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15616">15616</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15700">15700</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15702">15702</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15708">15708</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15710">15710</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15711">15711</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15714">15714</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15719">15719</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15573">15573</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15693">15693</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15776">15776</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15855">15855</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15290">15290</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15866">15866</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15924">15924</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15926">15926</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15925">15925</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15927">15927</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15933">15933</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16024">16024</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16026">16026</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16067">16067</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16162">16162</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15236">15236</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15287">15287</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15289">15289</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15699">15699</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16347">16347</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16280">16280</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16403">16403</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16392">16392</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16877">16877</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16923">16923</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/12714">12714</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/5768">5768</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/14692">14692</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/9580">9580</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13992">13992</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/7897">7897</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/14249">14249</a>,<a target="_blank" href="https://github.com/magento/magento2/issues/14089">14089</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/7379">7379</a></td>
+  </tr>
+
+
+  <tr>
+    <td>Krish Technologies</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/16577">16577</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16586">16586</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16665">16665</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16667">16667</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16671">16671</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16585">16585</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16632">16632</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16759">16759</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16760">16760</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16825">16825</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16836">16836</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16846">16846</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16828">16828</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16835">16835</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16811">16811</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16830">16830</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16812">16812</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16917">16917</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16920">16920</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16948">16948</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17003">17003</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17018">17018</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17084">17084</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17085">17085</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17086">17086</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17088">17088</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17089">17089</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17092">17092</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17087">17087</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17105">17105</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17139">17139</a>. <a target="_blank" href="https://github.com/magento/magento2/pull/17090">17090</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17136">17136</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16898">16898</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17260">17260</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17241">17241</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17242">17242</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17200">17200</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17243">17243</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17247">17247</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17202">17202</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17216">17216</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17218">17218</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17211">17211</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17212">17212</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17213">17213</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17172">17172</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16619">16619</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17179">17179</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17091">17091</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/7399">7399</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15940">15940</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13692">13692</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15467">15467</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/5316">5316</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/16174">16174</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/2956">2956</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13988">13988</a>
+    <a target="_blank" href="https://github.com/magento/magento2/issues/13006">13006</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13595">13595</a>,<a target="_blank" href="https://github.com/magento/magento2/issues/13769">13769</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/11512">11512</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/11140">11140</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/11540">11540</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/9919">9919</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13768">13768</a></td>
+  </tr>
+
+<tr>
+    <td>Wagento</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15736">15736</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15739">15739</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15805">15805</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17091">17091</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15756">15756</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15816">15816</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15814">15814</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15814">15814</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15816">15816</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15767">15767</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15796">15796</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15797">15797</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15801">15801</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15841">15841</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15880">15880</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15915">15915</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15917">15917</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16031">16031</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16043">16043</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15829">15829</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15834">15834</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16037">16037</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16102">16102</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16111">16111</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16039">16039</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15821">15821</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/15727">15727</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16226">16226</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16264">16264</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16287">16287</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16526">16526</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16797">16797</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17015">17015</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17022">17022</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/17029">17029</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/16992">16992</a>
+ </td>
+<td><a target="_blank" href="https://github.com/magento/magento2/issues/15354">15354</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15192">15192</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15319">15319</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15590">15590</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15510">15510</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15608">15608</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15323">15323</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/14999">14999</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13899">13899</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/8954">8954</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15348">15348</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15832">15832</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/12601">12601</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/13415">13415</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15213">15213</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/16378">16378</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15848">15848</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/12320">12320</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/15356">15356</a></td>
+</tr>
+
+
+</table>
+
+<h2 id="system-requirements">System requirements</h2>
+
+<p>Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>See <a href="http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html">How to get the Magento software</a> for comprehensive information about Magento 2.1.x installation and setup.</p>
+
+<h2 id="migration-toolkits">Migration toolkits</h2>
+
+<p>The Magento <a href="http://devdocs.magento.com/guides/v2.1/migration/bk-migration-guide.html">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="http://devdocs.magento.com/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool">Magento Data Migration repository</a>.</p>
+
+<p>An updated version of this toolkit is typically available several days after the patch release.</p>
+
+<p>The <a href="https://github.com/magento/code-migration">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+<h2 id="credits">Credits</h2>
+<p>Dear community members, thank you for your suggestions,  bug reports, and code contributions.</p>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.1/release-notes/ReleaseNotes2.1.15EE.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.15EE.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+
+</body>
+</html>
+
