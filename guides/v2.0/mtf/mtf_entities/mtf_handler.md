@@ -448,18 +448,18 @@ Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5
 
 <?php
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Widget\Test\Handler\Widget;
+namespace Magento\Tax\Test\Handler\TaxRule;
 
 use Magento\Mtf\Handler\HandlerInterface;
 
 /**
- * Interface WidgetInterface
+ * Interface TaxRuleInterface
  */
-interface WidgetInterface extends HandlerInterface
+interface TaxRuleInterface extends HandlerInterface
 {
     //
 }
@@ -471,87 +471,89 @@ interface WidgetInterface extends HandlerInterface
 
 <?php
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Widget\Test\Handler\Widget;
+namespace Magento\Tax\Test\Handler\TaxRule;
 
+use Magento\Tax\Test\Fixture\TaxRule;
+use Magento\Mtf\Config\DataInterface;
 use Magento\Mtf\Fixture\FixtureInterface;
-use Magento\Mtf\Handler\Curl as AbstractCurl;
 use Magento\Mtf\Util\Protocol\CurlTransport;
-use Magento\Mtf\Util\Protocol\CurlTransport\BackendDecorator;
+use Magento\Mtf\Handler\Webapi as AbstractWebapi;
+use Magento\Mtf\System\Event\EventManagerInterface;
+use Magento\Mtf\Util\Protocol\CurlTransport\WebapiDecorator;
 
 /**
- * Curl handler for creating widgetInstance/frontendApp.
+ * Create Tax Rule via Web API handler.
  */
-class Curl extends AbstractCurl
+class Webapi extends AbstractWebapi implements TaxRuleInterface
 {
     /**
-     * Mapping values for data.
+     * Tax Rule cUrl handler.
      *
-     * @var array
+     * @var Curl
      */
-    protected $mappingData = [
-        'code' => [
-            'CMS Page Link' => 'cms_page_link',
-        ],
-        'block' => [
-            'Main Content Area' => 'content',
-            'Sidebar Additional' => 'sidebar.additional',
-            'Sidebar Main' => 'sidebar.main',
-        ]
-    ];
+    protected $taxRuleCurl;
 
     /**
-     * Post request for creating widget instance.
+     * @constructor
+     * @param DataInterface $configuration
+     * @param EventManagerInterface $eventManager
+     * @param WebapiDecorator $webapiTransport
+     * @param Curl $taxRuleCurl
+     */
+    public function __construct(
+        DataInterface $configuration,
+        EventManagerInterface $eventManager,
+        WebapiDecorator $webapiTransport,
+        Curl $taxRuleCurl
+    ) {
+        parent::__construct($configuration, $eventManager, $webapiTransport);
+        $this->taxRuleCurl = $taxRuleCurl;
+    }
+
+    /**
+     * Web API request for creating Tax Rule.
      *
-     * @param FixtureInterface $fixture [optional]
+     * @param FixtureInterface $fixture
+     * @return array
      * @throws \Exception
-     * @return null|array instance id
      */
     public function persist(FixtureInterface $fixture = null)
     {
-        // Prepare data to send it using cURL.
+        /** @var TaxRule $fixture */
         $data = $this->prepareData($fixture);
-        // Build url to send post request to create widget.
-        $url = $_ENV['app_backend_url'] . 'admin/widget_instance/save/code/'
-            . $data['code'] . '/theme_id/' . $data['theme_id'];
-        // Create CurlTransport instance to operate with cURL. BackendDecorator is used to log in to Magento backend.
-        $curl = new BackendDecorator(new CurlTransport(), $this->_configuration);
-        // Send request to url with prepared data.
-        $curl->write($url, $data);
-        // Read response.
-        $response = $curl->read();
-        // Close connection to server.
-        $curl->close();
-        // Verify whether request has been successful (check if success message is present).
-        if (!strpos($response, 'data-ui-id="messages-message-success"')) {
-            throw new \Exception("Widget instance creation by curl handler was not successful! Response: $response");
+
+        $url = $_ENV['app_frontend_url'] . 'rest/V1/taxRules';
+        $this->webapiTransport->write($url, $data);
+        $response = json_decode($this->webapiTransport->read(), true);
+        $this->webapiTransport->close();
+
+        if (empty($response['id'])) {
+            $this->eventManager->dispatchEvent(['webapi_failed'], [$response]);
+            throw new \Exception('Tax rule creation by Web API handler was not successful!');
         }
-        // Get id of created widget in order to use in other tests.
-        $id = null;
-        if (preg_match_all('/\/widget_instance\/edit\/instance_id\/(\d+)/', $response, $matches)) {
-            $id = $matches[1][count($matches[1]) - 1];
-        }
-        return ['id' => $id];
+
+        return ['id' => $response['id']];
     }
 
     /**
-     * Prepare data to create widget.
+     * Returns data for Web API params.
      *
-     * @param FixtureInterface $widget
+     * @param TaxRule $fixture
      * @return array
      */
-    protected function prepareData(FixtureInterface $widget)
+    protected function prepareData(TaxRule $fixture)
     {
-        // Replace UI fixture values with values that are applicable for cURL. Property $mappingData is used.
-        $data = $this->replaceMappingData($widget->getData());
-        // Perform data manipulations to prepare the cURL request based on input data.
-        ...
-        return $data;
+        $data = $fixture->getData();
+        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_rate', 'tax_rate_ids');
+        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_product_class', 'product_tax_class_ids');
+        $data = $this->taxRuleCurl->prepareFieldData($fixture, $data, 'tax_customer_class', 'customer_tax_class_ids');
+
+        return ['rule' => $data];
     }
-    // Additional methods.
 }
 
 {% endhighlight %}
