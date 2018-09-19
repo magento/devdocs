@@ -15,7 +15,6 @@ functional_areas:
   - Cloud
   - Setup
 ---
-
 QUESTION: Do we really want to support a full overwrite?
 
 The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
