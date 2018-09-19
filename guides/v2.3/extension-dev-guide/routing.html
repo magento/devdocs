@@ -3448,6 +3448,8 @@ If <code class="highlighter-rouge">app/code/OrangeCompany/RoutingExample/Control
 <p>Action classes are extensions of the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Action/Action.php"><code class="highlighter-rouge">Action</code></a> class that a router returns on matched requests. 
 The <code class="highlighter-rouge">execute()</code> function in these classes contain the logic for dispatching requests.</p>
 
+<p>Each Action should implement one or more Magento\Framework\App\Action\Http<em>HTTP Method</em>ActionInterface to declare which HTTP request methods it can process.</p>
+
 <p>Magento has a <code class="highlighter-rouge">form key</code> validation in place for all <code class="highlighter-rouge">POST</code> non-AJAX requests - if your <code class="highlighter-rouge">Action</code> doesn’t need that validation or you want to modify it you can implement <code class="highlighter-rouge">CsrfAwareActionInterface</code>.</p>
 
 <p>If you need to forward a request to another action in your class, use the <code class="highlighter-rouge">_forward()</code> function.</p>
