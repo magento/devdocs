@@ -143,10 +143,6 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91450 -->* You can now filter successfully by date from the Admin on products in multistore environments. Previously, values in the product creation date field (that is, the date set in when **Set Product as New from Date** is selected)  were arbitrarily changed, and filtering did not work. 
 
-
-<!--- 91440 -->* 
-
-
 <!--- 91440 -->*  Attributes with no assigned values on a product are no longer displayed with a  value of N/A in the Compare Products page or block as expected. 
 
 
@@ -160,7 +156,6 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91434 -->* Magento now correctly sets the default option for the `status` attribute when a merchant creates a product. Previously, Magento changed a default setting of disabled (**No**) to **Yes** during product creation.
 
-<!--- 91439 -->* 
 
 <!--- 69949 -->* 
 
@@ -660,7 +655,7 @@ You can install Magento Commerce 2.3 Beta  using Composer.
 
 ## Migration toolkits
 
-The [Data Migration Tool]({{page.baseurl}}/migration/migration-migrate.html) helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 

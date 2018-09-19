@@ -131,11 +131,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 <!--- 91450 -->* You can now filter successfully by date from the Admin on products in multistore environments. Previously, values in the product creation date field (that is, the date set in when **Set Product as New from Date** is selected)  were arbitrarily changed, and filtering did not work. 
 
 
-<!--- 91440 -->* 
-
-
 <!--- 91440 -->*  Attributes with no assigned values on a product are no longer displayed with a  value of N/A in the Compare Products page or block as expected. 
-
 
 
 <!--- 91439 -->* Prices are now visible as expected on the Category page for a configurable product when you re-enable them from the Admin. Previously, when you re-enabled a previously disabled product and assigned it to a different store, Magento did not display its price on the Category or Product page. 
@@ -147,7 +143,6 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91434 -->* Magento now correctly sets the default option for the `status` attribute when a merchant creates a product. Previously, Magento changed a default setting of disabled (**No**) to **Yes** during product creation.
 
-<!--- 91439 -->* 
 
 <!--- 69949 -->* 
 
@@ -627,10 +622,10 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 
- For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
+ For more information, [System Requirements]({{site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 
@@ -638,7 +633,7 @@ You can install Magento Open Source 2.3 Beta  using Composer.
 
 ## Migration toolkits
 
-The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
