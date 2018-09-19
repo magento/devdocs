@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.3.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/extending.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/extending.html
 ---
 
 # Extending

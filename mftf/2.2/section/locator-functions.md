@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.0.2
-redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/locator-functions.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.2/locator-functions.html
 ---
 
 # Locator functions

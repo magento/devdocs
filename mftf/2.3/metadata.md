@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.2.0
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/metadata.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/metadata.html
 ---
 
 # Metadata

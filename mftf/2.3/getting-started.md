@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.3.6
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-started.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/getting-started.html
 ---
 
 # Getting started
@@ -8,17 +8,19 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-sta
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
+{% include_relative include/note-2.2-docs.md %}
+
 ## Prepare environment  {#prepare-environment}
 
 Make sure that you have the following software installed and configured on your development environment:
 
-* [PHP version supported by the Magento instance under test][]
-* [Composer 1.3 or later][]
-* [Java 1.8 or later][]
-* [Selenium Server Standalone 3.6 or later][] and [ChromeDriver 2.33 or later][] or other webdriver in the same directory
+* [PHP version supported by the Magento instance under test][php]
+* [Composer 1.3 or later][composer]
+* [Java 1.8 or later][java]
+* [Selenium Server Standalone 3.6 or later][selenium server] and [ChromeDriver 2.33 or later][chrome driver] or other webdriver in the same directory
 
 {:.bs-callout .bs-callout-tip}
-[PhpStorm] supports [Codeception Test execution][], which is helpful when debugging.
+[PhpStorm] supports [Codeception test execution][], which is helpful when debugging.
 
 ## Prepare Magento  {#prepare-magento}
 
@@ -220,15 +222,13 @@ Learn more about Allure in the [official documentation][allure docs].
 <!-- Link definitions -->
 
 [Allure Framework]: http://allure.qatools.ru/
-[ChromeDriver 2.33 or later]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[chrome driver]: https://sites.google.com/a/chromium.org/chromedriver/downloads
 [Codeception Test execution]: https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/
-[Composer 1.3 or later]: https://getcomposer.org/download/
-[Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
-[Download the latest Selenium Server]: http://www.seleniumhq.org/download/
-[Java 1.8 or later]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
+[composer]: https://getcomposer.org/download/
+[java]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[php]: {{ site.gdeurl23 }}/install-gde/system-requirements-tech.html#php
 [PHPStorm]: https://www.jetbrains.com/phpstorm/
-[Selenium Server Standalone 3.6]: https://www.seleniumhq.org/download/
+[selenium server]: https://www.seleniumhq.org/download/
 [`codecept`]: commands/codeception.html
 [`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
 [`mftf`]: commands/mftf.html

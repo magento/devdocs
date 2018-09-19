@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.1.2
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/section.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/section.html
 ---
 
 # Section structure

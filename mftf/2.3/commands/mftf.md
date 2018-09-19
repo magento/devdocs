@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.3.6
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/commands/mftf.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/commands/mftf.html
 ---
 
 # CLI commands: vendor/bin/mftf

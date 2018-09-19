@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.3.6
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/test/actions.html
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/test/actions.html
 ---
 
 # Test actions

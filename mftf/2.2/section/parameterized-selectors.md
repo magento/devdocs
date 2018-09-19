@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.0.2
-redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/parameterized-selectors.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.2/parameterized-selectors.html
 ---
 
 # Parameterized selectors

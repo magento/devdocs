@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.1.2
-redirect_from: /guides/v2.2/magento-functional-testing-framework/2.3/configuration.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/2.2/configuration.html
 ---
 
 # Configuration
