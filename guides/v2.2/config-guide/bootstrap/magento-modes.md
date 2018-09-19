@@ -60,7 +60,7 @@ You can run Magento in any of the following *modes*:
 
 ## Default mode
 
-As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
+As its name implies, default mode is how Magento operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
 
 To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
 
