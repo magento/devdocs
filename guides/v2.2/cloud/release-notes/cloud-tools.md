@@ -38,9 +38,9 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed which caused 
+    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
 
-    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Perviously, these issues caused the deployment to fail.
+    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
        -  ADMIN_EMAIL is not set on upgrade.
 	   
@@ -51,26 +51,6 @@ The following updates describe the latest improvements to the `ece-tools` packag
        -  JIRA-MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
 	   
     - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
-
-#### Resolved Issues
-
-
--  **Deployment fixes**
-
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until deployment issues are resolved.  Previously, the site could sometimes resume operation even if the deployment failed, and customers were not aware of configuration or other issues that can cause site errors or outages.
-
-    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING`. Instead of causing the deployment to fail immediately, customers get a warning about these issues with information about how to correct them after the deploy phase ends.
-	
-       -  ADMIN_EMAIL is not set on upgrade.
-	   
-	   -  ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
-
-       -  Environment configuration contains incorrect values for deploy or cloud variables
-
-       -  JIRA-MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
-
-    - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
-
 
 -  **Cron-related fixes**
 
