@@ -42,7 +42,7 @@ Command options:
 bin/magento indexer:status [indexer]
 ```
 
-Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
+`[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
 
 To list all indexers:
 
@@ -197,7 +197,11 @@ To specify the indexer configuration:
 bin/magento indexer:set-mode {realtime|schedule} [indexer]
 ```
 
-**`realtime`** sets the selected indexers to update on save. **`schedule`** sets the specified indexers to save according to the cron schedule. **`indexer`** is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
+**`realtime`** sets the selected indexers to update on save.
+
+**`schedule`** sets the specified indexers to save according to the cron schedule.
+
+**`indexer`** is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
 
 To view the list of indexers:
 
