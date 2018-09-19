@@ -3478,9 +3478,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
-        <div class="bs-callout bs-callout-info">
-        <a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.
-        </div>
     </td>
 	</tr>
 	<tr>
@@ -3492,8 +3489,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 				<li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
 			</ul></td>
 	</tr>
+<tr>
+		<td>maintenance</td>
+		<td><p>Intended to prevent access to the Magento application while it is being updated or reconfigured, this mode:</p>
+			<ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
+				<li>When the application is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
+				<li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>
+			</ul></td>
+		</tr>
 </tbody>
 </table>
+
+<p class="bs-callout bs-callout-info"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports only production and maintenance modes.</p>
 
 <h2 id="default-mode">Default mode</h2>
 
@@ -3515,8 +3522,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="developer-mode">Developer mode</h2>
 
 <p>You should run the Magento software in developer mode when you’re extending or customizing it.</p>
-
-<p class="bs-callout bs-callout-info"><a href="/guides/v2.1/cloud/bk-cloud.html">Magento Commerce Cloud</a> supports production mode only.</p>
 
 <p>In developer mode:</p>
 
@@ -3545,6 +3550,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  only.)</li>
   <li>Errors are logged to the file system and are never displayed to the user.</li>
 </ul>
+
+<h2 id="maintenance-mode">Maintenance mode</h2>
+
+<p>Run Magento in maintenance mode to take your site offline while you complete maintainenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default <code class="highlighter-rouge">Service Temporarily Unavailable</code> page.</p>
+
+<p>You can create a <a href="/guides/v2.1/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create.html">custom mainenance page</a>, manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">enable and disable maintenance mode</a>.</p>
+
+<p>If you are using Magento Commerce Cloud, Magento applicationruns in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment hooks</a>.</p>
 
 <h4 id="next-step">Next step</h4>
 

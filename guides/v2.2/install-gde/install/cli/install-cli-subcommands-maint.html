@@ -4457,7 +4457,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="instgde-cli-before">First steps</h2>
+			<p>Magento uses <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#maintenance-mode">maintenance mode</a> to disable bootstrapping; for example, while you’re maintaining, upgrading, or reconfiguring your site.</p>
+
+<p>Magento detects maintenance mode as follows:</p>
+
+<ul>
+  <li>If <code class="highlighter-rouge">var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
+  <li>
+    <p>Otherwise, maintenance mode is on unless <code class="highlighter-rouge">var/.maintenance.ip</code> exists:</p>
+
+    <p><code class="highlighter-rouge">var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
+  </li>
+</ul>
+
+<h2 id="instgde-cli-before">First steps</h2>
 <ol>
   <li>
     <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
@@ -4499,18 +4512,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
 
-<p>Magento uses <em>maintenance mode</em> to disable bootstrapping; for example, while you’re maintaining, upgrading, or reconfiguring your site.</p>
-
-<p>Magento detects maintenance mode as follows:</p>
-
-<ul>
-  <li>If <code class="highlighter-rouge">var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
-  <li>
-    <p>Otherwise, maintenance mode is on unless <code class="highlighter-rouge">var/.maintenance.ip</code> exists:</p>
-
-    <p><code class="highlighter-rouge">var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
-  </li>
-</ul>
+<p>Use the <code class="highlighter-rouge">magento maintenance</code> CLI command to enable or disable Magento maintenance mode.</p>
 
 <p>Command usage:</p>
 
