@@ -48,10 +48,9 @@ You can run Magento in any of the following *modes*:
 <tr>
 		<td>maintenance</td>
 		<td><p>Intended to prevent access to the Magento application while it is being updated or reconfigured, this mode:</p>
-			<ul><li>Displays a default <code>Service Temporarily Unavailable</code> page when customers visit store URLs.</li>
-				<li>When the application is in maintenance mode, the <code>var/</code> directory contains the       <code>.maintenance.flag</code> file.</li>
+			<ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
+				<li>When the application is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
 				<li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>
-				<li>You can configure a custom maintenance page to display when the Magento application enters maintenance mode.</li>
 			</ul></td>
 		</tr>
 </tbody>
@@ -102,11 +101,11 @@ In production mode:
 
 ## Maintenance mode
 
-Run the Magento software in maintenance mode when you need to take your site offline, for example when you are performing installation and upgrade tasks. When your site is in maintenance mode, normal site visitors get a `Service Temporarily Unavailable` message when they navigate to your store. You can configure maintenance mode to allow visitors from authorized IP addresses to view the store normally.
+Run Magento in maintenance mode to take your site offline while you complete maintainenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default `Service Temporarily Unavailable` page.
 
-You can [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html) and configure exempt IP addresses using Magento CLI commands.
+You can create a [custom mainenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create.html), manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
-For customers using {{site.data.var.ece}}, maintenance mode is enabled automatically for the duration of the deploy phase. When the deployment completes sucessfully, maintenance mode is turned off, and the Magento application is put back into production mode. See [Deployment hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+If you are using {{site.data.var.ece}}, Magento applicationruns in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See [Deployment hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 
 #### Next step
