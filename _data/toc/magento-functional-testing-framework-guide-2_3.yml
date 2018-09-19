@@ -100,5 +100,5 @@ pages:
     versionless: true
 
   - label: Changelog
-    url: /mftf/2.3/changelog.html
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
     versionless: true
