@@ -41,10 +41,10 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Deployment fixes**
 	
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until deployment issues are resolved. Previously, the site resumed operation even if the deployment failed, and customers were not aware of configuration or other issues that can cause site errors or outages.
+    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved.
 
-    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING`. Instead of causing the deployment to fail immediately, customers get a warning about these issues with information about how to correct them after the deploy phase ends.
-	
+    -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Perviously, these issues caused the deployment to fail.
+
        -  ADMIN_EMAIL is not set on upgrade.
 	   
 	   -  ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
