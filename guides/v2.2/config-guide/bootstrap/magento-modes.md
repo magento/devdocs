@@ -18,7 +18,7 @@ You can run Magento in any of the following *modes*:
 		<tr>
 		<td>default</td>
 		<td><p>Enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.</p>
-			<p>To deploy Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
+			<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
 			<ul><li>Static view file caching is enabled</li>
 				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
 				<li>Hides custom <code>X-Magento-*</code> HTTP request and response headers</li></ul>
@@ -48,7 +48,7 @@ You can run Magento in any of the following *modes*:
 		<td>maintenance</td>
 		<td><p>Intended to prevent access to a Magento Commerce site while it is being updated or reconfigured, this mode:</p>
 			<ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
-				<li>When the application is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
+				<li>When the site is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
 				<li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>
 			</ul></td>
 		</tr>
