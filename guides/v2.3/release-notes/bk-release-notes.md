@@ -5,7 +5,7 @@ title: 2.3.x Release Information
 ---
 
 
-**Magento 2.3.0 is currently in pre-release**. Check out [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start) for information on participating in our pre-release evaluation program.
+**Magento 2.3.0 is currently in pre-release**. Check out [Magento 2.3.0 Beta Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start) for information on participating in our pre-release evaluation program.
 
 ## Magento 2.3.x Release Notes
 
