@@ -218,6 +218,9 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
         'max_lifetime' => '2592000'
       )
     ),
+    
+{: .bs-callout .bs-callout-info }
+TTL for session records use the value for Cookie Lifetime, but interprets a value of zero differently from PHP. Instead of the session staying open until the browser is closed, min_lifetime will be used, which has a default value of sixty seconds. If that behavior is not desired, we suggest increasing that value.
 
 ## Basic verification {#redis-verify}
 
