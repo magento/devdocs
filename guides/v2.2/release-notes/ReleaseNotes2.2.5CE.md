@@ -8,7 +8,7 @@ This release includes multiple enhancements to product security plus bug fixes a
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6 , 1.14.3.10, and 1.9.3.10. 
 
 ## Highlights
 
@@ -53,12 +53,12 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 This release of Magento Shipping adds the following new capabilities: 
 
-• With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
+* With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
 
-• Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches. 
+* Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches. 
 
 
-• Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.  
+* Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.  
 
 
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API. 
@@ -286,6 +286,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+
 <table>
   <tr>
     <th>Pull request</th>
@@ -294,13 +295,13 @@ The following table identifies contributions from our community members. This ta
   </tr>
 
 
+
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
     <td>15205, 15245</td>
     <td><a target="_blank" href="https://github.com/fmarangi">Francesco Marangi</a></td>
   </tr>
-
-
+  
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13956">13956</a></td>
     <td>N/A</td>
@@ -931,7 +932,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 ### Installation and upgrade instructions
 

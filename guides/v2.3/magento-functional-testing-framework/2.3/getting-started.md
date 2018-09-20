@@ -3,29 +3,24 @@ group: magento-functional-testing-framework-guide-2_3
 title: Getting started
 functional_areas:
  - Testing
-mftf-release: 2.3.1
+mftf-release: 2.3.6
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/getting-started.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-{% if page.guide_version == "2.2" %}
-{% include_relative include/note-2.2-docs.md %}
-{% endif %}
-
 ## Prepare environment  {#prepare-environment}
 
-Make sure that you've installed and set up the following software:
+Make sure that you have the following software installed and configured on your development environment:
 
-* [PHP version supported by Magento instance under test]
-* [Composer v1.3.x+]
-* [Java v1.8.x+]
-* [Selenium Server Standalone v3.6.0+]
-* [ChromeDriver v2.33+]
+* [PHP version supported by the Magento instance under test][]
+* [Composer 1.3 or later][]
+* [Java 1.8 or later][]
+* [Selenium Server Standalone 3.6 or later][] and [ChromeDriver 2.33 or later][] or other webdriver in the same directory
 
 {:.bs-callout .bs-callout-tip}
-[PhpStorm] recently added support for [Codeception Test execution], which is helpful when debugging.
+[PhpStorm] supports [Codeception Test execution][], which is helpful when debugging.
 
 ## Prepare Magento  {#prepare-magento}
 
@@ -41,6 +36,9 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 2. Navigate to **Stores \> Configuration \> General \> Content Management**.
 3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
 4. Click **Save Config**.
+
+{: .bs-callout .bs-callout-tip }
+When you want to test the WYSIWYG functionality, reenable WYSIWYG in your test [suite][].
 
 ### Security settings   {#security-settings}
 
@@ -69,10 +67,13 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies {#install-dependencies}
 
-1. Change directory to the Magento project root.
+1. Checkout to the Magento version that you are going to test.
 
    ```bash
    cd magento2/
+   ```
+   ```bash
+   git checkout 2.3-develop
    ```
 
 2. Install the Magento application.
@@ -81,17 +82,11 @@ git clone git@github.com:magento/magento2.git
    composer install
    ```
 
-3. Change directory to the acceptance tests area.
+3. Install the MFTF.
 
    ```bash
-   cd dev/tests/acceptance/
+   composer install -d dev/tests/acceptance/
    ```
-
-4. Install the MFTF.
-
-    ```bash
-    composer install
-    ```
 
 ### Step 3. Build the project   {#build-project}
 
@@ -114,16 +109,22 @@ If the file does not exist, add the `--force` option to create it:
 vendor/bin/mftf generate:urn-catalog --force .idea/
 ```
 
-See [`generate:urn-catalog`] for more details.'
+See [`generate:urn-catalog`][] for more details.'
 %}
 
 {:.bs-callout .bs-callout-tip}
-To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
-When added, you should be able to run the `mftf`, `codecept`, and `phpunit` commands.
+You can simplify command entry by adding the  absolute  path to the `vendor/bin` directory path to your PATH environment variable.
+After adding the path, you can run `mftf` without having to include `vendor/bin`.
 
-### Step 4. Edit environment settings   {#environment-settings}
+### Step 4. Edit environmental settings   {#environment-settings}
 
-In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
+In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system.
+
+```bash
+vim dev/tests/acceptance/.env
+```
+
+Specify the following parameters, which are required to launch tests:
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
@@ -137,107 +138,103 @@ Example: `MAGENTO_ADMIN_USERNAME=admin`
 * `MAGENTO_ADMIN_PASSWORD` must contain the user password required for authorization in the Admin area.
 Example: `MAGENTO_ADMIN_PASSWORD=123123q`
 
-The following self-descriptive variables have included default values.
+{: .bs-callout .bs-callout-info }
+If the `MAGENTO_BASE_URL` contains a subdirectory like `http://magento.test/magento2ce`, specify `MAGENTO_CLI_COMMAND_PATH`.
 
-```config
-SELENIUM_HOST=127.0.0.1
-SELENIUM_PORT=4444
-SELENIUM_PROTOCOL=http
-SELENIUM_PATH=/wd/hub
-```
-
-{:.bs-callout .bs-callout-warning}
-Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
-
-Your environment settings form the path to your running Selenium Server.
-Example:
-```
-http://127.0.0.1:4444/wd/hub
-```
-
-### Step 5. (Optional) Copy `command.php` into Magento installation {#add-cli-commands}
-
-If you are installing the MFTF not from your Magento installation, locate the `command.php` file in the MFTF:
-
-`magento2-functional-testing-framework/etc/config/command.php`
-
-And copy it into your Magento installation under: 
-
-`magento2/dev/tests/acceptance/utils/command.php`
-
-If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project].
-
-{:.bs-callout .bs-callout-warning}
-If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.
-
-### Step 6. Enable the Magento CLI commands
+### Step 5. Enable the Magento CLI commands
 
 In the `magento2/dev/tests/acceptance` directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.
 
  ```bash
-cp .htaccess.sample .htaccess
+cp dev/tests/acceptance/.htaccess.sample dev/tests/acceptance/.htaccess
 ```
 
-### Step 7. Generate existing tests     {#generate-tests}
+#### (Optional) Copy `command.php` into Magento installation {#add-cli-commands}
 
-In the `magento2/` root directory, run the following command to generate tests as PHP classes from XML files:
+If you are installing the MFTF from the other location than your Magento installation, point to the `command.php` file in the MFTF source code:
+
+`magento2-functional-testing-framework/etc/config/command.php`
+
+And copy it into your Magento installation: 
+
+`magento2/dev/tests/acceptance/utils/`
+
+If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project][].
+
+{:.bs-callout .bs-callout-warning}
+If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.
+
+### Step 7. Generate and run tests   {#run-tests}
+
+To run tests, you need a running Selenium server and [`mftf`][] with required parameters.
+
+#### Run the Selenium server    {#selenium-server}
+
+Run the Selenium server in terminal.
+For example, the following commands run the Selenium server for Google Chrome:
+
+```bash
+cd <path_to_directory_with_selenium_server_and_webdriver>/
+```
+```bash
+java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone-3.14.0.jar
+```
+
+#### Generate and run all tests {#run-all-tests}
 
 ```bash
 vendor/bin/mftf generate:tests
 ```
-
-### Step 8. Run tests   {#run-tests}
-
-To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] with required parameters.
-
-#### Run the Selenium server    {#selenium-server}
-
-Run the Selenium server in terminal:
-
 ```bash
-java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+cd dev/tests/acceptance
+```
+```bash
+vendor/bin/codecept run functional
 ```
 
-If you do not have the Selenium server yet:
+See more commands in [`codecept`][].
 
-1. [Download the latest Selenium Server].
+#### Run a simple test {#run-test}
 
-2. [Download a Selenium web driver for your web browser] into the same directory that contains the Selenium server.
-
-3. Add the directory with the web driver to `PATH`.
-
-#### Run all tests {#run-all-tests}
+To clean up the previously generated tests, and then generate and run a single test `AdminLoginTest`, run:
 
 ```bash
-vendor/bin/codecept run
+vendor/bin/mftf run:test AdminLoginTest --remove
 ```
 
-See more commands in [`mftf`] and [`codecept`].
+See more commands in [`mftf`][].
 
 ### Step 9. Generate reports    {#reports}
 
-The testing reports are generated in a CLI during testing.
+During testing, the MFTF generates test reports in CLI.
+You can generate visual representations of the report data using [Allure Framework][].
+To view the reports in GUI:
 
-To generate the reports in HTML, use [Allure].
-For example, to generate the reports when you are in the `magento2` project root, run:
+-  [install Allure][]
+-  run the tool to serve the artifacts in `dev/tests/acceptance/tests/_output/allure-results/`:
 
 ```bash
-allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/tests/acceptance/tests/_output/allure-report/ --clean
+allure serve dev/tests/acceptance/tests/_output/allure-results/
 ```
+
+Learn more about Allure in the [official documentation][allure docs].
 
 <!-- Link definitions -->
 
+[Allure Framework]: http://allure.qatools.ru/
+[ChromeDriver 2.33 or later]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[Codeception Test execution]: https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/
+[Composer 1.3 or later]: https://getcomposer.org/download/
+[Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
+[Download the latest Selenium Server]: http://www.seleniumhq.org/download/
+[Java 1.8 or later]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
+[PHPStorm]: https://www.jetbrains.com/phpstorm/
+[Selenium Server Standalone 3.6]: https://www.seleniumhq.org/download/
 [`codecept`]: commands/codeception.html
 [`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
 [`mftf`]: commands/mftf.html
-[Allure]: https://docs.qameta.io/allure/latest/
+[allure docs]: https://docs.qameta.io/allure/
 [build the project]: #build-project
-[ChromeDriver v2.33+]: https://sites.google.com/a/chromium.org/chromedriver/downloads
-[Codeception Test execution]: https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/
-[Composer v1.3.x+]: https://getcomposer.org/download/
-[Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
-[Download the latest Selenium Server]: http://www.seleniumhq.org/download/
-[Java v1.8.x+]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
-[PHPStorm]: https://www.jetbrains.com/phpstorm/
-[Selenium Server Standalone v3.6.0+]: #selenium-server
+[install Allure]: https://github.com/allure-framework/allure2#download
+[test suite]: suite.html

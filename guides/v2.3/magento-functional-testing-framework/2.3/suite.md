@@ -97,8 +97,8 @@ There are several ways to generate and execute your new test in the context of a
 
 ## Examples
 
-### Browser actions in suite conditions
-
+### Enabling/disabling WYSIWYG in suite conditions
+<!-- {{raw}} -->
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
     <suite name="WYSIWYG">
@@ -124,16 +124,19 @@ There are several ways to generate and execute your new test in the context of a
     </suite>
 </suites>
 ```
-
+<!-- {{endraw}} -->
 This example declares a suite with the name `WYSIWYG`.
-The suite requires enabling WYSIWYG before running tests:
+The suite enables WYSIWYG *before* running tests.
+It performs the following steps:
+
 1. Log in to the backend.
 2. Navigate to the **Configuration** page.
 3. Enable **WYSIWYG** in the Magento instance.
 
-After the testing, the Magento instance returns to its state prior to the test:
+*After* the testing, the suite returns the Magento instance to the initial state disabling WYSIWYG:
+
 1. Log back in.
-2. Disable **WYSIWYG** so that 
+2. Disable **WYSIWYG** so that
 
 This suite includes all tests that contain the `<group value="WYSIWYG"/>` annotation.
 

@@ -4,7 +4,7 @@ title: |
     CLI commands: vendor/bin/mftf
 functional_areas:
  - Testing
-mftf-release: 2.3.0
+mftf-release: 2.3.6
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.2/commands/mftf.html
 ---
 
@@ -24,14 +24,14 @@ content='`mftf` commands replace the `robo` commands that were used in previous 
 In the project root directory (where you have installed the framework as a composer dependency), run commands using the following format:
 
 ```bash
-vendor/bin/mftf command [options] [arguments]
+vendor/bin/mftf command [options] [<arguments>] [--remove|-r]
 ```
   
 ## Useful commands
 
-Use the following commands to run commonly-performed tasks.
+Use the following commands to run commonly performed tasks.
 
-### Build the project
+### Apply the configuration parameters
 
 ```bash
 vendor/bin/mftf build:project
@@ -43,28 +43,34 @@ vendor/bin/mftf build:project
 vendor/bin/mftf build:project --upgrade
 ```
 
-### Generate all tests in PHP
+Upgrades the existing MFTF tests after the MFTF major upgrade.
+
+### Generate all tests
 
 ```bash
 vendor/bin/mftf generate:tests
 ```
-### Generate one or more tests in PHP
+### Generate tests by test name
 
 ```bash
-vendor/bin/mftf generate:tests testName01 testName02 testName03
+vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 ```
 
-### Run and generate all tests that contain the `group="example"` annotation 
+### Generate and run the tests for a spcecified group
 
 ```bash
-vendor/bin/mftf run:group example
+vendor/bin/mftf run:group product -r
 ```
 
-### Run and generate all tests
+This command cleans up the previously generated tests; generates and runs tests for the product group (where `group="product"`).
+
+### Generate and run particular tests
 
 ```bash
-vendor/bin/mftf run:test
+vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 ```
+
+This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
 ## Reference
  
@@ -77,7 +83,7 @@ Clone the example configuration files and build the Codeception project.
 #### Usage
 
 ```bash
-vendor/bin/mftf build:project [option]
+vendor/bin/mftf build:project [--upgrade]
 ```
 
 #### Options
@@ -96,18 +102,19 @@ The path is set in the `TESTS_MODULE_PATH` [configuration] parameter.
 #### Usage
 
 ```bash
-vendor/bin/mftf generate:tests [option] [test name] [test name]
+vendor/bin/mftf generate:tests [option] [<test name>] [<test name>] [--remove]
 ```
 
 #### Options
 
 Option | Description|
 ---|---
-`--config`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split it into multiple groups using `--config parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config parallel`.
+`--config=[<default>|<singleRun>|<parallel>]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split the list into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
 `--force`    | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.
-`--lines`    | Sets the number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
+`--lines`    | Sets the number of lines that determines the group size when `--config=parallel` is used. The __default value__ is `500`. Example: `generate:tests --config=parallel --lines=400`
 `--tests`    | Defines the test configuration as a JSON string.
 `--debug`    | Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.
+`-r,--remove`| Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `generate:tests SampleTest --remove` cleans up the entire `_generated` directory and generates `SampleTest` only.
 
 #### Examples of the JSON configuration
 
@@ -170,10 +177,16 @@ Generates one or more suites based on XML declarations.
 
 #### Usage
 
-`generate:suite <suites> <suites> ...`
+```bash
+vendor/bin/mftf generate:suite <suite name> [<suite name>] [--remove]
+```
 
-`<suites>` represents a suite name.
-To generate multiple suites, separate each name with a space.
+
+#### Options
+
+Option | Description|
+---|---
+`-r,--remove`| Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `vendor/bin/mftf generate:suite WYSIWYG --remove` cleans up the entire `_generated` directory and generates `WYSIWYG` only.
 
 #### Example
 
@@ -190,7 +203,9 @@ It also enables auto-completion in PhpStorm.
 
 #### Usage
 
-`generate:urn-catalog [options] <path to the directory with misc.xml>/`
+```bash
+vendor/bin/mftf generate:urn-catalog [--force] [<path to the directory with misc.xml>]
+```
 
 `misc.xml` is typically located in `<project root>/.idea/`.
 
@@ -215,7 +230,9 @@ The `.env` file is not affected.
 
 #### Usage
 
-`reset [options]`
+```bash
+vendor/bin/mftf reset [--hard]
+```
 
 #### Options
 
@@ -235,23 +252,26 @@ Generates and executes the listed groups of tests using Codeception.
 
 #### Usage
 
-`run:group [options --] <group1> <group2> ...`
+```bash
+vendor/bin/mftf run:group [--skip-generate|--remove] [--] <group1> [<group2>] 
+```
 
 #### Options
 
 Option | Description
 ---|---
 `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
+`-r, --remove`   | Removes previously generated suites and tests before the actual generation and run.
 
 #### Examples
 
-Generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
+Clean up after the last test run; generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
 
 ```bash
-vendor/bin/mftf run:group group1 group2
+vendor/bin/mftf -r -- run:group group1 group2
 ```
 
-Execute the generated PHP tests with the tags `@group group1` and `@group group2`:
+Execute previously generated tests with the annotations `group="group1"` and `group="group2"`, skipping the regeneration of the test:
 
 ```bash
 vendor/bin/mftf run:group -k -- group1 group2
@@ -263,27 +283,25 @@ Generates and executes tests by name using Codeception.
 
 #### Usage
 
-`run:test [options --] <name1> <name2> ...`
+```bash
+vendor/bin/mftf run:test [--skip-generate|--remove] [--] <name1> [<name2>]
+```
 
 #### Options
 
 Option | Description
 ---|---
 `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
+`-r, --remove`   | Remove previously generated suites and tests.
 
 #### Examples
 
-Generate from XML and execute the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests:
+Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from XML and execute all the generated tests:
 
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
 
-Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests:
-
-```bash
-vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
-```
 
 ### `upgrade:tests`
 
@@ -291,7 +309,9 @@ Applies all the MFTF major version upgrade scripts to test components in the giv
 
 #### Usage
 
-`upgrade:tests <path>`
+```bash
+vendor/bin/mftf upgrade:tests <path>
+```
 
 `<path>` is the path that contains MFTF test components that need to be upgraded.
 The command searches recursively for any `*.xml` files to upgrade.

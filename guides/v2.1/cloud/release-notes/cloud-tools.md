@@ -8,6 +8,13 @@ functional_areas:
   - Setup
   - Configuration
 ---
+
+<!-- Assigning liquid variables for placeholder values
+{% assign base_url = "{{base_url}}" %}
+{% assign unsecure_base_url = "{{unsecure_base_url}}" %}
+
+-->
+
 The `ece-tools` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
 You can list the available ece-tools commands using:
@@ -26,7 +33,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Docker Compose for Cloud**—Made the following improvements to the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
-   -  <!--MAGECLOUD-2359-->Added a command—`docker:config:convert` to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration}}).
+   -  <!--MAGECLOUD-2359-->Added a command—`docker:config:convert` to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
 
    -  <!--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems to more closely emulate the Cloud file system. See [Configure Docker]({{ page.baseurl }}/cloud/reference/docker-config.html).
 
