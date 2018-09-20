@@ -647,7 +647,7 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 
- For more information, [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
+ For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
