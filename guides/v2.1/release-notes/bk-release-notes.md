@@ -5,6 +5,8 @@ title: 2.1.x Release Information
 menu_title: 2.1.x Release Information
 menu_order: 1
 menu_node: parent
+redirect_from: 
+  - /guides/v2.1/release-notes/2.3.0-install.html
 ---
 
 
