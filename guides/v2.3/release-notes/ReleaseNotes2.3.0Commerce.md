@@ -26,16 +26,16 @@ This release introduces significant tools to improve the developer experience: P
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.  
 
 
-* **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
+* **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
 
-* **Graph API** provides an alternative to REST and SOAP web APIs for front-end development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
+* **GraphQL API** provides an alternative to REST and SOAP web APIs for front-end development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
 
 
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
 
-* **Amazon Sales Channel**
+* **Amazon Sales Channel**, a new bundled extension that allows you to create and manage Amazon listings and fulfill your orders for both Amazon customers as well customers of your store.  
 
 ### Core product improvements
 
@@ -43,11 +43,11 @@ This release introduces significant tools to improve the developer experience: P
 
 * **Improvements to import and export**  focus on enhancements to existing processes, including the  addition of new object types. 
 
-* **ElasticSearch support for Magento Community version**. ElasticSearch support was previously provided in Magento Commerce only. 
+* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
 
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
 * **Performance improvements** include JavaScript bundling, which enhances the frontend performance of existing themes. JavaScript bundling also minimizes file size and optimizes processing time to improve page performance in the browser. 
 
@@ -139,7 +139,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 
 
-<!--- 91473 -->* Magento now maintains designated sort order for products after saving a product in a category. Previously, product sort order reverted to sort-by-product-ID.
+<!--- 91473 -->* Magento now maintains designated sort order for products after saving a product in a category. Previously, product sort order reverted to sorting by product ID.
 
 <!--- 91450 -->* You can now filter successfully by date from the Admin on products in multistore environments. Previously, values in the product creation date field (that is, the date set in when **Set Product as New from Date** is selected)  were arbitrarily changed, and filtering did not work. 
 
@@ -157,11 +157,11 @@ Previously, Magento did not load the image if its name contained double quotatio
 <!--- 91434 -->* Magento now correctly sets the default option for the `status` attribute when a merchant creates a product. Previously, Magento changed a default setting of disabled (**No**) to **Yes** during product creation.
 
 
-<!--- 69949 -->* 
+<!--- 69949 -->* `auto_increment` values are now preserved after restarting the MySQL server.
 
 
 <!--- 91436 -->* You can now successfully save a product with custom options to a different website in multisite deployments. Previously, when you added another site to a product with customizable options, Magento corrupted these options. by splitting into multiple options or duplicating an option.
- EE ONLY
+
 
 <!--- 62310 -->* A product’s **Use Default Value** check box for attributes is now unchecked by default when you add a new website to a product’s scope.
 
@@ -175,7 +175,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91734 -->*   Guest orders placed with gift cards can now be canceled as expected.
 
-<!--- 91624 -->*  Braintree now permits customers to select different billing and shipping addresses on orders. Previously, Braintree saved the same address for both billing and shipping. 
+<!--- 91624 -->*  Braintree now permits customers to change the billing addresses on orders when paying with a saved card. Previously, Braintree used the same address for both billing and shipping. 
 
 
 <!--- 91465 -->*  Customers can now change an existing  value in the Checkout page’s  State/Province field to an alphanumeric value. Previously, when a customer tried to edit this field in this way, Magento did not place the order, and displayed a descriptive error message. 
