@@ -22,7 +22,7 @@ This release introduces significant tools to improve the developer experience: P
 
 
 
-* **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation]( https://magento-research.github.io/pwa-devdocs/) for information about this toolset as well as information about contributing to this ongoing project.  
+* **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-devdocs/) for information about this toolset as well as information about contributing to this ongoing project.  
 
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
