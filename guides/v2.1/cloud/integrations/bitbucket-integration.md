@@ -144,6 +144,18 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     magento-cloud integrations -p '<project-ID>'
     ```
 
+    The integation will list a webhook URL which is needed in the following step.
+
+#### Add Webhook to Repository in Bitbucket:
+
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
+
+1.  Navigate to the Project Settings -> Webhooks
+
+1.  Click **Add webhook** and add the webhook from the previous step, with a Title: Magento Cloud Integration
+
+1.  Click **Save**.
+
 ## Test the integration
 
 After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.
