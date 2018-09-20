@@ -321,8 +321,8 @@ In addition to contributing code, you can help to triage issues. This can includ
 
 We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.
 
-{% include_relative ../includes/contributor/labels.md %}
+{% include contributor/labels.md %}
 
 ## Contribution awards and points {#points}
 
-{% include_relative ../includes/contributor/rewards.md %}
+{% include contributor/rewards.md %}
