@@ -283,10 +283,10 @@ Previously, Magento displayed attributes with Dropdown and Multiple select types
 <!--- 94402 -->* The Billing Address field now displays the designated billing address as expected  for a registered customer  when checking out with Paypal Express Checkout. Previously, Magento displayed the shipping address in the Billing Address field in both the order confirmation email and the Admin.
 
 
-<!--- 28197 -->* Admin users that are not part of the "Administrator" group can now complete payment for an order using Braintree.
+<!--- 91500 -->* Admin users that are not part of the "Administrator" group can now complete payment for an order using Braintree.
 
 
-
+<!--- 91500 -->* 
 
 #### Reports 
 
