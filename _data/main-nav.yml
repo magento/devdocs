@@ -7,13 +7,16 @@
     - label: Cloud Architecture
       url: /cloud/architecture/cloud-architecture.html
 
+    - label: Local Development
+      url: /cloud/access-acct/first-time-setup.html
+
     - label: Configure Environments
       url: /cloud/env/environments.html
 
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
 
-    - label: ece-tools Release Notes
+    - label: Release Notes
       url: /cloud/release-notes/cloud-tools.html
       exclude_versions: ['2.0']
 
