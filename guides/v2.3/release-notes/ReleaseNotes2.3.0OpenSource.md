@@ -62,7 +62,7 @@ This release introduces significant tools to improve the developer experience: P
 
 ## Known issues
 
-Magento 2.3.0 pre-release code is a work in progress, and readiness of different components may vary. See [Component Status](page.baseurl}}/release-notes/component-status.html) for an overview of the health of core code components and modules.
+Magento 2.3.0 pre-release code is a work in progress, and readiness of different components may vary. See [Component Status]({{page.baseurl}}/release-notes/component-status.html) for an overview of the health of core code components and modules.
 
 
 
