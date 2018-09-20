@@ -72,7 +72,7 @@ pages:
           url: /cloud/integrations/github-integration.html
 
     - label: Local environment setup
-      url: /cloud/access-acct/first-time-setup.html
+      url: /cloud/setup/first-time-setup.html
       children:
         - label: Prepare for local environment setup
           url: /cloud/before/before-workspace.html
@@ -93,7 +93,7 @@ pages:
           url: /cloud/before/before-setup-env-install.html
 
         - label: First time deployment
-          url: /cloud/access-acct/first-time-deploy.html
+          url: /cloud/setup/first-time-deploy.html
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
@@ -106,13 +106,13 @@ pages:
           include_versions: ["2.1","2.2","2.3"]
 
     - label: Import existing code into a project
-      url: /cloud/access-acct/first-time-setup_import-first-steps.html
+      url: /cloud/setup/first-time-setup-import-first-steps.html
       children:
         - label: Prepare your existing Magento Commerce system
-          url: /cloud/access-acct/first-time-setup_import-prepare.html
+          url: /cloud/setup/first-time-setup-import-prepare.html
 
-        - label: Import Magento Commerce into Magento Commerce Cloud
-          url: /cloud/access-acct/first-time-setup_import-import.html
+        - label: Import Magento Commerce into Magento Commerce (Cloud)
+          url: /cloud/setup/first-time-setup-import-import.html
 
     - label: Configure your store
       url: /cloud/configure/configuration-overview.html
@@ -148,29 +148,29 @@ pages:
       url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
-          url: /cloud/access-acct/fastly.html
+          url: /cloud/cdn/configure-fastly.html
 
         - label: Fastly Image Optimization
           url: /cloud/cdn/fastly-image-optimization.html
           include_versions: ["2.1","2.2","2.3"]
 
         - label: Custom Fastly VCL snippets
-          url: /cloud/configure/cloud-vcl-custom-snippets.html
+          url: /cloud/cdn/cloud-vcl-custom-snippets.html
 
         - label: Custom whitelist VCL
-          url: /cloud/configure/fastly-vcl-whitelist.html
+          url: /cloud/cdn/fastly-vcl-whitelist.html
 
         - label: Custom blacklist VCL
-          url: /cloud/configure/fastly-vcl-blacklist.html
+          url: /cloud/cdn/fastly-vcl-blacklist.html
 
         - label: Custom redirect to WordPress VCL
-          url: /cloud/configure/fastly-vcl-wordpress.html
+          url: /cloud/cdn/fastly-vcl-wordpress.html
 
         - label: Custom block bad referer VCL
-          url: /cloud/configure/fastly-vcl-badreferer.html
+          url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
-          url: /cloud/trouble/trouble_fastly.html
+          url: /cloud/cdn/trouble-fastly.html
 
     - label: Configure environments
       url: /cloud/env/environments.html
@@ -318,7 +318,7 @@ pages:
       url: /cloud/trouble/trouble.html
       children:
         - label: Troubleshoot deployment
-          url: /cloud/access-acct/trouble.html
+          url: /cloud/trouble/troubleshoot-deployment.html
 
         - label: View logs for troubleshooting
           url: /cloud/trouble/environments-logs.html
@@ -387,5 +387,5 @@ pages:
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)
-          url: /cloud/upgrade/upgrade-from-2-0-4.html
           include_versions: ["2.0"]
+

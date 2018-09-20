@@ -3,7 +3,6 @@ group: architecture-guide
 title: Architecture Guide
 landing-page: Architecture
 menu_title: Get Started
-menu_order: 2
 menu_node: parent
 redirect_from: /guides/v1.0/architecture/bk-architecture.html
 ---

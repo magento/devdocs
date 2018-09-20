@@ -12,13 +12,12 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 ## Prepare environment  {#prepare-environment}
 
-Make sure that you've installed and set up the following software:
+Make sure that you have the following software installed and configured on your development environment:
 
-* [PHP version supported by Magento instance under test][]
-* [Composer v1.3.x+][]
-* [Java v1.8.x+][]
-* [Selenium Server Standalone v3.6.0+][]
-* [ChromeDriver v2.33+][]
+* [PHP version supported by the Magento instance under test][]
+* [Composer 1.3 or later][]
+* [Java 1.8 or later][]
+* [Selenium Server Standalone 3.6 or later][] and [ChromeDriver 2.33 or later][] or other webdriver in the same directory
 
 {:.bs-callout .bs-callout-tip}
 [PhpStorm] supports [Codeception Test execution][], which is helpful when debugging.
@@ -39,7 +38,7 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 4. Click **Save Config**.
 
 {: .bs-callout .bs-callout-tip }
-Enable WYSIWYG in your test [suite][] when you need to test it.
+When you want to test the WYSIWYG functionality, reenable WYSIWYG in your test [suite][].
 
 ### Security settings   {#security-settings}
 
@@ -114,9 +113,8 @@ See [`generate:urn-catalog`][] for more details.'
 %}
 
 {:.bs-callout .bs-callout-tip}
-To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
-When added, you should be able to run the `mftf`, `codecept`, and `phpunit` commands.
-
+You can simplify command entry by adding the  absolute  path to the `vendor/bin` directory path to your PATH environment variable.
+After adding the path, you can run `mftf` without having to include `vendor/bin`.
 
 ### Step 4. Edit environmental settings   {#environment-settings}
 
@@ -173,20 +171,14 @@ To run tests, you need a running Selenium server and [`mftf`][] with required pa
 #### Run the Selenium server    {#selenium-server}
 
 Run the Selenium server in terminal.
-Example of the run for Chrome:
+For example, the following commands run the Selenium server for Google Chrome:
 
 ```bash
-cd <path_to_directory_with_selenium_server_and_webdiver>/
+cd <path_to_directory_with_selenium_server_and_webdriver>/
 ```
 ```bash
 java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone-3.14.0.jar
 ```
-
-If you do not have the Selenium server yet:
-
-1. [Download the latest Selenium Server][].
-
-2. [Download a Selenium web driver for your web browser][] into the same directory that contains the Selenium server.
 
 #### Generate and run all tests {#run-all-tests}
 
@@ -214,9 +206,8 @@ See more commands in [`mftf`][].
 
 ### Step 9. Generate reports    {#reports}
 
-The testing reports are generated in CLI during the testing.
-
-The MFTF also provides visual reports using [Allure][].
+During testing, the MFTF generates test reports in CLI.
+You can generate visual representations of the report data using [Allure Framework][].
 To view the reports in GUI:
 
 -  [install Allure][]
@@ -230,20 +221,20 @@ Learn more about Allure in the [official documentation][allure docs].
 
 <!-- Link definitions -->
 
-[Allure]: http://allure.qatools.ru/
-[ChromeDriver v2.33+]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[Allure Framework]: http://allure.qatools.ru/
+[ChromeDriver 2.33 or later]: https://sites.google.com/a/chromium.org/chromedriver/downloads
 [Codeception Test execution]: https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/
-[Composer v1.3.x+]: https://getcomposer.org/download/
+[Composer 1.3 or later]: https://getcomposer.org/download/
 [Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
 [Download the latest Selenium Server]: http://www.seleniumhq.org/download/
-[Java v1.8.x+]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Java 1.8 or later]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
 [PHPStorm]: https://www.jetbrains.com/phpstorm/
-[Selenium Server Standalone v3.6.0+]: #selenium-server
+[Selenium Server Standalone 3.6]: https://www.seleniumhq.org/download/
 [`codecept`]: commands/codeception.html
 [`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
 [`mftf`]: commands/mftf.html
 [allure docs]: https://docs.qameta.io/allure/
 [build the project]: #build-project
-[install Allure]: https://github.com/allure-framework/allure2
+[install Allure]: https://github.com/allure-framework/allure2#download
 [test suite]: suite.html

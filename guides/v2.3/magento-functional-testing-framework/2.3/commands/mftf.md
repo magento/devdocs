@@ -29,7 +29,7 @@ vendor/bin/mftf command [options] [<arguments>] [--remove|-r]
   
 ## Useful commands
 
-Use the following commands to run commonly-performed tasks.
+Use the following commands to run commonly performed tasks.
 
 ### Apply the configuration parameters
 
@@ -50,19 +50,19 @@ Upgrades the existing MFTF tests after the MFTF major upgrade.
 ```bash
 vendor/bin/mftf generate:tests
 ```
-### Generate the particular tests
+### Generate tests by test name
 
 ```bash
 vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 ```
 
-### Generate and run the tests of a particular group
+### Generate and run the tests for a spcecified group
 
 ```bash
 vendor/bin/mftf run:group product -r
 ```
 
-It cleans up the previously generated tests; generates and runs the tests where `group="product"`.
+This command cleans up the previously generated tests; generates and runs tests for the product group (where `group="product"`).
 
 ### Generate and run particular tests
 
@@ -70,7 +70,7 @@ It cleans up the previously generated tests; generates and runs the tests where 
 vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 ```
 
-It cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` `LoginAsCustomerTest` tests.
+This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
 ## Reference
  
@@ -109,7 +109,7 @@ vendor/bin/mftf generate:tests [option] [<test name>] [<test name>] [--remove]
 
 Option | Description|
 ---|---
-`--config=[<default>|<singleRun>|<parallel>]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split it into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
+`--config=[<default>|<singleRun>|<parallel>]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split the list into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
 `--force`    | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.
 `--lines`    | Sets the number of lines that determines the group size when `--config=parallel` is used. The __default value__ is `500`. Example: `generate:tests --config=parallel --lines=400`
 `--tests`    | Defines the test configuration as a JSON string.
@@ -265,13 +265,13 @@ Option | Description
 
 #### Examples
 
-Clean up after the last run, generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
+Clean up after the last test run; generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
 
 ```bash
 vendor/bin/mftf -r -- run:group group1 group2
 ```
 
-Execute the tests with the annotations `group="group1"` and `group="group2"` that has already been generated, skipping the regeneration of the test:
+Execute previously generated tests with the annotations `group="group1"` and `group="group2"`, skipping the regeneration of the test:
 
 ```bash
 vendor/bin/mftf run:group -k -- group1 group2
@@ -296,7 +296,7 @@ Option | Description
 
 #### Examples
 
-Generate from XML the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests and execute all the generated tests:
+Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from XML and execute all the generated tests:
 
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest

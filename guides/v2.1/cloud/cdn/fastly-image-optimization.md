@@ -18,7 +18,7 @@ images through image optimizers, using default configurations.
 **Prerequisites**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
--  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
+-  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
 
 #### To enable Fastly IO:
 

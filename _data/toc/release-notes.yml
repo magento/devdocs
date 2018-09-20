@@ -22,6 +22,12 @@ pages:
       include_versions: ["2.2"]
       children:
 
+        - label: Magento Open Source 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6CE.html
+
+        - label: Magento Commerce 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6EE.html
+
         - label: Magento Open Source 2.2.5 Release Notes
           url: /release-notes/ReleaseNotes2.2.5CE.html
 
@@ -71,6 +77,9 @@ pages:
         - label: Magento Open Source 2.1.x Release Notes
           children:
 
+            - label: Magento Open Source 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15CE.html
+
             - label: Magento Open Source 2.1.14 Release Notes
               url: /release-notes/ReleaseNotes2.1.14CE.html
 
@@ -118,6 +127,9 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15EE.html
 
             - label: Magento Commerce 2.1.14 Release Notes
               url: /release-notes/ReleaseNotes2.1.14EE.html
