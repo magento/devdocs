@@ -10,7 +10,7 @@ functional_areas:
 ---
 
 <!-- Assigning liquid variables for placeholder valuesst
-{% assign base_url = "{{base_url}}" %}
+{% assign base_url = "{{base_url}}" %}<!--MAGECLOUD
 {% assign unsecure_base_url = "{{unsecure_base_url}}" %}
 -->
 
@@ -28,17 +28,17 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA-MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
+-  <!--MAGECLOUD-2372-->**Verify Ideal State**—The `ideal-state` wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.
 
--  JIRA-MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
+-  <!--MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
--  JIRA-MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
+-  <!--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
 
 #### Resolved Issues
 
 -  **Deployment fixes**
 
-    -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
+    -  <!--MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
 
     -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
@@ -48,21 +48,21 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
        -  Environment configuration contains incorrect values for deploy or cloud variables.
 
-       -  JIRA-MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
+       -  <!--MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
 	   
-    - JIRA-MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
+    - <!--MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
 
 -  **Cron-related fixes**
 
-   -  JIRA-MAGECLOUD-2602-->Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).
+   -  <!--MAGECLOUD-2602-->Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).
 
-   -  JIRA-MAGECLOUD--2537-->Fixed an issue in the deploy phase that allowed cron jobs to continue running during deployment, which can cause database locks and other critical issues. Now, all cron jobs are stopped before the deploy phase begins and restarted after the deployment completes.
+   -  <!--MAGECLOUD--2537-->Fixed an issue in the deploy phase that allowed cron jobs to continue running during deployment, which can cause database locks and other critical issues. Now, all cron jobs are stopped before the deploy phase begins and restarted after the deployment completes.
 
-   -  JIRA-MAGECLOUD-2501-->Fixed the cron job workflow in versions 2.2.x to unlock frozen cron jobs so that they can be stopped before beginning deployment. Previously, a frozen cron job caused the deployment to stall.
+   -  <!--MAGECLOUD-2501-->Fixed the cron job workflow in versions 2.2.x to unlock frozen cron jobs so that they can be stopped before beginning deployment. Previously, a frozen cron job caused the deployment to stall.
    
--  JIRA-MAGECLOUD-2527-->Changed the format of the `config.php` file generated by the `vendor/bin/ece-tools config:dump` command to use short array syntax and 4-space indentation to comply with Magento coding standards.
+-  <!--MAGECLOUD-2527-->Changed the format of the `config.php` file generated by the `vendor/bin/ece-tools config:dump` command to use short array syntax and 4-space indentation to comply with Magento coding standards.
 
--  JIRA-MAGECLOUD-2607-->Fixed a deployment error that occurs when the `.magento.env.yaml` contains `{{ base_url }}` and `{{ unsecure_base_url }}` placeholders for web configurations instead of the default URL configuration for a {{site.data.var.ece}} project.
+-  <!--MAGECLOUD-2607-->Fixed a deployment error that occurs when the `.magento.env.yaml` contains `{{ base_url }}` and `{{ unsecure_base_url }}` placeholders for web configurations instead of the default URL configuration for a {{site.data.var.ece}} project.
 
 
 ## v2002.0.13
