@@ -317,11 +317,7 @@ pages:
       url: /cloud/trouble/trouble.html
       children:
         - label: Troubleshoot deployment
-<<<<<<< HEAD
           url: /cloud/trouble/troubleshoot-deployment.html
-=======
-          url: /cloud/setup/trouble.html
->>>>>>> Removing access-acct files and adding setup folder
 
         - label: View logs for troubleshooting
           url: /cloud/trouble/environments-logs.html
