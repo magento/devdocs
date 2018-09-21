@@ -1562,15 +1562,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>When talking about testing in Magento 2, we have to distinguish between different test types.</p>
 
 <h2 id="functional">Functional</h2>
+
 <p>Functional tests are mainly used for system tests at a very high level by remote controlling a browser. Magento is treated as a black box, and tests happen from a user perspective.</p>
 
 <p>For more information, see the <a href="/guides/v2.3/mtf/mtf_introduction.html" target="_blank">Functional Testing Framework Guide</a>.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>We’ve released the new Magento Functional Testing Framework (MFTF) recently. <a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html" target="_blank">Check it out</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">We’ve released the new Magento Functional Testing Framework (MFTF) recently. <a href="/mftf/2.2/introduction.html" target="_blank">Check it out</a>.</p>
 
 <h2 id="api-functional">API Functional</h2>
+
 <p>The Web   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  testing framework enables you to test the Magento   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">Web API</span>
  from the client application point of view.</p>
@@ -1578,12 +1578,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For more information, see the <a href="/guides/v2.3/get-started/web-api-functional-testing.html" target="_blank">Web API functional testing</a>.</p>
 
 <h2 id="integration">Integration</h2>
+
 <p>Integration tests run Magento   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.</p>
 
 <p>For more information, see <a href="/guides/v2.3/test/integration/integration_test_execution.html" target="_blank">Running Integration Tests</a>.</p>
 
 <h2 id="javascript">JavaScript</h2>
+
 <p>Much of the functionality in Magento 2 is provided with the help of sophisticated   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
 . JavaScript tests ensure the   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  portion of Magento functions as expected.</p>
@@ -1591,11 +1593,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For more information, please see the <a href="/guides/v2.3/test/js/test_js-unit.html" target="_blank">Extension Developer Guide on JavaScript Tests</a>.</p>
 
 <h2 id="static">Static</h2>
+
 <p>Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the <code class="highlighter-rouge">bin/magento</code> tool.</p>
 
 <p>Please see the <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html" target="_blank"><code class="highlighter-rouge">magento dev:tests:run</code></a> documentation for more information, using the test type <code class="highlighter-rouge">static</code>.</p>
 
 <h2 id="unit">Unit</h2>
+
 <p>Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">test-driven development</a> (TDD).</p>
 
 <p>Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster then integration tests.</p>
