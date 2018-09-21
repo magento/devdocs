@@ -230,7 +230,7 @@ Previously, Magento displayed attributes with dropdown and multiple select types
 
 
 
-#### Import/Expoert
+#### Import/Export
 
 <!--- 91594 -->* Import now completes successfully when a product’s CSV entry is split over two import “bunches”.  Previously, Magento threw this error, `Cannot add or update a child row: a foreign key constraint fails`, and import failed. 
 
