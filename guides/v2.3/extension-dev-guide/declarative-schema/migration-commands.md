@@ -18,9 +18,15 @@ The Schema Listener tool listens for schema changes and attempts to change Magen
 To convert your install or upgrade script, run one of the following commands:
 
 ```bash
-magento setup:install --convert_old_scripts=1
-magento setup:upgrade --convert_old_scripts=1
+magento setup:install --convert-old-scripts=1
 ```
+
+```bash
+magento setup:upgrade --convert-old-scripts=1
+```
+
+{: .bs-callout .bs-callout-info }
+In Magento 2.3 Alpha, the `--convert-old-scripts` parameter was named `--convert_old_scripts`.
 
 ### Troubleshooting
 
@@ -38,13 +44,17 @@ Old data scripts cannot be converted automatically. The following steps help mak
 1. Generate a patch stub.
 
     ```bash
-    dev:generate:patch [options] <module-name> <patch-name>
+    setup:db-declaration:generate-patch [options] <module-name> <patch-name>
     ```
     where `[options]` can be any of the following:
 
     `--revertable[=true | false]` - Determines whether the patch is revertable. The default value is `false`.
 
     `--type[=<type>]` - Specifies what type of patch to generate. The default is `data`.
+
+    {: .bs-callout .bs-callout-info }
+    In Magento 2.3 Alpha, the `setup:db-declaration:generate-patch` command was named `dev:generate:patch`.
+
 
 2. All released modules that previously used upgrade scripts must support backward compatibility by implementing
 `\Magento\Setup\Model\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
@@ -66,13 +76,14 @@ As a result of specifying the `--dry-run=1` flag, Magento writes a log file at `
 
 The advantage and the main problem of declarative schema is that it can blindly modify the database schema. For example, a developer can make a mistake and potentially remove a structural element from the database, causing data loss.
 
-To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional--you do not have to create a manual dump during a system upgrade. _(But please note, that this works only with schema)_
+To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional--you do not have to create a manual dump during a system upgrade. _(Note that this works only with schema.)_
 
 Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
 `--safe-mode` - Creates a data dump during the installation or upgrade process.
 
 `--data-restore` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore`.
+
 
 Several types of operations have an effect on data dumps and rollbacks.
 
@@ -102,11 +113,15 @@ Backward compatibility must be maintained. Therefore, declarative schema does no
 The `<module_vendor>/<module_name/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
 
 ```bash
-magento declaration:generate:whitelist [options]
+magento setup:db-declaration:generate-whitelist [options]
 ```
-where:
+
+where `[options]` can be:
 
 `--module-name[=MODULE-NAME]` specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set `--module-name=all`.
+
+{: .bs-callout .bs-callout-info }
+In Magento 2.3 Alpha, the `setup:db-declaration:generate-whitelist` command was named `declaration:generate:whitelist`.
 
 As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the `db_schema.xml` file.
 
