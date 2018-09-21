@@ -3269,9 +3269,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To convert your install or upgrade script, run one of the following commands:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install <span class="nt">--convert_old_scripts</span><span class="o">=</span>1
-magento setup:upgrade <span class="nt">--convert_old_scripts</span><span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:install <span class="nt">--convert-old-scripts</span><span class="o">=</span>1
 </code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade <span class="nt">--convert-old-scripts</span><span class="o">=</span>1
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">--convert-old-scripts</code> parameter was named <code class="highlighter-rouge">--convert_old_scripts</code>.</p>
 
 <h3 id="troubleshooting">Troubleshooting</h3>
 
@@ -3292,13 +3296,15 @@ magento setup:upgrade <span class="nt">--convert_old_scripts</span><span class="
   <li>
     <p>Generate a patch stub.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> dev:generate:patch <span class="o">[</span>options] &lt;module-name&gt; &lt;patch-name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> setup:db-declaration:generate-patch <span class="o">[</span>options] &lt;module-name&gt; &lt;patch-name&gt;
 </code></pre></div>    </div>
     <p>where <code class="highlighter-rouge">[options]</code> can be any of the following:</p>
 
     <p><code class="highlighter-rouge">--revertable[=true | false]</code> - Determines whether the patch is revertable. The default value is <code class="highlighter-rouge">false</code>.</p>
 
     <p><code class="highlighter-rouge">--type[=&lt;type&gt;]</code> - Specifies what type of patch to generate. The default is <code class="highlighter-rouge">data</code>.</p>
+
+    <p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">setup:db-declaration:generate-patch</code> command was named <code class="highlighter-rouge">dev:generate:patch</code>.</p>
   </li>
   <li>
     <p>All released modules that previously used upgrade scripts must support backward compatibility by implementing
@@ -3322,7 +3328,7 @@ setup:upgrade <span class="nt">--dry-run</span><span class="o">=</span>1
 
 <p>The advantage and the main problem of declarative schema is that it can blindly modify the database schema. For example, a developer can make a mistake and potentially remove a structural element from the database, causing data loss.</p>
 
-<p>To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional–you do not have to create a manual dump during a system upgrade. <em>(But please note, that this works only with schema)</em></p>
+<p>To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional–you do not have to create a manual dump during a system upgrade. <em>(Note that this works only with schema.)</em></p>
 
 <p>Magento provides options to the <code class="highlighter-rouge">setup:install</code> and <code class="highlighter-rouge">setup:upgrade</code> commands that enable safe installations and rollbacks:</p>
 
@@ -3366,11 +3372,14 @@ setup:upgrade <span class="nt">--dry-run</span><span class="o">=</span>1
 
 <p>The <code class="highlighter-rouge">&lt;module_vendor&gt;/&lt;module_name/etc/db_schema_whitelist.json</code> file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento declaration:generate:whitelist <span class="o">[</span>options]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-declaration:generate-whitelist <span class="o">[</span>options]
 </code></pre></div></div>
-<p>where:</p>
+
+<p>where <code class="highlighter-rouge">[options]</code> can be:</p>
 
 <p><code class="highlighter-rouge">--module-name[=MODULE-NAME]</code> specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set <code class="highlighter-rouge">--module-name=all</code>.</p>
+
+<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">setup:db-declaration:generate-whitelist</code> command was named <code class="highlighter-rouge">declaration:generate:whitelist</code>.</p>
 
 <p>As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the <code class="highlighter-rouge">db_schema.xml</code> file.</p>
 
