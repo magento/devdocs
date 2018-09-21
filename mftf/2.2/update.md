@@ -26,7 +26,7 @@ To update the MFTF (via a command line interface):
 	```bash
 	cd dev/tests/acceptance
 	```
-1. Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the [Changelog](../changelog.html).
+1. Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the [Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md).
 1. Run `composer update` to get the latest framework version:
 
 	```bash

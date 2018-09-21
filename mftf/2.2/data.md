@@ -16,7 +16,7 @@ The following diagram shows the XML structure of an MFTF data object:
 
 {%include_relative img/data-dia.svg%}
 
-### Supply data to test by reference to a data entity
+### Supply data to test by reference to a data entity {#supply-data}
 {%raw%}
 Test steps requiring `<data>` input in an action, like filling a field with a string, may reference an attribute from a data entity:
 
@@ -40,7 +40,7 @@ In this example:
 * `_ENV` is a reference to the `dev/tests/acceptance/.env` file, where basic environment variables are set.
 * `MAGENTO_ADMIN_USERNAME` is a name of an environment variable. The corresponding value will be assigned to `userInput` as a result.
 
-### Persist a data entity as a prerequisite of a test
+### Persist a data entity as a prerequisite of a test {#persist-data}
 
 A test can specify an entity which should be persisted (created in the database) so that the test actions can operate on existing known data.
 
@@ -73,7 +73,7 @@ As they are relevant to test:
 * `$$persistedData.field$$` turns into `$this->persistedData.getData('field')`."
 %}
 
-### Use data returned by test actions
+### Use data returned by test actions {#use-returned-data}
 {%raw%}
 A test can also reference data that was returned as a result of [test actions](./test/actions.html#actions-returning-a-variable), like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
 

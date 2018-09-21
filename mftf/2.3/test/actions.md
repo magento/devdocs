@@ -30,7 +30,7 @@ This step can be referenced within the test using `conditionalClickStep1`.
 
 The value format should met the following principles:
 
-* Must be unique within [`<test>`](../test.html#test).
+* Must be unique within [`<test>`](../test.html#test-tag).
 * Naming should be as descriptive as possible:
   * Describe the action performed.
   * Briefly describe the purpose.
