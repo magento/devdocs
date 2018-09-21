@@ -18,7 +18,7 @@ You can set up [multiple websites and stores]({{ page.baseurl }}/cloud/project/p
 
 The following options, tools, and features can be set up and configured in your store:
 
-* [Fastly]({{ page.baseurl }}/cloud/cdn/fastly.html) for caching and CDN in Staging and Production environments
+* [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) for caching and CDN in Staging and Production environments
 * [cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) mo

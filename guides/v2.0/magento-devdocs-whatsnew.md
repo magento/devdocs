@@ -134,7 +134,7 @@ Updated Fastly troubleshooting and supported features for Magento Commerce (Clou
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 [Added guideline on mocking auto-generated factories in Unit tests]({{ site.baseurl }}/guides/v2.1/test/testing.html#unit)|2.0.x, 2.1.x|Updated|Oct 31
-Updated Magento Commerce (Cloud) content for Fastly including [Fastly]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html), [Set up Fastly]({{ site.baseurl }}/guides/v2.2/cdn/fastly.html), [Custom Fastly VCL snippets]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html), and [Troubleshoot Fastly]({{ site.baseurl }}/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 30
+Updated Magento Commerce (Cloud) content for Fastly including [Fastly]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html), [Set up Fastly]({{ site.baseurl }}/guides/v2.2/cdn/configure-fastly.html), [Custom Fastly VCL snippets]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html), and [Troubleshoot Fastly]({{ site.baseurl }}/guides/v2.2/cloud/trouble/trouble_fastly.html)|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 30
 Add [B2B module set up]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-b2b.html) information for Magento Commerce (Cloud)|2.2.x|New|Oct 27
 Update SSH tunneling info to Magento Commerce (Cloud) in [SSH and sFTP]({{ site.baseurl }}/guides/v2.2/cloud/env/environments-ssh.html) and [Manage branches with the CLI]({{ site.baseurl }}/guides/v2.2/cloud/env/environments-start.html).|2.0.x, 2.1.x, 2.2.x, 2.x|Updated|Oct 25
 Update database troubleshooting for Magento Commerce (Cloud) in Migrate and deploy static files and data for [2.1]({{ site.baseurl }}/guides/v2.1/cloud/live/stage-prod-migrate.html) and [2.2]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-migrate.html)|2.1.x, 2.2.x|Updated|Oct 24
@@ -445,7 +445,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
 | [How {{site.data.var.ece}} uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html){:target="_blank"}  | 2.x  |  New | Feb 17  |
 |  [Prohibit usage of DocBlock templates, add License Notice and Copyright]({{ page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}  | 2.x  |  Updated | Feb 11  |
-| [How to create a Fastly error or maintenance page]({{ page.baseurl }}/cloud/cdn/fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
+| [How to create a Fastly error or maintenance page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
 | [{{site.data.var.ece}} 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}  |  2.x | New  | Feb 7  |
 | [Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}  | 2.0.x  | New  | Feb 7  |
 | [Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
