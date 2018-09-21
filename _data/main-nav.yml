@@ -8,7 +8,7 @@
       url: /cloud/architecture/cloud-architecture.html
 
     - label: Local Development
-      url: /cloud/access-acct/first-time-setup.html
+      url: /cloud/setup/first-time-setup.html
 
     - label: Configure Environments
       url: /cloud/env/environments.html
