@@ -3,7 +3,7 @@ group: release-notes
 title: Component Status
 ---
 
-**Last Updated: September 12, 2018**
+**Last Updated: September 21, 2018**
 
 This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
 
@@ -21,7 +21,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Name                                           | Status                                    |
 | ---------------------------------------------- | ----------------------------------------- |
 | Module/ Catalog                                | <span class='status red'>Red</span>       |
-| Module/ Bundle                                 | <span class='status yellow'>Yellow</span> |
 | Module/ Checkout/ One Page Checkout            | <span class='status yellow'>Yellow</span> |
 | Module/ Cms/ CMS Content                       | <span class='status yellow'>Yellow</span> |
 | Module/ ConfigurableProduct                    | <span class='status yellow'>Yellow</span> |
@@ -66,6 +65,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Authorizenet                           | <span class='status green'>Green</span>   |
 | Module/ Backup                                 | <span class='status green'>Green</span>   |
 | Module/ Braintree                              | <span class='status green'>Green</span>   |
+| Module/ Bundle                                 | <span class='status green'>Green</span>   |
 | Module/ CacheInvalidate                        | <span class='status green'>Green</span>   |
 | Module/ Captcha                                | <span class='status green'>Green</span>   |
 | Module/ CatalogImportExport                    | <span class='status green'>Green</span>   |
