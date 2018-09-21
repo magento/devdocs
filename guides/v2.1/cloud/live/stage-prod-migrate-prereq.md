@@ -53,7 +53,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 
