@@ -65,7 +65,7 @@ You also have a few optional steps to help develop and test your code and store 
 * [Install sample data](#sample-data) to your store
 * [Pull production store data](#prod-data) down to environments
 
-This process assumes you would have your [local developer workspace]({{ page.baseurl }}/cloud/cdn/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
+This process assumes you would have your [local developer workspace]({{ page.baseurl }}/cloud/setup/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
 
 ### Clone and branch {#clone-branch}
 
