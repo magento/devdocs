@@ -361,7 +361,7 @@ In the example provided, this value is `Magento_Tinymce3/tinymce3Adapter` define
 
 `Magento\Tinymce3\Model\Config\Source\Wysiwyg\Editor`
 
-[`Magento\Cms\Model\Wysiwyg\Config`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Cms/Model/Wysiwyg/Config.php
+[`Magento\Cms\Model\Wysiwyg\Config`]: {{ site.mage2300url }}app/code/Magento/Cms/Model/Wysiwyg/Config.php
 [virtual type]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html#virtual-types
 [`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [Integrate third-party editors]: {{page.baseurl }}/ui_comp_guide/components/ui-wysiwyg.html#add-a-custom-editor
