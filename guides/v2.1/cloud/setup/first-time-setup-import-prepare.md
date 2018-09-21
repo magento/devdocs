@@ -1,13 +1,14 @@
 ---
 group: cloud-guide
 title: Prepare your existing Magento Commerce install
-functional_areas:
-  - Cloud
-  - Setup
 redirect_from:
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html
+functional_areas:
+  - Cloud
+  - Setup
+
 
 You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 
@@ -177,7 +178,7 @@ To edit `composer.json`:
 
 Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
-1.  Get the  integration system's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
+1.  Get the  integration system's [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh).
 2.  To back up media files, enter the following command:
 
         php <Magento Commerce install dir>/bin/magento setup:backup --media
@@ -199,7 +200,7 @@ To decrypt the encrypted data from your imported database, copy your encryption 
 2.  Search for the value of `key` in the `crypt` array.
 3.  Copy the value to the clipboard and save it.
 
-You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key).
+You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#encryption-key).
 
 ## Migrate Magento Commerce data {#migrate-db}
 
@@ -219,7 +220,7 @@ The following command example compresses the dump so it doesn't significantly in
 
         rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
 
-To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds).
+To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html)
+[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html)

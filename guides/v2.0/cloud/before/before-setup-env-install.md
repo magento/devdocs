@@ -171,6 +171,6 @@ With these steps completed, you should have:
 
 ## Next steps:
 
-For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html).
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
 
 For **Starter projects**, you are ready to start developing.

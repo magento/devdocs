@@ -34,7 +34,7 @@ You also have a few optional steps to help develop and test your code and your s
 * [Install sample data](#sample-data) to your store
 * [Pull production store data](#prod-data) down to environments
 
-This process assumes that you have set up your [local developer workspace]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
+This process assumes that you have set up your [local developer workspace]({{ page.baseurl }}/cloud/cdn/first-time-setup.html).
 
 ### Clone and branch {#clone-branch}
 
@@ -49,7 +49,7 @@ The first time you start working in branches for your Starter project, you need 
 
 Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a development branch created from the `staging` branch. You will have four active Integration environments available. When you push an active branch, one of these Integration environments automatically deploys your code to test.
 
-We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html) environment.
+We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/cdn/first-time-setup.html) environment.
 
 The format of the Git branch command is:
 

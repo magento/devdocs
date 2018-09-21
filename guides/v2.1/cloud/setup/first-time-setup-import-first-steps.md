@@ -12,11 +12,9 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.0/cloud/access-acct/first-time-setup_import-first-steps.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html
-
 functional_areas:
   - Cloud
   - Setup
@@ -29,7 +27,7 @@ You can create a {{site.data.var.ece}} project from a blank template or by impor
 Before you begin, do the following:
 
 -   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html).
--   Set up your [local development environment]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
+-   Set up your [local development environment]({{ page.baseurl }}/cloud/cdn/first-time-setup.html).
 -   Gather required information:
 
     -    [SSH access link](#ssh) to the target environment
@@ -88,10 +86,10 @@ Use the magento-cloud CLI tool to locate the base URL:
 The complete workflow for importing existing code includes the following steps:
 
 1.  If you do not have a project, create a new [project from a template](#cloud-import-proj). This new project has files and directories specific to {{site.data.var.ece}}.
-1.  [Replace the contents]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
-1.  [Import your Magento database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
-1.  [Import your static files]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#media) into your {{site.data.var.ece}} project.
-1.  Copy your {{site.data.var.ee}} [encryption key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
+1.  [Replace the contents]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html) of this project with your code using Git.
+1.  [Import your Magento database]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
+1.  [Import your static files]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#media) into your {{site.data.var.ece}} project.
+1.  Copy your {{site.data.var.ee}} [encryption key]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
 1.  Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and verify the project imported successfully.
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
@@ -123,4 +121,4 @@ The complete workflow for importing existing code includes the following steps:
 1.  After the project deploys, **Success** displays next to the name of your project.
 
 #### Next step
-[Prepare your existing Magento Commerce install]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html)
+[Prepare your existing Magento Commerce install]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html)

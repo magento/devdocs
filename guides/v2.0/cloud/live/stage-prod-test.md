@@ -38,7 +38,7 @@ Check the Magento configuration settings through the Admin panel including the B
 
 ## Check Fastly caching {#fastly}
 
-Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
+Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
@@ -83,7 +83,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 {: .bs-callout .bs-callout-warning }
 Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
 
-The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html).
+The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html).
 
 ## Complete UAT testing {#uat-testing}
 

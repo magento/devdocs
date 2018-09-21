@@ -14,7 +14,7 @@ functional_areas:
 
 This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git [branches and commits](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging){:target="_blank"} to effectively fix your branch. Additional information is linked as needed to help understand Git and {{site.data.var.ece}} builds and deployments.
 
-To review logs, see [Troubleshoot your deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
+To review logs, see [Troubleshoot your deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 
 ## Issues with installing patches {#patches}
 
@@ -77,6 +77,6 @@ You should have a successful build. At this point, If you have code commits, com
 
 #### Related topics
 
-* [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+* [First-time local environment setup]({{ page.baseurl }}/cloud/cdn/first-time-setup.html)
 * [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 * [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
