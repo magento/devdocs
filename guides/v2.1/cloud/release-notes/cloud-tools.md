@@ -34,7 +34,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  <!--MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
--  JIRA--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
+- <!--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
 
 
 #### Resolved Issues
