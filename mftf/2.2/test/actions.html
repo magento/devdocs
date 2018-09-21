@@ -1,0 +1,7132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Test actions | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+<script src="//assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/mftf/2.2/test/actions.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main"></button>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+
+      <!-- Main Navigation -->
+
+
+<ul class="nav-main" role="menubar">
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Cloud</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/bk-cloud.html">Cloud Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/architecture/cloud-architecture.html">Cloud Architecture</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/env/environments.html">Configure Environments</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/performance-best-practices/">Performance Best Practices</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/magento-release-information.html">Release Information</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Backend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/architecture/bk-architecture.html">Architecture</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">Frontend</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+          
+          
+            <div class="nav-section">
+              <div class="nav-section-title">API</div>
+              <ul>
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a>
+  </li>
+
+
+
+              
+                
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="https://developers.rjmetrics.com/">Magento BI Import REST API</a>
+  </li>
+
+
+
+              
+              </ul>
+            </div>
+          
+        
+      
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/mftf/2.2/introduction.html">Functional Acceptance Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-separator"></li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="http://omsdocs.magento.com/en/">Order Management</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+
+  
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    
+      <div class="nav-popup" role="menu" aria-hidden="true">
+
+      
+
+      
+        <ul>
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/rest/tutorials/index.html">Rest Tutorials</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/howdoi/customize_product.html">Customize Product Creation Form</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Customize Checkout</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/community/resources/support.html">Magento Support</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
+    <a href="/videos/">Video Tutorials</a>
+  </li>
+
+
+
+          
+        
+      </ul>
+      
+
+      </div>
+    
+
+  </li>
+  
+
+
+
+</ul><!-- /.nav-main -->
+    </div>
+
+    <div class="search-btn">
+      <button class="search-trigger search-icon"></button>
+    </div>
+
+    <form class="quick-search" action="/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <button class="quick-search-close">&times;</button>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+		
+		<h4 class="guide-title">Magento Functional Testing Framework Guide version 2.2</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/introduction.html">Introduction</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/getting-started.html">Getting started</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/suite.html">Suite</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/test.html">Test</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/test/annotations.html">Annotations</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class="active ">
+  
+    <a href="/mftf/2.2/test/actions.html">Actions</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/test/action-groups.html">Action groups</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/test/assertions.html">Assertions</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/page.html">Page</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/section.html">Section</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/section/parameterized-selectors.html">Parameterized selectors</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/section/locator-functions.html">Locator functions</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/data.html">Data</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/metadata.html">Metadata</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/merging.html">Merging</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/configuration.html">Configuration</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <span>CLI Commands</span>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/commands/robo.html">robo</a>
+  
+
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/commands/codeception.html">codecept</a>
+  
+
+  
+</li>
+
+
+
+      
+    </ul>
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/update.html">Update</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/best-practices.html">Best practices</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/troubleshooting.html">Troubleshooting</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/mftf/2.2/contribution-guidelines.html">Contribution Guidelines</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    	
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md">Changelog</a>
+  
+
+  
+</li>
+
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Test actions</h1>
+
+  
+
+
+</section>
+
+			
+<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+
+<p>Actions in the MFTF allow you to automate different scenarios of Magento user’s actions.
+They are mostly XML implementations of <a href="http://codeception.com/docs/modules/WebDriver#Actions">Codeception actions</a>.
+Some actions drive browser elements, while others use REST APIs.</p>
+
+<h2 id="common-attributes">Common attributes</h2>
+
+<p>All <code class="highlighter-rouge">&lt;actions&gt;</code> contain the following attributes that are useful for merging needs.</p>
+
+<h3 id="stepkey"><code class="highlighter-rouge">stepKey</code></h3>
+
+<p><code class="highlighter-rouge">stepKey</code> is a required attribute that stores a unique identifier of the action.</p>
+
+<p>Example test step of the <code class="highlighter-rouge">myAction</code> action with the <code class="highlighter-rouge">conditionalClickStep1</code> identifier:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">stepKey=</span><span class="s">"conditionalClickStep1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This step can be referenced within the test using <code class="highlighter-rouge">conditionalClickStep1</code>.</p>
+
+<p>The value format should met the following principles:</p>
+
+<ul>
+  <li>Must be unique within <a href="../test.html#test"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</li>
+  <li>Naming should be as descriptive as possible:
+    <ul>
+      <li>Describe the action performed.</li>
+      <li>Briefly describe the purpose.</li>
+      <li>Describe which data is in use.</li>
+    </ul>
+  </li>
+  <li>Should be in camelCase with lowercase first letter.</li>
+  <li>Should be the last attribute of an element.</li>
+</ul>
+
+<hr />
+
+<h3 id="before-and-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code></h3>
+
+<p><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> are optional attributes that insert the action into the test while merging. The action will be executed before or after the one set in these attributes. The value here is the <code class="highlighter-rouge">stepKey</code> of reference action.</p>
+
+<p>Example with <code class="highlighter-rouge">before</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">before=</span><span class="s">"fillField"</span> <span class="na">stepKey=</span><span class="s">"conditionalClickStep1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">myAction</code> will be executed before the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
+
+<p>Example with <code class="highlighter-rouge">after</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;myAction</span> <span class="na">after=</span><span class="s">"fillField"</span> <span class="na">stepKey=</span><span class="s">"seeResult"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">myAction</code> will be executed after the action, which has <code class="highlighter-rouge">stepKey="fillField"</code>.</p>
+
+<h2 id="example">Example</h2>
+
+<p>The following example contains four actions:</p>
+
+<ol>
+  <li><a href="#example-step1">Open the Sign In page for a Customer</a>.</li>
+  <li><a href="#example-step2">Enter a customer’s email</a>.</li>
+  <li><a href="#example-step3">Enter a customer’s password</a>.</li>
+  <li>
+    <p><a href="#example-step4">Click the Sign In button</a>.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="example-step1">1. Open the Sign In page for a customer</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The Customer Sign In page is declared in the <code class="highlighter-rouge">.../Customer/Page/StorefrontCustomerSignInPage.xml</code> file.
+The given relative URI is declared in <code class="highlighter-rouge">StorefrontCustomerSignInPage.url</code>.</p>
+
+<p>Source code (<code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> ):</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInPage"</span> <span class="na">url=</span><span class="s">"/customer/account/login/"</span> <span class="na">module=</span><span class="s">"Magento_Customer"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInFormSection"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<p><a href="#amonpage"><code class="highlighter-rouge">&lt;amOnPage&gt;</code></a> is an action that opens a page for a given URI. It has a key <code class="highlighter-rouge">"amOnSignInPage"</code> that will be used as a reference for merging needs in other modules.
+This action uses the <code class="highlighter-rouge">url</code> attribute value for the given relative URI to open a browser page.
+Here, <code class="highlighter-rouge">url</code> contains a pointer to a <code class="highlighter-rouge">url</code> attribute of the <code class="highlighter-rouge">StorefrontCustomerSignInPage</code>.</p>
+
+<h3 id="example-step2">2. Enter a customer’s email</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p><a href="#fillfield"><code class="highlighter-rouge">&lt;fillField&gt;</code></a> fills a text field with the given string.</p>
+
+<p>The customer’s email is stored in the <code class="highlighter-rouge">email</code> parameter of the <code class="highlighter-rouge">customer</code> entity created somewhere earlier in the test using a <a href="#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a> tag.
+<code class="highlighter-rouge">userInput</code> points to that data.</p>
+
+<p><code class="highlighter-rouge">selector</code> points to the field where you enter the data.
+A required selector is stored in the <code class="highlighter-rouge">emailField</code> element of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code> section.</p>
+
+<p id="section-code">This section is declared in <code class="highlighter-rouge">.../Customer/Section/StorefrontCustomerSignInFormSection.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInFormSection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"emailField"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#email"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"passwordField"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#pass"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"signInAccountButton"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">selector=</span><span class="s">"#send2"</span> <span class="na">timeout=</span><span class="s">"30"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h3 id="example-step3">3. Enter a customer’s password</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>This <code class="highlighter-rouge">&lt;action&gt;</code> is very similar to the <code class="highlighter-rouge">&lt;action&gt;</code> in a previous step.
+The only difference is that different data is assigned to the attributes, which set a field with a password.</p>
+
+<h3 id="example-step4">4. Click the Sign In button</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Here, <a href="#click"><code class="highlighter-rouge">&lt;click&gt;</code></a> performs a click on a button that can be found by the selector that is stored in the <code class="highlighter-rouge">signInAccountButton</code> of the <code class="highlighter-rouge">StorefrontCustomerSignInFormSection</code>.
+See the <code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> file code in <a href="#section-code">step 2</a>
+.</p>
+
+<h2 id="actions-returning-a-variable">Actions returning a variable</h2>
+
+<p>The following test actions return a variable:</p>
+
+<ul>
+  <li><a href="#grabattributefrom">grabAttributeFrom</a></li>
+  <li><a href="#grabcookie">grabCookie</a></li>
+  <li><a href="#grabfromcurrenturl">grabFromCurrentUrl</a></li>
+  <li><a href="#grabmultiple">grabMultiple</a></li>
+  <li><a href="#grabpagesource">grabPageSource</a></li>
+  <li><a href="#grabtextfrom">grabTextFrom</a></li>
+  <li><a href="#grabvaluefrom">grabValueFrom</a></li>
+  <li><a href="#executejs">executeJS</a></li>
+</ul>
+
+<p>Learn more in <a href="../data.html#use-data-returned-by-test-actions">Using data returned by test actions</a>.</p>
+
+<h2 id="actions-handling-data-entities">Actions handling data entities</h2>
+
+<p>The following test actions handle data entities using <a href="../metadata.html">metadata</a>:</p>
+
+<ul>
+  <li><a href="#createData">createData</a></li>
+  <li><a href="#deleteData">deleteData</a></li>
+  <li><a href="#updateData">updateData</a></li>
+  <li><a href="#getData">getData</a></li>
+</ul>
+
+<p>Learn more in <a href="../metadata.html#rest-response">Handling a REST API response</a>.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>The following list contains reference documentation about all action elements available in the MFTF.
+If the description of an element does not include a link to Codeception analogue, it means that the action is developed by Magento for specific MFTF needs.</p>
+
+<h3 id="acceptpopup">acceptPopup</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#acceptPopup" target="_blank">acceptPopup docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="amonpage">amOnPage</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnPage" target="_blank">amOnPage docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="amonsubdomain">amOnSubdomain</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnSubdomain" target="_blank">amOnSubdomain docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="amonurl">amOnUrl</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#amOnUrl" target="_blank">amOnUrl docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="appendfield">appendField</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#appendField" target="_blank">appendField docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="attachfile">attachFile</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#attachFile" target="_blank">attachFile docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>The selector identifying the corresponding HTML element (<code class="highlighter-rouge">&lt;input type="file"&gt;</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>The name of attaching file. The file must be placed in the <code class="highlighter-rouge">tests/_data</code> directory.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="cancelpopup">cancelPopup</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#cancelPopup" target="_blank">cancelPopup docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="checkoption">checkOption</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#checkOption" target="_blank">checkOption docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clearfield">clearField</h3>
+
+<p>Clears a text input field.
+Equivalent to using <a href="#fillfield"><code class="highlighter-rouge">&lt;fillField&gt;</code></a> with an empty string.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="click">click</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#click" target="_blank">click docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clickwithleftbutton">clickWithLeftButton</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#clickWithLeftButton" target="_blank">clickWithLeftButton docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">x</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">y</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clickwithrightbutton">clickWithRightButton</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#clickWithRightButton">clickWithRightButton docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">x</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">y</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="closeadminnotification">closeAdminNotification</h3>
+
+<p>Remove from the DOM all elements with the CSS classes <code class="highlighter-rouge">.modal-popup</code> or <code class="highlighter-rouge">.modals-overlay</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="closetab">closeTab</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#closeTab" target="_blank">closeTab docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="comment">comment</h3>
+
+<p>Allows input of a string as a PHP code comment.
+This tag is not executed.
+It is intended to aid documentation and clarity of tests.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>PHP comment that will be written in generated test file.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="conditionalclick">conditionalClick</h3>
+
+<p>Conditionally click on an element if, and only if, another element is visible or not.</p>
+
+<p>For example, to click on <code class="highlighter-rouge">#foo</code> if <code class="highlighter-rouge">#bar</code> is visible:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;conditionalClick</span> <span class="na">selector=</span><span class="s">"#foo"</span> <span class="na">dependentSelector=</span><span class="s">"#bar"</span> <span class="na">visible=</span><span class="s">"true"</span> <span class="na">stepKey=</span><span class="s">"click1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">dependentSelector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">visible</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="createdata">createData</h3>
+
+<p>Create an entity (for example, a category or product). In other words, make a <code class="highlighter-rouge">POST</code> request
+to the Magento API according to the data and metadata of the entity to be created.</p>
+
+<p>For example, you can create the entity with the name “SampleProduct”:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createSampleProduct"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">entity</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This action can optionally contain one or more <code class="highlighter-rouge">requiredEntity</code> child elements.</p>
+
+<h4 id="requiredentity">requiredEntity</h4>
+
+<p>Specify relationships amongst data to be created. For example, a complex Product
+object may contain within it a pointer (an ID) to a complex Category object.</p>
+
+<p>For example, first we create a category, then we create a product in that category
+by indicating the relationship.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleCategory"</span> <span class="na">stepKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;requiredEntity</span> <span class="na">createDataKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/createData&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="field">field</h4>
+
+<p>Specify a custom field you’d like persisted to Magento (as a part of the entity) which will overwrite any other declaration in static data. This field will only replace at a top level (nested values such as custom attributes or extension attributes will not be replaceable via this annotation).</p>
+
+<p>For example, to overwrite the <code class="highlighter-rouge">name</code> field in a particular product specify a field element during its creation.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleProduct"</span> <span class="na">stepKey=</span><span class="s">"createProduct"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">key=</span><span class="s">"name"</span><span class="nt">&gt;</span>myCustomProductName<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/createData&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Name of the field to be replaced or added.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="deletedata">deleteData</h3>
+
+<p>Delete an entity that was previously created.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Reference to <code class="highlighter-rouge">stepKey</code> of the <code class="highlighter-rouge">createData</code> action .</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>REST API route to send a DELETE request.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-of-persisted-data-deletion">Example of persisted data deletion</h4>
+
+<p>Delete the entity that was previously created using <a href="#createdata"><code class="highlighter-rouge">createData</code></a> in the scope of the <a href="../test.html#test-tag">test</a>.</p>
+
+<ol>
+  <li>Create <em>SampleCategory</em>:</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"SampleCategory"</span> <span class="na">stepKey=</span><span class="s">"createCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Delete <em>SampleCategory</em>:</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;deleteData</span> <span class="na">createDataKey=</span><span class="s">"createCategory"</span> <span class="na">stepKey=</span><span class="s">"deleteCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h4 id="example-of-existing-data-deletion">Example of existing data deletion</h4>
+
+<p>Delete an entity using <a href="/guides/v2.2/rest/bk-rest.html">REST API</a> request to the corresponding route:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;grabFromCurrentUrl</span> <span class="na">regex=</span><span class="s">"categories/id\/([\d]+)/"</span> <span class="na">stepKey=</span><span class="s">"grabId"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;deleteData</span> <span class="na">url=</span><span class="s">"V1/categories/{$grabId}"</span> <span class="na">stepKey=</span><span class="s">"deleteCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="dontsee">dontSee</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSee" target="_blank">the codeception.com documentation for more information about this action</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseecheckboxischecked">dontSeeCheckboxIsChecked</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked" target="_blank">dontSeeCheckboxIsChecked docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseecookie">dontSeeCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCookie" target="_blank">dontSeeCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseecurrenturlequals">dontSeeCurrentUrlEquals</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals" target="_blank">dontSeeCurrentUrlEquals docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseecurrenturlmatches">dontSeeCurrentUrlMatches</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlMatches" target="_blank">dontSeeCurrentUrlMatches docs on codeception.com</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">regex</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Regular expression against the current URI.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeelement">dontSeeElement</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeElement" target="_blank">dontSeeElement docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeelementindom">dontSeeElementInDOM</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeElementInDOM" target="_blank">dontSeeElementInDOM docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">attributeArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeincurrenturl">dontSeeInCurrentUrl</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl" target="_blank">dontSeeInCurrentUrl docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeinfield">dontSeeInField</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInField" target="_blank">dontSeeInField docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeinformfields">dontSeeInFormFields</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields" target="_blank">dontSeeInFormFields docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeinpagesource">dontSeeInPageSource</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource" target="_blank">dontSeeInPageSource docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeinsource">dontSeeInSource</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInSource" target="_blank">dontSeeInSource docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">html</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeintitle">dontSeeInTitle</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeInTitle" target="_blank">dontSeeInTitle docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseejserror">dontSeeJsError</h3>
+
+<p>Ensure that there are no JavaScript errors.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseelink">dontSeeLink</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeLink" target="_blank">dontSeeLink docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dontseeoptionisselected">dontSeeOptionIsSelected</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected" target="_blank">dontSeeOptionIsSelected docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="doubleclick">doubleClick</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#doubleClick" target="_blank">doubleClick docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="draganddrop">dragAndDrop</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#dragAndDrop" target="_blank">dragAndDrop docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector1</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A selector for the HTML element to drag.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selector2</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A selector for the HTML element to drop onto.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">x</code></td>
+      <td>int</td>
+      <td>optional</td>
+      <td>X offset applied to drag-and-drop destination.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">y</code></td>
+      <td>int</td>
+      <td>optional</td>
+      <td>Y offset applied to drag-and-drop destination.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="executeinselenium">executeInSelenium</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#executeInSelenium" target="_blank">executeInSelenium docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">function</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="executejs">executeJS</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#executeJS" target="_blank">executeJS docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">function</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fillfield">fillField</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#fillField" target="_blank">fillField docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="formatmoney">formatMoney</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">locale</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="getdata">getData</h3>
+
+<p>Gets an entity (for example, a category, the Magento API according to the data and metadata of the entity type that is requested.</p>
+
+<p>For example, using <code class="highlighter-rouge">getData</code> in a test looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;getData</span> <span class="na">entity=</span><span class="s">"ProductAttributeOptionGetter"</span> <span class="na">index=</span><span class="s">"1"</span> <span class="na">stepKey=</span><span class="s">"getAttributeOption1Handle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;requiredEntity</span> <span class="na">createDataKey=</span><span class="s">"productAttributeHandle"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/getData&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">ProductAttributeOptionGetter</code> entity must be defined in the corresponding <a href="../data.html">data <code class="highlighter-rouge">*.xml</code></a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">index</code></td>
+      <td>integer</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">entity</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This action can optionally contain one or more <a href="#requiredentity">requiredEntity</a> child elements.</p>
+
+<h3 id="grabattributefrom">grabAttributeFrom</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabAttributeFrom" target="_blank">grabAttributeFrom docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabcookie">grabCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabCookie" target="_blank">grabCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabfromcurrenturl">grabFromCurrentUrl</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl" target="_blank">grabFromCurrentUrl docs on codeception.com</a>..</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">regex</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Regular expression against the current URI.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabmultiple">grabMultiple</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabMultiple" target="_blank">grabMultiple docs on codeception.com</a>..</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabpagesource">grabPageSource</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabPageSource" target="_blank">grabPageSource docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabtextfrom">grabTextFrom</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabTextFrom" target="_blank">grabTextFrom docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="grabvaluefrom">grabValueFrom</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#grabValueFrom" target="_blank">grabValueFrom docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="loadsessionsnapshot">loadSessionSnapshot</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot" target="_blank">loadSessionSnapshot docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="magentocli">magentoCLI</h3>
+
+<p>Specifies a CLI command to execute in a Magento environment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">command</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>CLI command to be executed in Magento environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="makescreenshot">makeScreenshot</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#makeScreenshot" target="_blank">makeScreenshot docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="maximizewindow">maximizeWindow</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#maximizeWindow" target="_blank">maximizeWindow docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="moveback">moveBack</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveBack" target="_blank">moveBack docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="moveforward">moveForward</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveForward" target="_blank">moveForward docs on codeception.com</a>..</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="movemouseover">moveMouseOver</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#moveMouseOver" target="_blank">moveMouseOver docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">x</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">y</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="msetlocale">mSetLocale</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">locale</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mresetlocale">mResetLocale</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="opennewtab">openNewTab</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#openNewTab" target="_blank">openNewTab docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="parsefloat">parseFloat</h3>
+
+<p>Parses float number with thousands separator.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pauseexecution">pauseExecution</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#pauseExecution" target="_blank">pauseExecution docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="performon">performOn</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#performOn" target="_blank">performOn docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">function</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="presskey">pressKey</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#pressKey" target="_blank">pressKey docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="reloadpage">reloadPage</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#reloadPage" target="_blank">reloadPage docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="remove">remove</h3>
+
+<p>Removes action by its <code class="highlighter-rouge">stepKey</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">keyForRemoval</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Set <code class="highlighter-rouge">stepKey</code> of the action you want to remove.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resetcookie">resetCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#resetCookie" target="_blank">resetCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="resizewindow">resizeWindow</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#resizeWindow" target="_blank">resizeWindow docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">width</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">height</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="savesessionsnapshot">saveSessionSnapshot</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot" target="_blank">saveSessionSnapshot docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="scrollto">scrollTo</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#scrollTo" target="_blank">scrollTo docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">x</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">y</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="scrolltotopofpage">scrollToTopOfPage</h3>
+
+<p>A convenience function that executes <code class="highlighter-rouge">window.scrollTo(0,0)</code> as JavaScript, thus returning to the top of the page.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="searchandmultiselectoption">searchAndMultiSelectOption</h3>
+
+<p>Search for and select options from a Magento multi-select drop-down menu.
+For example, the drop-down menu you use to assign Products to Categories.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>The selector of a multi select HTML element (drop-down menu).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>array</td>
+      <td>required</td>
+      <td>Items to search and select in the selected drop-down menu.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">requiredAction</code></td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>Clicks <strong>Done</strong> after selections if <code class="highlighter-rouge">true</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;searchAndMultiSelectOption</span> <span class="na">selector=</span><span class="s">"#stuff"</span> <span class="na">parameterArray=</span><span class="s">"['Item 1', 'Item 2']"</span> <span class="na">stepKey=</span><span class="s">"searchAndMultiSelect1"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>On this test step the MFTF:</p>
+<ol>
+  <li>Searches for a drop-down HTML element that matches the <code class="highlighter-rouge">#stuff</code> selector.</li>
+  <li>Opens the drop-down menu.</li>
+  <li>Enters <strong>Item 1</strong> in a search field of the drop-down element.</li>
+  <li>Selects first element from the filtered results.</li>
+  <li>Enters <strong>Item 2</strong> in a search field of the drop-down element.</li>
+  <li>Selects first element from the filtered results.</li>
+</ol>
+
+<h3 id="see">see</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#see" target="_blank">see docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seecheckboxischecked">seeCheckboxIsChecked</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked" target="_blank">seeCheckboxIsChecked docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seecookie">seeCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCookie" target="_blank">seeCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seecurrenturlequals">seeCurrentUrlEquals</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals" target="_blank">seeCurrentUrlEquals docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seecurrenturlmatches">seeCurrentUrlMatches</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches" target="_blank">seeCurrentUrlMatches docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">regex</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Regular expression against the current URI.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeelement">seeElement</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeElement" target="_blank">seeElement docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeelementindom">seeElementInDOM</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeElementInDOM" target="_blank">seeElementInDOM docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeincurrenturl">seeInCurrentUrl</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl" target="_blank">seeInCurrentUrl docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeinfield">seeInField</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInField" target="_blank">seeInField docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeinformfields">seeInFormFields</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInFormFields" target="_blank">seeInFormFields docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeinpagesource">seeInPageSource</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInPageSource" target="_blank">seeInPageSource docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">html</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeinpopup">seeInPopup</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInPopup" target="_blank">seeInPopup docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeinsource">seeInSource</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInSource" target="_blank">seeInSource docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">html</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeintitle">seeInTitle</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeInTitle" target="_blank">seeInTitle docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seelink">seeLink</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeLink" target="_blank">seeLink docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seenumberofelements">seeNumberOfElements</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeNumberOfElements" target="_blank">seeNumberOfElements docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="seeoptionisselected">seeOptionIsSelected</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected" target="_blank">seeOptionIsSelected docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="selectoption">selectOption</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#selectOption" target="_blank">selectOption docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="selectmultipleoptions">selectMultipleOptions</h3>
+
+<p>Selects all given options in the given Magento drop-down element.</p>
+
+<p>Example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;selectMultipleOptions</span> <span class="na">filterSelector=</span><span class="s">".filter"</span> <span class="na">optionSelector=</span><span class="s">".option"</span> <span class="na">stepKey=</span><span class="s">"selectMultipleOpts1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;array&gt;</span>['opt1', 'opt2']<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/selectMultipleOptions&gt;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">filterSelector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>The selector for the text filter field.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">optionSelector</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>The selector used to select the corresponding options based on the filter field.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It contains a child element <code class="highlighter-rouge">&lt;array&gt;</code> where you specify the options that must be selected using an array format like <code class="highlighter-rouge">['opt1', 'opt2']</code>.
+See the previous example.</p>
+
+<h3 id="setcookie">setCookie</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#setCookie" target="_blank">setCookie docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="submitform">submitForm</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#submitForm" target="_blank">submitForm docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">button</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switchtoiframe">switchToIFrame</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToIFrame" target="_blank">switchToIFrame docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switchtonexttab">switchToNextTab</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToNextTab" target="_blank">switchToNextTab docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switchtoprevioustab">switchToPreviousTab</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToPreviousTab" target="_blank">switchToPreviousTab docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="switchtowindow">switchToWindow</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#switchToWindow" target="_blank">switchToWindow docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="typeinpopup">typeInPopup</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#typeInPopup" target="_blank">typeInPopup docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="uncheckoption">uncheckOption</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#uncheckOption" target="_blank">uncheckOption docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="unselectoption">unselectOption</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#unselectOption" target="_blank">unselectOption docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">parameterArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="updatedata">updateData</h3>
+
+<p>When you create a data entity using <code class="highlighter-rouge">createData</code>, you may need to update it later in the test.
+The <code class="highlighter-rouge">updateData</code> action allows this.</p>
+
+<p>For example, to change the price of a product:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;updateData</span> <span class="na">entity=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">createDataKey=</span><span class="s">"productHandle"</span> <span class="na">stepKey=</span><span class="s">"updateProduct"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Where <code class="highlighter-rouge">AdjustPriceProduct</code> simply looks like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"AdjustPriceProduct"</span> <span class="na">type=</span><span class="s">"product"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"price"</span><span class="nt">&gt;</span>321.00<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/entity&gt;</span>
+</code></pre></div></div>
+
+<p>Only the fields that you want to update are set.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">storeCode</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">entity</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">createDataKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This action can optionally contain one or more <a href="#requiredentity">requiredEntity</a> child elements.</p>
+
+<h3 id="wait">wait</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#wait" target="_blank">wait docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforajaxload">waitForAjaxLoad</h3>
+
+<p>Wait for all AJAX calls to finish.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforelementchange">waitForElementChange</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementChange" target="_blank">waitForElementChange docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">function</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforelement">waitForElement</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElement" target="_blank">waitForElement docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforelementnotvisible">waitForElementNotVisible</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementNotVisible" target="_blank">waitForElementNotVisible docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforelementvisible">waitForElementVisible</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForElementVisible" target="_blank">waitForElementVisible docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforjs">waitForJS</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForJS" target="_blank">waitForJS docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">function</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforloadingmasktodisappear">waitForLoadingMaskToDisappear</h3>
+
+<p>Wait for all Magento loading overlays to disappear.</p>
+
+<p class="bs-callout bs-callout-info">The CSS class for loading masks is not used consistently throughout Magento. Therefore, this convenience function tries to wait for various specific selectors.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Wait for these classes to not be visible
+</span>
+//<span class="n">div</span>[<span class="n">contains</span>(@<span class="n">class</span>, <span class="s2">"loading-mask"</span>)]
+//<span class="n">div</span>[<span class="n">contains</span>(@<span class="n">class</span>, <span class="s2">"admin_data-grid-loading-mask"</span>)]
+//<span class="n">div</span>[<span class="n">contains</span>(@<span class="n">class</span>, <span class="s2">"admin__data-grid-loading-mask"</span>)]
+//<span class="n">div</span>[<span class="n">contains</span>(@<span class="n">class</span>, <span class="s2">"admin__form-loading-mask"</span>)]
+//<span class="n">div</span>[@<span class="n">data</span>-<span class="n">role</span>=<span class="s2">"spinner"</span>]
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitforpageload">waitForPageLoad</h3>
+
+<p>Wait for AJAX, Magento loading overlays, and <code class="highlighter-rouge">document.readyState == "complete"</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="waitfortext">waitForText</h3>
+
+<p>See <a href="http://codeception.com/docs/modules/WebDriver#waitForText" target="_blank">waitForText docs on codeception.com</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">time</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/magento2-functional-testing-framework/tree/develop/mftf/2.2/test/actions.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/magento2-functional-testing-framework/issues/new?title=Feedback on page: /mftf/2.2/test/actions.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+
+</body>
+</html>
+
