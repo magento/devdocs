@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.6 Release Notes
 
 ---
 
-*Patch code and release notes were published on September 18, 2018.*
+*Patch code and release notes were published on September 18, 2018 and last revised September 21.*
 
 
 We are pleased to present Magento Open Source 2.2.6. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
@@ -161,15 +161,6 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 #### Magento Shipping
 
 
-* The **Click & Collect** feature offers merchants the ability to:
-
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations and stores 
-
-	* Configure source locations available for Click & Collect pick-ups
-
-	* Updates to Shipment Form for UPS (US only)
-
-Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
 * **Batch Processing** provides merchants with the ability to 
 
