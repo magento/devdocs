@@ -57,4 +57,4 @@ The following steps walk-through preparing your local environment, installing Ma
 * [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 * [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html)
 
-If you have existing Magento custom code, we provide instructions to import. For more information, see [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-first-steps.html).
+If you have existing Magento custom code, we provide instructions to import. For more information, see [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html).

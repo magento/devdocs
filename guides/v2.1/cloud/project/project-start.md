@@ -16,7 +16,7 @@ File | Description
 `.gitignore` | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring-files).
 `.magento.app.yaml` | Configuration file that defines the properties to build your application. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `.magento.env.yaml` | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
-`composer.json` | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html).
+`composer.json` | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 `composer.lock` | Stores version dependencies for every package.
 `magento-vars.php` | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 

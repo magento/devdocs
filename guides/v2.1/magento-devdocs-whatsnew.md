@@ -426,8 +426,8 @@ Description  | Versions applied to  | New or Updated | Date
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Import Magento EE into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
-| [Prepare your existing Magento EE system]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Import Magento EE into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Prepare your existing Magento EE system]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
 | [Resolve issues with encryption key]({{ page.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"} | 2.0, 2.1, 2.2 |  New | June 29  |
 | [Go live]({{ page.baseurl }}/cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
 | [Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
@@ -577,7 +577,7 @@ Description  | Versions applied to  | New or Updated | Date
 |  [Community contribution to adding attributes to an entity]({{ page.baseurl }}/extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |
 | [Tutorial on copying fieldsets](ext-best-practices/tutorials/copy-fieldsets.html){:target="_blank"} | 2.x | New | Mar 9 |
 |  [Backward incompatible changes now includes Magento 2.0.x, added tables]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html){:target="_blank"} |  2.x |  Updated |  Mar 9 |
-| [Import a Magento EE project into {{site.data.var.ece}} (MECE)]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-first-steps.html){:target="_blank"}  | 2.x  |  New | Mar 1  |
+| [Import a Magento EE project into {{site.data.var.ece}} (MECE)]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html){:target="_blank"}  | 2.x  |  New | Mar 1  |
 | [MECE configuration management]({{ site.gdeurl21 }}cloud/live/sens-data-over.html){:target="_blank"}  | 2.1.x  |  New |  Mar 3 |
 | [Reorganize and update how to get started with an MECE environment]({{ page.baseurl }}/cloud/before/before-setup-env-1_get-start.html){:target="_blank"}  | 2.x  |  Updated |  Mar 3 |
 | [Reorganize and correct issues with MECE workspace]({{ page.baseurl }}/cloud/before/before-workspace.html){:target="_blank"} | 2.x  | Updated  |  Mar 2 |

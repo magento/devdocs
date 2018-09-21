@@ -77,6 +77,6 @@ You should have a successful build. At this point, If you have code commits, com
 
 #### Related topics
 
-* [First-time local environment setup]({{ page.baseurl }}/cloud/cdn/first-time-setup.html)
+* [First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 * [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 * [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)

@@ -198,7 +198,7 @@ To decrypt the encrypted data from your imported database, copy your encryption 
 2.  Search for the value of `key` in the `crypt` array.
 3.  Copy the value to the clipboard and save it.
 
-You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#encryption-key).
+You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
 ## Migrate Magento Commerce data {#migrate-db}
 
@@ -221,4 +221,4 @@ The following command example compresses the dump so it doesn't significantly in
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html)
+[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)

@@ -25,7 +25,7 @@ Before you continue, make sure there is nothing in your {{site.data.var.ece}} pr
 
 ## Required information
 
-Before you continue, make sure you have the [encryption key]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system.
+Before you continue, make sure you have the [encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system.
 
 ## Create a remote Git reference {#cloud-import-ref}
 
@@ -227,7 +227,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 
 The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
-You copied the key in a [previous step]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html#encryption-key).
+You copied the key in a [previous step]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
 To add your {{site.data.var.ee}} encryption key:
 
@@ -238,7 +238,7 @@ To add your {{site.data.var.ee}} encryption key:
     ```
 
 1.  Open `app/etc/env.php` in a text editor.
-1.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html#encryption-key).
+1.  Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
     ```php
     return array (

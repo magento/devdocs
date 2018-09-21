@@ -257,6 +257,6 @@ For more information, see [Continuous integration]({{ page.baseurl }}/cloud/depl
 
 #### Related topics
 
-*	[First-time local environment setup]({{ page.baseurl }}/cloud/cdn/first-time-setup.html)
+*	[First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 *	[Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)

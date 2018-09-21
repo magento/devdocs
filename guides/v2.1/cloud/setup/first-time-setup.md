@@ -51,4 +51,4 @@ You can manually add a virtual machine (VM) and install {{site.data.var.ee}}. Th
 1.  [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 1.  [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html)
 
-You can import existing Magento custom code. See [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-first-steps.html).
+You can import existing Magento custom code. See [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html).

@@ -16,7 +16,7 @@ For a new Starter project, the Magento encryption key is on your `master` branch
 
 For a new Pro project starting with a "blank site" {{site.data.var.ece}} template, the Magento encryption key is on the Integration `master` branch and environment until you [initially deploy]({{ page.baseurl }}/cloud/setup/first-time-deploy.html) across all environments.
 
-If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html#encryption-key) and [deploy it]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-import.html#encryption-key) to the environments.
+If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key) and [deploy it]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key) to the environments.
 
 ### Encryption key not in all environments {#cloud-trouble-nocrypt}
 
@@ -28,7 +28,7 @@ To verify and update the encryption key environment variable:
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
-3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/cdn/first-time-setup-import-prepare.html#encryption-key).
+3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
         {% highlight php startinline=true %}
         return array (
