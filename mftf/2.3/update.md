@@ -24,7 +24,7 @@ This ensures that the MFTF is up to date.
 To update the MFTF to the latest patch:
 
 1. Verify that the Magento [WYSIWYG settings](getting-started.html#wysiwyg-settings) and [Security settings](getting-started.html#security-settings) are set appropriately.
-1. Check details about backward incompatible changes in the [Changelog](../changelog.html) and update your new or customized tests.
+1. Check details about backward incompatible changes in the [Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md) and update your new or customized tests.
 1. Get the latest framework version using Composer:
 
 	```bash
@@ -67,7 +67,7 @@ To update the MFTF from the previous minor version:
    vendor/bin/mftf generate:urn-catalog .idea/
    ```
 1. Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version.
-Check details about backward incompatible changes and review new MFTF release documentation in the [Changelog](../changelog.html).
+Check details about backward incompatible changes and review new MFTF release documentation in the [Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md).
 1. Generate newly pulled tests:
    ```bash
    vendor/bin/mftf generate:tests

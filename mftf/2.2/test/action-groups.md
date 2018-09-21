@@ -160,7 +160,7 @@ The `string` argument type provides a method to pass a single piece of data to t
 
 **To define the argument value based on data entity resolution**:
 
-Create an argument of `type="entity"`. The argument value points to an entity and string pair [created](../data.html#persisting-a-data-entity-as-a-prerequisite-of-a-test){:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `myCustomEntity` data entity, MFTF interprets the `myCustomEntity.field1` value as a string.
+Create an argument of `type="entity"`. The argument value points to an entity and string pair [created](../data.html#persist-data){:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `myCustomEntity` data entity, MFTF interprets the `myCustomEntity.field1` value as a string.
 
 ```xml
 <actionGroup stepKey="fillWithXmlData" ref="fillExample">
