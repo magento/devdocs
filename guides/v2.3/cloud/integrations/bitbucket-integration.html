@@ -4130,7 +4130,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
   <li>
     <p>Click <strong>Add consumer</strong> and configure it as follows:</p>
 
-    <p><img src="/common/images/cloud_oauth_consumer_config.png" alt="Bitbucket OAuth consumer configuration" /></p>
+    <p><img src="/common/images/cloud_oauth_consumer_config.png" alt="Bitbucket OAuth consumer configuration" width="700px" /></p>
 
     <p class="bs-callout bs-callout-warning">A valid <strong>Callback URL</strong> is not required, but you must enter a value in this field to successfully complete the integration.</p>
   </li>
@@ -4168,7 +4168,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-tip">Be sure to use the name of your Bitbucket repository and not the URL. The integration will fail if you use a URL.</p>
+    <p class="bs-callout bs-callout-tip">Be sure to use the name of your Bitbucket repository and not the URL. The integration fails if you use a URL.</p>
   </li>
   <li>
     <p>Add the integration to your project using the <code class="highlighter-rouge">magento-cloud</code> CLI tool.</p>
@@ -4188,10 +4188,51 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integrations <span class="nt">-p</span> <span class="s1">'&lt;project-ID&gt;'</span>
 </code></pre></div>    </div>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">+----------+-----------+--------------------------------------------------------------------------------+
+| ID       | Type      | Summary                                                                        |
++----------+-----------+--------------------------------------------------------------------------------+
+</span><span class="gp">| &lt;int-id&gt;</span> | bitbucket | Repository: bitbucket_Account/magento-int.git                                  |
+<span class="go">|          |           | Hook URL:                                                                      |
+</span><span class="gp">|          |           | https://magento-url.cloud/api/projects/&lt;project-id&gt;</span>/integrations/&lt;int-id&gt;/hook |
+<span class="go">+----------+-----------+--------------------------------------------------------------------------------+
+</span></code></pre></div>    </div>
+    <p>Make a note of the <strong>Hook URL</strong> to configure a webhook in BitBucket.</p>
   </li>
 </ol>
 
-<h2 id="test-the-integration">Test the integration</h2>
+<h3 id="add-a-webhook-in-bitbucket">Add a webhook in BitBucket</h3>
+
+<p>In order to communicate events—such as a push—with your Cloud git server, you need to create a webhook for your BitBucket repository.</p>
+
+<ol>
+  <li>
+    <p>Log in to your <a href="https://bitbucket.org/account/signin/" target="_blank">Bitbucket</a> account.</p>
+  </li>
+  <li>
+    <p>Click <strong>Repositories</strong> and select your project.</p>
+  </li>
+  <li>
+    <p>Click <strong>Settings</strong> &gt; <strong>Workflow</strong> &gt; <strong>Webhooks</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add webhook</strong>.</p>
+  </li>
+  <li>
+    <p>In the <em>Add new webhook</em> view, edit the following fields:</p>
+
+    <ul>
+      <li><strong>Title</strong>: Magento Cloud Integration</li>
+      <li><strong>URL</strong>: Use the Hook URL from your <code class="highlighter-rouge">magento-cloud</code> integration list</li>
+      <li><strong>Triggers</strong>: The default is a basic <em>Repository push</em></li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="test-the-integration">Test the integration</h3>
 
 <p>After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.</p>
 
@@ -4279,7 +4320,7 @@ Parent environment [master]: integration
   </li>
 </ol>
 
-<p>Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the <em>Settings</em> page.</p>
+<p>Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the account <em>Settings</em> page.</p>
 
 			
 		</div>
