@@ -70,8 +70,7 @@ pages:
 
         - label: GitHub integration
           url: /cloud/integrations/github-integration.html
-
-    - label: Local development setup
+    - label: Local development
       url: /cloud/setup/first-time-setup.html
       children:
         - label: Docker development

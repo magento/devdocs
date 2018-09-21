@@ -55,6 +55,6 @@ The following steps walk-through preparing your local environment, installing Ma
 * [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
 * [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 * [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
-* [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html)
+* [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html)
 
-If you have existing Magento custom code, we provide instructions to import. For more information, see [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html).
+If you have existing Magento custom code, we provide instructions to import. For more information, see [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html).

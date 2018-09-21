@@ -25,7 +25,6 @@ php ./vendor/bin/ece-tools list
 
 The following updates describe the latest improvements to the `ece-tools` package, which uses the following version sequence:  `200<major>.<minor>.<patch>`.  See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `ece-tools` package.
 
-
 ## v2002.0.14
 
 #### New features
@@ -34,15 +33,14 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  JIRA-MAGECLOUD-2521-->**PCI Compliance**—Updated the messaging protocols for {{site.data.var.ece}} to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS verision 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: `Unable to connect via TLS`.
 
--  JIRA--MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled.
-
+-  JIRA-MAGECLOUD-2517-->**Deployment improvement**—Added validation to warn customers if a Staging or Production environment has `dev`, `debug`, or `debug_logging` options enabled to prevent performance issues caused by excessive logging activity.
 
 #### Resolved Issues
 
 -  **Deployment fixes**
 	
     -  JIRA-MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved.
-
+	
     -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
        -  ADMIN_EMAIL is not set on upgrade.

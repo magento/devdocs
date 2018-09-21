@@ -18,7 +18,7 @@ You can set up [multiple websites and stores]({{ page.baseurl }}/cloud/project/p
 
 The following options, tools, and features can be set up and configured in your store:
 
-* [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) for caching and CDN in Staging and Production environments
+* [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) for caching and CDN in Staging and Production environments
 * [PayPal On-Boarding tool]({{ site.baseurl }}/guides/v2.1/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
 * [Magento B2B module]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-b2b.html) for Business to Business features, Pro plan only
 * [cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
