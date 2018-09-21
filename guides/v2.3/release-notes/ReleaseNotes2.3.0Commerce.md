@@ -3,6 +3,8 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
+*Release notes published September 21, 2018.*
+
 
 We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
 
