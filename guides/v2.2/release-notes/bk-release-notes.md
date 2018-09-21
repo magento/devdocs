@@ -54,14 +54,8 @@ Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x]({{site
 
 You can apply patches as they become available to update Magento Commerce (Cloud). We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-<<<<<<< HEAD
-{:.bs-callout .bs-callout-tip}
-We recommend installing full [{{site.data.var.ece}} upgrades]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
-
-=======
 {: .bs-callout .bs-callout-info }
 We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
->>>>>>> 9e09a04345ec0930fbb5145dbab517599ce23a9d
 
 ## Magento Shipping release notes
 
