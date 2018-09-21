@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.6 Release Notes
 
 ---
 
-*Patch code and release notes were published on September 18, 2018.*
+*Patch code and release notes were published on September 18, 2018 and last revised September 21.*
 
 
 
@@ -158,16 +158,6 @@ For more information on these new features, see [Klarna](https://docs.magento.co
 
 #### Magento Shipping
 
-
-* The **Click & Collect** feature offers merchants the ability to:
-
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
-
-	* Configure source locations available for Click & Collect pick-ups
-
-	* Updates to Shipment Form for UPS (US only)
-Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
-
 * **Batch Processing** provides merchants with the ability to 
 
 	* Specify and modify packages and experiences for orders assigned to a batch
@@ -178,7 +168,6 @@ Consumers can also select Click & Collect locations during check-out. This featu
 
 
 * New **Shipment Reference**  field associates bookings between a carrier and a customer
-
 
 
 
