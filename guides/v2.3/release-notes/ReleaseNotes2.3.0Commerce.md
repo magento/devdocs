@@ -255,7 +255,7 @@ Previously, Magento displayed attributes with dropdown and multiple select types
 
 
 
-#### Import/Expoert
+#### Import/Export
 
 <!--- 91594 -->* Import now completes successfully when a product’s CSV entry is split over two import “bunches”.  Previously, Magento threw this error, `Cannot add or update a child row: a foreign key constraint fails`, and import failed. 
 
@@ -288,8 +288,6 @@ Previously, Magento displayed attributes with dropdown and multiple select types
 <!--- 91500 -->* Admin users that are not part of the Administrator group can now complete payment for an order using Braintree.
 
 
-<!--- 91500 -->* 
-
 #### Reports 
 
 <!--- 63173 -->* Wishlist reports are available on the Admin as expected. 
@@ -297,7 +295,7 @@ Previously, Magento displayed attributes with dropdown and multiple select types
 
 #### Return Merchandise Authorizations (RMA)
 
-`<!--- 91567 -->* GET  V1/returns/:id` calls return tracks objects as expected.  
+`GET  V1/returns/:id` calls return tracks objects as expected.  
 
 
 
