@@ -171,6 +171,7 @@ In order to communicate events—such as a push—with your Cloud git server, yo
 
     - **Title**: Magento Cloud Integration
     - **URL**: Use the Hook URL from your `magento-cloud` integration list
+    - **Triggers**: Select **Choose from a full list of triggers** and select **Push**
 
 1.  Click **Save**.
 
