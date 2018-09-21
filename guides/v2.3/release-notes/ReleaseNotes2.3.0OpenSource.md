@@ -31,12 +31,10 @@ This release introduces significant tools to improve the developer experience: P
 * **GraphQL API** provides an alternative to REST and SOAP web APIs for front-end development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language.
 
 
-
-
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
 
-* **Amazon Sales Channel**, a new bundled extension that allows you to create and manage Amazon listings and fulfill your orders for both Amazon customers as well customers of your store.  
+* **Amazon Sales Channel** allows you to create and manage Amazon listings and fulfill your orders for both Amazon customers as well customers of your store.  
 
 ### Core product improvements
 
@@ -79,7 +77,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 #### Application framework
 
-* <!--- 93723,  92185-->* The Magento application framework has been updated to use: 
+* <!--- 93723,  92185-->The Magento application framework has been updated to use: 
 
 	* jQuery 3.x 
 
@@ -110,7 +108,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!--- 91689 -->* Single quotation marks in attribute values are no longer  auto-converted to HTML when saved. 
 
 
-<!--- 91608 -->* The SEO-friendly URL for Category pages now works as expected. 
+<!--- 91608 -->* The SEO-friendly URL for category pages now works as expected. 
 
 
 <!--- 45950 -->*  We've optimized queries on loading product attributes when store scope is used.
@@ -128,13 +126,13 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91473 -->* Magento now maintains designated sort order for products after saving a product in a category. Previously, product sort order reverted to sorting by product ID.
 
-<!--- 91450 -->* You can now filter successfully by date from the Admin on products in multistore environments. Previously, values in the product creation date field (that is, the date set in when **Set Product as New from Date** is selected)  were arbitrarily changed, and filtering did not work. 
+<!--- 91450 -->* You can now filter successfully by date from the Admin on products in multistore environments. Previously, values in the product creation date field (that is, the date set when **Set Product as New from Date** is selected)  were arbitrarily changed, and filtering did not work. 
 
 
 <!--- 91440 -->*  Attributes with no assigned values on a product are no longer displayed with a  value of N/A in the Compare Products page or block as expected. 
 
 
-<!--- 91439 -->* Prices are now visible as expected on the Category page for a configurable product when you re-enable them from the Admin. Previously, when you re-enabled a previously disabled product and assigned it to a different store, Magento did not display its price on the Category or Product page. 
+<!--- 91439 -->* Prices are now visible as expected on the category page for a configurable product when you re-enable them from the Admin. Previously, when you re-enabled a previously disabled product and assigned it to a different store, Magento did not display its price on the category or product page. 
 
 
 
@@ -161,7 +159,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- 91624 -->*  Braintree now permits customers to change the billing addresses on orders when paying with a saved card. Previously, Braintree used the same address for both billing and shipping. 
 
-<!--- 91465 -->*  Customers can now change an existing  value in the Checkout page’s  State/Province field to an alphanumeric value. Previously, when a customer tried to edit this field in this way, Magento did not place the order, and displayed a descriptive error message. 
+<!--- 91465 -->*  Customers can now change an existing  value in the checkout page’s  **State/Province** field to an alphanumeric value. Previously, when a customer tried to edit this field in this way, Magento did not place the order, and displayed a descriptive error message. 
 
 <!--- 90971 -->*  Magento now successfully processes an order that contains products that will be shipped to multiple shipping addresses. Previously, Magento did not complete the order, but displayed an error message. 
 
@@ -202,7 +200,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 
 <!--- 91760 -->*  Magento now correctly displays both the default and additional shipping addresses  provided during checkout.
-Previously, Magento displayed attributes with Dropdown and Multiple select types with incorrect values (option IDs instead of labels) for shipping addresses on checkout.
+Previously, Magento displayed attributes with dropdown and multiple select types with incorrect values (option IDs instead of labels) for shipping addresses on checkout.
 
 
 #### EAV
@@ -244,9 +242,9 @@ Previously, Magento displayed attributes with Dropdown and Multiple select types
 #### Infrastructure
 
 
-<!--- 93039 -->*  Note: Several components included by Composer have been updated to the latest patch versions. 
+<!--- 93039 --> Note: Several components included by Composer have been updated to the latest patch versions. 
 
-<!--- 68802 -->* Customers can change product status by clicking on the toggle element or by clicking on label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, such as the Enable Product attribute on a product, it changes the state of the element. This could lead to unintended results if the customer mistakenly clicked on the area around the element and doesn't realize that the status had been changed.
+<!--- 68802 -->* Customers can change product status by clicking on the toggle element or by clicking on label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, Magento changed the state of the element. Unintended results could occur if a customer mistakenly clicked on the area around the element and didn't realize that the status had  changed.
 
 
 
@@ -258,10 +256,10 @@ Previously, Magento displayed attributes with Dropdown and Multiple select types
 
 #### Payments
 
-<!--- 94402 -->* The Billing Address field now displays the designated billing address as expected  for a registered customer  when checking out with Paypal Express Checkout. Previously, Magento displayed the shipping address in the Billing Address field in both the order confirmation email and the Admin.
+<!--- 94402 -->* The **Billing Address** field now displays the designated billing address as expected  for a registered customer  when checking out with Paypal Express Checkout. Previously, Magento displayed the shipping address in the **Billing Address** field in both the order confirmation email and the Admin.
 
 
-<!--- 91500 -->* Admin users that are not part of the "Administrator" group can now complete payment for an order using Braintree.
+<!--- 91500 -->* Admin users that are not part of the Administrator group can now complete payment for an order using Braintree.
 
 
 
@@ -309,7 +307,7 @@ Previously, Magento displayed attributes with Dropdown and Multiple select types
 
 #### Web API framework
 
-<!--- 64316 -->*  When you create a product with `POST V1/products` whose name matches an existing product, Magento changes the URL key of the new product to a unique value. This matches the behavior when you create a product in Admin.https://github.com/magento/magento2/issues/8188
+<!--- 64316 -->*  When you create a product with `POST V1/products` whose name matches an existing product, Magento changes the URL key of the new product to a unique value. This matches the behavior when you create a product in Admin. [GitHub-8188](https://github.com/magento/magento2/issues/8188)
 
 
 <!--- 91540 -->*  Product searches using `GET V1/products` return extension_attributes for configurable products as expected.
