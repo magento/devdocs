@@ -23,9 +23,9 @@ This example creates a full invoice.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/order/1/invoice`
+`POST http://<host>/rest/us/V1/order/3/invoice`
 
-where `1` is the `orderid`
+where `3` is the `orderid`
 
 **Scope**
 
