@@ -152,6 +152,8 @@ The `string` argument type provides a method to pass a single piece of data to t
 
 **To define the argument value using persisted data references**:
 
+The argument value points to an persisted entity and string pair [created](../data.html#persisting-a-data-entity-as-a-prerequisite-of-a-test){:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `persistedData` data entity, MFTF interprets the `$persistedData.field1$` value as a string.
+
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
     <argument name="relevantString" value="$persistedData.field1$"/>
@@ -160,11 +162,11 @@ The `string` argument type provides a method to pass a single piece of data to t
 
 **To define the argument value based on data entity resolution**:
 
-Create an argument of `type="entity"`. The argument value points to an entity and string pair [created](../data.html#persisting-a-data-entity-as-a-prerequisite-of-a-test){:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `myCustomEntity` data entity, MFTF interprets the `myCustomEntity.field1` value as a string.
+The argument value points to a piece of data defined in a `data.xml` file. The `field1` data contains the required string. MFTF resolves `{{myCustomEntity.field1}}` the same as it would in a `selector` or `userInput` attribute.
 
 ```xml
 <actionGroup stepKey="fillWithXmlData" ref="fillExample">
-    <argument name="relevantString" value="myCustomEntity.field1"/>
+    <argument name="relevantString" value="{{myCustomEntity.field1}}"/>
 </actionGroup>
 ```
 
