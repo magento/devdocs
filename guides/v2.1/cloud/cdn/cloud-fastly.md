@@ -62,7 +62,7 @@ If you receive a 503 error, try to submit the request directly to the origin
 shield URL and review logs to identify the source of the issue. For details,
 see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
 
-Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
+Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}cloud/cdn/configure-fastly.html#bulkaction).
 
 
 ## Backends and Origin shields {#backend}
@@ -178,6 +178,6 @@ settings or entering credentials.
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 After you have configured it, you can continue with advanced options including
 custom VCL snippets.
