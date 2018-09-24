@@ -10,7 +10,7 @@ functional_areas:
 ---
 
 
-<!-- Assigning liquid variables for placeholder valuesst
+<!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
 {% assign unsecure_base_url = "{{unsecure_base_url}}" %}
 -->
