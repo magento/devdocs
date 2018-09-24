@@ -26,7 +26,7 @@ Review the following sections:
 
 ## Understand VCL snippet values {#vcl-curl}
 
-You can use the following key/value pairs in JSON snippets in VCL files and in `cURL` commands.
+You can use the following key-value pairs in JSON snippets in VCL files and in `cURL` commands.
 
 <table>
   <tr>
