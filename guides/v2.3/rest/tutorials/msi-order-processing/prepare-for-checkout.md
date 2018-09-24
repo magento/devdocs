@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest-api
 title: Step 9. Prepare for checkout
 subtitle: Order processing with MSI
 menu_title: Step 9. Prepare for checkout
@@ -284,7 +283,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         ]
     }
 }
-
 ```
 
 ### Verify this step {#verify-step}
