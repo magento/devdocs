@@ -38,7 +38,7 @@ None
 
 **Response**
 
-The response is the `quoteId`: 1
+The response is the `quoteId`: 3
 
 ## Check for product availability
 
@@ -133,7 +133,7 @@ In this call, we'll add 20 `sp1` items. This portion of the order can be fulfill
   "cartItem": {
     "sku": "sp1",
     "qty": 20,
-    "quote_id": "1"
+    "quote_id": "3"
   }
 }
 ```
@@ -144,12 +144,12 @@ Note the `item_id` for use in subsequent steps.
 
 ``` json
 {
-    "item_id": 1,
+    "item_id": 5,
     "sku": "sp1",
     "qty": 20,
     "name": "Simple Product 1",
     "product_type": "simple",
-    "quote_id": "1"
+    "quote_id": "3"
 }
 ```
 
@@ -164,7 +164,7 @@ Use the same endpoint to add 60 items of `sp2` to the cart. Multiple sources wil
   "cartItem": {
     "sku": "sp2",
     "qty": 60,
-    "quote_id": "1"
+    "quote_id": "3"
   }
 }
 ```
@@ -172,13 +172,13 @@ Use the same endpoint to add 60 items of `sp2` to the cart. Multiple sources wil
 
 ``` json
 {
-    "item_id": 2,
+    "item_id": 6,
     "sku": "sp2",
     "qty": 60,
     "name": "Simple Product 2",
     "price": 10,
     "product_type": "simple",
-    "quote_id": "1"
+    "quote_id": "3"
 }
 ```
 
@@ -193,7 +193,7 @@ Finally, we'll add a single instance of a virtual product to the cart.
   "cartItem": {
     "sku": "vp1",
     "qty": 1,
-    "quote_id": "1"
+    "quote_id": "3"
   }
 }
 ```
@@ -202,13 +202,13 @@ Finally, we'll add a single instance of a virtual product to the cart.
 
 ``` json
 {
-    "item_id": 3,
+    "item_id": 7,
     "sku": "vp1",
     "qty": 1,
     "name": "Gold Club Membership",
     "price": 20,
     "product_type": "virtual",
-    "quote_id": "1"
+    "quote_id": "3"
 }
 ```
 

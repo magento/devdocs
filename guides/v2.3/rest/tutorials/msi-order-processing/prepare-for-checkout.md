@@ -105,39 +105,39 @@ Magento returns a list of payment options and calculates the order totals.
 
 ``` json
 {  "addressInformation": {
-	  "shipping_address": {
-       "region": "New York",
-       "region_id": 43,
-       "region_code": "NY",
-       "country_id": "US",
-       "street": [
-         "123 Oak Ave"
-       ],
-       "postcode": "10577",
-       "city": "Purchase",
-       "firstname": "Jane",
-       "lastname": "Doe",
-       "email": "jdoe@example.com",
-       "telephone": "512-555-1111"
-  },
-  "billing_address": {
-  	"region": "New York",
-    "region_id": 43,
-    "region_code": "NY",
-    "country_id": "US",
-    "street": [
-      "123 Oak Ave"
-    ],
-    "postcode": "10577",
-    "city": "Purchase",
-    "firstname": "Jane",
-    "lastname": "Doe",
-    "email": "jdoe@example.com",
-    "telephone": "512-555-1111"
-  },
-  "shipping_carrier_code": "flatrate",
-  "shipping_method_code": "flatrate"
-  }
+		"shipping_address": {
+			"region": "New York",
+			"region_id": 43,
+			"region_code": "NY",
+			"country_id": "US",
+			"street": [
+				"123 Oak Ave"
+			],
+			"postcode": "10577",
+			"city": "Purchase",
+			"firstname": "Jane",
+			"lastname": "Doe",
+			"email": "jdoe@example.com",
+			"telephone": "512-555-1111"
+		},
+		"billing_address": {
+			"region": "New York",
+			"region_id": 43,
+			"region_code": "NY",
+			"country_id": "US",
+			"street": [
+				"123 Oak Ave"
+			],
+			"postcode": "10577",
+			"city": "Purchase",
+			"firstname": "Jane",
+			"lastname": "Doe",
+			"email": "jdoe@example.com",
+			"telephone": "512-555-1111"
+		},
+		"shipping_carrier_code": "flatrate",
+		"shipping_method_code": "flatrate"
+	}
 }
 ```
 
@@ -151,10 +151,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 ``` json
 {
     "payment_methods": [
-        {
-            "code": "banktransfer",
-            "title": "Bank Transfer Payment"
-        },
         {
             "code": "checkmo",
             "title": "Check / Money order"
@@ -186,7 +182,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "items_qty": 81,
         "items": [
             {
-                "item_id": 1,
+                "item_id": 5,
                 "price": 5,
                 "base_price": 5,
                 "qty": 20,
@@ -209,7 +205,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Simple Product 1"
             },
             {
-                "item_id": 2,
+                "item_id": 6,
                 "price": 10,
                 "base_price": 10,
                 "qty": 60,
@@ -232,7 +228,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Simple Product 2"
             },
             {
-                "item_id": 3,
+                "item_id": 7,
                 "price": 20,
                 "base_price": 20,
                 "qty": 1,
@@ -262,6 +258,20 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "value": 720
             },
             {
+                "code": "giftwrapping",
+                "title": "Gift Wrapping",
+                "value": null,
+                "extension_attributes": {
+                    "gw_item_ids": [],
+                    "gw_price": "0.0000",
+                    "gw_base_price": "0.0000",
+                    "gw_items_price": "0.0000",
+                    "gw_items_base_price": "0.0000",
+                    "gw_card_price": "0.0000",
+                    "gw_card_base_price": "0.0000"
+                }
+            },
+            {
                 "code": "shipping",
                 "title": "Shipping & Handling (Flat Rate - Fixed)",
                 "value": 400
@@ -279,8 +289,23 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "title": "Grand Total",
                 "value": 1120,
                 "area": "footer"
+            },
+            {
+                "code": "customerbalance",
+                "title": "Store Credit",
+                "value": 0
+            },
+            {
+                "code": "reward",
+                "title": "0 Reward points",
+                "value": 0
             }
-        ]
+        ],
+        "extension_attributes": {
+            "reward_points_balance": 0,
+            "reward_currency_amount": 0,
+            "base_reward_currency_amount": 0
+        }
     }
 }
 ```
