@@ -43,7 +43,7 @@ If you intend to make changes, modify the YAML files in your Git branch of code.
 
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of [autoprovisioning]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html#autoprovisioning) or a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deplyment.html).
+* `auth.json` in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of [autoprovisioning]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html#autoprovisioning) or a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
 * [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
@@ -175,7 +175,7 @@ With an understanding of the process, we provide the following instructions for 
 
 #### Related topics
 
-* [Deployment troubleshooting]({{ page.baseurl }}/cloud/trouble/troubleshoot-deplyment.html)
+* [Deployment troubleshooting]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html)
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
 *	[Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)

@@ -45,7 +45,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
--  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deplyment.html).
+-  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 -  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—updates and saves `magento/`.
