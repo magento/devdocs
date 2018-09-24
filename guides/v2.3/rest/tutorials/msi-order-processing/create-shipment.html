@@ -1330,7 +1330,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>In the previous step, the SSA recommended shipping 20 <code class="highlighter-rouge">sp1</code> items and 25 <code class="highlighter-rouge">sp2</code>items from Baltimore. It also recommended shipping 35 <code class="highlighter-rouge">sp2</code> items from Reno.</p>
+			<p>In the previous step, the SSA recommended shipping 20 <code class="highlighter-rouge">sp1</code> items and 25 <code class="highlighter-rouge">sp2</code> items from Baltimore. It also recommended shipping 35 <code class="highlighter-rouge">sp2</code> items from Reno.</p>
 
 <p>You can always override the SSA recommendations. It would be valid, for example, to ship all the <code class="highlighter-rouge">sp1</code> items and 50 <code class="highlighter-rouge">sp2</code> items from Reno, leaving 15 <code class="highlighter-rouge">sp2</code> items to be shipped from Baltimore.</p>
 
@@ -1338,9 +1338,93 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.</p>
 
-<h2 id="ship-from-the-baltimore-warehouse">Ship from the Baltimore warehouse</h2>
+<h2 id="recommended-ship-using--post-v1orderorderidship">Recommended: Ship using  <code class="highlighter-rouge">POST /V1/order/:orderId/ship</code></h2>
 
-<p>You must use the <code class="highlighter-rouge">POST V1/shipment</code> endpoint to create a shipment.</p>
+<p>Although you can use the <code class="highlighter-rouge">POST V1/shipment</code> endpoint to create a shipment, the <code class="highlighter-rouge">POST /V1/order/:orderId/ship</code> endpoint is a better option in that it is more efficient and the payload can be simpler.</p>
+
+<h3 id="ship-from-the-baltimore-warehouse">Ship from the Baltimore warehouse</h3>
+
+<p>We’ll ship 20 <code class="highlighter-rouge">sp1</code> items and 25 <code class="highlighter-rouge">sp2</code> items from the Baltimore warehouse. The <code class="highlighter-rouge">order_item_id</code> value for <code class="highlighter-rouge">sp1</code> is 3, and the value for <code class="highlighter-rouge">sp2</code> is 4.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/order/3/ship</code></p>
+
+<p>where <code class="highlighter-rouge">3</code> is the <code class="highlighter-rouge">orderid</code></p>
+
+<p><strong>Scope</strong></p>
+
+<p><code class="highlighter-rouge">us</code> store view</p>
+
+<p><strong>Headers</strong></p>
+
+<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+
+<p><code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
+
+<p><strong>Payload</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Baltimore"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<p>The shipment ID, such as <code class="highlighter-rouge">3</code>.</p>
+
+<h3 id="ship-from-the-reno-warehouse">Ship from the Reno warehouse</h3>
+
+<p>Use the same endpoint to ship the remaining 35 <code class="highlighter-rouge">sp2</code> items from the Reno warehouse.</p>
+
+<p><strong>Payload</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Reno"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<p>The shipment ID, such as <code class="highlighter-rouge">4</code>.</p>
+
+<h2 id="alternative-ship-using-post-v1shipment">Alternative: Ship using <code class="highlighter-rouge">POST /V1/shipment</code></h2>
+
+<p>Magento also supports the <code class="highlighter-rouge">POST /V1/shipment</code> endpoint for sending full or partial shipments.</p>
+
+<h3 id="ship-from-the-baltimore-warehouse-1">Ship from the Baltimore warehouse</h3>
 
 <p><strong>Endpoint</strong></p>
 
@@ -1361,25 +1445,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   	</span><span class="s2">"billing_address_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
   </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Product 1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2056</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Product 2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2057</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1394,10 +1478,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
     </span><span class="s2">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000013"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
@@ -1407,9 +1491,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Product 1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2056</span><span class="p">,</span><span class="w">
             </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1419,7 +1503,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
             </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
             </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
             </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1431,7 +1515,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h2 id="ship-from-reno">Ship from Reno</h2>
+<h3 id="ship-from-the-reno-warehouse-1">Ship from the Reno warehouse</h3>
 
 <p>Use the same endpoint to ship the remaining 35 <code class="highlighter-rouge">sp2</code> items from the Reno warehouse.</p>
 
@@ -1439,16 +1523,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
   </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Product 2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2057</span><span class="p">,</span><span class="w">
       </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
       </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1463,10 +1547,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 22:22:23"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
     </span><span class="s2">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000016"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"shipment_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
@@ -1477,9 +1561,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Product 2"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2057</span><span class="p">,</span><span class="w">
             </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
             </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
@@ -1495,7 +1579,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Click <strong>Sales</strong> &gt; <strong>Shipments</strong>. The two shipments for this order are displayed in the grid.</li>
-  <li>Click <strong>Catalog</strong> &gt; <strong>Products</strong> to verify <strong>Quantity per Source</strong> values for each product has been deducted according to the selections made at shipment.</li>
+  <li>Click <strong>Catalog</strong> &gt; <strong>Products</strong>. Verify that the <strong>Quantity per Source</strong> values are correct for each product, based on the selections you made at shipment.</li>
 </ol>
 
 
