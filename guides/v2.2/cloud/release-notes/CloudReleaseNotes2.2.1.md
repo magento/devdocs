@@ -53,7 +53,7 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 
 ## Fixed issues {#fixed}
 
-<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:  
 
