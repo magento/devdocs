@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Open Source 2.2.5 Release Notes
 ---
-*Patch code and release notes published on July 1, 2018.* 
+*Patch code and release notes published on July 1, 2018. Release notes updated on September 24, 2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
@@ -199,9 +199,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud. 
 
-### Visual Merchandiser
-
-<!--- MAGETWO-71554 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 
 
