@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.1/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1700,7 +1719,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1720,7 +1739,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.1/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1728,6 +1767,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1867,6 +1933,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1905,29 +1978,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.1/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3585,6 +3635,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+  
+
+  
+</li>
+
 
 
       
@@ -3813,7 +3877,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -3964,7 +4028,7 @@ Before you continue, make sure there is nothing in your Magento Commerce Cloud p
 
 <h2 id="required-information">Required information</h2>
 
-<p>Before you continue, make sure you have the <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
+<p>Before you continue, make sure you have the <a href="/guides/v2.1/cloud/setup/first-time-setup-import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
 
 <h2 id="cloud-import-ref">Create a remote Git reference</h2>
 
@@ -4073,8 +4137,8 @@ Environment routes:
 <p>To import the Magento database in Magento Commerce Cloud, you must know:</p>
 
 <ul>
-  <li>The Magento Commerce Cloud environment’s <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html#ssh">SSH URL</a></li>
-  <li>The database name, username, and password of the <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds">Cloud database</a></li>
+  <li>The Magento Commerce Cloud environment’s <a href="/guides/v2.1/cloud/setup/first-time-setup-import-first-steps.html#ssh">SSH URL</a></li>
+  <li>The database name, username, and password of the <a href="/guides/v2.1/cloud/setup/first-time-setup-import-first-steps.html#db-creds">Cloud database</a></li>
 </ul>
 
 <p class="bs-callout bs-callout-info">This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.</p>
@@ -4175,7 +4239,7 @@ Environment routes:
 
 <p>The Magento Commerce encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
 
-<p>You copied the key in a <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">previous step</a>.</p>
+<p>You copied the key in a <a href="/guides/v2.1/cloud/setup/first-time-setup-import-prepare.html#encryption-key">previous step</a>.</p>
 
 <p>To add your Magento Commerce encryption key:</p>
 
@@ -4188,7 +4252,7 @@ Environment routes:
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
   <li>
-    <p>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
+    <p>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/guides/v2.1/cloud/setup/first-time-setup-import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
 
     <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">'crypt'</span> <span class="o">=&gt;</span>

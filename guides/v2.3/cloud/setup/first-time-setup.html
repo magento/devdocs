@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Local environment setup | Magento 2 Developer Documentation</title>
+	<title>Local development | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.3/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1754,7 +1773,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class="active ">
   
-    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1774,7 +1793,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.3/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1782,6 +1821,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1921,6 +1987,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1959,29 +2032,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3895,7 +3945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -4030,62 +4080,57 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Local environment setup</h1>
+	<h1 class="page-heading">Local development</h1>
 
   
 
 
 </section>
 
-			<p>All environments for your project are read-only, requiring all work to be completed on your local environment and pushed to cloud environments. To start developing Magento, you need a configured local developer workspace, cloned Magento Commerce Cloud code from your Git branch, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local system.</p>
-
-<h2 id="account">Project user account</h2>
-
-<p>Depending on the <a href="/guides/v2.3/cloud/onboarding/onboarding-tasks.html">Project Owner</a>, you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company’s Magento Commerce Cloud account. The account includes all source code and deployment environments.</p>
-
-<p>After you receive an invitation, you can complete tasks to create your local, pull code, and deploy your store.</p>
-
-<h2 id="knowledge">Helpful knowledge</h2>
-
-<p>We highly recommend having experience with the following technologies and methodologies:</p>
+			<p>Magento Commerce Cloud environments are <strong>Read Only</strong>, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production. You must develop in a local workspace using a cloned Integration environment and push changes to the remote, read-only Magento Commerce Cloud Git repository. You can choose one of two methods:</p>
 
 <ul>
-  <li>Magento <a href="/guides/v2.3/architecture/tech-stack.html">technology stack</a></li>
-  <li><a href="https://git-scm.com/" target="_blank">Git</a> for repository and code management, <a href="https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows" target="_blank">branching methodologies</a>, and working with Magento Git code</li>
-  <li><a href="https://github.com/" target="_blank">GitHub</a> for managing your code and accessing Magento repos</li>
-  <li><a href="https://www.fastly.com/" target="_blank">Fastly</a> for CDN and caching, used in Staging and Production</li>
-  <li><a href="http://galeracluster.com/" target="_blank">Galera Cluster</a> for databases, used in Staging and Production (with triple redundancy failover in Production)</li>
+  <li><a href="#docker">Launch a Docker development environment</a></li>
+  <li><a href="#local">Create a local development environment</a></li>
 </ul>
 
 <h2 id="credentials">Gather credentials</h2>
 
-<p>Prior to setting up your workspace, you may want to gather the following credentials and accounts:</p>
+<p>Prior to setting up a workspace, gather the following credentials and accounts:</p>
 
 <ul>
-  <li><strong>Magento Access Key</strong>: Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 code repo (repo.magento.com), and any other Git services like GitHub and 3rd party accounts needed for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. To generate a key, contact the Project Owner to <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Generate Magento authentication keys</a>.</li>
-  <li><strong>Cloud Project account</strong>: The Project Owner or Technical Admin (Super User) should invite you to the Magento Commerce Cloud project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See <a href="/guides/v2.3/cloud/before/before-workspace.html#newaccount">Set up an account</a> for details.</li>
-  <li><strong>Magento Encryption Key</strong>: When importing an existing Magento system only, you will need to capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see <a href="/guides/v2.3/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+  <li><strong>Magento Access Key</strong><br />
+ Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 Composer repository (repo.magento.com), and any other Git services—such as GitHub—required for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. Contact the Project Owner to generate <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</li>
+  <li><strong>Cloud Project account</strong><br />
+ The Project Owner or Technical Admin (Super User) should invite you to the Magento Commerce Cloud project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See <a href="/guides/v2.3/cloud/before/before-workspace.html#newaccount">Set up an account</a> for details.</li>
+  <li><strong>Magento Encryption Key</strong><br />
+ When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see <a href="/guides/v2.3/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+</ul>
+
+<h2 id="docker">Launch a Docker environment</h2>
+
+<p>You can use the Docker environment to emulate the Magento Commerce Cloud Integration environment for local development. You need three, essential components: a Magento Commerce v2 template, Docker Compose, and Magento Commerce Cloud <code class="highlighter-rouge">ece-tools</code> package.</p>
+
+<ul>
+  <li><a href="/guides/v2.3/cloud/docker/docker-development.html">Docker architecture and common commands</a></li>
+  <li><a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker development environment</a></li>
 </ul>
 
 <h2 id="local">Create a local environment</h2>
 
-<p>For development, you need to install and configure a local environment. All environments for Magento Commerce Cloud are read-only, including all Starter environments and all Pro Integration, Staging, and Production environments. Working in a local environment, you can write and test code prior to pushing it to an Integration environment for further testing and deployment to Staging and Production.</p>
+<p>You can manually add a virtual machine (VM) and install Magento Commerce. The environment closely matches the cloud environments. The following steps walk-through manually preparing your local environment, installing Magento, and starting development:</p>
 
-<p>We recommend adding a virtual machine (VM) or Docker container and installing Magento Commerce. The environment should closely match cloud environments. To develop Magento code, you will clone the project Git code and create branches to develop your sites and stores in this local environment.</p>
-
-<p>The following steps walk-through preparing your local environment, installing Magento, and starting development:</p>
-
-<ul>
+<ol>
   <li><a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a></li>
   <li><a href="/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></li>
   <li><a href="/guides/v2.3/cloud/before/before-workspace-ssh.html">Enable SSH keys</a></li>
   <li><a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a> (optional)</li>
   <li><a href="/guides/v2.3/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a></li>
   <li><a href="/guides/v2.3/cloud/before/before-setup-env-install.html">Install Magento</a></li>
-  <li><a href="/guides/v2.3/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
-</ul>
+  <li><a href="/guides/v2.3/cloud/setup/first-time-deploy.html">First time deployment</a></li>
+</ol>
 
-<p>If you have existing Magento custom code, we provide instructions to import. For more information, see <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento Commerce</a>.</p>
+<p>You can import existing Magento custom code. See <a href="/guides/v2.3/cloud/setup/first-time-setup-import-first-steps.html">First steps for importing Magento Commerce</a>.</p>
 
 			
 		</div>

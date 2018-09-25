@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.1/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1700,7 +1719,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.1/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1720,7 +1739,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.1/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1728,6 +1767,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1867,6 +1933,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1905,29 +1978,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.1/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3585,6 +3635,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.1/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
+  
+
+  
+</li>
+
 
 
       
@@ -3813,7 +3877,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -3992,7 +4056,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#prod-data">Pull production store data</a> down to environments</li>
 </ul>
 
-<p>This process assumes that you have set up your <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">local developer workspace</a>.</p>
+<p>This process assumes that you have set up your <a href="/guides/v2.1/cloud/setup/first-time-setup.html">local developer workspace</a>.</p>
 
 <h3 id="clone-branch">Clone and branch</h3>
 
@@ -4008,7 +4072,7 @@ git pull origin &lt;environment ID&gt;
 
 <p>Next, create branches from <code class="highlighter-rouge">staging</code> to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a development branch created from the <code class="highlighter-rouge">staging</code> branch. You will have four active Integration environments available. When you push an active branch, one of these Integration environments automatically deploys your code to test.</p>
 
-<p>We walk you through the process when you <a href="/guides/v2.1/cloud/access-acct/first-time-setup.html">set up your local</a> environment.</p>
+<p>We walk you through the process when you <a href="/guides/v2.1/cloud/setup/first-time-setup.html">set up your local</a> environment.</p>
 
 <p>The format of the Git branch command is:</p>
 

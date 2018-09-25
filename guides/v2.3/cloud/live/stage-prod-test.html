@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.3/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1754,7 +1773,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1774,7 +1793,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.3/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1782,6 +1821,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1921,6 +1987,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1959,29 +2032,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3895,7 +3945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -4064,7 +4114,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="fastly">Check Fastly caching</h2>
 
-<p>Verify Fastly is caching properly on Staging and Production. <a href="/guides/v2.3/cloud/access-acct/fastly.html">Configuring Fastly</a> requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.</p>
+<p>Verify Fastly is caching properly on Staging and Production. <a href="/guides/v2.3/cloud/cdn/configure-fastly.html">Configuring Fastly</a> requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.</p>
 
 <p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
 
@@ -4121,7 +4171,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p class="bs-callout bs-callout-warning">Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.</p>
 
-<p>The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a> and <a href="/guides/v2.3/cloud/cdn/trouble-fastly.html">Fastly troubleshooting</a>.</p>
+<p>The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see <a href="/guides/v2.3/cloud/cdn/cloud-fastly.html">Set up Fastly</a> and <a href="/guides/v2.3/cloud/cdn/trouble-fastly.html">Fastly troubleshooting</a>.</p>
 
 <h2 id="uat-testing">Complete UAT testing</h2>
 

@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.3/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1754,7 +1773,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1774,7 +1793,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.3/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1782,6 +1821,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1921,6 +1987,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1959,29 +2032,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3895,7 +3945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class="active ">
   
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -4037,24 +4087,106 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<!-- Assigning liquid variables for placeholder valuesst
-
+			<!-- Assigning liquid variables for placeholder values
 
 
 -->
 
 <p>The <code class="highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce Cloud project. It contains scripts and Magento Commerce Cloud commands designed to help manage your code and automatically build and deploy your projects.</p>
 
-<p>You can list the available ece-tools commands using:</p>
+<p>You can list the available <code class="highlighter-rouge">ece-tools</code> commands using:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php ./vendor/bin/ece-tools list
 </code></pre></div></div>
 
-<p>The following updates describe the latest improvements to the <code class="highlighter-rouge">ece-tools</code> package, which uses the following version sequence:  <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.  See <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and patches</a> for information about updating to the latest release of the <code class="highlighter-rouge">ece-tools</code> package.</p>
+<p>The following updates describe the latest improvements to the <code class="highlighter-rouge">ece-tools</code> package, which uses the following version sequence: <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>. See <a href="/guides/v2.1/cloud/project/project-upgrade-parent.html">Upgrades and patches</a> for information about updating to the latest release of the <code class="highlighter-rouge">ece-tools</code> package.</p>
+
+<h2 id="v2002014">v2002.0.14</h2>
+
+<h4 id="new-features">New features</h4>
+
+<ul>
+  <li>
+    <!--MAGECLOUD-2372-->
+    <p><strong>Verify Ideal State</strong>—The <code class="highlighter-rouge">ideal-state</code> wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-2521-->
+    <p><strong>PCI Compliance</strong>—Updated the messaging protocols for Magento Commerce Cloud to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS version 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: <code class="highlighter-rouge">Unable to connect via TLS</code>.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-2517-->
+    <p><strong>Deployment improvement</strong>—Added validation to warn customers if a Staging or Production environment has <code class="highlighter-rouge">dev</code>, <code class="highlighter-rouge">debug</code>, or <code class="highlighter-rouge">debug_logging</code> options enabled to prevent performance issues caused by excessive logging activity.</p>
+  </li>
+</ul>
+
+<h4 id="resolved-issues">Resolved Issues</h4>
+
+<ul>
+  <li>
+    <p><strong>Deployment fixes</strong></p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2603-->
+        <p>Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.</p>
+      </li>
+      <li>
+        <p>Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from <code class="highlighter-rouge">CRITICAL</code> to <code class="highlighter-rouge">WARNING</code> so that the deployment completes. Previously, these issues caused the deployment to fail.</p>
+
+        <ul>
+          <li>
+            <p>ADMIN_EMAIL is not set on upgrade.</p>
+          </li>
+          <li>
+            <p>ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.</p>
+          </li>
+          <li>
+            <p>Environment configuration contains incorrect values for deploy or cloud variables.</p>
+          </li>
+          <li>
+            <!--MAGECLOUD-2600-->
+            <p>The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by Magento Commerce Cloud. See the <a href="https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento">Elasticsearch troubleshooting article</a> in the Magento Support Knowledgebase.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!--MAGECLOUD-2173-->
+        <p>Fixed an issue with the shared configuration settings in the <code class="highlighter-rouge">app/etc/config.php</code> file that caused <code class="highlighter-rouge">recursion detected</code> errors during deployment.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Cron-related fixes</strong></p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2602-->
+        <p>Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2537-->
+        <p>Fixed an issue in the deploy phase that allowed cron jobs to continue running during deployment, which can cause database locks and other critical issues. Now, all cron jobs are stopped before the deploy phase begins and restarted after the deployment completes.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2501-->
+        <p>Fixed the cron job workflow in versions 2.2.x to unlock frozen cron jobs so that they can be stopped before beginning deployment. Previously, a frozen cron job caused the deployment to stall.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <!--MAGECLOUD-2527-->
+    <p>Changed the format of the <code class="highlighter-rouge">config.php</code> file generated by the <code class="highlighter-rouge">vendor/bin/ece-tools config:dump</code> command to use short array syntax and 4-space indentation to comply with Magento coding standards.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-2607-->
+    <p>Fixed a deployment error that occurs when the <code class="highlighter-rouge">.magento.env.yaml</code> contains <code class="highlighter-rouge">{{base_url}}</code> and <code class="highlighter-rouge">{{unsecure_base_url}}</code> placeholders for web configurations instead of the default URL configuration for a Magento Commerce Cloud project.</p>
+  </li>
+</ul>
 
 <h2 id="v2002013">v2002.0.13</h2>
 
-<h4 id="new-features">New features</h4>
+<h4 id="new-features-1">New features</h4>
 
 <ul>
   <li>
@@ -4062,16 +4194,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p><strong>Enable zero-downtime deployment</strong>—Now Magento Commerce Cloud queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See <a href="https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud">Static content deployment options to reduce deployment downtime on Cloud</a>.</p>
   </li>
   <li>
-    <p><strong>Docker Compose for Cloud</strong>—Made the following improvements to the <a href="/guides/v2.3/cloud/reference/docker-config.html">Docker setup and configuration</a> process:</p>
+    <p><strong>Docker Compose for Cloud</strong>—Made the following improvements to the <a href="/guides/v2.3/cloud/docker/docker-config.html">Docker setup and configuration</a> process:</p>
 
     <ul>
       <li>
         <!--MAGECLOUD-2359-->
-        <p>Added a command—<code class="highlighter-rouge">docker:config:convert</code> to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See <a href="/guides/v2.3/cloud/reference/docker-config.html#launch-docker-configuration">Launch Docker</a>.</p>
+        <p>Added a command—<code class="highlighter-rouge">docker:config:convert</code> to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See <a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker</a>.</p>
       </li>
       <li>
         <!--MAGECLOUD--2357-->
-        <p>The Magento Commerce Cloud installation process now supports deploying to both read-only and  read-write file systems to more closely emulate the Cloud file system. See <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>.</p>
+        <p>The Magento Commerce Cloud installation process now supports deploying to both read-only and read-write file systems to more closely emulate the Cloud file system. See <a href="/guides/v2.3/cloud/docker/docker-config.html">Configure Docker</a>.</p>
       </li>
       <li>
         <!--MAGECLOUD--2442-->
@@ -4136,8 +4268,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
   <li>
-    <p><strong>Logging</strong>—
-Made the following changes to improve log messages and reduce log size:</p>
+    <p><strong>Logging</strong>—<br />
+ Made the following changes to improve log messages and reduce log size:</p>
 
     <ul>
       <li>
@@ -4160,7 +4292,7 @@ Made the following changes to improve log messages and reduce log size:</p>
   </li>
 </ul>
 
-<h4 id="resolved-issues">Resolved Issues</h4>
+<h4 id="resolved-issues-1">Resolved Issues</h4>
 
 <ul>
   <li>
@@ -4187,13 +4319,11 @@ Made the following changes to improve log messages and reduce log size:</p>
   </li>
   <li>
     <!--MAGECLOUD-2444-->
-    <p>Fixed an issue that prevented the <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code> command from removing redundant sections from the <code class="highlighter-rouge">config.php</code> file during the dump process if the store locale is not specified.
-Now you can easily move your configuration files between environments. After you update to <code class="highlighter-rouge">ece-tools</code> v2002.0.13, regenerate
-older <code class="highlighter-rouge">config.php</code> files with the improved <code class="highlighter-rouge">config:dump</code> command. See <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration management for store settings</a>.</p>
+    <p>Fixed an issue that prevented the <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code> command from removing redundant sections from the <code class="highlighter-rouge">config.php</code> file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to <code class="highlighter-rouge">ece-tools</code> v2002.0.13, regenerate older <code class="highlighter-rouge">config.php</code> files with the improved <code class="highlighter-rouge">config:dump</code> command. See <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration management for store settings</a>.</p>
   </li>
   <li>
     <!--MAGECLOUD-2556-->
-    <p>Fixed an  issue that caused an error during the deploy phase if the route configuration in the <code class="highlighter-rouge">.magento/routes.yaml</code> file redirects from an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/">apex</a> domain to a <code class="highlighter-rouge">www</code>domain.</p>
+    <p>Fixed an issue that caused an error during the deploy phase if the route configuration in the <code class="highlighter-rouge">.magento/routes.yaml</code> file redirects from an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/">apex</a> domain to a <code class="highlighter-rouge">www</code>domain.</p>
   </li>
   <li>
     <!--MAGECLOUD-2520-->
@@ -4201,18 +4331,18 @@ older <code class="highlighter-rouge">config.php</code> files with the improved 
   </li>
   <li>
     <!-- MAGECLOUD-2515-->
-    <p>Fixed a Redis configuration issue that incorrectly enabled session locking for Magento Commerce Cloud versions 2.2.1 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the <code class="highlighter-rouge">disable_locking</code> parameter introduced in v1.3.4 of the Redis session handler package <a href="https://github.com/colinmollenhour/php-redis-session-abstract">colinmollenhour/php-redis-session-abstract package</a>.</p>
+    <p>Fixed a Redis configuration issue that incorrectly enabled session locking for Magento Commerce Cloud versions 2.2.1 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the <code class="highlighter-rouge">disable_locking</code> parameter introduced in v1.3.4 of the Redis session handler package. See <a href="https://github.com/colinmollenhour/php-redis-session-abstract">colinmollenhour/php-redis-session-abstract package</a>.</p>
   </li>
 </ul>
 
 <h2 id="v2002012">v2002.0.12</h2>
 
-<h4 id="new-features-1">New features</h4>
+<h4 id="new-features-2">New features</h4>
 
 <ul>
   <li>
     <!-- MAGECLOUD-2250 -->
-    <p><strong>Docker Compose for Cloud</strong>—Added a command—<code class="highlighter-rouge">docker:build</code>—to generate a <a href="/guides/v2.3/cloud/reference/docker-config.html">Docker Compose</a> configuration from the Cloud <code class="highlighter-rouge">ece-tools</code> repository.</p>
+    <p><strong>Docker Compose for Cloud</strong>—Added a command—<code class="highlighter-rouge">docker:build</code>—to generate a <a href="/guides/v2.3/cloud/docker/docker-config.html">Docker Compose</a> configuration from the Cloud <code class="highlighter-rouge">ece-tools</code> repository.</p>
   </li>
   <li>
     <!-- MAGECLOUD-2019 -->
@@ -4220,8 +4350,7 @@ older <code class="highlighter-rouge">config.php</code> files with the improved 
   </li>
   <li>
     <!-- MAGECLOU-1998 -->
-    <p><strong>Site map and Robots</strong>—Created a <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">workflow</a>
-to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <code class="highlighter-rouge">sitemap.xml</code> file for a single domain configuration without requiring a change to the infrastructure.</p>
+    <p><strong>Site map and Robots</strong>—Created a <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">workflow</a>to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <code class="highlighter-rouge">sitemap.xml</code> file for a single domain configuration without requiring a change to the infrastructure.</p>
   </li>
   <li>
     <!-- MAGECLOUD-1910 -->
@@ -4267,7 +4396,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-1">Resolved issues</h4>
+<h4 id="resolved-issues-2">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4286,7 +4415,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
     <p>Fixed an issue when using SCD with multiple locales, which generated the same <code class="highlighter-rouge">js-translation.json</code> file for each locale.</p>
   </li>
   <li>
-    <!-- MAGECLOUD-2033  -->
+    <!-- MAGECLOUD-2033 -->
     <p>Optimized the <code class="highlighter-rouge">db:dump</code> command in the <code class="highlighter-rouge">ece-tools</code> package to avoid locking tables and increase speed.</p>
   </li>
 </ul>
@@ -4295,7 +4424,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <p class="bs-callout bs-callout-info">The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.</p>
 
-<h4 id="new-features-2">New features</h4>
+<h4 id="new-features-3">New features</h4>
 
 <ul>
   <li><strong>Configuring read-only connections to non-master nodes</strong>—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 --><a href="/guides/v2.3/cloud/env/variables-deploy.html#redis_use_slave_connection">Redis</a> and for <!--MAGECLOUD-143 --> <a href="/guides/v2.3/cloud/env/variables-deploy.html#mysql_use_slave_connection">MariaDB</a>).</li>
@@ -4313,7 +4442,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-2">Resolved issues</h4>
+<h4 id="resolved-issues-3">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4366,7 +4495,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v2002010">v2002.0.10</h2>
 
-<h4 id="new-features-3">New features</h4>
+<h4 id="new-features-4">New features</h4>
 
 <ul>
   <li>
@@ -4410,7 +4539,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-3">Resolved issues</h4>
+<h4 id="resolved-issues-4">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4439,7 +4568,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <p class="bs-callout bs-callout-info">You must <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">upgrade the Magento Commerce Cloud metapackage</a> to get this and all future updates.</p>
 
-<h4 id="new-features-4">New features</h4>
+<h4 id="new-features-5">New features</h4>
 
 <ul>
   <li>
@@ -4474,7 +4603,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-4">Resolved issues</h4>
+<h4 id="resolved-issues-5">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4499,7 +4628,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <p class="bs-callout bs-callout-info">We merged <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
 
-<h4 id="new-features-5">New features</h4>
+<h4 id="new-features-6">New features</h4>
 
 <ul>
   <li>
@@ -4541,7 +4670,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-5">Resolved issues</h4>
+<h4 id="resolved-issues-6">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4588,7 +4717,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200207">v2002.0.7</h2>
 
-<h4 id="resolved-issues-6">Resolved issues</h4>
+<h4 id="resolved-issues-7">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4599,7 +4728,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200206">v2002.0.6</h2>
 
-<h4 id="resolved-issues-7">Resolved issues</h4>
+<h4 id="resolved-issues-8">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4614,7 +4743,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200205">v2002.0.5</h2>
 
-<h4 id="new-features-6">New features</h4>
+<h4 id="new-features-7">New features</h4>
 
 <ul>
   <li>
@@ -4646,7 +4775,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-8">Resolved issues</h4>
+<h4 id="resolved-issues-9">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4685,18 +4814,18 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200204">v2002.0.4</h2>
 
-<h4 id="resolved-issues-9">Resolved issues</h4>
+<h4 id="resolved-issues-10">Resolved issues</h4>
 
 <ul>
   <li>
     <!-- MAGECLOUD-1355 -->
-    <p>You can now <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. Not available in 2.1.</p>
+    <p>You can now <a href="/guides/v2.2/cloud/trouble/reset-cron-jobs.html">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</p>
   </li>
 </ul>
 
 <h2 id="v200203">v2002.0.3</h2>
 
-<h4 id="resolved-issues-10">Resolved issues</h4>
+<h4 id="resolved-issues-11">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4707,7 +4836,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200202">v2002.0.2</h2>
 
-<h4 id="resolved-issues-11">Resolved issues</h4>
+<h4 id="resolved-issues-12">Resolved issues</h4>
 
 <ul>
   <li>
@@ -4718,7 +4847,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200201">v2002.0.1</h2>
 
-<h4 id="new-features-7">New features</h4>
+<h4 id="new-features-8">New features</h4>
 
 <ul>
   <li>
@@ -4731,7 +4860,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
 </ul>
 
-<h4 id="resolved-issues-12">Resolved issues</h4>
+<h4 id="resolved-issues-13">Resolved issues</h4>
 
 <ul>
   <li>

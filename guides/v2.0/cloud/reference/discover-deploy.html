@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.0/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.0/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -1166,8 +1185,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
     </ul>
   
@@ -1551,8 +1568,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
     </ul>
   
@@ -1562,8 +1577,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 		    
 		    	
-
-
 
 
 
@@ -1584,11 +1597,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.0/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
     <ul>
+      
+         
+
+
+
+
+
       
          
 
@@ -1604,14 +1624,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.0/cloud/before/before-workspace.html">Prepare for manual setup</a>
   
 
   
-</li>
-
-
-
+    <ul>
       
          
 
@@ -1751,6 +1768,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1793,15 +1817,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   
 </li>
-
-
-
-      
-         
-
-
-
-
 
 
 
@@ -1930,8 +1945,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
       
          
-
-
 
 
 
@@ -2099,8 +2112,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
       
          
-
-
 
 
 
@@ -2301,8 +2312,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
 
@@ -2353,8 +2362,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
 
@@ -2371,8 +2378,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
 
@@ -2380,12 +2385,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
-
-
 
 
 
@@ -2585,8 +2586,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
       
          
-
-
 
 
 
@@ -3229,8 +3228,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
 
@@ -3302,8 +3299,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
       
          
-
-
 
 
 
@@ -3385,8 +3380,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
     </ul>
   
@@ -3421,8 +3414,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
 
@@ -3430,12 +3421,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-
-
       
          
-
-
 
 
 
@@ -3579,7 +3566,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">auth.json</code> in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of <a href="/guides/v2.0/cloud/basic-information/cloud-plans.html#autoprovisioning">autoprovisioning</a> or a new project using a blank template. If you need to verify the file and settings, see <a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot deployment</a>.</li>
+  <li><code class="highlighter-rouge">auth.json</code> in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of <a href="/guides/v2.0/cloud/basic-information/cloud-plans.html#autoprovisioning">autoprovisioning</a> or a new project using a blank template. If you need to verify the file and settings, see <a href="/guides/v2.0/cloud/trouble/troubleshoot-deployment.html">Troubleshoot deployment</a>.</li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> is updated and saved in the root directory</li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a> is updated and saved in <code class="highlighter-rouge">magento/</code></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> is updated and saved in <code class="highlighter-rouge">magento/</code></li>
@@ -3697,7 +3684,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>
-    <p>If Magento is <strong>not installed</strong>, it installs Magento with <code class="highlighter-rouge">bin/magento setup:install</code>, updates the deployment configuration, <code class="highlighter-rouge">app/etc/env.php</code>, and the database for your specified environment (for example, Redis and website URLs). <strong>Important:</strong> When you completed the <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a> during setup, Magento Commerce was installed and deployed across all environments.</p>
+    <p>If Magento is <strong>not installed</strong>, it installs Magento with <code class="highlighter-rouge">bin/magento setup:install</code>, updates the deployment configuration, <code class="highlighter-rouge">app/etc/env.php</code>, and the database for your specified environment (for example, Redis and website URLs). <strong>Important:</strong> When you completed the <a href="/guides/v2.0/cloud/setup/first-time-deploy.html">First time deployment</a> during setup, Magento Commerce was installed and deployed across all environments.</p>
   </li>
   <li>
     <p>If Magento <strong>is installed</strong>, performs any necessary upgrades. The deployment script runs <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html"><code class="highlighter-rouge">bin/magento setup:upgrade</code></a> to update the database schema and data (which is necessary after extension or core code updates), and also updates the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, <code class="highlighter-rouge">app/etc/env.php</code>, and the database for your environment. Finally, the deployment script clears the Magento cache.</p>
@@ -3734,7 +3721,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/guides/v2.0/cloud/access-acct/trouble.html">Deployment troubleshooting</a></li>
+  <li><a href="/guides/v2.0/cloud/trouble/troubleshoot-deployment.html">Deployment troubleshooting</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
   <li><a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>

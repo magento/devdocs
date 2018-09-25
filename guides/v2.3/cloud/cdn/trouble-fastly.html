@@ -189,6 +189,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local Development</a>
+  </li>
+
+
+
+          
+        
+          
+          
+            
+
+
+
+
+
+  
+  
+  
+  <li>
     <a href="/guides/v2.3/cloud/env/environments.html">Configure Environments</a>
   </li>
 
@@ -227,7 +246,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
   
   <li>
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools Release Notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release Notes</a>
   </li>
 
 
@@ -1754,7 +1773,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local environment setup</a>
+    <a href="/guides/v2.3/cloud/setup/first-time-setup.html">Local development setup</a>
   
 
   
@@ -1774,7 +1793,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
+    <a href="/guides/v2.3/cloud/docker/docker-development.html">Docker development</a>
+  
+
+  
+    <ul>
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/docker/docker-config.html">Launch Docker</a>
   
 
   
@@ -1782,6 +1821,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
+      
+    </ul>
+  
+</li>
+
+
+
+      
+         
+
+
+
+
+
+  
+  
+  
+
+  
+  
+<li class=" ">
+  
+    <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for manual setup</a>
+  
+
+  
+    <ul>
       
          
 
@@ -1921,6 +1987,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
       
+    </ul>
+  
+</li>
+
+
+
+      
          
 
 
@@ -1959,29 +2032,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li class=" ">
   
     <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
-  
-
-  
-</li>
-
-
-
-      
-         
-
-
-
-
-
-  
-  
-  
-
-  
-  
-<li class=" ">
-  
-    <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
   
 
   
@@ -3895,7 +3945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ece-tools release notes</a>
+    <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Release notes for ece-tools</a>
   
 
   
@@ -4037,7 +4087,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>For information setting up and configuring Fastly, see <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a>.</p>
+			<p>For information setting up and configuring Fastly, see <a href="/guides/v2.3/cloud/cdn/cloud-fastly.html">Set up Fastly</a>.</p>
 
 <p>To verify the Fastly extension is working or to debug the Fastly extension, you can use the <code class="highlighter-rouge">curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.</p>
 
@@ -4226,9 +4276,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To determine if the default VCL snippets are not uploaded, check the following:</p>
 
 <ul>
-  <li><strong>Top level navigation does not work</strong>: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See <a href="/guides/v2.3/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</li>
+  <li><strong>Top level navigation does not work</strong>: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See <a href="/guides/v2.3/cloud/cdn/configure-fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</li>
   <li><strong>Pages are not caching</strong>: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL &gt; 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it’s due to a 3rd party module or Magento extension blocking or removing the Magento headers. See <a href="#xcache-miss">X-Cache missed section</a> for details.</li>
-  <li><strong>Geo-location/GeoIP does not work</strong>: The uploaded Magento Fastly VCL snippets append the country code to the URL. See <a href="/guides/v2.3/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</li>
+  <li><strong>Geo-location/GeoIP does not work</strong>: The uploaded Magento Fastly VCL snippets append the country code to the URL. See <a href="/guides/v2.3/cloud/cdn/configure-fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</li>
 </ul>
 
 <h2 id="curl">Resolve errors found by cURL</h2>
@@ -4269,11 +4319,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<p>If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a> for instructions.</p>
+<p>If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See <a href="/guides/v2.3/cloud/cdn/cloud-fastly.html">Set up Fastly</a> for instructions.</p>
 
 <h3 id="no-VCL">Fastly-Magento-VCL-Uploaded is not present</h3>
 
-<p>During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see <a href="/guides/v2.3/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</p>
+<p>During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see <a href="/guides/v2.3/cloud/cdn/configure-fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</p>
 
 <h3 id="xcache-miss">X-Cache includes MISS</h3>
 
