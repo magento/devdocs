@@ -178,6 +178,6 @@ settings or entering credentials.
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 After you have configured it, you can continue with advanced options including
 custom VCL snippets.

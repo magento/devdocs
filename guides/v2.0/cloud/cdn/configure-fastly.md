@@ -157,7 +157,7 @@ Backend settings provide fine tuning for Fastly performance with Origin shieldin
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
 
-You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [WordPress]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
+You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [WordPress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) to handle your blog.
 
 1. Access and expand **Fastly Configuration**.
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.

@@ -165,10 +165,10 @@ The values include:
 
 For detailed examples and custom code, see the following:
 
--   [Custom whitelist VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-whitelist.html)
--   [Custom blacklist VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-blacklist.html)
--   [Custom redirect to Wordpress VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html)
--   [Custom block bad referer VCL]({{ page.baseurl }}/cloud/configure/fastly-vcl-badreferer.html)
+-   [Custom whitelist VCL]({{ page.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
+-   [Custom blacklist VCL]({{ page.baseurl }}/cloud/cdn/fastly-vcl-blacklist.html)
+-   [Custom redirect to Wordpress VCL]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html)
+-   [Custom block bad referer VCL]({{ page.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
 
 ## Add VCL snippets to Fastly configuration {#add-snippet}
 

@@ -14,6 +14,8 @@ functional_areas:
   - Deploy
 ---
 
+---
+
 #### Previous step:
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 
