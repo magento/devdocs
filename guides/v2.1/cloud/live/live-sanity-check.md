@@ -27,7 +27,7 @@ If you modified your `composer.json` file to add modules, we recommend running t
 
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 * `config.local.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
 * `config.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
@@ -169,7 +169,7 @@ We highly recommend having Magento already installed prior to deployment. During
 
 		php bin/magento setup:upgrade
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean

@@ -1,7 +1,7 @@
 ---
 group: php-developer-guide
 title: Routing
-version: 2.1
+version: 2.3
 ---
 
 In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.
@@ -149,6 +149,8 @@ If `app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php` exists, 
 
 Action classes are extensions of the [`Action`] class that a router returns on matched requests. 
 The `execute()` function in these classes contain the logic for dispatching requests.
+
+Each Action should implement one or more Magento\Framework\App\Action\Http*HTTP Method*ActionInterface to declare which HTTP request methods it can process.
 
 Magento has a `form key` validation in place for all `POST` non-AJAX requests - if your `Action` doesn't need that validation or you want to modify it you can implement `CsrfAwareActionInterface`.
 

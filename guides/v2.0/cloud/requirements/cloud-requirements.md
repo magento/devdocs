@@ -83,7 +83,7 @@ This software is *not* upgradable but versions for the following software is con
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 
@@ -112,7 +112,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
-*	Install and configure [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html)
+*	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ## Development and testing {#cloud-req-devtest}
@@ -151,6 +151,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 #### Related topics
 
 *	[Cloud Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
-*	[First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 *	[Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Go live and launch]({{ page.baseurl }}/cloud/live/live.html)

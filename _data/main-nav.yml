@@ -7,13 +7,16 @@
     - label: Cloud Architecture
       url: /cloud/architecture/cloud-architecture.html
 
+    - label: Local Development
+      url: /cloud/setup/first-time-setup.html
+
     - label: Configure Environments
       url: /cloud/env/environments.html
 
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
 
-    - label: ece-tools Release Notes
+    - label: Release Notes
       url: /cloud/release-notes/cloud-tools.html
       exclude_versions: ['2.0']
 
@@ -130,12 +133,14 @@
       url: /test/testing.html
 
     - label: Functional Acceptance Testing
-      url: /magento-functional-testing-framework/2.2/introduction.html
+      url: /mftf/2.2/introduction.html
       include_versions: ['2.2']
+      versionless: true
 
     - label: Functional Acceptance Testing
-      url: /magento-functional-testing-framework/2.3/introduction.html
+      url: /mftf/2.3/introduction.html
       include_versions: ['2.3']
+      versionless: true
 
     - label: Functional Testing
       url: /mtf/mtf_introduction.html

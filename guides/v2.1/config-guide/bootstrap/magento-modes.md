@@ -34,9 +34,6 @@ You can run Magento in any of the following *modes*:
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
-        <div class="bs-callout bs-callout-info">
-        <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
-        </div>
     </td>
 	</tr>
 	<tr>
@@ -48,8 +45,20 @@ You can run Magento in any of the following *modes*:
 				<li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
 			</ul></td>
 	</tr>
+<tr>
+		<td>maintenance</td>
+		<td><p>Intended to prevent access to the Magento application while it is being updated or reconfigured, this mode:</p>
+			<ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
+				<li>When the application is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
+				<li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>
+			</ul></td>
+		</tr>
 </tbody>
 </table>
+
+{:.bs-callout .bs-callout-info}
+[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports only production and maintenance modes.
+
 
 ## Default mode
 
@@ -68,9 +77,6 @@ For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide
 ## Developer mode
 
 You should run the Magento software in developer mode when you're extending or customizing it.
-
-{:.bs-callout .bs-callout-info}
-[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
 
 In developer mode:
 
@@ -92,6 +98,15 @@ In production mode:
 
 -   Static view files are not materialized and URLs for them are composed on the fly. Static view files are served from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} only.)
 -   Errors are logged to the file system and are never displayed to the user.
+
+## Maintenance mode
+
+Run Magento in maintenance mode to take your site offline while you complete maintainenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default `Service Temporarily Unavailable` page.
+
+You can create a [custom mainenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create.html), manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
+
+If you are using {{site.data.var.ece}}, Magento applicationruns in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See [Deployment hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+
 
 #### Next step
 

@@ -55,7 +55,7 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 
 ## Rewrite using Fastly VCL snippet
 
-You can generate the `sitemap.xml` file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+You can generate the `sitemap.xml` file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 
