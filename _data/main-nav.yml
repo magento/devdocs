@@ -48,7 +48,7 @@
       url: /cloud/bk-cloud.html
 
     - label: Release Information
-      url: /magento-release-information.html
+      url: /release-notes/bk-release-notes.html
       versionless: true
 
 - label: Development
