@@ -11,8 +11,8 @@ functional_areas:
 ---
 
 Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When
-working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/){:target="_blank"}
-with [Varnish](https://varnish-cache.org/docs/){:target="_blank"} caches your
+working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/)
+with [Varnish](https://varnish-cache.org/docs/) caches your
 site pages, assets, CSS, and more in backend data centers you set up. As
 customers access your site and stores, the requests hit Fastly to load cached
 pages faster.
@@ -145,14 +145,14 @@ instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/c
 
 Fastly supports forcing unencrypted requests to TLS through the Force TLS
 feature. Set up a secure base URL in Magento and turn on the Force TLS option
-in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="_blank"}.
+in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
 
 ## GeoIP service support {#geoip}
 
 Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP
 handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
-see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling){:target="_blank"}.
+see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling).
 
 ## Image Optimization support
 

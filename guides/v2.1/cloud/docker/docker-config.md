@@ -17,7 +17,7 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 
 #### To launch Docker:
 
-1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="_blank"}.
+1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud).
 
 1.  Add your credentials to the `auth.json` file.
 
@@ -84,9 +84,9 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost:8080`](http://localhost:8080){:target="_blank"}
+    -  [`http://localhost:8080`](http://localhost:8080)
 
-    -  [`https://localhost`](https://localhost){:target="_blank"}
+    -  [`https://localhost`](https://localhost)
 
 #### To stop and remove the Docker configuration:
 

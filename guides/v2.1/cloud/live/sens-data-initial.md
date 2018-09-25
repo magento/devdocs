@@ -65,7 +65,7 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.local.php to your local workstation {#export}
@@ -186,7 +186,7 @@ To change values in the Integration environment Magento Admin:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ### Generate a new version of config.local.php {#regenerate}
