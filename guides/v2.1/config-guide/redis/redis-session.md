@@ -158,7 +158,7 @@ where
 </table>
 
 {: .bs-callout .bs-callout-info }
-TTL for session records use the value for Cookie Lifetime, but interprets a value of zero differently from PHP. Instead of the session staying open until the browser is closed, min_lifetime will be used, which has a default value of sixty seconds. If that behavior is not desired, we suggest increasing that value.
+TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}
 
