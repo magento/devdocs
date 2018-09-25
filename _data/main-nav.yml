@@ -49,7 +49,6 @@
 
     - label: Release Information
       url: /release-notes/bk-release-notes.html
-      versionless: true
 
 - label: Development
   children:
