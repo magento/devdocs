@@ -34,9 +34,6 @@ This release introduces significant tools to improve the developer experience: P
 
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
-
-* **Amazon Sales Channel** allows you to create and manage Amazon listings and fulfill your orders for both Amazon customers as well customers of your store.  
-
 ### Core product improvements
 
 * **Updates to Magento's tech stack (including upgraded PHP support)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.  
