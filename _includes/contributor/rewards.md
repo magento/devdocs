@@ -9,8 +9,8 @@ Every merged PR receives one of the base achievements and potentially one or mor
 
 Examples:
 
-- Contributor submitsPR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
-- Contributor submitsPR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
+- Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
+- Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
 - Contributor submits PR port of existing merged PR:
   - Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points
   - Porting contributor: Port(base) 5 points
