@@ -456,7 +456,7 @@ If you want to change the representation of block details, you can change a [`Te
 
 * Find the method
 
-{% highlight php5 %}
+```php
 <?php
 protected function _toHtml()
 {

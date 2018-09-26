@@ -242,11 +242,11 @@ It is located in `Fixture` directory of corresponding module. That contains subd
        source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates"
        group="storefront_properties" />
 
-{% endhighlight%}
+```
 
 Let's see our data source file `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
-{% highlight php %}
+```php 
 
 <?php
 /**
