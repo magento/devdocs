@@ -1,13 +1,15 @@
 Magento is thankful for all contributions, and we always recognize our most active members. The aim is to find and recognize our top contributors according to points awarded during a given time period (monthly/quarterly/yearly). Contributors can earn points in numerous ways with a focus in pull requests to the backlog and special projects.
 
-The Community Engineering team assesses each pull request and determines the best awards for the work involved. Contribution Points are calculated according to the assessment results. Each contributor receives points after the pull request is merged.
+The Community Engineering team assesses each Pull Request and determines the best awards for the work involved. Contribution Points are calculated according to the assessment results. We award points when the PR is merged.
 
 ### How points are awarded
 {:.no_toc}
 
-Every merged PR receives one of the base achievements and potentially one or more additional achievements. Points will be awarded after the PR has been merged. Contributors and Maintainers receive the same amount of points due to the level of work completed by each person on the PR.
+Every merged PR receives one base achievement and potentially one or more additional achievements. These achievements are applied to PRs during review and assessment. Contributors and Maintainers receive points after the PR has been merged.
 
-Examples:
+Due to the level of work required for developing and reviewing a PR, Contributors and Maintainers receive the same amount of points.
+
+See the following examples for calculated reward points:
 
 - Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points
 - Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
@@ -16,24 +18,23 @@ Examples:
   - Porting contributor: Port(base) 5 points
 - Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points
 
-Earned achievements displays as labels on GitHub PRs and displayed per Magento Contributor, Partner, and Maintainer on [magento.com](https://magento.com/magento-contributors).
+Earned achievements display as labels on GitHub PRs and for each Magento Contributor, Partner, and Maintainer on [magento.com](https://magento.com/magento-contributors).
 
 ### Base achievements
 {:.no_toc}
 
-Every merged Pull Request receive one of the base achievements.
+Every merged PR receives one base achievement.
 
 Achievement | Points | Description
 | ------------ | --- | --- |
-Improvement| 10 | Contribution contains code improvements, refactoring or a bug fix.
-Port | 5 | Contribution ports an existing solution between release lines. The author of original PR receives additional **5 points** when another person contributes the ported Pull Request.
-Code Cleanup | 1 | Contribution contains code cleanup (typos, inline documentation, coding style, remove unused code, and so on).
-  |   |
+Improvement| 10 | Contribution contains code improvements, refactoring, or a bug fix.
+Port | 5 | Contribution ports an existing solution between release lines. The author of the original PR receives an additional **5 points** when another person contributes the ported Pull Request.
+Code Cleanup | 1 | Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, and so on.
 
 ### Additional achievements
 {:.no_toc}
 
-Every Pull Request may receive several additional achievements according to assessment result. All additional achievements sum up with base achievements.
+Every PR may receive several additional achievements during assessment.
 
 Achievement | Points | Description
 | ------------ | --- | --- |
@@ -47,17 +48,17 @@ Author of Ported Issue | 5 | Additional points for a contribution that ports (up
 
 ## DevDocs awards and points
 
-You can gain points for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to your contributor totals, also based on labels assigned to your PRs. Each PR receives one base achievement and potentially additional achievements.
+Contributors and Maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and apply labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
 
 ### Base achievements
 {:.no_toc}
 
-Every merged PR to the [DevDocs repository](https://github.com/magento/devdocs) receives one base achievement:
+Every merged PR to the [DevDocs repository](https://github.com/magento/devdocs) receives one base achievement. If you enter a PR with editorial fixes and new content, you receive the Improvement and additional achievements.
 
 Achievement | Points | Description
 | ------------ | --- | --- |
-Improvement | 10 | Contribution contains document improvement, adding missing features of inconsistency between code base and documentation.
-Editorial | 1 | Contribution contains typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.
+Improvement | 10 | Contribution contains document improvements, adding missing features of inconsistency between code base and documentation, and so on.
+Editorial | 1 | Contribution contains fixes only for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.
 
 ### Additional achievements
 {:.no_toc}
@@ -68,4 +69,4 @@ Achievement | Points | Description
 | ------------ | --- | --- |
 New topic | 30 | New file submissions for content that has never existed on devdocs
 Major update | 20 | Significant updates to existing content, such as a new section or example
-Technical | 10 | Updates to the code or processes that alter the technical content of the document
+Technical | 10 | Updates to code or processes that alter the technical content of the document
