@@ -48,7 +48,7 @@ Enter actual data in `<browserName>` and `<browser>` attributes.
 
 Example for Google Chrome:
 
-{% highlight xml %}
+```xml 
 
 <server>
 <item name="selenium"
@@ -65,7 +65,7 @@ Example for Google Chrome:
 </item>
 </server>
 
-{% endhighlight %}
+```
 
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 

@@ -7,9 +7,9 @@ The SSH keys require the following:
 
 For more information on SSH keys, see the following:
 
-*	[Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="_blank"}
-*	[Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows){:target="_blank"}
-*	[ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen){:target="_blank"}
+*	[Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+*	[Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows)
+*	[ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen)
 
 ## Locate an existing SSH key pair {#existing}
 
@@ -121,8 +121,8 @@ To add an SSH key using the Project Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
 
-	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
-2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud){:target="_blank"}.
+	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
+2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 3.	In your selected branch, an icon displays if you do not have an SSH key added.
 
 	![No SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-install.png)
@@ -140,4 +140,4 @@ To set variables, enter the following commands on every workspace:
 	git config --global user.name "<your name>"
 	git config --global user.email <your e-mail address>
 
-For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
+For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time)

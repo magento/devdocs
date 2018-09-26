@@ -34,7 +34,7 @@ To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you must
 
 Add these files to your {{site.data.var.ee}} code:
 
-1.  In the [{{site.data.var.ece}} GitHub repository](https://github.com/magento/magento-cloud){:target="_blank"}, select the branch corresponding to the {{site.data.var.ee}} version you currently have.
+1.  In the [{{site.data.var.ece}} GitHub repository](https://github.com/magento/magento-cloud), select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
@@ -60,7 +60,7 @@ Add these files to your {{site.data.var.ee}} code:
 
     For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.1.4 branch:
 
-    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
+    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml).
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
@@ -83,7 +83,7 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 
 #### To create a new `auth.json` file:
 
-First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample){:target="_blank"}.
+First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample).
 
 1.  Using a text editor, create an `auth.json` file and save it in your Magento root directory.
 
@@ -136,7 +136,7 @@ This method is best to prevent accidental exposure of credentials, such as pushi
 
 ## Edit `composer.json` {#composer-json}
 
-Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="_blank"}.
+Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json).
 
 To edit `composer.json`:
 
