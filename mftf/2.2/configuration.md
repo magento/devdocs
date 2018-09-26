@@ -46,6 +46,12 @@ In most cases, these values are not required.
 Sensible defaults are in place.
 But in case you do need to do some configuration, they are shown here for your reference.
 
+### DEFAULT_TIMEZONE
+
+* Use: Optional.
+* Description: Timezone used for `generateDate` actions that do not have a `timezone` specified. Will use `America/Los_Angeles` if one is not specified.
+* Example: `UTC`
+
 ### SELENIUM
 
 The `SELENIUM_*` values are concatenated together to form the URL of a custom Selenium server to test against.
