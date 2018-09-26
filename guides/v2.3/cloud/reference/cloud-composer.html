@@ -4087,7 +4087,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>We use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage Magento Commerce Cloud dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
+			<p>We use <a href="https://getcomposer.org/doc">Composer</a> to manage Magento Commerce Cloud dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
 <p>Composer manages required libraries and dependencies for your project and installs them in the <code class="highlighter-rouge">vendor</code> directory.</p>
 
@@ -4133,7 +4133,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="cloud-composer-cloudmeta">magento/magento-cloud-metapackage</h2>
 
-<p>The <code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank"><em>metapackage</em></a> and does not contain any code.</p>
+<p>The <code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type"><em>metapackage</em></a> and does not contain any code.</p>
 
 <p>The metapackage depends on the appropriate versions of <code class="highlighter-rouge">vendor/magento/ece-patches</code>, <a href="#ece-tools"><code class="highlighter-rouge">vendor/magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">vendor/magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
 

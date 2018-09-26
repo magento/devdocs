@@ -4034,7 +4034,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You may <a href="/guides/v2.1/cloud/live/live.html#goliveinfo">need information</a> for this ticket.</p>
 
 <ol>
-  <li>Log in to your <a href="https://accounts.magento.cloud" target="_blank">Magento Cloud account</a>.</li>
+  <li>Log in to your <a href="https://accounts.magento.cloud">Magento Cloud account</a>.</li>
   <li>Click <strong>Support</strong> &gt; <strong>Submit ticket</strong> from the top menu.</li>
   <li>Follow the prompts to open an issue with Support.	Support assists you with your live deployment and gives you an IP address for your live site so you can set up DNS.</li>
   <li>Provide a list of all storefront domain names for the shared SSL certificate.</li>
@@ -4055,16 +4055,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site, you must add a CNAME record for each one.</p>
 
-<p class="bs-callout bs-callout-info">This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
+<p class="bs-callout bs-callout-info">This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
 
 <p>The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.</p>
 
 <ul>
-  <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a></li>
-  <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="_blank">DNS Made Easy</a></li>
-  <li>ANAME at <a href="https://www.easydns.com" target="_blank">easyDNS</a></li>
-  <li>ACNAME at <a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
-  <li>ALIAS at <a href="https://pointhq.com" target="_blank">PointDNS</a></li>
+  <li>CNAME with ALIAS record from <a href="http://dyn.com">Dyn</a></li>
+  <li>ANAME record on <a href="http://www.dnsmadeeasy.com">DNS Made Easy</a></li>
+  <li>ANAME at <a href="https://www.easydns.com">easyDNS</a></li>
+  <li>ACNAME at <a href="https://www.cloudflare.com">CloudFlare</a></li>
+  <li>ALIAS at <a href="https://pointhq.com">PointDNS</a></li>
 </ul>
 
 <p>Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider for more information.</p>
@@ -4081,7 +4081,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
-<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
+<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification">DNS TXT record validation</a>.</p>
 
 <h2 id="verify-production-configurations">Verify Production configurations</h2>
 
@@ -4095,10 +4095,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Change the default Magento Admin password</p>
 
-    <p>See <a href="http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html" target="_blank">Configuring Admin Security</a> for further information on Admin configurations.</p>
+    <p>See <a href="http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html">Configuring Admin Security</a> for further information on Admin configurations.</p>
   </li>
   <li>Optimize all images for the web</li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html" target="_blank">Enable minification</a> for JS, CSS, and HTTP</li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html">Enable minification</a> for JS, CSS, and HTTP</li>
 </ul>
 
 <h2 id="verifyfastly">Verify Fastly caching</h2>
@@ -4113,16 +4113,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="performance">Performance testing</h2>
 
-<p>We recommend that you review the <a href="https://github.com/magento/magento2/blob/2.1/setup/performance-toolkit" target="_blank">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
+<p>We recommend that you review the <a href="https://github.com/magento/magento2/blob/2.1/setup/performance-toolkit">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
 
 <p>You can also test using the following 3rd party options:</p>
 
 <ul>
-  <li><a href="https://www.joedog.org/siege-home/" target="_blank">Siege</a>: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.</li>
-  <li><a href="http://jmeter.apache.org/" target="_blank">Jmeter</a>: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.</li>
-  <li><a href="https://support.newrelic.com/" target="_blank">New Relic</a> (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.</li>
+  <li><a href="https://www.joedog.org/siege-home/">Siege</a>: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.</li>
+  <li><a href="http://jmeter.apache.org/">Jmeter</a>: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.</li>
+  <li><a href="https://support.newrelic.com/">New Relic</a> (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.</li>
   <li><a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire</a> (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.</li>
-  <li><a href="https://www.webpagetest.org/" target="_blank">WebPageTest</a> and <a href="https://www.pingdom.com/" target="_blank">Pingdom</a>: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.</li>
+  <li><a href="https://www.webpagetest.org/">WebPageTest</a> and <a href="https://www.pingdom.com/">Pingdom</a>: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.</li>
 </ul>
 
 <h4 id="next-step">Next step:</h4>

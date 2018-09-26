@@ -4112,7 +4112,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Verify Fastly is caching properly on Staging and Production. <a href="/guides/v2.2/cloud/cdn/configure-fastly.html">Configuring Fastly</a> requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.</p>
 
-<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains" target="_blank">Testing before changing DNS</a>.</p>
+<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains">Testing before changing DNS</a>.</p>
 
 <p>The following examples use Pro URLs. You can use any URL with the <code class="highlighter-rouge">dig</code> command.</p>
 
@@ -4152,8 +4152,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">Fastly-Module-Enabled</code> should be either <code class="highlighter-rouge">Yes</code> or the Fastly extension version number</li>
   <li><code class="highlighter-rouge">X-Cache</code> should be either <code class="highlighter-rouge">HIT</code> or <code class="highlighter-rouge">HIT, HIT</code></li>
   <li><code class="highlighter-rouge">x-cache-hits</code> should be 1,1</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9" target="_blank"><code class="highlighter-rouge">Cache-Control: max-age</code></a> should be greater than 0</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32" target="_blank"><code class="highlighter-rouge">Pragma</code></a> should be <code class="highlighter-rouge">cache</code></li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"><code class="highlighter-rouge">Cache-Control: max-age</code></a> should be greater than 0</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32"><code class="highlighter-rouge">Pragma</code></a> should be <code class="highlighter-rouge">cache</code></li>
 </ul>
 
 <p>To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:</p>
@@ -4289,16 +4289,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.</p>
 
-<p>We recommend that you review the <a href="https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit" target="_blank">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
+<p>We recommend that you review the <a href="https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
 
 <p>For best results, we recommend the following tools:</p>
 
 <ul>
-  <li><a href="https://www.joedog.org/siege-home/" target="_blank">Siege</a>: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.</li>
-  <li><a href="http://jmeter.apache.org/" target="_blank">Jmeter</a>: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.</li>
+  <li><a href="https://www.joedog.org/siege-home/">Siege</a>: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.</li>
+  <li><a href="http://jmeter.apache.org/">Jmeter</a>: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.</li>
   <li>New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.</li>
   <li><a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire</a> (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.</li>
-  <li><a href="https://www.webpagetest.org/" target="_blank">WebPageTest</a> and <a href="https://www.pingdom.com/" target="_blank">Pingdom</a>: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.</li>
+  <li><a href="https://www.webpagetest.org/">WebPageTest</a> and <a href="https://www.pingdom.com/">Pingdom</a>: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.</li>
 </ul>
 
 <h2 id="security-scan">Set up Magento Security Scan Tool</h2>

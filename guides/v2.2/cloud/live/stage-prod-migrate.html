@@ -4220,7 +4220,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You will migrate   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
 
-<p>We recommend using the Linux remote synchronization and file transfer command <a href="https://en.wikipedia.org/wiki/Rsync" target="_blank"><code class="highlighter-rouge">rsync</code></a>. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.</p>
+<p>We recommend using the Linux remote synchronization and file transfer command <a href="https://en.wikipedia.org/wiki/Rsync"><code class="highlighter-rouge">rsync</code></a>. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.</p>
 
 <p>We suggest using the following syntax:</p>
 
@@ -4235,7 +4235,7 @@ v verbose
 P partial progress
 </code></pre></div></div>
 
-<p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
+<p>For additional options, see the <a href="http://linux.die.net/man/1/rsync">rsync man page</a>.</p>
 
 <p>To migrate static files from your local machine:</p>
 
@@ -4267,7 +4267,7 @@ P partial progress
 
 <h2 id="cloud-live-migrate-db">Migrate the database</h2>
 
-<p><strong>Prerequisite:</strong> A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the <a href="https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger" target="_blank">TRIGGER privilege</a>.</p>
+<p><strong>Prerequisite:</strong> A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the <a href="https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger">TRIGGER privilege</a>.</p>
 
 <p><strong>Important:</strong> The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.</p>
 
