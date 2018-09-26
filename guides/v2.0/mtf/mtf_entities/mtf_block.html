@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2004,7 +2004,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">Show/hide the code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -2163,7 +2163,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">waitForElementVisible</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">warningMessage</span><span class="p">);</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">warningMessage</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getText</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 </div>
   </div>
 
@@ -2186,13 +2187,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can use the <code class="highlighter-rouge">_rootElement</code> to find an element in the current block.</p>
 
-<p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:</p>
+<p>Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code class="highlighter-rouge">WidgetInstance.php</code></a> block:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">addLayoutUpdates</span><span class="p">()</span>
 <span class="p">{</span>
    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addLayoutUpdates</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>This code uses <code class="highlighter-rouge">_rootElement</code> to search the button element by the <code class="highlighter-rouge">$this-&gt;addLayoutUpdates</code> selector. The advantage of the <code class="highlighter-rouge">_rootElement</code> is that it enables search in the context of the block to which the element belongs.</p>
 
@@ -2205,7 +2207,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code class="highlighter-rouge">email</code> and <code class="highlighter-rouge">password</code>.</p>
 
-<p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_login_ui.png"><img src="/common/images/ftf/mtf_block_login_ui.png" alt="" /></a></p>
 
 <p>The mapping file for the block is stored in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml</code>, along with the block.</p>
 
@@ -2213,7 +2215,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The mapping file defines the fields from the form.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2228,7 +2230,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nt">&lt;/email&gt;</span>
         <span class="nt">&lt;password</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fields&gt;</span>
-<span class="nt">&lt;/mapping&gt;</span></code></pre></figure>
+<span class="nt">&lt;/mapping&gt;</span>
+</code></pre></div></div>
 
 <p id="mtf_block_form_xml_nodes">See a description of the nodes in the following table.</p>
 
@@ -2252,7 +2255,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="mtf_block_map_form_tab">Form tab mapping</h2>
 
 <p>You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
+To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code class="highlighter-rouge">Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
 
 <p>For example, let’s see tabs for the Magento Widget: <strong>Settings</strong>, <strong>Storefront properties</strong>, <strong>Frontend App Options</strong>, <strong>Layout Updates</strong> .</p>
 
@@ -2264,7 +2267,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <p>The file contains the following mapping:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2307,29 +2310,51 @@ To get the block class with form tab mapping, extend your class from <a href="ht
         <span class="nt">&lt;selector&gt;</span>#widget_instace_tabs_main_section<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;strategy&gt;</span>css selector<span class="nt">&lt;/strategy&gt;</span>
     <span class="nt">&lt;/widget_instance&gt;</span>
-<span class="nt">&lt;/tabs&gt;</span></code></pre></figure>
+<span class="nt">&lt;/tabs&gt;</span>
+</code></pre></div></div>
 
 <p>See the following table to understand the node’s purpose.</p>
 
 <table>
-<col width="1*" />
-<col width="3*" />
-<tbody>
-<tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
-<tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
-<tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
-<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- code, used to open the tab.</td></tr>
-<tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
-<tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
-</tbody>
+    <col width="1*" />
+    <col width="3*" />
+    <tbody>
+        <tr>
+            <th><code>tabs</code> nodes </th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>wrapper</code> </td>
+            <td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code>
+                has not been specified.</td>
+        </tr>
+        <tr>
+            <td><code>class</code> </td>
+            <td>Reference to the class that handles tab’s behavior.</td>
+        </tr>
+        <tr>
+            <td><code>selector</code> </td>
+            <td>Identifier for the selector of the tab in the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
+ code, used to open the tab.</td>
+        </tr>
+        <tr>
+            <td><code>strategy</code> </td>
+            <td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td>
+        </tr>
+        <tr>
+            <td><code>fields</code> </td>
+            <td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form
+                    mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code>
+                attribute <code>composite="1"</code>.</td>
+        </tr>
+    </tbody>
 </table>
 
 <p>Example of <code class="highlighter-rouge">composite</code> field from <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
 
 <p>In the mapping file:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;quantity_and_stock_status</span> <span class="na">composite=</span><span class="s">"1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;qty&gt;</span>
         <span class="nt">&lt;selector&gt;</span>[name="product[quantity_and_stock_status][qty]"]<span class="nt">&lt;/selector&gt;</span>
     <span class="nt">&lt;/qty&gt;</span>
@@ -2337,7 +2362,8 @@ To get the block class with form tab mapping, extend your class from <a href="ht
         <span class="nt">&lt;selector&gt;</span>[name="product[quantity_and_stock_status][is_in_stock]"]<span class="nt">&lt;/selector&gt;</span>
         <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
     <span class="nt">&lt;/is_in_stock&gt;</span>
-<span class="nt">&lt;/quantity_and_stock_status&gt;</span></code></pre></figure>
+<span class="nt">&lt;/quantity_and_stock_status&gt;</span>
+</code></pre></div></div>
 
 <p>On the UI:</p>
 
@@ -2404,7 +2430,7 @@ For example, you develop a functional test for the   <span term-uuid="fbcfce51-6
 
 <p>Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.</p>
 
-<p><a href="/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="/common/images/ftf/mtf_block_name_path_in_ui.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="/common/images/ftf/mtf_block_name_path_in_ui.png" alt="" /></a></p>
 
 <div class="bs-callout bs-callout-tip">
   <p>  
@@ -2413,7 +2439,7 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <h5 id="mtf_block_path_code">Get the name and the path of blocks in the code</h5>
 
-<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:</p>
+<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Template.php"><code class="highlighter-rouge">Template.php</code></a>:</p>
 
 <ul>
   <li>
@@ -2424,20 +2450,21 @@ If the name and path cover partially each other, hover the mouse pointer over th
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">return</span> <span class="s1">''</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplateFile</span><span class="p">());</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li>Change the code to the following</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">_toHtml</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTemplate</span><span class="p">())</span> <span class="p">{</span>
@@ -2449,7 +2476,8 @@ If the name and path cover partially each other, hover the mouse pointer over th
     <span class="k">return</span> <span class="s2">"&lt;!-- BEGIN </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nv">$class</span> <span class="o">.</span> <span class="s2">"--&gt;"</span>
         <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fetchView</span><span class="p">(</span><span class="nv">$template</span><span class="p">)</span>
         <span class="o">.</span> <span class="s2">"&lt;!-- END </span><span class="nv">$name</span><span class="s2"> using </span><span class="nv">$template</span><span class="s2"> --&gt;"</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li>Save the file</li>
@@ -2457,23 +2485,24 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <p>Now you can inspect any element in a browser, and find which block contains it.</p>
 
-<p><a href="/common/images/ftf/mtf_block_name_path_in_code.png"><img src="/common/images/ftf/mtf_block_name_path_in_code.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_block_name_path_in_code.png"><img src="/common/images/ftf/mtf_block_name_path_in_code.png" alt="" /></a></p>
 
 <h4 id="mtf_block_to-page">Add a block to the page</h4>
 
 <p>Blocks are tested as part of the <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page</a> object. To add the block to the page you must add a corresponding node to the XML file of the page object.</p>
 
-<p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
+<p>For example, the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code class="highlighter-rouge">WidgetInstanceIndex.xml</code></a>.</p>
 
 <p><code class="highlighter-rouge">block</code> is the node that adds the block to the page:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"WidgetInstanceIndex"</span> <span class="na">area=</span><span class="s">"Adminhtml"</span> <span class="na">mca=</span><span class="s">"admin/widget_instance/index"</span> <span class="na">module=</span><span class="s">"Magento_Widget"</span><span class="nt">&gt;</span>
         ...
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"widgetGrid"</span> <span class="na">class=</span><span class="s">"Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid"</span> <span class="na">locator=</span><span class="s">"#widgetInstanceGrid"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
         ...
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
 
@@ -2530,18 +2559,19 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <h3 id="mtf_block_in_block">Use blocks inside blocks</h3>
 
-<p>You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.</p>
+<p>You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code class="highlighter-rouge">BlockFactory</code></a> class and a selector.</p>
 
 <p>See the following example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">protected</span> <span class="k">function</span> <span class="nf">getTemplateBlock</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
         <span class="s1">'Magento\Backend\Test\Block\Template'</span><span class="p">,</span>
         <span class="p">[</span><span class="s1">'element'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">templateBlock</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">)]</span>
     <span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>In this code we are creating the <code class="highlighter-rouge">Magento\Backend\Test\Block\Template</code> block with the selector <code class="highlighter-rouge">$this-&gt;templateBlock</code>.</p>
 
@@ -2551,18 +2581,14 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <p>Let’s see the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml"><code class="highlighter-rouge">Catalog/Test/Page/Product/CatalogProductView.xml</code></a> page. For the better readability we reduced a list of blocks to one block.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"viewBlock"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Product\View"</span> <span class="na">locator=</span><span class="s">"#maincontent"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">/&gt;</span>        
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>This page relates to the Magento_Catalog module and contains <code class="highlighter-rouge">ViewBlock</code>. This block has reference to the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php"><code class="highlighter-rouge">Magento\Catalog\Test\Block\Product\View</code></a> class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own <code class="highlighter-rouge">ViewBlock</code> in a corresponding module. And that is where you can use render!</p>
 
@@ -2574,35 +2600,27 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <p><strong>Step 2</strong>. In the <code class="highlighter-rouge">Bundle/Test/Page/Product/CatalogProductView.xml</code>, copy <code class="highlighter-rouge">page</code> node from the <code class="highlighter-rouge">Catalog/Test/Page/Product/CatalogProductView.xml</code> without <code class="highlighter-rouge">module</code> attribute</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span><span class="nt">&gt;</span>
                 
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Step 3</strong>. Insert <code class="highlighter-rouge">block</code> with the same name of block and add a render that indicates the type of product and the class that processes this block</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogProductView"</span> <span class="na">area=</span><span class="s">"Product"</span> <span class="na">mca=</span><span class="s">"catalog/product/view"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"viewBlock"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;render</span> <span class="na">name=</span><span class="s">"bundle"</span> <span class="na">class=</span><span class="s">"Magento\Bundle\Test\Block\Catalog\Product\View"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/block&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>Details:</p>
 
@@ -2625,7 +2643,7 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 <p>Let’s take a look at the basic class <code class="highlighter-rouge">Magento\Catalog\Test\Block\Product\View</code>, where a render calls the <code class="highlighter-rouge">getOptions()</code> method from <code class="highlighter-rouge">Magento\Bundle\Test\Block\Catalog\Product\View</code>.</p>
 
-<figure class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">getOptions</span><span class="p">(</span><span class="nx">FixtureInterface</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="sd">/** @var CatalogProductSimple $product */</span>
@@ -2635,7 +2653,8 @@ If the name and path cover partially each other, hover the mouse pointer over th
     <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">)</span>
         <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">callRender</span><span class="p">(</span><span class="nv">$typeId</span><span class="p">,</span> <span class="s1">'getOptions'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'product'</span> <span class="o">=&gt;</span> <span class="nv">$product</span><span class="p">])</span>
         <span class="o">:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>It contains the <code class="highlighter-rouge">getOptions()</code> method that:</p>
 

@@ -2036,7 +2036,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.2/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2072,20 +2072,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>Well, you are on the way to install the Functional Testing Framework!</p>
 
-<p>Follow the next three steps:</p>
-
-<ul>
-  <li>
-    <p><a href="#mtf_install_pre">Check pre-installation conditions</a></p>
-  </li>
-  <li>
-    <p><a href="#mtf_install_perform">Perform the installation</a></p>
-  </li>
-  <li>
-    <p><a href="#mtf_install_check">Check the installation</a></p>
-  </li>
-</ul>
-
 <h2 id="mtf_install_pre">Check pre-installation conditions</h2>
 
 <h3 id="mtf_install_pre_inst-magento">Install the Magento application</h3>
@@ -2118,16 +2104,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.2/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
-composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn’t been installed globally.<br />
- Copy <code class="highlighter-rouge">composer.phar</code> to <code class="highlighter-rouge">/usr/local/bin/composer</code>.<br />
- To run it locally put <code class="highlighter-rouge">composer.phar</code> into directory, where <code class="highlighter-rouge">composer.json</code> file is located (that is, <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/</code>).<br />
- And run from this directory <code class="highlighter-rouge">php composer.phar install</code>.</p>
-</div>
+<p class="bs-callout bs-callout-info">If the command execution failed, check if <a href="https://getcomposer.org">Composer</a> is installed <a href="https://getcomposer.org/doc/00-intro.md#globally">globally</a>.</p>
 
 <h2 id="mtf_install_check">Check the installation</h2>
 
@@ -2135,21 +2117,29 @@ composer install
 
 <p>Check whether the <code class="highlighter-rouge">vendor</code> directory exists in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/
-ls
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>
 </code></pre></div></div>
 
 <p>Find the <code class="highlighter-rouge">mtf</code> directory.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd vendor/magento
-ls
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>vendor/magento
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>
 </code></pre></div></div>
 
 <h3 id="mtf_install_check_verify">Verify the Functional Testing Framework version</h3>
 
-<p>Open <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code class="highlighter-rouge">CHANGELOG.md</code> is version of the FTF you installed.</p>
+<p>Open <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>.
+The latest version in <code class="highlighter-rouge">CHANGELOG.md</code> is version of the FTF you installed.</p>
 
-<h2 id="next-steps-mtf_install_next-adjust-ftf-configuration-">Next Steps {#mtf_install_next} <a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a></h2>
+<h2 id="mtf_install_next">Next Steps</h2>
+
+<p><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust the FTF configuration </a></p>
+
+<!-- Link defifnitions -->
+
 
 			
 		</div>

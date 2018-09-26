@@ -2054,7 +2054,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2109,8 +2109,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To apply any changes in fixture, run generate tool:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <p>This tool creates   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
@@ -2126,8 +2127,9 @@ php generate.php
 
 <p>Magento has a tool, <code class="highlighter-rouge">generateFixtureXml.php,</code>, to automatically generate fixture with parameters indicated in arguments. It is located in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/utils</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> generateFixtureXml.php <span class="nt">--</span> <span class="nt">--name</span> widget <span class="nt">--entity_type</span> widget_instance <span class="nt">--collection</span> Magento<span class="se">\\</span>Widget<span class="se">\\</span>Model<span class="se">\\</span>Resource<span class="se">\\</span>Widget<span class="se">\\</span>Instance<span class="se">\\</span>Collection
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code class="highlighter-rouge">Widget.xml</code> fixture, you cannot create new one with the same name.</p>
@@ -2143,6 +2145,7 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
       <th style="text-align: left">Semantics</th>
       <th style="text-align: left">Value from command above</th>
       <th style="text-align: left">Note</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -2151,30 +2154,35 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
       <td style="text-align: left">Name of fixture.</td>
       <td style="text-align: left"><code class="highlighter-rouge">widget</code></td>
       <td style="text-align: left">Required</td>
+      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">--type</code></td>
       <td style="text-align: left">Table type for the entity. Can be <code class="highlighter-rouge">eav</code>, <code class="highlighter-rouge">flat</code>, <code class="highlighter-rouge">composite</code>.</td>
       <td style="text-align: left"><code class="highlighter-rouge">flat</code></td>
       <td style="text-align: left">Default value: <code class="highlighter-rouge">flat</code>.</td>
+      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">--entity_type</code></td>
       <td style="text-align: left">Database table name, where entity data is stored.</td>
       <td style="text-align: left"><code class="highlighter-rouge">widget_instance</code></td>
       <td style="text-align: left">Required</td>
+      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">--collection</code></td>
       <td style="text-align: left">Collection to generate data sets</td>
       <td style="text-align: left"><code class="highlighter-rouge">Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection</code></td>
       <td style="text-align: left">Required. Escape all backslashes.</td>
+      <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">--help</code></td>
       <td style="text-align: left">List of arguments with definitions.</td>
       <td style="text-align: left"> </td>
       <td style="text-align: left"> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -2183,14 +2191,8 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
 
 <p>Following is the generated Widget fixture located in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
---&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/fixture.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">"widget"</span>
@@ -2210,13 +2212,13 @@ php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --c
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"widget_parameters"</span> <span class="na">is_required=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-
 </code></pre></div></div>
 
 <p>To generate PHP classes, enter the following commands in the order shown:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <p>That’s it!</p>
@@ -2241,88 +2243,88 @@ php generate.php
     <tr>
       <th style="text-align: left"><code class="highlighter-rouge">&lt;fixture&gt;</code> attribute</th>
       <th style="text-align: left">Semantics</th>
-      <th style="text-align: center">Value</th>
-      <th>Example</th>
-      <th style="text-align: center">Is required?</th>
+      <th style="text-align: left">Value</th>
+      <th style="text-align: left">Example</th>
+      <th style="text-align: left">Is required?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">name</code></td>
       <td style="text-align: left">Name of fixture.</td>
-      <td style="text-align: center">string</td>
-      <td>catalogProductSimple</td>
-      <td style="text-align: center">required</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">catalogProductSimple</td>
+      <td style="text-align: left">required</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">module</code></td>
       <td style="text-align: left">Name of the module in which to place the fixture.</td>
-      <td style="text-align: center">string</td>
-      <td>Magento_Catalog</td>
-      <td style="text-align: center">required</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Magento_Catalog</td>
+      <td style="text-align: left">required</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">class</code></td>
       <td style="text-align: left">Path to the PHP class. Generator will use this path to locate automatically generated PHP file.</td>
-      <td style="text-align: center">string</td>
-      <td>Magento\Catalog\Test\Fixture\CatalogProductSimple</td>
-      <td style="text-align: center">required</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Magento\Catalog\Test\Fixture\CatalogProductSimple</td>
+      <td style="text-align: left">required</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">type</code></td>
       <td style="text-align: left">Table type for the entity.</td>
-      <td style="text-align: center"><code class="highlighter-rouge">eav</code>, <code class="highlighter-rouge">flat</code>, <code class="highlighter-rouge">virtual</code>, <code class="highlighter-rouge">composite</code></td>
-      <td>eav</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left"><code class="highlighter-rouge">eav</code>, <code class="highlighter-rouge">flat</code>, <code class="highlighter-rouge">virtual</code>, <code class="highlighter-rouge">composite</code></td>
+      <td style="text-align: left">eav</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">entity_type</code></td>
       <td style="text-align: left">Database table name where the entity data is stored. Specify more than one database table as a comma-separated list (for example, <code class="highlighter-rouge">"eav_attribute, catalog_eav_attribute"</code>) and assign <code class="highlighter-rouge">type = "composite"</code>.</td>
-      <td style="text-align: center">string</td>
-      <td>catalog_product</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">catalog_product</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">product_type</code></td>
       <td style="text-align: left">Type of product. Applicable only for product fixtures.</td>
-      <td style="text-align: center">string</td>
-      <td>simple</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">simple</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">collection</code></td>
       <td style="text-align: left">Collection to generate data sets. It is taken from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/app/code/Magento</code>.</td>
-      <td style="text-align: center">string</td>
-      <td>Magento\Catalog\Model\Resource\Product\Collection</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Magento\Catalog\Model\Resource\Product\Collection</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">identifier</code></td>
       <td style="text-align: left">Field used to create data set names in the repository.</td>
-      <td style="text-align: center">string</td>
-      <td>sku</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">sku</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">repository_class</code></td>
       <td style="text-align: left">Reference to the repository class.</td>
-      <td style="text-align: center">string</td>
-      <td>Magento\Catalog\Test\Repository\CatalogProductSimple</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Magento\Catalog\Test\Repository\CatalogProductSimple</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">handler_interface</code></td>
       <td style="text-align: left">Reference to the handler interface class.</td>
-      <td style="text-align: center">string</td>
-      <td>Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface</td>
+      <td style="text-align: left">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">extends</code></td>
       <td style="text-align: left">Reference to the class from which you want to extend.</td>
-      <td style="text-align: center">string</td>
-      <td>\Magento\Widget\Test\Fixture\Widget</td>
-      <td style="text-align: center">optional</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">\Magento\Widget\Test\Fixture\Widget</td>
+      <td style="text-align: left">optional</td>
     </tr>
   </tbody>
 </table>
@@ -2335,7 +2337,7 @@ php generate.php
       <th style="text-align: left"><code class="highlighter-rouge">&lt;field&gt;</code> attribute</th>
       <th style="text-align: left">Semantics</th>
       <th style="text-align: center">Value</th>
-      <th>Example</th>
+      <th style="text-align: left">Example</th>
       <th style="text-align: center">Is required?</th>
     </tr>
   </thead>
@@ -2344,35 +2346,35 @@ php generate.php
       <td style="text-align: left"><code class="highlighter-rouge">name</code></td>
       <td style="text-align: left">Field name.</td>
       <td style="text-align: center">string</td>
-      <td>layout_updates</td>
+      <td style="text-align: left">layout_updates</td>
       <td style="text-align: center">required</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">is_required</code></td>
       <td style="text-align: left">Specifies whether field is required on the form.</td>
       <td style="text-align: center">1 - required, 0 - optional</td>
-      <td>1</td>
+      <td style="text-align: left">1</td>
       <td style="text-align: center">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">group</code></td>
       <td style="text-align: left">Tab name that contains field (for example, <code class="highlighter-rouge">title</code> field is placed on <strong>Storefront properties</strong> tab on widget creation page).</td>
       <td style="text-align: center">string</td>
-      <td>storefront_properties</td>
+      <td style="text-align: left">storefront_properties</td>
       <td style="text-align: center">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">source</code></td>
       <td style="text-align: left">Class that prepares field data for use. See <a href="#mtf_fixture_source">Add the data source to the fixture field</a>.</td>
       <td style="text-align: center">string</td>
-      <td>Magento\Widget\Test\Fixture\Widget\LayoutUpdates</td>
+      <td style="text-align: left">Magento\Widget\Test\Fixture\Widget\LayoutUpdates</td>
       <td style="text-align: center">optional</td>
     </tr>
     <tr>
       <td style="text-align: left"><code class="highlighter-rouge">repository</code></td>
       <td style="text-align: left">Reference to  the class that stores data sets for the field. <a href="/guides/v2.3/mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>.</td>
       <td style="text-align: center">string</td>
-      <td>Magento\Widget\Test\Repository\Widget\LayoutUpdates</td>
+      <td style="text-align: left">Magento\Widget\Test\Repository\Widget\LayoutUpdates</td>
       <td style="text-align: center">optional</td>
     </tr>
   </tbody>
@@ -2380,7 +2382,7 @@ php generate.php
 
 <p>The following image shows how XML is connected with GUI of your new widget.</p>
 
-<p><a href="/common/images/ftf/mtf_fixture_xml_pic.png"><img src="/common/images/ftf/mtf_fixture_xml_pic.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_fixture_xml_pic.png"><img src="/common/images/ftf/mtf_fixture_xml_pic.png" alt="" /></a></p>
 
 <p>Orange arrows show relations between <code class="highlighter-rouge">&lt;field&gt;</code> nodes of fixture and GUI element of Magento widget, that we are going to test.</p>
 
@@ -2392,14 +2394,8 @@ php generate.php
 
 <p>Let’s manually add a new field and <code class="highlighter-rouge">group</code> attribute to the <code class="highlighter-rouge">Widget.xml</code>. See what we have now.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/fixture.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">"widget"</span>
@@ -2420,13 +2416,13 @@ php generate.php
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout_updates"</span> <span class="na">is_required=</span><span class="s">"0"</span> <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-
 </code></pre></div></div>
 
 <p>To apply the changes, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <h2 id="mtf_fixture_repositoy">Add a repository to the fixture field</h2>
@@ -2436,9 +2432,7 @@ php generate.php
 
 <p>For this goal, link to the repository where all test data has already been defined.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout_updates"</span> <span class="na">repository=</span><span class="s">"Magento\Widget\Test\Repository\Widget\LayoutUpdates"</span> <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
-
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout_updates"</span> <span class="na">repository=</span><span class="s">"Magento\Widget\Test\Repository\Widget\LayoutUpdates"</span> <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>Repository is located in <code class="highlighter-rouge">Repository</code> directory of corresponding module. <code class="highlighter-rouge">Repository</code> directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.</p>
@@ -2448,12 +2442,7 @@ php generate.php
 <p>Following is the code of <code class="highlighter-rouge">LayoutUpdates.xml</code>. It specifies two data sets that you can choose to define in your test.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
---&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">"Magento\Widget\Test\Repository\Widget\LayoutUpdates"</span><span class="nt">&gt;</span>
@@ -2474,13 +2463,13 @@ php generate.php
         <span class="nt">&lt;/dataset&gt;</span>
     <span class="nt">&lt;/repository&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-
 </code></pre></div></div>
 
 <p>To apply changes, enter following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <h2 id="mtf_fixture_source">Add data source to fixture field</h2>
@@ -2495,23 +2484,16 @@ php generate.php
 
 <p>It is located in <code class="highlighter-rouge">Fixture</code> directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout_updates"</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"layout_updates"</span>
        <span class="na">is_required=</span><span class="s">"0"</span>
        <span class="na">repository=</span><span class="s">"Magento\Widget\Test\Repository\Widget\LayoutUpdates"</span>
        <span class="na">source=</span><span class="s">"Magento\Widget\Test\Fixture\Widget\LayoutUpdates"</span>
        <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
-
 </code></pre></div></div>
 
 <p>Let’s see our data source file <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php</code></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">&lt;?php</span>
-<span class="sd">/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
  
 <span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
 
@@ -2553,13 +2535,13 @@ php generate.php
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
 </code></pre></div></div>
 
 <p>To apply the changes, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-warning">
@@ -2576,27 +2558,21 @@ php generate.php
 
 <p>We can create file that adds field <code class="highlighter-rouge">new_field</code> to our widget fixture.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
---&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/fixture.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">"widget"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"new_field"</span> <span class="na">is_required=</span><span class="s">"0"</span> <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-
 </code></pre></div></div>
 
 <p>To apply the changes, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">new_field</code> has been added in fixture <code class="highlighter-rouge">Widget.php</code>.</p>
@@ -2607,14 +2583,8 @@ php generate.php
 
 <p>To do that you should supplement your <code class="highlighter-rouge">Widget.xml</code> code with <code class="highlighter-rouge">extends</code> attribute in <code class="highlighter-rouge">&lt;fixture&gt;</code> node. As you already know, <code class="highlighter-rouge">extends</code> value stores a link to the class from which you want to extend your fixture.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/etc/fixture.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fixture</span> <span class="na">name=</span><span class="s">"adWidget"</span>
@@ -2625,15 +2595,15 @@ php generate.php
         <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"custom_field"</span> <span class="na">repository=</span><span class="s">"Magento\AdWidget\Test\Repository\AdWidget\CustomField"</span> <span class="na">group=</span><span class="s">"storefront_properties"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
-
 </code></pre></div></div>
 
 <p>In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named <code class="highlighter-rouge">custom_field</code>.</p>
 
 <p>To generate your new fixture PHP class, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 

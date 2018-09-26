@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -1999,7 +1999,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The example of the default test suite:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -2024,7 +2025,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"stable"</span> <span class="na">value=</span><span class="s">"no"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/deny&gt;</span>
     <span class="nt">&lt;/rule&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>This set of rules selects functional tests that accepts the following criteria:</p>
 
@@ -2046,22 +2049,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Define the test suite to be run in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;dev/tests/functional/phpunit.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">"testsuite_rule"</span> <span class="na">value =</span> <span class="s">&lt;test_suite_name</span><span class="nt">&gt;</span> /&gt;
-<span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">"testsuite_rule_path"</span> <span class="na">value =</span> <span class="s">&lt;test_suite_directory</span><span class="nt">&gt;</span> /&gt;</code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">"testsuite_rule"</span> <span class="na">value =</span> <span class="s">&lt;test_suite_name</span><span class="nt">&gt;</span> /&gt;
+<span class="nt">&lt;env</span> <span class="na">name =</span> <span class="s">"testsuite_rule_path"</span> <span class="na">value =</span> <span class="s">&lt;test_suite_directory</span><span class="nt">&gt;</span> /&gt;
+</code></pre></div></div>
 
 <p>The default test suite is <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml</code>.</p>
 
 <p>In <code class="highlighter-rouge">phpunit.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule"</span> <span class="na">value=</span><span class="s">"basic"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule_path"</span> <span class="na">value=</span><span class="s">"Magento/Mtf/TestSuite/InjectableTests"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule"</span> <span class="na">value=</span><span class="s">"basic"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"testsuite_rule_path"</span> <span class="na">value=</span><span class="s">"Magento/Mtf/TestSuite/InjectableTests"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h2 id="run">Run your test suite</h2>
 
 <p>To run a test suite enter the following commands from your terminal:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
-vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
+</code></pre></div></div>
 
 <h2 id="rule">Rule</h2>
 
@@ -2114,7 +2120,7 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
 <p>The   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
  filter example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2128,12 +2134,13 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
             <span class="nt">&lt;namespace</span> <span class="na">value=</span><span class="s">"Magento\Catalog\Test\TestCase\Product"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/allow&gt;</span>
     <span class="nt">&lt;/rule&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>The   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  filter example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2148,11 +2155,14 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
             <span class="nt">&lt;module</span> <span class="na">value=</span><span class="s">"Magento_Cms"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/allow&gt;</span>
     <span class="nt">&lt;/rule&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>The class filter example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2167,7 +2177,9 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
             <span class="nt">&lt;class</span> <span class="na">value=</span><span class="s">"Magento\ConfigurableProduct\Test\TestCase\CreateConfigurableProductEntityTest"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/allow&gt;</span>
     <span class="nt">&lt;/rule&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <h3 id="scope-testcase"><code class="highlighter-rouge">scope = "testcase"</code></h3>
 
@@ -2190,11 +2202,14 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
   <li>The tag in the rule:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;deny&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"test_type"</span> <span class="na">value=</span><span class="s">"3rd_party_test_deprecated"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/deny&gt;</span>
-<span class="nt">&lt;/rule&gt;</span></code></pre></figure>
+<span class="nt">&lt;/rule&gt;</span>
+
+</code></pre></div></div>
 
 <p>A test case can contain multiple tag groups, and a group can have multiple values. For example:</p>
 
@@ -2213,37 +2228,42 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
 
 <p>You can use <code class="highlighter-rouge">group</code> and <code class="highlighter-rouge">value</code> parameters in the variation scope. In a variation, they are provided in the following format:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;variation</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"tag"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>group_1:value, group_2:value<span class="nt">&lt;/data&gt;</span>
     <span class="nt">&lt;data</span> <span class="err">...</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/variation&gt;</span></code></pre></figure>
+<span class="nt">&lt;/variation&gt;</span>
+</code></pre></div></div>
 
 <p>For example, you have a data set with the following variation:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">"CreateSimpleProductEntityTestVariation3"</span> <span class="na">summary=</span><span class="s">"Create product with special price and custom options(fixed price)"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">"CreateSimpleProductEntityTestVariation3"</span> <span class="na">summary=</span><span class="s">"Create product with special price and custom options(fixed price)"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"tag"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>test_type:extended_acceptance_test<span class="nt">&lt;/data&gt;</span>
     <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/url_key"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/data&gt;</span>
     ... ... ...
     <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertProductSaveMessage"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertProductInGrid"</span> <span class="nt">/&gt;</span>
     ... ... ...
-<span class="nt">&lt;/variation&gt;</span></code></pre></figure>
+<span class="nt">&lt;/variation&gt;</span>
+</code></pre></div></div>
 
 <p>By using the <code class="highlighter-rouge">&lt;allow&gt;</code> element, you can create a rule to use only the <code class="highlighter-rouge">CreateSimpleProductEntityTestVariation3</code> variation:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"variation"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"variation"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;allow&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"test_type"</span> <span class="na">value=</span><span class="s">"extended_acceptance_test"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/allow&gt;</span>
-<span class="nt">&lt;/rule&gt;</span></code></pre></figure>
+<span class="nt">&lt;/rule&gt;</span>
+</code></pre></div></div>
 
 <p>or use all variations except the <code class="highlighter-rouge">CreateSimpleProductEntityTestVariation3</code> variation:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"variation"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"variation"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;deny&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"test_type"</span> <span class="na">value=</span><span class="s">"extended_acceptance_test"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/deny&gt;</span>
-<span class="nt">&lt;/rule&gt;</span></code></pre></figure>
+<span class="nt">&lt;/rule&gt;</span>
+</code></pre></div></div>
 
 <h3 id="scope-constraint"><code class="highlighter-rouge">scope = "constraint"</code></h3>
 
@@ -2271,21 +2291,23 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php</code></
   <li>The rule that allows constraints with this tag only:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;allow&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"severity"</span> <span class="na">value=</span><span class="s">"low"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/allow&gt;</span>
-<span class="nt">&lt;/rule&gt;</span></code></pre></figure>
+<span class="nt">&lt;/rule&gt;</span>
+</code></pre></div></div>
 
 <ul>
   <li>The rule that allows all constraints except those having this tag:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;rule</span> <span class="na">scope=</span><span class="s">"testcase"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;deny&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">group=</span><span class="s">"severity"</span> <span class="na">value=</span><span class="s">"low"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/deny&gt;</span>
-<span class="nt">&lt;/rule&gt;</span></code></pre></figure>
+<span class="nt">&lt;/rule&gt;</span>
+</code></pre></div></div>
 
 <!-- LINKS DEFINITION -->
 

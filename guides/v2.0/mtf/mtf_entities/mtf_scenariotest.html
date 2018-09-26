@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2011,7 +2011,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Implementation of a scenario test is always the same. You have to change the name of your test case only.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestCase</span><span class="p">;</span>
 
@@ -2038,7 +2038,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">executeScenario</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <p>Scenario test case is a PHP class that extends the <code class="highlighter-rouge">\Magento\Mtf\TestCase\Scenario\</code> class and implements the <code class="highlighter-rouge">test()</code> method that calls <code class="highlighter-rouge">executeScenario()</code>. However, the <code class="highlighter-rouge">Scenario</code> class is not an interface, so the method can have any other name than <code class="highlighter-rouge">test()</code>.</p>
 
@@ -2046,7 +2048,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in <code class="highlighter-rouge">&lt;magento2 root dir&gt;dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/etc/testcase.xml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/mtf/Magento/Mtf/TestCase/etc/testcase.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"{name of test case}"</span> <span class="na">firstStep=</span><span class="s">"{name of step to be run first}"</span><span class="nt">&gt;</span>
@@ -2059,7 +2061,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"{name of test step}"</span> <span class="na">module=</span><span class="s">"{name of the module where the test step is located}"</span> <span class="na">next=</span><span class="s">"{name of test step to be run next}"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"{name of test step}"</span> <span class="na">module=</span><span class="s">"{name of the module where the test step is located}"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/scenario&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <h3 id="scenario-element"><code class="highlighter-rouge">&lt;scenario&gt;</code> element</h3>
 
@@ -2067,9 +2070,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
 ...
-<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+<span class="nt">&lt;/scenario&gt;</span>
+</code></pre></div></div>
 
 <p>The example declares a scenario for <code class="highlighter-rouge">TestCase/OnePageCheckoutTest.php</code> where <code class="highlighter-rouge">&lt;step&gt;</code> with <code class="highlighter-rouge">name="setupConfiguration"</code> is to be run first.</p>
 
@@ -2079,8 +2083,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"createProducts"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"createProducts"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>The example defines the following test steps:</p>
 
@@ -2095,15 +2100,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following examples show tangled structure to demonstrate logic of the attributes.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"createProducts"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span> <span class="na">next=</span><span class="s">"createProducts"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+<span class="nt">&lt;/scenario&gt;</span>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"createProducts"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span> <span class="na">prev=</span><span class="s">"setupConfiguration"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+<span class="nt">&lt;/scenario&gt;</span>
+</code></pre></div></div>
 
 <p>Both examples define the following test steps and their sequence:</p>
 
@@ -2120,11 +2127,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">"OnePageCheckoutTest"</span> <span class="na">firstStep=</span><span class="s">"setupConfiguration"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span> <span class="na">next=</span><span class="s">"createProducts"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"createProducts"</span> <span class="na">module=</span><span class="s">"Magento_Catalog"</span> <span class="na">next=</span><span class="s">"setupConfigurationAfter"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">"setupConfigurationAfter"</span> <span class="na">alias=</span><span class="s">"setupConfiguration"</span> <span class="na">module=</span><span class="s">"Magento_Config"</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+<span class="nt">&lt;/scenario&gt;</span>
+</code></pre></div></div>
 
 <p>The example defines the following test steps and their sequence:</p>
 
@@ -2138,7 +2146,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>All test steps are located in <code class="highlighter-rouge">&lt;module&gt;/Test/TestStep</code> as PHP classes in the following format:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestStep</span><span class="p">;</span>
 
@@ -2163,7 +2172,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="c1">// additional logic to be executed after the test step.
 </span>    <span class="p">}</span>
     
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <p>A tests step must implement <code class="highlighter-rouge">Magento\Mtf\TestStep\TestStepInterface</code> and define:</p>
 
@@ -2177,7 +2188,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="collapsible">
     <b class="collapsible-title">Show/hide example </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="cp">&lt;?php</span>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">&lt;?php</span>
  <span class="sd">/**
   * Copyright © 2016 Magento. All rights reserved.
   * See COPYING.txt for license details.
@@ -2266,7 +2277,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
      <span class="p">}</span>
  <span class="p">}</span>
- </code></pre></figure>
+</code></pre></div></div>
 </div>
   </div>
 

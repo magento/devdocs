@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2016,9 +2016,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Set a preset, which is a list of dispatched <a href="/guides/v2.0/extension-dev-guide/events-and-observers.html#events">events</a> and an <a href="#observers">observers</a> to handle them:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;php&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"events_preset"</span> <span class="na">value=</span><span class="s">"&lt;preset_name&gt;"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+<span class="nt">&lt;/php&gt;</span>
+</code></pre></div></div>
 
 <p>Replace <code class="highlighter-rouge">&lt;preset_name&gt;</code> with a name of preset that you want to use.</p>
 
@@ -2026,9 +2027,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Set the value of <code class="highlighter-rouge">&lt;env name="log_directory"&gt;</code> to the directory in which to store your reports.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;php&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;php&gt;</span>
     <span class="nt">&lt;env</span> <span class="na">name=</span><span class="s">"log_directory"</span> <span class="na">value=</span><span class="s">"&lt;your_directory_path&gt;"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/php&gt;</span></code></pre></figure>
+<span class="nt">&lt;/php&gt;</span>
+</code></pre></div></div>
 
 <p>The default path is <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/var/log</code>.</p>
 
@@ -2038,7 +2040,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Format of a preset</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"..."</span><span class="nt">&gt;</span>
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\..."</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
@@ -2046,11 +2048,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"other\observer\class\path\..."</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;/preset&gt;</span></code></pre></figure>
+<span class="nt">&lt;/preset&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Example</strong>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\SourceCode"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
@@ -2062,7 +2065,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\CurlResponse"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"curl_failed"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;/preset&gt;</span></code></pre></figure>
+<span class="nt">&lt;/preset&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Explanation of the example</strong>:</p>
 
@@ -2123,7 +2127,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In terms of XML, it is represented as an element <code class="highlighter-rouge">&lt;tag /&gt;</code> in <code class="highlighter-rouge">events.xml</code>. <code class="highlighter-rouge">&lt;tag /&gt;</code> is a child element of an <code class="highlighter-rouge">&lt;observer&gt;</code> element. See the following example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\ClientError"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\ClientError"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"page_changed"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"exception"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/observer&gt;</span>
@@ -2141,7 +2145,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/observer&gt;</span>
 <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\CurlResponse"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"curl_failed"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/observer&gt;</span></code></pre></figure>
+<span class="nt">&lt;/observer&gt;</span>
+</code></pre></div></div>
 
 <p>As you can see, a tag contains one required attribute <code class="highlighter-rouge">name</code>, where a name of event must be assigned.</p>
 
@@ -2161,12 +2166,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example of use:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$response</span><span class="p">,</span> <span class="s1">'data-ui-id="messages-message-success"'</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'curl_failed'</span><span class="p">],</span> <span class="p">[</span><span class="nv">$response</span><span class="p">]);</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s1">'Product creation by curl handler was not successful!'</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="examples">Examples</h2>
 
@@ -2216,14 +2222,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Step 3. Add a preset with required observers and tags.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"custom"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\SourceCode"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"failure"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
-<span class="nt">&lt;/preset&gt;</span></code></pre></figure>
+<span class="nt">&lt;/preset&gt;</span>
+</code></pre></div></div>
 
 <h3 id="edit-preset">Edit a preset</h3>
 
@@ -2270,7 +2277,7 @@ The <code class="highlighter-rouge">base</code> preset is stored in the <abbr ti
 
 <p>Step 2. In the <code class="highlighter-rouge">base</code> preset, add required observer and event tags.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
     ...
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\Screenshot"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"click_before"</span> <span class="nt">/&gt;</span>
@@ -2278,7 +2285,8 @@ The <code class="highlighter-rouge">base</code> preset is stored in the <abbr ti
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"set_value"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
     ...
-<span class="nt">&lt;/preset&gt;</span></code></pre></figure>
+<span class="nt">&lt;/preset&gt;</span>
+</code></pre></div></div>
 
 <h3 id="add-custom-observer">Create and apply a custom observer</h3>
 
@@ -2325,7 +2333,7 @@ The <code class="highlighter-rouge">base</code> preset is stored in the <abbr ti
 
 <p>Step 1. Create an observer class <code class="highlighter-rouge">\Magento\Mtf\System\Observer\WebapiResponse</code> that stores incoming events in JSON files.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -2359,7 +2367,8 @@ The <code class="highlighter-rouge">base</code> preset is stored in the <abbr ti
             <span class="nv">$directory</span> <span class="o">.</span> <span class="s1">'/'</span> <span class="o">.</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">getFileIdentifier</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'.json'</span>
         <span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>Step 2. <a href="#dispatch-event">Dispatch</a> an event <code class="highlighter-rouge">webapi_failed</code> in the <code class="highlighter-rouge">\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">handler</a> for failed responses.</p>
 
@@ -2381,13 +2390,14 @@ The <code class="highlighter-rouge">base</code> preset is stored in the <abbr ti
 
 <p>In <code class="highlighter-rouge">&lt;magento_2_root_dir&gt;/dev/tests/functional/etc/events.xml</code>, add to a preset <code class="highlighter-rouge">&lt;preset name="base"&gt;</code> an observer <code class="highlighter-rouge">&lt;observer class="Magento\Mtf\System\Observer\WebapiResponse"&gt;</code> with a tag <code class="highlighter-rouge">&lt;tag name="webapi_failed" /&gt;</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;preset</span> <span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
 ...
     <span class="nt">&lt;observer</span> <span class="na">class=</span><span class="s">"Magento\Mtf\System\Observer\WebapiResponse"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"webapi_failed"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/observer&gt;</span>
 ...
-<span class="nt">&lt;preset</span> <span class="nt">/&gt;</span></code></pre></figure>
+<span class="nt">&lt;preset</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->
 

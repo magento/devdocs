@@ -2054,7 +2054,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2119,24 +2119,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="refresh-page-cache">Refresh page cache</h2>
 
 <ul>
-  <li>
-    <p>Go to <strong>Cache Management</strong>.
-<img src="/common/images/ftf/mtf_cache_mngt.png" alt="Cache Management message" width="650px" /></p>
-  </li>
-  <li>Select the checkboxes next to <strong>Configuration</strong> and <strong>Page Cache</strong>.</li>
-  <li>
-    <ul>
-      <li>From the <strong>Actions</strong> list in the upper left, click <strong>Refresh</strong>.</li>
-    </ul>
-  </li>
-  <li>
-    <ul>
-      <li>Click <strong>Submit</strong>.
-        <h2 id="enable-cli-commands">Enable CLI commands</h2>
-      </li>
-    </ul>
-  </li>
+  <li>Go to <strong>Cache Management</strong>.</li>
 </ul>
+
+<p><img src="/common/images/ftf/mtf_cache_mngt.png" alt="Cache Management message" width="650px" /></p>
+
+<ul>
+  <li>Select the checkboxes next to <strong>Configuration</strong> and <strong>Page Cache</strong>.</li>
+  <li>From the <strong>Actions</strong> list in the upper left, click <strong>Refresh</strong>.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ul>
+
+<h2 id="enable-cli-commands">Enable CLI commands</h2>
 
 <p>Functional tests require access to utilities working with Magento during test run. Depending on a web server, use the following instructions to enable access to the commands.</p>
 
@@ -2148,7 +2142,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In <code class="highlighter-rouge">nginx.conf</code>, add declaration blocks for each command listed in <code class="highlighter-rouge">/dev/tests/functional/.htaccess.sample</code> using the following example:</p>
 
-<figure class="highlight"><pre><code class="language-nginx" data-lang="nginx"><span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span>$<span class="s">|/)</span> <span class="p">{</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">^/dev/tests/functional/utils(</span>$<span class="s">|/)</span> <span class="p">{</span>
     <span class="kn">root</span> <span class="nv">$MAGE_ROOT</span><span class="p">;</span>
     <span class="kn">location</span> <span class="p">~</span> <span class="sr">^/dev/tests/functional/utils/command.php</span> <span class="p">{</span>
         <span class="kn">fastcgi_pass</span>   <span class="s">fastcgi_backend</span><span class="p">;</span>
@@ -2164,7 +2158,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="kn">fastcgi_index</span>  <span class="s">index.php</span><span class="p">;</span>
         <span class="kn">fastcgi_param</span>  <span class="s">SCRIPT_FILENAME</span>  <span class="nv">$document_root$fastcgi_script_name</span><span class="p">;</span>
         <span class="kn">include</span>        <span class="s">fastcgi_params</span><span class="p">;</span>
-    <span class="p">}</span></code></pre></figure>
+    <span class="p">}</span>
+</code></pre></div></div>
 
 <table>
   <tbody>

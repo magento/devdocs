@@ -2000,7 +2000,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2047,7 +2047,7 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <p>Enter in terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server.jar
 </code></pre></div></div>
 
 <h2 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h2>
@@ -2060,11 +2060,12 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <p>Example for Google Chrome with Selenium 2:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server.jar <span class="nt">-Dwebdriver</span>.chrome.driver<span class="o">=</span>&lt;path_to_chrome_driver&gt;/chromedriver.exe
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-info">
   <p>For Selenium 3 add the web driver to the directory where <code class="highlighter-rouge">selenium-server.jar</code> is located and run tests without additional argument:</p>
+
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server.jar
 </code></pre></div>  </div>
 </div>
@@ -2075,8 +2076,9 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <p>Enter in terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
-php generate.php
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/utils
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php generate.php
 </code></pre></div></div>
 
 <h2 id="mtf_install_pre">Next Steps</h2>

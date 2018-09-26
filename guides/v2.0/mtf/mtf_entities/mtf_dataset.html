@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -1990,11 +1990,11 @@ Each variation has constraints that are called at the end of the test flow.</p>
 
 <p>Let’s see an example for <code class="highlighter-rouge">CreateSimpleProductEntityTest</code>. A data set and its corresponding <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> must be placed in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product</code> directory.</p>
 
-<p><a href="/common/images/ftf/mtf_dataset_dir.png"><img src="/common/images/ftf/mtf_dataset_dir.png" /></a></p>
+<p><a href="/common/images/ftf/mtf_dataset_dir.png"><img src="/common/images/ftf/mtf_dataset_dir.png" alt="" /></a></p>
 
 <p>The <code class="highlighter-rouge">CreateSimpleProductEntityTest.xml</code> data set contains:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/variations.xsd"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/variations.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest"</span> <span class="na">summary=</span><span class="s">"Create Simple Product"</span> <span class="na">ticketId=</span><span class="s">"MAGETWO-23414"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">"CreateSimpleProductEntityTestVariation1"</span> <span class="na">summary=</span><span class="s">"Create product with custom options(fixed price)"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/url_key"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/data&gt;</span>
@@ -2016,7 +2016,8 @@ Each variation has constraints that are called at the end of the test flow.</p>
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertProductInCart"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>This is a data set that:</p>
 
@@ -2159,10 +2160,7 @@ The following data types are available:
 </ul></td></tr>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-  <p>  
-A variation should contain only data that is required for its flow and constraints.</p>
-</div>
+<p class="bs-callout bs-callout-warning">A variation should contain only data that is required for its flow and constraints.</p>
 
 <p>A data set should be placed in the same directory with a corresponding test case.</p>
 
@@ -2200,8 +2198,9 @@ A variation should contain only data that is required for its flow and constrain
 
 <p>If a variable is assigned more than one value:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price/shopping_cart/total"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price/product_page/special_price/excluding_tax"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price/shopping_cart/total"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price/product_page/special_price/excluding_tax"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <p>the value is processed as an array:</p>
 
@@ -2221,7 +2220,7 @@ A variation should contain only data that is required for its flow and constrain
 
 <p>Also, in similar cases you can use array type in a data set, like:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"shopping_cart"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"total"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"product_type"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -2229,39 +2228,45 @@ A variation should contain only data that is required for its flow and constrain
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"excluding_tax"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <h3 id="simple_var">Set a simple variable</h3>
 
 <p>For example, if a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code class="highlighter-rouge">$price</code>, then the test case takes from the data set all the <code class="highlighter-rouge">&lt;data&gt;</code> nodes with a name <code class="highlighter-rouge">price</code>. Assume a method with the <code class="highlighter-rouge">$price</code> argument.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <p>To assign it with <code class="highlighter-rouge">10</code> in one of the variations, add the following field to a variation of the corresponding data set:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <h3 id="fixture_field">Set data to a fixture field</h3>
 
 <p>In your test you often need to use injectable <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a> instances. For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">//
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span>
+</code></pre></div></div>
 
 <p>In this case, the ObjectManager sends data to the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> constructor. It declares that your data can be passed to the fixture in <code class="highlighter-rouge">$data</code> variable as an array. For example, to assign the existing fixture field <code class="highlighter-rouge">weight</code> with <code class="highlighter-rouge">50</code> you can use the following notation:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/weight"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/weight"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <h3 id="fixture_repository">Set data to a fixture from a repository</h3>
 
 <p>The <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class enables you to use a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a>. It can be injected in a <code class="highlighter-rouge">$dataset</code> variable. For example, to use <code class="highlighter-rouge">dataset = product_with_special_symbols_in_name</code> from the repository assigned in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>, you can use:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product_with_special_symbols_in_name<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>product_with_special_symbols_in_name<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <h3 id="fixture_field_repository">Set data to a fixture field from a repository</h3>
 
@@ -2269,13 +2274,15 @@ A variation should contain only data that is required for its flow and constrain
 
 <p>Let’s see an example:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/price/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/checkout_data/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/price/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"product/data/checkout_data/dataset"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+</code></pre></div></div>
 
 <p>A <code class="highlighter-rouge">CatalogProductSimple.xml</code> fixture contains the following declarations:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">is_required=</span><span class="s">"1"</span> <span class="na">group=</span><span class="s">"product-details"</span> <span class="na">source=</span><span class="s">"Magento\Catalog\Test\Fixture\Product\Price"</span> <span class="na">repository=</span><span class="s">"Magento\Catalog\Test\Repository\CatalogProductSimple\Price"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"checkout_data"</span> <span class="na">group=</span><span class="s">"null"</span> <span class="na">repository=</span><span class="s">"Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">is_required=</span><span class="s">"1"</span> <span class="na">group=</span><span class="s">"product-details"</span> <span class="na">source=</span><span class="s">"Magento\Catalog\Test\Fixture\Product\Price"</span> <span class="na">repository=</span><span class="s">"Magento\Catalog\Test\Repository\CatalogProductSimple\Price"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"checkout_data"</span> <span class="na">group=</span><span class="s">"null"</span> <span class="na">repository=</span><span class="s">"Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">price</code> fixture field contains the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> that assigns values from a repository. After the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class has passed data to the CatalogProductSimple fixture, <code class="highlighter-rouge">Magento\Catalog\Test\Fixture\Product\Price</code> data source receives <code class="highlighter-rouge">['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> and assigns values from the <code class="highlighter-rouge">['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> of the <code class="highlighter-rouge">Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository.</p>
 
@@ -2289,7 +2296,7 @@ A variation should contain only data that is required for its flow and constrain
   <li>Create <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml</code> with the following code:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2317,7 +2324,8 @@ A variation should contain only data that is required for its flow and constrain
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>Variations <code class="highlighter-rouge">DeleteVideoFromPCFTestVariation1</code> and <code class="highlighter-rouge">DeleteVideoFromPCFTestVariation2</code> will be used by the <code class="highlighter-rouge">Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> class during the test run.</p>
 
@@ -2327,7 +2335,7 @@ A variation should contain only data that is required for its flow and constrain
 
 <p>For example, see how in <code class="highlighter-rouge">Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml</code></p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
@@ -2344,11 +2352,11 @@ A variation should contain only data that is required for its flow and constrain
     <span class="nt">&lt;/testCase&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
 
- </code></pre></figure>
+</code></pre></div></div>
 
 <p>the variation <code class="highlighter-rouge">ValidateOrderOfProductTypeTestVariation1</code> is extended by the Magento_Bundle module:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
@@ -2363,7 +2371,7 @@ A variation should contain only data that is required for its flow and constrain
     <span class="nt">&lt;/testCase&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
 
-  </code></pre></figure>
+</code></pre></div></div>
 
 <!-- LINK DEFINITIONS -->
 

@@ -2054,7 +2054,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.3/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2161,7 +2161,7 @@ Create a duplicate of the file, and keep both, but make changes to the new one, 
 .</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
-<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains [access token](/guides/v2.3/get-started/authentication/gs-authentication.html) (used by WebAPI handlers only).</td>
+<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="/guides/v2.3/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
   &lt;webapi priority="0"&gt;
@@ -2241,12 +2241,18 @@ The file must be placed in <code class="highlighter-rouge">&lt;magento2_root_dir
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
 <span class="c">&lt;!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"\Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Widget\Test\Constraint\AssertProductInCatalogNewProductsList"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>S2<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
 
 </code></pre></div></div>
@@ -2370,41 +2376,38 @@ This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, which d
 </span><span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</p>
-
-    <p>```xml
-<?xml version="1.0" ?>
-&lt;!–
-/**</p>
-  </li>
-  <li>Copyright © 2013-2017 Magento, Inc. All rights reserved.</li>
-  <li>See COPYING.txt for license details.
- */
-–&gt;</li>
+  <li>Create <a href="#mtf_handler_di"><code class="highlighter-rouge">di.xml</code></a> in the <code class="highlighter-rouge">etc/curl</code> directory of the Magento_Widget module.</li>
 </ul>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface" type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-### cURL authentication classes {#mtf_handler_decor}
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\Widget\Test\Handler\Widget\WidgetInterface"</span> <span class="na">type=</span><span class="s">"Magento\Widget\Test\Handler\Widget\Curl"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
 
-In the previously mentioned example of the [Curl.php](#mtf_curl_script) code, authentication in the Admin is realized using the `BackendDecorator` class.
+</code></pre></div></div>
 
-The [FrontendDecorator class](#mtf_handler_curl_frontdecor) manages authentication in the   &lt;span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover"&gt;storefront&lt;/span&gt;
-.
+<h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-#### BackendDecorator class {#mtf_handler_curl_backdecor}
+<p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code class="highlighter-rouge">BackendDecorator</code> class.</p>
 
-`BackendDecorator` manages authentication in Admin and saves the Admin's session.
+<p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+.</p>
 
-Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`.
+<h4 id="mtf_handler_curl_backdecor">BackendDecorator class</h4>
 
-Add to the `Curl.php` the following code:
+<p><code class="highlighter-rouge">BackendDecorator</code> manages authentication in Admin and saves the Admin’s session.</p>
 
-```php
-$curl = new BackendDecorator(new CurlTransport(), new Config());
+<p>Full class name is <code class="highlighter-rouge">Mtf\Util\Protocol\CurlTransport\BackendDecorator</code>.</p>
+
+<p>Add to the <code class="highlighter-rouge">Curl.php</code> the following code:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$curl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BackendDecorator</span><span class="p">(</span><span class="k">new</span> <span class="nx">CurlTransport</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">Config</span><span class="p">());</span>
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">Config()</code> takes Admin’s configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.</p>

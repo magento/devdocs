@@ -1948,7 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.0/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2023,7 +2023,8 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <p>where four blocks have been added:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2037,7 +2038,9 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"messagesBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\Messages"</span> <span class="na">locator=</span><span class="s">"#messages"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"systemMessageDialog"</span> <span class="na">class=</span><span class="s">"Magento\AdminNotification\Test\Block\System\Messages"</span> <span class="na">locator=</span><span class="s">'[role="dialog"].ui-popup-message'</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p id="mtf_page_attributes">The following table explains <code class="highlighter-rouge">&lt;page&gt;</code> attributes.</p>
 
@@ -2186,7 +2189,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <p><code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2201,11 +2204,13 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"messagesBlock"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Test\Block\Messages"</span> <span class="na">locator=</span><span class="s">".page.messages"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"titleBlock"</span> <span class="na">class=</span><span class="s">"Magento\Theme\Test\Block\Html\Title"</span> <span class="na">locator=</span><span class="s">".page-title-wrapper h1.page-title .base"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>        
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>We should create <code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2218,7 +2223,8 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"customerReviewBlock"</span> <span class="na">class=</span><span class="s">"Magento\Review\Test\Block\Product\View"</span> <span class="na">locator=</span><span class="s">"#customer-reviews"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"reviewFormBlock"</span> <span class="na">class=</span><span class="s">"Magento\Review\Test\Block\ReviewForm"</span> <span class="na">locator=</span><span class="s">"#review-form"</span> <span class="na">strategy=</span><span class="s">"css selector"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p>And generate the updated page:</p>
 
@@ -2227,7 +2233,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <p>The result is in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -2343,7 +2349,8 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewFormBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="override-blocks">Block overriding</h3>
 
@@ -2375,7 +2382,8 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <p>Let us see page <code class="highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -2389,11 +2397,14 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"modalBlock"</span> <span class="na">class=</span><span class="s">"Magento\Ui\Test\Block\Adminhtml\Modal"</span> <span class="na">locator=</span><span class="s">"._show[data-role=modal]"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p>The block that we want to change is:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <p>We shouldn’t change the <code class="highlighter-rouge">editForm</code> block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
 
@@ -2411,21 +2422,25 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
   <li>without <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogCategoryEdit"</span> <span class="na">mca=</span><span class="s">"catalog/category/edit"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+
+</code></pre></div></div>
 
 <p><strong>Step 3.</strong> Add blocks that you want to   <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>
 .</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../../vendor/magento/mtf/etc/pages.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"CatalogCategoryEdit"</span> <span class="na">mca=</span><span class="s">"catalog/category/edit"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"//div[contains(@data-bind, 'category_form')]"</span> <span class="na">strategy=</span><span class="s">"xpath"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Step 4.</strong> Run the page generator.</p>
 

@@ -2036,7 +2036,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.2/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2095,16 +2095,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ol>
   <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code class="highlighter-rouge">&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\Facebook\Driver" /&gt;</code> element.</li>
   <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, move the <code class="highlighter-rouge">"facebook/webdriver": "dev-master"</code> entry from the <code class="highlighter-rouge">"suggest"</code> list to the <code class="highlighter-rouge">"require"</code> list.</li>
-  <li>
-    <p>Run in your terminal:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
- composer update
-</code></pre></div>    </div>
-  </li>
+  <li>Run in your terminal:</li>
 </ol>
 
-<p class="bs-callout bs-callout-info">   You still need to <a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">You still need to <a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
 
 <h2 id="add-and-setup-a-custom-web-driver">Add and setup a custom web driver</h2>
 
@@ -2119,16 +2118,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/etc/di.xml</code>, add the <code class="highlighter-rouge">&lt;preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\&lt;Your_driver&gt;\Driver" /&gt;</code> element.</li>
-  <li>
-    <p>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code class="highlighter-rouge">"require"</code> list (if related module is available on <a href="https://packagist.org/">Packagist</a>). And run in your terminal:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd &lt;magento2_root_dir&gt;/dev/tests/functional
- composer update
-</code></pre></div>    </div>
-  </li>
+  <li>In <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>, add corresponding entry to the <code class="highlighter-rouge">"require"</code> list (if related module is available on <a href="https://packagist.org/">Packagist</a>). And run in your terminal:</li>
 </ol>
 
-<p class="bs-callout bs-callout-info">   You still need to <a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">You still need to <a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
 
 <!-- LINKS DEFINITION -->
 

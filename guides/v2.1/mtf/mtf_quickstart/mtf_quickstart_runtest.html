@@ -2000,7 +2000,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 <li class=" ">
   
-    <a href="/guides/v2.1/mtf/mtf_changelog.html">Changelog</a>
+    <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">Changelog</a>
   
 
   
@@ -2051,8 +2051,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Enter in terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
-vendor/bin/phpunit
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/phpunit
 </code></pre></div></div>
 
 <p>This command will run all tests from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/</code>.</p>
@@ -2060,9 +2061,9 @@ vendor/bin/phpunit
 <h3 id="mtf_quickstart_testrun_one">Run particular test</h3>
 
 <p>Enter in terminal:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
-vendor/bin/phpunit --filter &lt;name of test&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/phpunit <span class="nt">--filter</span> &lt;name of <span class="nb">test</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
 <p>Name of test is the name of   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
@@ -2072,8 +2073,9 @@ vendor/bin/phpunit --filter &lt;name of test&gt;
 
 <p>Let’s check creating of new category. For this we should run <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php</code>. To run this test enter the following script in your terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional
-vendor/bin/phpunit --filter CreateCategoryEntityTest
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/phpunit <span class="nt">--filter</span> CreateCategoryEntityTest
 </code></pre></div></div>
 
 <h2 id="mtf_install_pre">Next Steps</h2>
