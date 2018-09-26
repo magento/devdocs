@@ -52,7 +52,7 @@ Create an `allowlist.json` file with the following JSON content:
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
+  "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
 }
 ```
 
