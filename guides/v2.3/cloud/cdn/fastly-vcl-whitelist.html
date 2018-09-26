@@ -4127,7 +4127,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ </span><span class="se">\"</span><span class="s2">^/admin</span><span class="se">\"</span><span class="s2">) &amp;&amp; !(client.ip ~ whitelist) &amp;&amp; !req.http.Fastly-FF) { error 403 </span><span class="se">\"</span><span class="s2">Forbidden</span><span class="se">\"</span><span class="s2">; }"</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ </span><span class="se">\"</span><span class="s2">^/admin</span><span class="se">\"</span><span class="s2">) &amp;&amp; !(client.ip ~ allowlist) &amp;&amp; !req.http.Fastly-FF) { error 403 </span><span class="se">\"</span><span class="s2">Forbidden</span><span class="se">\"</span><span class="s2">; }"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
