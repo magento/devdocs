@@ -28,7 +28,7 @@ Browse through the portal to find helpful information and options to get started
 
 Currently, access to the Onboarding Portal is available through your Magento account.
 
-1. [Log in to your Magento account](https://account.magento.com){:target="_blank"}.
+1. [Log in to your Magento account](https://account.magento.com).
 2. On the Magento tab, click the Projects (Cloud) option. A list of projects associated to your account display.
 3. Select your project to open the Onboarding Portal.
 
@@ -50,7 +50,7 @@ The focus of this portal is for business users who may need a bit more planning 
 
 The _Technical Admin_ is a user account in the Project Web Interface with super user permissions. This admin is your point of contact for all technical information and project management. Managing a project includes Git code branches, adding user accounts, setting environment variables and settings, adding routes, and deploying software to environments.
 
-The Technical Admin can be a Magento Solution Partner, a development consultant, or even yourself. In search of a development partner? Check our [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"} network.
+The Technical Admin can be a Magento Solution Partner, a development consultant, or even yourself. In search of a development partner? Check our [Magento Solution Partner](https://magento.com/find-a-partner) network.
 
 This user can help you create developer accounts with access to the Magento environments and code, configure technical aspects of the environments, and help with tickets with Support.
 

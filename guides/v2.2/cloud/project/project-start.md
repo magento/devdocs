@@ -26,7 +26,7 @@ When you push your local environment to the remote server, our deploy script use
 
 ## Ignoring files
 
-We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="_blank"}. You can add an ignored file when staging a commit by using the `-f` option:
+We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore). You can add an ignored file when staging a commit by using the `-f` option:
 
 ```bash
 git add <path/filename> -f

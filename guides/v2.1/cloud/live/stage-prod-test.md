@@ -40,7 +40,7 @@ Check the Magento configuration settings through the Admin panel including the B
 
 Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
 
-First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
+First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains).
 
 The following examples use Pro URLs. You can use any URL with the `dig` command.
 
@@ -70,8 +70,8 @@ Check the returned response headers and values:
 *	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
 *	`X-Cache` should be either `HIT` or `HIT, HIT`
 *	`x-cache-hits` should be 1,1
-*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
-*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
+*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
@@ -205,15 +205,15 @@ Before launching, we highly recommend performing extensive traffic and performan
 
 Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 For best results, we recommend the following tools:
 
-* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
-* [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
+* [Siege](https://www.joedog.org/siege-home/): Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Jmeter](http://jmeter.apache.org/): Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
-* [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
+* [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 ## Set up Magento Security Scan Tool {#security-scan}
 

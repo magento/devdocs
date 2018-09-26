@@ -111,7 +111,7 @@ To test a general patch on your local system:
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
@@ -136,7 +136,7 @@ After you've successfully tested a patch locally and on your integration environ
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 3.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 4.	After testing the patch, push it to the remote server and deploy it:
 
@@ -173,7 +173,7 @@ To test a custom patch on your local system:
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
@@ -206,7 +206,7 @@ After you've successfully tested a custom patch locally and on your integration 
 
 	`P` partial progress
 
-	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
+	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 2.	Apply the patch:
 
 		git apply <Magento project root dir>/m2-hotfixes/<patch file name>
@@ -214,7 +214,7 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
