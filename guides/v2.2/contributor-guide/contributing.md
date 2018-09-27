@@ -151,7 +151,9 @@ For `version`, the currently supported values are [version tags](https://github.
 **Admin access:**
 
 - http://i-xxx.engcom.dev.magento.com/admin
-- Credentials: Username: admin | Password: 123123q
+- Admin Credentials:
+    - Username: admin
+    - Password: 123123q
 
 **Permissions:**
 
@@ -174,7 +176,9 @@ To verify and test changes completed in a pull request, enter a command to gener
 **Admin access:**
 
 - http://pr-xxx.engcom.dev.magento.com/admin
-- Credentials: Username: admin | Password: 123123q
+- Admin Credentials:
+    - Username: admin
+    - Password: 123123q
 
 **Permissions:**
 
