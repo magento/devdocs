@@ -1569,6 +1569,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#report">Report an issue</a></li>
   <li><a href="#triage">Help triage issues</a></li>
   <li><a href="#labels">Labels applied by the Community Engineering Team</a></li>
+  <li><a href="#points">Contribution awards and points</a></li>
 </ul>
 
 <h2 id="contribute">Contribute to Magento 2 code</h2>
@@ -1970,7 +1971,11 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
 
 <p>We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.</p>
 
-<h3 id="release-lines">Release Lines</h3>
+<h2 id="labels">Labels applied by the Magento team</h2>
+
+<p>We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.</p>
+
+<h3 class="no_toc" id="release-lines">Release Lines</h3>
 
 <p>Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.2.6, you would apply the Release Line: 2.2. This effectively includes all releases in this line.</p>
 
@@ -1980,7 +1985,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">Release Line: 2.3</code></li>
 </ul>
 
-<h3 id="progress">Progress</h3>
+<h3 class="no_toc" id="progress">Progress</h3>
 
 <p>Progress labels indicate the Pull Request status on each review stage:</p>
 
@@ -1991,7 +1996,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">Progress: reject</code> - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject --></li>
 </ul>
 
-<h3 id="contribution-rewards">Contribution Rewards</h3>
+<h3 class="no_toc" id="contribution-awards">Contribution awards</h3>
 
 <p>The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.</p>
 
@@ -2009,7 +2014,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
 <!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). --></li>
 </ul>
 
-<h3 id="partners">Partners</h3>
+<h3 class="no_toc" id="partners">Partners</h3>
 
 <p>All partners Pull Requests should be marked with label <code class="highlighter-rouge">partners-contribution</code>. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: <code class="highlighter-rouge">Partner: &lt;PartnerName&gt;</code>. The following are Partner examples:</p>
 
@@ -2022,7 +2027,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">etc</code></li>
 </ul>
 
-<h3 id="components">Components</h3>
+<h3 class="no_toc" id="components">Components</h3>
 
 <p>Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see <a href="https://github.com/magento/magento2/wiki/Magento-Components-Assignment">Magento Components Assignment</a>.</p>
 
@@ -2033,7 +2038,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">etc</code></li>
 </ul>
 
-<h3 id="events">Events</h3>
+<h3 class="no_toc" id="events">Events</h3>
 
 <p>Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a <a href="https://magentocommeng.slack.com">Community Engineering Slack</a> channel using the same label.</p>
 
@@ -2044,7 +2049,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">etc</code></li>
 </ul>
 
-<h3 id="general-labels">General Labels</h3>
+<h3 class="no_toc" id="general">General</h3>
 
 <p>General labels include a variety of tasks and definitions for pull requests and issues.</p>
 
@@ -2054,7 +2059,7 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">triage wanted</code> - Indicates the issues are under triage. See this information to learn more about the <a href="https://github.com/magento/magento2/wiki/Triage-Wanted">Triage Wanted program</a>.</li>
 </ul>
 
-<h3 id="issue-resolution-status">Issue Resolution Status</h3>
+<h3 class="no_toc" id="issue-resolution-status">Issue Resolution Status</h3>
 <!-- old labels -->
 
 <ul>
@@ -2073,6 +2078,189 @@ git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt
   <li><code class="highlighter-rouge">Cannot Reproduce</code> - The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</li>
   <li><code class="highlighter-rouge">non-issue</code> - A described behavior in the issue description is valid and shouldn’t be changed in Magento code base.</li>
 </ul>
+
+<h3 class="no_toc" id="devdocs">DevDocs</h3>
+
+<p>All <a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">contributions to DevDocs</a> receive the following labels:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">New topic</code>- New file submissions for content that has never existed on devdocs</li>
+  <li><code class="highlighter-rouge">Major update</code> - Significant updates to existing content, such as a new section or example</li>
+  <li><code class="highlighter-rouge">Technical</code> - Updates to the code or processes that alter the technical content of the document</li>
+  <li><code class="highlighter-rouge">Editorial</code> - Fixes for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.</li>
+</ul>
+
+<h2 id="points">Contribution awards and points</h2>
+
+<p>Magento is thankful for all contributions, and we always recognize our most active members. The aim is to find and recognize our top contributors according to points awarded during a given time period (monthly/quarterly/yearly). Contributors can earn points in numerous ways with a focus in pull requests to the backlog and special projects.</p>
+
+<p>The Community Engineering team assesses each Pull Request and determines the best awards for the work involved. Contribution Points are calculated according to the assessment results. We award points when the PR is merged.</p>
+
+<h3 class="no_toc" id="how-points-are-awarded">How points are awarded</h3>
+
+<p>Every merged PR receives one base achievement and potentially one or more additional achievements. These achievements are applied to PRs during review and assessment. Contributors and Maintainers receive points after the PR has been merged.</p>
+
+<p>Due to the level of work required for developing and reviewing a PR, Contributors and Maintainers receive the same amount of points.</p>
+
+<p>See the following examples for calculated reward points:</p>
+
+<ul>
+  <li>Contributor submits PR with complex code contributions: Improvement(base) 10 points + Complex(additional) 20 points = 30 points</li>
+  <li>Contributor submits PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points</li>
+  <li>Contributor submits PR port of existing merged PR:
+    <ul>
+      <li>Original contributor: (Improvement(base) 10 points + Complex(additional) 20 points) + Author of Ported Issue 5 points = 35 points</li>
+      <li>Porting contributor: Port(base) 5 points</li>
+    </ul>
+  </li>
+  <li>Maintainer reviews and approves PR with complex code and tests: Improvement(base) 10 points + Complex(additional) 20 points + Test coverage(additional) 10 points = 40 points</li>
+</ul>
+
+<p>Earned achievements display as labels on GitHub PRs and for each Magento Contributor, Partner, and Maintainer on <a href="https://magento.com/magento-contributors">magento.com</a>.</p>
+
+<h3 class="no_toc" id="base-achievements">Base achievements</h3>
+
+<p>Every merged PR receives one base achievement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improvement</td>
+      <td>10</td>
+      <td>Contribution contains code improvements, refactoring, or a bug fix.</td>
+    </tr>
+    <tr>
+      <td>Port</td>
+      <td>5</td>
+      <td>Contribution ports an existing solution between release lines. The author of the original PR receives an additional <strong>5 points</strong> when another person contributes the ported Pull Request.</td>
+    </tr>
+    <tr>
+      <td>Code Cleanup</td>
+      <td>1</td>
+      <td>Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, and so on.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="no_toc" id="additional-achievements">Additional achievements</h3>
+
+<p>Every PR may receive several additional achievements during assessment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Advanced</td>
+      <td>30</td>
+      <td>Contribution provides new features. For example: introducing a new CLI command, integration with the new payment or shipping methods, and so on</td>
+    </tr>
+    <tr>
+      <td>Complex</td>
+      <td>20</td>
+      <td>Contribution contains complete refactoring of legacy code, improvements to application design, updates to libraries, and so on</td>
+    </tr>
+    <tr>
+      <td>Special achievement</td>
+      <td>20</td>
+      <td>Contribution earns recognition in a specific category. For example: extensive tests coverage, improved framework design, improved APIs or API coverage, improved customizability, and so on</td>
+    </tr>
+    <tr>
+      <td>Test coverage</td>
+      <td>10</td>
+      <td>Contribution contains fix or improvement and new tests or test cases</td>
+    </tr>
+    <tr>
+      <td>MFTF test coverage</td>
+      <td>10</td>
+      <td>Contribution contains MFTF tests</td>
+    </tr>
+    <tr>
+      <td>Bug fix</td>
+      <td>10</td>
+      <td>Contribution fixes one or more known issues from GitHub</td>
+    </tr>
+    <tr>
+      <td>Author of Ported Issue</td>
+      <td>5</td>
+      <td>Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="devdocs-awards-and-points">DevDocs awards and points</h2>
+
+<p>Contributors and Maintainers can also earn rewards for merged submissions to the <a href="https://github.com/magento/devdocs">DevDocs repository</a>. These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and apply labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.</p>
+
+<h3 class="no_toc" id="base-achievements-1">Base achievements</h3>
+
+<p>Every merged PR to the <a href="https://github.com/magento/devdocs">DevDocs repository</a> receives one base achievement. If you enter a PR with editorial fixes and new content, you receive the Improvement and additional achievements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improvement</td>
+      <td>10</td>
+      <td>Contribution contains document improvements, adding missing features of inconsistency between code base and documentation, and so on.</td>
+    </tr>
+    <tr>
+      <td>Editorial</td>
+      <td>1</td>
+      <td>Contribution contains fixes only for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="no_toc" id="additional-achievements-1">Additional achievements</h3>
+
+<p>Each PR can earn one of the following additional achievements. If you entered an editorial PR, you may not receive an additional achievement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>New topic</td>
+      <td>30</td>
+      <td>New file submissions for content that has never existed on devdocs</td>
+    </tr>
+    <tr>
+      <td>Major update</td>
+      <td>20</td>
+      <td>Significant updates to existing content, such as a new section or example</td>
+    </tr>
+    <tr>
+      <td>Technical</td>
+      <td>10</td>
+      <td>Updates to code or processes that alter the technical content of the document</td>
+    </tr>
+  </tbody>
+</table>
+
 
 			
 		</div>
