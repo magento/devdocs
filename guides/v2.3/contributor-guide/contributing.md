@@ -307,18 +307,21 @@ Before creating an issue:
 
 To add an issue:
 
-1. In the Magento 2 public repository, click the **Issues** link on the right. <br><img src="{{ site.baseurl }}/common/images/issues.png" alt="the Issues link at the right"/>
-1. Click **New issue**.<br><img src="{{ site.baseurl }}/common/images/new_issue.png" alt="the New Issue button"/>
-1. Fill in the Title and Issue description.
+1. In the Magento 2 public repository, click the **Issues** tab.
+
+    ![Issues tab]({{site.baseurl}}/common/images/issues.png)
+1. Click **New issue**.
+
+    ![Create new issue]({{site.baseurl}}/common/images/issues.png)
+1. Select a type of issue: Bug report, Developer experience issue, or Feature request.
+1. Fill in the Title, description, and additional information for the template.
 1. Click **Submit new issue**.
+
+When you submit the issue, a validation process begins. If the issue doesn't have enough information, you as the Reporter may need to add more information. See [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow) for complete details on issue verification.
 
 ## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
-
-## Labels applied by the Magento team {#labels}
-
-We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.
 
 ## Labels applied by the Magento team {#labels}
 
