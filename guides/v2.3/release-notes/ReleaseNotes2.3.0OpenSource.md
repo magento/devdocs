@@ -34,9 +34,6 @@ This release introduces significant tools to improve the developer experience: P
 
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
-
-* **Amazon Sales Channel** allows you to create and manage Amazon listings and fulfill your orders for both Amazon customers as well customers of your store.  
-
 ### Core product improvements
 
 * **Updates to Magento's tech stack (including upgraded PHP support)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.  
@@ -48,8 +45,6 @@ This release introduces significant tools to improve the developer experience: P
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
-
-* **Performance improvements** include JavaScript bundling, which enhances the frontend performance of existing themes. JavaScript bundling also minimizes file size and optimizes processing time to improve page performance in the browser. 
 
 * **Security enhancements** 
 

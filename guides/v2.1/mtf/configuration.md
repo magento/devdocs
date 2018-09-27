@@ -13,7 +13,6 @@ The Functional Testing Framework configuration settings are located in two {% gl
 The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table.
 
 {% collapsible Show/hide the default phpunit.xml code %}
-
 ```xml
 {% remote_markdown  https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/phpunit.xml.dist %}
 ```
@@ -50,7 +49,7 @@ The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/m
 
 Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 
-{%endcollapsible%}
+{% endcollapsible %}
 
 {% collapsible in Magento functional tests %}
 

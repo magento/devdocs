@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest-api
 title: Step 1. Configure your environment
 subtitle: Order processing with MSI
 menu_title: Step 1. Configure your environment
@@ -29,6 +28,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | North America Site
    Code | `na_site`
+   {:style="table-layout:auto;"}
 
    Click **Save Web Site**.
 
@@ -40,6 +40,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | North America Store
    Code | `na_store`
    Root Category | Default Category
+   {:style="table-layout:auto;"}
 
    Click **Save Store**.
 
@@ -51,6 +52,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | US Store View
    Code | `us`
    Status | Enabled
+   {:style="table-layout:auto;"}
 
    Click **Save Store View**.
 
@@ -62,6 +64,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | Europe Site
    Code | `eu_site`
+   {:style="table-layout:auto;"}
 
    Click **Save Web Site**.
 
@@ -73,6 +76,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Europe Store
    Code | `eu_store`
    Root Category | Default Category
+   {:style="table-layout:auto;"}
 
    Click **Save Store**.
 
@@ -84,6 +88,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Germany Store View
    Code | `de`
    Status | Enabled
+   {:style="table-layout:auto;"}
 
    Click **Save Store View**.
 

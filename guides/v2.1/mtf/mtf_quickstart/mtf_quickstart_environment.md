@@ -18,7 +18,9 @@ Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibili
 
 Enter in terminal:
 
-    java -jar <path_to_selenium_directory>/selenium-server.jar
+```bash
+java -jar <path_to_selenium_directory>/selenium-server.jar
+```
 
 ## Run tests on non-default browser {#mtf_quickstart_env_selenium-non-def}
 
@@ -30,10 +32,13 @@ Run the Selenium Server with an additional argument.
 
 Example for Google Chrome with Selenium 2:
 
-    java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
+```bash
+java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
+```
     
 <div class="bs-callout bs-callout-info" markdown="1">
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument:
+
 ```bash
 java -jar <path_to_selenium_directory>/selenium-server.jar
 ```
@@ -45,8 +50,12 @@ Generator generates [fixtures], [repositories], and [page objects]. Once the FTF
 
 Enter in terminal:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 ## Next Steps {#mtf_install_pre}
 

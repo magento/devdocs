@@ -5,7 +5,7 @@ pages:
       children:
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
-          include_versions: ["2.1", "2.2", "2.3"]
+          exclude_versions: ["2.0"]
 
     - label: Architecture
       url: /cloud/architecture/cloud-architecture.html
@@ -59,11 +59,11 @@ pages:
 
         - label: SendGrid
           url: /cloud/project/sendgrid.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
-      include_versions: ["2.1","2.2","2.3"]
+      exclude_versions: ["2.0"]
       children:
         - label: Bitbucket integration
           url: /cloud/integrations/bitbucket-integration.html
@@ -71,39 +71,42 @@ pages:
         - label: GitHub integration
           url: /cloud/integrations/github-integration.html
 
-    - label: Local environment setup
+    - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
-        - label: Prepare for local environment setup
+        - label: Docker development
+          url: /cloud/docker/docker-development.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Launch Docker
+              url: /cloud/docker/docker-config.html
+
+        - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
+          children:
+            - label: Install Magento prerequisites
+              url: /cloud/before/before-workspace-magento-prereqs.html
 
-        - label: Install Magento prerequisites
-          url: /cloud/before/before-workspace-magento-prereqs.html
+            - label: Enable SSH keys
+              url: /cloud/before/before-workspace-ssh.html
 
-        - label: Enable SSH keys
-          url: /cloud/before/before-workspace-ssh.html
+            - label: Set up the Magento file system owner
+              url: /cloud/before/before-workspace-file-sys-owner.html
 
-        - label: Set up the Magento file system owner
-          url: /cloud/before/before-workspace-file-sys-owner.html
+            - label: Clone and branch the project
+              url: /cloud/before/before-setup-env-2_clone.html
 
-        - label: Clone and branch the project
-          url: /cloud/before/before-setup-env-2_clone.html
+            - label: Install Magento
+              url: /cloud/before/before-setup-env-install.html
 
-        - label: Install Magento
-          url: /cloud/before/before-setup-env-install.html
-
-        - label: First time deployment
-          url: /cloud/setup/first-time-deploy.html
+            - label: First time deployment
+              url: /cloud/setup/first-time-deploy.html
 
         - label: Optional - Install sample data
           url: /cloud/howtos/sample-data.html
 
         - label: Optional - Configure Xdebug
           url: /cloud/howtos/debug.html
-
-        - label: Configure Docker
-          url: /cloud/reference/docker-config.html
-          include_versions: ["2.1","2.2","2.3"]
 
     - label: Import existing code into a project
       url: /cloud/setup/first-time-setup-import-first-steps.html
@@ -122,7 +125,7 @@ pages:
 
         - label: Set up PayPal
           url: /cloud/live/paypal-onboarding.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Set up Magento B2B
           url: /cloud/configure/setup-b2b.html
@@ -152,7 +155,7 @@ pages:
 
         - label: Fastly Image Optimization
           url: /cloud/cdn/fastly-image-optimization.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Custom Fastly VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
@@ -180,19 +183,16 @@ pages:
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
           children:
             - label: Set up notifications
               url: /cloud/env/setup-notifications.html
-              include_versions: ["2.1","2.2","2.3"]
 
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
-              include_versions: ["2.1","2.2","2.3"]
 
             - label: Smart wizards
               url: /cloud/env/smart-wizards.html
-              include_versions: ["2.1","2.2","2.3"]
 
         - label: Environment variables
           url: /cloud/env/variables-intro.html
@@ -202,7 +202,7 @@ pages:
 
             - label: Build variables
               url: /cloud/env/variables-build.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Cloud variables
               url: /cloud/env/variables-cloud.html
@@ -210,15 +210,15 @@ pages:
 
             - label: Deploy variables
               url: /cloud/env/variables-deploy.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Post-deploy variables
               url: /cloud/env/variables-post-deploy.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Working with variables
               url: /cloud/env/working-with-variables.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
         - label: Routes
           url: /cloud/project/project-conf-files_routes.html
@@ -247,7 +247,7 @@ pages:
 
             - label: Set up Elasticsearch service
               url: /cloud/project/project-conf-files_services-elastic.html
-              include_versions: ["2.1","2.2","2.3"]
+              exclude_versions: ["2.0"]
 
             - label: Set up RabbitMQ service
               url: /cloud/project/project-conf-files_services-rabbit.html
@@ -337,7 +337,7 @@ pages:
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
-          include_versions: ["2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Resolve issues with encryption key
           url: /cloud/trouble/trouble-crypt-key-variable.html
@@ -350,7 +350,7 @@ pages:
 
         - label: Restore configuration files
           url: /cloud/trouble/restore-configuration-files.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Site availability
           url: /cloud/trouble/site-availability.html
@@ -363,22 +363,22 @@ pages:
 
         - label: Message queues
           url: /cloud/trouble/message-queues.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: ece-tools release notes
+        - label: Release notes for ece-tools
           url: /cloud/release-notes/cloud-tools.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Upgrade to use ece-tools
           url: /cloud/project/ece-tools-upgrade-project.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Update ece-tools version
           url: /cloud/project/ece-tools-update.html
-          include_versions: ["2.1","2.2","2.3"]
+          exclude_versions: ["2.0"]
 
         - label: Apply custom patches
           url: /cloud/project/project-patch.html

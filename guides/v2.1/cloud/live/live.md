@@ -37,18 +37,18 @@ We strongly recommend testing in these environments due to the complexity of you
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
-The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 
 * Monitor your sites security status and applied security updates
 * Receive security updates and site specific notifications
 
-For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html){:target="_blank"}. Typically, you want to start using this tool as you enter UAT testing.
+For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html). Typically, you want to start using this tool as you enter UAT testing.
 
 Each site to be scanned must be registered through Magento Security Scan tab. This registration process includes acceptance of Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is completed. Scans can be scheduled for either a specific, recurring date and time or on-demand as required.
 
 To scan your site:
 
-1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 2. Click the Security Scan tab and select **Go to Security Scan**.
 3. In the **Actions** column for the site, select Run Scan. A notification status displays the scheduled scan.
 

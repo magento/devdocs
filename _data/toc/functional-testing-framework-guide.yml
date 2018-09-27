@@ -104,4 +104,4 @@ pages:
       url: /mtf/troubleshooting.html
 
     - label: Changelog
-      url: /mtf/mtf_changelog.html
+      url: https://github.com/magento/mtf/blob/develop/CHANGELOG.md

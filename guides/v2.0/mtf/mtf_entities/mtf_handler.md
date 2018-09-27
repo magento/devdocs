@@ -44,12 +44,34 @@ cp config.xml.dist config.xml
 The following nodes influence handlers:
 
 <table>
-<tr><th>Node</th><th>Semantics</th><th>Example</th></tr>
-<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
-<tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
-<tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
-<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
-<td><pre>
+    <tr>
+        <th>Node</th>
+        <th>Semantics</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td><code>&lt;backendLoginUrl&gt;</code></td>
+        <td>Reference to the login form of the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{%
+            endglossarytooltip %}.</td>
+        <td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td>
+    </tr>
+    <tr>
+        <td><code>&lt;backendLogin&gt;</code></td>
+        <td>A username to access the Admin as a Magento administrator.</td>
+        <td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td>
+    </tr>
+    <tr>
+        <td><code>&lt;backendPassword&gt;</code></td>
+        <td>A password to access the Admin as a Magento administrator.</td>
+        <td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td>
+    </tr>
+    <tr>
+        <td><code>&lt;handler&gt;</code></td>
+        <td>Specifies priorities for different types of handler. The less the value, the higher the priority. The
+            highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access
+                token</a> (used by WebAPI handlers only).</td>
+        <td>
+            <pre>
 &lt;handler&gt;
   &lt;webapi priority="0"&gt;
     &lt;token&gt;integration_token&lt;/token&gt;
@@ -58,7 +80,8 @@ The following nodes influence handlers:
   &lt;ui priority="2" /&gt;
 &lt;/handler&gt;
 </pre>
-</td></tr>
+        </td>
+    </tr>
 </table>
 
 ## Handler components {#mtf_handler-components}

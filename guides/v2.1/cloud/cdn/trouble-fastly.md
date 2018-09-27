@@ -14,7 +14,7 @@ functional_areas:
   - Configuration
 ---
 
-For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
+For information setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.
 
@@ -122,7 +122,7 @@ If you do not have DNS set up for a public hostname, enter a command similar to 
 
 ### Check response headers {#response-headers}
 
-For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services){:target="_blank"}.
+For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services).
 
 Check the returned response headers and values:
 
@@ -131,8 +131,8 @@ Check the returned response headers and values:
 *	Fastly-Module-Enabled should be either Yes or the Fastly extension version number
 *	X-Cache should be either `HIT` or `HIT, HIT`
 *	x-cache-hits should be 1,1
-*	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
-* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+*	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
+* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
 
 The following example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
@@ -173,9 +173,9 @@ The output for cURL commands can be lengthy. The following is a summary only:
 
 To determine if the default VCL snippets are not uploaded, check the following:
 
-* **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/access-acct/fastly.html#upload-vcl-snippets).
+* **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 * **Pages are not caching**: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
-* **Geo-location/GeoIP does not work**: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/access-acct/fastly.html#upload-vcl-snippets).
+* **Geo-location/GeoIP does not work**: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 ## Resolve errors found by cURL {#curl}
 
@@ -204,11 +204,11 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 
 	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
-If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) for instructions.
+If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) for instructions.
 
 ### Fastly-Magento-VCL-Uploaded is not present {#no-VCL}
 
-During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/access-acct/fastly.html#upload-vcl-snippets).
+During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 ### X-Cache includes MISS {#xcache-miss}
 
@@ -253,7 +253,7 @@ If the credentials are correct, you may have issues with your VCLs. To list and 
 
 	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
-Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="_blank"}. For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets). For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 ## Activating a deactivated version {#activate}
 
