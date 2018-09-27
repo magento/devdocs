@@ -10,8 +10,7 @@ You can configure your Bitbucket repository to automatically build and deploy an
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-{: .bs-callout .bs-callout-info}
-We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
+{% include cloud/note-private-repo.md %}
 
 Before you enable the integration, you must have the following:
 
