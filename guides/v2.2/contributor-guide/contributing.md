@@ -114,9 +114,12 @@ First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3
 To create a pull request:
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
-1. In your repository, click **Pull requests** on the right, and then click **New pull request**. <br><img src="{{ site.baseurl }}/common/images/pr.png" target="_blank">
-1. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop`, `magento:2.2-develop` or `magento:2.1-develop` branch. We accept PRs to these branches only.
-1. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
+1. In your repository, click **Pull requests** on the right, and then click **New pull request**.
+
+    ![Create a Pull Request]({{ site.baseurl }}/common/images/pr.png)
+1. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop` or `magento:2.2-develop`. We accept PRs to these branches only.
+1. Review the changes, then click **Create pull request**.
+1. Fill out the PR form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the Magento 2 repository’s [Pull Requests panel](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
