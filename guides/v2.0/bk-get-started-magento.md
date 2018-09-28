@@ -1,6 +1,5 @@
 ---
 title: Getting started with Magento
-redirect_from: /guides/v1.0/bk-get-started-magento.html
 functional_areas:
   - Integration
 ---

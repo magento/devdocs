@@ -1,7 +1,6 @@
 ---
 group: testing
 title: JavaScript testing with JsTestDriver
-redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test

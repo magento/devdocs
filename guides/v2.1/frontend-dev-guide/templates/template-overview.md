@@ -1,7 +1,6 @@
 ---
 group: frontend-developer-guide
 title: Templates overview
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 functional_areas:
   - Frontend
 ---

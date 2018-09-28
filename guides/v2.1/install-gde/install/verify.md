@@ -5,7 +5,6 @@ title: Verify the installation
 menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/install/verify.html
 functional_areas:
   - Install
   - System

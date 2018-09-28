@@ -31,40 +31,44 @@ The level of investigation, research, and work required for a task may differ. C
 * `Award: MFTF test coverage`
 * `Award: bug fix`
 * `Cleanup`
-* `Port` - For up-port and back-port work
-<!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). -->
+* `Port`
 
 ### Partners
 {:.no_toc}
 
 All partners Pull Requests should be marked with label `partners-contribution`. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: `Partner: <PartnerName>`. The following are Partner examples:
 
+Example labels:
+
 * `partners-contribution`
 * `Partner: Atwix`
 * `Partner: Comwrap`
 * `Partner: Interactiv4`
 * `Partner: Wagento`
-* `etc`
 
 ### Components
 {:.no_toc}
 
 Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment).
 
+Example labels:
+
 * `Component: Catalog`
 * `Component: Report`
 * `Component: Checkout`
-* `etc`
+
+For edge cases, `Component: Other` and `Component: Multiple` may be used.
 
 ### Events
 {:.no_toc}
 
 Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a [Community Engineering Slack](https://magentocommeng.slack.com) channel using the same label.
 
+Example labels:
+
 * `Event: mm18in`
 * `Event: mm17es`
 * `Event: mlau18`
-* `etc`
 
 ### General
 {:.no_toc}
@@ -77,21 +81,21 @@ General labels include a variety of tasks and definitions for pull requests and 
 
 ### Issue Resolution Status
 {:.no_toc}
-<!-- old labels -->
 
-* `G1 Passed` - Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
-* `G1 Failed` - Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
-* `G2 Passed` - The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.
-* `G3 Passed` - The Community Engineering Team has validated and confirmed the issue.
+Labels applied to issues through verification and completion. For details on the process, see [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow).
+
+* `Issue: Format is not valid` - Gate 1 failed. Automatic verification by the Automated Contributor Assistant failed and the issue needs updates. The [format](https://github.com/magento/magento2/tree/2.3-develop/.github/ISSUE_TEMPLATE) of the issue description and minimum required information is not provided: Preconditions, Steps to Reproduce, Actual Result, Expected Result. Previous label `G1 Failed`.
+* `Issue: Format is valid` - Gate 1 passed. Automatic verification by the Automated Contributor Assistant passed for all issue content. Previous label `G1 Passed`.
+* `Issue: Clear Description` - Gate 2 passed. The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce. Previous label `G2 Passed`.
+* `Issue: Cannot Reproduce` - Gate 3 failed. The issue could not be reproduced or validated. Previous label `Cannot Reproduce`.
+* `Issue: Confirmed` - Gate 3 passed. Manual verification of the issue description and reproduction steps was confirmed. Previous label `G3 Passed`.
+* `Issue: Ready for Work` - Gate 4 passed. The issue is acknowledged and added to the backlog for open development. Previous label `acknowledged`.
 * `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
 * `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
 * `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
 * `Fixed in 2.1.x` - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.2.x` - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.3.x` - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.
-* `acknowledged` - The Community Engineering Team has created internal ticket.
-* `needs update` - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.
-* `Cannot Reproduce` - The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.
 * `non-issue` - A described behavior in the issue description is valid and shouldn't be changed in Magento code base.
 
 ### DevDocs

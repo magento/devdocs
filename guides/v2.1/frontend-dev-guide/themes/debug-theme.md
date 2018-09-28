@@ -1,7 +1,6 @@
 ---
 group: frontend-developer-guide
 title: Locate templates, layouts, and styles
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 functional_areas:
   - Frontend
   - Theme

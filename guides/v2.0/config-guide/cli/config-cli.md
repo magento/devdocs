@@ -5,7 +5,6 @@ title: Command line configuration
 menu_title: Command line configuration
 menu_node: parent
 menu_order: 1
-redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
 functional_areas:
   - Configuration
   - System

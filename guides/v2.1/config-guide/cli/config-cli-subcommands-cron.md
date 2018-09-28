@@ -1,7 +1,6 @@
 ---
 group: configuration-guide
 title: Configure and run cron
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 functional_areas:
   - Configuration
   - System
