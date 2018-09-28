@@ -147,7 +147,7 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Actions:** The following actions complete for the command:
 
-- If the instance does not exist, it will be deployed. Deploymnent takes ~2 minutes.
+- If the instance does not exist, it will be deployed. Deployment takes ~2 minutes.
 - If the instance exists, a fresh instance will be redeployed.
 - By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
 
@@ -207,7 +207,7 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 - All mentioned pull requests are open
 - All mentioned pull requests have been created by the same contributor (author)
 - All mentioned pull requests have same target (base) branch
-- All mentioned pull requests are mergeable with each other
+- All mentioned pull requests can be merged with each other
 
 **Permissions:**
 
@@ -281,7 +281,7 @@ The following is an example "Forwardport" (up-port) pull request for https://git
 1. Create a new branch for your fix: `git checkout -b up-port-pull-13528`.
 1. Apply changes from the existing pull request: `curl -L https://github.com/magento/magento2/pull/13528.patch | git am`.
 1. Push changes to your repository: `git push origin up-port-pull-13528:up-port-pull-13528`.
-1. Create a pull request from `<your-fork>:up-port-pull-13528` to m`agento:2.3-develop`.
+1. Create a pull request from `<your-fork>:up-port-pull-13528` to `magento:2.3-develop`.
 1. In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.
 
 The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
@@ -320,7 +320,7 @@ To add an issue:
     ![Issues tab]({{site.baseurl}}/common/images/issues.png)
 1. Click **New issue**.
 
-    ![Create new issue]({{site.baseurl}}/common/images/issues.png)
+    ![Create new issue]({{site.baseurl}}/common/images/new_issue.png)
 1. Select a type of issue: Bug report, Developer experience issue, or Feature request.
 1. Fill in the Title, description, and additional information for the template.
 1. Click **Submit new issue**.

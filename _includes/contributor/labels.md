@@ -88,7 +88,6 @@ General labels include a variety of tasks and definitions for pull requests and 
 * `Issue: Cannot Reproduce` - Gate 3 failed. The issue could not be reproduced or validated. Previous label `Cannot Reproduce`.
 * `Issue: Confirmed` - Gate 3 passed. Manual verification of the issue description and reproduction steps was confirmed. Previous label `G3 Passed`.
 * `Issue: Ready for Work` - Gate 4 passed. The issue is acknowledged and added to the backlog for open development. Previous label `acknowledged`.
-<!-- checking into the following labels with engcom -->
 * `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
 * `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
 * `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
