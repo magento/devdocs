@@ -2,7 +2,6 @@
 group: architecture-guide
 title: Architectural layers overview
 menu_title: Architectural layers
-redirect_from: /guides/v1.0/architecture/archi_perspectives/ALayers_intro.html
 ---
 
 ## Magento as layered software

@@ -6,7 +6,6 @@ landing-page: SOAP API
 menu_title: Overview
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/soap/bk-soap.html
 functional_areas:
   - Integration
 ---

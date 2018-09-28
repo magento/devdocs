@@ -4,7 +4,6 @@ subgroup: E_rwd
 title: Create a responsive mobile theme based on a default theme
 menu_title: Create a responsive mobile theme based on a default theme
 menu_order: 4
-redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html
 functional_areas:
   - Frontend
 ---

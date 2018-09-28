@@ -1,7 +1,6 @@
 ---
 group: configuration-guide
 title: Deploy static view files
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 functional_areas:
   - Configuration
   - System

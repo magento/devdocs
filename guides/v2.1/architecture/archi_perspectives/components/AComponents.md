@@ -2,7 +2,6 @@
 group: architecture-guide
 title: Magento Components
 menu_title: Components
-redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
 
 ## Magento components

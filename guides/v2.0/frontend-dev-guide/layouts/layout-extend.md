@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Extend a layout
 menu_title: Extend a layout
 menu_order: 4
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-extend.html
 functional_areas:
   - Frontend
 ---

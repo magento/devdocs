@@ -5,7 +5,6 @@ title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
 
 ## Overview of Data Migration Tool configuration {#migration-configure-over}

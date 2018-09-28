@@ -5,7 +5,6 @@ title: After Migration
 menu_title: After Migration
 menu_node: parent
 menu_order: 7
-redirect_from: /guides/v1.0/migration/migration-migrate-after.html
 functional_areas:
   - Tools
 ---

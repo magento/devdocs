@@ -4,7 +4,6 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
-redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 ---
 
 <p>Block and model class constructors declare many dependencies. The Magento system uses constructor {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}.</p>

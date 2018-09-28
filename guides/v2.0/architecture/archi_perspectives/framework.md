@@ -4,7 +4,6 @@ subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework
 menu_order: 4
-redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
 ## Overview

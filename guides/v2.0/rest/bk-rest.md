@@ -6,7 +6,6 @@ landing-page: REST API
 menu_title: Overview
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/rest/bk-rest.html
 functional_areas:
   - Integration
 ---
