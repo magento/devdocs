@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deployment process
-version: 2.2
-github_link: cloud/reference/discover-deploy.md
 redirect_from:
   - /guides/v2.2/cloud/discover-deploy.html
 functional_areas:
@@ -23,11 +21,13 @@ Verify the code for your site and stores is in the {{site.data.var.ece}} branch.
 {% include cloud/wings-management.md %}
 
 ## Track the process {#track}
+
 You can track build and deploy actions in real-time using the terminal or the Project Web Interface. The status displays in-progress, pending, success, or failed. You can view the logs in the interface.
 
 If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow activity in their interface and in the {{site.data.var.ece}} Project Web Interface.
 
 ## Project configuration {#cloud-deploy-conf}
+
 A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.
 
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
@@ -42,15 +42,17 @@ For all Starter environments and Pro Integration environments, pushing your Git 
    The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [quick]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so doing it during the build phase reduces deployment and site downtime.
 
 ## Required files for your Git branch {#requiredfiles}
+
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
--  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
+-  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 -  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—updates and saves `magento/`.
 -  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—updates and saves to `magento/`.
 
 ## Best practices for builds and deployment {#best-practices}
+
 We highly recommend the following best practices and considerations for your deployment process:
 
 -  **Always follow the deployment process** to ensure your code is THE SAME in Integration, Staging, and Production. This is vital. Pushing code from Integration environments may become important or needed for upgrades, patches, and configurations. This deployment overwrites Production and any differences in code in that environment.
@@ -60,6 +62,7 @@ We highly recommend the following best practices and considerations for your dep
 -  **Test your build and deploy locally and in Staging before deploying to Production.** Extensions and custom code work great in development. Some users push to production only to have failures and issues. Staging gives you an opportunity to fully test your code and implementation in a production environment without extended downtime if something goes wrong in Production.
 
 ## Five phases of Integration build and deployment {#cloud-deploy-over-phases}
+
 The following phases occur in your local development environment and the Integration environment. For Pro plans, the code is not deployed to the Staging or Production environments in these initial phases. See [Deploy code to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 Integration build and deployment consists of the following phases:
@@ -75,7 +78,7 @@ For detailed instructions, see [Build and deploy full steps](#steps).
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
 
-When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="\_blank"}. This code repo is cloned to your project as the `master` branch.
+When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud). This code repo is cloned to your project as the `master` branch.
 
 -  **For Starter**—`master` branch is your Production environment.
 -  **For Pro**—`master` begins as origin branch for the Integration environment.
@@ -97,7 +100,7 @@ This phase builds the codebase and runs hooks in the `build` section of `.magent
 
 -  Applies patches located in `vendor/magento/ece-patches`, as well as optional, project-specific patches in `m2-hotfixes`
 -  Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the Magento `generated/` directory, which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
--  Checks if the [`app/etc/config.php`]({{ page.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
+-  Checks if the [`app/etc/config.php`]({{ page.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
   {:.bs-callout .bs-callout-info}
   The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so initiating it during the build phase helps to reduce deployment and site downtime.
@@ -134,7 +137,6 @@ Now we provision your applications and all of the {% glossarytooltip 74d6d228-34
 {:.bs-callout .bs-callout-info}
 Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are _read-only_. A read-only system guarantees deterministic deployments and dramatically improves your site security because no process can write to the file system. It also works to ensure your code is identical in the Integration, Staging, and Production environments.
 
-
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
 
 {:.bs-callout .bs-callout-info}
@@ -145,11 +147,11 @@ The last step runs a deployment script, which you can use to anonymize data in d
 If the `app/etc/config.php` file does not exist in the codebase, static files are compressed using `gzip` and deployed during this phase. This increases the length of your deploy phase and site maintenance.
 
 {:.bs-callout .bs-callout-info}
-Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy) to learn about customizing or disabling file compression.
+Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html) to learn about customizing or disabling file compression.
 
 There are two default deploy hooks. The `pre-deploy.php` hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The `php ./vendor/bin/m2-ece-deploy` hook runs a series of commands and scripts:
 
--  If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
+-  If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
 
 -  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 

@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Users
-version: 2.1
-github_link: marketplace/eqp/users.md
 ---
 
 The `users` resource accesses and updates your user profile. You can also access reports you own.
@@ -207,7 +205,6 @@ PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-
 ### Get keys
 
 Use this API to return the keys associated with the specified `mage_id`.
@@ -330,7 +327,6 @@ curl -X POST \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-
 * The API returns a batch response for each label.
 * A 200 OK HTTP response code indicates a successful update.
 * Any non-200 HTTP response code indicates an error. See the `message` field for details.
@@ -400,6 +396,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future..
-</div>

@@ -1,8 +1,6 @@
 ---
-group: install_pre
+group: installation-guide
 title: Install Magento using Composer
-version: 2.1
-github_link: install-gde/composer.md
 redirect_from:
   - guides/v2.1/install-gde/prereq/integrator_install.html
   - guides/v2.1/install-gde/prereq/integrator_install_composer.html
@@ -30,7 +28,7 @@ Before you continue, you must do the following:
 
 -   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
 -   Create the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
--   [Install Composer](https://getcomposer.org/download/){:target="\_blank"}
+-   [Install Composer](https://getcomposer.org/download/){:target="_blank"}
 -   Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository
 
 ## Get the metapackage

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up MySQL service
 menu_title: Set up MySQL service
@@ -7,14 +7,12 @@ menu_order: 60
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.1
-github_link: cloud/project/project-conf-files_services-mysql.md
 functional_areas:
   - Cloud
   - Setup
 ---
 
-The `mysql` service provides data storage. It's based on [MariaDB](https://mariadb.com/products/subscription-plans){:target="_blank"}, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb){:target="_blank"} storage
+The `mysql` service provides data storage. It's based on [MariaDB](https://mariadb.com/products/subscription-plans), supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage
 engine (equivalent to MySQL with InnoDB).
 
 We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.
@@ -25,6 +23,7 @@ following command:
     mysql -h database.internal -u user
 
 ## Set up multiple database users {#cloud-appyaml-mysqlusers}
+
 You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named `mysql` that has administrator access to all defined databases.
 
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.
@@ -72,6 +71,7 @@ In the preceding example, the endpoint (that is, user) `reporter` has `ro` privi
 *   The `importer` user has SELECT, INSERT, UPDATE, and DELETE privileges.
 
 ## Add MySQL in services.yaml and .magento.app.yaml {#settings}
+
 To enable MySQL, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
 ```yaml
@@ -90,10 +90,11 @@ relationships:
 Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 {: .bs-callout .bs-callout-info}
-* If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
+* If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.
 * MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
+
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:

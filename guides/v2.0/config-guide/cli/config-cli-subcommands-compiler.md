@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
 menu_node:
 menu_order: 175
-version: 2.0
-github_link: config-guide/cli/config-cli-subcommands-compiler.md
 redirect_from:
   - /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html
   - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html
@@ -20,6 +18,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of code compilation {#config-cli-subcommands-compile-overview}
+
 This section discusses the basics of code compilation. Code compilation consists of all of the following (in no particular order):
 
 -   Application code generation (factories, proxies, and so on)
@@ -29,9 +28,10 @@ This section discusses the basics of code compilation. Code compilation consists
 -   Repositories code generation (that is, generated code for APIs)
 -   Service data attributes generation (that is, generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)
 
-You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
+You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 ## Run the single-tenant compiler {#config-cli-subcommands-single}
+
 Run the command as follows (there are no options):
 
 	bin/magento setup:di:compile
@@ -47,6 +47,7 @@ The issue was resolved in Magento versions 2.0.6 and later.
 </div>
 
 ## Run the multi-tenant compiler {#config-cli-subcommands-run}
+
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
 -   There is one Magento 2 code base instance
@@ -64,9 +65,9 @@ Command options:
 The following table discusses the meanings of this command's parameters and values.
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Parameter</th>
@@ -76,7 +77,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 	<tr>
 		<td><p>--serializer</p></td>
-		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="\_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
+		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>

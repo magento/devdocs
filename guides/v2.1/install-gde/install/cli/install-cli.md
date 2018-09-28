@@ -1,12 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: install-gde/install/cli/install-cli.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli.html
   - /guides/v2.0/install-gde/install/install-cli.html
@@ -23,19 +21,18 @@ Totally lost? Need a helping hand? Try our [installation quick reference (tutori
 If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
 
 ## Introducing the Magento command-line interface (CLI) {#new-cli-intro}
-{% include install/new-cli-intro.html %}
+{% include install/new-cli-intro.md %}
 
 This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see the [Configuration Guide]({{ page.baseurl }}/config-guide/bk-config-guide.html).
 
 ## Before you start your installation {#instgde-install-cli-prereq}
-{% include install/before-you-begin-cli.html %}
+{% include install/before-you-begin-cli.md %}
 
 {:.bs-callout .bs-callout-tip}
 If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
 
-
 ## First steps {#instgde-install-cli-first}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 #### Next steps
 

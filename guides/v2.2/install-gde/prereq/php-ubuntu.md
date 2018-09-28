@@ -1,13 +1,11 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: PHP 7.0 or 7.1 &mdash;Ubuntu
 menu_title: PHP 7.0 or 7.1&mdash;Ubuntu
 menu_order: 23
 level3_menu_node: level3child
 level3_subgroup: php
-version: 2.2
-github_link: install-gde/prereq/php-ubuntu.md
 functional_areas:
   - Install
   - System
@@ -18,9 +16,11 @@ functional_areas:
 If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
+
 {% include install/php_2.2.md %}
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -29,6 +29,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
 
     PHP 7.0.21-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:38:10) ( NTS )
@@ -37,7 +38,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, a me
       with Zend OPcache v7.0.21-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 
 {:.bs-callout .bs-callout-info}
-The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
@@ -70,14 +71,14 @@ If PHP is *not* installed, see one of the following sections:
 		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.21-1~ubuntu16.04.1+deb.sury.org+1, Copyright (c) 1999-2016, by Zend Technologies
 
     {:.bs-callout .bs-callout-info}
-    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -127,7 +128,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -157,14 +158,14 @@ If PHP is *not* installed, see one of the following sections:
 		Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.7-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 
     {:.bs-callout .bs-callout-info}
-    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
     You should see output similar to the following:
-    <pre>
+    ```
     [PHP Modules]
     bcmath
     calendar
@@ -214,7 +215,7 @@ If PHP is *not* installed, see one of the following sections:
 
     [Zend Modules]
     Zend OPcache
-    </pre>
+    ```
 
 4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -224,6 +225,7 @@ If PHP is *not* installed, see one of the following sections:
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
+
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)

@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Page
-version: 2.1
-github_link: mtf/mtf_entities/mtf_page.md
 ---
 
 A page object is a class that serves to interact with the Magento page under test.
@@ -35,7 +33,7 @@ Let's see an example of the Magento {% glossarytooltip f0dcf847-ce21-4b88-8b45-8
 
 where four blocks have been added:
 
-{%highlight xml%}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -53,7 +51,7 @@ where four blocks have been added:
     </page>
 </config>
 
-{%endhighlight%}
+```
 
 The following table explains `<page>` attributes.
 {:#mtf_page_attributes}
@@ -69,7 +67,7 @@ The following table explains `<page>` attributes.
 
 Also, block can contain a `render` node. [Read about renders in the Block topic]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ## Page types {#mtf_page_types}
 
@@ -125,7 +123,7 @@ For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/P
 
 `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml` contains:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -143,11 +141,11 @@ For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/P
     </page>
 </config>
 
-{%endhighlight%}
+```
 
 We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml` page with blocks we want to add:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -162,7 +160,7 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
         <block name="reviewFormBlock" class="Magento\Review\Test\Block\ReviewForm" locator="#review-form" strategy="css selector" />
     </page>
 </config>
-{%endhighlight%}
+```
 
 And generate the updated page:
 
@@ -170,7 +168,7 @@ And generate the updated page:
 
 The result is in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 
-{%highlight php%}
+```php
 <?php
 /**
  * Copyright © 2015 Magento. All rights reserved.
@@ -288,7 +286,7 @@ class CatalogProductView extends FrontendPage
         return $this->getBlockInstance('reviewFormBlock');
     }
 }
-{%endhighlight%}
+```
 
 ### Block overriding {#override-blocks}
 
@@ -315,7 +313,7 @@ Let's see an example with the following use case:
 
 Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:
 
-{% highlight xml %}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -333,13 +331,13 @@ Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:
     </page>
 </config>
 
-{% endhighlight %}
+```
 
 The block that we want to change is:
 
-{% highlight xml %}
+```xml
 <block name="editForm" class="Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="#container" strategy="css selector"/>
-{% endhighlight %}
+```
 
 We shouldn't change the `editForm` block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.
 
@@ -355,7 +353,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
  * with the same `mca`
  * without `module` and `area` attributes
 
-{% highlight xml %}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
@@ -363,18 +361,18 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
     </page>
 </config>
 
-{% endhighlight %}
+```
 
 **Step 3.** Add blocks that you want to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %}.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogCategoryEdit" mca="catalog/category/edit">
         <block name="editForm" class="\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="//div[contains(@data-bind, 'category_form')]" strategy="xpath"/>
     </page>
 </config>
-{% endhighlight %}
+```
 
 **Step 4.** Run the page generator.
 

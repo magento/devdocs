@@ -1,13 +1,11 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Welcome to Magento Commerce (Cloud)
 landing-page: Cloud
 menu_title: Welcome to Magento Commerce (Cloud)
 menu_order: 10
 menu_node: parent
-version: 2.0
-github_link: cloud/bk-cloud.md
 redirect_from:
   - /guides/v2.0/cloud/access-acct/resources.html
   - /guides/v2.1/cloud/access-acct/resources.html
@@ -34,6 +32,7 @@ For full release notes, see [Release Information]({{ page.baseurl }}/release-not
 For a list of our plans and breakdown of features, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
 
 ### Details about the cloud {#details}
+
 * Each plan includes Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.
 * All environments run with active Git branches of code.
 * You have an unlimited number of *inactive* Git branches.
@@ -42,6 +41,7 @@ For a list of our plans and breakdown of features, see [Subscriptions and plans]
 * You can increase the amount of memory and CPU as needed.
 
 ### Technologies and requirements {#requirements}
+
 You should become familiar with the following technologies:
 
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
@@ -53,6 +53,7 @@ You should become familiar with the following technologies:
 See [Technologies and requirements]({{ page.baseurl }}/cloud/requirements/cloud-requirements.html), [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html), and [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
+
 If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects of building a project, setting up your local, continuous deployment across environments, and going live.
 
 To get started, see:
@@ -72,9 +73,10 @@ To better understand {{site.data.var.ee}}, your plan, architecture, and workflow
 	* [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
 	*	[Pro develop and deploy workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-* [Local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+* [Local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 
 ## Learn more about Magento 2 {#magento2}
+
 If you would like to learn more about Magento 2, see the following resources:
 
 *	[All documentation home page](https://magento.com/resources/technical){:target="_blank"}

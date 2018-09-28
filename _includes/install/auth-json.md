@@ -1,8 +1,6 @@
-<div markdown="1">
-
 To create `auth.json`:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Edit or create `auth.json` in the user's home directory.
 
 	The following example shows how to add `repo.magento.com` authentication to an existing file:
@@ -20,4 +18,3 @@ To create `auth.json`:
         }
 
        	For example, if your username is `magento_user`, create or edit `/home/magento_user/.composer/auth.json`
-</div>

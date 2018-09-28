@@ -1,13 +1,11 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 01_Introduction
 title: Configuration Guide
 landing-page: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: config-guide/bk-config-guide.md
 redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 functional_areas:
   - Configuration
@@ -15,20 +13,21 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="configuration">Configure the Magento application</h2>
+## Configure the Magento application   {#configuration}
+
 You can configure the Magento application in any of the following ways:
 
 *	General configuration
 
-	*  	Using a <a href="{{ page.baseurl }}/config-guide/cli/config-cli.html">command-line utility</a> (for example, enable or disable cache types, run indexers, set up translations, and so on)
-	*  	Manually to set up <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html">bootstrap parameters</a>
+	*  	Using a [command-line utility]({{ page.baseurl }}/config-guide/cli/config-cli.html) (for example, enable or disable cache types, run indexers, set up translations, and so on)
+	*  	Manually to set up [bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
 
 *	Caching
 
 	*	[Set up Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
 	* [Set up caching]({{ page.baseurl }}/config-guide/cache.html)
 	*	[Set up database caching]({{ page.baseurl }}/config-guide/cache/caching-database.html)
-	*	<a href="{{ page.baseurl }}/config-guide/redis/config-redis.html">Set up Redis</a>
+	*	[Set up Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 
 *	Session storage
 	*	[memcache]({{ page.baseurl }}/config-guide/memcache/memcache.html)
@@ -47,6 +46,6 @@ You can configure the Magento application in any of the following ways:
 
 *	{{site.data.var.ee}} only
 
-	*	<a href="{{ page.baseurl }}/config-guide/solr/solr-overview.html">Install and configure Solr</a>
-	*	<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master.html">Split databases</a>
-	*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message queues</a>
+	*	[Install and configure Solr]({{ page.baseurl }}/config-guide/solr/solr-overview.html)
+	*	[Split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master.html)
+	*	[Message queues]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)

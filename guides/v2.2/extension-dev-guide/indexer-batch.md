@@ -1,13 +1,11 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Indexer optimization
 menu_title: Indexer optimization
 menu_order: 14
-version: 2.2
 level3_menu_node: level3child
 level3_subgroup: index
-github_link: extension-dev-guide/indexer-batch.md
 
 ---
 
@@ -67,7 +65,6 @@ interface IndexTableRowSizeEstimatorInterface
     public function estimateRowSize();
 }
 {% endhighlight %}
-
 
 ## Batching configuration
 
@@ -131,9 +128,8 @@ Indexer name | Tables used
 
 Make sure that these indexers are in "Update By Schedule" mode. If "Update On Save" mode is selected, some data can be lost if you make changes during full reindex.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
-</div>
 
 ### Related topics
 {:.no_toc}

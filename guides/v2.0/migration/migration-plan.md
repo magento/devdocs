@@ -1,12 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
-version: 2.0
-github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
 functional_areas:
   - Tools
@@ -93,9 +91,8 @@ You can stop transferring updates at any time by pressing `Ctrl+C`
 * Test your Magento 2 site during this time to catch any issues as soon as possible.
 In case of such issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.
 
 ## Step 7: Go live
 

@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Installation of the Functional Testing Framework Entities
-version: 2.1
-github_link: mtf/mtf_installation.md
 ---
 
 Well, you are on the way to install the Functional Testing Framework!
@@ -18,6 +16,7 @@ Follow the next three steps:
 ## Check pre-installation conditions {#mtf_install_pre}
 
 ### Install the Magento application {#mtf_install_pre_inst-magento}
+
 To install the Magento application, see <a href="{{page.baseurl }}/install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 ### Check if all required software installed and configured {#mtf_install_pre_tools}
@@ -26,9 +25,8 @@ To install the Magento application, see <a href="{{page.baseurl }}/install-gde/b
 
 For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>, <a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).
 
-<div class="bs-callout bs-callout-warning">
-    <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out.
 
 #### Check if the Functional Testing Framework has been already installed {#mtf_install_pre_mtf-check}
 
@@ -39,9 +37,8 @@ For more details about PHP verification, installation and configuration (<a href
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure that Composer is installed, see <a href="{{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you're not sure that Composer is installed, see [Install Composer]({{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
 
 1.    <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
 1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
@@ -49,13 +46,12 @@ The Functional Testing Framework requires Composer, which downloads libraries de
     cd <magento2_root_dir>/dev/tests/functional/
     composer install
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br/>
-  Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br/>
-  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>
-And run from this directory <code>php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install</code>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If command failed, maybe [Composer](https://getcomposer.org) hasn't been installed globally.  
+ Copy `composer.phar` to `/usr/local/bin/composer`.  
+ To run it locally put `composer.phar` into directory, where `composer.json` file is located (that is, `<magento2>/dev/tests/functional/`).  
+ And run from this directory `php {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %}.phar install`.
 </div>
-
 
 ## Check the installation {#mtf_install_check}
 

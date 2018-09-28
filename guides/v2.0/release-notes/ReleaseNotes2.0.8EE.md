@@ -6,19 +6,14 @@ menu_title: Magento Commerce 2.0.8 Release Notes
 menu_order: 280
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.8EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.8. This release includes several functional fixes.
 
 
-Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
-
-
+Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatible Changes]({{ page.baseurl }}/release-notes/changes_2.0.html){: target="_blank"}.
 
 ### Fixed issues
-
 
 #### Installation and upgrade
 
@@ -26,14 +21,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.5. 
 
-
 #### Product creation
+
 <!--- 53342 -->* Magento  no longer duplicates {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} keys during the creation of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
 
-<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
-
-
-
+<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. [(GITHUB-3490)](https://github.com/magento/magento2/issues/3490){: target="_blank"} 
 
 #### Miscellaneous
 
@@ -45,7 +37,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 <!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
 
 
-<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018" target="_blank">(GITHUB-3018)</a> 
+<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  [(GITHUB-3018)](https://github.com/magento/magento2/issues/3018){: target="_blank"} 
 
 <!--- 46014 -->* Magento now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
@@ -53,16 +45,15 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <!--- 55087 -->* Solr search now returns search results as expected from both English and Spanish stores. Previously, Solr returned results for the English site but not for the Spanish site. 
 
-
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
+
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

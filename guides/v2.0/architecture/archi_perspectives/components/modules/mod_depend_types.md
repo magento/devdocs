@@ -1,13 +1,11 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module dependency types
 menu_title: Module dependency types
 menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: modules
-version: 2.0
-github_link: architecture/archi_perspectives/components/modules/mod_depend_types.md
 redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
@@ -37,11 +35,8 @@ Modules with a *soft dependency* on another module can function properly without
 
 * The module extends another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>
-    Note: If a module uses code from another module, it should declare the dependency explicitly.
-  </p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Note: If a module uses code from another module, it should declare the dependency explicitly.
 
 Magento installs modules in the following order:
 
@@ -67,16 +62,18 @@ You can build dependencies between the modules belonging to different layers.
 
 Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Note: In this case, using interfaces is preferable to using classes. </p>
-  <p>You can build dependencies between classes in the Magento Framework even if they belong to different modules.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Note: In this case, using interfaces is preferable to using classes.
+
+You can build dependencies between classes in the Magento Framework even if they belong to different modules.
 </div>
 
 ## Dependencies in the Application layer {#m2devgde-moddep-app-layer}
+
 Modules belonging to the application layer cannot be used in the Magento Framework.
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+[Module dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)

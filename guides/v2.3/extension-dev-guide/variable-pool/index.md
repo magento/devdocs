@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Variable Pool
-github_link: extension-dev-guide/variable-pool/index.md
 ---
 
 The variable pool contains pre-defined values you can use inside CMS content.

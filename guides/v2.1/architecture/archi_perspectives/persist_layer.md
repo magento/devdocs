@@ -1,9 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Persistence layer
 menu_title: Persistence layer
-version: 2.1
-github_link: architecture/archi_perspectives/persist_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
 

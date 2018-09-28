@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Authentication
-version: 2.1
-github_link: marketplace/eqp/auth.md
 ---
 
 All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The REST APIs use a two-step process to authenticate a client application and authorize access to resources:
@@ -13,9 +11,8 @@ All API requests must be authenticated using [HTTP Basic Authentication](https:/
 First, you must create an application on the [Developer Portal](https://developer.magento.com) to obtain an application ID and secret for sandbox and production endpoints.
 
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Information about how to create applications will be announced when the EQP REST API is publicly released.
-</div>
 
 ## Session Token
 
@@ -38,9 +35,8 @@ You must specify the grant type in the request body:
 }
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The API supports the `session` grant type only.
-</div>
 
 The following example shows a request and expected response:
 

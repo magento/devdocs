@@ -1,8 +1,6 @@
 ---
 group: payments-integrations
 title: Payment Token
-github_link: payments-integrations/vault/payment-token.md
-version: 2.2
 functional_areas:
   - Integration
 ---

@@ -1,8 +1,9 @@
 ---
-group: cloud
+group: cloud-guide
 title: Update ece-tools version
-version: 2.1
-github_link: cloud/project/ece-tools-update.md
+redirect_from:
+  - guides/v2.1/cloud/composer-packages/ece-tools.html
+  - guides/v2.2/cloud/composer-packages/ece-tools.html
 functional_areas:
   - Cloud
   - Upgrade

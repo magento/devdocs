@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Product Attribute"
 thumbnail: "fundamentals/thumbs/add-attribute.png"
 menu_order: 1
-github_link:
 ---
 
 Adding a product attribute is one of the most popular operations in both Magento 1 and Magento 2.
@@ -114,7 +113,7 @@ class InstallData implements InstallDataInterface
 
     /**
      * Init
-     * @param CategorySetupFactory $categorySetupFactory
+     * @param EavSetupFactory $eavSetupFactory
      */
     public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
     {

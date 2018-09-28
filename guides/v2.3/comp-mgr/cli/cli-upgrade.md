@@ -1,8 +1,6 @@
 ---
-group: compman
+group: software-update-guide
 title: Command-line upgrade
-version: 2.3
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---
@@ -30,7 +28,7 @@ If you cloned the Magento 2 GitHub repository, you **cannot** use this method to
 
 ## Pre-upgrade checklist
 
-Comply with the the [Update and upgrade checklist].
+Comply with the [Update and upgrade checklist].
 
 ### Prerequisite for the `pub` directory root {#upgrade-cli-pub}
 
@@ -131,7 +129,7 @@ composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
 
 ### Update `autoload` in `composer.json`
 
-Open `composer.json` and edit the the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`
+Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`
 
 Example: 
 

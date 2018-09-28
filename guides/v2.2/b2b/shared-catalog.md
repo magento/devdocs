@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with the SharedCatalog module
 menu_title: Integrate with the SharedCatalog module
 menu_order: 21
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
-github_link: b2b/shared-catalog.md
 functional_areas:
   - B2B
   - Catalog

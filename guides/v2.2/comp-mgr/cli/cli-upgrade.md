@@ -1,8 +1,6 @@
 ---
-group: compman
+group: software-update-guide
 title: Command-line upgrade
-version: 2.2
-github_link: comp-mgr/cli/cli-upgrade.md
 functional_areas:
   - Upgrade
 ---
@@ -12,9 +10,8 @@ You can upgrade Magento from the command line if you installed the software usin
 * Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
 * Installed the compressed archive
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade; instead, see [Update the Magento application]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
-</div>
 
 ## Pre-upgrade checklist
 
@@ -36,9 +33,8 @@ If you use pub as your Magento root directory:
 
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can optionally create a [custom maintenance mode page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
-</div>
 
 To enable maintenance mode:
 
@@ -66,17 +62,17 @@ To enable maintenance mode:
    composer update
    ```
 
-   For example, to upgrade to {{ site.data.var.ce }} version {{page.version}}.4, enter:
+   For example, to upgrade to {{ site.data.var.ce }} version {{ page.guide_version }}.4, enter:
    ```bash
-   composer require magento/product-community-edition {{ page.version }}.4 --no-update
+   composer require magento/product-community-edition {{ page.guide_version }}.4 --no-update
    ```
    ```bash
    composer update
    ```
 
-   To upgrade to Magento EE version {{page.version}}.4, enter:
+   To upgrade to Magento EE version {{ page.guide_version }}.4, enter:
    ```bash
-   composer require magento/product-enterprise-edition {{ page.version }}.4 --no-update
+   composer require magento/product-enterprise-edition {{ page.guide_version }}.4 --no-update
    ```
    ```bash
    composer update

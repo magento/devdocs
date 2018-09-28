@@ -1,12 +1,10 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request
 menu_order: 1
 
-version: 2.0
-github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
@@ -29,7 +27,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
+         <p><a href="#verbs">HTTP verb</a></p>
       </td>
       <td>
          <p>The action to perform against the endpoint.</p>
@@ -45,7 +43,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
+         <p><a href="#http-headers">HTTP headers</a></p>
       </td>
       <td>
          <p>The authentication token, the call request and response formats,
@@ -55,7 +53,7 @@ The following table and the sections that follow the table describe these API ca
    </tr>
    <tr>
       <td>
-         <p><a href="#payload">Call&nbsp;payload</a></p>
+         <p><a href="#payload">Call payload</a></p>
       </td>
       <td>
          <p>A set of input parameters and attributes that you supply with the request.
@@ -68,6 +66,7 @@ The following table and the sections that follow the table describe these API ca
 </table>
 
 ### HTTP verb {#verbs}
+
 <p>Specify one of these HTTP verbs in the request:</p>
 <ul>
    <li><code>GET</code>.
@@ -91,13 +90,15 @@ The following table and the sections that follow the table describe these API ca
 </ul>
 
 ### Endpoint {#endpoints}
+
 An endpoint is a combination of the _server_ that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.
 
 For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is `magento.ll/index.php/`, the web service is `rest`, the resource is `/V1/customerGroups`, and the template parameter is `id`.
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+{: .bs-callout .bs-callout-info }
+To specify an HTTP header in a cURL command, use the `-H` option.
 Specify one or more of the following HTTP headers in your web API calls:
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -113,7 +114,7 @@ Specify one or more of the following HTTP headers in your web API calls:
          account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
          </p>
       </td>
-      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
+      <td><pre>Authorization: Bearer &lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
 See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
@@ -147,6 +148,7 @@ See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.htm
 </table>
 
 ### Call payload {#payload}
+
 The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
 
 You specify input parameters in the URI. For example, in the `GET/V1/customers/:customerId` URI, you must specify the `customerId` template parameter. This parameter filters the response by the specified customer ID.
@@ -186,6 +188,7 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
 This JSON-formatted request body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.
 
 ## Construct a request {#construct-request}
+
 This example shows you how to construct a REST web API call to create an account.
 
 <ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
@@ -215,6 +218,7 @@ This example shows you how to construct a REST web API call to create an account
 </ol>
 
 ### Customers Search API request example {#customers-search-api-request-example}
+
 The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.
 <ol>
 <li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} token returned by the Magento token service.</p></li>
@@ -257,4 +261,5 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
+
 Run the web API call through a <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL command</a> or a REST client.

@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 04_CLI
+group: configuration-guide
 title: Manage the indexers
-menu_title: Manage the indexers
-menu_node:
-menu_order: 90
-version: 2.3
-github_link: config-guide/cli/config-cli-subcommands-index.md
 functional_areas:
   - Configuration
   - System
@@ -16,6 +10,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## View a list of indexers
+
 To view a list of all indexers:
 
 ```bash
@@ -38,6 +33,7 @@ catalogsearch_fulltext                   Catalog Search
 ```
 
 ## View indexer status
+
 Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.
 
 Command options:
@@ -80,11 +76,11 @@ Sample result:
 ```
 
 ## Reindex {#config-cli-subcommands-index-reindex}
+
 Use this command to reindex all or selected indexers one time only.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
-</div>
 
 Command options:
 
@@ -119,9 +115,8 @@ Catalog Product Rule index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. -->
-</div>
 
 <!-- Content for 2.3:
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
@@ -140,12 +135,12 @@ For example, the following command runs the Catalog Search Fulltext indexer acro
 MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fulltext
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Only use the environment variable in the indexer command. Do not save the variable to your environment or your Magento installs and updates may have errors.
-</div>
 -->
 
 ## Configure indexers
+
 Use this command to set the following indexer options:
 
 *  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
@@ -154,6 +149,7 @@ Use this command to set the following indexer options:
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
 ### Display the current configuration
+
 To view the current indexer configuration:
 
 ```bash
@@ -180,6 +176,7 @@ Catalog Search:                                    Update on Save
 ```
 
 ### Configure indexers
+
 To specify the indexer configuration:
 
 ```bash

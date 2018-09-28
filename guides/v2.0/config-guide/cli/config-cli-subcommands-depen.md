@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Dependency reports
 menu_title: Dependency reports
 menu_node:
 menu_order: 225
-version: 2.0
-github_link: config-guide/cli/config-cli-subcommands-depen.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
 functional_areas:
   - Configuration
@@ -17,6 +15,7 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of dependency reports
+
 You can run the following types of reports:
 
 -   {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}**Module**{% endglossarytooltip %} dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft.
@@ -26,6 +25,7 @@ You can run the following types of reports:
 A dependency in a comment is also a dependency.
 
 ## Run dependency reports
+
 Command options:
 
 	bin/magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
@@ -33,9 +33,9 @@ Command options:
 The following table explains this command's options, parameters, and values.
 
 <table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Parameter</th>
@@ -76,8 +76,8 @@ The following table explains this command's options, parameters, and values.
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
 <table>
-	<col width="50%">
-	<col width="50%">
+	<col width="50%" />
+	<col width="50%" />
 	<tbody>
 		<tr>
 			<th>Command</th>
@@ -99,9 +99,8 @@ If no directory or filename is passed as an argument, the following application 
 </table>
 	
 
-
-
 ### Sample module dependencies report
+
 The following is a portion of the output for a sample module dependencies report:
 
 	"","All","Hard","Soft"
@@ -123,6 +122,7 @@ The following is a portion of the output for a sample module dependencies report
 	" -- magento/module-import-export","","1","0"
 
 ### Sample circular dependencies report
+
 The following is a portion of the output for a sample circular dependencies report:
 
 	"Circular dependencies:","Total number of chains"
@@ -146,6 +146,7 @@ The following is a portion of the output for a sample circular dependencies repo
 	"magento/module-config->magento/module-backend->magento/module-sales->magento/module-checkout->magento/module-customer->magento/module-review->magento/module-catalog->magento/module-catalog-rule->magento/module-rule->magento/module-eav->magento/module-config"
 
 ### Sample framework dependencies report
+
 The following is a portion of the output for a sample framework dependencies report:
 
 	"Dependencies of framework:","Total number"
@@ -170,15 +171,15 @@ The following is a portion of the output for a sample framework dependencies rep
 
 #### Related topics
 
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
+-   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
+-   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+-   [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
+-   [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
+-   [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
+-   [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
+-   [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+-   [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
+-   [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+-   [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
+-   [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

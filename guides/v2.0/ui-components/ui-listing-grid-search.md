@@ -1,12 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: B_UI Library Listing/Grid Component
 title: Grid search indexing
 menu_title: Grid search indexing
 menu_node: 
 menu_order: 1
-version: 2.0
-github_link: ui-components/ui-listing-grid-search.md
 redirect_from: /guides/v2.0/ui-library/ui-listing-grid-search.html
 ---
 

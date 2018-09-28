@@ -1,6 +1,7 @@
-<div markdown="1">
+
 
 ## Install the Magento software
+
 See one of the following sections:
 
 *	[Get Magento Commerce using Composer](#install-rc-composer)
@@ -12,13 +13,13 @@ See one of the following sections:
 
 This software is available from `repo.magento.com`. Before installing the Magento Commerce software using Composer, familiarize yourself with the Composer [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html), then run:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
 
 where `<version>` matches the version you want (for example, `2.0.10`)
 
 For example, to install 2.0.10 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
 
 ### Get Magento Commerce using a compressed archive {#get-zip}
 {:.no_toc}
@@ -37,6 +38,7 @@ After you get the Commerce software:
 	*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 ## Upgrade from an earlier version {#upgrade}
+
 To upgrade to version 2.0.x from an earlier version:
 
 *	[Web Setup Wizard (System Upgrade)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

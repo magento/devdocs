@@ -1,6 +1,7 @@
-<div markdown="1">
- 
+
+
 ## Install the Magento software
+
 See one of the following sections:
 
 *	[Get Magento Commerce using Composer](#install-rc-composer)
@@ -10,16 +11,16 @@ See one of the following sections:
 ### Get Magento Commerce using Composer {#install-rc-composer}
 {:.no_toc}
 
-Magento Commerce (formerly Enterprise Edition) is available from `repo.magento.com`. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="{{ page.baseurl }}/install-gde/composer.html" target="_blank">prerequisites</a>, then run:
+Magento Commerce (formerly Enterprise Edition) is available from `repo.magento.com`. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  [prerequisites]({{ page.baseurl }}/install-gde/composer.html), then run:
 
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
 
 where `<version>` is `2.1.0`, `2.1.1`, and so on
 
 For example, to install 2.1.1 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 
 ### Get Magento Commerce using a compressed archive {#get-zip}
 {:.no_toc}
@@ -38,4 +39,5 @@ After you get the Commerce software:
 	*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
 
 ## Upgrade from an earlier version
+
 To upgrade to Magento Commerce 2.1 from an earlier version, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).

@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrade to ece-tools
-version: 2.1
-github_link: cloud/project/ece-tools-upgrade-project.md
 functional_areas:
   - Cloud
   - Upgrade
@@ -14,12 +12,14 @@ You must perform a one-time, manual step to update the `magento/magento-cloud-me
 {% include cloud/note-upgrade.md %}
 
 ## Remove deprecated packages
+
 Before performing an upgrade to use the `{{site.data.var.ct}}` package, check the `composer.lock` file for the following deprecated packages:
 
 -  `magento/magento-cloud-configuration`
 -  `magento/ece-patches`
 
 ## Update the metapackage {#metapackage}
+
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
 ```
@@ -45,7 +45,7 @@ To upgrade your project to use the `ece-tools` package, you need to update the m
 1.  Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 
     ```bash
-    composer require "magento/magento-cloud-metapackage": ">=2.2.0 <2.2.1" --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.2.0 <2.2.1" --no-update
     ```
 
 1.  Update the metapackage.

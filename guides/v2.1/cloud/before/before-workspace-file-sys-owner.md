@@ -1,12 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Set up the Magento file system owner
 menu_title: Set up the Magento file system owner
 menu_order: 25
 menu_node:
-version: 2.1
-github_link: cloud/before/before-workspace-file-sys-owner.md
 functional_areas:
   - Cloud
   - Setup
@@ -21,6 +19,7 @@ To enable the web server (Apache) to write files and directories in the Magento 
 You need to create a new Magento file system owner and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
 
 ## Create the Magento file system owner {#mage-owner-create-user}
+
 Create the Magento file system owner with a strong password. Magento file system owner is another term for the *command-line user*.
 
 To create the Magento file system owner, enter the following command as a user with `root` privileges:
@@ -54,7 +53,6 @@ To find the web server user's group:
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
 	Typically, the username and the group name are both `www-data`
-
 
 ## Put the Magento file system owner in the web server's primary group {#install-update-depend-user-add2group}
 

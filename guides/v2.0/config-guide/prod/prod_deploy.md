@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Deploy to production
 menu_title: Deploy to production
 menu_node:
 menu_order: 10
-version: 2.0
-github_link: config-guide/prod/prod_deploy.md
 redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 functional_areas:
   - Configuration

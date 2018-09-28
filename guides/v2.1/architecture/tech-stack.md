@@ -1,9 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Technology stack
 menu_title: Technology stack
-version: 2.1
-github_link: architecture/tech-stack.md
 redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 

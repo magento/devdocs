@@ -6,7 +6,6 @@ title: Community Resources
 menu_title: Community Resources
 menu_order: 100
 menu_node: parent
-github_link: /community/resources/index.md
 redirect_from: 
   - /guides/v2.1/community/resources/index.html
   - /guides/v2.0/community/resources/index.html
@@ -43,6 +42,7 @@ They are listed here because the content has been well received within the Magen
 * *GitHub* [Magento 2 Docker][18]{:target="_blank"}
 
 ## Automated Testing
+
 * *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
 * *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
 * *Blog post:* [Integration Tests with Magento 2][19]{:target="_blank"} by Andreas von Studnitz
@@ -61,7 +61,7 @@ They are listed here because the content has been well received within the Magen
 *  *Presentation:* [Premium performance with PHP 7 and Varnish][15]{:target="_blank"} by Miguel Balparda 
 
 [0]: https://github.com/DavidLambauer/awesome-magento2 
-[1]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
+[1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
 [4]: http://www.slideshare.net/OlgaKopylova2/m2-deployment

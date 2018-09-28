@@ -1,12 +1,7 @@
 ---
 group: coding-standards
-subgroup: 01_Coding standards
 title: JavaScript coding standard
 landing-page: Coding standards
-menu_title: JavaScript coding standard
-menu_order: 5
-version: 2.1
-github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 functional_areas:
   - Standards
@@ -36,14 +31,12 @@ It can use custom rules to enforce specific coding standards.
 
 When you declare an anonymous function as an argument in a function call, indent the body of the function by *four* spaces from the left edge of the statement or function {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} to increase readability.
 
-{% highlight javascript %}
-
+``` javascript
 myObject.myFunction(param1, function (a,b) {
-  //Function logic
-  return a > b;
+    //Function logic
+    return a > b;
 });
-
-{% endhighlight%}
+```
 
 ### End of file
 
@@ -53,7 +46,7 @@ This reduces the quantity of the changed lines in a diff and makes code safer in
 
 ### Indentation
 
-Indentation in Magento code uses two spaces.
+Indentation in Magento code uses four spaces.
 
 Tabs are not allowed as indentation.
 
@@ -83,14 +76,14 @@ Lines must end with a single linefeed(LF) character represented as ordinal 10 or
 
 Use string concatenation for multi-line string literals:
 
-{% highlight javascript %}
+``` javascript
 var myString = 'JavaScript was originally developed in Netscape, by Brendan Eich. ' +
     'Battling with Microsoft over the Internet, Netscape considered their client-server solution ' +
     'as a distributed OS, running a portable version of Sun Microsystem&#8217;s Java. ' +
     'Because Java was a competitor of C++ and aimed at professional programmers, ' +
     'Netscape also wanted a lightweight interpreted language that would complement Java ' +
     'by appealing to nonprofessional programmers, like Microsoft&#8217;s VB.[9] (see JavaScript and Java)';
-{% endhighlight %}
+```
 
 ### Parentheses
 
@@ -106,10 +99,10 @@ Never use parentheses for:
 
 Use braces with all multiline blocks. May only omit braces if entire block can be written in one line and improves readability.
 
-{% highlight javascript %}
+``` javascript
 // Wrong
 if (true)
-  blah();
+    blah();
 
 function () { return false; }
 
@@ -117,58 +110,59 @@ function () { return false; }
 if (true) return;
 
 if (true) {
-  return;
+    return;
 }
 
 if (true) {
-  blah();
+    blah();
 }
 
 function () {
-  return false;
+    return false;
 }
 
-{% endhighlight %}
+```
 
 ### Semicolons
+
 Always put semicolons as statement terminators.
 
 The following code examples show the dangers of missing semicolons:
 
-{% highlight javascript %}
+``` javascript
 // Example 1: JavaScript Error
 MyClass.prototype.myMethod = function() {
-   return 42;
+    return 42;
 }  // <-- Missing semicolon
 
 (function() {
-  // Some initialization code wrapped in a function to create a scope for locals.
+    // Some initialization code wrapped in a function to create a scope for locals.
 })();
-{% endhighlight %}
+```
 
 Since there is semicolon to end the first statement, the first function returns 42 and the script interprets 42 as a function.
 When the script tries to call 42 as a function with the second function as a parameter, an error occurs.
 
-{% highlight javascript %}
+``` javascript
 // Example 2: Trying to do one thing on Internet Explorer and another on Firefox.
 var x = {
-  'i': 1,
-  'j': 2
+    'i': 1,
+    'j': 2
  }  // <-- Missing semicolon
 
 [normalVersion, ffVersion][isIE]();
-{% endhighlight %}
+```
 
 A 'no such property in undefined' error appears during runtime when the script tries to call `x[ffVersion][isIE]()`.
 
-{% highlight javascript %}
+``` javascript
 
 // Example 3: Conditional execution a la bash
 var THINGS_TO_EAT = [apples, oysters, sprayOnCheese]  // <-- Missing semicolon
 
 -1 == resultOfOperation() || die();
 
-{% endhighlight %}
+```
 
 The script calls `die` unless `resultOfOperation)_` is `NaN` and assigns `THING_TO_EAT` the result of `die()`.
 
@@ -186,9 +180,9 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 Use single quotes instead of double quotes for consistency.
 
 This is helpful when creating strings that include HTML:
-{% highlight javascript %}
+``` javascript
 var msg = '&lt;span class="text">Hello World!&lt;/div>';
-{% endhighlight %}
+```
 
 ## Additional naming convention standards
 
@@ -224,17 +218,17 @@ This method must always succeed without side effects.
 
 Use a variable initialized with a function expression to define a function within a block.
 
-{% highlight javascript %}
+``` javascript
 // Wrong
 if (x) {
-  function foo() {}
+    function foo() {}
 }
 
 // Correct
 if (x) {
-  var foo = function() {}
+    var foo = function() {}
 }
-{% endhighlight %}
+```
 
 ### Exceptions and custom exceptions
 
@@ -256,15 +250,15 @@ For example, `string.charAt(3)` instead of `string[3]`, and element access with 
 
 There are several ways to attach methods and properties to a constructor, but the preferred style is:
 
-{% highlight javascript %}
+``` javascript
 Foo.prototype.bar = function() {
     // ...
 };
-{% endhighlight %}
+```
 
 Do not use:
 
-{% highlight javascript %}
+``` javascript
 Foo.prototype = {
     bar: function() {
         // ...
@@ -274,7 +268,7 @@ Foo.prototype = {
     }
 };
 
-{% endhighlight %}
+```
 
 Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
 
@@ -282,32 +276,32 @@ Assignment operations to constructor prototypes creating temporal coupling and s
 
 A closure keeps a pointer to its enclosing scope, so attaching a closure to a DOM element can create a circular reference and thus, a memory leak.
 
-{% highlight javascript %}
+``` javascript
 // Wrong
 function foo(element, a, b) {
-  element.onclick = function() {
-    // uses a and b
-  };
+    element.onclick = function() {
+      // uses a and b
+    };
 }
-{% endhighlight %}
+```
 
 The function closure keeps references to elements "a" and "b" even if it never uses them.
 
 Because elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection.
 In these situations, the code can be structured as follows:
 
-{% highlight javascript %}
+``` javascript
 // Correct
 function foo(element, a, b) {
-  element.onclick = bar(a, b);
+    element.onclick = bar(a, b);
 }
 
 function bar(a, b) {
-  return function() {
-    // uses a and b
-  }
+    return function() {
+      // uses a and b
+    }
 }
-{% endhighlight %}
+```
 
 ## Additional general standards
 
@@ -315,22 +309,22 @@ function bar(a, b) {
 
 Single-line array and object initializers are allowed when they fit on a line as follows:
 
-{% highlight javascript %}
+``` javascript
     var arr = [1, 2, 3];  // No space after [ or before ].
     var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.  
-{% endhighlight %}
+```
 
 Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.
 
 For example:
 
-{% highlight javascript %}
+``` javascript
 Object.prototype = {
     a: 0,
     b: 1,
     lengthyName: 2
 };
-{% endhighlight %}
+```
 
 ### Associative arrays
 
@@ -356,16 +350,16 @@ Declare a variable with `var` wherever possible to avoid overwriting existing gl
 
 Using only one var per scope promotes readability.
 
-{% highlight javascript %}
+``` javascript
 var foo = 'bar',
     num = 1,
     arr = [1, 2, 3];
-{% endhighlight %}
+```
 
 [jquery]: https://jquery.com/
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [jscs]: http://jscs.info/
-[eslint-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[jscs-rules]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

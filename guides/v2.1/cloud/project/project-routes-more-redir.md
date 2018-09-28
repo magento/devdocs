@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Redirects
 menu_title: Redirects
@@ -7,14 +7,13 @@ menu_order: 40
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.1
-github_link: cloud/project/project-routes-more-redir.md
 functional_areas:
   - Cloud
   - Setup
 ---
 
 ## Overview of redirection {#cloud-route-redir}
+
 Managing redirection rules is a common requirement for web applications,
 especially in cases where you do not want to lose incoming links that have
 changed or been removed over time. This topic discusses how you can manage redirection rules on your
@@ -23,6 +22,7 @@ changed or been removed over time. This topic discusses how you can manage redir
 If the redirection methods discussed in this topic don't work for you, you can use caching headers to do the same thing.
 
 ## Whole-route redirects {#cloud-route-whole}
+
 Using whole-route redirects, you can define very basic routes in `routes.yaml`. For example, you can redirect from a naked domain to a `www` subdomain as follows:
 
 	http://{default}/:
@@ -30,6 +30,7 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
+
 In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
 to existing routes:
 
@@ -135,7 +136,7 @@ If `append_suffix` is set to its default value of `true`, `/from/path/suffix` re
 {% endcollapsible %}
 
 ### `code` {#cloud-route-partial-code}
-Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2){:target="_blank"}, [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3){:target="_blank"}, [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8){:target="_blank"}, and [`308`](https://tools.ietf.org/html/rfc7238){:target="_blank"}. Defaults to `302`.
+Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
 
 ### `expires` {#cloud-route-partial-expires}
 Optional, the duration the redirect will be cached. Defaults to the `expires` value defined directly under the `redirects` key, but at this level we can fine-tune the expiration of individual partial redirects:

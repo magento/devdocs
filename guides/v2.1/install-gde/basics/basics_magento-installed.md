@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
@@ -7,8 +7,6 @@ menu_node:
 menu_order: 101
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.1
-github_link: install-gde/basics/basics_magento-installed.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_magento-installed.html
 functional_areas:
   - Install

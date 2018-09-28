@@ -1,8 +1,6 @@
 ---
 group: graphql
-version: 2.3
 title: urlResolver endpoint
-github_link: graphql/reference/url-resolver.md
 ---
 
 The `urlResolver` query returns the canonical URL for a specified product, category or CMS page. An external app can render a page by a url without any prior knowledge about the landing page.

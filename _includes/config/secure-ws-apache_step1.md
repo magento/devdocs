@@ -1,5 +1,3 @@
-<div markdown="1">
-
 For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.
 
 #### Install htpasswd if necessary
@@ -17,16 +15,17 @@ First, see if you have the Apache `htpasswd` utility is installed as follows:
 	*	CentOS: `yum -y install httpd-tools`
 
 #### Create a password file
+
 Enter the following commands as a user with `root` privileges:
 
 	mkdir -p /usr/local/apache/password
 	htpasswd -c /usr/local/apache/password/.<password file name> <username>
 
-where 
+where
 
 *	`<username>` can be:
 
-	*	Setting up cron: the web server user or another user. 
+	*	Setting up cron: the web server user or another user.
 
 		In this example, we use the web server user but the choice of user is up to you.
 	*	Setting up Elasticsearch: the user is named `magento_elasticsearch` in this example
@@ -50,6 +49,7 @@ You must set up authentication for two users: one with access to nginx and one w
 	htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
 
 #### Add additional users
+
 To add another user to your password file, enter the following command as a user with `root` privileges:
 
 	htpasswd /usr/local/apache/password/.htpasswd <username>

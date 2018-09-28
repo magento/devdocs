@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Snapshots and backup management
-version: 2.1
-github_link: cloud/project/project-webint-snap.md
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
@@ -116,6 +114,7 @@ We provide two methods for creating and managing snapshots:
     ```
 
 ## Dump your database {#db-dump}
+
 You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
 
 #### To create a database dump:
@@ -144,6 +143,7 @@ You can create a copy of your database using [`magento/ece-tools`]({{ site.baseu
 If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Rollbacks to remove code {#rollback-code}
+
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.

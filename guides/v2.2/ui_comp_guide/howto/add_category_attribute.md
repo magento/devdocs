@@ -1,13 +1,8 @@
 ---
-group: UI_Components_guide
-subgroup: how tos
+group: ui-components-guide
 title: Add a category attribute
-menu_title: Create and display a category attribute with UI components
-menu_order: 3
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.2
-github_link: ui_comp_guide/howto/add_category_attribute.md
 ---
 
 Category attributes were automatically displayed in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %}. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.
@@ -16,7 +11,7 @@ Category attributes were automatically displayed in the {% glossarytooltip 29ddb
 
 The following is a full example of an install script that creates a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} attribute. If you already have a category attribute, it is not necessary.
 
-{% highlight php startinline=true %}
+```php
 // File: Namespace/Module/Setup/InstallData.php
 
 use Magento\Framework\Setup\{
@@ -52,7 +47,7 @@ class InstallData implements InstallDataInterface
         ]);
     }
 }
-{% endhighlight %}
+```
 
 ## Step #2: Display the Attribute
 
@@ -60,7 +55,7 @@ The category UI Component is rendered with configuration from the `category_form
 
 Here is a full example of adding a field under the "Display Settings" group. It is important to note that `attribute_id` should match the ID of the attribute that you created in the install script.
 
-{% highlight xml %}
+```xml
 <!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml -->
 <?xml version="1.0"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -82,7 +77,7 @@ Here is a full example of adding a field under the "Display Settings" group. It 
         </field>
     </fieldset>
 </form>
-{% endhighlight %}
+```
 
 ## Step #3: Upgrade and Run
 

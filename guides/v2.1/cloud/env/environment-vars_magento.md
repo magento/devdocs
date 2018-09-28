@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: ADMIN variables
-version: 2.1
-github_link: cloud/env/environment-vars_magento.md
 functional_areas:
   - Cloud
   - Configuration

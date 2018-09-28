@@ -6,8 +6,6 @@ menu_title: Magento Open Source 2.1.10 Release Notes
 menu_order: 156
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.10CE.md
 ---
 
 *	TOC
@@ -21,7 +19,6 @@ github_link: release-notes/ReleaseNotes2.1.10CE.md
 
 
 We are pleased to present Magento Open Source  2.1.10. This release includes important enhancements to your Magento software.
-
 
 ## Highlights
 
@@ -43,7 +40,6 @@ Magento 2.1.10 includes multiple security enhancements. Although this release in
 
 See [Magento Security Center](https://magento.com/security/patches/magento-221-2110-and-2017-security-update) for more information.
 
-
 ## Fixed issues
 ### Installation, setup, and deployment
 
@@ -51,7 +47,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
   
 
 ### Cart and checkout
-
 
 <!--- 57683 -->* Magento now displays the checkout agreement validation for Terms and Condition acknowledgment after you’ve changed your payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
@@ -64,8 +59,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 58914 -->* The `collectRates()` method now obtains full address details for registered customers when the customer opens the Checkout page with an existing shipping address.
 
 <!--- 68812 -->* You cannot check out as a guest customer until you delete any lingering long-term cookies by clicking **Not me**. Previously, in environments where **Enable Persistence** was set to **Yes**, you could log in as a guest and potentially complete an order that another customer had initiated.
-
-
 
 ### Catalog
 
@@ -87,10 +80,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 75222 -->*  We've fixed an issue prices weren't saved correctly when  **Catalog Price Scope** was set to **Website**.
 
-
-
 ### Configurable products
-
 
 <!--- 58515, 70606 -->* Simple product videos now display the embedded video player instead of the thumbnail image. [GitHub-6360](https://github.com/magento/magento2/issues/6360), [GitHub-8882](https://github.com/magento/magento2/issues/8882) 
 
@@ -102,6 +92,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 71136 -->* You can now save a value for an attribute that is shared between related, upsell, or cross-sell products that have different attribute sets. Previously, when a configurable product had another configurable product with a different attribute set as a related product, cross sell, or upsell and both attribute sets share a multiselect attribute, the value for that multiselect attribute could not be updated for the product.
 
 ### General
+
 <!--- 63816 -->* We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites. 
 
 
@@ -114,23 +105,22 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 63984 -->* Magento now displays the correct configurable product price based on the website to which it is assigned. Previously, Magento displayed the lowest price for the product, no matter which price was assigned to the product on a particular website. 
 
-
-
-
 ### Google
+
 <!--- 70892 -->* We’ve fixed an Ajax issue that prevented Add to Cart and Remove from Cart events from firing in Google Tag Manager as expected. 
 
-
 ### Import/export
+
 <!--- 59720 -->* Magento now allows you to import multiple alternative images with multiple labels that include commas in the description.
 
 ### Order management
+
 <!--- 71051 -->* Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, `No such entity with customerId = 0`, and the order did not complete.
 
 <!--- 59125 -->* You can now receive shipping quotes from either the Admin panel or the storefront. 
 
-
 ### Payment methods
+
 <!--- 69089 -->* In orders with separate billing and shipping addresses, when you change the billing address but neglect to click **Update** before clicking **Place order**, Magento will not place the order until you click **Update**. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address. 
 
 <!--- 72466 -->* We’ve fixed a `PayPal.js` error that occurred when you tried to check out an order that contained a downloadable product. 
@@ -139,25 +129,20 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 69724 -->* Payment methods now retrieve new order status from config as expected. [GitHub-5860](https://github.com/magento/magento2/issues/5860)
 
-
 ### Shipping
+
 <!--- 69898 -->* Magento now handles tracking for FedEx shipments with valid tracking numbers as expected. Previously, Magento displayed an error when you clicked **Track this Shipment**, even when the tracking number was valid. 
 
-
-
 ### Search
+
 <!--- 72106 -->* Search synonyms in a group now can declare several words as synonyms. For example, "Elon Musk,tesla" is a valid synonym group, and a search on the phrase "Elon Musk" will also show results for the "tesla" keyword. Previously, you could declare synonyms for each word (for example, "Elon,Musk,Tesla"), but these words didn't work as a phrase. Synonyms are also now case-insensitive. 
-
-
 
 ### Translations
 
 <!--- 69935 -->* You can now save scheduled changes when running a store with a Japanese locale. Previously, Magento displayed this error, `error: : Future Update Start Time cannot be earlier than current time`. 
 
-
-
-
 ### Wishlist
+
 <!--- 70991 -->* Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist. 
 
 
@@ -427,23 +412,22 @@ The following table identifies contributions from our community members. This ta
   </tr>
   </table>
 
-
 ## System requirements
+
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ce_install_21.md %}
 
-
-
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){:target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){:target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions and bug reports. 
 

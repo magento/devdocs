@@ -1,49 +1,43 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
-github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---
 
-## Overview {#overview-web-service}
-<p>You can configure a Magento or third-party service as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p>
-<p>To <a href="#configure-webapi">configure a web API</a>, you define {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} elements and attributes in the <code>webapi.xml</code> XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service.
-   The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
-   By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>.
-</p>
-<p>Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
-<p>Users can make REST or SOAP calls to access the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.</p>
-<p>To configure a web API, read these topics:</p>
-<ul>
-   <li>
-      <p><a href="#configure-webapi">Configure a web API</a></p>
-   </li>
-   <li>
-      <p><a href="#configuration-options">webapi.xml configuration options</a></p>
-   </li>
-   <li>
-      <p><a href="#sample-webapi">Sample webapi.xml file</a></p>
-   </li>
-   <li>
-      <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
-   </li>
-   <li>
-      <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
-   </li>
-</ul>
+You can configure a Magento or third-party service as a web {%glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{%endglossarytooltip %}.
+
+To [configure a web API](#configure-webapi), you define {%glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{%endglossarytooltip %} elements and attributes in the `webapi.xml` XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service. The `webapi.xml` file for your module specifies an XML schema file for validation. By default, this file is `app/code/<VENDOR>/Webapi/etc/webapi.xsd`.
+
+Your module can use the default `webapi.xsd` file or you can create a customized XML schema file for validation.
+
+Users can make REST or SOAP calls to access the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.
+
+To configure a web API, read these topics:
+
+-   [Configure a web API](#configure-webapi)
+
+-   [webapi.xml configuration options](#configuration-options)
+
+-   [Sample webapi.xml file](#sample-webapi)
+
+-   [webapi.xsd XML schema file](#validate-webapi)
+
+-   [Forcing Request Parameters](#forced-parameters)
+
 ## Configure a web API {#configure-webapi}
+
 <p>To configure a web API for a service, you define XML elements and attributes in the
    <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE&gt;</code> is the module name.
    For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.
 </p>
+
 ## Service Interface Requirements {#service-interface-requirements}
 
 After a service class is configured using the `webapi.xml` file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.
@@ -87,17 +81,17 @@ Following are some examples of various types and what they would look like in th
         * @return \Magento\Customer\Api\Data\CustomerInterface[]
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+If a service method argument is called `item`, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an `item` element.
 
 ## webapi.xml configuration options {#configuration-options}
+
 <p>To define web API components, set these attributes on these XML elements in the
    <code>webapi.xml</code> configuration file, as follows:
 </p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
-      <th>XML&nbsp;element</th>
+      <th>XML element</th>
       <th>Description</th>
       <th>Attributes</th>
    </tr>
@@ -222,7 +216,9 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
+
 ## Sample webapi.xml file {#sample-webapi}
+
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
 ``` xml
 <?xml version="1.0"?>
@@ -301,10 +297,14 @@ Following are some examples of various types and what they would look like in th
       </td>
    </tr>
 </table>
+
 ## webapi.xsd XML schema file {#validate-webapi}
+
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
+
 ## Forcing Request Paramters {#forced-parameters}
+
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
    always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>
    parameter is forced to match the ID of the currently logged in user.</p>

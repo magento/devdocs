@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Exception handling
-version: 2.3
-github_link: graphql/develop/exceptions.md
 ---
 
 The WebApi module has an implementation to “mask” `LocalizedExceptions` so they aren't exposed to the client. GraphQL accomplishes this by restricting verbose output to only those exceptions implementing `\GraphQL\Error\ClientAware`, and only if the system is in developer mode. In these circumstances, Magento returns a full stack trace. Otherwise, Magento writes these exceptions to the system `exception.log` file while returning an “internal server error” to the client.

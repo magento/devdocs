@@ -25,9 +25,11 @@ Always test a patch your local system. When complete, push the local Git branch 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Upgrade a Magento Commerce patch {#upgrade-patch}
+
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ### Back up the database
+
 Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
@@ -51,6 +53,7 @@ Back up your Staging or Production environment database before deploying to thos
         mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ### Verify other changes
+
 Verify other changes you're going to submit to source control before you start the upgrade:
 
 1.  If you haven't done so already, change to your project root directory.
@@ -80,11 +83,13 @@ Verify other changes you're going to submit to source control before you start t
 5.  Wait for deployment to complete.
 
 ## Test general patches {#cloud-patch-gen}
+
 *General patches* are provided for all Magento Commerce customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
 The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#gen-getstarted}
+
 We recommend you test a patch in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
@@ -106,7 +111,7 @@ To test a general patch on your local system:
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
@@ -114,6 +119,7 @@ To test a general patch on your local system:
 		git push origin <branch name>
 
 ### Push a general patch to the staging or production environment {#gen-pushpatch}
+
 After you've successfully tested a patch locally and on your integration environment, you can push the patch to staging or production as follows:
 
 1.  Open an SSH connection to your staging or production server:
@@ -130,7 +136,7 @@ After you've successfully tested a patch locally and on your integration environ
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 3.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 4.	After testing the patch, push it to the remote server and deploy it:
 
@@ -138,11 +144,13 @@ After you've successfully tested a patch locally and on your integration environ
 		git push origin master
 
 ## Test custom patches {#cloud-patch-custom}
+
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
 The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#custom-getstarted}
+
 We recommend you test a patch locally in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
@@ -165,7 +173,7 @@ To test a custom patch on your local system:
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
@@ -198,7 +206,7 @@ After you've successfully tested a custom patch locally and on your integration 
 
 	`P` partial progress
 
-	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
+	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 2.	Apply the patch:
 
 		git apply <Magento project root dir>/m2-hotfixes/<patch file name>
@@ -206,7 +214,7 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"

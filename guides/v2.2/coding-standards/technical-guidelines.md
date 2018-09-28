@@ -1,8 +1,6 @@
 ---
 group: coding-standards
 title: Technical guidelines
-github_link: coding-standards/technical-guidelines.md
-version: 2.2
 redirect_from:
     - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:
@@ -785,5 +783,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: https://github.com/magento/magento2/blob/2.1/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

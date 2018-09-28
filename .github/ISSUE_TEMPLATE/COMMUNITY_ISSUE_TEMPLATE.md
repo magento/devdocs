@@ -29,11 +29,9 @@ Notifications of Changes:
 - [ ] New REST endpoints or updated GraphQL query syntax?
 - [ ] New command line option?
 
-
 ## Content
 
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
-
 
 ## Additional information
 

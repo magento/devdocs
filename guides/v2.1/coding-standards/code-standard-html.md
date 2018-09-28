@@ -5,8 +5,6 @@ title: HTML style guide
 landing-page: Coding standards
 menu_title: HTML style guide
 menu_order: 9
-version: 2.1
-github_link: coding-standards/code-standard-html.md
 functional_areas:
   - Standards
 ---
@@ -32,9 +30,11 @@ Use only spaces for indentation:
 {%endhighlight%}
 
 ## End of file
+
 Add a blank line at the end of file.
 
 ## Self-closing tags
+
 Always close self-closing tags.
 
 **Inappropriate**
@@ -44,7 +44,6 @@ Always close self-closing tags.
 <input type="text" name="username">
 {%endhighlight%}
 
-
 **Recommended**
 {%highlight html%}
 <br />
@@ -52,8 +51,8 @@ Always close self-closing tags.
 <input type="text" name="username" />
 {%endhighlight%}
 
-
 ## Line length
+
 Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.
 
 **Inappropriate**
@@ -75,6 +74,7 @@ Avoid code lines longer than 120 characters. When using an editor, it is inconve
 {%endhighlight%}
 
 ## Spaces around equals sign ("=")
+
 Spaces around equals sign ("=") are acceptable, but not recommended. The code without spaces is easier to read.
 
 **Not recommended**
@@ -88,6 +88,7 @@ Spaces around equals sign ("=") are acceptable, but not recommended. The code wi
 {%endhighlight%}
 
 ## Spaces and colon in attributes
+
 Use no space before the colon and one space after the colon for the sake of readability.
 
 **Not recommended**
@@ -102,12 +103,13 @@ Use no space before the colon and one space after the colon for the sake of read
 {%endhighlight%}
 
 ## Block-level elements
+
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
-
+![]({{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png)
 
 ## Class names
+
 Use semantic class names and IDs. Avoid presentational class names.
 
 **Inappropriate**
@@ -122,8 +124,9 @@ Use semantic class names and IDs. Avoid presentational class names.
 {%endhighlight%}
 
 ## Accessibility
+
 All pages should comply with the [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/).
 
-
 ## Microdata
+
 All crucial pages (like product page) should contain [microdata](https://www.w3.org/TR/microdata/). Please pay attention to this recommendation when adding new functionality.

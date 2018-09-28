@@ -1,8 +1,6 @@
 ---
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Open Source
-github_link: release-notes/backward-incompatible-changes/open-source.md
 ---
 
 The changes are aggregated into two tables:

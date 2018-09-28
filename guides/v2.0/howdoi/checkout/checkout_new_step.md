@@ -1,13 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a new checkout step
 subtitle: Customize Checkout
 menu_order: 1
 level3_subgroup: checkout-tutorial
-version: 2.0
-github_link: howdoi/checkout/checkout_new_step.md
 functional_areas:
   - Checkout
 ---
@@ -25,7 +23,6 @@ You can add a custom checkout step, it should be implemented as a {% glossarytoo
 2. [Add your step to the Checkout page layout](#checkout).
 3. [Create mixins for payment and shipping steps (optional)](#create-mixin).
 
-
 ## Step 1: Create the view part of the checkout step component {#create-view}
 
 To create the view part of the new checkout step:
@@ -40,9 +37,8 @@ A new checkout step must be implemented as UI component. That is, its {% glossar
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `<your_module_dir>` notation stands for the path to your module directory from the root directory. Usually it will be one of the following: `app/code/<YourVendor>/<YourModule>` or `vendor/<yourvendor>/module-<module>-<name>`. For more details see [Conventional notations for paths to modules and themes]({{ page.baseurl }}/frontend-dev-guide/conventions.html)
-</div>
 
 A sample `my-step-view.js` with comments follows:
 
@@ -244,6 +240,5 @@ To create a mixin:
     );
     ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins, see [JS Mixins]({{ page.baseurl }}/v2.1/javascript-dev-guide/javascript/js_mixins.html).
-</div>

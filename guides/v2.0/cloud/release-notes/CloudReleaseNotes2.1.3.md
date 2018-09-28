@@ -7,8 +7,6 @@ menu_order: 385
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.0
-github_link: cloud/release-notes/CloudReleaseNotes2.1.3.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
 functional_areas:
@@ -22,6 +20,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
 ## Required update to `.magento.app.yaml`
+
 Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration environment]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-stage) and [production]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-prod).
 
 ### Get started
@@ -62,6 +61,7 @@ Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to ve
 {% endcollapsible %}
 
 ## Update your Elasticsearch configuration {#cloud-rn-213-es}
+
 This section discusses how to update your [integration]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
@@ -135,6 +135,7 @@ To use Elasticsearch, you must perform all the tasks discussed in this section.
 {% endcollapsible %}
 
 ### Step 4: Get Elasticsearch connection information {#cloud-es-config-mg}
+
 This section discusses how to get connection information for Elasticsearch so you can configure the Magento application to use it as your search engine.
 
 {% collapsible To get Elasticsearch connection information: %}

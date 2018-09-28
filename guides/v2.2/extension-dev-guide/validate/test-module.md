@@ -1,12 +1,10 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 06_Validate
 title: Test your component
 menu_title: Test your component
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: extension-dev-guide/validate/test-module.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-test.html
   - /guides/v2.1/mktpl-quickstart/dev-test.html
@@ -16,13 +14,15 @@ redirect_from:
 ## Unit and Integration Tests {#test-unit}
 
 Run the PHPUnit based Magento unit and integration tests.
-For more information see the <a href="{{ page.baseurl }}/test/testing.html">Magento Testing Overview</a>
+For more information see the [Magento Testing Overview]({{ page.baseurl }}/test/testing.html)
 
 ## Functional testing {#test-functional}
+
 For further testing with the Magento functional testing frameworks, see
 [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html).
 
 ## Test using {{site.data.var.ce}} {#test-comm}
+
 Test your component by deploying {{site.data.var.ce}} and adding the component to the project's <code>composer.json</code>.
 
 {% highlight JSON %}
@@ -36,27 +36,23 @@ Test your component by deploying {{site.data.var.ce}} and adding the component t
 Remember to [register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
 
 ## Test installing your component {#test-install}
-Before you publish your component, you should test installing it using the <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).
+
+Before you publish your component, you should test installing it using the [Magento Component Manager]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html){: target="_blank"} (part of the Magento Admin).
 
 One way to do this follows:
 
-1.	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.	[Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
 		<IP or hostname of your GitHub repository> https://repo.magento.com
 
-3.	<a href="{{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html">Install your component</a> exactly like a merchant.
+3.	[Install your component]({{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html) exactly like a merchant.
 4.	Verify the component installed properly.
 
-
-
-
-
-
-
 ## More information
+
 For more information on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components, see the following:
 
 * [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}

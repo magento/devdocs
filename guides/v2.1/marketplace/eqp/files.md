@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Files
-version: 2.1
-github_link: marketplace/eqp/files.md
 ---
 
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
@@ -75,8 +73,6 @@ Details on the response fields:
 
 ### Upload files
 
-
-
 You upload files in bulk upload using the **multipart/form-data** encoding type. With this approach, binary files can be uploaded without the need for additional encoding, which can result in an increase in overall upload size.
 
 ```
@@ -115,7 +111,6 @@ Content-Type: application/pdf
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-
 * Each part has a header and body with `Content-Disposition` header always set to `form-data`.
 * The `name` value must be set to `file[]` for all parts.
 * The original filename must be supplied in the `filename` parameter.
@@ -169,9 +164,8 @@ curl -X POST \
 ]
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The response is the list of files in the same order sent during the upload request.
-</div>
 
 Each record in the list has the following fields:
 
@@ -234,7 +228,6 @@ curl -X DELETE \
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-
 * The API returns a batch response for each item, which includes a `code` and `message`.
 * A 200 OK HTTP response code indicates a successful upload.
 * Any non-200 HTTP response code indicates an error.

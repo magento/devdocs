@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Technologies and requirements
-version: 2.1
-github_link: cloud/requirements/cloud-requirements.md
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
   - /guides/v2.1/cloud/discover-tools.html
@@ -30,6 +28,7 @@ functional_areas:
 This topic describes technologies, knowledge, accounts, and steps to complete when working with your {{site.data.var.ece}} code, environments, and store(s) and site(s). If you are not experienced with a technology, we provide additional links and information to get you started.
 
 ## Technologies {#cloud-req-pre}
+
 The following technologies are requirements for developing and deploying your store code:
 
 *	Git
@@ -49,13 +48,14 @@ Here are some advanced technologies we recommend getting familiar with:
 {% include cloud/split-db-nosupport.md %}
 
 ### What is Git {#git}
+
 Git is the heart of all your code in repositories. It acts as a version control system through branches from a parent. Multiple developers can work together in personal branches all merging into the same parent. You can also work on features at the same time in multiple branches.
 
 We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="\_blank"} and [videos](https://git-scm.com/videos){:target="\_blank"} from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="\_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="\_blank"} from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="\_blank"} with DevForge to understand how people use the repo and commands with a fun story
+*	[Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
 
 To get started with Git, install Git on your local workstation.
 
@@ -89,6 +89,7 @@ For detailed information on supported versions and extensions, see the following
 *	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
 
 ## Requirements to get started {#requirements}
+
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
 *	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
@@ -98,6 +99,7 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 We walk you through everything you need to do and know.
 
 ## Magento configurations {#cloud-req-test}
+
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
@@ -106,10 +108,11 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
-*	Install and configure [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html)
+*	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ## Development and testing {#cloud-req-devtest}
+
 For development and testing, we recommend the following:
 
 *	Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
@@ -125,6 +128,7 @@ For development and testing, we recommend the following:
 *	Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
+
 The Account Owner creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
 To work with and deploy stores, you need the following:

@@ -1,11 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
 menu_title: JavaScript resources in Magento
 menu_order: 5
-version: 2.0
-github_link: javascript-dev-guide/javascript/js-resources.md
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html
@@ -17,7 +15,7 @@ redirect_from:
 
 This topic describes the general concepts of how to work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
 
-To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
+To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
 RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
@@ -32,12 +30,11 @@ In Magento, you can find the JS components on the following levels:
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Library level can only contain core Magento resources. Do not put custom JS files in  the `lib/web` directory.
-</div>
-
+{: .bs-callout .bs-callout-info }
+Library level can only contain core Magento resources. Do not put custom JS files in the `lib/web` directory.
 
 ### Specifying JS
+
 We recommend specifying JavaScript resources in the templates rather than in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates, to ensure processing of the resources in body of a page.
 
 ## Accessing JS resources
@@ -92,7 +89,7 @@ These relative paths are also used in for [mapping and setting `paths` in requir
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
-To build a dependency on the third-party plugin, specify a <a href="http://requirejs.org/docs/api.html#config-shim" target="_blank">shim</a> in the following configuration files:
+To build a dependency on the third-party plugin, specify a [shim](http://requirejs.org/docs/api.html#config-shim){: target="_blank"} in the following configuration files:
 
  - `requirejs-config.js`
 
@@ -113,7 +110,6 @@ var config = {
   // where $ == jQuery
 })(jQuery);
 {%endhighlight%}
-
 
 ## RequireJS library
 
@@ -170,9 +166,8 @@ All configurations are collected and executed in the following order:
 
 <li>Configurations at the module level.</li>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p>Dependencies between the modules or themes are considered as well.</p>
-  </div>
+{: .bs-callout .bs-callout-warning }
+Dependencies between the modules or themes are considered as well.
 
 <li>Configurations at the theme module level for the ancestor themes.</li>
 
@@ -187,7 +182,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 
 * for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
 * for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
-
 
 ## Related reading
 
