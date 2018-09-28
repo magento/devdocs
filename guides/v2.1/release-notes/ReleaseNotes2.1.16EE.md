@@ -30,24 +30,18 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!--- ENGCOM-2750 -->* 
+<!--- ENGCOM-2750 -->* Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade. 
 
-Product image roles v disappearing
 
 [GitHub-10687](https://github.com/magento/magento2/issues/10687)
 
-
-After upgrading from Magento 2.1.7 to 2.1.8 we had problems with product image roles. We have experienced that some products that previously had product image role set to base, small, thumbnail didn't have it anymore. It seems that the image roles get's removed from random products over time. This weekend at we have at least identified 10 products that got images roles removed during the weekend.
-
-Expected result
-Product image roles should be set to base, small, thumbnail unless the user changes it.
-Actual result
-Product image roles disappear randomly from some products from time to time.
 
 title: [Backport] Fix #10687 - Product image roles disappearing
 url: magento/magento2#17553
 contributor name: @eduard13
 contributor link: https://github.com/eduard13
+
+
 
 ### EAV
 
@@ -72,7 +66,10 @@ The ProductAttributeInterface does declare the two methods declared in MetadataO
 
 ### Email
 
-<!--- MAGETWO-82598 -->* 
+<!--- MAGETWO-82598 -->* Magento now supports the new top-level address domains identified in the [IANA list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt). [GitHub-4547](https://github.com/magento/magento2/issues/4547)
+
+
+
 
 
 
@@ -99,11 +96,8 @@ Fixed Issues:
 
 
 
-<!--- ENGCOM-2324 -->* [Backport] issue/14056 - Coupon API not working for guest user
+<!--- ENGCOM-2324 -->* Coupon codes now work as expected for users logged in through the web API. [GitHub-14056](https://github.com/magento/magento2/issues/14056)
 
-[GitHub-14056](https://github.com/magento/magento2/issues/14056)
-
-Coupon code also does not work for logged-in customer through webapi, on frontend it works fine.
 
 title: [Backport] Add compare list link to success message after adding a product
 url: magento/magento2#16782
@@ -120,7 +114,10 @@ check 2.2.6??
 
 ### General
 
-<!--- ENGCOM-2795 -->* Resolved product custom option title save issue 
+<!--- ENGCOM-2795 -->* 
+
+
+Resolved product custom option title save issue 
 
 title: [Backport] 6305 - Resolved product custom option title save issue
 url: magento/magento2#17609
@@ -170,6 +167,8 @@ Customer group is displaying under customer while Store menu is blank.
 
 
 
+
+
 <!--- ENGCOM-2975 -->* Fixes reverted for remove space when only one country in drop-down on both cart
 
 title: [Backport] Fixes reverted for remove space when only one country in drop-down on both cart ?
@@ -192,14 +191,14 @@ Is this a known issue? How can I fix this for my installation? I have other Mage
 
 ### Infrastructure
 
-<!--- ENGCOM-2730 -->* 
+<!--- ENGCOM-2730 -->* Configurable product addtocart with restAPI now works as expected. 
+
 
 itle: [Backport] Convert to string $option->getValue, in order to be compared with oth?
 url: magento/magento2#17476
 contributor name: @mage2pratik
 contributor link: https://github.com/mage2pratik
 
-Configurable product addtocart with restAPI not working as expected
 
 Addtocart using same API work fine for simple product, but while adding configurable product with restAPI, it creates duplicate product entry in cart, it should ideally update the qty.
 Using single store and quote id is also same.
@@ -362,66 +361,23 @@ Error is thrown, a new invoice can't be created.
 
 ### Shipping
 
-<!--- ENGCOM-2325 -->* 
-Fix the issue with "Shipping address is not set" exception
+<!--- ENGCOM-2325 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
 
-title: [Backport] Fix the issue with "Shipping address is not set" exception
-url: magento/magento2#16783
-contributor name: @dmytro-ch
-contributor link: https://github.com/dmytro-ch
-
-
-[GitHub-16555](https://github.com/magento/magento2/issues/16555)
-
-
-"Shipping address is not set" exception in Multishipping Checkout.
-
-Steps to reproduce
-Log In as Customer.
-Add Product to Cart.
-Proceed to Checkout.
-Fill Shipping Address data, click Next (do not place Order)
-Return to the Storefront.
-Go to the Shopping Cart.
-Click Check Out with Multiple Addresses.
-Expected result
-Correct Multishipping Checkout workflow.
-Actual result
-Exception #0 (Magento\Framework\Exception\StateException): Shipping address is not set
-Exception #0 (Zend_Db_Statement_Exception): SQLSTATE[23000]: Integrity constraint violation when trying to access Shopping Cart.
 
 
 
 ### Store
 
-<!--- ENGCOM-2627 -->* 
+<!--- ENGCOM-2627 -->*  The `$product->getUrlInStore()` method now returns more compact URLs. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
-ix bug in method getUrlInStore() of product model 
+
+
 
 title: #16273: [Backport] Fix bug in method getUrlInStore() of product model
 url: magento/magento2#16310
 contributor name: @vasilii-b
 contributor link: https://github.com/vasilii-b
 
-
-[GitHub-16273](https://github.com/magento/magento2/issues/16273)
-
-
-Method $product->getUrlInStore() returning extremely long URLs, could be a bug 
-
-Steps to reproduce
-Use the following code where a product model is loaded and where you can see the result:
-
-<?= $product->getUrlInStore() ?>
-
-Expected result
-The URL produced for the product would look like:
-
-https://www.domain.com/my-product.html?___store=default
-Actual result
-The URL produced is actually very long winded:
-
-https://www.domain.com/my-product.html?___store%5B_data%5D%5Bstore_id%5D=1&___store%5B_data%5D%5Bcode%5D=default&___store%5B_data%5D%5Bwebsite_id%5D=1&___store%5B_data%5D%5Bgroup_id%5D=1&___store%5B_data%5D%5Bname%5D=UK+Mainland&___store%5B_data%5D%5Bsort_order%5D=0&___store%5B_data%5D%5Bis_active%5D=1&___store%5B_data%5D%5Bavailable_currency_codes%5D%5B0%5D=GBP&___store%5B_data%5D%5Bbase_currency%5D%5B_data%5D%5Bcurrency_code%5D=GBP&___store%5B_data%5D%5Bcurrent_currency%5D%5B_data%5D%5Bcurrency_code%5D=GBP
 
 
 
@@ -430,9 +386,8 @@ https://www.domain.com/my-product.html?___store%5B_data%5D%5Bstore_id%5D=1&___st
 
 ### Theme
 
-<!--- ENGCOM-2917 -->* 
+<!--- ENGCOM-2917 -->* Magento now displays the wishlist icon on the shopping cart in mobile view. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
-Wishlist icon cut on Shopping cart page in mobile view 
 
 title: [Backport] Resolved : Wishlist icon cut on Shopping cart page in mobile view #17851 #28
 url: magento/magento2#17912
@@ -440,29 +395,14 @@ contributor name: @hitesh-wagento
 contributor link: https://github.com/hitesh-wagento
 
 
-[GitHub-17851](https://github.com/magento/magento2/issues/17851)
-
-
-Wishlist icon cut on Shopping cart page in mobile view.
-
-
-
-Steps to reproduce
-Login in your frontend.
-Add any product in Cart.
-Go to Shopping cart.
-Switch mobile view.
-Expected result
-Wishlist icon should not cut in mobile view.
-Actual result
-Wishlist icon cut in mobile view.
-
-
 
 ### UI
 
-<!--- ENGCOM-2825 -->* 
-Update time12h javascript validation rule to be compatible with js minify 
+<!--- ENGCOM-2825 -->* The input field should validate against the time12h validation rule
+
+
+
+The time12h javascript validation rule is now compatible with JS minify. Previously,  
 
 title: [Backport] Update time12h javascript validation rule to be compatible with js minify
 url: magento/magento2#17689
@@ -481,7 +421,13 @@ The input field should validate against the time12h validation rule
 Actual result
 There is a javascript error that happens when the js is minified. The space in the validation rule is stripped.
 
-<!--- ENGCOM-2835 -->* Message list component fix: the message type is always error when parameters specified
+
+
+<!--- ENGCOM-2835 -->* Magento now displays 
+Previously, Magento listed the message type as `error` when parameters were specfied. 
+
+
+Message list component fix: the message type is always error when parameters specified
 itle: [Backport] Message list component fix: the message type is always error when parameters specified
 url: magento/magento2#17702
 contributor name: @dmytro-ch
@@ -501,21 +447,13 @@ The error message is shown.
 
 
 
-<!--- ENGCOM-2898 -->* Fixes black background for png images in wysiwyg editors
+<!--- ENGCOM-2898 -->* The WYSIWYG editor now preserves the transparent background of .png  thumbnails. Previously, Magento rendered these transparent backgrounds black. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+
 
 title: [Backport] Fixes black background for png images in wysiwyg editors.
 url: magento/magento2#17855
 contributor name: @eduard13
 contributor link: https://github.com/eduard13
-
-[GitHub-14248](https://github.com/magento/magento2/issues/14248)
-
-
-Transparent background becomes black for thumbnails of PNG into Wysiwyg editor
-
-This PR fixes the black background for png images, which are uploaded in wysiwyg editors. This issue appears only for GD2 image processing library.
-
-
 
 
 ## Community contributions
