@@ -1,7 +1,6 @@
 ---
 group: configuration-guide
 title: Manage the indexers
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 functional_areas:
   - Configuration
   - System

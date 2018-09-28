@@ -4,7 +4,6 @@ subgroup: 40_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 functional_areas:
   - Integration
 ---

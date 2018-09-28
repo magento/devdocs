@@ -5,7 +5,6 @@ title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 functional_areas:
   - Configuration
   - System

@@ -5,7 +5,6 @@ title: Versions supported
 menu_title: Versions supported
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-overview-supported.html
 functional_areas:
   - Tools
 ---

@@ -1,7 +1,6 @@
 ---
 group: frontend-developer-guide
 title: Layout file types
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 functional_areas:
   - Frontend
 ---

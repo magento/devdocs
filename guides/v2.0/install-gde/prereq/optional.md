@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: Optional software
 menu_title: Optional software
 menu_order: 400
-redirect_from: /guides/v1.0/install-gde/prereq/optional.html
 functional_areas:
   - Install
   - System

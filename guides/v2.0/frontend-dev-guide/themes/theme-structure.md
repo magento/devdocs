@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Magento theme structure
 menu_title: Magento theme structure
 menu_order: 60
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 functional_areas:
   - Frontend
   - Theme

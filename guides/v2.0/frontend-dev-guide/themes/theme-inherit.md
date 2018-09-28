@@ -4,7 +4,6 @@ subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 70
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 functional_areas:
   - Frontend
   - Theme

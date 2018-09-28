@@ -4,7 +4,6 @@ subgroup: C_Templates
 title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
 functional_areas:
   - Frontend
 ---

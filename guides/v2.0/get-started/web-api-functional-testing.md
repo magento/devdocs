@@ -5,7 +5,6 @@ title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 ---
 
 ## Web API functional testing

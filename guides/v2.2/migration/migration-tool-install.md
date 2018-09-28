@@ -5,7 +5,6 @@ title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ---
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}

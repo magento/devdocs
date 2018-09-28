@@ -6,7 +6,6 @@ landing-page: Getting Started with Web APIs
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
 functional_areas:
   - Integration
 ---
