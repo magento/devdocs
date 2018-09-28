@@ -11,7 +11,7 @@ functional_areas:
 To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,
 and send received details to payment processor.
 
-Depends on your payment integration payment details might be different, but, usually, it's credit card details, tokenized cards, payment nonce, etc.
+Depending on your payment integration payment details might be different, but, usually, it's credit card details, tokenized cards, payment nonce, etc.
 
 However, in any case you should write some code to retrieve payment details from payment form.
 
