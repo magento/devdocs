@@ -27,7 +27,7 @@ functional_areas:
 ## Overview of the Varnish solution {#config-varnish-over}
 [Varnish Cache] is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 
-Magento 2 supports Varnish 4.x and 5.0.
+Magento 2 supports Varnish 4.x and 5.x.
 
 {:.bs-callout .bs-callout-warning}
 We _strongly recommend_ you use Varnish in production. The built-in full-page caching (to either the file system or [database]) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.
