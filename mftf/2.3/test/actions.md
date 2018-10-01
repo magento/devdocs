@@ -1535,9 +1535,11 @@ Attribute|Type|Use|Description
 <pressKey userInput="a" selector="#targetElement" stepKey="pressA"/>
 ```
 
+_**parameterArray**_ attribute has to begin with `[` and end with `]`, array() syntax is not supported. 
+If more than one key is pressed at the same time, secondary `[]` can be used.
 ```xml
 <!-- Press the delete within the selected area uses key constants from the WebDriverKeys class. -->
-<pressKey selector="#targetElement" parameterArray="[\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="pressDelete"/>
+<pressKey selector="#targetElement" parameterArray="[['ctrl', 'a'], \Facebook\WebDriver\WebDriverKeys::DELETE]" stepKey="pressDelete"/>
 ```
 
 ### reloadPage
