@@ -7,11 +7,17 @@ title: What's new on DevDocs
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-
-## September 2018
+## October 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).|2.1.x, 2.2.x|New topic|October  1
+
+{% collapsibleh2 September 2018 %}
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points) section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.1.x, 2.2.x, 2.3.x|Major update|September 27
+Updated the [Release notes for ece-tools version 2002.0.14.](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html) architecture.<br/>Added [Reset cron jobs](http://devdocs.magento.com/guides/v2.1/cloud/trouble/reset-cron-jobs.html) topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and a bad redirect for the ece-tools update.|2.1.x, 2.2.x, 2.3.x|Major update|September 25
 Updated [declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html) command names and parameters.|2.3.x|Technical changes|September 21
 Added a step to configure a webhook for the Magento Cloud [BitBucket integration](https://devdocs.magento.com/guides/v2.2/cloud/integrations/bitbucket-integration.html).|2.1.x, 2.2.x|Technical changes|September 21
 Updated the backward incompatible changes for [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_5-2_2_6) and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_5-2_2_6) after the Magento 2.2.6 release.|2.2.x|Major update|September 18
@@ -31,6 +37,7 @@ Replaced all references to the `composer create-project --repository-url` flag w
 Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html) to include the new `attribute_options` object.|2.3.x|Technical changes|Sep 4
 Added [REST reference documentation for MSI](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-sources.html)|2.3.x|New topic|Sep 4
 Removed Fastly VCL snippet for extending the Admin timeout. Magento Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Sep 4
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 August 2018 %}
 
