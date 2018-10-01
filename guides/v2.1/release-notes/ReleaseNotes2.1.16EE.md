@@ -30,30 +30,19 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!--- ENGCOM-2750 -->* Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade. 
+<!--- ENGCOM-2750 -->* Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17553](https://github.com/magento/magento2/pull/17553)*. [GitHub-10687](https://github.com/magento/magento2/issues/10687)
 
-
-[GitHub-10687](https://github.com/magento/magento2/issues/10687)
-
-
-title: [Backport] Fix #10687 - Product image roles disappearing
-url: magento/magento2#17553
-contributor name: @eduard13
-contributor link: https://github.com/eduard13
 
 
 
 ### EAV
 
 <!--- ENGCOM-2707 -->*  Incorrect return value from Product Attribute Repository 
-Pull Request:
 
-title: [Backport] Fix #4803: Incorrect return value from Product Attribute Repository
-url: magento/magento2#15688
-contributor name: @cream-julian
-contributor link: https://github.com/cream-julian
 
-[GitHub-4803](https://github.com/magento/magento2/issues/4803)
+
+*Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15688](https://github.com/magento/magento2/pull/15688)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
+
 
 
 To adhere to Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface), the
@@ -85,29 +74,11 @@ Actual result
 An image with 250px width and 90px height (as defined in the parent view.xml)
 
 
-title: [Backport] magento/magento2#12250: View.xml is inheriting image sizes from paren?
-url: magento/magento2#17439
-contributor name: @quisse
-contributor link: https://github.com/quisse
-Fixed Issues:
-1. magento/magento2#12250:
-
-[GitHub-12250](https://github.com/magento/magento2/issues/12250)
+*Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [17439](https://github.com/magento/magento2/pull/17439)*. [GitHub-12250](https://github.com/magento/magento2/issues/12250)
 
 
 
-<!--- ENGCOM-2324 -->* Coupon codes now work as expected for users logged in through the web API. [GitHub-14056](https://github.com/magento/magento2/issues/14056)
-
-
-title: [Backport] Add compare list link to success message after adding a product
-url: magento/magento2#16782
-contributor name: @gelanivishal
-contributor link: https://github.com/gelanivishal
-
-check 2.2.6??
-
-
-
+<!--- ENGCOM-2324 -->* Coupon codes now work as expected for users logged in through the web API. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16782](https://github.com/magento/magento2/pull/16782)*. [GitHub-14056](https://github.com/magento/magento2/issues/14056)
 
 
 
@@ -119,13 +90,10 @@ check 2.2.6??
 
 Resolved product custom option title save issue 
 
-title: [Backport] 6305 - Resolved product custom option title save issue
-url: magento/magento2#17609
-contributor name: @jignesh-baldha
-contributor link: https://github.com/jignesh-baldha
 
 
-[GitHub-6305](https://github.com/magento/magento2/issues/6305)
+*Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17609](https://github.com/magento/magento2/pull/17609)*. [GitHub-6305](https://github.com/magento/magento2/issues/6305)
+
 
 
 Steps to reproduce
@@ -141,12 +109,10 @@ Option Type: Dropdown
 
 <!--- ENGCOM-2805 -->* Solution for User role issue with customer group
 
-title: [Backport] Solution for User role issue with customer group
-url: magento/magento2#17629
-contributor name: @jignesh-baldha
-contributor link: https://github.com/jignesh-baldha
 
-[GitHub-16499](https://github.com/magento/magento2/issues/16499)
+*Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+
+
 
 While creating a user role for the “customer group”, issue with “customer group” menu for user role(ACL file).
 The “customer group” menu is displayed under "customers" menu on the admin side, whereas it is displayed under store > other setting menu while assigning user role.
@@ -171,10 +137,9 @@ Customer group is displaying under customer while Store menu is blank.
 
 <!--- ENGCOM-2975 -->* Fixes reverted for remove space when only one country in drop-down on both cart
 
-title: [Backport] Fixes reverted for remove space when only one country in drop-down on both cart ?
-url: magento/magento2#17194
-contributor name: @nilesh2jcommerce
-contributor link: https://github.com/nilesh2jcommerce
+
+*Fix submitted by [Nilesh Lokhande](https://github.com/nilesh2jcommerce) in pull request [17194](https://github.com/magento/magento2/pull/17194)*. [GitHub-2146](https://github.com/magento/magento2/issues/2146)
+
 
 Countries dropdown is empty
 
@@ -185,7 +150,6 @@ Also under locale options (I'm trying to change the store view locale) the dropd
 Is this a known issue? How can I fix this for my installation? I have other Magento 2 installations running that does not have this problem. Maybe the way of installing Magento is the cause (via Composer or download from Github)?
 
 
-[GitHub-2146](https://github.com/magento/magento2/issues/2146)
 
 
 
@@ -194,10 +158,10 @@ Is this a known issue? How can I fix this for my installation? I have other Mage
 <!--- ENGCOM-2730 -->* Configurable product addtocart with restAPI now works as expected. 
 
 
-itle: [Backport] Convert to string $option->getValue, in order to be compared with oth?
-url: magento/magento2#17476
-contributor name: @mage2pratik
-contributor link: https://github.com/mage2pratik
+
+
+*Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17476](https://github.com/magento/magento2/pull/17476)*.  [GitHub-15028](https://github.com/magento/magento2/issues/15028)
+
 
 
 Addtocart using same API work fine for simple product, but while adding configurable product with restAPI, it creates duplicate product entry in cart, it should ideally update the qty.
@@ -212,15 +176,13 @@ Using single store and quote id is also same.
 
 <!--- ENGCOM-2653 -->* 
 
-title: [Backport] Fix bug Magento 2.2.2 password reset strength meter #13429
-url: magento/magento2#17290
-contributor name: @jignesh-baldha
-contributor link: https://github.com/jignesh-baldha
 
 
 Magento 2.2.2 password reset strength meter
 
-[GitHub-13429](https://github.com/magento/magento2/issues/13429)
+*Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17290](https://github.com/magento/magento2/pull/17290)*. [GitHub-13429](https://github.com/magento/magento2/issues/13429)
+
+
 
 
 
@@ -245,12 +207,10 @@ Error on the console.
 
 <!--- ENGCOM-2764 -->* Year-to-date dropdown in Stores>Configuration>General>Reports>Dashboard 
 
-title: [Backport] Magento 2.2.5: Year-to-date dropdown in Stores>Configuration>General>Reports>Dashboard #17289
-url: magento/magento2#17496
-contributor name: @ronak2ram
-contributor link: https://github.com/ronak2ram
 
-[GitHub-17289](https://github.com/magento/magento2/issues/17289)
+*Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+
+
 
 
 Steps to reproduce
@@ -265,10 +225,7 @@ Numerical list appears of following numbers: [01,03,03,05,05,07,07,09,09,10,10,1
 ### Review
 
 <!--- ENGCOM-2806 -->* Fixed review list ajax if product not exist redirect to 404 page
-title: [Backport] Fixed review list ajax if product not exist redirect to 404 page #13102
-url: magento/magento2#17632
-contributor name: @mage2pratik
-contributor link: https://github.com/mage2pratik
+
 
 Steps to reproduce
 Visit review/product/listAjax/id/{{non existent id}/
@@ -278,18 +235,16 @@ I would expect a 404 not found
 Actual result
 An exception which triggers a 503 HTTP status code
 
+*Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17632](https://github.com/magento/magento2/pull/17632)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
-[GitHub-13102](https://github.com/magento/magento2/issues/13102)
+
 
 
 
 ###  Sales
 
 <!--- ENGCOM-2933 -->* 
-title: [Backport] #8035 join extension attributes not added to orders
-url: magento/magento2#16169
-contributor name: @Scarraban
-contributor link: https://github.com/Scarraban
+
 
 Join extension attributes are not added to Order results (REST api)
 
@@ -310,19 +265,24 @@ Define a Extension attribute for the OrderInterface with a join table:
 Make sure there's matching data in the SOMETABLE table and the sales_order table
 Request orders via REST
 
-[GitHub-8035](https://github.com/magento/magento2/issues/8035)
+
+*Fix submitted by [Sam Butler Thompson](https://github.com/Scarraban) in pull request [16169](https://github.com/magento/magento2/pull/16169)*. [GitHub-8035](https://github.com/magento/magento2/issues/8035)
+
+
 
 
 
 <!--- ENGCOM-2691 -->* 
 
-title: [Backport] Fix #16655 Block totalbar not used in invoice create and credit memo create screens
-url: magento/magento2#17413
-contributor name: @dverkade
-contributor link: https://github.com/dverkade
 
 
-https://github.com/magento/magento2/issues/16655
+
+*Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [17413](https://github.com/magento/magento2/pull/17413)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653), [GitHub-16655](https://github.com/magento/magento2/issues/16655)
+
+
+
+
+
 Block totalbar not used in invoice create and credit memo create screens
 
 In the following layout files the Magento\Sales\Block\Adminhtml\Order\Totalbar block is defined:
@@ -337,8 +297,6 @@ Expected result
 Totalbar block renders something.
 Actual result
 Block doesn't render anything.
-
-[GitHub-16653](https://github.com/magento/magento2/issues/16653)
 
 
 
@@ -368,16 +326,7 @@ Error is thrown, a new invoice can't be created.
 
 ### Store
 
-<!--- ENGCOM-2627 -->*  The `$product->getUrlInStore()` method now returns more compact URLs. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
-
-
-
-
-title: #16273: [Backport] Fix bug in method getUrlInStore() of product model
-url: magento/magento2#16310
-contributor name: @vasilii-b
-contributor link: https://github.com/vasilii-b
-
+<!--- ENGCOM-2627 -->*  The `$product->getUrlInStore()` method now returns more compact URLs. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16310](https://github.com/magento/magento2/pull/16310)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
 
 
@@ -386,28 +335,26 @@ contributor link: https://github.com/vasilii-b
 
 ### Theme
 
-<!--- ENGCOM-2917 -->* Magento now displays the wishlist icon on the shopping cart in mobile view. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
+<!--- ENGCOM-2917 -->* Magento now displays the wishlist icon on the shopping cart in mobile view. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17912](https://github.com/magento/magento2/pull/17912)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
 
-title: [Backport] Resolved : Wishlist icon cut on Shopping cart page in mobile view #17851 #28
-url: magento/magento2#17912
-contributor name: @hitesh-wagento
-contributor link: https://github.com/hitesh-wagento
 
+<!--- ENGCOM-2325 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. 
+
+*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16783](https://github.com/magento/magento2/pull/16783)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
 
 
 ### UI
 
 <!--- ENGCOM-2825 -->* The input field should validate against the time12h validation rule
 
+*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17689](https://github.com/magento/magento2/pull/17689)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
+
+
 
 
 The time12h javascript validation rule is now compatible with JS minify. Previously,  
 
-title: [Backport] Update time12h javascript validation rule to be compatible with js minify
-url: magento/magento2#17689
-contributor name: @dmytro-ch
-contributor link: https://github.com/dmytro-ch
 
 UI validation rule for valid time am/pm doesn't work when js is minified
 
@@ -426,12 +373,8 @@ There is a javascript error that happens when the js is minified. The space in t
 <!--- ENGCOM-2835 -->* Magento now displays 
 Previously, Magento listed the message type as `error` when parameters were specfied. 
 
+*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17702](https://github.com/magento/magento2/pull/17702)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
-Message list component fix: the message type is always error when parameters specified
-itle: [Backport] Message list component fix: the message type is always error when parameters specified
-url: magento/magento2#17702
-contributor name: @dmytro-ch
-contributor link: https://github.com/dmytro-ch
 
 Message list component: the message type is always error when parameters specified
 
@@ -447,13 +390,11 @@ The error message is shown.
 
 
 
-<!--- ENGCOM-2898 -->* The WYSIWYG editor now preserves the transparent background of .png  thumbnails. Previously, Magento rendered these transparent backgrounds black. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+<!--- ENGCOM-2898 -->* The WYSIWYG editor now preserves the transparent background of .png  thumbnails. Previously, Magento rendered these transparent backgrounds black. 
 
 
-title: [Backport] Fixes black background for png images in wysiwyg editors.
-url: magento/magento2#17855
-contributor name: @eduard13
-contributor link: https://github.com/eduard13
+*Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17855](https://github.com/magento/magento2/pull/17855)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+
 
 
 ## Community contributions
