@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates customization walkthrough
 menu_title: Templates customization walkthrough
 menu_order: 2
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html
 functional_areas:
   - Frontend
 ---

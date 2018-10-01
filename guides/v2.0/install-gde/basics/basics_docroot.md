@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What is a docroot?
 menu_title: What is a docroot?
@@ -7,7 +7,6 @@ menu_node:
 menu_order: 200
 level3_menu_node: level3child
 level3_subgroup: basics
-redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
 functional_areas:
   - Install
   - System

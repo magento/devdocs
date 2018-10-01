@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Blackfire Profiler
 functional_areas:
   - Cloud

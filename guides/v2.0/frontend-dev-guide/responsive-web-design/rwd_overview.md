@@ -1,11 +1,10 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Overview of responsive web design in Magento
 menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html
 functional_areas:
   - Frontend
 ---

@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Isolation management
 ---
 
@@ -22,11 +22,11 @@ The following example demonstrates how you can use isolation management.
 
 Assume that we want to return a database, dumped to `/var/www/magento/magento.dump.sql`, to its initial state. You can implement it using the following code:
 
-{% highlight php %}
+```php 
 <?php
 exec('mysql -umagento -pmagento -e"DROP DATABASE magento; CREATE DATABASE magento CHARACTER SET utf8;"');
 exec('mysql -umagento -pmagento magento < /var/www/magento/magento.dump.sql');
-{% endhighlight %}
+```
 
 By default, [isolation configuration] points to `dev/tests/functional/isolation.php`.
  
@@ -49,42 +49,42 @@ Isolation management for a certain test or test case has higher priority than gl
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
 - In `<isolation>`, set `<testCase>after</testCase>`, for example:
 
-{%highlight xml%}
+```xml
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
     <testSuite>none</testSuite>
     <testCase>after</testCase>
     <test>none</test>
 </isolation>
-{%endhighlight%}
+```
 
 ### Step 2(b): Globally set isolation script to be run before each test {#step-2b}
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
 - In `<isolation>`, set `<test>before</test>`, for example:
 
-{%highlight xml%}
+```xml
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
     <testSuite>none</testSuite>
     <testCase>none</testCase>
     <test>before</test>
 </isolation>
-{%endhighlight%}
+```
 
 ### Step 2(c): Globally set isolation script to be run before and after a test suite {#step-2c}
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
 - In `<isolation>`, set `<testSuite>both</testSuite>`, for example:
 
-{%highlight xml%}
+```xml
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
     <testSuite>both</testSuite>
     <testCase>none</testCase>
     <test>none</test>
 </isolation>
-{%endhighlight%}
+```
 
 ### Step 2(d): Locally set isolation script to be run after a test case {#step-2d}
 

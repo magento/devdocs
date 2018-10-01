@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: G_UI definition.xml
 title: definition.xml
 menu_title: definition.xml

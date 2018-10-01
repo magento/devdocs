@@ -1,8 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Persistence layer
 menu_title: Persistence layer
-redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
 
 Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:

@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 26_CE-EEUpgrade
 title: Upgrade from Open Source to Commerce
 menu_title: Upgrade from Open Source to Commerce

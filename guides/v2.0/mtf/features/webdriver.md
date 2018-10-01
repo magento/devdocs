@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Web Driver Replacement in the Functional Testing Framework
 ---
 

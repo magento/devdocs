@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
-redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
 tabweight: 0

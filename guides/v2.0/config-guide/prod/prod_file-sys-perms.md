@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production

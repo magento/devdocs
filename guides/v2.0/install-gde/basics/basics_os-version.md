@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What operating system is my server running?
 menu_title: What operating system is my server running?
@@ -7,7 +7,6 @@ menu_node:
 menu_order: 103
 level3_menu_node: level3child
 level3_subgroup: basics
-redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 functional_areas:
   - Install
   - System

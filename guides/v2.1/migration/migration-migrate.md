@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate using Data Migration Tool
 menu_title: Migrate using Data Migration Tool
 menu_node: parent
 menu_order: 4
-redirect_from: /guides/v1.0/migration/migration-migrate.html
 functional_areas:
   - Tools
 ---

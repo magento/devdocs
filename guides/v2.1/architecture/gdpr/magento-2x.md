@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Magento 2.x GDPR compliance
 ---
 

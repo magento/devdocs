@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize using a modifier class
 subtitle: Customize Product Creation Form

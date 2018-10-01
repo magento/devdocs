@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create a cache type
 menu_title: Create a cache type

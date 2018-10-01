@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Troubleshoot the Functional Testing Framework issues
 ---
 

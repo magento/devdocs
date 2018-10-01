@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Tutorial&mdash;Set up multiple websites with Apache
 functional_areas:
   - Configuration

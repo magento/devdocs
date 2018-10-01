@@ -1,10 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
-redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
 
 ## What is a public interface? {#public-interface}

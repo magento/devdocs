@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: RabbitMQ
 functional_areas:
   - Install
@@ -24,7 +24,7 @@ The message queue system must be established before you install Magento. The bas
 2. Connect RabbitMQ and Magento.
 
 {:.bs-callout .bs-callout-info"}
-A basic message queue system can be implemented with using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
+A basic message queue system can be implemented using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 

@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 title: Construct a request
 ---
 

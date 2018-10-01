@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add custom shipping carrier validations
 subtitle: Customize Checkout

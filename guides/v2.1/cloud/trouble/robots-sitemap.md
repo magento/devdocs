@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Add site map and search engine robots
 functional_areas:
   - Cloud
@@ -15,7 +15,7 @@ With {{site.data.var.ece}}, you can only write to specific directories, such as 
 
 For version 2.1.11 and later, you do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. It does not create a file, but you can view the content in your browser with the url: `<domain.your.project>/robots.txt`
 
-This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49){:target="_blank"}.
+This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
 
 #### To generate a `sitemap.xml` file in version 2.1.11 and later:
 
@@ -45,11 +45,11 @@ Your `robots.txt` file appears in the `<magento_root>/app/pub/media/` folder.
 For versions earlier than  2.1.10, you must use the `pub/media` path. When you generate the `robots.txt` file using the Magento Admin Panel—Stores > Settings:Configuration > General:Design—it stores the contents in the database and creates an actual file. 
 
 ## Rewrite using Fastly VCL snippet
- If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 
-Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.
+Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key-value pairs.
 
 ```json
 { 

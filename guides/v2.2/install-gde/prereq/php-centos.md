@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: PHP 7.0 or 7.1&mdash;CentOS
 menu_title: PHP 7.0 or 7.1&mdash;CentOS

@@ -1,10 +1,9 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
-redirect_from: /guides/v1.0/config-guide/config/config-php.html
 functional_areas:
   - Configuration
   - System

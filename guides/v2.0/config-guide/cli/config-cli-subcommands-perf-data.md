@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing
 menu_node:
 menu_order: 800
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 functional_areas:
   - Configuration
   - System

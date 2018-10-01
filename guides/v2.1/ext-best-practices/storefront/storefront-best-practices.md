@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 03_Storefront
 title: Storefront UI best practices
 menu_title: Storefront

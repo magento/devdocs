@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler

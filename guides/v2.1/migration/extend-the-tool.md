@@ -1,5 +1,5 @@
 ---
-group: migration
+group: migration-guide
 title: Extend the tool
 functional_areas:
   - Tools

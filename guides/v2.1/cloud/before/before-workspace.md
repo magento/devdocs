@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Prepare for local environment setup
 menu_title: Prepare for local environment setup
@@ -23,7 +23,7 @@ This section walks through the steps for first time merchants with Magento, Mage
 
 ## Set up an account {#newaccount}
 
-To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
 
 You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
 
@@ -39,11 +39,11 @@ You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %
 
 ## Recommended tools
 
-This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/){:target="_blank"}, [Putty](http://www.putty.org/){:target="_blank"}, or Git Bash.
+This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/), [Putty](http://www.putty.org/), or Git Bash.
 
-For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/){:target="_blank"}, [PHPStorm](https://www.jetbrains.com/phpstorm/){:target="_blank"}, and [Atom](https://atom.io/){:target="_blank"}.
+For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/), [PHPStorm](https://www.jetbrains.com/phpstorm/), and [Atom](https://atom.io/).
 
-Developing code for {{site.data.var.ee}} requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs){:target="_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="_blank"}.
+Developing code for {{site.data.var.ee}} requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs) commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/) and [SmartGit](https://www.syntevo.com/smartgit/).
 
 ## Prerequisites
 

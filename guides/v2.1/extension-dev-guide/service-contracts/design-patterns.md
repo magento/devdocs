@@ -1,10 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
-redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
 
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} as a best practice with conditions.</p>

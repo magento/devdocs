@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage company credit
 menu_title: Manage company credit

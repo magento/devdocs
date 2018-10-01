@@ -29,7 +29,7 @@ Look for the following highlights in this release:
 
 * **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
 
-* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/introduction.html).
+* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MFTF) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/mftf/2.2/introduction.html).
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
@@ -57,7 +57,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 

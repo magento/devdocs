@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade

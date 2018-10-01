@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
 ---

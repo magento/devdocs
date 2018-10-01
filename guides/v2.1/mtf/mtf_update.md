@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Update the Functional Testing Framework
 ---
 
@@ -31,5 +31,9 @@ Step 3.    [Perform and check installation.]({{ page.baseurl }}/mtf/mtf_installa
 
 Enter in terminal:
 
-    cd <magento2_root_dir>/dev/tests/functional/
-    composer update
+```bash
+cd <magento2_root_dir>/dev/tests/functional/
+```
+```bash
+composer update
+```

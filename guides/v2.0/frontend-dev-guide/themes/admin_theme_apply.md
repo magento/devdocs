@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Apply an Admin theme
 menu_title: Apply an Admin theme

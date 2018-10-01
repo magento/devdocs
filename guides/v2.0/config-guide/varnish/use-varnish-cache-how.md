@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: How Varnish caching works
 menu_title: How Varnish caching works

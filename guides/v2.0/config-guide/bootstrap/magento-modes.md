@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
 menu_node:
-redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 functional_areas:
   - Configuration
   - System

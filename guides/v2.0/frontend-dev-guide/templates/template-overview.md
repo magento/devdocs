@@ -1,11 +1,10 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates overview
 menu_title: Templates
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 functional_areas:
   - Frontend
 ---

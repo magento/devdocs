@@ -1,12 +1,11 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module dependency types
 menu_title: Module dependency types
 menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: modules
-redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
 ## Two types of dependencies {#m2devgde-moddep-declare-dep}

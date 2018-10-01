@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
 redirect_from:

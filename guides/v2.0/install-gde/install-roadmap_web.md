@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: 01_roadmap
 title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)

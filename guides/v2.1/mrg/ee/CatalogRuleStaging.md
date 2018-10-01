@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_CatalogRuleStaging module
 ee_only: true
 ---

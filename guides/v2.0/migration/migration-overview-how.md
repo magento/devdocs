@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: How migration works
 menu_title: How migration works
 menu_node:
 menu_order: 3
-redirect_from: /guides/v1.0/migration/migration-overview-how.html
 functional_areas:
   - Tools
 ---

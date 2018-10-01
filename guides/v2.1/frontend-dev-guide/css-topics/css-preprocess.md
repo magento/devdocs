@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: CSS preprocessing
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
   - Frontend
 ---

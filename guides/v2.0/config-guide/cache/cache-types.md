@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 08_Configure caching
 title: Associate cache frontends with cache types
 menu_title: Associate cache frontends with cache types

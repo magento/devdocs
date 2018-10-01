@@ -30,8 +30,7 @@ versions:
       url: /guides/v2.3/
 
 # GitHub variables
-github_repo: "https://github.com/magento/devdocs/"
-github_files: "https://github.com/magento/devdocs/blob/master/"
+
 github_link: true
 feedback_link: true
 
@@ -74,7 +73,7 @@ collections:
 
 plugins:
   - jekyll-redirect-from
-
+  - jekyll-titles-from-headings
 
 defaults:
 
@@ -83,6 +82,8 @@ defaults:
       path: ""
     values:
       layout: default
+      github_repo: "https://github.com/magento/devdocs/"
+      github_files: "https://github.com/magento/devdocs/blob/master/"
   -
     scope:
       path: "guides/m1x"
@@ -94,7 +95,26 @@ defaults:
     values:
       layout: video
 
-# toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
+  -
+    scope:
+      path: "mftf/2.2"
+    values:
+      group: magento-functional-testing-framework-guide
+      functional_areas:
+        - Test
+
+  -
+    scope:
+      path: "mftf/2.3"
+    values:
+      group: magento-functional-testing-framework-guide-2_3
+      functional_areas:
+        - Test
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
 
 # Build settings
 markdown: kramdown
@@ -110,7 +130,6 @@ algolia:
   application_id: 'E642SEDTHL'
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
-  lazy_update: false
   files_to_exclude:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md

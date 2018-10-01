@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Versioning
 menu_title: Versioning

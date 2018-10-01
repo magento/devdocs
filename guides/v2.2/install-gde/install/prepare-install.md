@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: T_Developer
 title: Update installation dependencies
 menu_title: Update installation dependencies

@@ -2,7 +2,7 @@ This section discusses how to get a module's Composer name and its version from 
 
 #### To get the module's Composer name from Magento Marketplace:
 
-1.	Log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} with the username and password you used to purchase the component.
+1.	Log in to [Magento Marketplace](https://marketplace.magento.com) with the username and password you used to purchase the component.
 2.	In the upper right corner, click **&lt;your username>** > **My Account** as the following figure shows.
 
 	![Access your Marketplace account]({{ site.baseurl }}/common/images/cloud_marketplace-account.png){:width="650px"}

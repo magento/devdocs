@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Readiness check failure
 menu_title: Readiness check failure

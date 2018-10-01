@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage your project
 menu_title: Manage your project
@@ -45,7 +45,7 @@ To upgrade and patch Magento, see:
 
 ## Access the Project Web Interface {#login}
 
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
+With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud).
 
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 

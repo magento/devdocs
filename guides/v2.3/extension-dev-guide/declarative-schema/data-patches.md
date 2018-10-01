@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Develop data and schema patches
 ---
 

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Theme development best practices
 menu_title: Theme development best practices
 menu_order: 20

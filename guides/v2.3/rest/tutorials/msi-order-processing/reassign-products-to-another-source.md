@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 6. Reassign products to custom sources
 subtitle: Order processing with MSI
 menu_title: Step 6. Reassign products to custom sources
@@ -88,9 +88,9 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 {
   "sourceItems": [{
   	"sku": "sp1",
-    "source_code": "baltimore_wh",
-    "quantity": 50,
-    "status": 1
+  	"source_code": "baltimore_wh",
+  	"quantity": 50,
+  	"status": 1
   },
   {
   	"sku": "sp1",

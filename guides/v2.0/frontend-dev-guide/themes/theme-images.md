@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Configure images properties for a theme
 menu_title: Configure images properties for a theme

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configuration reference
 functional_areas:
   - Configuration

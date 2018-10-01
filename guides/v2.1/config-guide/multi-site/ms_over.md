@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Multiple websites or stores
 redirect_from:
  - /guides/v2.0/config-guide/bootstrap/mage-run.html

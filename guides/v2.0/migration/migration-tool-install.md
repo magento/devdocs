@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-tool-install.html
 functional_areas:
   - Tools
 ---

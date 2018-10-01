@@ -1,10 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
   - System

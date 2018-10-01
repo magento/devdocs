@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Functional Testing Framework Configuration
 ---
 
@@ -14,9 +14,9 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
 
 {% collapsible Show/hide the default phpunit.xml code %}
 
-{% highlight xml %}
+```xml 
 {% remote_markdown  https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/phpunit.xml.dist %}
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 | Parameter | Description | `value` | Usage |
@@ -42,9 +42,9 @@ The FTF configuration settings are declared and specified in two places:
 
 The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`
 
-{% highlight xml %}
+```xml 
 {% remote_markdown https://raw.githubusercontent.com/magento/mtf/2.0/etc/config.xml.dist%}
-{% endhighlight %}
+```
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
@@ -56,9 +56,9 @@ Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/m
 
 The file is located in `<magento2_root_dir>dev/tests/functional/`
 
-{% highlight xml %}
+```xml 
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/etc/config.xml.dist %}
-{% endhighlight %}
+```
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_config-xsd-dia.svg)
 

@@ -1,5 +1,5 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Configuration best practices
 functional_areas:
   - Configuration
@@ -17,7 +17,7 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 
 An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System > Index Management** configuration page.
 
-We recommend that you use index parallelization and that you set threads count for the index process based on: 
+We recommend that you use index parallelization and that you set threads count for the index process based on:
 - Threads count >= max dimension count (across all indexers)
 - Threads count <= cores count
 
@@ -34,6 +34,9 @@ Enabling the “Asynchronous email notifications” setting moves processes that
 ## Asynchronous order data processing
 
 There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from **Stores > Configuration > Advanced > Developer > Grid Settings > Asynchronous indexing**. See [Scheduled Grid Updates](http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html) in the _{{site.data.var.ce}} User Guide_ for more information.
+
+{: .bs-callout .bs-callout-info }
+The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Deferred stock update
 
@@ -56,6 +59,9 @@ To improve the storefront responsiveness of your Magento instance, go to the Adm
 | Javascript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
+{: .bs-callout .bs-callout-info }
+The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
+
 When you activate the **Enable Javascript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -70,4 +76,4 @@ We recommend performing periodic database backups for your Staging and Productio
 
 For better performance, schedule your backups to run in succession, one at a time, at off-peak times. This method avoids I/O contention and reduces time to complete, especially for smaller instances, larger databases, and so on.
 
-For example, we recommend scheduling a backup of your Production database followed up by the Staging database when your stores encounter lower visits. 
+For example, we recommend scheduling a backup of your Production database followed up by the Staging database when your stores encounter lower visits.

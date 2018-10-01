@@ -1,12 +1,11 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---

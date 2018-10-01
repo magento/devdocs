@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 10. Create an order
 subtitle: Order processing with MSI
 menu_title: Step 10. Create an order
@@ -60,7 +59,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Response**
 
-An `orderID`, such as `1
+An `orderID`, such as `3`
 
 ## Verify this step {#verify-step}
 

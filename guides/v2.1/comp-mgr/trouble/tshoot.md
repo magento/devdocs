@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions

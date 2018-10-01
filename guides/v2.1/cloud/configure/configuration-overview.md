@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Configure your store
 menu_title: Configure your store
@@ -18,14 +18,13 @@ You can set up [multiple websites and stores]({{ page.baseurl }}/cloud/project/p
 
 The following options, tools, and features can be set up and configured in your store:
 
-* [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) for caching and CDN in Staging and Production environments
+* [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) for caching and CDN in Staging and Production environments
 * [PayPal On-Boarding tool]({{ site.baseurl }}/guides/v2.1/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
 * [cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 * [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html) for your site and store
-* Install the [Magento Google reCAPTCHA and Two-Factor Authentication extensions](https://docs.magento.com/m2/2.1/ee/user_guide/magento/magento-extensions.html){:target="_blank"} to provide additional security for account access to the Admin panel and storefront. 
-
+* Install Magento security extensions including [Google reCAPTCHA]({{ page.baseurl }}/security/google-recaptcha.html) and [Two-Factor Authentication]({{ page.baseurl }}/security/two-factor-authentication.html) to enhance secure access to the Magento Admin UI and storefront
 
 ## Configure your deployment: build hooks, services, and routes {#deploy}
 

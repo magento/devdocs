@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Snapshots and backup management
 menu_title: Snapshots and backup management

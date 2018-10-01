@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Translation dictionaries and language packages
 menu_title: Translation dictionaries and language packages
 menu_node:
 menu_order: 260
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 functional_areas:
   - Configuration
   - System

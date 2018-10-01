@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade

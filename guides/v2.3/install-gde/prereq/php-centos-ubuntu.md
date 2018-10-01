@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: PHP
 functional_areas:
   - Install

@@ -1,11 +1,10 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Layout overview
 menu_title: Layout
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 functional_areas:
   - Frontend
 ---

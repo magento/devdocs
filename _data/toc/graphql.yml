@@ -67,5 +67,8 @@ pages:
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
+            - label: storeConfig endpoint
+              url: /graphql/reference/store-config.html
+
             - label: urlResolver endpoint
               url: /graphql/reference/url-resolver.html

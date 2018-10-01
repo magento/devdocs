@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 03_Bootstrap
 title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
 menu_order: 7
 menu_node:
-redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 functional_areas:
   - Configuration
   - System

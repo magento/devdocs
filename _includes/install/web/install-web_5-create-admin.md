@@ -8,6 +8,6 @@
     |New E-Mail|Enter the Magento administrator's e-mail address.|
     |New Password|Enter the administrator's password.|
     |Confirm Password|Enter the password again for verification.|
-		{:style="table-layout:auto;"}
+    {:style="table-layout:auto;"}
 
 2.	Click **Next**.

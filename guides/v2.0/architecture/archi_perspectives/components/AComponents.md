@@ -1,11 +1,10 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Magento Components
 menu_title: Components
 menu_order:
 menu_node: parent
-redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
 
 ## Magento components

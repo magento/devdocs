@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Security
 title: Non-secure functions
 menu_title: Non-secure functions

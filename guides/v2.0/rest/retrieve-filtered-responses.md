@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
 menu_title: Retrieve filtered responses

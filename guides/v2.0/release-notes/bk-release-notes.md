@@ -5,7 +5,6 @@ title: 2.0.x Release Information
 menu_title: 2.0.x Release Information
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
 ## Magento 2.0 Release Notes

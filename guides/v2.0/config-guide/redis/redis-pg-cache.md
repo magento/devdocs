@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Use Redis for the Magento page and default cache
 menu_title: Use Redis for the Magento page and default cache

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_onboarding
 title: Onboarding tasks
 menu_title: Onboarding tasks

@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Convert layout XML files
 menu_title: Convert layout XML files
 menu_node:
 menu_order: 700
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html
 functional_areas:
   - Configuration
   - System

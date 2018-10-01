@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Troubleshooting 503 (Backend Fetch Failed) errors
 functional_areas:
   - Configuration

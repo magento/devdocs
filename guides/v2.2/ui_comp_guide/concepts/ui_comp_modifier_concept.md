@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: About PHP modifiers in UI components
 ---
 
@@ -99,7 +99,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 
 , where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
 
-(If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
+(If you want to use this sample in your `di.xml`, replace the sample values with the real names of your entities.)
 
 **Step 3**
 

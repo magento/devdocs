@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Indexing overview
 redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html

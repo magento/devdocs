@@ -1,11 +1,10 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
-redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
 
 ## Overview {#migrate-overview}

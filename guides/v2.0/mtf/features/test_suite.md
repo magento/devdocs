@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Test suite in the Functional Testing Framework
 ---
 
@@ -18,7 +18,7 @@ The rules for a test case are defined in a separate `.xml` file. (Recommended na
 
 The example of the default test suite:
 
-{% highlight xml %}
+```xml 
 
 <?xml version="1.0"?>
 <!--
@@ -47,7 +47,7 @@ The example of the default test suite:
     </rule>
 </config>
 
-{% endhighlight %}
+```
 
 This set of rules selects functional tests that accepts the following criteria:
 
@@ -65,28 +65,28 @@ Learn more details in next topics.
 
 Define the test suite to be run in the `<magento2_root_dir>dev/tests/functional/phpunit.xml`:
 
-{% highlight xml %}
+```xml 
 <env name = "testsuite_rule" value = <test_suite_name> />
 <env name = "testsuite_rule_path" value = <test_suite_directory> />
-{% endhighlight %}
+```
 
 The default test suite is `<magento2_root_dir>/dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests/basic.xml`.
 
 In `phpunit.xml`:
 
-{% highlight xml %}
+```xml 
 <env name="testsuite_rule" value="basic" />
 <env name="testsuite_rule_path" value="Magento/Mtf/TestSuite/InjectableTests" />
-{% endhighlight %}
+```
 
 ## Run your test suite  {#run}
 
 To run a test suite enter the following commands from your terminal:
 
-{% highlight bash %}
+```bash 
 cd <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
-{% endhighlight %}
+```
 
 ## Rule {#rule}
 
@@ -111,7 +111,7 @@ This scope enables you to filter functional tests using the following criteria:
 
 The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} filter example:
 
-{% highlight xml %}
+```xml 
 <?xml version="1.0"?>
 <!--
 /**
@@ -127,11 +127,11 @@ The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglo
         </allow>
     </rule>
 </config>
-{% endhighlight %}
+```
 
 The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} filter example:
 
-{% highlight xml %}
+```xml 
 <?xml version="1.0"?>
 <!--
 /**
@@ -149,11 +149,11 @@ The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossa
     </rule>
 </config>
 
-{% endhighlight %}
+```
 
 The class filter example:
 
-{% highlight xml %}
+```xml 
 
 <?xml version="1.0"?>
 <!--
@@ -172,7 +172,7 @@ The class filter example:
     </rule>
 </config>
 
-{% endhighlight %}
+```
 
 
 ### `scope = "testcase"` {#scope-testcase}
@@ -193,7 +193,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 - The tag in the rule:
 
-{% highlight xml %}
+```xml 
 
 <rule scope="testcase">
     <deny>
@@ -201,7 +201,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
     </deny>
 </rule>
 
-{% endhighlight %}
+```
 
 A test case can contain multiple tag groups, and a group can have multiple values. For example:
 
@@ -221,17 +221,17 @@ You can assign a `tag` node to a [data set][] variation. This enables you to use
 
 You can use `group` and `value` parameters in the variation scope. In a variation, they are provided in the following format:
 
-{% highlight xml %}
+```xml 
 
 <variation ...>
     <data name="tag" xsi:type="string">group_1:value, group_2:value</data>
     <data ...>
 </variation>
-{% endhighlight %}
+```
 
 For example, you have a data set with the following variation:
 
-{% highlight xml %}
+```xml 
 <variation name="CreateSimpleProductEntityTestVariation3" summary="Create product with special price and custom options(fixed price)">
     <data name="tag" xsi:type="string">test_type:extended_acceptance_test</data>
     <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
@@ -240,27 +240,27 @@ For example, you have a data set with the following variation:
     <constraint name="Magento\Catalog\Test\Constraint\AssertProductInGrid" />
     ... ... ...
 </variation>
-{% endhighlight %}
+```
 
 By using the `<allow>` element, you can create a rule to use only the `CreateSimpleProductEntityTestVariation3` variation:
 
-{% highlight xml %}
+```xml 
 <rule scope="variation">
     <allow>
         <tag group="test_type" value="extended_acceptance_test" />
     </allow>
 </rule>
-{% endhighlight %}
+```
 
 or use all variations except the `CreateSimpleProductEntityTestVariation3` variation:
 
-{% highlight xml %}
+```xml 
 <rule scope="variation">
     <deny>
         <tag group="test_type" value="extended_acceptance_test" />
     </deny>
 </rule>
-{% endhighlight %}
+```
 
 ### `scope = "constraint"` {#scope-constraint}
 
@@ -285,23 +285,23 @@ class AssertProductView extends AbstractConstraint
 
 - The rule that allows constraints with this tag only:
 
-{% highlight xml %}
+```xml 
 <rule scope="testcase">
     <allow>
         <tag group="severity" value="low" />
     </allow>
 </rule>
-{% endhighlight %}
+```
 
 - The rule that allows all constraints except those having this tag:
 
-{% highlight xml %}
+```xml 
 <rule scope="testcase">
     <deny>
         <tag group="severity" value="low" />
     </deny>
 </rule>
-{% endhighlight %}
+```
 
 <!-- LINKS DEFINITION -->
 

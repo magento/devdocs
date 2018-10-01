@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: S_Integrator
 title: Get the Magento Commerce metapackage
 menu_title: Get the Magento Commerce metapackage

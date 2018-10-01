@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Install a theme
 menu_title: Install a theme
