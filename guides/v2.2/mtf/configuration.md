@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Functional Testing Framework Configuration
 ---
 
@@ -25,14 +25,14 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
 | `app_backend_url` | URL to Magento Admin under test. | `"http://<name>.<domain>/<path to Admin>/"` | [Set URL for Magento Admin URL under test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend){: target="_blank"} |
 | `testsuite_rule` | Test suite name to be run. | `"<test suite name>"` | [Set a test suite]({{ page.baseurl }}/mtf/features/test_suite.html#configure){: target="_blank"} |
 | `testsuite_rule_path` | Path to a test suite. | `"<path to test suite>"` | [Set a path to test suite]({{ page.baseurl }}/mtf/features/test_suite.html#configure){: target="_blank"} |
-| `log_directory` | Path to a directory with testing reports. | `"<path to the reporting directory>"` | [Set a reporting directory]{: target="_blank"} |
+| `log_directory` | Path to a directory with testing reports. | `"<path to the reporting directory>"` | [Set a reporting directory](http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory){: target="_blank"} |
 | `events_preset` | Name of a reporting event preset. | `"<event preset name>"` | [Set a preset]({{ page.baseurl }}/mtf/features/reporting.html#set-preset){: target="_blank"} |
 | `module_whitelist` | List of special FTF modules which are present in functional tests but are not enabled in the Magento application. | `"<names of modules>"` | Make listed modules (that are not enabled in Magento) visible for the FTF. |
 | `basedir` | A directory where PHPUnit reports are stored. | `"<directory for PHPUnit reports>"` |  |
 | `credentials_file_path` | Path to the file with credentials required by services such as payment and shipment. | `"./credentials.xml.dist"` | [Edit `credentials.xml` to work with Magento modules that require credentials]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html){: target="_blank"} |
-| `mage_mode` | Magento mode ([About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html){: target="_blank"}). | `"default", "developer", "production"` | This parameter is intended to be used directly in a test. The FTF doesn\'t use it. [Open an example]({{ site.mage2200url }}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php) |
-| `module_filter` | Applicable for [test suites]({{ page.baseurl }}/mtf/features/test_suite.html) only. Enables you to select test cases for specific modules. [Learn more about the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite){: target="_blank"} | `"Magento_<name_of_module>"` | Use it when you don\'t want to modify the test suite. |
-| `module_filter_strict` | Applicable for a [tests suite]({{ page.baseurl }}/mtf/features/test_suite.html) only. It has the same effect as `strict` in the `<module>`. [Learn more about `strict` parameter of the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite){: target="_blank"} | `"1"`, `"0"` | Use it when you don\'t want to modify the test suite. |
+| `mage_mode` | Magento mode ([About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html){: target="_blank"}). | `"default", "developer", "production"` | This parameter is intended to be used directly in a test. The FTF doesn't use it. [Open an example]({{ site.mage2200url }}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php) |
+| `module_filter` | Applicable for [test suites]({{ page.baseurl }}/mtf/features/test_suite.html) only. Enables you to select test cases for specific modules. [Learn more about the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite){: target="_blank"} | `"Magento_<name_of_module>"` | Use it when you don't want to modify the test suite. |
+| `module_filter_strict` | Applicable for a [tests suite]({{ page.baseurl }}/mtf/features/test_suite.html) only. It has the same effect as `strict` in the `<module>`. [Learn more about `strict` parameter of the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite){: target="_blank"} | `"1"`, `"0"` | Use it when you don't want to modify the test suite. |
 
 ## `config.xml` {#config_xml}
 
@@ -171,7 +171,6 @@ Set of parameters to be used for [installation test case].
 [isolation management]: {{ page.baseurl }}/mtf/features/isolation.html
 [test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 [test suite]: {{ page.baseurl }}/mtf/features/test_suite.html#configure
-[Set a reporting directory]: {{ page.baseurl }}/mtf/features/reporting.html#report-directory
 
 ["app_frontend_url"]: #app_frontend_url
 ["app_backend_url"]: #app_backend_url

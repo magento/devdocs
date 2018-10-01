@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node:
 menu_order: 8
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 functional_areas:
   - Install
   - System

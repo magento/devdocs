@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: TreeMassAction Component
 menu_title: TreeMassAction Component
@@ -83,7 +83,7 @@ Example:
 
 Component can be configured in two ways:
 
-* Globally: using any module's <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
+* Globally: using any module's [`view/*/ui_component/etc/definition.xml`]({{ page.baseurl }}/ui-library/ui-definition.html) file. All settings declared in this file are applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_listing.xml`
 
 #### TreeMassAction JS Component Structure

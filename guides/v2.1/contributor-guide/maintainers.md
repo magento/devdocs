@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Maintainers
 version: 2.1
 github_link: contributor-guide/maintainers.md

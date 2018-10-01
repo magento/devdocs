@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Technologies and requirements
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
@@ -59,10 +59,11 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 
 To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.ee}} adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+In addition to Git's requirements for [valid branch names](https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html), {{site.data.var.ee}} adds two additional requirements:
+
+* The `/` character isn't allowed.
+* Branch names must be case-insensitively unique. In other words, if you have a branch named `_CaSe_`, you cannot create another branch named `_case_`.
 </div>
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
@@ -82,7 +83,7 @@ This software is *not* upgradable but versions for the following software is con
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 
@@ -111,7 +112,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
-*	Install and configure [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html)
+*	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ## Development and testing {#cloud-req-devtest}
@@ -150,6 +151,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 #### Related topics
 
 *	[Cloud Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
-*	[First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 *	[Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Go live and launch]({{ page.baseurl }}/cloud/live/live.html)

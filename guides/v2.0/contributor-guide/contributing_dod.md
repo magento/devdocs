@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Magento Definition of Done
 ---
 
@@ -109,7 +109,7 @@ Code to cover:
 
 * Must cover any formal backwards-incompatible changes on code level.
 For more information, see
-<a href="{{ page.baseurl }}/architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
+[Magento's backward compatibility policy]({{ page.baseurl }}/architecture/back-compatibility.html).
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 

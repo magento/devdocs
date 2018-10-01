@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Using custom fonts
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
 functional_areas:
   - Frontend
 ---

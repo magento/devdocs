@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: ExportButton component
-menu_title: ExportButton component
 ---
 
 The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).
@@ -19,14 +17,14 @@ The ExportButton component implements the ability to export grid data to the spe
   <tr>
     <td><code>additionalParams</code></td>
     <td>List of additional parameters added to each performed request.</td>
-    <td>{<br>[name: string]: string<br>}</td>
+    <td>{<br />[name: string]: string<br />}</td>
     <td>-</td>
   </tr>
   <tr>
     <td><code>options</code></td>
     <td>List of available formats in which the table's data can be exported.</td>
     <td>Array<a href="#exportoption">&lt;<code>ExportOption</code>&gt;</a> </td>
-    <td><code>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</code></td>
+    <td><code>[{<br />value: "csv",<br />label: "CSV",<br />url: "mui/export/gridToCsv"<br />}, {<br />value: "xml",<br />label: "Excel XML",<br />url: "mui/export/gridToXml"<br />}]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -104,7 +102,7 @@ By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea
 
 To add new export format:
 
-* Add configuration data to ExportButton definition [\`Magento/Ui/view/base/ui\_component/etc/definition.xml\`]({{ page.baseurl }}/ui-library/ui-definition.html)
+* Add configuration data to ExportButton definition <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 

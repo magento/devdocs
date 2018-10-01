@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Patch Magento Commerce (Cloud)
 redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magento.html
@@ -16,9 +16,8 @@ When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with
 
 To check for patches, you can check the `vendor/magento/magento-cloud-configuration/patches` folder.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
-</div>
 
 There are two types of patches:
 
@@ -34,9 +33,8 @@ There are two types of patches:
 
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
-</div>
 
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 

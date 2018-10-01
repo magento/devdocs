@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
@@ -19,11 +19,12 @@ open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 {% endhighlight %} 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-	<p>This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.</p>
-	<p>For more information about configuration options for Redis, see <a href="{{ page.baseurl }}/config-guide/redis/config-redis.html">Configure Redis</a>.</p>
-	<p>For more information about specifying Redis using the command-line installer, see the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration topic</a>.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.
+
+For more information about configuration options for Redis, see [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
+
+For more information about specifying Redis using the command-line installer, see the [installation topic]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or the [deployment configuration topic]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp).
 </div>
 
 ### Solution:

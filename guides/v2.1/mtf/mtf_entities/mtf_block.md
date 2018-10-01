@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Block
 ---
 
@@ -182,7 +182,6 @@ class Messages extends Block
         return $this->_rootElement->find($this->warningMessage)->getText();
     }
 }
-
 ```
 {% endcollapsible %}
 
@@ -234,12 +233,7 @@ The mapping file defines the fields from the form.
 
 ```xml
 <?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <mapping strict="1">
     <wrapper>login</wrapper>
     <fields>
@@ -259,7 +253,7 @@ See a description of the nodes in the following table.
 <tr><td><code>mapping</code> </td><td>Root node with a <code>strict</code> attribute. If <code>strict</code> equals <code>0</code>, then all the fixture field data must be entered in the block form. If <code>strict</code> equals <code>1</code>, then only the mapping file fields data must be entered in the block form. </td><td><code>"1"</code>. <i>Only</i> the <i>mapping</i> file fields data <i>must</i> be entered in the block form.</td></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the selector of the field, when <code>selector</code> has not been specified. </td><td><code>login</code></td></tr>
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
-<tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
+<tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br /> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
 <tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
 <tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
@@ -275,7 +269,7 @@ The general structure of the form mapping file:
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php).If you want to use custom tab logic you can extend your class from[`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
+To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs` ]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php). If you want to use custom tab logic you can extend your class from [`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
@@ -291,12 +285,7 @@ The file contains the following mapping:
 
 ```xml
 <?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <tabs>
     <settings>
         <class>\Magento\Widget\Test\Block\Adminhtml\Widget\Instance\Edit\Tab\Settings</class>
@@ -339,8 +328,8 @@ The file contains the following mapping:
 See the following table to understand the node's purpose.
 
 <table>
-<col width="1*">
-<col width="3*">
+<col width="1*" />
+<col width="3*" />
 <tbody>
 <tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
@@ -428,9 +417,8 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 [![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)
 
-<div class="bs-callout bs-callout-tip">
-  <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+   If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
@@ -479,7 +467,7 @@ Now you can inspect any element in a browser, and find which block contains it.
 
 Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php)is a part of the page that is defined in[`WidgetInstanceIndex.xml`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
+For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php) is a part of the page that is defined in [`WidgetInstanceIndex.xml`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
 
 `block` is the node that adds the block to the page:
 
@@ -526,12 +514,7 @@ Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view" module="Magento_Catalog">
         <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>        
@@ -551,12 +534,7 @@ Let's create render for the bundle product.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view">
                 
@@ -568,12 +546,7 @@ Let's create render for the bundle product.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view">
         <block name="viewBlock">

@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 5. Create Admin Account
 menu_title: Step 5. Create Admin Account
@@ -15,4 +15,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_6-install.html">Step 6. Install</a>
+[Step 6. Install]({{ page.baseurl }}/install-gde/install/web/install-web_6-install.html)

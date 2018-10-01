@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_GiftCardRequisitionList module
 menu_title: GiftCardRequisitionList

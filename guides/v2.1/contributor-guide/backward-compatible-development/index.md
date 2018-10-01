@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Backward compatible development
 ---
 This page describes rules and best practices for backward compatible development.
@@ -15,17 +15,15 @@ The core Magento team and contributing developers work in two release types
 2.  New patch release (product's PATCH release)
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
-</div>
+{: .bs-callout .bs-callout-info }
+Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
 The following code modifications are forbidden for all code (both `@api` and non `@api`) without approval of a Magento architect.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
-</div>
+{: .bs-callout .bs-callout-info }
+The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
 ### PHP
 
@@ -323,7 +321,7 @@ Review and refactor the class such that parts of the logic go into smaller speci
 Magento 2 must not have alternative APIs.
 Whenever you introduce a new implementation of some behavior, mark the old implementation as deprecated and specify the reason.
 
-### PHP, JS and XML
+### PHP, JS, and XML
 
 Use the `@deprecated` tag to mark methods as deprecated and follow it up with an explanation.
 
@@ -331,23 +329,39 @@ Use the  `@see` tag to recommend the new API to use instead of the old one.
 
 Preserve `@api` tag when deprecating `@api`-marked code.
 
-#### Deprecated tag in PHP
+#### Deprecating in PHP and JS
 
-~~~
+Comment:
+
+```terminal
 /**
  * @deprecated because new api was introduced
  * @see \New\Api
  */
-~~~
+```
 
-#### Deprecated tag in XML/HTML
+Trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.
 
-~~~
+PHP:
+
+```php
+trigger_error('Class is deprecated', E_USER_DEPRECATED);
+```
+
+JS:
+
+```js
+console.warn('Function is deprecated');
+```
+
+#### Deprecating in XML/HTML
+
+```xml
 <!--
 @deprecated because new api was introduced
 @see NewApi
 -->
-~~~
+```
 
 ### WebAPI
 

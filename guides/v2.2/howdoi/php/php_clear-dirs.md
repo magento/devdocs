@@ -1,23 +1,34 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Clear directories during development
+menu_title: Clear directories during development
+menu_node: 
+menu_order: 200
 ---
+
+#### Contents
+
+*	<a href="#howdoi-clear-over">Overview of directory clearing</a>
+*	<a href="#howdoi-clear-what">What directories to clear</a>
+*	<a href="#howdoi-clear-how">How to clear the directories</a>
+
+## Overview of directory clearing {#howdoi-clear-over}
 
 While you're developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won't function properly.
 
 This topic provides guidelines on what directories to clear and when to clear them.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <ul><li>All directories discussed in this topic are default locations. It's possible to customize these locations but doing so is beyond the scope of this topic.</li>
-  	<li>This topic is not comprehensive. Please help us improve it by clicking <strong>Edit this page on GitHub</strong> at the top of this page. Watch this page for updates.</li></ul>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+* All directories discussed in this topic are default locations. It's possible to customize these locations but doing so is beyond the scope of this topic.
+* This topic is not comprehensive. Please help us improve it by clicking **Edit this page on GitHub** at the top of this page. Watch this page for updates.
 </div> 
 
 When you're developing Magento components (modules, themes, and language packages), the following directories contain temporary or generated files you can clear periodically:
 
 <table>
-	<col width="25%">
-	<col width="75%">
+	<col width="25%" />
+	<col width="75%" />
 	<tbody>
 		<tr>
 			<th>Directory</th>
@@ -38,7 +49,7 @@ When you're developing Magento components (modules, themes, and language package
 	</tr>
 	<tr>
 		<td>generated/code</td>
-		<td>Contains [generatedcode]({{ page.baseurl }}/extension-dev-guide/code-generation.html).</td>
+		<td>Contains <a href="{{ page.baseurl }}/extension-dev-guide/code-generation.html">generated code</a>.</td>
 	</tr>
 	<tr>
 		<td>generated/metadata</td>
@@ -63,12 +74,12 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22)declared in a class or a proxy declared in[`di.xml`]({{ site.mage2000url }}app/etc/di.xml#L25))</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>generated/metadata, generated/code</td>
 	</tr>
 	<tr>
 		<td>Change any <code>di.xml</code></td>
-		<td>generated/metadata, generated/code; also, run the [codecompiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) again</td>
+		<td>generated/metadata, generated/code; also, run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> again</td>
 	</tr>
 	<tr>
 		<td>Add, remove, enable, or disable modules</td>
@@ -91,7 +102,7 @@ The following table provides guidelines on what you should clear and when.
 
 ## How to clear the directories {#howdoi-clear-how}
 
-To only clear directories and not perform other actions, log in to the Magento server as the [Magento file systemowner]({{ page.baseurl }}/install-gde/prereq/apache-user.html) and clear directories using a command like the following:
+To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
 	rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
 
@@ -105,22 +116,22 @@ You can also use the following command-line tools clear some directories for you
 			<th>What it clears</th>
 		</tr>
 	<tr>
-		<td>[magentosetup:upgrade]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)</td>
+		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html">magento setup:upgrade</a></td>
 		<td>Updates the Magento database schema and data.</td>
 		<td>generated/metadata, generated/code</td>
 	</tr>
 	<tr>
-		<td>[magentosetup:di:compile]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)</td>
+		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
 		<td>Generates code.</td>
 		<td>generated/code (after which compiles code again)</td>
 	</tr>
 	<tr>
-		<td>[magento deploy:mode:set{mode}]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)</td>
+		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
 		<td>Changes from developer mode to production mode and vice versa.</td>
 		<td>generated/metadata, generated/code, var/view_preprocessed</td>
 	</tr>
 	<tr>
-		<td>[magento cache:clean\[type\]]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)</td>
+		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">magento cache:clean [type]</a></td>
 		<td>Cleans the cache.</td>
 		<td>var/cache, var/page_cache</td>
 	</tr>

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Cannot write to the var/generation directory
 menu_title: Cannot write to the var/generation directory

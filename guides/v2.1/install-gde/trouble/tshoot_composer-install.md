@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Cannot run 'composer install'
 menu_title: Cannot run 'composer install'
 menu_node:
 menu_order: 550
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 functional_areas:
   - Install
   - System

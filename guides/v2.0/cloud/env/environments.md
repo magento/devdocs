@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configure environments
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html
@@ -28,9 +28,8 @@ Every {{site.data.var.ece}} project starts with a `master` environment that corr
 
 We recommend using GitHub for maintaining your code branches.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Your project must have a `master` branch; it won't function properly without one.
 
 You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) commands.
 
@@ -88,9 +87,8 @@ These drivers are included in all Starter environments and Pro Integration envir
 
 If you have questions regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The drivers and supported service only includes configuration and updates in {{site.data.var.ece}} environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting environments.
-</div>
 
 ## Configure your environments {#configenv}
 

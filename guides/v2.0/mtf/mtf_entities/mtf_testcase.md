@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Test case
 ---
 
@@ -62,7 +62,7 @@ In the following example, the test includes preconditions and test steps. Precon
 - editing of the found product
 - saving of the edited product
 
-{% highlight php %}
+```php 
 
 <?php
 /**
@@ -97,7 +97,7 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
     return ['category' => $category];
 }
 
-{% endhighlight %}
+```
 
 A returned array is available in constraints within current variation.
 

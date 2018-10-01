@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: R_General
 title: (Easy) Install the Magento archive on your server
 menu_title: (Easy) Install the Magento archive on your server
@@ -13,7 +13,7 @@ functional_areas:
 
 ## Intended audience   {#integrator-aud}
 
-The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">choose another starting point</a>.
+The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and [choose another starting point]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 ## Prerequisites
 
@@ -31,8 +31,8 @@ To transfer the Magento software archive to your server:
 
 	There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-	*	Windows: <a href="https://winscp.net/eng/download.php" target="_blank">WinSCP</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a>
-	*	Mac OS: <a href="https://cyberduck.io/?l=en" target="_blank">CyberDuck</a> or <a href="https://filezilla-project.org/download.php" target="_blank">Filezilla</a>
+	*	Windows: [WinSCP](https://winscp.net/eng/download.php){: target="_blank"} or [Filezilla](https://filezilla-project.org/download.php){: target="_blank"}
+	*	Mac OS: [CyberDuck](https://cyberduck.io/?l=en){: target="_blank"} or [Filezilla](https://filezilla-project.org/download.php){: target="_blank"}
 
 2.	Create a connection to your Magento server.
 
@@ -50,7 +50,7 @@ To transfer the Magento software archive to your server:
 
 	On some FTP client software, you do this by dragging and dropping.
 5.	Wait while the transfer completes.
-6.	Log in to your Magento server, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+6.	Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 7.	Change to the web server docroot or the virtual host directory.
 7.	Create a subdirectory for the Magento software.
 
@@ -75,7 +75,7 @@ To transfer the Magento software archive to your server:
 
 ## Extract the software on your server   {#zip-extract}
 
-Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:
+Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) and extract the software package in the web server docroot using one of the following commands:
 
 <table>
 <tbody>
@@ -106,5 +106,5 @@ The Magento software extracts to the directory you created. After the file has e
 
 Install the Magento software:
 
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>
+*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*	[Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

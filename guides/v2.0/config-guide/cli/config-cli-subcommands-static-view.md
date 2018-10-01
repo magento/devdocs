@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
 menu_node:
 menu_order: 300
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 functional_areas:
   - Configuration
   - System
@@ -122,12 +121,6 @@ Use the following steps:
 2.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 3.  Delete the contents of `<your Magento install dir>/pub/static` directory.
 4.  <a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
-
-	<!-- <div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-	</div> -->
 
 ## Tips for developers customizing the static content deployment tool
 

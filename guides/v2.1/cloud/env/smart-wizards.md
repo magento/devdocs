@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Smart wizards
 functional_areas:
   - Cloud

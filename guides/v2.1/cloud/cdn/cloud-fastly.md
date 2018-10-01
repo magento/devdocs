@@ -1,8 +1,7 @@
 ---
-group: cloud
+group: cloud-guide
 title: Fastly
 redirect_from:
-  - /guides/v2.0/cloud/basic-information/cloud-fastly.html
   - /guides/v2.1/cloud/basic-information/cloud-fastly.html
   - /guides/v2.2/cloud/basic-information/cloud-fastly.html
   - /guides/v2.3/cloud/basic-information/cloud-fastly.html
@@ -12,8 +11,8 @@ functional_areas:
 ---
 
 Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When
-working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/){:target="_blank"}
-with [Varnish](https://varnish-cache.org/docs/){:target="_blank"} caches your
+working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/)
+with [Varnish](https://varnish-cache.org/docs/) caches your
 site pages, assets, CSS, and more in backend data centers you set up. As
 customers access your site and stores, the requests hit Fastly to load cached
 pages faster.
@@ -61,13 +60,10 @@ lengthy processing, or when trying to perform bulk operations.
 
 If you receive a 503 error, try to submit the request directly to the origin
 shield URL and review logs to identify the source of the issue. For details,
-see [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html#timeouts).
+see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
 
-Fastly can be bypassed for the Magento Admin to perform long running or bulk
-actions and API access to avoid 503s.
+Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
-We provide [VCL snippet instructions]({{ page.baseurl }}/cloud/configure/fastly-vcl-extend-timeout.html)
-for extending the timeout for the Magento Admin.
 
 ## Backends and Origin shields {#backend}
 
@@ -82,7 +78,7 @@ the Origin server which caches the content. The shields reduces traffic directly
 to the origin.
 
 We provide detailed instructions for configuring backends when you
-[configure Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
+[configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Basic authentication {#basic-auth}
 
@@ -98,11 +94,11 @@ access the Magento Admin without requiring additional credentials to enter.
 
 Fastly provides an extremely custom code friendly method for creating lists of
 items like IPs and domains to complete actions via Fastly and Varnish code
-blocks. For example, with edge and ACL dictionaries and VCL code, you could
-allow, block, or redirect access for specific users or IPs.
+blocks. For example, you can allow, block, or redirect access for specific users or IPs
+using edge and ACL dictionaries and VCL code.
 
-After you have [set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html),
-you can create [custom VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html)
+After you have [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html),
+you can create [custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 using these edge dictionaries and ACLs.
 
 ### Edge dictionaries {#dictionary}
@@ -143,20 +139,20 @@ For a few examples, you can create VCL snippets to:
 * Extend timeouts for Fastly and Magento
 
 After you have [set up Fastly](#install-configure), we provide detailed
-instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
 
 Fastly supports forcing unencrypted requests to TLS through the Force TLS
 feature. Set up a secure base URL in Magento and turn on the Force TLS option
-in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md){:target="_blank"}.
+in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
 
 ## GeoIP service support {#geoip}
 
 Fastly provides a GeoIP service and supports some GeoIP functionality. GeoIP
 handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
-see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling){:target="_blank"}.
+see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling).
 
 ## Image Optimization support
 
@@ -182,6 +178,6 @@ settings or entering credentials.
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
+For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 After you have configured it, you can continue with advanced options including
 custom VCL snippets.

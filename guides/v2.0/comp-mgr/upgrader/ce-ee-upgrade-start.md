@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 26_CE-EEUpgrade
 title: Upgrade from Open Source to Commerce
 menu_title: Upgrade from Open Source to Commerce
@@ -13,9 +13,8 @@ functional_areas:
 
 This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee}}.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.
 
 ## Prerequisites   {#compman-prereq}
 
@@ -26,9 +25,8 @@ In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){: target="_blank"} if you have questions.
 
 ## Start System Upgrade from the Magento Admin   {#compman-access}
 

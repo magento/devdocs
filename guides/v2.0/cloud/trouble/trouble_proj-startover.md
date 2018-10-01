@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Resolve issues with a new project
 menu_title: Resolve issues with a new project
@@ -20,7 +20,7 @@ If you didn't push code to the project because, for example, you didn't complete
 
 ![If the project has no code]({{ site.baseurl }}/common/images/cloud_trouble_no-code.png)
 
-Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html#account).
+Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html#account).
 
 #### Related topics
 

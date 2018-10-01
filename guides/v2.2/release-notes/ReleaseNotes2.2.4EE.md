@@ -730,9 +730,8 @@ Users of the CyberSource payment method should note that CyberSource uses the Ma
 
 ### Shipping
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
-</div>
 
 
 
@@ -799,7 +798,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Themes
 
-<!--- MAGETWO-72898 -->* Magento no longer caches warning messages as often as a customer clicks the  **Update Shopping Cart** button while the  shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while  the page loaded in FireFox or Chrome, and this action  resulted in multiple warning messages appearing on the top of the shopping cart page.
+<!--- MAGETWO-72898 -->* Magento no longer caches warning messages as often as a customer clicks the  **Update Shopping Cart** button while the  shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while  the page loaded in Firefox or Chrome, and this action  resulted in multiple warning messages appearing on the top of the shopping cart page.
 
 <!--- MAGETWO-85785 -->* If a customer is logged in while  Magento loads, then the welcome message displays the customer's full name. *Fix submitted by [Oleh Kravets](https://github.com/xpoback) in pull request 12738*. [GitHub-12719](https://github.com/magento/magento2/issues/12719)
 

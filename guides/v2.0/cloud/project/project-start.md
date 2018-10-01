@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Project structure
 menu_title: Project structure
@@ -35,9 +35,8 @@ Not including the Magento application itself, your local project has the followi
 └── README.md
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment isn't affected.
 
 ### .gitignore file {gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
@@ -69,9 +68,8 @@ In Integration, Staging, and Production, *only* the following directories are wr
 *	`app/etc`
 *	`/tmp`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In Production, each node in the three-node cluster has a <code>/tmp</code> directory that is not shared with the other nodes.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
 
 ## Logs {#logs}
 

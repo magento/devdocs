@@ -1,10 +1,9 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
-redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration
   - System
@@ -70,7 +69,7 @@ The following sections provide information about configuration types, their corr
 The following table shows each configuration type and the Magento configuration object to which it relates.
 
 <table>
-      <tbody>
+      <tbody markdown="1">
             <tr>
                   <th>Configuration file</th>
                   <th>Description</th>

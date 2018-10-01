@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 functional_areas:
   - Tools
 ---
@@ -31,10 +30,10 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.</p>
-  <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.
+
+To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.
 </div>
 
 ## Possible consistency errors {#migrate-command-data}
@@ -73,9 +72,8 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
 </ignore>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning">
-    <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.
 
 ### Verify fixes
 
@@ -85,4 +83,4 @@ To know if the issues have been resolved successfully, run the Data Migration To
 
 ## Next migration step
 
-[Migratechanges]({{ page.baseurl }}/migration/migration-migrate-delta.html)
+[Migrate changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)

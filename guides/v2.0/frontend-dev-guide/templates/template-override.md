@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates basic concepts
 menu_title: Templates basic concepts
 menu_order: 3
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 functional_areas:
   - Frontend
 ---

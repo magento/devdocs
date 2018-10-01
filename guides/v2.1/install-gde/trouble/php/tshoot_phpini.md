@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: SQLSTATE[HY000] [2002] No such file or directory
 menu_title: SQLSTATE[HY000] [2002] No such file or directory

@@ -2,7 +2,6 @@
 group: coding-standards
 title: JavaScript coding standard
 landing-page: Coding standards
-redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 functional_areas:
   - Standards
 ---

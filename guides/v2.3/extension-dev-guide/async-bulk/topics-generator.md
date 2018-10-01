@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Topics generator
 contributor_name: Oleksandr Lykun
 contributor_link: 

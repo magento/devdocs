@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Snapshots and backup management
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html

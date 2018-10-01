@@ -1,6 +1,7 @@
 ---
-group: contributor
+group: contributor-guide
 title: Basic template
+redirect_from: /guides/v2.0/howdoi/howdoi_template.html
 ---
 
 Introductory text that gives an overview of the topic you will be writing about.

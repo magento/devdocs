@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: checkout
 title: Customize the list of shipping methods
 subtitle: Customize Checkout
@@ -84,22 +84,16 @@ In your custom module directory, create a new file: `<your_module_dir>/view/fron
 
 ```html
 <div id="checkout-shipping-method-load">
-    <table class="table-checkout-shipping-method">
-        <thead>
-        <tr class="row">
-            <th class="col col-method" translate="'Select Method'"></th>
-            <th class="col col-price" translate="'Price'"></th>
-            <th class="col col-method" translate="'Method Title'"></th>
-            <th class="col col-carrier" translate="'Carrier Title'"></th>
+    <table class="table-checkout-shipping-method" markdown="1"> <thead>
+        <tr class="row" markdown="1">
+            <th class="col col-method" translate="'Select Method'" />
+            <th class="col col-price" translate="'Price'" />
+            <th class="col col-method" translate="'Method Title'" />
+            <th class="col col-carrier" translate="'Carrier Title'" />
             <!-- Column for triggers -->
-            <th class="col"></th>
+            <th class="col" />
         </tr>
-        </thead>
-        <!-- tbody was moved inside item template -->
-        <!-- ko foreach: { data: rates(), as: 'method'} -->
-        	<!--ko template: { name: element.shippingMethodItemTemplate} --><!-- /ko -->
-        <!-- /ko -->
-    </table>
+        </thead> <!-- tbody was moved inside item template --> <!-- ko foreach: { data: rates(), as: 'method'} --> <!--ko template: { name: element.shippingMethodItemTemplate} --><!-- /ko --> <!-- /ko --> </table>
 </div>
 ```
 

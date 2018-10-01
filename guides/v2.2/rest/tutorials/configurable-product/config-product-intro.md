@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Create a configurable product tutorial
 menu_title: Initial tasks
 menu_order: 0

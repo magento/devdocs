@@ -1,10 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 functional_areas:
   - Integration
 ---

@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
 menu_title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
@@ -7,7 +7,6 @@ menu_node:
 menu_order: 105
 level3_menu_node: level3child
 level3_subgroup: basics
-redirect_from: /guides/v1.0/install-gde/basics/basics_login.html
 functional_areas:
   - Install
   - System
@@ -47,8 +46,6 @@ Here's what it looks like when you're logged in to a server as the `root` user w
 
 ![Logging in with Cygwin on Windows]({{ site.baseurl }}/common/images/install_cygwin.png)
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p><a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (ssh)</a> is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+[Secure Shell (ssh)](http://en.wikipedia.org/wiki/Secure_Shell){: target="_blank"} is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.
 	

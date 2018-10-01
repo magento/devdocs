@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Update the Magento database schema and data
 functional_areas:
   - Install

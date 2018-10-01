@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Update and upgrade checklist
 functional_areas:
   - Upgrade

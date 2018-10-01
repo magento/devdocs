@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Checkboxset component
-menu_title: Checkboxset component
 ---
 
 The Checkboxset component implements a group of `<input type="checkbox">` or `<input type="radio">` selection elements.

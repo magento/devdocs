@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Enable profiling (MAGE_PROFILER)
 functional_areas:
   - Configuration

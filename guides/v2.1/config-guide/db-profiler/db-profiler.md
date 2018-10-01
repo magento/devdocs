@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure the database profiler
 contributor_name: Atish Goswami
 contributor_link: http://atishgoswami.com

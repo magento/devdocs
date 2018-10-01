@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Import data from configuration files
 functional_areas:
   - Configuration

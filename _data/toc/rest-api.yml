@@ -6,19 +6,19 @@ pages:
     - label: Quick reference
       children:
         - label: REST Endpoints (Swagger)
-          versions: ["2.0"]
+          include_versions: ["2.0"]
           url: http://devdocs.magento.com/swagger/index_20.html
 
         - label: REST Endpoints (Swagger)
-          versions: ["2.1"]
+          include_versions: ["2.1"]
           url: http://devdocs.magento.com/swagger/index_21.html
 
         - label: REST Endpoints (Swagger)
-          versions: ["2.2"]
+          include_versions: ["2.2"]
           url: http://devdocs.magento.com/swagger/index_22.html
 
         - label: REST Endpoints (Swagger)
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: http://devdocs.magento.com/swagger/index_23.html
 
         - label: List of REST endpoints by module
@@ -42,31 +42,31 @@ pages:
           url: /rest/anonymous-api-security.html
 
         - label: Asynchronous web endpoints
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /rest/asynchronous-web-endpoints.html
 
         - label: Bulk endpoints
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /rest/bulk-endpoints.html
 
         - label: Bulk operation status endpoints
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /rest/operation-status-endpoints.html
 
         - label: Search for the status of a bulk operation
-          versions: ["2.3"]
+          include_versions: ["2.3"]
           url: /rest/operation-status-search.html
 
-        - label: REST usage notes
+        - label: Parameters in URLs
           url: /rest/notes.html
 
     - label: Tutorials
       url: /rest/tutorials/index.html
-      versions: ["2.1", "2.2", "2.3"]
+      include_versions: ["2.1", "2.2", "2.3"]
       children:
 
       - label: Prerequisite tasks
-        versions: ["2.2", "2.3"]
+        include_versions: ["2.2", "2.3"]
         children:
 
           - label: Generate an admin token
@@ -75,17 +75,17 @@ pages:
       - label: Order processing
         class: tutorial
         url: /rest/tutorials/orders/order-intro.html
-        versions: ["2.1", "2.2", "2.3"]
+        include_versions: ["2.1", "2.2", "2.3"]
 
       - label: Order processing with MSI
         class: tutorial
         url: /rest/tutorials/msi-order-processing/index.html
-        versions: ["2.3"]
+        include_versions: ["2.3"]
 
       - label: Create configurable products
         class: tutorial
         url: /rest/tutorials/configurable-product/config-product-intro.html
-        versions: ["2.2", "2.3"]
+        include_versions: ["2.2", "2.3"]
 
     - label: Modules
       children:
@@ -98,4 +98,23 @@ pages:
 
             - label: Manage prices for multiple products
               url: /rest/modules/catalog-pricing.html
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
+
+    - label: Inventory
+      include_versions: ["2.3"]
+      children:
+
+        - label: Manage sources
+          url: /rest/modules/inventory/manage-sources.html
+
+        - label: Manage stocks
+          url: /rest/modules/inventory/manage-stocks.html
+
+        - label: Link and unlink stocks and sources
+          url: /rest/modules/inventory/link-stocks-sources.html
+
+        - label: Manage source items
+          url: /rest/modules/inventory/manage-source-items.html
+
+        - label: Perform bulk actions
+          url: /rest/modules/inventory/bulk-inventory.html

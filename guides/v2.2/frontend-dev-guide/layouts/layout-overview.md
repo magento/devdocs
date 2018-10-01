@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout overview
 functional_areas:
   - Frontend

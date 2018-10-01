@@ -1,11 +1,10 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Themes
 menu_title: Themes
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-general.html
 functional_areas:
   - Frontend
   - Theme

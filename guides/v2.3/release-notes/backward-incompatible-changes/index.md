@@ -11,6 +11,54 @@ View a detailed list of PHP code changes that were made in the "2.3-develop" bra
 - [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
 - [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
+## API changes
+
+### StoreManager instead of StoreResolver
+
+`\Magento\Store\Api\StoreResolverInterface` has been deprecated in favor of the `\Magento\Store\Model\StoreManagerInterface`.
+
+When resolving for a store frontend, use `\Magento\Store\Model\StoreManagerInterface::getStore`.
+
+The following example shows the diff in `Magento\Catalog\Model\ResourceModel\Product\StatusBaseSelectProcessor` class after replacing the deprecated method.
+
+```diff
+...
+     /**
+-     * @var StoreResolverInterface
++     * @var StoreManagerInterface
+     */
+-    private $storeResolver;
++    private $storeManager;
+     /**
+     * @param Config $eavConfig
+     * @param MetadataPool $metadataPool
+-    * @param StoreResolverInterface $storeResolver
++    * @param StoreManagerInterface $storeManager
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function __construct(
+        Config $eavConfig,
+        MetadataPool $metadataPool,
+-       StoreResolverInterface $storeResolver
++       StoreManagerInterface $storeManager = null
+    ) {
+        $this->eavConfig = $eavConfig;
+        $this->metadataPool = $metadataPool;
+-        $this->storeResolver = $storeResolver;
++        $this->storeManager = $storeManager ?: \Magento\Framework\App\ObjectManager::getInstance()
++            ->get(StoreManagerInterface::class);
+
+...
+
+            . ' AND status_attr.attribute_id = ' . (int)$statusAttribute->getAttributeId()
+-           . ' AND status_attr.store_id = ' . $this->storeResolver->getCurrentStoreId(),
++           . ' AND status_attr.store_id = ' . $this->storeManager->getStore()->getId(),
+            []
+        );
+...
+```
+
 ## Application framework libraries
 
 ### Zend Framework

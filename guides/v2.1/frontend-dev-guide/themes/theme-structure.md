@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento theme structure
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 functional_areas:
   - Frontend
   - Theme

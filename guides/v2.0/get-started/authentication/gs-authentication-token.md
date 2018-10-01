@@ -1,10 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 functional_areas:
   - Integration
 ---
@@ -73,7 +72,7 @@ A access token request contains three basic elements:
       </td>
    </tr>
    <tr>
-      <td>Content&nbsp;type</td>
+      <td>Content type</td>
       <td>
          <p>The content type of the request body. Set this value to either <code>"Content-Type:application/json"</code> or <code>"Content-Type:application/xml"</code>.</p>
       </td>

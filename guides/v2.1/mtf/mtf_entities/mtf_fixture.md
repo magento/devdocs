@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Fixture
 ---
 
@@ -18,8 +18,12 @@ In this chapter, we will create a new fixture and modify it, considering differe
 
 To apply any changes in fixture, run generate tool:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 This tool creates {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes that are used by the test.
 
@@ -31,39 +35,36 @@ Let's imagine that we want to create new fixture to test our {% glossarytooltip 
 
 Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture with parameters indicated in arguments. It is located in `<magento2_root_dir>/dev/tests/functional/utils`.
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
+```
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Please note that the generateFixtureXml tool does not replace an existing XML fixture. For example, if you already have `Widget.xml` fixture, you cannot create new one with the same name.
 
 {: .bs-callout .bs-callout-warning}
 To work with generateFixtureXml tool, [Magento must be installed.]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 In the following table see `generateFixtureXml` arguments.
 
-| Argument        | Semantics                                                    | Value from command above                                                           | Note                                      |
-|:----------------|:-------------------------------------------------------------|:-----------------------------------------------------------------|:------------------------------------------|
-| `--name`        | Name of fixture.                                              | `widget`                                                         | Required                                  |
-| `--type`        | Table type for the entity. Can be `eav`, `flat`, `composite`. | `flat`                                                           | Default value: `flat`.                     |
-| `--entity_type` | Database table name, where entity data is stored.            | `widget_instance`                                                | Required                                  |
-| `--collection`  | Collection to generate data sets                             | `Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection` | Required. Escape all backslashes. |
-| `--help`        | List of arguments with definitions.                       |                                                                  |                                           |
+| Argument        | Semantics                                                     | Value from command above                                         | Note                              |
+|:----------------|:--------------------------------------------------------------|:-----------------------------------------------------------------|:----------------------------------|
+| `--name`        | Name of fixture.                                              | `widget`                                                         | Required                          |
+| `--type`        | Table type for the entity. Can be `eav`, `flat`, `composite`. | `flat`                                                           | Default value: `flat`.            |
+| `--entity_type` | Database table name, where entity data is stored.             | `widget_instance`                                                | Required                          |
+| `--collection`  | Collection to generate data sets                              | `Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection` | Required. Escape all backslashes. |
+| `--help`        | List of arguments with definitions.                           |                                                                  |                                   |                                           |
 
 This tool creates a new fixture using data from a database table you specified using the `--entity_type` argument.
 
 Following is the generated Widget fixture located in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="widget"
@@ -83,13 +84,16 @@ Following is the generated Widget fixture located in `<magento2_root_dir>/dev/te
         <field name="widget_parameters" is_required="0"/>
     </fixture>
 </config>
-
 ```
 
 To generate PHP classes, enter the following commands in the order shown:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 That's it!
 
@@ -106,29 +110,30 @@ Let's look closer at fixture structure.
 
 Following table describes `<fixture>` attributes.
 
-| `<fixture>` attribute | Semantics                    |     Value    | Example| Is required? |
-|:----------------------|:--------------------------------|:-----------:|-------|:------------:|
-| `name`                | Name of fixture.                                 |    string    |  catalogProductSimple| required   |
-| `module`              | Name of the module in which to place the fixture.                          |                string  |Magento_Catalog   |   required   |
-| `class`               | Path to the PHP class. Generator will use this path to locate automatically generated PHP file.         |                string  |Magento\Catalog\Test\Fixture\CatalogProductSimple      |   required   |
-| `type`                | Table type for the entity.     | `eav`, `flat`, `virtual`, `composite` | eav | optional   |
-| `entity_type`         | Database table name where the entity data is stored. Specify more than one database table as a comma-separated list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`. |                string  |catalog_product   |   optional   |
-| `product_type`        | Type of product. Applicable only for product fixtures.   | string |simple  |   optional   |
-| `collection`          | Collection to generate data sets. It is taken from `<magento2_root_dir>/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
-| `identifier`          | Field used to create data set names in the repository.| string|sku| optional |
-| `repository_class`    | Reference to the repository class.   |  string |Magento\Catalog\Test\Repository\CatalogProductSimple |   optional   |
-| `handler_interface`   | Reference to the handler interface class.    |  string |Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface|   optional   |
-| `extends`             | Reference to the class from which you want to extend.  |   string |\Magento\Widget\Test\Fixture\Widget |   optional   |
+| `<fixture>` attribute   | Semantics                                                                                                                                                                                                      | Value                                   | Example                                                                           | Is required?   |
+|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|:----------------------------------------------------------------------------------|:---------------|
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------: | :-------------------------------------------------------------------------------- | :------------: |
+| `name`                  | Name of fixture.                                                                                                                                                                                               | string                                  | catalogProductSimple                                                              | required       |
+| `module`                | Name of the module in which to place the fixture.                                                                                                                                                              | string                                  | Magento_Catalog                                                                   | required       |
+| `class`                 | Path to the PHP class. Generator will use this path to locate automatically generated PHP file.                                                                                                                | string                                  | Magento\Catalog\Test\Fixture\CatalogProductSimple                                 | required       |
+| `type`                  | Table type for the entity.                                                                                                                                                                                     | `eav`, `flat`, `virtual`, `composite`   | eav                                                                               | optional       |
+| `entity_type`           | Database table name where the entity data is stored. Specify more than one database table as a comma-separated list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`.   | string                                  | catalog_product                                                                   | optional       |
+| `product_type`          | Type of product. Applicable only for product fixtures.                                                                                                                                                         | string                                  | simple                                                                            | optional       |
+| `collection`            | Collection to generate data sets. It is taken from `<magento2_root_dir>/app/code/Magento`.                                                                                                                     | string                                  | Magento\Catalog\Model\Resource\Product\Collection                                 | optional       |
+| `identifier`            | Field used to create data set names in the repository.                                                                                                                                                         | string                                  | sku                                                                               | optional       |
+| `repository_class`      | Reference to the repository class.                                                                                                                                                                             | string                                  | Magento\Catalog\Test\Repository\CatalogProductSimple                              | optional       |
+| `handler_interface`     | Reference to the handler interface class.                                                                                                                                                                      | string                                  | Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface   | optional       |
+| `extends`               | Reference to the class from which you want to extend.                                                                                                                                                          | string                                  | \Magento\Widget\Test\Fixture\Widget                                               | optional       |
 
 The following table describes `<field>` attributes.
 
-| `<field>` attribute | Semantics    |     Value  |Example | Is required? |
-|:--------------------|:----------|:---------------:|-----------|:-----------------:|
-| `name`              | Field name.     |  string   | layout_updates  |  required      |
-| `is_required`       | Specifies whether field is required on the form.   | 1 - required, 0 - optional | 1  |optional     |
-| `group`    | Tab name that contains field (for example, `title` field is placed on **Storefront properties** tab on widget creation page).      |           string           |storefront_properties | optional      |
-| `source`    | Class that prepares field data for use. See [Add the data source to the fixture field](#mtf_fixture_source).      |    string |Magento\Widget\Test\Fixture\Widget\LayoutUpdates   |     optional      |
-| `repository`    | Reference to  the class that stores data sets for the field. [More details about the repository]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html). |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
+| `<field>` attribute | Semantics                                                                                                                                                    |           Value            | Example                                             | Is required? |
+|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------:|:----------------------------------------------------|:------------:|
+| `name`              | Field name.                                                                                                                                                  |           string           | layout_updates                                      |   required   |
+| `is_required`       | Specifies whether field is required on the form.                                                                                                             | 1 - required, 0 - optional | 1                                                   |   optional   |
+| `group`             | Tab name that contains field (for example, `title` field is placed on **Storefront properties** tab on widget creation page).                                |           string           | storefront_properties                               |   optional   |
+| `source`            | Class that prepares field data for use. See [Add the data source to the fixture field](#mtf_fixture_source).                                                 |           string           | Magento\Widget\Test\Fixture\Widget\LayoutUpdates    |   optional   |
+| `repository`        | Reference to  the class that stores data sets for the field. [More details about the repository]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html). |           string           | Magento\Widget\Test\Repository\Widget\LayoutUpdates |   optional   |
 
 The following image shows how XML is connected with GUI of your new widget.
 
@@ -145,14 +150,8 @@ We also defined a new field, `layout_updates` on the UI but this field is absent
 Let's manually add a new field and `group` attribute to the `Widget.xml`. See what we have now.
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="widget"
@@ -173,13 +172,16 @@ Let's manually add a new field and `group` attribute to the `Widget.xml`. See wh
         <field name="layout_updates" is_required="0" group="storefront_properties" />
     </fixture>
 </config>
-
 ```
 
 To apply the changes, enter the following commands:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 ## Add a repository to the fixture field {#mtf_fixture_repositoy}
 
@@ -188,9 +190,7 @@ Now we have a new fixture for Widget. All fields are defined and ready to take t
 For this goal, link to the repository where all test data has already been defined.
 
 ```xml
-
 <field name="layout_updates" repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates" group="storefront_properties" />
-
 ```
 
 Repository is located in `Repository` directory of corresponding module. `Repository` directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.
@@ -201,12 +201,7 @@ Following is the code of `LayoutUpdates.xml`. It specifies two data sets that yo
 
 ```xml
 <?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
     <repository class="Magento\Widget\Test\Repository\Widget\LayoutUpdates">
@@ -227,13 +222,16 @@ Following is the code of `LayoutUpdates.xml`. It specifies two data sets that yo
         </dataset>
     </repository>
 </config>
-
 ```
 
 To apply changes, enter following commands:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 ## Add data source to fixture field {#mtf_fixture_source}
 
@@ -248,24 +246,17 @@ All data source logic is defined in a PHP file which must be linked as specified
 It is located in `Fixture` directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.
 
 ```xml
-
 <field name="layout_updates"
        is_required="0"
        repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates"
        source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates"
        group="storefront_properties" />
-
 ```
 
 Let's see our data source file `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
 ```php
-
 <?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
  
 namespace Magento\Widget\Test\Fixture\Widget;
 
@@ -307,19 +298,24 @@ class LayoutUpdates extends DataSource
         }
     }
 }
-
 ```
 
 To apply the changes, enter the following commands:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
     
-<div class="bs-callout bs-callout-warning">
-<p>You should mention repository in data source class to use it for fixture field.<br/>
-<br/>
-Example from <code>LayoutUpdates.php</code><br/>
-<code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You should mention repository in data source class to use it for fixture field.  
+   
+ Example from `LayoutUpdates.php`  
+ ```php?start_inline=1
+ $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
+ ```
 </div>
 
 ## Merge fixtures {#mtf_fixture_merge}
@@ -329,27 +325,24 @@ We have a module that adds new field to Widget module.
 We can create file that adds field `new_field` to our widget fixture.
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="widget">
         <field name="new_field" is_required="0" group="storefront_properties" />
     </fixture>
 </config>
-
 ```
 
 To apply the changes, enter the following commands:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 
 `new_field` has been added in fixture `Widget.php`.
 
@@ -360,14 +353,8 @@ Let's assume that you want to add new fixture based on our `Widget.xml` fixture 
 To do that you should supplement your `Widget.xml` code with `extends` attribute in `<fixture>` node. As you already know, `extends` value stores a link to the class from which you want to extend your fixture.
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="adWidget"
@@ -378,13 +365,16 @@ To do that you should supplement your `Widget.xml` code with `extends` attribute
         <field name="custom_field" repository="Magento\AdWidget\Test\Repository\AdWidget\CustomField" group="storefront_properties" />
     </fixture>
 </config>
-
 ```
 
 In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named `custom_field`.
 
 To generate your new fixture PHP class, enter the following commands:
 
-    cd <magento2_root_dir>/dev/tests/functional/utils
-    php generate.php
+```bash
+cd <magento2_root_dir>/dev/tests/functional/utils
+```
+```bash
+php generate.php
+```
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Redirects
 menu_title: Redirects
@@ -136,7 +136,7 @@ If `append_suffix` is set to its default value of `true`, `/from/path/suffix` re
 {% endcollapsible %}
 
 ### `code` {#cloud-route-partial-code}
-Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2){:target="_blank"}, [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3){:target="_blank"}, [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8){:target="_blank"}, and [`308`](https://tools.ietf.org/html/rfc7238){:target="_blank"}. Defaults to `302`.
+Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), and [`308`](https://tools.ietf.org/html/rfc7238). Defaults to `302`.
 
 ### `expires` {#cloud-route-partial-expires}
 Optional, the duration the redirect will be cached. Defaults to the `expires` value defined directly under the `redirects` key, but at this level we can fine-tune the expiration of individual partial redirects:

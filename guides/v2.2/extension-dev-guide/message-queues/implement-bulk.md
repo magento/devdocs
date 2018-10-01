@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Example bulk operations implementation
 menu_title: Example bulk operations implementation

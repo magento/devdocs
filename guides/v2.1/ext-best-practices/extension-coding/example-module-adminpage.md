@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Creating a Magento admin page
 menu_title: Creating a Magento admin page

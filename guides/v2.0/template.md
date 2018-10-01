@@ -21,17 +21,14 @@ PROVIDE OVERVIEW OF TOPIC HERE
 
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
-<div class="bs-callout bs-callout-info" id="info">
-
-  <p>INSERT NOTE TEXT HERE</a>.</p>
-
-</div>
+{: .bs-callout .bs-callout-info }
+INSERT NOTE TEXT HERE</a>.
 
 ### HEADING 3   {#H3}
 
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
 ## HEADING 2   {#H2}
 
@@ -41,8 +38,8 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_O
 
 ## Related topics   {#book-related}
 
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
+* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
+* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
 
 ## Collapsible Content
 

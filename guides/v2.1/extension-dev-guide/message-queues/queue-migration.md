@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
@@ -35,5 +35,5 @@ The structure of the `queue.xml` file is substantially different in Magento. 2.1
 
 #### Related topics
 
-*	[Message QueuesOverview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*	[Configure messagequeues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

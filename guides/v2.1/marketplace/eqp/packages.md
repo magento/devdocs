@@ -28,9 +28,8 @@ These review steps occur in parallel when you submit a package. If both steps ar
 
 The following table describes all package object properties:
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Both `POST` and `PUT` requests support a batch model where multiple packages can be created or updated.
-</div>
 
 |Field/Parameter|Type|Applicable HTTP Command|EQP Review Type|Description|
 |---------------|----|-----------------------|--------|-----------|
@@ -388,9 +387,8 @@ You can update one or more parameters in `draft` mode, but the API does not chec
 
 When the `action` field is set to `publish`, the API validates fields to ensure all required parameters are available on the Developer Portal to initiate the EQP process.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 All `action` fields are optional. If not specified, `draft` is the default value.
-</div>
 
 The following example shows a POST request with all required parameters set for both technical and marketing submissions:
 

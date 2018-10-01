@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish
@@ -13,13 +13,12 @@ functional_areas:
 
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
-*	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>
-*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish installation guides</a>
-*	<a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a>
+*	[installation wiki](http://wiki.mikejung.biz/Varnish){: target="_blank"}
+*	[Varnish installation guides](https://www.varnish-cache.org/docs){: target="_blank"}
+*	[How to install Varnish (Tecmint)](http://www.tecmint.com/install-varnish-cache-web-accelerator){: target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.
 
 ## Confirm your Varnish version   {#config-varnish-version}
 
@@ -37,4 +36,4 @@ Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
 
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+[Configure Varnish and your web server]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html)

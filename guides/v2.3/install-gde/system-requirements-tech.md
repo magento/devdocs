@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: Magento 2.3.x technology stack requirements
 functional_areas:
   - Install

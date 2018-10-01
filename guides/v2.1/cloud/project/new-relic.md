@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
 functional_areas:
   - Cloud
@@ -86,7 +86,7 @@ Contact your Magento technical account manager or New Relic sales (sales@newreli
 
 1.  Copy the license key.
 
-You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
+You can also access the license key from the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
 
 
 #### To add a New Relic license key to an environment:

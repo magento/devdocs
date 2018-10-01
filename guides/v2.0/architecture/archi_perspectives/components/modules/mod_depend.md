@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module dependencies
 menu_title: Module dependencies
@@ -35,8 +35,8 @@ Although Magento architecture favors loosely coupled software components, module
 
 * libraries (either Magento Framework {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} or third party libraries)
 
-<div class="bs-callout bs-callout-warning" id="warning">
-<p>Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.</p></div>
+{: .bs-callout .bs-callout-warning }
+Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.
 
 ## Managing module dependencies
 

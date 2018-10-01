@@ -4,23 +4,29 @@ pages:
       url: /release-notes/bk-release-notes.html
 
     - label: 2.3 Release Notes
-      versions: ["2.3"]
+      include_versions: ["2.3"]
       children:
-        - label: 2.3.0 Alpha Installation Guide
-          url: /release-notes/2.3.0-alpha-install.html
+        - label: 2.3.0 Installation Guide
+          url: /release-notes/2.3.0-install.html
 
         - label: Component Status
           url: /release-notes/component-status.html
 
-        - label: Magento Open Source 2.3.0 Alpha Release Notes
+        - label: Magento Open Source 2.3.0 Beta Release Notes
           url: /release-notes/ReleaseNotes2.3.0OpenSource.html
 
-        - label: Magento Commerce 2.3.0 Alpha Release Notes
+        - label: Magento Commerce 2.3.0 Beta Release Notes
           url: /release-notes/ReleaseNotes2.3.0Commerce.html
 
     - label: 2.2 Release Notes
-      versions: ["2.2"]
+      include_versions: ["2.2"]
       children:
+
+        - label: Magento Open Source 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6CE.html
+
+        - label: Magento Commerce 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6EE.html
 
         - label: Magento Open Source 2.2.5 Release Notes
           url: /release-notes/ReleaseNotes2.2.5CE.html
@@ -36,7 +42,7 @@ pages:
 
         - label: Magento Open Source 2.2.3 Release Notes
           url: /release-notes/ReleaseNotes2.2.3CE.html
-       
+
         - label: Magento Commerce 2.2.3 Release Notes
           url: /release-notes/ReleaseNotes2.2.3EE.html
 
@@ -65,11 +71,14 @@ pages:
           url: /release-notes/release-candidate/component-status.html
 
     - label: Magento 2.1 Release Notes
-      versions: ["2.1"]
+      include_versions: ["2.1"]
       children:
 
         - label: Magento Open Source 2.1.x Release Notes
           children:
+
+            - label: Magento Open Source 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15CE.html
 
             - label: Magento Open Source 2.1.14 Release Notes
               url: /release-notes/ReleaseNotes2.1.14CE.html
@@ -118,6 +127,9 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15EE.html
 
             - label: Magento Commerce 2.1.14 Release Notes
               url: /release-notes/ReleaseNotes2.1.14EE.html
@@ -201,7 +213,7 @@ pages:
               url: /cloud/release-notes/CloudReleaseNotes2.1.2.html
 
     - label: Magento 2.0 Release Notes
-      versions: ["2.0"]
+      include_versions: ["2.0"]
       children:
 
         - label: Magento Open Source 2.0.x Release Notes
@@ -357,7 +369,7 @@ pages:
 
         - label: Magento Commerce for B2B changes
           url: /release-notes/changes/b2b_changes.html
-          versions: ["2.2"]
+          include_versions: ["2.2"]
 
 
     - label: Third-party licenses

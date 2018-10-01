@@ -1,7 +1,6 @@
 ---
-group: install2
+group: installation-guide
 title: What operating system is my server running?
-redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 functional_areas:
   - Install
   - System

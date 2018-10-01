@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 01_Introduction
 title: B2B Developer Guide
 landing-page: B2B

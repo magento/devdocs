@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_github
 title: git pull origin develop fails when updating the Magento software
 menu_title: git pull origin develop fails when updating the Magento software
@@ -59,9 +59,8 @@ Try any of the following:
 
 		git config --system core.eol LF
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>Magento does <em>not</em> recommend or endorse any particular GitHub configuration settings. The preceding are suggestions only. For more information, consult the <a href="https://help.github.com/" target="_blank">GitHub help</a>.</p></span>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Magento does *not* recommend or endorse any particular GitHub configuration settings. The preceding are suggestions only. For more information, consult the [GitHub help](https://help.github.com/){: target="_blank"}.
 	</div>
 
 	Continue where you left off with your Magento 2 update.

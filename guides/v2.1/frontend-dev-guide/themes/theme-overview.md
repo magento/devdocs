@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Themes overview
 functional_areas:
   - Frontend

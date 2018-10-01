@@ -1,8 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: FileUploader component
-menu_title: FileUploader component
 ---
 
 The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.
@@ -32,7 +30,7 @@ The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf
       <td>
         List of allowed file extensions. For example, <code>'jpg
         jpeg gif png svg'</code>. If set to "false" - then no
-        extion is allowed, "true" - any extension is allowed.
+        extension is allowed, "true" - any extension is allowed.
       </td>
       <td>
         Boolean/String

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy variables
 functional_areas:
   - Cloud
@@ -196,7 +196,7 @@ The read-only connection is not available for use in the Integration environment
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){:target="_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ```yaml
 stage:
@@ -379,7 +379,7 @@ You should set this variable to `false` _only_ in Staging or Production environm
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

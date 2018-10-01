@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 20_cqrs
 title: Set up optional database replication
 menu_title: Set up optional database replication
@@ -24,8 +24,8 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:
 
-*	<a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a>
-*	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql" target="_blank">How To Set Up Master Slave Replication in MySQL (digitalocean)</a>
+*	[MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/replication.html){: target="_blank"}
+*	[How To Set Up Master Slave Replication in MySQL (digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql){: target="_blank"}
 
 Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the `ResourceConnections` class `README.md`.
 

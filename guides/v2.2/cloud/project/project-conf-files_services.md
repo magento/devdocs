@@ -1,12 +1,12 @@
 ---
-group: cloud
+group: cloud-guide
 title: Services
 functional_areas:
   - Cloud
   - Setup
 ---
 
-Use the `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, Redis, ElasticSearch (for 2.1.X and later), and so on. You do not need to subscribe to external service providers. This file is located in the `.magento` directory in your project. See the latest sample of the [`services.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"} file.
+Use the `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, Redis, ElasticSearch (for 2.1.X and later), and so on. You do not need to subscribe to external service providers. This file is located in the `.magento` directory in your project. See the latest sample of the [`services.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml) file.
 
 When you push your Git branch, our deploy script uses the values defined by configuration files in the `.magento` directory. After deployment, the script deletes the directory and its contents. Your local development environment is not affected.
 

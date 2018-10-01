@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Starter architecture
 menu_title: Starter architecture
@@ -15,9 +15,8 @@ All environments are in PaaS (Platform-as-a-Service) containers. These container
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The following architecture information uses an architecture including Production, Staging, and Integration environments.
-</div>
 
 ![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
 
