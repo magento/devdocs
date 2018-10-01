@@ -111,7 +111,7 @@ If a service method argument is called `item`, there will be a problem during SO
          <p><code>&lt;route&gt;</code></p>
       </td>
       <td>
-         <p>Required. Child element of L<code>&lt;routes&gt;</code>. Defines the HTTP route for the web API method.</p>
+         <p>Required. Child element of <code>&lt;routes&gt;</code>. Defines the HTTP route for the web API method.</p>
       </td>
       <td>
          <ul>
