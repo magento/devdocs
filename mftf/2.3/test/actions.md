@@ -911,7 +911,7 @@ Attribute|Type|Use|Description
 
 ### dontSeeJsError
 
-Ensure that there are no JavaScript errors.
+Ensure that there are no JavaScript errors in current page
 
 Attribute|Type|Use|Description
 ---|---|---|---
