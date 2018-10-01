@@ -51,18 +51,18 @@ Using the more manual process of upgrading via the command line allows you to tr
 ### Backup `composer.json`
 
 Backup the existing `composer.json` file in the Magento installation directory.
-   
-### Deactivate the {{ ce }} update
+
+### Manage packages
+
+Specify needed packages and remove any unneeded ones before proceeding with the upgrade.
+
+#### Deactivate the {{ ce }} update
 
 _Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
  
 ```bash
 composer remove magento/product-community-edition --no-update
 ```
-
-### Manage packages
-
-Specify needed packages and remove any unneeded ones before proceeding with the upgrade.
 
 #### Specify Magento packages
 
