@@ -56,17 +56,19 @@ Example:
 MAGENTO_ADMIN_PASSWORD=1234reTyt%$7
 ```
 
-## Advanced Configuration
+## Advanced configuration
 
-In most cases, these values are not required.
+The advanced configuration is optional.
 Sensible defaults are in place.
 But in case you do need to do some configuration, they are shown here for your reference.
 
 ### DEFAULT_TIMEZONE
 
-Timezone used for `generateDate` actions that do not have a `timezone` specified. Will use `America/Los_Angeles` if one is not specified.
+The [timezone][] used by a `generateDate` action that do not have a particular `timezone` specified.
 
-Example: 
+Default: `America/Los_Angeles`.
+
+Example:
 
 ```conf
 DEFAULT_TIMEZONE=UTC
@@ -76,11 +78,7 @@ DEFAULT_TIMEZONE=UTC
 
 The `SELENIUM_*` values form the URL of a custom Selenium server for running testing.
 
-Your default Selenium URL:
-
-```
-http://127.0.0.1:4444/wd/hub
-```
+Your default Selenium URL: `http://127.0.0.1:4444/wd/hub`
 
 And the default configuration:
 
@@ -92,7 +90,7 @@ SELENIUM_PATH=/wd/hub
 ```
 
 {:.bs-callout .bs-callout-warning}
-`SELENIUM_*` values are required if you are running Selenium on an external system. 
+`SELENIUM_*` values are required if you are running Selenium on an external system.
 If you change the configuration of the external Selenium server, you must update these values.
 
 #### SELENIUM_HOST
@@ -119,7 +117,7 @@ SELENIUM_PORT=443
 
 Override the default Selenium server protocol.
 
-Example: 
+Example:
 
 ```conf
 SELENIUM_PROTOCOL=https
@@ -148,7 +146,7 @@ MAGENTO_RESTAPI_SERVER_PORT
 
 The protocol and the host of the REST API server path.
 
-Example: 
+Example:
 
 ```conf
 MAGENTO_RESTAPI_SERVER_HOST=http://localhost
@@ -166,8 +164,8 @@ MAGENTO_RESTAPI_SERVER_PORT=5000
 
 ### TESTS
 
-These values can be used in cases where you are working locally on both MFTF's implementation code and Magento's test case code.
-Use them if you have a more advanced local development setup that involves symlinking the MFTF into the `vendor` directory of the Magento root directory.
+These values can be used in cases where you are working locally on both MFTF implementation code and Magento test case code.
+Use them if you have a more advanced local development setup that involves using symbolic links for the MFTF into the `vendor` directory of the Magento root directory.
 
 ```conf
 TESTS_BP
@@ -188,7 +186,7 @@ TESTS_BP=~/magento2ce/dev/tests/acceptance
 
 #### FW_BP
 
-The path to where MFTF exists and from which it is symlinked.
+The path to where the MFTF exists and from which it linked using symbolic links.
 FW_BP is an acronym for _FrameWork BasePath_.
 
 Example:
@@ -199,9 +197,9 @@ FW_BP=~/magento/magento2-functional-testing-framework
 
 #### TESTS_MODULE_PATH
 
-The path to where MFTF modules mirror Magento's modules.
+The path to where the MFTF modules mirror Magento modules.
 
-Example: 
+Example:
 
 ```conf
 ~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest
@@ -243,3 +241,7 @@ Example:
 ```conf
 BROWSER=firefox
 ```
+
+<!-- Link definitions -->
+
+[timezone]: http://php.net/manual/en/timezones.php
