@@ -165,14 +165,14 @@ See the `StorefrontCustomerSignInPage.xml` file code in [step 2](#section-code)
 
 The following test actions return a variable:
 
-*  [grabAttributeFrom](#grabattributefrom)
-*  [grabCookie](#grabcookie)
-*  [grabFromCurrentUrl](#grabfromcurrenturl)
-*  [grabMultiple](#grabmultiple)
-*  [grabPageSource](#grabpagesource)
-*  [grabTextFrom](#grabtextfrom)
-*  [grabValueFrom](#grabvaluefrom)
-*  [executeJS](#executejs)
+* [grabAttributeFrom](#grabattributefrom)
+* [grabCookie](#grabcookie)
+* [grabFromCurrentUrl](#grabfromcurrenturl)
+* [grabMultiple](#grabmultiple)
+* [grabPageSource](#grabpagesource)
+* [grabTextFrom](#grabtextfrom)
+* [grabValueFrom](#grabvaluefrom)
+* [executeJS](#executejs)
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
@@ -633,7 +633,7 @@ Delete the entity that was previously created using [`createData`](#createdata) 
 <createData entity="SampleCategory" stepKey="createCategory"/>
 ```
 
-2. Delete _SampleCategory_:
+1. Delete _SampleCategory_:
 
 ```xml
 <deleteData createDataKey="createCategory" stepKey="deleteCategory"/>
@@ -768,7 +768,7 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Verify that `<div id="box" ... >...</div>` is missing or invisible on the current page. -->
-<dontSeeElement selectore="div#box" stepKey="dontSeeBox"/>
+<dontSeeElement selector="div#box" stepKey="dontSeeBox"/>
 ```
 
 ### dontSeeElementInDOM
@@ -789,7 +789,7 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Verify that `<div id="box" ... >...</div>` is completely missing on the current page. -->
-<dontSeeElementInDOM selectore="div#box" stepKey="dontSeeBoxInDOM"/>
+<dontSeeElementInDOM selector="div#box" stepKey="dontSeeBoxInDOM"/>
 ```
 
 ### dontSeeInCurrentUrl
@@ -911,7 +911,7 @@ Attribute|Type|Use|Description
 
 ### dontSeeJsError
 
-Ensure that there are no JavaScript errors in current page
+Ensure that the current page does not have JavaScript errors.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -1130,7 +1130,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Get the product attribute that was created using `<createData stepkey="productAttributeHandle" ... />`. -->
+<!-- Get the product attribute that was created using `<createData stepKey="productAttributeHandle" ... />`. -->
 <getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
     <requiredEntity createDataKey="productAttributeHandle"/>
 </getData>
@@ -1535,8 +1535,9 @@ Attribute|Type|Use|Description
 <pressKey userInput="a" selector="#targetElement" stepKey="pressA"/>
 ```
 
-_**parameterArray**_ attribute has to begin with `[` and end with `]`, array() syntax is not supported. 
+_**parameterArray**_ attribute has to begin with `[` and end with `]`, array() syntax is not supported.
 If more than one key is pressed at the same time, secondary `[]` can be used.
+
 ```xml
 <!-- Press the delete within the selected area uses key constants from the WebDriverKeys class. -->
 <pressKey selector="#targetElement" parameterArray="[['ctrl', 'a'], \Facebook\WebDriver\WebDriverKeys::DELETE]" stepKey="pressDelete"/>
@@ -1707,6 +1708,7 @@ Attribute|Type|Use|Description
 ```
 
 On this test step the MFTF:
+
 1. Searches for a drop-down HTML element that matches the `#stuff` selector.
 2. Opens the drop-down menu.
 3. Enters **Item 1** in a search field of the drop-down element.
@@ -1835,7 +1837,7 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Verify that `<div id="box" ... >...</div>` is available and visible on the current page. -->
-<seeElement selectore="div#box" stepKey="seeBox"/>
+<seeElement selector="div#box" stepKey="seeBox"/>
 ```
 
 ### seeElementInDOM
@@ -1855,7 +1857,7 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Verify that `<div id="box" ... >...</div>` is available on the current page. -->
-<seeElementInDOM selectore="div#box" stepKey="seeBoxInDOM"/>
+<seeElementInDOM selector="div#box" stepKey="seeBoxInDOM"/>
 ```
 
 ### seeInCurrentUrl
