@@ -21,8 +21,6 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 
 ## Get the Magento software
 
-{% include install/archives-php-issue.md %}
-
 {% include install/get-software_zip.md %}
 
 ## Transfer the Magento archive to your server {#zip-transfer}
