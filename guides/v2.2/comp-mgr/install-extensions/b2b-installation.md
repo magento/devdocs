@@ -5,7 +5,7 @@ ee_only: true
 ---
 
 {: .bs-callout .bs-callout-warning }
-The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} 2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
+The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
 ## Installation
 
