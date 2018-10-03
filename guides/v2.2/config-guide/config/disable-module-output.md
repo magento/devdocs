@@ -79,3 +79,6 @@ Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add t
 Here, the `array` beneath `modules_disable_output` contains a list of modules. A value of `1` disables output for that module.
 
 As a sample result of this configuration, customers can no longer sign up to receive newsletters.
+
+{:.bs-callout .bs-callout-info}
+Even if no disabled modules are specified in the above options, the module can be disabled by value in database in table `core_config_data`. Such a module can be found by value with `advanced/modules_disable_output/VendorName_ModuleName` in the `path` column.
