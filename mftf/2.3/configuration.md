@@ -58,13 +58,14 @@ MAGENTO_ADMIN_PASSWORD=1234reTyt%$7
 
 ## Advanced configuration
 
-The advanced configuration is optional.
-Sensible defaults are in place.
-But in case you do need to do some configuration, they are shown here for your reference.
+Depending on the environment you use, you may need to configure the MFTF more precisely by setting more configuration parameters then for basic configuration.
+This section describes available configuration parameters and their default values (where applicable).
 
 ### DEFAULT_TIMEZONE
 
-The [timezone][] used by a `generateDate` action that do not have a particular `timezone` specified.
+Sets a default value for the `timezone` attribute of a [`generateDate` action][generateDate].
+This value is applied when a test step does not specify a time zone.
+For the complete list of available time zones, refer to [List of Supported Timezones][timezones].
 
 Default: `America/Los_Angeles`.
 
@@ -78,7 +79,7 @@ DEFAULT_TIMEZONE=UTC
 
 The `SELENIUM_*` values form the URL of a custom Selenium server for running testing.
 
-Your default Selenium URL: `http://127.0.0.1:4444/wd/hub`
+Default Selenium URL: `http://127.0.0.1:4444/wd/hub`
 
 And the default configuration:
 
@@ -164,8 +165,9 @@ MAGENTO_RESTAPI_SERVER_PORT=5000
 
 ### TESTS
 
-These values can be used in cases where you are working locally on both MFTF implementation code and Magento test case code.
-Use them if you have a more advanced local development setup that involves using symbolic links for the MFTF into the `vendor` directory of the Magento root directory.
+Overrides base paths for the framework.
+You can use it when the MFTF is applied as a separate tool.
+For example, when you need to place the MFTF and the Magento code base in separate projects.
 
 ```conf
 TESTS_BP
@@ -175,7 +177,7 @@ TESTS_MODULES_PATH
 
 #### TESTS_BP
 
-The path to where MFTF supplementary files are located in the Magento2 codebase.
+The path to where MFTF supplementary files are located in the Magento codebase.
 BP is an acronym for _BasePath_.
 
 Example:
@@ -186,7 +188,7 @@ TESTS_BP=~/magento2ce/dev/tests/acceptance
 
 #### FW_BP
 
-The path to where the MFTF exists and from which it linked using symbolic links.
+The path to MFTF.
 FW_BP is an acronym for _FrameWork BasePath_.
 
 Example:
@@ -202,7 +204,7 @@ The path to where the MFTF modules mirror Magento modules.
 Example:
 
 ```conf
-~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest
+TESTS_MODULE_PATH=~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest
 ```
 
 ### MODULE_WHITELIST
@@ -244,4 +246,5 @@ BROWSER=firefox
 
 <!-- Link definitions -->
 
-[timezone]: http://php.net/manual/en/timezones.php
+[generateDate]: test/actions.html#generatedate
+[timezones]: http://php.net/manual/en/timezones.php

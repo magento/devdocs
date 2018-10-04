@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.6
+mftf-release: 2.3.7
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/test/actions.html
 ---
 
@@ -1535,8 +1535,8 @@ Attribute|Type|Use|Description
 <pressKey userInput="a" selector="#targetElement" stepKey="pressA"/>
 ```
 
-_**parameterArray**_ attribute has to begin with `[` and end with `]`, array() syntax is not supported.
-If more than one key is pressed at the same time, secondary `[]` can be used.
+The `parameterArray` attribute value must begin with `[` and end with `]`.
+To press more than one key at a time, wrap the keys in secondary `[]`.
 
 ```xml
 <!-- Press the delete within the selected area uses key constants from the WebDriverKeys class. -->

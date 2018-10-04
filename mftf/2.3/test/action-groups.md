@@ -19,7 +19,7 @@ The following diagram shows the structure of an MFTF action group:
 The following conventions apply to MFTF action groups:
 
 - All action groups are declared in XML files and stored in the `<module>/ActionGroup/` directory.
-- Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup.xml`.
+- Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup`.
 
 The XML format for the `actionGroups` declaration is:
 
@@ -147,7 +147,7 @@ For example, the following defines the replacement argument `relevantString` usi
 
 The `string` argument type provides a method to pass a single piece of data to the `<actionGroup>`during a test instead of passing an entire entity.
 
-### Define the argument value
+### Explicitly define the argument value
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -155,7 +155,7 @@ The `string` argument type provides a method to pass a single piece of data to t
 </actionGroup>
 ```
 
-#### Using persisted data references
+### Use persisted data references to define the argument value
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -167,7 +167,7 @@ The `relevantString` argument value points to the data [created](../data.html#pe
 `field1` is a data key of the required data string.
 Even with the `persistedData` data entity, the MFTF interprets the `$persistedData.field1$` value as a string.
 
-#### Based on data entity resolution
+### Define the argument value based on data entity resolution
 
 The argument value points to a piece of data defined in a `data.xml` file.
 The `field1` data contains the required string.
