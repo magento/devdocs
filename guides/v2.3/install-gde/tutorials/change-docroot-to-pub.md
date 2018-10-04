@@ -18,7 +18,7 @@ The sample configuration overrides your server's docroot settings to serve files
     # /etc/nginx/sites-available/magento
 
     upstream fastcgi_backend {
-         server  unix:/run/php/php7.2-fpm.sock;
+         server  unix:/run/php/php7.0-fpm.sock;
      }
 
      server {
@@ -37,7 +37,7 @@ To complete this tutorial, you'll need access to a working Magento installation 
 -   Linux
 -   Apache (2.2+)
 -   MySQL (5.6+)
--   PHP (7.1 or 7.2)
+-   PHP (7.1.3+ or 7.2)
 -   Magento (2.0+)
 
 {:.bs-callout .bs-callout-info}
@@ -130,3 +130,4 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
 ## Congratulations! You're finished.
 {:.no_toc}
+
