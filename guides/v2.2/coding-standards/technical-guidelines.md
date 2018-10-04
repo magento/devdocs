@@ -43,7 +43,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
 
 ## 2. Class design
 
