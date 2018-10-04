@@ -95,13 +95,15 @@ Example of a theme `composer.json` file:
 {
     "name": "magento/theme-frontend-luma",
     "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
-        "magento/theme-frontend-blank": "100.0.*",
-        "magento/framework": "100.0.*"
+        "php": "~7.1.3||~7.2.0",
+        "magento/framework": "*",
+        "magento/theme-frontend-blank": "*"
     },
     "type": "magento2-theme",
-    "version": "100.0.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
