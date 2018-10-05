@@ -69,9 +69,9 @@ userInput="$createCustomer.email$"
 {%endraw%}
 In this example:
 
-* `createCustomer` is a `stepKey` of the corresponding test step that creates an entity.
-* `email` is a `dataKey` of the entity.
-The corresponding value will be assigned to `userInput` as a result.
+* `createCustomer` is a step key of the corresponding test step that creates an entity.
+* `email` is a data key of the entity.
+  The corresponding value will be assigned to `userInput` as a result.
 
 {%
 include note.html
