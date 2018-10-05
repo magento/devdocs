@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 title: OAuth-based authentication
 functional_areas:
   - Integration

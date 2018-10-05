@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Use Redis for the Magento page and default cache
 functional_areas:
   - Configuration
@@ -122,33 +122,27 @@ The following example enables Redis page caching, sets the host to `redis.exampl
 As a result of the two example commands, Magento adds lines similar to the following to `<Magento install dir>app/etc/env.php`:
 
 ```
-'cache' =>
-  array(
-    'frontend' =>
-      array(
-        'default' =>
-          array(
+'cache' => [
+    'frontend' => [
+        'default' => [
             'backend' => 'Cm_Cache_Backend_Redis',
-            'backend_options' =>
-              array(
+            'backend_options' => [
                 'server' => 'redis.example.com',
                 'database' => '0',
                 'port' => '6379'
-              ),
-        ),
-        'page_cache' =>
-          array(
+            ],
+        ],
+        'page_cache' => [
             'backend' => 'Cm_Cache_Backend_Redis',
-            'backend_options' =>
-              array(
+            'backend_options' => [
                 'server' => 'redis.example.com',
                 'port' => '6379',
                 'database' => '1',
                 'compress_data' => '0'
-              )
-        )
-    )
-  ),
+            ]
+        ]
+    ]
+],
 ```
 
 ## Basic verification {#redis-verify}

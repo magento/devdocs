@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_github
 title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository

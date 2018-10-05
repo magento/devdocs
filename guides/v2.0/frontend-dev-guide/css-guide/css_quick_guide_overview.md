@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS_G
 title: Quick start guide to working with styles for a new theme
 menu_title: Quick start guide to styles
@@ -11,20 +11,20 @@ functional_areas:
 
 This chapter combines the topics aiming to help you to quickly start working with styles of your custom theme:
 
-- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
-- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
+- [Simple ways to customize a theme's styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html)
+- [Simple style changes with client-side LESS compilation vs. server-side]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html)
 
 ## High-level steps to create a theme and change styles
 
 1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
-1. In the file system, <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">add a new theme</a> inheriting from Magento Blank or Luma.
-3.  <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">Apply your theme</a>.
+1. In the file system, [add a new theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html){: target="_blank"} inheriting from Magento Blank or Luma.
+3.  [Apply your theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html){: target="_blank"}.
 2. Decide which {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} compilation mode you will use. Compilation modes are described in the following topics:
-	- Detailed description: <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a>
-	- Practical illustration: <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
+	- Detailed description: [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html)
+	- Practical illustration: [Simple style changes with client-side LESS compilation vs. server-side]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html)
 4. Customize styles. To learn how, check out the following sources:
-	- <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html">CSS chapter of this book</a>
-	- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
+	- [CSS chapter of this book]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+	- [Simple ways to customize a theme's styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html)
 
 ## Why do you need to create a custom theme?
 
@@ -42,6 +42,6 @@ Making changes in the Magento out-of-the-box themes is a bad idea, because can r
 
 ## Related topics
 
-- <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html"> CSS in Magento themes</a>
-- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
-- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
+- [ CSS in Magento themes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
+- [Simple ways to customize a theme's styles]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html)
+- [Simple style changes with client-side LESS compilation vs. server-side]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html)

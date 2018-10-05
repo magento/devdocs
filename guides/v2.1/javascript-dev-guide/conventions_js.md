@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 title: Conventional notations used in this Guide
 ---
 

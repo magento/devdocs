@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade

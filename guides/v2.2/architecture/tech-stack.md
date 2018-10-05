@@ -1,10 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Technology stack
 menu_title: Technology stack
 menu_order: 2
-redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
 ## Overview
@@ -69,4 +68,4 @@ For more information, see the [Functional Testing Framework]({{ page.baseurl }}/
 
 ## Related topics
 
-[Architecturalbasics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)
+[Architectural basics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)

@@ -14,9 +14,8 @@ We are pleased to present Magento Open Source (formerly Community Edition) 2.1.0
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Open Source 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This version of the Magento Open Source 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these changes in italics below. The code base has not changed.
 
 ### Highlights
 
@@ -37,7 +36,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 ### Known issue
 
-_Known issue [(GITHUB-5025)](https://github.com/magento/magento2/issues/5025)  removed._
+<i>Known issue [ (GITHUB-5025)](https://github.com/magento/magento2/issues/5025){: target="_blank"}  removed.</i>
 
 ### Fixed issues
 
@@ -523,10 +522,8 @@ target="_blank"> (GITHUB-4099)</a>
 
 To view this setting in the Magento Admin, click **Stores** > Settings > **Configuration** > GENERAL > **Web**. In the right pane, expand **Base URLs (Secure)**, value of the **Offloader header** field.
 
-<div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-    <p>If you change the value of this field, you must regenerate your <code>.vcl</code> files.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}Event{% endglossarytooltip %} change in the Product page and Advance Inventory changes.  
 
@@ -1016,27 +1013,27 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-*  _Fixed GitHub issue [(GITHUB-4917)](https://github.com/magento/magento2/issues/4917) removed._
+*  <i>Fixed GitHub issue [ (GITHUB-4917)](https://github.com/magento/magento2/issues/4917){: target="_blank"} removed.</i>
 
 
-*  _Fixed GitHub issue [(GITHUB-4434)](https://github.com/magento/magento2/issues/4434) removed._
+*  <i>Fixed GitHub issue [ (GITHUB-4434)](https://github.com/magento/magento2/issues/4434){: target="_blank"} removed.</i>
 
-* _Fixed GitHub issue  [(GITHUB-2910)](https://github.com/magento/magento2/issues/2910) removed._
+* <i>Fixed GitHub issue  [ (GITHUB-2910)](https://github.com/magento/magento2/issues/2910){: target="_blank"} removed.</i>
 
 
-*  _Fixed GitHub issue  [(GITHUB-3053)](https://github.com/magento/magento2/issues/3053) removed. _
+*  <i>Fixed GitHub issue  [ (GITHUB-3053)](https://github.com/magento/magento2/issues/3053){: target="_blank"} removed. </i>
 
-* _Fixed GitHub issue  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946) removed. _
+* <i>Fixed GitHub issue  [ (GITHUB-2946)](https://github.com/magento/magento2/issues/2946){: target="_blank"} removed. </i>
 
-*  _Fixed GitHub issue   [(GITHUB-2711)](https://github.com/magento/magento2/issues/2711) removed._
+*  <i>Fixed GitHub issue   [ (GITHUB-2711)](https://github.com/magento/magento2/issues/2711){: target="_blank"} removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-2121)](https://github.com/magento/magento2/issues/2121) removed. _
+* <i>Fixed GitHub issue [ (GITHUB-2121)](https://github.com/magento/magento2/issues/2121){: target="_blank"} removed. </i>
 
-* _Fixed GitHub issue [(GITHUB-3605)](https://github.com/magento/magento2/issues/3605)  removed._
+* <i>Fixed GitHub issue [ (GITHUB-3605)](https://github.com/magento/magento2/issues/3605){: target="_blank"}  removed.</i>
 
-* _Fixed GitHub issue [(GITHUB-59)](https://github.com/magento/magento2/issues/59)  removed._
+* <i>Fixed GitHub issue [ (GITHUB-59)](https://github.com/magento/magento2/issues/59){: target="_blank"}  removed.</i>
 
-* _Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, [(GITHUB-3529)](https://github.com/magento/magento2/issues/3529) removed. _
+* <i>Fixed GitHub issues [ (GITHUB-4548)](https://github.com/magento/magento2/issues/4548){:target="_blank"}, [ (GITHUB-2735)](https://github.com/magento/magento2/issues/2735){:target="_blank"}, [ (GITHUB-4275)](https://github.com/magento/magento2/issues/4275){:target="_blank"}, [ (GITHUB-3529)](https://github.com/magento/magento2/issues/3529){: target="_blank"} removed. </i>
 
 ### System requirements
 

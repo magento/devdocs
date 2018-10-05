@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: How Varnish caching works
 functional_areas:
   - Configuration

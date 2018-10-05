@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Uninstall a storefront theme
 menu_title: Uninstall a storefront theme
@@ -79,9 +79,8 @@ Take the following steps:
 
 4. Use the `magento theme:uninstall` CLI command as described in the [Uninstall themes Composer package]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html) topic.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can use the Composer command to remove the dependency, but in that case, you must delete the theme record from the database manually.
-</div>
 
 ## Uninstall a theme extension
 

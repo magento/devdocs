@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: PHP
 functional_areas:
   - Install
@@ -13,6 +13,7 @@ This page details how to install PHP for both CentOS and Ubuntu systems.
 Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 ## Supported PHP versions {#php-support}
+
 {% include install/php_2.3.md %}
 
 {:.bs-callout .bs-callout-info}

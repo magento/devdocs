@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Enable or disable maintenance mode
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-maint.html
@@ -9,6 +9,16 @@ functional_areas:
   - System
   - Setup
 ---
+
+
+Magento uses [maintenance mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#maintenance-mode) to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
+
+Magento detects maintenance mode as follows:
+
+*	If `var/.maintenance.flag` does not exist, maintenance mode is off and Magento operates normally.
+*	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
+
+	`var/.maintenance.ip` can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
 
 ## First steps {#instgde-cli-before}
 
@@ -22,14 +32,7 @@ Before you use this command, you must [install the Magento software]({{ page.bas
 
 ## Enable or disable maintenance mode {#instgde-cli-maint}
 
-Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
-
-Magento detects maintenance mode as follows:
-
-*	If `var/.maintenance.flag` does not exist, maintenance mode is off and Magento operates normally.
-*	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
-
-	`var/.maintenance.ip` can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
+Use the `magento maintenance` CLI command to enable or disable Magento maintenance mode.
 
 Command usage:
 

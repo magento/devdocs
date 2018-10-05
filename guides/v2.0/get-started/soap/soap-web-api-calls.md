@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: 30_SOAP
 title: Use SOAP Services
 menu_title: Use SOAP Services
@@ -22,7 +22,32 @@ Each Magento service interface that is part of a {% glossarytooltip cdf644c4-bc9
 To consume several services, you must specify them in the WSDL endpoint {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 
-<table style="width:100%">   <colgroup>      <col width="20%" />      <col width="40%" />      <col width="40%" />   </colgroup>   <thead>      <tr>         <th>Service</th>         <th>WSDL endpoint URL</th>         <th>Available services</th>      </tr>   </thead>   <tbody>      <tr>         <td>customer</td>         <td>http://magentohost/soap?wsdl&services=customerV1</td>         <td>\Magento\Customer\Service\V1\CustomerService</td>      </tr>       <tr>         <td>customer, catalogProduct</td>         <td>http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2</td>         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>      </tr>   </tbody></table>
+<table style="width:100%">
+   <colgroup>
+      <col width="20%" />
+      <col width="40%" />
+      <col width="40%" />
+   </colgroup>
+   <thead>
+      <tr>
+         <th>Service</th>
+         <th>WSDL endpoint URL</th>
+         <th>Available services</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>customer</td>
+         <td>http://magentohost/soap?wsdl&services=customerV1</td>
+         <td>\Magento\Customer\Service\V1\CustomerService</td>
+      </tr>
+       <tr>
+         <td>customer, catalogProduct</td>
+         <td>http://magentohost/soap/custom_store?wsdl&services=customerCustomerAccountServiceV1,catalogProductV2</td>
+         <td>\Magento\Customer\Service\V1\CustomerAccountServiceInterface, \Magento\Catalog\Service\V2\ProductInterface</td>
+      </tr>
+   </tbody>
+</table>
 
 The WSDL URL follows the following pattern:
 
@@ -43,13 +68,13 @@ Service names use the following conventions:
 
 | Original Service Interface Name | Service Name |
 |----------
-| \\Magento\\Customer\\Service\\V1\\CustomerInterface | customerV1 |
-| \\Magento\\Customer\\Service\\V1\\CustomerAccountServiceInterface | customerCustomerAccountServiceV1 |
-| \\Enterprise\\Customer\\Service\\V3\\Customer\\AddressInterface | enterpriseCustomerAddressV3 |
+| \Magento\Customer\Service\V1\CustomerInterface | customerV1 |
+| \Magento\Customer\Service\V1\CustomerAccountServiceInterface | customerCustomerAccountServiceV1 |
+| \Enterprise\Customer\Service\V3\Customer\AddressInterface | enterpriseCustomerAddressV3 |
 
 ## Authentication   {#auth}
 
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 
 The following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script illustrates how to get an access token:
 
@@ -71,6 +96,6 @@ $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 
 ## Related topics   {#related}
 
-* <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
-* <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-* <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>
+* [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
+* [Service contracts]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html)
+* [SOAP Reference]({{ page.baseurl }}/soap/bk-soap.html)

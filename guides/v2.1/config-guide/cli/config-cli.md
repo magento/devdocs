@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Command line configuration
-redirect_from: /guides/v1.0/config-guide/cli/config-cli.html
 functional_areas:
   - Configuration
   - System

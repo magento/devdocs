@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Cascading style sheets (CSS)
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-overview.html
 functional_areas:
   - Frontend
 ---

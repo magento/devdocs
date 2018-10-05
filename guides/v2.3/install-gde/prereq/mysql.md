@@ -1,10 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 25
-redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
 
 ## Help if you're just starting out {#mysql-help-beginner}

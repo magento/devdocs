@@ -1,6 +1,5 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: Linking properties of UI components
 ---
 
@@ -27,10 +26,10 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 Example of setting `exports` in a component's `.js` file:
 
-```javascript
+```json
 {
-  'exports': {
-   'visible': '${ $.provider }:visibility'
+  "exports": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -59,10 +58,10 @@ The `imports` property is used for tracking changes of an external entity proper
 
 Example of using `imports` in a component's `.js` file:
 
-```js
+```json
 {
-  'imports': {
-   'visible': '${ $.provider }:visibility'
+  "imports": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -92,10 +91,10 @@ The `links` property is used for cross tracking properties changes: both linked 
 
 Example of using `links` in a component's `.js` file:
 
-```javascript
+```json
 {
-  'links': {
-   'visible': '${ $.provider }:visibility'
+  "links": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -124,10 +123,10 @@ The `listens` property is used to track the changes of a component's property. `
 
 Example of using `listens` in a component's `.js` file :
 
-```javascript
+```json
 {
-  'listens': {
-   '${ $.provider }:visibility': 'visibilityChanged'
+  "listens": {
+   "${ $.provider }:visibility": "visibilityChanged"
   }
 }
 ```

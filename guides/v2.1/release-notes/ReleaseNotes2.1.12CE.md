@@ -23,9 +23,8 @@ Although this release includes these enhancements, no confirmed attacks related 
 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-For security reasons, this release limits the ability to use symlinks for <code>/media</code> and other folders. If you are using symlinks for deployment, or if your <code>/media</code> is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929) for more information.
-</div>
+{: .bs-callout .bs-callout-info }
+For security reasons, this release limits the ability to use symlinks for `/media` and other folders. If you are using symlinks for deployment, or if your `/media` is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929){: target="_blank"} for more information.
 
 ## Highlights
 

@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_github
 title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository
@@ -24,5 +24,5 @@ fatal: The remote end hung up unexpectedly</pre>
 
 ### Solution
 
-Upload your SSH key to GitHub as discussed in <a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">the GitHub help page</a>.
+Upload your SSH key to GitHub as discussed in [the GitHub help page](https://help.github.com/articles/generating-ssh-keys){: target="_blank"}.
 

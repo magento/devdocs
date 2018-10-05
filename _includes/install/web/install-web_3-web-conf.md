@@ -6,7 +6,7 @@
     |--- |--- |
     |Your Store Address|Enter the URL, including scheme and trailing slash, by which users access your storefront. For example, if your storefront hostname is http://www.example.com, enter http://www.example.com/|
     |Magento Admin Address|Enter the relative URL by which to access the Magento Admin.|
-		{:style="table-layout:auto;"}
+    {:style="table-layout:auto;"}
 
 2.	Optionally click **Advanced Options** and enter the following information:
 

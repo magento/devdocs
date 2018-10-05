@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions
@@ -13,15 +13,15 @@ The following topics discuss Component Manager and System Upgrade errors and sug
 
 ### Both Component Manager and System Upgrade
 
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html">Troubleshoot component dependencies</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backup</a>
+*	[Troubleshoot cron]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
+*	[Troubleshoot component dependencies]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
+*	[Troubleshoot the updater application]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
+*	[Troubleshoot backup]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html)
 
 ### System Upgrade only
 
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html">"Sorry, we can't take that action right now"</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html">Roll back after upgrade failure</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html">CE to EE upgrade failure</a>
+*	["Sorry, we can't take that action right now"]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html)
+*	[Missing .gitignore files]({{ page.baseurl }}/comp-mgr/trouble/cman/gitignore.html)
+*	[Roll back after upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html)
+*	[CE to EE upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html)
 

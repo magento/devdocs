@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 08_Configure caching
 title: Low-level cache options
 menu_title: Low-level cache options
@@ -20,18 +20,17 @@ The Magento application uses a low-level {% glossarytooltip 0bc9c8bc-de1a-4a06-9
 
 ## Low-level frontend cache   {#cache-lowlevel-front}
 
-Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html" target="_blank">Zend_Cache_Core</a> by implementing <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> frontend cache.
+Magento extends [Zend\_Cache\_Core](http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html){: target="_blank"} by implementing [Magento\\Framework\\Cache\\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){: target="_blank"} frontend cache.
 
 ## Low-level backend cache   {#cache-lowlevel-front}
 
-In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:
+In general, the Magento application works with any backend cache that [Zend\_Cache Backends](http://framework.zend.com/manual/1.12/en/zend.cache.backends.html){: target="_blank"} supports. However, this guide covers only the following low-level backend caches:
 
-*   <a href="{{ page.baseurl }}/config-guide/redis/config-redis.html">Redis</a>
-*   <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">Database</a>
+*   [Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
+*   [Database]({{ page.baseurl }}/config-guide/cache/caching-database.html)
 *   File system (default): No configuration is necessary to use file system caching.
 
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Varnish</a> doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
+[Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more low-level cache types so watch this space.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+We'll periodically add more low-level cache types so watch this space.

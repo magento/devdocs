@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module overview
 menu_title: Module overview
 redirect_from:

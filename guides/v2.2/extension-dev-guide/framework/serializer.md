@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Serialize Library
 subgroup: Framework
 menu_title: Serialize Library
@@ -18,11 +18,8 @@ The main purpose of data serialization is to convert data into a string using `s
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-
+{: .bs-callout .bs-callout-warning }
 For security reasons, `SerializerInterface` implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.
-
-</div>
 
 ## Implementations
 
@@ -36,12 +33,8 @@ This class does not unserialize objects.
 The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2200url }}lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-
-Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities.
-Always use the `SerializerInterface` for serializing and unserializing.
-
-</div>
+{: .bs-callout .bs-callout-warning }
+Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the `SerializerInterface` for serializing and unserializing.
 
 ## Usage
 

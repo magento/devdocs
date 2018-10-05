@@ -1,12 +1,11 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---
@@ -89,9 +88,8 @@ Following are some examples of various types and what they would look like in th
         * @return \Magento\Customer\Api\Data\CustomerInterface[]
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+If a service method argument is called `item`, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an `item` element.
 
 ## webapi.xml configuration options   {#configuration-options}
 
@@ -100,7 +98,7 @@ Following are some examples of various types and what they would look like in th
 </p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
-      <th>XML&nbsp;element</th>
+      <th>XML element</th>
       <th>Description</th>
       <th>Attributes</th>
    </tr>

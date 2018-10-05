@@ -1,11 +1,10 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
 
-redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 ---
 
 ## REST responses {#rest-responses}

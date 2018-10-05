@@ -13,6 +13,13 @@ When this pull request is merged, it will...
 
 ## Additional information
 
+List all affected URL's 
+
+- ...
+- ...
+
+<!-- (REQUIRED) The Url that this PR will modify -->
+
 <!-- (OPTIONAL) What other information can you provide about this PR? -->
 
 <!--

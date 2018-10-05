@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Deploy Magento to production
 menu_title: Deploy Magento to production

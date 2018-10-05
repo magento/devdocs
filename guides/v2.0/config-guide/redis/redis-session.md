@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Use Redis for session storage
 menu_title: Use Redis for session storage
@@ -15,10 +15,8 @@ functional_areas:
 
 Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
 ## Configure Magento to use Redis for session storage   {#config-redis-config}
 
@@ -162,6 +160,9 @@ where
 </tr>
 </tbody>
 </table>
+
+{: .bs-callout .bs-callout-info }
+TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}
 

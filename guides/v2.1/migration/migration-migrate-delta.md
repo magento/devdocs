@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
 menu_node:
 menu_order: 3
-redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 functional_areas:
   - Tools
 ---
@@ -38,10 +37,8 @@ where;
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Incremental migration runs continuously until you stop it by pressing CTRL+C.
 
 ## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}
 
@@ -57,6 +54,6 @@ If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endg
 
 ## Related topics
 
-* [Data that needs to be migratedmanually]({{ page.baseurl }}/migration/migration-manually.html)
+* [Data that needs to be migrated manually]({{ page.baseurl }}/migration/migration-manually.html)
 
-* [Endmigration]({{ page.baseurl }}/migration/migration-migrate-after.html)
+* [End migration]({{ page.baseurl }}/migration/migration-migrate-after.html)

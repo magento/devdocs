@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Searching with Repositories
 menu_title: Searching with Repositories
@@ -204,14 +204,20 @@ class ProductCategoryFilter implements CustomFilterInterface
      *
      * @param Filter $filter
      * @param AbstractDb $collection
-     * @return bool Whether to apply the filter
-     **/
+     * @return bool Whether the filter is applied
+     */
     public function apply(Filter $filter, AbstractDb $collection)
     {
-        $conditionType = $filter->getConditionType() ? $filter->getConditionType() : 'eq';
-        $categoryFilter = [$conditionType => [$filter->getValue()]];
+        $value = $filter->getValue();
+        $conditionType = $filter->getConditionType() ?: 'in';
+        if (($conditionType === 'in' || $conditionType === 'nin') && is_string($value)) {
+            $value = explode(',', $value);
+        } else {
+            $value = [$value];
+        }
+        $categoryFilter = [$conditionType => $value];
 
-        /** @var Collection $collection **/
+        /** @var Collection $collection */
         $collection->addCategoriesFilter($categoryFilter);
 
         return true;

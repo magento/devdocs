@@ -1,10 +1,9 @@
 ---
-group: get-started-magento
+group: web-api
 title: Getting started with Magento
 menu_title: Getting started with Magento
 menu_order: 1
 menu_node:
-redirect_from: /guides/v1.0/bk-get-started-magento.html
 functional_areas:
   - Integration
 ---

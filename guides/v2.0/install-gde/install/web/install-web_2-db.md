@@ -1,5 +1,5 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
@@ -18,4 +18,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>
+[Step 3. Web configuration]({{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html)

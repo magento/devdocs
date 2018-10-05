@@ -1,12 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Resolve issues with HTML minification
 menu_title: Resolve issues with HTML minification
 menu_order: 30
 menu_node:
-redirect_from:
-  - /guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html
 functional_areas:
   - Cloud
   - Configuration
@@ -34,14 +32,14 @@ As a work-around, complete the following:
             'allow_symlink' => '0',
             'minify_html' => '1',
           ),
-2. Modify the setting for minify in the database with this command:
+3. Modify the setting for minify in the database with this command:
 
 
       update core_config_data set value=0 where path ='dev/template/minify_html'
-3. Flush all caches.
+4. Flush all caches.
 
 
     php bin/magento cache:flush
     redis-cli -h <> -p <> flushall
-4. Remove all `base_url` related items in `config.local.php`.
-5. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.
+5. Remove all `base_url` related items in `config.local.php`.
+6. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.

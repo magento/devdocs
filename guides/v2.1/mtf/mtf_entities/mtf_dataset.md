@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Data set
 ---
 
@@ -55,8 +55,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 {:#ex_variation_table}
 
 <table>
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="2*" />
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
@@ -116,9 +116,9 @@ The following table shows structure of the data set:
 {:#dataset_struct_table}
 
 <table>
-<col width="1*">
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="1*" />
+<col width="2*" />
 <tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
@@ -176,9 +176,8 @@ The following data types are available:
 </ul></td></tr>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-  <p>A variation should contain only data that is required for its flow and constraints.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+   A variation should contain only data that is required for its flow and constraints.
 
 A data set should be placed in the same directory with a corresponding test case.
 

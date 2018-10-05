@@ -1,8 +1,7 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
-redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 functional_areas:
   - Frontend
 ---

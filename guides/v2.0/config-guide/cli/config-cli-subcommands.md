@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 functional_areas:
   - Configuration
   - System
@@ -39,14 +38,13 @@ You can run the commands in any of the following ways:
 
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Before you run any of these commands, you must either [install the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) or [enable some modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
-</div>
 
 <table>
-	<col width="40%">
-  	<col width="30%">
-  	<col width="30%">
+	<col width="40%" />
+  	<col width="30%" />
+  	<col width="30%" />
 	<tbody>
 		<tr>
 			<th>Command</th>

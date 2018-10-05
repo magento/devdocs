@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 03_market
 title: Magento Marketplace example
 menu_title: Magento Marketplace example

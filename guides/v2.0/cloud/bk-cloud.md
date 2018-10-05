@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Welcome to Magento Commerce (Cloud)
 landing-page: Cloud
@@ -73,7 +73,7 @@ To better understand {{site.data.var.ee}}, your plan, architecture, and workflow
 	* [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
 	*	[Pro develop and deploy workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-* [Local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+* [Local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 
 ## Learn more about Magento 2 {#magento2}
 

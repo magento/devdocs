@@ -19,9 +19,8 @@ MasterCard recently added a new series of Bank Identification Numbers (BIN). As 
 
 You must upgrade to Magento 2.0.14 before June 30 to support transactions made with cards that implement these new BIN numbers. 
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Magento 2.0.14 is scheduled for the end of May. This patch will include support for this MasterCard BIN update plus other critical security fixes. 
-</div>
+{: .bs-callout .bs-callout-warning }
+Magento 2.0.14 is scheduled for the end of May. This patch will include support for this MasterCard BIN update plus other critical security fixes.
 
 ### More information
 [MasterCard Bank Identification Numbers Range Update]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21x_MasterCard.html){:target="_blank"} provides an overview of platform-wide MasterCard-related issues for Magento. 

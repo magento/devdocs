@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Using_UI
 title: Using UI components client-side
 menu_title: Using UI components client-side
@@ -212,7 +212,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
+- by default uses the [app/code/Magento/Ui/view/base/web/templates/collection.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html) template
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.

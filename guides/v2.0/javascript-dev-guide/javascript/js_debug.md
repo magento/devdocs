@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
@@ -29,9 +29,8 @@ To locate scripts used for a certain element:
 To find the source file of the used script:
 <ol>
 <li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code>requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/<Vendor>/<theme>/<locale>/requirejs-config.js`
 </div>
 </li>
 <li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} reference:

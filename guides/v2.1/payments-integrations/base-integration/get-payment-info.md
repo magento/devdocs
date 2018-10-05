@@ -11,7 +11,7 @@ functional_areas:
 To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,
 and send received details to payment processor.
 
-Depends on your payment integration payment details might be different, but, usually, it's credit card details, tokenized cards, payment nonce, etc.
+Depending on your payment integration, payment details might include credit card details, tokenized cards, payment nonce, and similar information.
 
 However, in any case you should write some code to retrieve payment details from payment form.
 
@@ -53,10 +53,8 @@ class PaymentDataBuilder implements BuilderInterface
 
 As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
- in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You should remove any sensitive data (like credit card details) from payment additional information when you do not use it in your code. You can remove it in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.
 
 ## Getting payment information from frontend to backend 
 

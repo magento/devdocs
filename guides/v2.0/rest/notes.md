@@ -1,14 +1,9 @@
 ---
-group: rest
-subgroup: Notes
-title: REST usage notes
-menu_title: REST usage notes
-menu_order: 1
+group: rest-api
+title: Parameters in URLs
 functional_areas:
   - Integration
 ---
-
-## Parameters in URLs
 
 In a REST call, a user could potentially specify one ID in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and another in the request body. Whenever this type of conflict occurs, Magento uses the value specified in the URL.
 

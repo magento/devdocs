@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Deploy static view files
 functional_areas:
   - Configuration
@@ -70,15 +70,12 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Space-separated list of <a href=
-          "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-         >ISO-639</a> language codes for which to
+          Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to
           output static view files. (Default is
           <code>en_US</code>.)
         </p>
         <p>
-          You can find the list by running <code>bin/magento
-          info:language:list</code>.
+          You can find the list by running <code>bin/magento info:language:list</code>.
         </p>
       </td>
       <td>
@@ -93,16 +90,10 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Generate files only for the specified languages. The
-          default, with no option specified, is to generate files
-          for all <a href=
-          "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-         >ISO-639</a> language codes. You can
-          specify the name of one language code at a time.
+          Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time.
         </p>
         <p>
-          For example, <code>--language en_US --language
-          es_ES</code>
+          For example, <code>--language en_US --language es_ES</code>
         </p>
       </td>
       <td>
@@ -117,10 +108,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Generate files for the specified language codes. The
-          default, with no option specified, is to exclude nothing.
-          You can specify the name of one language code or a
-          comma-separated list of language codes.
+          Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes.
         </p>
       </td>
       <td>
@@ -138,8 +126,7 @@ The following table explains this command's parameters and values.
           Themes for which to deploy static content.
         </p>
         <p>
-          For example, <code>--theme Magento/blank --theme
-          Magento/luma</code>
+          For example, <code>--theme Magento/blank --theme Magento/luma</code>
         </p>
       </td>
       <td>
@@ -172,10 +159,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Generate files only for the specified areas. The default,
-          with no option specified, is to generate files for all
-          areas. Valid values are <code>adminhtml</code> and
-          <code>frontend</code>.
+          Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.
         </p>
         <p>
           For example, <code>--area adminhtml</code>
@@ -193,8 +177,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Do not generate files for the specified areas. The
-          default, with no option specified, is to exclude nothing.
+          Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing.
         </p>
       </td>
       <td>
@@ -209,8 +192,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Enable parallel processing using the specified number of
-          jobs. The default is 0 (do not run in parallel processes).
+          Enable parallel processing using the specified number of jobs. The default is 0 (do not run in parallel processes).
         </p>
       </td>
       <td>

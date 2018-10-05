@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Dependency reports
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
 functional_areas:
   - Configuration
   - System

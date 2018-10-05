@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: how tos
 title: Add a category attribute
 menu_title: Create and display a category attribute with UI components

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: JavaScript Bundling
 menu_title: JavaScript Bundling
@@ -24,7 +24,6 @@ To activate JavaScript bundling:
 
 To optimize bundling, set the following settings to `Yes`:
 
-* `Javascript Settings -> Merge JavaScript Files`
 * `Javascript Settings -> Minify Javascript Files`
 * `Static Files Settings -> Sign Static Files`
 

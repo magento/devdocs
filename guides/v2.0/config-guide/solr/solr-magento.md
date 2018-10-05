@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Configure Solr and Magento
 menu_title: Configure Solr and Magento
@@ -29,9 +29,8 @@ The following topics discuss how to configure Solr to work with {{site.data.var.
 
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The example Solr configuration is *not* intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.
 
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with {{site.data.var.ee}}:
 
@@ -47,8 +46,8 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cd magento2
 		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 
-	<div class="bs-callout bs-callout-info" id="info">
-	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .</code></p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If you're prompted to overwrite files, try the command `\cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .`
 	</div>
 
 2.  After copying files, open the `<your Solr install dir>/example/solr/magento2/core.properties` file in a text editor and change:
@@ -81,8 +80,8 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cd <your Solr install dir>/example
 		java -jar start.jar
 
-	<div class="bs-callout bs-callout-warning">
-			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in [Script Solr startup and shutdown]({{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script).
 	</div>
 
 ### Configure Magento to work with Solr   {#config-solr-magento}
@@ -96,8 +95,8 @@ To configure Magento to work with Solr:
 3.  In the right pane, expand <strong>Catalog Search</strong>.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
-<col width="30%">
-<col width="70%">
+<col width="30%" />
+<col width="70%" />
 <tbody>
 	<tr><th>Option</th>
 	<th>Description</th>
@@ -143,19 +142,19 @@ Click <strong>Test Connection</strong>.
 The button changes as follows.
 
 <table>
-<col width="20%">
-<col width="80%">
+<col width="20%" />
+<col width="80%" />
 <tbody>
 <tr>
 	<th>Button state</th>
 	<th>Meaning</th>
 </tr>
 <tr>
-	<td><img src="{{ site.baseurl }}/common/images/solr_test-success.png" width="140px" height="17px"></td>
+	<td><img src="{{ site.baseurl }}/common/images/solr_test-success.png" width="140px" height="17px" /></td>
 	<td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl }}/common/images/solr_test-fail.png" width="160px" height="16px"></td>
+ <td><img src="{{ site.baseurl }}/common/images/solr_test-fail.png" width="160px" height="16px" /></td>
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
@@ -203,9 +202,8 @@ To reindex using the command line:
 
 3.	Wait while the indexers are reindexed.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Solr.
 
 ## Verify Solr is working   {#solr-verify}
 

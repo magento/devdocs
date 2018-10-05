@@ -1,10 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Presentation Layer
 menu_title: Presentation layer
 menu_order: 1
-redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---
 
 ## What is the Magento Presentation layer?

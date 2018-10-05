@@ -1,5 +1,5 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Place a negotiable quote order
 menu_title: Place a negotiable quote order
@@ -590,9 +590,8 @@ None
 
 In this example, the buyer requests a negotiable quote. The seller applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
-</div>
 
 ### Initiate a negotiable quote
 

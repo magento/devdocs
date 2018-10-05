@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: GitHub integration
 functional_areas:
   - Cloud
@@ -8,7 +8,7 @@ functional_areas:
 
 The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitHub repository.
 
-We strongly recommend you use a *private* GitHub repository.
+{% include cloud/note-private-repo.md %}
 
 This integration enables you to:
 
@@ -20,7 +20,7 @@ You must obtain a GitHub token and a webhook to continue the process.
 
 ## Generate a GitHub token
 
-You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="_blank"}.
+You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
 
 ## Enable the GitHub integration
 

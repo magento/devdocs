@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Create your component file structure
 menu_title: Create your component file structure
@@ -34,7 +34,7 @@ Additional folders can be added for configuration and other ancillary functions 
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed <a href="{{ page.baseurl }}/extension-dev-guide/plugins.html">plug-ins</a>.
+* `Plugin`: contains any needed [plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 ### Theme file structure

@@ -1,5 +1,5 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Admin Style Guide
 title: Admin Style Guide
 landing-page: Admin Style Guide

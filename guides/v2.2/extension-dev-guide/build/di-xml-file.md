@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
@@ -8,7 +8,7 @@ menu_order: 1
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) are injected by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -17,7 +17,7 @@ Magento reads all the `di.xml` configuration files declared in the system and me
 
 As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
 
-Magento loads The configuration in the following stages:
+Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 2. Global (`<moduleDir>/etc/di.xml`)
@@ -27,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -298,10 +298,10 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
+*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.
-*	**transient** - The object manager creates a new instance of the class for every request.
+*	**Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 

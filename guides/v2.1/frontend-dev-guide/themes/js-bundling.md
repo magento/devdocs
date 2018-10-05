@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: JavaScript Bundling
 functional_areas:
   - Frontend
@@ -21,7 +21,6 @@ To activate JavaScript bundling:
 
 To optimize bundling, set the following settings to `Yes`:
 
-* `Javascript Settings -> Merge JavaScript Files`
 * `Javascript Settings -> Minify Javascript Files`
 * `Static Files Settings -> Sign Static Files`
 

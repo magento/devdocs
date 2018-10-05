@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title:  Restore configuration files
 functional_areas:
   - Cloud

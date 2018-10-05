@@ -2,13 +2,13 @@
 group: release-notes
 title: Magento Open Source 2.2.5 Release Notes
 ---
-*Patch code and release notes published on July 1, 2018.* 
+*Patch code and release notes published on July 1, 2018. Release notes updated on September 24, 2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6 , 1.14.3.10, and 1.9.3.10. 
 
 ## Highlights
 
@@ -53,12 +53,12 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 This release of Magento Shipping adds the following new capabilities: 
 
-• With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
+* With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
 
-• Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches. 
+* Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches. 
 
 
-• Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.  
+* Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.  
 
 
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API. 
@@ -151,9 +151,8 @@ In addition to security enhancements, this release contains the following functi
 
 ### Shipping
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
-</div>
 
 <!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
 
@@ -200,9 +199,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud. 
 
-### Visual Merchandiser
-
-<!--- MAGETWO-71554 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
 
 
 
@@ -287,6 +283,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+
 <table>
   <tr>
     <th>Pull request</th>
@@ -295,13 +292,13 @@ The following table identifies contributions from our community members. This ta
   </tr>
 
 
+
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
     <td>15205, 15245</td>
     <td><a target="_blank" href="https://github.com/fmarangi">Francesco Marangi</a></td>
   </tr>
-
-
+  
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13956">13956</a></td>
     <td>N/A</td>
@@ -932,7 +929,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 ### Installation and upgrade instructions
 

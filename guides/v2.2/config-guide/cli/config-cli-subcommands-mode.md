@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Set the Magento mode
 functional_areas:
   - Configuration

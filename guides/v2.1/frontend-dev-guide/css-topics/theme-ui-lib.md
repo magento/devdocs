@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento UI library
 functional_areas:
   - Frontend

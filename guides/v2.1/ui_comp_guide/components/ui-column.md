@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Column component
 menu_title: Column component
@@ -48,9 +48,9 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
   </tr>
   <tr>
     <td><code>editor</code></td>
-    <td></td>
+    <td />
     <td>String | Object</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
@@ -62,7 +62,7 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
     <td><code>filter</code></td>
     <td>Reference to one of the available filter types defined in the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-filters.html">Filters component</a>. If the value represents an object containing the <code>filterType</code> field, this object is considered as an extension of the referenced filter element. If there's no such field in the value object, it is considered as a definition of a custom filter element.</td>
     <td>String | Object</td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td><code>headerTmpl</code></td>
@@ -91,7 +91,7 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
   <tr>
     <td><code>statefull</code></td>
     <td>Defined in the parent <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</td>
-    <td></td>
+    <td />
     <td><code>{visible: true, sorting: true}</code></td>
   </tr>
   <tr>

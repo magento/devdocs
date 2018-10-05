@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Extensibility and modularity
 menu_title: Extensibility and modularity

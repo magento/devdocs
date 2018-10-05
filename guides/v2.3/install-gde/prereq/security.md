@@ -1,10 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
 menu_order: 200
-redirect_from: /guides/v1.0/install-gde/prereq/security.html
 functional_areas:
   - Install
   - System
@@ -59,8 +58,7 @@ Depending on your security requirements, you might find it necessary to open por
 #### Related topics:
 
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0—Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0—CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html)
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

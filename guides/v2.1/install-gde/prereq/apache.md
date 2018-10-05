@@ -1,10 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
   - System
@@ -210,7 +209,6 @@ For example:
 		Allow from all
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
 {:.bs-callout .bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}

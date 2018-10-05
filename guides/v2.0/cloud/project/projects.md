@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage your project
 menu_title: Manage your project
@@ -86,7 +86,7 @@ The following table details the branches for Pro:
 
 | Branch | Environment | Description |
 |----------
-| (no branch) | Global Master | This \"branch\" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
+| (no branch) | Global Master | This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
 | `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
 | `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
 | `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |

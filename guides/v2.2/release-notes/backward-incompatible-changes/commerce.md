@@ -8,9 +8,8 @@ This topic provides details about backward incompatible changes related to {{sit
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 
@@ -21,6 +20,10 @@ The changes are aggregated into two tables:
 type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
+
+## 2.2.5 - 2.2.6 {#releases-2_2_5-2_2_6}
+
+{% include backward-incompatible-changes/commerce/2.2.5-2.2.6.html %}
 
 ## 2.2.4 - 2.2.5 {#releases-2_2_4-2_2_5}
 

@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 title: Construct a request
 ---
 
@@ -39,9 +39,8 @@ A store code can have one of the following values.
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To specify an HTTP header in a cURL command, use the `-H` option.
-</div>
 
 Specify one or more of the following HTTP headers in your web API calls:
 

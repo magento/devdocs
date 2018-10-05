@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Uninstall a storefront theme
 functional_areas:
   - Frontend

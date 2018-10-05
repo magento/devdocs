@@ -10,9 +10,8 @@ level3_subgroup: ee21-relnotes
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.3. This release includes many functional fixes and enhancements.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We republished these Release Notes with clarifications on December 16th, 2016.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+We republished these Release Notes with clarifications on December 16th, 2016.
 
 ## Highlights
 

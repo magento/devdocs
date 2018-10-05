@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Clone and branch the project
 menu_title: Clone and branch the project
@@ -76,9 +76,8 @@ We recommend changing the following variables for the Magento Admin URL and admi
 * `ADMIN_PASSWORD`: Administrative user's password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.
-</div>
 
 ### List and review variables {#variablelist}
 
@@ -92,9 +91,8 @@ To set Admin variables, you will use this command format:
 
 You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
-</div>
 
 ### Add variables using the CLI {#cli}
 

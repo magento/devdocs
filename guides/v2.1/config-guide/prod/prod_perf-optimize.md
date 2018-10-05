@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento Optimization Guide
 functional_areas:
   - Configuration
@@ -62,7 +62,7 @@ Edit your `apcu.ini` file to include the following:
 
 	extension=apcu.so
 	[apcu]
-	acp.enabled = 1
+	apc.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 

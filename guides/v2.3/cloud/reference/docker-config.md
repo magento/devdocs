@@ -1,1 +1,0 @@
-../../../v2.2/cloud/reference/docker-config.md

@@ -1,5 +1,5 @@
 ---
-group: rest
+group: rest-api
 title: Asynchronous web endpoints
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
@@ -29,7 +29,7 @@ DELETE /async/V1/products/:sku
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoints.
 
-The [Swagger documentation]({{ site.baseurl }}/swagger/index.html) provides a list of all current synchronous Magento API routes.
+The [Swagger documentation]({{ site.baseurl }}/swagger/index_23.html) provides a list of all current synchronous Magento API routes.
 
 The response of an asynchronous request contains the following fields:
 

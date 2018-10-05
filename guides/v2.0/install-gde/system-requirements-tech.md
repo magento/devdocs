@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: Magento 2.0.x technology stack requirements
 menu_title: Magento 2.0.x technology stack requirements
@@ -60,10 +60,7 @@ PHP documentation: <a href="{{ page.baseurl }}/install-gde/prereq/php-centos.htm
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a>
-*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only:
-
-	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
-	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
+*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}, [iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 
@@ -117,9 +114,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	<a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation.
+
+For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
 </div>
 
 *	PHPUnit (as a command-line tool) 4.1 or later

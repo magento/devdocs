@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
@@ -42,8 +42,8 @@ To choose which components to upgrade:
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page" />Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number" />From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	<tr>
 		<td><p>List of components</p></td>

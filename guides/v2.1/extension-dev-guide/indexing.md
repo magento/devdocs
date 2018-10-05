@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Indexing overview
 redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
@@ -58,9 +58,8 @@ The following components are involved in the indexing process:
 	</tr>
 </tbody></table>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p><code>Magento_Indexer</code> replaces the Magento 1.x <code>Magento_Index</code> module. Use <code>Magento_Indexer</code> for all new development.</p>
-  </div>
+  {: .bs-callout .bs-callout-warning }
+`Magento_Indexer` replaces the Magento 1.x `Magento_Index` module. Use `Magento_Indexer` for all new development.
 
 ### Indexing types
 
@@ -134,13 +133,13 @@ The Magento application implements the following indexers:
 		<td>Design Config Grid</td>
 		<td><code>design_config_grid</code></td>
 		<td><a href="{{ site.mage2100url }}app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
-		<td></td>
+		<td />
 	</tr>
 		<tr>
 		<td>Customer Grid</td>
 		<td><code>customer_grid</code></td>
 		<td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Category products</td>
@@ -170,25 +169,25 @@ The Magento application implements the following indexers:
 		<td>Stock</td>
 		<td><code>cataloginventory_stock</code></td>
 		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td><code>catalogrule_rule</code></td>
 		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td><code>catalogrule_product</code></td>
 		<td><a href="{{ site.mage2100url  }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
-		<td></td>
+		<td />
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td><code>catalogsearch_fulltext</code></td>
 		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
-		<td></td>
+		<td />
 	</tr>
 	</tbody>
 </table>
