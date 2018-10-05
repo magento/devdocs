@@ -89,7 +89,7 @@ composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
 ```
 _Magento Commerce_
 ```bash
-composer require magento/product-enterprise-edition=2.3.0 --no-update
+composer show magento/product-enterprise-edition 2.3.* --all | grep -m 1 versions
 ```
 '
 %}
