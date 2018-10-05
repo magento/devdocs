@@ -1,4 +1,5 @@
 ---
+layout: full-width
 group: community
 title: Community Resources
 redirect_from: 
