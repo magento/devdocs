@@ -9,7 +9,7 @@ redirect_from: /guides/v2.0/extension-dev-guide/module-load-order.html
 
 You may need to specify your component's dependency on other components or files from other components using your component's [composer.json]({{ page.baseurl }}/extension-dev-guide/build/create_component.html#add-component-xml). Further, you can specify a load order in your component's `module.xml` file using the `<sequence>` tag to ensure that needed files from other components are already loaded when your component loads.
 
-`<sequence>` declares the list of components that must be loaded before the current component is loaded. It's used for loading different kind of files: configuration files, view files (including CSS, LESS, and template files), or setup classes. Note that `<sequence>` does not affect the loading of regular classes (non-setup classes).
+`<sequence>` declares the list of components that must be loaded before the current component is loaded. It's used for loading different kind of files: configuration files, view files (including CSS, Less, and template files), or setup classes. Note that `<sequence>` does not affect the loading of regular classes (non-setup classes).
 *Setup* classes are classes in the component that create or update {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data.
 
 If you know that your component's logic depends on something in another component, then you should add this component to `require` in `composer.json` and `<sequence>` in `module.xml`.

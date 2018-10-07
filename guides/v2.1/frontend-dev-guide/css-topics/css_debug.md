@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Compile LESS with Grunt
+title: Compile Less with Grunt
 functional_areas:
   - Frontend
 ---

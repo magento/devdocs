@@ -6,7 +6,7 @@ Magento has one command-line interface that performs both installation and confi
 -   Creating translation dictionaries and translation packages.
 -   Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.
 -   Deploying static view files.
--   Creating CSS from LESS.
+-   Creating CSS from Less.
 
 Other benefits:
 

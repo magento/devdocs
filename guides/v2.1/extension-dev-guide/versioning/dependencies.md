@@ -87,7 +87,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Console commands and their arguments**                    | Called in custom shell scripts                                                                          | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
-| **Less variables and mixins**                               | Use in LESS declarations                                                                                | MAJOR              |
+| **Less variables and mixins**                               | Use in Less declarations                                                                                | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Message queue topics and data types**                     | Consume a topic/message                                                                                 | MINOR              |
 |                                                             | Publish an existing topic                                                                               | MAJOR              |

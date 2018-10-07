@@ -454,8 +454,8 @@ Description  | Versions applied to  | New or Updated | Date
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [How CSS and LESS files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Compile LESS using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [How CSS and Less files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Compile Less using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Layout overview]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Common layout customization tasks]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Templates XSS security]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"} | 2.2 |  New | June 23  |
