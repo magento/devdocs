@@ -335,7 +335,7 @@ Comment:
 
 ```terminal
 /**
- * @deprecated because new api was introduced
+ * @deprecated because newAPI  was introduced
  * @see \New\Api
  */
 ```
@@ -358,7 +358,7 @@ console.warn('Function is deprecated');
 
 ```xml
 <!--
-@deprecated because new api was introduced
+@deprecated because newAPI  was introduced
 @see NewApi
 -->
 ```
