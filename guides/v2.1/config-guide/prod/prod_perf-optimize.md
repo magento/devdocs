@@ -87,8 +87,8 @@ Go to the Admin in default of developer mode and change the following settings f
 | ------------------- | -------------------------- | ------ |
 | Grid Settings       | Asynchronous indexing      | Enable |
 | CSS Settings        | Minify CSS Files           | Yes    |
-| Javascript Settings | Minify JavaScript Files    | Yes    |
-| Javascript Settings | Enable JavaScript Bundling | Yes    |
+| JavaScript Settings | Minify JavaScript Files    | Yes    |
+| JavaScript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
 #### Stores -> Configuration -> Sales -> Sales Emails

@@ -55,14 +55,14 @@ To improve the storefront responsiveness of your Magento instance, go to the Adm
 | ------------------- | -------------------------- | ------ |
 | Grid Settings       | Asynchronous indexing      | Enable |
 | CSS Settings        | Minify CSS Files           | Yes    |
-| Javascript Settings | Minify JavaScript Files    | Yes    |
-| Javascript Settings | Enable JavaScript Bundling | Yes    |
+| JavaScript Settings | Minify JavaScript Files    | Yes    |
+| JavaScript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
 {: .bs-callout .bs-callout-info }
 The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-When you activate the **Enable Javascript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.
+When you activate the **Enable JavaScript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 * Magento recommends that you use third-party tools for minification and bundling (like [r.js](http://requirejs.org/)). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.

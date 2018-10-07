@@ -44,7 +44,7 @@ require([
 });
 ```
 
-For details about how to initialize a widget in a`.phtml` template, refer to the [Javascript initialization] topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the [JavaScript initialization] topic.
 
 ## Options {#alert_options}
 
@@ -119,7 +119,7 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseur}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
-[Javascript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [actions]: #alert_actions
 [autoOpen]: #alert_autoopen
 [clickableOverlay]: #alert_clickableOverlay
