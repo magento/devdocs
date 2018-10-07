@@ -107,7 +107,7 @@ The prompt window content.
 ### `focus`   {#prompt_focus}
 
 The selector of the element to be in focus when the prompt window opens.
-If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not required, set `focus` to `none`.
 
 **Type**: String.
 

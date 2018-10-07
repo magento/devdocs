@@ -102,7 +102,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57009 -->*  Magento now correctly calculates a bundle product's price even when it contains only one product in a required product option. Previously, if a bundle product contained only one product in an option, Magento did not update the price. [GitHub-4446](https://github.com/magento/magento2/issues/4446)
 
-<!--- 61270 -->* Cron errors no longer occur when reward points are avaiable and the Subscribe for Points Expiration Notifications setting is set.  
+<!--- 61270 -->* Cron errors no longer occur when reward points are available and the Subscribe for Points Expiration Notifications setting is set.  
 
 <!--- 66634 -->* We’ve fixed an issue with the PayPal ExpressCheckout functional test.  
 

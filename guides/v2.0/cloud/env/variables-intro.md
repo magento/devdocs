@@ -98,7 +98,7 @@ To list environment variables using Magento Cloud CLI:
 ## CLI: Add environment variables {#addvariables}
 
 {: .bs-callout .bs-callout-warning }
-Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
 
 To create a variable using the command line:
 
@@ -113,4 +113,4 @@ To create a variable using the command line:
 You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 {: .bs-callout .bs-callout-warning }
-Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
