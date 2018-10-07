@@ -85,7 +85,7 @@ You will not be able to see output from the "deploy" hook as these happen in the
         database (type: mysql, size: S, disk: 200)
         moarsearch (type: Elasticsearch, size: S, disk: 200)
 
-We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
+We can see the five different data backends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
 
     Environment routes:
         http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
