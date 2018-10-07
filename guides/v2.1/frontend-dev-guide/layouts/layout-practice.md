@@ -88,7 +88,7 @@ OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/t
 </container>
 ```
 
-(See [app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
+(See [app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on GitHub).
 
 Other modules use this block to add their specific links to the header using the [referenceBlock]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23)
 

@@ -73,7 +73,7 @@ Please review the following supported and accepted pull request rules. We define
 
 ## Fork a repository {#fork}
 
-To fork a repository on Github:
+To fork a repository on GitHub:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.

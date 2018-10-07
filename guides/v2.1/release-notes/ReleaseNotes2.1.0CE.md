@@ -1051,7 +1051,7 @@ For more information, [System Requirements]({{ site.baseurl }}/magento-system-re
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.1.0 (General Availability) release either Github or by using Composer.
+You can install Magento Open Source 2.1.0 (General Availability) release either GitHub or by using Composer.
 
 {% include install/releasenotes/ce_install_21.md %}
 

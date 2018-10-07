@@ -356,7 +356,7 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
 
 <!-- LINK DEFINITIONS -->
 
-<!-- Github links -->
+<!-- GitHub links -->
 [`BrowserInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/BrowserInterface.php
 [`events.xml` on GitHub]: https://github.com/magento/mtf/blob/develop/etc/events.xml
 [`EventState`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Event/State.php
