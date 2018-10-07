@@ -165,7 +165,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 #### API
 {:.no_toc}
-<!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
+<!--- 50878 -->* The OAuth handshake now clearly indicates the SAAS platform with which the Magento store is doing the OAuth handshake.
 
 <!--- 46720 -->* The Orders {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now exposes Shipping Address. [ (GITHUB-2628)](https://github.com/magento/magento2/issues/2628){:target="_blank"}
 
