@@ -11,7 +11,7 @@ To further expand documentation options for DevDocs, we offer a new opportunity 
 {:.bs-callout .bs-callout-info}
 This is the first of many new options for expanding documentation for developers. We will add more information and examples soon.
 
-## Remote Doc Repo benefits
+## Multi-Repo Docs benefits
 
 You get to:
 
