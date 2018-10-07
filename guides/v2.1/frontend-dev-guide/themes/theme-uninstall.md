@@ -53,7 +53,7 @@ If both the theme and the Magento instance were installed using Composer, you ca
 
 ### Uninstall a theme package if Magento was installed by cloning the repository
 
-To uninstall a theme Composer package if your Magento instance was installed by cloning the git repository, you can also uninstall it using a CLI command. However, you must first remove it from the list of dependencies.
+To uninstall a theme Composer package if your Magento instance was installed by cloning the Git repository, you can also uninstall it using a CLI command. However, you must first remove it from the list of dependencies.
 
 Take the following steps:
 

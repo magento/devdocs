@@ -40,7 +40,7 @@ The following guidelines may answer most of your questions and help you get star
 3.  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
 
     -   The DevDocs team can find the best home for your new topics and add it to the navigation.
-    -   If a topic has a symlink, you can remove it with git commands and add a new file. Copy and paste a previous version of the topic to get started.
+    -   If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
 
 ## Write and submit PRs
 
