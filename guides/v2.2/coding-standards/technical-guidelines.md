@@ -614,7 +614,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build front-end applications.
+10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 

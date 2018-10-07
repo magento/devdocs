@@ -740,7 +740,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-89849 -->* Non-U.S. and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
-<!-- MAGETWO-89034 -->* The checkout page no longer displays custom address attributes when **Show on front-end** is set to **no**. 
+<!-- MAGETWO-89034 -->* The checkout page no longer displays custom address attributes when **Show on frontend** is set to **no**. 
 
 <!-- MAGETWO-88411 -->* Magento now displays the default value for a new Customer attribute that is created from the Admin. Previously, Magento set this value to **no** by default. 
 

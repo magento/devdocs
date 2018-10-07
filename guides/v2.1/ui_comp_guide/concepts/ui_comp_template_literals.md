@@ -49,9 +49,9 @@ Perhaps the most important part of template literals in Magento is the `$` objec
 
 Perhaps the most useful aspect of template literals is the ability to access other UI Component JavaScript classes in the registry so we will use this as an example. First, there are a few things to explain.
 
-UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-top-level-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the front end and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
+UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-top-level-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the frontend and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
 
-Names of other registered modules can be added to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %} configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the front end. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
+Names of other registered modules can be added to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %} configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
 
 
 ```javascript
@@ -95,4 +95,4 @@ In the template, the messages can be displayed like this:
 
 ### Conclusion
 
-Template literals provide a simple and concise way to evaluate expressions. In Magento, they facilitate a great way to load data into a JavaScript class. They also play a part in interacting with other classes to create a fully interactive front end framework.
+Template literals provide a simple and concise way to evaluate expressions. In Magento, they facilitate a great way to load data into a JavaScript class. They also play a part in interacting with other classes to create a fully interactive frontend framework.
