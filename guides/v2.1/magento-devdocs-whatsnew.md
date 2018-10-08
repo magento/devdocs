@@ -9,9 +9,14 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 ## October 2018
 
-Description  | Versions applied to  | New or Updated | Date
--------------|--------------|----------------------|--------
-Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).|2.1.x, 2.2.x|New topic|October  1
+Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Versions applied to | New or Updated    | Date
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------|-----------
+Added [Multi-Repo Docs](https://devdocs.magento.com/community/resources/multi-repo-docs.html) features and overview                                                                                                                                                                                                                                                                                                                   | 2.x                 | New topic         | October  7
+MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/2.3/test/actions.html#presskey) action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#data-type-usage) syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/2.3/configuration.html#default_timezone) configuration parameter. | 2.3.x               | Technical changes | October  5
+Added a 2.3 [product availability](https://devdocs.magento.com/availability.html) topic.                                                                                                                                                                                                                                                                                                                                              | 2.3.x               | New topic         | October  5
+Updated the [1.3.1 technical guideline](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#1-basic-programming-principles).                                                                                                                                                                                                                                                                           | 2.x                 | Major update      | October  4
+Corrected the instructions for optimizing JavaScript files using the [JavaScript bundling](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/js-bundling.html) technique.                                                                                                                                                                                                                                             | 2.1.x, 2.2.x, 2.3.x | Technical changes | October  3
+Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).                                                                          | 2.1.x, 2.2.x        | New topic         | October  1
 
 {% collapsibleh2 September 2018 %}
 Description  | Versions applied to  | New or Updated | Date
@@ -69,7 +74,6 @@ Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extensio
 Added the topic [Operation Status Search](https://devdocs.magento.com/guides/v2.3/rest/operation-status-search.html).|2.3.x|New topic|Aug 03
 Updated the [Magento Functional Testing Framework documentation](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) due to the MFTF 2.3.0 release.|2.2.x, 2.3.x|Major update|Aug 02
 {% endcollapsibleh2 %}
-
 
 {% collapsibleh2 July 2018 %}
 
