@@ -2,9 +2,9 @@
 group: cloud-guide
 title: Prepare your existing Magento Commerce install
 redirect_from:
-  - /guides/v2.1/cloud/access-acct/first_time-setup_import-prepare.html
-  - /guides/v2.2/cloud/access-acct/first_time-setup_import-prepare.html
-  - /guides/v2.3/cloud/access-acct/first_time-setup_import-prepare.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html
+  - /guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html
 functional_areas:
   - Cloud
   - Setup
