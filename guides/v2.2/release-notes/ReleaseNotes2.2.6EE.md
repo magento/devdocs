@@ -377,7 +377,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`, `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`, and `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
 
 
-<!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occured during product import has been improved. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16389](https://github.com/magento/magento2/pull/16389)*. 
+<!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occurred during product import has been improved. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16389](https://github.com/magento/magento2/pull/16389)*.
 
 <!-- ENGCOM-2093-->* We've removed the direct use of the object manager when saving Admin attribute sets. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16217](https://github.com/magento/magento2/pull/16217)*. 
 
