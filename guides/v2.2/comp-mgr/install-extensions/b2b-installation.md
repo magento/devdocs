@@ -1,14 +1,11 @@
 ---
 group: software-update-guide
-subgroup: 10_Install extensions from the command line
 title: Install the B2B extension
-menu_title: Install the B2B extension
-menu_order: 1
 ee_only: true
 ---
 
 {: .bs-callout .bs-callout-warning }
-The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You must install it after installing {{site.data.var.ee}}.
+The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
 ## Installation
 

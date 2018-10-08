@@ -35,7 +35,7 @@ The <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-
 {% highlight xml %} 
 <config>
     <type name="{ObservedType}">
-      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" />
+      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
     </type>
 </config>
 {% endhighlight %}

@@ -62,7 +62,7 @@ The following guidelines may answer most of your questions and help you get star
 
 ## Preview HTML locally
 
-To preview your changes in HTML output, follow the instructions in the [README](https://GitHub.com/magento/devdocs/blob/develop/README.md) to build the devdocs site locally using Jekyll.
+To preview your changes in HTML output, follow the instructions in the [README](https://GitHub.com/magento/devdocs/blob/master/README.md) to build the devdocs site locally using Jekyll.
 
 ## Templates
 

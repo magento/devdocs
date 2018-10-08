@@ -17,7 +17,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-![Magento storefront with the Luma theme]({{ site.baseurl }}/common/images/install-success_store-luma.png
+![Magento storefront with the Luma theme]({{ site.baseurl }}/common/images/install-success_store-luma.png)
 
 ## Verify the storefront (no sample data) {#instgde-verify-front}
 
