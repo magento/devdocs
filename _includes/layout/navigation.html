@@ -21,12 +21,12 @@
               <div class="nav-section-title">{{ subsection.label }}</div>
               <ul>
               {% for item in subchildren %}
-                {% include layout/main-nav-item.html item=item %}
+                {% include layout/nav-item.html section=item %}
               {% endfor%}
               </ul>
             </div>
           {% else if %}
-            {% include layout/main-nav-item.html item=subsection %}
+            {% include layout/nav-item.html section=subsection %}
           {% endif %}
         {% endfor %}
       {% endcapture %}
