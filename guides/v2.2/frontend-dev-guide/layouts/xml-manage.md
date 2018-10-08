@@ -30,7 +30,7 @@ To ensure stability and secure your customizations from being deleted during upg
 
 ## Set the page layout {#layout_markup_columns}
 
-The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
+The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root [`<page>`] node.
 
 Example:
 Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
@@ -43,7 +43,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 ## Include static resources (JavaScript, CSS, fonts) {#layout_markup_css}
 
-JavaScript, CSS, and other static assets are added in the `<head>` section of a [page configuration] file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
+JavaScript, CSS, and other static assets are added in the [`<head>`] section of a [page configuration] file. The default look of a Magento store page [`<head>`] is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
 ```xml
@@ -66,7 +66,7 @@ The following file is a sample of a file you must add:
 
 When adding external resources, specifying the `src_type="url"` argument value is a must.
 
-You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
+You can use either the [`<link src="js/sample.js"/>`] or [`<script src="js/sample.js"/>`] instruction to add a locally stored JavaScript file to your theme.
 
 The path to assets is specified relatively to one the following locations:
 - `<theme_dir>/web`- 
@@ -98,7 +98,7 @@ In this example, `orange` is a custom theme created by the OrangeCo vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
-To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
+To remove the static resources, linked in a page [`<head>`], make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -120,9 +120,9 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 
 ## Add meta tags to the head block {#layout_markup_meta}
 
-To add `<meta>` tags to the `<head>` element of your layout, create a theme-extending file similar to: `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`.
+To add [`<meta>`] tags to the [`<head>`] element of your layout, create a theme-extending file similar to: `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`.
 
-By default, the class that renders the `<meta>` tags is `\Magento\Framework\View\Page\Config\Renderer`. This class can render five meta types and a catch-all (the default).
+By default, the class that renders the [`<meta>`] tags is `\Magento\Framework\View\Page\Config\Renderer`. This class can render five meta types and a catch-all (the default).
 1. og: 
 2. charset
 3. content_type
@@ -215,7 +215,7 @@ Example: pass the image to the `logo` block.
 There are two ways to set the template for a block:
 
 - using the `template` attribute
-- using the `<argument>` instruction
+- using the [`<argument>`] instruction
 
 Both approaches are demonstrated in the following examples of changing the template of the page title block.
 
@@ -235,21 +235,21 @@ Both approaches are demonstrated in the following examples of changing the templ
  </referenceBlock>
 ```
 
-In both example, the template is specified according to the following:
+In both examples, the template is specified according to the following:
 
  * `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
  * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
 
 {:.bs-callout .bs-callout-info}
-Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
+Template values specified as attributes have higher priority during layout generation, than the ones specified using [`<argument>`]. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in [`<argument>`] for the same block.
 
 
 ## Modify block arguments {#layout_markup_modify-block}
 
-To modify block arguments, use the `<referenceBlock>` instruction.
+To modify block arguments, use the [`<referenceBlock>`] instruction.
 
-Example: change the value of the existing block argument and add a new argument.
+**Example:** change the value of the existing block argument and add a new argument.
 
 Initial block declaration:
 
@@ -278,10 +278,10 @@ Extending layout:
 
 There are two ways to access block object methods:
 
-- using the [`<argument>`] instruction for `<block>` or `<referenceBlock>`
-- using the [`<action>`] instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+- using the [`<argument>`] instruction for [`<block>`] or [`<referenceBlock>`]
+- using the [`<action>`] instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through [`<argument>`]. 
 
-Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
+**Example 1:** Set a CSS class and add an attribute for the product page using [`<argument>`].
 
 Extending layout:
 
@@ -294,10 +294,10 @@ Extending layout:
 </referenceBlock>
 ```
 
-Example 2: Set a page title using `<action>`. 
+**Example 2:** Set a page title using [`<action>`]. 
 
 {:.bs-callout .bs-callout-warning}
-Do not use `<action>` if the method implementation allows calling it using `<argument>` for `<block>` or `<referenceBlock>`.
+Do not use [`<action>`] if the method implementation allows calling it using [`<argument>`] for [`<block>`] or [`<referenceBlock>`].
 
 
 Extending layout:
@@ -314,11 +314,11 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* [`<move>` instruction]: allows changing elements' order and parent.
-* [`before` and `after` attributes of `<block>`]: allows changing elements' order within one parent.
+ * [`<move>`] instruction: allows changing elements' order and parent.
+ * `before` and `after` attributes of [`<block>`]: allows changing elements' order within one parent.
 
 
-Example of `<move>` usage:
+**Example of [`<move>`] usage:**
 put the stock availability and SKU blocks next to the product price on a product page.
 
 In the Magento Blank theme these elements are located as follows:
@@ -347,7 +347,7 @@ To learn how to locate the layout file you need to customize, see [Locate templa
 
 ## Remove elements {#layout_markup_remove_elements}
 
-Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
+Elements are removed using the `remove` attribute for the [`<referenceBlock>`] and [`<referenceContainer>`]. 
 
 **Example**: remove the Compare Products {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %} block from all store pages. 
 
@@ -383,7 +383,85 @@ In this file, reference the element having added the `remove` attribute:
 
 ## Replace elements {#layout_markup_replace_elements}
 
-To replace an element, [remove it] and add a new one.
+Elements can be replaced with custom blocks by one of the following methods below:
+
+ * Remove the old [`<block>`] and substitute it with a new [`<block>`] with the same reference and path  
+ * Override the [`<block>`] definition through the class preference method
+
+**Example 1**: substitute the Product View attributes [`<block>`]  of a store catalog with a new [`<block>`]  of the same name across all content pages of the website.
+
+The following block, which is our old block, is declared in `app/design/frontend/catalog/product_view_attributes/layout/local.xml`:
+
+```xml
+<block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">
+    <action method="addToParentGroup"><group>detailed_info</group></action>
+    <action method="setTitle" translate="value"><value>Additional Information</value></action>
+</block>
+```
+Let us say that we want to replace the block inside our [`<reference>`] container to replaced with the following custom block type below:
+
+```xml
+<block type="attributesasgroup/groupview" name="product.attributes" as="additional" template="webguys/attributesasgroup/groupview.phtml">
+    <action method="addToParentGroup"><group>detailed_info</group></action>
+    <action method="setTitle" translate="value"><value>Additional Information</value></action>
+</block>
+```
+
+For the replacement of this block we will use the `local.xml` file, which is a special layout file that is always processed last by Magento (i.e. layout updates in this file are applied last after all other layout update files).   
+
+Include this file inside your theme's layout directory with specified layout changes. Essentially, we can swap out an existing block type for a new block via `local.xml` :
+
+```xml
+<catalog_product_view>
+
+    <remove name="product.attributes" />
+
+    <reference name="content">
+        <block type="attributesasgroup/groupview" name="product.attributes" as="additional" template="webguys/attributesasgroup/groupview.phtml">
+            <action method="addToParentGroup"><group>detailed_info</group></action>
+            <action method="setTitle" translate="value"><value>Additional Information</value></action>
+        </block>
+    </reference>
+
+</catalog_product_view>
+```
+This layout structure held by our `local.xml` does two things. First, it removes the default block from the layout structure with the `remove` node.
+Second, it then adds our own custom block to the content section of the page within the [`<reference>`] container.
+
+As a final note, it is important that your block be defined on the backend side. If it is not defined, Magento will not understand which block you are referencing to it. This will mean that Magento will not properly render the content that is located inside your block.
+
+For instance, in order for the new block in the above case to be processed properly, Magento needs `Namespace_Modulename_Block_Groupview` to be defined at `app/code/local/Namespace/Modulename/Block/Groupview.php` (where `Namespace_Modulename` stands for your custom module name).
+
+Some block definitions do not contain an explicit name attribute, which means you cannot override the block from a layout XML file. For these blocks, you can use the class preference method to override the template.
+
+**Example 2**: override the block containing the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
+
+Let us say that we want to override the block containing the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
+
+```xml
+<block class="Magento\Checkout\Block\Cart\Item\Renderer" as="virtual" template="cart/item/default.phtml">
+```
+
+The class attribute on the block sets the scope for the template path, which means that all it takes to change the template's module scope is to change the block's class with a class preference in your `di.xml` file:
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Checkout\Block\Cart\Item\Renderer" type="Vendor\Module\Block\Checkout\Cart\Item\Renderer" />
+</config>
+```
+
+Now we have to verify that the block actually exists even if you don't need to do anything with it. To do this we can create a skeleton block, which serves to change the scope of the old block definition:
+
+```php
+<?php
+namespace Vendor\Module\Block\Checkout\Cart\Item;
+class Renderer extends \Magento\Checkout\Block\Cart\Item\Renderer {}
+```
+
+The template attribute on the block will now default to the module of the skeleton block rather than the core module of the original block. 
+
+Now all you need to do is add your template like you would if you were doing a normal template override from layout. In this case, that path will be `Vendor/Module/view/frontend/templates/cart/item/default.phtml`.
 
 #### Related topics:
 
