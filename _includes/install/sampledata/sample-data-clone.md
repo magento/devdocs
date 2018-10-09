@@ -140,7 +140,7 @@ To set file system permissions and ownership on the sample data repository:
 
 3.  Set permissions:
 
-        find . -type d -exec chmod g+ws {} \;
+        find . -type d -exec chmod g+ws {} +
 4.  Clear static files:
 
         cd <your {{site.data.var.ce}} install dir>/var
