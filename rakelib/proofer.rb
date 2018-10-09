@@ -27,7 +27,7 @@ module Proofer
         puts "#{count} lines in the #{File.basename(filepath)} file.".blue
     end
 
-    # Read the current git branch
+    # Read the current Git branch
     def current_branch
         `git symbolic-ref --short HEAD`.strip
     end

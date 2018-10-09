@@ -85,7 +85,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `cloud-gce`: GCE Cloud Plugin
 * `delete-by-query`: Support for deleting documents matching a given query
 * `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
-* `lang-javascript`: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts
+* `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
 * `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
 * `mapper-attachments`: Mapper attachments plugin for indexing common file types
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time

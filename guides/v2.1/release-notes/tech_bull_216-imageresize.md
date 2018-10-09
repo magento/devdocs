@@ -15,7 +15,7 @@ These instructions apply to anyone upgrading to Magento Open Source (formerly Co
 
 You need to read this bulletin if you've upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues: 
 
-* all images on the product front end appear reduced in size, including the base image
+* all images on the product frontend appear reduced in size, including the base image
 
 * images do not have uniform sizes -- some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.)
 

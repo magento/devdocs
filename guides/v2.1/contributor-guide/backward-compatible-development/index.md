@@ -220,9 +220,9 @@ The following is a list of prohibited DB Schema changes:
 * Removing or renaming a table
 * Introducing a required field
 
-### CSS/LESS
+### CSS/Less
 
-The following is a list of prohibited CSS/LESS changes:
+The following is a list of prohibited CSS/Less changes:
 
 * Removing or renaming a class
 * Removing or renaming a mix-in
@@ -335,7 +335,7 @@ Comment:
 
 ```terminal
 /**
- * @deprecated because new api was introduced
+ * @deprecated because newAPI  was introduced
  * @see \New\Api
  */
 ```
@@ -358,7 +358,7 @@ console.warn('Function is deprecated');
 
 ```xml
 <!--
-@deprecated because new api was introduced
+@deprecated because newAPI  was introduced
 @see NewApi
 -->
 ```

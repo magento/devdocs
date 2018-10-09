@@ -333,7 +333,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 /**
- * @deprecated because new api was introduced
+ * @deprecated because new API was introduced
  * @see \New\Api
  */
 ~~~
@@ -342,7 +342,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 <!--
-@deprecated because new api was introduced
+@deprecated because new API was introduced
 @see NewApi
 -->
 ~~~

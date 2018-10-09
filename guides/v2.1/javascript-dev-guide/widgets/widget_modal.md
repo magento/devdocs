@@ -36,7 +36,7 @@ $('#modal_content').modal({
 });
 ```
 
-For details about how to initialize the widget in a`.phtml` template, refer to the [Javascript initialization] topic.
+For details about how to initialize the widget in a`.phtml` template, refer to the [JavaScript initialization] topic.
 
 ## Options {#modal_options}
 
@@ -207,4 +207,4 @@ Called when the modal window is opened.
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
-[Javascript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

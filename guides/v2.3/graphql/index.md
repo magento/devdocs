@@ -4,7 +4,7 @@ title: Overview
 landing-page: GraphQL Developer's Guide
 ---
 
-[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for front-end development.
+[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
 The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build]({{ site.mage2300url }}app/code/Magento) to explore and try it out for yourself.
 
@@ -23,7 +23,7 @@ For example, the [`Catalogschema.graphqls`]({{ site.mage2300url }}app/code/Magen
 
 * **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
-You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
+You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the frontend.
 
 The current GraphQL codebase also supports the following features:
 

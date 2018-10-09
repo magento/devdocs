@@ -24,7 +24,7 @@ Apart from the value type specified for each binding, every value may be wrapped
 
 The `afterRender` binding notifies its subscriber when an associated element is inserted into the DOM.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js).
 
 **Value type**: `(element: Element, viewModel: Object) => void`.
 Function that is invoked after the element is rendered.
@@ -44,7 +44,7 @@ Function that is invoked after the element is rendered.
 ### `autoselect`
 The `autoselect` binding automatically highlights the text in an input element, when it gets focus.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js).
 **Value type**: Boolean
 
 Defines whether the binding is enabled (`true`) or disabled (`false`).
@@ -65,7 +65,7 @@ The `bindHtml` binding renders the provided string, as a collection of HTML elem
 
 It also instantiates all bindings defined for the rendered elements in the scope of the current [view model](http://knockoutjs.com/documentation/observables.html).
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js).
 
 **Value type**: String
 
@@ -81,7 +81,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 ### `collapsible`
 The `collapsible` binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: `toggleCollapsible`, `openCollapsible` and `closeCollapsible`.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js).
 
 **Value type**: Object
 
@@ -170,7 +170,7 @@ Binding's configuration that may include the following properties:
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html) widget.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js)
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js)
 
 **Value type**: String\|Object
 
@@ -184,7 +184,7 @@ The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseur
 ### `fadeVisible`
 The `fadeVisible` binding performs the gradual change of the element's visibility  (with an animation effect).
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js).
 
 **Value type**: Boolean
 
@@ -202,7 +202,7 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 
 The `i18n` binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it's enabled on the page.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js).
 
 **Value type**: `string`
 
@@ -221,7 +221,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 
 The keyboard binding allows setting up listeners for the `keypress` event of a specific key.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
 
 **Value type**:` [name: number]: (e: KeyboardEvent) => void`
 
@@ -242,7 +242,7 @@ A collection in which keys represent keyboard keys codes and values are callback
 
 The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that is used to initialize jQuery widgets on the associated element.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js).
 
 **Value type**: `[path: string]:` Object
 
@@ -264,7 +264,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 
 The `optgroup` binding is a decorator for the standard Knockout's options binding which adds the support of nested options, and renders them as the `<optgroup>` element.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js).
 
 **Value type**: `Array<string>` \| `Array<Object>`
 
@@ -297,7 +297,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 
 The `outerClick` binding allows to subscribe for the "click" event that happens outside of the boundaries of the associated element.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js).
 
 **Value type**: Function.
 
@@ -317,7 +317,7 @@ Callback that is invoked when user clicks outside of the element.
 
 The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). It also implements necessary handlers to work with mobile devices.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js).
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js).
 
 **Value type**: Object.
 
@@ -341,7 +341,7 @@ Configuration that is passed to the Slider widget.
 
 The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js). 
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js). 
 
 **Value type:** Object.
 

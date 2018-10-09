@@ -76,7 +76,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | **JavaScript Interface** (marked with `@api`)               | Inject in a constructor and/or call methods                                                             | MAJOR              |
 |                                                             | Implement the interface                                                                                 | MINOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
-| **Javascript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
+| **JavaScript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
 |                                                             | Extend from a class                                                                                     | MINOR              |
 |                                                             | Override a method                                                                                       | MINOR              |
 |                                                             | Subscribe to an event  | MINOR              |
@@ -87,7 +87,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Console commands and their arguments**                    | Called in custom shell scripts                                                                          | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
-| **Less variables and mixins**                               | Use in LESS declarations                                                                                | MAJOR              |
+| **Less variables and mixins**                               | Use in Less declarations                                                                                | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Message queue topics and data types**                     | Consume a topic/message                                                                                 | MINOR              |
 |                                                             | Publish an existing topic                                                                               | MAJOR              |

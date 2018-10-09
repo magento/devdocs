@@ -93,7 +93,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 <ol>
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
-<li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
+<li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Frontend development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
 <li markdown="span">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:

@@ -43,7 +43,7 @@ Magento's highly modular structure includes the following open-source technologi
 ### Additional technologies
 
 *	HTML5
-*	CSS3 (LESS {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
+*	CSS3 (Less {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
 *	{% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} (primary {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} library)
 *	RequireJS (library that helps load JavaScript resources on demand)
 *	Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)

@@ -24,13 +24,13 @@ The DragAndDrop component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc
   </tr>
   <tr>
     <td><code>fixedX</code></td>
-    <td>Whether the column has a fixed positon on the X-axis. That is, whether it can be moved horizontally.</td>
+    <td>Whether the column has a fixed position on the X-axis. That is, whether it can be moved horizontally.</td>
     <td>Boolean</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>fixedY</code></td>
-    <td>Whether the column has a fixed positon on the Y-axis. That is, whether it can be moved vertically.</td>
+    <td>Whether the column has a fixed position on the Y-axis. That is, whether it can be moved vertically.</td>
     <td>Boolean</td>
     <td><code>true</code></td>
   </tr>

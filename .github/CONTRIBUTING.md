@@ -16,7 +16,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Prerequisites
 
-* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento respositories.
+* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento repositories.
 * Make sure you sign the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca).
 * Check the [guidelines](#contribution-guidelines).
 * [Fork](https://help.github.com/articles/fork-a-repo/) or [clone](https://help.github.com/articles/cloning-a-repository/) the [DevDocs repository](GitHub.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
@@ -40,7 +40,7 @@ The following guidelines may answer most of your questions and help you get star
 3.  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
 
     -   The DevDocs team can find the best home for your new topics and add it to the navigation.
-    -   If a topic has a symlink, you can remove it with git commands and add a new file. Copy and paste a previous version of the topic to get started.
+    -   If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
 
 ## Write and submit PRs
 

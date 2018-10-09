@@ -22,7 +22,7 @@ The mobile and desktop styles are defined in separate files:
 
 Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.
 
-The Blank and Luma themes use LESS variables to implement the following [breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms):
+The Blank and Luma themes use Less variables to implement the following [breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms):
 -   `@screen__xxs`: 320px
 -   `@screen__xs`: 480px
 -   `@screen__s`: 640px
@@ -40,7 +40,7 @@ The approach implemented in the Magento UI library, uses `@media-common` style g
 
 If working on a theme which inherits from either the Blank or Luma theme, it's recommended to use `.media-width()` and style groups separation.  Otherwise the style rules will be added twice, once to `styles-m.css` and once more to `styles-l.css`.
 
-For LESS styles rules to be compiled to `styles-m.css` without a media query so that they apply to all screen widths use the `@media-common` style group separation.
+For Less styles rules to be compiled to `styles-m.css` without a media query so that they apply to all screen widths use the `@media-common` style group separation.
 
 ```less
 //
@@ -89,7 +89,7 @@ You can find more information about the Magento UI library responsive mixin usag
 
 ## Related topics
 * [Create a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html)
-* [CSS and LESS preprocessing]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html)
+* [CSS and Less preprocessing]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html)
 * [Magento UI library]({{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html)
 * [JavaScript in a responsive design]({{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_js.html)
 

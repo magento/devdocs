@@ -2296,7 +2296,7 @@ Attribute|Type|Use|Description
 #### Example
 
 ```xml
-<!-- Unselect `option1` from `<select id="mySelect" ... >...</select>`. -->
+<!-- Deselect `option1` from `<select id="mySelect" ... >...</select>`. -->
 <unselectOption userInput="option1" selector="select#myselect" stepKey="unselectOption1"/>
 ```
 

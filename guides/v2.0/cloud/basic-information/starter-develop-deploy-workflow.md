@@ -164,7 +164,7 @@ For more information, see [Configuration Management]({{ site.baseurl }}/guides/v
 
 At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
-Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
+Every time you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
 You can directly access this environment with a store URL, Magento Admin URL, and SSH. These environments include a web server, database, and configured services. When ready, you can start deploying and testing in Staging.
 

@@ -39,9 +39,9 @@ Declare a `getData()` method in the data provider class that was referenced in t
 
 
 {: .bs-callout .bs-callout-info }
-A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.
+A JavaScript "component" is actually a JavaScript file loaded through RequireJS. It should return a JavaScript object that defines a module or function. Do not confuse JavaScript components with UI components.
 
-Include the Form Provider Javascript component by adding this inside the `<dataSource />` node:
+Include the Form Provider JavaScript component by adding this inside the `<dataSource />` node:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -65,19 +65,19 @@ A good way to keep configuration data out of the javascript is to declare a "pro
 
 This example declares the name of the data provider class and will be output in the JSON that contains the UI component's configuration. It can then be used to locate the data source component. This is essentially declaring a variable that will be available to a javascript class.
 
-# Javascript Template Literals
+# JavaScript Template Literals
 
-Throughout Magento's core Javascript components there are strings like this: `'${ $.provider }:data.totalRecords'`. These are ES2015 [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). The `${ }` surrounds an expression that will be parsed as Javascript. `$.provider` is the expression, in this example.
+Throughout Magento's core JavaScript components there are strings like this: `'${ $.provider }:data.totalRecords'`. These are ES2015 [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). The `${ }` surrounds an expression that will be parsed as JavaScript. `$.provider` is the expression, in this example.
 
 The template literal is in a single-quote string, however, not the back-ticks which are standard for ES2015. As a result, they would normally be treated as a string. Since Magento needs to support browsers that don't recognize template literals a special interpreter was built for them. If the browser does support standard back-tick template literals, Magento will use that, and if not, it evaluates the value manually.
 
 When the component is initialized, it will automatically evaluate all string literals in properties. In the example above, `$.provider` will become  `[ComponentName].[ComponentName]_data_source`. The value of this `provider` was declared in the `js_config` block in the XML above. It is possible to pass nearly any configuration value this way and access it using template literals.
 
-But, XML is static and while that gets us the name of the data provider component, it still doesn't actually provide data. There is one more important step in providing data to Javascript components.
+But, XML is static and while that gets us the name of the data provider component, it still doesn't actually provide data. There is one more important step in providing data to JavaScript components.
 
-# Javascript Component Linking
+# JavaScript Component Linking
 
-Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in [`Magento/Ui/view/base/web/js/lib/core/element/element.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
+Every JavaScript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in [`Magento/Ui/view/base/web/js/lib/core/element/element.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
 
 The properties Magento will parse are:
 
