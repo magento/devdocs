@@ -363,7 +363,7 @@ pages:
       children:
 
         - label: Contact Information for Third-Party Extensions
-          url: /release-notes/CBE-support-info.html
+          url: /release-notes/cbe-support-info.html
 
 
 

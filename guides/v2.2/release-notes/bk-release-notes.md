@@ -62,7 +62,7 @@ We recommend installing full [{{site.data.var.ece}} upgrades]({{site.baseurl}}/g
 
 ## Contact information for third-party extensions
 
-[Contact Information for Third-Party Extensions]({{page.baseurl}}/release-notes/CBE-support-info.html)
+[Contact Information for Third-Party Extensions]({{page.baseurl}}/release-notes/cbe-support-info.html)
 
 ## Magento Shipping release notes
 

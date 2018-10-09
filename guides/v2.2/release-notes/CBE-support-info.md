@@ -14,4 +14,4 @@ The Magento platform core code contains several extensions that have been develo
 | dotmailer             | support@dotmailer.com                | [dotmailer-magento2-extension](https://github.com/dotmailer/dotmailer-magento2-extension) |
 | Klarna Payments       | magento@klarna.com                   | N/A                                                       |
 | Magento Shipping      | magentoshipping@temando.com          | N/A                                                       |
-| Vertex Tax Solutions  | [Contact us](https://www.vertexinc.com/contact-us) | N/A                                                       |
+| Vertex Tax Solutions  | CloudSupport@VertexInc.com           | N/A                                                       |
