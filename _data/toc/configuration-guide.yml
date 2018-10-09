@@ -16,11 +16,11 @@ pages:
 
         - label: Two-Factor Authentication
           url: /security/two-factor-authentication.html
-          versions: ["2.1", "2.2"]
+          include_versions: ["2.1", "2.2"]
 
         - label: Google reCAPTCHA
           url: /security/google-recaptcha.html
-          versions: ["2.1", "2.2"]
+          include_versions: ["2.1", "2.2"]
 
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
