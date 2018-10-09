@@ -41,9 +41,9 @@ If a store expects changing load, the number of web nodes/cores can be increased
 
 The Magento 2 database (as well as any other database) is sensitive to amount of the memory available for storing data and indexes. To allow effective leveraging of MySQL data indexation, the amount of memory should be at least close to half size of data stored in the database.
 
-### Network bandwith
+### Network bandwidth
 
-Sufficient network bandwith is one of the key requirements for data exchange between web nodes, database(s), caching/session servers, and other services. Because Magento 2 effectively leverages caching for high performance, your system can actively exchange data with caching servers like Redis. If Redis is located on a remote server, it is necessary to provide a sufficient network channel between web nodes and the caching server so that there is no bottleneck on read/write operations.
+Sufficient network bandwidth is one of the key requirements for data exchange between web nodes, database(s), caching/session servers, and other services. Because Magento 2 effectively leverages caching for high performance, your system can actively exchange data with caching servers like Redis. If Redis is located on a remote server, it is necessary to provide a sufficient network channel between web nodes and the caching server so that there is no bottleneck on read/write operations.
 
 ## Software
 

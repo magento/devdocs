@@ -29,7 +29,7 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 	* Reduce chargebacks and support calls by customizing the business name, phone number, and URL that appears on credit card statements for each of your websites through Braintree.
 
-	* Reduce your risk of accidently shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm risk decisions before proceeding with orders.
+	* Reduce your risk of accidentally shipping products to customers flagged by Braintree’s fraud risk feature with a new process that requires you to confirm risk decisions before proceeding with orders.
 
 	* Enable unregistered customers to reorder or add items to an existing order in the Admin without having to re-enter their credit card information. Merchant can now bill the last payment method used during a guest checkout.
 
@@ -189,7 +189,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---57052-->* You can now import negative quantities. 
 
-<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `Javascript Error: Uncaught RangeError: Maximum call stack size exceeded`. [(GITHUB-5573)](https://github.com/magento/magento2/issues/5573){:target="_blank"} 
+<!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `JavaScript Error: Uncaught RangeError: Maximum call stack size exceeded`. [(GITHUB-5573)](https://github.com/magento/magento2/issues/5573){:target="_blank"} 
 
 <!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
 

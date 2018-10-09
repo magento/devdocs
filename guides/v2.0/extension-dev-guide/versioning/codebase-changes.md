@@ -98,7 +98,7 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Changed method signature                                                                             | MAJOR          |
 |                                                             | Last argument added                                                                                  | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Javascript class** (marked with `@api`                    | New class                                                                                            | MINOR          |
+| **JavaScript class** (marked with `@api`                    | New class                                                                                            | MINOR          |
 |                                                             | New method added                                                                                     | MINOR          |
 |                                                             | Class removed                                                                                        | MAJOR          |
 |                                                             | Method removed                                                                                       | MAJOR          |

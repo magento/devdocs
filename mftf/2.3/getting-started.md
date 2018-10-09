@@ -38,7 +38,7 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 4. Click **Save Config**.
 
 {: .bs-callout .bs-callout-tip }
-When you want to test the WYSIWYG functionality, reenable WYSIWYG in your test [suite][].
+When you want to test the WYSIWYG functionality, re-enable WYSIWYG in your test [suite][].
 
 ### Security settings   {#security-settings}
 

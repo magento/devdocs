@@ -298,7 +298,7 @@ namespace Magento\Mtf\System\Observer;
 use Magento\Mtf\System\Event\Event;
 
 /**
- * Observer for obtaining response of web api handler.
+ * Observer for obtaining response of web API handler.
  */
 class WebapiResponse extends AbstractObserver
 {
@@ -357,7 +357,7 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
 
 <!-- LINK DEFINITIONS -->
 
-<!-- Github links -->
+<!-- GitHub links -->
 [`BrowserInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/BrowserInterface.php
 [ClientError]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/ClientError.php
 [CurlResponse]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/System/Observer/CurlResponse.php

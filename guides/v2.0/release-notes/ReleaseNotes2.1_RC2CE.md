@@ -177,7 +177,7 @@ We do not support PHP 5.5.x or 7.0.5.
 
 ## Installation and upgrade instructions
 
-You can install Magento Open Source 2.1 Release Candidate 1 (RC1) from either Github or by using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
+You can install Magento Open Source 2.1 Release Candidate 1 (RC1) from either GitHub or by using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
 See one of the following sections:

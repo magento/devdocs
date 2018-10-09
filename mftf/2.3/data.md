@@ -79,7 +79,7 @@ type="info"
 content='As of MFTF 2.3.6, you no longer need to differentiate between scopes (a test, a hook, or a suite) for persisted data when referencing it in tests.
 
 The MFTF now stores the persisted data and attempts to retrieve it using the combination of `stepKey` and the scope of where it has been called.
-The current scope is prefered, then widening to _test > hook > suite_ or _hook > test > suite_.
+The current scope is preferred, then widening to _test > hook > suite_ or _hook > test > suite_.
 
 This emphasizes the practice for the `stepKey` of `createData` to be descriptive and unique, as a duplicated `stepKey` in both a `<test>` and `<before>` prefers the `<test>` data.'
 %}

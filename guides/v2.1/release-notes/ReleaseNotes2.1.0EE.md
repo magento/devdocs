@@ -139,7 +139,7 @@ To work around this issue, run the following commands in the order shown:
 
 #### API
 {:.no_toc}
-<!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
+<!--- 50878 -->* The OAuth handshake now clearly indicates the SAAS platform with which the Magento store is doing the OAuth handshake.
 
 <!--- 49699 -->*  You can now use the Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} to access Version Manager.
 

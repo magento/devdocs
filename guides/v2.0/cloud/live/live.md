@@ -28,7 +28,7 @@ As part of Magento Commerce (Cloud) subscription, you have access to a shared Do
 We strongly recommend testing in these environments due to the complexity of your custom code, themes, Magento extensions, 3rd party integrations all working together to provide a single or multiple stores. Every deployment can differ between merchants. The following are common issues you can find early and solve before touching Production:
 
 * Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
-* Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and front end, sometimes clashing and causing errors.
+* Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
 * Extensions typically are heavily tested in [Developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
 * Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local doesn't confirm it works perfectly in production.
 * Integration environments don't have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.

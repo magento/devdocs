@@ -114,7 +114,7 @@ _Note:_ The "Expand All/Collapse All" control can appear simultaneously with the
 
 * Checked – if the parent state is changed from "unchecked" to "checked" state
 * Unchecked – if the parent state is changed from "checked" to "unchecked" state
-* Partial Selection – if parent has a partial selection state, clicking on it will unselect all the child items.
+* Partial Selection – if parent has a partial selection state, clicking on it will deselect all the child items.
 
 ## Drag and Arrange
 

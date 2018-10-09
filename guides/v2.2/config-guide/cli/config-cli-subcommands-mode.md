@@ -102,7 +102,7 @@ Messages similar to the following display:
 	New version of deployed files: 1440461332
 	Static content deployment complete
 Gathering css/styles-m.less sources.
-Successfully processed LESS and/or {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}SASS{% endglossarytooltip %} files
+Successfully processed LESS and/or {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}Sass{% endglossarytooltip %} files
 {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} deployment complete
 Generated classes:
         Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor

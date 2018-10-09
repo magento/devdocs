@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: How CSS and LESS files are preprocessed and how to debug them
+title: How CSS and Less files are preprocessed and how to debug them
 functional_areas:
   - Frontend
 ---
@@ -46,42 +46,42 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
 </table>
 
 
-## LESS compilation modes {#less_modes}
+## Less compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling `.less` files to CSS are implemented:
 
-1. Server-side LESS compilation. 
+1. Server-side Less compilation. 
 
-    This is the default compilation mode, and is the only option in [production application mode]. In this case the compilation is performed on the server, using the [LESS PHP library].
+    This is the default compilation mode, and is the only option in [production application mode]. In this case the compilation is performed on the server, using the [Less PHP library].
 
 
-2. Client-side LESS compilation.
+2. Client-side Less compilation.
 
     When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
 
 To set the compilation mode, do the following:
 1.  In the Magento Admin, navigate to **Stores** > **Configuration** > ADVANCED > **Developer**.
 2.  In the **Store View** drop-down field, select **Default Config**.
-3.  Under **Front-end development workflow**, in the **Workflow type** field, select the compilation mode.
+3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  To save the settings, click **Save Config**.
 
-### Server-side LESS compilation {#server-side}
+### Server-side Less compilation {#server-side}
 
-The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
-For each CSS file included in the layouts, LESS preprocessor does the following:
+The following paragraph describes how the Less preprocessor works in server-side compilation mode.
+For each CSS file included in the layouts, Less preprocessor does the following:
 
 1. Checks if the requested `.css` file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.
-2. Changes the extension of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]. If the `.less` file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.
-3. Reads `.less` file contents and resolves [`@magento_import`](#fedg_css-magento-import) and default LESS `@import` directives.
+2. Changes the extension of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]. If the `.less` file is not found, Less preprocessor stops its execution. Otherwise, it proceeds to the next step.
+3. Reads `.less` file contents and resolves [`@magento_import`](#fedg_css-magento-import) and default Less `@import` directives.
 
-4. Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
+4. Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the Less preprocessor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
 
-5. All source files are passed to the PHP LESS compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
+5. All source files are passed to the PHP Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
 
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side LESS compilation mode, to have your changes applied, you need to do the following:
+In server-side Less compilation mode, to have your changes applied, you need to do the following:
 
 1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system.
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).

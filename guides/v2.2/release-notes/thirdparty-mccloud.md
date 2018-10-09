@@ -10,7 +10,7 @@ This page contains links to license agreements of the third party components use
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
-github |||[Source](https://github.com)|[Terms of Service](https://help.github.com/articles/github-terms-of-service/)
+GitHub |||[Source](https://github.com)|[Terms of Service](https://help.github.com/articles/github-terms-of-service/)
 fastly |1.2.33||[Source](https://github.com/fastly/fastly-magento2)|[License](https://github.com/fastly/fastly-magento2/blob/master/LICENSE_FASTLY_CDN.txt)
 new relic apm || MIT/Apache|[Source](https://docs.newrelic.com/apm)|[License](https://rpm.newrelic.com/licenses)
 blackfire profiler |||[Source](https://blackfire.io)|[Terms of Use](https://blackfire.io/terms-of-use)

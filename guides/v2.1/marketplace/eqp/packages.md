@@ -19,7 +19,7 @@ A successful submission results in a package being published on the [Magento Mar
 
 The EQP review process includes two steps:
 
-* In **technical review**, we preform all automated testing. This step also involves manual testing after all automated tests run.
+* In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
 * In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
 These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
