@@ -13,5 +13,5 @@ The Magento platform core code contains several extensions that have been develo
 | Amazon Pay            | payments-cp-devel@amazon.com         | [amazon-payments-magento-2-plugin](https://github.com/amzn/amazon-payments-magento-2-plugin)  |
 | dotmailer             | support@dotmailer.com                | [dotmailer-magento2-extension](https://github.com/dotmailer/dotmailer-magento2-extension) |
 | Klarna Payments       | magento@klarna.com                   | N/A                                                       |
-| Magento Shipping      | magentoshipping@temando.com          | N/A                                                       |
+| Magento Shipping      | [support.magento.com](https://support.magento.com)          | N/A                                                       |
 | Vertex Tax Solutions  | CloudSupport@VertexInc.com           | N/A                                                       |
