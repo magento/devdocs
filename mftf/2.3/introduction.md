@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.7
+mftf-release: 2.3.8
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/introduction.html
 ---
 
