@@ -180,24 +180,26 @@ This indicates a null value.
 
 Node Format:
 
-: ~~~
+: The node format is as follows:
+
+  ``` xml
   <argument xsi:type="array">
     <item name="someKey" xsi:type="<type>">someVal</item>
   </argument>
-  ~~~
+  ```
 
-Magento builds an array with elements corresponding to the items and passes it as the argument.
-The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-
-When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-
-When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-
+  Magento builds an array with elements corresponding to the items and passes it as the argument.
+  The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
+  
+  When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
+  
+  When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
+  
 ---
 
 **Argument Examples:**
 
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Example\Type">
         <arguments>
@@ -232,14 +234,13 @@ When Magento loads a new configuration at a later time, either by a more specifi
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
-<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Merging and Arguments**
-
+<br/>
 During merging, arguments replace other arguments with the same name if their type is different.
 If the argument type is the same, then the newer argument replaces the old one.
-</div>
 
 ### Abstraction-implementation mappings
 

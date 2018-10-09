@@ -110,13 +110,11 @@ Content-Type: application/pdf
 ------------287032381131322--
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
 * Each part has a header and body with `Content-Disposition` header always set to `form-data`.
 * The `name` value must be set to `file[]` for all parts.
 * The original filename must be supplied in the `filename` parameter.
 * The `Content-Type` header must be set to the appropriate mime-type for the file.
 * The body of each part is the full contents of the raw file.
-</div>
 
 For example, if you save the previous request body is saved to a temporary file at `/tmp/files-payload`, you can use it in your POST request to upload the file:
 
@@ -227,9 +225,7 @@ curl -X DELETE \
 ]
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
 * The API returns a batch response for each item, which includes a `code` and `message`.
 * A 200 OK HTTP response code indicates a successful upload.
 * Any non-200 HTTP response code indicates an error.
 * If no packages are associated with a file, the API returns an empty list and the file is removed.
-</div>
