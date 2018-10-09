@@ -23,7 +23,7 @@ In the project root directory (where you have installed the framework as a compo
 ```bash
 vendor/bin/mftf command [options] [<arguments>] [--remove|-r]
 ```
-  
+
 ## Useful commands
 
 Use the following commands to run commonly performed tasks.
@@ -47,13 +47,14 @@ Upgrades the existing MFTF tests after the MFTF major upgrade.
 ```bash
 vendor/bin/mftf generate:tests
 ```
+
 ### Generate tests by test name
 
 ```bash
 vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 ```
 
-### Generate and run the tests for a spcecified group
+### Generate and run the tests for a specified group
 
 ```bash
 vendor/bin/mftf run:group product -r
@@ -70,8 +71,8 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
 ## Reference
- 
-### `build:project`     
+
+### `build:project`
 
 #### Description
 
@@ -85,9 +86,9 @@ vendor/bin/mftf build:project [--upgrade]
 
 #### Options
 
-Option | Description
----|---
-`-u`, `--upgrade` | Upgrades existing MFTF tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: `build:project --upgrade`.
+| Option            | Description                                                                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-u`, `--upgrade` | Upgrades existing MFTF tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: `build:project --upgrade`. |
 
 ### `generate:tests`
 
@@ -104,18 +105,19 @@ vendor/bin/mftf generate:tests [option] [<test name>] [<test name>] [--remove]
 
 #### Options
 
-Option | Description|
----|---
-`--config=[<default>|<singleRun>|<parallel>]`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split the list into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`.
-`--force`    | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.
-`--lines`    | Sets the number of lines that determines the group size when `--config=parallel` is used. The __default value__ is `500`. Example: `generate:tests --config=parallel --lines=400`
-`--tests`    | Defines the test configuration as a JSON string.
-`--debug`    | Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.
-`-r,--remove`| Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `generate:tests SampleTest --remove` cleans up the entire `_generated` directory and generates `SampleTest` only.
+| Option                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--config=[<default>|<singleRun>|<parallel>]` | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split the list into multiple groups using `--config=parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config=parallel`. |
+| `--force`                                     | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.                                                                                                                                                                                                                                                                                                                                                             |
+| `-i,--time`                                     | Set time in minutes to determine the group size when `--config=parallel` is used. The __default value__ is `10`. Example: `generate:tests --config=parallel --time=15`                                                                                                                                                                                                                                                                                                            |
+| `--tests`                                     | Defines the test configuration as a JSON string.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `--debug`                                     | Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.                                                                                                                                                                                                                                                   |
+| `-r,--remove`                                 | Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `generate:tests SampleTest --remove` cleans up the entire `_generated` directory and generates `SampleTest` only.                                                                                                                                                                                                                                                 |
 
 #### Examples of the JSON configuration
 
 The configuration to generate a single test with no suites:
+
 ```json
 {  
    "tests":[
@@ -126,6 +128,7 @@ The configuration to generate a single test with no suites:
 ```
 
 The configuration to generate a single test in the suite:
+
 ```json
 {  
    "tests": null,         // No tests outside the suite configuration will be generated.
@@ -142,7 +145,7 @@ Complex configuration to generate a few non-suite tests, a single test in a suit
 ```json
 {  
    "tests":[  
-      "general_test1",   
+      "general_test1",
       "general_test2",
       "general_test3"
    ],
@@ -178,12 +181,11 @@ Generates one or more suites based on XML declarations.
 vendor/bin/mftf generate:suite <suite name> [<suite name>] [--remove]
 ```
 
-
 #### Options
 
-Option | Description|
----|---
-`-r,--remove`| Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `vendor/bin/mftf generate:suite WYSIWYG --remove` cleans up the entire `_generated` directory and generates `WYSIWYG` only.
+| Option        | Description                                                                                                                                                                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `-r,--remove` | Removes the existing generated suites and tests cleaning up the `_generated` directory before the actual run. For example, `vendor/bin/mftf generate:suite WYSIWYG --remove` cleans up the entire `_generated` directory and generates `WYSIWYG` only. |
 
 #### Example
 
@@ -208,9 +210,9 @@ vendor/bin/mftf generate:urn-catalog [--force] [<path to the directory with misc
 
 #### Options
 
-Option | Description
----|---
-`-f, --force` | Creates the `misc.xml` file if it does not exist in the given `path`.
+| Option        | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| `-f, --force` | Creates the `misc.xml` file if it does not exist in the given `path`. |
 
 #### Example
 
@@ -233,9 +235,9 @@ vendor/bin/mftf reset [--hard]
 
 #### Options
 
-Option|Description
----|---
-`--hard` | Forces a reset of the configuration files.
+| Option   | Description                                |
+| -------- | ------------------------------------------ |
+| `--hard` | Forces a reset of the configuration files. |
 
 #### Example
 
@@ -250,15 +252,15 @@ Generates and executes the listed groups of tests using Codeception.
 #### Usage
 
 ```bash
-vendor/bin/mftf run:group [--skip-generate|--remove] [--] <group1> [<group2>] 
+vendor/bin/mftf run:group [--skip-generate|--remove] [--] <group1> [<group2>]
 ```
 
 #### Options
 
-Option | Description
----|---
-`-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
-`-r, --remove`   | Removes previously generated suites and tests before the actual generation and run.
+| Option                | Description                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests. |
+| `-r, --remove`        | Removes previously generated suites and tests before the actual generation and run.                       |
 
 #### Examples
 
@@ -273,7 +275,7 @@ Execute previously generated tests with the annotations `group="group1"` and `gr
 ```bash
 vendor/bin/mftf run:group -k -- group1 group2
 ```
-  
+
 ### `run:test`
 
 Generates and executes tests by name using Codeception.
@@ -286,10 +288,10 @@ vendor/bin/mftf run:test [--skip-generate|--remove] [--] <name1> [<name2>]
 
 #### Options
 
-Option | Description
----|---
-`-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
-`-r, --remove`   | Remove previously generated suites and tests.
+| Option                | Description                                                                                               |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests. |
+| `-r, --remove`        | Remove previously generated suites and tests.                                                             |
 
 #### Examples
 
@@ -298,7 +300,6 @@ Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from X
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
-
 
 ### `upgrade:tests`
 
