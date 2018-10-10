@@ -5,7 +5,7 @@ title: Fastly troubleshooting
 menu_title: Fastly troubleshooting
 menu_order: 20
 menu_node:
-redirect from:
+redirect_from:
    - /guides/v2.1/cloud/trouble/trouble_fastly.html
    - /guides/v2.2/cloud/trouble/trouble_fastly.html
    - /guides/v2.3/cloud/trouble/trouble_fastly.html

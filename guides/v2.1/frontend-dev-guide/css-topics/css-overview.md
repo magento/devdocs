@@ -1,22 +1,21 @@
 ---
 group: frontend-developer-guide
 title: Cascading style sheets (CSS)
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-overview.html
 functional_areas:
   - Frontend
 ---
 
 ## Overview
 
-Magento 2 incorporates [LESS](http://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
-To define styles of a Magento store, you can use both - CSS and LESS stylesheets.
+Magento 2 incorporates [Less](http://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
+To define styles of a Magento store, you can use both - CSS and Less stylesheets.
 
-Magento application provides a built-in LESS UI library, which you can optionally extend. 
+Magento application provides a built-in Less UI library, which you can optionally extend. 
 
 To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-*	If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default LESS files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
-*	Create your own LESS files using the built-in LESS preprocessor. 
+*	If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
+*	Create your own Less files using the built-in Less preprocessor. 
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
 ## Things to remember when working with styles

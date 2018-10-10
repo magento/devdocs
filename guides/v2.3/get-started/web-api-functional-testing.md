@@ -65,7 +65,7 @@ interface AdapterInterface
      *         'resourcePath' => $resourcePath, // e.g. /products/:id
      *         'httpMethod' => $httpMethod,     // e.g. GET
      *         'token' => '21hasbtlaqy8t3mj73kjh71cxxkqj4aq'    // optional : for token based Authentication. Will
-     *                                                             override default Oauth based authentication provided
+     *                                                             override default OAuth based authentication provided
      *                                                             by test framework
      *     ),
      *     'soap' => array(

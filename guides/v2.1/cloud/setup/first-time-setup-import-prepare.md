@@ -194,7 +194,7 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
 
 ## Copy the encryption key {#encryption-key}
 
-To decrypt the encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
+To decrypt the encrypted data from your imported database, copy your encryption key from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` in the `crypt` array.

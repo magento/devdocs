@@ -201,4 +201,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-[Sample module on github](https://github.com/magento/magento2-samples/tree/master/sample-external-links)
+[Sample module on GitHub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

@@ -207,7 +207,7 @@ Admin (structure_id = 2)
 
 **Sample Usage**
 
-`GET /V1/heirarchy/2`
+`GET /V1/hierarchy/2`
 
 **Payload**
 

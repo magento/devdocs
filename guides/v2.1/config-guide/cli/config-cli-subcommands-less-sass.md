@@ -1,7 +1,6 @@
 ---
 group: configuration-guide
 title: Create symlinks to LESS files
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html
 functional_areas:
   - Configuration
   - System

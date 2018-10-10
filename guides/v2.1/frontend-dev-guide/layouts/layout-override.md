@@ -1,7 +1,6 @@
 ---
 group: frontend-developer-guide
 title: Override a layout
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 functional_areas:
   - Frontend
 ---

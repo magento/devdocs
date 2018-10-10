@@ -6,7 +6,6 @@ menu_title: Configure services as web APIs
 menu_order: 20
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 functional_areas:
   - Services
 ---
@@ -311,7 +310,7 @@ If a service method argument is called `item`, there will be a problem during SO
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
 
-## Forcing Request Paramters   {#forced-parameters}
+## Forcing Request Parameters   {#forced-parameters}
 
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
    always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>

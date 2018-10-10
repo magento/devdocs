@@ -78,7 +78,7 @@ There are several ways to download the Magento software, including:
 
 *	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
@@ -287,7 +287,7 @@ There are several ways to download the Magento software, including:
 
 *	[Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll download and extract an archive.
 

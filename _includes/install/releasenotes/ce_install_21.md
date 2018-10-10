@@ -2,7 +2,7 @@
 
 ## Install the Magento software
 
-You can get Magento Open Source (formerly Community Edition) 2.1 from Github, Composer, or using a compressed archive.
+You can get Magento Open Source (formerly Community Edition) 2.1 from GitHub, Composer, or using a compressed archive.
 
 See one of the following sections for more information:
 

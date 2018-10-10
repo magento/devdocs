@@ -4,7 +4,6 @@ subgroup: Architectural Layers
 title: Presentation Layer
 menu_title: Presentation layer
 menu_order: 1
-redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---
 
 ## What is the Magento Presentation layer?
@@ -28,7 +27,7 @@ Types of users and their associated areas include:
 * **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation.
 These users work within the (`frontend`) area.
 
-* **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.
+* **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
 * **Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
 

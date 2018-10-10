@@ -5,7 +5,6 @@ title: Install Data Migration Tool
 menu_title: Install Data Migration Tool
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ---
 
 ## Prerequisite: Versions of Magento and Data Migration Tool must match {#data-migrate-prereq}
@@ -20,7 +19,7 @@ If you downloaded the Magento software using a {% glossarytooltip d85e2d0a-221f-
 
 	php <your Magento install dir>/bin/magento --version
 
-#### Github repository
+#### GitHub repository
 
 If you cloned the Magento 2 GitHub repository, enter the following commands:
 
@@ -36,7 +35,7 @@ If you're cloning the GitHub repository, make sure you check out a release tag a
 
 ### Find released versions of Data Migration Tool {#migration-tool-release-version}
 
-Go to the [Releases](https://github.com/magento/data-migration-tool/releases){:target="_blank"} page of the Data Migration Tool Github repository to find available released versions.
+Go to the [Releases](https://github.com/magento/data-migration-tool/releases){:target="_blank"} page of the Data Migration Tool GitHub repository to find available released versions.
 
 ## Install Data Migration Tool {#data-migrate-install}
 

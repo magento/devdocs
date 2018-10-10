@@ -156,7 +156,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 
 ### Add a webhook in BitBucket
 
-In order to communicate events—such as a push—with your Cloud git server, you need to create a webhook for your BitBucket repository.
+In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your BitBucket repository.
 
 1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
@@ -231,7 +231,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     * - Indicates the current environment
     ```
 
-After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
+After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular Git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
 

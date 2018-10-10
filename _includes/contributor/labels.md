@@ -82,7 +82,7 @@ General labels include a variety of tasks and definitions for pull requests and 
 ### Issue Resolution Status
 {:.no_toc}
 
-Labels applied to issues through verification and completion. For details on the process, see [GitHub Issues Processing Workflow]().
+Labels applied to issues through verification and completion. For details on the process, see [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow).
 
 * `Issue: Format is not valid` - Gate 1 failed. Automatic verification by the Automated Contributor Assistant failed and the issue needs updates. The [format](https://github.com/magento/magento2/tree/2.3-develop/.github/ISSUE_TEMPLATE) of the issue description and minimum required information is not provided: Preconditions, Steps to Reproduce, Actual Result, Expected Result. Previous label `G1 Failed`.
 * `Issue: Format is valid` - Gate 1 passed. Automatic verification by the Automated Contributor Assistant passed for all issue content. Previous label `G1 Passed`.

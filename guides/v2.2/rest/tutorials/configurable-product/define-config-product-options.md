@@ -53,7 +53,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 **Endpoint**
 
-`POST <host>/V1/configurable-products/MS-Champ/child`
+`POST <host>/rest/default/V1/configurable-products/MS-Champ/child`
 
 **Payload**
 

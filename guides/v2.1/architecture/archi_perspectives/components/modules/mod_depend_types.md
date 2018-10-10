@@ -1,7 +1,6 @@
 ---
 group: architecture-guide
 title: Module dependency types
-redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
 ## Module install order

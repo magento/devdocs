@@ -118,7 +118,7 @@ The MassActions component has dependencies on the following components:
             <item name="config" xsi:type="array">
                 <item name="confirm" xsi:type="array">
                     <item name="title" xsi:type="string" translate="true">Edit items</item>
-                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to edit selected items?</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you want to edit selected items?</item>
                 </item>
                 <item name="type" xsi:type="string">edit</item>
                 <item name="label" xsi:type="string" translate="true">Edit</item>

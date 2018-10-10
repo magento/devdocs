@@ -2,7 +2,6 @@
 group: architecture-guide
 title: Service layer
 menu_title: Service layer
-redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
 ---
 
 ## What is a Service layer?

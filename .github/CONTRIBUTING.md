@@ -16,7 +16,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Prerequisites
 
-* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento respositories.
+* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento repositories.
 * Make sure you sign the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca).
 * Check the [guidelines](#contribution-guidelines).
 * [Fork](https://help.github.com/articles/fork-a-repo/) or [clone](https://help.github.com/articles/cloning-a-repository/) the [DevDocs repository](GitHub.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
@@ -27,7 +27,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Contribution guidelines
 
-We use [Markdown](http://daringfireball.net/projects/markdown/) to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html). Check [Templates](#templates) for examples of styles and markdown.
+Write content using [Kramdown](https://kramdown.gettalong.org/), which is a simple markup language. We use Kramdown, Liquid, and [Jekyll](https://jekyllrb.com/) to generate a static site hosted through [GH Pages](https://help.github.com/articles/what-is-github-pages/). Check [Templates](#templates) for examples of styles and markdown.
 
 You can update existing or add new topics in their respective Magento 2 versioned directories (2.1, 2.2, 2.3, and onward). If you need help finding a directory for your content, we can help in your PR.
 
@@ -35,12 +35,12 @@ The following guidelines may answer most of your questions and help you get star
 
 1.  Check [existing pull requests](https://GitHub.com/magento/devdocs/pulls) and make sure you are not duplicating work!
 
-1.  For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
+2.  For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
 
-1.  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
+3.  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
 
     -   The DevDocs team can find the best home for your new topics and add it to the navigation.
-    -   If a topic has a symlink, you can remove it with git commands and add a new file. Copy and paste a previous version of the topic to get started.
+    -   If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
 
 ## Write and submit PRs
 
@@ -62,7 +62,7 @@ The following guidelines may answer most of your questions and help you get star
 
 ## Preview HTML locally
 
-To preview your changes in HTML output, follow the instructions in the [README](https://GitHub.com/magento/devdocs/blob/develop/README.md) to build the devdocs site locally using Jekyll.
+To preview your changes in HTML output, follow the instructions in the [README](https://GitHub.com/magento/devdocs/blob/master/README.md) to build the devdocs site locally using Jekyll.
 
 ## Templates
 

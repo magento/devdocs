@@ -22,7 +22,7 @@ The Toolbar component implements a container for the listing-related elements li
   </tr>
   <tr>
     <td><code>stickyClass</code></td>
-    <td>A list of aditional CSS classes added to the root node of the <code>.html</code> template specified in <code>StickyTmpl</code>.</td>
+    <td>A list of additional CSS classes added to the root node of the <code>.html</code> template specified in <code>StickyTmpl</code>.</td>
     <td>{<br />[name:string]: boolean<br />}</td>
     <td>{<br /><code>'sticky-header': true</code><br />}</td>
   </tr>

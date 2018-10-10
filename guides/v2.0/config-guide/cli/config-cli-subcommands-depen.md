@@ -5,7 +5,6 @@ title: Dependency reports
 menu_title: Dependency reports
 menu_node:
 menu_order: 225
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html
 functional_areas:
   - Configuration
   - System

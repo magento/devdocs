@@ -7,11 +7,22 @@ title: What's new on DevDocs
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
+## October 2018
 
-## September 2018
+Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Versions applied to | New or Updated    | Date
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------|-----------
+Added [Multi-Repo Docs](https://devdocs.magento.com/community/resources/multi-repo-docs.html) features and overview                                                                                                                                                                                                                                                                                                                   | 2.x                 | New topic         | October  7
+MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/2.3/test/actions.html#presskey) action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#data-type-usage) syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/2.3/configuration.html#default_timezone) configuration parameter. | 2.3.x               | Technical changes | October  5
+Added a 2.3 [product availability](https://devdocs.magento.com/availability.html) topic.                                                                                                                                                                                                                                                                                                                                              | 2.3.x               | New topic         | October  5
+Updated the [1.3.1 technical guideline](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#1-basic-programming-principles).                                                                                                                                                                                                                                                                           | 2.x                 | Major update      | October  4
+Corrected the instructions for optimizing JavaScript files using the [JavaScript bundling](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/js-bundling.html) technique.                                                                                                                                                                                                                                             | 2.1.x, 2.2.x, 2.3.x | Technical changes | October  3
+Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).                                                                          | 2.1.x, 2.2.x        | New topic         | October  1
 
+{% collapsibleh2 September 2018 %}
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points) section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.1.x, 2.2.x, 2.3.x|Major update|September 27
+Updated the [Release notes for ece-tools version 2002.0.14.](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html) architecture.<br/>Added [Reset cron jobs](http://devdocs.magento.com/guides/v2.1/cloud/trouble/reset-cron-jobs.html) topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and a bad redirect for the ece-tools update.|2.1.x, 2.2.x, 2.3.x|Major update|September 25
 Updated [declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html) command names and parameters.|2.3.x|Technical changes|September 21
 Added a step to configure a webhook for the Magento Cloud [BitBucket integration](https://devdocs.magento.com/guides/v2.2/cloud/integrations/bitbucket-integration.html).|2.1.x, 2.2.x|Technical changes|September 21
 Updated the backward incompatible changes for [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_5-2_2_6) and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_5-2_2_6) after the Magento 2.2.6 release.|2.2.x|Major update|September 18
@@ -31,6 +42,7 @@ Replaced all references to the `composer create-project --repository-url` flag w
 Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html) to include the new `attribute_options` object.|2.3.x|Technical changes|Sep 4
 Added [REST reference documentation for MSI](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-sources.html)|2.3.x|New topic|Sep 4
 Removed Fastly VCL snippet for extending the Admin timeout. Magento Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Sep 4
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 August 2018 %}
 
@@ -62,7 +74,6 @@ Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extensio
 Added the topic [Operation Status Search](https://devdocs.magento.com/guides/v2.3/rest/operation-status-search.html).|2.3.x|New topic|Aug 03
 Updated the [Magento Functional Testing Framework documentation](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) due to the MFTF 2.3.0 release.|2.2.x, 2.3.x|Major update|Aug 02
 {% endcollapsibleh2 %}
-
 
 {% collapsibleh2 July 2018 %}
 
@@ -447,8 +458,8 @@ Description  | Versions applied to  | New or Updated | Date
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [How CSS and LESS files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Compile LESS using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [How CSS and Less files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Compile Less using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Layout overview]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Common layout customization tasks]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Templates XSS security]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"} | 2.2 |  New | June 23  |

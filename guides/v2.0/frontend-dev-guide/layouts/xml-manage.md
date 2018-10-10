@@ -4,7 +4,6 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 functional_areas:
   - Frontend
 ---
