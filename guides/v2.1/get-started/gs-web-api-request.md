@@ -152,9 +152,29 @@ The following example builds a Customers Search request based on search criteria
     $request->setMethod(\Zend\Http\Request::METHOD_GET);
 
     $params = new \Zend\Stdlib\Parameters([
-      'searchCriteria' => '*'
-      ]);
-      $request->setQuery($params);
+        'searchCriteria' => [
+            'filterGroups' => [
+                0 => [
+                    'filters' => [
+                        0 => [
+                            'field' => 'firstname',
+                            'value' => '%ver%',
+                            'condition_type' => 'like'
+                        ],
+                        1 => [
+                            'field' => 'lastname',
+                            'value' => '%Costello%',
+                            'condition_type' => 'like'
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        'current_page' => 1,
+        'page_size' => 10
+    ]);
+    
+    $request->setQuery($params);
       ```
 
 4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
