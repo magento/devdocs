@@ -60,7 +60,7 @@ To add the store and sales related information to a template, use system variabl
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
-Here is a comprehensive list of some of the most commonly used email template variables that are available:
+Here is a list of the most commonly used email template variables that are available:
 
   * Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
   * Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
