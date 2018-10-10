@@ -56,7 +56,7 @@ where
 <td>cache-backend-redis-password</td>
 <td>password</td>
 <td>
-<p>Configuring a <strong>Redis password</strong> enables one of its two built-in security feature - the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <strong>/etc/redis/redis.conf</strong> , which you should still have open from the previous step.</p>
+<p>Configuring a <strong>Redis password</strong> enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <code>/etc/redis/redis.conf</code>, which you should still have open from the previous step.</p>
 </td>
 <td></td>
 </tr>
@@ -113,7 +113,7 @@ where
 <tr>
 <td>page-cache-redis-password</td>
 <td>password</td>
-<p>Configuring a <strong>Redis password</strong> enables one of its two built-in security feature - the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <strong>/etc/redis/redis.conf</strong> , which you should still have open from the previous step.</p>
+<p>Configuring a <strong>Redis password</strong> enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <code>/etc/redis/redis.conf</code>, which you should still have open from the previous step.</p>
 <td>0</td>
 </tr>
 <tr>
