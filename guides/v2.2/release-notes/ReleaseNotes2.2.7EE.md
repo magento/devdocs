@@ -104,44 +104,9 @@ ASK CLOUD
 
 
 
-<!-- ENGCOM-2673 -->* 
+<!-- ENGCOM-2673 -->* You can now enable logs as expected (through the use of **Stores** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode. *Fix submitted by [Jay Ghosh](https://github.com/jayankaghosh) in pull request [15335](https://github.com/magento/magento2/pull/15335)*. [GitHub-13480](https://github.com/magento/magento2/issues/13480)
 
-
-
-Unable to activate logs after switching from production mode to developer
-
-I can't enable logs in config (Stores > Configuration > Advanced > Developer > Debug > Log to file) because the select field is disabled.
-
-fix: Set the ENV value of dev/debug/debug_logging to null when deployment mode is "developer"
-
-
-
-
- *Fix submitted by [Jay Ghosh](https://github.com/jayankaghosh) in pull request [15335](https://github.com/magento/magento2/pull/15335)*. [GitHub-13480](https://github.com/magento/magento2/issues/13480)
-
-
-
-
-<!-- ENGCOM-2920 -->* Next Page button triggered when filtering Customer grid
-
-Steps to reproduce
-Go to "Sales -> Orders"
-"Create new order"
-Customer grid is displayed
-Focus on any column filter (i.e. text box in email column)
-Press ENTER to trigger the filter
-Expected result
-Filter's AJAX call is triggered
-Results don't change because the filter input was empty
-Grid is still showing the same page.
-Actual result
-Filter's AJAX call is triggered
-Next Page AJAX call is triggered at the same time (see screenshots)
-Results don't change because the filter input was empty
-Grid is showing the next page now
-
-
-   *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17870](https://github.com/magento/magento2/pull/17870)*. [GitHub-17789](https://github.com/magento/magento2/issues/17789)
+<!-- ENGCOM-2920 -->* You can now filter the customer grid without inadvertently triggering a next-page Ajax call. Previously, when you created an order from the Orders page and tried to filter the customer list, Magento did not filter the list, and displayed the next page of customer entries. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17870](https://github.com/magento/magento2/pull/17870)*. [GitHub-17789](https://github.com/magento/magento2/issues/17789)
 
 
 
@@ -157,11 +122,10 @@ As an Admin user,
 When I am an administrator of a single web-site and I edit a product which is assigned to several other web-sites, then "All Store Views" scope option is not available for me and product edit page is opened for the store view scope which I have access to.
 So, that, I do not need to switch to my store view manually every-time when opening a product for editing.
 
-<!-- MAGETWO-90765 -->*
-Unable edit\create CMS/Block content by restricted admin
 
-ACTUAL RESULTS: Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png￼
-Expected CMS block for restricted admin is created
+
+
+<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this wwhen an adminstrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
 
 
 EE only
@@ -263,88 +227,22 @@ ACTUAL RESULTS:
 
 ### Bundle products
 
-<!-- MAGETWO-93145 -->* Bundle summary is not sorted by Bundle Item Position but by `option_id`
-STEPS TO REPLICATE:
-
-Setup vanilla Magento installation with sample products.
-View product `Sprite Yoga Companion Kit` select some options and check the summary.
-The summary will be sorted correctly because `option_id` is ascending
-Now go to the backend and place the Bundle Items in a different order
-View the bundle product again, select some products and check the summary
-EXPECTED RESULTS:
-The summary sorted as configured in the admin panel.
-
-ACTUAL RESULTS:
-The summary isn't sorted as configured in the admin panel.
-
-NOTES:
-Is issue reproducible in clean reported Magento Version: Yes
-Is issue reproducible in the latest available release: Yes
-
-<!-- ENGCOM-1832 -->* 
-
-Bundle Products price range is showing expired special price from bundle options
-
-Expected result
-no special price should be shown for bundle product price range.
-Actual result
-It is showing special price , when the special price for simple product has already been expired.
-but the price in customization and summary box is right
+<!-- MAGETWO-93145 -->* Magento now sorts bundle summaries according to the criteria set in the Admin. 
 
 
+<!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15535](https://github.com/magento/magento2/pull/15535)*. [GitHub-15457](https://github.com/magento/magento2/issues/15457)
 
 
-  *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15535](https://github.com/magento/magento2/pull/15535)*. [GitHub-15457](https://github.com/magento/magento2/issues/15457)
-
-
-
-<!-- MAGETWO-89006 -->* 
-
-Merchants can now create a return merchandise authorization (RMA)  for a bundled product on the customer account. 
+<!-- MAGETWO-89006 -->* Merchants can now create a return merchandise authorization (RMA)  for a bundled product from a customer's account. 
 Previously, Magento did not create the RMA, and the store returned an error.
-
-SSUE When creating RMA on the customer account for a bundled product, the store returns an error:
-There is an error in quantities for item Sprite Yoga Companion Kit.
-STEPS TO REPRODUCE
-	1.	Enabled RMA on the storefront
-	2.	Create an order with a configurable product for an existing customer
-	3.	Invoice and ship the order
-	4.	Log as customer on the storefront
-	5.	View Order in customer account
-	6.	Click link to create a return
-	7.	Enter return information and click submit
-Is issue reproducible in Magento Version: Yes Is issue reproducible in the latest available release: Yes Is issue reproducible in the customer's install: Yes
-EXPECTED RESULTS Return should be created
-ACTUAL RESULTS No return is created and the store returns an error.
-
 
 
 ### Catalog
 
 
-<!-- MAGETWO-92036 -->* The error icon does not appear on sections with required attributes that are empty when click on 'save' button
-
-Fixed issue when the error icon does not appear on sections with required attributes that are empty when click on 'save' button
+<!-- MAGETWO-92036 -->* Magento now alerts you to an error when a merchant tries to save a product without completed required fields. 
 
 
-ISSUE:
-Error icon on tabs not showing, if there is data missing on save
-
-Go to Stores > Attributes > Product and add a required attribute (or make for example meta_keyword a required attribute)
-Add the attribute to a collapsed tab/group (e.g., meta_keyword in Search Engine Optimization group)
-Create a new product
-Immediately click on save before editing any data => the error icon  is not shown on the tab where there is the required field
-Input data into required field and remove it again (before leaving the field)
-Click on save => The error icon is not shown
-Input data into required field and leave field
-Remove data from required field and leave field => the  icon is shown
-Input data into a field in the same tab => The edited (pen) icon is shown
-Click on save => The edited (pen) icon is shown instead of the error icon
-EXPECTED RESULTS:
-When a required field is not entered on product creation and you try to save it, the  icon should be shown for the tab / section where the attribute is located
-
-ACTUAL RESULTS:
-When a required field is not entered on product creation and you try to save it, the  icon is not shown for the tab / section where the attribute is located
 
 <!-- ENGCOM-2555 -->* restored previous fix for  gallery template issue. (This fix was unintentionally reverted in a previous release.)
 
@@ -376,12 +274,26 @@ COPY FROM 2.1.16 -- engcom-2750
 
 
 
-<!-- ENGCOM-2670 -->* 
+<!-- ENGCOM-2670 -->* You can now save attributes for a configurable product. 
+
+When adding a new product with an image, if a validation error occurs when trying to save the prodcut, the images gets removed from the "Images And Videos" section. If you fix the validation conflict and try to save the product again, an error will occur with "The file "/home/user/www/pub/media/tmp/catalog/product/o/r/pic.png" doesn't exist or not a file"
+
+
 
 Save configurable product options after validation error #16597
 
 I have a Magento Installation where I can't save attributes on a configurable product. (simple products work!).
 
+Steps to reproduce
+Add new product
+Add image to product
+Force a validation error by using an already used URL Key for the product
+Expected result
+Magento should remember the image that was added before validation occurred and save the product with the image.
+
+Create product with image
+Actual result
+The file "/home/user/www/pub/media/tmp/catalog/product/o/r/pic.png" doesn't exist or not a file
 
 
 
@@ -402,23 +314,7 @@ The following error occurs:
 
 
 
-<!-- ENGCOM-2675 -->* 
-
-[Backport] Fixed add to wishlist issue on product price 0
-
-Issue in adding the wishlist of "zero price" product
-
-Expected result
-It should allow to add the product in whishlist.
-Actual result
-Instead its throwing error message about price type in the file path: Vendor/magento/module-catalog/Pricing/Price/ConfiguredOptions.php
-
-
-
-
-
-
-  *Fix submitted by [sv3n](https://github.com/sreichel) in pull request [17395](https://github.com/magento/magento2/pull/17395)*. [GitHub-16479](https://github.com/magento/magento2/issues/16479)
+<!-- ENGCOM-2675 -->* You can now add a product with a price of zero (0) to a wishlist. *Fix submitted by [sv3n](https://github.com/sreichel) in pull request [17395](https://github.com/magento/magento2/pull/17395)*. [GitHub-16479](https://github.com/magento/magento2/issues/16479)
 
 
 
@@ -449,13 +345,9 @@ Can't save option with Title: 0
 
 
 
-<!-- ENGCOM-2758 -->* 
+<!-- ENGCOM-2758 -->*  You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
- Adding a new fieldset to the admin category editor changes the position of the 'General' fieldset
 
- When a custom fieldset is added to the admin category editor, the General section (the one with "Enable category", "Include in Menu" and "Category Name") moves to the last position of the form.
-
-   *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
 
 <!-- MAGETWO-94080 -->* Aditional Fix for "Catalog Products List" widget displaying on frontend
@@ -513,67 +405,12 @@ Can you please check if a patch for this already exists? Same issue is in the la
 EE ONLY
 
 
-<!-- MAGETWO-92036 -->*
+<!-- MAGETWO-88641 -->* Magento now applies tier prices as expected after a customer logs into their shopping cart. [GitHub-14255](https://github.com/magento/magento2/issues/14255)
 
-The error icon does not appear on sections with required attributes that are empty when click on 'save' button
+<!-- MAGETWO-84894 -->* Magento no longer switches from table to list view on the product page when you add a product from the wishlist to the shopping cart. 
 
-Fixed issue when the error icon does not appear on sections with required attributes that are empty when click on 'save' button
-ISSUE:
-Error icon on tabs not showing, if there is data missing on save
-
-EXPECTED RESULTS: When a required field is not entered on product creation and you try to save it, the ￼ icon should be shown for the tab / section where the attribute is located
-ACTUAL RESULTS: When a required field is not entered on product creation and you try to save it, the ￼ icon is not shown for the tab / section where the attribute is located
-
-
-<!-- MAGETWO-88641 -->*
-
-Tier price not applied instantly after logging in Shopping Cart
-
-STEPS TO REPLICATE: 1. Create customer group "TEST" 2. Crete Customer and assign it to TEST group 3. Create Product with tire price for Test group 4. Open frontend as guest user 5. Add product to cart 6. Click "Sign In " and Login as Customer from step 2 7. Observe product prices
-EXPECTED RESULTS: main section and summary should display tier price
-ACTUAL RESULTS: the main section displays the regular price "Summary" block shows the tier price and after several seconds refreshed to tier price (The same issue is reproduced in Shipping page too when login at the shipping step)
-
-
-[GitHub-14255](https://github.com/magento/magento2/issues/14255)
-
-
-
-
-
-
-<!-- MAGETWO-84894 -->*
-
-ProductListing: Grid view is getting changed to List view when user adding product from wishlist section.
-
-
-On product listing page, Grid view is getting changed to List view when user adding product from wishlist section and success message should displayed in the grid view.
-
-ACTUAL RESULTS Success message is not displayed but the products view is changed from grid view to list vie
-EXPECTED RESULTS Success message should displayed and the page should remain in list view/
-
-
-
-
-<!-- MAGETWO-73443 -->*
-
-Customers can now add a product 
-
-
-Adding a product to cart from category page with an expired session does not allow product to be added
-
-If you attempt to add a product to cart from a category page with an expired session it does not allow the product to be added. It is stuck showing "adding" for the product.
-
-STEPS TO REPLICATE:
-	1.	Navigate to a category page (Ex. /gear/bags.html)
-	2.	Click on "view site info" icon in the browser URL bar (This is using Chrome but any browser can be used if you know how to access cookies)
-	3.	Click on "#cookies in use"
-	4.	Expand the URL shown
-	5.	Expand cookies
-	6.	Remove PHPSESSID and form_key to replicate an expired session
-	7.	Do not refresh the page and click "add to cart"
-	8.	Notice the page is stuck "adding" the product
-EXPECTED RESULTS: The page should provide a message to refresh
-ACTUAL RESULTS: It does not allow the product to be added. It is stuck showing "adding" for the product.
+<!-- MAGETWO-73443 -->*  Customers can now add a product to their shopping cart when their session has expired. Previosuly, Magento did not add the 
+product, and hung indefinitely while trying to add the product. 
 
 
 
@@ -616,25 +453,7 @@ ask cloudvolks
 
 ### Cart and checkout
 
-<!-- MAGETWO-93037 -->* User can place order when product changes status to Out of stock during checkout
-
-Added restriction for placing orders with out of stock products
-
-STEPS TO REPLICATE:
-
-Add product to shopping cart
-Click on the button "PROCEED TO CHECKOUT"
-Log in and go to the page "Secure Checkout"
-Go to BackOffice and set for product from first step Stock Status = Out of Stock and save changes (do not change qty, qty should be > 0) https://www.screencast.com/t/hBHXnyNa
-Back to the page "Secure Checkout"
-Fill all required field and place order
-ACTUAL RESULTS:
-
-Order has been placed
-
-EXPECTED RESULTS
-An order should not be placed. The error message should be shown on checkout payment step
-
+<!-- MAGETWO-93037 -->* Customers can no longer place orders for out-of-stock products. 
 
 
  <!-- ENGCOM-2743 -->* 
@@ -659,14 +478,7 @@ Sometimes it is the case that setting both Carrier title and Method name for a s
 
 
 
- <!-- ENGCOM-2901 -->* 
-
-
- Resolved : Wishlist icon cut on Shopping cart page in mobile view #17851 #17877
-
-
-
-   *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
+ <!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
 
 
@@ -693,26 +505,9 @@ My billing and shipping address are the same is checked, but the address informa
 
 
 
-<!-- MAGETWO-93038 -->* Category not updating until full reindex
-the issue with updating category after full reindex is fixed
+<!-- MAGETWO-93038 -->* You can now see category changes on the storefront as expected after the changes have been saved. Previously, Magento did not display changes to product categories on the storefront until reindexing occurred even if **update on schedule** was set and the cache had been cleaned.
 
-ISSUE
-You can not get category changes to show on front end until they do a reindexing indexers regardless if "update on schedule" is set and cache cleaned.
 
-*REPRODUCE*
-
-Set indexers to "update on schedule" (System > Index Management > Select all, Choose Update by Schedule and click on Submit button )
-Enable "Use Flat Catalog" for categories and products (Stores > Configurations > Catalog > Catalog > Storefront > Choose Yes in Use Flat Catalog Category and Use Flat Catalog Product dropboxes)
-Set up Elasticsearch ( Stores > Configurations > Catalog > Catalog > Catalog Search > Choose the version which is you need
-in Search Engine dropbox)
-Clear cache and perform full reindex
-Add a product to a category (Create simple product simple1, create subcategory cat1, and assign simple1 to cat1)
-Run cron several times until indexer_update_all_views cron job is processed successfully
-Does the product show on the front end?
-*EXPECTED*
-Yes
-*ACTUAL*
-No
 
 
 
@@ -764,26 +559,8 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Company
 
-<!-- MAGETWO-93081 -->* Can't change company status to "Rejected"
+<!-- MAGETWO-93081 -->* Administrators with appropriate permissions can now change the status of a company  to **Rejected**. Previously, Magento did not save the change in status, and threw an error. 
 
-Fixed issue when admin user can't able to change company status into "Rejected"
-
-ISSUE
-Can't change the status of a company from 'Pending Approval' to Rejected
-
-STEPS TO REPLICATE:
-1. Login to backend
-2. Go to Customer->Company
-3. Create a company with status 'Pending Approval'
-4. Save the company
-5. Change status to 'Rejected'
-6. Try to make save.
-
-ACTUAL RESULTS:
-An Error: Could not save company
-
-EXPECTED RESULTS:
-The company is saved without the error
 
 <!-- MAGETWO-93050 -->*  Edit Users for Company on front end in New Tab throws JSON error Partner thinks edit in new tab should be disabled
 
@@ -816,25 +593,7 @@ New Tab opens and JSON error is thrown.
 
 ### Configurable products
 
-<!-- MAGETWO-73245 -->* Add product to website will reset has_options and required_options
 
-Steps to reproduce:
-
-Create a 2nd website.
-Create a configurable product with any attribute.
-Add a Customizable Option
-Click Save button.
-Open the tab Product in Websites and add you configurable product to your created website.
-Click Save button
-
-Expected result:
-
-Entry in table catalog_product_entity should have has_options and required_options set to 1
-
-Actual result:
-
-The columns has_options and required_options are set to 0
-If you click Save button again in the backend it will set has_options and required_options to 1
 
 <!-- ENGCOM-2671 -->* To decide whether a product with the same options is already present in the cart, magento makes a comparison with the string that represents the buyrequest in json format with those saved in the database. When a product is added by the Rest API the option code attribute encoded in the json is a number, whereas from the frontend context it is a string. In this case, this bufix forces the option attribute value in string, creating arrays that will later be converted into json
 
@@ -847,49 +606,9 @@ Convert to string $option->getValue, in order to be compared with other saved op
   *Fix submitted by [zamboten](https://github.com/zamboten) in pull request [15720](https://github.com/magento/magento2/pull/15720)*. [GitHub-15028](https://github.com/magento/magento2/issues/15028)
 
 
-<!-- MAGETWO-77742 -->* 
-Error message when uploading unsupported file format
-When buying a configurable product with a customizable option of type FILE, if user attempts to upload an unsupported file, the error  "You need to choose options for your item." appears and selected options are unselected. The error is not related to the actual problem (uploading unsupported file) and merchant considers it is not UI friendly for the customers.
+<!-- MAGETWO-77742 -->* Magento now displays a descriptive error message when you try to upload a file in an unsupported format. Previously, Magento displayed an error that did not relate to the specific upload problem. 
 
-Expected results: 
-If the user attempts to upload a file with unsupported file format, a descriptive error associated to invalid file format should be displayed - "File '<file name uploaded by user>' for '<option name>' has an invalid extension."  and the selected configurable options should remain selected.
-
-Actual results: 
-
-If the user attempts to upload a file with unsupported file format, the error "You need to choose options for your item." appears (error not associated to the actual problem) and the options selected by the user are lost, forcing the user to re-select the options.
-
-
-
-
-
-<!-- MAGETWO-75086 -->* 
-
-Child product image should be shown in Wishist if options are selected for configurable product
-PRECONDITIONS
-	▪	Configurable product visible on the frontend has been created (with image).
-	▪	Simple product assigned to created configurable has been created (with images).
-	▪	Registered customer exists
-STEPS TO REPRODUCE
-1. Go to frontend, login as registered customer  2. Open created configurable product  3. Select options for existed simple on configurable product information page  4. Click Add to Wishlist
-
-
-EXPECTED RESULT
-￼ Selected options are displayed by clicking on View Details link.  ￼ As Image for selected options - image of child product with these options is displayed
-ACTUAL RESULT
-￼ Selected options are displayed by clicking on View Details link.  ￼ As Image for selected options - parent configurable product's image is shown
-
-
-[GitHub-8168](https://github.com/magento/magento2/issues/8168)
-
-
-
-Configurable product on wishlist shows parent image instead variation image 
-
-
-Expected result
-	1.	Wishlist should display variation product image instead of parent
-	2.	Currently this is done for checkout page and cart and we are able to select from backend if we want parent or child product image to be displayed
-
+<!-- MAGETWO-75086 -->* Magento now displays the correct selected product options when you click  on  **View Details** for a  product with configurable options.  ￼Previously, Magento displayed the image for the parent product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 
 
@@ -945,28 +664,7 @@ No errors and no changes to reward points
 
 ### Directory
 
-<!-- MAGETWO-92831 -->* Currency conversion rate services do not work in admin panel
-Removed outdated currency rates services. 
-Added possibility to specify API Key for Fixer.io usage.
-
-
-ISSUE:
-None of the currency conversion rate services work.
-
-STEPS TO REPLICATE:
-
-Login to admin
-Go to Sotre=>Configuration=>General=>Currency Setup
-Verify that multiple currencies are allowed, select a few if not
-Go to Store=>Currency Rate
-Try to use any of the currency rate conversion services
-Notice that they all give some kind of error
-EXPECTED RESULTS:
-Services reply with conversion rates to be imported.
-
-ACTUAL RESULTS:
-Each service gives a different error.
-
+<!-- MAGETWO-92831 -->* Currency conversion rate services now work as expected in the Admin. 
 
 
 
@@ -982,22 +680,8 @@ Each service gives a different error.
 ### Email
 
 
-<!-- MAGETWO-92786 -->* Wrong email width on iPhone
+<!-- MAGETWO-92786 -->* Magento now displays the correct width for the welcome email when viewed on a mobile device.  
 
-ISSUE
-Wrong email width on iPhone
-
-STEPS TO REPRODUCE
-
-Register a new customer
-Open a welcome email on iPhone
-Check the video screencast
-Expected results
-The email displayed correctly and its width fits the device's width
-
-Actual results
-The email displayed with a width that is ~50% of the device's width
-PS: switching device's orientation from portrait to album fixes the issue.
 
 
 
@@ -1020,7 +704,7 @@ PS: switching device's orientation from portrait to album fixes the issue.
 
 #### Database framework
 
-<!-- MAGETWO-83918 -->* The getSize function now reflects item and page count totals for filtered product collections on the category page. 
+<!-- MAGETWO-83918 -->* The `getSize` function now reflects item and page count totals for filtered product collections on the category page. 
 
 
 #### JavaScript framework
@@ -1038,38 +722,15 @@ PS: switching device's orientation from portrait to album fixes the issue.
 
 ### General
 
-<!-- MAGETWO-98990 -->*
+<!-- MAGETWO-98990 -->* ?
 
-<!-- MAGETWO-93939 -->* Cannot clear Date of Birth value in customer edit page in Admin
+<!-- MAGETWO-93939 -->* You can now clear the **Date of Birth** field in the customer edit page when accessed from the Admin. 
 
-Cannot clear Date of Birth value in customer edit page in Admin
-
-ISSUE:
-Customer Date of Birth is unable to be removed in the admin panel
-
-STEPS TO REPLICATE:
-
-Create a new customer in the admin panel and set non-empty value to Date of Birth. Save the customer
-Clear the DOB field
-Click save
-Check the field
-Notice the field still contains the original DOB
-EXPECTED RESULTS:
-Possible to remove a DOB in the admin panel
-
-ACTUAL RESULTS:
-Unable to remove a DOB in the admin panel
 
 <!-- ENGCOM-2737 -->* Product image zoom now works as expected in stores running on Safari. *Fix submitted by [Danny Nimmo](https://github.com/dannynimmo) in pull request [17491](https://github.com/magento/magento2/pull/17491)*. [GitHub-17416](https://github.com/magento/magento2/issues/17416)
 
 
-
-
-
-
-
 <!-- ENGCOM-2785 -->* Magento now displays the background of transparent product image watermarks correctly. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17013](https://github.com/magento/magento2/pull/17013)*. [GitHub-16929](https://github.com/magento/magento2/issues/16929)
-
 
 
 <!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .PHG thumbnail images as expected. Previously, transparent background were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
@@ -1078,13 +739,7 @@ Unable to remove a DOB in the admin panel
 <!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
 
-<!-- ENGCOM-2322 -->* 
-
-correct the position of the datepicker when you scroll
-
-Datepicker does not scroll
-
-*Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
+<!-- ENGCOM-2322 -->* Magento now correctly displays the Datepicker widget when a user scrolls a  page containing it. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
 
 
 
@@ -1122,25 +777,6 @@ MYSQL Message queue is fetching messages from new to old
 EE only 
 
 
-<!-- MAGETWO-93939 -->* Cannot clear Date of Birth value in customer edit page in Admin	
-
-Cannot clear Date of Birth value in customer edit page in Admin
-
-ISSUE:
-Customer Date of Birth is unable to be removed in the admin panel
-
-STEPS TO REPLICATE:
-
-Create a new customer in the admin panel and set non-empty value to Date of Birth. Save the customer
-Clear the DOB field
-Click save
-Check the field
-Notice the field still contains the original DOB
-EXPECTED RESULTS:
-Possible to remove a DOB in the admin panel
-
-ACTUAL RESULTS:
-Unable to remove a DOB in the admin panel
 
 
 
@@ -1169,7 +805,10 @@ Seems like this is an issue for configurable, grouped, and bundled products
 
 ### Import/export
 
-<!-- MAGETWO-93223 -->* Import history wrong execution time
+<!-- MAGETWO-93223 -->* Magento now displays the correct for import in the **System** > Import History
+
+
+Import history wrong execution time
 
 Import time is incorrect in System > Import History
 
@@ -1273,27 +912,8 @@ Same issue if you set in store config locale English (Australia) And add datapic
 
 ### Logging
 
-<!-- MAGETWO-93054 -->* 
+<!-- MAGETWO-93054 -->* Admin action logs now list changes to product quantity as expected. 
 
-Fixed issue with admin logs don't detail quantity changes
-
-Admin logs don't detail quantity changes
-
-ISSUE:
-
-Admin action logs report contain changes that weren't made by admin.
-Doesn't log quantity changes if admin did they
-STEPS TO REPLICATE:
-
-Edit any product in the catalog
-Change quantity and save
-Open System>Action Logs>Report
-Open last product save action
-EXPECTED RESULTS:
-Only actions that were made by admin reflected, quantity change action is logged.
-
-ACTUAL RESULTS:
-Lots of attributes that weren't changed is logged, quantity change action is not logged
 
 
 
@@ -1315,7 +935,7 @@ EXPECTED RESULTS: Order Status should be Closed ACTUAL RESULTS: Order stat
 
 #### Braintree
 
-<!-- MAGETWO-93299 -->* 
+<!-- MAGETWO-93299 -->* Magento no longer throws an error when you try to add a new shipping address to an order paid with using Braintree from the Admin. 
 
 Error occurs when entering a new shipping address on admin order paid with Braintree
 
@@ -1356,24 +976,8 @@ Pull Request:
 
 ### Quote
 
-<!-- MAGETWO-91332 -->* 
-Cannot request a quote on storefront (IOS 11.3.1)
+<!-- MAGETWO-91332 -->* Customers can now request quotes as expected from a storefront running Magento on iOS 11.3.1.
 
-est devices:  iPhone SE, iPad NEW (2017)  iOS 11.3.1
-Browsers:  Safari, Chrome
-Preconditions:
-	1.	Install Magento B2B on cloud instance (Enabled all B2B features)
-	2.	Create company with admin user
-	3.	Create simple product
-Steps to reproduce:
-	1.	Login to frontend as company admin
-	2.	Add product to the shopping cart
-	3.	Go to shopping cart
-	4.	Click "Request a quote"
-	5.	Fill all needed fields
-	6.	Click "Send Request"
-Expected result:  Quote successfully requested
-Actual result: Nothing happens
 
 
 
@@ -1382,69 +986,17 @@ Actual result: Nothing happens
 
 ### Reports
 
-<!-- MAGETWO-93729 -->* Fix scope selector for reports
+<!-- MAGETWO-93729 -->* The scope selector for reports now works as expected. Previously, when a merchant set the scope to **All Websites** , the generated report showed  sales from only a subset of websites.
 
-Steps for reproduce
+<!-- MAGETWO-93345 -->* The `.csv` export of Coupon reports now shows the correct total for  selected coupons. Previously, the total line in the `.csv` file showed the totals for all coupons in the selected time period, rather than just the selected coupons.
 
-1. Stores->all stores->Add new StoreView "Canadian"
-2. Add new website and store view "Ukrainian"
-3. Set Canadian currency as Canadian dollar.
-4. Set Ukrainian currency as Ukrainian hryvnia.
-5. add new product to both websites.
-6. add currency rates to currencies.
-6. place orders from default, canadian and ukrainian storeviews.
-7. add invoices to all this orders.
-8. open orders reports.
+<!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained only only the first 20 rows of the report. 
 
-Expected result:
-
-When "All Websites" is selected, the report shows only $USD orders - it should show sales from all websites. - 3 order
-
-Actual result:
-
-When "All Websites" is selected, the report shows show sales from all websites. - 3 orders
-
-
-
-
-
-
-<!-- MAGETWO-93345 -->* 
-Wrong totals shown in exported Coupon Report
-
-STEPS TO REPRODUCE
-
-Create a few orders using different coupons.
-Go to Reports>Coupons
-Select any dates with orders that used coupons
-Select Specific Coupon
-Choose a Coupon
-Export report as CSV
-EXPECTED RESULTS
-The total line in the CSV file should show totals for the selected coupon.
-
-ACTUAL RESULTS
-The total line in the CSV file shows the totals for all coupons in the selected time period.
-
-<!-- MAGETWO-86650 -->* Abandoned Cart report exports only current page
-Fixed issue when Abandoned Cart report exports only current page
-
-Abandoned carts report exports to csv/xml file, only rows from current page in admin grid.
-
-STEPS TO REPRODUCE
-
-Make sure you have more than 20 customers with abandoned carts (for example 25)
-Go to Reports>Abandoned Carts
-On Abandoned Carts report page, click export (CSV/Excel XML)
-EXPECTED RESULTS:
-All abandoned carts should be exported
-
-ACTUAL RESULTS:
-Only first 20 rows are exported
 
 
 
  <!-- ENGCOM-2724 -->* 
+
  Year-to-date dropdown in Stores>Configuration>General>Reports>Dashboard
 
 
@@ -1461,43 +1013,8 @@ Numerical list appears of following numbers: [01,03,03,05,05,07,07,09,09,10,10,1
    *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
-<!-- MAGETWO- 73585-->* 
+<!-- MAGETWO- 73585-->* The customer wishlist report page on the Admin now displays all expected products. 
 
-The customer wishlist report page on the Admin now displays the expected products. 
-
-
-<!-- MAGETWO- 86650-->* 
-
-The Abandoned Cart report now exports 
-
-Abandoned Cart report exports only current page
-
-Fixed issue when Abandoned Cart report exports only current page
-
-
-Abandoned carts report exports to csv/xml file, only rows from current page in admin grid.
-STEPS TO REPRODUCE
-	1.	Make sure you have more than 20 customers with abandoned carts (for example 25)
-	2.	Go to Reports>Abandoned Carts
-	3.	On Abandoned Carts report page, click export (CSV/Excel XML)
-EXPECTED RESULTS: All abandoned carts should be exported
-ACTUAL RESULTS: Only first 20 rows are exported
-
-
-<!-- MAGETWO-93345-->* Wrong totals shown in exported Coupon Report
-STEPS TO REPRODUCE
-
-Create a few orders using different coupons.
-Go to Reports>Coupons
-Select any dates with orders that used coupons
-Select Specific Coupon
-Choose a Coupon
-Export report as CSV
-EXPECTED RESULTS
-The total line in the CSV file should show totals for the selected coupon.
-
-ACTUAL RESULTS
-The total line in the CSV file shows the totals for all coupons in the selected time period.
 
 
 
@@ -1538,27 +1055,11 @@ No errors and no changes to reward points
 
 ee only
 
+
 ### RMA
 
-<!-- MAGETWO-94019 -->*
+<!-- MAGETWO-94019 -->* The **Show/Hide** details button on the RMA page now works. 
 
-On Returns(RMA) details, Show/Hide details button does nothing
-
-STEPS TO REPLICATE:
-1. Enable RMA on Frontend
-2. Create new one RMA attribute that shows in frontend
-3. Place Order 
-4. Create Invoice and Shippment
-5. Create Return from frontend
-6. In admin change RMA status and fill custom attribute
-7. Open RMA on frontend
-8. Clic "Show/Hide details" button
-
-ACTUAL RESULTS:
-The button does not work
-
-EXPECTED RESULT:
-The button is worked
 
 
 
@@ -1567,7 +1068,10 @@ The button is worked
 ### Sales
 
 
- <!-- ENGCOM-2623 -->* Block totalbar not used in invoice create and credit memo create screens 
+ <!-- ENGCOM-2623 -->* Magento now uses the block tool bar 
+
+
+ Block totalbar not used in invoice create and credit memo create screens 
 
  In the following layout files the Magento\Sales\Block\Adminhtml\Order\Totalbar block is defined:
 
@@ -1590,16 +1094,9 @@ Block doesn't render anything.
 
 
 
-<!-- MAGETWO-94291 -->* Wrong product and shipping prices are applying on admin orders
+<!-- MAGETWO-94291 -->* Magento now displays product price and shipping costs in the default currency that was configured for that  specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect.
 
-ISSUE:
-Merchant reported that when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect.
 
-Issue is reproducible in clean 2.2.5 with B2B (merchant's version) and also in 2.2-develop with B2B 1.0-develop
-
-expected: When creating an order in the Admin panel, product price and shipping must be displayed in the default currency that was configured to the specific website.
-
-actual: When creating an order in the Admin panel, product price and shipping are shown with different currency than the default currency configured for such website.
 
 
 
@@ -1625,15 +1122,8 @@ Price and currency symbol are not updated
 
 
 
-<!-- MAGETWO-88858 -->* 
+<!-- MAGETWO-88858 -->* Minimum order amounts are no longer required when placing an order through the Admin.
 
-Minimum Order amount required in Admin orders
-
-ISSUE:
-Minimum order amound is required when placing an order through the admin. The setting is not limited to the front end customers only. This was not the case in 1.x versions.
-
-EXPECTED RESULTS: Admin orders should not be restricted by the minimum order amount.
-ACTUAL RESULTS: Admin orders are restircted to the minimum order amount set
 
 
 
@@ -1642,20 +1132,8 @@ ACTUAL RESULTS: Admin orders are restircted to the minimum order amount set
 ### Sales rule
 
 
-<!-- MAGETWO-93209 -->* Wildcard values for coupon codes
+<!-- MAGETWO-93209 -->* You can now use wildcard values in coupon codes. 
 
-Added possibility to specify special characters in coupon codes
-
-ISSUE: Wildcard values for coupon codes
-
-STEPS TO REPRODUCE:
-1. Go to Admin > Create a Sales Rule with coupon code "2?ds5!2d"
-2. Go on the frontend and add product to the cart
-3. Try to apply coupon "2?ds5!2d"
-
-Actual result: coupon code cannot be applied
-
-Expected result: coupon applied
 
 
 ### Search
@@ -1710,38 +1188,17 @@ Steps to reproduce
 
 ### Shipping 
 
-<!-- MAGETWO-86179 -->* Cannot add address when editing Billing Address during checkout
-fix issue with adding billing address on multiply checkout
-
-ISSUE
-When ordering with multiple addresses, adding a billing address does not work.
-
-STEPS TO REPRODUCE
-
-Create customer account
-Add multiple address to account
-On store front, add several products to the shopping cart
-Go to shopping cart page
-Choose to check out with multiple addresses
-Assign products to different address
-Continue checkout to billing step
-On Billing step, click Edit Billing Address
-Click Add New Address
-Is issue reproducible in Magento Version: 2.1.9
-Is issue reproducible in Trunk: No
-Is issue reproducible in the customer's install: Yes
-
-EXPECTED RESULTS
-Customer should be directed to page to add new address.
-
-ACTUAL RESULTS
-Nothing happens when clicking the New Address button
+<!-- MAGETWO-86179 -->* Customers can now add a new address to an order during checkout of an order being shipped to multiple addresses. 
 
 
 
+<!-- ENGCOM-2704 -->* 
+
+Previously, Magento threw an error when a customer 
+
+Fix the issue with "Shipping address is not set" exception
 
 
-<!-- ENGCOM-2704 -->* Fix the issue with "Shipping address is not set" exception
 Steps to reproduce
 Log In as Customer.
 Add Product to Cart.
@@ -2113,7 +1570,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html).
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
 
 ### Installation and upgrade instructions
