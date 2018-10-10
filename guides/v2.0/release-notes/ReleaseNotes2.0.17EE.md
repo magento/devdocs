@@ -78,7 +78,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) 
 
-<!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
+<!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product frontend.
 
 ### General
 
@@ -86,7 +86,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 61564 -->* When you edit a product list widget on a CMS page, Magento now shows previously set conditions. Previously, when you tried to edit a product list widget, the condition parameter was empty. [GitHub-6616](https://github.com/magento/magento2/issues/6616)
 
-<!--- 60543 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly. 
+<!--- 60543 -->* The **Print Shipping Label** link now displays on the product frontend. Previously, the layout for the Shipping and Tracking block did not work properly. 
 
 
 <!--- 60822 -->* Enabling  **Admin > Stores > Configuration > Advanced > Developer > Merge CSS files** no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
@@ -102,7 +102,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 57009 -->*  Magento now correctly calculates a bundle product's price even when it contains only one product in a required product option. Previously, if a bundle product contained only one product in an option, Magento did not update the price. [GitHub-4446](https://github.com/magento/magento2/issues/4446)
 
-<!--- 61270 -->* Cron errors no longer occur when reward points are avaiable and the Subscribe for Points Expiration Notifications setting is set.  
+<!--- 61270 -->* Cron errors no longer occur when reward points are available and the Subscribe for Points Expiration Notifications setting is set.  
 
 <!--- 66634 -->* We’ve fixed an issue with the PayPal ExpressCheckout functional test.  
 

@@ -18,7 +18,7 @@ Let's create a repository for the Widget fixture `<magento2_root_dir>/dev/tests/
 
 Assume that we have the following fixture:
 
-{%highlight xml%}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -59,7 +59,7 @@ Assume that we have the following fixture:
     </fixture>
 </config>
 
-{% endhighlight %}
+```
 
 The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository.
 
@@ -89,13 +89,13 @@ To create a new CMS page link the user must enter data of all required fields. T
 - Set the **Frontend App Title** field to "Cms Page Link [random integer value]". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<field name="title" xsi:type="string">Cms Page Link %isolation%</field>`.
 - Set the **Assign to Store Views** field to "All Store Views". It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml):
 
-{% highlight xml %}
+```xml 
 
  <field name="store_ids" xsi:type="array">
     <item name="dataset" xsi:type="string">all_store_views</item>
 </field>
 
-{% endhighlight xml %}
+```
 
 - Provide data for the **Layout Updates** complex field. In the repository code, complex fields are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as `<field name="widget_instance" xsi:type="array"></field>`. As it is possible to create more than one instance of a layout update, we define our instance as the first element of an array with index "0" as `<item name="0" xsi:type="array"></item>`.
   - Set the **Display on** field to "All pages:. It corresponds to the following code in [the repository data set](#mtf_repo_widgetxml) `<item name="page_group" xsi:type="string">All Pages</item>`. Daughter fields are appeared, when **Display on** field is specified. All daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
@@ -110,7 +110,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 - Set the **Anchor Custom Title** field to "anchor title".
 - Choose in the **CMS Page** grid newly created CMS page.
 
-{% highlight xml %}
+```xml 
 
 <field name="widgetOptions" xsi:type="array">
     <item name="0" xsi:type="array">
@@ -118,7 +118,7 @@ To create a new CMS page link the user must enter data of all required fields. T
     </item>
 </field>
 
-{% endhighlight xml %}
+```
 
 This simple code contains a bit more complex logic, where [the repository is applied to the fixture field](#mtf_repository_create-field). Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
@@ -126,7 +126,7 @@ In brief, we reference another repository `<magento2_root_dir>/dev/tests/functio
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 
-{% highlight xml %}
+```xml 
 
 <dataset name="cmsPageLink">
     <field name="anchor_text" xsi:type="string">text</field>
@@ -136,7 +136,7 @@ The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
     </field>
 </dataset>
 
-{% endhighlight xml %}
+```
 
 The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
@@ -146,7 +146,7 @@ Now we can create a repository XML file `Widget.xml`. In our case the file shoul
 
 See the entire repository sample so far:
 
-{% highlight xml %}
+```xml 
 
 <?xml version="1.0" ?>
 <!--
@@ -201,7 +201,7 @@ See the entire repository sample so far:
     </repository>
 </config>
 
-{% endhighlight %}
+```
 
 ### Repository structure {#mtf_repository_structure}
 
@@ -264,7 +264,7 @@ Case 3. **for_cms_page_link** data set:
 
 The repository code for these cases follows:
 
-{% highlight xml %}
+```xml 
 <?xml version="1.0" ?>
 <!--
 /**
@@ -301,7 +301,7 @@ The repository code for these cases follows:
     </repository>
 </config>
 
-{% endhighlight %}
+```
 
 ## Configuration repository {#mtf_repository_config}
 
@@ -309,7 +309,7 @@ The configuration repository stores predefined data sets for Magento configurati
 
 Let's see the following example of configuration settings for [Authorize.Net module]({{ site.mage2000url }}app/code/Magento/Authorizenet) `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
-{% highlight xml %}
+```xml 
 
 <?xml version="1.0"?>
 <!--
@@ -375,7 +375,7 @@ Let's see the following example of configuration settings for [Authorize.Net mod
     </repository>
 </config>
 
-{% endhighlight %}
+```
 
 Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
@@ -439,18 +439,18 @@ There are two ways to paste credentials:
 
 Assume, that you have the following credentials in `credentials.xml`.
 
-{%highlight xml%}
+```xml
 
 <field path="carriers/ups/password" value="strong_password" />
 <field path="carriers/ups/username" value="my_name" />
 <field path="carriers/ups/access_license_number" value="20150825" />
 <field path="carriers/ups/shipper_number" value="321852741789" />
 
-{%endhighlight%}
+```
 
 In the repository these fields can be defined as:
 
-{%highlight xml%}
+```xml
 
 <field name="carriers/ups/password" xsi:type="array">
     <item name="scope" xsi:type="string">carriers</item>
@@ -477,7 +477,7 @@ In the repository these fields can be defined as:
     <item name="value" xsi:type="string">CARRIERS_UPS_SHIPPER_NUMBER</item>
 </field>
 
-{%endhighlight%}
+```
 
 During the test run these fields are filled with values from `credentials.xml`.
 
@@ -485,17 +485,17 @@ During the test run these fields are filled with values from `credentials.xml`.
 
 For example, you have the following credentials in `credentials.xml`:
 
-{%highlight xml%}
+```xml
 
 <field replace="carriers_dhl_id_eu" value="123654987" />
 <field replace="carriers_dhl_password_eu" value="my_dh1_pas$worD" />
 <field replace="carriers_dhl_account_eu" value="8521236987452" />
 
-{%endhighlight%}
+```
 
 Then you should define repository fields as the following:
 
-{%highlight xml%}
+```xml
 
 <field name="carriers/dhl/id" xsi:type="array">
     <item name="scope" xsi:type="string">carriers</item>
@@ -516,7 +516,7 @@ Then you should define repository fields as the following:
     <item name="value" xsi:type="string">%carriers_dhl_account_eu%</item>
 </field>
 
-{%endhighlight%}
+```
 
 When the test is run, credentials from `credentials.xml` are transferred to the defined fields.
 
@@ -526,11 +526,11 @@ You can use `%isolation%` placeholder where you want to put a random value. It i
 
 Some examples:
 
-{%highlight xml%}
+```xml
 <field name="title" xsi:type="string">Cms Page Link %isolation%</field>
 <field name="sku" xsi:type="string">sku_simple_product_%isolation%</field>
 <field name="url_key" xsi:type="string">simple-product-%isolation%</field>
 
-{%endhighlight%}
+```
 
 All placeholders `%isolation%` will be replaced with [`mt_rand()`](http://php.net/manual/en/function.mt-rand.php) function during the test run.

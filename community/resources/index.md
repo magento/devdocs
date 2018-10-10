@@ -1,11 +1,7 @@
 ---
 layout: full-width
 group: community
-subgroup: resources
 title: Community Resources
-menu_title: Community Resources
-menu_order: 100
-menu_node: parent
 redirect_from: 
   - /guides/v2.1/community/resources/index.html
   - /guides/v2.0/community/resources/index.html

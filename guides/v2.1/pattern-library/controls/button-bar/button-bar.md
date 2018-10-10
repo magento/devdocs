@@ -1,7 +1,6 @@
 ---
 group: admin-pattern-library
 title: Button Bar
-redirect_from: /guides/v1.0/pattern-library/controls/button-bar/button-bar.html
 ---
 Within Magento application, it is often necessary to provide users with page level actions. These actions should be contain in a button bar as described in this guideline.
 

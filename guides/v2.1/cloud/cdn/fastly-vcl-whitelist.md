@@ -5,7 +5,7 @@ title: Custom whitelist VCL
 menu_title: Custom whitelist VCL
 menu_order:
 menu_node:
-redirect from:
+redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.3/cloud/configure/fastly-vcl-whitelist.html
@@ -52,7 +52,7 @@ Create an `allowlist.json` file with the following JSON content:
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
+  "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
 }
 ```
 

@@ -4,7 +4,6 @@ title: Architecture Guide
 landing-page: Architecture
 menu_title: Get Started
 menu_node: parent
-redirect_from: /guides/v1.0/architecture/bk-architecture.html
 ---
 
 The Architecture Guide provides a high-level introduction and view of the Magento product. 

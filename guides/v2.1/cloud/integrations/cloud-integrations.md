@@ -12,6 +12,4 @@ Integrations are useful for leveraging the functionality of the hosting services
 -  [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html)
 <!-- -  [GitLab]({{ page.baseurl }}/cloud/integrations/gitlab-integration.html) -->
 
-{: .bs-callout .bs-callout-info}
-It is highly recommended to use _private_ repositories, as opposed to public.
-
+{% include cloud/note-private-repo.md %}

@@ -5,14 +5,13 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 
 ## Before you start: routine preparations
 
 1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+2. Change to the Magento installation directory or make sure it is added to your system PATH.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 

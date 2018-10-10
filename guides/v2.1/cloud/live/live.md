@@ -28,7 +28,7 @@ As part of Magento Commerce (Cloud) subscription, you have access to a shared Do
 We strongly recommend testing in these environments due to the complexity of your custom code, themes, Magento extensions, 3rd party integrations all working together to provide a single or multiple stores. Every deployment can differ between merchants. The following are common issues you can find early and solve before touching Production:
 
 * Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
-* Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and front end, sometimes clashing and causing errors.
+* Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
 * Extensions typically are heavily tested in [Developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
 * Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local doesn't confirm it works perfectly in production.
 * Integration environments don't have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
@@ -37,18 +37,18 @@ We strongly recommend testing in these environments due to the complexity of you
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
-The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 
 * Monitor your sites security status and applied security updates
 * Receive security updates and site specific notifications
 
-For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html){:target="_blank"}. Typically, you want to start using this tool as you enter UAT testing.
+For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html). Typically, you want to start using this tool as you enter UAT testing.
 
 Each site to be scanned must be registered through Magento Security Scan tab. This registration process includes acceptance of Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is completed. Scans can be scheduled for either a specific, recurring date and time or on-demand as required.
 
 To scan your site:
 
-1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 2. Click the Security Scan tab and select **Go to Security Scan**.
 3. In the **Actions** column for the site, select Run Scan. A notification status displays the scheduled scan.
 

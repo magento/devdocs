@@ -173,7 +173,7 @@ Since the action is __to create__ a category, the MFTF will also search for oper
 The following is encoded in `<operation>`:
   - `name="CreateCategory"` defines a descriptive name of the operation, which is used for merging if needed.
   - `dataType="category"` defines a relation with data entities with input data for a Category (`<entity type="category">`).
-  - `auth="adminOauth"` defines Oauth authorization, which is required for the Admin area.
+  - `auth="adminOauth"` defines OAuth authorization, which is required for the Admin area.
   - `url="/V1/categories"` defines a routing URL to the corresponding service class.
   (The request will be sent to [https://example.com/rest/V1/categories]() if `MAGENTO_BASE_URL=https://example.com/` and `MAGENTO_BACKEND_NAME=admin` are set in the _acceptance/.env_ configuration file.)
   - `method="POST"` defines a POST method of the HTTP request.

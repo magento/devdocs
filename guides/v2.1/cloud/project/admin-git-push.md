@@ -27,11 +27,11 @@ This is what the output looks like:
     Writing objects: 100% (4/4), 428 bytes | 0 bytes/s, done.
     Total 4 (delta 3), reused 0 (delta 0)
 
-This was the normal output you would expect from a git server. If a conflict occurred, an error would have displayed and recommended resolving before pushing again.
+This was the normal output you would expect from a Git server. If a conflict occurred, an error would have displayed and recommended resolving before pushing again.
 
 ## Validating submodules
 
-{{site.data.var.ece}} supports git submodules and supports multiple applications. You can have multiple applications, each in its own git repository, but have a single production environment for all of them. In this case we only have a single application and no git submodule.
+{{site.data.var.ece}} supports Git submodules and supports multiple applications. You can have multiple applications, each in its own Git repository, but have a single production environment for all of them. In this case we only have a single application and no Git submodule.
 
 The output for each deployed application would have been similar to what you see below for a single application.
 
@@ -85,7 +85,7 @@ You will not be able to see output from the "deploy" hook as these happen in the
         database (type: mysql, size: S, disk: 200)
         moarsearch (type: Elasticsearch, size: S, disk: 200)
 
-We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
+We can see the five different data backends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
 
     Environment routes:
         http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
@@ -98,4 +98,4 @@ Finally, {{site.data.var.ece}} gives you the different routes that are served by
     To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
         31ed214..f32e741  maximal -> maximal
 
-At the end, we are back to some normal git output. The server tells you at what commit level it is now.
+At the end, we are back to some normal Git output. The server tells you at what commit level it is now.

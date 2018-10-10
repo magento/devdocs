@@ -53,11 +53,11 @@ Git is the heart of all your code in repositories. It acts as a version control 
 
 We hope you have a good working knowledge of Git. Need some help? Don't worry, we have you covered with some of our favorite links and information. We'll also include a Git guide to branching and developing soon.
 
-*	[Git documentation](https://git-scm.com/documentation){:target="_blank"} and [videos](https://git-scm.com/videos){:target="_blank"} from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf){:target="_blank"} and [quick guide](http://rogerdudler.github.io/git-guide/){:target="_blank"} from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg){:target="_blank"} with DevForge to understand how people use the repo and commands with a fun story
+*	[Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
+*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
+*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
 
-To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="_blank"} on your local.
+To get started with Git, you should have [Git installed](https://git-scm.com/downloads) on your local.
 
 {:.bs-callout .bs-callout-info}
 In addition to Git requirements for valid branch names, {{site.data.var.ee}} adds two additional requirements:
@@ -110,7 +110,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
-*	Install and configure [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html)
+*	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ## Development and testing {#cloud-req-devtest}

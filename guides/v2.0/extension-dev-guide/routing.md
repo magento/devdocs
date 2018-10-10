@@ -4,7 +4,6 @@ subgroup: 99_Module Development
 title: Routing
 menu_title: Routing
 menu_order: 11
-redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
 In the Magento system, a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has the following format:

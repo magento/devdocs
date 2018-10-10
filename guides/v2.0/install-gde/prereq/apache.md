@@ -4,7 +4,6 @@ subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
   - System
@@ -186,7 +185,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 #### Solving 403 Forbidden errors for Apache 2.4   {#install-apache-403_2.4}
 
-To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
+To enable website visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
 
 For example:
 	
@@ -202,7 +201,7 @@ The preceding values for `Order` might not work in all cases. For more informati
 
 #### Solving 403 Forbidden errors for Apache 2.2   {#install-apache-403_2.2}
 
-To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
+To enable website visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
 
 For example:
 	

@@ -28,7 +28,7 @@ Browse through the portal to find helpful information and options to get started
 
 Currently, access to the Onboarding Portal is available through your Magento account.
 
-1. [Log in to your Magento account](https://account.magento.com){:target="_blank"}.
+1. [Log in to your Magento account](https://account.magento.com).
 2. On the Magento tab, click the Projects (Cloud) option. A list of projects associated to your account display.
 3. Select your project to open the Onboarding Portal.
 
@@ -50,7 +50,7 @@ The focus of this portal is for business users who may need a bit more planning 
 
 The _Technical Admin_ is a user account in the Project Web Interface with super user permissions. This admin is your point of contact for all technical information and project management. Managing a project includes Git code branches, adding user accounts, setting environment variables and settings, adding routes, and deploying software to environments.
 
-The Technical Admin can be a Magento Solution Partner, a development consultant, or even yourself. In search of a development partner? Check our [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"} network.
+The Technical Admin can be a Magento Solution Partner, a development consultant, or even yourself. In search of a development partner? Check our [Magento Solution Partner](https://magento.com/find-a-partner) network.
 
 This user can help you create developer accounts with access to the Magento environments and code, configure technical aspects of the environments, and help with tickets with Support.
 
@@ -73,7 +73,7 @@ Your Technical Admin can immediately start development planning and tasks withou
 
 You may have a number of different people help create, launch, and maintain your Magento stores and sites. These include developers, designers, DBAs, and more. To better understand the process and access environments, we provide a Development section of checklists and information:
 
-* **Development Workflow**: A high-level checklist for preparing your local development environment, cloning code, creating branches, and developing your store. It provides a quick walk-through for the [First-time development setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html) information according to your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) plan.
+* **Development Workflow**: A high-level checklist for preparing your local development environment, cloning code, creating branches, and developing your store. It provides a quick walk-through for the [First-time development setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html) information according to your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) plan.
 * **Environments**: Provides links and information for your Pro and Starter account environments. Every active branch of code has a complete environment to fully test new features, extensions, and integrations. This page includes direct URL links, SSH link, CLI command access, and a link into the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login). You may want to provide the following helpful information for the development and deploy process for [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) and [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) to your developers.
 * **Services**: Learn more about available and integrated services for your project. These services include [Blackfire.io Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html), and [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html). You can review and set credentials for these services through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login).
 

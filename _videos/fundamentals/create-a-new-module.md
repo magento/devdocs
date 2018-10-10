@@ -23,7 +23,7 @@ Let’s go through each of these steps in detail.
 
 #### There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder
 
-Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning github).
+Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning GitHub).
 
 #### Which of these locations should you choose for your new module?
 

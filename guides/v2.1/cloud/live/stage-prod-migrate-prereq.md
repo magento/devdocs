@@ -33,7 +33,7 @@ To prepare your environments for full deployment, you need:
 
 You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 2. Select an environment.
 3. Click **Access site** to display the URL and SSH information.
 
@@ -53,7 +53,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/access-acct/fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 

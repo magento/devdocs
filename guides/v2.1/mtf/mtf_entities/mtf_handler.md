@@ -49,7 +49,7 @@ The following nodes influence handlers:
 <tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
-<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains [access token]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) (used by WebAPI handlers only).</td>
+<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
   &lt;webapi priority="0"&gt;
@@ -129,7 +129,7 @@ The file must be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/M
 See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
 ```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
 ```
 
 In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
@@ -254,9 +254,9 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
 
 * Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
 
-  ```xml
-  {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-  ```
+```xml
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
+```
 
 ### cURL authentication classes {#mtf_handler_decor}
 

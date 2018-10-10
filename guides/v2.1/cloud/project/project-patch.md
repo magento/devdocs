@@ -43,6 +43,6 @@ You can only apply patches during the build phase of redeployment.
     php ./bin/magento cache:clean
     ```
 
-    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1.  Test the patch, make any necessary changes.

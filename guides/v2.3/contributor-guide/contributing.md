@@ -16,6 +16,7 @@ The following topics are included in this guide:
 - [Report an issue](#report)
 - [Help triage issues](#triage)
 - [Labels applied by the Community Engineering Team](#labels)
+- [Contribution awards and points](#points)
 
 ## Contribute to Magento 2 code {#contribute}
 
@@ -70,7 +71,7 @@ Please review the following supported and accepted pull request rules. We define
 
 ## Fork a repository {#fork}
 
-To fork a repository on Github:
+To fork a repository on GitHub:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.
@@ -112,9 +113,12 @@ First, check the [existing PRs](https://github.com/magento/magento2/pulls?q=is%3
 To create a pull request:
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
-1. In your repository, click **Pull requests** on the right, and then click **New pull request**. <br><img src="{{ site.baseurl }}/common/images/pr.png" target="_blank">
-1. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop`, `magento:2.2-develop` or `magento:2.1-develop` branch. We accept PRs to these branches only.
-1. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
+1. In your repository, click **Pull requests** on the right, and then click **New pull request**.
+
+    ![Create a Pull Request]({{ site.baseurl }}/common/images/pr.png)
+1. Ensure that you are creating a PR to the one of following  branches: `magento:2.3-develop` or `magento:2.2-develop`. We accept PRs to these branches only.
+1. Review the changes, then click **Create pull request**.
+1. Fill out the PR form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the Magento 2 repository’s [Pull Requests panel](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
@@ -142,14 +146,16 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Actions:** The following actions complete for the command:
 
-- If the instance does not exist, it will be deployed. Deploymnent takes ~2 minutes.
+- If the instance does not exist, it will be deployed. Deployment takes ~2 minutes.
 - If the instance exists, a fresh instance will be redeployed.
 - By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
 
 **Admin access:**
 
 - http://i-xxx.engcom.dev.magento.com/admin
-- Credentials: Username: admin | Password: 123123q
+- Admin Credentials:
+    - Username: admin
+    - Password: 123123q
 
 **Permissions:**
 
@@ -172,7 +178,9 @@ To verify and test changes completed in a pull request, enter a command to gener
 **Admin access:**
 
 - http://pr-xxx.engcom.dev.magento.com/admin
-- Credentials: Username: admin | Password: 123123q
+- Admin Credentials:
+    - Username: admin
+    - Password: 123123q
 
 **Permissions:**
 
@@ -198,7 +206,7 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 - All mentioned pull requests are open
 - All mentioned pull requests have been created by the same contributor (author)
 - All mentioned pull requests have same target (base) branch
-- All mentioned pull requests are mergeable with each other
+- All mentioned pull requests can be merged with each other
 
 **Permissions:**
 
@@ -233,10 +241,10 @@ This tool ports fixes automatically across versions with a few simple steps. It 
 Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"}. The first time you visit, you need to login and authorize with GitHub credentials. The tool performs all actions using your token.
 
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"} and **Login with GitHub**.
-1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
-1. Select the target version for your port: **Up Port** or **Back Port**.
-1. Verify the summary of changes in **Port information**.
-1. Click **Create Job**. A job is created and started shortly after.
+2. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
+3. Select the target version for your port: **Up Port** or **Back Port**.
+4. Verify the summary of changes in **Port information**.
+5. Click **Create Job**. A job is created and started shortly after.
 
 ![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)
 
@@ -272,7 +280,7 @@ The following is an example "Forwardport" (up-port) pull request for https://git
 1. Create a new branch for your fix: `git checkout -b up-port-pull-13528`.
 1. Apply changes from the existing pull request: `curl -L https://github.com/magento/magento2/pull/13528.patch | git am`.
 1. Push changes to your repository: `git push origin up-port-pull-13528:up-port-pull-13528`.
-1. Create a pull request from `<your-fork>:up-port-pull-13528` to m`agento:2.3-develop`.
+1. Create a pull request from `<your-fork>:up-port-pull-13528` to `magento:2.3-develop`.
 1. In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.
 
 The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
@@ -306,10 +314,17 @@ Before creating an issue:
 
 To add an issue:
 
-1. In the Magento 2 public repository, click the **Issues** link on the right. <br><img src="{{ site.baseurl }}/common/images/issues.png" alt="the Issues link at the right"/>
-1. Click **New issue**.<br><img src="{{ site.baseurl }}/common/images/new_issue.png" alt="the New Issue button"/>
-1. Fill in the Title and Issue description.
+1. In the Magento 2 public repository, click the **Issues** tab.
+
+    ![Issues tab]({{site.baseurl}}/common/images/issues.png)
+1. Click **New issue**.
+
+    ![Create new issue]({{site.baseurl}}/common/images/new_issue.png)
+1. Select a type of issue: Bug report, Developer experience issue, or Feature request.
+1. Fill in the Title, description, and additional information for the template.
 1. Click **Submit new issue**.
+
+When you submit the issue, a validation process begins. If the issue doesn't have enough information, you as the Reporter may need to add more information. See [GitHub Issues Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow) for complete details on issue verification.
 
 ## Help triage issues  [![](https://www.codetriage.com/magento/magento2/badges/users.svg)](https://www.codetriage.com/magento/magento2) {#triage}
 
@@ -319,90 +334,8 @@ In addition to contributing code, you can help to triage issues. This can includ
 
 We apply labels to public Pull Requests and Issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.
 
-### Release Lines
+{% include contributor/labels.md %}
 
-Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.2.6, you would apply the Release Line: 2.2. This effectively includes all releases in this line.
+## Contribution awards and points {#points}
 
-* `Release Line: 2.1`
-* `Release Line: 2.2`
-* `Release Line: 2.3`
-
-### Progress
-
-Progress labels indicate the Pull Request status on each review stage:
-
-* `Progress: needs update` - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request. <!-- needs update -->
-* `Progress: on hold` - The pull request is on hold due and will be further reviewed to accept or reject.
-* `Progress: accept` - The pull request has been accepted and will be merged into mainline code. <!-- accept -->
-* `Progress: reject` - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject -->
-
-### Contribution Rewards
-
-The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.
-
-* `Award: complex`
-* `Award: advanced`
-* `Award: special achievement`
-* `Award: category of expertise`
-* `Award: test coverage`
-* `Award: devdocs update`
-* `Award: MFTF test coverage`
-* `Award: bug fix`
-* `Cleanup`
-* `Port` - For up-port and back-port work
-<!-- For more information on awards and points, see our [Contribution Rewards](http://test.com). -->
-
-### Partners
-
-All partners Pull Requests should be marked with label `partners-contribution`. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: `Partner: <PartnerName>`. The following are Partner examples:
-
-* `partners-contribution`
-* `Partner: Atwix`
-* `Partner: Comwrap`
-* `Partner: Interactiv4`
-* `Partner: Wagento`
-* `etc`
-
-### Components
-
-Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see [Magento Components Assignment](https://github.com/magento/magento2/wiki/Magento-Components-Assignment).
-
-* `Component: Catalog`
-* `Component: Report`
-* `Component: Checkout`
-* `etc`
-
-### Events
-
-Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a [Community Engineering Slack](https://magentocommeng.slack.com) channel using the same label.
-
-* `Event: mm18in`
-* `Event: mm17es`
-* `Event: mlau18`
-* `etc`
-
-### General Labels
-
-General labels include a variety of tasks and definitions for pull requests and issues.
-
-* `good first issue` - Indicates a good issue for first-time contributors.
-* `help wanted` - Indicates the creator or author needs help with a decision, advice for resolving, and so on.
-* `triage wanted` - Indicates the issues are under triage. See this information to learn more about the [Triage Wanted program](https://github.com/magento/magento2/wiki/Triage-Wanted).
-
-### Issue Resolution Status
-<!-- old labels -->
-
-* `G1 Passed` - Automatic verification of the issue description successfully passed. Minimum required information is provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
-* `G1 Failed` - Automatic verification of the issue description failed. Minimum required information is not provided (Preconditions, Steps to Reproduce, Actual Result, Expected Result).
-* `G2 Passed` - The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce.
-* `G3 Passed` - The Community Engineering Team has validated and confirmed the issue.
-* `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
-* `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
-* `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
-* `Fixed in 2.1.x` - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.
-* `Fixed in 2.2.x` - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.
-* `Fixed in 2.3.x` - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.
-* `acknowledged` - The Community Engineering Team has created internal ticket.
-* `needs update` - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the issue.
-* `Cannot Reproduce` - The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.
-* `non-issue` - A described behavior in the issue description is valid and shouldn't be changed in Magento code base.
+{% include contributor/rewards.md %}

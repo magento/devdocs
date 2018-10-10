@@ -3,7 +3,6 @@ group: frontend-developer-guide
 subgroup: D_CSS
 title: Include CSS
 menu_order: 2
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
   - Theme

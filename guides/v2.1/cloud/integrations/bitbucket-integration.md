@@ -10,8 +10,7 @@ You can configure your Bitbucket repository to automatically build and deploy an
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-{: .bs-callout .bs-callout-info}
-We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
+{% include cloud/note-private-repo.md %}
 
 Before you enable the integration, you must have the following:
 
@@ -80,11 +79,11 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
 ## Create an OAuth consumer
 
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg). You need the OAuth `key` and `secret` from this consumer to complete the next section.
 
 #### To create an OAuth consumer in Bitbucket:
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
 1.  Click **Settings** > **Access Management** > **OAuth**.
 
@@ -157,9 +156,9 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 
 ### Add a webhook in BitBucket
 
-In order to communicate events—such as a push—with your Cloud git server, you need to create a webhook for your BitBucket repository.
+In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your BitBucket repository.
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
 1.  Click **Repositories** and select your project.
 
@@ -232,7 +231,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     * - Indicates the current environment
     ```
 
-After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
+After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular Git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
 

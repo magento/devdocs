@@ -1,7 +1,6 @@
 ---
 group: frontend-developer-guide
 title: Include CSS
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 functional_areas:
   - Frontend
   - Theme
@@ -20,7 +19,7 @@ This topic describes how stylesheets are located by default in the Magento appli
 
 ## How Magento stylesheet files are organized
 
-Conventionally, CSS and LESS files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
+Conventionally, CSS and Less files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
 
 In a [theme directory], stylesheets are stored in the following locations:
 
@@ -44,13 +43,13 @@ Contains the following:
 <li>
 <code>print.less</code>: used to generate styles for the printed version of store pages.
 </li>
-<li><code>_styles.less</code> - a composite file, which includes all LESS files used in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. The underscore sign ("_") in a file name conventionally means that a file is not used independently, but is included in other files.
+<li><code>_styles.less</code> - a composite file, which includes all Less files used in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. The underscore sign ("_") in a file name conventionally means that a file is not used independently, but is included in other files.
 </li>
 <li><code>styles-m.less</code>: used to generate mobile-specific styles, includes <code>_styles.less</code>
 </li>
 <li><code>styles-l.less</code>: used to generate desktop-specific styles, includes <code>_styles.less</code>.
 </li>
-<li><code>/source</code>: this subdirectory contains LESS configuration files that invoke mixins from the Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}
+<li><code>/source</code>: this subdirectory contains Less configuration files that invoke mixins from the Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}
 </li>
 <li>
 <code>/source/_theme.less</code>: overrides the default Magento UI library variables values.
