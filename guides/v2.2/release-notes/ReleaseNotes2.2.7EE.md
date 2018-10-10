@@ -1192,28 +1192,7 @@ Steps to reproduce
 
 
 
-<!-- ENGCOM-2704 -->* 
-
-Previously, Magento threw an error when a customer 
-
-Fix the issue with "Shipping address is not set" exception
-
-
-Steps to reproduce
-Log In as Customer.
-Add Product to Cart.
-Proceed to Checkout.
-Fill Shipping Address data, click Next (do not place Order)
-Return to the Storefront.
-Go to the Shopping Cart.
-Click Check Out with Multiple Addresses.
-Expected result
-Correct Multishipping Checkout workflow.
-Actual result
-Exception #0 (Magento\Framework\Exception\StateException): Shipping address is not set
-
-
-  *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16753](https://github.com/magento/magento2/pull/16753)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
+<!-- ENGCOM-2704 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16753](https://github.com/magento/magento2/pull/16753)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
 
 
 <!-- MAGETWO-94434 -->* 
@@ -1426,10 +1405,7 @@ Order status is Processing
 
 ### Testing
 
- <!-- ENGCOM-2616 -->* Integration test ProcessCronQueueObserverTest.php succeeds regardless of magento config fixture
-
-
- *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
+ <!-- ENGCOM-2616 -->* The ProcessCronQueueObserverTest.php integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
 
 
 
