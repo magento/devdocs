@@ -149,7 +149,13 @@ Grid is showing the next page now
 
 
 
-<!-- MAGETWO-93990 -->*
+<!-- MAGETWO-93990 -->* Admin user with permissions for 1 website should not be able to view the All Store Views scope on a product
+change logic for restricted admin to show him All store view.
+
+User story:
+As an Admin user,
+When I am an administrator of a single web-site and I edit a product which is assigned to several other web-sites, then "All Store Views" scope option is not available for me and product edit page is opened for the store view scope which I have access to.
+So, that, I do not need to switch to my store view manually every-time when opening a product for editing.
 
 <!-- MAGETWO-90765 -->*
 Unable edit\create CMS/Block content by restricted admin
@@ -166,16 +172,66 @@ EE only
 
 ### Amazon Pay
 
-<!-- BUNDLE- -->* 
 
 ### B2B
 
-<!-- MAGETWO-94884 -->* 
+<!-- MAGETWO-94884 -->* B2B currency switcher causes duplicating of button
+
+STEPS
+Setup multiple currencies: MAGETWO-62277
+Create an additional Website & Store & Store view
+Open Admin > Stores > Configuration > Currency Setup.
+Select several Allowed Currencies
+Set different Default Currency for each store view
+Open Stores > Currency Rates. Enter some values to recalculate prices
+Create an order from Admin
+Select a user
+Switch currency from Order Currency dropdown
+EXPECTED RESULT
+Only one button Add products by SKU
+
+ACTUAL RESULT
+Second Add products by SKU button appears
+
+<!-- MAGETWO-94820 -->* B2B If a secondary admin creates a custom shared catalog and that admin user is deleted, the catalog is deleted also.
 
 
-<!-- MAGETWO-94820 -->* 
+ISSUE:
+If an additional admin user creates a custom shared catalog and the user is later deleted, the catalog is deleted as well.
 
-<!-- MAGETWO-93050 -->* 
+STEPS TO REPLICATE:
+
+Install B2B
+Create a new admin user
+Login as new user and create a new custom shared catalog
+Login as original admin user
+Delete the additional admin user
+Notice the custom catalog that user created is deleted also
+EXPECTED RESULTS:
+The custom shared catalog should not be deleted when the user that created it is deleted
+
+ACTUAL RESULTS:
+The custom shared catalog is deleted when the user that created it is deleted
+
+<!-- MAGETWO-93050 -->* Edit Users for Company on front end in New Tab throws JSON error Partner thinks edit in new tab should be disabled
+
+ISSUE:
+Partner is reporting that when Editing Company users from the frontend > selecting the edit user in New tab is throwing a JSON error
+He believes editing a User in a New tab should be disabled and not be allowed at all.
+
+Preconditions
+Enable B2b features in menu Stores->Configuration->General->B2B Features
+
+STEPS TO REPLICATE:
+
+Register Company Admin on storefront
+Navigate to menu Customers->Companies and set status of created company to Active
+Check in emails welcoming letter and setup password for company admin
+Login as company admin on storefront
+In My Account open Company Users tab
+Right Click and select open in New Tab, on the Edit link of one of the Users
+EXPECTED RESULTS:
+New tab should not be allowed, and we should throw a meaningful error
 
 <!-- MAGETWO-92400 -->* 
 Reset button on Company page not removed email
@@ -207,7 +263,23 @@ ACTUAL RESULTS:
 
 ### Bundle products
 
-<!-- MAGETWO-93145 -->* 
+<!-- MAGETWO-93145 -->* Bundle summary is not sorted by Bundle Item Position but by `option_id`
+STEPS TO REPLICATE:
+
+Setup vanilla Magento installation with sample products.
+View product `Sprite Yoga Companion Kit` select some options and check the summary.
+The summary will be sorted correctly because `option_id` is ascending
+Now go to the backend and place the Bundle Items in a different order
+View the bundle product again, select some products and check the summary
+EXPECTED RESULTS:
+The summary sorted as configured in the admin panel.
+
+ACTUAL RESULTS:
+The summary isn't sorted as configured in the admin panel.
+
+NOTES:
+Is issue reproducible in clean reported Magento Version: Yes
+Is issue reproducible in the latest available release: Yes
 
 <!-- ENGCOM-1832 -->* 
 
@@ -249,10 +321,30 @@ ACTUAL RESULTS No return is created and the store returns an error.
 
 ### Catalog
 
-<!-- MAGETWO-94080 -->* 
-<!-- MAGETWO-93047 -->* 
 
-<!-- MAGETWO-92036 -->* 
+<!-- MAGETWO-92036 -->* The error icon does not appear on sections with required attributes that are empty when click on 'save' button
+
+Fixed issue when the error icon does not appear on sections with required attributes that are empty when click on 'save' button
+
+
+ISSUE:
+Error icon on tabs not showing, if there is data missing on save
+
+Go to Stores > Attributes > Product and add a required attribute (or make for example meta_keyword a required attribute)
+Add the attribute to a collapsed tab/group (e.g., meta_keyword in Search Engine Optimization group)
+Create a new product
+Immediately click on save before editing any data => the error icon  is not shown on the tab where there is the required field
+Input data into required field and remove it again (before leaving the field)
+Click on save => The error icon is not shown
+Input data into required field and leave field
+Remove data from required field and leave field => the  icon is shown
+Input data into a field in the same tab => The edited (pen) icon is shown
+Click on save => The edited (pen) icon is shown instead of the error icon
+EXPECTED RESULTS:
+When a required field is not entered on product creation and you try to save it, the  icon should be shown for the tab / section where the attribute is located
+
+ACTUAL RESULTS:
+When a required field is not entered on product creation and you try to save it, the  icon is not shown for the tab / section where the attribute is located
 
 <!-- ENGCOM-2555 -->* restored previous fix for  gallery template issue. (This fix was unintentionally reverted in a previous release.)
 
@@ -366,11 +458,47 @@ Can't save option with Title: 0
    *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
 
-<!-- MAGETWO-94080 -->*
+<!-- MAGETWO-94080 -->* Aditional Fix for "Catalog Products List" widget displaying on frontend
 
-<!-- MAGETWO-94062 -->*
 
-<!-- MAGETWO-93673 -->*
+
+<!-- MAGETWO-94062 -->* Quantity Increments of selected simple within a Configurable Product does not work
+
+STEPS TO REPLICATE:
+1. Create Configurable Product with Children 
+2. In one of the children Simple Products set "Minimum Qty Allowed in Shopping Cart" to "500" and also set "Qty Increments" to "500". 
+2. Through front-end select a configuration that will end with your simple product. 
+Add 400 to the cart and the following error is given "The fewest you may purchase is 500." this is 
+correct and indicates "Minimum Qty Allowed in Shopping Cart" is working as expected. 
+3. Clear Shopping Cart 
+4. Add 550 of the selected child to the cart that has "Qty Increments" set to "500"
+
+EXPECTED RESULTS:
+An error message is given informing user that "Product can only be ordered in increments of 500"
+
+ACTUAL RESULTS:
+Product successfully adds to the cart
+
+<!-- MAGETWO-93673 -->* Cannot change attribute set
+
+ISSUE:
+If some required attributes moved to another attribute group, then it is not possible to use this attribute set on Product Create Page
+
+STEPS TO REPRODUCE:
+
+Go to Admin > Stores > Attribute Set
+Create new attribute set based on Default
+Drag and Drop "category_ids" attribute from "Product Details" group to "Content" section (or to any other)
+Save Attribute Set
+Go to Products > Add Product
+Try to change Attribute Set during creation of new product
+ACTUAL RESULT:
+Error: "A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later."
+Spinner does not dissapear
+EXPECTED RESULT:
+You can change attribute set without errors. Attributes can be moved to any group
+
+
 
 <!-- MAGETWO-92682 -->*
 
@@ -477,7 +605,9 @@ Actual result:
 
 <!-- MAGETWO-93047 -->*
 
+rest/all/V1/categories/:categoryID deletes category name
 
+ask cloudvolks
 
 
 
@@ -486,7 +616,26 @@ Actual result:
 
 ### Cart and checkout
 
-<!-- MAGETWO-93037 -->* 
+<!-- MAGETWO-93037 -->* User can place order when product changes status to Out of stock during checkout
+
+Added restriction for placing orders with out of stock products
+
+STEPS TO REPLICATE:
+
+Add product to shopping cart
+Click on the button "PROCEED TO CHECKOUT"
+Log in and go to the page "Secure Checkout"
+Go to BackOffice and set for product from first step Stock Status = Out of Stock and save changes (do not change qty, qty should be > 0) https://www.screencast.com/t/hBHXnyNa
+Back to the page "Secure Checkout"
+Fill all required field and place order
+ACTUAL RESULTS:
+
+Order has been placed
+
+EXPECTED RESULTS
+An order should not be placed. The error message should be shown on checkout payment step
+
+
 
  <!-- ENGCOM-2743 -->* 
 
@@ -544,7 +693,27 @@ My billing and shipping address are the same is checked, but the address informa
 
 
 
-<!-- MAGETWO-93038 -->*
+<!-- MAGETWO-93038 -->* Category not updating until full reindex
+the issue with updating category after full reindex is fixed
+
+ISSUE
+You can not get category changes to show on front end until they do a reindexing indexers regardless if "update on schedule" is set and cache cleaned.
+
+*REPRODUCE*
+
+Set indexers to "update on schedule" (System > Index Management > Select all, Choose Update by Schedule and click on Submit button )
+Enable "Use Flat Catalog" for categories and products (Stores > Configurations > Catalog > Catalog > Storefront > Choose Yes in Use Flat Catalog Category and Use Flat Catalog Product dropboxes)
+Set up Elasticsearch ( Stores > Configurations > Catalog > Catalog > Catalog Search > Choose the version which is you need
+in Search Engine dropbox)
+Clear cache and perform full reindex
+Add a product to a category (Create simple product simple1, create subcategory cat1, and assign simple1 to cat1)
+Run cron several times until indexer_update_all_views cron job is processed successfully
+Does the product show on the front end?
+*EXPECTED*
+Yes
+*ACTUAL*
+No
+
 
 
 <!-- MAGETWO-73604 -->*
@@ -595,9 +764,51 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Company
 
-<!-- MAGETWO-93081 -->* 
+<!-- MAGETWO-93081 -->* Can't change company status to "Rejected"
 
-<!-- MAGETWO-93050 -->* 
+Fixed issue when admin user can't able to change company status into "Rejected"
+
+ISSUE
+Can't change the status of a company from 'Pending Approval' to Rejected
+
+STEPS TO REPLICATE:
+1. Login to backend
+2. Go to Customer->Company
+3. Create a company with status 'Pending Approval'
+4. Save the company
+5. Change status to 'Rejected'
+6. Try to make save.
+
+ACTUAL RESULTS:
+An Error: Could not save company
+
+EXPECTED RESULTS:
+The company is saved without the error
+
+<!-- MAGETWO-93050 -->*  Edit Users for Company on front end in New Tab throws JSON error Partner thinks edit in new tab should be disabled
+
+ISSUE:
+Partner is reporting that when Editing Company users from the frontend > selecting the edit user in New tab is throwing a JSON error
+He believes editing a User in a New tab should be disabled and not be allowed at all.
+
+Preconditions
+Enable B2b features in menu Stores->Configuration->General->B2B Features
+
+STEPS TO REPLICATE:
+
+Register Company Admin on storefront
+Navigate to menu Customers->Companies and set status of created company to Active
+Check in emails welcoming letter and setup password for company admin
+Login as company admin on storefront
+In My Account open Company Users tab
+Right Click and select open in New Tab, on the Edit link of one of the Users
+EXPECTED RESULTS:
+New tab should not be allowed, and we should throw a meaningful error
+
+ACTUAL RESULTS:
+New Tab opens and JSON error is thrown.
+
+
 
 
 
@@ -605,7 +816,25 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Configurable products
 
-<!-- MAGETWO-73245 -->* 
+<!-- MAGETWO-73245 -->* Add product to website will reset has_options and required_options
+
+Steps to reproduce:
+
+Create a 2nd website.
+Create a configurable product with any attribute.
+Add a Customizable Option
+Click Save button.
+Open the tab Product in Websites and add you configurable product to your created website.
+Click Save button
+
+Expected result:
+
+Entry in table catalog_product_entity should have has_options and required_options set to 1
+
+Actual result:
+
+The columns has_options and required_options are set to 0
+If you click Save button again in the backend it will set has_options and required_options to 1
 
 <!-- ENGCOM-2671 -->* To decide whether a product with the same options is already present in the cart, magento makes a comparison with the string that represents the buyrequest in json format with those saved in the database. When a product is added by the Rest API the option code attribute encoded in the json is a number, whereas from the frontend context it is a string. In this case, this bufix forces the option attribute value in string, creating arrays that will later be converted into json
 
@@ -716,7 +945,27 @@ No errors and no changes to reward points
 
 ### Directory
 
-<!-- MAGETWO-92831 -->* 
+<!-- MAGETWO-92831 -->* Currency conversion rate services do not work in admin panel
+Removed outdated currency rates services. 
+Added possibility to specify API Key for Fixer.io usage.
+
+
+ISSUE:
+None of the currency conversion rate services work.
+
+STEPS TO REPLICATE:
+
+Login to admin
+Go to Sotre=>Configuration=>General=>Currency Setup
+Verify that multiple currencies are allowed, select a few if not
+Go to Store=>Currency Rate
+Try to use any of the currency rate conversion services
+Notice that they all give some kind of error
+EXPECTED RESULTS:
+Services reply with conversion rates to be imported.
+
+ACTUAL RESULTS:
+Each service gives a different error.
 
 
 
@@ -733,7 +982,26 @@ No errors and no changes to reward points
 ### Email
 
 
-<!-- MAGETWO-92786 -->* 
+<!-- MAGETWO-92786 -->* Wrong email width on iPhone
+
+ISSUE
+Wrong email width on iPhone
+
+STEPS TO REPRODUCE
+
+Register a new customer
+Open a welcome email on iPhone
+Check the video screencast
+Expected results
+The email displayed correctly and its width fits the device's width
+
+Actual results
+The email displayed with a width that is ~50% of the device's width
+PS: switching device's orientation from portrait to album fixes the issue.
+
+
+
+
 
 
 
@@ -772,7 +1040,25 @@ No errors and no changes to reward points
 
 <!-- MAGETWO-98990 -->*
 
-<!-- MAGETWO-93939 -->* 
+<!-- MAGETWO-93939 -->* Cannot clear Date of Birth value in customer edit page in Admin
+
+Cannot clear Date of Birth value in customer edit page in Admin
+
+ISSUE:
+Customer Date of Birth is unable to be removed in the admin panel
+
+STEPS TO REPLICATE:
+
+Create a new customer in the admin panel and set non-empty value to Date of Birth. Save the customer
+Clear the DOB field
+Click save
+Check the field
+Notice the field still contains the original DOB
+EXPECTED RESULTS:
+Possible to remove a DOB in the admin panel
+
+ACTUAL RESULTS:
+Unable to remove a DOB in the admin panel
 
 <!-- ENGCOM-2737 -->* Product image zoom now works as expected in stores running on Safari. *Fix submitted by [Danny Nimmo](https://github.com/dannynimmo) in pull request [17491](https://github.com/magento/magento2/pull/17491)*. [GitHub-17416](https://github.com/magento/magento2/issues/17416)
 
@@ -794,6 +1080,10 @@ No errors and no changes to reward points
 
 <!-- ENGCOM-2322 -->* 
 
+correct the position of the datepicker when you scroll
+
+Datepicker does not scroll
+
 *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
 
 
@@ -802,6 +1092,26 @@ No errors and no changes to reward points
 
 
  <!-- ENGCOM-2628 -->* 
+ Fixed "Shop By" button disabling broken on the search page
+"Shop By" button disabling broken on the search page
+
+The "Shop By" button becomes disabled once any additional filters are pointless (they would yield the same one product or no products at all). It works like that on category pages (e.g. "women/tops-women/jackets-women.html"), but it's broken on the search page.
+
+The technical cause is the disabling overlay being positioned below the search results / products on the search page, which is way off the button which is positioned above the search results.
+
+Steps to reproduce
+click on the "Search" icon and search for "jacket";
+resize the window to a mobile size;
+click on "Shop By" and choose a filter with one product (e.g. "Category -> Gear");
+Expected result
+The button "Shop By" should become disabled.
+Actual result
+The button "Shop By" is still enabled.
+
+Added the class "page-with-filter" in the catalogsearch_result_index.xml for fixing the issue.
+
+
+
 
   *Fix submitted by [Andrea Rivadossi](https://github.com/AndreaRivadossi) in pull request [15650](https://github.com/magento/magento2/pull/15650)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
 
@@ -812,7 +1122,25 @@ MYSQL Message queue is fetching messages from new to old
 EE only 
 
 
-<!-- MAGETWO-93939 -->*
+<!-- MAGETWO-93939 -->* Cannot clear Date of Birth value in customer edit page in Admin	
+
+Cannot clear Date of Birth value in customer edit page in Admin
+
+ISSUE:
+Customer Date of Birth is unable to be removed in the admin panel
+
+STEPS TO REPLICATE:
+
+Create a new customer in the admin panel and set non-empty value to Date of Birth. Save the customer
+Clear the DOB field
+Click save
+Check the field
+Notice the field still contains the original DOB
+EXPECTED RESULTS:
+Possible to remove a DOB in the admin panel
+
+ACTUAL RESULTS:
+Unable to remove a DOB in the admin panel
 
 
 
@@ -839,19 +1167,43 @@ Seems like this is an issue for configurable, grouped, and bundled products
 
 
 
-### HTML
-
-
-
-
 ### Import/export
 
-<!-- MAGETWO-93223 -->* 
+<!-- MAGETWO-93223 -->* Import history wrong execution time
+
+Import time is incorrect in System > Import History
+
+PRECONDITIONS:
+Set timezone different from system timezone.
+Stores > Configuration > General > Locale Options > Timezone
+
+STEPS:
+
+Import file with one product (System > Import)
+Check the time of execution (System > Import History)
+screenshot
+EXPECTED RESULT:
+Execution Time should be correct
+
+ACTUAL RESULT:
+Execution Time is not correct
 
 
 ### Infrastructure
 
- <!-- ENGCOM-2783 -->* 
+ <!-- ENGCOM-2783 -->* Link logo in web setup wizard to back-end base URL
+ Sidebar shortcut to admin dashboard (Magento logo on top left) has no link in web setup wizard
+
+ Steps to reproduce
+Admin dashboard>System>Web Setup Wizard
+Click Magento logo on top left
+No effect
+No way to get back to admin dashboard
+Expected result
+Click Magento logo on top left>admin dashboard
+Actual result
+No effect as logo has no link like the other sidebars do
+
     *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17543](https://github.com/magento/magento2/pull/17543)*. [GitHub-13948](https://github.com/magento/magento2/issues/13948)
 
 
@@ -859,6 +1211,20 @@ Seems like this is an issue for configurable, grouped, and bundled products
 
 
  <!-- ENGCOM-2872 -->* 
+renamed variable on line 572 & 589, from $keepRation to $keepRatio.
+
+
+The parameter $keepRation should be called $keepRatio
+
+Steps to reproduce
+Look at the resizeFile function on line 572 of the Magento\Cms\Model\Wysiwyg\Images\Storage class.
+
+Expected result
+The parameter $keepRation should be $keepRatio
+
+Actual result
+The parameter is called $keepRation
+
 
 
    *Fix submitted by [Martin Aarts](https://github.com/MartinAarts) in pull request [17776](https://github.com/magento/magento2/pull/17776)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
@@ -892,8 +1258,7 @@ DateTime::`__construct()`: Failed to parse time string (30/01/2018) at position 
 TEPS TO REPLICATE:
 Create admin user with Locale English (Australia)
 Login as this admin
-Navigate "Reports" > Products > Ordered.
-Find "`products" using date filter (Day should be greater than 12) datepicker should be from 1 to 31 Ex. 1/08/2018 - 31/08/2018
+Navigate "Reports" > Products > Ordered. (Day should be greater than 12) datepicker should be from 1 to 31 Ex. 1/08/2018 - 31/08/2018
 
 
 Actual result
@@ -985,10 +1350,6 @@ Pull Request:
  - contributor name: @driskell
  - contributor link: https://github.com/driskell
 
-
-
-
-### Pagecache
 
 
 
@@ -1084,6 +1445,18 @@ Only first 20 rows are exported
 
 
  <!-- ENGCOM-2724 -->* 
+ Year-to-date dropdown in Stores>Configuration>General>Reports>Dashboard
+
+
+Fix month dropdown on field Year-to-date in Stores>Configuration>General>Reports>Dashboard
+
+
+
+
+ Expected result
+Numerical list appears of numbers 01 to 12.
+Actual result
+Numerical list appears of following numbers: [01,03,03,05,05,07,07,09,09,10,10,11,11,12,12]
 
    *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
@@ -1111,7 +1484,20 @@ EXPECTED RESULTS: All abandoned carts should be exported
 ACTUAL RESULTS: Only first 20 rows are exported
 
 
-<!-- MAGETWO-93345-->* 
+<!-- MAGETWO-93345-->* Wrong totals shown in exported Coupon Report
+STEPS TO REPRODUCE
+
+Create a few orders using different coupons.
+Go to Reports>Coupons
+Select any dates with orders that used coupons
+Select Specific Coupon
+Choose a Coupon
+Export report as CSV
+EXPECTED RESULTS
+The total line in the CSV file should show totals for the selected coupon.
+
+ACTUAL RESULTS
+The total line in the CSV file shows the totals for all coupons in the selected time period.
 
 
 
@@ -1120,7 +1506,11 @@ ACTUAL RESULTS: Only first 20 rows are exported
 
 ### Review
 
- <!-- ENGCOM-2720-->* 
+ <!-- ENGCOM-2720-->* Fixed review list ajax if product not exist redirect to 404 page
+ Steps to reproduce
+Visit review/product/listAjax/id/{{non existent id}/
+Expected result
+I would expect a 404 not found
 
 
    *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
@@ -1177,7 +1567,20 @@ The button is worked
 ### Sales
 
 
- <!-- ENGCOM-2623 -->* 
+ <!-- ENGCOM-2623 -->* Block totalbar not used in invoice create and credit memo create screens 
+
+ In the following layout files the Magento\Sales\Block\Adminhtml\Order\Totalbar block is defined:
+
+sales_order_creditmemo_new.xml
+sales_order_creditmemo_updateqty.xml
+sales_order_invoice_new.xml
+sales_order_invoice_updateqty.xml
+However up on investigation I found that this block doesn't do anything and seems to be deprecated. Even when it does render something there is no styling. All styling is in the file styles-old.less and styling can not be found in the style.less file of the Magento adminhtml theme.
+
+Expected result
+Totalbar block renders something.
+Actual result
+Block doesn't render anything.
 
  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [16656](https://github.com/magento/magento2/pull/16656)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653)
 
@@ -1257,7 +1660,12 @@ Expected result: coupon applied
 
 ### Search
 
- <!-- ENGCOM-2415 -->* 
+ <!-- ENGCOM-2415 -->* JS files located outside the web/js directory
+
+ Expected result
+JS files to be inside web/js as per the dev docs.
+
+ Some JS files are direct children of web rather than web/js. This does not follow instructions from the dev docs thus is confusing.
 
    *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16582](https://github.com/magento/magento2/pull/16582)*. [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
@@ -1276,6 +1684,8 @@ Steps to reproduce:
 	4.	Go to Marketing> SEO & Search
 Actual result: "Search Synonyms" disappear from backend menu
 Expected result: "Search Synonyms" should be available regardless of search engine
+
+
 
 <!-- MAGETWO-92652 -->* 
 
@@ -1331,7 +1741,19 @@ Nothing happens when clicking the New Address button
 
 
 
-<!-- ENGCOM-2704 -->* 
+<!-- ENGCOM-2704 -->* Fix the issue with "Shipping address is not set" exception
+Steps to reproduce
+Log In as Customer.
+Add Product to Cart.
+Proceed to Checkout.
+Fill Shipping Address data, click Next (do not place Order)
+Return to the Storefront.
+Go to the Shopping Cart.
+Click Check Out with Multiple Addresses.
+Expected result
+Correct Multishipping Checkout workflow.
+Actual result
+Exception #0 (Magento\Framework\Exception\StateException): Shipping address is not set
 
 
   *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16753](https://github.com/magento/magento2/pull/16753)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
@@ -1427,18 +1849,6 @@ ACTUAL RESULTS:
 Error in browser console:
 [Error] SyntaxError: Unexpected identifier 'Sindre' (df5162b027e833419d3bb735a8b8cbe9.js:257)
 
-### Swatches
-
-
-<!-- MAGETWO-95426 -->* Unable to set default option for swatch attribute
-
-UNRESOLVED
-
-
-
-<!-- MAGETWO-95424 -->*
-
-UNRESOLVED
 
 
 
@@ -1541,16 +1951,16 @@ Order status is Processing
 
 ### Swagger
 
- <!-- ENGCOM-2837 -->* 
+ <!-- ENGCOM-2837 -->* With JS minification enabled, the swagger-ui-bundle.js becomes corrupted
+
+ Use '.min' in filenames of already minified js files in the Swagger module so they aren't getting minified again in production, fixes 
+
+ The JS works fine when minification is disabled and the files redeployed.
+
+
 
    *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17626](https://github.com/magento/magento2/pull/17626)*. [GitHub-16927](https://github.com/magento/magento2/issues/16927)
 
-
-
-### Swatches
-
-
-### Tax
 
 
 
@@ -1559,7 +1969,8 @@ Order status is Processing
 
 ### Testing
 
- <!-- ENGCOM-2616 -->* 
+ <!-- ENGCOM-2616 -->* Integration test ProcessCronQueueObserverTest.php succeeds regardless of magento config fixture
+
 
  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
 
@@ -1569,7 +1980,19 @@ Order status is Processing
 
 ### UI
 
-<!-- ENGCOM-2812 -->* 
+<!-- ENGCOM-2812 -->* Update time12h javascript validation rule to be compatible with js minify #17652
+
+UI validation rule for valid time am/pm doesn't work when js is minified
+
+Steps to reproduce
+Run SQL: update core_config_data set value = 1 where path = 'dev/js/minify_files'
+bin/magento deploy:mode:set production
+Run production compilation scripts
+Try to save a ui component that validates against time12h
+Expected result
+The input field should validate against the time12h validation rule
+Actual result
+There is a javascript error that happens when the js is minified. The space in the validation rule is stripped.
 
   *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
 
@@ -1578,12 +2001,29 @@ Order status is Processing
 
 
 
-<!-- ENGCOM-2834 -->* 
+<!-- ENGCOM-2834 -->* Message list component fix: the message type is always error when parameters specified
+Component: Magento_Ui/js/model/messageList.js component.
+The message type is always "error" when specifying the parameters property.
+
+Steps to reproduce
+Use message list component (Magento_Ui/js/model/messageList.js).
+Add success message with parameters.
 
   *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
 
-<!-- ENGCOM-2607 -->* 
+<!-- ENGCOM-2607 -->* Error with translation of confirmation modal buttons
+Error with translation of confirmation modal buttons
+
+Steps to reproduce
+Add a product to cart
+Open mincart and click on trash pictogram
+Expected result
+Confirmation modal with two butttons in french: "Annuler" and "OK"
+Actual result
+Confirmation modal with two butttons in english: "Cancel" and "OK"
+
+
 
  *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17275](https://github.com/magento/magento2/pull/17275)*. [GitHub-17193](https://github.com/magento/magento2/issues/17193)
 
