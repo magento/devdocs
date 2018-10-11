@@ -76,7 +76,7 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 }
 ```
 
-In this example the:
+In this example:
 
 * `name` is the name of your component.
 * `description` is a concise explanation of your component's purpose.
