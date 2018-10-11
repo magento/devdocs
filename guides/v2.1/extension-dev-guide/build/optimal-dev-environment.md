@@ -12,7 +12,7 @@ redirect_from:
 
 A typical software development flow is as follows:
 
-**Local dev machine** > **QA/integration server** > **Preview server**(optional) > **Production server**
+**Local dev machine** > **QA/integration server** > **Preview server** (optional) > **Production server**
 
 Whether you are writing a new Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} or contributing to the [code base](https://github.com/magento/magento2){:target="_blank"}, the first step for any developer is setting up a development environment.
 This article will guide you in setting up and optimizing your local development machine.
