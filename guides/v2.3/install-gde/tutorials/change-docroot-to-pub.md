@@ -10,7 +10,8 @@ Serving files from the `pub/` directory prevents site visitors from accessing th
 {: .bs-callout .bs-callout-warning }
 If you're accustomed to using the Web Setup Wizard during development, be aware that you won't be able to access it when serving files from the `pub/` directory.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+## A note about nginx
+
 If you're using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample){:target="_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
 
 The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
@@ -28,7 +29,6 @@ The sample configuration overrides your server's docroot settings to serve files
               set $MAGE_ROOT /var/www/html/magento2ce;
               include /var/www/html/magento2ce/nginx.conf.sample;
     }
-</div>
 
 ## Before you begin
 
