@@ -38,7 +38,7 @@ To run System Upgrade:
 	![Authentication keys entered in the Setup Wizard]({{ site.baseurl }}/common/images/compman_auth-keys.png)
 
 	{:.bs-callout .bs-callout-warning}
-	For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade Magento EE or vice versa. You also *cannot* use another user's authentication keys or [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){: target="_blank"} authentication keys
+	For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade Magento EE or vice versa. You also *cannot* use another user's authentication keys or [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html) authentication keys
 
 5.	Click **Save Config**.
 3.	Click **System Upgrade**.
