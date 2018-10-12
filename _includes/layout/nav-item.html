@@ -24,7 +24,7 @@
 
   {% assign item_url = item.url | prepend: base %}
   {% assign compare_url = page.url | prepend: site.baseurl %}
-<li class="{% if compare_url == item_url %}active{% endif %} {{ item.class }}">
+<li class="{% if compare_url == item_url %}active{% endif %} {{ item.class }}" role="menuitem">
   {% if item.url %}
   <a href="{{ item_url }}">{{ item.label }}</a>
   {% else %}
