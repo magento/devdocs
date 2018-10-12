@@ -144,6 +144,9 @@ The following example builds a Customers Search request based on search criteria
 2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
 3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Also, the `searchCriteria` parameter should be used to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ site.baseurl }}/guides/v2.2/rest/list.html).
+Please check below example to find customers whose first name contains "ver" or whose last name contains "Costello". 
+
+
 
 
     ```php?start_inline=1
@@ -177,6 +180,86 @@ The following example builds a Customers Search request based on search criteria
     
     $request->setQuery($params);
       ```
+After execute above API, You will get result like below
+```json
+{
+    "items": [
+        {
+            "id": 1,
+            "group_id": 1,
+            "default_billing": "1",
+            "default_shipping": "1",
+            "created_at": "2017-12-05 09:50:11",
+            "updated_at": "2018-09-22 06:32:50",
+            "created_in": "Default Store View",
+            "dob": "1973-12-15",
+            "email": "roni_cost@example.com",
+            "firstname": "Veronica",
+            "lastname": "Costello",
+            "gender": 2,
+            "store_id": 1,
+            "website_id": 1,
+            "addresses": [
+                {
+                    "id": 1,
+                    "customer_id": 1,
+                    "region": {
+                        "region_code": "MI",
+                        "region": "Michigan",
+                        "region_id": 33
+                    },
+                    "region_id": 33,
+                    "country_id": "US",
+                    "street": [
+                        "6146 Honey Bluff Parkway"
+                    ],
+                    "telephone": "(555) 229-3326",
+                    "postcode": "49628-7978",
+                    "city": "Calder",
+                    "firstname": "Veronica",
+                    "lastname": "Costello",
+                    "default_shipping": true,
+                    "default_billing": true
+                },
+                {
+                    "id": 19,
+                    "customer_id": 1,
+                    "region": {
+                        "region_code": "London ",
+                        "region": "London ",
+                        "region_id": 0
+                    },
+                    "region_id": 0,
+                    "country_id": "GB",
+                    "street": [
+                        "1 Studio 103 The Business Centre 61"
+                    ],
+                    "telephone": "1234567890",
+                    "postcode": "CF24 3DG",
+                    "city": "Tottenham ",
+                    "firstname": "Veronica",
+                    "lastname": "Costello"
+                }
+            ],
+            "disable_auto_group_change": 0
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "firstname",
+                        "value": "%ver%",
+                        "condition_type": "like"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}
+```
 
 4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
 
