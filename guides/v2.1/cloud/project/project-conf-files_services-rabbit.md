@@ -68,7 +68,7 @@ The response includes all relationships for services and configuration data for 
       }
    ]
 }
-```{: .no-copy}
+```
 
 ## Connect to RabbitMQ for debugging {#connect}
 
