@@ -12,9 +12,6 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-warning}
-Note: The below information applies to Magento Commerce Cloud environments, not Magento Commerce Pro environments.
-
 The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
@@ -23,6 +20,8 @@ We support RabbitMQ version 3.5.
 
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
+
+{% include cloud/note-pro-using-yaml-support.md %}
 
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
 
