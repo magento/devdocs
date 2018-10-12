@@ -21,7 +21,7 @@ We support RabbitMQ version 3.5.
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
-{% include cloud/note-pro-using-yaml-support.md %}
+{% include cloud/service-config-integration-starter.md %}
 
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
 
@@ -68,7 +68,7 @@ The response includes all relationships for services and configuration data for 
       }
    ]
 }
-```{: .no-copy}
+```
 
 ## Connect to RabbitMQ for debugging {#connect}
 
