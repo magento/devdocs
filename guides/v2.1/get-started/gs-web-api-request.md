@@ -143,9 +143,10 @@ The following example builds a Customers Search request based on search criteria
 
 2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
-3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Also, the `searchCriteria` parameter should be used to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ site.baseurl }}/guides/v2.2/rest/list.html).
-Please check below example to find customers whose first name contains "ver" or whose last name contains "Costello". 
 
+3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ site.baseurl }}/rest/list.html).
+
+   The following example finds customers whose first name contains "ver" or whose last name contains "Costello". 
 
 
 
@@ -180,7 +181,23 @@ Please check below example to find customers whose first name contains "ver" or 
     
     $request->setQuery($params);
       ```
-After execute above API, You will get result like below
+4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
+
+   ```php?start_inline=1
+   $client = new \Zend\Http\Client();
+   $options = [
+      'adapter'   => 'Zend\Http\Client\Adapter\Curl',
+      'curloptions' => [CURLOPT_FOLLOWLOCATION => true],
+      'maxredirects' => 0,
+      'timeout' => 30
+    ];
+    $client->setOptions($options);
+
+    $response = $client->send($request);
+   ```
+
+This request returns a list of all customers in JSON format, as shown below. You can also specify XML format by changing <code>Accept</code> header of the request.
+   
 ```json
 {
     "items": [
@@ -261,22 +278,6 @@ After execute above API, You will get result like below
 }
 ```
 
-4. Prepare a HTTP Curl client object and pass the request object to `Client::send()` method.
-
-   ```php?start_inline=1
-   $client = new \Zend\Http\Client();
-   $options = [
-      'adapter'   => 'Zend\Http\Client\Adapter\Curl',
-      'curloptions' => [CURLOPT_FOLLOWLOCATION => true],
-      'maxredirects' => 0,
-      'timeout' => 30
-    ];
-    $client->setOptions($options);
-
-    $response = $client->send($request);
-   ```
-
-   This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.
 
 ## Next step
 
