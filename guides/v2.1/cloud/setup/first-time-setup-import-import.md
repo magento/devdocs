@@ -15,13 +15,13 @@ functional_areas:
   - Cloud
   - Setup
 ---
-QUESTION: Do we really want to support a full overwrite?
+<! -- QUESTION: Do we really want to support a full overwrite? -->
 
-The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code. When importing, you are force pushing your existing code in a Git repository over the {{site.data.var.ece}}'s Git `master` branch.
+The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code.
 
 {: .bs-callout .bs-callout-warning}
-Warning: When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
-Before you continue, make sure there is nothing in your {{site.data.var.ece}} project you want to keep.
+When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
+Before you continue, make sure there is nothing in your {{site.data.var.ece}} project that you want to keep.
 
 ## Required information
 
@@ -36,6 +36,7 @@ Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c
 To create a remote Git reference:
 
 1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+
 1.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
     ```
